@@ -1,20 +1,33 @@
-{
-  "name": "uoga-hunt-planner",
-  "private": true,
-  "version": "1.0.0",
-  "description": "Local static server for the U.O.G.A. Hunt Planner",
-  "scripts": {
-    "start": "node server.js",
-    "build:pages": "node scripts/build-pages-dist.js",
-    "export:data": "node export-data.js",
-    "audit:2026": "node audit-2026-completeness.js",
-    "apply:2026:supplements": "node apply-2026-supplements.js",
-    "audit:2026:top500": "node audit-2026-completeness.js --top=500"
-  },
-  "devDependencies": {
-    "pdf-parse": "^1.1.4",
-    "pdfkit": "^0.17.2",
-    "wrangler": "^4.88.0",
-    "xlsx": "^0.18.5"
-  }
+﻿{
+    "name":  "uoga-hunt-planner",
+    "private":  true,
+    "version":  "1.0.0",
+    "description":  "Local static server for the U.O.G.A. Hunt Planner",
+    "scripts":  {
+                    "start":  "node server.js",
+                    "build:pages":  "node scripts/build-pages-dist.js",
+                    "export:data":  "node export-data.js",
+                    "audit:2026":  "node audit-2026-completeness.js",
+                    "apply:2026:supplements":  "node apply-2026-supplements.js",
+                    "audit:2026:top500":  "node audit-2026-completeness.js --top=500",
+                    "generate:page-data":  "node scripts/generate-page-data.js",
+                    "canonical:rebuild":  "node scripts/build-canonical-rebuild.js",
+                    "validate:canonical":  "node scripts/validate-canonical-json.js && node scripts/validate-canonical.js",
+                    "compare:runtime-contracts":  "node scripts/compare-runtime-contracts.js",
+                    "promotion:safety":  "node scripts/promotion-safety-check.js",
+                    "coverage:canonical":  "node scripts/finalize-canonical-coverage.js",
+                    "sync:permits-2026":  "node scripts/sync-permit-allocations-2026.js",
+                    "verify:permits-2026":  "node scripts/verify-permit-allocations-2026.js",
+                    "verify:boundaries-2026":  "node scripts/verify-boundary-id-render-map-2026.js",
+                    "publish:hard-copy-tables":  "node scripts/publish-formatted-hunt-tables.js",
+                    "test:canonical":  "node tests/validate-canonical-json.test.js && node tests/canonical-rebuild.test.js",
+                    "test":  "node tests/validate-canonical-json.test.js && node tests/canonical-rebuild.test.js && npm run verify:permits-2026",
+                    "build":  "npm run build:pages"
+                },
+    "devDependencies":  {
+                            "pdf-parse":  "^1.1.4",
+                            "pdfkit":  "^0.17.2",
+                            "wrangler":  "^4.88.0",
+                            "xlsx":  "^0.18.5"
+                        }
 }

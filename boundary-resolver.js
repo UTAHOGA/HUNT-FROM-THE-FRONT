@@ -64,7 +64,8 @@ window.UOGA_BOUNDARY_RESOLVER = (() => {
 
   function normalizeManifestRow(row) {
     const huntCode = normalizeHuntCode(firstNonEmpty(row, ['hunt_code', 'huntCode', 'HUNT_CODE']));
-    const boundaryIdRaw = normalizeBoundaryId(firstNonEmpty(row, ['dwr_boundary_id', 'dwrBoundaryId', 'boundary_id', 'boundaryId', 'BoundaryID']));
+    const boundaryIdRaw = normalizeBoundaryId(firstNonEmpty(row, ['boundary_id', 'boundaryId', 'BoundaryID', 'display_boundary_id', 'displayBoundaryId']));
+    const explicitDwrBoundaryIdRaw = normalizeBoundaryId(firstNonEmpty(row, ['dwr_boundary_id', 'dwrBoundaryId']));
     const mergedBoundaryId = safeText(firstNonEmpty(row, ['merged_boundary_id', 'mergedBoundaryId']));
     const boundaryGeometryType = safeText(firstNonEmpty(row, ['boundary_geometry_type', 'boundaryGeometryType'])).toLowerCase();
     const geometryStatus = safeText(firstNonEmpty(row, ['geometry_status', 'geometryStatus']));
@@ -76,11 +77,14 @@ window.UOGA_BOUNDARY_RESOLVER = (() => {
       parseIdList(firstNonEmpty(row, ['dwr_member_boundary_ids', 'dwrMemberBoundaryIds', 'member_boundary_ids', 'memberBoundaryIds'])).map((value) => normalizeBoundaryId(value)),
     );
     const numericBoundaryId = /^\d+$/.test(boundaryIdRaw) ? boundaryIdRaw : '';
-    const isComposite = !!mergedBoundaryId || memberBoundaryIds.length > 1 || boundaryGeometryType.includes('merged');
-    const displayBoundaryId = isComposite
-      ? `UOGA_${huntCode}_2026`
-      : (numericBoundaryId ? `DWR_${numericBoundaryId}` : (huntCode ? `UOGA_${huntCode}_2026` : ''));
-    const dwrBoundaryId = isComposite ? null : (numericBoundaryId || null);
+    const explicitDwrBoundaryId = /^\d+$/.test(explicitDwrBoundaryIdRaw) ? explicitDwrBoundaryIdRaw : '';
+    const isComposite = !!mergedBoundaryId
+      || memberBoundaryIds.length > 1
+      || boundaryGeometryType.includes('merged')
+      || boundaryGeometryType.includes('bundle')
+      || boundaryGeometryType.includes('composite');
+    const displayBoundaryId = numericBoundaryId || (huntCode ? `VERIFIED_${huntCode}_2026` : '');
+    const dwrBoundaryId = isComposite ? null : (explicitDwrBoundaryId || numericBoundaryId || null);
     const dwrMemberBoundaryIds = isComposite ? memberBoundaryIds : [];
 
     return {
@@ -89,7 +93,7 @@ window.UOGA_BOUNDARY_RESOLVER = (() => {
       display_boundary_id: displayBoundaryId || null,
       dwr_boundary_id: dwrBoundaryId,
       dwr_member_boundary_ids: dwrMemberBoundaryIds,
-      boundary_id: dwrBoundaryId,
+      boundary_id: displayBoundaryId || null,
       merged_boundary_id: mergedBoundaryId || null,
       boundary_geometry_type: boundaryGeometryType || null,
       geometry_status: geometryStatus || null,
@@ -215,14 +219,21 @@ window.UOGA_BOUNDARY_RESOLVER = (() => {
     const dwrBoundaryLink = safeText(manifestRow?.dwr_boundary_link || hunt?.dwr_boundary_link || hunt?.dwrBoundaryLink || hunt?.boundaryLink || hunt?.boundaryURL || hunt?.huntBoundaryLink);
     const geometryType = safeText(manifestRow?.boundary_geometry_type || hunt?.boundary_geometry_type || hunt?.boundaryGeometryType);
     const manifestDwrBoundaryId = normalizeBoundaryId(
-      manifestRow?.dwr_boundary_id || manifestRow?.boundary_id,
+      manifestRow?.dwr_boundary_id,
     );
     // If a manifest row exists, only trust an explicit manifest DWR ID.
     // This prevents synthetic legacy IDs from being treated as real DWR IDs.
     const singleBoundaryId = manifestDwrBoundaryId || (!manifestRow ? huntBoundaryId : '');
-    const manifestDisplayBoundaryId = safeText(manifestRow?.display_boundary_id || hunt?.display_boundary_id || hunt?.displayBoundaryId);
+    const manifestDisplayBoundaryId = safeText(
+      manifestRow?.display_boundary_id
+      || manifestRow?.boundary_id
+      || hunt?.display_boundary_id
+      || hunt?.displayBoundaryId
+      || hunt?.boundary_id
+      || hunt?.boundaryId,
+    );
     const derivedDisplayBoundaryId = manifestDisplayBoundaryId
-      || (mergedBoundaryId ? `UOGA_${huntCode}_2026` : (singleBoundaryId ? `DWR_${singleBoundaryId}` : (huntCode ? `UOGA_${huntCode}_2026` : '')));
+      || (mergedBoundaryId ? `VERIFIED_${huntCode}_2026` : (singleBoundaryId ? singleBoundaryId : (huntCode ? `VERIFIED_${huntCode}_2026` : '')));
     const index = boundaryFeatureIndex?.byBoundaryId instanceof Map ? boundaryFeatureIndex.byBoundaryId : new Map();
 
     if (boundaryGeojsonPath) {
@@ -232,7 +243,7 @@ window.UOGA_BOUNDARY_RESOLVER = (() => {
         display_boundary_id: derivedDisplayBoundaryId || null,
         dwr_boundary_id: singleBoundaryId || null,
         dwr_member_boundary_ids: memberBoundaryIds,
-        boundary_id: singleBoundaryId || null,
+        boundary_id: derivedDisplayBoundaryId || null,
         merged_boundary_id: mergedBoundaryId || null,
         boundary_geometry_type: geometryType || (mergedBoundaryId ? 'merged_kmz' : 'single_kmz'),
         boundary_geojson_path: boundaryGeojsonPath,
@@ -248,10 +259,10 @@ window.UOGA_BOUNDARY_RESOLVER = (() => {
       return {
         status: 'mapped',
         hunt_code: huntCode,
-        display_boundary_id: derivedDisplayBoundaryId || null,
-        dwr_boundary_id: singleBoundaryId,
-        dwr_member_boundary_ids: [],
-        boundary_id: singleBoundaryId,
+          display_boundary_id: derivedDisplayBoundaryId || null,
+          dwr_boundary_id: singleBoundaryId,
+          dwr_member_boundary_ids: [],
+          boundary_id: derivedDisplayBoundaryId || singleBoundaryId,
         merged_boundary_id: mergedBoundaryId || null,
         boundary_geometry_type: geometryType || 'single_boundary_id',
         boundary_geojson_path: null,
@@ -278,7 +289,7 @@ window.UOGA_BOUNDARY_RESOLVER = (() => {
           display_boundary_id: derivedDisplayBoundaryId || null,
           dwr_boundary_id: singleBoundaryId || null,
           dwr_member_boundary_ids: memberBoundaryIds,
-          boundary_id: singleBoundaryId || null,
+          boundary_id: derivedDisplayBoundaryId || null,
           merged_boundary_id: mergedBoundaryId || null,
           boundary_geometry_type: geometryType || 'member_fallback',
           boundary_geojson_path: null,
@@ -298,7 +309,7 @@ window.UOGA_BOUNDARY_RESOLVER = (() => {
       display_boundary_id: derivedDisplayBoundaryId || null,
       dwr_boundary_id: singleBoundaryId || null,
       dwr_member_boundary_ids: memberBoundaryIds,
-      boundary_id: singleBoundaryId || null,
+      boundary_id: derivedDisplayBoundaryId || null,
       merged_boundary_id: mergedBoundaryId || null,
       boundary_geometry_type: geometryType || null,
       boundary_geojson_path: null,

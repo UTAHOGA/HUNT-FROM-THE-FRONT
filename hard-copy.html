@@ -368,12 +368,12 @@
       <div class="lodge-header">
         <div class="lodge-copy">
           <h2>Outdoors Hard-Copy Library</h2>
-          <p class="helper">Search and filter hunt documents, exports, and source files. Open or download directly.</p>
+          <p class="helper">Search and filter hunt tables, source PDFs, and supporting hard-copy files. Open or download directly.</p>
         </div>
       </div>
       <div class="panel-body">
         <div class="library-head">
-          <p class="helper">Search and download official/source PDFs used in the hunt data pipeline. This page is PDF-only for visitor review.</p>
+          <p class="helper">Search and download formatted hunt tables and official/source PDFs used in the hunt data pipeline.</p>
           <div class="library-toolbar">
             <input id="librarySearch" class="library-search" type="search" placeholder="Search dataset name, type, or description..." aria-label="Search data library">
             <span id="libraryCount" class="helper" aria-live="polite"></span>
@@ -393,14 +393,14 @@
         <details class="library-about">
           <summary>About This Library</summary>
           <div class="library-about-body">
-            This visitor library is focused on downloadable source PDFs used by the hunt engine workflow. Use category tabs, year filters, and search together for the fastest results.
+            This visitor library is focused on downloadable formatted hunt tables and source documents used by the hunt engine workflow. Use category tabs, year filters, and search together for the fastest results.
           </div>
         </details>
 
         <div id="librarySections"></div>
 
         <p class="helper" style="margin-top: 14px;">
-          Tip: Click any card to open the PDF. Use the browser download button to save a local copy.
+          Tip: Click any card to open the file. Use the browser download button to save a local copy.
         </p>
       </div>
     </section>
@@ -421,6 +421,7 @@
 
     function groupLabel(key) {
       const map = {
+        hunt_tables: 'Hunt Tables',
         draw_odds: 'Draw Odds / Results',
         harvest_report: 'Harvest Reports',
         conservation_permits: 'Conservation Permits',
@@ -535,7 +536,7 @@
 
       function drawSections() {
         const filtered = filterItems();
-        countEl.textContent = `${filtered.length} of ${parsedItems.length} PDF links`;
+        countEl.textContent = `${filtered.length} of ${parsedItems.length} files`;
         drawActiveFilters();
         if (!filtered.length) {
           sectionsEl.innerHTML = '<div class="library-empty">No files match this filter.</div>';
@@ -546,7 +547,7 @@
           if (!byGroup.has(item.group)) byGroup.set(item.group, []);
           byGroup.get(item.group).push(item);
         });
-        const groupOrder = ['draw_odds', 'harvest_report', 'conservation_permits', 'regulation'];
+        const groupOrder = ['hunt_tables', 'draw_odds', 'harvest_report', 'conservation_permits', 'regulation'];
         const sortedGroups = Array.from(byGroup.keys()).sort((a, b) => {
           const ai = groupOrder.includes(a) ? groupOrder.indexOf(a) : 999;
           const bi = groupOrder.includes(b) ? groupOrder.indexOf(b) : 999;
@@ -579,6 +580,7 @@
                   <span class="hard-data-title">${escapeHtml(item.title)}</span>
                   <span class="hard-data-sub">${escapeHtml(item.subtitle || '')}</span>
                   <span class="hard-data-meta">${escapeHtml((item.type || '').toUpperCase())}${item.year ? ` | ${escapeHtml(item.year)}` : ''}</span>
+                  ${item.companion_href ? `<span class="hard-data-sub">Companion download: ${escapeHtml((item.companion_type || 'file').toUpperCase())}</span>` : ''}
                 </span>
               </a>
             `).join('');
@@ -600,7 +602,7 @@
             <section class="library-section">
               <div class="library-section-head">
                 <h3>${escapeHtml(groupLabel(group))}</h3>
-                <span class="library-section-count">${list.length} PDFs</span>
+                <span class="library-section-count">${list.length} files</span>
               </div>
               ${yearBlocks}
             </section>

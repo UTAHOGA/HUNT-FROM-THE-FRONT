@@ -413,6 +413,9 @@ function getResolvedBoundaryIdsForHunt(hunt) {
     .map(id => safe(id).trim())
     .filter(Boolean);
   if (resolved.length) return [...new Set(resolved)];
+  // Direct per-hunt GeoJSON is the selected-hunt render source. Do not use the
+  // display boundary_id as a legacy DWR feature ID when a direct file exists.
+  if (manifestGeojsonPath) return [];
   const manifestBoundaryId = safe(normalizeBoundaryIdFromResolver(firstNonEmpty(
     manifestRow?.dwr_boundary_id,
     manifestRow?.boundary_id,
@@ -420,9 +423,6 @@ function getResolvedBoundaryIdsForHunt(hunt) {
     manifestRow?.BoundaryID,
   ))).trim();
   if (manifestBoundaryId) return [manifestBoundaryId];
-  // If this hunt has a direct boundary GeoJSON path, rendering should use that
-  // path; do not expand member IDs into broad legacy feature matching.
-  if (manifestGeojsonPath) return [];
   const memberIdsFromManifest = parseBoundaryIdListFromResolver(firstNonEmpty(
     manifestRow?.dwr_member_boundary_ids,
     manifestRow?.member_boundary_ids,
@@ -589,10 +589,15 @@ function applyBoundaryManifestToHunts(records) {
     const normalizedBoundaryId = safe(resolved?.dwr_boundary_id).trim();
     const resolvedIds = memberIds.length ? memberIds : (normalizedBoundaryId ? [normalizedBoundaryId] : []);
     const displayBoundaryId = safe(resolved?.display_boundary_id).trim();
+    const selectedBoundaryId = safe(resolved?.boundary_id || displayBoundaryId || normalizedBoundaryId).trim();
 
     if (displayBoundaryId) {
       record.display_boundary_id = displayBoundaryId;
       record.displayBoundaryId = displayBoundaryId;
+    }
+    if (selectedBoundaryId) {
+      record.boundary_id = selectedBoundaryId;
+      record.boundaryId = selectedBoundaryId;
     }
     record.dwr_boundary_id = normalizedBoundaryId || null;
     record.dwrBoundaryId = normalizedBoundaryId || null;
@@ -715,9 +720,9 @@ function getDisplayBoundaryIdForHunt(hunt) {
   const displayBoundaryId = safe(resolved?.display_boundary_id).trim();
   if (displayBoundaryId) return displayBoundaryId;
   const numericId = safe(resolved?.dwr_boundary_id || resolved?.boundary_id).trim();
-  if (numericId) return `DWR_${numericId}`;
+  if (numericId) return numericId;
   const huntCode = safe(getHuntCode(hunt)).trim().toUpperCase();
-  return huntCode ? `UOGA_${huntCode}_2026` : '';
+  return huntCode ? `VERIFIED_${huntCode}_2026` : '';
 }
 
 function buildIndependentBoundaryTargets(hunts) {
@@ -1233,7 +1238,7 @@ function buildSyntheticConservationPermitHunts(records) {
       seasonLabel: 'Conservation Permit Area',
       dates: 'See official conservation permit details',
       title: firstNonEmpty(row?.matchedRegisterLabel, area, `${species} Conservation Permit`),
-      source: 'UOGA conservation permit hunt table',
+      source: 'Verified Utah DWR conservation permit table',
       sourceHuntCodes: Array.isArray(row?.sourceHuntCodes) ? row.sourceHuntCodes.slice() : [],
       permitCount: row?.permitCount,
       organizations: Array.isArray(row?.organizations) ? row.organizations.slice() : [],

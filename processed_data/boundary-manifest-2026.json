@@ -1,7 +1,7 @@
 {
   "generated_at": "2026-05-06",
   "source": "Uploaded KMZ files",
-  "count": 26,
+  "count": 27,
   "records": [
     {
       "hunt_code": "BI1000",
@@ -223,6 +223,33 @@
       "boundary_geojson_path": "processed_data/boundaries/DB0007.geojson",
       "sha256": "2343b19418a92dc64f3d56289fc0719ab521c621615dfd8f2695f5f3b769a07e",
       "notes": ""
+    },
+    {
+      "hunt_code": "DB0008",
+      "source_filename": "db0008 extended archery deer.kmz",
+      "boundary_id": null,
+      "merged_boundary_id": "DB0008_EXT_ARCH_2026",
+      "boundary_geometry_type": "merged_kmz",
+      "geometry_status": "merged_kmz_available",
+      "member_boundary_ids": [
+        "6",
+        "28",
+        "101",
+        "106",
+        "109",
+        "218",
+        "280",
+        "311",
+        "312",
+        "731"
+      ],
+      "member_boundary_count": 10,
+      "placemark_count": 10,
+      "boundary_kmz_path": "data/boundaries/kmz/DB0008.kmz",
+      "boundary_kml_path": "data/boundaries/kml/DB0008.kml",
+      "boundary_geojson_path": "processed_data/boundaries/DB0008.geojson",
+      "sha256": "ae46714b83fb2d0788008fdc4b109fbe85e29d723d592238feb5c5aa9099a26e",
+      "notes": "Extended Archery Deer: Sept 12-Oct 15 areas and Sept 12-Nov 30 areas from official DWR KMZ/KML."
     },
     {
       "hunt_code": "EA2000",

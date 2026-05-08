@@ -1614,5 +1614,53 @@
       "HUNT_NUMBER": "PB5326",
       "SEASON": "Contact operator for 2026 season dates"
     }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Box Elder, West - Private Land Only",
+      "BOUNDARYID": "755",
+      "HUNT_NUMBER": "LP5031",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "San Rafael, North - Private Land Only",
+      "BOUNDARYID": "202",
+      "HUNT_NUMBER": "LP5046",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Fillmore, Oak Creek South - Private Land Only",
+      "BOUNDARYID": "81",
+      "HUNT_NUMBER": "LP5033",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "West Desert, Rush Valley - Private Land Only",
+      "BOUNDARYID": "245",
+      "HUNT_NUMBER": "LP5051",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Southwest Desert - Private Land Only",
+      "BOUNDARYID": "625",
+      "HUNT_NUMBER": "LP5049",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Beaver - Private Land Only",
+      "BOUNDARYID": "628",
+      "HUNT_NUMBER": "LP5025",
+      "SEASON": null
+    }
   }
 ]
