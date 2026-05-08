@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-08T13:36:35.169Z",
+  "generated_at": "2026-05-08T13:43:17.933Z",
   "mode": "verify",
   "source_file": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
   "source_label": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
@@ -57,10 +57,7 @@
       "blank_values_preserved": 428432,
       "target_only_hunt_codes": [],
       "database_only_hunt_codes": [],
-      "sample_issues": [],
-      "mismatches_before_sync": 0,
-      "changed_rows": 0,
-      "changed_cells": 0
+      "sample_issues": []
     },
     {
       "file": "processed_data/hunt_unit_reference_linked.csv",
@@ -74,10 +71,7 @@
       "blank_values_preserved": 24720,
       "target_only_hunt_codes": [],
       "database_only_hunt_codes": [],
-      "sample_issues": [],
-      "mismatches_before_sync": 0,
-      "changed_rows": 0,
-      "changed_cells": 0
+      "sample_issues": []
     },
     {
       "file": "processed_data/draw_reality_engine.csv",
@@ -91,10 +85,7 @@
       "blank_values_preserved": 811600,
       "target_only_hunt_codes": [],
       "database_only_hunt_codes": [],
-      "sample_issues": [],
-      "mismatches_before_sync": 0,
-      "changed_rows": 0,
-      "changed_cells": 0
+      "sample_issues": []
     },
     {
       "file": "processed_data/point_ladder_view.csv",
@@ -108,10 +99,7 @@
       "blank_values_preserved": 811600,
       "target_only_hunt_codes": [],
       "database_only_hunt_codes": [],
-      "sample_issues": [],
-      "mismatches_before_sync": 0,
-      "changed_rows": 0,
-      "changed_cells": 0
+      "sample_issues": []
     },
     {
       "file": "data/hunt-master-canonical-2026-database-candidate.json",
@@ -125,10 +113,7 @@
       "blank_values_preserved": 12360,
       "target_only_hunt_codes": [],
       "database_only_hunt_codes": [],
-      "sample_issues": [],
-      "mismatches_before_sync": 0,
-      "changed_rows": 0,
-      "changed_cells": 0
+      "sample_issues": []
     },
     {
       "file": "data/hunt-master-canonical-2026-foundation.json",
@@ -142,10 +127,7 @@
       "blank_values_preserved": 12360,
       "target_only_hunt_codes": [],
       "database_only_hunt_codes": [],
-      "sample_issues": [],
-      "mismatches_before_sync": 0,
-      "changed_rows": 0,
-      "changed_cells": 0
+      "sample_issues": []
     },
     {
       "file": "data/hunt-master-canonical-2026-source-of-truth.json",
@@ -159,10 +141,7 @@
       "blank_values_preserved": 12360,
       "target_only_hunt_codes": [],
       "database_only_hunt_codes": [],
-      "sample_issues": [],
-      "mismatches_before_sync": 0,
-      "changed_rows": 0,
-      "changed_cells": 0
+      "sample_issues": []
     },
     {
       "file": "processed_data/hunt-master-canonical-2026-source-of-truth.json",
@@ -176,10 +155,7 @@
       "blank_values_preserved": 12360,
       "target_only_hunt_codes": [],
       "database_only_hunt_codes": [],
-      "sample_issues": [],
-      "mismatches_before_sync": 0,
-      "changed_rows": 0,
-      "changed_cells": 0
+      "sample_issues": []
     },
     {
       "file": "canonical/hunt-planner-2026.json",
@@ -193,10 +169,7 @@
       "blank_values_preserved": 12360,
       "target_only_hunt_codes": [],
       "database_only_hunt_codes": [],
-      "sample_issues": [],
-      "mismatches_before_sync": 0,
-      "changed_rows": 0,
-      "changed_cells": 0
+      "sample_issues": []
     },
     {
       "file": "generated/pages/hunt-planner.json",
@@ -210,10 +183,7 @@
       "blank_values_preserved": 12360,
       "target_only_hunt_codes": [],
       "database_only_hunt_codes": [],
-      "sample_issues": [],
-      "mismatches_before_sync": 0,
-      "changed_rows": 0,
-      "changed_cells": 0
+      "sample_issues": []
     },
     {
       "file": "generated/pages/hunt-research.json",
@@ -227,10 +197,7 @@
       "blank_values_preserved": 0,
       "target_only_hunt_codes": [],
       "database_only_hunt_codes": [],
-      "sample_issues": [],
-      "mismatches_before_sync": 0,
-      "changed_rows": 0,
-      "changed_cells": 0
+      "sample_issues": []
     }
   ],
   "skipped_missing_targets": [],
