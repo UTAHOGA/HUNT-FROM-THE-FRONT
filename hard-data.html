@@ -377,6 +377,15 @@
         .replace(/"/g, '&quot;');
     }
 
+    function safeUrl(value) {
+      try {
+        const url = new URL(String(value), window.location.origin);
+        return ['http:', 'https:', 'mailto:', 'tel:'].includes(url.protocol) ? url.href : '#';
+      } catch {
+        return '#';
+      }
+    }
+
     function inferYear(item) {
       const hay = [item.title, item.subtitle, item.href].join(' ');
       const m = String(hay).match(/\b(20\d{2})\b/);
@@ -517,8 +526,10 @@
             return String(a.title || '').localeCompare(String(b.title || ''));
           });
 
-          const cards = list.map(item => `
-            <a class="ops-card" role="listitem" href="${escapeHtml(item.href)}" target="_blank" rel="noopener noreferrer">
+          const cards = list.map(item => {
+            const href = safeUrl(item.href);
+            return `
+            <a class="ops-card" role="listitem" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">
               <span class="ops-ico" aria-hidden="true">${escapeHtml(iconLabel(item.type))}</span>
               <span>
                 <span class="ops-title">${escapeHtml(item.title || 'Untitled')}</span>
@@ -526,7 +537,8 @@
                 <span class="ops-meta">${escapeHtml((item.type || '').toUpperCase())}${item.year ? ` | ${escapeHtml(item.year)}` : ''}${item.source ? ` | ${escapeHtml(item.source)}` : ''}</span>
               </span>
             </a>
-          `).join('');
+          `;
+          }).join('');
 
           return `
             <section class="ops-section">

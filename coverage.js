@@ -30,6 +30,15 @@
       .replace(/'/g, '&#39;');
   }
 
+  function safeUrl(value) {
+    try {
+      const url = new URL(String(value), window.location.origin);
+      return ['http:', 'https:', 'mailto:', 'tel:'].includes(url.protocol) ? url.href : '#';
+    } catch {
+      return '#';
+    }
+  }
+
   function pill(val) {
     const yes = !!val;
     return `<span class="pill-yn ${yes ? 'y' : 'n'}">${yes ? 'YES' : 'NO'}</span>`;
@@ -114,7 +123,10 @@
       .slice(0, 600) // keep fast; filters get you to what you need
       .map((r) => {
         const code = escapeHtml(r.huntCode);
-        const link = r.boundaryLink ? `<a class="code-link" href="${escapeHtml(r.boundaryLink)}" target="_blank" rel="noopener noreferrer">${code}</a>` : code;
+        const boundaryHref = r.boundaryLink ? safeUrl(r.boundaryLink) : '';
+        const link = boundaryHref && boundaryHref !== '#'
+          ? `<a class="code-link" href="${escapeHtml(boundaryHref)}" target="_blank" rel="noopener noreferrer">${code}</a>`
+          : code;
         return `
           <tr>
             <td>${link}</td>

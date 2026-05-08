@@ -225,6 +225,14 @@ const searchInput = document.getElementById('searchInput'),
 
 // --- UTILITIES ---
 function escapeHtml(v) { return String(v ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+function safeUrl(value) {
+  try {
+    const url = new URL(String(value), window.location.origin);
+    return ['http:', 'https:', 'mailto:', 'tel:'].includes(url.protocol) ? url.href : '#';
+  } catch {
+    return '#';
+  }
+}
 function safe(v) { return String(v ?? ''); }
 function firstNonEmpty(...a) { for (let x of a) { let t = safe(x).trim(); if (t) return t; } return ''; }
 function trackAnalytics(eventName, props = {}) {
@@ -1821,31 +1829,31 @@ function refreshSelectionMatrix() {
     ['Deer', 'Elk', 'Pronghorn', 'Moose', 'Bison', 'Black Bear', 'Cougar', 'Turkey', 'Desert Bighorn Sheep', 'Rocky Mountain Bighorn Sheep', 'Mountain Goat']
   );
   const previousSpecies = speciesFilter.value || 'All Species';
-  speciesFilter.innerHTML = `<option value="All Species">All Species</option>` + speciesOptions.map(v => `<option value="${v}">${v}</option>`).join('');
+  speciesFilter.innerHTML = `<option value="All Species">All Species</option>` + speciesOptions.map(v => `<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`).join('');
   speciesFilter.value = speciesOptions.includes(previousSpecies) ? previousSpecies : 'All Species';
 
   const sexData = getFilteredHunts('sex');
   const sexOptions = sortWithPreferredOrder(Array.from(new Set(['All', ...sexData.map(getNormalizedSex).filter(Boolean)])), ['All', ...SEX_ORDER]);
   const prevSex = sexFilter.value || 'All';
-  sexFilter.innerHTML = sexOptions.map(v => `<option value="${v}">${v}</option>`).join('');
+  sexFilter.innerHTML = sexOptions.map(v => `<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`).join('');
   sexFilter.value = sexOptions.includes(prevSex) ? prevSex : 'All';
 
   const huntTypeData = getFilteredHunts('huntType');
   const huntTypeOptions = sortWithPreferredOrder(Array.from(new Set(['All', ...huntTypeData.map(getHuntType).filter(Boolean)])), ['All', ...HUNT_TYPE_ORDER]);
   const prevHuntType = huntTypeFilter.value || 'All';
-  huntTypeFilter.innerHTML = huntTypeOptions.map(v => `<option value="${v}">${v}</option>`).join('');
+  huntTypeFilter.innerHTML = huntTypeOptions.map(v => `<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`).join('');
   huntTypeFilter.value = huntTypeOptions.includes(prevHuntType) ? prevHuntType : 'All';
 
   const categoryData = getFilteredHunts('huntCategory');
   const categoryOptions = sortWithPreferredOrder(Array.from(new Set(['All', ...categoryData.map(getHuntCategory).filter(Boolean)])), ['All', ...HUNT_CLASS_ORDER]);
   const prevHuntCategory = huntCategoryFilter.value || 'All';
-  huntCategoryFilter.innerHTML = categoryOptions.map(v => `<option value="${v}">${v}</option>`).join('');
+  huntCategoryFilter.innerHTML = categoryOptions.map(v => `<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`).join('');
   huntCategoryFilter.value = categoryOptions.includes(prevHuntCategory) ? prevHuntCategory : 'All';
 
   const weaponData = getFilteredHunts('weapon');
   const weaponOptions = sortWithPreferredOrder(Array.from(new Set(['All', ...weaponData.map(getWeapon).filter(Boolean)])), ['All', ...WEAPON_ORDER]);
   const prevWeapon = weaponFilter.value || 'All';
-  weaponFilter.innerHTML = weaponOptions.map(v => `<option value="${v}">${v}</option>`).join('');
+  weaponFilter.innerHTML = weaponOptions.map(v => `<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`).join('');
   weaponFilter.value = weaponOptions.includes(prevWeapon) ? prevWeapon : 'All';
 
   const hasNonUnitSelections = [
@@ -1865,7 +1873,7 @@ function refreshSelectionMatrix() {
   });
   const unitOptions = Array.from(unitsMap.entries()).sort((a, b) => a[1].localeCompare(b[1]));
   const prevUnit = unitFilter.value || '';
-  unitFilter.innerHTML = `<option value="">All DWR Hunt Units</option>` + unitOptions.map(([v, l]) => `<option value="${v}">${l}</option>`).join('');
+  unitFilter.innerHTML = `<option value="">All DWR Hunt Units</option>` + unitOptions.map(([v, l]) => `<option value="${escapeHtml(v)}">${escapeHtml(l)}</option>`).join('');
   unitFilter.value = unitOptions.some(([v]) => v === prevUnit) ? prevUnit : '';
 }
 
@@ -2072,6 +2080,8 @@ function openSelectedHuntFloat() {
   const boundaryLine = escapeHtml(boundaryMeta.line);
   const boundaryLink = getBoundaryLink(selectedHunt);
   const kmzLink = boundaryMeta.kmzPath;
+  const safeBoundaryLink = boundaryLink ? safeUrl(boundaryLink) : '';
+  const safeKmzLink = kmzLink ? safeUrl(kmzLink) : '';
 
   selectedHuntFloat.innerHTML = `
     <section class="selected-unit-placard">
@@ -2112,8 +2122,8 @@ function openSelectedHuntFloat() {
           <button type="button" class="secondary hunt-research-ring selected-unit-placard-map-btn selected-unit-placard-primary-btn" data-inline-view-map>
             View Map
           </button>
-          ${boundaryLink ? `<a href="${escapeHtml(boundaryLink)}" target="_blank" rel="noopener noreferrer">View on DWR</a>` : ''}
-          ${kmzLink ? `<a href="${escapeHtml(kmzLink)}" target="_blank" rel="noopener noreferrer">Download KMZ</a>` : ''}
+          ${safeBoundaryLink && safeBoundaryLink !== '#' ? `<a href="${escapeHtml(safeBoundaryLink)}" target="_blank" rel="noopener noreferrer">View on DWR</a>` : ''}
+          ${safeKmzLink && safeKmzLink !== '#' ? `<a href="${escapeHtml(safeKmzLink)}" target="_blank" rel="noopener noreferrer">Download KMZ</a>` : ''}
         </div>
         <div class="selected-unit-placard-note">Built to stay just off the left rail so the map area still breathes.</div>
       </div>
@@ -2129,10 +2139,12 @@ function openSelectedHuntFloat() {
 
 function buildLandInfoCard({ logo, title, subtitle, detailText = '', noticeText = '', detailsLinkText = '', detailsLink = '', logoSize = 46, cardMinWidth = 270, cardMaxWidth = 320 }) {
   const resolvedLogo = logo ? assetUrl(logo) : '';
+  const safeResolvedLogo = resolvedLogo ? safeUrl(resolvedLogo) : '';
+  const safeDetailsLink = detailsLink ? safeUrl(detailsLink) : '';
   return `
     <div style="display:grid;gap:8px;min-width:${Number(cardMinWidth) || 270}px;max-width:${Number(cardMaxWidth) || 320}px;">
       <div style="display:flex;align-items:center;gap:10px;">
-        ${resolvedLogo ? `<img src="${resolvedLogo}" alt="${escapeHtml(subtitle)} logo" style="width:${Number(logoSize) || 46}px;height:${Number(logoSize) || 46}px;object-fit:contain;display:block;flex:0 0 auto;">` : ''}
+        ${safeResolvedLogo && safeResolvedLogo !== '#' ? `<img src="${safeResolvedLogo}" alt="${escapeHtml(subtitle)} logo" style="width:${Number(logoSize) || 46}px;height:${Number(logoSize) || 46}px;object-fit:contain;display:block;flex:0 0 auto;">` : ''}
         <div>
           <div style="font-size:15px;font-weight:900;letter-spacing:.04em;text-transform:uppercase;color:${DNR_ORANGE};line-height:1.05;">${escapeHtml(subtitle)}</div>
           <div style="font-size:15px;font-weight:900;color:#2b1c12;">${escapeHtml(title)}</div>
@@ -2140,7 +2152,7 @@ function buildLandInfoCard({ logo, title, subtitle, detailText = '', noticeText 
       </div>
       ${detailText ? `<div style="font-size:12px;line-height:1.35;color:#6b5646;">${escapeHtml(detailText)}</div>` : ''}
       ${noticeText ? `<div style="font-size:12px;line-height:1.4;color:#7b3f1d;font-weight:700;background:#fff4ea;border:1px solid #edc39f;border-radius:10px;padding:8px 10px;">${escapeHtml(noticeText)}</div>` : ''}
-      ${detailsLink ? `<a href="${escapeHtml(detailsLink)}" target="_blank" rel="noopener noreferrer" style="color:#2f7fd1;font-weight:800;text-decoration:none;">${escapeHtml(detailsLinkText || 'Open details')}</a>` : ''}
+      ${safeDetailsLink && safeDetailsLink !== '#' ? `<a href="${escapeHtml(safeDetailsLink)}" target="_blank" rel="noopener noreferrer" style="color:#2f7fd1;font-weight:800;text-decoration:none;">${escapeHtml(detailsLinkText || 'Open details')}</a>` : ''}
     </div>`;
 }
 
@@ -2319,6 +2331,8 @@ function renderSelectedHunt() {
   const boundaryLine = escapeHtml(boundaryMeta.line);
   const dwrBoundaryLink = getBoundaryLink(hunt);
   const downloadKmzPath = boundaryMeta.kmzPath;
+  const safeDwrBoundaryLink = dwrBoundaryLink ? safeUrl(dwrBoundaryLink) : '';
+  const safeDownloadKmzPath = downloadKmzPath ? safeUrl(downloadKmzPath) : '';
 
   window.UOGA_UI?.recordRecentHunt?.({
     hunt_code: getHuntCode(hunt),
@@ -2338,8 +2352,8 @@ function renderSelectedHunt() {
         <div><strong>Weapon:</strong> ${weapon}</div>
         <div><strong>Hunt Type:</strong> ${huntType}</div>
         <div><strong>${boundaryLine}</strong></div>
-        ${dwrBoundaryLink ? `<div><a href="${escapeHtml(dwrBoundaryLink)}" target="_blank" rel="noopener noreferrer">View on DWR</a></div>` : ''}
-        ${downloadKmzPath ? `<div><a href="${escapeHtml(downloadKmzPath)}" target="_blank" rel="noopener noreferrer">Download KMZ</a></div>` : ''}
+        ${safeDwrBoundaryLink && safeDwrBoundaryLink !== '#' ? `<div><a href="${escapeHtml(safeDwrBoundaryLink)}" target="_blank" rel="noopener noreferrer">View on DWR</a></div>` : ''}
+        ${safeDownloadKmzPath && safeDownloadKmzPath !== '#' ? `<div><a href="${escapeHtml(safeDownloadKmzPath)}" target="_blank" rel="noopener noreferrer">Download KMZ</a></div>` : ''}
 
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
           <button
@@ -2479,15 +2493,17 @@ function renderOutfitters() {
   }
   container.innerHTML = matches.map(o => {
     const website = safe(o.website).trim();
+    const safeWebsite = website ? safeUrl(website) : '';
     const phone = getOutfitterPrimaryPhone(o);
     const email = getOutfitterPrimaryEmail(o);
     const logo = safe(o.logoUrl).trim();
+    const safeLogo = logo ? safeUrl(logo) : '';
     const location = getOutfitterLocationText(o);
     const tags = [...normalizeListValues(o.matchReasons), ...getOutfitterSummaryTags(o)].slice(0, 4);
     return `
       <div class="outfitter-card" data-outfitter-id="${escapeHtml(firstNonEmpty(o.id, o.slug, o.listingName))}" role="button" tabindex="0" title="Zoom to ${escapeHtml(o.listingName || 'outfitter')}">
         <div class="outfitter-card-header">
-          ${logo ? `<img class="outfitter-card-logo" src="${escapeHtml(logo)}" alt="${escapeHtml(o.listingName || 'Outfitter logo')}">` : ''}
+          ${safeLogo && safeLogo !== '#' ? `<img class="outfitter-card-logo" src="${escapeHtml(safeLogo)}" alt="${escapeHtml(o.listingName || 'Outfitter logo')}">` : ''}
           <div class="outfitter-card-title-wrap">
             <div class="hunt-card-title">${escapeHtml(o.listingName || 'Outfitter')}</div>
             <div class="outfitter-card-subline">${escapeHtml(normalizeVisibleVerificationLabel(firstNonEmpty(o.verificationStatus, o.certLevel, o.listingType, 'Outfitter')))}</div>
@@ -2497,7 +2513,7 @@ function renderOutfitters() {
         ${tags.length ? `<div class="outfitter-card-meta-row">${tags.map(tag => `<span class="outfitter-card-chip">${escapeHtml(tag)}</span>`).join('')}</div>` : ''}
         <div class="outfitter-card-actions">
           <button type="button" class="outfitter-action-btn primary" data-outfitter-focus="${escapeHtml(firstNonEmpty(o.id, o.slug, o.listingName))}">Map Link</button>
-          ${website ? `<a class="outfitter-action-btn" href="${escapeHtml(website)}" target="_blank" rel="noopener noreferrer">Website</a>` : ''}
+          ${safeWebsite && safeWebsite !== '#' ? `<a class="outfitter-action-btn" href="${escapeHtml(safeWebsite)}" target="_blank" rel="noopener noreferrer">Website</a>` : ''}
         </div>
         ${phone ? `<div class="hunt-card-meta">${escapeHtml(phone)}</div>` : ''}
         ${email ? `<div class="hunt-card-meta">${escapeHtml(email)}</div>` : ''}
@@ -2654,8 +2670,10 @@ function getOutfitterGeocodeQueries(outfitter) {
 
 function buildOutfitterPopupCard(outfitter) {
   const logo = safe(outfitter.logoUrl).trim();
+  const safeLogo = logo ? safeUrl(logo) : '';
   const name = safe(outfitter.listingName).trim() || 'Outfitter';
   const website = safe(outfitter.website).trim();
+  const safeWebsite = website ? safeUrl(website) : '';
   const phone = getOutfitterPrimaryPhone(outfitter);
   const email = getOutfitterPrimaryEmail(outfitter);
   const location = getOutfitterLocationText(outfitter);
@@ -2663,7 +2681,7 @@ function buildOutfitterPopupCard(outfitter) {
   return `
     <div style="display:grid;gap:10px;min-width:280px;max-width:340px;">
       <div style="display:grid;grid-template-columns:58px minmax(0,1fr);align-items:center;gap:12px;">
-        ${logo ? `<img src="${escapeHtml(logo)}" alt="${escapeHtml(name)} logo" style="width:58px;height:58px;object-fit:cover;object-position:center;border-radius:12px;background:#fff;padding:3px;border:1px solid #d6c1ae;box-shadow:0 6px 14px rgba(0,0,0,.14);">` : ''}
+        ${safeLogo && safeLogo !== '#' ? `<img src="${escapeHtml(safeLogo)}" alt="${escapeHtml(name)} logo" style="width:58px;height:58px;object-fit:cover;object-position:center;border-radius:12px;background:#fff;padding:3px;border:1px solid #d6c1ae;box-shadow:0 6px 14px rgba(0,0,0,.14);">` : ''}
         <div>
           <div style="font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:${DNR_ORANGE};">Verified Outfitter</div>
           <div style="font-size:17px;font-weight:900;color:#2b1c12;line-height:1.15;">${escapeHtml(name)}</div>
@@ -2673,7 +2691,7 @@ function buildOutfitterPopupCard(outfitter) {
       ${location ? `<div style="font-size:13px;color:#6b5646;line-height:1.35;">${escapeHtml(location)}</div>` : ''}
       ${phone ? `<div style="font-size:13px;color:#6b5646;">${escapeHtml(phone)}</div>` : ''}
       ${email ? `<div style="font-size:13px;color:#6b5646;">${escapeHtml(email)}</div>` : ''}
-      ${website ? `<a href="${escapeHtml(website)}" target="_blank" rel="noopener noreferrer" style="color:#2f7fd1;font-weight:800;text-decoration:none;">Visit website</a>` : ''}
+      ${safeWebsite && safeWebsite !== '#' ? `<a href="${escapeHtml(safeWebsite)}" target="_blank" rel="noopener noreferrer" style="color:#2f7fd1;font-weight:800;text-decoration:none;">Visit website</a>` : ''}
     </div>`;
 }
 function openOutfitterInfoWindow(outfitter, position) {
@@ -2745,8 +2763,10 @@ function createOutfitterLogoMarker(position, outfitter) {
     const div = document.createElement('div');
     div.className = 'outfitter-logo-pin-shell';
     const initials = (safe(outfitter.listingName).trim().match(/[A-Z0-9]/ig) || ['O']).slice(0, 2).join('').toUpperCase();
-    const logoMarkup = safe(outfitter.logoUrl).trim()
-      ? `<img src="${escapeHtml(outfitter.logoUrl)}" alt="${escapeHtml(outfitter.listingName || 'Outfitter')}">`
+    const logoUrl = safe(outfitter.logoUrl).trim();
+    const safeLogoUrl = logoUrl ? safeUrl(logoUrl) : '';
+    const logoMarkup = safeLogoUrl && safeLogoUrl !== '#'
+      ? `<img src="${escapeHtml(safeLogoUrl)}" alt="${escapeHtml(outfitter.listingName || 'Outfitter')}">`
       : `<span class="outfitter-logo-pin-fallback">${escapeHtml(initials)}</span>`;
     div.innerHTML = `
       <div class="outfitter-logo-pin-base"></div>
@@ -2963,6 +2983,7 @@ function buildPopupCardForHunt(hunt) {
   const boundaryMeta = getBoundaryDisplaySummary(hunt);
   const boundaryLine = escapeHtml(boundaryMeta.line);
   const kmzPath = boundaryMeta.kmzPath;
+  const safeKmzPath = kmzPath ? safeUrl(kmzPath) : '';
 
   return `
     <div style="min-width:320px;max-width:420px;border:1px solid rgba(92,65,45,.75);border-radius:14px;overflow:hidden;background:rgba(35,30,26,.96);color:#f4efe4;box-shadow:0 12px 34px rgba(0,0,0,.35);">
@@ -2979,7 +3000,7 @@ function buildPopupCardForHunt(hunt) {
         <div style="font-size:13px;color:rgba(244,239,228,.78);line-height:1.35;">${dates}</div>
         <div style="font-size:13px;color:rgba(244,239,228,.9);line-height:1.35;">${boundaryLine}</div>
         ${boundaryLink ? `<button type="button" data-inline-hunt-details class="secondary" style="justify-self:start;">Official Utah DWR Hunt Details</button>` : ''}
-        ${kmzPath ? `<a href="${escapeHtml(kmzPath)}" target="_blank" rel="noopener noreferrer" style="color:#ffba7d;font-weight:700;text-decoration:none;">Download KMZ</a>` : ''}
+        ${safeKmzPath && safeKmzPath !== '#' ? `<a href="${escapeHtml(safeKmzPath)}" target="_blank" rel="noopener noreferrer" style="color:#ffba7d;font-weight:700;text-decoration:none;">Download KMZ</a>` : ''}
       </div>
     </div>`;
 }
