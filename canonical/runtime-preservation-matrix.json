@@ -1,0 +1,3412 @@
+[
+  {
+    "field": "access_type",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].access_type",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "avg_days_2025",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].avg_days_2025",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "avg_points_2025",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].avg_points_2025",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "boundary_id",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "data.js",
+      "boundary-resolver.js"
+    ],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].boundary_id",
+    "preserved": true,
+    "alias": [
+      "boundaryId",
+      "Boundary_Id",
+      "BoundaryID"
+    ],
+    "promotion_safe": true
+  },
+  {
+    "field": "boundary_id_numeric",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js"
+    ],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].boundary_id_numeric",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "boundary_token",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].boundary_token",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "boundaryId",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "data.js",
+      "boundary-resolver.js"
+    ],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].boundaryId",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "code",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": true,
+    "used_by": [
+      "index.html",
+      "research.html",
+      "app.js",
+      "data.js",
+      "boundary-resolver.js",
+      "hunt-research.js",
+      "ui.js",
+      "google-basemap.js"
+    ],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].code",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "data_status",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].data_status",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "draw_2025_bg_pdf_page",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].draw_2025_bg_pdf_page",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "draw_2025_bg_report_page",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].draw_2025_bg_report_page",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "draw_2025_species_section",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].draw_2025_species_section",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "draw_2025_type",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].draw_2025_type",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "draw_family",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].draw_family",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "eligibility_class",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].eligibility_class",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "harvest_2025",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].harvest_2025",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "has_antlerless_draw",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].has_antlerless_draw",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "has_bonus_draw",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].has_bonus_draw",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "has_harvest",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].has_harvest",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "hunt_class",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "data.js"
+    ],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].hunt_class",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "hunt_code",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": true,
+    "used_by": [
+      "index.html",
+      "research.html",
+      "app.js",
+      "data.js",
+      "boundary-resolver.js",
+      "hunt-research.js",
+      "ui.js",
+      "google-basemap.js"
+    ],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].hunt_code",
+    "preserved": true,
+    "alias": [
+      "huntCode",
+      "code",
+      "HuntCode"
+    ],
+    "promotion_safe": true
+  },
+  {
+    "field": "hunt_name",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": true,
+    "used_by": [
+      "index.html",
+      "research.html",
+      "hard-copy.html",
+      "verify.html",
+      "app.js",
+      "data.js",
+      "hunt-research.js",
+      "ui.js",
+      "header-layout.js"
+    ],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].hunt_name",
+    "preserved": true,
+    "alias": [
+      "title",
+      "unitName"
+    ],
+    "promotion_safe": true
+  },
+  {
+    "field": "hunt_type",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "data.js",
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].hunt_type",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "huntCode",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "data.js",
+      "boundary-resolver.js",
+      "hunt-research.js",
+      "ui.js"
+    ],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].huntCode",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "hunters_2025",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].hunters_2025",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "NOTES",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].NOTES",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permit_allocation_type",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].permit_allocation_type",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permit_note",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].permit_note",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permit_overlay_source",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].permit_overlay_source",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permit_source_authority",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].permit_source_authority",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permit_status",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].permit_status",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2025_draw_nr",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].permits_2025_draw_nr",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2025_draw_res",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].permits_2025_draw_res",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2025_draw_total",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].permits_2025_draw_total",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2025_nr",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].permits_2025_nr",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2025_res",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].permits_2025_res",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2025_total",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].permits_2025_total",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_nr",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].permits_2026_nr",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_res",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].permits_2026_res",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_source",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].permits_2026_source",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_total",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].permits_2026_total",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "resolvedBoundaryIds",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js"
+    ],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].resolvedBoundaryIds",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "satisfaction_2025",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].satisfaction_2025",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "season",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": true,
+    "used_by": [
+      "data.js"
+    ],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].season",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "sex_type",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": true,
+    "used_by": [
+      "data.js"
+    ],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].sex_type",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "source_authority",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].source_authority",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "source_file",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].source_file",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "species",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": true,
+    "used_by": [
+      "index.html",
+      "app.js",
+      "data.js",
+      "hunt-research.js",
+      "ui.js"
+    ],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].species",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "success_percent_2025",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].success_percent_2025",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "title",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": true,
+    "used_by": [
+      "index.html",
+      "research.html",
+      "hard-copy.html",
+      "verify.html",
+      "app.js",
+      "data.js",
+      "ui.js",
+      "header-layout.js"
+    ],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].title",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "unitCode",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "data.js"
+    ],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].unitCode",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "unitName",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "data.js",
+      "ui.js"
+    ],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].unitName",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "weapon",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "data.js",
+      "hunt-research.js",
+      "ui.js"
+    ],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].weapon",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "youth_flag",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].youth_flag",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "blmDistricts",
+    "source": "outfitters.json",
+    "source_file": "data/outfitters.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js"
+    ],
+    "canonical_path": "outfitter-verification-2026.outfitters.internal_records[].blmDistricts",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "certLevel",
+    "source": "outfitters.json",
+    "source_file": "data/outfitters.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js"
+    ],
+    "canonical_path": "outfitter-verification-2026.outfitters.internal_records[].certLevel",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "city",
+    "source": "outfitters.json",
+    "source_file": "data/outfitters.json",
+    "runtime_used": true,
+    "used_by": [
+      "config.js",
+      "app.js"
+    ],
+    "canonical_path": "outfitter-verification-2026.outfitters.internal_records[].city",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "email",
+    "source": "outfitters.json",
+    "source_file": "data/outfitters.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js"
+    ],
+    "canonical_path": "outfitter-verification-2026.outfitters.internal_records[].email",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "listingName",
+    "source": "outfitters.json",
+    "source_file": "data/outfitters.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js"
+    ],
+    "canonical_path": "outfitter-verification-2026.outfitters.internal_records[].listingName",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "listingType",
+    "source": "outfitters.json",
+    "source_file": "data/outfitters.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js"
+    ],
+    "canonical_path": "outfitter-verification-2026.outfitters.internal_records[].listingType",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "logoUrl",
+    "source": "outfitters.json",
+    "source_file": "data/outfitters.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js"
+    ],
+    "canonical_path": "outfitter-verification-2026.outfitters.internal_records[].logoUrl",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "notes",
+    "source": "outfitters.json",
+    "source_file": "data/outfitters.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js"
+    ],
+    "canonical_path": "outfitter-verification-2026.outfitters.internal_records[].notes",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "ownerName",
+    "source": "outfitters.json",
+    "source_file": "data/outfitters.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "outfitter-verification-2026.outfitters.internal_records[].ownerName",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "phone",
+    "source": "outfitters.json",
+    "source_file": "data/outfitters.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js"
+    ],
+    "canonical_path": "outfitter-verification-2026.outfitters.internal_records[].phone",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "region",
+    "source": "outfitters.json",
+    "source_file": "data/outfitters.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "data.js"
+    ],
+    "canonical_path": "outfitter-verification-2026.outfitters.internal_records[].region",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "speciesServed",
+    "source": "outfitters.json",
+    "source_file": "data/outfitters.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js"
+    ],
+    "canonical_path": "outfitter-verification-2026.outfitters.internal_records[].speciesServed",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "unitsServed",
+    "source": "outfitters.json",
+    "source_file": "data/outfitters.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js"
+    ],
+    "canonical_path": "outfitter-verification-2026.outfitters.internal_records[].unitsServed",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "usfsForests",
+    "source": "outfitters.json",
+    "source_file": "data/outfitters.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js"
+    ],
+    "canonical_path": "outfitter-verification-2026.outfitters.internal_records[].usfsForests",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "verificationStatus",
+    "source": "outfitters.json",
+    "source_file": "data/outfitters.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js"
+    ],
+    "canonical_path": "outfitter-verification-2026.outfitters.internal_records[].verificationStatus",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "website",
+    "source": "outfitters.json",
+    "source_file": "data/outfitters.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js"
+    ],
+    "canonical_path": "outfitter-verification-2026.outfitters.internal_records[].website",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "boundary_geojson_path",
+    "source": "boundary-manifest-2026.json",
+    "source_file": "processed_data/boundary-manifest-2026.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "boundary-resolver.js"
+    ],
+    "canonical_path": "hunt-planner-2026.boundaries.manifest.records[].boundary_geojson_path",
+    "preserved": true,
+    "alias": [
+      "boundaryGeojsonPath"
+    ],
+    "promotion_safe": true
+  },
+  {
+    "field": "boundary_geometry_type",
+    "source": "boundary-manifest-2026.json",
+    "source_file": "processed_data/boundary-manifest-2026.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "boundary-resolver.js"
+    ],
+    "canonical_path": "hunt-planner-2026.boundaries.manifest.records[].boundary_geometry_type",
+    "preserved": true,
+    "alias": [
+      "boundaryGeometryType"
+    ],
+    "promotion_safe": true
+  },
+  {
+    "field": "boundary_id",
+    "source": "boundary-manifest-2026.json",
+    "source_file": "processed_data/boundary-manifest-2026.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "data.js",
+      "boundary-resolver.js"
+    ],
+    "canonical_path": "hunt-planner-2026.boundaries.manifest.records[].boundary_id",
+    "preserved": true,
+    "alias": [
+      "boundaryId",
+      "Boundary_Id",
+      "BoundaryID"
+    ],
+    "promotion_safe": true
+  },
+  {
+    "field": "boundary_kml_path",
+    "source": "boundary-manifest-2026.json",
+    "source_file": "processed_data/boundary-manifest-2026.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "boundary-resolver.js"
+    ],
+    "canonical_path": "hunt-planner-2026.boundaries.manifest.records[].boundary_kml_path",
+    "preserved": true,
+    "alias": [
+      "boundaryKmlPath"
+    ],
+    "promotion_safe": true
+  },
+  {
+    "field": "boundary_kmz_path",
+    "source": "boundary-manifest-2026.json",
+    "source_file": "processed_data/boundary-manifest-2026.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "boundary-resolver.js"
+    ],
+    "canonical_path": "hunt-planner-2026.boundaries.manifest.records[].boundary_kmz_path",
+    "preserved": true,
+    "alias": [
+      "boundaryKmzPath"
+    ],
+    "promotion_safe": true
+  },
+  {
+    "field": "geometry_status",
+    "source": "boundary-manifest-2026.json",
+    "source_file": "processed_data/boundary-manifest-2026.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "boundary-resolver.js"
+    ],
+    "canonical_path": "hunt-planner-2026.boundaries.manifest.records[].geometry_status",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "hunt_code",
+    "source": "boundary-manifest-2026.json",
+    "source_file": "processed_data/boundary-manifest-2026.json",
+    "runtime_used": true,
+    "used_by": [
+      "index.html",
+      "research.html",
+      "app.js",
+      "data.js",
+      "boundary-resolver.js",
+      "hunt-research.js",
+      "ui.js",
+      "google-basemap.js"
+    ],
+    "canonical_path": "hunt-planner-2026.boundaries.manifest.records[].hunt_code",
+    "preserved": true,
+    "alias": [
+      "huntCode",
+      "code",
+      "HuntCode"
+    ],
+    "promotion_safe": true
+  },
+  {
+    "field": "member_boundary_count",
+    "source": "boundary-manifest-2026.json",
+    "source_file": "processed_data/boundary-manifest-2026.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "boundary-resolver.js"
+    ],
+    "canonical_path": "hunt-planner-2026.boundaries.manifest.records[].member_boundary_count",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "member_boundary_ids",
+    "source": "boundary-manifest-2026.json",
+    "source_file": "processed_data/boundary-manifest-2026.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "boundary-resolver.js"
+    ],
+    "canonical_path": "hunt-planner-2026.boundaries.manifest.records[].member_boundary_ids",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "merged_boundary_id",
+    "source": "boundary-manifest-2026.json",
+    "source_file": "processed_data/boundary-manifest-2026.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "boundary-resolver.js"
+    ],
+    "canonical_path": "hunt-planner-2026.boundaries.manifest.records[].merged_boundary_id",
+    "preserved": true,
+    "alias": [
+      "mergedBoundaryId"
+    ],
+    "promotion_safe": true
+  },
+  {
+    "field": "notes",
+    "source": "boundary-manifest-2026.json",
+    "source_file": "processed_data/boundary-manifest-2026.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js"
+    ],
+    "canonical_path": "hunt-planner-2026.boundaries.manifest.records[].notes",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "placemark_count",
+    "source": "boundary-manifest-2026.json",
+    "source_file": "processed_data/boundary-manifest-2026.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.boundaries.manifest.records[].placemark_count",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "sha256",
+    "source": "boundary-manifest-2026.json",
+    "source_file": "processed_data/boundary-manifest-2026.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.boundaries.manifest.records[].sha256",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "source_filename",
+    "source": "boundary-manifest-2026.json",
+    "source_file": "processed_data/boundary-manifest-2026.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.boundaries.manifest.records[].source_filename",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "boundary_geojson_path",
+    "source": "display-boundary-index-2026.json",
+    "source_file": "processed_data/display-boundary-index-2026.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "boundary-resolver.js"
+    ],
+    "canonical_path": "hunt-planner-2026.boundaries.display_index[].boundary_geojson_path",
+    "preserved": true,
+    "alias": [
+      "boundaryGeojsonPath"
+    ],
+    "promotion_safe": true
+  },
+  {
+    "field": "boundary_geometry_type",
+    "source": "display-boundary-index-2026.json",
+    "source_file": "processed_data/display-boundary-index-2026.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "boundary-resolver.js"
+    ],
+    "canonical_path": "hunt-planner-2026.boundaries.display_index[].boundary_geometry_type",
+    "preserved": true,
+    "alias": [
+      "boundaryGeometryType"
+    ],
+    "promotion_safe": true
+  },
+  {
+    "field": "boundary_kml_path",
+    "source": "display-boundary-index-2026.json",
+    "source_file": "processed_data/display-boundary-index-2026.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "boundary-resolver.js"
+    ],
+    "canonical_path": "hunt-planner-2026.boundaries.display_index[].boundary_kml_path",
+    "preserved": true,
+    "alias": [
+      "boundaryKmlPath"
+    ],
+    "promotion_safe": true
+  },
+  {
+    "field": "boundary_kmz_path",
+    "source": "display-boundary-index-2026.json",
+    "source_file": "processed_data/display-boundary-index-2026.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "boundary-resolver.js"
+    ],
+    "canonical_path": "hunt-planner-2026.boundaries.display_index[].boundary_kmz_path",
+    "preserved": true,
+    "alias": [
+      "boundaryKmzPath"
+    ],
+    "promotion_safe": true
+  },
+  {
+    "field": "display_boundary_id",
+    "source": "display-boundary-index-2026.json",
+    "source_file": "processed_data/display-boundary-index-2026.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "boundary-resolver.js"
+    ],
+    "canonical_path": "hunt-planner-2026.boundaries.display_index[].display_boundary_id",
+    "preserved": true,
+    "alias": [
+      "displayBoundaryId",
+      "UOGA_DISPLAY_BOUNDARY_ID"
+    ],
+    "promotion_safe": true
+  },
+  {
+    "field": "dwr_boundary_id",
+    "source": "display-boundary-index-2026.json",
+    "source_file": "processed_data/display-boundary-index-2026.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "boundary-resolver.js"
+    ],
+    "canonical_path": "hunt-planner-2026.boundaries.display_index[].dwr_boundary_id",
+    "preserved": true,
+    "alias": [
+      "dwrBoundaryId"
+    ],
+    "promotion_safe": true
+  },
+  {
+    "field": "dwr_boundary_link",
+    "source": "display-boundary-index-2026.json",
+    "source_file": "processed_data/display-boundary-index-2026.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "boundary-resolver.js"
+    ],
+    "canonical_path": "hunt-planner-2026.boundaries.display_index[].dwr_boundary_link",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "dwr_member_boundary_ids",
+    "source": "display-boundary-index-2026.json",
+    "source_file": "processed_data/display-boundary-index-2026.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "boundary-resolver.js"
+    ],
+    "canonical_path": "hunt-planner-2026.boundaries.display_index[].dwr_member_boundary_ids",
+    "preserved": true,
+    "alias": [
+      "dwrMemberBoundaryIds",
+      "member_boundary_ids",
+      "memberBoundaryIds"
+    ],
+    "promotion_safe": true
+  },
+  {
+    "field": "geometry_status",
+    "source": "display-boundary-index-2026.json",
+    "source_file": "processed_data/display-boundary-index-2026.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "boundary-resolver.js"
+    ],
+    "canonical_path": "hunt-planner-2026.boundaries.display_index[].geometry_status",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "hunt_code",
+    "source": "display-boundary-index-2026.json",
+    "source_file": "processed_data/display-boundary-index-2026.json",
+    "runtime_used": true,
+    "used_by": [
+      "index.html",
+      "research.html",
+      "app.js",
+      "data.js",
+      "boundary-resolver.js",
+      "hunt-research.js",
+      "ui.js",
+      "google-basemap.js"
+    ],
+    "canonical_path": "hunt-planner-2026.boundaries.display_index[].hunt_code",
+    "preserved": true,
+    "alias": [
+      "huntCode",
+      "code",
+      "HuntCode"
+    ],
+    "promotion_safe": true
+  },
+  {
+    "field": "member_boundary_count",
+    "source": "display-boundary-index-2026.json",
+    "source_file": "processed_data/display-boundary-index-2026.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "boundary-resolver.js"
+    ],
+    "canonical_path": "hunt-planner-2026.boundaries.display_index[].member_boundary_count",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "merged_boundary_id",
+    "source": "display-boundary-index-2026.json",
+    "source_file": "processed_data/display-boundary-index-2026.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "boundary-resolver.js"
+    ],
+    "canonical_path": "hunt-planner-2026.boundaries.display_index[].merged_boundary_id",
+    "preserved": true,
+    "alias": [
+      "mergedBoundaryId"
+    ],
+    "promotion_safe": true
+  },
+  {
+    "field": "applicants_above",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.applicants_above",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "applicants_at_level",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.applicants_at_level",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "avg_days_2026",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.avg_days_2026",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "cutoff_bucket_probability",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.cutoff_bucket_probability",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "data_cutoff_date",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.data_cutoff_date",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "data_quality_grade",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.data_quality_grade",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "delta_gap",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.delta_gap",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "display_odds_pct",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.display_odds_pct",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "draw_outlook",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.draw_outlook",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "expected_cutoff_points",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.expected_cutoff_points",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "gap",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": true,
+    "used_by": [
+      "index.html",
+      "research.html",
+      "hard-copy.html",
+      "verify.html",
+      "app.js",
+      "hunt-research.js",
+      "ui.js",
+      "header-layout.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.gap",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "guaranteed_at_2025",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.guaranteed_at_2025",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "guaranteed_at_2026",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.guaranteed_at_2026",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "guaranteed_delta_2025_to_2026",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.guaranteed_delta_2025_to_2026",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "guaranteed_probability",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.guaranteed_probability",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "hunt_code",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": true,
+    "used_by": [
+      "index.html",
+      "research.html",
+      "app.js",
+      "data.js",
+      "boundary-resolver.js",
+      "hunt-research.js",
+      "ui.js",
+      "google-basemap.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.hunt_code",
+    "preserved": true,
+    "alias": [
+      "huntCode",
+      "code",
+      "HuntCode"
+    ],
+    "promotion_safe": true
+  },
+  {
+    "field": "max_point_permits_2025",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.max_point_permits_2025",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "max_point_permits_2026",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.max_point_permits_2026",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "max_pool_projection_2026",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.max_pool_projection_2026",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "model_version",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.model_version",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "odds_2026_projected",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.odds_2026_projected",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "p_draw_mean",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.p_draw_mean",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "p_draw_p10",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.p_draw_p10",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "p_draw_p50",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.p_draw_p50",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "p_draw_p90",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.p_draw_p90",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "p_preference_mean",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.p_preference_mean",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "p_random_mean",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.p_random_mean",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "p_reserved_mean",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.p_reserved_mean",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "p_youth_mean",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.p_youth_mean",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permit_delta_2025_to_2026",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.permit_delta_2025_to_2026",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_nr",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.permits_2026_nr",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_res",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.permits_2026_res",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_source",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.permits_2026_source",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_total",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.permits_2026_total",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "points",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": true,
+    "used_by": [
+      "research.html",
+      "app.js",
+      "hunt-research.js",
+      "ui.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.points",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "projected_applicants_2026_source",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.projected_applicants_2026_source",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "public_permits_2025",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.public_permits_2025",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "public_permits_2026",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.public_permits_2026",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "public_permits_2026_source",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.public_permits_2026_source",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "quota_source",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.quota_source",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "random_draw_odds_2026",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.random_draw_odds_2026",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "random_permits_2025",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.random_permits_2025",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "random_permits_2026",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.random_permits_2026",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "reason_codes",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.reason_codes",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "residency",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": true,
+    "used_by": [
+      "research.html",
+      "app.js",
+      "data.js",
+      "hunt-research.js",
+      "ui.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.residency",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "rule_version",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.rule_version",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "satisfaction_2026",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.satisfaction_2026",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "status",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": true,
+    "used_by": [
+      "index.html",
+      "research.html",
+      "hard-copy.html",
+      "verify.html",
+      "app.js",
+      "data.js",
+      "boundary-resolver.js",
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.status",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "trend",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.trend",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "group",
+    "source": "hard_copy_pdf_manifest.web.json",
+    "source_file": "processed_data/hard_data_exports/hard_copy_pdf_manifest.web.json",
+    "runtime_used": true,
+    "used_by": [
+      "index.html",
+      "hard-copy.html",
+      "app.js",
+      "hunt-research.js",
+      "header-layout.js"
+    ],
+    "canonical_path": "hard-copies-2026.library.items[].group",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "href",
+    "source": "hard_copy_pdf_manifest.web.json",
+    "source_file": "processed_data/hard_data_exports/hard_copy_pdf_manifest.web.json",
+    "runtime_used": true,
+    "used_by": [
+      "index.html",
+      "research.html",
+      "hard-copy.html",
+      "verify.html",
+      "app.js",
+      "hunt-research.js",
+      "ui.js"
+    ],
+    "canonical_path": "hard-copies-2026.library.items[].href",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "subtitle",
+    "source": "hard_copy_pdf_manifest.web.json",
+    "source_file": "processed_data/hard_data_exports/hard_copy_pdf_manifest.web.json",
+    "runtime_used": true,
+    "used_by": [
+      "index.html",
+      "hard-copy.html",
+      "app.js",
+      "ui.js"
+    ],
+    "canonical_path": "hard-copies-2026.library.items[].subtitle",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "title",
+    "source": "hard_copy_pdf_manifest.web.json",
+    "source_file": "processed_data/hard_data_exports/hard_copy_pdf_manifest.web.json",
+    "runtime_used": true,
+    "used_by": [
+      "index.html",
+      "research.html",
+      "hard-copy.html",
+      "verify.html",
+      "app.js",
+      "data.js",
+      "ui.js",
+      "header-layout.js"
+    ],
+    "canonical_path": "hard-copies-2026.library.items[].title",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "type",
+    "source": "hard_copy_pdf_manifest.web.json",
+    "source_file": "processed_data/hard_data_exports/hard_copy_pdf_manifest.web.json",
+    "runtime_used": true,
+    "used_by": [
+      "index.html",
+      "research.html",
+      "hard-copy.html",
+      "verify.html",
+      "app.js",
+      "data.js",
+      "boundary-resolver.js",
+      "hunt-research.js",
+      "ui.js",
+      "header-layout.js"
+    ],
+    "canonical_path": "hard-copies-2026.library.items[].type",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "year",
+    "source": "hard_copy_pdf_manifest.web.json",
+    "source_file": "processed_data/hard_data_exports/hard_copy_pdf_manifest.web.json",
+    "runtime_used": true,
+    "used_by": [
+      "hard-copy.html"
+    ],
+    "canonical_path": "hard-copies-2026.library.items[].year",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "access_type",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.access_type",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "applicants_2025",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.applicants_2025",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "hunt_code",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": true,
+    "used_by": [
+      "index.html",
+      "research.html",
+      "app.js",
+      "data.js",
+      "boundary-resolver.js",
+      "hunt-research.js",
+      "ui.js",
+      "google-basemap.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.hunt_code",
+    "preserved": true,
+    "alias": [
+      "huntCode",
+      "code",
+      "HuntCode"
+    ],
+    "promotion_safe": true
+  },
+  {
+    "field": "hunt_name",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": true,
+    "used_by": [
+      "index.html",
+      "research.html",
+      "hard-copy.html",
+      "verify.html",
+      "app.js",
+      "data.js",
+      "hunt-research.js",
+      "ui.js",
+      "header-layout.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.hunt_name",
+    "preserved": true,
+    "alias": [
+      "title",
+      "unitName"
+    ],
+    "promotion_safe": true
+  },
+  {
+    "field": "hunt_type",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "data.js",
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.hunt_type",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "max_point_permits_2026",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.max_point_permits_2026",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "missing_draw_data",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.missing_draw_data",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "missing_permits",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.missing_permits",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "missing_projection",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.missing_projection",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "odds_2025",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.odds_2025",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "odds_2026_projected",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.odds_2026_projected",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_nr",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.permits_2026_nr",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_res",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.permits_2026_res",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_source",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.permits_2026_source",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_total",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.permits_2026_total",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "points",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": true,
+    "used_by": [
+      "research.html",
+      "app.js",
+      "hunt-research.js",
+      "ui.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.points",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "projected_applicants_2026",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.projected_applicants_2026",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "projected_applicants_2026_source",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.projected_applicants_2026_source",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "public_permits_2025",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.public_permits_2025",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "public_permits_2026",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.public_permits_2026",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "public_permits_2026_source",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.public_permits_2026_source",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "random_permits_2026",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.random_permits_2026",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "residency",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": true,
+    "used_by": [
+      "research.html",
+      "app.js",
+      "data.js",
+      "hunt-research.js",
+      "ui.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.residency",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "species",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": true,
+    "used_by": [
+      "index.html",
+      "app.js",
+      "data.js",
+      "hunt-research.js",
+      "ui.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.species",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "success_harvest",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.success_harvest",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "success_hunters",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.success_hunters",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "success_percent",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.success_percent",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "weapon",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "data.js",
+      "hunt-research.js",
+      "ui.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.weapon",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "access_type",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.access_type",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "antlerless_odds_row_start",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.antlerless_odds_row_start",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "antlerless_odds_sheet",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.antlerless_odds_sheet",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "antlerless_odds_title",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.antlerless_odds_title",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "applicants_2025",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.applicants_2025",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "bg_odds_hunt_title",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.bg_odds_hunt_title",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "bg_odds_pdf_page_index",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.bg_odds_pdf_page_index",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "bg_odds_printed_page",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.bg_odds_printed_page",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "coverage_reason",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.coverage_reason",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "coverage_status",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.coverage_status",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "delta_gap",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.delta_gap",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "guaranteed_at_2026",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.guaranteed_at_2026",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "harvest_2025",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.harvest_2025",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "harvest_average_days_2025",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.harvest_average_days_2025",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "harvest_hunters_2025",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.harvest_hunters_2025",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "harvest_satisfaction_2025",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.harvest_satisfaction_2025",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "harvest_success_percent_2025",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.harvest_success_percent_2025",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "has_antlerless_odds_page",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.has_antlerless_odds_page",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "has_any_odds_source",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.has_any_odds_source",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "has_bg_odds_page",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.has_bg_odds_page",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "hunt_code",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": true,
+    "used_by": [
+      "index.html",
+      "research.html",
+      "app.js",
+      "data.js",
+      "boundary-resolver.js",
+      "hunt-research.js",
+      "ui.js",
+      "google-basemap.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.hunt_code",
+    "preserved": true,
+    "alias": [
+      "huntCode",
+      "code",
+      "HuntCode"
+    ],
+    "promotion_safe": true
+  },
+  {
+    "field": "hunt_name",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": true,
+    "used_by": [
+      "index.html",
+      "research.html",
+      "hard-copy.html",
+      "verify.html",
+      "app.js",
+      "data.js",
+      "hunt-research.js",
+      "ui.js",
+      "header-layout.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.hunt_name",
+    "preserved": true,
+    "alias": [
+      "title",
+      "unitName"
+    ],
+    "promotion_safe": true
+  },
+  {
+    "field": "hunt_type",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "data.js",
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.hunt_type",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "link_key",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.link_key",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "max_point_permits_2026",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.max_point_permits_2026",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2025_nr",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.permits_2025_nr",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2025_res",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.permits_2025_res",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2025_total",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.permits_2025_total",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_nr",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.permits_2026_nr",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_res",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.permits_2026_res",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_source",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.permits_2026_source",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_total",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.permits_2026_total",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "projected_applicants_2026",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.projected_applicants_2026",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "public_permits_2025",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.public_permits_2025",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "public_permits_2026",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.public_permits_2026",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "public_permits_2026_source",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.public_permits_2026_source",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "rac_page",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.rac_page",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "rac_section",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.rac_section",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "random_permits_2026",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.random_permits_2026",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "residency",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": true,
+    "used_by": [
+      "research.html",
+      "app.js",
+      "data.js",
+      "hunt-research.js",
+      "ui.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.residency",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "source_file_2026",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.source_file_2026",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "source_pdf",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.source_pdf",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "species",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": true,
+    "used_by": [
+      "index.html",
+      "app.js",
+      "data.js",
+      "hunt-research.js",
+      "ui.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.species",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "trend",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.trend",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "weapon",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "data.js",
+      "hunt-research.js",
+      "ui.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.weapon",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "BlmAuthoritySource",
+    "source": "outfitter-federal-unit-coverage-review.json",
+    "source_file": "processed_data/outfitter-federal-unit-coverage-review.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js"
+    ],
+    "canonical_path": "outfitter-verification-2026.outfitters.federal_coverage[].BlmAuthoritySource",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "BlmPermitMatchedOutfitterCount",
+    "source": "outfitter-federal-unit-coverage-review.json",
+    "source_file": "processed_data/outfitter-federal-unit-coverage-review.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "outfitter-verification-2026.outfitters.federal_coverage[].BlmPermitMatchedOutfitterCount",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "BlmPermitMatchedOutfitters",
+    "source": "outfitter-federal-unit-coverage-review.json",
+    "source_file": "processed_data/outfitter-federal-unit-coverage-review.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js"
+    ],
+    "canonical_path": "outfitter-verification-2026.outfitters.federal_coverage[].BlmPermitMatchedOutfitters",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "ExampleHuntCodes",
+    "source": "outfitter-federal-unit-coverage-review.json",
+    "source_file": "processed_data/outfitter-federal-unit-coverage-review.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "outfitter-verification-2026.outfitters.federal_coverage[].ExampleHuntCodes",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "ExclusionReason",
+    "source": "outfitter-federal-unit-coverage-review.json",
+    "source_file": "processed_data/outfitter-federal-unit-coverage-review.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "outfitter-verification-2026.outfitters.federal_coverage[].ExclusionReason",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "FederalCoverageEligible",
+    "source": "outfitter-federal-unit-coverage-review.json",
+    "source_file": "processed_data/outfitter-federal-unit-coverage-review.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js"
+    ],
+    "canonical_path": "outfitter-verification-2026.outfitters.federal_coverage[].FederalCoverageEligible",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "FederalPermitMatchedOutfitterCount",
+    "source": "outfitter-federal-unit-coverage-review.json",
+    "source_file": "processed_data/outfitter-federal-unit-coverage-review.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "outfitter-verification-2026.outfitters.federal_coverage[].FederalPermitMatchedOutfitterCount",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "FederalPermitMatchedOutfitters",
+    "source": "outfitter-federal-unit-coverage-review.json",
+    "source_file": "processed_data/outfitter-federal-unit-coverage-review.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js"
+    ],
+    "canonical_path": "outfitter-verification-2026.outfitters.federal_coverage[].FederalPermitMatchedOutfitters",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "HuntCount",
+    "source": "outfitter-federal-unit-coverage-review.json",
+    "source_file": "processed_data/outfitter-federal-unit-coverage-review.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "outfitter-verification-2026.outfitters.federal_coverage[].HuntCount",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "Notes",
+    "source": "outfitter-federal-unit-coverage-review.json",
+    "source_file": "processed_data/outfitter-federal-unit-coverage-review.json",
+    "runtime_used": true,
+    "used_by": [
+      "config.js",
+      "app.js"
+    ],
+    "canonical_path": "outfitter-verification-2026.outfitters.federal_coverage[].Notes",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "PrimaryBlmDistrictId",
+    "source": "outfitter-federal-unit-coverage-review.json",
+    "source_file": "processed_data/outfitter-federal-unit-coverage-review.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "outfitter-verification-2026.outfitters.federal_coverage[].PrimaryBlmDistrictId",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "PrimaryBlmDistrictName",
+    "source": "outfitter-federal-unit-coverage-review.json",
+    "source_file": "processed_data/outfitter-federal-unit-coverage-review.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js"
+    ],
+    "canonical_path": "outfitter-verification-2026.outfitters.federal_coverage[].PrimaryBlmDistrictName",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "PrimaryUsfsForestId",
+    "source": "outfitter-federal-unit-coverage-review.json",
+    "source_file": "processed_data/outfitter-federal-unit-coverage-review.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "outfitter-verification-2026.outfitters.federal_coverage[].PrimaryUsfsForestId",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "PrimaryUsfsForestName",
+    "source": "outfitter-federal-unit-coverage-review.json",
+    "source_file": "processed_data/outfitter-federal-unit-coverage-review.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js"
+    ],
+    "canonical_path": "outfitter-verification-2026.outfitters.federal_coverage[].PrimaryUsfsForestName",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "Species",
+    "source": "outfitter-federal-unit-coverage-review.json",
+    "source_file": "processed_data/outfitter-federal-unit-coverage-review.json",
+    "runtime_used": true,
+    "used_by": [
+      "index.html",
+      "app.js"
+    ],
+    "canonical_path": "outfitter-verification-2026.outfitters.federal_coverage[].Species",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "UnitCode",
+    "source": "outfitter-federal-unit-coverage-review.json",
+    "source_file": "processed_data/outfitter-federal-unit-coverage-review.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "data.js"
+    ],
+    "canonical_path": "outfitter-verification-2026.outfitters.federal_coverage[].UnitCode",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "UnitName",
+    "source": "outfitter-federal-unit-coverage-review.json",
+    "source_file": "processed_data/outfitter-federal-unit-coverage-review.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "data.js"
+    ],
+    "canonical_path": "outfitter-verification-2026.outfitters.federal_coverage[].UnitName",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "UsfsAuthoritySource",
+    "source": "outfitter-federal-unit-coverage-review.json",
+    "source_file": "processed_data/outfitter-federal-unit-coverage-review.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js"
+    ],
+    "canonical_path": "outfitter-verification-2026.outfitters.federal_coverage[].UsfsAuthoritySource",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "UsfsPermitMatchedOutfitterCount",
+    "source": "outfitter-federal-unit-coverage-review.json",
+    "source_file": "processed_data/outfitter-federal-unit-coverage-review.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "outfitter-verification-2026.outfitters.federal_coverage[].UsfsPermitMatchedOutfitterCount",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "UsfsPermitMatchedOutfitters",
+    "source": "outfitter-federal-unit-coverage-review.json",
+    "source_file": "processed_data/outfitter-federal-unit-coverage-review.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js"
+    ],
+    "canonical_path": "outfitter-verification-2026.outfitters.federal_coverage[].UsfsPermitMatchedOutfitters",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "guaranteed_marker",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.guaranteed_marker",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "hunt_code",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": true,
+    "used_by": [
+      "index.html",
+      "research.html",
+      "app.js",
+      "data.js",
+      "boundary-resolver.js",
+      "hunt-research.js",
+      "ui.js",
+      "google-basemap.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.hunt_code",
+    "preserved": true,
+    "alias": [
+      "huntCode",
+      "code",
+      "HuntCode"
+    ],
+    "promotion_safe": true
+  },
+  {
+    "field": "odds_2025_actual",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.odds_2025_actual",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "odds_2026_projected",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.odds_2026_projected",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_nr",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.permits_2026_nr",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_res",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.permits_2026_res",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_source",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.permits_2026_source",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_total",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.permits_2026_total",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "points",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": true,
+    "used_by": [
+      "research.html",
+      "app.js",
+      "hunt-research.js",
+      "ui.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.points",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "residency",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": true,
+    "used_by": [
+      "research.html",
+      "app.js",
+      "data.js",
+      "hunt-research.js",
+      "ui.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.residency",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "user_point_marker",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.user_point_marker",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  }
+]

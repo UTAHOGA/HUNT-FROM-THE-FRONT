@@ -1,0 +1,591 @@
+{
+  "metadata": {
+    "id": "shared-2026",
+    "generated_at": "2026-05-08T07:47:18.215Z",
+    "scope": [
+      "Hunt Planner",
+      "Hunt Research",
+      "Hard Copies",
+      "Outfitter Verification"
+    ],
+    "production_behavior": "preserve_current_live_site_behavior"
+  },
+  "versioning": {
+    "canonical_version": "2026.1.bottom-up",
+    "generator": "scripts/build-canonical-rebuild.js",
+    "generated_files_are_derived": true
+  },
+  "routes": [
+    {
+      "id": "hunt-planner",
+      "label": "Hunt Planner",
+      "path": "./index.html",
+      "source_file": "index.html",
+      "title": "U.O.G.A. Builder",
+      "seo": {
+        "title": "U.O.G.A. Builder",
+        "description": "Hunt Planner page in the UOGA hunt tool site."
+      },
+      "ui_contract": {
+        "title": "U.O.G.A. Builder",
+        "ids": [
+          "mapTypeSelect",
+          "mapModeToggleBtn",
+          "pageNavToggleBtn",
+          "instructionsTab",
+          "instructionsPanel",
+          "searchInput",
+          "speciesFilter",
+          "sexFilter",
+          "huntTypeFilter",
+          "huntCategoryFilter",
+          "weaponFilter",
+          "unitFilter",
+          "status",
+          "matchingHunts",
+          "selectedHuntPanel",
+          "huntBasket",
+          "ownershipDock",
+          "toggleDwrUnits",
+          "federalLayersSummary",
+          "toggleUSFS",
+          "toggleBLM",
+          "toggleBLMDetail",
+          "stateLayersSummary",
+          "toggleSITLA",
+          "toggleStateParks",
+          "toggleWma",
+          "privateLayersSummary",
+          "togglePrivate",
+          "toggleCwmu",
+          "map",
+          "dwrMapFrame",
+          "mapChooser",
+          "mapChooserKicker",
+          "mapChooserTitle",
+          "closeMapChooserBtn",
+          "mapChooserBody",
+          "selectedHuntFloat",
+          "basemapPopover",
+          "basemapToggleBtn",
+          "globeBasemapPanel",
+          "googleBasemapGrid",
+          "outfitterResults",
+          "huntDetailsSection",
+          "huntDetailsTitle",
+          "huntDetailsMeta",
+          "closeHuntDetailsBtn",
+          "huntDetailsFallbackLink",
+          "huntDetailsFrame"
+        ],
+        "data_attributes": [
+          "data-map-mode-picker",
+          "data-map-mode-value",
+          "data-uoga-page-nav",
+          "data-backpack-host",
+          "data-google-basemap"
+        ],
+        "links": [
+          "./assets/logos/favicon.ico.png",
+          "./style.css?v=20260506-ownership-basemap-fix-1",
+          "./index.html#google-maps",
+          "./research.html",
+          "./verify.html",
+          "./hard-copy.html",
+          "#"
+        ],
+        "options": [
+          {
+            "value": "dwr",
+            "label": "DWR Map"
+          },
+          {
+            "value": "earth",
+            "label": "Google Earth"
+          },
+          {
+            "value": "google",
+            "label": "Google Maps"
+          },
+          {
+            "value": "All Species",
+            "label": "Loading..."
+          },
+          {
+            "value": "All",
+            "label": "All"
+          },
+          {
+            "value": "All",
+            "label": "All"
+          },
+          {
+            "value": "All",
+            "label": "All"
+          },
+          {
+            "value": "All",
+            "label": "All"
+          },
+          {
+            "value": "",
+            "label": "Loading..."
+          }
+        ]
+      }
+    },
+    {
+      "id": "hunt-research",
+      "label": "Hunt Research",
+      "path": "./research.html",
+      "source_file": "research.html",
+      "title": "U.O.G.A. Hunt Research",
+      "seo": {
+        "title": "U.O.G.A. Hunt Research",
+        "description": "Hunt Research page in the UOGA hunt tool site."
+      },
+      "ui_contract": {
+        "title": "U.O.G.A. Hunt Research",
+        "ids": [
+          "huntCodeInput",
+          "residencySelect",
+          "pointsInput",
+          "runResearchButton",
+          "clearFiltersButton",
+          "addToBasketButton",
+          "filterReadout",
+          "plannerReadout",
+          "detailEmpty",
+          "detailContent",
+          "detailTitle",
+          "detailSubtitle",
+          "selectedHuntCodeRead",
+          "selectedHarvestSuccess",
+          "selectedResidentPermits",
+          "selectedNonresidentPermits",
+          "summaryGuaranteed",
+          "summaryPoints",
+          "summaryStatus",
+          "summaryOdds",
+          "selectedOutlook",
+          "summaryTrend",
+          "summaryTrendText",
+          "summaryRecommendation",
+          "ladderTableEmpty",
+          "ladderTableWrap",
+          "ladderHeaderRow",
+          "ladderPrimaryHeader",
+          "ladderSecondaryHeader",
+          "ladderTableBody",
+          "sourceModal",
+          "sourceModalTitle",
+          "sourceModalSubtitle",
+          "sourceModalClose",
+          "sourceModalGrid"
+        ],
+        "data_attributes": [],
+        "links": [
+          "./assets/logos/favicon.ico.png",
+          "./style.css?v=20260423-planner-header-refine-1",
+          "./index.html#google-maps",
+          "./research.html",
+          "./verify.html",
+          "./hard-copy.html"
+        ],
+        "options": [
+          {
+            "value": "Resident",
+            "label": "Resident"
+          },
+          {
+            "value": "Nonresident",
+            "label": "Nonresident"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hard-copies",
+      "label": "Hard Copies",
+      "path": "./hard-copy.html",
+      "source_file": "hard-copy.html",
+      "title": "U.O.G.A. Hard Data",
+      "seo": {
+        "title": "U.O.G.A. Hard Data",
+        "description": "Hard Copies page in the UOGA hunt tool site."
+      },
+      "ui_contract": {
+        "title": "U.O.G.A. Hard Data",
+        "ids": [
+          "librarySearch",
+          "libraryCount",
+          "libraryClearFilters",
+          "libraryTypeFilter",
+          "libraryYearFilter",
+          "libraryChips",
+          "activeFilterChips",
+          "librarySections"
+        ],
+        "data_attributes": [
+          "data-group",
+          "data-clear"
+        ],
+        "links": [
+          "./assets/logos/favicon.ico.png",
+          "./style.css?v=20260423-planner-header-refine-1",
+          "./index.html#google-maps",
+          "./research.html",
+          "./verify.html",
+          "./hard-copy.html",
+          "${escapeHtml(item.href)}"
+        ],
+        "options": [
+          {
+            "value": "all",
+            "label": "All document types"
+          },
+          {
+            "value": "all",
+            "label": "All years"
+          },
+          {
+            "value": "${escapeHtml(type)}",
+            "label": "${escapeHtml(type === 'all' ? 'All file types' : type.toUpperCase())}"
+          },
+          {
+            "value": "${escapeHtml(year)}",
+            "label": "${escapeHtml(year === 'all' ? 'All years' : year)}"
+          }
+        ]
+      }
+    },
+    {
+      "id": "outfitter-verification",
+      "label": "Outfitter Verification",
+      "path": "./verify.html",
+      "source_file": "verify.html",
+      "title": "Outfitter Verification",
+      "seo": {
+        "title": "Outfitter Verification",
+        "description": "Outfitter Verification page in the UOGA hunt tool site."
+      },
+      "ui_contract": {
+        "title": "Outfitter Verification",
+        "ids": [
+          "dwr-registration-floor",
+          "dwrOutfitterModal",
+          "dwrOutfitterModalTitle",
+          "dwrOutfitterCloseBtn",
+          "dwrOutfitterFrame",
+          "dwrOutfitterFallback"
+        ],
+        "data_attributes": [],
+        "links": [
+          "./assets/logos/favicon.ico.png",
+          "./style.css?v=20260423-planner-header-refine-1",
+          "./index.html#google-maps",
+          "./research.html",
+          "./verify.html",
+          "./hard-copy.html",
+          "https://wildlife.utah.gov/"
+        ],
+        "options": []
+      }
+    }
+  ],
+  "navigation": [
+    {
+      "id": "hunt-builder",
+      "label": "HUNT BUILDER",
+      "href": "./index.html#google-maps"
+    },
+    {
+      "id": "hunt-research",
+      "label": "HUNT RESEARCH",
+      "href": "./research.html"
+    },
+    {
+      "id": "outfitters",
+      "label": "OUTFITTERS",
+      "href": "./verify.html"
+    },
+    {
+      "id": "hard-copies",
+      "label": "HARD COPIES",
+      "href": "./hard-copy.html"
+    }
+  ],
+  "assets": [
+    {
+      "id": "favicon",
+      "path": "./assets/logos/favicon.ico.png"
+    },
+    {
+      "id": "google-maps-logo",
+      "path": "./assets/logos/google-maps-logo.png"
+    },
+    {
+      "id": "google-earth-logo",
+      "path": "./assets/logos/google_earth_logo.png"
+    },
+    {
+      "id": "dwr-map-logo",
+      "path": "./assets/logos/DWR-LOGO-maps.png"
+    },
+    {
+      "id": "dwr-shield-logo",
+      "path": "./assets/logos/WILDLIFE-LOGO.png"
+    }
+  ],
+  "config_sources": [
+    {
+      "name": "HUNT_BOUNDARY_SOURCES",
+      "declared_in": "config.js",
+      "consumed_by": [
+        "config.js",
+        "app.js"
+      ]
+    },
+    {
+      "name": "BOUNDARY_MANIFEST_SOURCES",
+      "declared_in": "config.js",
+      "consumed_by": [
+        "config.js",
+        "app.js"
+      ]
+    },
+    {
+      "name": "DISPLAY_BOUNDARY_INDEX_SOURCES",
+      "declared_in": "config.js",
+      "consumed_by": [
+        "config.js",
+        "app.js"
+      ]
+    },
+    {
+      "name": "FINALIZED_BOUNDARY_SOURCES",
+      "declared_in": "config.js",
+      "consumed_by": [
+        "config.js",
+        "app.js"
+      ]
+    },
+    {
+      "name": "COMPOSITE_BOUNDARY_SOURCES",
+      "declared_in": "config.js",
+      "consumed_by": [
+        "config.js",
+        "app.js"
+      ]
+    },
+    {
+      "name": "HUNT_DATA_SOURCES",
+      "declared_in": "config.js",
+      "consumed_by": [
+        "config.js",
+        "app.js",
+        "data.js"
+      ]
+    },
+    {
+      "name": "OUTFITTERS_DATA_SOURCES",
+      "declared_in": "config.js",
+      "consumed_by": [
+        "config.js",
+        "app.js"
+      ]
+    },
+    {
+      "name": "OUTFITTER_FEDERAL_COVERAGE_SOURCES",
+      "declared_in": "config.js",
+      "consumed_by": [
+        "config.js",
+        "app.js"
+      ]
+    },
+    {
+      "name": "CONSERVATION_PERMIT_AREA_SOURCES",
+      "declared_in": "config.js",
+      "consumed_by": [
+        "config.js",
+        "app.js"
+      ]
+    },
+    {
+      "name": "CONSERVATION_PERMIT_HUNT_TABLE_SOURCES",
+      "declared_in": "config.js",
+      "consumed_by": [
+        "config.js",
+        "app.js"
+      ]
+    },
+    {
+      "name": "HUNT_RESEARCH_ENGINE_SOURCES",
+      "declared_in": "config.js",
+      "consumed_by": [
+        "config.js",
+        "hunt-research.js"
+      ]
+    },
+    {
+      "name": "HUNT_RESEARCH_LADDER_SOURCES",
+      "declared_in": "config.js",
+      "consumed_by": [
+        "config.js",
+        "hunt-research.js"
+      ]
+    },
+    {
+      "name": "HUNT_RESEARCH_MASTER_SOURCES",
+      "declared_in": "config.js",
+      "consumed_by": [
+        "config.js",
+        "hunt-research.js"
+      ]
+    },
+    {
+      "name": "HUNT_RESEARCH_REFERENCE_SOURCES",
+      "declared_in": "config.js",
+      "consumed_by": [
+        "config.js",
+        "hunt-research.js"
+      ]
+    }
+  ],
+  "owner_questions": [
+    {
+      "id": "owner-hard-copy-categories",
+      "question": "Confirm whether Hard Copies should remain PDF-only or include CSV/XLSX downloads later.",
+      "status": "needs_owner_input"
+    },
+    {
+      "id": "owner-outfitter-cpo-threshold",
+      "question": "Confirm the owner-approved threshold for C.P.O. designation before automating verification labels.",
+      "status": "needs_owner_input"
+    }
+  ],
+  "regulatory_source_needed": [
+    {
+      "id": "source-utah-dwr-outfitter-registration",
+      "item": "Utah DWR outfitter registration floor and public-resource language.",
+      "source_url": "https://wildlife.utah.gov/guide/outfitter.html",
+      "status": "source_needed"
+    },
+    {
+      "id": "source-regulatory-disclaimer",
+      "item": "Verification disclaimer: not a license, permit grant, land-access guarantee, agency authorization, or legal determination.",
+      "source_url": null,
+      "status": "source_needed"
+    }
+  ],
+  "provenance": [
+    {
+      "file": "index.html",
+      "role": "implementation_inventory_source"
+    },
+    {
+      "file": "research.html",
+      "role": "implementation_inventory_source"
+    },
+    {
+      "file": "hard-copy.html",
+      "role": "implementation_inventory_source"
+    },
+    {
+      "file": "verify.html",
+      "role": "implementation_inventory_source"
+    },
+    {
+      "file": "config.js",
+      "role": "implementation_inventory_source"
+    },
+    {
+      "file": "app.js",
+      "role": "implementation_inventory_source"
+    },
+    {
+      "file": "data.js",
+      "role": "implementation_inventory_source"
+    },
+    {
+      "file": "boundary-resolver.js",
+      "role": "implementation_inventory_source"
+    },
+    {
+      "file": "hunt-research.js",
+      "role": "implementation_inventory_source"
+    },
+    {
+      "file": "ui.js",
+      "role": "implementation_inventory_source"
+    },
+    {
+      "file": "header-layout.js",
+      "role": "implementation_inventory_source"
+    },
+    {
+      "file": "google-basemap.js",
+      "role": "implementation_inventory_source"
+    },
+    {
+      "file": "map-engine.js",
+      "role": "implementation_inventory_source"
+    },
+    {
+      "file": "style.css",
+      "role": "implementation_inventory_source"
+    },
+    {
+      "file": "data/hunt-master-canonical-2026-foundation.json",
+      "role": "implementation_inventory_source"
+    },
+    {
+      "file": "data/hunt-master-canonical-2026-database-candidate.json",
+      "role": "implementation_inventory_source"
+    },
+    {
+      "file": "data/hunt-master-canonical-2026-source-of-truth.json",
+      "role": "implementation_inventory_source"
+    },
+    {
+      "file": "processed_data/draw_reality_engine.csv",
+      "role": "implementation_inventory_source"
+    },
+    {
+      "file": "processed_data/point_ladder_view.csv",
+      "role": "implementation_inventory_source"
+    },
+    {
+      "file": "processed_data/hunt_master_enriched.csv",
+      "role": "implementation_inventory_source"
+    },
+    {
+      "file": "processed_data/hunt_unit_reference_linked.csv",
+      "role": "implementation_inventory_source"
+    },
+    {
+      "file": "processed_data/display-boundary-index-2026.json",
+      "role": "implementation_inventory_source"
+    },
+    {
+      "file": "processed_data/boundary-manifest-2026.json",
+      "role": "implementation_inventory_source"
+    },
+    {
+      "file": "processed_data/hard_data_exports/hard_copy_pdf_manifest.web.json",
+      "role": "implementation_inventory_source"
+    },
+    {
+      "file": "data/outfitters-public.json",
+      "role": "implementation_inventory_source"
+    },
+    {
+      "file": "data/outfitters.json",
+      "role": "implementation_inventory_source"
+    },
+    {
+      "file": "processed_data/outfitter-federal-unit-coverage-review.json",
+      "role": "implementation_inventory_source"
+    }
+  ]
+}

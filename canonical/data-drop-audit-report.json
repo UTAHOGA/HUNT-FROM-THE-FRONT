@@ -1,0 +1,2239 @@
+{
+  "generated_at": "2026-05-08T06:52:06.598Z",
+  "compared_new_canonical": "canonical/hunt-planner-2026.json hunt_catalog",
+  "database_primary_green_light": true,
+  "direct_comparisons": [
+    {
+      "source_file": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+      "target_file": "canonical/hunt-planner-2026.json",
+      "row_count": 1395,
+      "unique_hunt_code_count": 1394,
+      "new_canonical_row_count": 1394,
+      "new_canonical_unique_hunt_code_count": 1394,
+      "hunt_codes_present_in_source_missing_from_new_canonical": [],
+      "hunt_codes_present_in_new_canonical_missing_from_source": [],
+      "fields_present_in_source_missing_from_new_canonical": [],
+      "fields_present_in_new_canonical_missing_from_source": [
+        "access_type",
+        "avg_days_2025",
+        "avg_points_2025",
+        "boundaryId",
+        "boundary_id",
+        "boundary_id_numeric",
+        "boundary_token",
+        "code",
+        "data_status",
+        "draw_2025_bg_pdf_page",
+        "draw_2025_bg_report_page",
+        "draw_2025_species_section",
+        "draw_2025_type",
+        "draw_family",
+        "eligibility_class",
+        "harvest_2025",
+        "has_antlerless_draw",
+        "has_bonus_draw",
+        "has_harvest",
+        "huntCode",
+        "hunt_class",
+        "hunters_2025",
+        "permit_allocation_type",
+        "permit_note",
+        "permit_overlay_source",
+        "permit_source_authority",
+        "permit_status",
+        "permits_2025_draw_nr",
+        "permits_2025_draw_res",
+        "permits_2025_draw_total",
+        "permits_2025_nr",
+        "permits_2025_res",
+        "permits_2025_total",
+        "resolvedBoundaryIds",
+        "satisfaction_2025",
+        "source_authority",
+        "source_file",
+        "success_percent_2025",
+        "title",
+        "unitCode",
+        "unitName",
+        "youth_flag"
+      ],
+      "changed_values_for_shared_fields": [],
+      "differences_are": "expected"
+    },
+    {
+      "source_file": "pipeline/RAW/hunt_unit_database/2026/csv/hunt_master_canonical_2026_built.csv",
+      "target_file": "canonical/hunt-planner-2026.json",
+      "row_count": 1289,
+      "unique_hunt_code_count": 1289,
+      "new_canonical_row_count": 1394,
+      "new_canonical_unique_hunt_code_count": 1394,
+      "hunt_codes_present_in_source_missing_from_new_canonical": [
+        "DB1276"
+      ],
+      "hunt_codes_present_in_new_canonical_missing_from_source": [
+        "BR1001",
+        "BR1008",
+        "BR1009",
+        "BR1010",
+        "BR1011",
+        "BR1012",
+        "BR1013",
+        "BR1015",
+        "BR1016",
+        "BR1017",
+        "BR1018",
+        "BR7000",
+        "BR7001",
+        "BR7003",
+        "BR7004",
+        "BR7005",
+        "BR7007",
+        "BR7009",
+        "BR7010",
+        "BR7011",
+        "BR7012",
+        "BR7013",
+        "BR7014",
+        "BR7015",
+        "BR7016",
+        "BR7017",
+        "BR7018",
+        "BR7020",
+        "BR7021",
+        "BR7022",
+        "BR7100",
+        "BR7101",
+        "BR7102",
+        "BR7104",
+        "BR7105",
+        "BR7106",
+        "BR7109",
+        "BR7110",
+        "BR7111",
+        "BR7112",
+        "BR7113",
+        "BR7114",
+        "BR7115",
+        "BR7116",
+        "BR7117",
+        "BR7118",
+        "BR7119",
+        "BR7120",
+        "BR7121",
+        "BR7122",
+        "BR7123",
+        "BR7124",
+        "BR7125",
+        "BR7126",
+        "BR7127",
+        "BR7200",
+        "BR7201",
+        "BR7203",
+        "BR7204",
+        "BR7205",
+        "BR7207",
+        "BR7210",
+        "BR7211",
+        "BR7212",
+        "BR7213",
+        "BR7214",
+        "BR7215",
+        "BR7216",
+        "BR7217",
+        "BR7218",
+        "BR7219",
+        "BR7220",
+        "BR7221",
+        "BR7224",
+        "BR7225",
+        "BR7228",
+        "BR7229",
+        "BR7237",
+        "BR7238",
+        "BR7239",
+        "BR7300",
+        "BR7301",
+        "BR7303",
+        "BR7304",
+        "BR7305",
+        "BR7307",
+        "BR7308",
+        "BR7309",
+        "BR7310",
+        "BR7311",
+        "BR7312",
+        "BR7313",
+        "BR7314",
+        "BR7315",
+        "BR7316",
+        "BR7317",
+        "BR7318",
+        "BR7320",
+        "BR7321",
+        "BR7322",
+        "BR7323",
+        "BR7324",
+        "BR7325",
+        "BR7326",
+        "DS1000",
+        "LO0010"
+      ],
+      "fields_present_in_source_missing_from_new_canonical": [
+        "avg_days_2026",
+        "avg_points_2026",
+        "satisfaction_2026"
+      ],
+      "fields_present_in_new_canonical_missing_from_source": [
+        "NOTES",
+        "avg_days_2025",
+        "avg_points_2025",
+        "boundaryId",
+        "boundary_id_numeric",
+        "boundary_token",
+        "code",
+        "draw_2025_bg_pdf_page",
+        "draw_2025_bg_report_page",
+        "draw_2025_species_section",
+        "draw_2025_type",
+        "huntCode",
+        "permit_allocation_type",
+        "permit_note",
+        "permit_source_authority",
+        "permits_2025_draw_nr",
+        "permits_2025_draw_res",
+        "permits_2025_draw_total",
+        "permits_2025_nr",
+        "permits_2025_res",
+        "permits_2025_total",
+        "resolvedBoundaryIds",
+        "satisfaction_2025",
+        "title",
+        "unitCode",
+        "unitName"
+      ],
+      "changed_values_for_shared_fields": [
+        {
+          "field": "sex_type",
+          "checked": 1288,
+          "mismatch": 134,
+          "examples": [
+            {
+              "hunt_code": "BI1000",
+              "source": "Hunter's Choice",
+              "target": "Hunters Choice"
+            },
+            {
+              "hunt_code": "BI6500",
+              "source": "Hunter's Choice",
+              "target": "Hunters Choice"
+            },
+            {
+              "hunt_code": "BI6503",
+              "source": "Hunter's Choice",
+              "target": "Hunters Choice"
+            },
+            {
+              "hunt_code": "BI6504",
+              "source": "Hunter's Choice",
+              "target": "Hunters Choice"
+            },
+            {
+              "hunt_code": "BI6505",
+              "source": "Antlerless",
+              "target": "Cow Only"
+            }
+          ]
+        },
+        {
+          "field": "hunt_type",
+          "checked": 1288,
+          "mismatch": 85,
+          "examples": [
+            {
+              "hunt_code": "BI6500",
+              "source": "Once-in-a-Lifetime",
+              "target": "Once-in-a-lifetime"
+            },
+            {
+              "hunt_code": "BI6503",
+              "source": "Once-in-a-Lifetime",
+              "target": "Once-in-a-lifetime"
+            },
+            {
+              "hunt_code": "BI6504",
+              "source": "Once-in-a-Lifetime",
+              "target": "Once-in-a-lifetime"
+            },
+            {
+              "hunt_code": "BI6505",
+              "source": "Once-in-a-Lifetime",
+              "target": "Once-in-a-lifetime"
+            },
+            {
+              "hunt_code": "BI6506",
+              "source": "Once-in-a-Lifetime",
+              "target": "Once-in-a-lifetime"
+            }
+          ]
+        },
+        {
+          "field": "weapon",
+          "checked": 1288,
+          "mismatch": 108,
+          "examples": [
+            {
+              "hunt_code": "DA1001",
+              "source": "Archery",
+              "target": "Archery, Muzzleloader, Shotgun"
+            },
+            {
+              "hunt_code": "DA1002",
+              "source": "Archery",
+              "target": "Archery, Muzzleloader, Shotgun"
+            },
+            {
+              "hunt_code": "DA1003",
+              "source": "Archery",
+              "target": "Archery, Muzzleloader, Shotgun"
+            },
+            {
+              "hunt_code": "DA1018",
+              "source": "Archery",
+              "target": "Archery, Muzzleloader, Shotgun"
+            },
+            {
+              "hunt_code": "DA1046",
+              "source": "Archery",
+              "target": "Archery, Muzzleloader, Shotgun"
+            }
+          ]
+        },
+        {
+          "field": "hunt_name",
+          "checked": 1288,
+          "mismatch": 128,
+          "examples": [
+            {
+              "hunt_code": "DB1119",
+              "source": "La Sal, Moab Valley",
+              "target": "Moab Valley"
+            },
+            {
+              "hunt_code": "EB3000",
+              "source": "Beaver, East",
+              "target": "Beaver East"
+            },
+            {
+              "hunt_code": "EB3002",
+              "source": "Book Cliffs, Little Creek Roadless",
+              "target": "Book Cliffs Little Creek Roadless"
+            },
+            {
+              "hunt_code": "EB3003",
+              "source": "Cache, Meadowville",
+              "target": "Cache Meadowville"
+            },
+            {
+              "hunt_code": "EB3005",
+              "source": "Cache, South",
+              "target": "Cache South"
+            }
+          ]
+        },
+        {
+          "field": "season",
+          "checked": 1288,
+          "mismatch": 12,
+          "examples": [
+            {
+              "hunt_code": "BI6538",
+              "source": "Aug 1, 2025 - Jan 31, 2026 | Harvest survey due by Feb 15, 2026 Visit: http://wildlife.utah.gov/harvest to submit your survey",
+              "target": "Aug 1, 2025 - Jan 31, 2026"
+            },
+            {
+              "hunt_code": "BR1000",
+              "source": "Any open season on any open bear unit during the 2026 season. See 2026 Black Bear Guidebook for season dates",
+              "target": ""
+            },
+            {
+              "hunt_code": "CG9999",
+              "source": "open",
+              "target": ""
+            },
+            {
+              "hunt_code": "LO0008",
+              "source": "Aug 16 2025 - Sept 12 2025 - Valid only on property enrolled in the Diamond Mtn LOA",
+              "target": "Aug 15 2026 - Sept 11 2026 - Valid only on property enrolled in the Diamond Mtn LOA"
+            },
+            {
+              "hunt_code": "LO0009",
+              "source": "Oct 18 2025 - Oct 26 2025 - Valid only on property enrolled in the Diamond Mtn LOA",
+              "target": "Oct 17 2026 - Oct 25 2026 - Valid only on property enrolled in the Diamond Mtn LOA"
+            }
+          ]
+        },
+        {
+          "field": "permits_2026_res",
+          "checked": 792,
+          "mismatch": 792,
+          "examples": [
+            {
+              "hunt_code": "BI6500",
+              "source": "2.0",
+              "target": "2"
+            },
+            {
+              "hunt_code": "BI6503",
+              "source": "4.0",
+              "target": "4"
+            },
+            {
+              "hunt_code": "BI6504",
+              "source": "5.0",
+              "target": "5"
+            },
+            {
+              "hunt_code": "BI6505",
+              "source": "8.0",
+              "target": "8"
+            },
+            {
+              "hunt_code": "BI6506",
+              "source": "11.0",
+              "target": "11"
+            }
+          ]
+        },
+        {
+          "field": "permits_2026_nr",
+          "checked": 788,
+          "mismatch": 788,
+          "examples": [
+            {
+              "hunt_code": "BI6500",
+              "source": "0.0",
+              "target": "0"
+            },
+            {
+              "hunt_code": "BI6503",
+              "source": "2.0",
+              "target": "2"
+            },
+            {
+              "hunt_code": "BI6504",
+              "source": "2.0",
+              "target": "2"
+            },
+            {
+              "hunt_code": "BI6505",
+              "source": "3.0",
+              "target": "3"
+            },
+            {
+              "hunt_code": "BI6506",
+              "source": "0.0",
+              "target": "0"
+            }
+          ]
+        },
+        {
+          "field": "permits_2026_total",
+          "checked": 985,
+          "mismatch": 985,
+          "examples": [
+            {
+              "hunt_code": "BI6500",
+              "source": "2.0",
+              "target": "2"
+            },
+            {
+              "hunt_code": "BI6503",
+              "source": "6.0",
+              "target": "6"
+            },
+            {
+              "hunt_code": "BI6504",
+              "source": "7.0",
+              "target": "7"
+            },
+            {
+              "hunt_code": "BI6505",
+              "source": "11.0",
+              "target": "11"
+            },
+            {
+              "hunt_code": "BI6506",
+              "source": "11.0",
+              "target": "11"
+            }
+          ]
+        },
+        {
+          "field": "permit_status",
+          "checked": 1288,
+          "mismatch": 510,
+          "examples": [
+            {
+              "hunt_code": "BI1000",
+              "source": "MISSING",
+              "target": "NO_QUOTA_PUBLISHED"
+            },
+            {
+              "hunt_code": "BI6527",
+              "source": "MISSING",
+              "target": "NO_QUOTA_PUBLISHED"
+            },
+            {
+              "hunt_code": "BI6538",
+              "source": "MISSING",
+              "target": "NO_QUOTA_PUBLISHED"
+            },
+            {
+              "hunt_code": "BR1000",
+              "source": "MISSING",
+              "target": "TOTAL_ONLY"
+            },
+            {
+              "hunt_code": "BR1007",
+              "source": "MISSING",
+              "target": "NO_QUOTA_PUBLISHED"
+            }
+          ]
+        },
+        {
+          "field": "permit_overlay_source",
+          "checked": 1174,
+          "mismatch": 896,
+          "examples": [
+            {
+              "hunt_code": "BI1000",
+              "source": "",
+              "target": "2026_bison_either-sex.xlsx"
+            },
+            {
+              "hunt_code": "BI6500",
+              "source": "hunt_join_2025.1.csv",
+              "target": "2026_bison_either-sex.xlsx"
+            },
+            {
+              "hunt_code": "BI6503",
+              "source": "hunt_join_2025.1.csv",
+              "target": "2026_bison_either-sex.xlsx"
+            },
+            {
+              "hunt_code": "BI6504",
+              "source": "hunt_join_2025.1.csv",
+              "target": "2026_bison_either-sex.xlsx"
+            },
+            {
+              "hunt_code": "BI6505",
+              "source": "hunt_join_2025.1.csv",
+              "target": "2026_bison_cow_only.xlsx"
+            }
+          ]
+        },
+        {
+          "field": "source_authority",
+          "checked": 1288,
+          "mismatch": 175,
+          "examples": [
+            {
+              "hunt_code": "EA2002",
+              "source": "official_uploaded_source",
+              "target": "Utah DWR Hunt Planner"
+            },
+            {
+              "hunt_code": "EA2003",
+              "source": "official_uploaded_source",
+              "target": "Utah DWR Hunt Planner"
+            },
+            {
+              "hunt_code": "EA2004",
+              "source": "official_uploaded_source",
+              "target": "Utah DWR Hunt Planner"
+            },
+            {
+              "hunt_code": "EA2005",
+              "source": "official_uploaded_source",
+              "target": "Utah DWR Hunt Planner"
+            },
+            {
+              "hunt_code": "EA2006",
+              "source": "official_uploaded_source",
+              "target": "Utah DWR Hunt Planner"
+            }
+          ]
+        },
+        {
+          "field": "data_status",
+          "checked": 1288,
+          "mismatch": 510,
+          "examples": [
+            {
+              "hunt_code": "BI1000",
+              "source": "MISSING_STATEWIDE_SOURCE",
+              "target": "SOURCE_CONFIRMED_NO_QUOTA_PUBLISHED"
+            },
+            {
+              "hunt_code": "BI6527",
+              "source": "MISSING_GENERAL_SOURCE",
+              "target": "SOURCE_CONFIRMED_NO_QUOTA_PUBLISHED"
+            },
+            {
+              "hunt_code": "BI6538",
+              "source": "MISSING_GENERAL_SOURCE",
+              "target": "SOURCE_CONFIRMED_NO_QUOTA_PUBLISHED"
+            },
+            {
+              "hunt_code": "BR1000",
+              "source": "MISSING_STATEWIDE_SOURCE",
+              "target": "COMPLETE_TOTAL_ONLY"
+            },
+            {
+              "hunt_code": "BR1007",
+              "source": "MISSING_PURSUIT_SOURCE",
+              "target": "SOURCE_CONFIRMED_NO_QUOTA_PUBLISHED"
+            }
+          ]
+        },
+        {
+          "field": "boundary_id",
+          "checked": 1288,
+          "mismatch": 1288,
+          "examples": [
+            {
+              "hunt_code": "BI1000",
+              "source": "",
+              "target": "SW_BISON_2026"
+            },
+            {
+              "hunt_code": "BI6500",
+              "source": "",
+              "target": "1"
+            },
+            {
+              "hunt_code": "BI6503",
+              "source": "",
+              "target": "94"
+            },
+            {
+              "hunt_code": "BI6504",
+              "source": "",
+              "target": "94"
+            },
+            {
+              "hunt_code": "BI6505",
+              "source": "",
+              "target": "94"
+            }
+          ]
+        }
+      ],
+      "differences_are": "derived"
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "target_file": "canonical/hunt-planner-2026.json",
+      "row_count": 53782,
+      "unique_hunt_code_count": 1115,
+      "new_canonical_row_count": 1394,
+      "new_canonical_unique_hunt_code_count": 1394,
+      "hunt_codes_present_in_source_missing_from_new_canonical": [
+        "DB1320",
+        "DB1324",
+        "DB1343",
+        "DB1344",
+        "DB1348",
+        "DB1774",
+        "EA2042",
+        "EB3561",
+        "EB3609",
+        "MB6200",
+        "MB6207",
+        "MB6209",
+        "MB6217",
+        "MB6220",
+        "MB6223",
+        "MB6224",
+        "MB6225",
+        "MB6240",
+        "MB6254",
+        "MB6257",
+        "MB6259",
+        "PB5343",
+        "PD1016",
+        "PD1025",
+        "PD1026",
+        "PD1041"
+      ],
+      "hunt_codes_present_in_new_canonical_missing_from_source": [
+        "BI6538",
+        "BI6539",
+        "BR1000",
+        "BR1001",
+        "BR1007",
+        "BR1008",
+        "BR1009",
+        "BR1010",
+        "BR1011",
+        "BR1012",
+        "BR1013",
+        "BR1015",
+        "BR1016",
+        "BR1017",
+        "BR1018",
+        "BR7000",
+        "BR7001",
+        "BR7003",
+        "BR7004",
+        "BR7005",
+        "BR7007",
+        "BR7009",
+        "BR7010",
+        "BR7011",
+        "BR7012",
+        "BR7013",
+        "BR7014",
+        "BR7015",
+        "BR7016",
+        "BR7017",
+        "BR7018",
+        "BR7020",
+        "BR7021",
+        "BR7022",
+        "BR7100",
+        "BR7101",
+        "BR7102",
+        "BR7104",
+        "BR7105",
+        "BR7106",
+        "BR7109",
+        "BR7110",
+        "BR7111",
+        "BR7112",
+        "BR7113",
+        "BR7114",
+        "BR7115",
+        "BR7116",
+        "BR7117",
+        "BR7118",
+        "BR7119",
+        "BR7120",
+        "BR7121",
+        "BR7122",
+        "BR7123",
+        "BR7124",
+        "BR7125",
+        "BR7126",
+        "BR7127",
+        "BR7200",
+        "BR7201",
+        "BR7203",
+        "BR7204",
+        "BR7205",
+        "BR7207",
+        "BR7210",
+        "BR7211",
+        "BR7212",
+        "BR7213",
+        "BR7214",
+        "BR7215",
+        "BR7216",
+        "BR7217",
+        "BR7218",
+        "BR7219",
+        "BR7220",
+        "BR7221",
+        "BR7224",
+        "BR7225",
+        "BR7228",
+        "BR7229",
+        "BR7237",
+        "BR7238",
+        "BR7239",
+        "BR7300",
+        "BR7301",
+        "BR7303",
+        "BR7304",
+        "BR7305",
+        "BR7307",
+        "BR7308",
+        "BR7309",
+        "BR7310",
+        "BR7311",
+        "BR7312",
+        "BR7313",
+        "BR7314",
+        "BR7315",
+        "BR7316",
+        "BR7317",
+        "BR7318",
+        "BR7320",
+        "BR7321",
+        "BR7322",
+        "BR7323",
+        "BR7324",
+        "BR7325",
+        "BR7326",
+        "CG9999",
+        "DB0001",
+        "DB0002",
+        "DB0003",
+        "DB0004",
+        "DB0005",
+        "DB0006",
+        "DB0010",
+        "DB0011",
+        "DB0012",
+        "DB0013",
+        "DB1075",
+        "DB1076",
+        "DB1118",
+        "DB1121",
+        "DB1351",
+        "EA1258",
+        "EB3620",
+        "EL3002",
+        "EL3003",
+        "EL3005",
+        "EL3006",
+        "EL3008",
+        "EL3009",
+        "EL3010",
+        "EL3011",
+        "EL3013",
+        "EL3015",
+        "EL3018",
+        "EL3019",
+        "EL3020",
+        "EL3025",
+        "EL3028",
+        "EL3031",
+        "EL3032",
+        "EL3036",
+        "EL3037",
+        "EL3042",
+        "EL3043",
+        "EL3044",
+        "EL3045",
+        "EL3046",
+        "EL3047",
+        "EL3049",
+        "EL3050",
+        "EL3053",
+        "EL3056",
+        "EL3063",
+        "EL3064",
+        "EL3067",
+        "EL3069",
+        "EL3073",
+        "EL3077",
+        "EL3079",
+        "EL3081",
+        "EL3083",
+        "EL3086",
+        "EL3087",
+        "EL3088",
+        "EL3089",
+        "EL3091",
+        "EL3093",
+        "EL3096",
+        "EL3097",
+        "EL3098",
+        "EL3130",
+        "EL3132",
+        "EL3135",
+        "EL3136",
+        "EL3137",
+        "EL3139",
+        "EL3142",
+        "EL3143",
+        "EL3145",
+        "EL3146",
+        "EL3147",
+        "EL3148",
+        "EL3150",
+        "EL3151",
+        "EL3153",
+        "EL3154",
+        "EL3155",
+        "EL3158",
+        "EL3159",
+        "EL3160",
+        "EL3161",
+        "EL3162",
+        "EL3163",
+        "EL3164",
+        "EL3166",
+        "EL3167",
+        "EL3168",
+        "EL3169",
+        "EL3170",
+        "EL3172",
+        "EL3173",
+        "EL3174",
+        "EL3176",
+        "EL3179",
+        "EL3180",
+        "EL3182",
+        "EL3184",
+        "EL3185",
+        "EL3186",
+        "EL3187",
+        "EL3188",
+        "EL3189",
+        "EL3190",
+        "EL3191",
+        "EL3192",
+        "EL3193",
+        "EL3195",
+        "EL3197",
+        "EL3199",
+        "EL3205",
+        "EL3208",
+        "EL3210",
+        "EX1000",
+        "LO0008",
+        "LO0010",
+        "LO0011",
+        "LO1501",
+        "LO1503",
+        "LO1504",
+        "LO1508",
+        "LO1509",
+        "LO1510",
+        "LO1513",
+        "LO1518",
+        "LO1519",
+        "LO1521",
+        "LO1522",
+        "LO1523",
+        "LO1525",
+        "LO1526",
+        "LO1538",
+        "LO1539",
+        "LO1543",
+        "LO1549",
+        "LO1561",
+        "LO1563",
+        "LO1564"
+      ],
+      "fields_present_in_source_missing_from_new_canonical": [
+        "applicants_2025",
+        "max_point_permits_2026",
+        "missing_draw_data",
+        "missing_permits",
+        "missing_projection",
+        "odds_2025",
+        "odds_2026_projected",
+        "points",
+        "projected_applicants_2026",
+        "projected_applicants_2026_source",
+        "public_permits_2025",
+        "public_permits_2026",
+        "public_permits_2026_source",
+        "random_permits_2026",
+        "residency",
+        "success_harvest",
+        "success_hunters",
+        "success_percent"
+      ],
+      "fields_present_in_new_canonical_missing_from_source": [
+        "NOTES",
+        "avg_days_2025",
+        "avg_points_2025",
+        "boundaryId",
+        "boundary_id",
+        "boundary_id_numeric",
+        "boundary_token",
+        "code",
+        "data_status",
+        "draw_2025_bg_pdf_page",
+        "draw_2025_bg_report_page",
+        "draw_2025_species_section",
+        "draw_2025_type",
+        "draw_family",
+        "eligibility_class",
+        "harvest_2025",
+        "has_antlerless_draw",
+        "has_bonus_draw",
+        "has_harvest",
+        "huntCode",
+        "hunt_class",
+        "hunters_2025",
+        "permit_allocation_type",
+        "permit_note",
+        "permit_overlay_source",
+        "permit_source_authority",
+        "permit_status",
+        "permits_2025_draw_nr",
+        "permits_2025_draw_res",
+        "permits_2025_draw_total",
+        "permits_2025_nr",
+        "permits_2025_res",
+        "permits_2025_total",
+        "permits_2026_nr",
+        "permits_2026_res",
+        "permits_2026_total",
+        "resolvedBoundaryIds",
+        "satisfaction_2025",
+        "season",
+        "sex_type",
+        "source_authority",
+        "source_file",
+        "success_percent_2025",
+        "title",
+        "unitCode",
+        "unitName",
+        "youth_flag"
+      ],
+      "changed_values_for_shared_fields": [
+        {
+          "field": "species",
+          "checked": 1089,
+          "mismatch": 5,
+          "examples": [
+            {
+              "hunt_code": "LO0012",
+              "source": "Deer",
+              "target": "Elk"
+            },
+            {
+              "hunt_code": "LO0013",
+              "source": "Deer",
+              "target": "Elk"
+            },
+            {
+              "hunt_code": "LO0014",
+              "source": "Deer",
+              "target": "Elk"
+            },
+            {
+              "hunt_code": "LO0015",
+              "source": "Deer",
+              "target": "Elk"
+            },
+            {
+              "hunt_code": "PB1000",
+              "source": "Moose",
+              "target": "Pronghorn"
+            }
+          ]
+        },
+        {
+          "field": "hunt_name",
+          "checked": 1089,
+          "mismatch": 389,
+          "examples": [
+            {
+              "hunt_code": "DA1011",
+              "source": "George Creek",
+              "target": "George Creek CWMU"
+            },
+            {
+              "hunt_code": "DA1012",
+              "source": "Junction Valley",
+              "target": "Junction Valley CWMU"
+            },
+            {
+              "hunt_code": "DA1013",
+              "source": "Mt Carmel",
+              "target": "Mt Carmel CWMU"
+            },
+            {
+              "hunt_code": "DA1050",
+              "source": "The Rose of Snowville",
+              "target": "The Rose of Snowville CWMU"
+            },
+            {
+              "hunt_code": "DB0008",
+              "source": "Deer Extended Archery Only",
+              "target": "Extended Archery Deer"
+            }
+          ]
+        },
+        {
+          "field": "weapon",
+          "checked": 1089,
+          "mismatch": 207,
+          "examples": [
+            {
+              "hunt_code": "DA1001",
+              "source": "Any Legal Weapon",
+              "target": "Archery, Muzzleloader, Shotgun"
+            },
+            {
+              "hunt_code": "DA1002",
+              "source": "Any Legal Weapon",
+              "target": "Archery, Muzzleloader, Shotgun"
+            },
+            {
+              "hunt_code": "DB0008",
+              "source": "Extended Archery",
+              "target": "Archery"
+            },
+            {
+              "hunt_code": "DB1090",
+              "source": "HAMSS",
+              "target": "HAMSS (Handgun, Archery, Muzzleloader, Shotgun or Straight-walled rifle)"
+            },
+            {
+              "hunt_code": "DB1091",
+              "source": "HAMSS",
+              "target": "HAMSS (Handgun, Archery, Muzzleloader, Shotgun or Straight-walled rifle)"
+            }
+          ]
+        },
+        {
+          "field": "hunt_type",
+          "checked": 1089,
+          "mismatch": 450,
+          "examples": [
+            {
+              "hunt_code": "BI1000",
+              "source": "Sportsman",
+              "target": "Statewide"
+            },
+            {
+              "hunt_code": "BI6500",
+              "source": "OIAL",
+              "target": "Once-in-a-lifetime"
+            },
+            {
+              "hunt_code": "BI6503",
+              "source": "OIAL",
+              "target": "Once-in-a-lifetime"
+            },
+            {
+              "hunt_code": "BI6504",
+              "source": "OIAL",
+              "target": "Once-in-a-lifetime"
+            },
+            {
+              "hunt_code": "BI6505",
+              "source": "OIAL",
+              "target": "Once-in-a-lifetime"
+            }
+          ]
+        },
+        {
+          "field": "access_type",
+          "checked": 1089,
+          "mismatch": 122,
+          "examples": [
+            {
+              "hunt_code": "DS1000",
+              "source": "Public",
+              "target": ""
+            },
+            {
+              "hunt_code": "EA2002",
+              "source": "Public",
+              "target": "Private"
+            },
+            {
+              "hunt_code": "EA2003",
+              "source": "Public",
+              "target": "Private"
+            },
+            {
+              "hunt_code": "EA2004",
+              "source": "Public",
+              "target": "Private"
+            },
+            {
+              "hunt_code": "EA2005",
+              "source": "Public",
+              "target": "Private"
+            }
+          ]
+        }
+      ],
+      "differences_are": "derived"
+    },
+    {
+      "source_file": "data/hunt-master-canonical-2026-foundation.json",
+      "target_file": "canonical/hunt-planner-2026.json",
+      "row_count": 1288,
+      "unique_hunt_code_count": 1288,
+      "new_canonical_row_count": 1394,
+      "new_canonical_unique_hunt_code_count": 1394,
+      "hunt_codes_present_in_source_missing_from_new_canonical": [],
+      "hunt_codes_present_in_new_canonical_missing_from_source": [
+        "BR1001",
+        "BR1008",
+        "BR1009",
+        "BR1010",
+        "BR1011",
+        "BR1012",
+        "BR1013",
+        "BR1015",
+        "BR1016",
+        "BR1017",
+        "BR1018",
+        "BR7000",
+        "BR7001",
+        "BR7003",
+        "BR7004",
+        "BR7005",
+        "BR7007",
+        "BR7009",
+        "BR7010",
+        "BR7011",
+        "BR7012",
+        "BR7013",
+        "BR7014",
+        "BR7015",
+        "BR7016",
+        "BR7017",
+        "BR7018",
+        "BR7020",
+        "BR7021",
+        "BR7022",
+        "BR7100",
+        "BR7101",
+        "BR7102",
+        "BR7104",
+        "BR7105",
+        "BR7106",
+        "BR7109",
+        "BR7110",
+        "BR7111",
+        "BR7112",
+        "BR7113",
+        "BR7114",
+        "BR7115",
+        "BR7116",
+        "BR7117",
+        "BR7118",
+        "BR7119",
+        "BR7120",
+        "BR7121",
+        "BR7122",
+        "BR7123",
+        "BR7124",
+        "BR7125",
+        "BR7126",
+        "BR7127",
+        "BR7200",
+        "BR7201",
+        "BR7203",
+        "BR7204",
+        "BR7205",
+        "BR7207",
+        "BR7210",
+        "BR7211",
+        "BR7212",
+        "BR7213",
+        "BR7214",
+        "BR7215",
+        "BR7216",
+        "BR7217",
+        "BR7218",
+        "BR7219",
+        "BR7220",
+        "BR7221",
+        "BR7224",
+        "BR7225",
+        "BR7228",
+        "BR7229",
+        "BR7237",
+        "BR7238",
+        "BR7239",
+        "BR7300",
+        "BR7301",
+        "BR7303",
+        "BR7304",
+        "BR7305",
+        "BR7307",
+        "BR7308",
+        "BR7309",
+        "BR7310",
+        "BR7311",
+        "BR7312",
+        "BR7313",
+        "BR7314",
+        "BR7315",
+        "BR7316",
+        "BR7317",
+        "BR7318",
+        "BR7320",
+        "BR7321",
+        "BR7322",
+        "BR7323",
+        "BR7324",
+        "BR7325",
+        "BR7326",
+        "DS1000",
+        "LO0010"
+      ],
+      "fields_present_in_source_missing_from_new_canonical": [],
+      "fields_present_in_new_canonical_missing_from_source": [
+        "NOTES"
+      ],
+      "changed_values_for_shared_fields": [
+        {
+          "field": "hunt_name",
+          "checked": 1288,
+          "mismatch": 128,
+          "examples": [
+            {
+              "hunt_code": "EB1011",
+              "source": "outh General Season Bull Elk",
+              "target": "Youth General Season Bull Elk"
+            },
+            {
+              "hunt_code": "EB3000",
+              "source": "Beaver, East",
+              "target": "Beaver East"
+            },
+            {
+              "hunt_code": "EB3002",
+              "source": "Book Cliffs, Little Creek Roadless",
+              "target": "Book Cliffs Little Creek Roadless"
+            },
+            {
+              "hunt_code": "EB3003",
+              "source": "Cache, Meadowville",
+              "target": "Cache Meadowville"
+            },
+            {
+              "hunt_code": "EB3005",
+              "source": "Cache, South",
+              "target": "Cache South"
+            }
+          ]
+        },
+        {
+          "field": "hunt_type",
+          "checked": 1288,
+          "mismatch": 48,
+          "examples": [
+            {
+              "hunt_code": "DS6600",
+              "source": "Once-in-a-Lifetime",
+              "target": "Once-in-a-lifetime"
+            },
+            {
+              "hunt_code": "DS6601",
+              "source": "Once-in-a-Lifetime",
+              "target": "Once-in-a-lifetime"
+            },
+            {
+              "hunt_code": "DS6603",
+              "source": "Once-in-a-Lifetime",
+              "target": "Once-in-a-lifetime"
+            },
+            {
+              "hunt_code": "DS6604",
+              "source": "Once-in-a-Lifetime",
+              "target": "Once-in-a-lifetime"
+            },
+            {
+              "hunt_code": "DS6606",
+              "source": "Once-in-a-Lifetime",
+              "target": "Once-in-a-lifetime"
+            }
+          ]
+        },
+        {
+          "field": "weapon",
+          "checked": 1288,
+          "mismatch": 46,
+          "examples": [
+            {
+              "hunt_code": "EB3139",
+              "source": "Archery",
+              "target": "HAMSS (Handgun, Archery, Muzzleloader, Shotgun or Straight-walled rifle)"
+            },
+            {
+              "hunt_code": "EB3142",
+              "source": "Archery",
+              "target": "HAMSS (Handgun, Archery, Muzzleloader, Shotgun or Straight-walled rifle)"
+            },
+            {
+              "hunt_code": "EB3143",
+              "source": "Archery",
+              "target": "HAMSS (Handgun, Archery, Muzzleloader, Shotgun or Straight-walled rifle)"
+            },
+            {
+              "hunt_code": "EB3144",
+              "source": "Archery",
+              "target": "HAMSS (Handgun, Archery, Muzzleloader, Shotgun or Straight-walled rifle)"
+            },
+            {
+              "hunt_code": "EB3205",
+              "source": "Archery",
+              "target": "HAMSS (Handgun, Archery, Muzzleloader, Shotgun or Straight-walled rifle)"
+            }
+          ]
+        },
+        {
+          "field": "sex_type",
+          "checked": 1288,
+          "mismatch": 93,
+          "examples": [
+            {
+              "hunt_code": "DS1002",
+              "source": "Ram",
+              "target": "Male Only"
+            },
+            {
+              "hunt_code": "DS1003",
+              "source": "Ram",
+              "target": "Male Only"
+            },
+            {
+              "hunt_code": "DS1004",
+              "source": "Ram",
+              "target": "Male Only"
+            },
+            {
+              "hunt_code": "DS1006",
+              "source": "Ram",
+              "target": "Male Only"
+            },
+            {
+              "hunt_code": "DS1007",
+              "source": "Ram",
+              "target": "Male Only"
+            }
+          ]
+        },
+        {
+          "field": "season",
+          "checked": 1288,
+          "mismatch": 10,
+          "examples": [
+            {
+              "hunt_code": "BI6538",
+              "source": "Aug 1, 2025 - Jan 31, 2026 | Harvest survey due by Feb 15, 2026 Visit: http://wildlife.utah.gov/harvest to submit your survey",
+              "target": "Aug 1, 2025 - Jan 31, 2026"
+            },
+            {
+              "hunt_code": "BR1000",
+              "source": "Any open season on any open bear unit during the 2026 season. See 2026 Black Bear Guidebook for season dates",
+              "target": ""
+            },
+            {
+              "hunt_code": "CG9999",
+              "source": "open",
+              "target": ""
+            },
+            {
+              "hunt_code": "LO0008",
+              "source": "Aug 16 2025 - Sept 12 2025 - Valid only on property enrolled in the Diamond Mtn LOA",
+              "target": "Aug 15 2026 - Sept 11 2026 - Valid only on property enrolled in the Diamond Mtn LOA"
+            },
+            {
+              "hunt_code": "LO0009",
+              "source": "Oct 18 2025 - Oct 26 2025 - Valid only on property enrolled in the Diamond Mtn LOA",
+              "target": "Oct 17 2026 - Oct 25 2026 - Valid only on property enrolled in the Diamond Mtn LOA"
+            }
+          ]
+        },
+        {
+          "field": "permits_2026_res",
+          "checked": 932,
+          "mismatch": 720,
+          "examples": [
+            {
+              "hunt_code": "CG9999",
+              "source": "0",
+              "target": ""
+            },
+            {
+              "hunt_code": "DA1011",
+              "source": "",
+              "target": "5"
+            },
+            {
+              "hunt_code": "DA1012",
+              "source": "",
+              "target": "15"
+            },
+            {
+              "hunt_code": "DA1013",
+              "source": "",
+              "target": "5"
+            },
+            {
+              "hunt_code": "DA1050",
+              "source": "",
+              "target": "8"
+            }
+          ]
+        },
+        {
+          "field": "permits_2026_nr",
+          "checked": 796,
+          "mismatch": 597,
+          "examples": [
+            {
+              "hunt_code": "CG9999",
+              "source": "0",
+              "target": ""
+            },
+            {
+              "hunt_code": "DA1011",
+              "source": "",
+              "target": "0"
+            },
+            {
+              "hunt_code": "DA1012",
+              "source": "",
+              "target": "0"
+            },
+            {
+              "hunt_code": "DA1013",
+              "source": "",
+              "target": "0"
+            },
+            {
+              "hunt_code": "DA1050",
+              "source": "",
+              "target": "0"
+            }
+          ]
+        },
+        {
+          "field": "permits_2026_total",
+          "checked": 993,
+          "mismatch": 409,
+          "examples": [
+            {
+              "hunt_code": "BR1000",
+              "source": "1",
+              "target": ""
+            },
+            {
+              "hunt_code": "CG9999",
+              "source": "0",
+              "target": ""
+            },
+            {
+              "hunt_code": "DB0007",
+              "source": "1",
+              "target": ""
+            },
+            {
+              "hunt_code": "DS1002",
+              "source": "1.0",
+              "target": ""
+            },
+            {
+              "hunt_code": "DS1003",
+              "source": "1.0",
+              "target": ""
+            }
+          ]
+        },
+        {
+          "field": "title",
+          "checked": 1288,
+          "mismatch": 128,
+          "examples": [
+            {
+              "hunt_code": "EB1011",
+              "source": "outh General Season Bull Elk",
+              "target": "Youth General Season Bull Elk"
+            },
+            {
+              "hunt_code": "EB3000",
+              "source": "Beaver, East",
+              "target": "Beaver East"
+            },
+            {
+              "hunt_code": "EB3002",
+              "source": "Book Cliffs, Little Creek Roadless",
+              "target": "Book Cliffs Little Creek Roadless"
+            },
+            {
+              "hunt_code": "EB3003",
+              "source": "Cache, Meadowville",
+              "target": "Cache Meadowville"
+            },
+            {
+              "hunt_code": "EB3005",
+              "source": "Cache, South",
+              "target": "Cache South"
+            }
+          ]
+        },
+        {
+          "field": "unitName",
+          "checked": 1288,
+          "mismatch": 128,
+          "examples": [
+            {
+              "hunt_code": "EB1011",
+              "source": "outh General Season Bull Elk",
+              "target": "Youth General Season Bull Elk"
+            },
+            {
+              "hunt_code": "EB3000",
+              "source": "Beaver, East",
+              "target": "Beaver East"
+            },
+            {
+              "hunt_code": "EB3002",
+              "source": "Book Cliffs, Little Creek Roadless",
+              "target": "Book Cliffs Little Creek Roadless"
+            },
+            {
+              "hunt_code": "EB3003",
+              "source": "Cache, Meadowville",
+              "target": "Cache Meadowville"
+            },
+            {
+              "hunt_code": "EB3005",
+              "source": "Cache, South",
+              "target": "Cache South"
+            }
+          ]
+        }
+      ],
+      "differences_are": "expected"
+    }
+  ],
+  "classified_missing_items": [
+    {
+      "source_file": "pipeline/RAW/hunt_unit_database/2026/csv/hunt_master_canonical_2026_built.csv",
+      "missing_hunt_codes": [
+        "DB1276"
+      ],
+      "missing_fields": [],
+      "classification": "INTENTIONAL_LEGACY_DROP",
+      "reason": "This hunt_code appears only in an older built artifact and is absent from the current DATABASE.csv primary truth file.",
+      "runtime_impact": "No current runtime source list points to this built CSV; exclusion does not affect live planner/research pages.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "pipeline/RAW/hunt_unit_database/2026/csv/hunt_master_canonical_2026_built.csv",
+      "missing_hunt_codes": [],
+      "missing_fields": [
+        "avg_days_2026"
+      ],
+      "examples": [
+        "9.0",
+        "4.0",
+        "5.5",
+        "1.8"
+      ],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "Field is absent from the Planner hunt_catalog but preserved in canonical/hunt-research-2026.json under the Hunt Research dataset contract.",
+      "runtime_impact": "No Planner impact. Hunt Research continues to load the field from its processed CSV and the canonical package documents the field.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "pipeline/RAW/hunt_unit_database/2026/csv/hunt_master_canonical_2026_built.csv",
+      "missing_hunt_codes": [],
+      "missing_fields": [
+        "avg_points_2026"
+      ],
+      "examples": [],
+      "classification": "INTENTIONAL_LEGACY_DROP",
+      "reason": "Field appears only in an older/derived built artifact and is not referenced by the live runtime.",
+      "runtime_impact": "No current visitor-facing runtime impact.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "pipeline/RAW/hunt_unit_database/2026/csv/hunt_master_canonical_2026_built.csv",
+      "missing_hunt_codes": [],
+      "missing_fields": [
+        "satisfaction_2026"
+      ],
+      "examples": [
+        "3.6",
+        "4.0",
+        "4.3",
+        "4.8"
+      ],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "Field is absent from the Planner hunt_catalog but preserved in canonical/hunt-research-2026.json under the Hunt Research dataset contract.",
+      "runtime_impact": "No Planner impact. Hunt Research continues to load the field from its processed CSV and the canonical package documents the field.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [
+        "DB1320"
+      ],
+      "missing_fields": [],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "This code is absent from the Planner hunt_catalog but is preserved in the Hunt Research canonical dataset contract and live processed CSV.",
+      "runtime_impact": "No Planner impact. Hunt Research keeps the code through processed_data/hunt_master_enriched.csv and canonical/hunt-research-2026.json dataset metadata.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [
+        "DB1324"
+      ],
+      "missing_fields": [],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "This code is absent from the Planner hunt_catalog but is preserved in the Hunt Research canonical dataset contract and live processed CSV.",
+      "runtime_impact": "No Planner impact. Hunt Research keeps the code through processed_data/hunt_master_enriched.csv and canonical/hunt-research-2026.json dataset metadata.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [
+        "DB1343"
+      ],
+      "missing_fields": [],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "This code is absent from the Planner hunt_catalog but is preserved in the Hunt Research canonical dataset contract and live processed CSV.",
+      "runtime_impact": "No Planner impact. Hunt Research keeps the code through processed_data/hunt_master_enriched.csv and canonical/hunt-research-2026.json dataset metadata.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [
+        "DB1344"
+      ],
+      "missing_fields": [],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "This code is absent from the Planner hunt_catalog but is preserved in the Hunt Research canonical dataset contract and live processed CSV.",
+      "runtime_impact": "No Planner impact. Hunt Research keeps the code through processed_data/hunt_master_enriched.csv and canonical/hunt-research-2026.json dataset metadata.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [
+        "DB1348"
+      ],
+      "missing_fields": [],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "This code is absent from the Planner hunt_catalog but is preserved in the Hunt Research canonical dataset contract and live processed CSV.",
+      "runtime_impact": "No Planner impact. Hunt Research keeps the code through processed_data/hunt_master_enriched.csv and canonical/hunt-research-2026.json dataset metadata.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [
+        "DB1774"
+      ],
+      "missing_fields": [],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "This code is absent from the Planner hunt_catalog but is preserved in the Hunt Research canonical dataset contract and live processed CSV.",
+      "runtime_impact": "No Planner impact. Hunt Research keeps the code through processed_data/hunt_master_enriched.csv and canonical/hunt-research-2026.json dataset metadata.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [
+        "EA2042"
+      ],
+      "missing_fields": [],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "This code is absent from the Planner hunt_catalog but is preserved in the Hunt Research canonical dataset contract and live processed CSV.",
+      "runtime_impact": "No Planner impact. Hunt Research keeps the code through processed_data/hunt_master_enriched.csv and canonical/hunt-research-2026.json dataset metadata.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [
+        "EB3561"
+      ],
+      "missing_fields": [],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "This code is absent from the Planner hunt_catalog but is preserved in the Hunt Research canonical dataset contract and live processed CSV.",
+      "runtime_impact": "No Planner impact. Hunt Research keeps the code through processed_data/hunt_master_enriched.csv and canonical/hunt-research-2026.json dataset metadata.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [
+        "EB3609"
+      ],
+      "missing_fields": [],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "This code is absent from the Planner hunt_catalog but is preserved in the Hunt Research canonical dataset contract and live processed CSV.",
+      "runtime_impact": "No Planner impact. Hunt Research keeps the code through processed_data/hunt_master_enriched.csv and canonical/hunt-research-2026.json dataset metadata.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [
+        "MB6200"
+      ],
+      "missing_fields": [],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "This code is absent from the Planner hunt_catalog but is preserved in the Hunt Research canonical dataset contract and live processed CSV.",
+      "runtime_impact": "No Planner impact. Hunt Research keeps the code through processed_data/hunt_master_enriched.csv and canonical/hunt-research-2026.json dataset metadata.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [
+        "MB6207"
+      ],
+      "missing_fields": [],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "This code is absent from the Planner hunt_catalog but is preserved in the Hunt Research canonical dataset contract and live processed CSV.",
+      "runtime_impact": "No Planner impact. Hunt Research keeps the code through processed_data/hunt_master_enriched.csv and canonical/hunt-research-2026.json dataset metadata.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [
+        "MB6209"
+      ],
+      "missing_fields": [],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "This code is absent from the Planner hunt_catalog but is preserved in the Hunt Research canonical dataset contract and live processed CSV.",
+      "runtime_impact": "No Planner impact. Hunt Research keeps the code through processed_data/hunt_master_enriched.csv and canonical/hunt-research-2026.json dataset metadata.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [
+        "MB6217"
+      ],
+      "missing_fields": [],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "This code is absent from the Planner hunt_catalog but is preserved in the Hunt Research canonical dataset contract and live processed CSV.",
+      "runtime_impact": "No Planner impact. Hunt Research keeps the code through processed_data/hunt_master_enriched.csv and canonical/hunt-research-2026.json dataset metadata.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [
+        "MB6220"
+      ],
+      "missing_fields": [],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "This code is absent from the Planner hunt_catalog but is preserved in the Hunt Research canonical dataset contract and live processed CSV.",
+      "runtime_impact": "No Planner impact. Hunt Research keeps the code through processed_data/hunt_master_enriched.csv and canonical/hunt-research-2026.json dataset metadata.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [
+        "MB6223"
+      ],
+      "missing_fields": [],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "This code is absent from the Planner hunt_catalog but is preserved in the Hunt Research canonical dataset contract and live processed CSV.",
+      "runtime_impact": "No Planner impact. Hunt Research keeps the code through processed_data/hunt_master_enriched.csv and canonical/hunt-research-2026.json dataset metadata.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [
+        "MB6224"
+      ],
+      "missing_fields": [],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "This code is absent from the Planner hunt_catalog but is preserved in the Hunt Research canonical dataset contract and live processed CSV.",
+      "runtime_impact": "No Planner impact. Hunt Research keeps the code through processed_data/hunt_master_enriched.csv and canonical/hunt-research-2026.json dataset metadata.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [
+        "MB6225"
+      ],
+      "missing_fields": [],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "This code is absent from the Planner hunt_catalog but is preserved in the Hunt Research canonical dataset contract and live processed CSV.",
+      "runtime_impact": "No Planner impact. Hunt Research keeps the code through processed_data/hunt_master_enriched.csv and canonical/hunt-research-2026.json dataset metadata.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [
+        "MB6240"
+      ],
+      "missing_fields": [],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "This code is absent from the Planner hunt_catalog but is preserved in the Hunt Research canonical dataset contract and live processed CSV.",
+      "runtime_impact": "No Planner impact. Hunt Research keeps the code through processed_data/hunt_master_enriched.csv and canonical/hunt-research-2026.json dataset metadata.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [
+        "MB6254"
+      ],
+      "missing_fields": [],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "This code is absent from the Planner hunt_catalog but is preserved in the Hunt Research canonical dataset contract and live processed CSV.",
+      "runtime_impact": "No Planner impact. Hunt Research keeps the code through processed_data/hunt_master_enriched.csv and canonical/hunt-research-2026.json dataset metadata.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [
+        "MB6257"
+      ],
+      "missing_fields": [],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "This code is absent from the Planner hunt_catalog but is preserved in the Hunt Research canonical dataset contract and live processed CSV.",
+      "runtime_impact": "No Planner impact. Hunt Research keeps the code through processed_data/hunt_master_enriched.csv and canonical/hunt-research-2026.json dataset metadata.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [
+        "MB6259"
+      ],
+      "missing_fields": [],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "This code is absent from the Planner hunt_catalog but is preserved in the Hunt Research canonical dataset contract and live processed CSV.",
+      "runtime_impact": "No Planner impact. Hunt Research keeps the code through processed_data/hunt_master_enriched.csv and canonical/hunt-research-2026.json dataset metadata.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [
+        "PB5343"
+      ],
+      "missing_fields": [],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "This code is absent from the Planner hunt_catalog but is preserved in the Hunt Research canonical dataset contract and live processed CSV.",
+      "runtime_impact": "No Planner impact. Hunt Research keeps the code through processed_data/hunt_master_enriched.csv and canonical/hunt-research-2026.json dataset metadata.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [
+        "PD1016"
+      ],
+      "missing_fields": [],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "This code is absent from the Planner hunt_catalog but is preserved in the Hunt Research canonical dataset contract and live processed CSV.",
+      "runtime_impact": "No Planner impact. Hunt Research keeps the code through processed_data/hunt_master_enriched.csv and canonical/hunt-research-2026.json dataset metadata.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [
+        "PD1025"
+      ],
+      "missing_fields": [],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "This code is absent from the Planner hunt_catalog but is preserved in the Hunt Research canonical dataset contract and live processed CSV.",
+      "runtime_impact": "No Planner impact. Hunt Research keeps the code through processed_data/hunt_master_enriched.csv and canonical/hunt-research-2026.json dataset metadata.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [
+        "PD1026"
+      ],
+      "missing_fields": [],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "This code is absent from the Planner hunt_catalog but is preserved in the Hunt Research canonical dataset contract and live processed CSV.",
+      "runtime_impact": "No Planner impact. Hunt Research keeps the code through processed_data/hunt_master_enriched.csv and canonical/hunt-research-2026.json dataset metadata.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [
+        "PD1041"
+      ],
+      "missing_fields": [],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "This code is absent from the Planner hunt_catalog but is preserved in the Hunt Research canonical dataset contract and live processed CSV.",
+      "runtime_impact": "No Planner impact. Hunt Research keeps the code through processed_data/hunt_master_enriched.csv and canonical/hunt-research-2026.json dataset metadata.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [],
+      "missing_fields": [
+        "applicants_2025"
+      ],
+      "examples": [
+        "0",
+        "2",
+        "3",
+        "12"
+      ],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "Field is absent from the Planner hunt_catalog but preserved in canonical/hunt-research-2026.json under the Hunt Research dataset contract.",
+      "runtime_impact": "No Planner impact. Hunt Research continues to load the field from its processed CSV and the canonical package documents the field.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [],
+      "missing_fields": [
+        "max_point_permits_2026"
+      ],
+      "examples": [
+        "1",
+        "0",
+        "2",
+        "4"
+      ],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "Field is absent from the Planner hunt_catalog but preserved in canonical/hunt-research-2026.json under the Hunt Research dataset contract.",
+      "runtime_impact": "No Planner impact. Hunt Research continues to load the field from its processed CSV and the canonical package documents the field.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [],
+      "missing_fields": [
+        "missing_draw_data"
+      ],
+      "examples": [
+        "TRUE",
+        "FALSE"
+      ],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "Field is absent from the Planner hunt_catalog but preserved in canonical/hunt-research-2026.json under the Hunt Research dataset contract.",
+      "runtime_impact": "No Planner impact. Hunt Research continues to load the field from its processed CSV and the canonical package documents the field.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [],
+      "missing_fields": [
+        "missing_permits"
+      ],
+      "examples": [
+        "TRUE",
+        "FALSE"
+      ],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "Field is absent from the Planner hunt_catalog but preserved in canonical/hunt-research-2026.json under the Hunt Research dataset contract.",
+      "runtime_impact": "No Planner impact. Hunt Research continues to load the field from its processed CSV and the canonical package documents the field.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [],
+      "missing_fields": [
+        "missing_projection"
+      ],
+      "examples": [
+        "TRUE",
+        "FALSE"
+      ],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "Field is absent from the Planner hunt_catalog but preserved in canonical/hunt-research-2026.json under the Hunt Research dataset contract.",
+      "runtime_impact": "No Planner impact. Hunt Research continues to load the field from its processed CSV and the canonical package documents the field.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [],
+      "missing_fields": [
+        "odds_2025"
+      ],
+      "examples": [
+        "N/A",
+        "1 in 2.0",
+        "1 in 342.0",
+        "1 in 6.5"
+      ],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "Field is absent from the Planner hunt_catalog but preserved in canonical/hunt-research-2026.json under the Hunt Research dataset contract.",
+      "runtime_impact": "No Planner impact. Hunt Research continues to load the field from its processed CSV and the canonical package documents the field.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [],
+      "missing_fields": [
+        "odds_2026_projected"
+      ],
+      "examples": [
+        "100.000",
+        "50.075",
+        "0.102",
+        "0.110"
+      ],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "Field is absent from the Planner hunt_catalog but preserved in canonical/hunt-research-2026.json under the Hunt Research dataset contract.",
+      "runtime_impact": "No Planner impact. Hunt Research continues to load the field from its processed CSV and the canonical package documents the field.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [],
+      "missing_fields": [
+        "points"
+      ],
+      "examples": [
+        "32",
+        "31",
+        "30",
+        "29"
+      ],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "Field is absent from the Planner hunt_catalog but preserved in canonical/hunt-research-2026.json under the Hunt Research dataset contract.",
+      "runtime_impact": "No Planner impact. Hunt Research continues to load the field from its processed CSV and the canonical package documents the field.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [],
+      "missing_fields": [
+        "projected_applicants_2026"
+      ],
+      "examples": [
+        "0",
+        "1",
+        "3",
+        "12"
+      ],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "Field is absent from the Planner hunt_catalog but preserved in canonical/hunt-research-2026.json under the Hunt Research dataset contract.",
+      "runtime_impact": "No Planner impact. Hunt Research continues to load the field from its processed CSV and the canonical package documents the field.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [],
+      "missing_fields": [
+        "projected_applicants_2026_source"
+      ],
+      "examples": [
+        "projected_2026",
+        "fallback_2025"
+      ],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "Field is absent from the Planner hunt_catalog but preserved in canonical/hunt-research-2026.json under the Hunt Research dataset contract.",
+      "runtime_impact": "No Planner impact. Hunt Research continues to load the field from its processed CSV and the canonical package documents the field.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [],
+      "missing_fields": [
+        "public_permits_2025"
+      ],
+      "examples": [
+        "2",
+        "4",
+        "5",
+        "25"
+      ],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "Field is absent from the Planner hunt_catalog but preserved in canonical/hunt-research-2026.json under the Hunt Research dataset contract.",
+      "runtime_impact": "No Planner impact. Hunt Research continues to load the field from its processed CSV and the canonical package documents the field.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [],
+      "missing_fields": [
+        "public_permits_2026"
+      ],
+      "examples": [
+        "2",
+        "0",
+        "4",
+        "5"
+      ],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "Field is absent from the Planner hunt_catalog but preserved in canonical/hunt-research-2026.json under the Hunt Research dataset contract.",
+      "runtime_impact": "No Planner impact. Hunt Research continues to load the field from its processed CSV and the canonical package documents the field.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [],
+      "missing_fields": [
+        "public_permits_2026_source"
+      ],
+      "examples": [
+        "posted_2026",
+        "fallback_2025"
+      ],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "Field is absent from the Planner hunt_catalog but preserved in canonical/hunt-research-2026.json under the Hunt Research dataset contract.",
+      "runtime_impact": "No Planner impact. Hunt Research continues to load the field from its processed CSV and the canonical package documents the field.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [],
+      "missing_fields": [
+        "random_permits_2026"
+      ],
+      "examples": [
+        "1",
+        "0",
+        "2",
+        "3"
+      ],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "Field is absent from the Planner hunt_catalog but preserved in canonical/hunt-research-2026.json under the Hunt Research dataset contract.",
+      "runtime_impact": "No Planner impact. Hunt Research continues to load the field from its processed CSV and the canonical package documents the field.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [],
+      "missing_fields": [
+        "residency"
+      ],
+      "examples": [
+        "Resident",
+        "Nonresident"
+      ],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "Field is absent from the Planner hunt_catalog but preserved in canonical/hunt-research-2026.json under the Hunt Research dataset contract.",
+      "runtime_impact": "No Planner impact. Hunt Research continues to load the field from its processed CSV and the canonical package documents the field.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [],
+      "missing_fields": [
+        "success_harvest"
+      ],
+      "examples": [
+        "2",
+        "14",
+        "13",
+        "22"
+      ],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "Field is absent from the Planner hunt_catalog but preserved in canonical/hunt-research-2026.json under the Hunt Research dataset contract.",
+      "runtime_impact": "No Planner impact. Hunt Research continues to load the field from its processed CSV and the canonical package documents the field.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [],
+      "missing_fields": [
+        "success_hunters"
+      ],
+      "examples": [
+        "2",
+        "15",
+        "13",
+        "28"
+      ],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "Field is absent from the Planner hunt_catalog but preserved in canonical/hunt-research-2026.json under the Hunt Research dataset contract.",
+      "runtime_impact": "No Planner impact. Hunt Research continues to load the field from its processed CSV and the canonical package documents the field.",
+      "promotion_blocker": false
+    },
+    {
+      "source_file": "processed_data/hunt_master_enriched.csv",
+      "missing_hunt_codes": [],
+      "missing_fields": [
+        "success_percent"
+      ],
+      "examples": [
+        "100",
+        "93.3",
+        "78.6",
+        "93.1"
+      ],
+      "classification": "SAFE_DERIVED_DROP",
+      "reason": "Field is absent from the Planner hunt_catalog but preserved in canonical/hunt-research-2026.json under the Hunt Research dataset contract.",
+      "runtime_impact": "No Planner impact. Hunt Research continues to load the field from its processed CSV and the canonical package documents the field.",
+      "promotion_blocker": false
+    }
+  ],
+  "promotion_blockers": []
+}

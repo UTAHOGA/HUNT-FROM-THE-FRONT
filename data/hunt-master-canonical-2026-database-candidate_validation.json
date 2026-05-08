@@ -1,0 +1,23 @@
+{
+  "candidate_rows": 1394,
+  "candidate_unique_nonblank_codes": 1394,
+  "candidate_blank_codes": 0,
+  "candidate_duplicate_codes": {},
+  "database_rows": 1395,
+  "database_blank_hunt_code_rows": 1,
+  "validation_problem_count": 0,
+  "first_25_problems": [],
+  "species_counts": {
+    "Bison": 19,
+    "Black Bear": 106,
+    "Cougar": 1,
+    "Deer": 479,
+    "Desert Bighorn Sheep": 25,
+    "Elk": 558,
+    "Moose": 32,
+    "Mountain Goat": 18,
+    "Pronghorn": 117,
+    "Rocky Mountain Bighorn Sheep": 21,
+    "Turkey": 18
+  }
+}
