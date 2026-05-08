@@ -1,6 +1,6 @@
 # 2026 Permit Allocation Integrity Report
 
-Generated: 2026-05-08T13:53:11.609Z
+Generated: 2026-05-08T14:13:06.130Z
 Source file used: pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv
 Source label: DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS
 Promotion blockers: 0
