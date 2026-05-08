@@ -1,0 +1,107 @@
+[
+  {
+    "source": "2026_bison_cow.xlsx",
+    "title": "2026 BISON COW",
+    "xlsx": "2026_BISON_COW.xlsx",
+    "pdf": "2026_BISON_COW.pdf",
+    "status": "ok"
+  },
+  {
+    "source": "2026_bison_hunter_choice.xlsx",
+    "title": "2026 BISON HUNTER CHOICE",
+    "xlsx": "2026_BISON_HUNTER_CHOICE.xlsx",
+    "pdf": "2026_BISON_HUNTER_CHOICE.pdf",
+    "status": "ok"
+  },
+  {
+    "source": "2026_black_bear.xlsx",
+    "title": "2026 BLACK BEAR",
+    "xlsx": "2026_BLACK_BEAR.xlsx",
+    "pdf": "2026_BLACK_BEAR.pdf",
+    "status": "ok"
+  },
+  {
+    "source": "2026_deer_antlerless.xlsx",
+    "title": "2026 DEER ANTLERLESS",
+    "xlsx": "2026_DEER_ANTLERLESS.xlsx",
+    "pdf": "2026_DEER_ANTLERLESS.pdf",
+    "status": "ok"
+  },
+  {
+    "source": "2026_deer_archery_extended.xlsx",
+    "title": "2026 DEER ARCHERY EXTENDED",
+    "xlsx": "2026_DEER_ARCHERY_EXTENDED.xlsx",
+    "pdf": "2026_DEER_ARCHERY_EXTENDED.pdf",
+    "status": "ok"
+  },
+  {
+    "source": "2026_deer_buck.xlsx",
+    "title": "2026 DEER BUCK",
+    "xlsx": "2026_DEER_BUCK.xlsx",
+    "pdf": "2026_DEER_BUCK.pdf",
+    "status": "ok"
+  },
+  {
+    "source": "2026_elk_antlerless.xlsx",
+    "title": "2026 ELK ANTLERLESS",
+    "xlsx": "2026_ELK_ANTLERLESS.xlsx",
+    "pdf": "2026_ELK_ANTLERLESS.pdf",
+    "status": "ok"
+  },
+  {
+    "source": "2026_elk_bull_all.xlsx",
+    "title": "2026 ELK BULL ALL",
+    "xlsx": "2026_ELK_BULL_ALL.xlsx",
+    "pdf": "2026_ELK_BULL_ALL.pdf",
+    "status": "ok"
+  },
+  {
+    "source": "2026_goat_hunter_choice .xlsx",
+    "title": "2026 GOAT HUNTER CHOICE",
+    "xlsx": "2026_GOAT_HUNTER_CHOICE.xlsx",
+    "pdf": "2026_GOAT_HUNTER_CHOICE.pdf",
+    "status": "ok"
+  },
+  {
+    "source": "2026_moose_bull.xlsx",
+    "title": "2026 MOOSE BULL",
+    "xlsx": "2026_MOOSE_BULL.xlsx",
+    "pdf": "2026_MOOSE_BULL.pdf",
+    "status": "ok"
+  },
+  {
+    "source": "2026_sheep_desert_ram.xlsx",
+    "title": "2026 SHEEP DESERT RAM",
+    "xlsx": "2026_SHEEP_DESERT_RAM.xlsx",
+    "pdf": "2026_SHEEP_DESERT_RAM.pdf",
+    "status": "ok"
+  },
+  {
+    "source": "2026_sheep_rocky_mountain_ewe.xlsx",
+    "title": "2026 SHEEP ROCKY MOUNTAIN EWE",
+    "xlsx": "2026_SHEEP_ROCKY_MOUNTAIN_EWE.xlsx",
+    "pdf": "2026_SHEEP_ROCKY_MOUNTAIN_EWE.pdf",
+    "status": "ok"
+  },
+  {
+    "source": "2026_sheep_rocky_mountain_ram.xlsx",
+    "title": "2026 SHEEP ROCKY MOUNTAIN RAM",
+    "xlsx": "2026_SHEEP_ROCKY_MOUNTAIN_RAM.xlsx",
+    "pdf": "2026_SHEEP_ROCKY_MOUNTAIN_RAM.pdf",
+    "status": "ok"
+  },
+  {
+    "source": "2026_turkey_bearded.xlsx",
+    "title": "2026 TURKEY BEARDED",
+    "xlsx": "2026_TURKEY_BEARDED.xlsx",
+    "pdf": "2026_TURKEY_BEARDED.pdf",
+    "status": "ok"
+  },
+  {
+    "source": "2026_turkey_either_sex.xlsx",
+    "title": "2026 TURKEY EITHER SEX",
+    "xlsx": "2026_TURKEY_EITHER_SEX.xlsx",
+    "pdf": "2026_TURKEY_EITHER_SEX.pdf",
+    "status": "ok"
+  }
+]

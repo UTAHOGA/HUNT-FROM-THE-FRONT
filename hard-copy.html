@@ -444,11 +444,7 @@
       let activeType = 'all';
       let activeYear = 'all';
       const parsedItems = items.map((item) => {
-        const combined = String(`${item.title || ''} ${item.subtitle || ''} ${item.href || ''}`).toLowerCase();
         let group = String(item.group || '').toLowerCase().trim() || 'raw_library';
-        if (combined.includes('conservation permit') || combined.includes('conservation_permit') || combined.includes('expo')) {
-          group = 'conservation_permits';
-        }
         const yearMatch = String(`${item.title || ''} ${item.subtitle || ''} ${item.href || ''}`).match(/\b(20\d{2})\b/);
         return {
           ...item,
