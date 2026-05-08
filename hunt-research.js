@@ -34,6 +34,7 @@
     engineByKey: new Map(),
     engineGroups: new Map(),
     ladderGroups: new Map(),
+    masterPointByKey: new Map(),
     masterByResidency: new Map(),
     masterByCode: new Map(),
     referenceByKey: new Map(),
@@ -335,6 +336,7 @@
     state.engineByKey = new Map();
     state.engineGroups = new Map();
     state.ladderGroups = new Map();
+    state.masterPointByKey = new Map();
     state.masterByResidency = new Map();
     state.masterByCode = new Map();
     state.referenceByKey = new Map();
@@ -356,9 +358,10 @@
       const points = num(row.points);
       const key = rowKey(row.hunt_code, residency, points);
       const engineMatch = state.engineByKey.get(key);
+      const masterPointMatch = state.masterPointByKey.get(key);
       const normalized = engineMatch
-        ? { ...row, ...engineMatch, residency, points }
-        : { ...row, residency, points };
+        ? { ...(masterPointMatch || {}), ...engineMatch, ...row, residency, points }
+        : { ...(masterPointMatch || {}), ...row, residency, points };
       if (!state.ladderGroups.has(group)) state.ladderGroups.set(group, []);
       state.ladderGroups.get(group).push(normalized);
 
@@ -378,12 +381,17 @@
     masterRows.forEach((row) => {
       const residency = normalizeResidencyLabel(row.residency);
       const group = groupKey(row.hunt_code, residency);
+      const points = num(row.points);
+      const key = rowKey(row.hunt_code, residency, points);
       const normalized = { ...row, residency };
       if (!state.masterByResidency.has(group)) {
         state.masterByResidency.set(group, normalized);
       }
       if (!state.masterByCode.has(normalizeKey(row.hunt_code))) {
         state.masterByCode.set(normalizeKey(row.hunt_code), normalized);
+      }
+      if (points !== null) {
+        state.masterPointByKey.set(key, { ...row, residency, points });
       }
     });
 
@@ -956,6 +964,9 @@
         ? formatProbability(firstAvailable(row, ['odds_2026_projected', 'max_pool_projection_2026', 'random_draw_odds_2026']))
         : formatProbability(firstAvailable(row, ['max_pool_projection_2026', 'odds_2026_projected']));
 
+      const actual2025Display = firstAvailable(row, ['odds_2025_actual', 'odds_2025', 'success_ratio'])
+        || (num(row.p_draw_percent) !== null ? formatProbability(row.p_draw_percent) : 'Not available');
+
       const secondaryCell = isPreferenceAntlerless(meta)
         ? ''
         : `<td>${formatProbability(firstAvailable(row, ['random_draw_projection_2026', 'random_draw_odds_2026', 'odds_2026_projected']))}</td>`;
@@ -963,7 +974,7 @@
       return `
         <tr class="${classes.join(' ')}">
           <td>${formatInteger(row.points)}</td>
-          <td>${escapeHtml(row.odds_2025_actual || 'Not available')}</td>
+          <td>${escapeHtml(actual2025Display)}</td>
           <td>${primaryValue}</td>
           ${secondaryCell}
           <td>${markerHtml(markers)}</td>

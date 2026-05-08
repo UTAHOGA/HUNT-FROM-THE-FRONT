@@ -473,6 +473,28 @@
     "promotion_safe": true
   },
   {
+    "field": "permits_2026_conservation",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].permits_2026_conservation",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_expo",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].permits_2026_expo",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
     "field": "permits_2026_nr",
     "source": "hunt-master-canonical-2026-database-candidate.json",
     "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
@@ -505,6 +527,17 @@
     "runtime_used": false,
     "used_by": [],
     "canonical_path": "hunt-planner-2026.hunt_catalog[].permits_2026_source",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_sportsman",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].permits_2026_sportsman",
     "preserved": true,
     "alias": null,
     "promotion_safe": true
@@ -590,6 +623,50 @@
     "runtime_used": false,
     "used_by": [],
     "canonical_path": "hunt-planner-2026.hunt_catalog[].source_file",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "special_permit_area_id",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].special_permit_area_id",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "special_permit_category",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].special_permit_category",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "special_permit_note",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].special_permit_note",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "special_permit_overlay_source",
+    "source": "hunt-master-canonical-2026-database-candidate.json",
+    "source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.hunt_catalog[].special_permit_overlay_source",
     "preserved": true,
     "alias": null,
     "promotion_safe": true
@@ -1127,11 +1204,11 @@
       "boundary-resolver.js"
     ],
     "canonical_path": "hunt-planner-2026.boundaries.display_index[].boundary_geojson_path",
-    "preserved": true,
+    "preserved": false,
     "alias": [
       "boundaryGeojsonPath"
     ],
-    "promotion_safe": true
+    "promotion_safe": false
   },
   {
     "field": "boundary_geometry_type",
@@ -1143,11 +1220,30 @@
       "boundary-resolver.js"
     ],
     "canonical_path": "hunt-planner-2026.boundaries.display_index[].boundary_geometry_type",
-    "preserved": true,
+    "preserved": false,
     "alias": [
       "boundaryGeometryType"
     ],
-    "promotion_safe": true
+    "promotion_safe": false
+  },
+  {
+    "field": "boundary_id",
+    "source": "display-boundary-index-2026.json",
+    "source_file": "processed_data/display-boundary-index-2026.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "data.js",
+      "boundary-resolver.js"
+    ],
+    "canonical_path": "hunt-planner-2026.boundaries.display_index[].boundary_id",
+    "preserved": false,
+    "alias": [
+      "boundaryId",
+      "Boundary_Id",
+      "BoundaryID"
+    ],
+    "promotion_safe": false
   },
   {
     "field": "boundary_kml_path",
@@ -1159,11 +1255,11 @@
       "boundary-resolver.js"
     ],
     "canonical_path": "hunt-planner-2026.boundaries.display_index[].boundary_kml_path",
-    "preserved": true,
+    "preserved": false,
     "alias": [
       "boundaryKmlPath"
     ],
-    "promotion_safe": true
+    "promotion_safe": false
   },
   {
     "field": "boundary_kmz_path",
@@ -1175,43 +1271,32 @@
       "boundary-resolver.js"
     ],
     "canonical_path": "hunt-planner-2026.boundaries.display_index[].boundary_kmz_path",
-    "preserved": true,
+    "preserved": false,
     "alias": [
       "boundaryKmzPath"
     ],
+    "promotion_safe": false
+  },
+  {
+    "field": "boundary_source_authority",
+    "source": "display-boundary-index-2026.json",
+    "source_file": "processed_data/display-boundary-index-2026.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.boundaries.display_index[].boundary_source_authority",
+    "preserved": false,
+    "alias": null,
     "promotion_safe": true
   },
   {
-    "field": "display_boundary_id",
+    "field": "boundary_source_file",
     "source": "display-boundary-index-2026.json",
     "source_file": "processed_data/display-boundary-index-2026.json",
-    "runtime_used": true,
-    "used_by": [
-      "app.js",
-      "boundary-resolver.js"
-    ],
-    "canonical_path": "hunt-planner-2026.boundaries.display_index[].display_boundary_id",
-    "preserved": true,
-    "alias": [
-      "displayBoundaryId",
-      "UOGA_DISPLAY_BOUNDARY_ID"
-    ],
-    "promotion_safe": true
-  },
-  {
-    "field": "dwr_boundary_id",
-    "source": "display-boundary-index-2026.json",
-    "source_file": "processed_data/display-boundary-index-2026.json",
-    "runtime_used": true,
-    "used_by": [
-      "app.js",
-      "boundary-resolver.js"
-    ],
-    "canonical_path": "hunt-planner-2026.boundaries.display_index[].dwr_boundary_id",
-    "preserved": true,
-    "alias": [
-      "dwrBoundaryId"
-    ],
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-planner-2026.boundaries.display_index[].boundary_source_file",
+    "preserved": false,
+    "alias": null,
     "promotion_safe": true
   },
   {
@@ -1224,27 +1309,9 @@
       "boundary-resolver.js"
     ],
     "canonical_path": "hunt-planner-2026.boundaries.display_index[].dwr_boundary_link",
-    "preserved": true,
+    "preserved": false,
     "alias": null,
-    "promotion_safe": true
-  },
-  {
-    "field": "dwr_member_boundary_ids",
-    "source": "display-boundary-index-2026.json",
-    "source_file": "processed_data/display-boundary-index-2026.json",
-    "runtime_used": true,
-    "used_by": [
-      "app.js",
-      "boundary-resolver.js"
-    ],
-    "canonical_path": "hunt-planner-2026.boundaries.display_index[].dwr_member_boundary_ids",
-    "preserved": true,
-    "alias": [
-      "dwrMemberBoundaryIds",
-      "member_boundary_ids",
-      "memberBoundaryIds"
-    ],
-    "promotion_safe": true
+    "promotion_safe": false
   },
   {
     "field": "geometry_status",
@@ -1256,9 +1323,9 @@
       "boundary-resolver.js"
     ],
     "canonical_path": "hunt-planner-2026.boundaries.display_index[].geometry_status",
-    "preserved": true,
+    "preserved": false,
     "alias": null,
-    "promotion_safe": true
+    "promotion_safe": false
   },
   {
     "field": "hunt_code",
@@ -1276,13 +1343,13 @@
       "google-basemap.js"
     ],
     "canonical_path": "hunt-planner-2026.boundaries.display_index[].hunt_code",
-    "preserved": true,
+    "preserved": false,
     "alias": [
       "huntCode",
       "code",
       "HuntCode"
     ],
-    "promotion_safe": true
+    "promotion_safe": false
   },
   {
     "field": "member_boundary_count",
@@ -1294,9 +1361,23 @@
       "boundary-resolver.js"
     ],
     "canonical_path": "hunt-planner-2026.boundaries.display_index[].member_boundary_count",
-    "preserved": true,
+    "preserved": false,
     "alias": null,
-    "promotion_safe": true
+    "promotion_safe": false
+  },
+  {
+    "field": "member_boundary_ids",
+    "source": "display-boundary-index-2026.json",
+    "source_file": "processed_data/display-boundary-index-2026.json",
+    "runtime_used": true,
+    "used_by": [
+      "app.js",
+      "boundary-resolver.js"
+    ],
+    "canonical_path": "hunt-planner-2026.boundaries.display_index[].member_boundary_ids",
+    "preserved": false,
+    "alias": null,
+    "promotion_safe": false
   },
   {
     "field": "merged_boundary_id",
@@ -1308,31 +1389,20 @@
       "boundary-resolver.js"
     ],
     "canonical_path": "hunt-planner-2026.boundaries.display_index[].merged_boundary_id",
-    "preserved": true,
+    "preserved": false,
     "alias": [
       "mergedBoundaryId"
     ],
-    "promotion_safe": true
+    "promotion_safe": false
   },
   {
-    "field": "applicants_above",
-    "source": "draw_reality_engine.csv",
-    "source_file": "processed_data/draw_reality_engine.csv",
+    "field": "source_boundary_ids",
+    "source": "display-boundary-index-2026.json",
+    "source_file": "processed_data/display-boundary-index-2026.json",
     "runtime_used": false,
     "used_by": [],
-    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.applicants_above",
-    "preserved": true,
-    "alias": null,
-    "promotion_safe": true
-  },
-  {
-    "field": "applicants_at_level",
-    "source": "draw_reality_engine.csv",
-    "source_file": "processed_data/draw_reality_engine.csv",
-    "runtime_used": false,
-    "used_by": [],
-    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.applicants_at_level",
-    "preserved": true,
+    "canonical_path": "hunt-planner-2026.boundaries.display_index[].source_boundary_ids",
+    "preserved": false,
     "alias": null,
     "promotion_safe": true
   },
@@ -1343,6 +1413,17 @@
     "runtime_used": false,
     "used_by": [],
     "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.avg_days_2026",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "bonus_permits",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.bonus_permits",
     "preserved": true,
     "alias": null,
     "promotion_safe": true
@@ -1381,13 +1462,13 @@
     "promotion_safe": true
   },
   {
-    "field": "delta_gap",
+    "field": "data_status",
     "source": "draw_reality_engine.csv",
     "source_file": "processed_data/draw_reality_engine.csv",
     "runtime_used": false,
     "used_by": [],
-    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.delta_gap",
-    "preserved": true,
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.data_status",
+    "preserved": false,
     "alias": null,
     "promotion_safe": true
   },
@@ -1413,6 +1494,17 @@
       "hunt-research.js"
     ],
     "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.draw_outlook",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "eligible_applicants",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.eligible_applicants",
     "preserved": true,
     "alias": null,
     "promotion_safe": true
@@ -1449,17 +1541,6 @@
     "promotion_safe": true
   },
   {
-    "field": "guaranteed_at_2025",
-    "source": "draw_reality_engine.csv",
-    "source_file": "processed_data/draw_reality_engine.csv",
-    "runtime_used": false,
-    "used_by": [],
-    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.guaranteed_at_2025",
-    "preserved": true,
-    "alias": null,
-    "promotion_safe": true
-  },
-  {
     "field": "guaranteed_at_2026",
     "source": "draw_reality_engine.csv",
     "source_file": "processed_data/draw_reality_engine.csv",
@@ -1468,17 +1549,6 @@
       "hunt-research.js"
     ],
     "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.guaranteed_at_2026",
-    "preserved": true,
-    "alias": null,
-    "promotion_safe": true
-  },
-  {
-    "field": "guaranteed_delta_2025_to_2026",
-    "source": "draw_reality_engine.csv",
-    "source_file": "processed_data/draw_reality_engine.csv",
-    "runtime_used": false,
-    "used_by": [],
-    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.guaranteed_delta_2025_to_2026",
     "preserved": true,
     "alias": null,
     "promotion_safe": true
@@ -1521,27 +1591,27 @@
     "promotion_safe": true
   },
   {
-    "field": "max_point_permits_2025",
-    "source": "draw_reality_engine.csv",
-    "source_file": "processed_data/draw_reality_engine.csv",
-    "runtime_used": false,
-    "used_by": [],
-    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.max_point_permits_2025",
-    "preserved": true,
-    "alias": null,
-    "promotion_safe": true
-  },
-  {
-    "field": "max_point_permits_2026",
+    "field": "hunt_name",
     "source": "draw_reality_engine.csv",
     "source_file": "processed_data/draw_reality_engine.csv",
     "runtime_used": true,
     "used_by": [
-      "hunt-research.js"
+      "index.html",
+      "research.html",
+      "hard-copy.html",
+      "verify.html",
+      "app.js",
+      "data.js",
+      "hunt-research.js",
+      "ui.js",
+      "header-layout.js"
     ],
-    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.max_point_permits_2026",
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.hunt_name",
     "preserved": true,
-    "alias": null,
+    "alias": [
+      "title",
+      "unitName"
+    ],
     "promotion_safe": true
   },
   {
@@ -1632,6 +1702,17 @@
     "promotion_safe": true
   },
   {
+    "field": "p_draw_percent",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.p_draw_percent",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
     "field": "p_preference_mean",
     "source": "draw_reality_engine.csv",
     "source_file": "processed_data/draw_reality_engine.csv",
@@ -1676,13 +1757,90 @@
     "promotion_safe": true
   },
   {
-    "field": "permit_delta_2025_to_2026",
+    "field": "page_number",
     "source": "draw_reality_engine.csv",
     "source_file": "processed_data/draw_reality_engine.csv",
     "runtime_used": false,
     "used_by": [],
-    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.permit_delta_2025_to_2026",
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.page_number",
     "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permit_allocation_type",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.permit_allocation_type",
+    "preserved": false,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permit_note",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.permit_note",
+    "preserved": false,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permit_overlay_source",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.permit_overlay_source",
+    "preserved": false,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permit_source_authority",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.permit_source_authority",
+    "preserved": false,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permit_status",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.permit_status",
+    "preserved": false,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_conservation",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.permits_2026_conservation",
+    "preserved": false,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_expo",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.permits_2026_expo",
+    "preserved": false,
     "alias": null,
     "promotion_safe": true
   },
@@ -1695,9 +1853,9 @@
       "hunt-research.js"
     ],
     "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.permits_2026_nr",
-    "preserved": true,
+    "preserved": false,
     "alias": null,
-    "promotion_safe": true
+    "promotion_safe": false
   },
   {
     "field": "permits_2026_res",
@@ -1708,9 +1866,9 @@
       "hunt-research.js"
     ],
     "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.permits_2026_res",
-    "preserved": true,
+    "preserved": false,
     "alias": null,
-    "promotion_safe": true
+    "promotion_safe": false
   },
   {
     "field": "permits_2026_source",
@@ -1719,7 +1877,18 @@
     "runtime_used": false,
     "used_by": [],
     "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.permits_2026_source",
-    "preserved": true,
+    "preserved": false,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_sportsman",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.permits_2026_sportsman",
+    "preserved": false,
     "alias": null,
     "promotion_safe": true
   },
@@ -1732,9 +1901,9 @@
       "hunt-research.js"
     ],
     "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.permits_2026_total",
-    "preserved": true,
+    "preserved": false,
     "alias": null,
-    "promotion_safe": true
+    "promotion_safe": false
   },
   {
     "field": "points",
@@ -1753,30 +1922,6 @@
     "promotion_safe": true
   },
   {
-    "field": "projected_applicants_2026_source",
-    "source": "draw_reality_engine.csv",
-    "source_file": "processed_data/draw_reality_engine.csv",
-    "runtime_used": false,
-    "used_by": [],
-    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.projected_applicants_2026_source",
-    "preserved": true,
-    "alias": null,
-    "promotion_safe": true
-  },
-  {
-    "field": "public_permits_2025",
-    "source": "draw_reality_engine.csv",
-    "source_file": "processed_data/draw_reality_engine.csv",
-    "runtime_used": true,
-    "used_by": [
-      "hunt-research.js"
-    ],
-    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.public_permits_2025",
-    "preserved": true,
-    "alias": null,
-    "promotion_safe": true
-  },
-  {
     "field": "public_permits_2026",
     "source": "draw_reality_engine.csv",
     "source_file": "processed_data/draw_reality_engine.csv",
@@ -1785,9 +1930,9 @@
       "hunt-research.js"
     ],
     "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.public_permits_2026",
-    "preserved": true,
+    "preserved": false,
     "alias": null,
-    "promotion_safe": true
+    "promotion_safe": false
   },
   {
     "field": "public_permits_2026_source",
@@ -1796,7 +1941,7 @@
     "runtime_used": false,
     "used_by": [],
     "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.public_permits_2026_source",
-    "preserved": true,
+    "preserved": false,
     "alias": null,
     "promotion_safe": true
   },
@@ -1825,36 +1970,23 @@
     "promotion_safe": true
   },
   {
-    "field": "random_permits_2025",
-    "source": "draw_reality_engine.csv",
-    "source_file": "processed_data/draw_reality_engine.csv",
-    "runtime_used": false,
-    "used_by": [],
-    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.random_permits_2025",
-    "preserved": true,
-    "alias": null,
-    "promotion_safe": true
-  },
-  {
-    "field": "random_permits_2026",
-    "source": "draw_reality_engine.csv",
-    "source_file": "processed_data/draw_reality_engine.csv",
-    "runtime_used": true,
-    "used_by": [
-      "hunt-research.js"
-    ],
-    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.random_permits_2026",
-    "preserved": true,
-    "alias": null,
-    "promotion_safe": true
-  },
-  {
     "field": "reason_codes",
     "source": "draw_reality_engine.csv",
     "source_file": "processed_data/draw_reality_engine.csv",
     "runtime_used": false,
     "used_by": [],
     "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.reason_codes",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "regular_permits",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.regular_permits",
     "preserved": true,
     "alias": null,
     "promotion_safe": true
@@ -1899,6 +2031,61 @@
     "promotion_safe": true
   },
   {
+    "field": "source_file",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.source_file",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "special_permit_area_id",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.special_permit_area_id",
+    "preserved": false,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "special_permit_category",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.special_permit_category",
+    "preserved": false,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "special_permit_note",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.special_permit_note",
+    "preserved": false,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "special_permit_overlay_source",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.special_permit_overlay_source",
+    "preserved": false,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
     "field": "status",
     "source": "draw_reality_engine.csv",
     "source_file": "processed_data/draw_reality_engine.csv",
@@ -1919,6 +2106,41 @@
     "promotion_safe": true
   },
   {
+    "field": "success_ratio",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.success_ratio",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "total_drawn",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.total_drawn",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "total_permits",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": true,
+    "used_by": [
+      "data.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.total_permits",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
     "field": "trend",
     "source": "draw_reality_engine.csv",
     "source_file": "processed_data/draw_reality_engine.csv",
@@ -1927,6 +2149,45 @@
       "hunt-research.js"
     ],
     "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.trend",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "year",
+    "source": "draw_reality_engine.csv",
+    "source_file": "processed_data/draw_reality_engine.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hard-copy.html"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.draw_reality_engine.fields.year",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "companion_href",
+    "source": "hard_copy_pdf_manifest.web.json",
+    "source_file": "processed_data/hard_data_exports/hard_copy_pdf_manifest.web.json",
+    "runtime_used": true,
+    "used_by": [
+      "hard-copy.html"
+    ],
+    "canonical_path": "hard-copies-2026.library.items[].companion_href",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "companion_type",
+    "source": "hard_copy_pdf_manifest.web.json",
+    "source_file": "processed_data/hard_data_exports/hard_copy_pdf_manifest.web.json",
+    "runtime_used": true,
+    "used_by": [
+      "hard-copy.html"
+    ],
+    "canonical_path": "hard-copies-2026.library.items[].companion_type",
     "preserved": true,
     "alias": null,
     "promotion_safe": true
@@ -1963,6 +2224,61 @@
       "ui.js"
     ],
     "canonical_path": "hard-copies-2026.library.items[].href",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "model_year_folder",
+    "source": "hard_copy_pdf_manifest.web.json",
+    "source_file": "processed_data/hard_data_exports/hard_copy_pdf_manifest.web.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hard-copies-2026.library.items[].model_year_folder",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "parent_title",
+    "source": "hard_copy_pdf_manifest.web.json",
+    "source_file": "processed_data/hard_data_exports/hard_copy_pdf_manifest.web.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hard-copies-2026.library.items[].parent_title",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "source_authority",
+    "source": "hard_copy_pdf_manifest.web.json",
+    "source_file": "processed_data/hard_data_exports/hard_copy_pdf_manifest.web.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hard-copies-2026.library.items[].source_authority",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "source_role",
+    "source": "hard_copy_pdf_manifest.web.json",
+    "source_file": "processed_data/hard_data_exports/hard_copy_pdf_manifest.web.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hard-copies-2026.library.items[].source_role",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "source_year",
+    "source": "hard_copy_pdf_manifest.web.json",
+    "source_file": "processed_data/hard_data_exports/hard_copy_pdf_manifest.web.json",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hard-copies-2026.library.items[].source_year",
     "preserved": true,
     "alias": null,
     "promotion_safe": true
@@ -2056,6 +2372,17 @@
     "runtime_used": false,
     "used_by": [],
     "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.applicants_2025",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "data_status",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.data_status",
     "preserved": true,
     "alias": null,
     "promotion_safe": true
@@ -2194,6 +2521,83 @@
     "promotion_safe": true
   },
   {
+    "field": "permit_allocation_type",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.permit_allocation_type",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permit_note",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.permit_note",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permit_overlay_source",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.permit_overlay_source",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permit_source_authority",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.permit_source_authority",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permit_status",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.permit_status",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_conservation",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.permits_2026_conservation",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_expo",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.permits_2026_expo",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
     "field": "permits_2026_nr",
     "source": "hunt_master_enriched.csv",
     "source_file": "processed_data/hunt_master_enriched.csv",
@@ -2226,6 +2630,17 @@
     "runtime_used": false,
     "used_by": [],
     "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.permits_2026_source",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_sportsman",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.permits_2026_sportsman",
     "preserved": true,
     "alias": null,
     "promotion_safe": true
@@ -2344,6 +2759,50 @@
       "ui.js"
     ],
     "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.residency",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "special_permit_area_id",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.special_permit_area_id",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "special_permit_category",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.special_permit_category",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "special_permit_note",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.special_permit_note",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "special_permit_overlay_source",
+    "source": "hunt_master_enriched.csv",
+    "source_file": "processed_data/hunt_master_enriched.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.special_permit_overlay_source",
     "preserved": true,
     "alias": null,
     "promotion_safe": true
@@ -2532,6 +2991,17 @@
     "runtime_used": false,
     "used_by": [],
     "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.coverage_status",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "data_status",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.data_status",
     "preserved": true,
     "alias": null,
     "promotion_safe": true
@@ -2748,6 +3218,61 @@
     "promotion_safe": true
   },
   {
+    "field": "permit_allocation_type",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.permit_allocation_type",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permit_note",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.permit_note",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permit_overlay_source",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.permit_overlay_source",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permit_source_authority",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.permit_source_authority",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permit_status",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.permit_status",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
     "field": "permits_2025_nr",
     "source": "hunt_unit_reference_linked.csv",
     "source_file": "processed_data/hunt_unit_reference_linked.csv",
@@ -2778,6 +3303,28 @@
       "hunt-research.js"
     ],
     "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.permits_2025_total",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_conservation",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.permits_2026_conservation",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_expo",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.permits_2026_expo",
     "preserved": true,
     "alias": null,
     "promotion_safe": true
@@ -2815,6 +3362,17 @@
     "runtime_used": false,
     "used_by": [],
     "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.permits_2026_source",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_sportsman",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.permits_2026_sportsman",
     "preserved": true,
     "alias": null,
     "promotion_safe": true
@@ -2954,6 +3512,50 @@
       "hunt-research.js"
     ],
     "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.source_pdf",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "special_permit_area_id",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.special_permit_area_id",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "special_permit_category",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.special_permit_category",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "special_permit_note",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.special_permit_note",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "special_permit_overlay_source",
+    "source": "hunt_unit_reference_linked.csv",
+    "source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.special_permit_overlay_source",
     "preserved": true,
     "alias": null,
     "promotion_safe": true
@@ -3253,14 +3855,113 @@
     "promotion_safe": true
   },
   {
-    "field": "guaranteed_marker",
+    "field": "applicants_above",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.applicants_above",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "applicants_at_level",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.applicants_at_level",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "data_status",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.data_status",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "delta_gap",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.delta_gap",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "draw_outlook",
     "source": "point_ladder_view.csv",
     "source_file": "processed_data/point_ladder_view.csv",
     "runtime_used": true,
     "used_by": [
       "hunt-research.js"
     ],
-    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.guaranteed_marker",
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.draw_outlook",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "gap",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": true,
+    "used_by": [
+      "index.html",
+      "research.html",
+      "hard-copy.html",
+      "verify.html",
+      "app.js",
+      "hunt-research.js",
+      "ui.js",
+      "header-layout.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.gap",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "guaranteed_at_2025",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.guaranteed_at_2025",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "guaranteed_at_2026",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.guaranteed_at_2026",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "guaranteed_delta_2025_to_2026",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.guaranteed_delta_2025_to_2026",
     "preserved": true,
     "alias": null,
     "promotion_safe": true
@@ -3290,27 +3991,113 @@
     "promotion_safe": true
   },
   {
-    "field": "odds_2025_actual",
+    "field": "max_point_permits_2025",
     "source": "point_ladder_view.csv",
     "source_file": "processed_data/point_ladder_view.csv",
-    "runtime_used": true,
-    "used_by": [
-      "hunt-research.js"
-    ],
-    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.odds_2025_actual",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.max_point_permits_2025",
     "preserved": true,
     "alias": null,
     "promotion_safe": true
   },
   {
-    "field": "odds_2026_projected",
+    "field": "max_point_permits_2026",
     "source": "point_ladder_view.csv",
     "source_file": "processed_data/point_ladder_view.csv",
     "runtime_used": true,
     "used_by": [
       "hunt-research.js"
     ],
-    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.odds_2026_projected",
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.max_point_permits_2026",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permit_allocation_type",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.permit_allocation_type",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permit_delta_2025_to_2026",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.permit_delta_2025_to_2026",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permit_note",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.permit_note",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permit_overlay_source",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.permit_overlay_source",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permit_source_authority",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.permit_source_authority",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permit_status",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.permit_status",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_conservation",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.permits_2026_conservation",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "permits_2026_expo",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.permits_2026_expo",
     "preserved": true,
     "alias": null,
     "promotion_safe": true
@@ -3353,6 +4140,17 @@
     "promotion_safe": true
   },
   {
+    "field": "permits_2026_sportsman",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.permits_2026_sportsman",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
     "field": "permits_2026_total",
     "source": "point_ladder_view.csv",
     "source_file": "processed_data/point_ladder_view.csv",
@@ -3382,6 +4180,91 @@
     "promotion_safe": true
   },
   {
+    "field": "projected_applicants_2026_source",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.projected_applicants_2026_source",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "public_permits_2025",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.public_permits_2025",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "public_permits_2026",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.public_permits_2026",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "public_permits_2026_source",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.public_permits_2026_source",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "random_draw_odds_2026",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.random_draw_odds_2026",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "random_permits_2025",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.random_permits_2025",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "random_permits_2026",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.random_permits_2026",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
     "field": "residency",
     "source": "point_ladder_view.csv",
     "source_file": "processed_data/point_ladder_view.csv",
@@ -3399,12 +4282,78 @@
     "promotion_safe": true
   },
   {
-    "field": "user_point_marker",
+    "field": "special_permit_area_id",
     "source": "point_ladder_view.csv",
     "source_file": "processed_data/point_ladder_view.csv",
     "runtime_used": false,
     "used_by": [],
-    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.user_point_marker",
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.special_permit_area_id",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "special_permit_category",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.special_permit_category",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "special_permit_note",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.special_permit_note",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "special_permit_overlay_source",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": false,
+    "used_by": [],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.special_permit_overlay_source",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "status",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": true,
+    "used_by": [
+      "index.html",
+      "research.html",
+      "hard-copy.html",
+      "verify.html",
+      "app.js",
+      "data.js",
+      "boundary-resolver.js",
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.status",
+    "preserved": true,
+    "alias": null,
+    "promotion_safe": true
+  },
+  {
+    "field": "trend",
+    "source": "point_ladder_view.csv",
+    "source_file": "processed_data/point_ladder_view.csv",
+    "runtime_used": true,
+    "used_by": [
+      "hunt-research.js"
+    ],
+    "canonical_path": "hunt-research-2026.datasets.point_ladder_view.fields.trend",
     "preserved": true,
     "alias": null,
     "promotion_safe": true

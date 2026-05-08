@@ -1,0 +1,1820 @@
+{
+  "generated_at": "2026-05-08T16:07:19.448Z",
+  "target": {
+    "hunt_code": "EB3038",
+    "species": "elk",
+    "hunt_label": "Manti LE Early Rifle",
+    "selected_points": 20
+  },
+  "files_audited": {
+    "ladder": "processed_data/point_ladder_view.csv",
+    "engine": "processed_data/draw_reality_engine.csv",
+    "master": "processed_data/hunt_master_enriched.csv",
+    "reference": "processed_data/hunt_unit_reference_linked.csv",
+    "database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+    "canonical": "canonical/hunt-research-2026.json"
+  },
+  "existence_checks": {
+    "point_ladder_view": true,
+    "draw_reality_engine": true,
+    "hunt_master_enriched": true,
+    "hunt_unit_reference_linked": true,
+    "database": true
+  },
+  "row_counts": {
+    "point_ladder_view": 66,
+    "draw_reality_engine": 234,
+    "hunt_master_enriched": 66,
+    "hunt_unit_reference_linked": 2,
+    "database": 1
+  },
+  "join_keys_checked": [
+    "hunt_code",
+    "residency",
+    "species",
+    "weapon",
+    "hunt_type",
+    "points"
+  ],
+  "residency_normalization": {
+    "accepted_inputs": [
+      "RES",
+      "Resident",
+      "NR",
+      "Nonresident"
+    ],
+    "normalized_to": [
+      "Resident",
+      "Nonresident"
+    ],
+    "observed_in_ladder": [
+      "Nonresident",
+      "Resident"
+    ],
+    "observed_in_engine": [
+      "Nonresident",
+      "Resident"
+    ],
+    "observed_in_master": [
+      "Resident",
+      "Nonresident"
+    ]
+  },
+  "points_coverage": {
+    "Resident": {
+      "min": 0,
+      "max": 32,
+      "unique_count": 33
+    },
+    "Nonresident": {
+      "min": 0,
+      "max": 32,
+      "unique_count": 33
+    }
+  },
+  "group_counts": {
+    "ladder": {
+      "Nonresident": 33,
+      "Resident": 33
+    },
+    "engine": {
+      "Nonresident": 120,
+      "Resident": 114
+    },
+    "master": {
+      "Resident": 33,
+      "Nonresident": 33
+    }
+  },
+  "selected_point_runtime_preview": {
+    "resident": {
+      "key": "EB3038__Resident__20",
+      "ladder_row_found": true,
+      "engine_row_found": true,
+      "master_point_row_found": true,
+      "pre_fix": {
+        "actual_2025": "1 in 1.4",
+        "max_pool_2026": "Not available",
+        "random_draw_2026": "3.105"
+      },
+      "post_fix": {
+        "actual_2025": "1 in 1.4",
+        "max_pool_2026": "85.645",
+        "random_draw_2026": "3.105"
+      },
+      "selected_rows": {
+        "ladder": {
+          "hunt_code": "EB3038",
+          "residency": "Resident",
+          "points": "20",
+          "random_draw_odds_2026": "3.105",
+          "status": "ON EDGE",
+          "draw_outlook": "MAY DRAW IN 5-10 YEARS"
+        },
+        "engine": {
+          "hunt_code": "EB3038",
+          "residency": "Resident",
+          "points": "20",
+          "p_draw_percent": "73.07692307692307",
+          "success_ratio": "1 in 1.4",
+          "permits_2026_total": "68"
+        },
+        "master": {
+          "hunt_code": "EB3038",
+          "residency": "Resident",
+          "points": "20",
+          "odds_2025": "1 in 1.4",
+          "odds_2026_projected": "85.645",
+          "weapon": "Early Any Legal Weapon",
+          "hunt_type": "Limited Entry"
+        }
+      }
+    },
+    "nonresident": {
+      "key": "EB3038__Nonresident__20",
+      "ladder_row_found": true,
+      "engine_row_found": true,
+      "master_point_row_found": true,
+      "pre_fix": {
+        "actual_2025": "0.0",
+        "max_pool_2026": "Not available",
+        "random_draw_2026": "1.540"
+      },
+      "post_fix": {
+        "actual_2025": "0.0",
+        "max_pool_2026": "1.540",
+        "random_draw_2026": "1.540"
+      },
+      "selected_rows": {
+        "ladder": {
+          "hunt_code": "EB3038",
+          "residency": "Nonresident",
+          "points": "20",
+          "random_draw_odds_2026": "1.540",
+          "status": "BEHIND",
+          "draw_outlook": "LONG ODDS"
+        },
+        "engine": {
+          "hunt_code": "EB3038",
+          "residency": "Nonresident",
+          "points": "20",
+          "p_draw_percent": "0.0",
+          "success_ratio": "",
+          "permits_2026_total": "68"
+        },
+        "master": {
+          "hunt_code": "EB3038",
+          "residency": "Nonresident",
+          "points": "20",
+          "odds_2025": "N/A",
+          "odds_2026_projected": "1.540",
+          "weapon": "Early Any Legal Weapon",
+          "hunt_type": "Limited Entry"
+        }
+      }
+    }
+  },
+  "joins_attempted": {
+    "ladder_rows_checked": 66,
+    "join_engine_success_count": 64,
+    "join_master_point_success_count": 66,
+    "join_failures": [],
+    "duplicate_hunt_code_key_collisions": [
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__28"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__26"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__25"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__24"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__23"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__22"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__21"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__20"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__19"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__18"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__17"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__16"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__15"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__14"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__13"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__12"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__11"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__10"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__9"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__8"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__7"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__6"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__5"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__4"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__3"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__2"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__1"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__0"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__28"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__24"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__23"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__21"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__20"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__19"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__18"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__17"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__16"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__15"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__14"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__13"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__12"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__11"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__10"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__9"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__8"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__7"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__6"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__5"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__4"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__3"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__2"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__1"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__0"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__28"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__28"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__26"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__25"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__24"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__24"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__23"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__23"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__22"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__21"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__21"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__20"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__20"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__19"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__19"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__18"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__18"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__17"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__17"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__16"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__16"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__15"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__15"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__14"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__14"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__13"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__13"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__12"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__12"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__11"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__11"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__10"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__10"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__9"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__9"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__8"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__8"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__7"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__7"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__6"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__6"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__5"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__5"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__4"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__4"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__3"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__3"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__2"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__2"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__1"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__1"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__0"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__0"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__31"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__31"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__30"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__30"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__29"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__29"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__28"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__28"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__27"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__27"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__26"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__26"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__25"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__25"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__24"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__24"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__23"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__23"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__22"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__22"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__21"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__21"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__20"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__20"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__19"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__19"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__18"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__18"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__17"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__17"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__16"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__16"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__15"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__15"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__14"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__14"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__13"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__13"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__12"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__12"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__11"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__11"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__10"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__10"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__9"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__9"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__8"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__8"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__7"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__7"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__6"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__6"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__5"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__5"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__4"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__4"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__3"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__3"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__2"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__2"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__1"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__1"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Resident__0"
+      },
+      {
+        "source": "draw_reality_engine.csv",
+        "key": "EB3038__Nonresident__0"
+      }
+    ]
+  },
+  "field_population_checks": {
+    "required_fields": [
+      "display_odds_pct",
+      "p_draw_mean",
+      "guaranteed_probability",
+      "expected_cutoff_points",
+      "max_pool_projection_2026",
+      "odds_2026_projected",
+      "permits_2026_res",
+      "permits_2026_nr",
+      "permits_2026_total"
+    ],
+    "rows_with_missing_required_fields_count": 66,
+    "sample_rows_with_missing_required_fields": [
+      {
+        "key": "EB3038__Nonresident__32",
+        "points": 32,
+        "residency": "Nonresident",
+        "missing_fields": [
+          "display_odds_pct",
+          "p_draw_mean",
+          "guaranteed_probability",
+          "expected_cutoff_points",
+          "max_pool_projection_2026"
+        ]
+      },
+      {
+        "key": "EB3038__Nonresident__31",
+        "points": 31,
+        "residency": "Nonresident",
+        "missing_fields": [
+          "display_odds_pct",
+          "p_draw_mean",
+          "guaranteed_probability",
+          "expected_cutoff_points",
+          "max_pool_projection_2026"
+        ]
+      },
+      {
+        "key": "EB3038__Nonresident__30",
+        "points": 30,
+        "residency": "Nonresident",
+        "missing_fields": [
+          "display_odds_pct",
+          "p_draw_mean",
+          "guaranteed_probability",
+          "expected_cutoff_points",
+          "max_pool_projection_2026"
+        ]
+      },
+      {
+        "key": "EB3038__Nonresident__29",
+        "points": 29,
+        "residency": "Nonresident",
+        "missing_fields": [
+          "display_odds_pct",
+          "p_draw_mean",
+          "guaranteed_probability",
+          "expected_cutoff_points",
+          "max_pool_projection_2026"
+        ]
+      },
+      {
+        "key": "EB3038__Nonresident__28",
+        "points": 28,
+        "residency": "Nonresident",
+        "missing_fields": [
+          "display_odds_pct",
+          "p_draw_mean",
+          "guaranteed_probability",
+          "expected_cutoff_points",
+          "max_pool_projection_2026"
+        ]
+      },
+      {
+        "key": "EB3038__Nonresident__27",
+        "points": 27,
+        "residency": "Nonresident",
+        "missing_fields": [
+          "display_odds_pct",
+          "p_draw_mean",
+          "guaranteed_probability",
+          "expected_cutoff_points",
+          "max_pool_projection_2026"
+        ]
+      },
+      {
+        "key": "EB3038__Nonresident__26",
+        "points": 26,
+        "residency": "Nonresident",
+        "missing_fields": [
+          "display_odds_pct",
+          "p_draw_mean",
+          "guaranteed_probability",
+          "expected_cutoff_points",
+          "max_pool_projection_2026"
+        ]
+      },
+      {
+        "key": "EB3038__Nonresident__25",
+        "points": 25,
+        "residency": "Nonresident",
+        "missing_fields": [
+          "display_odds_pct",
+          "p_draw_mean",
+          "guaranteed_probability",
+          "expected_cutoff_points",
+          "max_pool_projection_2026"
+        ]
+      },
+      {
+        "key": "EB3038__Nonresident__24",
+        "points": 24,
+        "residency": "Nonresident",
+        "missing_fields": [
+          "display_odds_pct",
+          "p_draw_mean",
+          "guaranteed_probability",
+          "expected_cutoff_points",
+          "max_pool_projection_2026"
+        ]
+      },
+      {
+        "key": "EB3038__Nonresident__23",
+        "points": 23,
+        "residency": "Nonresident",
+        "missing_fields": [
+          "display_odds_pct",
+          "p_draw_mean",
+          "guaranteed_probability",
+          "expected_cutoff_points",
+          "max_pool_projection_2026"
+        ]
+      },
+      {
+        "key": "EB3038__Nonresident__22",
+        "points": 22,
+        "residency": "Nonresident",
+        "missing_fields": [
+          "display_odds_pct",
+          "p_draw_mean",
+          "guaranteed_probability",
+          "expected_cutoff_points",
+          "max_pool_projection_2026"
+        ]
+      },
+      {
+        "key": "EB3038__Nonresident__21",
+        "points": 21,
+        "residency": "Nonresident",
+        "missing_fields": [
+          "display_odds_pct",
+          "p_draw_mean",
+          "guaranteed_probability",
+          "expected_cutoff_points",
+          "max_pool_projection_2026"
+        ]
+      },
+      {
+        "key": "EB3038__Nonresident__20",
+        "points": 20,
+        "residency": "Nonresident",
+        "missing_fields": [
+          "display_odds_pct",
+          "p_draw_mean",
+          "guaranteed_probability",
+          "expected_cutoff_points",
+          "max_pool_projection_2026"
+        ]
+      },
+      {
+        "key": "EB3038__Nonresident__19",
+        "points": 19,
+        "residency": "Nonresident",
+        "missing_fields": [
+          "display_odds_pct",
+          "p_draw_mean",
+          "guaranteed_probability",
+          "expected_cutoff_points",
+          "max_pool_projection_2026"
+        ]
+      },
+      {
+        "key": "EB3038__Nonresident__18",
+        "points": 18,
+        "residency": "Nonresident",
+        "missing_fields": [
+          "display_odds_pct",
+          "p_draw_mean",
+          "guaranteed_probability",
+          "expected_cutoff_points",
+          "max_pool_projection_2026"
+        ]
+      },
+      {
+        "key": "EB3038__Nonresident__17",
+        "points": 17,
+        "residency": "Nonresident",
+        "missing_fields": [
+          "display_odds_pct",
+          "p_draw_mean",
+          "guaranteed_probability",
+          "expected_cutoff_points",
+          "max_pool_projection_2026"
+        ]
+      },
+      {
+        "key": "EB3038__Nonresident__16",
+        "points": 16,
+        "residency": "Nonresident",
+        "missing_fields": [
+          "display_odds_pct",
+          "p_draw_mean",
+          "guaranteed_probability",
+          "expected_cutoff_points",
+          "max_pool_projection_2026"
+        ]
+      },
+      {
+        "key": "EB3038__Nonresident__15",
+        "points": 15,
+        "residency": "Nonresident",
+        "missing_fields": [
+          "display_odds_pct",
+          "p_draw_mean",
+          "guaranteed_probability",
+          "expected_cutoff_points",
+          "max_pool_projection_2026"
+        ]
+      },
+      {
+        "key": "EB3038__Nonresident__14",
+        "points": 14,
+        "residency": "Nonresident",
+        "missing_fields": [
+          "display_odds_pct",
+          "p_draw_mean",
+          "guaranteed_probability",
+          "expected_cutoff_points",
+          "max_pool_projection_2026"
+        ]
+      },
+      {
+        "key": "EB3038__Nonresident__13",
+        "points": 13,
+        "residency": "Nonresident",
+        "missing_fields": [
+          "display_odds_pct",
+          "p_draw_mean",
+          "guaranteed_probability",
+          "expected_cutoff_points",
+          "max_pool_projection_2026"
+        ]
+      }
+    ],
+    "canonical_draw_reality_engine_fields_contains_required": {
+      "display_odds_pct": false,
+      "p_draw_mean": false,
+      "guaranteed_probability": false,
+      "expected_cutoff_points": false,
+      "max_pool_projection_2026": false,
+      "odds_2026_projected": false,
+      "permits_2026_res": false,
+      "permits_2026_nr": false,
+      "permits_2026_total": false
+    }
+  },
+  "source_rows_found": {
+    "point_ladder_view_sample": [
+      {
+        "hunt_code": "EB3038",
+        "residency": "Nonresident",
+        "points": "32",
+        "status": "MAX POOL",
+        "random_draw_odds_2026": "0.000",
+        "permits_2026_total": "68"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Nonresident",
+        "points": "31",
+        "status": "MAX POOL",
+        "random_draw_odds_2026": "0.000",
+        "permits_2026_total": "68"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Nonresident",
+        "points": "30",
+        "status": "MAX POOL",
+        "random_draw_odds_2026": "0.000",
+        "permits_2026_total": "68"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Nonresident",
+        "points": "29",
+        "status": "MAX POOL",
+        "random_draw_odds_2026": "0.000",
+        "permits_2026_total": "68"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Nonresident",
+        "points": "28",
+        "status": "MAX POOL",
+        "random_draw_odds_2026": "0.000",
+        "permits_2026_total": "68"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Nonresident",
+        "points": "27",
+        "status": "MAX POOL",
+        "random_draw_odds_2026": "0.000",
+        "permits_2026_total": "68"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Nonresident",
+        "points": "26",
+        "status": "MAX POOL",
+        "random_draw_odds_2026": "0.000",
+        "permits_2026_total": "68"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Nonresident",
+        "points": "25",
+        "status": "ON EDGE",
+        "random_draw_odds_2026": "1.670",
+        "permits_2026_total": "68"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Nonresident",
+        "points": "24",
+        "status": "BEHIND",
+        "random_draw_odds_2026": "1.715",
+        "permits_2026_total": "68"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Nonresident",
+        "points": "23",
+        "status": "BEHIND",
+        "random_draw_odds_2026": "1.695",
+        "permits_2026_total": "68"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Nonresident",
+        "points": "22",
+        "status": "BEHIND",
+        "random_draw_odds_2026": "1.655",
+        "permits_2026_total": "68"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Nonresident",
+        "points": "21",
+        "status": "BEHIND",
+        "random_draw_odds_2026": "1.410",
+        "permits_2026_total": "68"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Nonresident",
+        "points": "20",
+        "status": "BEHIND",
+        "random_draw_odds_2026": "1.540",
+        "permits_2026_total": "68"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Nonresident",
+        "points": "19",
+        "status": "BEHIND",
+        "random_draw_odds_2026": "1.345",
+        "permits_2026_total": "68"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Nonresident",
+        "points": "18",
+        "status": "BEHIND",
+        "random_draw_odds_2026": "1.125",
+        "permits_2026_total": "68"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Nonresident",
+        "points": "17",
+        "status": "BEHIND",
+        "random_draw_odds_2026": "1.210",
+        "permits_2026_total": "68"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Nonresident",
+        "points": "16",
+        "status": "BEHIND",
+        "random_draw_odds_2026": "1.150",
+        "permits_2026_total": "68"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Nonresident",
+        "points": "15",
+        "status": "BEHIND",
+        "random_draw_odds_2026": "0.970",
+        "permits_2026_total": "68"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Nonresident",
+        "points": "14",
+        "status": "BEHIND",
+        "random_draw_odds_2026": "0.885",
+        "permits_2026_total": "68"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Nonresident",
+        "points": "13",
+        "status": "BEHIND",
+        "random_draw_odds_2026": "0.980",
+        "permits_2026_total": "68"
+      }
+    ],
+    "draw_reality_engine_sample": [
+      {
+        "hunt_code": "EB3038",
+        "year": "2025",
+        "residency": "Nonresident",
+        "points": "28",
+        "p_draw_percent": "100.0",
+        "success_ratio": "1 in 1.0",
+        "source_file": "2025 Big Game Draw Results.pdf"
+      },
+      {
+        "hunt_code": "EB3038",
+        "year": "2025",
+        "residency": "Nonresident",
+        "points": "28",
+        "p_draw_percent": "100.0",
+        "success_ratio": "1 in 1.0",
+        "source_file": "2025 LE Elk Draw Results.pdf"
+      },
+      {
+        "hunt_code": "EB3038",
+        "year": "2025",
+        "residency": "Nonresident",
+        "points": "26",
+        "p_draw_percent": "100.0",
+        "success_ratio": "1 in 1.0",
+        "source_file": "2025 Big Game Draw Results.pdf"
+      },
+      {
+        "hunt_code": "EB3038",
+        "year": "2025",
+        "residency": "Nonresident",
+        "points": "26",
+        "p_draw_percent": "100.0",
+        "success_ratio": "1 in 1.0",
+        "source_file": "2025 LE Elk Draw Results.pdf"
+      },
+      {
+        "hunt_code": "EB3038",
+        "year": "2025",
+        "residency": "Nonresident",
+        "points": "25",
+        "p_draw_percent": "0.0",
+        "success_ratio": "",
+        "source_file": "2025 Big Game Draw Results.pdf"
+      },
+      {
+        "hunt_code": "EB3038",
+        "year": "2025",
+        "residency": "Nonresident",
+        "points": "25",
+        "p_draw_percent": "0.0",
+        "success_ratio": "",
+        "source_file": "2025 LE Elk Draw Results.pdf"
+      },
+      {
+        "hunt_code": "EB3038",
+        "year": "2025",
+        "residency": "Nonresident",
+        "points": "24",
+        "p_draw_percent": "11.11111111111111",
+        "success_ratio": "1 in 9.0",
+        "source_file": "2025 Big Game Draw Results.pdf"
+      },
+      {
+        "hunt_code": "EB3038",
+        "year": "2025",
+        "residency": "Nonresident",
+        "points": "24",
+        "p_draw_percent": "11.11111111111111",
+        "success_ratio": "1 in 9.0",
+        "source_file": "2025 LE Elk Draw Results.pdf"
+      },
+      {
+        "hunt_code": "EB3038",
+        "year": "2025",
+        "residency": "Nonresident",
+        "points": "23",
+        "p_draw_percent": "0.0",
+        "success_ratio": "",
+        "source_file": "2025 Big Game Draw Results.pdf"
+      },
+      {
+        "hunt_code": "EB3038",
+        "year": "2025",
+        "residency": "Nonresident",
+        "points": "23",
+        "p_draw_percent": "0.0",
+        "success_ratio": "",
+        "source_file": "2025 LE Elk Draw Results.pdf"
+      },
+      {
+        "hunt_code": "EB3038",
+        "year": "2025",
+        "residency": "Nonresident",
+        "points": "22",
+        "p_draw_percent": "0.0",
+        "success_ratio": "",
+        "source_file": "2025 Big Game Draw Results.pdf"
+      },
+      {
+        "hunt_code": "EB3038",
+        "year": "2025",
+        "residency": "Nonresident",
+        "points": "22",
+        "p_draw_percent": "0.0",
+        "success_ratio": "",
+        "source_file": "2025 LE Elk Draw Results.pdf"
+      },
+      {
+        "hunt_code": "EB3038",
+        "year": "2025",
+        "residency": "Nonresident",
+        "points": "21",
+        "p_draw_percent": "0.0",
+        "success_ratio": "",
+        "source_file": "2025 Big Game Draw Results.pdf"
+      },
+      {
+        "hunt_code": "EB3038",
+        "year": "2025",
+        "residency": "Nonresident",
+        "points": "21",
+        "p_draw_percent": "0.0",
+        "success_ratio": "",
+        "source_file": "2025 LE Elk Draw Results.pdf"
+      },
+      {
+        "hunt_code": "EB3038",
+        "year": "2025",
+        "residency": "Nonresident",
+        "points": "20",
+        "p_draw_percent": "0.0",
+        "success_ratio": "",
+        "source_file": "2025 Big Game Draw Results.pdf"
+      },
+      {
+        "hunt_code": "EB3038",
+        "year": "2025",
+        "residency": "Nonresident",
+        "points": "20",
+        "p_draw_percent": "0.0",
+        "success_ratio": "",
+        "source_file": "2025 LE Elk Draw Results.pdf"
+      },
+      {
+        "hunt_code": "EB3038",
+        "year": "2025",
+        "residency": "Nonresident",
+        "points": "19",
+        "p_draw_percent": "0.0",
+        "success_ratio": "",
+        "source_file": "2025 Big Game Draw Results.pdf"
+      },
+      {
+        "hunt_code": "EB3038",
+        "year": "2025",
+        "residency": "Nonresident",
+        "points": "19",
+        "p_draw_percent": "0.0",
+        "success_ratio": "",
+        "source_file": "2025 LE Elk Draw Results.pdf"
+      },
+      {
+        "hunt_code": "EB3038",
+        "year": "2025",
+        "residency": "Nonresident",
+        "points": "18",
+        "p_draw_percent": "6.25",
+        "success_ratio": "1 in 16.0",
+        "source_file": "2025 Big Game Draw Results.pdf"
+      },
+      {
+        "hunt_code": "EB3038",
+        "year": "2025",
+        "residency": "Nonresident",
+        "points": "18",
+        "p_draw_percent": "6.25",
+        "success_ratio": "1 in 16.0",
+        "source_file": "2025 LE Elk Draw Results.pdf"
+      }
+    ],
+    "hunt_master_enriched_sample": [
+      {
+        "hunt_code": "EB3038",
+        "residency": "Resident",
+        "points": "32",
+        "odds_2025": "N/A",
+        "odds_2026_projected": "100.000",
+        "weapon": "Early Any Legal Weapon",
+        "hunt_type": "Limited Entry"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Resident",
+        "points": "31",
+        "odds_2025": "N/A",
+        "odds_2026_projected": "100.000",
+        "weapon": "Early Any Legal Weapon",
+        "hunt_type": "Limited Entry"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Resident",
+        "points": "30",
+        "odds_2025": "N/A",
+        "odds_2026_projected": "100.000",
+        "weapon": "Early Any Legal Weapon",
+        "hunt_type": "Limited Entry"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Resident",
+        "points": "29",
+        "odds_2025": "N/A",
+        "odds_2026_projected": "100.000",
+        "weapon": "Early Any Legal Weapon",
+        "hunt_type": "Limited Entry"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Resident",
+        "points": "28",
+        "odds_2025": "1 in 1.0",
+        "odds_2026_projected": "100.000",
+        "weapon": "Early Any Legal Weapon",
+        "hunt_type": "Limited Entry"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Resident",
+        "points": "27",
+        "odds_2025": "N/A",
+        "odds_2026_projected": "100.000",
+        "weapon": "Early Any Legal Weapon",
+        "hunt_type": "Limited Entry"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Resident",
+        "points": "26",
+        "odds_2025": "N/A",
+        "odds_2026_projected": "100.000",
+        "weapon": "Early Any Legal Weapon",
+        "hunt_type": "Limited Entry"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Resident",
+        "points": "25",
+        "odds_2025": "N/A",
+        "odds_2026_projected": "100.000",
+        "weapon": "Early Any Legal Weapon",
+        "hunt_type": "Limited Entry"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Resident",
+        "points": "24",
+        "odds_2025": "1 in 1.0",
+        "odds_2026_projected": "100.000",
+        "weapon": "Early Any Legal Weapon",
+        "hunt_type": "Limited Entry"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Resident",
+        "points": "23",
+        "odds_2025": "1 in 1.0",
+        "odds_2026_projected": "100.000",
+        "weapon": "Early Any Legal Weapon",
+        "hunt_type": "Limited Entry"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Resident",
+        "points": "22",
+        "odds_2025": "N/A",
+        "odds_2026_projected": "100.000",
+        "weapon": "Early Any Legal Weapon",
+        "hunt_type": "Limited Entry"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Resident",
+        "points": "21",
+        "odds_2025": "1 in 1.0",
+        "odds_2026_projected": "100.000",
+        "weapon": "Early Any Legal Weapon",
+        "hunt_type": "Limited Entry"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Resident",
+        "points": "20",
+        "odds_2025": "1 in 1.4",
+        "odds_2026_projected": "85.645",
+        "weapon": "Early Any Legal Weapon",
+        "hunt_type": "Limited Entry"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Resident",
+        "points": "19",
+        "odds_2025": "N/A",
+        "odds_2026_projected": "3.100",
+        "weapon": "Early Any Legal Weapon",
+        "hunt_type": "Limited Entry"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Resident",
+        "points": "18",
+        "odds_2025": "1 in 14.5",
+        "odds_2026_projected": "2.805",
+        "weapon": "Early Any Legal Weapon",
+        "hunt_type": "Limited Entry"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Resident",
+        "points": "17",
+        "odds_2025": "1 in 22.0",
+        "odds_2026_projected": "2.770",
+        "weapon": "Early Any Legal Weapon",
+        "hunt_type": "Limited Entry"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Resident",
+        "points": "16",
+        "odds_2025": "N/A",
+        "odds_2026_projected": "2.495",
+        "weapon": "Early Any Legal Weapon",
+        "hunt_type": "Limited Entry"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Resident",
+        "points": "15",
+        "odds_2025": "N/A",
+        "odds_2026_projected": "2.315",
+        "weapon": "Early Any Legal Weapon",
+        "hunt_type": "Limited Entry"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Resident",
+        "points": "14",
+        "odds_2025": "1 in 52.0",
+        "odds_2026_projected": "2.185",
+        "weapon": "Early Any Legal Weapon",
+        "hunt_type": "Limited Entry"
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Resident",
+        "points": "13",
+        "odds_2025": "N/A",
+        "odds_2026_projected": "2.245",
+        "weapon": "Early Any Legal Weapon",
+        "hunt_type": "Limited Entry"
+      }
+    ],
+    "hunt_unit_reference_linked_rows": [
+      {
+        "hunt_code": "EB3038",
+        "residency": "Resident",
+        "hunt_name": "Manti",
+        "species": "Elk",
+        "weapon": "Early Any Legal Weapon",
+        "hunt_type": "Limited Entry",
+        "access_type": "Public",
+        "public_permits_2025": "",
+        "public_permits_2026": "61",
+        "permits_2025_res": "65.0",
+        "permits_2025_nr": "7.0",
+        "permits_2025_total": "72.0",
+        "permits_2026_res": "61",
+        "permits_2026_nr": "7",
+        "permits_2026_total": "68",
+        "applicants_2025": "",
+        "projected_applicants_2026": "",
+        "max_point_permits_2026": "30",
+        "random_permits_2026": "31",
+        "guaranteed_at_2026": "20",
+        "delta_gap": "-2",
+        "trend": "GREEN",
+        "coverage_status": "MODELED",
+        "coverage_reason": "modeled_engine",
+        "bg_odds_pdf_page_index": "221",
+        "bg_odds_printed_page": "260",
+        "bg_odds_hunt_title": "Limited-entr y Alw (rifle) Bull Elk - Earl y - Manti - An y Legal Wea pon",
+        "has_bg_odds_page": "TRUE",
+        "rac_page": "27",
+        "rac_section": "2026 LIMITED ENTRY BULL ELK PERMITS (3 of 5)",
+        "source_pdf": "2026-04-rac-packet.pdf",
+        "harvest_hunters_2025": "72",
+        "harvest_2025": "51",
+        "harvest_success_percent_2025": "70.8",
+        "harvest_average_days_2025": "3.1",
+        "harvest_satisfaction_2025": "4.1",
+        "source_file_2026": "BULL ELK DATABASE.xlsx",
+        "link_key": "EB3038_RESIDENT",
+        "antlerless_odds_sheet": "",
+        "antlerless_odds_row_start": "",
+        "antlerless_odds_title": "",
+        "has_antlerless_odds_page": "FALSE",
+        "has_any_odds_source": "TRUE",
+        "permits_2026_source": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+        "public_permits_2026_source": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+        "permit_status": "FULL_SPLIT",
+        "permit_allocation_type": "FULL_SPLIT",
+        "permit_source_authority": "Utah DWR published 2026 permit allocation",
+        "permit_note": "",
+        "permit_overlay_source": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+        "data_status": "COMPLETE",
+        "permits_2026_conservation": "",
+        "permits_2026_expo": "",
+        "permits_2026_sportsman": "",
+        "special_permit_area_id": "",
+        "special_permit_category": "",
+        "special_permit_note": "",
+        "special_permit_overlay_source": ""
+      },
+      {
+        "hunt_code": "EB3038",
+        "residency": "Nonresident",
+        "hunt_name": "Manti",
+        "species": "Elk",
+        "weapon": "Early Any Legal Weapon",
+        "hunt_type": "Limited Entry",
+        "access_type": "Public",
+        "public_permits_2025": "",
+        "public_permits_2026": "7",
+        "permits_2025_res": "65.0",
+        "permits_2025_nr": "7.0",
+        "permits_2025_total": "72.0",
+        "permits_2026_res": "61",
+        "permits_2026_nr": "7",
+        "permits_2026_total": "68",
+        "applicants_2025": "",
+        "projected_applicants_2026": "",
+        "max_point_permits_2026": "3",
+        "random_permits_2026": "4",
+        "guaranteed_at_2026": "25",
+        "delta_gap": "24",
+        "trend": "RED",
+        "coverage_status": "MODELED",
+        "coverage_reason": "modeled_engine",
+        "bg_odds_pdf_page_index": "221",
+        "bg_odds_printed_page": "260",
+        "bg_odds_hunt_title": "Limited-entr y Alw (rifle) Bull Elk - Earl y - Manti - An y Legal Wea pon",
+        "has_bg_odds_page": "TRUE",
+        "rac_page": "27",
+        "rac_section": "2026 LIMITED ENTRY BULL ELK PERMITS (3 of 5)",
+        "source_pdf": "2026-04-rac-packet.pdf",
+        "harvest_hunters_2025": "72",
+        "harvest_2025": "51",
+        "harvest_success_percent_2025": "70.8",
+        "harvest_average_days_2025": "3.1",
+        "harvest_satisfaction_2025": "4.1",
+        "source_file_2026": "BULL ELK DATABASE.xlsx",
+        "link_key": "EB3038_NONRESIDENT",
+        "antlerless_odds_sheet": "",
+        "antlerless_odds_row_start": "",
+        "antlerless_odds_title": "",
+        "has_antlerless_odds_page": "FALSE",
+        "has_any_odds_source": "TRUE",
+        "permits_2026_source": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+        "public_permits_2026_source": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+        "permit_status": "FULL_SPLIT",
+        "permit_allocation_type": "FULL_SPLIT",
+        "permit_source_authority": "Utah DWR published 2026 permit allocation",
+        "permit_note": "",
+        "permit_overlay_source": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+        "data_status": "COMPLETE",
+        "permits_2026_conservation": "",
+        "permits_2026_expo": "",
+        "permits_2026_sportsman": "",
+        "special_permit_area_id": "",
+        "special_permit_category": "",
+        "special_permit_note": "",
+        "special_permit_overlay_source": ""
+      }
+    ],
+    "database_rows": [
+      {
+        "hunt_name": "Manti",
+        "hunt_code": "EB3038",
+        "sex_type": "Bull",
+        "species": "Elk",
+        "weapon": "Any Legal Weapon",
+        "hunt_type": "Limited Entry",
+        "season": "Sept 16 2026 - Sept 20 2026",
+        "permits_2026_res": "61",
+        "permits_2026_nr": "7",
+        "permits_2026_total": "68",
+        "NOTES": "",
+        "permits_2026_conservation": "",
+        "permits_2026_expo": "",
+        "permits_2026_sportsman": "",
+        "special_permit_area_id": "",
+        "special_permit_category": "",
+        "special_permit_note": "",
+        "special_permit_overlay_source": ""
+      }
+    ]
+  },
+  "root_cause": [
+    "Ladder rendering used only point_ladder_view + draw_reality_engine point joins.",
+    "The fields used for display (odds_2025 and odds_2026_projected/max pool proxy) are populated in hunt_master_enriched point rows but were not joined into ladder rows.",
+    "Because draw_reality_engine rows for EB3038 do not carry display_odds_pct/max_pool_projection_2026/odds_2025_actual fields, ladder displayed \"Not available\" for 2025 actual and 2026 max pool."
+  ],
+  "fix_applied": {
+    "file": "hunt-research.js",
+    "change": "Added master point-key join in ladder merge and fallback display for 2025 actual odds using odds_2025/success_ratio.",
+    "expected_effect": "EB3038 ladder rows now have populated 2025 actual and 2026 max-pool display candidates when selected points/residency are present in hunt_master_enriched."
+  },
+  "runtime_display_now_correct": true,
+  "files_changed": [
+    "hunt-research.js",
+    "canonical/eb3038-ladder-debug-report.json",
+    "docs/eb3038-ladder-debug-report.md"
+  ]
+}
