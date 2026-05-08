@@ -168,7 +168,9 @@
         "permit_note",
         "permit_overlay_source",
         "data_status",
-        "permits_2026_source"
+        "permits_2026_source",
+        "public_permits_2026",
+        "public_permits_2026_source"
       ],
       "key_fields": [
         "hunt_code",
