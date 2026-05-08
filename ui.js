@@ -796,6 +796,11 @@ window.UOGA_UI = (() => {
       host.appendChild(trayShell);
     }
 
+    // Always mount to body so fixed positioning remains viewport-locked while the page scrolls.
+    if (trayShell.parentElement !== document.body) {
+      document.body.appendChild(trayShell);
+    }
+
     trayButton = trayShell.querySelector('.uoga-backpack-toggle');
     trayPanel = trayShell.querySelector('.uoga-backpack-panel');
     trayBadge = trayShell.querySelector('.uoga-backpack-badge');
