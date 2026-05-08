@@ -1,0 +1,1038 @@
+{
+  "generated_at": "2026-05-08T14:36:52.500Z",
+  "source_of_truth": "data/hunt-master-canonical-2026-database-candidate.json",
+  "before_mismatch_count": 143,
+  "after_mismatch_count": 0,
+  "actions": {
+    "index_5000_to_canonical_numeric": 10,
+    "index_5000_to_member_numeric": 31,
+    "canonical_blank_to_index_numeric": 106,
+    "canonical_nonnumeric_to_index_numeric": 27,
+    "unresolved_kept": 0
+  },
+  "samples_before": [
+    {
+      "hunt_code": "BI1000",
+      "canonical_boundary_id": "SW_BISON_2026",
+      "index_boundary_id": "5000"
+    },
+    {
+      "hunt_code": "BR1007",
+      "canonical_boundary_id": "SW_BLACK_BEAR_2026",
+      "index_boundary_id": "5003"
+    },
+    {
+      "hunt_code": "BR1000",
+      "canonical_boundary_id": "SW_BLACK_BEAR_2026",
+      "index_boundary_id": "5001"
+    },
+    {
+      "hunt_code": "CG9999",
+      "canonical_boundary_id": "SW_COUGAR_2026",
+      "index_boundary_id": "5107"
+    },
+    {
+      "hunt_code": "DB0008",
+      "canonical_boundary_id": "DB0008_EXT_ARCH_2026",
+      "index_boundary_id": "5109"
+    },
+    {
+      "hunt_code": "DB0007",
+      "canonical_boundary_id": "SW_DEER_2026",
+      "index_boundary_id": "5108"
+    },
+    {
+      "hunt_code": "DS1003",
+      "canonical_boundary_id": "99",
+      "index_boundary_id": "5141"
+    },
+    {
+      "hunt_code": "EA2000",
+      "canonical_boundary_id": "EA2000_CONTROL_2026",
+      "index_boundary_id": "5116"
+    },
+    {
+      "hunt_code": "EA1180",
+      "canonical_boundary_id": "684",
+      "index_boundary_id": "5111"
+    },
+    {
+      "hunt_code": "EA1270",
+      "canonical_boundary_id": "51",
+      "index_boundary_id": "5114"
+    },
+    {
+      "hunt_code": "EA1271",
+      "canonical_boundary_id": "633",
+      "index_boundary_id": "5115"
+    },
+    {
+      "hunt_code": "EA2041",
+      "canonical_boundary_id": "29",
+      "index_boundary_id": "5117"
+    },
+    {
+      "hunt_code": "EA2045",
+      "canonical_boundary_id": "222",
+      "index_boundary_id": "5118"
+    },
+    {
+      "hunt_code": "EB3209",
+      "canonical_boundary_id": "682",
+      "index_boundary_id": "5129"
+    },
+    {
+      "hunt_code": "EX1000",
+      "canonical_boundary_id": "EX1000_EXT_ARCH_2026",
+      "index_boundary_id": "5130"
+    },
+    {
+      "hunt_code": "EA1220",
+      "canonical_boundary_id": "51",
+      "index_boundary_id": "5112"
+    },
+    {
+      "hunt_code": "EA1221",
+      "canonical_boundary_id": "175",
+      "index_boundary_id": "5145"
+    },
+    {
+      "hunt_code": "EA1258",
+      "canonical_boundary_id": "617",
+      "index_boundary_id": "5113"
+    },
+    {
+      "hunt_code": "EB1001",
+      "canonical_boundary_id": "SW_ELK_ANYBULL_2026",
+      "index_boundary_id": "5120"
+    },
+    {
+      "hunt_code": "EB1010",
+      "canonical_boundary_id": "SW_ELK_ANYBULL_2026",
+      "index_boundary_id": "5127"
+    },
+    {
+      "hunt_code": "EB1012",
+      "canonical_boundary_id": "SW_ELK_ANYBULL_2026",
+      "index_boundary_id": "931"
+    },
+    {
+      "hunt_code": "EB1007",
+      "canonical_boundary_id": "SW_ELK_ANYBULL_2026",
+      "index_boundary_id": "5125"
+    },
+    {
+      "hunt_code": "EB1002",
+      "canonical_boundary_id": "SW_ELK_ANYBULL_2026",
+      "index_boundary_id": "5121"
+    },
+    {
+      "hunt_code": "EB1005",
+      "canonical_boundary_id": "EB1005_SPECIAL_2026",
+      "index_boundary_id": "5124"
+    },
+    {
+      "hunt_code": "EB1003",
+      "canonical_boundary_id": "SW_ELK_SPIKE_2026",
+      "index_boundary_id": "5122"
+    },
+    {
+      "hunt_code": "EB1009",
+      "canonical_boundary_id": "SW_ELK_SPIKE_2026",
+      "index_boundary_id": "5126"
+    },
+    {
+      "hunt_code": "EB1004",
+      "canonical_boundary_id": "SW_ELK_SPIKE_2026",
+      "index_boundary_id": "5123"
+    },
+    {
+      "hunt_code": "EB1011",
+      "canonical_boundary_id": "EB1011_SPECIAL_2026",
+      "index_boundary_id": "5128"
+    },
+    {
+      "hunt_code": "EB1000",
+      "canonical_boundary_id": "SW_ELK_2026",
+      "index_boundary_id": "5119"
+    },
+    {
+      "hunt_code": "MB1000",
+      "canonical_boundary_id": "SW_MOOSE_2026",
+      "index_boundary_id": "5133"
+    },
+    {
+      "hunt_code": "GO1000",
+      "canonical_boundary_id": "SW_MOUNTAIN_GOAT_2026",
+      "index_boundary_id": "5131"
+    },
+    {
+      "hunt_code": "PB1000",
+      "canonical_boundary_id": "SW_PRONGHORN_2026",
+      "index_boundary_id": "5134"
+    },
+    {
+      "hunt_code": "RS0001",
+      "canonical_boundary_id": "SW_RM_BIGHORN_2026",
+      "index_boundary_id": "5135"
+    },
+    {
+      "hunt_code": "TK1019",
+      "canonical_boundary_id": "SW_TURKEY_MGMT_2026",
+      "index_boundary_id": "5137"
+    },
+    {
+      "hunt_code": "TK1022",
+      "canonical_boundary_id": "SW_TURKEY_MGMT_2026",
+      "index_boundary_id": "5138"
+    },
+    {
+      "hunt_code": "TK1001",
+      "canonical_boundary_id": "SW_TURKEY_MGMT_2026",
+      "index_boundary_id": "5136"
+    },
+    {
+      "hunt_code": "TK1020",
+      "canonical_boundary_id": "SW_TURKEY_MGMT_2026",
+      "index_boundary_id": "898"
+    },
+    {
+      "hunt_code": "BR1001",
+      "canonical_boundary_id": "",
+      "index_boundary_id": "5002"
+    },
+    {
+      "hunt_code": "BR1008",
+      "canonical_boundary_id": "",
+      "index_boundary_id": "7"
+    },
+    {
+      "hunt_code": "BR1009",
+      "canonical_boundary_id": "",
+      "index_boundary_id": "684"
+    },
+    {
+      "hunt_code": "BR1010",
+      "canonical_boundary_id": "",
+      "index_boundary_id": "710"
+    },
+    {
+      "hunt_code": "BR1011",
+      "canonical_boundary_id": "",
+      "index_boundary_id": "7"
+    },
+    {
+      "hunt_code": "BR1012",
+      "canonical_boundary_id": "",
+      "index_boundary_id": "684"
+    },
+    {
+      "hunt_code": "BR1013",
+      "canonical_boundary_id": "",
+      "index_boundary_id": "710"
+    },
+    {
+      "hunt_code": "BR1015",
+      "canonical_boundary_id": "",
+      "index_boundary_id": "7"
+    },
+    {
+      "hunt_code": "BR1016",
+      "canonical_boundary_id": "",
+      "index_boundary_id": "710"
+    },
+    {
+      "hunt_code": "BR1017",
+      "canonical_boundary_id": "",
+      "index_boundary_id": "684"
+    },
+    {
+      "hunt_code": "BR1018",
+      "canonical_boundary_id": "",
+      "index_boundary_id": "5013"
+    },
+    {
+      "hunt_code": "BR7000",
+      "canonical_boundary_id": "",
+      "index_boundary_id": "628"
+    },
+    {
+      "hunt_code": "BR7001",
+      "canonical_boundary_id": "",
+      "index_boundary_id": "449"
+    },
+    {
+      "hunt_code": "BR7003",
+      "canonical_boundary_id": "",
+      "index_boundary_id": "52"
+    },
+    {
+      "hunt_code": "BR7004",
+      "canonical_boundary_id": "",
+      "index_boundary_id": "744"
+    },
+    {
+      "hunt_code": "BR7005",
+      "canonical_boundary_id": "",
+      "index_boundary_id": "616"
+    },
+    {
+      "hunt_code": "BR7007",
+      "canonical_boundary_id": "",
+      "index_boundary_id": "88"
+    },
+    {
+      "hunt_code": "BR7009",
+      "canonical_boundary_id": "",
+      "index_boundary_id": "630"
+    },
+    {
+      "hunt_code": "BR7010",
+      "canonical_boundary_id": "",
+      "index_boundary_id": "462"
+    },
+    {
+      "hunt_code": "BR7011",
+      "canonical_boundary_id": "",
+      "index_boundary_id": "163"
+    },
+    {
+      "hunt_code": "BR7012",
+      "canonical_boundary_id": "",
+      "index_boundary_id": "455"
+    },
+    {
+      "hunt_code": "BR7013",
+      "canonical_boundary_id": "",
+      "index_boundary_id": "175"
+    },
+    {
+      "hunt_code": "BR7014",
+      "canonical_boundary_id": "",
+      "index_boundary_id": "710"
+    }
+  ],
+  "samples_after": [],
+  "sample_actions": [
+    {
+      "hunt_code": "BI1000",
+      "action": "index_5000_to_member_numeric",
+      "from": "667",
+      "to": "667"
+    },
+    {
+      "hunt_code": "BI1000",
+      "action": "canonical_nonnumeric_to_index_numeric",
+      "from": "SW_BISON_2026",
+      "to": "667"
+    },
+    {
+      "hunt_code": "BR1007",
+      "action": "index_5000_to_member_numeric",
+      "from": "7",
+      "to": "7"
+    },
+    {
+      "hunt_code": "BR1007",
+      "action": "canonical_nonnumeric_to_index_numeric",
+      "from": "SW_BLACK_BEAR_2026",
+      "to": "7"
+    },
+    {
+      "hunt_code": "BR1000",
+      "action": "index_5000_to_member_numeric",
+      "from": "7",
+      "to": "7"
+    },
+    {
+      "hunt_code": "BR1000",
+      "action": "canonical_nonnumeric_to_index_numeric",
+      "from": "SW_BLACK_BEAR_2026",
+      "to": "7"
+    },
+    {
+      "hunt_code": "CG9999",
+      "action": "index_5000_to_member_numeric",
+      "from": "8",
+      "to": "8"
+    },
+    {
+      "hunt_code": "CG9999",
+      "action": "canonical_nonnumeric_to_index_numeric",
+      "from": "SW_COUGAR_2026",
+      "to": "8"
+    },
+    {
+      "hunt_code": "DB0008",
+      "action": "index_5000_to_member_numeric",
+      "from": "6",
+      "to": "6"
+    },
+    {
+      "hunt_code": "DB0008",
+      "action": "canonical_nonnumeric_to_index_numeric",
+      "from": "DB0008_EXT_ARCH_2026",
+      "to": "6"
+    },
+    {
+      "hunt_code": "DB0007",
+      "action": "index_5000_to_member_numeric",
+      "from": "7",
+      "to": "7"
+    },
+    {
+      "hunt_code": "DB0007",
+      "action": "canonical_nonnumeric_to_index_numeric",
+      "from": "SW_DEER_2026",
+      "to": "7"
+    },
+    {
+      "hunt_code": "DS1003",
+      "action": "index_5000_to_canonical_numeric",
+      "from": "5141",
+      "to": "99"
+    },
+    {
+      "hunt_code": "EA2000",
+      "action": "index_5000_to_member_numeric",
+      "from": "117",
+      "to": "117"
+    },
+    {
+      "hunt_code": "EA2000",
+      "action": "canonical_nonnumeric_to_index_numeric",
+      "from": "EA2000_CONTROL_2026",
+      "to": "117"
+    },
+    {
+      "hunt_code": "EA1180",
+      "action": "index_5000_to_canonical_numeric",
+      "from": "5111",
+      "to": "684"
+    },
+    {
+      "hunt_code": "EA1270",
+      "action": "index_5000_to_canonical_numeric",
+      "from": "5114",
+      "to": "51"
+    },
+    {
+      "hunt_code": "EA1271",
+      "action": "index_5000_to_canonical_numeric",
+      "from": "5115",
+      "to": "633"
+    },
+    {
+      "hunt_code": "EA2041",
+      "action": "index_5000_to_canonical_numeric",
+      "from": "5117",
+      "to": "29"
+    },
+    {
+      "hunt_code": "EA2045",
+      "action": "index_5000_to_canonical_numeric",
+      "from": "5118",
+      "to": "222"
+    },
+    {
+      "hunt_code": "EB3209",
+      "action": "index_5000_to_canonical_numeric",
+      "from": "5129",
+      "to": "682"
+    },
+    {
+      "hunt_code": "EX1000",
+      "action": "index_5000_to_member_numeric",
+      "from": "282",
+      "to": "282"
+    },
+    {
+      "hunt_code": "EX1000",
+      "action": "canonical_nonnumeric_to_index_numeric",
+      "from": "EX1000_EXT_ARCH_2026",
+      "to": "282"
+    },
+    {
+      "hunt_code": "EA1220",
+      "action": "index_5000_to_canonical_numeric",
+      "from": "5112",
+      "to": "51"
+    },
+    {
+      "hunt_code": "EA1221",
+      "action": "index_5000_to_canonical_numeric",
+      "from": "5145",
+      "to": "175"
+    },
+    {
+      "hunt_code": "EA1258",
+      "action": "index_5000_to_canonical_numeric",
+      "from": "5113",
+      "to": "617"
+    },
+    {
+      "hunt_code": "EB1001",
+      "action": "index_5000_to_member_numeric",
+      "from": "18",
+      "to": "18"
+    },
+    {
+      "hunt_code": "EB1001",
+      "action": "canonical_nonnumeric_to_index_numeric",
+      "from": "SW_ELK_ANYBULL_2026",
+      "to": "18"
+    },
+    {
+      "hunt_code": "EB1010",
+      "action": "index_5000_to_member_numeric",
+      "from": "18",
+      "to": "18"
+    },
+    {
+      "hunt_code": "EB1010",
+      "action": "canonical_nonnumeric_to_index_numeric",
+      "from": "SW_ELK_ANYBULL_2026",
+      "to": "18"
+    },
+    {
+      "hunt_code": "EB1012",
+      "action": "canonical_nonnumeric_to_index_numeric",
+      "from": "SW_ELK_ANYBULL_2026",
+      "to": "931"
+    },
+    {
+      "hunt_code": "EB1007",
+      "action": "index_5000_to_member_numeric",
+      "from": "18",
+      "to": "18"
+    },
+    {
+      "hunt_code": "EB1007",
+      "action": "canonical_nonnumeric_to_index_numeric",
+      "from": "SW_ELK_ANYBULL_2026",
+      "to": "18"
+    },
+    {
+      "hunt_code": "EB1002",
+      "action": "index_5000_to_member_numeric",
+      "from": "18",
+      "to": "18"
+    },
+    {
+      "hunt_code": "EB1002",
+      "action": "canonical_nonnumeric_to_index_numeric",
+      "from": "SW_ELK_ANYBULL_2026",
+      "to": "18"
+    },
+    {
+      "hunt_code": "EB1005",
+      "action": "index_5000_to_member_numeric",
+      "from": "12",
+      "to": "12"
+    },
+    {
+      "hunt_code": "EB1005",
+      "action": "canonical_nonnumeric_to_index_numeric",
+      "from": "EB1005_SPECIAL_2026",
+      "to": "12"
+    },
+    {
+      "hunt_code": "EB1003",
+      "action": "index_5000_to_member_numeric",
+      "from": "12",
+      "to": "12"
+    },
+    {
+      "hunt_code": "EB1003",
+      "action": "canonical_nonnumeric_to_index_numeric",
+      "from": "SW_ELK_SPIKE_2026",
+      "to": "12"
+    },
+    {
+      "hunt_code": "EB1009",
+      "action": "index_5000_to_member_numeric",
+      "from": "12",
+      "to": "12"
+    },
+    {
+      "hunt_code": "EB1009",
+      "action": "canonical_nonnumeric_to_index_numeric",
+      "from": "SW_ELK_SPIKE_2026",
+      "to": "12"
+    },
+    {
+      "hunt_code": "EB1004",
+      "action": "index_5000_to_member_numeric",
+      "from": "12",
+      "to": "12"
+    },
+    {
+      "hunt_code": "EB1004",
+      "action": "canonical_nonnumeric_to_index_numeric",
+      "from": "SW_ELK_SPIKE_2026",
+      "to": "12"
+    },
+    {
+      "hunt_code": "EB1011",
+      "action": "index_5000_to_member_numeric",
+      "from": "12",
+      "to": "12"
+    },
+    {
+      "hunt_code": "EB1011",
+      "action": "canonical_nonnumeric_to_index_numeric",
+      "from": "EB1011_SPECIAL_2026",
+      "to": "12"
+    },
+    {
+      "hunt_code": "EB1000",
+      "action": "index_5000_to_member_numeric",
+      "from": "12",
+      "to": "12"
+    },
+    {
+      "hunt_code": "EB1000",
+      "action": "canonical_nonnumeric_to_index_numeric",
+      "from": "SW_ELK_2026",
+      "to": "12"
+    },
+    {
+      "hunt_code": "MB1000",
+      "action": "index_5000_to_member_numeric",
+      "from": "29",
+      "to": "29"
+    },
+    {
+      "hunt_code": "MB1000",
+      "action": "canonical_nonnumeric_to_index_numeric",
+      "from": "SW_MOOSE_2026",
+      "to": "29"
+    },
+    {
+      "hunt_code": "GO1000",
+      "action": "index_5000_to_member_numeric",
+      "from": "145",
+      "to": "145"
+    },
+    {
+      "hunt_code": "GO1000",
+      "action": "canonical_nonnumeric_to_index_numeric",
+      "from": "SW_MOUNTAIN_GOAT_2026",
+      "to": "145"
+    },
+    {
+      "hunt_code": "PB1000",
+      "action": "index_5000_to_member_numeric",
+      "from": "8",
+      "to": "8"
+    },
+    {
+      "hunt_code": "PB1000",
+      "action": "canonical_nonnumeric_to_index_numeric",
+      "from": "SW_PRONGHORN_2026",
+      "to": "8"
+    },
+    {
+      "hunt_code": "RS0001",
+      "action": "index_5000_to_member_numeric",
+      "from": "15",
+      "to": "15"
+    },
+    {
+      "hunt_code": "RS0001",
+      "action": "canonical_nonnumeric_to_index_numeric",
+      "from": "SW_RM_BIGHORN_2026",
+      "to": "15"
+    },
+    {
+      "hunt_code": "TK1019",
+      "action": "index_5000_to_member_numeric",
+      "from": "946",
+      "to": "946"
+    },
+    {
+      "hunt_code": "TK1019",
+      "action": "canonical_nonnumeric_to_index_numeric",
+      "from": "SW_TURKEY_MGMT_2026",
+      "to": "946"
+    },
+    {
+      "hunt_code": "TK1022",
+      "action": "index_5000_to_member_numeric",
+      "from": "942",
+      "to": "942"
+    },
+    {
+      "hunt_code": "TK1022",
+      "action": "canonical_nonnumeric_to_index_numeric",
+      "from": "SW_TURKEY_MGMT_2026",
+      "to": "942"
+    },
+    {
+      "hunt_code": "TK1001",
+      "action": "index_5000_to_member_numeric",
+      "from": "911",
+      "to": "911"
+    },
+    {
+      "hunt_code": "TK1001",
+      "action": "canonical_nonnumeric_to_index_numeric",
+      "from": "SW_TURKEY_MGMT_2026",
+      "to": "911"
+    },
+    {
+      "hunt_code": "TK1020",
+      "action": "canonical_nonnumeric_to_index_numeric",
+      "from": "SW_TURKEY_MGMT_2026",
+      "to": "898"
+    },
+    {
+      "hunt_code": "BR1001",
+      "action": "index_5000_to_member_numeric",
+      "from": "52",
+      "to": "52"
+    },
+    {
+      "hunt_code": "BR1001",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "52"
+    },
+    {
+      "hunt_code": "BR1008",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "7"
+    },
+    {
+      "hunt_code": "BR1009",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "684"
+    },
+    {
+      "hunt_code": "BR1010",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "710"
+    },
+    {
+      "hunt_code": "BR1011",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "7"
+    },
+    {
+      "hunt_code": "BR1012",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "684"
+    },
+    {
+      "hunt_code": "BR1013",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "710"
+    },
+    {
+      "hunt_code": "BR1015",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "7"
+    },
+    {
+      "hunt_code": "BR1016",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "710"
+    },
+    {
+      "hunt_code": "BR1017",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "684"
+    },
+    {
+      "hunt_code": "BR1018",
+      "action": "index_5000_to_member_numeric",
+      "from": "52",
+      "to": "52"
+    },
+    {
+      "hunt_code": "BR1018",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "52"
+    },
+    {
+      "hunt_code": "BR7000",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "628"
+    },
+    {
+      "hunt_code": "BR7001",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "449"
+    },
+    {
+      "hunt_code": "BR7003",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "52"
+    },
+    {
+      "hunt_code": "BR7004",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "744"
+    },
+    {
+      "hunt_code": "BR7005",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "616"
+    },
+    {
+      "hunt_code": "BR7007",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "88"
+    },
+    {
+      "hunt_code": "BR7009",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "630"
+    },
+    {
+      "hunt_code": "BR7010",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "462"
+    },
+    {
+      "hunt_code": "BR7011",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "163"
+    },
+    {
+      "hunt_code": "BR7012",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "455"
+    },
+    {
+      "hunt_code": "BR7013",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "175"
+    },
+    {
+      "hunt_code": "BR7014",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "710"
+    },
+    {
+      "hunt_code": "BR7015",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "444"
+    },
+    {
+      "hunt_code": "BR7016",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "845"
+    },
+    {
+      "hunt_code": "BR7017",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "92"
+    },
+    {
+      "hunt_code": "BR7018",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "251"
+    },
+    {
+      "hunt_code": "BR7020",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "629"
+    },
+    {
+      "hunt_code": "BR7021",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "108"
+    },
+    {
+      "hunt_code": "BR7022",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "617"
+    },
+    {
+      "hunt_code": "BR7100",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "628"
+    },
+    {
+      "hunt_code": "BR7101",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "449"
+    },
+    {
+      "hunt_code": "BR7102",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "12"
+    },
+    {
+      "hunt_code": "BR7104",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "52"
+    },
+    {
+      "hunt_code": "BR7105",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "744"
+    },
+    {
+      "hunt_code": "BR7106",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "616"
+    },
+    {
+      "hunt_code": "BR7109",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "630"
+    },
+    {
+      "hunt_code": "BR7110",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "615"
+    },
+    {
+      "hunt_code": "BR7111",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "289"
+    },
+    {
+      "hunt_code": "BR7112",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "462"
+    },
+    {
+      "hunt_code": "BR7113",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "163"
+    },
+    {
+      "hunt_code": "BR7114",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "455"
+    },
+    {
+      "hunt_code": "BR7115",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "175"
+    },
+    {
+      "hunt_code": "BR7116",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "710"
+    },
+    {
+      "hunt_code": "BR7117",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "444"
+    },
+    {
+      "hunt_code": "BR7118",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "613"
+    },
+    {
+      "hunt_code": "BR7119",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "463"
+    },
+    {
+      "hunt_code": "BR7120",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "448"
+    },
+    {
+      "hunt_code": "BR7121",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "92"
+    },
+    {
+      "hunt_code": "BR7122",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "93"
+    },
+    {
+      "hunt_code": "BR7123",
+      "action": "index_5000_to_member_numeric",
+      "from": "138",
+      "to": "138"
+    },
+    {
+      "hunt_code": "BR7123",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "138"
+    },
+    {
+      "hunt_code": "BR7124",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "88"
+    },
+    {
+      "hunt_code": "BR7125",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "629"
+    },
+    {
+      "hunt_code": "BR7126",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "108"
+    },
+    {
+      "hunt_code": "BR7127",
+      "action": "canonical_blank_to_index_numeric",
+      "from": "",
+      "to": "617"
+    }
+  ]
+}
