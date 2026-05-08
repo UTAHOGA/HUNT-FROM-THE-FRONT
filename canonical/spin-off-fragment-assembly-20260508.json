@@ -1,0 +1,219 @@
+{
+  "generated_at": "2026-05-08T14:05:31.170Z",
+  "source_roots": [
+    {
+      "name": "phase2_export",
+      "root": "_exports/spin_off_cleanup_phase2_20260508"
+    },
+    {
+      "name": "bulk_pages_dist_export",
+      "root": "_exports/spin_off_cleanup_20260508/pages-dist"
+    }
+  ],
+  "candidates_total": 33,
+  "promoted_count": 0,
+  "skipped_count": 2,
+  "promoted": [],
+  "skipped": [
+    {
+      "destRel": "data/hunt-master-canonical-2026-database-candidate_report.json",
+      "source": "phase2_export",
+      "sourceRel": "data/hunt-master-canonical-2026-database-candidate_report.json",
+      "reason": "fails_shape_guardrail"
+    },
+    {
+      "destRel": "data/hunt-master-canonical-2026-database-candidate_validation.json",
+      "source": "phase2_export",
+      "sourceRel": "data/hunt-master-canonical-2026-database-candidate_validation.json",
+      "reason": "fails_shape_guardrail"
+    }
+  ],
+  "decisions": [
+    {
+      "destRel": "schemas/hunt-master-canonical-2026.schema.json",
+      "action": "already_identical",
+      "source": "phase2_export",
+      "sourceRel": "schemas/hunt-master-canonical-2026.schema.json"
+    },
+    {
+      "destRel": "schemas/canonical/hard-copies.schema.json",
+      "action": "already_identical",
+      "source": "phase2_export",
+      "sourceRel": "schemas/canonical/hard-copies.schema.json"
+    },
+    {
+      "destRel": "schemas/canonical/hunt-planner.schema.json",
+      "action": "already_identical",
+      "source": "phase2_export",
+      "sourceRel": "schemas/canonical/hunt-planner.schema.json"
+    },
+    {
+      "destRel": "schemas/canonical/hunt-research.schema.json",
+      "action": "already_identical",
+      "source": "phase2_export",
+      "sourceRel": "schemas/canonical/hunt-research.schema.json"
+    },
+    {
+      "destRel": "schemas/canonical/outfitter-verification.schema.json",
+      "action": "already_identical",
+      "source": "phase2_export",
+      "sourceRel": "schemas/canonical/outfitter-verification.schema.json"
+    },
+    {
+      "destRel": "schemas/canonical/shared.schema.json",
+      "action": "already_identical",
+      "source": "phase2_export",
+      "sourceRel": "schemas/canonical/shared.schema.json"
+    },
+    {
+      "destRel": "lib/canonical/coverage.js",
+      "action": "already_identical",
+      "source": "phase2_export",
+      "sourceRel": "lib/canonical/coverage.js"
+    },
+    {
+      "destRel": "lib/canonical/diffing.js",
+      "action": "already_identical",
+      "source": "phase2_export",
+      "sourceRel": "lib/canonical/diffing.js"
+    },
+    {
+      "destRel": "lib/canonical/generators.js",
+      "action": "already_identical",
+      "source": "phase2_export",
+      "sourceRel": "lib/canonical/generators.js"
+    },
+    {
+      "destRel": "lib/canonical/inventory.js",
+      "action": "already_identical",
+      "source": "phase2_export",
+      "sourceRel": "lib/canonical/inventory.js"
+    },
+    {
+      "destRel": "lib/canonical/promotion-safety.js",
+      "action": "already_identical",
+      "source": "phase2_export",
+      "sourceRel": "lib/canonical/promotion-safety.js"
+    },
+    {
+      "destRel": "lib/canonical/schema-builder.js",
+      "action": "already_identical",
+      "source": "phase2_export",
+      "sourceRel": "lib/canonical/schema-builder.js"
+    },
+    {
+      "destRel": "lib/canonical/usage-map.js",
+      "action": "already_identical",
+      "source": "phase2_export",
+      "sourceRel": "lib/canonical/usage-map.js"
+    },
+    {
+      "destRel": "lib/canonical/validators.js",
+      "action": "already_identical",
+      "source": "phase2_export",
+      "sourceRel": "lib/canonical/validators.js"
+    },
+    {
+      "destRel": "generated/pages/hard-copies.json",
+      "action": "kept_root_newer",
+      "source": "phase2_export",
+      "sourceRel": "generated/pages/hard-copies.json"
+    },
+    {
+      "destRel": "generated/pages/hunt-planner.json",
+      "action": "kept_root_newer",
+      "source": "phase2_export",
+      "sourceRel": "generated/pages/hunt-planner.json"
+    },
+    {
+      "destRel": "generated/pages/hunt-research.json",
+      "action": "kept_root_newer",
+      "source": "phase2_export",
+      "sourceRel": "generated/pages/hunt-research.json"
+    },
+    {
+      "destRel": "generated/pages/outfitter-verification.json",
+      "action": "already_identical",
+      "source": "phase2_export",
+      "sourceRel": "generated/pages/outfitter-verification.json"
+    },
+    {
+      "destRel": "data/hunt-master-canonical-2026-database-candidate.json",
+      "action": "already_identical",
+      "source": "phase2_export",
+      "sourceRel": "data/hunt-master-canonical-2026-database-candidate.json"
+    },
+    {
+      "destRel": "canonical/canonical-field-usage-map.json",
+      "action": "already_identical",
+      "source": "phase2_export",
+      "sourceRel": "canonical/canonical-field-usage-map.json"
+    },
+    {
+      "destRel": "canonical/canonical-rebuild-coverage.json",
+      "action": "already_identical",
+      "source": "phase2_export",
+      "sourceRel": "canonical/canonical-rebuild-coverage.json"
+    },
+    {
+      "destRel": "canonical/data-drop-audit-report.json",
+      "action": "already_identical",
+      "source": "phase2_export",
+      "sourceRel": "canonical/data-drop-audit-report.json"
+    },
+    {
+      "destRel": "canonical/hard-copies-2026.json",
+      "action": "already_identical",
+      "source": "phase2_export",
+      "sourceRel": "canonical/hard-copies-2026.json"
+    },
+    {
+      "destRel": "canonical/hunt-planner-2026.json",
+      "action": "already_identical",
+      "source": "phase2_export",
+      "sourceRel": "canonical/hunt-planner-2026.json"
+    },
+    {
+      "destRel": "canonical/hunt-research-2026.json",
+      "action": "already_identical",
+      "source": "phase2_export",
+      "sourceRel": "canonical/hunt-research-2026.json"
+    },
+    {
+      "destRel": "canonical/outfitter-verification-2026.json",
+      "action": "already_identical",
+      "source": "phase2_export",
+      "sourceRel": "canonical/outfitter-verification-2026.json"
+    },
+    {
+      "destRel": "canonical/permit-allocation-2026-integrity-report.json",
+      "action": "kept_root_newer",
+      "source": "phase2_export",
+      "sourceRel": "canonical/permit-allocation-2026-integrity-report.json"
+    },
+    {
+      "destRel": "canonical/runtime-preservation-matrix.json",
+      "action": "already_identical",
+      "source": "phase2_export",
+      "sourceRel": "canonical/runtime-preservation-matrix.json"
+    },
+    {
+      "destRel": "canonical/shared-2026.json",
+      "action": "already_identical",
+      "source": "phase2_export",
+      "sourceRel": "canonical/shared-2026.json"
+    },
+    {
+      "destRel": "data/hunt-master-canonical-2026-foundation.json",
+      "action": "already_identical",
+      "source": "bulk_pages_dist_export",
+      "sourceRel": "data/hunt-master-canonical-2026-foundation.json"
+    },
+    {
+      "destRel": "data/hunt-master-canonical-2026-source-of-truth.json",
+      "action": "already_identical",
+      "source": "bulk_pages_dist_export",
+      "sourceRel": "data/hunt-master-canonical-2026-source-of-truth.json"
+    }
+  ]
+}
