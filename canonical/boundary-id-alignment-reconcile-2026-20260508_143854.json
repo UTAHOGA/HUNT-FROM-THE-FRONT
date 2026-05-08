@@ -1,0 +1,265 @@
+{
+  "generated_at": "2026-05-08T14:38:55.254Z",
+  "source_of_truth": "data/hunt-master-canonical-2026-database-candidate.json",
+  "before_mismatch_count": 0,
+  "after_mismatch_count": 0,
+  "actions": {
+    "index_5000_to_canonical_numeric": 0,
+    "index_5000_to_member_numeric": 0,
+    "canonical_blank_to_index_numeric": 0,
+    "canonical_nonnumeric_to_index_numeric": 0,
+    "unresolved_kept": 0
+  },
+  "geojson_metadata_updates": 41,
+  "samples_before": [],
+  "samples_after": [],
+  "sample_actions": [],
+  "sample_geojson_metadata_updates": [
+    {
+      "hunt_code": "BI1000",
+      "file": "processed_data/boundaries/BI1000.geojson",
+      "before": "5000",
+      "after": "667"
+    },
+    {
+      "hunt_code": "BR1000",
+      "file": "processed_data/boundaries/BR1000.geojson",
+      "before": "5001",
+      "after": "7"
+    },
+    {
+      "hunt_code": "BR1001",
+      "file": "processed_data/boundaries/BR1001.geojson",
+      "before": "5002",
+      "after": "52"
+    },
+    {
+      "hunt_code": "BR1007",
+      "file": "processed_data/boundaries/BR1007.geojson",
+      "before": "5003",
+      "after": "7"
+    },
+    {
+      "hunt_code": "BR1018",
+      "file": "processed_data/boundaries/BR1018.geojson",
+      "before": "5013",
+      "after": "52"
+    },
+    {
+      "hunt_code": "BR7123",
+      "file": "processed_data/boundaries/BR7123.geojson",
+      "before": "5053",
+      "after": "138"
+    },
+    {
+      "hunt_code": "BR7229",
+      "file": "processed_data/boundaries/BR7229.geojson",
+      "before": "5079",
+      "after": "138"
+    },
+    {
+      "hunt_code": "BR7321",
+      "file": "processed_data/boundaries/BR7321.geojson",
+      "before": "5101",
+      "after": "138"
+    },
+    {
+      "hunt_code": "CG9999",
+      "file": "processed_data/boundaries/CG9999.geojson",
+      "before": "5107",
+      "after": "8"
+    },
+    {
+      "hunt_code": "DB0007",
+      "file": "processed_data/boundaries/DB0007.geojson",
+      "before": "5108",
+      "after": "7"
+    },
+    {
+      "hunt_code": "DB0008",
+      "file": "processed_data/boundaries/DB0008.geojson",
+      "before": "5109",
+      "after": "6"
+    },
+    {
+      "hunt_code": "DS1000",
+      "file": "processed_data/boundaries/DS1000.geojson",
+      "before": "5110",
+      "after": "688"
+    },
+    {
+      "hunt_code": "DS1003",
+      "file": "processed_data/boundaries/DS1003.geojson",
+      "before": "5141",
+      "after": "99"
+    },
+    {
+      "hunt_code": "EA1180",
+      "file": "processed_data/boundaries/EA1180.geojson",
+      "before": "5111",
+      "after": "684"
+    },
+    {
+      "hunt_code": "EA1220",
+      "file": "processed_data/boundaries/EA1220.geojson",
+      "before": "5112",
+      "after": "51"
+    },
+    {
+      "hunt_code": "EA1221",
+      "file": "processed_data/boundaries/EA1221.geojson",
+      "before": "5145",
+      "after": "175"
+    },
+    {
+      "hunt_code": "EA1258",
+      "file": "processed_data/boundaries/EA1258.geojson",
+      "before": "5113",
+      "after": "617"
+    },
+    {
+      "hunt_code": "EA1270",
+      "file": "processed_data/boundaries/EA1270.geojson",
+      "before": "5114",
+      "after": "51"
+    },
+    {
+      "hunt_code": "EA1271",
+      "file": "processed_data/boundaries/EA1271.geojson",
+      "before": "5115",
+      "after": "633"
+    },
+    {
+      "hunt_code": "EA2000",
+      "file": "processed_data/boundaries/EA2000.geojson",
+      "before": "5116",
+      "after": "117"
+    },
+    {
+      "hunt_code": "EA2041",
+      "file": "processed_data/boundaries/EA2041.geojson",
+      "before": "5117",
+      "after": "29"
+    },
+    {
+      "hunt_code": "EA2045",
+      "file": "processed_data/boundaries/EA2045.geojson",
+      "before": "5118",
+      "after": "222"
+    },
+    {
+      "hunt_code": "EB1000",
+      "file": "processed_data/boundaries/EB1000.geojson",
+      "before": "5119",
+      "after": "12"
+    },
+    {
+      "hunt_code": "EB1001",
+      "file": "processed_data/boundaries/EB1001.geojson",
+      "before": "5120",
+      "after": "18"
+    },
+    {
+      "hunt_code": "EB1002",
+      "file": "processed_data/boundaries/EB1002.geojson",
+      "before": "5121",
+      "after": "18"
+    },
+    {
+      "hunt_code": "EB1003",
+      "file": "processed_data/boundaries/EB1003.geojson",
+      "before": "5122",
+      "after": "12"
+    },
+    {
+      "hunt_code": "EB1004",
+      "file": "processed_data/boundaries/EB1004.geojson",
+      "before": "5123",
+      "after": "12"
+    },
+    {
+      "hunt_code": "EB1005",
+      "file": "processed_data/boundaries/EB1005.geojson",
+      "before": "5124",
+      "after": "12"
+    },
+    {
+      "hunt_code": "EB1007",
+      "file": "processed_data/boundaries/EB1007.geojson",
+      "before": "5125",
+      "after": "18"
+    },
+    {
+      "hunt_code": "EB1009",
+      "file": "processed_data/boundaries/EB1009.geojson",
+      "before": "5126",
+      "after": "12"
+    },
+    {
+      "hunt_code": "EB1010",
+      "file": "processed_data/boundaries/EB1010.geojson",
+      "before": "5127",
+      "after": "18"
+    },
+    {
+      "hunt_code": "EB1011",
+      "file": "processed_data/boundaries/EB1011.geojson",
+      "before": "5128",
+      "after": "12"
+    },
+    {
+      "hunt_code": "EB3209",
+      "file": "processed_data/boundaries/EB3209.geojson",
+      "before": "5129",
+      "after": "682"
+    },
+    {
+      "hunt_code": "EX1000",
+      "file": "processed_data/boundaries/EX1000.geojson",
+      "before": "5130",
+      "after": "282"
+    },
+    {
+      "hunt_code": "GO1000",
+      "file": "processed_data/boundaries/GO1000.geojson",
+      "before": "5131",
+      "after": "145"
+    },
+    {
+      "hunt_code": "MB1000",
+      "file": "processed_data/boundaries/MB1000.geojson",
+      "before": "5133",
+      "after": "29"
+    },
+    {
+      "hunt_code": "PB1000",
+      "file": "processed_data/boundaries/PB1000.geojson",
+      "before": "5134",
+      "after": "8"
+    },
+    {
+      "hunt_code": "RS0001",
+      "file": "processed_data/boundaries/RS0001.geojson",
+      "before": "5135",
+      "after": "15"
+    },
+    {
+      "hunt_code": "TK1001",
+      "file": "processed_data/boundaries/TK1001.geojson",
+      "before": "5136",
+      "after": "911"
+    },
+    {
+      "hunt_code": "TK1019",
+      "file": "processed_data/boundaries/TK1019.geojson",
+      "before": "5137",
+      "after": "946"
+    },
+    {
+      "hunt_code": "TK1022",
+      "file": "processed_data/boundaries/TK1022.geojson",
+      "before": "5138",
+      "after": "942"
+    }
+  ]
+}

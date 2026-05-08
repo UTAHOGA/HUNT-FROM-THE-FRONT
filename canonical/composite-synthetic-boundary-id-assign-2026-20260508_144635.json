@@ -1,0 +1,711 @@
+{
+  "generated_at": "2026-05-08T14:46:35.597Z",
+  "synthetic_map": "processed_data/display-boundary-synthetic-id-map-2026.json",
+  "index_rows_checked": 1394,
+  "composite_rows_updated": 41,
+  "canonical_rows_updated": 41,
+  "geojson_metadata_updated": 41,
+  "sample_updates": [
+    {
+      "hunt_code": "BI1000",
+      "from": "667",
+      "to": "5000",
+      "member_boundary_ids": "667;889;637"
+    },
+    {
+      "hunt_code": "BR1000",
+      "from": "7",
+      "to": "5001",
+      "member_boundary_ids": "7;12;52;138;163;289;444;616;628;629;684;710;175;88;92;93;610;611;613;615;630;448;449;455;456;457;462;463;744;845"
+    },
+    {
+      "hunt_code": "BR1001",
+      "from": "52",
+      "to": "5002",
+      "member_boundary_ids": "52;251;289;444;616;617;628;710;175;88;92;610;613;615;630;449;455;462;463;744;845"
+    },
+    {
+      "hunt_code": "BR1007",
+      "from": "7",
+      "to": "5003",
+      "member_boundary_ids": "7;52;163;289;444;616;628;629;684;710;175;88;613;615;630;448;455;456;457;462;463;744"
+    },
+    {
+      "hunt_code": "BR1018",
+      "from": "52",
+      "to": "5013",
+      "member_boundary_ids": "52;163;289;444;616;628;629;175;88;613;615;630;448;455;456;457;462;463;744"
+    },
+    {
+      "hunt_code": "BR7123",
+      "from": "138",
+      "to": "5053",
+      "member_boundary_ids": "138;611"
+    },
+    {
+      "hunt_code": "BR7229",
+      "from": "138",
+      "to": "5079",
+      "member_boundary_ids": "138;611"
+    },
+    {
+      "hunt_code": "BR7321",
+      "from": "138",
+      "to": "5101",
+      "member_boundary_ids": "138;611"
+    },
+    {
+      "hunt_code": "CG9999",
+      "from": "8",
+      "to": "5107",
+      "member_boundary_ids": "8;16;26;29;117;140;143;243;247;276;444;625;629;668;672;681;683;684;685;711;163;172;191;226;234;237;239;56;57;59;63;71;75;76;86;88;94;97;609;613;630;632;633;634;635;445;446;729;730;752;753;818;819"
+    },
+    {
+      "hunt_code": "DB0007",
+      "from": "7",
+      "to": "5108",
+      "member_boundary_ids": "7;15;32;85;94;108;138;163;185;206;248;609;610;611;612;613;615;621;625;628;629;630;632;633;635;636;714;802"
+    },
+    {
+      "hunt_code": "DB0008",
+      "from": "6",
+      "to": "5109",
+      "member_boundary_ids": "6;28;101;106;109;218;280;311;312;731"
+    },
+    {
+      "hunt_code": "DS1000",
+      "from": "688",
+      "to": "5110",
+      "member_boundary_ids": "688;187;190;193;194;94;98;99;100;635;636;756"
+    },
+    {
+      "hunt_code": "DS1003",
+      "from": "99",
+      "to": "5141",
+      "member_boundary_ids": "933;934"
+    },
+    {
+      "hunt_code": "EA1180",
+      "from": "684",
+      "to": "5111",
+      "member_boundary_ids": "108;617;684;879"
+    },
+    {
+      "hunt_code": "EA1220",
+      "from": "51",
+      "to": "5112",
+      "member_boundary_ids": "43;45;47;49;51;55;58;861;862;938"
+    },
+    {
+      "hunt_code": "EA1221",
+      "from": "175",
+      "to": "5145",
+      "member_boundary_ids": "698;699;175"
+    },
+    {
+      "hunt_code": "EA1258",
+      "from": "617",
+      "to": "5113",
+      "member_boundary_ids": "108;617;684;879"
+    },
+    {
+      "hunt_code": "EA1270",
+      "from": "51",
+      "to": "5114",
+      "member_boundary_ids": "175;698;699"
+    },
+    {
+      "hunt_code": "EA1271",
+      "from": "633",
+      "to": "5115",
+      "member_boundary_ids": "43;45;47;49;51;55;58;861;862;938"
+    },
+    {
+      "hunt_code": "EA2000",
+      "from": "117",
+      "to": "5116",
+      "member_boundary_ids": "117;276;69;94;609;611;635;636"
+    },
+    {
+      "hunt_code": "EA2041",
+      "from": "29",
+      "to": "5117",
+      "member_boundary_ids": "29;33;38;39;40;302;303"
+    },
+    {
+      "hunt_code": "EA2045",
+      "from": "222",
+      "to": "5118",
+      "member_boundary_ids": "222;224;225;227;234;238;240;480;817;845;920;921"
+    },
+    {
+      "hunt_code": "EB1000",
+      "from": "12",
+      "to": "5119",
+      "member_boundary_ids": "12;17;33;36;41;51;108;128;140;163;241;616;617;622;625;629;683;685;175;183;206;222;88;630;634;449;455"
+    },
+    {
+      "hunt_code": "EB1001",
+      "from": "18",
+      "to": "5120",
+      "member_boundary_ids": "18;107;117;129;138;142;163;276;277;301;304;672;868;902;925;947;948;188;194;69;81;94;609;611;613;614;635;636;639"
+    },
+    {
+      "hunt_code": "EB1002",
+      "from": "18",
+      "to": "5121",
+      "member_boundary_ids": "18;107;117;129;138;142;163;276;277;301;304;672;868;902;925;947;948;188;194;69;81;94;609;611;613;614;635;636;639"
+    },
+    {
+      "hunt_code": "EB1003",
+      "from": "12",
+      "to": "5122",
+      "member_boundary_ids": "12;33;51;108;302;303;617;625;629;685;867;899;901;175;183;206;222;241;88;630;634;455;742;751"
+    },
+    {
+      "hunt_code": "EB1004",
+      "from": "12",
+      "to": "5123",
+      "member_boundary_ids": "12;33;51;108;241;302;303;617;625;629;685;867;899;901;175;183;206;222;88;630;634;455;742;751"
+    },
+    {
+      "hunt_code": "EB1005",
+      "from": "12",
+      "to": "5124",
+      "member_boundary_ids": "12;18;33;51;107;108;117;129;138;142;241;276;277;301;302;303;304;617;625;629;672;685;867;868;899;901;902;925;947;948;175;183;188;194;206;222;69;81;88;94;609;611;613;614;630;634;635;636;639;455;742;751"
+    },
+    {
+      "hunt_code": "EB1007",
+      "from": "18",
+      "to": "5125",
+      "member_boundary_ids": "18;107;117;129;143;163;276;277;301;304;672;868;902;925;947;948;188;194;69;81;94;609;611;613;614;635;636;639"
+    },
+    {
+      "hunt_code": "EB1009",
+      "from": "12",
+      "to": "5126",
+      "member_boundary_ids": "12;33;51;108;241;302;303;617;625;629;685;867;899;901;175;183;206;222;88;630;634;455;742;751"
+    },
+    {
+      "hunt_code": "EB1010",
+      "from": "18",
+      "to": "5127",
+      "member_boundary_ids": "18;107;117;129;138;142;276;277;301;304;672;868;902;925;947;948;163;188;194;69;81;94;609;611;613;614;635;636;639"
+    },
+    {
+      "hunt_code": "EB1011",
+      "from": "12",
+      "to": "5128",
+      "member_boundary_ids": "12;18;33;51;107;108;117;129;138;142;241;276;277;301;302;303;304;617;625;629;672;685;867;868;899;901;902;925;947;948;163;175;183;188;194;206;222;69;81;88;94;609;611;613;614;630;634;635;636;639;455;742;751"
+    },
+    {
+      "hunt_code": "EB3209",
+      "from": "682",
+      "to": "5129",
+      "member_boundary_ids": "682;683"
+    },
+    {
+      "hunt_code": "EX1000",
+      "from": "282",
+      "to": "5130",
+      "member_boundary_ids": "282;313;218"
+    },
+    {
+      "hunt_code": "GO1000",
+      "from": "145",
+      "to": "5131",
+      "member_boundary_ids": "145;146;147;148;157;616;617;628;200;225;231;233;102;630"
+    },
+    {
+      "hunt_code": "MB1000",
+      "from": "29",
+      "to": "5133",
+      "member_boundary_ids": "29;117;138;276;289;69;79;609;611;613;452;743"
+    },
+    {
+      "hunt_code": "PB1000",
+      "from": "8",
+      "to": "5134",
+      "member_boundary_ids": "8;15;24;25;27;129;138;244;245;246;277;289;443;625;628;688;715;718;719;171;186;194;208;81;97;636;453;461;755"
+    },
+    {
+      "hunt_code": "RS0001",
+      "from": "15",
+      "to": "5135",
+      "member_boundary_ids": "15;20;616;620;668;75;820;821;823;854"
+    },
+    {
+      "hunt_code": "TK1001",
+      "from": "911",
+      "to": "5136",
+      "member_boundary_ids": "911;912;913;914;915;916"
+    },
+    {
+      "hunt_code": "TK1019",
+      "from": "946",
+      "to": "5137",
+      "member_boundary_ids": "946;849"
+    },
+    {
+      "hunt_code": "TK1022",
+      "from": "942",
+      "to": "5138",
+      "member_boundary_ids": "942;943;944;945"
+    }
+  ],
+  "sample_canonical_updates": [
+    {
+      "hunt_code": "BI1000",
+      "from": "667",
+      "to": "5000"
+    },
+    {
+      "hunt_code": "BR1000",
+      "from": "7",
+      "to": "5001"
+    },
+    {
+      "hunt_code": "BR1001",
+      "from": "52",
+      "to": "5002"
+    },
+    {
+      "hunt_code": "BR1007",
+      "from": "7",
+      "to": "5003"
+    },
+    {
+      "hunt_code": "BR1018",
+      "from": "52",
+      "to": "5013"
+    },
+    {
+      "hunt_code": "BR7123",
+      "from": "138",
+      "to": "5053"
+    },
+    {
+      "hunt_code": "BR7229",
+      "from": "138",
+      "to": "5079"
+    },
+    {
+      "hunt_code": "BR7321",
+      "from": "138",
+      "to": "5101"
+    },
+    {
+      "hunt_code": "CG9999",
+      "from": "8",
+      "to": "5107"
+    },
+    {
+      "hunt_code": "DB0007",
+      "from": "7",
+      "to": "5108"
+    },
+    {
+      "hunt_code": "DB0008",
+      "from": "6",
+      "to": "5109"
+    },
+    {
+      "hunt_code": "DS1000",
+      "from": "688",
+      "to": "5110"
+    },
+    {
+      "hunt_code": "DS1003",
+      "from": "99",
+      "to": "5141"
+    },
+    {
+      "hunt_code": "EA1180",
+      "from": "684",
+      "to": "5111"
+    },
+    {
+      "hunt_code": "EA1220",
+      "from": "51",
+      "to": "5112"
+    },
+    {
+      "hunt_code": "EA1221",
+      "from": "175",
+      "to": "5145"
+    },
+    {
+      "hunt_code": "EA1258",
+      "from": "617",
+      "to": "5113"
+    },
+    {
+      "hunt_code": "EA1270",
+      "from": "51",
+      "to": "5114"
+    },
+    {
+      "hunt_code": "EA1271",
+      "from": "633",
+      "to": "5115"
+    },
+    {
+      "hunt_code": "EA2000",
+      "from": "117",
+      "to": "5116"
+    },
+    {
+      "hunt_code": "EA2041",
+      "from": "29",
+      "to": "5117"
+    },
+    {
+      "hunt_code": "EA2045",
+      "from": "222",
+      "to": "5118"
+    },
+    {
+      "hunt_code": "EB1000",
+      "from": "12",
+      "to": "5119"
+    },
+    {
+      "hunt_code": "EB1001",
+      "from": "18",
+      "to": "5120"
+    },
+    {
+      "hunt_code": "EB1002",
+      "from": "18",
+      "to": "5121"
+    },
+    {
+      "hunt_code": "EB1003",
+      "from": "12",
+      "to": "5122"
+    },
+    {
+      "hunt_code": "EB1004",
+      "from": "12",
+      "to": "5123"
+    },
+    {
+      "hunt_code": "EB1005",
+      "from": "12",
+      "to": "5124"
+    },
+    {
+      "hunt_code": "EB1007",
+      "from": "18",
+      "to": "5125"
+    },
+    {
+      "hunt_code": "EB1009",
+      "from": "12",
+      "to": "5126"
+    },
+    {
+      "hunt_code": "EB1010",
+      "from": "18",
+      "to": "5127"
+    },
+    {
+      "hunt_code": "EB1011",
+      "from": "12",
+      "to": "5128"
+    },
+    {
+      "hunt_code": "EB3209",
+      "from": "682",
+      "to": "5129"
+    },
+    {
+      "hunt_code": "EX1000",
+      "from": "282",
+      "to": "5130"
+    },
+    {
+      "hunt_code": "GO1000",
+      "from": "145",
+      "to": "5131"
+    },
+    {
+      "hunt_code": "MB1000",
+      "from": "29",
+      "to": "5133"
+    },
+    {
+      "hunt_code": "PB1000",
+      "from": "8",
+      "to": "5134"
+    },
+    {
+      "hunt_code": "RS0001",
+      "from": "15",
+      "to": "5135"
+    },
+    {
+      "hunt_code": "TK1001",
+      "from": "911",
+      "to": "5136"
+    },
+    {
+      "hunt_code": "TK1019",
+      "from": "946",
+      "to": "5137"
+    },
+    {
+      "hunt_code": "TK1022",
+      "from": "942",
+      "to": "5138"
+    }
+  ],
+  "sample_geojson_metadata_updates": [
+    {
+      "hunt_code": "BI1000",
+      "file": "processed_data/boundaries/BI1000.geojson",
+      "from": "667",
+      "to": "5000"
+    },
+    {
+      "hunt_code": "BR1000",
+      "file": "processed_data/boundaries/BR1000.geojson",
+      "from": "7",
+      "to": "5001"
+    },
+    {
+      "hunt_code": "BR1001",
+      "file": "processed_data/boundaries/BR1001.geojson",
+      "from": "52",
+      "to": "5002"
+    },
+    {
+      "hunt_code": "BR1007",
+      "file": "processed_data/boundaries/BR1007.geojson",
+      "from": "7",
+      "to": "5003"
+    },
+    {
+      "hunt_code": "BR1018",
+      "file": "processed_data/boundaries/BR1018.geojson",
+      "from": "52",
+      "to": "5013"
+    },
+    {
+      "hunt_code": "BR7123",
+      "file": "processed_data/boundaries/BR7123.geojson",
+      "from": "138",
+      "to": "5053"
+    },
+    {
+      "hunt_code": "BR7229",
+      "file": "processed_data/boundaries/BR7229.geojson",
+      "from": "138",
+      "to": "5079"
+    },
+    {
+      "hunt_code": "BR7321",
+      "file": "processed_data/boundaries/BR7321.geojson",
+      "from": "138",
+      "to": "5101"
+    },
+    {
+      "hunt_code": "CG9999",
+      "file": "processed_data/boundaries/CG9999.geojson",
+      "from": "8",
+      "to": "5107"
+    },
+    {
+      "hunt_code": "DB0007",
+      "file": "processed_data/boundaries/DB0007.geojson",
+      "from": "7",
+      "to": "5108"
+    },
+    {
+      "hunt_code": "DB0008",
+      "file": "processed_data/boundaries/DB0008.geojson",
+      "from": "6",
+      "to": "5109"
+    },
+    {
+      "hunt_code": "DS1000",
+      "file": "processed_data/boundaries/DS1000.geojson",
+      "from": "688",
+      "to": "5110"
+    },
+    {
+      "hunt_code": "DS1003",
+      "file": "processed_data/boundaries/DS1003.geojson",
+      "from": "99",
+      "to": "5141"
+    },
+    {
+      "hunt_code": "EA1180",
+      "file": "processed_data/boundaries/EA1180.geojson",
+      "from": "684",
+      "to": "5111"
+    },
+    {
+      "hunt_code": "EA1220",
+      "file": "processed_data/boundaries/EA1220.geojson",
+      "from": "51",
+      "to": "5112"
+    },
+    {
+      "hunt_code": "EA1221",
+      "file": "processed_data/boundaries/EA1221.geojson",
+      "from": "175",
+      "to": "5145"
+    },
+    {
+      "hunt_code": "EA1258",
+      "file": "processed_data/boundaries/EA1258.geojson",
+      "from": "617",
+      "to": "5113"
+    },
+    {
+      "hunt_code": "EA1270",
+      "file": "processed_data/boundaries/EA1270.geojson",
+      "from": "51",
+      "to": "5114"
+    },
+    {
+      "hunt_code": "EA1271",
+      "file": "processed_data/boundaries/EA1271.geojson",
+      "from": "633",
+      "to": "5115"
+    },
+    {
+      "hunt_code": "EA2000",
+      "file": "processed_data/boundaries/EA2000.geojson",
+      "from": "117",
+      "to": "5116"
+    },
+    {
+      "hunt_code": "EA2041",
+      "file": "processed_data/boundaries/EA2041.geojson",
+      "from": "29",
+      "to": "5117"
+    },
+    {
+      "hunt_code": "EA2045",
+      "file": "processed_data/boundaries/EA2045.geojson",
+      "from": "222",
+      "to": "5118"
+    },
+    {
+      "hunt_code": "EB1000",
+      "file": "processed_data/boundaries/EB1000.geojson",
+      "from": "12",
+      "to": "5119"
+    },
+    {
+      "hunt_code": "EB1001",
+      "file": "processed_data/boundaries/EB1001.geojson",
+      "from": "18",
+      "to": "5120"
+    },
+    {
+      "hunt_code": "EB1002",
+      "file": "processed_data/boundaries/EB1002.geojson",
+      "from": "18",
+      "to": "5121"
+    },
+    {
+      "hunt_code": "EB1003",
+      "file": "processed_data/boundaries/EB1003.geojson",
+      "from": "12",
+      "to": "5122"
+    },
+    {
+      "hunt_code": "EB1004",
+      "file": "processed_data/boundaries/EB1004.geojson",
+      "from": "12",
+      "to": "5123"
+    },
+    {
+      "hunt_code": "EB1005",
+      "file": "processed_data/boundaries/EB1005.geojson",
+      "from": "12",
+      "to": "5124"
+    },
+    {
+      "hunt_code": "EB1007",
+      "file": "processed_data/boundaries/EB1007.geojson",
+      "from": "18",
+      "to": "5125"
+    },
+    {
+      "hunt_code": "EB1009",
+      "file": "processed_data/boundaries/EB1009.geojson",
+      "from": "12",
+      "to": "5126"
+    },
+    {
+      "hunt_code": "EB1010",
+      "file": "processed_data/boundaries/EB1010.geojson",
+      "from": "18",
+      "to": "5127"
+    },
+    {
+      "hunt_code": "EB1011",
+      "file": "processed_data/boundaries/EB1011.geojson",
+      "from": "12",
+      "to": "5128"
+    },
+    {
+      "hunt_code": "EB3209",
+      "file": "processed_data/boundaries/EB3209.geojson",
+      "from": "682",
+      "to": "5129"
+    },
+    {
+      "hunt_code": "EX1000",
+      "file": "processed_data/boundaries/EX1000.geojson",
+      "from": "282",
+      "to": "5130"
+    },
+    {
+      "hunt_code": "GO1000",
+      "file": "processed_data/boundaries/GO1000.geojson",
+      "from": "145",
+      "to": "5131"
+    },
+    {
+      "hunt_code": "MB1000",
+      "file": "processed_data/boundaries/MB1000.geojson",
+      "from": "29",
+      "to": "5133"
+    },
+    {
+      "hunt_code": "PB1000",
+      "file": "processed_data/boundaries/PB1000.geojson",
+      "from": "8",
+      "to": "5134"
+    },
+    {
+      "hunt_code": "RS0001",
+      "file": "processed_data/boundaries/RS0001.geojson",
+      "from": "15",
+      "to": "5135"
+    },
+    {
+      "hunt_code": "TK1001",
+      "file": "processed_data/boundaries/TK1001.geojson",
+      "from": "911",
+      "to": "5136"
+    },
+    {
+      "hunt_code": "TK1019",
+      "file": "processed_data/boundaries/TK1019.geojson",
+      "from": "946",
+      "to": "5137"
+    },
+    {
+      "hunt_code": "TK1022",
+      "file": "processed_data/boundaries/TK1022.geojson",
+      "from": "942",
+      "to": "5138"
+    }
+  ]
+}
