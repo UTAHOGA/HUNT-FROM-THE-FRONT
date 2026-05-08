@@ -17,3 +17,4 @@ writeCoverage(usage, {
 });
 
 console.log(JSON.stringify({ ok: true, coverage: 'canonical/canonical-rebuild-coverage.json' }, null, 2));
+console.log(JSON.stringify({ ok: true, scoped_coverage: 'canonical/four-page-canonical-coverage.json' }, null, 2));

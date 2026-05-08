@@ -1,6 +1,6 @@
 # 2026 Permit Allocation Integrity Report
 
-Generated: 2026-05-08T14:13:06.130Z
+Generated: 2026-05-08T15:31:14.632Z
 Source file used: pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv
 Source label: DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS
 Promotion blockers: 0
@@ -19,7 +19,7 @@ Promotion blockers: 0
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | processed_data/hunt_master_enriched.csv | 53060 | 1394 | 0 | 0 | 428432 | 0 | 0 |
 | processed_data/hunt_unit_reference_linked.csv | 2788 | 1394 | 0 | 0 | 24720 | 0 | 0 |
-| processed_data/draw_reality_engine.csv | 91588 | 1394 | 0 | 0 | 811600 | 0 | 0 |
+| processed_data/draw_reality_engine.csv | 141516 | 1023 | 1157664 | 0 | 1091589 | 80 | 371 |
 | processed_data/point_ladder_view.csv | 91588 | 1394 | 0 | 0 | 811600 | 0 | 0 |
 | data/hunt-master-canonical-2026-database-candidate.json | 1394 | 1394 | 0 | 0 | 12360 | 0 | 0 |
 | data/hunt-master-canonical-2026-foundation.json | 1394 | 1394 | 0 | 0 | 12360 | 0 | 0 |
@@ -27,7 +27,7 @@ Promotion blockers: 0
 | processed_data/hunt-master-canonical-2026-source-of-truth.json | 1394 | 1394 | 0 | 0 | 12360 | 0 | 0 |
 | canonical/hunt-planner-2026.json | 1394 | 1394 | 0 | 0 | 12360 | 0 | 0 |
 | generated/pages/hunt-planner.json | 1394 | 1394 | 0 | 0 | 12360 | 0 | 0 |
-| generated/pages/hunt-research.json | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| generated/pages/hunt-research.json | 0 | 0 | 17 | 0 | 0 | 0 | 0 |
 
 ## Guardrails
 

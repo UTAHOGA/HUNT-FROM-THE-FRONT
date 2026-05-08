@@ -62,7 +62,7 @@
       "Hunt Planner"
     ],
     "required_or_optional": "optional",
-    "data_type_observed": "string",
+    "data_type_observed": "number-like",
     "example_values": [
       "615",
       "94",
@@ -175,9 +175,7 @@
     "data_type_observed": "string",
     "example_values": [
       "SOURCE_CONFIRMED_NO_QUOTA_PUBLISHED",
-      "COMPLETE",
-      "COMPLETE_TOTAL_ONLY",
-      "DATABASE_ONLY_NEEDS_CANONICAL_REVIEW"
+      "COMPLETE"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.hunt_catalog[].data_status",
@@ -533,9 +531,9 @@
     "data_type_observed": "string",
     "example_values": [
       "NO_QUOTA_PUBLISHED",
-      "DRAW_RES_NR_SPLIT",
-      "BLACK_BEAR_PURSUIT_NO_QUOTA",
-      "CONSERVATION_MULTIYEAR_TOTAL"
+      "FULL_SPLIT",
+      "CONSERVATION",
+      "TOTAL_ONLY"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.hunt_catalog[].permit_allocation_type",
@@ -551,10 +549,10 @@
     "required_or_optional": "optional",
     "data_type_observed": "string",
     "example_values": [
-      "Utah DWR Hunt Planner source confirms hunt in 2026_bison_either-sex.xlsx; no quota or permit total published in uploaded source.",
-      "2026 resident/nonresident permit split from Utah DWR Hunt Planner export 2026_bison_cow_only.xlsx.",
-      "2026 resident/nonresident permit split from Utah DWR Hunt Planner export 2026_bison_either-sex.xlsx.",
-      "Utah DWR Hunt Planner black bear pursuit export confirms resident pursuit hunt; no quota or permit total is published for pursuit-only permit."
+      "../notes/DATABASE/BR1007-notes.md",
+      "../notes/DATABASE/BR1000-notes.md",
+      "Statewide buck deer permit: 1 public draw permit; separate auction/conservation permit noted outside standard draw allocation.",
+      "../notes/DATABASE/BR1001-notes.md"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.hunt_catalog[].permit_note",
@@ -570,10 +568,7 @@
     "required_or_optional": "optional",
     "data_type_observed": "string",
     "example_values": [
-      "2026_bison_either-sex.xlsx",
-      "2026_bison_cow_only.xlsx",
-      "2026_black_bear_pursuit.xlsx",
-      "8C1294DD__2025-27_conservation_permits.pdf"
+      "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.hunt_catalog[].permit_overlay_source",
@@ -589,9 +584,7 @@
     "required_or_optional": "optional",
     "data_type_observed": "string",
     "example_values": [
-      "Utah DWR Hunt Planner",
-      "Utah DWR Conservation Permit Working List",
-      "DATABASE.csv official uploaded source cleanup"
+      "Utah DWR published 2026 permit allocation"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.hunt_catalog[].permit_source_authority",
@@ -609,8 +602,8 @@
     "example_values": [
       "NO_QUOTA_PUBLISHED",
       "FULL_SPLIT",
-      "TOTAL_ONLY",
-      "DATABASE_QUOTA_PUBLISHED"
+      "SPECIAL_PERMIT_ONLY",
+      "TOTAL_ONLY"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.hunt_catalog[].permit_status",
@@ -734,6 +727,39 @@
     "migration_status": "mapped"
   },
   {
+    "field_name": "permits_2026_conservation",
+    "current_source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "number-like",
+    "example_values": [
+      "2",
+      "1",
+      "4",
+      "8"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].permits_2026_conservation",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "permits_2026_expo",
+    "current_source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "unknown",
+    "example_values": [],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].permits_2026_expo",
+    "migration_status": "mapped"
+  },
+  {
     "field_name": "permits_2026_nr",
     "current_source_file": "data/hunt-master-canonical-2026-database-candidate.json",
     "consumed_by_files": [
@@ -787,10 +813,24 @@
     "required_or_optional": "optional",
     "data_type_observed": "string",
     "example_values": [
-      "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMITS"
+      "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.hunt_catalog[].permits_2026_source",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "permits_2026_sportsman",
+    "current_source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "unknown",
+    "example_values": [],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].permits_2026_sportsman",
     "migration_status": "mapped"
   },
   {
@@ -932,6 +972,77 @@
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.hunt_catalog[].source_file",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "special_permit_area_id",
+    "current_source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "CONSERVATION_DEER_BOOK_CLIFFS_2026",
+      "CONSERVATION_DEER_LA_SAL_DOLORES_TRIANGLE_2026",
+      "CONSERVATION_DESERT_BIGHORN_SHEEP_KAIPAROWITS_EAST_2026",
+      "CONSERVATION_DESERT_BIGHORN_SHEEP_KAIPAROWITS_ESCALANTE_2026"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].special_permit_area_id",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "special_permit_category",
+    "current_source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "CONSERVATION"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].special_permit_category",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "special_permit_note",
+    "current_source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "2026 conservation permit count from 2025-2027 conservation workbook source area: Book Cliffs (Hunter's Choice - winning bidder chooses one eligible season for that unit/species; not a multiseason permit). Kept outside normal public draw quota.",
+      "2026 conservation permit count from 2025-2027 conservation workbook source area: Book Cliffs (Archery). Kept outside normal public draw quota.",
+      "2026 conservation permit count from 2025-2027 conservation workbook source area: La Sal, Dolores Triangle (Multiseason). Kept outside normal public draw quota.",
+      "2026 conservation permit count from 2025-2027 conservation workbook source area: Book Cliffs (Muzzleloader). Kept outside normal public draw quota."
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].special_permit_note",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "special_permit_overlay_source",
+    "current_source_file": "data/hunt-master-canonical-2026-database-candidate.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "pipeline/RAW/hunt_unit_database/2026/reports/conservation_raw_workbook_grouped_2026.csv",
+      "pipeline/RAW/hunt_unit_database/2026/reports/conservation_area_crosswalk_2026.csv"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].special_permit_overlay_source",
     "migration_status": "mapped"
   },
   {
@@ -1160,7 +1271,7 @@
       "Hunt Planner"
     ],
     "required_or_optional": "optional",
-    "data_type_observed": "string",
+    "data_type_observed": "number-like",
     "example_values": [
       "615",
       "94",
@@ -1273,8 +1384,7 @@
     "data_type_observed": "string",
     "example_values": [
       "SOURCE_CONFIRMED_NO_QUOTA_PUBLISHED",
-      "COMPLETE",
-      "COMPLETE_TOTAL_ONLY"
+      "COMPLETE"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.hunt_catalog[].data_status",
@@ -1379,7 +1489,8 @@
     "example_values": [
       "STANDARD",
       "OIL",
-      "YOUTH_ONLY"
+      "YOUTH_ONLY",
+      "UNKNOWN"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.hunt_catalog[].eligibility_class",
@@ -1600,6 +1711,25 @@
     "migration_status": "mapped"
   },
   {
+    "field_name": "NOTES",
+    "current_source_file": "data/hunt-master-canonical-2026-foundation.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "Black Bear pursuit permit - resident: Pursuit only; this permit authorizes pursuit, but not harvest, of black bears. Season dates shown in the BR1007 print packet are Spring: Mar 28-May 25, 2026; Summer: July 5-July 31, 2026; Fall: Nov 2-8, 2026. The packet states a pursuit permit allows pursuit during open pursuit seasons and includes a warning that National Forests may contain private land requiring written permission. Full BR1007 area-specific pursuit information is indexed in 2026_black_bear_pursuit_BR1007_area_info_index.csv and sourced from black bear pursuit.pdf.",
+      "Black Bear statewide permit: Any open season on any open bear unit during the 2026 season. See the 2026 Black Bear Guidebook and the BR1000 print packet for season dates, legal methods, access notes, land ownership, and unit-specific restrictions. Special provisions: this packet identifies the statewide permit as a late-season bear conservation permit and includes the required harvest reporting language. Any harvested bear must be checked by a DWR employee within 48 hours of kill; permanent possession tag requirements apply. Full BR1000 area-specific information is indexed in 2026_black_bear_statewide_BR1000_area_info_index.csv and sourced from BR1000 Print.pdf.",
+      "Harvest-objective permits: Biologists set harvest objectives/quotas for certain bear units. When the objective is met, the unit closes to bear hunting for the rest of the season. A harvest-objective permit allows an eligible hunter to use any legal weapon to harvest one black bear on any open harvest-objective unit until the season ends or that unit objective is met. The permit is available to residents and nonresidents beginning March 10, 2026 at 8 a.m. MDT through wildlife.utah.gov, license agents, or DWR offices. A harvest-objective permit purchased after the season opens is not valid until three days from purchase; the last day to purchase a 2026 harvest-objective permit is Nov. 5, 2026. Hunters may not use bait with a harvest-objective permit. Fall harvest-objective hunts may include additional method restrictions such as no dogs/no bait or no bait, as listed by unit. Harvest-objective permits are available to eligible hunters except those who drew a bear limited-entry permit, not including pursuit or restricted pursuit permits. Hunters may only obtain one permit to harvest a bear during the 2026 season. Before every hunting trip, hunters must verify the unit is still open at wildlife.utah.gov/bearharvest. DWR updates closures daily by noon, effective the following day 30 minutes before official sunrise. After a harvest-objective unit closes, the permit may still be used on other open harvest-objective units. Multiseason limited-entry permit holders may hunt open harvest-objective seasons on the unit they draw without obtaining an additional harvest-objective permit; harvest-objective closures still apply. Source: 2026 Bear Cougar Furbearer Guidebook, Utah Admin. Rule R657-33-29 through R657-33-31. Harvest-objective unit detail: Beaver: 2026 objective 5 bears; Season: Sept 1 - Oct 25, 2026; no dogs/no bait | Book Cliffs, Bitter Creek/South: 2026 objective 20 bears; Season: Aug 15 - Oct 1, 2026; no dogs/no bait | Boulder/Kaiparowits: 2026 objective 22 bears; Season: July 5-31, 2026 & Sept 1-Oct 25, 2026; no dogs/no bait | Cache/Ogden: 2026 objective 10 bears; Season: July 5-31, 2026 & Sept 1-Oct 25, 2026; no dogs/no bait | Chalk Creek/East Canyon/Morgan-South Rich: 2026 objective 20 bears; Season: March 28-May 25, 2026; no bait allowed | Chalk Creek/East Canyon/Morgan-South Rich: 2026 objective 20 bears; Season: Aug 1-31, 2026 & Nov 2-8, 2026; no bait | Chalk Creek/East Canyon/Morgan-South Rich: 2026 objective 20 bears; Season: July 5-31, 2026 & Sept 1 - Oct 25, 2026; no dogs/no bait | Diamond Mtn/Vernal/Bonanza: 2026 objective 9 bears; Season: Sept 1 - Oct 25, 2026; no dogs/no bait | Fillmore, Pahvant: 2026 objective 1 bear; Season: Sept 1 - Oct 25, 2026; no dogs/no bait | Fishlake/Thousand Lakes: 2026 objective 5 bears; Season: Sept 1 - Oct 25, 2026; no dogs/no bait | Kamas/North Slope, Summit: 2026 objective 5 bears; Season: Jul 5-31, 2026 & Sept 1-Oct 25, 2026; no dogs/no bait | La Sal Mtns: 2026 objective 12 bears; Season: Sept 1 - Oct 25, 2026; no dogs/no bait | Manti, North: 2026 objective 15 bears; Season: Jul 5-31, 2026 & Sept 1 - Oct 25, 2026; no dogs/no bait | Manti, South/San Rafael, North: 2026 objective 25 bears; Season: Sept 1 - Oct 25, 2026; no dogs/no bait | Mt Dutton: 2026 objective 2 bears; Season: Sept 1 - Oct 25, 2026; no dogs/no bait | Nebo: 2026 objective 10 bears; Season: Jul 5-31, 2026 & Sept 1 - Oct 25, 2026; no dogs/no bait | Nine Mile: 2026 objective 25 bears; Season: March 28 - May 25, 2026; no bait allowed | Nine Mile: 2026 objective 10 bears; Season: Sept 1 - Oct 25, 2026; no dogs/no bait | North Slope, Three Corners/West Daggett: 2026 objective 5 bears; Season: March 28 - May 25, 2026; no bait allowed | North Slope, Three Corners/West Daggett: 2026 objective 3 bears; Season: Sept 1 - Oct 25, 2026; no dogs/no bait | Panguitch Lake/Zion: 2026 objective 3 bears; Season: Sept 1 - Oct 25, 2026; no dogs/no bait | San Juan: 2026 objective 12 bears; Season: Sept 1 - Oct 25, 2026; no dogs/no bait | Wasatch Mtns, Avintaquin/Currant Creek: 2026 objective 15 bears; Season: March 28 - May 25, 2026; no bait allowed | Wasatch Mtns, Avintaquin/Currant Creek: 2026 objective 10 bears; Season: Sept 1 - Oct 25, 2026; no dogs/no bait | Wasatch Mtns, West-Central: 2026 objective 20 bears; Season: July 5-31, 2026 & Sept 1 - Oct 25, 2026; no dogs/no bait | Yellowstone: 2026 objective 10 bears; Season: March 28 - May 25, 2026; no bait allowed | Yellowstone: 2026 objective 10 bears; Season: Sept 1 - Oct 25, 2026; no dogs/no bait Full BR1001 area-specific information is indexed in 2026_black_bear_harvest_objective_BR1001_area_info_index.csv and sourced from BR1001 Print bear harvest objective.pdf.",
+      "Black Bear pursuit permit - nonresident: Pursuit only; a pursuit permit authorizes pursuit, but not harvest, of black bears on units not designated as restricted during open pursuit seasons. Season dates are Spring: Mar 28-May 25, 2026; Summer: July 5-July 31, 2026; Fall: Nov 2-8, 2026. Nonresidents with pursuit permits may not use them on restricted pursuit units unless accompanying someone who possesses a valid restricted pursuit permit or hunting permit for that unit and season. See the 2026 Bear Cougar Furbearer Guidebook and hunt.utah.gov for complete unit availability."
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].NOTES",
+    "migration_status": "mapped"
+  },
+  {
     "field_name": "permit_allocation_type",
     "current_source_file": "data/hunt-master-canonical-2026-foundation.json",
     "consumed_by_files": [],
@@ -1610,9 +1740,9 @@
     "data_type_observed": "string",
     "example_values": [
       "NO_QUOTA_PUBLISHED",
-      "DRAW_RES_NR_SPLIT",
-      "BLACK_BEAR_PURSUIT_NO_QUOTA",
-      "CONSERVATION_MULTIYEAR_TOTAL"
+      "FULL_SPLIT",
+      "CONSERVATION",
+      "TOTAL_ONLY"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.hunt_catalog[].permit_allocation_type",
@@ -1628,10 +1758,10 @@
     "required_or_optional": "optional",
     "data_type_observed": "string",
     "example_values": [
-      "Utah DWR Hunt Planner source confirms hunt in 2026_bison_either-sex.xlsx; no quota or permit total published in uploaded source.",
-      "2026 resident/nonresident permit split from Utah DWR Hunt Planner export 2026_bison_cow_only.xlsx.",
-      "2026 resident/nonresident permit split from Utah DWR Hunt Planner export 2026_bison_either-sex.xlsx.",
-      "Utah DWR Hunt Planner black bear pursuit export confirms resident pursuit hunt; no quota or permit total is published for pursuit-only permit."
+      "../notes/DATABASE/BR1007-notes.md",
+      "../notes/DATABASE/BR1000-notes.md",
+      "Statewide buck deer permit: 1 public draw permit; separate auction/conservation permit noted outside standard draw allocation.",
+      "../notes/DATABASE/BR1001-notes.md"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.hunt_catalog[].permit_note",
@@ -1647,10 +1777,7 @@
     "required_or_optional": "optional",
     "data_type_observed": "string",
     "example_values": [
-      "2026_bison_either-sex.xlsx",
-      "2026_bison_cow_only.xlsx",
-      "2026_black_bear_pursuit.xlsx",
-      "8C1294DD__2025-27_conservation_permits.pdf"
+      "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.hunt_catalog[].permit_overlay_source",
@@ -1666,8 +1793,7 @@
     "required_or_optional": "optional",
     "data_type_observed": "string",
     "example_values": [
-      "Utah DWR Hunt Planner",
-      "Utah DWR Conservation Permit Working List"
+      "Utah DWR published 2026 permit allocation"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.hunt_catalog[].permit_source_authority",
@@ -1685,6 +1811,7 @@
     "example_values": [
       "NO_QUOTA_PUBLISHED",
       "FULL_SPLIT",
+      "SPECIAL_PERMIT_ONLY",
       "TOTAL_ONLY"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
@@ -1809,6 +1936,39 @@
     "migration_status": "mapped"
   },
   {
+    "field_name": "permits_2026_conservation",
+    "current_source_file": "data/hunt-master-canonical-2026-foundation.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "number-like",
+    "example_values": [
+      "2",
+      "1",
+      "4",
+      "8"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].permits_2026_conservation",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "permits_2026_expo",
+    "current_source_file": "data/hunt-master-canonical-2026-foundation.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "unknown",
+    "example_values": [],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].permits_2026_expo",
+    "migration_status": "mapped"
+  },
+  {
     "field_name": "permits_2026_nr",
     "current_source_file": "data/hunt-master-canonical-2026-foundation.json",
     "consumed_by_files": [
@@ -1850,6 +2010,36 @@
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.hunt_catalog[].permits_2026_res",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "permits_2026_source",
+    "current_source_file": "data/hunt-master-canonical-2026-foundation.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].permits_2026_source",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "permits_2026_sportsman",
+    "current_source_file": "data/hunt-master-canonical-2026-foundation.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "unknown",
+    "example_values": [],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].permits_2026_sportsman",
     "migration_status": "mapped"
   },
   {
@@ -1927,9 +2117,9 @@
     "data_type_observed": "string",
     "example_values": [
       "Aug 1, 2025 - Jan 31, 2026",
-      "Aug 1, 2025 - Jan 31, 2026 | Harvest survey due by Feb 15, 2026 Visit: http://wildlife.utah.gov/harvest to submit your survey",
       "Dec 9 2026 - Dec 20 2026",
-      "Dec 23, 2026 - Jan 3, 2027"
+      "Dec 23, 2026 - Jan 3, 2027",
+      "Oct 17 2026 - Oct 27 2026"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.hunt_catalog[].season",
@@ -1967,7 +2157,8 @@
     "data_type_observed": "string",
     "example_values": [
       "official_uploaded_source",
-      "Utah DWR Hunt Planner"
+      "Utah DWR Hunt Planner",
+      "official_uploaded_source_database_csv"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.hunt_catalog[].source_authority",
@@ -1990,6 +2181,77 @@
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.hunt_catalog[].source_file",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "special_permit_area_id",
+    "current_source_file": "data/hunt-master-canonical-2026-foundation.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "CONSERVATION_DEER_BOOK_CLIFFS_2026",
+      "CONSERVATION_DEER_LA_SAL_DOLORES_TRIANGLE_2026",
+      "CONSERVATION_DESERT_BIGHORN_SHEEP_KAIPAROWITS_EAST_2026",
+      "CONSERVATION_DESERT_BIGHORN_SHEEP_KAIPAROWITS_ESCALANTE_2026"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].special_permit_area_id",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "special_permit_category",
+    "current_source_file": "data/hunt-master-canonical-2026-foundation.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "CONSERVATION"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].special_permit_category",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "special_permit_note",
+    "current_source_file": "data/hunt-master-canonical-2026-foundation.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "2026 conservation permit count from 2025-2027 conservation workbook source area: Book Cliffs (Hunter's Choice - winning bidder chooses one eligible season for that unit/species; not a multiseason permit). Kept outside normal public draw quota.",
+      "2026 conservation permit count from 2025-2027 conservation workbook source area: Book Cliffs (Archery). Kept outside normal public draw quota.",
+      "2026 conservation permit count from 2025-2027 conservation workbook source area: La Sal, Dolores Triangle (Multiseason). Kept outside normal public draw quota.",
+      "2026 conservation permit count from 2025-2027 conservation workbook source area: Book Cliffs (Muzzleloader). Kept outside normal public draw quota."
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].special_permit_note",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "special_permit_overlay_source",
+    "current_source_file": "data/hunt-master-canonical-2026-foundation.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "pipeline/RAW/hunt_unit_database/2026/reports/conservation_raw_workbook_grouped_2026.csv",
+      "pipeline/RAW/hunt_unit_database/2026/reports/conservation_area_crosswalk_2026.csv"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].special_permit_overlay_source",
     "migration_status": "mapped"
   },
   {
@@ -2218,7 +2480,7 @@
       "Hunt Planner"
     ],
     "required_or_optional": "optional",
-    "data_type_observed": "string",
+    "data_type_observed": "number-like",
     "example_values": [
       "615",
       "94",
@@ -2227,6 +2489,97 @@
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.hunt_catalog[].boundary_id",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "boundary_id_numeric",
+    "current_source_file": "data/hunt-master-canonical-2026-source-of-truth.json",
+    "consumed_by_files": [
+      "app.js"
+    ],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "number-like",
+    "example_values": [
+      "615",
+      "94",
+      "889",
+      "667"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].boundary_id_numeric",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "boundary_token",
+    "current_source_file": "data/hunt-master-canonical-2026-source-of-truth.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "615",
+      "94",
+      "889",
+      "667"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].boundary_token",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "boundaryId",
+    "current_source_file": "data/hunt-master-canonical-2026-source-of-truth.json",
+    "consumed_by_files": [
+      "app.js",
+      "data.js",
+      "boundary-resolver.js"
+    ],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "number-like",
+    "example_values": [
+      "615",
+      "94",
+      "889",
+      "667"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].boundaryId",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "code",
+    "current_source_file": "data/hunt-master-canonical-2026-source-of-truth.json",
+    "consumed_by_files": [
+      "index.html",
+      "research.html",
+      "app.js",
+      "data.js",
+      "boundary-resolver.js",
+      "hunt-research.js",
+      "ui.js"
+    ],
+    "page_tool_using_it": [
+      "Hunt Planner",
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "BI6527",
+      "BI6538",
+      "BI6505",
+      "BI6506"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].code",
     "migration_status": "mapped"
   },
   {
@@ -2240,8 +2593,7 @@
     "data_type_observed": "string",
     "example_values": [
       "SOURCE_CONFIRMED_NO_QUOTA_PUBLISHED",
-      "COMPLETE",
-      "COMPLETE_TOTAL_ONLY"
+      "COMPLETE"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.hunt_catalog[].data_status",
@@ -2346,7 +2698,8 @@
     "example_values": [
       "STANDARD",
       "OIL",
-      "YOUTH_ONLY"
+      "YOUTH_ONLY",
+      "UNKNOWN"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.hunt_catalog[].eligibility_class",
@@ -2522,6 +2875,32 @@
     "migration_status": "mapped"
   },
   {
+    "field_name": "huntCode",
+    "current_source_file": "data/hunt-master-canonical-2026-source-of-truth.json",
+    "consumed_by_files": [
+      "app.js",
+      "data.js",
+      "boundary-resolver.js",
+      "hunt-research.js",
+      "ui.js"
+    ],
+    "page_tool_using_it": [
+      "Hunt Planner",
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "BI6527",
+      "BI6538",
+      "BI6505",
+      "BI6506"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].huntCode",
+    "migration_status": "mapped"
+  },
+  {
     "field_name": "hunters_2025",
     "current_source_file": "data/hunt-master-canonical-2026-source-of-truth.json",
     "consumed_by_files": [],
@@ -2541,6 +2920,25 @@
     "migration_status": "mapped"
   },
   {
+    "field_name": "NOTES",
+    "current_source_file": "data/hunt-master-canonical-2026-source-of-truth.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "Black Bear pursuit permit - resident: Pursuit only; this permit authorizes pursuit, but not harvest, of black bears. Season dates shown in the BR1007 print packet are Spring: Mar 28-May 25, 2026; Summer: July 5-July 31, 2026; Fall: Nov 2-8, 2026. The packet states a pursuit permit allows pursuit during open pursuit seasons and includes a warning that National Forests may contain private land requiring written permission. Full BR1007 area-specific pursuit information is indexed in 2026_black_bear_pursuit_BR1007_area_info_index.csv and sourced from black bear pursuit.pdf.",
+      "Black Bear statewide permit: Any open season on any open bear unit during the 2026 season. See the 2026 Black Bear Guidebook and the BR1000 print packet for season dates, legal methods, access notes, land ownership, and unit-specific restrictions. Special provisions: this packet identifies the statewide permit as a late-season bear conservation permit and includes the required harvest reporting language. Any harvested bear must be checked by a DWR employee within 48 hours of kill; permanent possession tag requirements apply. Full BR1000 area-specific information is indexed in 2026_black_bear_statewide_BR1000_area_info_index.csv and sourced from BR1000 Print.pdf.",
+      "Harvest-objective permits: Biologists set harvest objectives/quotas for certain bear units. When the objective is met, the unit closes to bear hunting for the rest of the season. A harvest-objective permit allows an eligible hunter to use any legal weapon to harvest one black bear on any open harvest-objective unit until the season ends or that unit objective is met. The permit is available to residents and nonresidents beginning March 10, 2026 at 8 a.m. MDT through wildlife.utah.gov, license agents, or DWR offices. A harvest-objective permit purchased after the season opens is not valid until three days from purchase; the last day to purchase a 2026 harvest-objective permit is Nov. 5, 2026. Hunters may not use bait with a harvest-objective permit. Fall harvest-objective hunts may include additional method restrictions such as no dogs/no bait or no bait, as listed by unit. Harvest-objective permits are available to eligible hunters except those who drew a bear limited-entry permit, not including pursuit or restricted pursuit permits. Hunters may only obtain one permit to harvest a bear during the 2026 season. Before every hunting trip, hunters must verify the unit is still open at wildlife.utah.gov/bearharvest. DWR updates closures daily by noon, effective the following day 30 minutes before official sunrise. After a harvest-objective unit closes, the permit may still be used on other open harvest-objective units. Multiseason limited-entry permit holders may hunt open harvest-objective seasons on the unit they draw without obtaining an additional harvest-objective permit; harvest-objective closures still apply. Source: 2026 Bear Cougar Furbearer Guidebook, Utah Admin. Rule R657-33-29 through R657-33-31. Harvest-objective unit detail: Beaver: 2026 objective 5 bears; Season: Sept 1 - Oct 25, 2026; no dogs/no bait | Book Cliffs, Bitter Creek/South: 2026 objective 20 bears; Season: Aug 15 - Oct 1, 2026; no dogs/no bait | Boulder/Kaiparowits: 2026 objective 22 bears; Season: July 5-31, 2026 & Sept 1-Oct 25, 2026; no dogs/no bait | Cache/Ogden: 2026 objective 10 bears; Season: July 5-31, 2026 & Sept 1-Oct 25, 2026; no dogs/no bait | Chalk Creek/East Canyon/Morgan-South Rich: 2026 objective 20 bears; Season: March 28-May 25, 2026; no bait allowed | Chalk Creek/East Canyon/Morgan-South Rich: 2026 objective 20 bears; Season: Aug 1-31, 2026 & Nov 2-8, 2026; no bait | Chalk Creek/East Canyon/Morgan-South Rich: 2026 objective 20 bears; Season: July 5-31, 2026 & Sept 1 - Oct 25, 2026; no dogs/no bait | Diamond Mtn/Vernal/Bonanza: 2026 objective 9 bears; Season: Sept 1 - Oct 25, 2026; no dogs/no bait | Fillmore, Pahvant: 2026 objective 1 bear; Season: Sept 1 - Oct 25, 2026; no dogs/no bait | Fishlake/Thousand Lakes: 2026 objective 5 bears; Season: Sept 1 - Oct 25, 2026; no dogs/no bait | Kamas/North Slope, Summit: 2026 objective 5 bears; Season: Jul 5-31, 2026 & Sept 1-Oct 25, 2026; no dogs/no bait | La Sal Mtns: 2026 objective 12 bears; Season: Sept 1 - Oct 25, 2026; no dogs/no bait | Manti, North: 2026 objective 15 bears; Season: Jul 5-31, 2026 & Sept 1 - Oct 25, 2026; no dogs/no bait | Manti, South/San Rafael, North: 2026 objective 25 bears; Season: Sept 1 - Oct 25, 2026; no dogs/no bait | Mt Dutton: 2026 objective 2 bears; Season: Sept 1 - Oct 25, 2026; no dogs/no bait | Nebo: 2026 objective 10 bears; Season: Jul 5-31, 2026 & Sept 1 - Oct 25, 2026; no dogs/no bait | Nine Mile: 2026 objective 25 bears; Season: March 28 - May 25, 2026; no bait allowed | Nine Mile: 2026 objective 10 bears; Season: Sept 1 - Oct 25, 2026; no dogs/no bait | North Slope, Three Corners/West Daggett: 2026 objective 5 bears; Season: March 28 - May 25, 2026; no bait allowed | North Slope, Three Corners/West Daggett: 2026 objective 3 bears; Season: Sept 1 - Oct 25, 2026; no dogs/no bait | Panguitch Lake/Zion: 2026 objective 3 bears; Season: Sept 1 - Oct 25, 2026; no dogs/no bait | San Juan: 2026 objective 12 bears; Season: Sept 1 - Oct 25, 2026; no dogs/no bait | Wasatch Mtns, Avintaquin/Currant Creek: 2026 objective 15 bears; Season: March 28 - May 25, 2026; no bait allowed | Wasatch Mtns, Avintaquin/Currant Creek: 2026 objective 10 bears; Season: Sept 1 - Oct 25, 2026; no dogs/no bait | Wasatch Mtns, West-Central: 2026 objective 20 bears; Season: July 5-31, 2026 & Sept 1 - Oct 25, 2026; no dogs/no bait | Yellowstone: 2026 objective 10 bears; Season: March 28 - May 25, 2026; no bait allowed | Yellowstone: 2026 objective 10 bears; Season: Sept 1 - Oct 25, 2026; no dogs/no bait Full BR1001 area-specific information is indexed in 2026_black_bear_harvest_objective_BR1001_area_info_index.csv and sourced from BR1001 Print bear harvest objective.pdf.",
+      "Black Bear pursuit permit - nonresident: Pursuit only; a pursuit permit authorizes pursuit, but not harvest, of black bears on units not designated as restricted during open pursuit seasons. Season dates are Spring: Mar 28-May 25, 2026; Summer: July 5-July 31, 2026; Fall: Nov 2-8, 2026. Nonresidents with pursuit permits may not use them on restricted pursuit units unless accompanying someone who possesses a valid restricted pursuit permit or hunting permit for that unit and season. See the 2026 Bear Cougar Furbearer Guidebook and hunt.utah.gov for complete unit availability."
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].NOTES",
+    "migration_status": "mapped"
+  },
+  {
     "field_name": "permit_allocation_type",
     "current_source_file": "data/hunt-master-canonical-2026-source-of-truth.json",
     "consumed_by_files": [],
@@ -2551,9 +2949,9 @@
     "data_type_observed": "string",
     "example_values": [
       "NO_QUOTA_PUBLISHED",
-      "DRAW_RES_NR_SPLIT",
-      "BLACK_BEAR_PURSUIT_NO_QUOTA",
-      "CONSERVATION_MULTIYEAR_TOTAL"
+      "FULL_SPLIT",
+      "CONSERVATION",
+      "TOTAL_ONLY"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.hunt_catalog[].permit_allocation_type",
@@ -2569,10 +2967,10 @@
     "required_or_optional": "optional",
     "data_type_observed": "string",
     "example_values": [
-      "Utah DWR Hunt Planner source confirms hunt in 2026_bison_either-sex.xlsx; no quota or permit total published in uploaded source.",
-      "2026 resident/nonresident permit split from Utah DWR Hunt Planner export 2026_bison_cow_only.xlsx.",
-      "2026 resident/nonresident permit split from Utah DWR Hunt Planner export 2026_bison_either-sex.xlsx.",
-      "Utah DWR Hunt Planner black bear pursuit export confirms resident pursuit hunt; no quota or permit total is published for pursuit-only permit."
+      "../notes/DATABASE/BR1007-notes.md",
+      "../notes/DATABASE/BR1000-notes.md",
+      "Statewide buck deer permit: 1 public draw permit; separate auction/conservation permit noted outside standard draw allocation.",
+      "../notes/DATABASE/BR1001-notes.md"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.hunt_catalog[].permit_note",
@@ -2588,10 +2986,7 @@
     "required_or_optional": "optional",
     "data_type_observed": "string",
     "example_values": [
-      "2026_bison_either-sex.xlsx",
-      "2026_bison_cow_only.xlsx",
-      "2026_black_bear_pursuit.xlsx",
-      "8C1294DD__2025-27_conservation_permits.pdf"
+      "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.hunt_catalog[].permit_overlay_source",
@@ -2607,8 +3002,7 @@
     "required_or_optional": "optional",
     "data_type_observed": "string",
     "example_values": [
-      "Utah DWR Hunt Planner",
-      "Utah DWR Conservation Permit Working List"
+      "Utah DWR published 2026 permit allocation"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.hunt_catalog[].permit_source_authority",
@@ -2626,6 +3020,7 @@
     "example_values": [
       "NO_QUOTA_PUBLISHED",
       "FULL_SPLIT",
+      "SPECIAL_PERMIT_ONLY",
       "TOTAL_ONLY"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
@@ -2750,6 +3145,39 @@
     "migration_status": "mapped"
   },
   {
+    "field_name": "permits_2026_conservation",
+    "current_source_file": "data/hunt-master-canonical-2026-source-of-truth.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "number-like",
+    "example_values": [
+      "2",
+      "1",
+      "4",
+      "8"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].permits_2026_conservation",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "permits_2026_expo",
+    "current_source_file": "data/hunt-master-canonical-2026-source-of-truth.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "unknown",
+    "example_values": [],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].permits_2026_expo",
+    "migration_status": "mapped"
+  },
+  {
     "field_name": "permits_2026_nr",
     "current_source_file": "data/hunt-master-canonical-2026-source-of-truth.json",
     "consumed_by_files": [
@@ -2794,6 +3222,36 @@
     "migration_status": "mapped"
   },
   {
+    "field_name": "permits_2026_source",
+    "current_source_file": "data/hunt-master-canonical-2026-source-of-truth.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].permits_2026_source",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "permits_2026_sportsman",
+    "current_source_file": "data/hunt-master-canonical-2026-source-of-truth.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "unknown",
+    "example_values": [],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].permits_2026_sportsman",
+    "migration_status": "mapped"
+  },
+  {
     "field_name": "permits_2026_total",
     "current_source_file": "data/hunt-master-canonical-2026-source-of-truth.json",
     "consumed_by_files": [
@@ -2813,6 +3271,27 @@
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.hunt_catalog[].permits_2026_total",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "resolvedBoundaryIds",
+    "current_source_file": "data/hunt-master-canonical-2026-source-of-truth.json",
+    "consumed_by_files": [
+      "app.js"
+    ],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "array",
+    "example_values": [
+      "615",
+      "94",
+      "889",
+      "667"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].resolvedBoundaryIds",
     "migration_status": "mapped"
   },
   {
@@ -2847,9 +3326,9 @@
     "data_type_observed": "string",
     "example_values": [
       "Aug 1, 2025 - Jan 31, 2026",
-      "Aug 1, 2025 - Jan 31, 2026 | Harvest survey due by Feb 15, 2026 Visit: http://wildlife.utah.gov/harvest to submit your survey",
       "Dec 9 2026 - Dec 20 2026",
-      "Dec 23, 2026 - Jan 3, 2027"
+      "Dec 23, 2026 - Jan 3, 2027",
+      "Oct 17 2026 - Oct 27 2026"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.hunt_catalog[].season",
@@ -2887,7 +3366,8 @@
     "data_type_observed": "string",
     "example_values": [
       "official_uploaded_source",
-      "Utah DWR Hunt Planner"
+      "Utah DWR Hunt Planner",
+      "official_uploaded_source_database_csv"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.hunt_catalog[].source_authority",
@@ -2910,6 +3390,77 @@
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.hunt_catalog[].source_file",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "special_permit_area_id",
+    "current_source_file": "data/hunt-master-canonical-2026-source-of-truth.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "CONSERVATION_DEER_BOOK_CLIFFS_2026",
+      "CONSERVATION_DEER_LA_SAL_DOLORES_TRIANGLE_2026",
+      "CONSERVATION_DESERT_BIGHORN_SHEEP_KAIPAROWITS_EAST_2026",
+      "CONSERVATION_DESERT_BIGHORN_SHEEP_KAIPAROWITS_ESCALANTE_2026"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].special_permit_area_id",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "special_permit_category",
+    "current_source_file": "data/hunt-master-canonical-2026-source-of-truth.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "CONSERVATION"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].special_permit_category",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "special_permit_note",
+    "current_source_file": "data/hunt-master-canonical-2026-source-of-truth.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "2026 conservation permit count from 2025-2027 conservation workbook source area: Book Cliffs (Hunter's Choice - winning bidder chooses one eligible season for that unit/species; not a multiseason permit). Kept outside normal public draw quota.",
+      "2026 conservation permit count from 2025-2027 conservation workbook source area: Book Cliffs (Archery). Kept outside normal public draw quota.",
+      "2026 conservation permit count from 2025-2027 conservation workbook source area: La Sal, Dolores Triangle (Multiseason). Kept outside normal public draw quota.",
+      "2026 conservation permit count from 2025-2027 conservation workbook source area: Book Cliffs (Muzzleloader). Kept outside normal public draw quota."
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].special_permit_note",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "special_permit_overlay_source",
+    "current_source_file": "data/hunt-master-canonical-2026-source-of-truth.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "pipeline/RAW/hunt_unit_database/2026/reports/conservation_raw_workbook_grouped_2026.csv",
+      "pipeline/RAW/hunt_unit_database/2026/reports/conservation_area_crosswalk_2026.csv"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].special_permit_overlay_source",
     "migration_status": "mapped"
   },
   {
@@ -2955,6 +3506,82 @@
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.hunt_catalog[].success_percent_2025",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "title",
+    "current_source_file": "data/hunt-master-canonical-2026-source-of-truth.json",
+    "consumed_by_files": [
+      "index.html",
+      "research.html",
+      "hard-copy.html",
+      "verify.html",
+      "app.js",
+      "data.js",
+      "ui.js",
+      "header-layout.js"
+    ],
+    "page_tool_using_it": [
+      "Hunt Planner",
+      "Hunt Research",
+      "Hard Copies",
+      "Outfitter Verification"
+    ],
+    "required_or_optional": "required",
+    "data_type_observed": "string",
+    "example_values": [
+      "Nine Mile",
+      "Nine Mile, Private Lands Only",
+      "Henry Mtns",
+      "Book Cliffs, Little Creek/South"
+    ],
+    "fallback_behavior": "Displayed as card title; falls back to hunt_code or filename where the current UI allows it.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].title",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "unitCode",
+    "current_source_file": "data/hunt-master-canonical-2026-source-of-truth.json",
+    "consumed_by_files": [
+      "app.js",
+      "data.js"
+    ],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "number-like",
+    "example_values": [
+      "615",
+      "94",
+      "889",
+      "667"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].unitCode",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "unitName",
+    "current_source_file": "data/hunt-master-canonical-2026-source-of-truth.json",
+    "consumed_by_files": [
+      "app.js",
+      "data.js",
+      "ui.js"
+    ],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "Nine Mile",
+      "Nine Mile, Private Lands Only",
+      "Henry Mtns",
+      "Book Cliffs, Little Creek/South"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.hunt_catalog[].unitName",
     "migration_status": "mapped"
   },
   {
@@ -4691,8 +5318,10 @@
       "Hunt Planner"
     ],
     "required_or_optional": "optional",
-    "data_type_observed": "unknown",
-    "example_values": [],
+    "data_type_observed": "string",
+    "example_values": [
+      "Extended Archery Deer: Sept 12-Oct 15 areas and Sept 12-Nov 30 areas from official DWR KMZ/KML."
+    ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.boundaries.display_index[].notes",
     "migration_status": "mapped"
@@ -4790,10 +5419,35 @@
     "data_type_observed": "string",
     "example_values": [
       "merged_kmz",
-      "single_kmz"
+      "single_kmz",
+      "conservation_expo_bundle",
+      "single_loa_boundary"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.boundaries.display_index[].boundary_geometry_type",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "boundary_id",
+    "current_source_file": "processed_data/display-boundary-index-2026.json",
+    "consumed_by_files": [
+      "app.js",
+      "data.js",
+      "boundary-resolver.js"
+    ],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "number-like",
+    "example_values": [
+      "5000",
+      "1",
+      "94",
+      "615"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.boundaries.display_index[].boundary_id",
     "migration_status": "mapped"
   },
   {
@@ -4841,47 +5495,38 @@
     "migration_status": "mapped"
   },
   {
-    "field_name": "display_boundary_id",
+    "field_name": "boundary_source_authority",
     "current_source_file": "processed_data/display-boundary-index-2026.json",
-    "consumed_by_files": [
-      "app.js",
-      "boundary-resolver.js"
-    ],
-    "page_tool_using_it": [
-      "Hunt Planner"
-    ],
-    "required_or_optional": "required",
-    "data_type_observed": "string",
-    "example_values": [
-      "UOGA_BI1000_2026",
-      "DWR_1",
-      "DWR_94",
-      "DWR_615"
-    ],
-    "fallback_behavior": "Website display geometry key; never treated as a DWR numeric boundary ID.",
-    "canonical_target_path": "hunt-planner-2026.boundaries.display_index[].display_boundary_id",
-    "migration_status": "mapped"
-  },
-  {
-    "field_name": "dwr_boundary_id",
-    "current_source_file": "processed_data/display-boundary-index-2026.json",
-    "consumed_by_files": [
-      "app.js",
-      "boundary-resolver.js"
-    ],
+    "consumed_by_files": [],
     "page_tool_using_it": [
       "Hunt Planner"
     ],
     "required_or_optional": "optional",
-    "data_type_observed": "number-like",
+    "data_type_observed": "string",
     "example_values": [
-      "1",
-      "94",
-      "615",
-      "889"
+      "Utah DWR"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
-    "canonical_target_path": "hunt-planner-2026.boundaries.display_index[].dwr_boundary_id",
+    "canonical_target_path": "hunt-planner-2026.boundaries.display_index[].boundary_source_authority",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "boundary_source_file",
+    "current_source_file": "processed_data/display-boundary-index-2026.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "bison_hunt_table_official.json",
+      "black_bear_hunt_table_official.json",
+      "cougar_hunt_table_official.json",
+      "bighorn_sheep_hunt_table_official.json"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.boundaries.display_index[].boundary_source_file",
     "migration_status": "mapped"
   },
   {
@@ -4899,28 +5544,6 @@
     "example_values": [],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.boundaries.display_index[].dwr_boundary_link",
-    "migration_status": "mapped"
-  },
-  {
-    "field_name": "dwr_member_boundary_ids",
-    "current_source_file": "processed_data/display-boundary-index-2026.json",
-    "consumed_by_files": [
-      "app.js",
-      "boundary-resolver.js"
-    ],
-    "page_tool_using_it": [
-      "Hunt Planner"
-    ],
-    "required_or_optional": "optional",
-    "data_type_observed": "array",
-    "example_values": [
-      "637;667;889",
-      "7;12;52;88",
-      "7;52;88;163",
-      "8;16;26;29"
-    ],
-    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
-    "canonical_target_path": "hunt-planner-2026.boundaries.display_index[].dwr_member_boundary_ids",
     "migration_status": "mapped"
   },
   {
@@ -4984,10 +5607,32 @@
       "3",
       "0",
       "30",
-      "22"
+      "21"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-planner-2026.boundaries.display_index[].member_boundary_count",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "member_boundary_ids",
+    "current_source_file": "processed_data/display-boundary-index-2026.json",
+    "consumed_by_files": [
+      "app.js",
+      "boundary-resolver.js"
+    ],
+    "page_tool_using_it": [
+      "Hunt Planner"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "array",
+    "example_values": [
+      "667;889;637",
+      "7;12;52;138",
+      "52;251;289;444",
+      "7;52;163;289"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-planner-2026.boundaries.display_index[].member_boundary_ids",
     "migration_status": "mapped"
   },
   {
@@ -5013,26 +5658,26 @@
     "migration_status": "mapped"
   },
   {
-    "field_name": "applicants_above",
-    "current_source_file": "processed_data/draw_reality_engine.csv",
+    "field_name": "source_boundary_ids",
+    "current_source_file": "processed_data/display-boundary-index-2026.json",
     "consumed_by_files": [],
     "page_tool_using_it": [
-      "Hunt Research"
+      "Hunt Planner"
     ],
     "required_or_optional": "optional",
-    "data_type_observed": "number-like",
+    "data_type_observed": "array",
     "example_values": [
-      "0",
+      "667;889;637",
       "1",
-      "4",
-      "16"
+      "94",
+      "615"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
-    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.applicants_above",
+    "canonical_target_path": "hunt-planner-2026.boundaries.display_index[].source_boundary_ids",
     "migration_status": "mapped"
   },
   {
-    "field_name": "applicants_at_level",
+    "field_name": "bonus_permits",
     "current_source_file": "processed_data/draw_reality_engine.csv",
     "consumed_by_files": [],
     "page_tool_using_it": [
@@ -5041,143 +5686,32 @@
     "required_or_optional": "optional",
     "data_type_observed": "number-like",
     "example_values": [
-      "0",
       "1",
+      "0",
+      "2",
+      "5"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.bonus_permits",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "eligible_applicants",
+    "current_source_file": "processed_data/draw_reality_engine.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "number-like",
+    "example_values": [
+      "2",
       "3",
-      "12"
+      "12",
+      "15"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
-    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.applicants_at_level",
-    "migration_status": "mapped"
-  },
-  {
-    "field_name": "delta_gap",
-    "current_source_file": "processed_data/draw_reality_engine.csv",
-    "consumed_by_files": [],
-    "page_tool_using_it": [
-      "Hunt Research"
-    ],
-    "required_or_optional": "optional",
-    "data_type_observed": "number-like",
-    "example_values": [
-      "-1",
-      "0",
-      "-3",
-      "-5"
-    ],
-    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
-    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.delta_gap",
-    "migration_status": "mapped"
-  },
-  {
-    "field_name": "draw_outlook",
-    "current_source_file": "processed_data/draw_reality_engine.csv",
-    "consumed_by_files": [
-      "hunt-research.js"
-    ],
-    "page_tool_using_it": [
-      "Hunt Research"
-    ],
-    "required_or_optional": "optional",
-    "data_type_observed": "string",
-    "example_values": [
-      "INSUFFICIENT DATA",
-      "GREEN LIGHT",
-      "MAY DRAW IN 5-10 YEARS",
-      "LONG ODDS"
-    ],
-    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
-    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.draw_outlook",
-    "migration_status": "mapped"
-  },
-  {
-    "field_name": "gap",
-    "current_source_file": "processed_data/draw_reality_engine.csv",
-    "consumed_by_files": [
-      "index.html",
-      "research.html",
-      "hard-copy.html",
-      "verify.html",
-      "app.js",
-      "hunt-research.js",
-      "ui.js",
-      "header-layout.js"
-    ],
-    "page_tool_using_it": [
-      "Hunt Planner",
-      "Hunt Research",
-      "Hard Copies",
-      "Outfitter Verification"
-    ],
-    "required_or_optional": "optional",
-    "data_type_observed": "number-like",
-    "example_values": [
-      "-32",
-      "-31",
-      "-30",
-      "-29"
-    ],
-    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
-    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.gap",
-    "migration_status": "mapped"
-  },
-  {
-    "field_name": "guaranteed_at_2025",
-    "current_source_file": "processed_data/draw_reality_engine.csv",
-    "consumed_by_files": [],
-    "page_tool_using_it": [
-      "Hunt Research"
-    ],
-    "required_or_optional": "optional",
-    "data_type_observed": "number-like",
-    "example_values": [
-      "0",
-      "31",
-      "30",
-      "29"
-    ],
-    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
-    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.guaranteed_at_2025",
-    "migration_status": "mapped"
-  },
-  {
-    "field_name": "guaranteed_at_2026",
-    "current_source_file": "processed_data/draw_reality_engine.csv",
-    "consumed_by_files": [
-      "hunt-research.js"
-    ],
-    "page_tool_using_it": [
-      "Hunt Research"
-    ],
-    "required_or_optional": "optional",
-    "data_type_observed": "number-like",
-    "example_values": [
-      "0",
-      "31",
-      "30",
-      "28"
-    ],
-    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
-    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.guaranteed_at_2026",
-    "migration_status": "mapped"
-  },
-  {
-    "field_name": "guaranteed_delta_2025_to_2026",
-    "current_source_file": "processed_data/draw_reality_engine.csv",
-    "consumed_by_files": [],
-    "page_tool_using_it": [
-      "Hunt Research"
-    ],
-    "required_or_optional": "optional",
-    "data_type_observed": "number-like",
-    "example_values": [
-      "0",
-      "1",
-      "-2",
-      "-4"
-    ],
-    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
-    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.guaranteed_delta_2025_to_2026",
+    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.eligible_applicants",
     "migration_status": "mapped"
   },
   {
@@ -5197,151 +5731,76 @@
     "required_or_optional": "required",
     "data_type_observed": "string",
     "example_values": [
-      "BI1000",
       "BI6500",
       "BI6503",
-      "BI6504"
+      "BI6504",
+      "BI6505"
     ],
     "fallback_behavior": "Normalize uppercase; fallback aliases include huntCode/code where present.",
     "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.hunt_code",
     "migration_status": "mapped"
   },
   {
-    "field_name": "max_point_permits_2025",
-    "current_source_file": "processed_data/draw_reality_engine.csv",
-    "consumed_by_files": [],
-    "page_tool_using_it": [
-      "Hunt Research"
-    ],
-    "required_or_optional": "optional",
-    "data_type_observed": "number-like",
-    "example_values": [
-      "0",
-      "1",
-      "2",
-      "3"
-    ],
-    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
-    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.max_point_permits_2025",
-    "migration_status": "mapped"
-  },
-  {
-    "field_name": "max_point_permits_2026",
+    "field_name": "hunt_name",
     "current_source_file": "processed_data/draw_reality_engine.csv",
     "consumed_by_files": [
-      "hunt-research.js"
+      "app.js",
+      "data.js",
+      "hunt-research.js",
+      "ui.js"
     ],
     "page_tool_using_it": [
+      "Hunt Planner",
       "Hunt Research"
     ],
-    "required_or_optional": "optional",
-    "data_type_observed": "number-like",
-    "example_values": [
-      "0",
-      "1",
-      "2",
-      "3"
-    ],
-    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
-    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.max_point_permits_2026",
-    "migration_status": "mapped"
-  },
-  {
-    "field_name": "permit_delta_2025_to_2026",
-    "current_source_file": "processed_data/draw_reality_engine.csv",
-    "consumed_by_files": [],
-    "page_tool_using_it": [
-      "Hunt Research"
-    ],
-    "required_or_optional": "optional",
-    "data_type_observed": "number-like",
-    "example_values": [
-      "0",
-      "-17",
-      "-19",
-      "1"
-    ],
-    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
-    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.permit_delta_2025_to_2026",
-    "migration_status": "mapped"
-  },
-  {
-    "field_name": "permits_2026_nr",
-    "current_source_file": "processed_data/draw_reality_engine.csv",
-    "consumed_by_files": [
-      "hunt-research.js"
-    ],
-    "page_tool_using_it": [
-      "Hunt Research"
-    ],
-    "required_or_optional": "optional",
-    "data_type_observed": "number-like",
-    "example_values": [
-      "0",
-      "2",
-      "3",
-      "7"
-    ],
-    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
-    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.permits_2026_nr",
-    "migration_status": "mapped"
-  },
-  {
-    "field_name": "permits_2026_res",
-    "current_source_file": "processed_data/draw_reality_engine.csv",
-    "consumed_by_files": [
-      "hunt-research.js"
-    ],
-    "page_tool_using_it": [
-      "Hunt Research"
-    ],
-    "required_or_optional": "optional",
-    "data_type_observed": "number-like",
-    "example_values": [
-      "2",
-      "4",
-      "5",
-      "8"
-    ],
-    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
-    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.permits_2026_res",
-    "migration_status": "mapped"
-  },
-  {
-    "field_name": "permits_2026_source",
-    "current_source_file": "processed_data/draw_reality_engine.csv",
-    "consumed_by_files": [],
-    "page_tool_using_it": [
-      "Hunt Research"
-    ],
-    "required_or_optional": "optional",
+    "required_or_optional": "required",
     "data_type_observed": "string",
     "example_values": [
-      "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMITS"
+      "Bison (hunter’s Choice) - Antelope Island - Any Legal Weapon",
+      "Bison (hunter’s Choice) - Henry Mtns - Any Legal Weapon",
+      "Bison (cow Only) -Henry Mtns - Any Legal Weapon",
+      "Bison Archery (hunter’s Choice) - Henry Mtns - Archery"
     ],
-    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
-    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.permits_2026_source",
+    "fallback_behavior": "Fallback aliases include title/unitName where present.",
+    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.hunt_name",
     "migration_status": "mapped"
   },
   {
-    "field_name": "permits_2026_total",
+    "field_name": "p_draw_percent",
     "current_source_file": "processed_data/draw_reality_engine.csv",
-    "consumed_by_files": [
-      "hunt-research.js"
-    ],
+    "consumed_by_files": [],
     "page_tool_using_it": [
       "Hunt Research"
     ],
     "required_or_optional": "optional",
     "data_type_observed": "number-like",
     "example_values": [
-      "2",
-      "6",
-      "7",
-      "11"
+      "50.0",
+      "0.0",
+      "0.2923976608187134",
+      "0.7518796992481203"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
-    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.permits_2026_total",
+    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.p_draw_percent",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "page_number",
+    "current_source_file": "processed_data/draw_reality_engine.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "number-like",
+    "example_values": [
+      "535",
+      "39",
+      "536",
+      "40"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.page_number",
     "migration_status": "mapped"
   },
   {
@@ -5360,115 +5819,17 @@
     "required_or_optional": "required",
     "data_type_observed": "number-like",
     "example_values": [
-      "32",
-      "31",
       "30",
-      "29"
+      "29",
+      "28",
+      "27"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.points",
     "migration_status": "mapped"
   },
   {
-    "field_name": "projected_applicants_2026_source",
-    "current_source_file": "processed_data/draw_reality_engine.csv",
-    "consumed_by_files": [],
-    "page_tool_using_it": [
-      "Hunt Research"
-    ],
-    "required_or_optional": "optional",
-    "data_type_observed": "string",
-    "example_values": [
-      "missing_projection_fill_v1",
-      "projected_2026",
-      "fallback_2025"
-    ],
-    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
-    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.projected_applicants_2026_source",
-    "migration_status": "mapped"
-  },
-  {
-    "field_name": "public_permits_2025",
-    "current_source_file": "processed_data/draw_reality_engine.csv",
-    "consumed_by_files": [
-      "hunt-research.js"
-    ],
-    "page_tool_using_it": [
-      "Hunt Research"
-    ],
-    "required_or_optional": "optional",
-    "data_type_observed": "number-like",
-    "example_values": [
-      "0",
-      "2",
-      "4",
-      "5"
-    ],
-    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
-    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.public_permits_2025",
-    "migration_status": "mapped"
-  },
-  {
-    "field_name": "public_permits_2026",
-    "current_source_file": "processed_data/draw_reality_engine.csv",
-    "consumed_by_files": [
-      "hunt-research.js"
-    ],
-    "page_tool_using_it": [
-      "Hunt Research"
-    ],
-    "required_or_optional": "optional",
-    "data_type_observed": "number-like",
-    "example_values": [
-      "0",
-      "2",
-      "4",
-      "5"
-    ],
-    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
-    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.public_permits_2026",
-    "migration_status": "mapped"
-  },
-  {
-    "field_name": "public_permits_2026_source",
-    "current_source_file": "processed_data/draw_reality_engine.csv",
-    "consumed_by_files": [],
-    "page_tool_using_it": [
-      "Hunt Research"
-    ],
-    "required_or_optional": "optional",
-    "data_type_observed": "string",
-    "example_values": [
-      "missing_projection_fill_v1",
-      "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMITS"
-    ],
-    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
-    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.public_permits_2026_source",
-    "migration_status": "mapped"
-  },
-  {
-    "field_name": "random_draw_odds_2026",
-    "current_source_file": "processed_data/draw_reality_engine.csv",
-    "consumed_by_files": [
-      "hunt-research.js"
-    ],
-    "page_tool_using_it": [
-      "Hunt Research"
-    ],
-    "required_or_optional": "optional",
-    "data_type_observed": "number-like",
-    "example_values": [
-      "0.000",
-      "0.150",
-      "0.102",
-      "0.110"
-    ],
-    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
-    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.random_draw_odds_2026",
-    "migration_status": "mapped"
-  },
-  {
-    "field_name": "random_permits_2025",
+    "field_name": "regular_permits",
     "current_source_file": "processed_data/draw_reality_engine.csv",
     "consumed_by_files": [],
     "page_tool_using_it": [
@@ -5480,31 +5841,10 @@
       "0",
       "1",
       "2",
-      "12"
+      "3"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
-    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.random_permits_2025",
-    "migration_status": "mapped"
-  },
-  {
-    "field_name": "random_permits_2026",
-    "current_source_file": "processed_data/draw_reality_engine.csv",
-    "consumed_by_files": [
-      "hunt-research.js"
-    ],
-    "page_tool_using_it": [
-      "Hunt Research"
-    ],
-    "required_or_optional": "optional",
-    "data_type_observed": "number-like",
-    "example_values": [
-      "0",
-      "1",
-      "2",
-      "4"
-    ],
-    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
-    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.random_permits_2026",
+    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.regular_permits",
     "migration_status": "mapped"
   },
   {
@@ -5524,11 +5864,30 @@
     "required_or_optional": "required",
     "data_type_observed": "string",
     "example_values": [
-      "Nonresident",
-      "Resident"
+      "Resident",
+      "Nonresident"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.residency",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "source_file",
+    "current_source_file": "processed_data/draw_reality_engine.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "2025 Big Game Draw Results.pdf",
+      "2025 O.I.L. Draw Results.pdf",
+      "2025 Black Bear Draw odds.pdf",
+      "2025 Youth Antlerless Draw.pdf"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.source_file",
     "migration_status": "mapped"
   },
   {
@@ -5551,35 +5910,129 @@
       "Outfitter Verification"
     ],
     "required_or_optional": "optional",
-    "data_type_observed": "string",
-    "example_values": [
-      "INSUFFICIENT DATA",
-      "MAX POOL",
-      "ON EDGE",
-      "BEHIND"
-    ],
+    "data_type_observed": "unknown",
+    "example_values": [],
     "fallback_behavior": "Display-only; MAX POOL must not force 100 percent odds.",
     "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.status",
     "migration_status": "mapped"
   },
   {
-    "field_name": "trend",
+    "field_name": "success_ratio",
     "current_source_file": "processed_data/draw_reality_engine.csv",
-    "consumed_by_files": [
-      "hunt-research.js"
-    ],
+    "consumed_by_files": [],
     "page_tool_using_it": [
       "Hunt Research"
     ],
     "required_or_optional": "optional",
     "data_type_observed": "string",
     "example_values": [
-      "YELLOW",
-      "GREEN",
-      "RED"
+      "1 in 2.0",
+      "1 in 342.0",
+      "1 in 133.0",
+      "1 in 6.5"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
-    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.trend",
+    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.success_ratio",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "total_drawn",
+    "current_source_file": "processed_data/draw_reality_engine.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "number-like",
+    "example_values": [
+      "1",
+      "0",
+      "2",
+      "5"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.total_drawn",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "total_permits",
+    "current_source_file": "processed_data/draw_reality_engine.csv",
+    "consumed_by_files": [
+      "data.js"
+    ],
+    "page_tool_using_it": [
+      "Hunt Planner",
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "number-like",
+    "example_values": [
+      "1",
+      "0",
+      "2",
+      "5"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.total_permits",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "year",
+    "current_source_file": "processed_data/draw_reality_engine.csv",
+    "consumed_by_files": [
+      "hard-copy.html"
+    ],
+    "page_tool_using_it": [
+      "Hunt Research",
+      "Hard Copies"
+    ],
+    "required_or_optional": "required",
+    "data_type_observed": "number-like",
+    "example_values": [
+      "2025"
+    ],
+    "fallback_behavior": "Hard Copies derives year from title/subtitle/href if not supplied.",
+    "canonical_target_path": "hunt-research-2026.datasets.draw_reality_engine.fields.year",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "companion_href",
+    "current_source_file": "processed_data/hard_data_exports/hard_copy_pdf_manifest.web.json",
+    "consumed_by_files": [
+      "hard-copy.html"
+    ],
+    "page_tool_using_it": [
+      "Hard Copies"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "./processed_data/hard_data_exports/hunt_tables/2026/2026_BISON_COW.xlsx",
+      "./processed_data/hard_data_exports/hunt_tables/2026/2026_BISON_COW.pdf",
+      "./processed_data/hard_data_exports/hunt_tables/2026/2026_BISON_HUNTER_CHOICE.xlsx",
+      "./processed_data/hard_data_exports/hunt_tables/2026/2026_BISON_HUNTER_CHOICE.pdf"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hard-copies-2026.library.items[].companion_href",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "companion_type",
+    "current_source_file": "processed_data/hard_data_exports/hard_copy_pdf_manifest.web.json",
+    "consumed_by_files": [
+      "hard-copy.html"
+    ],
+    "page_tool_using_it": [
+      "Hard Copies"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "xlsx",
+      "pdf"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hard-copies-2026.library.items[].companion_type",
     "migration_status": "mapped"
   },
   {
@@ -5601,8 +6054,9 @@
     "data_type_observed": "string",
     "example_values": [
       "harvest_report",
+      "regulation",
       "draw_odds",
-      "regulation"
+      "conservation_permits"
     ],
     "fallback_behavior": "Hard Copies falls back to raw_library and can infer conservation_permits from text.",
     "canonical_target_path": "hard-copies-2026.library.items[].group",
@@ -5629,13 +6083,97 @@
     "required_or_optional": "required",
     "data_type_observed": "string",
     "example_values": [
-      "./pipeline/RAW/hunt_unit_database/2026/pdf/harvest_report/2026-03-06-2025-preliminary-bg-harvest.pdf",
-      "./pipeline/RAW/hunt_unit_database/2026/pdf/draw_odds/2025__turkey_2025_youth_turkey_draw_results.pdf",
-      "./pipeline/RAW/hunt_unit_database/2026/pdf/draw_odds/turkey_2025_turkey_bonus_points_draw_results.pdf",
-      "./pipeline/RAW/hunt_unit_database/2026/pdf/draw_odds/2025__black_bear_25_drawing_odds.pdf"
+      "./processed_data/hard_data_exports/source_pdfs/harvest_report/2025/2025-preliminary-big-game-harvest-report.pdf",
+      "./processed_data/hard_data_exports/source_pdfs/regulations/2026/2026-waterfowl-guidebook.pdf",
+      "./processed_data/hard_data_exports/source_pdfs/regulations/2025-26/2025-26-upland-game-turkey-guidebook.pdf",
+      "./processed_data/hard_data_exports/source_pdfs/regulations/2026/2026-bear-cougar-furbearer-guidebook.pdf"
     ],
     "fallback_behavior": "Hard-copy item cannot render as a download card without a link.",
     "canonical_target_path": "hard-copies-2026.library.items[].href",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "model_year_folder",
+    "current_source_file": "processed_data/hard_data_exports/hard_copy_pdf_manifest.web.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hard Copies"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "number-like",
+    "example_values": [
+      "2026"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hard-copies-2026.library.items[].model_year_folder",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "parent_title",
+    "current_source_file": "processed_data/hard_data_exports/hard_copy_pdf_manifest.web.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hard Copies"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "2025 Big Game Draw Results"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hard-copies-2026.library.items[].parent_title",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "source_authority",
+    "current_source_file": "processed_data/hard_data_exports/hard_copy_pdf_manifest.web.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hard Copies"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "Utah Division of Wildlife Resources"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hard-copies-2026.library.items[].source_authority",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "source_role",
+    "current_source_file": "processed_data/hard_data_exports/hard_copy_pdf_manifest.web.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hard Copies"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "official_source",
+      "parent_source",
+      "derived_subfile",
+      "derived_formatted_table"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hard-copies-2026.library.items[].source_role",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "source_year",
+    "current_source_file": "processed_data/hard_data_exports/hard_copy_pdf_manifest.web.json",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hard Copies"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "number-like",
+    "example_values": [
+      "2025",
+      "2026"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hard-copies-2026.library.items[].source_year",
     "migration_status": "mapped"
   },
   {
@@ -5654,10 +6192,10 @@
     "required_or_optional": "optional",
     "data_type_observed": "string",
     "example_values": [
-      "Utah harvest/source report PDF (model year folder 2026).",
-      "Utah draw results/odds source PDF (model year folder 2026).",
-      "Utah regulation/guidebook PDF (year folder 2025).",
-      "Utah harvest/source report PDF (model year folder 2025)."
+      "Official Utah DWR preliminary big-game harvest report published March 6, 2026.",
+      "Official Utah DWR waterfowl regulation guidebook.",
+      "Official Utah DWR upland game and turkey regulation guidebook.",
+      "Official Utah DWR bear, cougar, and furbearer regulation guidebook."
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hard-copies-2026.library.items[].subtitle",
@@ -5685,10 +6223,10 @@
     "required_or_optional": "required",
     "data_type_observed": "string",
     "example_values": [
-      "2026 03 06 2025 preliminary bg harvest",
-      "turkey 2025 youth turkey draw results",
-      "turkey 2025 turkey bonus points draw results",
-      "black bear 25 drawing odds"
+      "2025 Preliminary Big Game Harvest Report",
+      "2026 Waterfowl Guidebook",
+      "2025-26 Upland Game Turkey Guidebook",
+      "2026 Bear Cougar Furbearer Guidebook"
     ],
     "fallback_behavior": "Displayed as card title; falls back to hunt_code or filename where the current UI allows it.",
     "canonical_target_path": "hard-copies-2026.library.items[].title",
@@ -5718,7 +6256,10 @@
     "required_or_optional": "required",
     "data_type_observed": "string",
     "example_values": [
-      "pdf"
+      "pdf",
+      "csv",
+      "json",
+      "xlsx"
     ],
     "fallback_behavior": "Hard Copies falls back to file.",
     "canonical_target_path": "hard-copies-2026.library.items[].type",
@@ -5736,8 +6277,8 @@
     "required_or_optional": "required",
     "data_type_observed": "number-like",
     "example_values": [
-      "2026",
       "2025",
+      "2026",
       "2024",
       "2023"
     ],
@@ -5779,6 +6320,23 @@
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.applicants_2025",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "data_status",
+    "current_source_file": "processed_data/hunt_master_enriched.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "SOURCE_CONFIRMED_NO_QUOTA_PUBLISHED",
+      "COMPLETE"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.data_status",
     "migration_status": "mapped"
   },
   {
@@ -5969,6 +6527,118 @@
     "migration_status": "mapped"
   },
   {
+    "field_name": "permit_allocation_type",
+    "current_source_file": "processed_data/hunt_master_enriched.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "NO_QUOTA_PUBLISHED",
+      "FULL_SPLIT",
+      "TOTAL_ONLY"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.permit_allocation_type",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "permit_note",
+    "current_source_file": "processed_data/hunt_master_enriched.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "Statewide buck deer permit: 1 public draw permit; separate auction/conservation permit noted outside standard draw allocation."
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.permit_note",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "permit_overlay_source",
+    "current_source_file": "processed_data/hunt_master_enriched.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.permit_overlay_source",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "permit_source_authority",
+    "current_source_file": "processed_data/hunt_master_enriched.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "Utah DWR published 2026 permit allocation"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.permit_source_authority",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "permit_status",
+    "current_source_file": "processed_data/hunt_master_enriched.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "NO_QUOTA_PUBLISHED",
+      "FULL_SPLIT",
+      "TOTAL_ONLY"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.permit_status",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "permits_2026_conservation",
+    "current_source_file": "processed_data/hunt_master_enriched.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "unknown",
+    "example_values": [],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.permits_2026_conservation",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "permits_2026_expo",
+    "current_source_file": "processed_data/hunt_master_enriched.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "unknown",
+    "example_values": [],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.permits_2026_expo",
+    "migration_status": "mapped"
+  },
+  {
     "field_name": "permits_2026_nr",
     "current_source_file": "processed_data/hunt_master_enriched.csv",
     "consumed_by_files": [
@@ -6020,10 +6690,24 @@
     "required_or_optional": "optional",
     "data_type_observed": "string",
     "example_values": [
-      "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMITS"
+      "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.permits_2026_source",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "permits_2026_sportsman",
+    "current_source_file": "processed_data/hunt_master_enriched.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "unknown",
+    "example_values": [],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.permits_2026_sportsman",
     "migration_status": "mapped"
   },
   {
@@ -6160,7 +6844,7 @@
     "required_or_optional": "optional",
     "data_type_observed": "string",
     "example_values": [
-      "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMITS"
+      "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.public_permits_2026_source",
@@ -6209,6 +6893,62 @@
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.residency",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "special_permit_area_id",
+    "current_source_file": "processed_data/hunt_master_enriched.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "unknown",
+    "example_values": [],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.special_permit_area_id",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "special_permit_category",
+    "current_source_file": "processed_data/hunt_master_enriched.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "unknown",
+    "example_values": [],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.special_permit_category",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "special_permit_note",
+    "current_source_file": "processed_data/hunt_master_enriched.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "unknown",
+    "example_values": [],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.special_permit_note",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "special_permit_overlay_source",
+    "current_source_file": "processed_data/hunt_master_enriched.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "unknown",
+    "example_values": [],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.hunt_master_enriched.fields.special_permit_overlay_source",
     "migration_status": "mapped"
   },
   {
@@ -6334,7 +7074,8 @@
     "data_type_observed": "string",
     "example_values": [
       "Public",
-      "CWMU"
+      "CWMU",
+      "Private"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.access_type",
@@ -6504,6 +7245,23 @@
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.coverage_status",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "data_status",
+    "current_source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "SOURCE_CONFIRMED_NO_QUOTA_PUBLISHED",
+      "COMPLETE"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.data_status",
     "migration_status": "mapped"
   },
   {
@@ -6820,6 +7578,95 @@
     "migration_status": "mapped"
   },
   {
+    "field_name": "permit_allocation_type",
+    "current_source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "NO_QUOTA_PUBLISHED",
+      "FULL_SPLIT",
+      "TOTAL_ONLY",
+      "CONSERVATION"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.permit_allocation_type",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "permit_note",
+    "current_source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "../notes/DATABASE/BR1000-notes.md",
+      "../notes/DATABASE/BR1007-notes.md",
+      "Statewide buck deer permit: 1 public draw permit; separate auction/conservation permit noted outside standard draw allocation.",
+      "../notes/DATABASE/BR1001-notes.md"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.permit_note",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "permit_overlay_source",
+    "current_source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.permit_overlay_source",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "permit_source_authority",
+    "current_source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "Utah DWR published 2026 permit allocation"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.permit_source_authority",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "permit_status",
+    "current_source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "NO_QUOTA_PUBLISHED",
+      "FULL_SPLIT",
+      "TOTAL_ONLY",
+      "SPECIAL_PERMIT_ONLY"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.permit_status",
+    "migration_status": "mapped"
+  },
+  {
     "field_name": "permits_2025_nr",
     "current_source_file": "processed_data/hunt_unit_reference_linked.csv",
     "consumed_by_files": [],
@@ -6879,6 +7726,39 @@
     "migration_status": "mapped"
   },
   {
+    "field_name": "permits_2026_conservation",
+    "current_source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "number-like",
+    "example_values": [
+      "2",
+      "1",
+      "4",
+      "8"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.permits_2026_conservation",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "permits_2026_expo",
+    "current_source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "unknown",
+    "example_values": [],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.permits_2026_expo",
+    "migration_status": "mapped"
+  },
+  {
     "field_name": "permits_2026_nr",
     "current_source_file": "processed_data/hunt_unit_reference_linked.csv",
     "consumed_by_files": [
@@ -6930,10 +7810,24 @@
     "required_or_optional": "optional",
     "data_type_observed": "string",
     "example_values": [
-      "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMITS"
+      "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.permits_2026_source",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "permits_2026_sportsman",
+    "current_source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "unknown",
+    "example_values": [],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.permits_2026_sportsman",
     "migration_status": "mapped"
   },
   {
@@ -7018,7 +7912,7 @@
     "required_or_optional": "optional",
     "data_type_observed": "string",
     "example_values": [
-      "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMITS"
+      "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.public_permits_2026_source",
@@ -7144,6 +8038,77 @@
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.source_pdf",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "special_permit_area_id",
+    "current_source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "CONSERVATION_DEER_BOOK_CLIFFS_2026",
+      "CONSERVATION_DEER_LA_SAL_DOLORES_TRIANGLE_2026",
+      "CONSERVATION_DESERT_BIGHORN_SHEEP_KAIPAROWITS_EAST_2026",
+      "CONSERVATION_DESERT_BIGHORN_SHEEP_KAIPAROWITS_ESCALANTE_2026"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.special_permit_area_id",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "special_permit_category",
+    "current_source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "CONSERVATION"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.special_permit_category",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "special_permit_note",
+    "current_source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "2026 conservation permit count from 2025-2027 conservation workbook source area: Book Cliffs (Hunter's Choice - winning bidder chooses one eligible season for that unit/species; not a multiseason permit). Kept outside normal public draw quota.",
+      "2026 conservation permit count from 2025-2027 conservation workbook source area: Book Cliffs (Archery). Kept outside normal public draw quota.",
+      "2026 conservation permit count from 2025-2027 conservation workbook source area: Book Cliffs (Muzzleloader). Kept outside normal public draw quota.",
+      "2026 conservation permit count from 2025-2027 conservation workbook source area: La Sal, Dolores Triangle (Multiseason). Kept outside normal public draw quota."
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.special_permit_note",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "special_permit_overlay_source",
+    "current_source_file": "processed_data/hunt_unit_reference_linked.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "pipeline/RAW/hunt_unit_database/2026/reports/conservation_raw_workbook_grouped_2026.csv",
+      "pipeline/RAW/hunt_unit_database/2026/reports/conservation_area_crosswalk_2026.csv"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.hunt_unit_reference_linked.fields.special_permit_overlay_source",
     "migration_status": "mapped"
   },
   {
@@ -7619,7 +8584,81 @@
     "migration_status": "mapped"
   },
   {
-    "field_name": "guaranteed_marker",
+    "field_name": "applicants_above",
+    "current_source_file": "processed_data/point_ladder_view.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "number-like",
+    "example_values": [
+      "0",
+      "1",
+      "4",
+      "16"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.applicants_above",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "applicants_at_level",
+    "current_source_file": "processed_data/point_ladder_view.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "number-like",
+    "example_values": [
+      "0",
+      "1",
+      "3",
+      "12"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.applicants_at_level",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "data_status",
+    "current_source_file": "processed_data/point_ladder_view.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "SOURCE_CONFIRMED_NO_QUOTA_PUBLISHED",
+      "COMPLETE"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.data_status",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "delta_gap",
+    "current_source_file": "processed_data/point_ladder_view.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "number-like",
+    "example_values": [
+      "-1",
+      "0",
+      "-3",
+      "-5"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.delta_gap",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "draw_outlook",
     "current_source_file": "processed_data/point_ladder_view.csv",
     "consumed_by_files": [
       "hunt-research.js"
@@ -7628,13 +8667,105 @@
       "Hunt Research"
     ],
     "required_or_optional": "optional",
-    "data_type_observed": "boolean-like",
+    "data_type_observed": "string",
     "example_values": [
-      "FALSE",
-      "TRUE"
+      "INSUFFICIENT DATA",
+      "GREEN LIGHT",
+      "MAY DRAW IN 5-10 YEARS",
+      "LONG ODDS"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
-    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.guaranteed_marker",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.draw_outlook",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "gap",
+    "current_source_file": "processed_data/point_ladder_view.csv",
+    "consumed_by_files": [
+      "index.html",
+      "research.html",
+      "hard-copy.html",
+      "verify.html",
+      "app.js",
+      "hunt-research.js",
+      "ui.js",
+      "header-layout.js"
+    ],
+    "page_tool_using_it": [
+      "Hunt Planner",
+      "Hunt Research",
+      "Hard Copies",
+      "Outfitter Verification"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "number-like",
+    "example_values": [
+      "-32",
+      "-31",
+      "-30",
+      "-29"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.gap",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "guaranteed_at_2025",
+    "current_source_file": "processed_data/point_ladder_view.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "number-like",
+    "example_values": [
+      "0",
+      "31",
+      "30",
+      "29"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.guaranteed_at_2025",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "guaranteed_at_2026",
+    "current_source_file": "processed_data/point_ladder_view.csv",
+    "consumed_by_files": [
+      "hunt-research.js"
+    ],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "number-like",
+    "example_values": [
+      "0",
+      "31",
+      "30",
+      "28"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.guaranteed_at_2026",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "guaranteed_delta_2025_to_2026",
+    "current_source_file": "processed_data/point_ladder_view.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "number-like",
+    "example_values": [
+      "0",
+      "1",
+      "-2",
+      "-4"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.guaranteed_delta_2025_to_2026",
     "migration_status": "mapped"
   },
   {
@@ -7664,28 +8795,26 @@
     "migration_status": "mapped"
   },
   {
-    "field_name": "odds_2025_actual",
+    "field_name": "max_point_permits_2025",
     "current_source_file": "processed_data/point_ladder_view.csv",
-    "consumed_by_files": [
-      "hunt-research.js"
-    ],
+    "consumed_by_files": [],
     "page_tool_using_it": [
       "Hunt Research"
     ],
     "required_or_optional": "optional",
-    "data_type_observed": "string",
+    "data_type_observed": "number-like",
     "example_values": [
-      "N/A",
-      "1 in 342.0",
-      "1 in 2.0",
-      "1 in 133.0"
+      "0",
+      "1",
+      "2",
+      "3"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
-    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.odds_2025_actual",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.max_point_permits_2025",
     "migration_status": "mapped"
   },
   {
-    "field_name": "odds_2026_projected",
+    "field_name": "max_point_permits_2026",
     "current_source_file": "processed_data/point_ladder_view.csv",
     "consumed_by_files": [
       "hunt-research.js"
@@ -7696,13 +8825,144 @@
     "required_or_optional": "optional",
     "data_type_observed": "number-like",
     "example_values": [
-      "0.000",
-      "0.004",
-      "0.002",
-      "0.014"
+      "0",
+      "1",
+      "2",
+      "3"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
-    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.odds_2026_projected",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.max_point_permits_2026",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "permit_allocation_type",
+    "current_source_file": "processed_data/point_ladder_view.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "NO_QUOTA_PUBLISHED",
+      "FULL_SPLIT",
+      "TOTAL_ONLY"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.permit_allocation_type",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "permit_delta_2025_to_2026",
+    "current_source_file": "processed_data/point_ladder_view.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "number-like",
+    "example_values": [
+      "0",
+      "-17",
+      "-19",
+      "1"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.permit_delta_2025_to_2026",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "permit_note",
+    "current_source_file": "processed_data/point_ladder_view.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "Statewide buck deer permit: 1 public draw permit; separate auction/conservation permit noted outside standard draw allocation."
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.permit_note",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "permit_overlay_source",
+    "current_source_file": "processed_data/point_ladder_view.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.permit_overlay_source",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "permit_source_authority",
+    "current_source_file": "processed_data/point_ladder_view.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "Utah DWR published 2026 permit allocation"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.permit_source_authority",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "permit_status",
+    "current_source_file": "processed_data/point_ladder_view.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "NO_QUOTA_PUBLISHED",
+      "FULL_SPLIT",
+      "TOTAL_ONLY"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.permit_status",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "permits_2026_conservation",
+    "current_source_file": "processed_data/point_ladder_view.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "unknown",
+    "example_values": [],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.permits_2026_conservation",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "permits_2026_expo",
+    "current_source_file": "processed_data/point_ladder_view.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "unknown",
+    "example_values": [],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.permits_2026_expo",
     "migration_status": "mapped"
   },
   {
@@ -7757,10 +9017,24 @@
     "required_or_optional": "optional",
     "data_type_observed": "string",
     "example_values": [
-      "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMITS"
+      "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.permits_2026_source",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "permits_2026_sportsman",
+    "current_source_file": "processed_data/point_ladder_view.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "unknown",
+    "example_values": [],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.permits_2026_sportsman",
     "migration_status": "mapped"
   },
   {
@@ -7800,13 +9074,150 @@
     "required_or_optional": "required",
     "data_type_observed": "number-like",
     "example_values": [
-      "0",
-      "1",
-      "2",
-      "3"
+      "32",
+      "31",
+      "30",
+      "29"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
     "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.points",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "projected_applicants_2026_source",
+    "current_source_file": "processed_data/point_ladder_view.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "missing_projection_fill_v1",
+      "projected_2026",
+      "fallback_2025"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.projected_applicants_2026_source",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "public_permits_2025",
+    "current_source_file": "processed_data/point_ladder_view.csv",
+    "consumed_by_files": [
+      "hunt-research.js"
+    ],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "number-like",
+    "example_values": [
+      "0",
+      "2",
+      "4",
+      "5"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.public_permits_2025",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "public_permits_2026",
+    "current_source_file": "processed_data/point_ladder_view.csv",
+    "consumed_by_files": [
+      "hunt-research.js"
+    ],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "number-like",
+    "example_values": [
+      "0",
+      "2",
+      "4",
+      "5"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.public_permits_2026",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "public_permits_2026_source",
+    "current_source_file": "processed_data/point_ladder_view.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.public_permits_2026_source",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "random_draw_odds_2026",
+    "current_source_file": "processed_data/point_ladder_view.csv",
+    "consumed_by_files": [
+      "hunt-research.js"
+    ],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "number-like",
+    "example_values": [
+      "0.000",
+      "0.150",
+      "0.102",
+      "0.110"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.random_draw_odds_2026",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "random_permits_2025",
+    "current_source_file": "processed_data/point_ladder_view.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "number-like",
+    "example_values": [
+      "0",
+      "1",
+      "2",
+      "12"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.random_permits_2025",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "random_permits_2026",
+    "current_source_file": "processed_data/point_ladder_view.csv",
+    "consumed_by_files": [
+      "hunt-research.js"
+    ],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "number-like",
+    "example_values": [
+      "0",
+      "1",
+      "2",
+      "4"
+    ],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.random_permits_2026",
     "migration_status": "mapped"
   },
   {
@@ -7834,19 +9245,110 @@
     "migration_status": "mapped"
   },
   {
-    "field_name": "user_point_marker",
+    "field_name": "special_permit_area_id",
     "current_source_file": "processed_data/point_ladder_view.csv",
     "consumed_by_files": [],
     "page_tool_using_it": [
       "Hunt Research"
     ],
     "required_or_optional": "optional",
-    "data_type_observed": "boolean-like",
+    "data_type_observed": "unknown",
+    "example_values": [],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.special_permit_area_id",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "special_permit_category",
+    "current_source_file": "processed_data/point_ladder_view.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "unknown",
+    "example_values": [],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.special_permit_category",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "special_permit_note",
+    "current_source_file": "processed_data/point_ladder_view.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "unknown",
+    "example_values": [],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.special_permit_note",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "special_permit_overlay_source",
+    "current_source_file": "processed_data/point_ladder_view.csv",
+    "consumed_by_files": [],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "unknown",
+    "example_values": [],
+    "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.special_permit_overlay_source",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "status",
+    "current_source_file": "processed_data/point_ladder_view.csv",
+    "consumed_by_files": [
+      "index.html",
+      "research.html",
+      "hard-copy.html",
+      "verify.html",
+      "app.js",
+      "data.js",
+      "boundary-resolver.js",
+      "hunt-research.js"
+    ],
+    "page_tool_using_it": [
+      "Hunt Planner",
+      "Hunt Research",
+      "Hard Copies",
+      "Outfitter Verification"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
     "example_values": [
-      "FALSE"
+      "INSUFFICIENT DATA",
+      "MAX POOL",
+      "ON EDGE",
+      "BEHIND"
+    ],
+    "fallback_behavior": "Display-only; MAX POOL must not force 100 percent odds.",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.status",
+    "migration_status": "mapped"
+  },
+  {
+    "field_name": "trend",
+    "current_source_file": "processed_data/point_ladder_view.csv",
+    "consumed_by_files": [
+      "hunt-research.js"
+    ],
+    "page_tool_using_it": [
+      "Hunt Research"
+    ],
+    "required_or_optional": "optional",
+    "data_type_observed": "string",
+    "example_values": [
+      "YELLOW",
+      "GREEN",
+      "RED"
     ],
     "fallback_behavior": "Current app tolerates missing values unless this field is marked required.",
-    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.user_point_marker",
+    "canonical_target_path": "hunt-research-2026.datasets.point_ladder_view.fields.trend",
     "migration_status": "mapped"
   },
   {
