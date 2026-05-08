@@ -1,0 +1,73 @@
+{
+  "date": "2026-05-08",
+  "scope": [
+    "pipeline/RAW/hunt_unit_database/spin_off_cleanup_phase2_20260508",
+    "_exports/spin_off_cleanup_20260508",
+    "_exports/spin_off_cleanup_phase2_20260508"
+  ],
+  "inventory": {
+    "phase2_local_folder": {
+      "file_count": 47
+    },
+    "exports_spin_off_cleanup": {
+      "file_count": 2061,
+      "top_dirs": [
+        "pages-dist",
+        "processed_data",
+        "outputs",
+        "docs",
+        "scripts"
+      ]
+    },
+    "exports_phase2_mirror": {
+      "file_count": 47
+    }
+  },
+  "phase2_vs_root": {
+    "total_compared": 47,
+    "identical": 40,
+    "different": 4,
+    "missing_in_root": 3,
+    "different_files": [
+      "canonical/permit-allocation-2026-integrity-report.json",
+      "generated/pages/hard-copies.json",
+      "generated/pages/hunt-planner.json",
+      "generated/pages/hunt-research.json"
+    ],
+    "missing_files": [
+      "data/hunt-master-canonical-2026-foundation.backup_before_add_106_missing_20260507_214651.csv",
+      "data/hunt-master-canonical-2026-foundation.with_106_missing_added_20260507_214729.csv",
+      "_moved_paths.txt"
+    ]
+  },
+  "promotion": {
+    "promoted_files": [],
+    "ignored_as_temporary_or_debug": [
+      "_exports/spin_off_cleanup_20260508/**",
+      "pipeline/RAW/hunt_unit_database/spin_off_cleanup_phase2_20260508/data/hunt-master-canonical-2026-foundation.backup_before_add_106_missing_20260507_214651.csv",
+      "pipeline/RAW/hunt_unit_database/spin_off_cleanup_phase2_20260508/data/hunt-master-canonical-2026-foundation.with_106_missing_added_20260507_214729.csv",
+      "pipeline/RAW/hunt_unit_database/spin_off_cleanup_phase2_20260508/_moved_paths.txt"
+    ],
+    "decision": "No additional runtime promotion required; root files are already authoritative/newer."
+  },
+  "validation": {
+    "commands_run": [
+      "npm run sync:permits-2026",
+      "npm run verify:permits-2026",
+      "npm run validate:canonical",
+      "npm run compare:runtime-contracts",
+      "npm run promotion:safety",
+      "npm run test",
+      "npm run build"
+    ],
+    "success": true,
+    "promotion_blockers": 0,
+    "notes": [
+      "Non-blocking hard-copy local path warnings remain for missing referenced PDF files."
+    ]
+  },
+  "root_pages_readiness": {
+    "main_root_runtime_authoritative": true,
+    "relies_on_pages_dist_for_runtime": false
+  }
+}

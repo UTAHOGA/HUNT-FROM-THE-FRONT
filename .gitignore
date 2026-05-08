@@ -47,3 +47,8 @@ _pdf_inbox/
 # Generated PDF ingest review packages
 processed_data/pdf_ingest/
 
+# Local/generated build artifacts not used by main/root runtime
+pages-dist/
+engine.zip
+processed_data/permit_allocation_2026_last_sync.json
+
