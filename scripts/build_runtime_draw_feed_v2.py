@@ -100,6 +100,67 @@ def normalize_success_ratio(value):
         return t
 
 
+DRAW_POOL_VALUES = {
+    "standard",
+    "youth",
+    "lifetime",
+    "dedicated_hunter",
+    "youth_dedicated_hunter",
+    "youth_turkey",
+    "youth_mature_bull",
+    "sportsman",
+    "hunt_expo",
+}
+
+
+def _join_nonempty(parts):
+    return " ".join([p for p in parts if clean(p)]).strip()
+
+
+def synthesize_hunt_class(species, sex_type, hunt_type, weapon):
+    sp = clean(species)
+    sx = clean(sex_type)
+    ht = clean(hunt_type)
+    wp = clean(weapon)
+    ht_l = ht.lower()
+    wp_l = wp.lower()
+    wp_specific = "" if wp_l in {"", "any legal weapon"} else wp
+
+    if "cwmu" in ht_l:
+        return _join_nonempty(["CWMU", sx, sp])
+    if "once-in-a-lifetime" in ht_l or "once in a lifetime" in ht_l or ht_l == "oial":
+        return _join_nonempty(["Once-in-a-lifetime", sx, sp])
+    if "premium limited entry" in ht_l:
+        return _join_nonempty(["Premium Limited-entry", wp_specific, sx, sp])
+    if "limited entry" in ht_l:
+        return _join_nonempty(["Limited-entry", wp_specific, sx, sp])
+    if "antlerless" in ht_l:
+        return _join_nonempty(["Antlerless", sp])
+    if "general season" in ht_l:
+        return _join_nonempty(["General-season", wp_specific, sx, sp])
+    if "dedicated hunter" in ht_l:
+        return _join_nonempty(["Dedicated Hunter", sp])
+    if "lifetime" in ht_l:
+        return _join_nonempty(["Lifetime", sx, sp])
+    if "sportsman" in ht_l:
+        return _join_nonempty(["Sportsman", sx, sp])
+    if "expo" in ht_l:
+        return _join_nonempty(["Hunt Expo", sx, sp])
+    if ht:
+        return _join_nonempty([ht, wp_specific, sx, sp])
+    return _join_nonempty([wp_specific, sx, sp])
+
+
+def normalize_hunt_class(raw_hunt_class, species, sex_type, hunt_type, weapon):
+    hc = clean(raw_hunt_class)
+    hc_l = hc.lower()
+    ht = clean(hunt_type)
+    ht_l = ht.lower()
+    if hc and hc_l not in DRAW_POOL_VALUES and hc_l != ht_l:
+        return hc
+    return synthesize_hunt_class(species, sex_type, hunt_type, weapon)
+
+
 def sha256_file(path: Path):
     h = hashlib.sha256()
     with path.open("rb") as f:
@@ -257,7 +318,13 @@ def main():
             "sex_type": clean(row.get("sex_type")),
             "hunt_type": clean(row.get("hunt_type")),
             "weapon": clean(row.get("weapon")),
-            "hunt_class": clean(row.get("hunt_class")),
+            "hunt_class": normalize_hunt_class(
+                row.get("hunt_class"),
+                row.get("species"),
+                row.get("sex_type"),
+                row.get("hunt_type"),
+                row.get("weapon"),
+            ),
             "season": clean(row.get("season")),
             "year": year,
             "draw_pool": draw_pool,

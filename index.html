@@ -259,7 +259,11 @@
             <label for="unitFilter">DWR Hunt Units</label>
             <select id="unitFilter" class="hunt-select"><option value="">Loading...</option></select>
           </div>
-          <div class="helper" style="margin-top:8px;">Live mode stays on. Use the Select button on an Available Hunt card to fly in and open hunt details.</div>
+          <div class="filter-actions" style="margin-top:8px;">
+            <button id="applyFiltersBtn" type="button">Apply</button>
+            <button id="clearFiltersBtn" type="button" class="secondary">Clear Hunt</button>
+          </div>
+          <div class="helper" style="margin-top:8px;">Select filters, then press Apply to open the hunt chooser and fly to a selected hunt.</div>
           <div id="status" class="status">Loading map...</div>
         </div>
       </section>

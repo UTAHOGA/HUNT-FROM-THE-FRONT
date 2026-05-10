@@ -181,6 +181,7 @@ const GOOGLE_EARTH_ATMOSPHERE_PROFILE = 'standard';
 const ENABLE_SELECTED_HUNT_FLOAT = false;
 const GOOGLE_EARTH_TOPOGRAPHY_EXAGGERATION = 1.5;
 const LIVE_FILTER_DESKTOP_DEBOUNCE_MS = 220;
+const ENABLE_LIVE_MATRIX_APPLY = false;
 let devDebugPanelEl = null;
 let devDebugPanelTimerId = null;
 let lastTrackedMapMode = '';
@@ -1818,7 +1819,12 @@ function handleFilterChange(event) {
     updateDwrMapFrame(getPreferredDwrHuntCandidate());
   }
   maybeAutoAdvanceFilterMatrix(changedId);
-  scheduleLiveFilterApply();
+  if (ENABLE_LIVE_MATRIX_APPLY) {
+    scheduleLiveFilterApply();
+  } else {
+    const count = getDisplayHunts().length;
+    updateStatus(`${count} matching hunt${count === 1 ? '' : 's'} ready. Press Apply to open choices.`);
+  }
 }
 
 function refreshSelectionMatrix() {
@@ -2265,7 +2271,7 @@ function buildDnrPlate(hunt, compact = false, roomy = false) {
     </div>`;
 }
 
-function syncSelectedHuntAcrossMapModes({ closeChooser = true, zoomGoogle = true } = {}) {
+async function syncSelectedHuntAcrossMapModes({ closeChooser = true, zoomGoogle = true } = {}) {
   if (!selectedHunt) {
     clearSelectedBoundaryFallbackLayer();
     return;
@@ -2274,10 +2280,12 @@ function syncSelectedHuntAcrossMapModes({ closeChooser = true, zoomGoogle = true
   renderOutfitters();
   renderMatchingHunts();
   if (closeChooser) closeSelectedHuntPopup();
-  styleBoundaryLayer();
-  applySelectedHuntBoundaryResolution(selectedHunt).catch((error) => {
+  try {
+    await applySelectedHuntBoundaryResolution(selectedHunt);
+  } catch (error) {
     console.warn('Selected hunt boundary resolution failed.', error);
-  });
+  }
+  styleBoundaryLayer();
   updateDwrMapFrame(selectedHunt);
 
   const mode = safe(mapTypeSelect?.value || 'google').toLowerCase();
@@ -2301,7 +2309,9 @@ window.selectHuntByKey = (key, options = {}) => {
     hunt_type: safe(getHuntType(h)),
     weapon: safe(getWeapon(h)),
   });
-  syncSelectedHuntAcrossMapModes({ closeChooser: true, zoomGoogle: true });
+  syncSelectedHuntAcrossMapModes({ closeChooser: true, zoomGoogle: true }).catch((error) => {
+    console.warn('Hunt selection sync failed.', error);
+  });
 };
 window.selectHuntByCode = (code) => {
   const want = safe(code).trim().toUpperCase();
@@ -2934,6 +2944,7 @@ function openSelectedHuntPopup() {
 function closeSelectedHuntPopup() {
   if (!mapChooser) return;
   mapChooser.classList.remove('is-open');
+  mapChooser.classList.remove('is-hunt-results');
   mapChooser.setAttribute('aria-hidden', 'true');
   selectedBoundaryMatches = [];
   if (mapChooserBody) {
@@ -3030,6 +3041,7 @@ function showHuntMatchesChooser(title, matches, kicker = 'Available Hunts') {
   selectedBoundaryMatches = matches.slice();
   mapChooserKicker.textContent = kicker;
   mapChooserTitle.textContent = firstNonEmpty(title, 'Available Hunts');
+  mapChooser.classList.add('is-hunt-results');
   mapChooserBody.innerHTML = matches.length ? matches.slice(0, 12).map(h => `
     <div class="map-chooser-card" data-popup-hunt-key="${escapeHtml(getHuntRecordKey(h))}" role="button" tabindex="0">
       <div class="hunt-card-title">${escapeHtml(getHuntCode(h))} | ${escapeHtml(getUnitName(h) || getHuntTitle(h))}</div>
@@ -4618,10 +4630,6 @@ function runApplyFiltersFlow(trigger = 'manual') {
 
   if (!count) {
     updateStatus('No matching hunts found for the current filters.');
-  } else if (!isLive && selectedUnitGroups.length > 1 && !selectedUnitValue) {
-    zoomToDisplayHuntsBounds();
-    openSelectedUnitsChooser();
-    updateStatus(`${count} matching hunts across ${selectedUnitGroups.length} selected units.`);
   } else {
     if (!isLive) {
       if (selectedUnitValue && selectedUnitGroups.length === 1) {
@@ -4630,8 +4638,8 @@ function runApplyFiltersFlow(trigger = 'manual') {
         zoomToDisplayHuntsBounds();
       }
       const chooserTitle = selectedUnitValue
-        ? firstNonEmpty(selectedUnitGroups[0]?.unitName, selectedUnitValue)
-        : firstNonEmpty(selectedUnitGroups[0]?.unitName, 'Available Hunts');
+        ? firstNonEmpty(selectedUnitGroups[0]?.unitName, selectedUnitValue, 'Available Hunts')
+        : `Available Hunts (${count})`;
       showHuntMatchesChooser(chooserTitle, results, 'Available Hunts');
       updateStatus(`${count} matching hunt${count === 1 ? '' : 's'} applied.`);
     } else {
@@ -4664,8 +4672,8 @@ function scheduleLiveFilterApply() {
 
 function syncApplyFiltersButtonLabel() {
   if (!applyFiltersBtn) return;
-  applyFiltersBtn.textContent = 'Select';
-  applyFiltersBtn.title = 'Select and focus map to your current filtered hunt units';
+  applyFiltersBtn.textContent = 'Apply';
+  applyFiltersBtn.title = 'Apply filters and open matching hunts';
 }
 
 function bindControls() {
