@@ -66,3 +66,37 @@
 - Outputs:
   - data_model/quality/reference_baseline_audit.csv
   - data_model/quality/reference_baseline_audit_report.json
+
+## Runtime Draft Build - V3 Draw Feed (Draft Only)
+- Timestamp (UTC): 2026-05-10T17:44:04Z
+- Task scope:
+  - Build validated draft runtime draw feed from DATABASE-aligned V3 draw truth.
+  - Do not modify website files.
+  - Do not overwrite production `processed_data` runtime feeds.
+- Inputs:
+  - data_truth/draw_results_truth/normalized/draw_results_long.csv
+  - processed_data/draw_reality_engine.csv (comparison baseline only)
+  - pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv
+- Outputs:
+  - data_model/runtime_drafts/draw_reality_engine_v2.csv
+  - data_model/runtime_drafts/draw_reality_engine_v2_manifest.json
+  - data_model/runtime_drafts/draw_reality_engine_v2_validation_report.json
+  - data_model/runtime_drafts/draw_reality_engine_v2_vs_current_report.json
+  - data_model/runtime_drafts/draw_reality_engine_v2_rows_added.csv
+  - data_model/runtime_drafts/draw_reality_engine_v2_schema_changes.csv
+- Validation results:
+  - V3 rows: 112056
+  - Draft rows: 112056
+  - Corrected-key duplicates: 0
+  - Required key blanks (`hunt_code`, `year`, `draw_pool`, `residency`, `points`): 0
+  - DATABASE-matched rows missing boundary_id: 0
+  - `HUNT_CODE_NOT_IN_2026_DATABASE` rows: 7167
+  - `HUNT_CODE_NOT_IN_2026_DATABASE` unique hunt codes: 221
+  - Current runtime rows: 36862
+  - Rows added vs current runtime: 75194
+  - Current runtime missing `draw_pool`: true
+  - Core draw-value mismatches on overlapping rows: 0
+- Promotion blockers:
+  - Production `processed_data` not updated in this step.
+  - Website runtime not updated in this step.
+  - Downstream runtime consumers may need schema updates for `draw_pool`.

@@ -1,0 +1,43 @@
+{
+  "id": "draw_reality_engine_v2_draft",
+  "generated_at_utc": "2026-05-10T17:44:04.273394+00:00",
+  "truth_source": "data_truth/draw_results_truth/normalized/draw_results_long.csv",
+  "truth_source_sha256": "670fcbaee53f5eeb4b17d62c91fa254fa566504eabf118dec21739f9de8a365b",
+  "output_feed": "data_model/runtime_drafts/draw_reality_engine_v2.csv",
+  "required_key": "hunt_code + year + draw_pool + residency + points",
+  "required_columns": [
+    "hunt_code",
+    "boundary_id",
+    "hunt_name",
+    "species",
+    "sex_type",
+    "hunt_type",
+    "weapon",
+    "hunt_class",
+    "season",
+    "year",
+    "draw_pool",
+    "residency",
+    "points",
+    "eligible_applicants",
+    "bonus_permits",
+    "regular_permits",
+    "total_permits",
+    "success_ratio",
+    "source_file",
+    "source_pdf_page",
+    "source_report_page",
+    "source_sha256",
+    "validation_status",
+    "validation_notes"
+  ],
+  "validation_report": "data_model/runtime_drafts/draw_reality_engine_v2_validation_report.json",
+  "comparison_report": "data_model/runtime_drafts/draw_reality_engine_v2_vs_current_report.json",
+  "rows_added_file": "data_model/runtime_drafts/draw_reality_engine_v2_rows_added.csv",
+  "schema_changes_file": "data_model/runtime_drafts/draw_reality_engine_v2_schema_changes.csv",
+  "notes": [
+    "V3 is used as draw-result truth source",
+    "No production processed_data runtime feeds were overwritten in this task",
+    "Historical hunt codes not in 2026 DATABASE are preserved and flagged"
+  ]
+}
