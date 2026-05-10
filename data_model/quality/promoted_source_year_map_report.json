@@ -1,0 +1,83 @@
+{
+  "generated_at": "2026-05-10T13:33:43.534366+00:00",
+  "inputs": {
+    "promoted_quality_sources_csv": "data_model/quality/promoted_quality_sources.csv",
+    "promoted_draw_sources_csv": "data_model/quality/promoted_draw_sources.csv",
+    "raw_pdf_inventory_audit_csv": "data_model/quality/raw_pdf_inventory_audit.csv"
+  },
+  "outputs": {
+    "promoted_source_year_map_csv": "data_model/quality/promoted_source_year_map.csv",
+    "promoted_source_year_map_report_json": "data_model/quality/promoted_source_year_map_report.json"
+  },
+  "summary": {
+    "counters": {
+      "quality_promoted_rows": 253,
+      "draw_promoted_rows": 204,
+      "year_conflict_rows": 222,
+      "year_unknown_rows": 0,
+      "missing_audit_rows": 0,
+      "total_output_rows": 457
+    },
+    "missing_audit_sources": []
+  },
+  "validation": {
+    "checks": {
+      "rows_total": 457,
+      "missing_source_file": 0,
+      "missing_source_sha256": 0,
+      "missing_source_class": 0,
+      "invalid_engine_flag_rows": 0,
+      "folder_year_supported_rows": 453,
+      "missing_folder_year_supported_rows": 0,
+      "invalid_model_target_math_rows": 0,
+      "year_conflict_rows": 222,
+      "year_unknown_rows": 0,
+      "quality_promoted_rows": 253,
+      "draw_promoted_rows": 204
+    },
+    "counts": {
+      "year_inference_method": {
+        "FILENAME": 214,
+        "FOLDER_ONLY": 21,
+        "CONFLICT": 222
+      },
+      "year_confidence": {
+        "HIGH": 436,
+        "LOW": 21
+      },
+      "source_class": {
+        "harvest_results": 241,
+        "draw_results": 154,
+        "permit_data": 50,
+        "biology_population": 12
+      },
+      "report_type": {
+        "harvest_result": 231,
+        "permit_or_draw_related": 204,
+        "average_age": 5,
+        "preseason_classification": 4,
+        "harvest_by_unit": 10,
+        "winter_trend": 2,
+        "winter_population": 1
+      },
+      "inferred_year": {
+        "2013": 10,
+        "2014": 20,
+        "2015": 15,
+        "2016": 15,
+        "2017": 11,
+        "2018": 15,
+        "2019": 13,
+        "2020": 24,
+        "2021": 36,
+        "2022": 25,
+        "2023": 37,
+        "2024": 18,
+        "2025": 148,
+        "2026": 70
+      }
+    },
+    "blockers": [],
+    "passed": true
+  }
+}

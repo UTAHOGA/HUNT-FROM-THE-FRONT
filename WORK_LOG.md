@@ -27,3 +27,19 @@
   - data_model/quality/promoted_quality_sources.csv
   - data_model/quality/promoted_draw_sources.csv
   - data_model/quality/promoted_source_summary.json
+
+## Step 1D - Promoted Source Year Map
+- Timestamp (UTC): 2026-05-10T13:34:21.393303+00:00
+- Inputs:
+  - data_model/quality/promoted_quality_sources.csv
+  - data_model/quality/promoted_draw_sources.csv
+  - data_model/quality/raw_pdf_inventory_audit.csv
+- Promoted quality rows mapped: 253
+- Promoted draw rows mapped: 204
+- Total promoted rows in year map: 457
+- Year conflicts (folder year vs reported hunt year): 222
+- Year unknown rows: 0
+- Validation passed: True
+- Outputs:
+  - data_model/quality/promoted_source_year_map.csv
+  - data_model/quality/promoted_source_year_map_report.json
