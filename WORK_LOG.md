@@ -218,6 +218,37 @@
   - `data_truth/harvest_results_truth/normalized/harvest_results_2025_for_2026_report.json`
   - `data_model/quality/harvest_quality_2025_for_2026.csv`
   - `data_model/quality/harvest_quality_2025_for_2026_vs_database.csv`
+
+## Draft Rebuild - point_ladder_view_v3 from 2025 Actual Draw Truth + 2026 Pool Projection
+- Timestamp (UTC): 2026-05-10T20:19:58Z
+- Scope:
+  - Rebuilt draft ladder feed under `data_model/runtime_drafts` only.
+  - Did not modify `processed_data`, website files, `public_client_engine.csv`, or prediction models.
+- Inputs:
+  - `data_model/runtime_drafts/draw_reality_engine_v2.csv`
+  - `data_model/runtime_drafts/permits_2026_online.csv`
+  - `data_model/runtime_drafts/point_ladder_view_v2.csv`
+  - `pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv`
+- Outputs:
+  - `data_model/runtime_drafts/applicant_pool_2026_from_2025_actual.csv`
+  - `data_model/runtime_drafts/point_ladder_view_v3.csv`
+  - `data_model/runtime_drafts/point_ladder_view_v3_validation_report.json`
+  - `data_model/runtime_drafts/point_ladder_view_v3_vs_current.csv`
+  - `data_model/runtime_drafts/point_ladder_missing_columns_audit.csv`
+- Validation summary:
+  - `point_ladder_view_v3` rows: `78162`
+  - Blank key fields (`hunt_code`, `draw_pool`, `residency`, `points`): `0`
+  - Duplicate corrected keys (`hunt_code+draw_pool+residency+points`): `0`
+  - Rows missing `odds_2025_actual`: `70836`
+  - Rows missing `max_pool_projection_2026`: `19462`
+  - Rows missing `odds_2025_actual` despite 2025 actual odds existing: `0`
+  - Rows with projected applicants but blank `max_pool_projection_2026`: `0`
+  - Negative projected nonwinner rows: `0`
+  - Promotion blockers: `0`
+- Notes:
+  - `draw_pool` is preserved in the corrected key and row output.
+  - `odds_2025_actual` is sourced only from 2025 actual draw rows and not from projected values.
+  - 2026 permit fields remain sourced from DATABASE-backed permit drafts only.
 - Validation summary:
   - Total pages scanned: 19
   - Parsed rows: 1118
