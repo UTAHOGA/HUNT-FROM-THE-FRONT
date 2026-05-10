@@ -41,6 +41,8 @@
           "huntCategoryFilter",
           "weaponFilter",
           "unitFilter",
+          "applyFiltersBtn",
+          "clearFiltersBtn",
           "status",
           "matchingHunts",
           "selectedHuntPanel",

@@ -33,7 +33,7 @@
         "./research.html",
         "./verify.html",
         "./hard-copy.html",
-        "${escapeHtml(item.href)}"
+        "${escapeHtml(href)}"
       ],
       "options": [
         {
