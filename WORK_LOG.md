@@ -202,3 +202,36 @@
 - Key finding:
   - `hunt_class` is largely populated with broad bucket values (especially non-selective classes), so classification selectivity is not aligned with required matrix semantics.
   - `DATABASE.csv` currently has `hunt_type` but no `hunt_class`; `proposed_hunt_class` was generated in the audit output only.
+
+## Harvest Truth Normalization - 2025 Preliminary Harvest for 2026 Model (Draft Truth Layer)
+- Timestamp (UTC): 2026-05-10T19:10:38Z
+- Scope:
+  - Parsed and normalized `2026-03-06-2025-preliminary-bg-harvest.pdf` for harvest truth only.
+  - Explicitly kept this source out of 2026 permit allocation fields.
+  - No updates to `processed_data`, website files, `public_client_engine.csv`, or prediction builds.
+- Inputs:
+  - `pipeline/RAW/hunt_unit_database/2026/pdf/harvest_report/2026-03-06-2025-preliminary-bg-harvest.pdf`
+  - `pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv`
+- Outputs:
+  - `data_truth/harvest_results_truth/normalized/harvest_results_2025_for_2026_long.csv`
+  - `data_truth/harvest_results_truth/normalized/harvest_results_2025_for_2026_rejects.csv`
+  - `data_truth/harvest_results_truth/normalized/harvest_results_2025_for_2026_report.json`
+  - `data_model/quality/harvest_quality_2025_for_2026.csv`
+  - `data_model/quality/harvest_quality_2025_for_2026_vs_database.csv`
+- Validation summary:
+  - Total pages scanned: 19
+  - Parsed rows: 1118
+  - Rejected rows: 2
+  - Unique hunt codes: 1118
+  - DATABASE matched rows: 1089
+  - DATABASE unmatched rows: 29
+  - Blank hunt_code rows: 0
+  - Blank harvest metric rows: 4
+  - Percent-success conflicts beyond tolerance: 0
+  - Impossible metrics (`harvest > hunters`): 0
+  - Duplicate hunt-code counts: none
+- Classification notes:
+  - The same-named PDF found under `pipeline/RAW/hunt_unit_database/2026/pdf/current_year_permit_numbers/...` was flagged as `MISFILED_HARVEST_REPORT` in the report.
+  - Raw file was not moved.
+  - `reported_hunt_year` was fixed to 2025 and `model_target_year` to 2026.
+  - `source_permits` remains a harvest-report metric and is not used as 2026 allocation quota.
