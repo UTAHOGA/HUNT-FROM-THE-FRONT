@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-05-10T15:10:07.337197+00:00",
+  "candidate_file": "pipeline/RAW/hunt_unit_database/2026/csv/current_year_permit_numbers_patch_candidates_157.csv",
+  "candidate_rows_raw": 157,
+  "candidate_rows_numeric": 157,
+  "targets": {
+    "csv": [
+      "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+      "processed_data/hunt_master_enriched.csv",
+      "processed_data/hunt_unit_reference_linked.csv",
+      "processed_data/point_ladder_view.csv",
+      "data/hunt-master-canonical-2026-source-of-truth.csv",
+      "processed_data/hunt-master-canonical-2026-source-of-truth.csv"
+    ],
+    "json": [
+      "data/hunt-master-canonical-2026-source-of-truth.json"
+    ]
+  },
+  "per_file": {
+    "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv": {
+      "updated_rows": 157,
+      "skipped_nonempty": 0,
+      "skipped_name_mismatch": 0,
+      "skipped_no_code_or_not_candidate": 1238
+    },
+    "processed_data/hunt_master_enriched.csv": {
+      "updated_rows": 314,
+      "skipped_nonempty": 0,
+      "skipped_name_mismatch": 0,
+      "skipped_no_code_or_not_candidate": 52746
+    },
+    "processed_data/hunt_unit_reference_linked.csv": {
+      "updated_rows": 314,
+      "skipped_nonempty": 0,
+      "skipped_name_mismatch": 0,
+      "skipped_no_code_or_not_candidate": 2474
+    },
+    "processed_data/point_ladder_view.csv": {
+      "updated_rows": 10362,
+      "skipped_nonempty": 0,
+      "skipped_name_mismatch": 0,
+      "skipped_no_code_or_not_candidate": 81226
+    },
+    "data/hunt-master-canonical-2026-source-of-truth.csv": {
+      "updated_rows": 157,
+      "skipped_nonempty": 0,
+      "skipped_name_mismatch": 0,
+      "skipped_no_code_or_not_candidate": 1237
+    },
+    "processed_data/hunt-master-canonical-2026-source-of-truth.csv": {
+      "updated_rows": 93,
+      "skipped_nonempty": 2,
+      "skipped_name_mismatch": 62,
+      "skipped_no_code_or_not_candidate": 1131
+    },
+    "data/hunt-master-canonical-2026-source-of-truth.json": {
+      "updated_rows": 157,
+      "skipped_nonempty": 0,
+      "skipped_name_mismatch": 0,
+      "skipped_no_code_or_not_candidate": 1237
+    }
+  },
+  "totals": {
+    "updated_rows": 11554,
+    "skipped_nonempty": 2,
+    "skipped_name_mismatch": 62,
+    "skipped_no_code_or_not_candidate": 141289,
+    "skipped_non_numeric_candidate": 0
+  },
+  "log_rows": 11616,
+  "log_csv": "pipeline/RAW/hunt_unit_database/2026/csv/current_year_permit_numbers_patch_application_log.csv",
+  "report_json": "pipeline/RAW/hunt_unit_database/2026/csv/current_year_permit_numbers_patch_application_report.json"
+}
