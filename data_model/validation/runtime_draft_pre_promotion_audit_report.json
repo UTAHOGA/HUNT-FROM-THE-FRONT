@@ -1,0 +1,101 @@
+{
+  "generated_at_utc": "2026-05-10T18:12:04.670885+00:00",
+  "inputs": {
+    "processed_hunt_master_enriched": "processed_data/hunt_master_enriched.csv",
+    "draft_hunt_master_enriched_v2": "data_model/runtime_drafts/hunt_master_enriched_v2.csv",
+    "draft_draw_reality_engine_v2": "data_model/runtime_drafts/draw_reality_engine_v2.csv",
+    "draft_point_ladder_view_v2": "data_model/runtime_drafts/point_ladder_view_v2.csv",
+    "draft_permits_2026_online": "data_model/runtime_drafts/permits_2026_online.csv",
+    "database_2026": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv"
+  },
+  "duplicate_audit": {
+    "expected_key": "hunt_code+residency+points",
+    "source_rows": 53060,
+    "draft_rows": 51857,
+    "rows_removed_from_v2": 1203,
+    "safe_duplicate_collapse_count": 0,
+    "review_required_count": 0,
+    "promotion_blocker_count": 1203,
+    "removed_rows_hunt_code_in_database_yes": 1203,
+    "removed_rows_hunt_code_in_database_no": 0
+  },
+  "draw_reality_key_validation": {
+    "key": "hunt_code+year+draw_pool+residency+points",
+    "corrected_key_duplicate_count": 0
+  },
+  "hunt_type_hunt_class_summary": {
+    "hunt_master_enriched_v2": {
+      "distinct_hunt_type_count": 9,
+      "distinct_hunt_class_count": 2,
+      "blank_hunt_class_rows": 0,
+      "hunt_class_equals_hunt_type_rows": 18282,
+      "broad_hunt_class_rows": 18282,
+      "draw_pool_as_hunt_class_rows": 0,
+      "distinct_draw_pool_values": []
+    },
+    "point_ladder_view_v2": {
+      "distinct_hunt_type_count": 32,
+      "distinct_hunt_class_count": 5,
+      "blank_hunt_class_rows": 0,
+      "hunt_class_equals_hunt_type_rows": 18414,
+      "broad_hunt_class_rows": 20460,
+      "draw_pool_as_hunt_class_rows": 594,
+      "distinct_draw_pool_values": []
+    },
+    "draw_reality_engine_v2": {
+      "distinct_hunt_type_count": 34,
+      "distinct_hunt_class_count": 6,
+      "blank_hunt_class_rows": 0,
+      "hunt_class_equals_hunt_type_rows": 26988,
+      "broad_hunt_class_rows": 33582,
+      "draw_pool_as_hunt_class_rows": 13566,
+      "distinct_draw_pool_values": [
+        "dedicated_hunter",
+        "lifetime",
+        "standard",
+        "youth",
+        "youth_dedicated_hunter",
+        "youth_mature_bull",
+        "youth_turkey"
+      ]
+    },
+    "permits_2026_online": {
+      "distinct_hunt_type_count": 32,
+      "distinct_hunt_class_count": 5,
+      "blank_hunt_class_rows": 0,
+      "hunt_class_equals_hunt_type_rows": 279,
+      "broad_hunt_class_rows": 310,
+      "draw_pool_as_hunt_class_rows": 9,
+      "distinct_draw_pool_values": []
+    }
+  },
+  "status_misuse_findings_count": 0,
+  "draw_pool_misuse_findings_count": 14169,
+  "draw_pool_required_values": [
+    "dedicated_hunter",
+    "lifetime",
+    "standard",
+    "youth",
+    "youth_dedicated_hunter",
+    "youth_mature_bull",
+    "youth_turkey"
+  ],
+  "draw_pool_present_in_draw_reality_engine_v2": [
+    "dedicated_hunter",
+    "lifetime",
+    "standard",
+    "youth",
+    "youth_dedicated_hunter",
+    "youth_mature_bull",
+    "youth_turkey"
+  ],
+  "draw_pool_missing_required_values": [],
+  "promotion_blockers": [
+    "ROWS_REMOVED_FROM_HUNT_MASTER_ENRICHED_V2",
+    "DRAW_POOL_USED_AS_HUNT_CLASS"
+  ],
+  "review_required": [
+    "HUNT_CLASS_EQUALS_HUNT_TYPE_ROWS_PRESENT",
+    "BROAD_HUNT_CLASS_ROWS_PRESENT"
+  ]
+}

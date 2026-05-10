@@ -118,6 +118,35 @@
   - `data_model/runtime_drafts/point_ladder_view_v2.csv`
   - `data_model/runtime_drafts/hunt_master_enriched_v2.csv`
   - `data_model/runtime_drafts/hunt_boundary_crosswalk_v2.csv`
+
+## Runtime Draft Pre-Promotion Audit - Duplicate/Matrix Integrity (Draft Only)
+- Timestamp (UTC): 2026-05-10T18:12:04Z
+- Scope:
+  - Audited runtime draft integrity before any promotion.
+  - Focused on removed rows from `hunt_master_enriched` during draft sync.
+  - Audited separation and usage of `hunt_type`, `hunt_class`, `draw_pool`, and status fields.
+  - No production files modified.
+- Inputs:
+  - `processed_data/hunt_master_enriched.csv`
+  - `data_model/runtime_drafts/hunt_master_enriched_v2.csv`
+  - `data_model/runtime_drafts/draw_reality_engine_v2.csv`
+  - `data_model/runtime_drafts/point_ladder_view_v2.csv`
+  - `data_model/runtime_drafts/permits_2026_online.csv`
+  - `pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv`
+- Outputs:
+  - `data_model/validation/runtime_draft_pre_promotion_audit.csv`
+  - `data_model/validation/runtime_draft_pre_promotion_audit_report.json`
+  - `data_model/validation/hunt_master_enriched_duplicate_audit.csv`
+  - `data_model/validation/hunt_type_hunt_class_matrix_audit.csv`
+- Key results:
+  - Rows in source `hunt_master_enriched` missing from draft v2 by key (`hunt_code+residency+points`): 1203
+  - `SAFE_DUPLICATE_COLLAPSE`: 0
+  - `REVIEW_REQUIRED`: 0
+  - `PROMOTION_BLOCKER`: 1203
+  - Corrected-key duplicates in `draw_reality_engine_v2` (`hunt_code+year+draw_pool+residency+points`): 0
+  - Distinct draw pools present in `draw_reality_engine_v2`: `standard`, `youth`, `lifetime`, `dedicated_hunter`, `youth_dedicated_hunter`, `youth_turkey`, `youth_mature_bull`
+  - Status misuse findings: 0
+  - Draw pool misused as `hunt_class`: 14169 rows (promotion blocker)
   - `data_model/runtime_drafts/runtime_feed_sync_report.json`
   - `data_model/runtime_drafts/runtime_feed_sync_summary.csv`
 - Validation summary:
