@@ -43,3 +43,26 @@
 - Outputs:
   - data_model/quality/promoted_source_year_map.csv
   - data_model/quality/promoted_source_year_map_report.json
+
+## Reference Baseline Audit - DATABASE.csv
+- Timestamp (UTC): 2026-05-10T14:06:52.319022+00:00
+- Source:
+  - pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv
+- Classification:
+  - reference_role: canonical_2026_database_reference
+  - derived_or_source: source_reference
+  - usable_for_hunt_code_validation: YES
+  - usable_for_2026_permit_reference: YES
+  - usable_for_harvest_truth: NO
+  - usable_for_draw_truth: NO
+- Validation counts:
+  - rows: 1395
+  - unique hunt codes: 1394
+  - duplicate hunt codes: 0
+  - malformed/missing hunt_code rows: 1 (flagged/rejected for reference joins)
+  - missing permits_2026_total rows (allowed): 321
+  - total present with split missing (allowed): 194
+  - res+nr vs total conflicts (blockers): 0
+- Outputs:
+  - data_model/quality/reference_baseline_audit.csv
+  - data_model/quality/reference_baseline_audit_report.json

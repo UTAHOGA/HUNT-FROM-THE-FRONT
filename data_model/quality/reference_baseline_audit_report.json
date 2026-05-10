@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-05-10T13:45:30.221928+00:00",
+  "source_file": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+  "classification": {
+    "reference_role": "canonical_2026_database_reference",
+    "derived_or_source": "source_reference",
+    "usable_for_hunt_code_validation": "YES",
+    "usable_for_2026_permit_reference": "YES",
+    "usable_for_harvest_truth": "NO",
+    "usable_for_draw_truth": "NO"
+  },
+  "expectations": {
+    "rows": 1395,
+    "unique_hunt_codes": 1394,
+    "duplicate_hunt_codes": 0,
+    "malformed_or_missing_hunt_code_rows": 1
+  },
+  "observed": {
+    "rows": 1395,
+    "unique_hunt_codes": 1394,
+    "duplicate_hunt_codes": 0,
+    "malformed_or_missing_hunt_code_rows": 1,
+    "missing_permits_2026_total_rows": 321,
+    "rows_total_present_but_resident_or_nonresident_missing": 194,
+    "rows_resident_plus_nonresident_conflicts_with_total": 0
+  },
+  "malformed_hunt_code_rows": {
+    "line_numbers": [
+      1396
+    ],
+    "count": 1,
+    "handling": "FLAGGED_AND_REJECTED_FOR_REFERENCE_JOIN"
+  },
+  "split_conflict_rows": [],
+  "validation": {
+    "checks": {
+      "rows_match_expected": true,
+      "unique_hunt_codes_match_expected": true,
+      "duplicate_hunt_codes_match_expected": true,
+      "malformed_rows_match_expected": true,
+      "split_conflict_blocker": false
+    },
+    "all_expected_counts_match": true,
+    "blocker_count": 0,
+    "status": "PASS"
+  }
+}
