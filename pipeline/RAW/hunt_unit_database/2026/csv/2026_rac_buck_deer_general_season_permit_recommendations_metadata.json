@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-05-10T14:04:49.690158+00:00",
+  "source_document": "D:/DOWNLOADS/2026-04-rac-packet.pdf",
+  "output_csv": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_buck_deer_general_season_permit_recommendations.csv",
+  "row_count_total": 33,
+  "row_count_unit_level_excluding_all_units_total": 32,
+  "integrity_checks": {
+    "permits_2025_unit_sum": 80200,
+    "permits_2025_all_units_reported": 80200,
+    "permits_2025_matches_reported_total": true,
+    "permits_2026_unit_sum": 86625,
+    "permits_2026_all_units_reported": 86625,
+    "permits_2026_matches_reported_total": true
+  },
+  "notes": [
+    "Blank values represent dash/missing values from the source table.",
+    "Asterisk unit markers were preserved in unit names where present.",
+    "This dataset is supplemental permits context and not draw results or harvest truth."
+  ]
+}
