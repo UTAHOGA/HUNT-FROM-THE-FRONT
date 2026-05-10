@@ -1,0 +1,74 @@
+{
+  "generated_at_utc": "2026-05-10T18:03:19.846892+00:00",
+  "inputs": [
+    "data_model/runtime_drafts/draw_reality_engine_v2.csv",
+    "data_model/runtime_drafts/point_ladder_view_v2.csv",
+    "data_model/runtime_drafts/hunt_master_enriched_v2.csv",
+    "data_model/runtime_drafts/permits_2026_online.csv",
+    "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv"
+  ],
+  "outputs": [
+    "data_model/validation/hunt_type_hunt_class_matrix_audit.csv",
+    "data_model/validation/hunt_type_hunt_class_matrix_audit_report.json"
+  ],
+  "distinct_hunt_type_count": 34,
+  "distinct_hunt_class_count": 6,
+  "distinct_hunt_type_values": {
+    "Limited Entry": 68725,
+    "CWMU": 64315,
+    "General Season": 57260,
+    "Once-in-a-lifetime": 20732,
+    "Limited Entry - Private Land Only": 10074,
+    "General Season - Private Land Only": 7245,
+    "Limited Entry - Summer": 3359,
+    "Limited Entry - Multiseason": 3071,
+    "Limited Entry - Fall": 3019,
+    "Limited Entry - Spring": 2656,
+    "Premium Limited Entry": 2618,
+    "Private Lands Only": 1863,
+    "Conservation": 1794,
+    "Limited-entry": 1693,
+    "Management Buck Deer": 1068,
+    "General-season": 1057,
+    "Statewide": 760,
+    "Tribal": 690,
+    "General Season - Any Bull": 413,
+    "Restricted Pursuit - Summer": 378,
+    "Restricted Pursuit - Late Summer": 377,
+    "Restricted Pursuit - Spring": 357,
+    "Extended Archery": 336,
+    "Fall Management": 276,
+    "Cactus Buck": 256,
+    "General Season - Spike Bull": 207,
+    "Multiseason - Conservation": 167,
+    "Pursuit": 138,
+    "Spot and Stalk": 129,
+    "Antlerless Elk Control": 69,
+    "General Season - Archery": 69,
+    "General Season - Youth": 69,
+    "Harvest Objective": 69,
+    "Spring General Season": 69
+  },
+  "distinct_hunt_class_values": {
+    "Public": 163378,
+    "CWMU": 63963,
+    "Private": 11040,
+    "Youth": 9843,
+    "Dedicated Hunter": 4345,
+    "Lifetime": 4326
+  },
+  "rows_with_blank_hunt_class": 0,
+  "rows_where_hunt_class_equals_hunt_type": 63963,
+  "suspicious_broad_hunt_class_rows": 236012,
+  "status_misuse_findings": 0,
+  "issue_type_counts": {
+    "SUSPICIOUS_BROAD_HUNT_CLASS": 236012,
+    "HUNT_CLASS_EQUALS_HUNT_TYPE": 63963,
+    "DRAW_POOL_USED_AS_HUNT_CLASS": 13214
+  },
+  "total_issue_rows_written": 313189,
+  "notes": [
+    "DATABASE.csv currently has hunt_type but no hunt_class column; proposed_hunt_class derived in audit output only.",
+    "No production files were modified by this task."
+  ]
+}

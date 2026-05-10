@@ -147,3 +147,29 @@
   - PROCESSED_DATA_NOT_UPDATED
   - WEBSITE_LOADER_MUST_SUPPORT_DRAW_POOL
   - DO_NOT_MERGE_HISTORICAL_DATABASE_YEARS_INTO_2026
+
+## Validation Audit - hunt_type vs hunt_class Matrix
+- Timestamp (UTC): 2026-05-10T18:10:44Z
+- Scope:
+  - Audited runtime draft files for correct usage separation of `hunt_type`, `hunt_class`, `draw_pool`, and status fields.
+  - No production/runtime/website files were modified.
+- Inputs:
+  - `data_model/runtime_drafts/draw_reality_engine_v2.csv`
+  - `data_model/runtime_drafts/point_ladder_view_v2.csv`
+  - `data_model/runtime_drafts/hunt_master_enriched_v2.csv`
+  - `data_model/runtime_drafts/permits_2026_online.csv`
+  - `pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv`
+- Outputs:
+  - `data_model/validation/hunt_type_hunt_class_matrix_audit.csv`
+  - `data_model/validation/hunt_type_hunt_class_matrix_audit_report.json`
+- Validation summary:
+  - Distinct `hunt_type` values: 34
+  - Distinct `hunt_class` values: 6
+  - Rows with blank `hunt_class`: 0
+  - Rows where `hunt_class == hunt_type`: 63963
+  - Suspicious broad `hunt_class` rows: 236012
+  - Status/data_status classification misuse findings: 0
+  - Total issue rows written: 313189
+- Key finding:
+  - `hunt_class` is largely populated with broad bucket values (especially non-selective classes), so classification selectivity is not aligned with required matrix semantics.
+  - `DATABASE.csv` currently has `hunt_type` but no `hunt_class`; `proposed_hunt_class` was generated in the audit output only.
