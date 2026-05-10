@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-05-10T14:16:34.333513+00:00",
+  "raw_source_file": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_supplemental_user_paste_raw.txt",
+  "output_csv": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_supplemental_permit_rows_parsed.csv",
+  "rows_parsed_raw": 213,
+  "rows_after_dedup": 213,
+  "unique_hunt_codes": 213,
+  "rows_missing_weapon": 4,
+  "rows_missing_hunt_name": 120,
+  "notes": [
+    "Auto-parse from user-provided text paste; verify hunt_name/section labels before production merge.",
+    "Only rows with hunt_code and six permit split values were extracted."
+  ]
+}

@@ -1,0 +1,2918 @@
+﻿Paunsaugunt Cactus
+2025 Permits
+2026 Permits
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Any Legal Weapon
+DB1058
+27
+3
+30
+18
+2
+20
+Grand Total
+27
+3
+30
+18
+2
+20                    Book Cliffs
+2025 Permits
+2026 Permits
+Hunt Name
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Book Cliffs
+Archery
+DB1011
+45
+5
+50
+55
+6
+61
+Book Cliffs
+Multiseason
+DB1044
+6
+1
+7
+8
+1
+9
+Book Cliffs
+Muzzleloader
+DB1025
+45
+5
+50
+55
+6
+61
+Book Cliffs, North
+Any Legal Weapon
+DB1017
+114
+13
+127
+137
+15
+152
+Book Cliffs, South
+Any Legal Weapon
+DB1018
+29
+3
+32
+34
+4
+38
+Grand Total
+239
+27
+266
+289
+32
+321
+Cache, Crawford Mtn
+2025 Permits
+2026 Permits
+Hunt Name
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Cache, Crawford Mtn
+Muzzleloader
+DB1026
+7
+1
+8
+8
+1
+9
+Grand Total
+7
+1
+8
+8
+1
+9
+Castle Valley
+2025 Permits
+2026 Permits
+Hunt Name
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Castle Valley
+Any Legal Weapon
+DB1120
+13
+2
+15
+13
+2
+15
+Grand Total
+13
+2
+15
+13
+2
+15
+Diamond Mtn
+2025 Permits
+2026 Permits
+Hunt Name
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Diamond Mtn
+Any Legal Weapon
+DB1023
+57
+6
+63
+61
+7
+68
+Diamond Mtn
+Archery
+DB1015
+20
+2
+22
+22
+2
+24
+Diamond Mtn
+Multiseason
+DB1047
+3
+0
+3
+4
+0
+4
+Diamond Mtn
+Muzzleloader
+DB1038
+20
+2
+22
+22
+2
+24
+Grand Total
+100
+10
+110
+109
+11
+120
+Dolores Triangle
+2025 Permits
+2026 Permits
+Hunt Name
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Dolores Triangle
+Any Legal Weapon
+DB1020
+11
+1
+12
+13
+2
+15
+Dolores Triangle
+Archery
+DB1013
+4
+0
+4
+5
+0
+5
+Dolores Triangle
+Muzzleloader
+DB1031
+4
+0
+4
+5
+0
+5
+Grand Total
+19
+1
+20
+23
+2
+25                               2026 LIMITED ENTRY BUCK DEER (2 of 3)
+Fillmore, Oak CreekLE
+2025 Permits
+2026 Permits
+Hunt Name
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Fillmore, Oak Creek LE
+Any Legal Weapon
+DB1019
+31
+3
+34
+33
+4
+37
+Fillmore, Oak Creek LE
+Archery
+DB1012
+11
+1
+12
+12
+1
+13
+Fillmore, Oak Creek LE
+Multiseason
+DB1045
+2
+0
+2
+2
+0
+2
+Fillmore, Oak Creek LE
+Muzzleloader
+DB1029
+11
+1
+12
+12
+1
+13
+Grand Total
+55
+5
+60
+59
+6
+65
+Little Rockies
+2025 Permits
+2026 Permits
+Hunt Name
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Little Rockies
+Any Legal Weapon
+DB1115
+4
+1
+5
+4
+1
+5
+Grand Total
+4
+1
+5
+4
+1
+5
+Moab Valley
+2025 Permits
+2026 Permits
+Hunt Name
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Moab Valley
+Any Legal Weapon
+DB1119
+9
+1
+10
+9
+1
+10
+Grand Total
+9
+1
+10
+9
+1
+10
+San Juan, Elk Ridge
+2025 Permits
+2026 Permits
+Hunt Name
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+San Juan, Elk Ridge
+Any Legal Weapon
+DB1022
+40
+4
+44
+42
+5
+47
+San Juan, Elk Ridge
+Archery
+DB1014
+14
+2
+16
+15
+2
+17
+San Juan, Elk Ridge
+Multiseason
+DB1046
+2
+0
+2
+2
+0
+2
+San Juan, Elk Ridge
+Muzzleloader
+DB1037
+14
+2
+16
+15
+2
+17
+Grand Total
+70
+8
+78
+74
+9
+83
+Thousand Lakes
+2025 Permits
+2026 Permits
+Hunt Name
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Thousand Lakes
+Any Legal Weapon
+DB1108
+25
+3
+28
+27
+3
+30
+Thousand Lakes
+Archery
+DB1106
+21
+2
+23
+20
+2
+22
+Thousand Lakes
+Multiseason
+DB1109
+2
+0
+2
+2
+0
+2
+Thousand Lakes
+Muzzleloader
+DB1107
+21
+2
+23
+20
+2
+22
+Grand Total
+69
+7
+76
+69
+7
+76                                     West Desert, Vernon
+2025 Permits
+2026 Permits
+Hunt Name
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+West Desert, Vernon
+Any Legal Weapon
+DB1024
+118
+13
+131
+130
+14
+144
+West Desert, Vernon
+Archery
+DB1016
+41
+5
+46
+46
+5
+51
+West Desert, Vernon
+Multiseason
+DB1048
+6
+1
+7
+7
+1
+8
+West Desert, Vernon
+Muzzleloader
+DB1042
+41
+5
+46
+46
+5
+51
+Grand Total
+206
+24
+230
+229
+25
+254
+HAMSS
+2025 Permits
+2026 Permits
+Hunt Name
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Book Cliffs, Floy Canyon
+DB1090
+6
+1
+7
+6
+1
+7
+East Canyon
+DB1105
+6
+1
+7
+6
+1
+7
+Kaiparowits HAMSS
+DB1091
+4
+1
+5
+4
+1
+5
+San Juan, Mancos Mesa
+DB1116
+4
+1
+5
+4
+1
+5
+Grand Total
+20
+4
+24
+20
+4
+24                               2026 LIMITED ENTRY ON GENERAL SEASON BUCK DEER
+LE on General Season
+2025 Permits
+2026 Permits
+Hunt Name
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Beaver, East
+Muzzleloader
+DB1110
+9
+1
+10
+10
+1
+11
+Beaver, West
+Muzzleloader
+DB1111
+4
+1
+5
+4
+1
+5
+Boulder/Kaiparowits
+Muzzleloader
+DB1084
+11
+1
+12
+12
+1
+13
+Box Elder
+Muzzleloader
+DB1077
+22
+3
+25
+23
+3
+26
+Cache
+Muzzleloader
+DB1078
+9
+1
+10
+11
+1
+12
+Cedar/Stansbury
+Muzzleloader
+DB1114
+5
+1
+6
+5
+1
+6
+Chalk Creek
+Muzzleloader
+DB1100
+10
+1
+11
+10
+1
+11
+East Canyon
+Muzzleloader
+DB1101
+9
+1
+10
+9
+1
+10
+Fillmore
+Muzzleloader
+DB1028
+10
+1
+11
+11
+1
+12
+Fishlake
+Muzzleloader
+DB1055
+5
+1
+6
+6
+1
+7
+Kamas
+Muzzleloader
+DB1030
+5
+1
+6
+4
+1
+5
+La Sal Mtns
+Muzzleloader
+DB1081
+8
+1
+9
+8
+1
+9
+Manti/San Rafael
+Muzzleloader
+DB1079
+38
+4
+42
+40
+5
+45
+Monroe
+Muzzleloader
+DB1032
+5
+1
+6
+5
+1
+6
+Morgan-South Rich
+Muzzleloader
+DB1103
+7
+1
+8
+7
+1
+8
+Mt Dutton
+Muzzleloader
+DB1053
+4
+1
+5
+4
+1
+5
+Nebo
+Muzzleloader
+DB1080
+22
+3
+25
+23
+3
+26
+Nine Mile
+Muzzleloader
+DB1033
+6
+1
+7
+6
+1
+7
+North Slope
+Muzzleloader
+DB1065
+13
+2
+15
+14
+2
+16
+Ogden
+Muzzleloader
+DB1054
+11
+1
+12
+13
+1
+14
+Oquirrh/Tintic
+Muzzleloader
+DB1113
+11
+1
+12
+10
+1
+11
+Panguitch Lake
+Muzzleloader
+DB1083
+11
+1
+12
+12
+1
+13
+Pine Valley
+Muzzleloader
+DB1034
+13
+2
+15
+13
+2
+15
+San Juan, Abajo Mtns
+Muzzleloader
+DB1085
+12
+1
+13
+13
+1
+14
+Southwest Desert
+Muzzleloader
+DB1040
+4
+1
+5
+4
+1
+5
+Vernal/Bonanza
+Muzzleloader
+DB1086
+5
+1
+6
+6
+1
+7
+Wasatch Mtns, East
+Muzzleloader
+DB1041
+27
+3
+30
+30
+3
+33
+Wasatch Mtns, West
+Muzzleloader
+DB1087
+30
+3
+33
+36
+4
+40
+West Desert, Swasey
+Muzzleloader
+DB1112
+4
+1
+5
+4
+1
+5
+Yellowstone
+Muzzleloader
+DB1039
+6
+1
+7
+6
+1
+7
+Zion
+Muzzleloader
+DB1043
+13
+2
+15
+15
+2
+17
+Grand Total
+349
+45
+394
+374
+47
+421       2026 DEER HERD STATUS
+Population Estimate                                       2026 GENERAL SEASON BULL ELK PERMITS
+Hunt Type
+2025 Permits
+2026 Permits
+Spike Bull
+15000
+15000
+Any Bull Elk (includes muzzleloader)
+15000
+15000
+Any Bull Late
+Unlimited
+Unlimited
+Youth General Season
+Unlimited
+Unlimited
+Uinta Basin Private Lands Only Any Bull
+500
+750
+Draw Only Youth Any Bull/Hunter’s Choice (any weapon)
+750
+750 Unit Name 
+Objective
+2023
+2024
+2025
+Beaver
+14000
+9400
+9900
+10500
+Book Cliffs
+9000
+5500
+5900
+6200
+Boulder/Kaiparowits
+8500
+7650
+8200
+7500
+Box Elder
+20000
+17000
+18300
+17300
+Cache
+25000
+12500
+13550
+16000
+Cedar/Stansbury
+5600
+–
+–
+5100
+Chalk Creek
+12000
+5900
+7150
+8300
+Diamond Mtn/Vernal/Bonanza
+13000
+9500
+9900
+12700
+Dolores Triangle
+3000
+1900
+1600
+1600
+East Canyon
+13500
+2400
+2700
+4400
+Fillmore
+7600
+8000
+8200
+8700
+Fillmore, Oak Creek LE
+2000
+1130
+950
+950
+Fishlake
+7000
+4600
+4640
+4600
+Henry Mtns
+2700
+955
+1280
+1170
+Kamas
+8000
+1300
+2350
+2350
+La Sal Mtns
+11500
+5500
+8800
+8100
+Manti/San Rafael
+38000
+26500
+28400
+32400
+Monroe
+7000
+5000
+5000
+4300
+Morgan-South Rich
+16000
+1900
+2450
+4900
+Mt Dutton
+3200
+1980
+1500
+1500
+Nebo
+14000
+13100
+14850
+16600
+Nine Mile
+8500
+6300
+5700
+6300
+North Slope
+10000
+5800
+6500
+7600
+Ogden
+11000
+6500
+7300
+9200
+Oquirrh-Stansbury
+–
+9500
+10400
+–
+Oquirrh/Tintic
+8800
+–
+–
+9500
+Panguitch Lake
+11000
+9000
+9500
+10500
+Paunsaugunt
+6500
+5400
+5900
+6000
+Pine Valley
+19500
+16000
+13000
+12100
+San Juan, Abajo Mtns
+17000
+11900
+14900
+14400
+San Juan, Elk Ridge
+2000
+950
+1100
+1100
+Southwest Desert
+3500
+2300
+2050
+2000
+Thousand Lakes
+1400
+600
+610
+600
+Wasatch Mtns, Avintaquin
+4000
+3600
+3600
+4500
+Wasatch Mtns, Currant Creek
+17000
+15500
+15500
+19000
+Wasatch Mtns, West
+22600
+12700
+13200
+15400
+West Desert
+–
+7800
+8200
+–
+West Desert, Swasey
+6200
+–
+–
+5900
+West Desert, Vernon
+2200
+–
+–
+2600
+Yellowstone
+11000
+7400
+8400
+8800
+Zion
+19000
+16800
+14650
+16900
+Grand Total
+421800
+279765
+296130
+327570                                  2026 LIMITED ENTRY ELK AVERAGE AGES AND OBJECTIVES
+Unit
+Objective
+2023
+2024
+2025
+3-Year Avg
+Barney Top/Kaiparowits
+3.5-4.5
+5.7
+9.4
+7.8
+7.6
+Beaver, East
+6.5-7.0
+9.1
+9.6
+9.4
+9.4
+Book Cliffs, Bitter Creek/East
+6.0-6.5
+6.5
+6.3
+7.5
+6.8
+Book Cliffs, Little Creek
+6.5-7.0
+8.1
+8.7
+7.3
+8.0
+Boulder
+6.5-7.0
+8.4
+7.4
+9.0
+8.3
+Box Elder, Grouse Creek
+5.5-6.0
+5.6
+5.3
+5.5
+5.5
+Box Elder, Pilot Mtn
+5.5-6.0
+6.0
+6.5
+4.6
+5.7
+Cache, Meadowville
+6.0-6.5
+5.6
+5.2
+4.1
+5.0
+Cache, North
+3.5-4.5
+6.4
+8.3
+4.2
+6.3
+Cache, South
+6.0-6.5
+6.4
+7.2
+7.1
+6.9
+Diamond Mtn
+5.5-6.0
+7.0
+7.1
+6.8
+7.0
+Dolores Triangle
+5.5-6.0
+–
+9.0
+–
+9.0
+Fillmore, Pahvant
+6.5-7.0
+7.7
+8.0
+7.1
+7.6
+Fishlake/Thousand Lakes
+5.5-6.0
+7.5
+6.6
+6.8
+7.0
+La Sal Mtns
+5.5-6.0
+5.7
+6.3
+5.9
+6.0
+Manti
+5.5-6.0
+6.3
+6.0
+5.8
+6.0
+Monroe
+6.0-6.5
+9.1
+8.3
+8.8
+8.7
+Mt Dutton
+6.0-6.5
+7.8
+8.0
+7.6
+7.8
+Nebo/San Pitch Mtns
+5.5-6.0
+6.6
+7.1
+7.0
+6.9
+North Slope, Three Corners
+5.5-6.0
+5.7
+4.8
+6.1
+5.5
+Panguitch Lake
+6.0-6.5
+7.8
+7.9
+7.3
+7.7
+San Juan Bull Elk
+6.5-7.0
+7.6
+7.9
+8.1
+7.9
+Southwest Desert, North
+3.5-4.5
+8.1
+9.5
+7.9
+8.5
+Southwest Desert, South
+6.0-6.5
+8.1
+8.4
+8.0
+8.2
+Wasatch Mtns
+5.5-6.0
+5.0
+5.2
+5.0
+5.1
+West Desert, Deep Creek
+3.5-4.5
+7.4
+8.2
+7.1
+7.6                 2026 LIMITED ENTRY BULL ELK PERMITS (1 of 5)
+Beaver, East
+2025 Permits
+2026 Permits
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Archery
+EB3000
+22
+2
+24
+22
+3
+25
+Early Any Legal Weapon
+EB3024
+9
+1
+10
+9
+1
+10
+Mid Any Legal Weapon
+EB3159
+25
+3
+28
+27
+3
+30
+Late Any Legal Weapon
+EB3025
+14
+2
+16
+15
+2
+17
+Multiseason
+EB3102
+3
+0
+3
+3
+0
+3
+Muzzleloader
+EB3077
+13
+1
+14
+13
+2
+15
+Grand Total
+86
+9
+95
+89
+11
+100
+Book Cliffs, Bitter Creek/East
+2025 Permits
+2026 Permits
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Archery
+EB3160
+20
+2
+22
+22
+2
+24
+Early Any Legal Weapon
+EB3162
+8
+1
+9
+9
+1
+10
+Mid Any Legal Weapon
+EB3164
+23
+3
+26
+25
+3
+28
+Late Any Legal Weapon
+EB3163
+13
+2
+15
+14
+2
+16
+Multiseason
+EB3165
+3
+0
+3
+3
+0
+3
+Muzzleloader
+EB3166
+12
+1
+13
+13
+1
+14
+Grand Total
+79
+9
+88
+86
+9
+95
+Book Cliffs, Little Creek Roadless
+2025 Permits
+2026 Permits
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Archery
+EB3002
+3
+0
+3
+4
+0
+4
+Early Any Legal Weapon
+EB3028
+2
+0
+2
+3
+0
+3
+Mid Any Legal Weapon
+EB3167
+3
+1
+4
+4
+1
+5
+Multiseason
+EB3104
+1
+0
+1
+1
+0
+1
+Muzzleloader
+EB3079
+2
+0
+2
+2
+0
+2
+Grand Total
+11
+1
+12
+14
+1
+15
+Boulder
+2025 Permits
+2026 Permits
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Archery
+EB3145
+28
+3
+31
+31
+4
+35
+Early Any Legal Weapon
+EB3148
+12
+1
+13
+13
+1
+14
+Mid Any Legal Weapon
+EB3191
+33
+4
+37
+37
+4
+41
+Late Any Legal Weapon
+EB3151
+19
+2
+21
+22
+2
+24
+Multiseason
+EB3156
+4
+0
+4
+4
+0
+4
+Muzzleloader
+EB3154
+17
+2
+19
+19
+2
+21
+Grand Total
+113
+12
+125
+126
+13
+139     Box Elder, Grouse Creek
+2025 Permits
+2026 Permits
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Early Any Legal Weapon
+EB3147
+6
+1
+7
+6
+1
+7
+Mid Any Legal Weapon
+EB3150
+12
+1
+13
+12
+1
+13
+Muzzleloader
+EB3153
+2
+1
+3
+2
+1
+3
+Grand Total
+20
+3
+23
+20
+3
+23
+Box Elder, Pilot Mtn
+2025 Permits
+2026 Permits
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Archery
+EB3130
+3
+0
+3
+2
+0
+2
+Early Any Legal Weapon
+EB3031
+9
+1
+10
+6
+1
+7
+Grand Total
+12
+1
+13
+8
+1
+9
+Cache, Meadowville
+2025 Permits
+2026 Permits
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Archery
+EB3003
+11
+1
+12
+9
+1
+10
+Early Any Legal Weapon
+EB3032
+4
+1
+5
+3
+1
+4
+Mid Any Legal Weapon
+EB3169
+13
+2
+15
+11
+1
+12
+Late Any Legal Weapon
+EB3033
+7
+1
+8
+6
+1
+7
+Multiseason
+EB3105
+1
+0
+1
+1
+0
+1
+Muzzleloader
+EB3081
+6
+1
+7
+5
+1
+6
+Grand Total
+42
+6
+48
+35
+5
+40
+Cache, South
+2025 Permits
+2026 Permits
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Archery
+EB3005
+9
+1
+10
+10
+1
+11
+Early Any Legal Weapon
+EB3036
+4
+0
+4
+4
+0
+4
+Mid Any Legal Weapon
+EB3171
+10
+1
+11
+11
+1
+12
+Late Any Legal Weapon
+EB3037
+5
+1
+6
+6
+1
+7
+Multiseason
+EB3107
+1
+0
+1
+1
+0
+1
+Muzzleloader
+EB3083
+5
+1
+6
+5
+1
+6
+Grand Total
+34
+4
+38
+37
+4
+41
+Diamond Mtn
+2025 Permits
+2026 Permits
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Archery
+EB3020
+22
+3
+25
+25
+3
+28
+Early Any Legal Weapon
+EB3068
+9
+1
+10
+10
+1
+11
+Mid Any Legal Weapon
+EB3069
+27
+3
+30
+30
+3
+33
+Late Any Legal Weapon
+EB3196
+15
+2
+17
+17
+2
+19
+Multiseason
+EB3122
+3
+0
+3
+3
+0
+3
+Muzzleloader
+EB3098
+13
+2
+15
+15
+2
+17
+Grand Total
+89
+11
+100
+100
+11
+111            Fillmore, Pahvant
+2025 Permits
+2026 Permits
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Archery
+EB3008
+19
+2
+21
+19
+2
+21
+Early Any Legal Weapon
+EB3042
+8
+1
+9
+8
+1
+9
+Mid Any Legal Weapon
+EB3181
+22
+3
+25
+22
+3
+25
+Late Any Legal Weapon
+EB3043
+13
+2
+15
+13
+2
+15
+Multiseason
+EB3110
+3
+0
+3
+3
+0
+3
+Muzzleloader
+EB3086
+12
+1
+13
+12
+1
+13
+Grand Total
+77
+9
+86
+77
+9
+86
+Dolores Triangle
+2025 Permits
+2026 Permits
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Late Any Legal Weapon
+EB3044
+6
+1
+7
+6
+1
+7
+Grand Total
+6
+1
+7
+6
+1
+7
+Fishlake/Thousand Lakes
+2025 Permits
+2026 Permits
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Archery
+EB3018
+81
+9
+90
+84
+9
+93
+Early Any Legal Weapon
+EB3063
+33
+4
+37
+34
+4
+38
+Mid Any Legal Weapon
+EB3064
+96
+11
+107
+99
+11
+110
+Late Any Legal Weapon
+EB3065
+56
+6
+62
+57
+6
+63
+Multiseason
+EB3120
+10
+1
+11
+10
+1
+11
+Muzzleloader
+EB3096
+49
+5
+54
+50
+6
+56
+Grand Total
+325
+36
+361
+334
+37
+371
+La Sal Mtns
+2025 Permits
+2026 Permits
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Archery
+EB3009
+36
+4
+40
+36
+4
+40
+Early Any Legal Weapon
+EB3045
+14
+2
+16
+14
+2
+16
+Mid Any Legal Weapon
+EB3183
+42
+5
+47
+42
+5
+47
+Late Any Legal Weapon
+EB3046
+24
+3
+27
+24
+3
+27
+Multiseason
+EB3111
+5
+0
+5
+5
+0
+5
+Muzzleloader
+EB3087
+22
+2
+24
+22
+2
+24
+Grand Total
+143
+16
+159
+143
+16
+159
+Manti
+2025 Permits
+2026 Permits
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Archery
+EB3006
+157
+18
+175
+148
+17
+165
+Early Any Legal Weapon
+EB3038
+65
+7
+72
+61
+7
+68
+Mid Any Legal Weapon
+EB3126
+186
+21
+207
+175
+20
+195
+Late Any Legal Weapon
+EB3039
+108
+12
+120
+102
+11
+113
+Multiseason
+EB3108
+19
+2
+21
+18
+2
+20
+Muzzleloader
+EB3084
+94
+11
+105
+89
+10
+99
+Grand Total
+629
+71
+700
+593
+67
+660                           Monroe
+2025 Permits
+2026 Permits
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Archery
+EB3010
+19
+2
+21
+21
+2
+23
+Early Any Legal Weapon
+EB3047
+8
+1
+9
+8
+1
+9
+Mid Any Legal Weapon
+EB3185
+22
+3
+25
+24
+3
+27
+Late Any Legal Weapon
+EB3048
+13
+1
+14
+13
+2
+15
+Multiseason
+EB3112
+2
+0
+2
+3
+0
+3
+Muzzleloader
+EB3088
+11
+1
+12
+13
+1
+14
+Grand Total
+75
+8
+83
+82
+9
+91
+Morgan-South Rich
+2025 Permits
+2026 Permits
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Late Any Legal Weapon
+EB3208
+9
+1
+10
+9
+1
+10
+Grand Total
+9
+1
+10
+9
+1
+10
+Mt Dutton
+2025 Permits
+2026 Permits
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Archery
+EB3011
+18
+2
+20
+19
+2
+21
+Early Any Legal Weapon
+EB3049
+7
+1
+8
+8
+1
+9
+Mid Any Legal Weapon
+EB3187
+22
+2
+24
+22
+3
+25
+Late Any Legal Weapon
+EB3050
+13
+1
+14
+13
+2
+15
+Multiseason
+EB3113
+2
+0
+2
+3
+0
+3
+Muzzleloader
+EB3089
+11
+1
+12
+12
+1
+13
+Grand Total
+73
+7
+80
+77
+9
+86
+Nebo/San Pitch Mtns
+2025 Permits
+2026 Permits
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Archery
+EB3173
+22
+2
+24
+29
+3
+32
+Early Any Legal Weapon
+EB3175
+9
+1
+10
+12
+1
+13
+Mid Any Legal Weapon
+EB3177
+25
+3
+28
+34
+4
+38
+Late Any Legal Weapon
+EB3176
+14
+2
+16
+20
+2
+22
+Multiseason
+EB3178
+3
+0
+3
+4
+0
+4
+Muzzleloader
+EB3179
+13
+1
+14
+17
+2
+19
+Grand Total
+86
+9
+95
+116
+12
+128
+North Slope, Three Corners
+2025 Permits
+2026 Permits
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Archery
+EB3013
+6
+1
+7
+6
+1
+7
+Early Any Legal Weapon
+EB3210
+5
+0
+5
+5
+0
+5
+Mid Any Legal Weapon
+EB3053
+9
+1
+10
+9
+1
+10
+Multiseason
+EB3115
+1
+0
+1
+1
+0
+1
+Muzzleloader
+EB3091
+4
+0
+4
+4
+0
+4
+Grand Total
+25
+2
+27
+25
+2
+27                   Panguitch Lake
+2025 Permits
+2026 Permits
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Archery
+EB3015
+16
+2
+18
+17
+2
+19
+Early Any Legal Weapon
+EB3056
+6
+1
+7
+7
+1
+8
+Mid Any Legal Weapon
+EB3189
+19
+2
+21
+20
+2
+22
+Late Any Legal Weapon
+EB3057
+11
+1
+12
+12
+1
+13
+Multiseason
+EB3117
+2
+0
+2
+2
+0
+2
+Muzzleloader
+EB3093
+10
+1
+11
+10
+1
+11
+Grand Total
+64
+7
+71
+68
+7
+75
+San Juan Bull Elk
+2025 Permits
+2026 Permits
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Archery
+EB3019
+26
+3
+29
+29
+3
+32
+Early Any Legal Weapon
+EB3066
+11
+1
+12
+12
+1
+13
+Mid Any Legal Weapon
+EB3194
+31
+3
+34
+33
+4
+37
+Late Any Legal Weapon
+EB3067
+18
+2
+20
+20
+2
+22
+Multiseason
+EB3121
+3
+0
+3
+4
+0
+4
+Muzzleloader
+EB3097
+15
+2
+17
+17
+2
+19
+Grand Total
+104
+11
+115
+115
+12
+127
+Southwest Desert, South
+2025 Permits
+2026 Permits
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Archery
+EB3146
+37
+4
+41
+39
+4
+43
+Early Any Legal Weapon
+EB3149
+15
+2
+17
+16
+2
+18
+Mid Any Legal Weapon
+EB3198
+43
+5
+48
+46
+5
+51
+Late Any Legal Weapon
+EB3152
+25
+3
+28
+26
+3
+29
+Multiseason
+EB3157
+5
+0
+5
+5
+0
+5
+Muzzleloader
+EB3155
+22
+2
+24
+23
+3
+26
+Grand Total
+147
+16
+163
+155
+17
+172
+Wasatch Mtns
+2025 Permits
+2026 Permits
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Archery
+EB3022
+164
+18
+182
+130
+15
+145
+Early Any Legal Weapon
+EB3072
+67
+7
+74
+54
+6
+60
+Mid Any Legal Weapon
+EB3127
+193
+22
+215
+155
+17
+172
+Late Any Legal Weapon
+EB3073
+112
+12
+124
+89
+10
+99
+Multiseason
+EB3124
+20
+2
+22
+15
+2
+17
+Muzzleloader
+EB3100
+98
+11
+109
+78
+9
+87
+Grand Total
+654
+72
+726
+521
+59
+580                    Limited Entry LateArchery Bull Elk
+2025 Permits
+2026 Permits
+Hunt Name
+Weapon
+Hunt Number
+Res
+Non Res
+Total
+Res
+Non Res
+Total
+Beaver, East
+Late Archery
+EB3158
+13
+2
+15
+18
+2
+20
+Book Cliffs, BitterCreek/East
+Late Archery
+EB3161
+4
+1
+5
+4
+1
+5
+Boulder
+Late Archery
+EB3190
+4
+1
+5
+4
+1
+5
+Cache, Meadowville
+Late Archery
+EB3168
+4
+1
+5
+4
+1
+5
+Cache, South
+Late Archery
+EB3170
+4
+1
+5
+4
+1
+5
+Diamond Mtn
+Late Archery
+EB3195
+4
+1
+5
+4
+1
+5
+Fillmore, Pahvant
+Late Archery
+EB3180
+13
+2
+15
+18
+2
+20
+Fishlake/Thousand Lakes
+Late Archery
+EB3192
+13
+2
+15
+13
+2
+15
+La Sal Mtns
+Late Archery
+EB3182
+9
+1
+10
+9
+1
+10
+Manti
+Late Archery
+EB3172
+9
+1
+10
+9
+1
+10
+Monroe
+Late Archery
+EB3184
+7
+1
+8
+7
+1
+8
+Mt Dutton
+Late Archery
+EB3186
+9
+1
+10
+13
+2
+15
+Nebo/San Pitch Mtns
+Late Archery
+EB3174
+9
+1
+10
+13
+2
+15
+Panguitch Lake
+Late Archery
+EB3188
+9
+1
+10
+13
+2
+15
+San Juan Bull Elk
+Late Archery
+EB3193
+9
+1
+10
+9
+1
+10
+Southwest Desert, South
+Late Archery
+EB3197
+9
+1
+10
+18
+2
+20
+Wasatch Mtns
+Late Archery
+EB3199
+9
+1
+10
+9
+1
+10
+Grand Total
+95
+11
+158
+169
+24
+193              Limited Entry HAMSS Bull Elk
+2025 Permits
+2026 Permits
+Hunt Name
+Weapon
+HuntNumber
+Res
+NonRes
+Total
+Res
+NonRes
+Total
+Barney Top/Kaiparowits
+HAMSS
+EB3142
+9
+1
+10
+9
+1
+10
+Cache, North
+HAMSS
+EB3139
+25
+3
+28
+22
+2
+24
+East Canyon
+HAMSS
+EB3205
+9
+1
+10
+7
+1
+8
+Southwest Desert, North
+HAMSS
+EB3143
+16
+2
+18
+21
+2
+23
+West Desert, Deep Creek
+HAMSS
+EB3144
+13
+1
+14
+13
+2
+15
+Grand Total
+72
+8
+80
+72
+8
+80
+Limited Entry Bull ElkSeptember Archery
+2025 Permits
+2026 Permits
+Hunt Name
+Weapon
+HuntNumber
+Res
+NonRes
+Total
+Res
+NonRes
+Total
+Barney Top/Kaiparowits
+September Archery
+EB3135
+9
+1
+10
+9
+1
+10
+Cache, North
+September Archery
+EB3132
+25
+3
+28
+22
+2
+24
+Southwest Desert, North
+September Archery
+EB3136
+16
+2
+18
+21
+2
+23
+West Desert, Deep Creek
+September Archery
+EB3137
+13
+1
+14
+13
+2
+15
+Grand Total
+63
+7
+70
+65
+7
+72
