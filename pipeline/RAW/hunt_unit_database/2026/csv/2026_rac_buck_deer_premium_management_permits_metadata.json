@@ -1,0 +1,158 @@
+{
+  "generated_at": "2026-05-10T14:06:47.344156+00:00",
+  "source_document": "D:/DOWNLOADS/2026-04-rac-packet.pdf",
+  "output_csv": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_buck_deer_premium_management_permits.csv",
+  "row_count": 14,
+  "group_count": 6,
+  "integrity_checks_by_group": {
+    "Antelope Island Premium": {
+      "computed_2025": [
+        1,
+        0,
+        1
+      ],
+      "expected_2025": [
+        1,
+        0,
+        1
+      ],
+      "matches_2025": true,
+      "computed_2026": [
+        1,
+        0,
+        1
+      ],
+      "expected_2026": [
+        1,
+        0,
+        1
+      ],
+      "matches_2026": true
+    },
+    "Antelope Island Management": {
+      "computed_2025": [
+        0,
+        0,
+        0
+      ],
+      "expected_2025": [
+        0,
+        0,
+        0
+      ],
+      "matches_2025": true,
+      "computed_2026": [
+        2,
+        0,
+        2
+      ],
+      "expected_2026": [
+        2,
+        0,
+        2
+      ],
+      "matches_2026": true
+    },
+    "Henry Mtns Premium": {
+      "computed_2025": [
+        39,
+        5,
+        44
+      ],
+      "expected_2025": [
+        39,
+        5,
+        44
+      ],
+      "matches_2025": true,
+      "computed_2026": [
+        41,
+        5,
+        46
+      ],
+      "expected_2026": [
+        41,
+        5,
+        46
+      ],
+      "matches_2026": true
+    },
+    "Henry Mtns Management": {
+      "computed_2025": [
+        10,
+        1,
+        11
+      ],
+      "expected_2025": [
+        10,
+        1,
+        11
+      ],
+      "matches_2025": true,
+      "computed_2026": [
+        10,
+        1,
+        11
+      ],
+      "expected_2026": [
+        10,
+        1,
+        11
+      ],
+      "matches_2026": true
+    },
+    "Paunsaugunt Premium": {
+      "computed_2025": [
+        130,
+        15,
+        145
+      ],
+      "expected_2025": [
+        130,
+        15,
+        145
+      ],
+      "matches_2025": true,
+      "computed_2026": [
+        130,
+        15,
+        145
+      ],
+      "expected_2026": [
+        130,
+        15,
+        145
+      ],
+      "matches_2026": true
+    },
+    "Paunsaugunt Management": {
+      "computed_2025": [
+        40,
+        5,
+        45
+      ],
+      "expected_2025": [
+        40,
+        5,
+        45
+      ],
+      "matches_2025": true,
+      "computed_2026": [
+        50,
+        5,
+        55
+      ],
+      "expected_2026": [
+        50,
+        5,
+        55
+      ],
+      "matches_2026": true
+    }
+  },
+  "all_group_totals_match_source": true,
+  "notes": [
+    "Blank values preserved where source showed dashes for 2025 on DB1121.",
+    "This is supplemental permit context, separate from draw and harvest truth datasets."
+  ]
+}
