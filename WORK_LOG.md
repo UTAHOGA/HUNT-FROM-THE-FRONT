@@ -100,3 +100,50 @@
   - Production `processed_data` not updated in this step.
   - Website runtime not updated in this step.
   - Downstream runtime consumers may need schema updates for `draw_pool`.
+
+## Runtime Draft Sync - 2026 DATABASE-Backed Support Feeds (Draft Only)
+- Timestamp (UTC): 2026-05-10T17:51:04Z
+- Scope:
+  - Built remaining 2026 DATABASE-backed runtime draft files under `data_model/runtime_drafts`.
+  - Did not overwrite production `processed_data`.
+  - Did not update website files/loaders.
+- Inputs:
+  - `pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv`
+  - `data_model/runtime_drafts/draw_reality_engine_v2.csv`
+  - `processed_data/point_ladder_view.csv`
+  - `processed_data/hunt_master_enriched.csv`
+  - `processed_data/hunt_unit_reference_linked.csv`
+- Outputs:
+  - `data_model/runtime_drafts/permits_2026_online.csv`
+  - `data_model/runtime_drafts/point_ladder_view_v2.csv`
+  - `data_model/runtime_drafts/hunt_master_enriched_v2.csv`
+  - `data_model/runtime_drafts/hunt_boundary_crosswalk_v2.csv`
+  - `data_model/runtime_drafts/runtime_feed_sync_report.json`
+  - `data_model/runtime_drafts/runtime_feed_sync_summary.csv`
+- Validation summary:
+  - DATABASE valid hunt codes: 1394
+  - permits_2026_online rows: 1394
+  - permits blank hunt_code: 0
+  - permits duplicate hunt_code: 0
+  - permits boundary_id missing: 0
+  - permit math conflicts: 0
+  - permit status counts:
+    - OK: 880
+    - TOTAL_ONLY_SPLIT_MISSING: 351
+    - NO_QUOTA_PUBLISHED: 163
+    - CALCULATED_TOTAL_FROM_SPLIT: 0
+    - PERMIT_MATH_CONFLICT: 0
+  - point_ladder_view_v2 rows: 91588
+  - point_ladder_view_v2 boundary_id missing: 0
+  - point_ladder_view_v2 duplicate hunt_code+residency+points: 0
+  - hunt_master_enriched_v2 rows: 51857
+  - hunt_master_enriched_v2 duplicate keys removed from source during draft sync: 1203
+  - hunt_master_enriched_v2 boundary_id missing: 0
+  - hunt_boundary_crosswalk_v2 rows: 1394
+  - hunt_boundary_crosswalk_v2 duplicate hunt_code: 0
+  - hunt_boundary_crosswalk_v2 boundary_id missing: 0
+- Promotion blockers:
+  - DRAFT_ONLY_NOT_PUBLISHED
+  - PROCESSED_DATA_NOT_UPDATED
+  - WEBSITE_LOADER_MUST_SUPPORT_DRAW_POOL
+  - DO_NOT_MERGE_HISTORICAL_DATABASE_YEARS_INTO_2026
