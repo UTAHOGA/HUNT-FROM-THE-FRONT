@@ -656,6 +656,23 @@
       max-height: 360px;
     }
 
+    .ladder-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 10px 14px 0;
+      flex-wrap: wrap;
+    }
+
+    .ladder-range {
+      margin: 0;
+      color: var(--research-muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+
     /* Compact accordions for dense sections (human-eyes-first). */
     .report-accordion {
       border: 0;
@@ -759,7 +776,7 @@
     .report-table thead th {
       position: sticky;
       top: 0;
-      z-index: 1;
+      z-index: 5;
       padding: 11px 10px;
       text-align: left;
       background: rgba(255, 253, 249, 0.98);
@@ -805,11 +822,17 @@
         }
 
     .report-table tbody tr.is-user-row {
-          background:
-            linear-gradient(90deg, rgba(255, 214, 64, 0.16) 0, rgba(255, 214, 64, 0.08) 28px, rgba(255, 252, 233, 0.94) 28px, rgba(255, 252, 233, 0.94) 100%);
-          color: #2f2414;
-          box-shadow: inset 0 0 0 1px rgba(255, 214, 64, 0.26);
-        }
+      background: #fff5b8 !important;
+      font-weight: 800;
+      box-shadow: inset 4px 0 0 #d19a00;
+    }
+    .report-table tbody tr.jump-flash td {
+      animation: ladderJumpFlash .9s ease;
+    }
+    @keyframes ladderJumpFlash {
+      0% { box-shadow: inset 0 0 0 999px rgba(240, 120, 0, 0.16); }
+      100% { box-shadow: inset 0 0 0 999px rgba(240, 120, 0, 0); }
+    }
 
     .report-table tbody tr.is-user-row.is-guaranteed-row {
           background:
@@ -1290,6 +1313,10 @@
                   <span class="report-accordion-hint">Yellow = you. Orange = guaranteed.</span>
                 </summary>
                 <section class="report-table-card">
+                  <div class="ladder-toolbar">
+                    <p id="ladderRange" class="ladder-range">Rows: 0</p>
+                    <button id="jumpToPointsBtn" class="mini-btn" type="button">Jump to My Points</button>
+                  </div>
                   <div id="ladderTableEmpty" class="empty-note" style="margin:14px;">No ladder rows for this hunt and residency yet.</div>
                   <div id="ladderTableWrap" class="report-table-wrap" hidden>
                     <table class="report-table">

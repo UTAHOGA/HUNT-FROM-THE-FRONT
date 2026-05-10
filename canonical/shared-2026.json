@@ -171,6 +171,8 @@
           "summaryTrend",
           "summaryTrendText",
           "summaryRecommendation",
+          "ladderRange",
+          "jumpToPointsBtn",
           "ladderTableEmpty",
           "ladderTableWrap",
           "ladderHeaderRow",

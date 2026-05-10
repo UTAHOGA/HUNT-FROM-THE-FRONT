@@ -36,6 +36,10 @@ window.UOGA_UI = (() => {
     return path.endsWith('/index.html') || path.endsWith('/builder.html') || path === '/' || path === '';
   }
 
+  function shouldBackpackFloatWithViewport() {
+    return !isBuilderPage();
+  }
+
   function getBackpackHost() {
     if (isBuilderPage()) {
       const existingHost = document.querySelector('[data-backpack-host]') || document.querySelector('.topbar-right');
@@ -284,6 +288,22 @@ window.UOGA_UI = (() => {
 
   function lockBackpackTopLayer() {
     if (!trayShell || !trayPanel) return;
+    if (!shouldBackpackFloatWithViewport()) {
+      trayShell.style.setProperty('position', 'relative', 'important');
+      trayShell.style.setProperty('top', 'auto', 'important');
+      trayShell.style.setProperty('right', 'auto', 'important');
+      trayShell.style.setProperty('left', 'auto', 'important');
+      trayShell.style.setProperty('z-index', '120', 'important');
+
+      trayPanel.style.setProperty('position', 'absolute', 'important');
+      trayPanel.style.setProperty('top', 'calc(100% + 12px)', 'important');
+      trayPanel.style.setProperty('right', '0', 'important');
+      trayPanel.style.setProperty('left', 'auto', 'important');
+      trayPanel.style.setProperty('bottom', 'auto', 'important');
+      trayPanel.style.setProperty('z-index', '121', 'important');
+      return;
+    }
+
     trayShell.style.setProperty('position', 'fixed', 'important');
     trayShell.style.setProperty('top', '12px', 'important');
     trayShell.style.setProperty('right', '18px', 'important');
@@ -301,6 +321,16 @@ window.UOGA_UI = (() => {
 
   function positionBackpackTray() {
     if (!trayButton || !trayPanel) return;
+    if (!shouldBackpackFloatWithViewport()) {
+      trayPanel.style.top = 'calc(100% + 12px)';
+      trayPanel.style.left = 'auto';
+      trayPanel.style.right = '0';
+      trayPanel.style.bottom = 'auto';
+      trayPanel.style.width = 'min(430px, calc(100vw - 28px))';
+      trayPanel.style.maxHeight = 'min(72vh, 760px)';
+      trayPanel.style.setProperty('--uoga-backpack-notch-left', 'auto');
+      return;
+    }
     const rect = trayButton.getBoundingClientRect();
     if (window.innerWidth <= 900) {
       trayPanel.style.top = 'auto';
@@ -796,8 +826,8 @@ window.UOGA_UI = (() => {
       host.appendChild(trayShell);
     }
 
-    // Always mount to body so fixed positioning remains viewport-locked while the page scrolls.
-    if (trayShell.parentElement !== document.body) {
+    // Floating pages use a body mount so fixed positioning stays viewport-locked.
+    if (shouldBackpackFloatWithViewport() && trayShell.parentElement !== document.body) {
       document.body.appendChild(trayShell);
     }
 

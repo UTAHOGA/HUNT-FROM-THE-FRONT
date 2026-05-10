@@ -38,6 +38,7 @@
     masterByResidency: new Map(),
     masterByCode: new Map(),
     referenceByKey: new Map(),
+    engineHistoryByPoint: new Map(),
   };
 
   const els = {
@@ -83,6 +84,8 @@
     ladderTableBody: document.getElementById('ladderTableBody'),
     ladderPrimaryHeader: document.getElementById('ladderPrimaryHeader'),
     ladderSecondaryHeader: document.getElementById('ladderSecondaryHeader'),
+    ladderRange: document.getElementById('ladderRange'),
+    jumpToPointsBtn: document.getElementById('jumpToPointsBtn'),
 
     sourceModal: document.getElementById('sourceModal'),
     sourceModalTitle: document.getElementById('sourceModalTitle'),
@@ -146,11 +149,17 @@
 
   function formatProbability(value) {
     const parsed = num(value);
-    if (parsed === null) return 'Not available';
+    if (parsed === null || parsed <= 0) return '—';
     if (parsed >= 99.95) return '100%';
     if (parsed >= 10) return `${parsed.toFixed(1)}%`;
     if (parsed >= 1) return `${parsed.toFixed(2)}%`;
     return `${parsed.toFixed(3)}%`;
+  }
+
+  function formatEmpty(value) {
+    const text = String(value ?? '').trim();
+    if (!text || text === '0.000%' || text.toLowerCase() === 'not available') return '—';
+    return text;
   }
 
   function formatGapStatus(gap) {
@@ -340,16 +349,26 @@
     state.masterByResidency = new Map();
     state.masterByCode = new Map();
     state.referenceByKey = new Map();
+    state.engineHistoryByPoint = new Map();
 
     engineRows.forEach((row) => {
       const residency = normalizeResidencyLabel(row.residency);
+      const year = num(row.year);
       const points = num(row.points);
       const key = rowKey(row.hunt_code, residency, points);
       const group = groupKey(row.hunt_code, residency);
-      const normalized = { ...row, residency, points };
+      const normalized = { ...row, residency, points, year };
       state.engineByKey.set(key, normalized);
       if (!state.engineGroups.has(group)) state.engineGroups.set(group, []);
       state.engineGroups.get(group).push(normalized);
+
+      if (points !== null) {
+        const historical = state.engineHistoryByPoint.get(key);
+        const historicalYear = num(historical?.year);
+        if (!historical || (year !== null && (historicalYear === null || year > historicalYear))) {
+          state.engineHistoryByPoint.set(key, normalized);
+        }
+      }
     });
 
     ladderRows.forEach((row) => {
@@ -525,7 +544,9 @@
   }
 
   function getRecommendation(meta, row) {
-    if (!row) return 'Modeled recommendation not available for this hunt and residency yet.';
+    if (!row) {
+      return 'No modeled point-level row is available yet. Use Sources to verify historical draw pages and compare nearby point rows while this hunt is being rebuilt into the modeled ladder.';
+    }
 
     if (isRandomOnlyBonusCase(meta, row)) {
       return 'This hunt has no meaningful max-pool path at this residency. Your outcome depends on weighted random draw only.';
@@ -938,15 +959,29 @@
       els.ladderTableWrap.hidden = true;
       els.ladderTableEmpty.hidden = false;
       els.ladderTableBody.innerHTML = '';
+      if (els.ladderRange) els.ladderRange.textContent = 'Rows: 0';
       return;
+    }
+
+    const pointValues = rows
+      .map((row) => num(row.points))
+      .filter((value) => value !== null)
+      .sort((a, b) => a - b);
+    const minPoint = pointValues.length ? pointValues[0] : null;
+    const maxPoint = pointValues.length ? pointValues[pointValues.length - 1] : null;
+    if (els.ladderRange) {
+      els.ladderRange.textContent = `Rows: ${rows.length}${minPoint !== null && maxPoint !== null ? ` | Points ${minPoint}-${maxPoint}` : ''}`;
     }
 
     els.ladderTableBody.innerHTML = rows.map((row) => {
       const markers = [];
       const classes = [];
       const referenceRow = getReferenceRow(huntCode, residency);
+      const historicalPointRow = state.engineHistoryByPoint.get(rowKey(huntCode, residency, row.points)) || null;
+      const userPoints = getCurrentPoints();
+      const isUserRow = Number(row.points) === Number(userPoints);
 
-      if (row.points === points) {
+      if (isUserRow) {
         markers.push({ kind: 'user', label: 'You' });
         classes.push('is-user-row');
       }
@@ -960,19 +995,34 @@
         markers.push({ kind: 'sources', label: 'Sources', point: row.points });
       }
 
-      const primaryValue = isPreferenceAntlerless(meta)
-        ? formatProbability(firstAvailable(row, ['odds_2026_projected', 'max_pool_projection_2026', 'random_draw_odds_2026']))
-        : formatProbability(firstAvailable(row, ['max_pool_projection_2026', 'odds_2026_projected']));
+      const hasPointLevelEvidence = historicalPointRow
+        || num(row.applicants_above) !== null
+        || num(row.applicants_at_level) !== null;
+      const rawPrimary = isPreferenceAntlerless(meta)
+        ? firstAvailable(row, ['odds_2026_projected', 'max_pool_projection_2026', 'random_draw_odds_2026'])
+        : firstAvailable(row, ['max_pool_projection_2026', 'odds_2026_projected']);
+      const primaryValue = hasPointLevelEvidence
+        ? formatEmpty(formatProbability(rawPrimary))
+        : '—';
 
-      const actual2025Display = firstAvailable(row, ['odds_2025_actual', 'odds_2025', 'success_ratio'])
-        || (num(row.p_draw_percent) !== null ? formatProbability(row.p_draw_percent) : 'Not available');
+      const rawHistoricalOdds = firstAvailable(row, ['odds_2025_actual', 'odds_2025', 'success_ratio'])
+        || firstAvailable(historicalPointRow, ['p_draw_percent']);
+      const actual2025Display = formatEmpty(
+        rawHistoricalOdds === null || rawHistoricalOdds === undefined || rawHistoricalOdds === ''
+          ? '—'
+          : (num(rawHistoricalOdds) !== null ? formatProbability(rawHistoricalOdds) : String(rawHistoricalOdds))
+      );
 
       const secondaryCell = isPreferenceAntlerless(meta)
         ? ''
-        : `<td>${formatProbability(firstAvailable(row, ['random_draw_projection_2026', 'random_draw_odds_2026', 'odds_2026_projected']))}</td>`;
+        : `<td>${hasPointLevelEvidence ? formatEmpty(formatProbability(firstAvailable(row, ['random_draw_projection_2026', 'random_draw_odds_2026', 'odds_2026_projected']))) : '—'}</td>`;
+
+      const rowClass = [isUserRow ? 'is-user-row' : '', ...classes.filter((name) => name !== 'is-user-row')]
+        .filter(Boolean)
+        .join(' ');
 
       return `
-        <tr class="${classes.join(' ')}">
+        <tr class="${rowClass}" data-ladder-point="${escapeHtml(row.points)}">
           <td>${formatInteger(row.points)}</td>
           <td>${escapeHtml(actual2025Display)}</td>
           <td>${primaryValue}</td>
@@ -983,6 +1033,11 @@
 
     els.ladderTableEmpty.hidden = true;
     els.ladderTableWrap.hidden = false;
+
+    if (els.jumpToPointsBtn) {
+      const target = els.ladderTableBody.querySelector(`tr[data-ladder-point="${String(points)}"]`);
+      els.jumpToPointsBtn.hidden = !target;
+    }
   }
 
   function renderEmpty(filters, coverageMessage) {
@@ -1189,6 +1244,11 @@
     runResearch();
   }
 
+  function jumpToUserPoints() {
+    document.querySelector('.report-table tbody tr.is-user-row')
+      ?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
   function bindEvents() {
     els.runResearchButton?.addEventListener('click', runResearch);
     els.clearFiltersButton?.addEventListener('click', clearFilters);
@@ -1203,6 +1263,14 @@
     els.clearBasketButton?.addEventListener('click', () => {
       saveBasket([]);
       renderBasket();
+    });
+
+    els.jumpToPointsBtn?.addEventListener('click', () => {
+      jumpToUserPoints();
+      const target = document.querySelector('.report-table tbody tr.is-user-row');
+      if (!target) return;
+      target.classList.add('jump-flash');
+      window.setTimeout(() => target.classList.remove('jump-flash'), 900);
     });
 
     [els.residencySelect].forEach((el) => {

@@ -19,6 +19,7 @@
                     "coverage:canonical":  "node scripts/finalize-canonical-coverage.js",
                     "sync:permits-2026":  "node scripts/sync-permit-allocations-2026.js",
                     "verify:permits-2026":  "node scripts/verify-permit-allocations-2026.js",
+                    "integrity:hard-data": "node scripts/run-hard-data-integrity.js",
                     "verify:join-integrity":  "node scripts/verify-join-integrity.js",
                     "sync:draw-reality-identity":  "node scripts/normalize-draw-reality-identity-guardrail.js",
                     "sync:draw-reality-runtime-trim":  "node scripts/trim-and-normalize-draw-reality-runtime.js",

@@ -471,20 +471,49 @@
       let activeGroup = 'all';
       let activeType = 'pdf';
       let activeYear = 'all';
+      const normalizeTitleKey = (title) => String(title || '')
+        .toLowerCase()
+        .replace(/\((csv|json|xlsx)\)/gi, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+
       const parsedItems = items.map((item) => {
         let group = String(item.group || '').toLowerCase().trim() || 'raw_library';
         const yearMatch = String(`${item.title || ''} ${item.subtitle || ''} ${item.href || ''}`).match(/\b(20\d{2})\b/);
+        const type = String(item.type || '').toLowerCase().trim() || 'file';
+        const titleKey = normalizeTitleKey(item.title);
+        const year = yearMatch ? yearMatch[1] : '';
         return {
           ...item,
           group,
-          type: String(item.type || '').toLowerCase().trim() || 'file',
-          year: yearMatch ? yearMatch[1] : ''
+          type,
+          titleKey,
+          year
         };
       });
 
-      const groups = ['all', ...Array.from(new Set(parsedItems.map(x => x.group)))];
-      const types = ['all', ...Array.from(new Set(parsedItems.map(x => x.type))).sort()];
-      const years = ['all', ...Array.from(new Set(parsedItems.map(x => x.year).filter(Boolean))).sort((a, b) => Number(b) - Number(a))];
+      const hasXlsxByKey = new Set(
+        parsedItems
+          .filter((item) => item.type === 'xlsx')
+          .map((item) => `${item.group}::${item.year}::${item.titleKey}`)
+      );
+
+      const displayItems = parsedItems.filter((item) => {
+        // Never show JSON files in Hard Copy library.
+        if (item.type === 'json') return false;
+        // Hide CSV when an XLSX equivalent is available.
+        if (item.type === 'csv') {
+          const key = `${item.group}::${item.year}::${item.titleKey}`;
+          if (hasXlsxByKey.has(key)) return false;
+          if (String(item.companion_type || '').toLowerCase() === 'xlsx') return false;
+          if (String(item.companion_href || '').toLowerCase().endsWith('.xlsx')) return false;
+        }
+        return true;
+      });
+
+      const groups = ['all', ...Array.from(new Set(displayItems.map(x => x.group)))];
+      const types = ['all', ...Array.from(new Set(displayItems.map(x => x.type))).sort()];
+      const years = ['all', ...Array.from(new Set(displayItems.map(x => x.year).filter(Boolean))).sort((a, b) => Number(b) - Number(a))];
 
       if (typeFilterEl) {
         typeFilterEl.innerHTML = types.map(type => `<option value="${escapeHtml(type)}">${escapeHtml(type === 'all' ? 'All file types' : type.toUpperCase())}</option>`).join('');
@@ -501,7 +530,7 @@
 
       function filterItems() {
         const q = (searchEl.value || '').trim().toLowerCase();
-        return parsedItems.filter(item => {
+        return displayItems.filter(item => {
           if (activeGroup !== 'all' && item.group !== activeGroup) return false;
           if (activeType !== 'all' && item.type !== activeType) return false;
           if (activeYear !== 'all' && item.year !== activeYear) return false;
@@ -566,7 +595,7 @@
 
       function drawSections() {
         const filtered = filterItems();
-        countEl.textContent = `${filtered.length} of ${parsedItems.length} files`;
+        countEl.textContent = `${filtered.length} of ${displayItems.length} files`;
         drawActiveFilters();
         if (!filtered.length) {
           sectionsEl.innerHTML = '<div class="library-empty">No files match this filter.</div>';
