@@ -1053,8 +1053,13 @@
     const meta = findMeta(filters.huntCode, filters.residency);
     const engineRows = getEngineRows(filters.huntCode, filters.residency);
     const engineRow = getEngineRow(filters.huntCode, filters.residency, filters.points);
+    const ladderRows = getLadderRows(filters.huntCode, filters.residency);
+    const ladderPointRow = ladderRows.find((row) => Number(row.points) === Number(filters.points)) || null;
+    // Prefer exact engine row when present, otherwise fall back to the ladder row
+    // for the selected point so summary cards don't collapse to "Not available".
+    const summaryRow = engineRow || ladderPointRow || null;
     const referenceRow = getReferenceRow(filters.huntCode, filters.residency);
-    const coverageMessage = getModeledCoverageStatus(meta, engineRows.length > 0);
+    const coverageMessage = getModeledCoverageStatus(meta, engineRows.length > 0 || ladderRows.length > 0);
 
     if (!filters.huntCode || (!meta && !engineRows.length)) {
       renderEmpty(filters, coverageMessage || 'Type a hunt code or load one from Hunt Backpack.');
@@ -1087,14 +1092,14 @@
       }
     }
 
-    renderSummary(meta, engineRow, filters, coverageMessage, referenceRow);
+    renderSummary(meta, summaryRow, filters, coverageMessage, referenceRow);
     renderLadder(meta, filters.huntCode, filters.residency, filters.points);
 
     state.selectedMeta = meta;
     state.selectedFilters = filters;
 
     if (meta) {
-      upsertBasketItem(meta, filters, engineRow);
+      upsertBasketItem(meta, filters, summaryRow);
     }
   }
 
