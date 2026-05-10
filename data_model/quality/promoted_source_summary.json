@@ -1,0 +1,79 @@
+{
+  "generated_at": "2026-05-10T13:16:05.986119+00:00",
+  "input_audit_file": "data_model/quality/raw_pdf_inventory_audit.csv",
+  "outputs": {
+    "promoted_quality_sources_csv": "data_model/quality/promoted_quality_sources.csv",
+    "promoted_draw_sources_csv": "data_model/quality/promoted_draw_sources.csv",
+    "promoted_source_summary_json": "data_model/quality/promoted_source_summary.json"
+  },
+  "counts": {
+    "quality_manifest_rows": 253,
+    "draw_manifest_rows": 204,
+    "expected_quality_rows": 253,
+    "expected_draw_rows": 204
+  },
+  "validation": {
+    "quality": {
+      "row_count_actual": 253,
+      "row_count_expected": 253,
+      "row_count_matches_expected": true,
+      "source_non_promote_rows_after_filter": 0,
+      "only_promote_rows_used": true,
+      "quality_engine_use_wrong_rows_after_filter": 0,
+      "only_YES_quality_engine_use": true,
+      "duplicate_source_rows_count": 0,
+      "no_duplicate_source_rows": true,
+      "rows_missing_source_file_or_sha256": 0,
+      "all_rows_have_source_file_and_sha256": true,
+      "blockers": [],
+      "passed": true
+    },
+    "draw": {
+      "row_count_actual": 204,
+      "row_count_expected": 204,
+      "row_count_matches_expected": true,
+      "source_non_promote_rows_after_filter": 0,
+      "only_promote_rows_used": true,
+      "draw_engine_use_wrong_rows_after_filter": 0,
+      "only_YES_draw_engine_use": true,
+      "duplicate_source_rows_count": 0,
+      "no_duplicate_source_rows": true,
+      "rows_missing_source_file_or_sha256": 0,
+      "all_rows_have_source_file_and_sha256": true,
+      "blockers": [],
+      "passed": true
+    },
+    "all_checks_passed": true
+  },
+  "promotion_blockers": [],
+  "extraction_priority_counts": {
+    "quality": {
+      "HIGH": 239,
+      "LOW": 13,
+      "MEDIUM": 1
+    },
+    "draw": {
+      "HIGH": 184,
+      "LOW": 20
+    }
+  },
+  "extraction_strategy_counts": {
+    "quality": {
+      "structured_table": 228,
+      "text_parse": 13,
+      "wide_year_table": 12
+    },
+    "draw": {
+      "structured_table": 184,
+      "text_parse": 20
+    }
+  },
+  "confidence_counts": {
+    "quality": {
+      "HIGH": 253
+    },
+    "draw": {
+      "HIGH": 204
+    }
+  }
+}
