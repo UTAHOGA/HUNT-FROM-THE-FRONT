@@ -21,7 +21,8 @@ def test_draw_system_coverage_report_generation(tmp_path: Path) -> None:
     assert "PREFERENCE_ANTLERLESS_ELK" in report["modeled_preference_categories"]
     assert "PREFERENCE_DOE_PRONGHORN" in report["modeled_preference_categories"]
     assert report["answers"]["is_bear_modeled"] is False
-    assert "BONUS_CWMU_BIG_GAME" in report["in_scope_model_pending_categories"]
+    assert report["answers"]["is_cwmu_public_modeled"] is True
+    assert "BONUS_CWMU_BIG_GAME" in report["modeled_bonus_categories"]
     assert "PRIVATE_LANDS_ONLY_ANTLERLESS_ELK" in report["in_scope_model_pending_categories"]
     assert "BONUS_OIL_BIG_GAME" in report["modeled_bonus_categories"]
     assert "OUT_OF_SCOPE_NON_TARGET" in report["out_of_scope_non_target_categories"]

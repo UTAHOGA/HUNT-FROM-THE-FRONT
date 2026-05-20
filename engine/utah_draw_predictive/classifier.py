@@ -28,6 +28,7 @@ from .preference_antlerless import STRATEGY_SPECS as PREFERENCE_ANTLERLESS_SPECS
 from .preference_general_deer import STRATEGY_SPECS as PREFERENCE_GENERAL_DEER_SPECS, is_modeled_general_deer_row
 from .private_lands_antlerless_elk import STRATEGY_SPECS as PRIVATE_LANDS_ANTLERLESS_ELK_SPECS
 from .random_only import STRATEGY_SPECS as RANDOM_ONLY_SPECS
+from .special_bonus import PHASE6_DRAW_SYSTEM_TYPES, is_modeled_phase6_bonus_row
 from .youth import STRATEGY_SPECS as YOUTH_SPECS
 
 
@@ -248,6 +249,8 @@ def resolve_algorithm_status(row: Mapping[str, object], draw_system_type: str | 
         return ALGORITHM_STATUS_MODELED_PREFERENCE if is_modeled_antlerless_row(row) else ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING
     if draw_system_type == "PREFERENCE_DEDICATED_HUNTER_DEER":
         return ALGORITHM_STATUS_MODELED_PREFERENCE if is_modeled_dedicated_hunter_row(row) else ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING
+    if draw_system_type in PHASE6_DRAW_SYSTEM_TYPES:
+        return ALGORITHM_STATUS_MODELED_BONUS if is_modeled_phase6_bonus_row(row) else ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING
     return REGISTRY[draw_system_type].algorithm_status
 
 
@@ -437,13 +440,37 @@ def build_draw_system_coverage_report(
         "is_antlerless_deer_modeled": _distinct_count(rows, lambda row: row["draw_system_type"] == "PREFERENCE_ANTLERLESS_DEER" and str(row["modeled_by_engine"]) == "True") > 0,
         "is_antlerless_elk_modeled": _distinct_count(rows, lambda row: row["draw_system_type"] == "PREFERENCE_ANTLERLESS_ELK" and str(row["modeled_by_engine"]) == "True") > 0,
         "is_doe_pronghorn_modeled": _distinct_count(rows, lambda row: row["draw_system_type"] == "PREFERENCE_DOE_PRONGHORN" and str(row["modeled_by_engine"]) == "True") > 0,
-        "are_antlerless_moose_and_ewe_sheep_modeled_under_bonus_rules": False,
+        "are_antlerless_moose_and_ewe_sheep_modeled_under_bonus_rules": (
+            _distinct_count(rows, lambda row: row["draw_system_type"] == "BONUS_ANTLERLESS_MOOSE" and str(row["modeled_by_engine"]) == "True") > 0
+            and _distinct_count(rows, lambda row: row["draw_system_type"] == "BONUS_EWE_BIGHORN" and str(row["modeled_by_engine"]) == "True") > 0
+        ),
         "are_all_oil_big_game_categories_modeled": _distinct_count(rows, lambda row: row["draw_system_type"] == "BONUS_OIL_BIG_GAME") == _distinct_count(rows, lambda row: row["draw_system_type"] == "BONUS_OIL_BIG_GAME" and str(row["modeled_by_engine"]) == "True"),
         "are_all_le_big_game_categories_modeled": _distinct_count(rows, lambda row: row["draw_system_type"] == "BONUS_LE_BIG_GAME") == _distinct_count(rows, lambda row: row["draw_system_type"] == "BONUS_LE_BIG_GAME" and str(row["modeled_by_engine"]) == "True"),
         "are_all_ple_big_game_categories_modeled": _distinct_count(rows, lambda row: row["draw_system_type"] == "BONUS_PLE_BIG_GAME") == _distinct_count(rows, lambda row: row["draw_system_type"] == "BONUS_PLE_BIG_GAME" and str(row["modeled_by_engine"]) == "True"),
         "is_turkey_modeled": False,
         "is_bear_modeled": False,
         "is_mountain_lion_cougar_modeled": False,
+        "is_cwmu_public_modeled": _distinct_count(rows, lambda row: row["draw_system_type"] == "BONUS_CWMU_BIG_GAME" and str(row["modeled_by_engine"]) == "True") > 0,
+        "is_antlerless_moose_modeled": _distinct_count(rows, lambda row: row["draw_system_type"] == "BONUS_ANTLERLESS_MOOSE" and str(row["modeled_by_engine"]) == "True") > 0,
+        "is_ewe_bighorn_modeled": _distinct_count(rows, lambda row: row["draw_system_type"] == "BONUS_EWE_BIGHORN" and str(row["modeled_by_engine"]) == "True") > 0,
+    }
+
+    cwmu_private_excluded_rows = [
+        row for row in rows
+        if row["draw_system_type"] == "LANDOWNER_BIG_GAME" and "cwmu" in _joined_text(row)
+    ]
+    phase6_summary = {
+        "cwmu_public_modeled_row_count": sum(1 for row in rows if row["draw_system_type"] == "BONUS_CWMU_BIG_GAME" and str(row["modeled_by_engine"]) == "True"),
+        "cwmu_public_pending_row_count": sum(1 for row in rows if row["draw_system_type"] == "BONUS_CWMU_BIG_GAME" and row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING),
+        "cwmu_private_excluded_row_count": len(cwmu_private_excluded_rows),
+        "antlerless_moose_modeled_row_count": sum(1 for row in rows if row["draw_system_type"] == "BONUS_ANTLERLESS_MOOSE" and str(row["modeled_by_engine"]) == "True"),
+        "antlerless_moose_pending_row_count": sum(1 for row in rows if row["draw_system_type"] == "BONUS_ANTLERLESS_MOOSE" and row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING),
+        "ewe_bighorn_modeled_row_count": sum(1 for row in rows if row["draw_system_type"] == "BONUS_EWE_BIGHORN" and str(row["modeled_by_engine"]) == "True"),
+        "ewe_bighorn_pending_row_count": sum(1 for row in rows if row["draw_system_type"] == "BONUS_EWE_BIGHORN" and row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING),
+        "turkey_still_pending": "BONUS_TURKEY" in {row["draw_system_type"] for row in rows if row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING},
+        "bear_still_pending": "BEAR_DRAW" in {row["draw_system_type"] for row in rows if row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING},
+        "mountain_lion_cougar_still_pending": "MOUNTAIN_LION_DRAW" in {row["draw_system_type"] for row in rows if row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING},
+        "private_lands_only_antlerless_elk_allocation_pending": "PRIVATE_LANDS_ONLY_ANTLERLESS_ELK" in {row["draw_system_type"] for row in rows if row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING},
     }
 
     report = {
@@ -470,6 +497,7 @@ def build_draw_system_coverage_report(
         "out_of_scope_non_target_rows": sum(1 for row in rows if out_of_scope_predicate(row)),
         "out_of_scope_non_target_hunt_codes": _distinct_count(rows, out_of_scope_predicate),
         "answers": answers,
+        "phase6_bonus_special": phase6_summary,
         "currently_production_modeled_categories": [draw_system_type for draw_system_type, spec in REGISTRY.items() if spec.algorithm_status == ALGORITHM_STATUS_MODELED_BONUS],
         "modeled_bonus_categories": [draw_system_type for draw_system_type, spec in REGISTRY.items() if spec.algorithm_status == ALGORITHM_STATUS_MODELED_BONUS],
         "modeled_preference_categories": [draw_system_type for draw_system_type, spec in REGISTRY.items() if spec.algorithm_status == ALGORITHM_STATUS_MODELED_PREFERENCE],

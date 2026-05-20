@@ -13,6 +13,7 @@ from engine.utah_draw_predictive.classifier import sanitize_modeled_probability_
 from engine.utah_draw_predictive.dedicated_hunter import build_preference_dedicated_hunter_predictions
 from engine.utah_draw_predictive.preference_antlerless import build_preference_antlerless_predictions
 from engine.utah_draw_predictive.preference_general_deer import build_preference_general_deer_predictions
+from engine.utah_draw_predictive.special_bonus import PHASE6_DRAW_SYSTEM_TYPES, build_phase6_bonus_special_predictions
 
 from .backtest import build_backtest_rows
 from .forecast import (
@@ -228,6 +229,117 @@ def _write_dedicated_hunter_artifacts(output_dir: Path, prediction_rows: list[di
     json_path = output_dir / "dedicated_hunter_report.json"
     json_path.write_text(json.dumps(report, indent=2), encoding="utf-8")
     return csv_path, json_path
+
+
+def _write_phase6_bonus_special_artifacts(
+    output_dir: Path,
+    prediction_rows: list[dict[str, object]],
+    phase6_report: dict[str, object],
+) -> tuple[Path, Path]:
+    phase6_rows = [row for row in prediction_rows if str(row.get("draw_system_type", "")).strip() in PHASE6_DRAW_SYSTEM_TYPES]
+    csv_path = output_dir / "phase6_bonus_special_predictions_v1.csv"
+    fieldnames = list(dict.fromkeys(key for row in phase6_rows for key in row.keys())) if phase6_rows else [
+        "hunt_code",
+        "residency",
+        "points",
+        "draw_system_type",
+        "algorithm_status",
+        "p_bonus_pool",
+        "p_random_pool",
+        "p_draw",
+        "p_draw_pct",
+        "p_preference_draw",
+    ]
+    write_csv(csv_path, phase6_rows, fieldnames)
+    modeled_rows = [row for row in phase6_rows if str(row.get("algorithm_status", "")).strip() == "MODELED_BONUS"]
+    pending_rows = [row for row in phase6_rows if str(row.get("algorithm_status", "")).strip() == "IN_SCOPE_MODEL_PENDING"]
+    cwmu_modeled_rows = [row for row in modeled_rows if str(row.get("draw_system_type", "")).strip() == "BONUS_CWMU_BIG_GAME"]
+    cwmu_pending_rows = [row for row in pending_rows if str(row.get("draw_system_type", "")).strip() == "BONUS_CWMU_BIG_GAME"]
+    antlerless_moose_modeled_rows = [row for row in modeled_rows if str(row.get("draw_system_type", "")).strip() == "BONUS_ANTLERLESS_MOOSE"]
+    antlerless_moose_pending_rows = [row for row in pending_rows if str(row.get("draw_system_type", "")).strip() == "BONUS_ANTLERLESS_MOOSE"]
+    ewe_bighorn_modeled_rows = [row for row in modeled_rows if str(row.get("draw_system_type", "")).strip() == "BONUS_EWE_BIGHORN"]
+    ewe_bighorn_pending_rows = [row for row in pending_rows if str(row.get("draw_system_type", "")).strip() == "BONUS_EWE_BIGHORN"]
+    phase6_report = dict(phase6_report)
+    phase6_report.update(
+        {
+            "total_phase6_rows": len(phase6_rows),
+            "rows_by_draw_system_type": dict(
+                sorted(
+                    (
+                        draw_system_type,
+                        sum(1 for row in phase6_rows if str(row.get("draw_system_type", "")).strip() == draw_system_type),
+                    )
+                    for draw_system_type in sorted({str(row.get("draw_system_type", "")).strip() for row in phase6_rows if str(row.get("draw_system_type", "")).strip()})
+                )
+            ),
+            "rows_by_algorithm_status": dict(
+                sorted(
+                    (
+                        algorithm_status,
+                        sum(1 for row in phase6_rows if str(row.get("algorithm_status", "")).strip() == algorithm_status),
+                    )
+                    for algorithm_status in sorted({str(row.get("algorithm_status", "")).strip() for row in phase6_rows if str(row.get("algorithm_status", "")).strip()})
+                )
+            ),
+            "cwmu_public_modeled_row_count": len(cwmu_modeled_rows),
+            "cwmu_public_modeled_hunt_code_count": len({str(row.get("hunt_code", "")).strip() for row in cwmu_modeled_rows if str(row.get("hunt_code", "")).strip()}),
+            "cwmu_pending_row_count": len(cwmu_pending_rows),
+            "antlerless_moose_modeled_row_count": len(antlerless_moose_modeled_rows),
+            "antlerless_moose_modeled_hunt_code_count": len({str(row.get("hunt_code", "")).strip() for row in antlerless_moose_modeled_rows if str(row.get("hunt_code", "")).strip()}),
+            "antlerless_moose_pending_row_count": len(antlerless_moose_pending_rows),
+            "ewe_bighorn_modeled_row_count": len(ewe_bighorn_modeled_rows),
+            "ewe_bighorn_modeled_hunt_code_count": len({str(row.get("hunt_code", "")).strip() for row in ewe_bighorn_modeled_rows if str(row.get("hunt_code", "")).strip()}),
+            "ewe_bighorn_pending_row_count": len(ewe_bighorn_pending_rows),
+            "p_bonus_pool_non_null_count": _nonnull(phase6_rows, "p_bonus_pool"),
+            "p_random_pool_non_null_count": _nonnull(phase6_rows, "p_random_pool"),
+            "p_draw_non_null_count": _nonnull(phase6_rows, "p_draw"),
+            "p_draw_pct_non_null_count": _nonnull(phase6_rows, "p_draw_pct"),
+            "p_preference_draw_non_null_count": _nonnull(phase6_rows, "p_preference_draw"),
+            "p_draw_outside_0_1_count": sum(
+                1
+                for row in phase6_rows
+                if str(row.get("p_draw", "")).strip()
+                and not (0.0 <= float(str(row.get("p_draw", "")).strip()) <= 1.0)
+            ),
+            "p_draw_pct_outside_0_100_count": sum(
+                1
+                for row in phase6_rows
+                if str(row.get("p_draw_pct", "")).strip()
+                and not (0.0 <= float(str(row.get("p_draw_pct", "")).strip()) <= 100.0)
+            ),
+            "duplicate_key_count": _duplicate_count(phase6_rows, ["hunt_code", "residency", "points"]),
+            "source_years_used_non_null_count": _nonnull(phase6_rows, "source_years_used"),
+        }
+    )
+    json_path = output_dir / "phase6_bonus_special_report.json"
+    json_path.write_text(json.dumps(phase6_report, indent=2), encoding="utf-8")
+    return csv_path, json_path
+
+
+def _replace_rows_by_key(
+    base_rows: list[dict[str, object]],
+    replacement_rows: list[dict[str, object]],
+) -> list[dict[str, object]]:
+    replacement_keys = {
+        (
+            str(row.get("hunt_code", "")).strip(),
+            str(row.get("residency", "")).strip(),
+            str(row.get("points", "")).strip(),
+        )
+        for row in replacement_rows
+    }
+    filtered = [
+        row
+        for row in base_rows
+        if (
+            str(row.get("hunt_code", "")).strip(),
+            str(row.get("residency", "")).strip(),
+            str(row.get("points", "")).strip(),
+        )
+        not in replacement_keys
+    ]
+    filtered.extend(replacement_rows)
+    return filtered
 
 
 def _quota_info(row: dict[str, str]) -> tuple[bool, bool]:
@@ -532,6 +644,8 @@ def _build_manifest(
         "dedicated_hunter_report.json": output_dir / "dedicated_hunter_report.json",
         "phase4_antlerless_validation_inventory.csv": output_dir / "phase4_antlerless_validation_inventory.csv",
         "phase4_antlerless_validation_inventory.json": output_dir / "phase4_antlerless_validation_inventory.json",
+        "phase6_bonus_special_predictions_v1.csv": output_dir / "phase6_bonus_special_predictions_v1.csv",
+        "phase6_bonus_special_report.json": output_dir / "phase6_bonus_special_report.json",
     }
     anomalies = _anomaly_counts(prediction_rows, backtest_rows)
     manifest = {
@@ -630,6 +744,12 @@ def materialize_outputs(
         forecast_year=forecast_year,
         history_years=history_years,
     )
+    phase6_bonus_special_rows, phase6_bonus_special_report = build_phase6_bonus_special_predictions(
+        truth_rows=truth_rows,
+        db_rows=db_rows,
+        forecast_year=forecast_year,
+        history_years=history_years,
+    )
     if preference_general_deer_rows:
         preference_general_deer_rows = [sanitize_modeled_probability_fields(dict(row)) for row in preference_general_deer_rows]
         prediction_rows.extend(preference_general_deer_rows)
@@ -642,7 +762,11 @@ def materialize_outputs(
         preference_dedicated_hunter_rows = [sanitize_modeled_probability_fields(dict(row)) for row in preference_dedicated_hunter_rows]
         prediction_rows.extend(preference_dedicated_hunter_rows)
         successor_rows.extend(dict(row) for row in preference_dedicated_hunter_rows)
-    if preference_general_deer_rows or preference_antlerless_rows or preference_dedicated_hunter_rows:
+    if phase6_bonus_special_rows:
+        phase6_bonus_special_rows = [sanitize_modeled_probability_fields(dict(row)) for row in phase6_bonus_special_rows]
+        prediction_rows = _replace_rows_by_key(prediction_rows, phase6_bonus_special_rows)
+        successor_rows = _replace_rows_by_key(successor_rows, [dict(row) for row in phase6_bonus_special_rows])
+    if preference_general_deer_rows or preference_antlerless_rows or preference_dedicated_hunter_rows or phase6_bonus_special_rows:
         prediction_rows.sort(key=lambda row: (str(row.get("hunt_code", "")), str(row.get("residency", "")), int(float(str(row.get("points", 0)) or 0))))
         successor_rows.sort(key=lambda row: (str(row.get("hunt_code", "")), str(row.get("residency", "")), int(float(str(row.get("points", 0)) or 0))))
 
@@ -691,7 +815,10 @@ def materialize_outputs(
         "model_strategy",
         "preference_model_valid",
         "preference_model_note",
+        "bonus_special_valid",
+        "bonus_special_note",
         "weapon",
+        "data_quality_flags",
         "draw_system_type",
         "algorithm_status",
         "target_scope",
@@ -711,6 +838,7 @@ def materialize_outputs(
 
     dedicated_hunter_csv_path, dedicated_hunter_report_path = _write_dedicated_hunter_artifacts(output_dir, prediction_rows, forecast_year, history_years)
     phase4_inventory_csv_path, phase4_inventory_json_path = _write_phase4_antlerless_inventory(output_dir, prediction_rows, forecast_year, history_years)
+    phase6_bonus_csv_path, phase6_bonus_json_path = _write_phase6_bonus_special_artifacts(output_dir, prediction_rows, phase6_bonus_special_report)
 
     backtest_rows = build_backtest_rows(permits, ladders, lambda public_permits: (split_utah_bonus_permits(public_permits).maxPointPermits, split_utah_bonus_permits(public_permits).randomPermits))
     backtest_fields = [
@@ -786,6 +914,8 @@ def materialize_outputs(
         "dedicated_hunter_report": dedicated_hunter_report_path,
         "phase4_antlerless_inventory_csv": phase4_inventory_csv_path,
         "phase4_antlerless_inventory_json": phase4_inventory_json_path,
+        "phase6_bonus_special_predictions": phase6_bonus_csv_path,
+        "phase6_bonus_special_report": phase6_bonus_json_path,
         "manifest": manifest_path,
     }
 

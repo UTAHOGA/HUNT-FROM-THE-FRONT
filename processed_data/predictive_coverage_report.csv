@@ -165,9 +165,9 @@ DA1003,True,True,True,False,included_forecast,General Season,Deer,"Monroe/Platea
 DA1004,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 DA1007,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 DA1009,True,True,True,False,included_forecast,General Season,Deer,"Pine Valley, Enterprise",,,25
-DA1011,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,George Creek CWMU,5,0,5
-DA1012,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Junction Valley CWMU,15,0,15
-DA1013,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Mt Carmel CWMU,5,0,5
+DA1011,True,True,True,False,included_forecast,CWMU,Deer,George Creek CWMU,5,0,5
+DA1012,True,True,True,False,included_forecast,CWMU,Deer,Junction Valley CWMU,15,0,15
+DA1013,True,True,True,False,included_forecast,CWMU,Deer,Mt Carmel CWMU,5,0,5
 DA1017,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 DA1018,True,True,True,False,included_forecast,General Season,Deer,"Pine Valley, New Harmony",,,20
 DA1026,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
@@ -188,7 +188,7 @@ DA1046,True,True,True,False,included_forecast,General Season,Deer,"Nine Mile, Pr
 DA1047,True,True,True,False,included_forecast,General Season,Deer,Vernal-Ouray Valley,,,25
 DA1048,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Fillmore City,,,15
 DA1049,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"Vernal, Ashley Valley",,,35
-DA1050,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,The Rose of Snowville CWMU,8,0,8
+DA1050,True,True,True,False,included_forecast,CWMU,Deer,The Rose of Snowville CWMU,8,0,8
 DB0001,False,True,True,False,not_OIL_LE_PLE,Tribal,Deer,Southeastern Navajo Buck Deer,,,
 DB0002,False,True,True,False,not_OIL_LE_PLE,Tribal,Deer,Southeastern Navajo Buck Deer,,,
 DB0003,False,True,True,False,not_OIL_LE_PLE,Tribal,Deer,Southeastern Navajo Buck Deer,,,
@@ -296,136 +296,136 @@ DB1118,False,True,True,False,not_OIL_LE_PLE,Conservation,Deer,Dolores Triangle,,
 DB1119,True,True,True,True,included_forecast,Limited Entry,Deer,Moab Valley,9,1,10
 DB1120,True,True,True,True,included_forecast,Limited Entry,Deer,Castle Valley,13,2,15
 DB1121,False,True,True,False,not_OIL_LE_PLE,Management Buck Deer,Deer,Antelope Island,2,0,2
-DB1200,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Alton - Premium Buck CWMU,3,0,3
-DB1201,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Alton - Management Buck CWMU,1,0,1
-DB1202,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Antelope Creek CWMU,1,0,1
-DB1203,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Avintaquin Canyon CWMU,1,0,1
-DB1204,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Bally Watts CWMU,1,0,1
-DB1205,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Bar J Ranch CWMU,1,0,1
-DB1206,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Bear Mountain CWMU,1,0,1
-DB1207,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Bear Springs CWMU,1,0,1
-DB1208,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Blackhawk CWMU,2,0,2
-DB1209,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Blind Springs CWMU,1,0,1
+DB1200,True,True,True,False,included_forecast,CWMU,Deer,Alton - Premium Buck CWMU,3,0,3
+DB1201,True,True,True,False,included_forecast,CWMU,Deer,Alton - Management Buck CWMU,1,0,1
+DB1202,True,True,True,False,included_forecast,CWMU,Deer,Antelope Creek CWMU,1,0,1
+DB1203,True,True,True,False,included_forecast,CWMU,Deer,Avintaquin Canyon CWMU,1,0,1
+DB1204,True,True,True,False,included_forecast,CWMU,Deer,Bally Watts CWMU,1,0,1
+DB1205,True,True,True,False,included_forecast,CWMU,Deer,Bar J Ranch CWMU,1,0,1
+DB1206,True,True,True,False,included_forecast,CWMU,Deer,Bear Mountain CWMU,1,0,1
+DB1207,True,True,True,False,included_forecast,CWMU,Deer,Bear Springs CWMU,1,0,1
+DB1208,True,True,True,False,included_forecast,CWMU,Deer,Blackhawk CWMU,2,0,2
+DB1209,True,True,True,False,included_forecast,CWMU,Deer,Blind Springs CWMU,1,0,1
 DB1210,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-DB1211,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Blue Spring Hills CWMU,1,0,1
-DB1212,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Bluebell CWMU,1,0,1
-DB1213,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Boobe Hole CWMU,2,0,2
-DB1215,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Buckhorn Ranch CWMU,1,0,1
-DB1216,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Castle Valley Outdoors CWMU,1,0,1
-DB1217,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Causey Spring CWMU,1,0,1
-DB1219,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Chimney Rock CWMU,2,0,2
-DB1222,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Coldwater Ranch CWMU,2,0,2
+DB1211,True,True,True,False,included_forecast,CWMU,Deer,Blue Spring Hills CWMU,1,0,1
+DB1212,True,True,True,False,included_forecast,CWMU,Deer,Bluebell CWMU,1,0,1
+DB1213,True,True,True,False,included_forecast,CWMU,Deer,Boobe Hole CWMU,2,0,2
+DB1215,True,True,True,False,included_forecast,CWMU,Deer,Buckhorn Ranch CWMU,1,0,1
+DB1216,True,True,True,False,included_forecast,CWMU,Deer,Castle Valley Outdoors CWMU,1,0,1
+DB1217,True,True,True,False,included_forecast,CWMU,Deer,Causey Spring CWMU,1,0,1
+DB1219,True,True,True,False,included_forecast,CWMU,Deer,Chimney Rock CWMU,2,0,2
+DB1222,True,True,True,False,included_forecast,CWMU,Deer,Coldwater Ranch CWMU,2,0,2
 DB1223,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-DB1224,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Cotton Thomas CWMU,1,0,1
-DB1227,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Deer Haven CWMU,2,0,2
-DB1228,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Deseret CWMU,13,0,13
-DB1229,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Dilly Ranch CWMU,1,0,1
-DB1230,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Double R Ranch CWMU,2,0,2
-DB1231,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Dove Creek CWMU,2,0,2
-DB1232,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Durst Mountain CWMU,2,0,2
-DB1233,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,East Fork Chalk Creek CWMU,4,0,4
-DB1234,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,East Zion CWMU,1,0,1
-DB1236,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Engineer Springs CWMU,1,0,1
-DB1237,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Ensign Ranches CWMU,3,0,3
-DB1238,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Folley Ridge CWMU,3,0,3
-DB1239,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Fort Ranch CWMU,1,0,1
-DB1240,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,George Creek CWMU,1,0,1
-DB1241,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Golden Spike CWMU,1,0,1
-DB1242,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Grass Valley/Clark Canyon CWMU,14,0,14
-DB1243,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Grazing Pasture CWMU,1,0,1
-DB1244,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Green Canyon CWMU,1,0,1
-DB1245,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Guildersleeve CWMU,1,0,1
-DB1246,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Hardscrabble CWMU,2,0,2
-DB1248,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Heaston East CWMU,2,0,2
-DB1249,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Hiawatha CWMU,1,0,1
-DB1250,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Indian Creek CWMU,1,0,1
-DB1251,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Indian Head CWMU,2,0,2
-DB1252,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Ingham Peak CWMU,3,0,3
-DB1253,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Circle E Ranch CWMU,1,0,1
-DB1255,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Johnson Mountain Ranch CWMU,1,0,1
-DB1256,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Junction Valley CWMU,5,0,5
+DB1224,True,True,True,False,included_forecast,CWMU,Deer,Cotton Thomas CWMU,1,0,1
+DB1227,True,True,True,False,included_forecast,CWMU,Deer,Deer Haven CWMU,2,0,2
+DB1228,True,True,True,False,included_forecast,CWMU,Deer,Deseret CWMU,13,0,13
+DB1229,True,True,True,False,included_forecast,CWMU,Deer,Dilly Ranch CWMU,1,0,1
+DB1230,True,True,True,False,included_forecast,CWMU,Deer,Double R Ranch CWMU,2,0,2
+DB1231,True,True,True,False,included_forecast,CWMU,Deer,Dove Creek CWMU,2,0,2
+DB1232,True,True,True,False,included_forecast,CWMU,Deer,Durst Mountain CWMU,2,0,2
+DB1233,True,True,True,False,included_forecast,CWMU,Deer,East Fork Chalk Creek CWMU,4,0,4
+DB1234,True,True,True,False,included_forecast,CWMU,Deer,East Zion CWMU,1,0,1
+DB1236,True,True,True,False,included_forecast,CWMU,Deer,Engineer Springs CWMU,1,0,1
+DB1237,True,True,True,False,included_forecast,CWMU,Deer,Ensign Ranches CWMU,3,0,3
+DB1238,True,True,True,False,included_forecast,CWMU,Deer,Folley Ridge CWMU,3,0,3
+DB1239,True,True,True,False,included_forecast,CWMU,Deer,Fort Ranch CWMU,1,0,1
+DB1240,True,True,True,False,included_forecast,CWMU,Deer,George Creek CWMU,1,0,1
+DB1241,True,True,True,False,included_forecast,CWMU,Deer,Golden Spike CWMU,1,0,1
+DB1242,True,True,True,False,included_forecast,CWMU,Deer,Grass Valley/Clark Canyon CWMU,14,0,14
+DB1243,True,True,True,False,included_forecast,CWMU,Deer,Grazing Pasture CWMU,1,0,1
+DB1244,True,True,True,False,included_forecast,CWMU,Deer,Green Canyon CWMU,1,0,1
+DB1245,True,True,True,False,included_forecast,CWMU,Deer,Guildersleeve CWMU,1,0,1
+DB1246,True,True,True,False,included_forecast,CWMU,Deer,Hardscrabble CWMU,2,0,2
+DB1248,True,True,True,False,included_forecast,CWMU,Deer,Heaston East CWMU,2,0,2
+DB1249,True,True,True,False,included_forecast,CWMU,Deer,Hiawatha CWMU,1,0,1
+DB1250,True,True,True,False,included_forecast,CWMU,Deer,Indian Creek CWMU,1,0,1
+DB1251,True,True,True,False,included_forecast,CWMU,Deer,Indian Head CWMU,2,0,2
+DB1252,True,True,True,False,included_forecast,CWMU,Deer,Ingham Peak CWMU,3,0,3
+DB1253,True,True,True,False,included_forecast,CWMU,Deer,Circle E Ranch CWMU,1,0,1
+DB1255,True,True,True,False,included_forecast,CWMU,Deer,Johnson Mountain Ranch CWMU,1,0,1
+DB1256,True,True,True,False,included_forecast,CWMU,Deer,Junction Valley CWMU,5,0,5
 DB1257,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-DB1258,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Little Red Creek CWMU,1,0,1
-DB1259,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Tunnel Hollow CWMU,1,0,1
-DB1260,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Middle Ridge CWMU,1,0,1
-DB1261,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Minnie Maud Ridge CWMU,5,0,5
-DB1263,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Moon Ranch CWMU,1,0,1
-DB1264,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Mountain Meadow CWMU,1,0,1
-DB1265,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Mountain Top CWMU,2,0,2
-DB1266,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Mt Carmel CWMU,3,0,3
+DB1258,True,True,True,False,included_forecast,CWMU,Deer,Little Red Creek CWMU,1,0,1
+DB1259,True,True,True,False,included_forecast,CWMU,Deer,Tunnel Hollow CWMU,1,0,1
+DB1260,True,True,True,False,included_forecast,CWMU,Deer,Middle Ridge CWMU,1,0,1
+DB1261,True,True,True,False,included_forecast,CWMU,Deer,Minnie Maud Ridge CWMU,5,0,5
+DB1263,True,True,True,False,included_forecast,CWMU,Deer,Moon Ranch CWMU,1,0,1
+DB1264,True,True,True,False,included_forecast,CWMU,Deer,Mountain Meadow CWMU,1,0,1
+DB1265,True,True,True,False,included_forecast,CWMU,Deer,Mountain Top CWMU,2,0,2
+DB1266,True,True,True,False,included_forecast,CWMU,Deer,Mt Carmel CWMU,3,0,3
 DB1267,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-DB1269,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,North Promontory CWMU,1,0,1
-DB1270,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Nucor West CWMU,1,0,1
-DB1271,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Oak Ranch CWMU,3,0,3
-DB1272,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Old Woman Plateau CWMU,3,0,3
-DB1273,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Park Valley Hereford CWMU,6,0,6
-DB1274,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Patmos Ridge CWMU,1,0,1
-DB1275,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Pine Canyon CWMU,2,0,2
+DB1269,True,True,True,False,included_forecast,CWMU,Deer,North Promontory CWMU,1,0,1
+DB1270,True,True,True,False,included_forecast,CWMU,Deer,Nucor West CWMU,1,0,1
+DB1271,True,True,True,False,included_forecast,CWMU,Deer,Oak Ranch CWMU,3,0,3
+DB1272,True,True,True,False,included_forecast,CWMU,Deer,Old Woman Plateau CWMU,3,0,3
+DB1273,True,True,True,False,included_forecast,CWMU,Deer,Park Valley Hereford CWMU,6,0,6
+DB1274,True,True,True,False,included_forecast,CWMU,Deer,Patmos Ridge CWMU,1,0,1
+DB1275,True,True,True,False,included_forecast,CWMU,Deer,Pine Canyon CWMU,2,0,2
 DB1276,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-DB1277,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Pocatello Valley CWMU,1,0,1
+DB1277,True,True,True,False,included_forecast,CWMU,Deer,Pocatello Valley CWMU,1,0,1
 DB1278,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-DB1279,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Preston Nutter Ranch CWMU,1,0,1
-DB1280,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Promontory Point CWMU,1,0,1
-DB1281,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Rattlesnake Pass CWMU,2,0,2
-DB1282,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Redd Ranches CWMU,2,0,2
-DB1283,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Roan Cliffs CWMU,1,0,1
-DB1285,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Sand Creek CWMU,1,0,1
-DB1286,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Pisgah Mountain CWMU,2,0,2
-DB1287,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Scofield Canyons CWMU,1,0,1
-DB1288,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Scofield West CWMU,2,0,2
-DB1289,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Sharp Mountain CWMU,2,0,2
-DB1290,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Skull Crack CWMU,1,0,1
-DB1291,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Skull Valley South CWMU,1,0,1
-DB1292,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Soldier Summit CWMU,2,0,2
-DB1293,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,South Canyon CWMU,1,0,1
-DB1294,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Spring Creek Acres CWMU,1,0,1
-DB1295,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Spring Creek/Dodge CWMU,6,0,6
+DB1279,True,True,True,False,included_forecast,CWMU,Deer,Preston Nutter Ranch CWMU,1,0,1
+DB1280,True,True,True,False,included_forecast,CWMU,Deer,Promontory Point CWMU,1,0,1
+DB1281,True,True,True,False,included_forecast,CWMU,Deer,Rattlesnake Pass CWMU,2,0,2
+DB1282,True,True,True,False,included_forecast,CWMU,Deer,Redd Ranches CWMU,2,0,2
+DB1283,True,True,True,False,included_forecast,CWMU,Deer,Roan Cliffs CWMU,1,0,1
+DB1285,True,True,True,False,included_forecast,CWMU,Deer,Sand Creek CWMU,1,0,1
+DB1286,True,True,True,False,included_forecast,CWMU,Deer,Pisgah Mountain CWMU,2,0,2
+DB1287,True,True,True,False,included_forecast,CWMU,Deer,Scofield Canyons CWMU,1,0,1
+DB1288,True,True,True,False,included_forecast,CWMU,Deer,Scofield West CWMU,2,0,2
+DB1289,True,True,True,False,included_forecast,CWMU,Deer,Sharp Mountain CWMU,2,0,2
+DB1290,True,True,True,False,included_forecast,CWMU,Deer,Skull Crack CWMU,1,0,1
+DB1291,True,True,True,False,included_forecast,CWMU,Deer,Skull Valley South CWMU,1,0,1
+DB1292,True,True,True,False,included_forecast,CWMU,Deer,Soldier Summit CWMU,2,0,2
+DB1293,True,True,True,False,included_forecast,CWMU,Deer,South Canyon CWMU,1,0,1
+DB1294,True,True,True,False,included_forecast,CWMU,Deer,Spring Creek Acres CWMU,1,0,1
+DB1295,True,True,True,False,included_forecast,CWMU,Deer,Spring Creek/Dodge CWMU,6,0,6
 DB1297,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-DB1298,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Strawberry Ridge CWMU,1,0,1
-DB1299,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Summit Point CWMU,3,0,3
-DB1300,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Thatcher Mountain CWMU,1,0,1
-DB1301,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Three C CWMU,2,0,2
+DB1298,True,True,True,False,included_forecast,CWMU,Deer,Strawberry Ridge CWMU,1,0,1
+DB1299,True,True,True,False,included_forecast,CWMU,Deer,Summit Point CWMU,3,0,3
+DB1300,True,True,True,False,included_forecast,CWMU,Deer,Thatcher Mountain CWMU,1,0,1
+DB1301,True,True,True,False,included_forecast,CWMU,Deer,Three C CWMU,2,0,2
 DB1302,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-DB1303,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,North Peaks CWMU,1,0,1
-DB1304,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Two Bear CWMU,1,0,1
-DB1305,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Wallsburg CWMU,1,0,1
-DB1306,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Washakie CWMU,1,0,1
+DB1303,True,True,True,False,included_forecast,CWMU,Deer,North Peaks CWMU,1,0,1
+DB1304,True,True,True,False,included_forecast,CWMU,Deer,Two Bear CWMU,1,0,1
+DB1305,True,True,True,False,included_forecast,CWMU,Deer,Wallsburg CWMU,1,0,1
+DB1306,True,True,True,False,included_forecast,CWMU,Deer,Washakie CWMU,1,0,1
 DB1307,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-DB1308,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,West Hills CWMU,2,0,2
-DB1309,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,West Willow Creek Ranch CWMU,5,0,5
-DB1310,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,White's Valley CWMU,1,0,1
-DB1312,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Woodruff Creek South CWMU,1,0,1
-DB1317,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Jacob's Creek CWMU,2,0,2
+DB1308,True,True,True,False,included_forecast,CWMU,Deer,West Hills CWMU,2,0,2
+DB1309,True,True,True,False,included_forecast,CWMU,Deer,West Willow Creek Ranch CWMU,5,0,5
+DB1310,True,True,True,False,included_forecast,CWMU,Deer,White's Valley CWMU,1,0,1
+DB1312,True,True,True,False,included_forecast,CWMU,Deer,Woodruff Creek South CWMU,1,0,1
+DB1317,True,True,True,False,included_forecast,CWMU,Deer,Jacob's Creek CWMU,2,0,2
 DB1320,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 DB1321,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-DB1322,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Pahvant Ensign CWMU,1,0,1
-DB1323,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Rock House CWMU,1,0,1
+DB1322,True,True,True,False,included_forecast,CWMU,Deer,Pahvant Ensign CWMU,1,0,1
+DB1323,True,True,True,False,included_forecast,CWMU,Deer,Rock House CWMU,1,0,1
 DB1324,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-DB1325,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Double Cone CWMU,1,0,1
-DB1326,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Rosette CWMU,1,0,1
-DB1327,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Mountain Sky Ranch CWMU,1,0,1
-DB1328,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Clear Creek CWMU,1,0,1
+DB1325,True,True,True,False,included_forecast,CWMU,Deer,Double Cone CWMU,1,0,1
+DB1326,True,True,True,False,included_forecast,CWMU,Deer,Rosette CWMU,1,0,1
+DB1327,True,True,True,False,included_forecast,CWMU,Deer,Mountain Sky Ranch CWMU,1,0,1
+DB1328,True,True,True,False,included_forecast,CWMU,Deer,Clear Creek CWMU,1,0,1
 DB1329,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-DB1330,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Iron Spring CWMU,1,0,1
-DB1331,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Raft River CWMU,2,0,2
-DB1332,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,West Ridge CWMU,5,0,5
-DB1333,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,5S CWMU,2,0,2
-DB1334,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Alton - Cactus Buck CWMU,1,0,1
-DB1335,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Big Piney Ranch CWMU,1,0,1
-DB1336,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,First Light CWMU,1,0,1
-DB1337,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Little Pole Canyon CWMU,1,0,1
+DB1330,True,True,True,False,included_forecast,CWMU,Deer,Iron Spring CWMU,1,0,1
+DB1331,True,True,True,False,included_forecast,CWMU,Deer,Raft River CWMU,2,0,2
+DB1332,True,True,True,False,included_forecast,CWMU,Deer,West Ridge CWMU,5,0,5
+DB1333,True,True,True,False,included_forecast,CWMU,Deer,5S CWMU,2,0,2
+DB1334,True,True,True,False,included_forecast,CWMU,Deer,Alton - Cactus Buck CWMU,1,0,1
+DB1335,True,True,True,False,included_forecast,CWMU,Deer,Big Piney Ranch CWMU,1,0,1
+DB1336,True,True,True,False,included_forecast,CWMU,Deer,First Light CWMU,1,0,1
+DB1337,True,True,True,False,included_forecast,CWMU,Deer,Little Pole Canyon CWMU,1,0,1
 DB1338,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 DB1339,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 DB1340,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-DB1341,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Dry Creek CWMU,1,0,1
-DB1342,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Faust Valley CWMU,1,0,1
+DB1341,True,True,True,False,included_forecast,CWMU,Deer,Dry Creek CWMU,1,0,1
+DB1342,True,True,True,False,included_forecast,CWMU,Deer,Faust Valley CWMU,1,0,1
 DB1343,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 DB1344,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 DB1345,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-DB1347,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,The Rose of Snowville CWMU,2,0,2
+DB1347,True,True,True,False,included_forecast,CWMU,Deer,The Rose of Snowville CWMU,2,0,2
 DB1348,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-DB1349,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Weber Florence Creek/Stillman Creek CWMU,9,0,9
-DB1351,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,The Dirty Dozen,2,0,2
+DB1349,True,True,True,False,included_forecast,CWMU,Deer,Weber Florence Creek/Stillman Creek CWMU,9,0,9
+DB1351,True,True,True,False,included_forecast,CWMU,Deer,The Dirty Dozen,2,0,2
 DB1500,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 DB1501,True,True,True,False,included_forecast,General Season,Deer,Box Elder,,,1040
 DB1502,True,True,True,False,included_forecast,General Season,Deer,Cache,,,1160
@@ -689,67 +689,67 @@ EA1113,True,True,True,False,included_forecast,General Season,Elk,"Wasatch Mtns, 
 EA1114,True,True,True,False,included_forecast,General Season,Elk,"Wasatch Mtns, West Timpanogos",22,3,25
 EA1116,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 EA1117,True,True,True,False,included_forecast,General Season,Elk,Zion,198,22,220
-EA1118,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Alton CWMU,6,0,6
-EA1119,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Bar J Ranch CWMU,12,0,12
-EA1120,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Bear Mountain CWMU,20,0,20
-EA1121,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Boobe Hole CWMU,10,0,10
-EA1122,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Causey Spring CWMU,5,0,5
-EA1124,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Chimney Rock CWMU,12,0,12
-EA1125,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Coldwater Ranch CWMU,25,0,25
+EA1118,True,True,True,False,included_forecast,CWMU,Elk,Alton CWMU,6,0,6
+EA1119,True,True,True,False,included_forecast,CWMU,Elk,Bar J Ranch CWMU,12,0,12
+EA1120,True,True,True,False,included_forecast,CWMU,Elk,Bear Mountain CWMU,20,0,20
+EA1121,True,True,True,False,included_forecast,CWMU,Elk,Boobe Hole CWMU,10,0,10
+EA1122,True,True,True,False,included_forecast,CWMU,Elk,Causey Spring CWMU,5,0,5
+EA1124,True,True,True,False,included_forecast,CWMU,Elk,Chimney Rock CWMU,12,0,12
+EA1125,True,True,True,False,included_forecast,CWMU,Elk,Coldwater Ranch CWMU,25,0,25
 EA1126,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-EA1129,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Deseret CWMU,425,0,425
-EA1130,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Double Cone CWMU,7,0,7
-EA1131,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Durst Mountain CWMU,30,0,30
-EA1132,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,East Fork Chalk Creek CWMU,30,0,30
-EA1134,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Ensign Ranches CWMU,60,0,60
-EA1135,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Folley Ridge CWMU,20,0,20
-EA1136,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Grass Valley/Clark Canyon CWMU,50,0,50
-EA1137,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Grazing Pasture CWMU,9,0,9
-EA1138,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Guildersleeve CWMU,20,0,20
-EA1139,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Hardscrabble CWMU,10,0,10
-EA1140,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Heaston East CWMU,24,0,24
-EA1141,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Hiawatha CWMU,12,0,12
-EA1142,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Indian Head CWMU,12,0,12
-EA1143,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Circle E Ranch CWMU,21,0,21
-EA1145,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Johnson Mountain Ranch CWMU,20,0,20
-EA1146,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Jump Creek CWMU,9,0,9
-EA1147,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Little Red Creek CWMU,15,0,15
-EA1149,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Minnie Maud Ridge CWMU,15,0,15
-EA1151,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Moon Ranch CWMU,6,0,6
-EA1153,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Old Woman Plateau CWMU,4,0,4
+EA1129,True,True,True,False,included_forecast,CWMU,Elk,Deseret CWMU,425,0,425
+EA1130,True,True,True,False,included_forecast,CWMU,Elk,Double Cone CWMU,7,0,7
+EA1131,True,True,True,False,included_forecast,CWMU,Elk,Durst Mountain CWMU,30,0,30
+EA1132,True,True,True,False,included_forecast,CWMU,Elk,East Fork Chalk Creek CWMU,30,0,30
+EA1134,True,True,True,False,included_forecast,CWMU,Elk,Ensign Ranches CWMU,60,0,60
+EA1135,True,True,True,False,included_forecast,CWMU,Elk,Folley Ridge CWMU,20,0,20
+EA1136,True,True,True,False,included_forecast,CWMU,Elk,Grass Valley/Clark Canyon CWMU,50,0,50
+EA1137,True,True,True,False,included_forecast,CWMU,Elk,Grazing Pasture CWMU,9,0,9
+EA1138,True,True,True,False,included_forecast,CWMU,Elk,Guildersleeve CWMU,20,0,20
+EA1139,True,True,True,False,included_forecast,CWMU,Elk,Hardscrabble CWMU,10,0,10
+EA1140,True,True,True,False,included_forecast,CWMU,Elk,Heaston East CWMU,24,0,24
+EA1141,True,True,True,False,included_forecast,CWMU,Elk,Hiawatha CWMU,12,0,12
+EA1142,True,True,True,False,included_forecast,CWMU,Elk,Indian Head CWMU,12,0,12
+EA1143,True,True,True,False,included_forecast,CWMU,Elk,Circle E Ranch CWMU,21,0,21
+EA1145,True,True,True,False,included_forecast,CWMU,Elk,Johnson Mountain Ranch CWMU,20,0,20
+EA1146,True,True,True,False,included_forecast,CWMU,Elk,Jump Creek CWMU,9,0,9
+EA1147,True,True,True,False,included_forecast,CWMU,Elk,Little Red Creek CWMU,15,0,15
+EA1149,True,True,True,False,included_forecast,CWMU,Elk,Minnie Maud Ridge CWMU,15,0,15
+EA1151,True,True,True,False,included_forecast,CWMU,Elk,Moon Ranch CWMU,6,0,6
+EA1153,True,True,True,False,included_forecast,CWMU,Elk,Old Woman Plateau CWMU,4,0,4
 EA1155,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-EA1156,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Preston Nutter Ranch CWMU,21,0,21
-EA1157,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Redd Ranches CWMU,35,0,35
-EA1158,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Cactus Ranch LLC CWMU,7,0,7
-EA1159,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Roan Cliffs CWMU,6,0,6
-EA1160,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Sand Creek CWMU,5,0,5
-EA1161,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Scofield Canyons CWMU,9,0,9
-EA1162,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Scofield East CWMU,14,0,14
-EA1163,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Scofield West CWMU,19,0,19
-EA1164,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,SJ Ranch CWMU,6,0,6
-EA1165,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Skull Crack CWMU,15,0,15
-EA1166,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Soldier Summit CWMU,16,0,16
-EA1167,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,South Canyon CWMU,12,0,12
-EA1168,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Spring Creek/Dodge CWMU,15,0,15
-EA1170,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Strawberry Ridge CWMU,10,0,10
-EA1171,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Summit Point CWMU,5,0,5
-EA1172,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Three C CWMU,9,0,9
-EA1174,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Two Bear CWMU,60,0,60
-EA1175,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Wallsburg CWMU,10,0,10
+EA1156,True,True,True,False,included_forecast,CWMU,Elk,Preston Nutter Ranch CWMU,21,0,21
+EA1157,True,True,True,False,included_forecast,CWMU,Elk,Redd Ranches CWMU,35,0,35
+EA1158,True,True,True,False,included_forecast,CWMU,Elk,Cactus Ranch LLC CWMU,7,0,7
+EA1159,True,True,True,False,included_forecast,CWMU,Elk,Roan Cliffs CWMU,6,0,6
+EA1160,True,True,True,False,included_forecast,CWMU,Elk,Sand Creek CWMU,5,0,5
+EA1161,True,True,True,False,included_forecast,CWMU,Elk,Scofield Canyons CWMU,9,0,9
+EA1162,True,True,True,False,included_forecast,CWMU,Elk,Scofield East CWMU,14,0,14
+EA1163,True,True,True,False,included_forecast,CWMU,Elk,Scofield West CWMU,19,0,19
+EA1164,True,True,True,False,included_forecast,CWMU,Elk,SJ Ranch CWMU,6,0,6
+EA1165,True,True,True,False,included_forecast,CWMU,Elk,Skull Crack CWMU,15,0,15
+EA1166,True,True,True,False,included_forecast,CWMU,Elk,Soldier Summit CWMU,16,0,16
+EA1167,True,True,True,False,included_forecast,CWMU,Elk,South Canyon CWMU,12,0,12
+EA1168,True,True,True,False,included_forecast,CWMU,Elk,Spring Creek/Dodge CWMU,15,0,15
+EA1170,True,True,True,False,included_forecast,CWMU,Elk,Strawberry Ridge CWMU,10,0,10
+EA1171,True,True,True,False,included_forecast,CWMU,Elk,Summit Point CWMU,5,0,5
+EA1172,True,True,True,False,included_forecast,CWMU,Elk,Three C CWMU,9,0,9
+EA1174,True,True,True,False,included_forecast,CWMU,Elk,Two Bear CWMU,60,0,60
+EA1175,True,True,True,False,included_forecast,CWMU,Elk,Wallsburg CWMU,10,0,10
 EA1176,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-EA1177,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Woodruff Creek South CWMU,8,0,8
+EA1177,True,True,True,False,included_forecast,CWMU,Elk,Woodruff Creek South CWMU,8,0,8
 EA1180,False,True,True,False,not_OIL_LE_PLE,Conservation,Elk,La Sal (Conservation),,,17
 EA1186,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 EA1187,True,True,True,False,included_forecast,General Season,Elk,"Paunsaugunt, Hatch Bench",13,2,15
 EA1189,True,True,True,False,included_forecast,General Season,Elk,"Wasatch Mtns, West-Central",382,43,425
 EA1190,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-EA1192,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Pahvant Ensign CWMU,6,0,6
+EA1192,True,True,True,False,included_forecast,CWMU,Elk,Pahvant Ensign CWMU,6,0,6
 EA1193,True,True,True,False,included_forecast,General Season,Elk,"Cache, Rich",18,2,20
 EA1194,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 EA1196,True,True,True,False,included_forecast,General Season,Elk,"North Slope, Summit",67,8,75
-EA1198,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Bear Springs CWMU,2,0,2
-EA1200,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Double R Ranch CWMU,10,0,10
-EA1201,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Mountain Sky Ranch CWMU,10,0,10
+EA1198,True,True,True,False,included_forecast,CWMU,Elk,Bear Springs CWMU,2,0,2
+EA1200,True,True,True,False,included_forecast,CWMU,Elk,Double R Ranch CWMU,10,0,10
+EA1201,True,True,True,False,included_forecast,CWMU,Elk,Mountain Sky Ranch CWMU,10,0,10
 EA1203,True,True,True,False,included_forecast,General Season,Elk,"Box Elder, Pilot Mtn",4,1,5
 EA1204,True,True,True,False,included_forecast,General Season,Elk,"Box Elder, Pilot Mtn",4,1,5
 EA1205,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
@@ -769,9 +769,9 @@ EA1227,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 EA1228,True,True,True,False,included_forecast,General Season,Elk,Morgan-South Rich,67,8,75
 EA1229,True,True,True,False,included_forecast,General Season,Elk,Morgan-South Rich,144,16,160
 EA1231,True,True,True,False,included_forecast,General Season,Elk,"West Desert, Tintic Valley",45,5,50
-EA1233,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Avintaquin Canyon CWMU,4,0,4
-EA1234,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Royal Ivory Outfitters CWMU,15,0,15
-EA1235,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Sharp Mountain CWMU,10,0,10
+EA1233,True,True,True,False,included_forecast,CWMU,Elk,Avintaquin Canyon CWMU,4,0,4
+EA1234,True,True,True,False,included_forecast,CWMU,Elk,Royal Ivory Outfitters CWMU,15,0,15
+EA1235,True,True,True,False,included_forecast,CWMU,Elk,Sharp Mountain CWMU,10,0,10
 EA1236,True,True,True,False,included_forecast,General Season,Elk,East Canyon,135,15,150
 EA1237,True,True,True,False,included_forecast,General Season,Elk,"La Sal, La Sal Mtns-North",157,18,175
 EA1238,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
@@ -788,13 +788,13 @@ EA1252,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 EA1253,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 EA1254,True,True,True,False,included_forecast,General Season,Elk,Pine Valley,27,3,30
 EA1255,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-EA1256,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Little Pole Canyon CWMU,9,0,9
-EA1257,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Tunnel Hollow CWMU,5,0,5
+EA1256,True,True,True,False,included_forecast,CWMU,Elk,Little Pole Canyon CWMU,9,0,9
+EA1257,True,True,True,False,included_forecast,CWMU,Elk,Tunnel Hollow CWMU,5,0,5
 EA1258,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,La Sal (Expo),,,
-EA1259,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Diamond Mountain CWMU,2,0,2
-EA1260,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,West Ridge CWMU,5,0,5
-EA1261,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Blackhawk CWMU,5,0,5
-EA1263,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Weber Florence Creek/Stillman Creek CWMU,35,0,35
+EA1259,True,True,True,False,included_forecast,CWMU,Elk,Diamond Mountain CWMU,2,0,2
+EA1260,True,True,True,False,included_forecast,CWMU,Elk,West Ridge CWMU,5,0,5
+EA1261,True,True,True,False,included_forecast,CWMU,Elk,Blackhawk CWMU,5,0,5
+EA1263,True,True,True,False,included_forecast,CWMU,Elk,Weber Florence Creek/Stillman Creek CWMU,35,0,35
 EA1264,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Wasatch Mtns, Rabbit Gulch",45,5,50
 EA1265,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Wasatch Mtns, Tabby Mtn",90,10,100
 EA1266,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Box Elder, Hansel Mtn",18,2,20
@@ -1032,79 +1032,79 @@ EB3205,True,True,True,True,included_forecast,Limited Entry,Elk,East Canyon,7,1,8
 EB3208,True,True,True,True,included_forecast,Limited Entry,Elk,Morgan-South Rich,9,1,10
 EB3209,False,True,True,False,not_OIL_LE_PLE,Conservation,Elk,Box Elder Pilot Mtn,,,
 EB3210,True,True,True,True,included_forecast,Limited Entry,Elk,North Slope Three Corners,5,0,5
-EB3500,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Alton CWMU,1,0,1
-EB3501,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Bar J Ranch CWMU,2,0,2
-EB3502,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Bear Mountain CWMU,1,0,1
-EB3503,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Bear Springs CWMU,1,0,1
-EB3504,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Blackhawk CWMU,1,0,1
-EB3505,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Boobe Hole CWMU,2,0,2
-EB3506,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Causey Spring CWMU,1,0,1
-EB3508,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Chimney Rock CWMU,2,0,2
-EB3509,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Coldwater Ranch CWMU,3,0,3
+EB3500,True,True,True,False,included_forecast,CWMU,Elk,Alton CWMU,1,0,1
+EB3501,True,True,True,False,included_forecast,CWMU,Elk,Bar J Ranch CWMU,2,0,2
+EB3502,True,True,True,False,included_forecast,CWMU,Elk,Bear Mountain CWMU,1,0,1
+EB3503,True,True,True,False,included_forecast,CWMU,Elk,Bear Springs CWMU,1,0,1
+EB3504,True,True,True,False,included_forecast,CWMU,Elk,Blackhawk CWMU,1,0,1
+EB3505,True,True,True,False,included_forecast,CWMU,Elk,Boobe Hole CWMU,2,0,2
+EB3506,True,True,True,False,included_forecast,CWMU,Elk,Causey Spring CWMU,1,0,1
+EB3508,True,True,True,False,included_forecast,CWMU,Elk,Chimney Rock CWMU,2,0,2
+EB3509,True,True,True,False,included_forecast,CWMU,Elk,Coldwater Ranch CWMU,3,0,3
 EB3510,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-EB3511,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Cotton Thomas CWMU,1,0,1
-EB3514,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Deseret CWMU,19,0,19
-EB3515,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Double Cone CWMU,1,0,1
-EB3516,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Durst Mountain CWMU,3,0,3
-EB3517,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,East Fork Chalk Creek CWMU,3,0,3
-EB3519,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Ensign Ranches CWMU,6,0,6
-EB3520,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Folley Ridge CWMU,2,0,2
-EB3521,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Grass Valley/Clark Canyon CWMU,10,0,10
-EB3522,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Grazing Pasture CWMU,1,0,1
-EB3523,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Guildersleeve CWMU,2,0,2
-EB3524,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Hardscrabble CWMU,2,0,2
-EB3525,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Heaston East CWMU,2,0,2
-EB3526,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Hiawatha CWMU,2,0,2
-EB3527,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Indian Head CWMU,2,0,2
-EB3528,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Ingham Peak CWMU,1,0,1
-EB3529,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Circle E Ranch CWMU,2,0,2
-EB3530,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Jacob's Creek CWMU,2,0,2
-EB3531,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Johnson Mountain Ranch CWMU,2,0,2
-EB3532,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Jump Creek CWMU,1,0,1
-EB3533,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Junction Valley CWMU,1,0,1
-EB3534,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Little Red Creek CWMU,2,0,2
+EB3511,True,True,True,False,included_forecast,CWMU,Elk,Cotton Thomas CWMU,1,0,1
+EB3514,True,True,True,False,included_forecast,CWMU,Elk,Deseret CWMU,19,0,19
+EB3515,True,True,True,False,included_forecast,CWMU,Elk,Double Cone CWMU,1,0,1
+EB3516,True,True,True,False,included_forecast,CWMU,Elk,Durst Mountain CWMU,3,0,3
+EB3517,True,True,True,False,included_forecast,CWMU,Elk,East Fork Chalk Creek CWMU,3,0,3
+EB3519,True,True,True,False,included_forecast,CWMU,Elk,Ensign Ranches CWMU,6,0,6
+EB3520,True,True,True,False,included_forecast,CWMU,Elk,Folley Ridge CWMU,2,0,2
+EB3521,True,True,True,False,included_forecast,CWMU,Elk,Grass Valley/Clark Canyon CWMU,10,0,10
+EB3522,True,True,True,False,included_forecast,CWMU,Elk,Grazing Pasture CWMU,1,0,1
+EB3523,True,True,True,False,included_forecast,CWMU,Elk,Guildersleeve CWMU,2,0,2
+EB3524,True,True,True,False,included_forecast,CWMU,Elk,Hardscrabble CWMU,2,0,2
+EB3525,True,True,True,False,included_forecast,CWMU,Elk,Heaston East CWMU,2,0,2
+EB3526,True,True,True,False,included_forecast,CWMU,Elk,Hiawatha CWMU,2,0,2
+EB3527,True,True,True,False,included_forecast,CWMU,Elk,Indian Head CWMU,2,0,2
+EB3528,True,True,True,False,included_forecast,CWMU,Elk,Ingham Peak CWMU,1,0,1
+EB3529,True,True,True,False,included_forecast,CWMU,Elk,Circle E Ranch CWMU,2,0,2
+EB3530,True,True,True,False,included_forecast,CWMU,Elk,Jacob's Creek CWMU,2,0,2
+EB3531,True,True,True,False,included_forecast,CWMU,Elk,Johnson Mountain Ranch CWMU,2,0,2
+EB3532,True,True,True,False,included_forecast,CWMU,Elk,Jump Creek CWMU,1,0,1
+EB3533,True,True,True,False,included_forecast,CWMU,Elk,Junction Valley CWMU,1,0,1
+EB3534,True,True,True,False,included_forecast,CWMU,Elk,Little Red Creek CWMU,2,0,2
 EB3535,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-EB3536,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Minnie Maud Ridge CWMU,5,0,5
-EB3538,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Moon Ranch CWMU,1,0,1
-EB3540,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Old Woman Plateau CWMU,2,0,2
-EB3541,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Patmos Ridge CWMU,1,0,1
+EB3536,True,True,True,False,included_forecast,CWMU,Elk,Minnie Maud Ridge CWMU,5,0,5
+EB3538,True,True,True,False,included_forecast,CWMU,Elk,Moon Ranch CWMU,1,0,1
+EB3540,True,True,True,False,included_forecast,CWMU,Elk,Old Woman Plateau CWMU,2,0,2
+EB3541,True,True,True,False,included_forecast,CWMU,Elk,Patmos Ridge CWMU,1,0,1
 EB3542,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-EB3543,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Preston Nutter Ranch CWMU,3,0,3
-EB3544,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Redd Ranches CWMU,2,0,2
-EB3545,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Cactus Ranch LLC CWMU,3,0,3
-EB3546,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Roan Cliffs CWMU,1,0,1
-EB3547,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Sand Creek CWMU,1,0,1
-EB3548,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Scofield Canyons CWMU,1,0,1
-EB3549,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Scofield East CWMU,1,0,1
-EB3550,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Scofield West CWMU,2,0,2
-EB3551,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,SJ Ranch CWMU,1,0,1
-EB3552,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Skull Crack CWMU,1,0,1
-EB3553,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Soldier Summit CWMU,2,0,2
-EB3554,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,South Canyon CWMU,1,0,1
-EB3555,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Spring Creek/Dodge CWMU,2,0,2
-EB3557,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Strawberry Ridge CWMU,2,0,2
-EB3558,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Summit Point CWMU,1,0,1
-EB3559,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Three C CWMU,2,0,2
+EB3543,True,True,True,False,included_forecast,CWMU,Elk,Preston Nutter Ranch CWMU,3,0,3
+EB3544,True,True,True,False,included_forecast,CWMU,Elk,Redd Ranches CWMU,2,0,2
+EB3545,True,True,True,False,included_forecast,CWMU,Elk,Cactus Ranch LLC CWMU,3,0,3
+EB3546,True,True,True,False,included_forecast,CWMU,Elk,Roan Cliffs CWMU,1,0,1
+EB3547,True,True,True,False,included_forecast,CWMU,Elk,Sand Creek CWMU,1,0,1
+EB3548,True,True,True,False,included_forecast,CWMU,Elk,Scofield Canyons CWMU,1,0,1
+EB3549,True,True,True,False,included_forecast,CWMU,Elk,Scofield East CWMU,1,0,1
+EB3550,True,True,True,False,included_forecast,CWMU,Elk,Scofield West CWMU,2,0,2
+EB3551,True,True,True,False,included_forecast,CWMU,Elk,SJ Ranch CWMU,1,0,1
+EB3552,True,True,True,False,included_forecast,CWMU,Elk,Skull Crack CWMU,1,0,1
+EB3553,True,True,True,False,included_forecast,CWMU,Elk,Soldier Summit CWMU,2,0,2
+EB3554,True,True,True,False,included_forecast,CWMU,Elk,South Canyon CWMU,1,0,1
+EB3555,True,True,True,False,included_forecast,CWMU,Elk,Spring Creek/Dodge CWMU,2,0,2
+EB3557,True,True,True,False,included_forecast,CWMU,Elk,Strawberry Ridge CWMU,2,0,2
+EB3558,True,True,True,False,included_forecast,CWMU,Elk,Summit Point CWMU,1,0,1
+EB3559,True,True,True,False,included_forecast,CWMU,Elk,Three C CWMU,2,0,2
 EB3561,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-EB3562,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Wallsburg CWMU,1,0,1
+EB3562,True,True,True,False,included_forecast,CWMU,Elk,Wallsburg CWMU,1,0,1
 EB3563,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-EB3564,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Woodruff Creek South CWMU,2,0,2
-EB3565,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,North Peaks CWMU,1,0,1
-EB3603,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Pahvant Ensign CWMU,1,0,1
-EB3604,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Double R Ranch CWMU,1,0,1
-EB3606,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Mountain Sky Ranch CWMU,1,0,1
-EB3607,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,West Willow Creek Ranch CWMU,1,0,1
-EB3608,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Avintaquin Canyon CWMU,1,0,1
+EB3564,True,True,True,False,included_forecast,CWMU,Elk,Woodruff Creek South CWMU,2,0,2
+EB3565,True,True,True,False,included_forecast,CWMU,Elk,North Peaks CWMU,1,0,1
+EB3603,True,True,True,False,included_forecast,CWMU,Elk,Pahvant Ensign CWMU,1,0,1
+EB3604,True,True,True,False,included_forecast,CWMU,Elk,Double R Ranch CWMU,1,0,1
+EB3606,True,True,True,False,included_forecast,CWMU,Elk,Mountain Sky Ranch CWMU,1,0,1
+EB3607,True,True,True,False,included_forecast,CWMU,Elk,West Willow Creek Ranch CWMU,1,0,1
+EB3608,True,True,True,False,included_forecast,CWMU,Elk,Avintaquin Canyon CWMU,1,0,1
 EB3609,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-EB3610,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Sharp Mountain CWMU,2,0,2
-EB3611,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,West Ridge CWMU,2,0,2
+EB3610,True,True,True,False,included_forecast,CWMU,Elk,Sharp Mountain CWMU,2,0,2
+EB3611,True,True,True,False,included_forecast,CWMU,Elk,West Ridge CWMU,2,0,2
 EB3612,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-EB3613,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Little Pole Canyon CWMU,1,0,1
-EB3614,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Tunnel Hollow CWMU,1,0,1
+EB3613,True,True,True,False,included_forecast,CWMU,Elk,Little Pole Canyon CWMU,1,0,1
+EB3614,True,True,True,False,included_forecast,CWMU,Elk,Tunnel Hollow CWMU,1,0,1
 EB3616,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 EB3617,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-EB3619,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Weber Florence Creek/Stillman Creek CWMU,10,0,10
-EB3620,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,The Dirty Dozen,1,0,1
+EB3619,True,True,True,False,included_forecast,CWMU,Elk,Weber Florence Creek/Stillman Creek CWMU,10,0,10
+EB3620,True,True,True,False,included_forecast,CWMU,Elk,The Dirty Dozen,1,0,1
 EL3000,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Beaver East,,,16
 EL3002,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Book Cliffs Little Creek Roadless,,,16
 EL3003,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Cache Meadowville,,,16
@@ -1383,8 +1383,8 @@ MA1005,True,True,True,True,included_forecast,Limited Entry,Moose,Morgan-South Ri
 MA1006,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 MA1007,True,True,True,True,included_forecast,Limited Entry,Moose,Morgan-South Rich,3,0,3
 MA1008,True,True,True,True,included_forecast,Limited Entry,Moose,"Wasatch Mtns, Salt Lake-Timpanogos",4,1,5
-MA1009,False,True,True,False,not_OIL_LE_PLE,CWMU,Moose,Causey Spring CWMU,1,0,1
-MA1010,False,True,True,False,not_OIL_LE_PLE,CWMU,Moose,Deseret CWMU,2,0,2
+MA1009,True,True,True,False,included_forecast,CWMU,Moose,Causey Spring CWMU,1,0,1
+MA1010,True,True,True,False,included_forecast,CWMU,Moose,Deseret CWMU,2,0,2
 MB1000,False,True,True,False,not_OIL_LE_PLE,Statewide,Moose,Moose - Statewide Permit,,,
 MB6000,True,True,True,True,included_forecast,Once-in-a-lifetime,Moose,Cache,14,3,17
 MB6001,True,True,True,True,included_forecast,Once-in-a-lifetime,Moose,Chalk Creek,4,0,4
@@ -1400,36 +1400,36 @@ MB6010,True,True,True,True,included_forecast,Once-in-a-lifetime,Moose,Yellowston
 MB6011,True,True,True,True,included_forecast,Once-in-a-lifetime,Moose,Wasatch Mtns/Central Mtns,19,3,22
 MB6012,True,True,True,True,included_forecast,Once-in-a-lifetime,Moose,Box Elder,2,0,2
 MB6200,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-MB6201,False,True,True,False,not_OIL_LE_PLE,CWMU,Moose,Beaver Hollow CWMU,1,0,1
-MB6202,False,True,True,False,not_OIL_LE_PLE,CWMU,Moose,Causey Spring CWMU,1,0,1
-MB6206,False,True,True,False,not_OIL_LE_PLE,CWMU,Moose,Deseret CWMU,1,0,1
+MB6201,True,True,True,False,included_forecast,CWMU,Moose,Beaver Hollow CWMU,1,0,1
+MB6202,True,True,True,False,included_forecast,CWMU,Moose,Causey Spring CWMU,1,0,1
+MB6206,True,True,True,False,included_forecast,CWMU,Moose,Deseret CWMU,1,0,1
 MB6207,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-MB6208,False,True,True,False,not_OIL_LE_PLE,CWMU,Moose,East Fork Chalk Creek CWMU,2,0,2
+MB6208,True,True,True,False,included_forecast,CWMU,Moose,East Fork Chalk Creek CWMU,2,0,2
 MB6209,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 MB6210,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-MB6211,False,True,True,False,not_OIL_LE_PLE,CWMU,Moose,Grass Valley/Clark Canyon CWMU,4,0,4
+MB6211,True,True,True,False,included_forecast,CWMU,Moose,Grass Valley/Clark Canyon CWMU,4,0,4
 MB6216,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 MB6217,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-MB6219,False,True,True,False,not_OIL_LE_PLE,CWMU,Moose,Skull Crack CWMU,2,0,2
+MB6219,True,True,True,False,included_forecast,CWMU,Moose,Skull Crack CWMU,2,0,2
 MB6220,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-MB6222,False,True,True,False,not_OIL_LE_PLE,CWMU,Moose,Strawberry Ridge CWMU,1,0,1
+MB6222,True,True,True,False,included_forecast,CWMU,Moose,Strawberry Ridge CWMU,1,0,1
 MB6223,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 MB6224,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 MB6225,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 MB6226,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 MB6240,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-MB6251,False,True,True,False,not_OIL_LE_PLE,CWMU,Moose,Hardscrabble CWMU,1,0,1
+MB6251,True,True,True,False,included_forecast,CWMU,Moose,Hardscrabble CWMU,1,0,1
 MB6252,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 MB6254,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-MB6256,False,True,True,False,not_OIL_LE_PLE,CWMU,Moose,Woodruff Creek South CWMU,1,0,1
+MB6256,True,True,True,False,included_forecast,CWMU,Moose,Woodruff Creek South CWMU,1,0,1
 MB6257,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-MB6258,False,True,True,False,not_OIL_LE_PLE,CWMU,Moose,Jacob's Creek CWMU,1,0,1
+MB6258,True,True,True,False,included_forecast,CWMU,Moose,Jacob's Creek CWMU,1,0,1
 MB6259,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-MB6262,False,True,True,False,not_OIL_LE_PLE,CWMU,Moose,Junction Valley CWMU,1,0,1
+MB6262,True,True,True,False,included_forecast,CWMU,Moose,Junction Valley CWMU,1,0,1
 MB6263,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 MB6264,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-MB6265,False,True,True,False,not_OIL_LE_PLE,CWMU,Moose,Little Pole Canyon CWMU,1,0,1
-MB6266,False,True,True,False,not_OIL_LE_PLE,CWMU,Moose,Weber Florence Creek/Stillman Creek CWMU,3,0,3
+MB6265,True,True,True,False,included_forecast,CWMU,Moose,Little Pole Canyon CWMU,1,0,1
+MB6266,True,True,True,False,included_forecast,CWMU,Moose,Weber Florence Creek/Stillman Creek CWMU,3,0,3
 PB1000,False,True,True,False,not_OIL_LE_PLE,Statewide,Pronghorn,Pronghorn - Statewide Permit,,,
 PB5000,True,True,True,True,included_forecast,Limited Entry,Pronghorn,Beaver,11,1,12
 PB5001,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Book Cliffs, Bitter Creek",13,1,14
@@ -1502,34 +1502,34 @@ PB5077,True,True,True,True,included_forecast,Limited Entry,Pronghorn,Parker Mtn,
 PB5078,True,True,True,True,included_forecast,Limited Entry,Pronghorn,Parker Mtn,45,5,50
 PB5079,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Box Elder, West",10,1,11
 PB5080,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Box Elder, Snowville",9,1,10
-PB5300,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Antelope Creek CWMU,4,0,4
-PB5302,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Deseret CWMU,29,0,29
+PB5300,True,True,True,False,included_forecast,CWMU,Pronghorn,Antelope Creek CWMU,4,0,4
+PB5302,True,True,True,False,included_forecast,CWMU,Pronghorn,Deseret CWMU,29,0,29
 PB5303,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-PB5305,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Park Valley CWMU,1,0,1
-PB5306,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Rabbit Creek CWMU,1,0,1
+PB5305,True,True,True,False,included_forecast,CWMU,Pronghorn,Park Valley CWMU,1,0,1
+PB5306,True,True,True,False,included_forecast,CWMU,Pronghorn,Rabbit Creek CWMU,1,0,1
 PB5307,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-PB5309,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Skull Valley South CWMU,2,0,2
-PB5311,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,The Rose of Snowville CWMU,3,0,3
-PB5312,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,TL Bar Ranch CWMU,1,0,1
+PB5309,True,True,True,False,included_forecast,CWMU,Pronghorn,Skull Valley South CWMU,2,0,2
+PB5311,True,True,True,False,included_forecast,CWMU,Pronghorn,The Rose of Snowville CWMU,3,0,3
+PB5312,True,True,True,False,included_forecast,CWMU,Pronghorn,TL Bar Ranch CWMU,1,0,1
 PB5313,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-PB5314,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Westlake CWMU,2,0,2
-PB5315,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Zane CWMU,2,0,2
-PB5325,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Allen Ranch CWMU,2,0,2
-PB5326,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Cedar Springs CWMU,1,0,1
-PB5327,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Cottonwood Ridge CWMU,4,0,4
-PB5328,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Pahvant Ensign CWMU,3,0,3
-PB5329,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Snowville Flat CWMU,2,0,2
-PB5330,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,George Creek CWMU,1,0,1
+PB5314,True,True,True,False,included_forecast,CWMU,Pronghorn,Westlake CWMU,2,0,2
+PB5315,True,True,True,False,included_forecast,CWMU,Pronghorn,Zane CWMU,2,0,2
+PB5325,True,True,True,False,included_forecast,CWMU,Pronghorn,Allen Ranch CWMU,2,0,2
+PB5326,True,True,True,False,included_forecast,CWMU,Pronghorn,Cedar Springs CWMU,1,0,1
+PB5327,True,True,True,False,included_forecast,CWMU,Pronghorn,Cottonwood Ridge CWMU,4,0,4
+PB5328,True,True,True,False,included_forecast,CWMU,Pronghorn,Pahvant Ensign CWMU,3,0,3
+PB5329,True,True,True,False,included_forecast,CWMU,Pronghorn,Snowville Flat CWMU,2,0,2
+PB5330,True,True,True,False,included_forecast,CWMU,Pronghorn,George Creek CWMU,1,0,1
 PB5331,True,True,True,True,included_forecast,Limited Entry,Pronghorn,Mt Dutton/Paunsaugunt,13,2,15
 PB5332,True,True,True,True,included_forecast,Limited Entry,Pronghorn,Mt Dutton/Paunsaugunt,4,1,5
-PB5337,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Heist CWMU,2,0,2
-PB5338,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Castle Valley Outdoors CWMU,1,0,1
-PB5339,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Iron Spring CWMU,1,0,1
+PB5337,True,True,True,False,included_forecast,CWMU,Pronghorn,Heist CWMU,2,0,2
+PB5338,True,True,True,False,included_forecast,CWMU,Pronghorn,Castle Valley Outdoors CWMU,1,0,1
+PB5339,True,True,True,False,included_forecast,CWMU,Pronghorn,Iron Spring CWMU,1,0,1
 PB5341,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-PB5342,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Salt Wells CWMU,1,0,1
+PB5342,True,True,True,False,included_forecast,CWMU,Pronghorn,Salt Wells CWMU,1,0,1
 PB5343,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-PB5345,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Green River Flat CWMU,2,0,2
-PB5346,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Junction Valley CWMU,1,0,1
+PB5345,True,True,True,False,included_forecast,CWMU,Pronghorn,Green River Flat CWMU,2,0,2
+PB5346,True,True,True,False,included_forecast,CWMU,Pronghorn,Junction Valley CWMU,1,0,1
 PD1000,True,True,True,False,included_forecast,General Season,Pronghorn,"Box Elder, Snowville",72,8,80
 PD1002,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 PD1003,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
@@ -1549,7 +1549,7 @@ PD1025,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 PD1026,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 PD1027,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 PD1030,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-PD1031,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Westlake CWMU,9,0,9
+PD1031,True,True,True,False,included_forecast,CWMU,Pronghorn,Westlake CWMU,9,0,9
 PD1032,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 PD1033,True,True,True,False,included_forecast,General Season,Pronghorn,"San Rafael, Poison Springs Bench",13,2,15
 PD1034,True,True,True,False,included_forecast,General Season,Pronghorn,"Fillmore, Oak Creek South",27,3,30
@@ -1562,13 +1562,13 @@ PD1041,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 PD1042,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 PD1043,True,True,True,False,included_forecast,General Season,Pronghorn,"Nine Mile, Anthro-Pleasant Valley",9,1,10
 PD1044,True,True,True,False,included_forecast,General Season,Pronghorn,Vernal-Ouray Valley,9,1,10
-PD1047,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Antelope Creek CWMU,6,0,6
-PD1048,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,The Rose of Snowville CWMU,2,0,2
-PD1049,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Zane CWMU,6,0,6
-PD1050,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Cottonwood Ridge CWMU,6,0,6
-PD1051,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Pahvant Ensign CWMU,6,0,6
-PD1052,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Heist CWMU,6,0,6
-PD1053,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Green River Flat CWMU,6,0,6
+PD1047,True,True,True,False,included_forecast,CWMU,Pronghorn,Antelope Creek CWMU,6,0,6
+PD1048,True,True,True,False,included_forecast,CWMU,Pronghorn,The Rose of Snowville CWMU,2,0,2
+PD1049,True,True,True,False,included_forecast,CWMU,Pronghorn,Zane CWMU,6,0,6
+PD1050,True,True,True,False,included_forecast,CWMU,Pronghorn,Cottonwood Ridge CWMU,6,0,6
+PD1051,True,True,True,False,included_forecast,CWMU,Pronghorn,Pahvant Ensign CWMU,6,0,6
+PD1052,True,True,True,False,included_forecast,CWMU,Pronghorn,Heist CWMU,6,0,6
+PD1053,True,True,True,False,included_forecast,CWMU,Pronghorn,Green River Flat CWMU,6,0,6
 PD1054,False,True,True,False,not_OIL_LE_PLE,General Season,Pronghorn,Parker Mtn,27,3,30
 PD1055,False,True,True,False,not_OIL_LE_PLE,General Season,Pronghorn,Parker Mtn,31,4,35
 PD1056,False,True,True,False,not_OIL_LE_PLE,General Season,Pronghorn,Parker Mtn,36,4,40
@@ -1576,7 +1576,7 @@ PD1057,False,True,True,False,not_OIL_LE_PLE,General Season,Pronghorn,"Parker Mtn
 PD1058,False,True,True,False,not_OIL_LE_PLE,General Season,Pronghorn,"Parker Mtn, Highlands",36,4,40
 PD1059,False,True,True,False,not_OIL_LE_PLE,General Season,Pronghorn,"Parker Mtn, Plains",27,3,30
 PD1060,False,True,True,False,not_OIL_LE_PLE,General Season,Pronghorn,"Parker Mtn, Plains",36,4,40
-RE1000,False,True,True,False,not_OIL_LE_PLE,General Season,Rocky Mountain Bighorn Sheep,"Box Elder, Newfoundland Mtn",4,1,5
+RE1000,True,True,True,False,included_forecast,General Season,Rocky Mountain Bighorn Sheep,"Box Elder, Newfoundland Mtn",4,1,5
 RS0001,False,True,True,False,not_OIL_LE_PLE,Statewide,Rocky Mountain Bighorn Sheep,Rocky Mountain Bighorn Sheep - Statewide Permit,,,
 RS1000,False,True,True,False,missing_forecast_quota,Once-in-a-lifetime,Rocky Mountain Bighorn Sheep,Antelope Island Conservation,,,
 RS1001,False,True,True,False,not_OIL_LE_PLE,Conservation,Rocky Mountain Bighorn Sheep,"Book Cliffs, South",,,
@@ -1610,8 +1610,8 @@ TK1013,False,True,True,False,not_OIL_LE_PLE,Conservation,Turkey,Northeastern Are
 TK1014,False,True,True,False,not_OIL_LE_PLE,Conservation,Turkey,Northern Area,,,
 TK1015,False,True,True,False,not_OIL_LE_PLE,Conservation,Turkey,Southeastern Area,,,
 TK1016,False,True,True,False,not_OIL_LE_PLE,Conservation,Turkey,Southern Area,,,
-TK1018,False,True,True,False,not_OIL_LE_PLE,CWMU,Turkey,Pahvant Ensign CWMU,,,6
+TK1018,True,True,True,False,included_forecast,CWMU,Turkey,Pahvant Ensign CWMU,,,6
 TK1019,False,True,True,False,not_OIL_LE_PLE,Fall Management,Turkey,Southeastern Region - Select areas only,,,66
 TK1020,False,True,True,False,not_OIL_LE_PLE,Fall Management,Turkey,Central Region - Private land only,,,800
-TK1021,False,True,True,False,not_OIL_LE_PLE,CWMU,Turkey,East Zion CWMU,,,4
+TK1021,True,True,True,False,included_forecast,CWMU,Turkey,East Zion CWMU,,,4
 TK1022,False,True,True,False,not_OIL_LE_PLE,Fall Management,Turkey,Southern Region - Select areas only,,,155

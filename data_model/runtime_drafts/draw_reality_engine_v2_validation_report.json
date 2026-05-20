@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-05-20T23:02:52.883272+00:00",
+  "generated_at_utc": "2026-05-20T23:33:00.112475+00:00",
   "input_v3_path": "data_truth/draw_results_truth/normalized/draw_results_long.csv",
   "input_v3_sha256": "68b89136a5663683c1f779bb45573bc1d3ef15e91b73fabd4f1677a8f19383e1",
   "output_v2_path": "data_model/runtime_drafts/draw_reality_engine_v2.csv",

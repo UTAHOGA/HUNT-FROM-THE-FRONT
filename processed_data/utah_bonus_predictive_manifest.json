@@ -10,7 +10,7 @@
     2025
   ],
   "command_used": "python -m engine.utah_bonus_predictive.materialize --output-dir processed_data --forecast-year 2026 --history-years 2021,2022,2023,2024,2025",
-  "generated_at": "2026-05-20T23:05:25.380322+00:00",
+  "generated_at": "2026-05-20T23:35:34.880353+00:00",
   "output_files": {
     "ml_draw_predictions_v1.csv": "processed_data\\ml_draw_predictions_v1.csv",
     "ml_draw_predictions_v1_report.json": "processed_data\\ml_draw_predictions_v1_report.json",
@@ -23,20 +23,22 @@
     "dedicated_hunter_predictions_v1.csv": "processed_data\\dedicated_hunter_predictions_v1.csv",
     "dedicated_hunter_report.json": "processed_data\\dedicated_hunter_report.json",
     "phase4_antlerless_validation_inventory.csv": "processed_data\\phase4_antlerless_validation_inventory.csv",
-    "phase4_antlerless_validation_inventory.json": "processed_data\\phase4_antlerless_validation_inventory.json"
+    "phase4_antlerless_validation_inventory.json": "processed_data\\phase4_antlerless_validation_inventory.json",
+    "phase6_bonus_special_predictions_v1.csv": "processed_data\\phase6_bonus_special_predictions_v1.csv",
+    "phase6_bonus_special_report.json": "processed_data\\phase6_bonus_special_report.json"
   },
   "output_row_counts": {
-    "ml_draw_predictions_v1.csv": 25322,
+    "ml_draw_predictions_v1.csv": 28785,
     "backtest_utah_bonus_draw.csv": 10557,
-    "draw_reality_engine_predictive_v2.csv": 25322,
+    "draw_reality_engine_predictive_v2.csv": 28785,
     "draw_reality_engine_v2.csv": 176753
   },
   "duplicate_key_counts": {
     "ml_draw_predictions_v1.csv": 0,
     "draw_reality_engine_predictive_v2.csv": 0
   },
-  "p_draw_non_null_count": 21912,
-  "p_draw_pct_non_null_count": 21912,
+  "p_draw_non_null_count": 24964,
+  "p_draw_pct_non_null_count": 24964,
   "calibration_metric_non_null_count": 10557,
   "EB3024_regression_result": {
     "pass": true,
@@ -75,9 +77,9 @@
   },
   "coverage_report_summary": {
     "total_historical_backtest_hunt_codes": 1616,
-    "total_forecast_hunt_codes": 664,
+    "total_forecast_hunt_codes": 948,
     "total_active_2026_forecast_eligible_hunt_codes": 592,
-    "count_excluded_not_OIL_LE_PLE": 577,
+    "count_excluded_not_OIL_LE_PLE": 293,
     "count_excluded_not_active_in_2026": 0,
     "count_excluded_missing_forecast_quota": 20,
     "count_excluded_missing_required_metadata": 0,
@@ -86,10 +88,10 @@
     "count_excluded_missing_model_input_or_not_in_predictive_draft": 133,
     "forecast_codes_match_active_eligible_universe": false,
     "active_eligible_codes_missing_from_forecast": 0,
-    "forecast_codes_outside_active_eligible_universe": 72,
+    "forecast_codes_outside_active_eligible_universe": 356,
     "reason_counts": {
-      "included_forecast": 664,
-      "not_OIL_LE_PLE": 577,
+      "included_forecast": 948,
+      "not_OIL_LE_PLE": 293,
       "not_active_in_2026": 0,
       "missing_forecast_quota": 20,
       "missing_required_metadata": 0,
@@ -102,11 +104,11 @@
     "prediction": {
       "p_draw_outside_0_1": 0,
       "p_draw_pct_outside_0_100": 0,
-      "p_draw_pct_null": 3410,
-      "public_permits_gt_0_but_p_draw_null": 3354,
-      "status_max_pool_and_p_draw_pct_100": 30,
+      "p_draw_pct_null": 3821,
+      "public_permits_gt_0_but_p_draw_null": 3481,
+      "status_max_pool_and_p_draw_pct_100": 174,
       "status_max_pool_and_p_draw_pct_lt_100": 0,
-      "random_permits_gt_0_and_p_random_pool_0": 1846,
+      "random_permits_gt_0_and_p_random_pool_0": 2390,
       "duplicate_key_count": 0
     },
     "backtest": {
