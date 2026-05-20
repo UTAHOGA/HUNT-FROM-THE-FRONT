@@ -10,6 +10,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from engine.utah_draw_predictive.classifier import sanitize_modeled_probability_fields
+from engine.utah_draw_predictive.preference_antlerless import build_preference_antlerless_predictions
 from engine.utah_draw_predictive.preference_general_deer import build_preference_general_deer_predictions
 
 from .backtest import build_backtest_rows
@@ -479,10 +480,21 @@ def materialize_outputs(
         forecast_year=forecast_year,
         history_years=history_years,
     )
+    preference_antlerless_rows = build_preference_antlerless_predictions(
+        truth_rows=truth_rows,
+        db_rows=db_rows,
+        forecast_year=forecast_year,
+        history_years=history_years,
+    )
     if preference_general_deer_rows:
         preference_general_deer_rows = [sanitize_modeled_probability_fields(dict(row)) for row in preference_general_deer_rows]
         prediction_rows.extend(preference_general_deer_rows)
         successor_rows.extend(dict(row) for row in preference_general_deer_rows)
+    if preference_antlerless_rows:
+        preference_antlerless_rows = [sanitize_modeled_probability_fields(dict(row)) for row in preference_antlerless_rows]
+        prediction_rows.extend(preference_antlerless_rows)
+        successor_rows.extend(dict(row) for row in preference_antlerless_rows)
+    if preference_general_deer_rows or preference_antlerless_rows:
         prediction_rows.sort(key=lambda row: (str(row.get("hunt_code", "")), str(row.get("residency", "")), int(float(str(row.get("points", 0)) or 0))))
         successor_rows.sort(key=lambda row: (str(row.get("hunt_code", "")), str(row.get("residency", "")), int(float(str(row.get("points", 0)) or 0))))
 

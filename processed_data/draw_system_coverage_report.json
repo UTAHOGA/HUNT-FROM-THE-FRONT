@@ -7,16 +7,16 @@
     2024,
     2025
   ],
-  "total_rows_seen": 201103,
+  "total_rows_seen": 201946,
   "total_hunt_codes_seen": 1616,
-  "target_scope_rows": 196220,
+  "target_scope_rows": 197024,
   "target_scope_hunt_codes": 1575,
-  "out_of_scope_rows": 4883,
+  "out_of_scope_rows": 4922,
   "out_of_scope_hunt_codes": 41,
   "unknown_target_rows": 0,
   "unknown_target_hunt_codes": 0,
   "counts_by_draw_system_type": {
-    "BEAR_DRAW": 10759,
+    "BEAR_DRAW": 10767,
     "BONUS_ANTLERLESS_MOOSE": 376,
     "BONUS_CWMU_BIG_GAME": 50429,
     "BONUS_EWE_BIGHORN": 81,
@@ -28,11 +28,11 @@
     "LANDOWNER_BIG_GAME": 484,
     "MOUNTAIN_LION_DRAW": 219,
     "OTC_OR_REMAINING_TARGET": 178,
-    "OUT_OF_SCOPE_NON_TARGET": 4883,
-    "PREFERENCE_ANTLERLESS_DEER": 1393,
-    "PREFERENCE_ANTLERLESS_ELK": 9177,
+    "OUT_OF_SCOPE_NON_TARGET": 4922,
+    "PREFERENCE_ANTLERLESS_DEER": 1493,
+    "PREFERENCE_ANTLERLESS_ELK": 9758,
     "PREFERENCE_DEDICATED_HUNTER_DEER": 2467,
-    "PREFERENCE_DOE_PRONGHORN": 1515,
+    "PREFERENCE_DOE_PRONGHORN": 1630,
     "PREFERENCE_GENERAL_SEASON_BUCK_DEER": 16399,
     "RANDOM_ONLY_TARGET": 645
   },
@@ -62,28 +62,28 @@
   },
   "counts_by_algorithm_status": {
     "EXCLUDED_NOT_PREDICTIVE_DRAW": 1307,
-    "IN_SCOPE_MODEL_PENDING": 92977,
+    "IN_SCOPE_MODEL_PENDING": 92985,
     "MODELED_BONUS": 101221,
-    "MODELED_PREFERENCE": 715,
-    "OUT_OF_SCOPE_NON_TARGET": 4883
+    "MODELED_PREFERENCE": 1511,
+    "OUT_OF_SCOPE_NON_TARGET": 4922
   },
   "counts_by_species": {
     "(blank)": 84268,
     "Bison": 2932,
     "Black Bear": 9705,
     "Cougar": 2,
-    "Deer": 42054,
+    "Deer": 42162,
     "Desert Bighorn Sheep": 2483,
-    "Elk": 39100,
+    "Elk": 39720,
     "Moose": 5067,
     "Mountain Goat": 2126,
-    "Pronghorn": 10980,
+    "Pronghorn": 11095,
     "Rocky Mountain Bighorn Sheep": 1993,
     "Turkey": 393
   },
   "counts_by_residency": {
-    "Nonresident": 93881,
-    "Resident": 107222
+    "Nonresident": 94199,
+    "Resident": 107747
   },
   "counts_by_year": {
     "2021": 27519,
@@ -91,20 +91,20 @@
     "2023": 17128,
     "2024": 37128,
     "2025": 75194,
-    "2026": 25446
+    "2026": 26289
   },
-  "modeled_target_rows": 20993,
-  "unmodeled_target_rows": 175227,
-  "modeled_target_hunt_codes": 431,
+  "modeled_target_rows": 21789,
+  "unmodeled_target_rows": 175235,
+  "modeled_target_hunt_codes": 531,
   "unmodeled_target_hunt_codes": 1575,
-  "out_of_scope_non_target_rows": 4883,
+  "out_of_scope_non_target_rows": 4922,
   "out_of_scope_non_target_hunt_codes": 41,
   "answers": {
     "is_general_season_buck_deer_modeled": true,
     "is_dedicated_hunter_deer_modeled": false,
-    "is_antlerless_deer_modeled": false,
-    "is_antlerless_elk_modeled": false,
-    "is_doe_pronghorn_modeled": false,
+    "is_antlerless_deer_modeled": true,
+    "is_antlerless_elk_modeled": true,
+    "is_doe_pronghorn_modeled": true,
     "are_antlerless_moose_and_ewe_sheep_modeled_under_bonus_rules": false,
     "are_all_oil_big_game_categories_modeled": false,
     "are_all_le_big_game_categories_modeled": false,
@@ -124,7 +124,10 @@
     "BONUS_PLE_BIG_GAME"
   ],
   "modeled_preference_categories": [
-    "PREFERENCE_GENERAL_SEASON_BUCK_DEER"
+    "PREFERENCE_GENERAL_SEASON_BUCK_DEER",
+    "PREFERENCE_ANTLERLESS_DEER",
+    "PREFERENCE_ANTLERLESS_ELK",
+    "PREFERENCE_DOE_PRONGHORN"
   ],
   "modeled_allocation_categories": [],
   "modeled_random_only_categories": [],
@@ -133,9 +136,6 @@
     "BONUS_ANTLERLESS_MOOSE",
     "BONUS_EWE_BIGHORN",
     "BONUS_TURKEY",
-    "PREFERENCE_ANTLERLESS_DEER",
-    "PREFERENCE_ANTLERLESS_ELK",
-    "PREFERENCE_DOE_PRONGHORN",
     "PREFERENCE_DEDICATED_HUNTER_DEER",
     "GENERAL_BIG_GAME_OTHER",
     "PRIVATE_LANDS_ONLY_ANTLERLESS_ELK",
@@ -225,21 +225,21 @@
     },
     {
       "draw_system_type": "PREFERENCE_ANTLERLESS_DEER",
-      "row_count": 1393,
+      "row_count": 1493,
       "hunt_code_count": 25,
-      "algorithm_status": "IN_SCOPE_MODEL_PENDING"
+      "algorithm_status": "MODELED_PREFERENCE"
     },
     {
       "draw_system_type": "PREFERENCE_ANTLERLESS_ELK",
-      "row_count": 9177,
+      "row_count": 9758,
       "hunt_code_count": 158,
-      "algorithm_status": "IN_SCOPE_MODEL_PENDING"
+      "algorithm_status": "MODELED_PREFERENCE"
     },
     {
       "draw_system_type": "PREFERENCE_DOE_PRONGHORN",
-      "row_count": 1515,
+      "row_count": 1630,
       "hunt_code_count": 28,
-      "algorithm_status": "IN_SCOPE_MODEL_PENDING"
+      "algorithm_status": "MODELED_PREFERENCE"
     },
     {
       "draw_system_type": "PREFERENCE_DEDICATED_HUNTER_DEER",
@@ -261,7 +261,7 @@
     },
     {
       "draw_system_type": "BEAR_DRAW",
-      "row_count": 10759,
+      "row_count": 10767,
       "hunt_code_count": 117,
       "algorithm_status": "IN_SCOPE_MODEL_PENDING"
     },
@@ -297,7 +297,7 @@
     },
     {
       "draw_system_type": "OUT_OF_SCOPE_NON_TARGET",
-      "row_count": 4883,
+      "row_count": 4922,
       "hunt_code_count": 41,
       "algorithm_status": "OUT_OF_SCOPE_NON_TARGET"
     },

@@ -24,7 +24,7 @@ from . import (
 from .bonus import STRATEGY_SPECS as BONUS_SPECS
 from .dedicated_hunter import STRATEGY_SPECS as DEDICATED_SPECS
 from .exclusions import STRATEGY_SPECS as EXCLUSION_SPECS
-from .preference_antlerless import STRATEGY_SPECS as PREFERENCE_ANTLERLESS_SPECS
+from .preference_antlerless import STRATEGY_SPECS as PREFERENCE_ANTLERLESS_SPECS, is_modeled_antlerless_row
 from .preference_general_deer import STRATEGY_SPECS as PREFERENCE_GENERAL_DEER_SPECS, is_modeled_general_deer_row
 from .private_lands_antlerless_elk import STRATEGY_SPECS as PRIVATE_LANDS_ANTLERLESS_ELK_SPECS
 from .random_only import STRATEGY_SPECS as RANDOM_ONLY_SPECS
@@ -244,6 +244,8 @@ def resolve_algorithm_status(row: Mapping[str, object], draw_system_type: str | 
     draw_system_type = draw_system_type or classify_draw_system_type(row)
     if draw_system_type == "PREFERENCE_GENERAL_SEASON_BUCK_DEER":
         return ALGORITHM_STATUS_MODELED_PREFERENCE if is_modeled_general_deer_row(row) else ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING
+    if draw_system_type in {"PREFERENCE_ANTLERLESS_DEER", "PREFERENCE_ANTLERLESS_ELK", "PREFERENCE_DOE_PRONGHORN"}:
+        return ALGORITHM_STATUS_MODELED_PREFERENCE if is_modeled_antlerless_row(row) else ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING
     return REGISTRY[draw_system_type].algorithm_status
 
 

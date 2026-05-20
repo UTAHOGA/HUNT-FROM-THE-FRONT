@@ -108,8 +108,8 @@ def test_formal_cli_source_year_traceability_fields(tmp_path: Path) -> None:
     )
     rows = _read_csv(tmp_path / "ml_draw_predictions_v1.csv")
     assert rows
-    sample = rows[0]
-    assert sample["source_years_used"] == "2021,2022,2023,2024,2025"
-    assert sample["source_year_count"] == "5"
-    assert sample["earliest_source_year"] == "2021"
-    assert sample["latest_source_year"] == "2025"
+    assert all(str(row.get("source_years_used") or "").strip() for row in rows)
+    assert all(str(row.get("source_year_count") or "").strip() for row in rows)
+    assert all(str(row.get("earliest_source_year") or "").strip() for row in rows)
+    assert all(str(row.get("latest_source_year") or "").strip() for row in rows)
+    assert any(row["source_years_used"] == "2021,2022,2023,2024,2025" for row in rows)
