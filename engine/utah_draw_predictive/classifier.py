@@ -22,7 +22,7 @@ from . import (
     TARGET_SCOPE_TARGET,
 )
 from .bonus import STRATEGY_SPECS as BONUS_SPECS
-from .dedicated_hunter import STRATEGY_SPECS as DEDICATED_SPECS
+from .dedicated_hunter import STRATEGY_SPECS as DEDICATED_SPECS, is_modeled_dedicated_hunter_row
 from .exclusions import STRATEGY_SPECS as EXCLUSION_SPECS
 from .preference_antlerless import STRATEGY_SPECS as PREFERENCE_ANTLERLESS_SPECS, is_modeled_antlerless_row
 from .preference_general_deer import STRATEGY_SPECS as PREFERENCE_GENERAL_DEER_SPECS, is_modeled_general_deer_row
@@ -246,6 +246,8 @@ def resolve_algorithm_status(row: Mapping[str, object], draw_system_type: str | 
         return ALGORITHM_STATUS_MODELED_PREFERENCE if is_modeled_general_deer_row(row) else ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING
     if draw_system_type in {"PREFERENCE_ANTLERLESS_DEER", "PREFERENCE_ANTLERLESS_ELK", "PREFERENCE_DOE_PRONGHORN"}:
         return ALGORITHM_STATUS_MODELED_PREFERENCE if is_modeled_antlerless_row(row) else ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING
+    if draw_system_type == "PREFERENCE_DEDICATED_HUNTER_DEER":
+        return ALGORITHM_STATUS_MODELED_PREFERENCE if is_modeled_dedicated_hunter_row(row) else ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING
     return REGISTRY[draw_system_type].algorithm_status
 
 
@@ -301,7 +303,7 @@ def sanitize_modeled_probability_fields(row: dict[str, object]) -> dict[str, obj
         ALGORITHM_STATUS_OUT_OF_SCOPE_NON_TARGET,
         ALGORITHM_STATUS_UNKNOWN_TARGET_NEEDS_REVIEW,
     }:
-        for key in ("p_draw", "p_draw_pct", "p_bonus_pool", "p_random_pool", "p_bonus_pool_pct", "p_random_pool_pct"):
+        for key in ("p_draw", "p_draw_pct", "p_preference_draw", "p_bonus_pool", "p_random_pool", "p_bonus_pool_pct", "p_random_pool_pct"):
             row[key] = ""
         if classification["algorithm_status"] == ALGORITHM_STATUS_OUT_OF_SCOPE_NON_TARGET:
             row["draw_outlook"] = "OUT OF SCOPE"

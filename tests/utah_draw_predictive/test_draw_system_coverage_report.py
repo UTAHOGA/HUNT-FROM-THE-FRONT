@@ -14,7 +14,9 @@ def test_draw_system_coverage_report_generation(tmp_path: Path) -> None:
     report = json.loads(json_path.read_text(encoding="utf-8"))
     assert report["forecast_year"] == 2026
     assert report["answers"]["is_general_season_buck_deer_modeled"] is True
+    assert report["answers"]["is_dedicated_hunter_deer_modeled"] is True
     assert "PREFERENCE_GENERAL_SEASON_BUCK_DEER" in report["modeled_preference_categories"]
+    assert "PREFERENCE_DEDICATED_HUNTER_DEER" in report["modeled_preference_categories"]
     assert "PREFERENCE_ANTLERLESS_DEER" in report["modeled_preference_categories"]
     assert "PREFERENCE_ANTLERLESS_ELK" in report["modeled_preference_categories"]
     assert "PREFERENCE_DOE_PRONGHORN" in report["modeled_preference_categories"]

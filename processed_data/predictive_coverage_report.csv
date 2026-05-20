@@ -555,34 +555,34 @@ DB1629,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Boulder/Kaiparow
 DB1630,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Boulder/Kaiparowits,,,720
 DB1631,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Box Elder,,,1040
 DB1769,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-DB1770,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Box Elder,,,688
-DB1771,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Cache,,,588
-DB1772,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Manti/San Rafael,,,573
-DB1773,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Nebo,,,349
+DB1770,True,True,True,False,included_forecast,General Season,Deer,Box Elder,,,688
+DB1771,True,True,True,False,included_forecast,General Season,Deer,Cache,,,588
+DB1772,True,True,True,False,included_forecast,General Season,Deer,Manti/San Rafael,,,573
+DB1773,True,True,True,False,included_forecast,General Season,Deer,Nebo,,,349
 DB1774,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-DB1775,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Fillmore,,,42
-DB1777,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Kamas,,,55
-DB1778,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,La Sal Mtns,,,67
-DB1779,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Monroe,,,45
-DB1780,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Mt Dutton,,,26
-DB1781,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Nine Mile,,,62
-DB1782,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,North Slope,,,340
-DB1783,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Ogden,,,297
+DB1775,True,True,True,False,included_forecast,General Season,Deer,Fillmore,,,42
+DB1777,True,True,True,False,included_forecast,General Season,Deer,Kamas,,,55
+DB1778,True,True,True,False,included_forecast,General Season,Deer,La Sal Mtns,,,67
+DB1779,True,True,True,False,included_forecast,General Season,Deer,Monroe,,,45
+DB1780,True,True,True,False,included_forecast,General Season,Deer,Mt Dutton,,,26
+DB1781,True,True,True,False,included_forecast,General Season,Deer,Nine Mile,,,62
+DB1782,True,True,True,False,included_forecast,General Season,Deer,North Slope,,,340
+DB1783,True,True,True,False,included_forecast,General Season,Deer,Ogden,,,297
 DB1784,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-DB1785,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Panguitch Lake,,,112
-DB1786,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Pine Valley,,,228
-DB1787,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Boulder/Kaiparowits,,,70
-DB1788,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Fishlake,,,49
+DB1785,True,True,True,False,included_forecast,General Season,Deer,Panguitch Lake,,,112
+DB1786,True,True,True,False,included_forecast,General Season,Deer,Pine Valley,,,228
+DB1787,True,True,True,False,included_forecast,General Season,Deer,Boulder/Kaiparowits,,,70
+DB1788,True,True,True,False,included_forecast,General Season,Deer,Fishlake,,,49
 DB1789,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-DB1790,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"San Juan, Abajo Mtns",,,261
-DB1791,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Vernal/Bonanza,,,45
-DB1792,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Yellowstone,,,63
-DB1793,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Southwest Desert,,,46
-DB1794,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"Wasatch Mtns, East",,,271
-DB1795,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"Wasatch Mtns, West",,,701
+DB1790,True,True,True,False,included_forecast,General Season,Deer,"San Juan, Abajo Mtns",,,261
+DB1791,True,True,True,False,included_forecast,General Season,Deer,Vernal/Bonanza,,,45
+DB1792,True,True,True,False,included_forecast,General Season,Deer,Yellowstone,,,63
+DB1793,True,True,True,False,included_forecast,General Season,Deer,Southwest Desert,,,46
+DB1794,True,True,True,False,included_forecast,General Season,Deer,"Wasatch Mtns, East",,,271
+DB1795,True,True,True,False,included_forecast,General Season,Deer,"Wasatch Mtns, West",,,701
 DB1796,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 DB1797,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-DB1798,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Zion,,,256
+DB1798,True,True,True,False,included_forecast,General Season,Deer,Zion,,,256
 DB1799,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Chalk Creek,,,292
 DB1800,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,East Canyon,,,186
 DB1801,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Morgan-South Rich,,,211

@@ -10,6 +10,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from engine.utah_draw_predictive.classifier import sanitize_modeled_probability_fields
+from engine.utah_draw_predictive.dedicated_hunter import build_preference_dedicated_hunter_predictions
 from engine.utah_draw_predictive.preference_antlerless import build_preference_antlerless_predictions
 from engine.utah_draw_predictive.preference_general_deer import build_preference_general_deer_predictions
 
@@ -94,6 +95,139 @@ def _safe_relative(path: Path) -> str:
         return str(path.relative_to(REPO))
     except ValueError:
         return str(path)
+
+
+def _write_phase4_antlerless_inventory(output_dir: Path, prediction_rows: list[dict[str, object]], forecast_year: int, history_years: list[int]) -> tuple[Path, Path]:
+    antlerless_rows = [
+        row for row in prediction_rows
+        if row.get("draw_system_type") in {"PREFERENCE_ANTLERLESS_DEER", "PREFERENCE_ANTLERLESS_ELK", "PREFERENCE_DOE_PRONGHORN"}
+        and row.get("algorithm_status") == "MODELED_PREFERENCE"
+    ]
+    inventory_map: dict[tuple[str, str, str, str, str], dict[str, object]] = {}
+    for row in antlerless_rows:
+        key = (
+            str(row.get("draw_system_type", "")),
+            str(row.get("hunt_code", "")),
+            str(row.get("hunt_name", "")),
+            str(row.get("species", "")),
+            str(row.get("residency", "")),
+        )
+        item = inventory_map.setdefault(
+            key,
+            {
+                "draw_system_type": row.get("draw_system_type", ""),
+                "hunt_code": row.get("hunt_code", ""),
+                "hunt_name": row.get("hunt_name", ""),
+                "species": row.get("species", ""),
+                "residency": row.get("residency", ""),
+                "points_modeled": 0,
+                "min_points": "",
+                "max_points": "",
+                "public_permits_2026": row.get("public_permits_2026", ""),
+                "source_years_used": row.get("source_years_used", ""),
+                "model_strategy": row.get("model_strategy", ""),
+            },
+        )
+        points = int(float(str(row.get("points", "0")) or 0))
+        item["points_modeled"] = int(item["points_modeled"]) + 1
+        item["min_points"] = points if item["min_points"] == "" else min(int(item["min_points"]), points)
+        item["max_points"] = points if item["max_points"] == "" else max(int(item["max_points"]), points)
+
+    inventory_rows = sorted(
+        inventory_map.values(),
+        key=lambda row: (
+            str(row.get("draw_system_type", "")),
+            str(row.get("hunt_code", "")),
+            str(row.get("residency", "")),
+        ),
+    )
+    csv_path = output_dir / "phase4_antlerless_validation_inventory.csv"
+    write_csv(
+        csv_path,
+        inventory_rows,
+        [
+            "draw_system_type",
+            "hunt_code",
+            "hunt_name",
+            "species",
+            "residency",
+            "points_modeled",
+            "min_points",
+            "max_points",
+            "public_permits_2026",
+            "source_years_used",
+            "model_strategy",
+        ],
+    )
+    report = {
+        "forecast_year": forecast_year,
+        "source_years": history_years,
+        "modeled_rows": len(antlerless_rows),
+        "modeled_hunt_codes_by_type": {
+            draw_system_type: len({str(row.get("hunt_code", "")) for row in antlerless_rows if row.get("draw_system_type") == draw_system_type})
+            for draw_system_type in {"PREFERENCE_ANTLERLESS_DEER", "PREFERENCE_ANTLERLESS_ELK", "PREFERENCE_DOE_PRONGHORN"}
+        },
+        "modeled_inventory_rows": len(inventory_rows),
+        "modeled_inventory_residency_counts": {
+            residency: sum(1 for row in inventory_rows if str(row.get("residency", "")) == residency)
+            for residency in sorted({str(row.get("residency", "")) for row in inventory_rows})
+        },
+        "csv": _safe_relative(csv_path),
+    }
+    json_path = output_dir / "phase4_antlerless_validation_inventory.json"
+    json_path.write_text(json.dumps(report, indent=2), encoding="utf-8")
+    return csv_path, json_path
+
+
+def _write_dedicated_hunter_artifacts(output_dir: Path, prediction_rows: list[dict[str, object]], forecast_year: int, history_years: list[int]) -> tuple[Path, Path]:
+    dedicated_rows = [row for row in prediction_rows if row.get("draw_system_type") == "PREFERENCE_DEDICATED_HUNTER_DEER"]
+    csv_path = output_dir / "dedicated_hunter_predictions_v1.csv"
+    fieldnames = list(dict.fromkeys(key for row in dedicated_rows for key in row.keys())) if dedicated_rows else [
+        "hunt_code",
+        "residency",
+        "points",
+        "draw_system_type",
+        "algorithm_status",
+        "p_preference_draw",
+        "p_draw",
+        "p_draw_pct",
+        "p_bonus_pool",
+        "p_random_pool",
+    ]
+    write_csv(csv_path, dedicated_rows, fieldnames)
+
+    modeled_rows = [row for row in dedicated_rows if row.get("algorithm_status") == "MODELED_PREFERENCE"]
+    pending_rows = [row for row in dedicated_rows if row.get("algorithm_status") == "IN_SCOPE_MODEL_PENDING"]
+    report = {
+        "forecast_year": forecast_year,
+        "source_years": history_years,
+        "exists": True,
+        "total_rows": len(dedicated_rows),
+        "modeled_preference_row_count": len(modeled_rows),
+        "in_scope_model_pending_row_count": len(pending_rows),
+        "modeled_hunt_code_count": len({str(row.get("hunt_code", "")) for row in modeled_rows if str(row.get("hunt_code", "")).strip()}),
+        "p_preference_draw_non_null_count": _nonnull(modeled_rows, "p_preference_draw"),
+        "p_draw_non_null_count": _nonnull(modeled_rows, "p_draw"),
+        "p_draw_pct_non_null_count": _nonnull(modeled_rows, "p_draw_pct"),
+        "p_bonus_pool_non_null_count": _nonnull(dedicated_rows, "p_bonus_pool"),
+        "p_random_pool_non_null_count": _nonnull(dedicated_rows, "p_random_pool"),
+        "p_draw_outside_0_1_count": sum(
+            1
+            for row in modeled_rows
+            if str(row.get("p_draw", "")).strip()
+            and not (0.0 <= float(str(row.get("p_draw", "")).strip()) <= 1.0)
+        ),
+        "p_draw_pct_outside_0_100_count": sum(
+            1
+            for row in modeled_rows
+            if str(row.get("p_draw_pct", "")).strip()
+            and not (0.0 <= float(str(row.get("p_draw_pct", "")).strip()) <= 100.0)
+        ),
+        "csv": _safe_relative(csv_path),
+    }
+    json_path = output_dir / "dedicated_hunter_report.json"
+    json_path.write_text(json.dumps(report, indent=2), encoding="utf-8")
+    return csv_path, json_path
 
 
 def _quota_info(row: dict[str, str]) -> tuple[bool, bool]:
@@ -394,6 +528,10 @@ def _build_manifest(
         "draw_reality_engine_v2.csv": runtime_truth_copy,
         "predictive_coverage_report.json": output_dir / "predictive_coverage_report.json",
         "predictive_coverage_report.csv": output_dir / "predictive_coverage_report.csv",
+        "dedicated_hunter_predictions_v1.csv": output_dir / "dedicated_hunter_predictions_v1.csv",
+        "dedicated_hunter_report.json": output_dir / "dedicated_hunter_report.json",
+        "phase4_antlerless_validation_inventory.csv": output_dir / "phase4_antlerless_validation_inventory.csv",
+        "phase4_antlerless_validation_inventory.json": output_dir / "phase4_antlerless_validation_inventory.json",
     }
     anomalies = _anomaly_counts(prediction_rows, backtest_rows)
     manifest = {
@@ -486,6 +624,12 @@ def materialize_outputs(
         forecast_year=forecast_year,
         history_years=history_years,
     )
+    preference_dedicated_hunter_rows = build_preference_dedicated_hunter_predictions(
+        truth_rows=truth_rows,
+        db_rows=db_rows,
+        forecast_year=forecast_year,
+        history_years=history_years,
+    )
     if preference_general_deer_rows:
         preference_general_deer_rows = [sanitize_modeled_probability_fields(dict(row)) for row in preference_general_deer_rows]
         prediction_rows.extend(preference_general_deer_rows)
@@ -494,7 +638,11 @@ def materialize_outputs(
         preference_antlerless_rows = [sanitize_modeled_probability_fields(dict(row)) for row in preference_antlerless_rows]
         prediction_rows.extend(preference_antlerless_rows)
         successor_rows.extend(dict(row) for row in preference_antlerless_rows)
-    if preference_general_deer_rows or preference_antlerless_rows:
+    if preference_dedicated_hunter_rows:
+        preference_dedicated_hunter_rows = [sanitize_modeled_probability_fields(dict(row)) for row in preference_dedicated_hunter_rows]
+        prediction_rows.extend(preference_dedicated_hunter_rows)
+        successor_rows.extend(dict(row) for row in preference_dedicated_hunter_rows)
+    if preference_general_deer_rows or preference_antlerless_rows or preference_dedicated_hunter_rows:
         prediction_rows.sort(key=lambda row: (str(row.get("hunt_code", "")), str(row.get("residency", "")), int(float(str(row.get("points", 0)) or 0))))
         successor_rows.sort(key=lambda row: (str(row.get("hunt_code", "")), str(row.get("residency", "")), int(float(str(row.get("points", 0)) or 0))))
 
@@ -522,6 +670,7 @@ def materialize_outputs(
         "guaranteed_at_2026",
         "applicants_above",
         "applicants_at_level",
+        "p_preference_draw",
         "p_bonus_pool",
         "p_random_pool",
         "p_draw",
@@ -559,6 +708,9 @@ def materialize_outputs(
     successor_path = output_dir / "draw_reality_engine_predictive_v2.csv"
     successor_fields = list(dict.fromkeys(key for row in successor_rows for key in row.keys())) if successor_rows else []
     write_csv(successor_path, successor_rows, successor_fields)
+
+    dedicated_hunter_csv_path, dedicated_hunter_report_path = _write_dedicated_hunter_artifacts(output_dir, prediction_rows, forecast_year, history_years)
+    phase4_inventory_csv_path, phase4_inventory_json_path = _write_phase4_antlerless_inventory(output_dir, prediction_rows, forecast_year, history_years)
 
     backtest_rows = build_backtest_rows(permits, ladders, lambda public_permits: (split_utah_bonus_permits(public_permits).maxPointPermits, split_utah_bonus_permits(public_permits).randomPermits))
     backtest_fields = [
@@ -630,6 +782,10 @@ def materialize_outputs(
         "prediction_input": runtime_paths["materialized_rows"],
         "coverage_report_json": coverage_artifacts["json_path"],
         "coverage_report_csv": coverage_artifacts["csv_path"],
+        "dedicated_hunter_predictions": dedicated_hunter_csv_path,
+        "dedicated_hunter_report": dedicated_hunter_report_path,
+        "phase4_antlerless_inventory_csv": phase4_inventory_csv_path,
+        "phase4_antlerless_inventory_json": phase4_inventory_json_path,
         "manifest": manifest_path,
     }
 
