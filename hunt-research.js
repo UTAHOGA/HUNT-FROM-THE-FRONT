@@ -18,6 +18,7 @@
   const SELECTED_HUNT_KEY = 'selected_hunt_code';
   const SELECTED_RESIDENCY_KEY = 'selected_hunt_research_residency';
   const SELECTED_POINTS_KEY = 'selected_hunt_research_points';
+  const SELECTED_DRAW_POOL_KEY = 'selected_hunt_research_draw_pool';
   const BASKET_KEY = 'uoga_hunt_basket_v1';
   const LEGACY_BASKET_KEY = 'hunt_research_recent_hunts';
   // Public draw permits already account for Expo permits. Conservation permits are not part of draw odds.
@@ -44,6 +45,7 @@
   const els = {
     huntCodeInput: document.getElementById('huntCodeInput'),
     residencySelect: document.getElementById('residencySelect'),
+    drawPoolSelect: document.getElementById('drawPoolSelect'),
     pointsInput: document.getElementById('pointsInput'),
     filterReadout: document.getElementById('filterReadout'),
     plannerReadout: document.getElementById('plannerReadout'),
@@ -106,12 +108,17 @@
     return String(value || '').trim().toLowerCase() === 'nonresident' ? 'Nonresident' : 'Resident';
   }
 
-  function groupKey(huntCode, residency) {
-    return `${normalizeKey(huntCode)}__${normalizeResidencyLabel(residency)}`;
+  function normalizeDrawPool(value) {
+    const normalized = String(value || '').trim().toLowerCase();
+    return normalized || 'standard';
   }
 
-  function rowKey(huntCode, residency, points) {
-    return `${groupKey(huntCode, residency)}__${String(points ?? '')}`;
+  function groupKey(huntCode, residency, drawPool) {
+    return `${normalizeKey(huntCode)}__${normalizeResidencyLabel(residency)}__${normalizeDrawPool(drawPool)}`;
+  }
+
+  function rowKey(huntCode, residency, points, drawPool) {
+    return `${groupKey(huntCode, residency, drawPool)}__${String(points ?? '')}`;
   }
 
   function escapeHtml(value) {
@@ -234,6 +241,10 @@
     return normalizeResidencyLabel(els.residencySelect.value);
   }
 
+  function getDrawPoolKey() {
+    return normalizeDrawPool(els.drawPoolSelect?.value);
+  }
+
   function getBasket() {
     try {
       const current = localStorage.getItem(BASKET_KEY);
@@ -353,11 +364,12 @@
 
     engineRows.forEach((row) => {
       const residency = normalizeResidencyLabel(row.residency);
+      const drawPool = normalizeDrawPool(row.draw_pool);
       const year = num(row.year);
       const points = num(row.points);
-      const key = rowKey(row.hunt_code, residency, points);
-      const group = groupKey(row.hunt_code, residency);
-      const normalized = { ...row, residency, points, year };
+      const key = rowKey(row.hunt_code, residency, points, drawPool);
+      const group = groupKey(row.hunt_code, residency, drawPool);
+      const normalized = { ...row, residency, points, year, draw_pool: drawPool };
       state.engineByKey.set(key, normalized);
       if (!state.engineGroups.has(group)) state.engineGroups.set(group, []);
       state.engineGroups.get(group).push(normalized);
@@ -373,14 +385,15 @@
 
     ladderRows.forEach((row) => {
       const residency = normalizeResidencyLabel(row.residency);
-      const group = groupKey(row.hunt_code, residency);
+      const drawPool = normalizeDrawPool(row.draw_pool);
+      const group = groupKey(row.hunt_code, residency, drawPool);
       const points = num(row.points);
-      const key = rowKey(row.hunt_code, residency, points);
+      const key = rowKey(row.hunt_code, residency, points, drawPool);
       const engineMatch = state.engineByKey.get(key);
       const masterPointMatch = state.masterPointByKey.get(key);
       const normalized = engineMatch
-        ? { ...(masterPointMatch || {}), ...engineMatch, ...row, residency, points }
-        : { ...(masterPointMatch || {}), ...row, residency, points };
+        ? { ...(masterPointMatch || {}), ...engineMatch, ...row, residency, points, draw_pool: drawPool }
+        : { ...(masterPointMatch || {}), ...row, residency, points, draw_pool: drawPool };
       if (!state.ladderGroups.has(group)) state.ladderGroups.set(group, []);
       state.ladderGroups.get(group).push(normalized);
 
@@ -399,10 +412,11 @@
 
     masterRows.forEach((row) => {
       const residency = normalizeResidencyLabel(row.residency);
-      const group = groupKey(row.hunt_code, residency);
+      const drawPool = normalizeDrawPool(row.draw_pool);
+      const group = groupKey(row.hunt_code, residency, drawPool);
       const points = num(row.points);
-      const key = rowKey(row.hunt_code, residency, points);
-      const normalized = { ...row, residency };
+      const key = rowKey(row.hunt_code, residency, points, drawPool);
+      const normalized = { ...row, residency, draw_pool: drawPool };
       if (!state.masterByResidency.has(group)) {
         state.masterByResidency.set(group, normalized);
       }
@@ -410,14 +424,15 @@
         state.masterByCode.set(normalizeKey(row.hunt_code), normalized);
       }
       if (points !== null) {
-        state.masterPointByKey.set(key, { ...row, residency, points });
+        state.masterPointByKey.set(key, { ...row, residency, points, draw_pool: drawPool });
       }
     });
 
     referenceRows.forEach((row) => {
       const residency = normalizeResidencyLabel(row.residency);
-      const group = groupKey(row.hunt_code, residency);
-      state.referenceByKey.set(group, { ...row, residency });
+      const drawPool = normalizeDrawPool(row.draw_pool);
+      const group = groupKey(row.hunt_code, residency, drawPool);
+      state.referenceByKey.set(group, { ...row, residency, draw_pool: drawPool });
     });
 
     state.engineGroups.forEach((rows) => rows.sort((a, b) => (b.points ?? 0) - (a.points ?? 0)));
@@ -429,30 +444,31 @@
     return {
       huntCode: normalizeKey(els.huntCodeInput.value),
       residency: getResidencyKey(),
+      drawPool: getDrawPoolKey(),
       points: getCurrentPoints(),
     };
   }
 
-  function findMeta(huntCode, residency) {
-    return state.masterByResidency.get(groupKey(huntCode, residency))
+  function findMeta(huntCode, residency, drawPool) {
+    return state.masterByResidency.get(groupKey(huntCode, residency, drawPool))
       || state.masterByCode.get(normalizeKey(huntCode))
       || null;
   }
 
-  function getEngineRow(huntCode, residency, points) {
-    return state.engineByKey.get(rowKey(huntCode, residency, points)) || null;
+  function getEngineRow(huntCode, residency, points, drawPool) {
+    return state.engineByKey.get(rowKey(huntCode, residency, points, drawPool)) || null;
   }
 
-  function getLadderRows(huntCode, residency) {
-    return state.ladderGroups.get(groupKey(huntCode, residency)) || [];
+  function getLadderRows(huntCode, residency, drawPool) {
+    return state.ladderGroups.get(groupKey(huntCode, residency, drawPool)) || [];
   }
 
-  function getReferenceRow(huntCode, residency) {
-    return state.referenceByKey.get(groupKey(huntCode, residency)) || null;
+  function getReferenceRow(huntCode, residency, drawPool) {
+    return state.referenceByKey.get(groupKey(huntCode, residency, drawPool)) || null;
   }
 
-  function getEngineRows(huntCode, residency) {
-    return state.engineGroups.get(groupKey(huntCode, residency)) || [];
+  function getEngineRows(huntCode, residency, drawPool) {
+    return state.engineGroups.get(groupKey(huntCode, residency, drawPool)) || [];
   }
 
   function getModeledCoverageStatus(meta, hasEngineGroup) {
@@ -661,8 +677,8 @@
 
   function renderFilterReadout(filters) {
     els.filterReadout.textContent = filters.huntCode
-      ? `${filters.huntCode} · ${filters.residency} · ${filters.points} point${filters.points === 1 ? '' : 's'}.`
-      : `${filters.residency} · ${filters.points} point${filters.points === 1 ? '' : 's'}.`;
+      ? `${filters.huntCode} · ${filters.residency} · ${filters.drawPool} · ${filters.points} point${filters.points === 1 ? '' : 's'}.`
+      : `${filters.residency} · ${filters.drawPool} · ${filters.points} point${filters.points === 1 ? '' : 's'}.`;
 
     els.plannerReadout.textContent = state.selectedHuntCode
       ? `Planner handoff: ${state.selectedHuntCode}.`
@@ -950,11 +966,11 @@
     }).join('')}</div>`;
   }
 
-  function renderLadder(meta, huntCode, residency, points) {
+  function renderLadder(meta, huntCode, residency, points, drawPool) {
     if (!els.ladderTableWrap || !els.ladderTableEmpty || !els.ladderTableBody) return;
     setLadderHeaders(meta);
 
-    const rows = getLadderRows(huntCode, residency);
+    const rows = getLadderRows(huntCode, residency, drawPool);
     if (!rows.length) {
       els.ladderTableWrap.hidden = true;
       els.ladderTableEmpty.hidden = false;
@@ -976,8 +992,8 @@
     els.ladderTableBody.innerHTML = rows.map((row) => {
       const markers = [];
       const classes = [];
-      const referenceRow = getReferenceRow(huntCode, residency);
-      const historicalPointRow = state.engineHistoryByPoint.get(rowKey(huntCode, residency, row.points)) || null;
+      const referenceRow = getReferenceRow(huntCode, residency, drawPool);
+      const historicalPointRow = state.engineHistoryByPoint.get(rowKey(huntCode, residency, row.points, drawPool)) || null;
       const userPoints = getCurrentPoints();
       const isUserRow = Number(row.points) === Number(userPoints);
 
@@ -1050,15 +1066,15 @@
   }
 
   function renderDetail(filters) {
-    const meta = findMeta(filters.huntCode, filters.residency);
-    const engineRows = getEngineRows(filters.huntCode, filters.residency);
-    const engineRow = getEngineRow(filters.huntCode, filters.residency, filters.points);
-    const ladderRows = getLadderRows(filters.huntCode, filters.residency);
+    const meta = findMeta(filters.huntCode, filters.residency, filters.drawPool);
+    const engineRows = getEngineRows(filters.huntCode, filters.residency, filters.drawPool);
+    const engineRow = getEngineRow(filters.huntCode, filters.residency, filters.points, filters.drawPool);
+    const ladderRows = getLadderRows(filters.huntCode, filters.residency, filters.drawPool);
     const ladderPointRow = ladderRows.find((row) => Number(row.points) === Number(filters.points)) || null;
     // Prefer exact engine row when present, otherwise fall back to the ladder row
     // for the selected point so summary cards don't collapse to "Not available".
     const summaryRow = engineRow || ladderPointRow || null;
-    const referenceRow = getReferenceRow(filters.huntCode, filters.residency);
+    const referenceRow = getReferenceRow(filters.huntCode, filters.residency, filters.drawPool);
     const coverageMessage = getModeledCoverageStatus(meta, engineRows.length > 0 || ladderRows.length > 0);
 
     if (!filters.huntCode || (!meta && !engineRows.length)) {
@@ -1093,7 +1109,7 @@
     }
 
     renderSummary(meta, summaryRow, filters, coverageMessage, referenceRow);
-    renderLadder(meta, filters.huntCode, filters.residency, filters.points);
+    renderLadder(meta, filters.huntCode, filters.residency, filters.points, filters.drawPool);
 
     state.selectedMeta = meta;
     state.selectedFilters = filters;
@@ -1113,6 +1129,7 @@
       species: meta.species,
       weapon: meta.weapon,
       residency: filters.residency,
+      draw_pool: filters.drawPool,
       selected_points: filters.points,
       draw_outlook: engineRow?.draw_outlook || '',
       updated_at: Date.now(),
@@ -1150,6 +1167,7 @@
         <span class="label">${escapeHtml(item.hunt_code)}</span>
         <h4>${escapeHtml(item.hunt_name || item.hunt_code)}</h4>
         <p>${escapeHtml(item.species || '')}${item.weapon ? ` · ${escapeHtml(item.weapon)}` : ''} · ${escapeHtml(item.residency || 'Resident')} · ${formatInteger(item.selected_points)} points</p>
+        <p>Pool: ${escapeHtml(normalizeDrawPool(item.draw_pool))}</p>
         <p>${escapeHtml(item.draw_outlook || 'Saved for later review.')}</p>
         <div class="backpack-actions">
           <button class="mini-btn" type="button" data-basket-load="${escapeHtml(item.hunt_code)}">Load</button>
@@ -1164,6 +1182,7 @@
         if (!item) return;
         els.huntCodeInput.value = item.hunt_code || '';
         els.residencySelect.value = item.residency || 'Resident';
+        if (els.drawPoolSelect) els.drawPoolSelect.value = normalizeDrawPool(item.draw_pool);
         els.pointsInput.value = String(item.selected_points ?? 0);
         runResearch();
       });
@@ -1202,6 +1221,7 @@
     const queryHunt = normalizeKey(params.get('hunt_code'));
     const storedHunt = normalizeKey(localStorage.getItem(SELECTED_HUNT_KEY));
     const storedResidency = normalizeResidencyLabel(localStorage.getItem(SELECTED_RESIDENCY_KEY));
+    const storedDrawPool = normalizeDrawPool(localStorage.getItem(SELECTED_DRAW_POOL_KEY));
     const storedPoints = localStorage.getItem(SELECTED_POINTS_KEY);
     const bootstrapHunt = queryHunt || storedHunt;
 
@@ -1211,6 +1231,7 @@
     }
 
     els.residencySelect.value = storedResidency;
+    if (els.drawPoolSelect) els.drawPoolSelect.value = storedDrawPool;
 
     if (storedPoints !== null && storedPoints !== '') {
       els.pointsInput.value = storedPoints;
@@ -1226,6 +1247,7 @@
     state.selectedHuntCode = filters.huntCode;
 
     localStorage.setItem(SELECTED_RESIDENCY_KEY, filters.residency);
+    localStorage.setItem(SELECTED_DRAW_POOL_KEY, filters.drawPool);
     localStorage.setItem(SELECTED_POINTS_KEY, String(filters.points));
 
     if (filters.huntCode) {
@@ -1241,10 +1263,12 @@
   function clearFilters() {
     els.huntCodeInput.value = '';
     els.residencySelect.value = 'Resident';
+    if (els.drawPoolSelect) els.drawPoolSelect.value = 'standard';
     els.pointsInput.value = '12';
     state.selectedHuntCode = '';
     localStorage.removeItem(SELECTED_HUNT_KEY);
     localStorage.setItem(SELECTED_RESIDENCY_KEY, 'Resident');
+    localStorage.setItem(SELECTED_DRAW_POOL_KEY, 'standard');
     localStorage.setItem(SELECTED_POINTS_KEY, '12');
     runResearch();
   }
@@ -1260,8 +1284,8 @@
 
     els.addToBasketButton?.addEventListener('click', () => {
       const filters = buildFilters();
-      const meta = findMeta(filters.huntCode, filters.residency);
-      const engineRow = getEngineRow(filters.huntCode, filters.residency, filters.points);
+      const meta = findMeta(filters.huntCode, filters.residency, filters.drawPool);
+      const engineRow = getEngineRow(filters.huntCode, filters.residency, filters.points, filters.drawPool);
       upsertBasketItem(meta, filters, engineRow);
     });
 
@@ -1278,7 +1302,7 @@
       window.setTimeout(() => target.classList.remove('jump-flash'), 900);
     });
 
-    [els.residencySelect].forEach((el) => {
+    [els.residencySelect, els.drawPoolSelect].forEach((el) => {
       el?.addEventListener('change', runResearch);
     });
 
@@ -1291,12 +1315,12 @@
       if (!trigger || !state.selectedMeta || !state.selectedFilters) return;
 
       const point = Number.parseInt(trigger.getAttribute('data-point') || '', 10);
-      const row = getLadderRows(state.selectedFilters.huntCode, state.selectedFilters.residency)
+      const row = getLadderRows(state.selectedFilters.huntCode, state.selectedFilters.residency, state.selectedFilters.drawPool)
         .find((candidate) => candidate.points === point);
 
       if (!row) return;
 
-      const referenceRow = getReferenceRow(state.selectedFilters.huntCode, state.selectedFilters.residency);
+      const referenceRow = getReferenceRow(state.selectedFilters.huntCode, state.selectedFilters.residency, state.selectedFilters.drawPool);
       openSourceModal(state.selectedMeta, row, referenceRow, state.selectedFilters.residency);
     });
 
