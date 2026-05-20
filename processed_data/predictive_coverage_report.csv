@@ -1,0 +1,1617 @@
+hunt_code,in_forecast,in_backtest,in_current_database,forecast_eligible_2026,exclusion_reason,hunt_type,species,hunt_name,permits_2026_res,permits_2026_nr,permits_2026_total
+BI1000,False,True,True,False,not_OIL_LE_PLE,Statewide,Bison,Bison - Statewide Permit,,,
+BI6500,True,True,True,True,included_forecast,Once-in-a-lifetime,Bison,Antelope Island,2,0,2
+BI6503,True,True,True,True,included_forecast,Once-in-a-lifetime,Bison,Henry Mtns,4,2,6
+BI6504,True,True,True,True,included_forecast,Once-in-a-lifetime,Bison,Henry Mtns,5,2,7
+BI6505,True,True,True,True,included_forecast,Once-in-a-lifetime,Bison,Henry Mtns,8,3,11
+BI6506,True,True,True,True,included_forecast,Once-in-a-lifetime,Bison,Henry Mtns,11,0,11
+BI6509,True,True,True,True,included_forecast,Once-in-a-lifetime,Bison,Henry Mtns,5,0,5
+BI6516,True,True,True,True,included_forecast,Once-in-a-lifetime,Bison,Henry Mtns,6,0,6
+BI6517,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+BI6519,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+BI6520,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+BI6521,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+BI6523,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+BI6524,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+BI6526,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+BI6527,False,True,True,False,not_OIL_LE_PLE,General Season,Bison,Nine Mile,,,
+BI6528,True,True,True,True,included_forecast,Once-in-a-lifetime,Bison,"Book Cliffs, Little Creek/South",6,0,6
+BI6529,True,True,True,True,included_forecast,Once-in-a-lifetime,Bison,"Book Cliffs, Little Creek/South",8,0,8
+BI6530,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+BI6531,True,True,True,True,included_forecast,Once-in-a-lifetime,Bison,"Book Cliffs, Little Creek/South",10,0,10
+BI6532,True,True,True,True,included_forecast,Once-in-a-lifetime,Bison,"Book Cliffs, Bitter Creek",6,0,6
+BI6533,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+BI6534,True,True,True,True,included_forecast,Once-in-a-lifetime,Bison,"Book Cliffs, Bitter Creek",10,0,10
+BI6535,True,True,True,True,included_forecast,Once-in-a-lifetime,Bison,"Book Cliffs, Bitter Creek",8,0,8
+BI6536,True,True,True,True,included_forecast,Once-in-a-lifetime,Bison,"Book Cliffs, Bitter Creek",15,0,15
+BI6537,True,True,True,True,included_forecast,Once-in-a-lifetime,Bison,"Book Cliffs, Little Creek/South",8,7,15
+BI6538,False,True,True,False,not_OIL_LE_PLE,General Season,Bison,"Nine Mile, Private Lands Only",,,
+BI6539,True,True,True,True,included_forecast,Once-in-a-lifetime,Bison,Henry Mtns,11,0,11
+BR1000,False,True,True,False,not_OIL_LE_PLE,Statewide,Black Bear,Black Bear - Statewide Permit,,,
+BR1001,False,True,True,False,not_OIL_LE_PLE,Harvest Objective,Black Bear,Black Bear Harvest Objective Units,,,
+BR1007,False,True,True,False,not_OIL_LE_PLE,Pursuit,Black Bear,Black Bear Pursuit - Resident,,,
+BR1008,False,True,True,False,not_OIL_LE_PLE,Restricted Pursuit - Summer,Black Bear,Book Cliffs,26,2,28
+BR1009,False,True,True,False,not_OIL_LE_PLE,Restricted Pursuit - Summer,Black Bear,La Sal,14,1,15
+BR1010,False,True,True,False,not_OIL_LE_PLE,Restricted Pursuit - Summer,Black Bear,San Juan,14,1,15
+BR1011,False,True,True,False,not_OIL_LE_PLE,Restricted Pursuit - Late Summer,Black Bear,Book Cliffs,26,2,28
+BR1012,False,True,True,False,not_OIL_LE_PLE,Restricted Pursuit - Late Summer,Black Bear,La Sal,14,1,15
+BR1013,False,True,True,False,not_OIL_LE_PLE,Restricted Pursuit - Late Summer,Black Bear,San Juan,14,1,15
+BR1015,False,True,True,False,not_OIL_LE_PLE,Restricted Pursuit - Spring,Black Bear,Book Cliffs,0,2,2
+BR1016,False,True,True,False,not_OIL_LE_PLE,Restricted Pursuit - Spring,Black Bear,San Juan,0,2,2
+BR1017,False,True,True,False,not_OIL_LE_PLE,Restricted Pursuit - Spring,Black Bear,La Sal,0,2,2
+BR1018,False,True,True,False,not_OIL_LE_PLE,Pursuit,Black Bear,Black Bear Pursuit - Nonresident,,,
+BR7000,True,True,True,True,included_forecast,Limited Entry - Spring,Black Bear,Beaver,9,1,10
+BR7001,True,True,True,True,included_forecast,Limited Entry - Spring,Black Bear,Book Cliffs Bitter Creek/South,49,5,54
+BR7003,True,True,True,True,included_forecast,Limited Entry - Spring,Black Bear,Manti North,17,2,19
+BR7004,True,True,True,True,included_forecast,Limited Entry - Spring,Black Bear,Manti South/San Rafael North,18,0,18
+BR7005,True,True,True,True,included_forecast,Limited Entry - Spring,Black Bear,Nebo,7,0,7
+BR7007,True,True,True,True,included_forecast,Limited Entry - Spring,Black Bear,Fillmore Pahvant,1,0,1
+BR7008,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+BR7009,True,True,True,True,included_forecast,Limited Entry - Spring,Black Bear,Mt Dutton,4,0,4
+BR7010,True,True,True,True,included_forecast,Limited Entry - Spring,Black Bear,Panguitch Lake/Zion,9,0,9
+BR7011,True,True,True,True,included_forecast,Limited Entry - Spring,Black Bear,Paunsaugunt,4,0,4
+BR7012,True,True,True,True,included_forecast,Limited Entry - Spring,Black Bear,Boulder/Kaiparowits,20,2,22
+BR7013,True,True,True,True,included_forecast,Limited Entry - Spring,Black Bear,Fishlake/Thousand Lakes,7,0,7
+BR7014,True,True,True,True,included_forecast,Limited Entry - Spring,Black Bear,San Juan,35,3,38
+BR7015,True,True,True,True,included_forecast,Limited Entry - Spring,Black Bear,Diamond Mtn/Vernal/Bonanza,7,0,7
+BR7016,True,True,True,True,included_forecast,Limited Entry - Spring,Black Bear,Wasatch Mtns West-Central,36,4,40
+BR7017,True,True,True,True,included_forecast,Limited Entry - Spring,Black Bear,Cache/Ogden,2,0,2
+BR7018,True,True,True,True,included_forecast,Limited Entry - Spring,Black Bear,Kamas/North Slope Summit,5,0,5
+BR7019,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+BR7020,True,True,True,True,included_forecast,Limited Entry - Spring,Black Bear,Monroe,1,0,1
+BR7021,True,True,True,True,included_forecast,Limited Entry - Spring,Black Bear,Dolores Triangle,2,0,2
+BR7022,True,True,True,True,included_forecast,Limited Entry - Spring,Black Bear,La Sal Mtns,40,3,43
+BR7100,True,True,True,True,included_forecast,Limited Entry - Summer,Black Bear,Beaver,9,1,10
+BR7101,True,True,True,True,included_forecast,Limited Entry - Summer,Black Bear,Book Cliffs Bitter Creek/South,14,1,15
+BR7102,True,True,True,True,included_forecast,Limited Entry - Summer,Black Bear,Book Cliffs Little Creek Roadless,5,0,5
+BR7104,True,True,True,True,included_forecast,Limited Entry - Summer,Black Bear,Manti North,17,1,18
+BR7105,True,True,True,True,included_forecast,Limited Entry - Summer,Black Bear,Manti South/San Rafael North,18,2,20
+BR7106,True,True,True,True,included_forecast,Limited Entry - Summer,Black Bear,Nebo,8,0,8
+BR7108,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+BR7109,True,True,True,True,included_forecast,Limited Entry - Summer,Black Bear,Mt Dutton,3,0,3
+BR7110,True,True,True,True,included_forecast,Limited Entry - Summer,Black Bear,Nine Mile,18,2,20
+BR7111,True,True,True,True,included_forecast,Limited Entry - Summer,Black Bear,North Slope Three Corners/West Daggett,1,0,1
+BR7112,True,True,True,True,included_forecast,Limited Entry - Summer,Black Bear,Panguitch Lake/Zion,5,0,5
+BR7113,True,True,True,True,included_forecast,Limited Entry - Summer,Black Bear,Paunsaugunt,3,0,3
+BR7114,True,True,True,True,included_forecast,Limited Entry - Summer,Black Bear,Boulder/Kaiparowits,13,1,14
+BR7115,True,True,True,True,included_forecast,Limited Entry - Summer,Black Bear,Fishlake/Thousand Lakes,7,0,7
+BR7116,True,True,True,True,included_forecast,Limited Entry - Summer,Black Bear,San Juan,22,2,24
+BR7117,True,True,True,True,included_forecast,Limited Entry - Summer,Black Bear,Diamond Mtn/Vernal/Bonanza,5,0,5
+BR7118,True,True,True,True,included_forecast,Limited Entry - Summer,Black Bear,Yellowstone,5,0,5
+BR7119,True,True,True,True,included_forecast,Limited Entry - Summer,Black Bear,Wasatch Mtns Avintaquin/Currant Creek,5,0,5
+BR7120,True,True,True,True,included_forecast,Limited Entry - Summer,Black Bear,Wasatch Mtns West-Central,22,1,23
+BR7121,True,True,True,True,included_forecast,Limited Entry - Summer,Black Bear,Cache/Ogden,4,0,4
+BR7122,True,True,True,True,included_forecast,Limited Entry - Summer,Black Bear,Chalk Creek/East Canyon/Morgan-South Rich,7,0,7
+BR7123,True,True,True,True,included_forecast,Limited Entry - Summer,Black Bear,Kamas/North Slope Summit,6,0,6
+BR7124,True,True,True,True,included_forecast,Limited Entry - Summer,Black Bear,Fillmore Pahvant,2,0,2
+BR7125,True,True,True,True,included_forecast,Limited Entry - Summer,Black Bear,Monroe,1,0,1
+BR7126,True,True,True,True,included_forecast,Limited Entry - Summer,Black Bear,Dolores Triangle,6,0,6
+BR7127,True,True,True,True,included_forecast,Limited Entry - Summer,Black Bear,La Sal Mtns,25,2,27
+BR7200,True,True,True,True,included_forecast,Limited Entry - Fall,Black Bear,Beaver,9,1,10
+BR7201,True,True,True,True,included_forecast,Limited Entry - Fall,Black Bear,Book Cliffs Bitter Creek/South,18,2,20
+BR7203,True,True,True,True,included_forecast,Limited Entry - Fall,Black Bear,Manti North,10,1,11
+BR7204,True,True,True,True,included_forecast,Limited Entry - Fall,Black Bear,Manti South/San Rafael North,18,2,20
+BR7205,True,True,True,True,included_forecast,Limited Entry - Fall,Black Bear,Nebo,5,0,5
+BR7207,True,True,True,True,included_forecast,Limited Entry - Fall,Black Bear,Fillmore Pahvant,1,0,1
+BR7208,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+BR7209,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+BR7210,True,True,True,True,included_forecast,Limited Entry - Fall,Black Bear,Mt Dutton,3,0,3
+BR7211,True,True,True,True,included_forecast,Limited Entry - Fall,Black Bear,Nine Mile,26,3,29
+BR7212,True,True,True,True,included_forecast,Limited Entry - Fall,Black Bear,North Slope Three Corners/West Daggett,2,0,2
+BR7213,True,True,True,True,included_forecast,Limited Entry - Fall,Black Bear,Panguitch Lake/Zion,9,0,9
+BR7214,True,True,True,True,included_forecast,Limited Entry - Fall,Black Bear,Paunsaugunt,4,0,4
+BR7215,True,True,True,True,included_forecast,Limited Entry - Fall,Black Bear,Boulder/Kaiparowits,9,1,10
+BR7216,True,True,True,True,included_forecast,Limited Entry - Fall,Black Bear,Fishlake/Thousand Lakes,5,0,5
+BR7217,True,True,True,True,included_forecast,Limited Entry - Fall,Black Bear,San Juan,6,0,6
+BR7218,True,True,True,True,included_forecast,Limited Entry - Fall,Black Bear,Diamond Mtn/Vernal/Bonanza,7,0,7
+BR7219,True,True,True,True,included_forecast,Limited Entry - Fall,Black Bear,Yellowstone,4,0,4
+BR7220,True,True,True,True,included_forecast,Limited Entry - Fall,Black Bear,Wasatch Mtns Avintaquin/Currant Creek,9,0,9
+BR7221,True,True,True,True,included_forecast,Limited Entry - Fall,Black Bear,Wasatch Mtns West-Central,18,2,20
+BR7224,True,True,True,True,included_forecast,Limited Entry - Spring,Black Bear,Book Cliffs Little Creek Roadless,14,1,15
+BR7225,False,True,True,False,not_OIL_LE_PLE,Spot and Stalk,Black Bear,Book Cliffs Little Creek Roadless,5,0,5
+BR7226,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+BR7227,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+BR7228,True,True,True,True,included_forecast,Limited Entry - Fall,Black Bear,Cache/Ogden,1,0,1
+BR7229,True,True,True,True,included_forecast,Limited Entry - Fall,Black Bear,Kamas/North Slope Summit,4,0,4
+BR7230,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+BR7231,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+BR7232,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+BR7233,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+BR7234,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+BR7235,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+BR7236,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+BR7237,True,True,True,True,included_forecast,Limited Entry - Fall,Black Bear,Monroe,1,0,1
+BR7238,True,True,True,True,included_forecast,Limited Entry - Fall,Black Bear,Dolores Triangle,2,0,2
+BR7239,True,True,True,True,included_forecast,Limited Entry - Fall,Black Bear,La Sal Mtns,6,0,6
+BR7300,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,Book Cliffs Bitter Creek/South,9,1,10
+BR7301,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,Book Cliffs Little Creek Roadless,5,0,5
+BR7303,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,Manti North,13,1,14
+BR7304,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,Manti South/San Rafael North,18,2,20
+BR7305,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,Nebo,5,0,5
+BR7307,False,True,True,False,not_OIL_LE_PLE,Multiseason - Conservation,Black Bear,La Sal,,,
+BR7308,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,North Slope Three Corners/West Daggett,1,0,1
+BR7309,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,Panguitch Lake/Zion,4,0,4
+BR7310,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,Boulder/Kaiparowits,10,1,11
+BR7311,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,Fishlake/Thousand Lakes,3,0,3
+BR7312,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,San Juan,11,1,12
+BR7313,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,Diamond Mtn/Vernal/Bonanza,5,0,5
+BR7314,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,Yellowstone,3,0,3
+BR7315,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,Wasatch Mtns Avintaquin/Currant Creek,3,0,3
+BR7316,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,Wasatch Mtns West-Central,14,1,15
+BR7317,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,Nine Mile,9,1,10
+BR7318,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,Beaver,1,0,1
+BR7320,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,Cache/Ogden,4,0,4
+BR7321,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,Kamas/North Slope Summit,5,0,5
+BR7322,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,Mt Dutton,1,0,1
+BR7323,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,Paunsaugunt,1,0,1
+BR7324,False,True,True,False,not_OIL_LE_PLE,Conservation,Black Bear,Chalk Creek/East Canyon/Morgan-South Rich,,,
+BR7325,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,Chalk Creek/East Canyon/Morgan-South Rich,1,0,1
+BR7326,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,La Sal Mtns,13,1,14
+CG1029,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+CG1034,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+CG7502,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+CG7503,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+CG7506,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+CG7602,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+CG7603,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+CG7605,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+CG7610,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+CG7612,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+CG9999,False,True,True,False,not_OIL_LE_PLE,Statewide,Cougar,Cougar - Statewide,,,
+DA1000,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DA1001,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"Box Elder, West Bear River",,,30
+DA1002,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"Box Elder, West Bear River",,,30
+DA1003,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"Monroe/Plateau, Sevier Valley",,,15
+DA1004,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DA1007,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DA1009,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"Pine Valley, Enterprise",,,25
+DA1011,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,George Creek CWMU,5,0,5
+DA1012,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Junction Valley CWMU,15,0,15
+DA1013,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Mt Carmel CWMU,5,0,5
+DA1017,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DA1018,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"Pine Valley, New Harmony",,,20
+DA1026,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DA1027,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"East Canyon, Davis-North Salt Lake",,,30
+DA1028,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DA1029,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DA1030,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"Nine Mile, Price River Valley",,,25
+DA1031,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"Oquirrh-Stansbury, Settlement Cyn",,,20
+DA1033,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"San Juan, Monticello",,,5
+DA1039,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DA1040,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DA1041,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"Nine Mile, Green River Valley",,,15
+DA1042,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"San Juan, Monticello",,,5
+DA1043,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DA1044,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DA1045,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"Fillmore, Oak City",,,20
+DA1046,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"Nine Mile, Price River Valley",,,25
+DA1047,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Vernal-Ouray Valley,,,25
+DA1048,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Fillmore City,,,15
+DA1049,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"Vernal, Ashley Valley",,,35
+DA1050,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,The Rose of Snowville CWMU,8,0,8
+DB0001,False,True,True,False,not_OIL_LE_PLE,Tribal,Deer,Southeastern Navajo Buck Deer,,,
+DB0002,False,True,True,False,not_OIL_LE_PLE,Tribal,Deer,Southeastern Navajo Buck Deer,,,
+DB0003,False,True,True,False,not_OIL_LE_PLE,Tribal,Deer,Southeastern Navajo Buck Deer,,,
+DB0004,False,True,True,False,not_OIL_LE_PLE,Tribal,Deer,Southern Navajo Buck Deer,,,
+DB0005,False,True,True,False,not_OIL_LE_PLE,Tribal,Deer,Southern Navajo Buck Deer,,,
+DB0006,False,True,True,False,not_OIL_LE_PLE,Tribal,Deer,Southern Navajo Buck Deer,,,
+DB0007,False,True,True,False,not_OIL_LE_PLE,Statewide,Deer,Buck Deer - Statewide Permit,,,1
+DB0008,False,True,True,False,not_OIL_LE_PLE,Extended Archery,Deer,Extended Archery Deer,,,2000
+DB0009,False,True,True,False,missing_forecast_quota,Premium Limited Entry,Deer,Antelope Island - Conservation/Expo,,,
+DB0010,False,True,True,False,not_OIL_LE_PLE,Tribal,Deer,Southern Paiute Buck Deer (early),,,
+DB0011,False,True,True,False,not_OIL_LE_PLE,Tribal,Deer,Southern Paiute Buck Deer,,,
+DB0012,False,True,True,False,not_OIL_LE_PLE,Tribal,Deer,Southern Paiute Buck Deer,,,
+DB0013,False,True,True,False,not_OIL_LE_PLE,Tribal,Deer,Southern Paiute Buck Deer (late),,,
+DB1000,True,True,True,True,included_forecast,Premium Limited Entry,Deer,Henry Mtns,8,1,9
+DB1001,True,True,True,True,included_forecast,Premium Limited Entry,Deer,Paunsaugunt,26,3,29
+DB1002,True,True,True,True,included_forecast,Premium Limited Entry,Deer,Antelope Island,1,0,1
+DB1003,True,True,True,True,included_forecast,Premium Limited Entry,Deer,Henry Mtns,24,3,27
+DB1004,True,True,True,True,included_forecast,Premium Limited Entry,Deer,Paunsaugunt,75,8,83
+DB1005,True,True,True,True,included_forecast,Premium Limited Entry,Deer,Henry Mtns,8,1,9
+DB1006,True,True,True,True,included_forecast,Premium Limited Entry,Deer,Paunsaugunt,26,3,29
+DB1007,True,True,True,True,included_forecast,Premium Limited Entry,Deer,Henry Mtns,1,0,1
+DB1008,True,True,True,True,included_forecast,Premium Limited Entry,Deer,Paunsaugunt,3,1,4
+DB1009,False,True,True,False,not_OIL_LE_PLE,Management Buck Deer,Deer,Henry Mtns (Management Buck Deer),10,1,11
+DB1010,True,True,True,False,included_forecast,Management Buck Deer,Deer,Paunsaugunt,30,3,33
+DB1011,True,True,True,True,included_forecast,Limited Entry,Deer,Book Cliffs,55,6,61
+DB1012,True,True,True,True,included_forecast,Limited Entry,Deer,"Fillmore, Oak Creek LE",12,1,13
+DB1013,True,True,True,True,included_forecast,Limited Entry,Deer,Dolores Triangle,5,0,5
+DB1014,True,True,True,True,included_forecast,Limited Entry,Deer,"San Juan, Elk Ridge",15,2,17
+DB1015,True,True,True,True,included_forecast,Limited Entry,Deer,Diamond Mtn,22,2,24
+DB1016,True,True,True,True,included_forecast,Limited Entry,Deer,"West Desert, Vernon",46,5,51
+DB1017,True,True,True,True,included_forecast,Limited Entry,Deer,"Book Cliffs, North",137,15,152
+DB1018,True,True,True,True,included_forecast,Limited Entry,Deer,"Book Cliffs, South",34,4,38
+DB1019,True,True,True,True,included_forecast,Limited Entry,Deer,"Fillmore, Oak Creek LE",33,4,37
+DB1020,True,True,True,True,included_forecast,Limited Entry,Deer,Dolores Triangle,13,2,15
+DB1022,True,True,True,True,included_forecast,Limited Entry,Deer,"San Juan, Elk Ridge",42,5,47
+DB1023,True,True,True,True,included_forecast,Limited Entry,Deer,Diamond Mtn,61,7,68
+DB1024,True,True,True,True,included_forecast,Limited Entry,Deer,"West Desert, Vernon",130,14,144
+DB1025,True,True,True,True,included_forecast,Limited Entry,Deer,Book Cliffs,55,6,61
+DB1026,True,True,True,True,included_forecast,Limited Entry,Deer,"Cache, Crawford Mtn",8,1,9
+DB1027,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1028,True,True,True,True,included_forecast,Limited Entry,Deer,Fillmore,11,1,12
+DB1029,True,True,True,True,included_forecast,Limited Entry,Deer,"Fillmore, Oak Creek LE",12,1,13
+DB1030,True,True,True,True,included_forecast,Limited Entry,Deer,Kamas,4,1,5
+DB1031,True,True,True,True,included_forecast,Limited Entry,Deer,Dolores Triangle,5,0,5
+DB1032,True,True,True,True,included_forecast,Limited Entry,Deer,Monroe,5,1,6
+DB1033,True,True,True,True,included_forecast,Limited Entry,Deer,Nine Mile,6,1,7
+DB1034,True,True,True,True,included_forecast,Limited Entry,Deer,Pine Valley,13,2,15
+DB1036,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1037,True,True,True,True,included_forecast,Limited Entry,Deer,"San Juan, Elk Ridge",15,2,17
+DB1038,True,True,True,True,included_forecast,Limited Entry,Deer,Diamond Mtn,22,2,24
+DB1039,True,True,True,True,included_forecast,Limited Entry,Deer,Yellowstone,6,1,7
+DB1040,True,True,True,True,included_forecast,Limited Entry,Deer,Southwest Desert,4,1,5
+DB1041,True,True,True,True,included_forecast,Limited Entry,Deer,"Wasatch Mtns, East",30,3,33
+DB1042,True,True,True,True,included_forecast,Limited Entry,Deer,"West Desert, Vernon",46,5,51
+DB1043,True,True,True,True,included_forecast,Limited Entry,Deer,Zion,15,2,17
+DB1044,True,True,True,True,included_forecast,Limited Entry,Deer,Book Cliffs,8,1,9
+DB1045,True,True,True,True,included_forecast,Limited Entry,Deer,"Fillmore, Oak Creek LE",2,0,2
+DB1046,True,True,True,True,included_forecast,Limited Entry,Deer,"San Juan, Elk Ridge",2,0,2
+DB1047,True,True,True,True,included_forecast,Limited Entry,Deer,Diamond Mtn,4,0,4
+DB1048,True,True,True,True,included_forecast,Limited Entry,Deer,"West Desert, Vernon",7,1,8
+DB1053,True,True,True,True,included_forecast,Limited Entry,Deer,Mt Dutton,4,1,5
+DB1054,True,True,True,True,included_forecast,Limited Entry,Deer,Ogden,13,1,14
+DB1055,True,True,True,True,included_forecast,Limited Entry,Deer,Fishlake,6,1,7
+DB1056,False,True,True,False,not_OIL_LE_PLE,Conservation,Deer,Book Cliffs (North & South),,,
+DB1058,True,True,True,False,included_forecast,Cactus Buck,Deer,Paunsaugunt,18,2,20
+DB1059,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1065,True,True,True,True,included_forecast,Limited Entry,Deer,North Slope,14,2,16
+DB1073,True,True,True,False,included_forecast,Management Buck Deer,Deer,Paunsaugunt,10,1,11
+DB1074,True,True,True,False,included_forecast,Management Buck Deer,Deer,Paunsaugunt,10,1,11
+DB1075,False,True,True,False,not_OIL_LE_PLE,Conservation,Deer,Book Cliffs (North & South),,,
+DB1076,False,True,True,False,not_OIL_LE_PLE,Conservation,Deer,Book Cliffs (North & South),,,
+DB1077,True,True,True,True,included_forecast,Limited Entry,Deer,Box Elder,23,3,26
+DB1078,True,True,True,True,included_forecast,Limited Entry,Deer,Cache,11,1,12
+DB1079,True,True,True,True,included_forecast,Limited Entry,Deer,Manti/San Rafael,40,5,45
+DB1080,True,True,True,True,included_forecast,Limited Entry,Deer,Nebo,23,3,26
+DB1081,True,True,True,True,included_forecast,Limited Entry,Deer,La Sal Mtns,8,1,9
+DB1082,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1083,True,True,True,True,included_forecast,Limited Entry,Deer,Panguitch Lake,12,1,13
+DB1084,True,True,True,True,included_forecast,Limited Entry,Deer,Boulder/Kaiparowits,12,1,13
+DB1085,True,True,True,True,included_forecast,Limited Entry,Deer,"San Juan, Abajo Mtns",13,1,14
+DB1086,True,True,True,True,included_forecast,Limited Entry,Deer,Vernal/Bonanza,6,1,7
+DB1087,True,True,True,True,included_forecast,Limited Entry,Deer,"Wasatch Mtns, West",36,4,40
+DB1088,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1089,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1090,True,True,True,True,included_forecast,Limited Entry,Deer,"Book Cliffs, Floy Canyon",6,1,7
+DB1091,True,True,True,True,included_forecast,Limited Entry,Deer,Kaiparowits HAMSS,4,1,5
+DB1092,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1094,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1100,True,True,True,True,included_forecast,Limited Entry,Deer,Chalk Creek,10,1,11
+DB1101,True,True,True,True,included_forecast,Limited Entry,Deer,East Canyon,9,1,10
+DB1103,True,True,True,True,included_forecast,Limited Entry,Deer,Morgan-South Rich,7,1,8
+DB1105,True,True,True,True,included_forecast,Limited Entry,Deer,East Canyon,6,1,7
+DB1106,True,True,True,True,included_forecast,Limited Entry,Deer,Thousand Lakes,20,2,22
+DB1107,True,True,True,True,included_forecast,Limited Entry,Deer,Thousand Lakes,20,2,22
+DB1108,True,True,True,True,included_forecast,Limited Entry,Deer,Thousand Lakes,27,3,30
+DB1109,True,True,True,True,included_forecast,Limited Entry,Deer,Thousand Lakes,2,0,2
+DB1110,True,True,True,True,included_forecast,Limited Entry,Deer,"Beaver, East",10,1,11
+DB1111,True,True,True,True,included_forecast,Limited Entry,Deer,"Beaver, West",4,1,5
+DB1112,True,True,True,True,included_forecast,Limited Entry,Deer,"West Desert, Swasey",4,1,5
+DB1113,True,True,True,True,included_forecast,Limited Entry,Deer,Oquirrh/Tintic,10,1,11
+DB1114,True,True,True,True,included_forecast,Limited Entry,Deer,Cedar/Stansbury,5,1,6
+DB1115,True,True,True,True,included_forecast,Limited Entry,Deer,Little Rockies,4,1,5
+DB1116,True,True,True,True,included_forecast,Limited Entry,Deer,"San Juan, Mancos Mesa",4,1,5
+DB1118,False,True,True,False,not_OIL_LE_PLE,Conservation,Deer,Dolores Triangle,,,
+DB1119,True,True,True,True,included_forecast,Limited Entry,Deer,Moab Valley,9,1,10
+DB1120,True,True,True,True,included_forecast,Limited Entry,Deer,Castle Valley,13,2,15
+DB1121,False,True,True,False,not_OIL_LE_PLE,Management Buck Deer,Deer,Antelope Island,2,0,2
+DB1200,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Alton - Premium Buck CWMU,3,0,3
+DB1201,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Alton - Management Buck CWMU,1,0,1
+DB1202,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Antelope Creek CWMU,1,0,1
+DB1203,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Avintaquin Canyon CWMU,1,0,1
+DB1204,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Bally Watts CWMU,1,0,1
+DB1205,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Bar J Ranch CWMU,1,0,1
+DB1206,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Bear Mountain CWMU,1,0,1
+DB1207,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Bear Springs CWMU,1,0,1
+DB1208,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Blackhawk CWMU,2,0,2
+DB1209,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Blind Springs CWMU,1,0,1
+DB1210,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1211,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Blue Spring Hills CWMU,1,0,1
+DB1212,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Bluebell CWMU,1,0,1
+DB1213,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Boobe Hole CWMU,2,0,2
+DB1215,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Buckhorn Ranch CWMU,1,0,1
+DB1216,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Castle Valley Outdoors CWMU,1,0,1
+DB1217,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Causey Spring CWMU,1,0,1
+DB1219,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Chimney Rock CWMU,2,0,2
+DB1222,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Coldwater Ranch CWMU,2,0,2
+DB1223,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1224,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Cotton Thomas CWMU,1,0,1
+DB1227,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Deer Haven CWMU,2,0,2
+DB1228,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Deseret CWMU,13,0,13
+DB1229,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Dilly Ranch CWMU,1,0,1
+DB1230,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Double R Ranch CWMU,2,0,2
+DB1231,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Dove Creek CWMU,2,0,2
+DB1232,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Durst Mountain CWMU,2,0,2
+DB1233,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,East Fork Chalk Creek CWMU,4,0,4
+DB1234,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,East Zion CWMU,1,0,1
+DB1236,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Engineer Springs CWMU,1,0,1
+DB1237,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Ensign Ranches CWMU,3,0,3
+DB1238,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Folley Ridge CWMU,3,0,3
+DB1239,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Fort Ranch CWMU,1,0,1
+DB1240,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,George Creek CWMU,1,0,1
+DB1241,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Golden Spike CWMU,1,0,1
+DB1242,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Grass Valley/Clark Canyon CWMU,14,0,14
+DB1243,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Grazing Pasture CWMU,1,0,1
+DB1244,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Green Canyon CWMU,1,0,1
+DB1245,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Guildersleeve CWMU,1,0,1
+DB1246,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Hardscrabble CWMU,2,0,2
+DB1248,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Heaston East CWMU,2,0,2
+DB1249,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Hiawatha CWMU,1,0,1
+DB1250,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Indian Creek CWMU,1,0,1
+DB1251,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Indian Head CWMU,2,0,2
+DB1252,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Ingham Peak CWMU,3,0,3
+DB1253,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Circle E Ranch CWMU,1,0,1
+DB1255,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Johnson Mountain Ranch CWMU,1,0,1
+DB1256,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Junction Valley CWMU,5,0,5
+DB1257,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1258,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Little Red Creek CWMU,1,0,1
+DB1259,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Tunnel Hollow CWMU,1,0,1
+DB1260,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Middle Ridge CWMU,1,0,1
+DB1261,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Minnie Maud Ridge CWMU,5,0,5
+DB1263,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Moon Ranch CWMU,1,0,1
+DB1264,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Mountain Meadow CWMU,1,0,1
+DB1265,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Mountain Top CWMU,2,0,2
+DB1266,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Mt Carmel CWMU,3,0,3
+DB1267,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1269,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,North Promontory CWMU,1,0,1
+DB1270,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Nucor West CWMU,1,0,1
+DB1271,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Oak Ranch CWMU,3,0,3
+DB1272,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Old Woman Plateau CWMU,3,0,3
+DB1273,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Park Valley Hereford CWMU,6,0,6
+DB1274,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Patmos Ridge CWMU,1,0,1
+DB1275,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Pine Canyon CWMU,2,0,2
+DB1276,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1277,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Pocatello Valley CWMU,1,0,1
+DB1278,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1279,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Preston Nutter Ranch CWMU,1,0,1
+DB1280,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Promontory Point CWMU,1,0,1
+DB1281,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Rattlesnake Pass CWMU,2,0,2
+DB1282,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Redd Ranches CWMU,2,0,2
+DB1283,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Roan Cliffs CWMU,1,0,1
+DB1285,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Sand Creek CWMU,1,0,1
+DB1286,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Pisgah Mountain CWMU,2,0,2
+DB1287,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Scofield Canyons CWMU,1,0,1
+DB1288,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Scofield West CWMU,2,0,2
+DB1289,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Sharp Mountain CWMU,2,0,2
+DB1290,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Skull Crack CWMU,1,0,1
+DB1291,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Skull Valley South CWMU,1,0,1
+DB1292,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Soldier Summit CWMU,2,0,2
+DB1293,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,South Canyon CWMU,1,0,1
+DB1294,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Spring Creek Acres CWMU,1,0,1
+DB1295,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Spring Creek/Dodge CWMU,6,0,6
+DB1297,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1298,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Strawberry Ridge CWMU,1,0,1
+DB1299,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Summit Point CWMU,3,0,3
+DB1300,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Thatcher Mountain CWMU,1,0,1
+DB1301,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Three C CWMU,2,0,2
+DB1302,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1303,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,North Peaks CWMU,1,0,1
+DB1304,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Two Bear CWMU,1,0,1
+DB1305,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Wallsburg CWMU,1,0,1
+DB1306,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Washakie CWMU,1,0,1
+DB1307,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1308,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,West Hills CWMU,2,0,2
+DB1309,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,West Willow Creek Ranch CWMU,5,0,5
+DB1310,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,White's Valley CWMU,1,0,1
+DB1312,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Woodruff Creek South CWMU,1,0,1
+DB1317,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Jacob's Creek CWMU,2,0,2
+DB1320,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1321,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1322,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Pahvant Ensign CWMU,1,0,1
+DB1323,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Rock House CWMU,1,0,1
+DB1324,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1325,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Double Cone CWMU,1,0,1
+DB1326,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Rosette CWMU,1,0,1
+DB1327,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Mountain Sky Ranch CWMU,1,0,1
+DB1328,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Clear Creek CWMU,1,0,1
+DB1329,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1330,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Iron Spring CWMU,1,0,1
+DB1331,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Raft River CWMU,2,0,2
+DB1332,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,West Ridge CWMU,5,0,5
+DB1333,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,5S CWMU,2,0,2
+DB1334,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Alton - Cactus Buck CWMU,1,0,1
+DB1335,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Big Piney Ranch CWMU,1,0,1
+DB1336,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,First Light CWMU,1,0,1
+DB1337,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Little Pole Canyon CWMU,1,0,1
+DB1338,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1339,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1340,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1341,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Dry Creek CWMU,1,0,1
+DB1342,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Faust Valley CWMU,1,0,1
+DB1343,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1344,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1345,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1347,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,The Rose of Snowville CWMU,2,0,2
+DB1348,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1349,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,Weber Florence Creek/Stillman Creek CWMU,9,0,9
+DB1351,False,True,True,False,not_OIL_LE_PLE,CWMU,Deer,The Dirty Dozen,2,0,2
+DB1500,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1501,True,True,True,False,included_forecast,General Season,Deer,Box Elder,,,1040
+DB1502,True,True,True,False,included_forecast,General Season,Deer,Cache,,,1160
+DB1503,True,True,True,False,included_forecast,General Season,Deer,Manti/San Rafael,,,1800
+DB1504,True,True,True,False,included_forecast,General Season,Deer,Nebo,,,1060
+DB1505,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1506,True,True,True,False,included_forecast,General Season,Deer,Fillmore,,,460
+DB1508,True,True,True,False,included_forecast,General Season,Deer,Kamas,,,200
+DB1509,True,True,True,False,included_forecast,General Season,Deer,La Sal Mtns,,,360
+DB1510,True,True,True,False,included_forecast,General Season,Deer,Monroe,,,220
+DB1511,True,True,True,False,included_forecast,General Season,Deer,Mt Dutton,,,80
+DB1512,True,True,True,False,included_forecast,General Season,Deer,Nine Mile,,,280
+DB1513,True,True,True,False,included_forecast,General Season,Deer,North Slope,,,620
+DB1514,True,True,True,False,included_forecast,General Season,Deer,Ogden,,,540
+DB1515,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1516,True,True,True,False,included_forecast,General Season,Deer,Panguitch Lake,,,500
+DB1517,True,True,True,False,included_forecast,General Season,Deer,Pine Valley,,,600
+DB1518,True,True,True,False,included_forecast,General Season,Deer,Boulder/Kaiparowits,,,720
+DB1519,True,True,True,False,included_forecast,General Season,Deer,Fishlake,,,260
+DB1520,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1521,True,True,True,False,included_forecast,General Season,Deer,"San Juan, Abajo Mtns",,,560
+DB1522,True,True,True,False,included_forecast,General Season,Deer,Vernal/Bonanza,,,420
+DB1523,True,True,True,False,included_forecast,General Season,Deer,Yellowstone,,,280
+DB1524,True,True,True,False,included_forecast,General Season,Deer,Southwest Desert,,,100
+DB1525,True,True,True,False,included_forecast,General Season,Deer,"Wasatch Mtns, East",,,1300
+DB1526,True,True,True,False,included_forecast,General Season,Deer,"Wasatch Mtns, West",,,1580
+DB1527,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1528,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1529,True,True,True,False,included_forecast,General Season,Deer,Zion,,,675
+DB1530,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1531,True,True,True,False,included_forecast,General Season,Deer,Box Elder,,,2080
+DB1532,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1533,True,True,True,False,included_forecast,General Season,Deer,Manti/San Rafael,,,5400
+DB1534,True,True,True,False,included_forecast,General Season,Deer,Nebo,,,3180
+DB1535,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1536,True,True,True,False,included_forecast,General Season,Deer,Fillmore,,,920
+DB1538,True,True,True,False,included_forecast,General Season,Deer,Kamas,,,400
+DB1539,True,True,True,False,included_forecast,General Season,Deer,La Sal Mtns,,,1080
+DB1540,True,True,True,False,included_forecast,General Season,Deer,Monroe,,,660
+DB1541,True,True,True,False,included_forecast,General Season,Deer,Mt Dutton,,,240
+DB1542,True,True,True,False,included_forecast,General Season,Deer,Nine Mile,,,560
+DB1543,True,True,True,False,included_forecast,General Season,Deer,North Slope,,,1240
+DB1544,True,True,True,False,included_forecast,General Season,Deer,Ogden,,,1620
+DB1545,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1546,True,True,True,False,included_forecast,General Season,Deer,Panguitch Lake,,,1000
+DB1547,True,True,True,False,included_forecast,General Season,Deer,Pine Valley,,,1200
+DB1548,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1549,True,True,True,False,included_forecast,General Season,Deer,Fishlake,,,520
+DB1550,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1551,True,True,True,False,included_forecast,General Season,Deer,"San Juan, Abajo Mtns",,,1680
+DB1552,True,True,True,False,included_forecast,General Season,Deer,Vernal/Bonanza,,,700
+DB1553,True,True,True,False,included_forecast,General Season,Deer,Yellowstone,,,840
+DB1554,True,True,True,False,included_forecast,General Season,Deer,Southwest Desert,,,300
+DB1555,True,True,True,False,included_forecast,General Season,Deer,"Wasatch Mtns, East",,,3900
+DB1556,True,True,True,False,included_forecast,General Season,Deer,"Wasatch Mtns, West",,,4740
+DB1557,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1558,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1559,True,True,True,False,included_forecast,General Season,Deer,Zion,,,1350
+DB1560,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1561,True,True,True,False,included_forecast,General Season,Deer,Box Elder,,,1040
+DB1562,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1563,True,True,True,False,included_forecast,General Season,Deer,Manti/San Rafael,,,1800
+DB1564,True,True,True,False,included_forecast,General Season,Deer,Nebo,,,1060
+DB1565,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1566,True,True,True,False,included_forecast,General Season,Deer,Fillmore,,,460
+DB1568,True,True,True,False,included_forecast,General Season,Deer,Kamas,,,200
+DB1569,True,True,True,False,included_forecast,General Season,Deer,La Sal Mtns,,,360
+DB1570,True,True,True,False,included_forecast,General Season,Deer,Monroe,,,220
+DB1571,True,True,True,False,included_forecast,General Season,Deer,Mt Dutton,,,80
+DB1572,True,True,True,False,included_forecast,General Season,Deer,Nine Mile,,,280
+DB1573,True,True,True,False,included_forecast,General Season,Deer,North Slope,,,620
+DB1574,True,True,True,False,included_forecast,General Season,Deer,Ogden,,,540
+DB1575,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1576,True,True,True,False,included_forecast,General Season,Deer,Panguitch Lake,,,500
+DB1577,True,True,True,False,included_forecast,General Season,Deer,Pine Valley,,,600
+DB1578,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1579,True,True,True,False,included_forecast,General Season,Deer,Fishlake,,,260
+DB1580,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1581,True,True,True,False,included_forecast,General Season,Deer,"San Juan, Abajo Mtns",,,560
+DB1582,True,True,True,False,included_forecast,General Season,Deer,Vernal/Bonanza,,,280
+DB1583,True,True,True,False,included_forecast,General Season,Deer,Yellowstone,,,280
+DB1584,True,True,True,False,included_forecast,General Season,Deer,Southwest Desert,,,100
+DB1585,True,True,True,False,included_forecast,General Season,Deer,"Wasatch Mtns, East",,,1300
+DB1586,True,True,True,False,included_forecast,General Season,Deer,"Wasatch Mtns, West",,,1580
+DB1587,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1588,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1589,True,True,True,False,included_forecast,General Season,Deer,Zion,,,675
+DB1590,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1591,True,True,True,False,included_forecast,General Season,Deer,Fillmore,,,460
+DB1592,True,True,True,False,included_forecast,General Season,Deer,Kamas,,,200
+DB1593,True,True,True,False,included_forecast,General Season,Deer,Nine Mile,,,280
+DB1594,True,True,True,False,included_forecast,General Season,Deer,Panguitch Lake,,,500
+DB1595,True,True,True,False,included_forecast,General Season,Deer,Pine Valley,,,600
+DB1596,True,True,True,False,included_forecast,General Season,Deer,Fishlake,,,260
+DB1597,True,True,True,False,included_forecast,General Season,Deer,Zion,,,675
+DB1598,True,True,True,False,included_forecast,General Season,Deer,North Slope,,,620
+DB1599,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Chalk Creek,,,880
+DB1600,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Chalk Creek,,,440
+DB1601,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Chalk Creek,,,440
+DB1602,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Chalk Creek,,,440
+DB1603,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,East Canyon,,,760
+DB1604,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,East Canyon,,,380
+DB1605,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,East Canyon,,,380
+DB1606,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,East Canyon,,,380
+DB1607,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Morgan-South Rich,,,640
+DB1608,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Morgan-South Rich,,,320
+DB1609,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Morgan-South Rich,,,320
+DB1610,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Morgan-South Rich,,,320
+DB1611,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"Beaver, East",,,440
+DB1612,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"Beaver, East",,,440
+DB1613,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"Beaver, East",,,1320
+DB1614,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"Beaver, West",,,130
+DB1615,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"Beaver, West",,,130
+DB1616,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"Beaver, West",,,390
+DB1617,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"West Desert, Swasey",,,80
+DB1618,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"West Desert, Swasey",,,80
+DB1619,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"West Desert, Swasey",,,240
+DB1620,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Oquirrh/Tintic,,,450
+DB1621,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Oquirrh/Tintic,,,450
+DB1622,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Oquirrh/Tintic,,,1350
+DB1623,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Cedar/Stansbury,,,250
+DB1624,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Cedar/Stansbury,,,250
+DB1625,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Cedar/Stansbury,,,750
+DB1627,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Cache,,,3480
+DB1628,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Cache,,,1160
+DB1629,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Boulder/Kaiparowits,,,960
+DB1630,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Boulder/Kaiparowits,,,720
+DB1631,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Box Elder,,,1040
+DB1769,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1770,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Box Elder,,,688
+DB1771,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Cache,,,588
+DB1772,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Manti/San Rafael,,,573
+DB1773,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Nebo,,,349
+DB1774,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1775,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Fillmore,,,42
+DB1777,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Kamas,,,55
+DB1778,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,La Sal Mtns,,,67
+DB1779,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Monroe,,,45
+DB1780,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Mt Dutton,,,26
+DB1781,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Nine Mile,,,62
+DB1782,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,North Slope,,,340
+DB1783,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Ogden,,,297
+DB1784,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1785,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Panguitch Lake,,,112
+DB1786,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Pine Valley,,,228
+DB1787,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Boulder/Kaiparowits,,,70
+DB1788,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Fishlake,,,49
+DB1789,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1790,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"San Juan, Abajo Mtns",,,261
+DB1791,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Vernal/Bonanza,,,45
+DB1792,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Yellowstone,,,63
+DB1793,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Southwest Desert,,,46
+DB1794,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"Wasatch Mtns, East",,,271
+DB1795,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"Wasatch Mtns, West",,,701
+DB1796,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1797,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DB1798,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Zion,,,256
+DB1799,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Chalk Creek,,,292
+DB1800,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,East Canyon,,,186
+DB1801,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Morgan-South Rich,,,211
+DB1802,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"Beaver, East",,,61
+DB1803,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"Beaver, West",,,44
+DB1804,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Cedar/Stansbury,,,42
+DB1805,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Oquirrh/Tintic,,,65
+DB1806,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"West Desert, Swasey",,,36
+DS1000,False,True,True,False,not_OIL_LE_PLE,Statewide,Desert Bighorn Sheep,Desert Bighorn Sheep - Statewide Permit,,,
+DS1002,False,True,True,False,not_OIL_LE_PLE,Conservation,Desert Bighorn Sheep,"Kaiparowits, East",,,
+DS1003,False,True,True,False,not_OIL_LE_PLE,Conservation,Desert Bighorn Sheep,"Kaiparowits, Escalante East/West",,,
+DS1004,False,True,True,False,not_OIL_LE_PLE,Conservation,Desert Bighorn Sheep,"San Rafael, Dirty Devil",,,
+DS1006,False,True,True,False,not_OIL_LE_PLE,Conservation,Desert Bighorn Sheep,"Kaiparowits, West",,,
+DS1007,False,True,True,False,not_OIL_LE_PLE,Conservation,Desert Bighorn Sheep,"San Rafael, South",,,
+DS6600,True,True,True,True,included_forecast,Once-in-a-lifetime,Desert Bighorn Sheep,Henry Mtns,3,0,3
+DS6601,True,True,True,True,included_forecast,Once-in-a-lifetime,Desert Bighorn Sheep,"Kaiparowits, East",10,3,13
+DS6602,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DS6603,True,True,True,True,included_forecast,Once-in-a-lifetime,Desert Bighorn Sheep,"Kaiparowits, West",3,1,4
+DS6604,True,True,True,True,included_forecast,Once-in-a-lifetime,Desert Bighorn Sheep,"La Sal, Potash/South Cisco",8,0,8
+DS6605,False,True,True,False,not_OIL_LE_PLE,Conservation,Desert Bighorn Sheep,"Pine Valley, Beaver Dam",,,
+DS6606,True,True,True,True,included_forecast,Once-in-a-lifetime,Desert Bighorn Sheep,"San Juan, Lockhart",2,0,2
+DS6607,True,True,True,True,included_forecast,Once-in-a-lifetime,Desert Bighorn Sheep,"San Juan, South",2,0,2
+DS6608,True,True,True,True,included_forecast,Once-in-a-lifetime,Desert Bighorn Sheep,"San Rafael, Dirty Devil",3,1,4
+DS6609,True,True,True,True,included_forecast,Once-in-a-lifetime,Desert Bighorn Sheep,"San Rafael, North",8,0,8
+DS6610,True,True,True,True,included_forecast,Once-in-a-lifetime,Desert Bighorn Sheep,"San Rafael, South",10,2,12
+DS6611,True,True,True,True,included_forecast,Once-in-a-lifetime,Desert Bighorn Sheep,Zion,3,0,3
+DS6612,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+DS6620,True,True,True,True,included_forecast,Once-in-a-lifetime,Desert Bighorn Sheep,"Pine Valley, Virgin River",3,0,3
+DS6621,True,True,True,True,included_forecast,Once-in-a-lifetime,Desert Bighorn Sheep,"Pine Valley, Beaver Dam",2,0,2
+DS6622,True,True,True,True,included_forecast,Once-in-a-lifetime,Desert Bighorn Sheep,"San Juan, North",3,0,3
+DS6623,True,True,True,True,included_forecast,Once-in-a-lifetime,Desert Bighorn Sheep,"San Juan, San Juan River",2,0,2
+DS6624,True,True,True,True,included_forecast,Once-in-a-lifetime,Desert Bighorn Sheep,"San Rafael, Dirty Devil",2,0,2
+DS6625,True,True,True,True,included_forecast,Once-in-a-lifetime,Desert Bighorn Sheep,Mineral Mtns,4,0,4
+DS6626,True,True,True,True,included_forecast,Once-in-a-lifetime,Desert Bighorn Sheep,"Escalante, East",5,2,7
+DS6627,True,True,True,True,included_forecast,Once-in-a-lifetime,Desert Bighorn Sheep,"Escalante, West",3,0,3
+EA1004,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EA1007,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EA1008,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EA1009,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EA1010,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Cache, Rich",18,2,20
+EA1011,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Cache, Richards Hollow",9,1,10
+EA1012,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Cache, Richmond Hyde Park",4,1,5
+EA1013,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Manti, Central",63,7,70
+EA1015,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Manti, Ferron Canyon",63,7,70
+EA1017,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Manti, Gordon Creek-Price Canyon",90,10,100
+EA1018,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Manti, Horn Mtn",54,6,60
+EA1020,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Manti, Mohrland-Stump Flat",108,12,120
+EA1021,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Nebo,207,23,230
+EA1022,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Manti, North",270,30,300
+EA1023,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Manti, South",90,10,100
+EA1024,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Manti, South",90,10,100
+EA1025,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Manti, West",108,12,120
+EA1026,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Chalk Creek,315,35,350
+EA1030,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Fillmore, Pahvant",45,5,50
+EA1031,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Fillmore, Pahvant",45,5,50
+EA1033,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Kamas,112,13,125
+EA1034,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EA1035,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Kamas, Oakley",112,13,125
+EA1037,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"La Sal, Dolores Triangle",45,5,50
+EA1038,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"La Sal, La Sal Mtns",180,20,200
+EA1039,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"La Sal, La Sal Mtns",135,15,150
+EA1040,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EA1044,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Morgan-South Rich, South Rich",31,4,35
+EA1049,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Mt Dutton, Deep Creek",67,8,75
+EA1052,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EA1054,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Nine Mile, West Anthro",45,5,50
+EA1055,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EA1056,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"North Slope, Greendale",4,1,5
+EA1058,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"North Slope, Henry's Fork-Burnt Fork",90,10,100
+EA1060,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"North Slope, West Daggett",18,2,20
+EA1061,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"North Slope, West Daggett",18,2,20
+EA1063,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Ogden,67,8,75
+EA1064,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Ogden,67,8,75
+EA1066,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EA1067,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EA1068,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EA1069,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Panguitch Lake,31,4,35
+EA1073,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Paunsaugunt,18,2,20
+EA1074,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EA1075,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Boulder East,45,5,50
+EA1076,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Boulder West,45,5,50
+EA1077,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Boulder-Circle Cliffs,27,3,30
+EA1078,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Fishlake/Thousand Lakes,243,27,270
+EA1079,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Fishlake/Thousand Lakes East,58,7,65
+EA1080,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Fishlake/Thousand Lakes West,54,6,60
+EA1081,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,San Juan,112,13,125
+EA1082,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,San Juan,112,13,125
+EA1084,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"San Rafael, North",4,1,5
+EA1085,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Vernal/Bonanza,90,10,100
+EA1087,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Bonanza/Vernal,90,10,100
+EA1089,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Diamond Mtn,45,5,50
+EA1090,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Diamond Mtn,45,5,50
+EA1091,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EA1094,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Vernal, Mosby Mtn",90,10,100
+EA1098,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EA1099,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EA1100,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EA1101,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Southwest Desert,90,10,100
+EA1106,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Wasatch Mtns, Avintaquin",180,20,200
+EA1110,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Wasatch Mtns, Salt Lake",40,5,45
+EA1111,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Wasatch Mtns, Wallsburg",31,4,35
+EA1112,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Wasatch Mtns, Wallsburg",49,6,55
+EA1113,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Wasatch Mtns, West Heber",27,3,30
+EA1114,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Wasatch Mtns, West Timpanogos",22,3,25
+EA1116,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EA1117,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Zion,198,22,220
+EA1118,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Alton CWMU,6,0,6
+EA1119,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Bar J Ranch CWMU,12,0,12
+EA1120,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Bear Mountain CWMU,20,0,20
+EA1121,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Boobe Hole CWMU,10,0,10
+EA1122,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Causey Spring CWMU,5,0,5
+EA1124,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Chimney Rock CWMU,12,0,12
+EA1125,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Coldwater Ranch CWMU,25,0,25
+EA1126,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EA1129,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Deseret CWMU,425,0,425
+EA1130,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Double Cone CWMU,7,0,7
+EA1131,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Durst Mountain CWMU,30,0,30
+EA1132,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,East Fork Chalk Creek CWMU,30,0,30
+EA1134,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Ensign Ranches CWMU,60,0,60
+EA1135,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Folley Ridge CWMU,20,0,20
+EA1136,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Grass Valley/Clark Canyon CWMU,50,0,50
+EA1137,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Grazing Pasture CWMU,9,0,9
+EA1138,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Guildersleeve CWMU,20,0,20
+EA1139,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Hardscrabble CWMU,10,0,10
+EA1140,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Heaston East CWMU,24,0,24
+EA1141,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Hiawatha CWMU,12,0,12
+EA1142,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Indian Head CWMU,12,0,12
+EA1143,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Circle E Ranch CWMU,21,0,21
+EA1145,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Johnson Mountain Ranch CWMU,20,0,20
+EA1146,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Jump Creek CWMU,9,0,9
+EA1147,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Little Red Creek CWMU,15,0,15
+EA1149,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Minnie Maud Ridge CWMU,15,0,15
+EA1151,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Moon Ranch CWMU,6,0,6
+EA1153,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Old Woman Plateau CWMU,4,0,4
+EA1155,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EA1156,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Preston Nutter Ranch CWMU,21,0,21
+EA1157,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Redd Ranches CWMU,35,0,35
+EA1158,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Cactus Ranch LLC CWMU,7,0,7
+EA1159,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Roan Cliffs CWMU,6,0,6
+EA1160,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Sand Creek CWMU,5,0,5
+EA1161,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Scofield Canyons CWMU,9,0,9
+EA1162,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Scofield East CWMU,14,0,14
+EA1163,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Scofield West CWMU,19,0,19
+EA1164,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,SJ Ranch CWMU,6,0,6
+EA1165,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Skull Crack CWMU,15,0,15
+EA1166,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Soldier Summit CWMU,16,0,16
+EA1167,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,South Canyon CWMU,12,0,12
+EA1168,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Spring Creek/Dodge CWMU,15,0,15
+EA1170,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Strawberry Ridge CWMU,10,0,10
+EA1171,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Summit Point CWMU,5,0,5
+EA1172,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Three C CWMU,9,0,9
+EA1174,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Two Bear CWMU,60,0,60
+EA1175,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Wallsburg CWMU,10,0,10
+EA1176,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EA1177,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Woodruff Creek South CWMU,8,0,8
+EA1180,False,True,True,False,not_OIL_LE_PLE,Conservation,Elk,La Sal (Conservation),,,17
+EA1186,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EA1187,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Paunsaugunt, Hatch Bench",13,2,15
+EA1189,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Wasatch Mtns, West-Central",382,43,425
+EA1190,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EA1192,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Pahvant Ensign CWMU,6,0,6
+EA1193,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Cache, Rich",18,2,20
+EA1194,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EA1196,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"North Slope, Summit",67,8,75
+EA1198,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Bear Springs CWMU,2,0,2
+EA1200,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Double R Ranch CWMU,10,0,10
+EA1201,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Mountain Sky Ranch CWMU,10,0,10
+EA1203,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Box Elder, Pilot Mtn",4,1,5
+EA1204,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Box Elder, Pilot Mtn",4,1,5
+EA1205,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EA1206,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Cache, Richmond Hyde Park",9,1,10
+EA1207,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Nebo, Moroni Hills",9,1,10
+EA1208,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Nebo,247,28,275
+EA1209,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Fillmore, Oak Creek LE",45,5,50
+EA1217,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Wasatch Mtns, Avintaquin",135,15,150
+EA1220,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Manti (Expo),,,
+EA1221,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Fishlake/Thousand Lake (Expo),,,
+EA1222,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Beaver, East",27,3,30
+EA1223,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Beaver, East",27,3,30
+EA1224,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Book Cliffs, Bitter Creek/South",117,13,130
+EA1225,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Book Cliffs, Bitter Creek/South",147,16,163
+EA1226,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Nebo, Moroni Hills",9,1,10
+EA1227,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EA1228,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Morgan-South Rich,67,8,75
+EA1229,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Morgan-South Rich,144,16,160
+EA1231,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"West Desert, Tintic Valley",45,5,50
+EA1233,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Avintaquin Canyon CWMU,4,0,4
+EA1234,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Royal Ivory Outfitters CWMU,15,0,15
+EA1235,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Sharp Mountain CWMU,10,0,10
+EA1236,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,East Canyon,135,15,150
+EA1237,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"La Sal, La Sal Mtns-North",157,18,175
+EA1238,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EA1239,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Nine Mile, Range Creek",45,5,50
+EA1240,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Nine Mile, Range Creek",135,15,150
+EA1241,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EA1242,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Vernal, Buckskin Hills-Jensen",90,10,100
+EA1243,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Vernal, Buckskin Hills-Jensen",90,10,100
+EA1244,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Yellowstone,90,10,100
+EA1245,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Yellowstone,45,5,50
+EA1250,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"North Slope, West Daggett",27,3,30
+EA1251,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Southwest Desert, Burbank/Garrison",13,2,15
+EA1252,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EA1253,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EA1254,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Pine Valley,27,3,30
+EA1255,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EA1256,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Little Pole Canyon CWMU,9,0,9
+EA1257,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Tunnel Hollow CWMU,5,0,5
+EA1258,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,La Sal (Expo),,,
+EA1259,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Diamond Mountain CWMU,2,0,2
+EA1260,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,West Ridge CWMU,5,0,5
+EA1261,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Blackhawk CWMU,5,0,5
+EA1263,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Weber Florence Creek/Stillman Creek CWMU,35,0,35
+EA1264,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Wasatch Mtns, Rabbit Gulch",45,5,50
+EA1265,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Wasatch Mtns, Tabby Mtn",90,10,100
+EA1266,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Box Elder, Hansel Mtn",18,2,20
+EA1267,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Cache,81,9,90
+EA1268,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"North Slope, Summit",180,20,200
+EA1269,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Ogden (Excludes Hyrum),180,20,200
+EA1270,False,True,True,False,not_OIL_LE_PLE,Conservation,Elk,Fishlake (Conservation),,,
+EA1271,False,True,True,False,not_OIL_LE_PLE,Conservation,Elk,Manti (Conservation),,,
+EA1272,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"East Canyon, East",135,15,150
+EA1273,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"North Slope, Three Corners",22,3,25
+EA1274,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"North Slope, Three Corners",22,3,25
+EA1276,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Wasatch Mtns, Box Elder Peak",40,5,45
+EA1277,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"North Slope, Three Corners",22,3,25
+EA1278,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Manti, Ferron-Nelson Mtn",45,5,50
+EA1279,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Manti, Ferron-Nelson Mtn",45,5,50
+EA1280,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"La Sal, La Sal Mtns-North",157,18,175
+EA1281,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Mt Dutton, Deep Creek",67,8,75
+EA1282,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Ogden, North",180,20,200
+EA1283,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Panguitch Lake,31,4,35
+EA1284,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Panguitch Lake,31,4,35
+EA1285,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Panguitch Lake,31,4,35
+EA1286,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Monroe,,,
+EA2000,False,True,True,False,not_OIL_LE_PLE,Antlerless Elk Control,Elk,Antlerless Elk Control,,,
+EA2002,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,Morgan-South Rich,,,600
+EA2003,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,East Canyon,,,500
+EA2004,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,Chalk Creek,,,600
+EA2005,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,"North Slope, West Daggett",,,100
+EA2006,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,Yellowstone,,,2000
+EA2008,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,"Nine Mile, Anthro-Myton Bench",,,250
+EA2009,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,"La Sal, La Sal Mtns",,,70
+EA2010,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,San Juan,,,50
+EA2011,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,Manti,,,300
+EA2012,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,"Wasatch Mtns, West",,,400
+EA2013,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,"Wasatch Mtns, Currant Creek",,,2000
+EA2014,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,"Wasatch Mtns, Avintaquin - White River",,,400
+EA2015,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,Paunsaugunt,,,100
+EA2016,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,Nebo,,,275
+EA2017,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,Mt Dutton,,,75
+EA2018,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,Panguitch Lake,,,75
+EA2019,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,"West Desert, Tintic Valley",,,60
+EA2020,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,Zion,,,320
+EA2021,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,"Beaver, East",,,30
+EA2026,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,"Box Elder, Hansel Mtn",,,200
+EA2027,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,Cache,,,300
+EA2028,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,Vernal/Bonanza,,,450
+EA2029,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,"Nine Mile, Range Creek",,,150
+EA2030,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,Diamond Mtn,,,200
+EA2033,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Kamas,225,25,250
+EA2034,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Nine Mile, Anthro",180,20,200
+EA2036,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Oquirrh-Stansbury, East",54,6,60
+EA2037,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Yellowstone,180,20,200
+EA2038,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Wasatch Mtns,1080,120,1200
+EA2039,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,"Fillmore, Pahvant",,,150
+EA2040,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,Kamas,,,150
+EA2041,False,True,True,False,not_OIL_LE_PLE,Conservation,Elk,Cache (Conservation),,,
+EA2045,False,True,True,False,not_OIL_LE_PLE,Conservation,Elk,Wasatch Mtns (Conservation),,,
+EA2046,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,"Box Elder, Sawtooth",,,25
+EB1000,False,True,True,False,not_OIL_LE_PLE,Statewide,Elk,Elk - Statewide Permit,,,15
+EB1001,False,True,True,False,not_OIL_LE_PLE,General Season - Any Bull,Elk,Any Bull Elk Units,,,10
+EB1002,False,True,True,False,not_OIL_LE_PLE,General Season - Any Bull,Elk,Any Bull Elk Units,,,6
+EB1003,False,True,True,False,not_OIL_LE_PLE,General Season - Spike Bull,Elk,Spike Only Units,,,16
+EB1004,False,True,True,False,not_OIL_LE_PLE,General Season - Spike Bull,Elk,Spike Only Units,,,6
+EB1005,False,True,True,False,not_OIL_LE_PLE,General Season - Archery,Elk,Archery Hunters Choice Elk,,,16
+EB1007,False,True,True,False,not_OIL_LE_PLE,General Season - Any Bull,Elk,Draw-only Youth Any Bull/Hunters Choice Elk,,,750
+EB1009,False,True,True,False,not_OIL_LE_PLE,General Season - Spike Bull,Elk,Spike Only Elk Units - Multiseason,,,
+EB1010,False,True,True,False,not_OIL_LE_PLE,General Season - Any Bull,Elk,Any Bull Elk Units,,,17
+EB1011,False,True,True,False,not_OIL_LE_PLE,General Season - Youth,Elk,Youth General Season Bull Elk,,,
+EB1012,False,True,True,False,not_OIL_LE_PLE,General Season - Any Bull,Elk,Uinta Basin Private Lands Any Bull Elk,,,500
+EB3000,True,True,True,True,included_forecast,Limited Entry,Elk,Beaver East,22,3,25
+EB3001,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EB3002,True,True,True,True,included_forecast,Limited Entry,Elk,Book Cliffs Little Creek Roadless,4,0,4
+EB3003,True,True,True,True,included_forecast,Limited Entry,Elk,Cache Meadowville,9,1,10
+EB3005,True,True,True,True,included_forecast,Limited Entry,Elk,Cache South,10,1,11
+EB3006,True,True,True,True,included_forecast,Limited Entry,Elk,Manti,148,17,165
+EB3007,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EB3008,True,True,True,True,included_forecast,Limited Entry,Elk,Fillmore Pahvant,19,2,21
+EB3009,True,True,True,True,included_forecast,Limited Entry,Elk,La Sal Mtns,36,4,40
+EB3010,True,True,True,True,included_forecast,Limited Entry,Elk,Monroe,10,1,11
+EB3011,True,True,True,True,included_forecast,Limited Entry,Elk,Mt Dutton,19,2,21
+EB3013,True,True,True,True,included_forecast,Limited Entry,Elk,North Slope Three Corners,6,1,7
+EB3015,True,True,True,True,included_forecast,Limited Entry,Elk,Panguitch Lake,17,2,19
+EB3016,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EB3018,True,True,True,True,included_forecast,Limited Entry,Elk,Fishlake/Thousand Lakes,84,9,93
+EB3019,True,True,True,True,included_forecast,Limited Entry,Elk,San Juan Bull Elk,29,3,32
+EB3020,True,True,True,True,included_forecast,Limited Entry,Elk,Diamond Mtn,25,3,28
+EB3022,True,True,True,True,included_forecast,Limited Entry,Elk,Wasatch Mtns,130,15,145
+EB3024,True,True,True,True,included_forecast,Limited Entry,Elk,Beaver East,9,1,10
+EB3025,True,True,True,True,included_forecast,Limited Entry,Elk,Beaver East,15,2,17
+EB3026,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EB3027,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EB3028,True,True,True,True,included_forecast,Limited Entry,Elk,Book Cliffs Little Creek Roadless,3,0,3
+EB3031,True,True,True,True,included_forecast,Limited Entry,Elk,Box Elder Pilot Mtn,6,1,7
+EB3032,True,True,True,True,included_forecast,Limited Entry,Elk,Cache Meadowville,3,1,4
+EB3033,True,True,True,True,included_forecast,Limited Entry,Elk,Cache Meadowville,6,1,7
+EB3036,True,True,True,True,included_forecast,Limited Entry,Elk,Cache South,4,0,4
+EB3037,True,True,True,True,included_forecast,Limited Entry,Elk,Cache South,6,1,7
+EB3038,True,True,True,True,included_forecast,Limited Entry,Elk,Manti,61,7,68
+EB3039,True,True,True,True,included_forecast,Limited Entry,Elk,Manti,102,11,113
+EB3040,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EB3041,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EB3042,True,True,True,True,included_forecast,Limited Entry,Elk,Fillmore Pahvant,8,1,9
+EB3043,True,True,True,True,included_forecast,Limited Entry,Elk,Fillmore Pahvant,13,2,15
+EB3044,True,True,True,True,included_forecast,Limited Entry,Elk,Dolores Triangle,6,1,7
+EB3045,True,True,True,True,included_forecast,Limited Entry,Elk,La Sal Mtns,14,2,16
+EB3046,True,True,True,True,included_forecast,Limited Entry,Elk,La Sal Mtns,24,3,27
+EB3047,True,True,True,True,included_forecast,Limited Entry,Elk,Monroe,3,1,4
+EB3048,True,True,True,True,included_forecast,Limited Entry,Elk,Monroe,13,2,15
+EB3049,True,True,True,True,included_forecast,Limited Entry,Elk,Mt Dutton,8,1,9
+EB3050,True,True,True,True,included_forecast,Limited Entry,Elk,Mt Dutton,13,2,15
+EB3053,True,True,True,True,included_forecast,Limited Entry,Elk,North Slope Three Corners,9,1,10
+EB3056,True,True,True,True,included_forecast,Limited Entry,Elk,Panguitch Lake,7,1,8
+EB3057,True,True,True,True,included_forecast,Limited Entry,Elk,Panguitch Lake,12,1,13
+EB3058,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EB3059,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EB3060,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EB3063,True,True,True,True,included_forecast,Limited Entry,Elk,Fishlake/Thousand Lakes,34,4,38
+EB3064,True,True,True,True,included_forecast,Limited Entry,Elk,Fishlake/Thousand Lakes,99,11,110
+EB3065,True,True,True,True,included_forecast,Limited Entry,Elk,Fishlake/Thousand Lakes,57,6,63
+EB3066,True,True,True,True,included_forecast,Limited Entry,Elk,San Juan Bull Elk,12,1,13
+EB3067,True,True,True,True,included_forecast,Limited Entry,Elk,San Juan Bull Elk,20,2,22
+EB3068,True,True,True,True,included_forecast,Limited Entry,Elk,Diamond Mtn,10,1,11
+EB3069,True,True,True,True,included_forecast,Limited Entry,Elk,Diamond Mtn,30,3,33
+EB3072,True,True,True,True,included_forecast,Limited Entry,Elk,Wasatch Mtns,54,6,60
+EB3073,True,True,True,True,included_forecast,Limited Entry,Elk,Wasatch Mtns,89,10,99
+EB3077,True,True,True,True,included_forecast,Limited Entry,Elk,Beaver East,13,2,15
+EB3078,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EB3079,True,True,True,True,included_forecast,Limited Entry,Elk,Book Cliffs Little Creek Roadless,2,0,2
+EB3081,True,True,True,True,included_forecast,Limited Entry,Elk,Cache Meadowville,5,1,6
+EB3083,True,True,True,True,included_forecast,Limited Entry,Elk,Cache South,5,1,6
+EB3084,True,True,True,True,included_forecast,Limited Entry,Elk,Manti,89,10,99
+EB3085,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EB3086,True,True,True,True,included_forecast,Limited Entry,Elk,Fillmore Pahvant,12,1,13
+EB3087,True,True,True,True,included_forecast,Limited Entry,Elk,La Sal Mtns,22,2,24
+EB3088,True,True,True,True,included_forecast,Limited Entry,Elk,Monroe,10,1,11
+EB3089,True,True,True,True,included_forecast,Limited Entry,Elk,Mt Dutton,12,1,13
+EB3091,True,True,True,True,included_forecast,Limited Entry,Elk,North Slope Three Corners,4,0,4
+EB3093,True,True,True,True,included_forecast,Limited Entry,Elk,Panguitch Lake,10,1,11
+EB3094,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EB3096,True,True,True,True,included_forecast,Limited Entry,Elk,Fishlake/Thousand Lakes,50,6,56
+EB3097,True,True,True,True,included_forecast,Limited Entry,Elk,San Juan Bull Elk,17,2,19
+EB3098,True,True,True,True,included_forecast,Limited Entry,Elk,Diamond Mtn,15,2,17
+EB3100,True,True,True,True,included_forecast,Limited Entry,Elk,Wasatch Mtns,78,9,87
+EB3102,True,True,True,True,included_forecast,Limited Entry,Elk,Beaver East,3,0,3
+EB3103,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EB3104,True,True,True,True,included_forecast,Limited Entry,Elk,Book Cliffs Little Creek Roadless,1,0,1
+EB3105,True,True,True,True,included_forecast,Limited Entry,Elk,Cache Meadowville,1,0,1
+EB3107,True,True,True,True,included_forecast,Limited Entry,Elk,Cache South,1,0,1
+EB3108,True,True,True,True,included_forecast,Limited Entry,Elk,Manti,18,2,20
+EB3109,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EB3110,True,True,True,True,included_forecast,Limited Entry,Elk,Fillmore Pahvant,3,0,3
+EB3111,True,True,True,True,included_forecast,Limited Entry,Elk,La Sal Mtns,5,0,5
+EB3112,True,True,True,True,included_forecast,Limited Entry,Elk,Monroe,2,0,2
+EB3113,True,True,True,True,included_forecast,Limited Entry,Elk,Mt Dutton,3,0,3
+EB3115,True,True,True,True,included_forecast,Limited Entry,Elk,North Slope Three Corners,1,0,1
+EB3117,True,True,True,True,included_forecast,Limited Entry,Elk,Panguitch Lake,2,0,2
+EB3118,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EB3120,True,True,True,True,included_forecast,Limited Entry,Elk,Fishlake/Thousand Lakes,10,1,11
+EB3121,True,True,True,True,included_forecast,Limited Entry,Elk,San Juan Bull Elk,4,0,4
+EB3122,True,True,True,True,included_forecast,Limited Entry,Elk,Diamond Mtn,3,0,3
+EB3124,True,True,True,True,included_forecast,Limited Entry,Elk,Wasatch Mtns,15,2,17
+EB3126,True,True,True,True,included_forecast,Limited Entry,Elk,Manti,175,20,195
+EB3127,True,True,True,True,included_forecast,Limited Entry,Elk,Wasatch Mtns,155,17,172
+EB3128,False,True,True,False,not_OIL_LE_PLE,Conservation,Elk,Box Elder Grouse Creek,,,
+EB3130,True,True,True,True,included_forecast,Limited Entry,Elk,Box Elder Pilot Mtn,2,0,2
+EB3131,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EB3132,True,True,True,True,included_forecast,Limited Entry,Elk,Cache North,22,2,24
+EB3133,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EB3134,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EB3135,True,True,True,True,included_forecast,Limited Entry,Elk,Barney Top/Kaiparowits,9,1,10
+EB3136,True,True,True,True,included_forecast,Limited Entry,Elk,Southwest Desert North,21,2,23
+EB3137,True,True,True,True,included_forecast,Limited Entry,Elk,West Desert Deep Creek,13,2,15
+EB3138,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EB3139,True,True,True,True,included_forecast,Limited Entry,Elk,Cache North,22,2,24
+EB3140,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EB3141,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EB3142,True,True,True,True,included_forecast,Limited Entry,Elk,Barney Top/Kaiparowits,9,1,10
+EB3143,True,True,True,True,included_forecast,Limited Entry,Elk,Southwest Desert North,21,2,23
+EB3144,True,True,True,True,included_forecast,Limited Entry,Elk,West Desert Deep Creek,13,2,15
+EB3145,True,True,True,True,included_forecast,Limited Entry,Elk,Boulder,31,4,35
+EB3146,True,True,True,True,included_forecast,Limited Entry,Elk,Southwest Desert South,39,4,43
+EB3147,True,True,True,True,included_forecast,Limited Entry,Elk,Box Elder Grouse Creek,6,1,7
+EB3148,True,True,True,True,included_forecast,Limited Entry,Elk,Boulder,13,1,14
+EB3149,True,True,True,True,included_forecast,Limited Entry,Elk,Southwest Desert South,16,2,18
+EB3150,True,True,True,True,included_forecast,Limited Entry,Elk,Box Elder Grouse Creek,12,1,13
+EB3151,True,True,True,True,included_forecast,Limited Entry,Elk,Boulder,22,2,24
+EB3152,True,True,True,True,included_forecast,Limited Entry,Elk,Southwest Desert South,26,3,29
+EB3153,True,True,True,True,included_forecast,Limited Entry,Elk,Box Elder Grouse Creek,2,1,3
+EB3154,True,True,True,True,included_forecast,Limited Entry,Elk,Boulder,19,2,21
+EB3155,True,True,True,True,included_forecast,Limited Entry,Elk,Southwest Desert South,23,3,26
+EB3156,True,True,True,True,included_forecast,Limited Entry,Elk,Boulder,4,0,4
+EB3157,True,True,True,True,included_forecast,Limited Entry,Elk,Southwest Desert South,5,0,5
+EB3158,True,True,True,True,included_forecast,Limited Entry,Elk,Beaver East,18,2,20
+EB3159,True,True,True,True,included_forecast,Limited Entry,Elk,Beaver East,27,3,30
+EB3160,True,True,True,True,included_forecast,Limited Entry,Elk,Book Cliffs Bitter Creek/East,22,2,24
+EB3161,True,True,True,True,included_forecast,Limited Entry,Elk,Book Cliffs Bitter Creek/East,4,1,5
+EB3162,True,True,True,True,included_forecast,Limited Entry,Elk,Book Cliffs Bitter Creek/East,9,1,10
+EB3163,True,True,True,True,included_forecast,Limited Entry,Elk,Book Cliffs Bitter Creek/East,14,2,16
+EB3164,True,True,True,True,included_forecast,Limited Entry,Elk,Book Cliffs Bitter Creek/East,25,3,28
+EB3165,True,True,True,True,included_forecast,Limited Entry,Elk,Book Cliffs Bitter Creek/East,3,0,3
+EB3166,True,True,True,True,included_forecast,Limited Entry,Elk,Book Cliffs Bitter Creek/East,13,1,14
+EB3167,True,True,True,True,included_forecast,Limited Entry,Elk,Book Cliffs Little Creek Roadless,4,1,5
+EB3168,True,True,True,True,included_forecast,Limited Entry,Elk,Cache Meadowville,4,1,5
+EB3169,True,True,True,True,included_forecast,Limited Entry,Elk,Cache Meadowville,11,1,12
+EB3170,True,True,True,True,included_forecast,Limited Entry,Elk,Cache South,4,1,5
+EB3171,True,True,True,True,included_forecast,Limited Entry,Elk,Cache South,11,1,12
+EB3172,True,True,True,True,included_forecast,Limited Entry,Elk,Manti,9,1,10
+EB3173,True,True,True,True,included_forecast,Limited Entry,Elk,Nebo/San Pitch Mtns,29,3,32
+EB3174,True,True,True,True,included_forecast,Limited Entry,Elk,Nebo/San Pitch Mtns,13,2,15
+EB3175,True,True,True,True,included_forecast,Limited Entry,Elk,Nebo/San Pitch Mtns,12,1,13
+EB3176,True,True,True,True,included_forecast,Limited Entry,Elk,Nebo/San Pitch Mtns,20,2,22
+EB3177,True,True,True,True,included_forecast,Limited Entry,Elk,Nebo/San Pitch Mtns,34,4,38
+EB3178,True,True,True,True,included_forecast,Limited Entry,Elk,Nebo/San Pitch Mtns,4,0,4
+EB3179,True,True,True,True,included_forecast,Limited Entry,Elk,Nebo/San Pitch Mtns,17,2,19
+EB3180,True,True,True,True,included_forecast,Limited Entry,Elk,Fillmore Pahvant,18,2,20
+EB3181,True,True,True,True,included_forecast,Limited Entry,Elk,Fillmore Pahvant,22,3,25
+EB3182,True,True,True,True,included_forecast,Limited Entry,Elk,La Sal Mtns,9,1,10
+EB3183,True,True,True,True,included_forecast,Limited Entry,Elk,La Sal Mtns,42,5,47
+EB3184,True,True,True,True,included_forecast,Limited Entry,Elk,Monroe,7,1,8
+EB3185,True,True,True,True,included_forecast,Limited Entry,Elk,Monroe,18,3,21
+EB3186,True,True,True,True,included_forecast,Limited Entry,Elk,Mt Dutton,13,2,15
+EB3187,True,True,True,True,included_forecast,Limited Entry,Elk,Mt Dutton,22,3,25
+EB3188,True,True,True,True,included_forecast,Limited Entry,Elk,Panguitch Lake,13,2,15
+EB3189,True,True,True,True,included_forecast,Limited Entry,Elk,Panguitch Lake,20,2,22
+EB3190,True,True,True,True,included_forecast,Limited Entry,Elk,Boulder,4,1,5
+EB3191,True,True,True,True,included_forecast,Limited Entry,Elk,Boulder,37,4,41
+EB3192,True,True,True,True,included_forecast,Limited Entry,Elk,Fishlake/Thousand Lakes,13,2,15
+EB3193,True,True,True,True,included_forecast,Limited Entry,Elk,San Juan Bull Elk,9,1,10
+EB3194,True,True,True,True,included_forecast,Limited Entry,Elk,San Juan Bull Elk,33,4,37
+EB3195,True,True,True,True,included_forecast,Limited Entry,Elk,Diamond Mtn,4,1,5
+EB3196,True,True,True,True,included_forecast,Limited Entry,Elk,Diamond Mtn,17,2,19
+EB3197,True,True,True,True,included_forecast,Limited Entry,Elk,Southwest Desert South,18,2,20
+EB3198,True,True,True,True,included_forecast,Limited Entry,Elk,Southwest Desert South,46,5,51
+EB3199,True,True,True,True,included_forecast,Limited Entry,Elk,Wasatch Mtns,9,1,10
+EB3205,True,True,True,True,included_forecast,Limited Entry,Elk,East Canyon,7,1,8
+EB3208,True,True,True,True,included_forecast,Limited Entry,Elk,Morgan-South Rich,9,1,10
+EB3209,False,True,True,False,not_OIL_LE_PLE,Conservation,Elk,Box Elder Pilot Mtn,,,
+EB3210,True,True,True,True,included_forecast,Limited Entry,Elk,North Slope Three Corners,5,0,5
+EB3500,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Alton CWMU,1,0,1
+EB3501,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Bar J Ranch CWMU,2,0,2
+EB3502,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Bear Mountain CWMU,1,0,1
+EB3503,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Bear Springs CWMU,1,0,1
+EB3504,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Blackhawk CWMU,1,0,1
+EB3505,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Boobe Hole CWMU,2,0,2
+EB3506,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Causey Spring CWMU,1,0,1
+EB3508,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Chimney Rock CWMU,2,0,2
+EB3509,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Coldwater Ranch CWMU,3,0,3
+EB3510,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EB3511,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Cotton Thomas CWMU,1,0,1
+EB3514,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Deseret CWMU,19,0,19
+EB3515,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Double Cone CWMU,1,0,1
+EB3516,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Durst Mountain CWMU,3,0,3
+EB3517,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,East Fork Chalk Creek CWMU,3,0,3
+EB3519,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Ensign Ranches CWMU,6,0,6
+EB3520,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Folley Ridge CWMU,2,0,2
+EB3521,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Grass Valley/Clark Canyon CWMU,10,0,10
+EB3522,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Grazing Pasture CWMU,1,0,1
+EB3523,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Guildersleeve CWMU,2,0,2
+EB3524,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Hardscrabble CWMU,2,0,2
+EB3525,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Heaston East CWMU,2,0,2
+EB3526,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Hiawatha CWMU,2,0,2
+EB3527,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Indian Head CWMU,2,0,2
+EB3528,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Ingham Peak CWMU,1,0,1
+EB3529,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Circle E Ranch CWMU,2,0,2
+EB3530,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Jacob's Creek CWMU,2,0,2
+EB3531,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Johnson Mountain Ranch CWMU,2,0,2
+EB3532,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Jump Creek CWMU,1,0,1
+EB3533,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Junction Valley CWMU,1,0,1
+EB3534,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Little Red Creek CWMU,2,0,2
+EB3535,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EB3536,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Minnie Maud Ridge CWMU,5,0,5
+EB3538,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Moon Ranch CWMU,1,0,1
+EB3540,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Old Woman Plateau CWMU,2,0,2
+EB3541,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Patmos Ridge CWMU,1,0,1
+EB3542,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EB3543,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Preston Nutter Ranch CWMU,3,0,3
+EB3544,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Redd Ranches CWMU,2,0,2
+EB3545,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Cactus Ranch LLC CWMU,3,0,3
+EB3546,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Roan Cliffs CWMU,1,0,1
+EB3547,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Sand Creek CWMU,1,0,1
+EB3548,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Scofield Canyons CWMU,1,0,1
+EB3549,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Scofield East CWMU,1,0,1
+EB3550,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Scofield West CWMU,2,0,2
+EB3551,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,SJ Ranch CWMU,1,0,1
+EB3552,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Skull Crack CWMU,1,0,1
+EB3553,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Soldier Summit CWMU,2,0,2
+EB3554,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,South Canyon CWMU,1,0,1
+EB3555,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Spring Creek/Dodge CWMU,2,0,2
+EB3557,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Strawberry Ridge CWMU,2,0,2
+EB3558,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Summit Point CWMU,1,0,1
+EB3559,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Three C CWMU,2,0,2
+EB3561,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EB3562,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Wallsburg CWMU,1,0,1
+EB3563,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EB3564,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Woodruff Creek South CWMU,2,0,2
+EB3565,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,North Peaks CWMU,1,0,1
+EB3603,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Pahvant Ensign CWMU,1,0,1
+EB3604,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Double R Ranch CWMU,1,0,1
+EB3606,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Mountain Sky Ranch CWMU,1,0,1
+EB3607,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,West Willow Creek Ranch CWMU,1,0,1
+EB3608,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Avintaquin Canyon CWMU,1,0,1
+EB3609,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EB3610,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Sharp Mountain CWMU,2,0,2
+EB3611,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,West Ridge CWMU,2,0,2
+EB3612,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EB3613,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Little Pole Canyon CWMU,1,0,1
+EB3614,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Tunnel Hollow CWMU,1,0,1
+EB3616,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EB3617,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+EB3619,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,Weber Florence Creek/Stillman Creek CWMU,10,0,10
+EB3620,False,True,True,False,not_OIL_LE_PLE,CWMU,Elk,The Dirty Dozen,1,0,1
+EL3000,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Beaver East,,,16
+EL3002,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Book Cliffs Little Creek Roadless,,,16
+EL3003,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Cache Meadowville,,,16
+EL3005,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Cache South,,,16
+EL3006,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Manti,,,16
+EL3008,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Fillmore Pahvant,,,16
+EL3009,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,La Sal La Sal Mtns,,,16
+EL3010,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Monroe,,,16
+EL3011,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Mt Dutton,,,16
+EL3013,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,North Slope Three Corners,,,16
+EL3015,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Panguitch Lake,,,16
+EL3018,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Fishlake/Thousand Lakes,,,16
+EL3019,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,San Juan Bull Elk,,,16
+EL3020,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Diamond Mtn,,,16
+EL3022,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Wasatch Mtns,,,16
+EL3024,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Beaver East,,,21
+EL3025,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Beaver East,,,16
+EL3028,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Book Cliffs Little Creek Roadless,,,21
+EL3031,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Box Elder Pilot Mtn,,,3
+EL3032,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Cache Meadowville,,,21
+EL3033,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Cache Meadowville,,,16
+EL3036,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Cache South,,,21
+EL3037,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Cache South,,,16
+EL3038,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Manti,,,21
+EL3039,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Manti,,,16
+EL3042,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Fillmore Pahvant,,,21
+EL3043,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Fillmore Pahvant,,,16
+EL3044,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,La Sal Dolores Triangle,,,31
+EL3045,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,La Sal La Sal Mtns,,,21
+EL3046,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,La Sal La Sal Mtns,,,16
+EL3047,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Monroe,,,21
+EL3048,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Monroe,,,16
+EL3049,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Mt Dutton,,,21
+EL3050,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Mt Dutton,,,16
+EL3053,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,North Slope Three Corners,,,16
+EL3056,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Panguitch Lake,,,21
+EL3057,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Panguitch Lake,,,16
+EL3063,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Fishlake/Thousand Lakes,,,21
+EL3064,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Fishlake/Thousand Lakes,,,16
+EL3065,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Fishlake/Thousand Lakes,,,16
+EL3066,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,San Juan Bull Elk,,,21
+EL3067,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,San Juan Bull Elk,,,16
+EL3068,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Diamond Mtn,,,21
+EL3069,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Diamond Mtn,,,16
+EL3072,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Wasatch Mtns,,,21
+EL3073,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Wasatch Mtns,,,16
+EL3077,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Beaver East,,,3
+EL3079,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Book Cliffs Little Creek Roadless,,,3
+EL3081,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Cache Meadowville,,,3
+EL3083,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Cache South,,,3
+EL3084,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Manti,,,3
+EL3086,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Fillmore Pahvant,,,3
+EL3087,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,La Sal La Sal Mtns,,,3
+EL3088,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Monroe,,,3
+EL3089,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Mt Dutton,,,3
+EL3091,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,North Slope Three Corners,,,3
+EL3093,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Panguitch Lake,,,3
+EL3096,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Fishlake/Thousand Lakes,,,3
+EL3097,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,San Juan Bull Elk,,,3
+EL3098,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Diamond Mtn,,,3
+EL3100,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Wasatch Mtns,,,3
+EL3126,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Manti,,,16
+EL3127,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Wasatch Mtns,,,16
+EL3130,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Box Elder Pilot Mtn,,,7
+EL3132,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Cache North,,,30
+EL3135,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Barney Top/Kaiparowits,,,30
+EL3136,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Southwest Desert North,,,30
+EL3137,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,West Desert Deep Creek,,,30
+EL3139,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Cache North,,,30
+EL3142,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Barney Top/Kaiparowits,,,30
+EL3143,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Southwest Desert North,,,30
+EL3144,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,West Desert Deep Creek,,,30
+EL3145,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Boulder,,,16
+EL3146,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Southwest Desert South,,,16
+EL3147,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Box Elder Grouse Creek,,,21
+EL3148,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Boulder,,,21
+EL3149,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Southwest Desert South,,,21
+EL3150,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Box Elder Grouse Creek,,,16
+EL3151,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Boulder,,,16
+EL3152,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Southwest Desert South,,,16
+EL3153,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Box Elder Grouse Creek,,,3
+EL3154,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Boulder,,,3
+EL3155,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Southwest Desert South,,,3
+EL3158,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Beaver East,,,14
+EL3159,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Beaver East,,,16
+EL3160,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Book Cliffs Bitter Creek/East,,,16
+EL3161,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Book Cliffs Bitter Creek/East,,,14
+EL3162,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Book Cliffs Bitter Creek/East,,,21
+EL3163,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Book Cliffs Bitter Creek/East,,,16
+EL3164,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Book Cliffs Bitter Creek/East,,,16
+EL3166,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Book Cliffs Bitter Creek/East,,,3
+EL3167,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Book Cliffs Little Creek Roadless,,,16
+EL3168,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Cache Meadowville,,,14
+EL3169,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Cache Meadowville,,,16
+EL3170,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Cache South,,,14
+EL3171,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Cache South,,,16
+EL3172,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Manti,,,14
+EL3173,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Nebo/San Pitch Mtns,,,16
+EL3174,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Nebo/San Pitch Mtns,,,14
+EL3175,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Nebo/San Pitch Mtns,,,21
+EL3176,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Nebo/San Pitch Mtns,,,16
+EL3177,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Nebo/San Pitch Mtns,,,16
+EL3179,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Nebo/San Pitch Mtns,,,3
+EL3180,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Fillmore Pahvant,,,14
+EL3181,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Fillmore Pahvant,,,16
+EL3182,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,La Sal La Sal Mtns,,,14
+EL3183,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,La Sal La Sal Mtns,,,16
+EL3184,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Monroe,,,14
+EL3185,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Monroe,,,16
+EL3186,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Mt Dutton,,,14
+EL3187,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Mt Dutton,,,16
+EL3188,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Panguitch Lake,,,14
+EL3189,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Panguitch Lake,,,16
+EL3190,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Boulder,,,14
+EL3191,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Boulder,,,16
+EL3192,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Fishlake/Thousand Lakes,,,14
+EL3193,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,San Juan Bull Elk,,,14
+EL3194,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,San Juan Bull Elk,,,16
+EL3195,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Diamond Mtn,,,14
+EL3196,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Diamond Mtn,,,16
+EL3197,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Southwest Desert South,,,14
+EL3198,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Southwest Desert South,,,16
+EL3199,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Wasatch Mtns,,,14
+EL3205,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,East Canyon,,,28
+EL3208,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Morgan-South Rich,,,28
+EL3210,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,North Slope Three Corners,,,21
+EX1000,False,True,True,False,not_OIL_LE_PLE,Extended Archery,Elk,Elk Extended Archery,,,
+GO1000,False,True,True,False,not_OIL_LE_PLE,Statewide,Mountain Goat,Mountain Goat - Statewide Permit,,,1
+GO6800,True,True,True,True,included_forecast,Once-in-a-lifetime,Mountain Goat,Beaver,7,2,9
+GO6801,True,True,True,True,included_forecast,Once-in-a-lifetime,Mountain Goat,Beaver,9,0,9
+GO6803,True,True,True,True,included_forecast,Once-in-a-lifetime,Mountain Goat,Nebo,21,3,24
+GO6804,True,True,True,True,included_forecast,Once-in-a-lifetime,Mountain Goat,High Uintas Kamas,1,0,1
+GO6805,True,True,True,True,included_forecast,Once-in-a-lifetime,Mountain Goat,High Uintas Central,5,0,5
+GO6806,True,True,True,True,included_forecast,Once-in-a-lifetime,Mountain Goat,High Uintas East,3,0,3
+GO6807,True,True,True,True,included_forecast,Once-in-a-lifetime,Mountain Goat,High Uintas Leidy Peak,2,0,2
+GO6808,True,True,True,True,included_forecast,Once-in-a-lifetime,Mountain Goat,High Uintas West,9,2,11
+GO6810,True,True,True,True,included_forecast,Once-in-a-lifetime,Mountain Goat,"Ogden, Willard Peak",1,0,1
+GO6813,True,True,True,True,included_forecast,Once-in-a-lifetime,Mountain Goat,"Wasatch Mtns, Provo Peak",5,0,5
+GO6814,True,True,True,True,included_forecast,Once-in-a-lifetime,Mountain Goat,Mt Dutton,2,0,2
+GO6815,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+GO6817,True,True,True,True,included_forecast,Once-in-a-lifetime,Mountain Goat,La Sal Mtns,10,2,12
+GO6818,True,True,True,True,included_forecast,Once-in-a-lifetime,Mountain Goat,"Wasatch Mtns, Box Elder Peak",3,0,3
+GO6819,True,True,True,True,included_forecast,Once-in-a-lifetime,Mountain Goat,"Wasatch Mtns, Lone Peak",1,0,1
+GO6820,True,True,True,True,included_forecast,Once-in-a-lifetime,Mountain Goat,"Wasatch Mtns, Timpanogos",8,2,10
+GO6821,True,True,True,True,included_forecast,Once-in-a-lifetime,Mountain Goat,Nebo,12,0,12
+GO6822,True,True,True,True,included_forecast,Once-in-a-lifetime,Mountain Goat,Beaver,2,0,2
+LD1001,False,True,True,False,missing_forecast_quota,Limited Entry - Private Land Only,Deer,Paunsaugunt - Private Land Only,,,
+LD1004,False,True,True,False,missing_forecast_quota,Limited Entry - Private Land Only,Deer,Paunsaugunt - Private Land Only,,,
+LD1006,False,True,True,False,missing_forecast_quota,Limited Entry - Private Land Only,Deer,Paunsaugunt - Private Land Only,,,
+LD1019,False,True,True,False,missing_forecast_quota,Limited Entry - Private Land Only,Deer,"Fillmore, Oak Creek LE - Private Land Only",,,
+LD1023,False,True,True,False,missing_forecast_quota,Limited Entry - Private Land Only,Deer,Diamond Mtn - Private Land Only,,,
+LD1108,False,True,True,False,missing_forecast_quota,Limited Entry - Private Land Only,Deer,Thousand Lakes - Private Land Only,,,
+LO0008,False,True,True,False,missing_forecast_quota,Limited Entry - Private Land Only,Deer,Diamond Mtn Landowner Association,,,
+LO0009,False,True,True,False,missing_forecast_quota,Limited Entry - Private Land Only,Deer,Diamond Mtn Landowner Association,,,
+LO0010,False,True,True,False,missing_forecast_quota,Limited Entry - Private Land Only,Deer,Diamond Mtn Landowner Association,,,
+LO0011,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Diamond Mtn Landowner Association,,,16
+LO0012,False,True,True,False,missing_forecast_quota,Limited Entry - Private Land Only,Elk,Diamond Mtn Landowner Association,,,
+LO0013,False,True,True,False,missing_forecast_quota,Limited Entry - Private Land Only,Elk,Diamond Mtn Landowner Association,,,
+LO0014,False,True,True,False,missing_forecast_quota,Limited Entry - Private Land Only,Elk,Diamond Mtn Landowner Association,,,
+LO0015,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Diamond Mtn Landowner Association,,,16
+LO1501,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Box Elder,,,
+LO1502,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Cache,,,
+LO1503,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Manti/San Rafael,,,
+LO1504,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Nebo,,,
+LO1506,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Fillmore,,,
+LO1508,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Kamas,,,
+LO1509,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,"La Sal, La Sal Mtns",,,
+LO1510,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Monroe,,,
+LO1511,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Mt Dutton,,,
+LO1512,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Nine Mile,,,
+LO1513,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,North Slope,,,
+LO1514,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Ogden,,,
+LO1516,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Panguitch Lake,,,
+LO1517,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Pine Valley,,,
+LO1518,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Boulder/Kaiparowits,,,
+LO1519,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Fishlake,,,
+LO1521,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,"San Juan, Abajo Mtns",,,
+LO1522,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Vernal/Bonanza,,,
+LO1523,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Yellowstone,,,
+LO1524,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Southwest Desert,,,
+LO1525,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,"Wasatch Mtns, East",,,
+LO1526,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,"Wasatch Mtns, West",,,
+LO1529,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Zion,,,
+LO1531,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Box Elder,,,2
+LO1533,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Manti/San Rafael,,,
+LO1534,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Nebo,,,2
+LO1536,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Fillmore,,,2
+LO1538,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Kamas,,,2
+LO1539,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,"La Sal, La Sal Mtns",,,
+LO1540,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Monroe,,,2
+LO1541,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Mt Dutton,,,2
+LO1542,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Nine Mile,,,2
+LO1543,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,North Slope,,,
+LO1544,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Ogden,,,2
+LO1546,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Panguitch Lake,,,
+LO1547,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Pine Valley,,,2
+LO1549,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Fishlake,,,2
+LO1551,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,"San Juan, Abajo Mtns",,,
+LO1552,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Vernal/Bonanza,,,
+LO1553,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Yellowstone,,,
+LO1554,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Southwest Desert,,,
+LO1555,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,"Wasatch Mtns, East",,,
+LO1556,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,"Wasatch Mtns, West",,,
+LO1559,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Zion,,,2
+LO1561,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Box Elder,,,
+LO1563,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Manti/San Rafael,,,
+LO1564,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Nebo,,,
+LO1566,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Fillmore,,,
+LO1568,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Kamas,,,
+LO1569,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,"La Sal, La Sal Mtns",,,
+LO1570,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Monroe,,,
+LO1571,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Mt Dutton,,,
+LO1572,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Nine Mile,,,
+LO1573,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,North Slope,,,
+LO1574,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Ogden,,,
+LO1576,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Panguitch Lake,,,
+LO1577,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Pine Valley,,,
+LO1579,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Fishlake,,,
+LO1581,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,"San Juan, Abajo Mtns",,,
+LO1582,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Vernal/Bonanza,,,
+LO1583,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Yellowstone,,,
+LO1584,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Southwest Desert,,,
+LO1585,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,"Wasatch Mtns, East",,,
+LO1586,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,"Wasatch Mtns, West",,,
+LO1589,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Zion,,,
+LO1591,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Fillmore,,,1
+LO1592,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Kamas,,,1
+LO1593,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Nine Mile,,,1
+LO1594,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Panguitch Lake,,,
+LO1595,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Pine Valley,,,1
+LO1596,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Fishlake,,,1
+LO1597,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Zion,,,1
+LO1598,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,North Slope,,,
+LO1599,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Chalk Creek,,,
+LO1600,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Chalk Creek,,,
+LO1601,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Chalk Creek,,,
+LO1602,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Chalk Creek,,,
+LO1603,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,East Canyon,,,
+LO1604,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,East Canyon,,,
+LO1605,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,East Canyon,,,
+LO1606,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,East Canyon,,,
+LO1607,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Morgan-South Rich,,,
+LO1608,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Morgan-South Rich,,,
+LO1609,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Morgan-South Rich,,,
+LO1610,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Morgan-South Rich,,,
+LO1611,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,"Beaver, East",,,
+LO1612,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,"Beaver, East",,,
+LO1613,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,"Beaver, East",,,
+LO1614,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,"Beaver, West",,,
+LO1615,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,"Beaver, West",,,
+LO1616,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,"Beaver, West",,,
+LO1617,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,"West Desert, Swasey",,,
+LO1618,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,"West Desert, Swasey",,,
+LO1619,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,"West Desert, Swasey",,,
+LO1620,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Oquirrh/Tintic,,,
+LO1621,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Oquirrh/Tintic,,,
+LO1622,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Oquirrh/Tintic,,,
+LO1623,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Cedar/Stansbury,,,
+LO1624,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Cedar/Stansbury,,,
+LO1625,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Cedar/Stansbury,,,
+LO1627,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Cache,,,2
+LO1628,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Cache,,,2
+LO1629,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Boulder/Kaiparowits,,,
+LO1630,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Boulder/Kaiparowits,,,
+LO1631,False,True,True,False,not_OIL_LE_PLE,General Season - Private Land Only,Deer,Box Elder,,,1
+LP5025,False,True,True,False,missing_forecast_quota,Limited Entry - Private Land Only,Pronghorn,Beaver - Private Land Only,,,
+LP5031,False,True,True,False,missing_forecast_quota,Limited Entry - Private Land Only,Pronghorn,"Box Elder, West - Private Land Only",,,
+LP5033,False,True,True,False,missing_forecast_quota,Limited Entry - Private Land Only,Pronghorn,"Fillmore, Oak Creek South - Private Land Only",,,
+LP5046,False,True,True,False,missing_forecast_quota,Limited Entry - Private Land Only,Pronghorn,"San Rafael, North - Private Land Only",,,
+LP5049,False,True,True,False,missing_forecast_quota,Limited Entry - Private Land Only,Pronghorn,Southwest Desert - Private Land Only,,,
+LP5051,False,True,True,False,missing_forecast_quota,Limited Entry - Private Land Only,Pronghorn,"West Desert, Rush Valley - Private Land Only",,,
+MA1000,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+MA1001,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+MA1003,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+MA1005,True,True,True,True,included_forecast,Limited Entry,Moose,Morgan-South Rich,6,1,7
+MA1006,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+MA1007,True,True,True,True,included_forecast,Limited Entry,Moose,Morgan-South Rich,3,0,3
+MA1008,True,True,True,True,included_forecast,Limited Entry,Moose,"Wasatch Mtns, Salt Lake-Timpanogos",4,1,5
+MA1009,False,True,True,False,not_OIL_LE_PLE,CWMU,Moose,Causey Spring CWMU,1,0,1
+MA1010,False,True,True,False,not_OIL_LE_PLE,CWMU,Moose,Deseret CWMU,2,0,2
+MB1000,False,True,True,False,not_OIL_LE_PLE,Statewide,Moose,Moose - Statewide Permit,,,
+MB6000,True,True,True,True,included_forecast,Once-in-a-lifetime,Moose,Cache,14,3,17
+MB6001,True,True,True,True,included_forecast,Once-in-a-lifetime,Moose,Chalk Creek,4,0,4
+MB6002,True,True,True,True,included_forecast,Once-in-a-lifetime,Moose,East Canyon,5,0,5
+MB6003,True,True,True,True,included_forecast,Once-in-a-lifetime,Moose,"East Canyon, Morgan-Summit",5,0,5
+MB6004,True,True,True,True,included_forecast,Once-in-a-lifetime,Moose,Kamas,6,0,6
+MB6005,True,True,True,True,included_forecast,Once-in-a-lifetime,Moose,Morgan-South Rich,6,0,6
+MB6006,True,True,True,True,included_forecast,Once-in-a-lifetime,Moose,"North Slope, Summit",20,3,23
+MB6007,True,True,True,True,included_forecast,Once-in-a-lifetime,Moose,"North Slope, Three Corners/West Daggett",6,2,8
+MB6008,True,True,True,True,included_forecast,Once-in-a-lifetime,Moose,Ogden,7,0,7
+MB6009,True,True,True,True,included_forecast,Once-in-a-lifetime,Moose,Diamond Mtn/Vernal,2,0,2
+MB6010,True,True,True,True,included_forecast,Once-in-a-lifetime,Moose,Yellowstone,6,0,6
+MB6011,True,True,True,True,included_forecast,Once-in-a-lifetime,Moose,Wasatch Mtns/Central Mtns,19,3,22
+MB6012,True,True,True,True,included_forecast,Once-in-a-lifetime,Moose,Box Elder,2,0,2
+MB6200,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+MB6201,False,True,True,False,not_OIL_LE_PLE,CWMU,Moose,Beaver Hollow CWMU,1,0,1
+MB6202,False,True,True,False,not_OIL_LE_PLE,CWMU,Moose,Causey Spring CWMU,1,0,1
+MB6206,False,True,True,False,not_OIL_LE_PLE,CWMU,Moose,Deseret CWMU,1,0,1
+MB6207,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+MB6208,False,True,True,False,not_OIL_LE_PLE,CWMU,Moose,East Fork Chalk Creek CWMU,2,0,2
+MB6209,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+MB6210,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+MB6211,False,True,True,False,not_OIL_LE_PLE,CWMU,Moose,Grass Valley/Clark Canyon CWMU,4,0,4
+MB6216,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+MB6217,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+MB6219,False,True,True,False,not_OIL_LE_PLE,CWMU,Moose,Skull Crack CWMU,2,0,2
+MB6220,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+MB6222,False,True,True,False,not_OIL_LE_PLE,CWMU,Moose,Strawberry Ridge CWMU,1,0,1
+MB6223,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+MB6224,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+MB6225,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+MB6226,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+MB6240,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+MB6251,False,True,True,False,not_OIL_LE_PLE,CWMU,Moose,Hardscrabble CWMU,1,0,1
+MB6252,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+MB6254,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+MB6256,False,True,True,False,not_OIL_LE_PLE,CWMU,Moose,Woodruff Creek South CWMU,1,0,1
+MB6257,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+MB6258,False,True,True,False,not_OIL_LE_PLE,CWMU,Moose,Jacob's Creek CWMU,1,0,1
+MB6259,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+MB6262,False,True,True,False,not_OIL_LE_PLE,CWMU,Moose,Junction Valley CWMU,1,0,1
+MB6263,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+MB6264,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+MB6265,False,True,True,False,not_OIL_LE_PLE,CWMU,Moose,Little Pole Canyon CWMU,1,0,1
+MB6266,False,True,True,False,not_OIL_LE_PLE,CWMU,Moose,Weber Florence Creek/Stillman Creek CWMU,3,0,3
+PB1000,False,True,True,False,not_OIL_LE_PLE,Statewide,Pronghorn,Pronghorn - Statewide Permit,,,
+PB5000,True,True,True,True,included_forecast,Limited Entry,Pronghorn,Beaver,11,1,12
+PB5001,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Book Cliffs, Bitter Creek",13,1,14
+PB5002,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Book Cliffs, South",8,1,9
+PB5003,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Box Elder, Promontory",4,0,4
+PB5004,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Box Elder, Puddle Valley",3,1,4
+PB5005,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Box Elder, Snowville",9,1,10
+PB5006,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Box Elder, West",10,1,11
+PB5007,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PB5008,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Fillmore, Oak Creek South",15,2,17
+PB5009,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"La Sal, Potash/South Cisco",6,0,6
+PB5011,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Nine Mile, Anthro-Myton Bench",30,3,33
+PB5012,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"North Slope, Three Corners/West Daggett",10,1,11
+PB5013,True,True,True,True,included_forecast,Limited Entry,Pronghorn,Pine Valley,7,1,8
+PB5015,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"San Rafael, North",21,2,23
+PB5016,True,True,True,True,included_forecast,Limited Entry,Pronghorn,Diamond Mtn/Bonanza,17,2,19
+PB5017,True,True,True,True,included_forecast,Limited Entry,Pronghorn,Vernal,18,2,20
+PB5018,True,True,True,True,included_forecast,Limited Entry,Pronghorn,Southwest Desert,31,4,35
+PB5019,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"West Desert, Riverbed",18,2,20
+PB5020,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"West Desert, Rush Valley",8,1,9
+PB5021,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"West Desert, Snake Valley",23,3,26
+PB5022,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PB5024,True,True,True,True,included_forecast,Limited Entry,Pronghorn,Southwest Desert,31,4,35
+PB5025,True,True,True,True,included_forecast,Limited Entry,Pronghorn,Beaver,43,5,48
+PB5026,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Book Cliffs, Bitter Creek",50,6,56
+PB5027,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Book Cliffs, South",34,4,38
+PB5028,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Box Elder, Promontory",14,2,16
+PB5029,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Box Elder, Puddle Valley",14,2,16
+PB5030,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Box Elder, Snowville",28,3,31
+PB5031,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Box Elder, West",30,3,33
+PB5032,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PB5033,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Fillmore, Oak Creek South",46,5,51
+PB5034,True,True,True,True,included_forecast,Limited Entry,Pronghorn,Kaiparowits,2,0,2
+PB5035,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"La Sal, Potash/South Cisco",22,2,24
+PB5037,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Nine Mile, Anthro-Myton Bench",89,10,99
+PB5038,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Nine Mile, Range Creek",13,1,14
+PB5039,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"North Slope, Summit",15,2,17
+PB5040,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"North Slope, Three Corners/West Daggett",29,3,32
+PB5041,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Panguitch Lake/Zion, North",21,2,23
+PB5042,True,True,True,True,included_forecast,Limited Entry,Pronghorn,Pine Valley,21,2,23
+PB5044,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"San Juan, Hatch Point",3,0,3
+PB5045,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"San Rafael, Desert",7,1,8
+PB5046,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"San Rafael, North",62,7,69
+PB5047,True,True,True,True,included_forecast,Limited Entry,Pronghorn,Diamond Mtn/Bonanza,50,6,56
+PB5048,True,True,True,True,included_forecast,Limited Entry,Pronghorn,Vernal,54,6,60
+PB5049,True,True,True,True,included_forecast,Limited Entry,Pronghorn,Southwest Desert,94,11,105
+PB5050,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"West Desert, Riverbed",73,8,81
+PB5051,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"West Desert, Rush Valley",32,4,36
+PB5052,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"West Desert, Snake Valley",95,11,106
+PB5053,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Nine Mile, Range Creek",4,0,4
+PB5054,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Panguitch Lake/Zion, North",7,1,8
+PB5055,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"San Rafael, Desert",2,0,2
+PB5056,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"San Rafael, North",21,2,23
+PB5058,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PB5059,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Nine Mile, Anthro-Myton Bench",30,3,33
+PB5060,True,True,True,True,included_forecast,Limited Entry,Pronghorn,Diamond Mtn/Bonanza,17,2,19
+PB5061,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Panguitch Lake/Zion, North",7,1,8
+PB5062,True,True,True,True,included_forecast,Limited Entry,Pronghorn,Pine Valley,7,1,8
+PB5063,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PB5064,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PB5065,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Fillmore, Oak Creek South",15,2,17
+PB5066,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"North Slope, Three Corners/West Daggett",10,1,11
+PB5067,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PB5072,True,True,True,True,included_forecast,Limited Entry,Pronghorn,Vernal,18,2,20
+PB5073,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Cache, Rich",6,0,6
+PB5074,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Cache, Rich",2,0,2
+PB5075,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Cache, Rich",2,0,2
+PB5076,True,True,True,True,included_forecast,Limited Entry,Pronghorn,Parker Mtn,135,15,150
+PB5077,True,True,True,True,included_forecast,Limited Entry,Pronghorn,Parker Mtn,45,5,50
+PB5078,True,True,True,True,included_forecast,Limited Entry,Pronghorn,Parker Mtn,45,5,50
+PB5079,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Box Elder, West",10,1,11
+PB5080,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Box Elder, Snowville",9,1,10
+PB5300,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Antelope Creek CWMU,4,0,4
+PB5302,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Deseret CWMU,29,0,29
+PB5303,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PB5305,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Park Valley CWMU,1,0,1
+PB5306,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Rabbit Creek CWMU,1,0,1
+PB5307,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PB5309,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Skull Valley South CWMU,2,0,2
+PB5311,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,The Rose of Snowville CWMU,3,0,3
+PB5312,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,TL Bar Ranch CWMU,1,0,1
+PB5313,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PB5314,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Westlake CWMU,2,0,2
+PB5315,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Zane CWMU,2,0,2
+PB5325,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Allen Ranch CWMU,2,0,2
+PB5326,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Cedar Springs CWMU,1,0,1
+PB5327,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Cottonwood Ridge CWMU,4,0,4
+PB5328,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Pahvant Ensign CWMU,3,0,3
+PB5329,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Snowville Flat CWMU,2,0,2
+PB5330,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,George Creek CWMU,1,0,1
+PB5331,True,True,True,True,included_forecast,Limited Entry,Pronghorn,Mt Dutton/Paunsaugunt,13,2,15
+PB5332,True,True,True,True,included_forecast,Limited Entry,Pronghorn,Mt Dutton/Paunsaugunt,4,1,5
+PB5337,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Heist CWMU,2,0,2
+PB5338,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Castle Valley Outdoors CWMU,1,0,1
+PB5339,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Iron Spring CWMU,1,0,1
+PB5341,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PB5342,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Salt Wells CWMU,1,0,1
+PB5343,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PB5345,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Green River Flat CWMU,2,0,2
+PB5346,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Junction Valley CWMU,1,0,1
+PD1000,False,True,True,False,not_OIL_LE_PLE,General Season,Pronghorn,"Box Elder, Snowville",72,8,80
+PD1002,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PD1003,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PD1005,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PD1007,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PD1008,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PD1012,False,True,True,False,not_OIL_LE_PLE,General Season,Pronghorn,"Box Elder, Promontory",22,3,25
+PD1013,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PD1014,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PD1016,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PD1017,False,True,True,False,not_OIL_LE_PLE,General Season,Pronghorn,"Box Elder, West",49,6,55
+PD1018,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PD1022,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PD1023,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PD1024,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PD1025,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PD1026,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PD1027,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PD1030,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PD1031,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Westlake CWMU,9,0,9
+PD1032,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PD1033,False,True,True,False,not_OIL_LE_PLE,General Season,Pronghorn,"San Rafael, Poison Springs Bench",13,2,15
+PD1034,False,True,True,False,not_OIL_LE_PLE,General Season,Pronghorn,"Fillmore, Oak Creek South",27,3,30
+PD1035,False,True,True,False,not_OIL_LE_PLE,General Season,Pronghorn,"Fillmore, Oak Creek South",27,3,30
+PD1036,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PD1037,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PD1038,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PD1039,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PD1041,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PD1042,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+PD1043,False,True,True,False,not_OIL_LE_PLE,General Season,Pronghorn,"Nine Mile, Anthro-Pleasant Valley",9,1,10
+PD1044,False,True,True,False,not_OIL_LE_PLE,General Season,Pronghorn,Vernal-Ouray Valley,9,1,10
+PD1047,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Antelope Creek CWMU,6,0,6
+PD1048,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,The Rose of Snowville CWMU,2,0,2
+PD1049,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Zane CWMU,6,0,6
+PD1050,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Cottonwood Ridge CWMU,6,0,6
+PD1051,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Pahvant Ensign CWMU,6,0,6
+PD1052,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Heist CWMU,6,0,6
+PD1053,False,True,True,False,not_OIL_LE_PLE,CWMU,Pronghorn,Green River Flat CWMU,6,0,6
+PD1054,False,True,True,False,not_OIL_LE_PLE,General Season,Pronghorn,Parker Mtn,27,3,30
+PD1055,False,True,True,False,not_OIL_LE_PLE,General Season,Pronghorn,Parker Mtn,31,4,35
+PD1056,False,True,True,False,not_OIL_LE_PLE,General Season,Pronghorn,Parker Mtn,36,4,40
+PD1057,False,True,True,False,not_OIL_LE_PLE,General Season,Pronghorn,"Parker Mtn, Highlands",31,4,35
+PD1058,False,True,True,False,not_OIL_LE_PLE,General Season,Pronghorn,"Parker Mtn, Highlands",36,4,40
+PD1059,False,True,True,False,not_OIL_LE_PLE,General Season,Pronghorn,"Parker Mtn, Plains",27,3,30
+PD1060,False,True,True,False,not_OIL_LE_PLE,General Season,Pronghorn,"Parker Mtn, Plains",36,4,40
+RE1000,False,True,True,False,not_OIL_LE_PLE,General Season,Rocky Mountain Bighorn Sheep,"Box Elder, Newfoundland Mtn",4,1,5
+RS0001,False,True,True,False,not_OIL_LE_PLE,Statewide,Rocky Mountain Bighorn Sheep,Rocky Mountain Bighorn Sheep - Statewide Permit,,,
+RS1000,False,True,True,False,missing_forecast_quota,Once-in-a-lifetime,Rocky Mountain Bighorn Sheep,Antelope Island Conservation,,,
+RS1001,False,True,True,False,not_OIL_LE_PLE,Conservation,Rocky Mountain Bighorn Sheep,"Book Cliffs, South",,,
+RS1003,False,True,True,False,not_OIL_LE_PLE,Conservation,Rocky Mountain Bighorn Sheep,"Box Elder, Newfoundland Mtn",,,
+RS1006,False,True,True,False,not_OIL_LE_PLE,Conservation,Rocky Mountain Bighorn Sheep,"Nine Mile, Gray Canyon",,,
+RS6700,True,True,True,True,included_forecast,Once-in-a-lifetime,Rocky Mountain Bighorn Sheep,Antelope Island,2,0,2
+RS6701,True,True,True,True,included_forecast,Once-in-a-lifetime,Rocky Mountain Bighorn Sheep,"Book Cliffs, South",5,1,6
+RS6703,True,True,True,True,included_forecast,Once-in-a-lifetime,Rocky Mountain Bighorn Sheep,"Box Elder, Newfoundland Mtn",4,0,4
+RS6704,True,True,True,True,included_forecast,Once-in-a-lifetime,Rocky Mountain Bighorn Sheep,"Box Elder, Newfoundland Mtn",3,1,4
+RS6708,True,True,True,True,included_forecast,Once-in-a-lifetime,Rocky Mountain Bighorn Sheep,"North Slope, Three Corners",2,0,2
+RS6709,True,True,True,True,included_forecast,Once-in-a-lifetime,Rocky Mountain Bighorn Sheep,"North Slope, Summit/West Daggett",3,0,3
+RS6712,True,True,True,True,included_forecast,Once-in-a-lifetime,Rocky Mountain Bighorn Sheep,"Nine Mile, Gray Canyon",4,2,6
+RS6713,True,True,True,True,included_forecast,Once-in-a-lifetime,Rocky Mountain Bighorn Sheep,"Nine Mile, Jack Creek",4,0,4
+RS6720,True,True,True,True,included_forecast,Once-in-a-lifetime,Rocky Mountain Bighorn Sheep,"Fillmore, Oak Creek",4,0,4
+RS6721,True,True,True,True,included_forecast,Once-in-a-lifetime,Rocky Mountain Bighorn Sheep,"Oquirrh-Stansbury, West",3,0,3
+RS6722,True,True,True,True,included_forecast,Once-in-a-lifetime,Rocky Mountain Bighorn Sheep,"Box Elder, Newfoundland Mtn",2,0,2
+RS6724,True,True,True,True,included_forecast,Once-in-a-lifetime,Rocky Mountain Bighorn Sheep,"Wasatch Mtns, West",3,0,3
+RS6725,True,True,True,True,included_forecast,Once-in-a-lifetime,Rocky Mountain Bighorn Sheep,Nebo,2,0,2
+RS6726,True,True,True,True,included_forecast,Once-in-a-lifetime,Rocky Mountain Bighorn Sheep,"Fillmore, Oak Creek",3,1,4
+RS6727,True,True,True,True,included_forecast,Once-in-a-lifetime,Rocky Mountain Bighorn Sheep,"Fillmore, Oak Creek",2,0,2
+TK0001,False,True,True,False,not_OIL_LE_PLE,Statewide,Turkey,Turkey - Statewide Permit,,,
+TK1000,False,True,True,False,not_OIL_LE_PLE,Spring General Season,Turkey,Statewide,,,
+TK1001,False,True,True,False,not_OIL_LE_PLE,Fall Management,Turkey,Northern Region - Private land only,,,2060
+TK1003,False,True,True,True,other_missing_model_input,Limited Entry,Turkey,Central Area,,,600
+TK1004,False,True,True,True,other_missing_model_input,Limited Entry,Turkey,Northeastern Area,,,347
+TK1005,False,True,True,True,other_missing_model_input,Limited Entry,Turkey,Northern Area,,,500
+TK1006,False,True,True,True,other_missing_model_input,Limited Entry,Turkey,Southeastern Area,,,250
+TK1007,False,True,True,True,other_missing_model_input,Limited Entry,Turkey,Southern Area,,,542
+TK1012,False,True,True,False,not_OIL_LE_PLE,Conservation,Turkey,Central Area,,,
+TK1013,False,True,True,False,not_OIL_LE_PLE,Conservation,Turkey,Northeastern Area,,,
+TK1014,False,True,True,False,not_OIL_LE_PLE,Conservation,Turkey,Northern Area,,,
+TK1015,False,True,True,False,not_OIL_LE_PLE,Conservation,Turkey,Southeastern Area,,,
+TK1016,False,True,True,False,not_OIL_LE_PLE,Conservation,Turkey,Southern Area,,,
+TK1018,False,True,True,False,not_OIL_LE_PLE,CWMU,Turkey,Pahvant Ensign CWMU,,,6
+TK1019,False,True,True,False,not_OIL_LE_PLE,Fall Management,Turkey,Southeastern Region - Select areas only,,,66
+TK1020,False,True,True,False,not_OIL_LE_PLE,Fall Management,Turkey,Central Region - Private land only,,,800
+TK1021,False,True,True,False,not_OIL_LE_PLE,CWMU,Turkey,East Zion CWMU,,,4
+TK1022,False,True,True,False,not_OIL_LE_PLE,Fall Management,Turkey,Southern Region - Select areas only,,,155

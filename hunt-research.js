@@ -1,4 +1,7 @@
 (function () {
+  const ENGINE_MODE = (window.UOGA_CONFIG && window.UOGA_CONFIG.HUNT_RESEARCH_ENGINE_MODE)
+    ? String(window.UOGA_CONFIG.HUNT_RESEARCH_ENGINE_MODE).trim().toLowerCase()
+    : 'observed';
   const ENGINE_SOURCES = (window.UOGA_CONFIG && Array.isArray(window.UOGA_CONFIG.HUNT_RESEARCH_ENGINE_SOURCES) && window.UOGA_CONFIG.HUNT_RESEARCH_ENGINE_SOURCES.length)
     ? window.UOGA_CONFIG.HUNT_RESEARCH_ENGINE_SOURCES
     : ['./processed_data/draw_reality_engine.csv'];
@@ -40,6 +43,7 @@
     masterByCode: new Map(),
     referenceByKey: new Map(),
     engineHistoryByPoint: new Map(),
+    engineMode: ENGINE_MODE,
   };
 
   const els = {
@@ -206,6 +210,10 @@
   function hasModeledProbabilityFields(row) {
     if (!row) return false;
     return [
+      row.p_draw_pct,
+      row.p_draw,
+      row.p_bonus_pool_pct,
+      row.p_random_pool_pct,
       row.display_odds_pct,
       row.p_draw_mean,
       row.p_draw_p10,
@@ -519,6 +527,27 @@
     if (!row) return { value: 'Not available', source: 'unavailable' };
     const hasModeledFields = hasModeledProbabilityFields(row);
     const intervalSuffix = getProbabilityIntervalSuffix(row);
+
+    const pDrawPct = num(firstAvailable(row, ['p_draw_pct']));
+    if (pDrawPct !== null) {
+      return { value: `${formatProbability(pDrawPct)}${intervalSuffix}`, source: 'p_draw_pct' };
+    }
+
+    const pDraw = num(firstAvailable(row, ['p_draw']));
+    if (pDraw !== null) {
+      return { value: `${formatProbability(toProbabilityPercent(pDraw))}${intervalSuffix}`, source: 'p_draw' };
+    }
+
+    const pBonusPoolPct = num(firstAvailable(row, ['p_bonus_pool_pct']));
+    const pRandomPoolPct = num(firstAvailable(row, ['p_random_pool_pct']));
+    if (pBonusPoolPct !== null || pRandomPoolPct !== null) {
+      const bonusLabel = pBonusPoolPct === null ? 'NA' : formatProbability(pBonusPoolPct);
+      const randomLabel = pRandomPoolPct === null ? 'NA' : formatProbability(pRandomPoolPct);
+      return {
+        value: `${bonusLabel} / ${randomLabel}`,
+        source: 'pool_breakdown',
+      };
+    }
 
     const displayOddsPct = num(firstAvailable(row, ['display_odds_pct']));
     if (displayOddsPct !== null) {
@@ -1209,6 +1238,7 @@
     );
 
     return {
+      engineMode: ENGINE_MODE,
       engine: engine.source,
       ladder: ladder.source,
       master: master.source,

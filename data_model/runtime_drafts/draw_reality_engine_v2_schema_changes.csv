@@ -1,5 +1,4 @@
 column,change_type,current_runtime_has_column,v2_runtime_has_column,notes
-draw_pool,ADDED_IN_V2_DRAFT,NO,YES,Required by V3 draw truth draft schema
 hunt_class,ADDED_IN_V2_DRAFT,NO,YES,Required by V3 draw truth draft schema
 hunt_type,ADDED_IN_V2_DRAFT,NO,YES,Required by V3 draw truth draft schema
 season,ADDED_IN_V2_DRAFT,NO,YES,Required by V3 draw truth draft schema

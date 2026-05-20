@@ -1,0 +1,763 @@
+hunt_code,hunt_type,hunt_kind,draw_pool,residency,prediction_year,quota_residency,reserved_quota,random_quota,reserved_fraction,points_modeled,expected_cutoff_points,iterations
+BI6500,Once-in-a-lifetime,OIL,standard,Resident,2026,2,1,1,0.5455,33,30.74,600
+BI6503,Once-in-a-lifetime,OIL,standard,Nonresident,2026,2,1,1,0.35,33,30.53,600
+BI6503,Once-in-a-lifetime,OIL,standard,Resident,2026,4,1,3,0.35,34,62.0,600
+BI6504,Once-in-a-lifetime,OIL,standard,Nonresident,2026,2,1,1,0.35,33,30.365,600
+BI6504,Once-in-a-lifetime,OIL,standard,Resident,2026,5,2,3,0.35,33,28.778,600
+BI6505,Once-in-a-lifetime,OIL,standard,Nonresident,2026,3,1,2,0.35,33,29.845,600
+BI6505,Once-in-a-lifetime,OIL,standard,Resident,2026,8,3,5,0.4035,33,25.998,600
+BI6506,Once-in-a-lifetime,OIL,standard,Resident,2026,11,5,6,0.4103,33,21.428,600
+BI6509,Once-in-a-lifetime,OIL,standard,Resident,2026,5,2,3,0.5,33,27.472,600
+BI6516,Once-in-a-lifetime,OIL,standard,Resident,2026,6,2,4,0.35,33,28.455,600
+BI6528,Once-in-a-lifetime,OIL,standard,Resident,2026,6,3,3,0.5238,33,25.8,600
+BI6529,Once-in-a-lifetime,OIL,standard,Resident,2026,8,4,4,0.5303,33,22.843,600
+BI6531,Once-in-a-lifetime,OIL,standard,Resident,2026,10,4,6,0.35,33,26.468,600
+BI6532,Once-in-a-lifetime,OIL,standard,Resident,2026,6,3,3,0.5,33,25.778,600
+BI6534,Once-in-a-lifetime,OIL,standard,Resident,2026,10,6,4,0.5714,33,27.192,600
+BI6535,Once-in-a-lifetime,OIL,standard,Resident,2026,8,4,4,0.4667,33,26.565,600
+BI6536,Once-in-a-lifetime,OIL,standard,Resident,2026,15,5,10,0.35,33,23.75,600
+BI6537,Once-in-a-lifetime,OIL,standard,Nonresident,2026,7,3,4,0.4,33,27.793,600
+BI6537,Once-in-a-lifetime,OIL,standard,Resident,2026,8,5,3,0.6,33,25.153,600
+BI6539,Once-in-a-lifetime,OIL,standard,Resident,2026,11,6,5,0.5,1,0.0,600
+BR7000,Limited Entry - Spring,LE,standard,Nonresident,2026,1,0,1,0.35,23,,600
+BR7000,Limited Entry - Spring,LE,standard,Resident,2026,9,4,5,0.4737,23,13.255,600
+BR7001,Limited Entry - Spring,LE,standard,Nonresident,2026,5,3,2,0.5455,23,15.518,600
+BR7001,Limited Entry - Spring,LE,standard,Resident,2026,49,24,25,0.4803,23,4.697,600
+BR7003,Limited Entry - Spring,LE,standard,Nonresident,2026,2,1,1,0.35,23,19.842,600
+BR7003,Limited Entry - Spring,LE,standard,Resident,2026,17,7,10,0.4231,23,10.482,600
+BR7004,Limited Entry - Spring,LE,standard,Resident,2026,18,7,11,0.3913,23,12.71,600
+BR7005,Limited Entry - Spring,LE,standard,Resident,2026,7,3,4,0.4737,23,15.84,600
+BR7007,Limited Entry - Spring,LE,standard,Resident,2026,1,0,1,0.35,23,,600
+BR7009,Limited Entry - Spring,LE,standard,Resident,2026,4,2,2,0.6111,23,17.293,600
+BR7010,Limited Entry - Spring,LE,standard,Resident,2026,9,4,5,0.4531,23,12.59,600
+BR7011,Limited Entry - Spring,LE,standard,Resident,2026,4,2,2,0.5,23,17.408,600
+BR7012,Limited Entry - Spring,LE,standard,Nonresident,2026,2,1,1,0.5,23,19.715,600
+BR7012,Limited Entry - Spring,LE,standard,Resident,2026,20,11,9,0.5278,23,4.842,600
+BR7013,Limited Entry - Spring,LE,standard,Resident,2026,7,4,3,0.5,23,13.392,600
+BR7014,Limited Entry - Spring,LE,standard,Nonresident,2026,3,2,1,0.5714,23,17.397,600
+BR7014,Limited Entry - Spring,LE,standard,Resident,2026,35,14,21,0.4,23,11.043,600
+BR7015,Limited Entry - Spring,LE,standard,Resident,2026,7,4,3,0.5132,23,12.503,600
+BR7016,Limited Entry - Spring,LE,standard,Nonresident,2026,4,2,2,0.6,23,17.312,600
+BR7016,Limited Entry - Spring,LE,standard,Resident,2026,36,17,19,0.4811,23,6.625,600
+BR7017,Limited Entry - Spring,LE,standard,Resident,2026,2,1,1,0.4,23,19.788,600
+BR7018,Limited Entry - Spring,LE,standard,Resident,2026,5,2,3,0.5,23,17.467,600
+BR7020,Limited Entry - Spring,LE,standard,Resident,2026,1,0,1,0.35,23,,600
+BR7021,Limited Entry - Spring,LE,standard,Resident,2026,2,1,1,0.5,1,0.0,600
+BR7022,Limited Entry - Spring,LE,standard,Nonresident,2026,3,2,1,0.5,1,0.0,600
+BR7022,Limited Entry - Spring,LE,standard,Resident,2026,40,20,20,0.5,1,0.0,600
+BR7100,Limited Entry - Summer,LE,standard,Nonresident,2026,1,0,1,0.35,23,,600
+BR7100,Limited Entry - Summer,LE,standard,Resident,2026,9,4,5,0.4762,23,15.167,600
+BR7101,Limited Entry - Summer,LE,standard,Nonresident,2026,1,0,1,0.35,23,,600
+BR7101,Limited Entry - Summer,LE,standard,Resident,2026,14,7,7,0.5238,23,10.118,600
+BR7102,Limited Entry - Summer,LE,standard,Resident,2026,5,2,3,0.5,23,17.44,600
+BR7104,Limited Entry - Summer,LE,standard,Nonresident,2026,1,0,1,0.35,23,,600
+BR7104,Limited Entry - Summer,LE,standard,Resident,2026,17,6,11,0.36,23,12.988,600
+BR7105,Limited Entry - Summer,LE,standard,Nonresident,2026,2,1,1,0.35,23,19.988,600
+BR7105,Limited Entry - Summer,LE,standard,Resident,2026,18,6,12,0.35,23,13.583,600
+BR7106,Limited Entry - Summer,LE,standard,Resident,2026,8,3,5,0.3625,23,17.885,600
+BR7109,Limited Entry - Summer,LE,standard,Resident,2026,3,2,1,0.625,23,17.493,600
+BR7110,Limited Entry - Summer,LE,standard,Nonresident,2026,2,1,1,0.35,23,19.68,600
+BR7110,Limited Entry - Summer,LE,standard,Resident,2026,18,8,10,0.4167,23,8.833,600
+BR7111,Limited Entry - Summer,LE,standard,Resident,2026,1,0,1,0.4,23,,600
+BR7112,Limited Entry - Summer,LE,standard,Resident,2026,5,2,3,0.45,23,17.283,600
+BR7113,Limited Entry - Summer,LE,standard,Resident,2026,3,2,1,0.625,23,17.343,600
+BR7114,Limited Entry - Summer,LE,standard,Nonresident,2026,1,0,1,0.4,23,,600
+BR7114,Limited Entry - Summer,LE,standard,Resident,2026,13,6,7,0.4833,23,10.462,600
+BR7115,Limited Entry - Summer,LE,standard,Resident,2026,7,3,4,0.4615,23,16.477,600
+BR7116,Limited Entry - Summer,LE,standard,Nonresident,2026,2,1,1,0.5,23,19.875,600
+BR7116,Limited Entry - Summer,LE,standard,Resident,2026,22,10,12,0.4444,23,10.773,600
+BR7117,Limited Entry - Summer,LE,standard,Resident,2026,5,3,2,0.5333,23,15.73,600
+BR7118,Limited Entry - Summer,LE,standard,Resident,2026,5,3,2,0.5385,23,16.215,600
+BR7119,Limited Entry - Summer,LE,standard,Resident,2026,5,2,3,0.4615,23,17.56,600
+BR7120,Limited Entry - Summer,LE,standard,Nonresident,2026,1,0,1,0.35,23,,600
+BR7120,Limited Entry - Summer,LE,standard,Resident,2026,22,8,14,0.35,23,14.078,600
+BR7121,Limited Entry - Summer,LE,standard,Resident,2026,4,2,2,0.4286,23,17.508,600
+BR7122,Limited Entry - Summer,LE,standard,Resident,2026,7,3,4,0.4286,23,15.94,600
+BR7123,Limited Entry - Summer,LE,standard,Resident,2026,6,2,4,0.4,23,17.522,600
+BR7124,Limited Entry - Summer,LE,standard,Resident,2026,2,1,1,0.35,23,19.683,600
+BR7125,Limited Entry - Summer,LE,standard,Resident,2026,1,0,1,0.35,23,,600
+BR7126,Limited Entry - Summer,LE,standard,Resident,2026,6,3,3,0.5,1,0.0,600
+BR7127,Limited Entry - Summer,LE,standard,Nonresident,2026,2,1,1,0.5,1,0.0,600
+BR7127,Limited Entry - Summer,LE,standard,Resident,2026,25,12,13,0.5,1,0.0,600
+BR7200,Limited Entry - Fall,LE,standard,Nonresident,2026,1,0,1,0.35,23,,600
+BR7200,Limited Entry - Fall,LE,standard,Resident,2026,9,4,5,0.4706,23,13.86,600
+BR7201,Limited Entry - Fall,LE,standard,Nonresident,2026,2,1,1,0.375,23,19.85,600
+BR7201,Limited Entry - Fall,LE,standard,Resident,2026,18,8,10,0.4677,23,10.245,600
+BR7203,Limited Entry - Fall,LE,standard,Nonresident,2026,1,0,1,0.35,23,,600
+BR7203,Limited Entry - Fall,LE,standard,Resident,2026,10,4,6,0.3684,23,13.27,600
+BR7204,Limited Entry - Fall,LE,standard,Nonresident,2026,2,1,1,0.35,23,19.833,600
+BR7204,Limited Entry - Fall,LE,standard,Resident,2026,18,6,12,0.35,23,14.693,600
+BR7205,Limited Entry - Fall,LE,standard,Resident,2026,5,2,3,0.4615,23,17.747,600
+BR7207,Limited Entry - Fall,LE,standard,Resident,2026,1,0,1,0.35,23,,600
+BR7210,Limited Entry - Fall,LE,standard,Resident,2026,3,2,1,0.65,23,17.328,600
+BR7211,Limited Entry - Fall,LE,standard,Nonresident,2026,3,2,1,0.6,23,17.257,600
+BR7211,Limited Entry - Fall,LE,standard,Resident,2026,26,17,9,0.65,23,0.387,600
+BR7212,Limited Entry - Fall,LE,standard,Resident,2026,2,1,1,0.5,23,19.947,600
+BR7213,Limited Entry - Fall,LE,standard,Resident,2026,9,4,5,0.4706,23,12.793,600
+BR7214,Limited Entry - Fall,LE,standard,Resident,2026,4,2,2,0.5,23,17.127,600
+BR7215,Limited Entry - Fall,LE,standard,Nonresident,2026,1,0,1,0.35,23,,600
+BR7215,Limited Entry - Fall,LE,standard,Resident,2026,9,4,5,0.5,23,12.533,600
+BR7216,Limited Entry - Fall,LE,standard,Resident,2026,5,3,2,0.5417,23,15.6,600
+BR7217,Limited Entry - Fall,LE,standard,Resident,2026,6,3,3,0.4375,23,16.137,600
+BR7218,Limited Entry - Fall,LE,standard,Resident,2026,7,4,3,0.5263,23,12.95,600
+BR7219,Limited Entry - Fall,LE,standard,Resident,2026,4,2,2,0.5455,23,17.52,600
+BR7220,Limited Entry - Fall,LE,standard,Resident,2026,9,4,5,0.4833,23,13.83,600
+BR7221,Limited Entry - Fall,LE,standard,Nonresident,2026,2,1,1,0.35,23,19.672,600
+BR7221,Limited Entry - Fall,LE,standard,Resident,2026,18,6,12,0.35,23,13.948,600
+BR7224,Limited Entry - Spring,LE,standard,Nonresident,2026,1,0,1,0.35,23,,600
+BR7224,Limited Entry - Spring,LE,standard,Resident,2026,14,7,7,0.4875,23,8.17,600
+BR7228,Limited Entry - Fall,LE,standard,Resident,2026,1,0,1,0.35,23,,600
+BR7229,Limited Entry - Fall,LE,standard,Resident,2026,4,2,2,0.5,23,17.475,600
+BR7237,Limited Entry - Fall,LE,standard,Resident,2026,1,0,1,0.35,23,,600
+BR7238,Limited Entry - Fall,LE,standard,Resident,2026,2,1,1,0.5,1,0.0,600
+BR7239,Limited Entry - Fall,LE,standard,Resident,2026,6,3,3,0.5,1,0.0,600
+BR7300,Limited Entry - Multiseason,LE,standard,Nonresident,2026,1,0,1,0.35,23,,600
+BR7300,Limited Entry - Multiseason,LE,standard,Resident,2026,9,4,5,0.4667,23,18.25,600
+BR7301,Limited Entry - Multiseason,LE,standard,Resident,2026,5,2,3,0.5,23,17.725,600
+BR7303,Limited Entry - Multiseason,LE,standard,Nonresident,2026,1,0,1,0.35,23,,600
+BR7303,Limited Entry - Multiseason,LE,standard,Resident,2026,13,7,6,0.5217,23,15.257,600
+BR7304,Limited Entry - Multiseason,LE,standard,Nonresident,2026,2,1,1,0.35,23,19.797,600
+BR7304,Limited Entry - Multiseason,LE,standard,Resident,2026,18,6,12,0.35,23,17.945,600
+BR7305,Limited Entry - Multiseason,LE,standard,Resident,2026,5,2,3,0.5,23,20.082,600
+BR7308,Limited Entry - Multiseason,LE,standard,Resident,2026,1,0,1,0.35,23,,600
+BR7309,Limited Entry - Multiseason,LE,standard,Resident,2026,4,2,2,0.5,23,19.133,600
+BR7310,Limited Entry - Multiseason,LE,standard,Nonresident,2026,1,0,1,0.35,23,,600
+BR7310,Limited Entry - Multiseason,LE,standard,Resident,2026,10,4,6,0.3947,23,14.805,600
+BR7311,Limited Entry - Multiseason,LE,standard,Resident,2026,3,1,2,0.4,23,20.138,600
+BR7312,Limited Entry - Multiseason,LE,standard,Nonresident,2026,1,0,1,0.35,23,,600
+BR7312,Limited Entry - Multiseason,LE,standard,Resident,2026,11,4,7,0.3684,23,19.075,600
+BR7313,Limited Entry - Multiseason,LE,standard,Resident,2026,5,3,2,0.5385,23,16.437,600
+BR7314,Limited Entry - Multiseason,LE,standard,Resident,2026,3,2,1,0.5714,23,18.442,600
+BR7315,Limited Entry - Multiseason,LE,standard,Resident,2026,3,2,1,0.5,23,18.55,600
+BR7316,Limited Entry - Multiseason,LE,standard,Nonresident,2026,1,0,1,0.35,23,,600
+BR7316,Limited Entry - Multiseason,LE,standard,Resident,2026,14,6,8,0.4,23,18.22,600
+BR7317,Limited Entry - Multiseason,LE,standard,Nonresident,2026,1,0,1,0.5,23,,600
+BR7317,Limited Entry - Multiseason,LE,standard,Resident,2026,9,5,4,0.5294,23,13.728,600
+BR7318,Limited Entry - Multiseason,LE,standard,Resident,2026,1,0,1,0.4,23,,600
+BR7320,Limited Entry - Multiseason,LE,standard,Resident,2026,4,1,3,0.35,23,20.063,600
+BR7321,Limited Entry - Multiseason,LE,standard,Resident,2026,5,2,3,0.4444,23,18.253,600
+BR7322,Limited Entry - Multiseason,LE,standard,Resident,2026,1,0,1,0.35,23,,600
+BR7323,Limited Entry - Multiseason,LE,standard,Resident,2026,1,0,1,0.35,23,,600
+BR7325,Limited Entry - Multiseason,LE,standard,Resident,2026,1,0,1,0.35,23,,600
+BR7326,Limited Entry - Multiseason,LE,standard,Nonresident,2026,1,0,1,0.5,1,,600
+BR7326,Limited Entry - Multiseason,LE,standard,Resident,2026,13,6,7,0.5,1,0.0,600
+DB1000,Premium Limited Entry,PLE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1000,Premium Limited Entry,PLE,standard,Resident,2026,8,3,5,0.35,33,25.82,600
+DB1001,Premium Limited Entry,PLE,standard,Nonresident,2026,3,1,2,0.375,33,29.89,600
+DB1001,Premium Limited Entry,PLE,standard,Resident,2026,26,9,17,0.35,33,20.857,600
+DB1002,Premium Limited Entry,PLE,standard,Resident,2026,1,0,1,0.35,33,,600
+DB1003,Premium Limited Entry,PLE,standard,Nonresident,2026,3,1,2,0.35,33,30.305,600
+DB1003,Premium Limited Entry,PLE,standard,Resident,2026,24,8,16,0.35,34,55.0,600
+DB1004,Premium Limited Entry,PLE,standard,Nonresident,2026,8,3,5,0.35,33,28.528,600
+DB1004,Premium Limited Entry,PLE,standard,Resident,2026,75,26,49,0.35,33,23.04,600
+DB1005,Premium Limited Entry,PLE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1005,Premium Limited Entry,PLE,standard,Resident,2026,8,3,5,0.35,33,26.222,600
+DB1006,Premium Limited Entry,PLE,standard,Nonresident,2026,3,1,2,0.4286,33,30.103,600
+DB1006,Premium Limited Entry,PLE,standard,Resident,2026,26,9,17,0.35,33,22.445,600
+DB1007,Premium Limited Entry,PLE,standard,Resident,2026,1,0,1,0.375,33,,600
+DB1008,Premium Limited Entry,PLE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1008,Premium Limited Entry,PLE,standard,Resident,2026,3,2,1,0.5,33,28.527,600
+DB1011,Limited Entry,LE,standard,Nonresident,2026,6,3,3,0.5,33,25.202,600
+DB1011,Limited Entry,LE,standard,Resident,2026,55,19,36,0.35,33,14.055,600
+DB1012,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1012,Limited Entry,LE,standard,Resident,2026,12,4,8,0.3548,33,23.428,600
+DB1013,Limited Entry,LE,standard,Resident,2026,5,2,3,0.4792,33,27.155,600
+DB1014,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.35,33,30.003,600
+DB1014,Limited Entry,LE,standard,Resident,2026,15,5,10,0.3504,33,22.512,600
+DB1015,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.55,33,29.895,600
+DB1015,Limited Entry,LE,standard,Resident,2026,22,8,14,0.35,33,15.06,600
+DB1016,Limited Entry,LE,standard,Nonresident,2026,5,2,3,0.5,33,27.513,600
+DB1016,Limited Entry,LE,standard,Resident,2026,46,16,30,0.3581,33,12.688,600
+DB1017,Limited Entry,LE,standard,Nonresident,2026,15,5,10,0.3636,33,23.662,600
+DB1017,Limited Entry,LE,standard,Resident,2026,137,48,89,0.35,33,15.0,600
+DB1018,Limited Entry,LE,standard,Nonresident,2026,4,2,2,0.375,33,27.745,600
+DB1018,Limited Entry,LE,standard,Resident,2026,34,12,22,0.35,33,16.768,600
+DB1019,Limited Entry,LE,standard,Nonresident,2026,4,1,3,0.35,33,30.112,600
+DB1019,Limited Entry,LE,standard,Resident,2026,33,12,21,0.35,33,24.217,600
+DB1020,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.35,33,30.035,600
+DB1020,Limited Entry,LE,standard,Resident,2026,13,5,8,0.35,33,22.078,600
+DB1022,Limited Entry,LE,standard,Nonresident,2026,5,2,3,0.4138,33,27.883,600
+DB1022,Limited Entry,LE,standard,Resident,2026,42,15,27,0.35,33,20.002,600
+DB1023,Limited Entry,LE,standard,Nonresident,2026,7,3,4,0.4167,33,25.148,600
+DB1023,Limited Entry,LE,standard,Resident,2026,61,21,40,0.35,33,15.002,600
+DB1024,Limited Entry,LE,standard,Nonresident,2026,14,5,9,0.35,33,23.395,600
+DB1024,Limited Entry,LE,standard,Resident,2026,130,46,84,0.35,33,16.0,600
+DB1025,Limited Entry,LE,standard,Nonresident,2026,6,3,3,0.5714,33,25.105,600
+DB1025,Limited Entry,LE,standard,Resident,2026,55,19,36,0.35,33,14.56,600
+DB1026,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1026,Limited Entry,LE,standard,Resident,2026,8,3,5,0.35,33,24.798,600
+DB1028,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1028,Limited Entry,LE,standard,Resident,2026,11,5,6,0.431,33,20.818,600
+DB1029,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1029,Limited Entry,LE,standard,Resident,2026,12,5,7,0.4062,33,24.678,600
+DB1030,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1030,Limited Entry,LE,standard,Resident,2026,4,2,2,0.5482,33,27.325,600
+DB1031,Limited Entry,LE,standard,Resident,2026,5,2,3,0.4375,33,27.5,600
+DB1032,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1032,Limited Entry,LE,standard,Resident,2026,5,2,3,0.45,33,27.365,600
+DB1033,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1033,Limited Entry,LE,standard,Resident,2026,6,2,4,0.4091,33,27.385,600
+DB1034,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.35,33,29.793,600
+DB1034,Limited Entry,LE,standard,Resident,2026,13,6,7,0.4341,33,18.587,600
+DB1037,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.3571,33,29.9,600
+DB1037,Limited Entry,LE,standard,Resident,2026,15,6,9,0.4286,33,21.47,600
+DB1038,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.5,33,29.858,600
+DB1038,Limited Entry,LE,standard,Resident,2026,22,8,14,0.35,33,16.218,600
+DB1039,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1039,Limited Entry,LE,standard,Resident,2026,6,3,3,0.5,33,24.728,600
+DB1040,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1040,Limited Entry,LE,standard,Resident,2026,4,2,2,0.4412,33,27.563,600
+DB1041,Limited Entry,LE,standard,Nonresident,2026,3,1,2,0.4545,33,29.733,600
+DB1041,Limited Entry,LE,standard,Resident,2026,30,13,17,0.4419,33,10.682,600
+DB1042,Limited Entry,LE,standard,Nonresident,2026,5,2,3,0.4375,33,27.488,600
+DB1042,Limited Entry,LE,standard,Resident,2026,46,16,30,0.35,33,15.025,600
+DB1043,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.35,33,29.712,600
+DB1043,Limited Entry,LE,standard,Resident,2026,15,7,8,0.4429,33,16.478,600
+DB1044,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1044,Limited Entry,LE,standard,Resident,2026,8,4,4,0.4545,33,23.752,600
+DB1045,Limited Entry,LE,standard,Resident,2026,2,1,1,0.35,33,29.96,600
+DB1046,Limited Entry,LE,standard,Resident,2026,2,1,1,0.5,33,29.732,600
+DB1047,Limited Entry,LE,standard,Resident,2026,4,2,2,0.6154,33,27.238,600
+DB1048,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1048,Limited Entry,LE,standard,Resident,2026,7,2,5,0.35,33,27.448,600
+DB1053,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1053,Limited Entry,LE,standard,Resident,2026,4,2,2,0.375,33,26.93,600
+DB1054,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.4667,33,,600
+DB1054,Limited Entry,LE,standard,Resident,2026,13,7,6,0.54,33,15.083,600
+DB1055,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1055,Limited Entry,LE,standard,Resident,2026,6,2,4,0.4167,33,27.268,600
+DB1065,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.3636,33,29.753,600
+DB1065,Limited Entry,LE,standard,Resident,2026,14,7,7,0.4848,33,15.51,600
+DB1077,Limited Entry,LE,standard,Nonresident,2026,3,1,2,0.4444,33,29.595,600
+DB1077,Limited Entry,LE,standard,Resident,2026,23,12,11,0.5338,33,8.622,600
+DB1078,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1078,Limited Entry,LE,standard,Resident,2026,11,6,5,0.5,33,17.367,600
+DB1079,Limited Entry,LE,standard,Nonresident,2026,5,2,3,0.5,33,27.32,600
+DB1079,Limited Entry,LE,standard,Resident,2026,40,17,23,0.4128,33,11.603,600
+DB1080,Limited Entry,LE,standard,Nonresident,2026,3,2,1,0.5,33,27.348,600
+DB1080,Limited Entry,LE,standard,Resident,2026,23,14,9,0.6014,33,8.605,600
+DB1081,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1081,Limited Entry,LE,standard,Resident,2026,8,4,4,0.475,33,22.078,600
+DB1083,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1083,Limited Entry,LE,standard,Resident,2026,12,6,6,0.4762,33,18.292,600
+DB1084,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1084,Limited Entry,LE,standard,Resident,2026,12,6,6,0.5172,33,17.873,600
+DB1085,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1085,Limited Entry,LE,standard,Resident,2026,13,5,8,0.4167,33,19.532,600
+DB1086,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1086,Limited Entry,LE,standard,Resident,2026,6,3,3,0.5,33,24.547,600
+DB1087,Limited Entry,LE,standard,Nonresident,2026,4,2,2,0.5534,33,27.1,600
+DB1087,Limited Entry,LE,standard,Resident,2026,36,22,14,0.6046,33,5.533,600
+DB1090,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1090,Limited Entry,LE,standard,Resident,2026,6,3,3,0.4444,33,25.082,600
+DB1091,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1091,Limited Entry,LE,standard,Resident,2026,4,2,2,0.4375,33,27.39,600
+DB1100,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1100,Limited Entry,LE,standard,Resident,2026,10,4,6,0.4423,33,22.442,600
+DB1101,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1101,Limited Entry,LE,standard,Resident,2026,9,5,4,0.5455,33,20.05,600
+DB1103,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1103,Limited Entry,LE,standard,Resident,2026,7,3,4,0.4583,33,24.607,600
+DB1105,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1105,Limited Entry,LE,standard,Resident,2026,6,3,3,0.4375,33,25.003,600
+DB1106,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.5,33,29.64,600
+DB1106,Limited Entry,LE,standard,Resident,2026,20,13,7,0.65,33,4.49,600
+DB1107,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.5,33,29.932,600
+DB1107,Limited Entry,LE,standard,Resident,2026,20,10,10,0.5,33,8.055,600
+DB1108,Limited Entry,LE,standard,Nonresident,2026,3,2,1,0.65,33,27.335,600
+DB1108,Limited Entry,LE,standard,Resident,2026,27,18,9,0.65,33,4.315,600
+DB1109,Limited Entry,LE,standard,Resident,2026,2,1,1,0.5,1,0.0,600
+DB1110,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1110,Limited Entry,LE,standard,Resident,2026,10,5,5,0.5,33,20.085,600
+DB1111,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1111,Limited Entry,LE,standard,Resident,2026,4,2,2,0.5,33,27.208,600
+DB1112,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1112,Limited Entry,LE,standard,Resident,2026,4,2,2,0.5,33,27.543,600
+DB1113,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1113,Limited Entry,LE,standard,Resident,2026,10,6,4,0.5556,33,18.035,600
+DB1114,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1114,Limited Entry,LE,standard,Resident,2026,5,2,3,0.5,33,27.407,600
+DB1115,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1115,Limited Entry,LE,standard,Resident,2026,4,2,2,0.5,33,27.868,600
+DB1116,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1116,Limited Entry,LE,standard,Resident,2026,4,2,2,0.5,33,27.465,600
+DB1119,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DB1119,Limited Entry,LE,standard,Resident,2026,9,6,3,0.65,33,17.812,600
+DB1120,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.5,33,29.835,600
+DB1120,Limited Entry,LE,standard,Resident,2026,13,6,7,0.5,33,18.877,600
+DS6600,Once-in-a-lifetime,OIL,standard,Resident,2026,3,2,1,0.5333,33,28.067,600
+DS6601,Once-in-a-lifetime,OIL,standard,Nonresident,2026,3,1,2,0.35,33,32.0,600
+DS6601,Once-in-a-lifetime,OIL,standard,Resident,2026,10,4,6,0.3704,33,27.615,600
+DS6603,Once-in-a-lifetime,OIL,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DS6603,Once-in-a-lifetime,OIL,standard,Resident,2026,3,1,2,0.45,33,30.273,600
+DS6604,Once-in-a-lifetime,OIL,standard,Resident,2026,8,3,5,0.3684,33,26.805,600
+DS6606,Once-in-a-lifetime,OIL,standard,Resident,2026,2,1,1,0.5,33,30.082,600
+DS6607,Once-in-a-lifetime,OIL,standard,Resident,2026,2,1,1,0.6,33,30.038,600
+DS6608,Once-in-a-lifetime,OIL,standard,Nonresident,2026,1,0,1,0.35,33,,600
+DS6608,Once-in-a-lifetime,OIL,standard,Resident,2026,3,1,2,0.3684,33,29.968,600
+DS6609,Once-in-a-lifetime,OIL,standard,Resident,2026,8,4,4,0.5,33,26.628,600
+DS6610,Once-in-a-lifetime,OIL,standard,Nonresident,2026,2,1,1,0.35,33,31.93,600
+DS6610,Once-in-a-lifetime,OIL,standard,Resident,2026,10,4,6,0.3667,33,27.188,600
+DS6611,Once-in-a-lifetime,OIL,standard,Resident,2026,3,2,1,0.5,33,28.383,600
+DS6620,Once-in-a-lifetime,OIL,standard,Resident,2026,3,2,1,0.5455,33,29.105,600
+DS6621,Once-in-a-lifetime,OIL,standard,Resident,2026,2,1,1,0.4706,33,30.108,600
+DS6622,Once-in-a-lifetime,OIL,standard,Resident,2026,3,2,1,0.65,33,27.898,600
+DS6623,Once-in-a-lifetime,OIL,standard,Resident,2026,2,1,1,0.35,33,30.027,600
+DS6624,Once-in-a-lifetime,OIL,standard,Resident,2026,2,1,1,0.3652,33,29.722,600
+DS6625,Once-in-a-lifetime,OIL,standard,Resident,2026,4,2,2,0.6,33,28.488,600
+DS6626,Once-in-a-lifetime,OIL,standard,Nonresident,2026,2,1,1,0.5,33,31.278,600
+DS6626,Once-in-a-lifetime,OIL,standard,Resident,2026,5,3,2,0.6,33,26.947,600
+DS6627,Once-in-a-lifetime,OIL,standard,Resident,2026,3,2,1,0.65,33,27.725,600
+EB3000,Limited Entry,LE,standard,Nonresident,2026,3,1,2,0.4375,33,30.253,600
+EB3000,Limited Entry,LE,standard,Resident,2026,22,9,13,0.4222,33,21.66,600
+EB3002,Limited Entry,LE,standard,Resident,2026,4,2,2,0.5,33,27.228,600
+EB3003,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.4,33,,600
+EB3003,Limited Entry,LE,standard,Resident,2026,9,6,3,0.65,33,17.127,600
+EB3005,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3005,Limited Entry,LE,standard,Resident,2026,10,4,6,0.4167,33,22.533,600
+EB3006,Limited Entry,LE,standard,Nonresident,2026,17,6,11,0.35,33,21.235,600
+EB3006,Limited Entry,LE,standard,Resident,2026,148,80,68,0.5381,33,8.038,600
+EB3008,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.35,33,29.883,600
+EB3008,Limited Entry,LE,standard,Resident,2026,19,8,11,0.407,33,15.642,600
+EB3009,Limited Entry,LE,standard,Nonresident,2026,4,2,2,0.4643,33,27.198,600
+EB3009,Limited Entry,LE,standard,Resident,2026,36,18,18,0.4918,33,6.938,600
+EB3010,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.4,33,,600
+EB3010,Limited Entry,LE,standard,Resident,2026,10,4,6,0.383,33,23.287,600
+EB3011,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.35,33,29.895,600
+EB3011,Limited Entry,LE,standard,Resident,2026,19,9,10,0.4943,33,14.367,600
+EB3013,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3013,Limited Entry,LE,standard,Resident,2026,6,3,3,0.4762,33,24.633,600
+EB3015,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.35,33,29.865,600
+EB3015,Limited Entry,LE,standard,Resident,2026,17,9,8,0.5526,33,18.163,600
+EB3018,Limited Entry,LE,standard,Nonresident,2026,9,4,5,0.4,33,23.652,600
+EB3018,Limited Entry,LE,standard,Resident,2026,84,39,45,0.464,33,7.978,600
+EB3019,Limited Entry,LE,standard,Nonresident,2026,3,2,1,0.5079,33,27.91,600
+EB3019,Limited Entry,LE,standard,Resident,2026,29,11,18,0.369,33,18.897,600
+EB3020,Limited Entry,LE,standard,Nonresident,2026,3,2,1,0.5,33,27.34,600
+EB3020,Limited Entry,LE,standard,Resident,2026,25,14,11,0.5439,33,8.575,600
+EB3022,Limited Entry,LE,standard,Nonresident,2026,15,5,10,0.35,33,20.423,600
+EB3022,Limited Entry,LE,standard,Resident,2026,130,78,52,0.5993,33,7.0,600
+EB3024,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3024,Limited Entry,LE,standard,Resident,2026,9,3,6,0.35,33,29.312,600
+EB3025,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.4667,33,30.14,600
+EB3025,Limited Entry,LE,standard,Resident,2026,15,6,9,0.3947,33,24.227,600
+EB3028,Limited Entry,LE,standard,Resident,2026,3,2,1,0.5,33,28.187,600
+EB3031,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3031,Limited Entry,LE,standard,Resident,2026,6,3,3,0.4545,33,25.822,600
+EB3032,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.4,33,,600
+EB3032,Limited Entry,LE,standard,Resident,2026,3,2,1,0.5778,33,27.163,600
+EB3033,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3033,Limited Entry,LE,standard,Resident,2026,6,3,3,0.5385,33,24.377,600
+EB3036,Limited Entry,LE,standard,Resident,2026,4,2,2,0.4667,33,27.642,600
+EB3037,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3037,Limited Entry,LE,standard,Resident,2026,6,3,3,0.5,33,25.633,600
+EB3038,Limited Entry,LE,standard,Nonresident,2026,7,2,5,0.35,33,28.412,600
+EB3038,Limited Entry,LE,standard,Resident,2026,61,21,40,0.35,33,20.147,600
+EB3039,Limited Entry,LE,standard,Nonresident,2026,11,4,7,0.35,33,24.992,600
+EB3039,Limited Entry,LE,standard,Resident,2026,102,43,59,0.4256,33,12.055,600
+EB3042,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3042,Limited Entry,LE,standard,Resident,2026,8,3,5,0.35,33,27.278,600
+EB3043,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.35,33,29.768,600
+EB3043,Limited Entry,LE,standard,Resident,2026,13,5,8,0.4146,33,22.61,600
+EB3044,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.4286,33,,600
+EB3044,Limited Entry,LE,standard,Resident,2026,6,3,3,0.5455,33,24.833,600
+EB3045,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.5,33,29.935,600
+EB3045,Limited Entry,LE,standard,Resident,2026,14,5,9,0.3698,33,20.938,600
+EB3046,Limited Entry,LE,standard,Nonresident,2026,3,2,1,0.6154,33,27.273,600
+EB3046,Limited Entry,LE,standard,Resident,2026,24,10,14,0.4277,33,12.965,600
+EB3047,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3047,Limited Entry,LE,standard,Resident,2026,3,1,2,0.35,33,30.495,600
+EB3048,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.35,33,29.913,600
+EB3048,Limited Entry,LE,standard,Resident,2026,13,5,8,0.3889,33,23.965,600
+EB3049,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.4,33,,600
+EB3049,Limited Entry,LE,standard,Resident,2026,8,3,5,0.3824,33,26.795,600
+EB3050,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.4,33,29.762,600
+EB3050,Limited Entry,LE,standard,Resident,2026,13,6,7,0.4848,33,23.647,600
+EB3053,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3053,Limited Entry,LE,standard,Resident,2026,9,4,5,0.4,33,23.222,600
+EB3056,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3056,Limited Entry,LE,standard,Resident,2026,7,2,5,0.35,33,28.57,600
+EB3057,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3057,Limited Entry,LE,standard,Resident,2026,12,6,6,0.4667,33,23.473,600
+EB3063,Limited Entry,LE,standard,Nonresident,2026,4,2,2,0.4783,33,27.983,600
+EB3063,Limited Entry,LE,standard,Resident,2026,34,13,21,0.3814,34,54.0,600
+EB3064,Limited Entry,LE,standard,Nonresident,2026,11,5,6,0.4286,33,23.042,600
+EB3064,Limited Entry,LE,standard,Resident,2026,99,45,54,0.4499,33,11.17,600
+EB3065,Limited Entry,LE,standard,Nonresident,2026,6,3,3,0.5417,33,25.378,600
+EB3065,Limited Entry,LE,standard,Resident,2026,57,21,36,0.375,33,13.377,600
+EB3066,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3066,Limited Entry,LE,standard,Resident,2026,12,4,8,0.35,35,39.0,600
+EB3067,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.5,33,30.117,600
+EB3067,Limited Entry,LE,standard,Resident,2026,20,9,11,0.4327,33,16.615,600
+EB3068,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3068,Limited Entry,LE,standard,Resident,2026,10,4,6,0.3619,33,22.877,600
+EB3069,Limited Entry,LE,standard,Nonresident,2026,3,2,1,0.5833,33,27.482,600
+EB3069,Limited Entry,LE,standard,Resident,2026,30,10,20,0.35,33,16.185,600
+EB3072,Limited Entry,LE,standard,Nonresident,2026,6,2,4,0.35,33,27.75,600
+EB3072,Limited Entry,LE,standard,Resident,2026,54,21,33,0.3913,33,16.938,600
+EB3073,Limited Entry,LE,standard,Nonresident,2026,10,4,6,0.4419,33,22.987,600
+EB3073,Limited Entry,LE,standard,Resident,2026,89,43,46,0.4804,33,10.467,600
+EB3077,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.35,33,30.732,600
+EB3077,Limited Entry,LE,standard,Resident,2026,13,5,8,0.3548,33,26.445,600
+EB3079,Limited Entry,LE,standard,Resident,2026,2,1,1,0.35,33,29.825,600
+EB3081,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3081,Limited Entry,LE,standard,Resident,2026,5,2,3,0.4917,33,27.09,600
+EB3083,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3083,Limited Entry,LE,standard,Resident,2026,5,3,2,0.5294,33,24.878,600
+EB3084,Limited Entry,LE,standard,Nonresident,2026,10,4,6,0.3548,33,24.305,600
+EB3084,Limited Entry,LE,standard,Resident,2026,89,35,54,0.3984,33,14.0,600
+EB3086,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3086,Limited Entry,LE,standard,Resident,2026,12,4,8,0.35,33,23.788,600
+EB3087,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.4545,33,29.643,600
+EB3087,Limited Entry,LE,standard,Resident,2026,22,10,12,0.4468,33,13.142,600
+EB3088,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3088,Limited Entry,LE,standard,Resident,2026,10,4,6,0.4259,33,25.932,600
+EB3089,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3089,Limited Entry,LE,standard,Resident,2026,12,4,8,0.3659,33,24.907,600
+EB3091,Limited Entry,LE,standard,Resident,2026,4,2,2,0.4706,33,27.25,600
+EB3093,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3093,Limited Entry,LE,standard,Resident,2026,10,4,6,0.3929,33,24.915,600
+EB3096,Limited Entry,LE,standard,Nonresident,2026,6,3,3,0.45,33,26.065,600
+EB3096,Limited Entry,LE,standard,Resident,2026,50,19,31,0.375,33,12.357,600
+EB3097,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.35,33,30.59,600
+EB3097,Limited Entry,LE,standard,Resident,2026,17,6,11,0.3667,33,25.983,600
+EB3098,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.35,33,29.83,600
+EB3098,Limited Entry,LE,standard,Resident,2026,15,7,8,0.4545,33,16.945,600
+EB3100,Limited Entry,LE,standard,Nonresident,2026,9,3,6,0.35,33,25.158,600
+EB3100,Limited Entry,LE,standard,Resident,2026,78,32,46,0.416,33,10.823,600
+EB3102,Limited Entry,LE,standard,Resident,2026,3,2,1,0.5556,33,30.462,600
+EB3104,Limited Entry,LE,standard,Resident,2026,1,0,1,0.35,33,,600
+EB3105,Limited Entry,LE,standard,Resident,2026,1,0,1,0.4444,33,,600
+EB3107,Limited Entry,LE,standard,Resident,2026,1,0,1,0.35,33,,600
+EB3108,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.65,33,29.855,600
+EB3108,Limited Entry,LE,standard,Resident,2026,18,6,12,0.35,33,25.383,600
+EB3110,Limited Entry,LE,standard,Resident,2026,3,2,1,0.5833,33,28.8,600
+EB3111,Limited Entry,LE,standard,Resident,2026,5,2,3,0.4737,33,27.453,600
+EB3112,Limited Entry,LE,standard,Resident,2026,2,1,1,0.4444,33,30.832,600
+EB3113,Limited Entry,LE,standard,Resident,2026,3,2,1,0.5,33,28.268,600
+EB3115,Limited Entry,LE,standard,Resident,2026,1,0,1,0.35,33,,600
+EB3117,Limited Entry,LE,standard,Resident,2026,2,1,1,0.35,33,30.247,600
+EB3120,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3120,Limited Entry,LE,standard,Resident,2026,10,4,6,0.3939,33,25.438,600
+EB3121,Limited Entry,LE,standard,Resident,2026,4,2,2,0.5833,33,30.13,600
+EB3122,Limited Entry,LE,standard,Resident,2026,3,2,1,0.5833,33,27.62,600
+EB3124,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.6471,33,29.743,600
+EB3124,Limited Entry,LE,standard,Resident,2026,15,5,10,0.35,33,24.228,600
+EB3126,Limited Entry,LE,standard,Nonresident,2026,20,7,13,0.35,34,65.0,600
+EB3126,Limited Entry,LE,standard,Resident,2026,175,75,100,0.4273,34,68.0,600
+EB3127,Limited Entry,LE,standard,Nonresident,2026,17,7,10,0.4264,33,20.413,600
+EB3127,Limited Entry,LE,standard,Resident,2026,155,78,77,0.5043,33,10.302,600
+EB3130,Limited Entry,LE,standard,Resident,2026,2,1,1,0.5833,33,29.822,600
+EB3132,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.5,33,29.927,600
+EB3132,Limited Entry,LE,standard,Resident,2026,22,10,12,0.472,33,12.055,600
+EB3135,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3135,Limited Entry,LE,standard,Resident,2026,9,5,4,0.5556,33,19.415,600
+EB3136,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.4167,33,29.688,600
+EB3136,Limited Entry,LE,standard,Resident,2026,21,9,12,0.4375,33,12.762,600
+EB3137,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.35,33,29.718,600
+EB3137,Limited Entry,LE,standard,Resident,2026,13,5,8,0.4079,33,20.132,600
+EB3139,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.5263,33,29.922,600
+EB3139,Limited Entry,LE,standard,Resident,2026,22,10,12,0.4493,33,12.075,600
+EB3142,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3142,Limited Entry,LE,standard,Resident,2026,9,5,4,0.5312,33,19.567,600
+EB3143,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.5,33,29.68,600
+EB3143,Limited Entry,LE,standard,Resident,2026,21,10,11,0.5,33,11.713,600
+EB3144,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.35,33,29.878,600
+EB3144,Limited Entry,LE,standard,Resident,2026,13,6,7,0.4286,33,18.02,600
+EB3145,Limited Entry,LE,standard,Nonresident,2026,4,2,2,0.4444,33,28.017,600
+EB3145,Limited Entry,LE,standard,Resident,2026,31,12,19,0.3827,33,18.155,600
+EB3146,Limited Entry,LE,standard,Nonresident,2026,4,2,2,0.5,33,27.718,600
+EB3146,Limited Entry,LE,standard,Resident,2026,39,20,19,0.5028,33,10.115,600
+EB3147,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.4286,33,,600
+EB3147,Limited Entry,LE,standard,Resident,2026,6,3,3,0.4186,33,24.737,600
+EB3148,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3148,Limited Entry,LE,standard,Resident,2026,13,5,8,0.35,33,27.005,600
+EB3149,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.35,33,30.115,600
+EB3149,Limited Entry,LE,standard,Resident,2026,16,6,10,0.35,33,24.397,600
+EB3150,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.375,33,,600
+EB3150,Limited Entry,LE,standard,Resident,2026,12,6,6,0.5,33,19.633,600
+EB3151,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.45,33,29.937,600
+EB3151,Limited Entry,LE,standard,Resident,2026,22,8,14,0.3818,33,19.285,600
+EB3152,Limited Entry,LE,standard,Nonresident,2026,3,1,2,0.3636,33,29.81,600
+EB3152,Limited Entry,LE,standard,Resident,2026,26,9,17,0.3509,33,17.445,600
+EB3153,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.3636,33,,600
+EB3153,Limited Entry,LE,standard,Resident,2026,2,1,1,0.625,33,29.923,600
+EB3154,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.35,33,30.398,600
+EB3154,Limited Entry,LE,standard,Resident,2026,19,7,12,0.35,33,25.255,600
+EB3155,Limited Entry,LE,standard,Nonresident,2026,3,1,2,0.4167,33,30.138,600
+EB3155,Limited Entry,LE,standard,Resident,2026,23,10,13,0.4136,33,17.892,600
+EB3156,Limited Entry,LE,standard,Resident,2026,4,2,2,0.5333,33,29.658,600
+EB3157,Limited Entry,LE,standard,Resident,2026,5,3,2,0.5882,33,26.805,600
+EB3158,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.35,33,29.928,600
+EB3158,Limited Entry,LE,standard,Resident,2026,18,9,9,0.4762,33,13.663,600
+EB3159,Limited Entry,LE,standard,Nonresident,2026,3,2,1,0.6,33,29.537,600
+EB3159,Limited Entry,LE,standard,Resident,2026,27,9,18,0.35,33,24.522,600
+EB3160,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.5,33,29.54,600
+EB3160,Limited Entry,LE,standard,Resident,2026,22,11,11,0.5,33,12.005,600
+EB3161,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3161,Limited Entry,LE,standard,Resident,2026,4,2,2,0.5,33,27.312,600
+EB3162,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3162,Limited Entry,LE,standard,Resident,2026,9,4,5,0.5,33,24.423,600
+EB3163,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.5,33,29.823,600
+EB3163,Limited Entry,LE,standard,Resident,2026,14,5,9,0.375,33,20.542,600
+EB3164,Limited Entry,LE,standard,Nonresident,2026,3,2,1,0.5,33,27.608,600
+EB3164,Limited Entry,LE,standard,Resident,2026,25,9,16,0.35,33,18.368,600
+EB3165,Limited Entry,LE,standard,Resident,2026,3,2,1,0.65,33,27.93,600
+EB3166,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3166,Limited Entry,LE,standard,Resident,2026,13,5,8,0.3529,33,21.455,600
+EB3167,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3167,Limited Entry,LE,standard,Resident,2026,4,2,2,0.6,33,27.358,600
+EB3168,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,32,,600
+EB3168,Limited Entry,LE,standard,Resident,2026,4,3,1,0.65,32,23.797,600
+EB3169,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.5,33,,600
+EB3169,Limited Entry,LE,standard,Resident,2026,11,6,5,0.5694,33,17.668,600
+EB3170,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3170,Limited Entry,LE,standard,Resident,2026,4,2,2,0.4286,33,27.127,600
+EB3171,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3171,Limited Entry,LE,standard,Resident,2026,11,5,6,0.4688,33,21.892,600
+EB3172,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3172,Limited Entry,LE,standard,Resident,2026,9,4,5,0.5,33,22.037,600
+EB3173,Limited Entry,LE,standard,Nonresident,2026,3,2,1,0.5,33,27.355,600
+EB3173,Limited Entry,LE,standard,Resident,2026,29,13,16,0.4583,33,11.967,600
+EB3174,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.35,33,29.942,600
+EB3174,Limited Entry,LE,standard,Resident,2026,13,7,6,0.5556,33,15.115,600
+EB3175,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3175,Limited Entry,LE,standard,Resident,2026,12,6,6,0.4722,33,22.372,600
+EB3176,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.35,33,29.715,600
+EB3176,Limited Entry,LE,standard,Resident,2026,20,8,12,0.4,33,17.058,600
+EB3177,Limited Entry,LE,standard,Nonresident,2026,4,2,2,0.6,33,28.01,600
+EB3177,Limited Entry,LE,standard,Resident,2026,34,13,21,0.3782,33,16.933,600
+EB3178,Limited Entry,LE,standard,Resident,2026,4,2,2,0.6,33,28.522,600
+EB3179,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.35,33,29.907,600
+EB3179,Limited Entry,LE,standard,Resident,2026,17,7,10,0.4118,33,20.1,600
+EB3180,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.35,33,29.712,600
+EB3180,Limited Entry,LE,standard,Resident,2026,18,10,8,0.5303,33,9.092,600
+EB3181,Limited Entry,LE,standard,Nonresident,2026,3,2,1,0.5,33,27.915,600
+EB3181,Limited Entry,LE,standard,Resident,2026,22,11,11,0.5,33,19.168,600
+EB3182,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3182,Limited Entry,LE,standard,Resident,2026,9,6,3,0.6111,33,17.438,600
+EB3183,Limited Entry,LE,standard,Nonresident,2026,5,2,3,0.4,33,27.255,600
+EB3183,Limited Entry,LE,standard,Resident,2026,42,18,24,0.4306,33,9.16,600
+EB3184,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3184,Limited Entry,LE,standard,Resident,2026,7,4,3,0.5556,33,22.168,600
+EB3185,Limited Entry,LE,standard,Nonresident,2026,3,2,1,0.6,33,29.008,600
+EB3185,Limited Entry,LE,standard,Resident,2026,18,6,12,0.35,33,25.637,600
+EB3186,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.35,33,29.698,600
+EB3186,Limited Entry,LE,standard,Resident,2026,13,8,5,0.6364,33,12.538,600
+EB3187,Limited Entry,LE,standard,Nonresident,2026,3,2,1,0.5,33,28.042,600
+EB3187,Limited Entry,LE,standard,Resident,2026,22,8,14,0.35,33,20.557,600
+EB3188,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.35,33,29.542,600
+EB3188,Limited Entry,LE,standard,Resident,2026,13,7,6,0.5455,33,15.372,600
+EB3189,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.5,33,30.142,600
+EB3189,Limited Entry,LE,standard,Resident,2026,20,8,12,0.4123,33,22.547,600
+EB3190,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3190,Limited Entry,LE,standard,Resident,2026,4,2,2,0.4286,33,27.318,600
+EB3191,Limited Entry,LE,standard,Nonresident,2026,4,2,2,0.5,33,28.247,600
+EB3191,Limited Entry,LE,standard,Resident,2026,37,14,23,0.3667,33,21.923,600
+EB3192,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.35,33,29.748,600
+EB3192,Limited Entry,LE,standard,Resident,2026,13,6,7,0.5,33,17.198,600
+EB3193,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3193,Limited Entry,LE,standard,Resident,2026,9,5,4,0.6,33,20.047,600
+EB3194,Limited Entry,LE,standard,Nonresident,2026,4,2,2,0.6,33,28.222,600
+EB3194,Limited Entry,LE,standard,Resident,2026,33,12,21,0.3529,33,23.345,600
+EB3195,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3195,Limited Entry,LE,standard,Resident,2026,4,2,2,0.5,33,27.595,600
+EB3196,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.5,33,29.555,600
+EB3196,Limited Entry,LE,standard,Resident,2026,17,7,10,0.3889,33,17.002,600
+EB3197,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.35,33,29.717,600
+EB3197,Limited Entry,LE,standard,Resident,2026,18,9,9,0.5,33,10.683,600
+EB3198,Limited Entry,LE,standard,Nonresident,2026,5,2,3,0.4286,33,27.895,600
+EB3198,Limited Entry,LE,standard,Resident,2026,46,21,25,0.4553,33,16.033,600
+EB3199,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3199,Limited Entry,LE,standard,Resident,2026,9,5,4,0.5556,33,19.613,600
+EB3205,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3205,Limited Entry,LE,standard,Resident,2026,7,4,3,0.5,33,22.203,600
+EB3208,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+EB3208,Limited Entry,LE,standard,Resident,2026,9,5,4,0.6,33,20.132,600
+EB3210,Limited Entry,LE,standard,Resident,2026,5,3,2,0.6,33,25.355,600
+GO6800,Once-in-a-lifetime,OIL,standard,Nonresident,2026,2,1,1,0.35,33,29.883,600
+GO6800,Once-in-a-lifetime,OIL,standard,Resident,2026,7,2,5,0.35,33,28.058,600
+GO6801,Once-in-a-lifetime,OIL,standard,Resident,2026,9,3,6,0.35,33,26.385,600
+GO6803,Once-in-a-lifetime,OIL,standard,Nonresident,2026,3,1,2,0.35,33,29.862,600
+GO6803,Once-in-a-lifetime,OIL,standard,Resident,2026,21,7,14,0.35,33,21.725,600
+GO6804,Once-in-a-lifetime,OIL,standard,Resident,2026,1,0,1,0.4375,33,,600
+GO6805,Once-in-a-lifetime,OIL,standard,Resident,2026,5,2,3,0.4832,33,27.362,600
+GO6806,Once-in-a-lifetime,OIL,standard,Resident,2026,3,1,2,0.3667,33,29.62,600
+GO6807,Once-in-a-lifetime,OIL,standard,Resident,2026,2,1,1,0.375,33,30.032,600
+GO6808,Once-in-a-lifetime,OIL,standard,Nonresident,2026,2,1,1,0.35,33,29.793,600
+GO6808,Once-in-a-lifetime,OIL,standard,Resident,2026,9,3,6,0.3636,33,25.147,600
+GO6810,Once-in-a-lifetime,OIL,standard,Resident,2026,1,0,1,0.4444,33,,600
+GO6813,Once-in-a-lifetime,OIL,standard,Resident,2026,5,3,2,0.5333,33,25.442,600
+GO6814,Once-in-a-lifetime,OIL,standard,Resident,2026,2,1,1,0.5,33,30.053,600
+GO6817,Once-in-a-lifetime,OIL,standard,Nonresident,2026,2,1,1,0.35,33,30.023,600
+GO6817,Once-in-a-lifetime,OIL,standard,Resident,2026,10,4,6,0.3704,33,23.8,600
+GO6818,Once-in-a-lifetime,OIL,standard,Resident,2026,3,1,2,0.4444,33,29.865,600
+GO6819,Once-in-a-lifetime,OIL,standard,Resident,2026,1,1,0,0.5833,33,29.867,600
+GO6820,Once-in-a-lifetime,OIL,standard,Nonresident,2026,2,1,1,0.5,33,29.928,600
+GO6820,Once-in-a-lifetime,OIL,standard,Resident,2026,8,4,4,0.4583,33,23.593,600
+GO6821,Once-in-a-lifetime,OIL,standard,Resident,2026,12,4,8,0.3667,33,23.118,600
+GO6822,Once-in-a-lifetime,OIL,standard,Resident,2026,2,1,1,0.5,33,29.795,600
+MA1005,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,20,,600
+MA1005,Limited Entry,LE,standard,Resident,2026,6,3,3,0.4274,20,18.052,600
+MA1007,Limited Entry,LE,standard,Resident,2026,3,2,1,0.65,20,17.52,600
+MA1008,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,20,,600
+MA1008,Limited Entry,LE,standard,Resident,2026,4,1,3,0.35,20,19.0,600
+MB6000,Once-in-a-lifetime,OIL,standard,Nonresident,2026,3,1,2,0.35,33,30.655,600
+MB6000,Once-in-a-lifetime,OIL,standard,Resident,2026,14,5,9,0.35,35,85.0,600
+MB6001,Once-in-a-lifetime,OIL,standard,Resident,2026,4,2,2,0.6154,33,29.108,600
+MB6002,Once-in-a-lifetime,OIL,standard,Resident,2026,5,2,3,0.4286,33,28.73,600
+MB6003,Once-in-a-lifetime,OIL,standard,Resident,2026,5,2,3,0.4615,33,28.403,600
+MB6004,Once-in-a-lifetime,OIL,standard,Resident,2026,6,3,3,0.5294,33,27.745,600
+MB6005,Once-in-a-lifetime,OIL,standard,Resident,2026,6,3,3,0.5,33,28.132,600
+MB6006,Once-in-a-lifetime,OIL,standard,Nonresident,2026,3,1,2,0.3889,33,30.308,600
+MB6006,Once-in-a-lifetime,OIL,standard,Resident,2026,20,7,13,0.35,37,92.0,600
+MB6007,Once-in-a-lifetime,OIL,standard,Nonresident,2026,2,1,1,0.35,33,29.992,600
+MB6007,Once-in-a-lifetime,OIL,standard,Resident,2026,6,2,4,0.35,33,28.67,600
+MB6008,Once-in-a-lifetime,OIL,standard,Resident,2026,7,3,4,0.3846,33,28.078,600
+MB6009,Once-in-a-lifetime,OIL,standard,Resident,2026,2,1,1,0.5,33,30.197,600
+MB6010,Once-in-a-lifetime,OIL,standard,Resident,2026,6,3,3,0.4444,33,27.715,600
+MB6011,Once-in-a-lifetime,OIL,standard,Nonresident,2026,3,1,2,0.35,33,30.097,600
+MB6011,Once-in-a-lifetime,OIL,standard,Resident,2026,19,7,12,0.35,36,75.0,600
+MB6012,Once-in-a-lifetime,OIL,standard,Resident,2026,2,1,1,0.5,33,30.585,600
+PB5000,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+PB5000,Limited Entry,LE,standard,Resident,2026,11,4,7,0.4,33,22.018,600
+PB5001,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+PB5001,Limited Entry,LE,standard,Resident,2026,13,8,5,0.6111,33,11.988,600
+PB5002,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+PB5002,Limited Entry,LE,standard,Resident,2026,8,5,3,0.65,33,19.485,600
+PB5003,Limited Entry,LE,standard,Resident,2026,4,1,3,0.35,33,29.723,600
+PB5004,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+PB5004,Limited Entry,LE,standard,Resident,2026,3,2,1,0.5,33,27.337,600
+PB5005,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+PB5005,Limited Entry,LE,standard,Resident,2026,9,6,3,0.65,33,16.908,600
+PB5006,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+PB5006,Limited Entry,LE,standard,Resident,2026,10,6,4,0.5833,33,17.352,600
+PB5008,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.35,33,29.84,600
+PB5008,Limited Entry,LE,standard,Resident,2026,15,9,6,0.5714,33,9.947,600
+PB5009,Limited Entry,LE,standard,Resident,2026,6,3,3,0.4778,33,24.577,600
+PB5011,Limited Entry,LE,standard,Nonresident,2026,3,1,2,0.4444,33,29.738,600
+PB5011,Limited Entry,LE,standard,Resident,2026,30,18,12,0.5873,33,2.972,600
+PB5012,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+PB5012,Limited Entry,LE,standard,Resident,2026,10,5,5,0.5189,33,19.382,600
+PB5013,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+PB5013,Limited Entry,LE,standard,Resident,2026,7,5,2,0.65,33,19.235,600
+PB5015,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.4545,33,29.613,600
+PB5015,Limited Entry,LE,standard,Resident,2026,21,12,9,0.579,33,6.513,600
+PB5016,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.4167,33,29.693,600
+PB5016,Limited Entry,LE,standard,Resident,2026,17,10,7,0.5965,33,8.455,600
+PB5017,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.35,33,29.907,600
+PB5017,Limited Entry,LE,standard,Resident,2026,18,10,8,0.5779,33,8.147,600
+PB5018,Limited Entry,LE,standard,Nonresident,2026,4,2,2,0.4583,33,26.947,600
+PB5018,Limited Entry,LE,standard,Resident,2026,31,19,12,0.6013,33,3.035,600
+PB5019,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.35,33,29.797,600
+PB5019,Limited Entry,LE,standard,Resident,2026,18,9,9,0.5258,33,11.55,600
+PB5020,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+PB5020,Limited Entry,LE,standard,Resident,2026,8,3,5,0.3796,33,24.768,600
+PB5021,Limited Entry,LE,standard,Nonresident,2026,3,1,2,0.3636,33,29.865,600
+PB5021,Limited Entry,LE,standard,Resident,2026,23,14,9,0.6109,33,3.793,600
+PB5024,Limited Entry,LE,standard,Nonresident,2026,4,2,2,0.4615,33,27.225,600
+PB5024,Limited Entry,LE,standard,Resident,2026,31,18,13,0.5833,33,3.363,600
+PB5025,Limited Entry,LE,standard,Nonresident,2026,5,2,3,0.5,33,27.363,600
+PB5025,Limited Entry,LE,standard,Resident,2026,43,17,26,0.3917,33,7.295,600
+PB5026,Limited Entry,LE,standard,Nonresident,2026,6,2,4,0.35,33,27.122,600
+PB5026,Limited Entry,LE,standard,Resident,2026,50,28,22,0.5511,33,3.977,600
+PB5027,Limited Entry,LE,standard,Nonresident,2026,4,2,2,0.5455,33,27.403,600
+PB5027,Limited Entry,LE,standard,Resident,2026,34,13,21,0.3829,33,7.67,600
+PB5028,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.35,33,29.732,600
+PB5028,Limited Entry,LE,standard,Resident,2026,14,7,7,0.4674,33,14.708,600
+PB5029,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.4545,33,29.865,600
+PB5029,Limited Entry,LE,standard,Resident,2026,14,6,8,0.4603,33,17.393,600
+PB5030,Limited Entry,LE,standard,Nonresident,2026,3,2,1,0.5714,33,27.153,600
+PB5030,Limited Entry,LE,standard,Resident,2026,28,15,13,0.5295,33,6.63,600
+PB5031,Limited Entry,LE,standard,Nonresident,2026,3,1,2,0.4615,33,29.792,600
+PB5031,Limited Entry,LE,standard,Resident,2026,30,16,14,0.5417,33,5.34,600
+PB5033,Limited Entry,LE,standard,Nonresident,2026,5,2,3,0.4444,33,27.11,600
+PB5033,Limited Entry,LE,standard,Resident,2026,46,19,27,0.42,33,8.043,600
+PB5034,Limited Entry,LE,standard,Resident,2026,2,1,1,0.5,33,29.798,600
+PB5035,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.4,33,29.685,600
+PB5035,Limited Entry,LE,standard,Resident,2026,22,10,12,0.4319,33,9.387,600
+PB5037,Limited Entry,LE,standard,Nonresident,2026,10,4,6,0.35,33,22.325,600
+PB5037,Limited Entry,LE,standard,Resident,2026,89,46,43,0.5175,33,5.0,600
+PB5038,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+PB5038,Limited Entry,LE,standard,Resident,2026,13,6,7,0.4583,33,17.272,600
+PB5039,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.375,33,29.973,600
+PB5039,Limited Entry,LE,standard,Resident,2026,15,6,9,0.3667,33,16.792,600
+PB5040,Limited Entry,LE,standard,Nonresident,2026,3,1,2,0.3846,33,29.773,600
+PB5040,Limited Entry,LE,standard,Resident,2026,29,13,16,0.4357,33,8.427,600
+PB5041,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.4545,33,29.857,600
+PB5041,Limited Entry,LE,standard,Resident,2026,21,9,12,0.4262,33,11.85,600
+PB5042,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.5,33,29.92,600
+PB5042,Limited Entry,LE,standard,Resident,2026,21,8,13,0.3688,33,12.672,600
+PB5044,Limited Entry,LE,standard,Resident,2026,3,2,1,0.5333,33,27.34,600
+PB5045,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+PB5045,Limited Entry,LE,standard,Resident,2026,7,3,4,0.3636,33,24.743,600
+PB5046,Limited Entry,LE,standard,Nonresident,2026,7,2,5,0.35,33,27.277,600
+PB5046,Limited Entry,LE,standard,Resident,2026,62,27,35,0.4293,33,8.665,600
+PB5047,Limited Entry,LE,standard,Nonresident,2026,6,2,4,0.4167,33,27.39,600
+PB5047,Limited Entry,LE,standard,Resident,2026,50,24,26,0.4798,33,5.015,600
+PB5048,Limited Entry,LE,standard,Nonresident,2026,6,2,4,0.35,33,27.228,600
+PB5048,Limited Entry,LE,standard,Resident,2026,54,29,25,0.5374,33,4.002,600
+PB5049,Limited Entry,LE,standard,Nonresident,2026,11,4,7,0.3869,33,22.625,600
+PB5049,Limited Entry,LE,standard,Resident,2026,94,39,55,0.4158,33,7.003,600
+PB5050,Limited Entry,LE,standard,Nonresident,2026,8,4,4,0.5028,33,22.612,600
+PB5050,Limited Entry,LE,standard,Resident,2026,73,26,47,0.35,33,9.22,600
+PB5051,Limited Entry,LE,standard,Nonresident,2026,4,2,2,0.5278,33,27.328,600
+PB5051,Limited Entry,LE,standard,Resident,2026,32,14,18,0.4333,33,8.608,600
+PB5052,Limited Entry,LE,standard,Nonresident,2026,11,4,7,0.4,33,22.67,600
+PB5052,Limited Entry,LE,standard,Resident,2026,95,50,45,0.5268,33,5.002,600
+PB5053,Limited Entry,LE,standard,Resident,2026,4,2,2,0.55,33,27.232,600
+PB5054,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+PB5054,Limited Entry,LE,standard,Resident,2026,7,3,4,0.4444,33,24.993,600
+PB5055,Limited Entry,LE,standard,Resident,2026,2,1,1,0.4167,33,29.683,600
+PB5056,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.5397,33,29.622,600
+PB5056,Limited Entry,LE,standard,Resident,2026,21,10,11,0.4571,33,10.058,600
+PB5059,Limited Entry,LE,standard,Nonresident,2026,3,2,1,0.5,33,27.445,600
+PB5059,Limited Entry,LE,standard,Resident,2026,30,16,14,0.5378,33,3.692,600
+PB5060,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.3714,33,29.772,600
+PB5060,Limited Entry,LE,standard,Resident,2026,17,8,9,0.4574,33,12.012,600
+PB5061,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+PB5061,Limited Entry,LE,standard,Resident,2026,7,3,4,0.4875,33,24.548,600
+PB5062,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+PB5062,Limited Entry,LE,standard,Resident,2026,7,3,4,0.4219,33,24.637,600
+PB5065,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.35,33,29.817,600
+PB5065,Limited Entry,LE,standard,Resident,2026,15,7,8,0.4524,33,14.713,600
+PB5066,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+PB5066,Limited Entry,LE,standard,Resident,2026,10,5,5,0.4938,33,19.097,600
+PB5072,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.35,33,29.798,600
+PB5072,Limited Entry,LE,standard,Resident,2026,18,11,7,0.5902,33,6.898,600
+PB5073,Limited Entry,LE,standard,Resident,2026,6,2,4,0.35,33,27.187,600
+PB5074,Limited Entry,LE,standard,Resident,2026,2,1,1,0.35,33,29.77,600
+PB5075,Limited Entry,LE,standard,Resident,2026,2,1,1,0.35,33,29.712,600
+PB5076,Limited Entry,LE,standard,Nonresident,2026,15,6,9,0.4,33,18.842,600
+PB5076,Limited Entry,LE,standard,Resident,2026,135,48,87,0.3589,33,7.0,600
+PB5077,Limited Entry,LE,standard,Nonresident,2026,5,2,3,0.375,33,26.927,600
+PB5077,Limited Entry,LE,standard,Resident,2026,45,29,16,0.65,33,0.832,600
+PB5078,Limited Entry,LE,standard,Nonresident,2026,5,3,2,0.5556,33,24.712,600
+PB5078,Limited Entry,LE,standard,Resident,2026,45,29,16,0.65,33,2.072,600
+PB5079,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+PB5079,Limited Entry,LE,standard,Resident,2026,10,6,4,0.65,33,17.178,600
+PB5080,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+PB5080,Limited Entry,LE,standard,Resident,2026,9,6,3,0.65,33,17.197,600
+PB5331,Limited Entry,LE,standard,Nonresident,2026,2,1,1,0.4539,33,29.72,600
+PB5331,Limited Entry,LE,standard,Resident,2026,13,5,8,0.4007,33,19.852,600
+PB5332,Limited Entry,LE,standard,Nonresident,2026,1,0,1,0.35,33,,600
+PB5332,Limited Entry,LE,standard,Resident,2026,4,2,2,0.55,33,27.367,600
+RS6700,Once-in-a-lifetime,OIL,standard,Resident,2026,2,1,1,0.35,33,29.918,600
+RS6701,Once-in-a-lifetime,OIL,standard,Nonresident,2026,1,0,1,0.35,33,,600
+RS6701,Once-in-a-lifetime,OIL,standard,Resident,2026,5,2,3,0.3529,33,28.252,600
+RS6703,Once-in-a-lifetime,OIL,standard,Resident,2026,4,2,2,0.45,33,27.613,600
+RS6704,Once-in-a-lifetime,OIL,standard,Nonresident,2026,1,0,1,0.35,33,,600
+RS6704,Once-in-a-lifetime,OIL,standard,Resident,2026,3,1,2,0.4762,33,29.617,600
+RS6708,Once-in-a-lifetime,OIL,standard,Resident,2026,2,1,1,0.6364,33,29.795,600
+RS6709,Once-in-a-lifetime,OIL,standard,Resident,2026,3,2,1,0.6,33,27.847,600
+RS6712,Once-in-a-lifetime,OIL,standard,Nonresident,2026,2,1,1,0.35,33,30.103,600
+RS6712,Once-in-a-lifetime,OIL,standard,Resident,2026,4,1,3,0.35,33,29.882,600
+RS6713,Once-in-a-lifetime,OIL,standard,Resident,2026,4,2,2,0.5,33,29.113,600
+RS6720,Once-in-a-lifetime,OIL,standard,Resident,2026,4,1,3,0.35,33,29.838,600
+RS6721,Once-in-a-lifetime,OIL,standard,Resident,2026,3,1,2,0.3571,33,29.81,600
+RS6722,Once-in-a-lifetime,OIL,standard,Resident,2026,2,1,1,0.5455,33,29.852,600
+RS6724,Once-in-a-lifetime,OIL,standard,Resident,2026,3,2,1,0.5,33,28.195,600
+RS6725,Once-in-a-lifetime,OIL,standard,Resident,2026,2,1,1,0.5455,33,29.815,600
+RS6726,Once-in-a-lifetime,OIL,standard,Nonresident,2026,1,0,1,0.35,33,,600
+RS6726,Once-in-a-lifetime,OIL,standard,Resident,2026,3,1,2,0.35,33,29.817,600
+RS6727,Once-in-a-lifetime,OIL,standard,Resident,2026,2,1,1,0.3666,33,29.685,600

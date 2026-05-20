@@ -1,10 +1,10 @@
 {
-  "generated_at_utc": "2026-05-10T17:44:04.222040+00:00",
+  "generated_at_utc": "2026-05-20T22:14:41.471922+00:00",
   "input_v3_path": "data_truth/draw_results_truth/normalized/draw_results_long.csv",
-  "input_v3_sha256": "670fcbaee53f5eeb4b17d62c91fa254fa566504eabf118dec21739f9de8a365b",
+  "input_v3_sha256": "68b89136a5663683c1f779bb45573bc1d3ef15e91b73fabd4f1677a8f19383e1",
   "output_v2_path": "data_model/runtime_drafts/draw_reality_engine_v2.csv",
-  "row_count_v3": 112056,
-  "row_count_v2": 112056,
+  "row_count_v3": 176753,
+  "row_count_v2": 176753,
   "row_count_equal": true,
   "corrected_key_duplicate_count": 0,
   "blank_counts": {
@@ -14,10 +14,10 @@
     "residency_blank_count": 0,
     "points_blank_count": 0
   },
-  "db_matched_rows_count": 104889,
+  "db_matched_rows_count": 163149,
   "db_matched_rows_missing_boundary_id_count": 0,
-  "hunt_code_not_in_2026_database_rows_count": 7167,
-  "hunt_code_not_in_2026_database_hunt_code_count": 221,
+  "hunt_code_not_in_2026_database_rows_count": 13604,
+  "hunt_code_not_in_2026_database_hunt_code_count": 222,
   "hunt_code_not_in_2026_database_hunt_codes_sample": [
     "BI6517",
     "BI6519",
@@ -181,6 +181,7 @@
     "EB3563",
     "EB3609",
     "EB3612",
+    "EB3616",
     "EB3617",
     "GO6815",
     "MA1000",

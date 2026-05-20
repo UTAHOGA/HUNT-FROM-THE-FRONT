@@ -36,6 +36,8 @@ window.UOGA_CONFIG = (() => {
   const UOGA_LOCAL_CONFIG = (typeof window !== 'undefined' && window.UOGA_LOCAL_CONFIG && typeof window.UOGA_LOCAL_CONFIG === 'object')
     ? window.UOGA_LOCAL_CONFIG
     : {};
+  const USE_PREDICTIVE_DRAW_ENGINE = UOGA_LOCAL_CONFIG.USE_PREDICTIVE_DRAW_ENGINE === true
+    || String(UOGA_LOCAL_CONFIG.USE_PREDICTIVE_DRAW_ENGINE || '').trim().toLowerCase() === 'true';
   const CLOUDFLARE_BASE = 'https://json.uoga.workers.dev';
   const CLOUDFLARE_R2_BASE = String(UOGA_LOCAL_CONFIG.CLOUDFLARE_R2_BASE || '').trim().replace(/\/+$/, '');
   // Single object runtime source for large mapping assets:
@@ -210,10 +212,24 @@ window.UOGA_CONFIG = (() => {
     `${CLOUDFLARE_BASE}/hunt_research_2026.json?v=${HUNT_RESEARCH_DATA_VERSION}`,
   ];
 
-  const HUNT_RESEARCH_ENGINE_SOURCES = [
+  const HUNT_RESEARCH_OBSERVED_ENGINE_SOURCES = [
+    `./processed_data/draw_reality_engine_v2.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
+    `${CLOUDFLARE_BASE}/processed_data/draw_reality_engine_v2.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
     `./processed_data/draw_reality_engine.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
     `${CLOUDFLARE_BASE}/draw_reality_engine.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
   ];
+
+  const HUNT_RESEARCH_PREDICTIVE_ENGINE_SOURCES = [
+    `./processed_data/draw_reality_engine_predictive_v2.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
+    `${CLOUDFLARE_BASE}/processed_data/draw_reality_engine_predictive_v2.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
+    `./processed_data/draw_reality_engine_v2.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
+    `${CLOUDFLARE_BASE}/processed_data/draw_reality_engine_v2.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
+  ];
+
+  const HUNT_RESEARCH_ENGINE_MODE = USE_PREDICTIVE_DRAW_ENGINE ? 'predictive' : 'observed';
+  const HUNT_RESEARCH_ENGINE_SOURCES = HUNT_RESEARCH_ENGINE_MODE === 'predictive'
+    ? HUNT_RESEARCH_PREDICTIVE_ENGINE_SOURCES
+    : HUNT_RESEARCH_OBSERVED_ENGINE_SOURCES;
 
   const HUNT_RESEARCH_LADDER_SOURCES = [
     `./processed_data/point_ladder_view.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
@@ -487,7 +503,11 @@ window.UOGA_CONFIG = (() => {
     CONSERVATION_PERMIT_HUNT_TABLE_SOURCES,
 
     HUNT_RESEARCH_DATA_SOURCES,
+    USE_PREDICTIVE_DRAW_ENGINE,
+    HUNT_RESEARCH_ENGINE_MODE,
     HUNT_RESEARCH_ENGINE_SOURCES,
+    HUNT_RESEARCH_OBSERVED_ENGINE_SOURCES,
+    HUNT_RESEARCH_PREDICTIVE_ENGINE_SOURCES,
     HUNT_RESEARCH_LADDER_SOURCES,
     HUNT_RESEARCH_MASTER_SOURCES,
     HUNT_RESEARCH_REFERENCE_SOURCES,

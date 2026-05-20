@@ -1,0 +1,422 @@
+﻿"""Build a new Utah predictive bonus draw engine for O.I.L., L.E., and P.L.E. hunts.
+
+Rule-first + history-calibrated Monte Carlo engine using HYBRID_ML_V1 output contract.
+This script preserves legacy bridge fields while replacing deprecated MAX POOL=100 shortcuts.
+"""
+
+from __future__ import annotations
+
+import argparse
+import csv
+import math
+import random
+import sys
+from collections import defaultdict
+from dataclasses import asdict
+from datetime import date
+from pathlib import Path
+from statistics import mean
+from typing import Dict, Iterable, List, Mapping, Tuple
+
+REPO = Path(__file__).resolve().parents[1]
+if str(REPO) not in sys.path:
+    sys.path.insert(0, str(REPO))
+
+from engine.utah.constants import MODEL_VERSION, RULE_VERSION
+from engine.utah.materialize import materialize_rows, write_materialized_csv
+
+INPUT_DRAW_V2 = REPO / "data_model" / "runtime_drafts" / "draw_reality_engine_v2.csv"
+INPUT_DATABASE = REPO / "pipeline" / "RAW" / "hunt_unit_database" / "2026" / "csv" / "DATABASE.csv"
+INPUT_LEGACY_ENGINE = REPO / "processed_data" / "draw_reality_engine.csv"
+
+OUT_DIR_DEFAULT = REPO / "data_model" / "runtime_drafts"
+
+TARGET_TOKENS = (
+    "once-in-a-lifetime",
+    "once in a lifetime",
+    "oial",
+    "limited entry",
+    "premium limited entry",
+)
+
+
+def clean(v: object) -> str:
+    return "" if v is None else str(v).strip()
+
+
+def to_int(v: object, default: int = 0) -> int:
+    t = clean(v)
+    if not t:
+        return default
+    try:
+        return int(float(t))
+    except Exception:
+        return default
+
+
+def to_float(v: object, default: float = 0.0) -> float:
+    t = clean(v)
+    if not t:
+        return default
+    try:
+        return float(t)
+    except Exception:
+        return default
+
+
+def read_csv(path: Path) -> List[dict]:
+    with path.open("r", encoding="utf-8-sig", newline="") as f:
+        return list(csv.DictReader(f))
+
+
+def write_csv(path: Path, headers: List[str], rows: List[dict]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=headers)
+        w.writeheader()
+        w.writerows(rows)
+
+
+def is_target_bonus_hunt(hunt_type: str) -> bool:
+    h = clean(hunt_type).lower()
+    return any(tok in h for tok in TARGET_TOKENS)
+
+
+def hunt_kind_label(hunt_type: str) -> str:
+    h = clean(hunt_type).lower()
+    if "premium limited entry" in h:
+        return "PLE"
+    if "once-in-a-lifetime" in h or "once in a lifetime" in h or "oial" in h:
+        return "OIL"
+    return "LE"
+
+
+def percentile(values: List[float], p: float) -> float:
+    if not values:
+        return 0.0
+    vals = sorted(values)
+    idx = int(math.floor((len(vals) - 1) * p))
+    idx = max(0, min(idx, len(vals) - 1))
+    return vals[idx]
+
+
+def growth_rate(series: List[Tuple[int, int]]) -> float:
+    if len(series) < 2:
+        return 0.03
+    series = sorted(series)
+    deltas: List[float] = []
+    for i in range(1, len(series)):
+        prev = max(series[i - 1][1], 1)
+        curr = max(series[i][1], 0)
+        deltas.append((curr - prev) / prev)
+    if not deltas:
+        return 0.03
+    g = mean(deltas)
+    return max(-0.25, min(0.25, g))
+
+
+def infer_reserved_fraction(rows: List[dict]) -> float:
+    fracs: List[float] = []
+    for r in rows:
+        b = to_float(r.get("bonus_permits"), 0.0)
+        reg = to_float(r.get("regular_permits"), 0.0)
+        tot = to_float(r.get("total_permits"), 0.0)
+        if tot <= 0:
+            continue
+        if b > 0 or reg > 0:
+            fracs.append(max(0.0, min(1.0, b / tot)))
+    if not fracs:
+        return 0.5
+    return max(0.35, min(0.65, mean(fracs)))
+
+
+def simulate_iteration(points_desc: List[int], demand_by_point: Dict[int, int], reserved_quota: int, random_quota: int) -> Tuple[Dict[int, float], Dict[int, float], float | None]:
+    # Reserved (max-point-first) stage
+    remaining_reserved = max(0, reserved_quota)
+    p_reserved: Dict[int, float] = {p: 0.0 for p in points_desc}
+    nonwinners: Dict[int, int] = {}
+    cutoff: float | None = None
+
+    for p in points_desc:
+        n = max(0, demand_by_point.get(p, 0))
+        if n <= 0:
+            nonwinners[p] = 0
+            continue
+        if remaining_reserved <= 0:
+            winners = 0
+        elif remaining_reserved >= n:
+            winners = n
+        else:
+            winners = remaining_reserved
+        prob_res = winners / n if n > 0 else 0.0
+        p_reserved[p] = prob_res
+        nonwinners[p] = n - winners
+        if winners > 0:
+            cutoff = float(p)
+        remaining_reserved = max(0, remaining_reserved - winners)
+
+    # Random stage (bonus tickets) on nonwinners
+    total_tickets = 0.0
+    tickets_by_point: Dict[int, float] = {}
+    for p, n in nonwinners.items():
+        t = float(max(0, p + 1) * max(0, n))
+        tickets_by_point[p] = t
+        total_tickets += t
+
+    p_random: Dict[int, float] = {p: 0.0 for p in points_desc}
+    if random_quota > 0 and total_tickets > 0:
+        # With-replacement approximation, stable for large pools.
+        draws = float(max(0, random_quota))
+        for p in points_desc:
+            n = nonwinners.get(p, 0)
+            if n <= 0:
+                continue
+            ticket_share = (p + 1) / total_tickets
+            p_rand = 1.0 - ((1.0 - ticket_share) ** draws)
+            p_random[p] = max(0.0, min(1.0, p_rand))
+
+    p_draw: Dict[int, float] = {}
+    for p in points_desc:
+        pr = p_reserved.get(p, 0.0)
+        rr = p_random.get(p, 0.0)
+        p_draw[p] = max(0.0, min(1.0, pr + (1.0 - pr) * rr))
+
+    return p_draw, p_reserved, cutoff
+
+
+def build_predictions(history_rows: List[dict], db_by_code: Dict[str, dict], prediction_year: int, iterations: int, seed: int) -> Tuple[List[dict], List[dict]]:
+    rng = random.Random(seed)
+
+    # Group history at hunt+pool+residency granularity
+    grouped: Dict[Tuple[str, str, str], List[dict]] = defaultdict(list)
+    for r in history_rows:
+        code = clean(r.get("hunt_code")).upper()
+        draw_pool = clean(r.get("draw_pool")).lower() or "standard"
+        res = clean(r.get("residency"))
+        grouped[(code, draw_pool, res)].append(r)
+
+    prediction_rows: List[dict] = []
+    audit_rows: List[dict] = []
+
+    for (code, draw_pool, residency), rows in grouped.items():
+        db = db_by_code.get(code)
+        if not db:
+            continue
+
+        hunt_type = clean(db.get("hunt_type"))
+        kind = hunt_kind_label(hunt_type)
+        if not is_target_bonus_hunt(hunt_type):
+            continue
+
+        # Quota per residency from approved DB (forecast can evolve later)
+        q_res = to_int(db.get("permits_2026_res"), 0)
+        q_nr = to_int(db.get("permits_2026_nr"), 0)
+        q_total = to_int(db.get("permits_2026_total"), q_res + q_nr)
+        residency_quota = q_res if residency.lower().startswith("res") else q_nr
+        if residency_quota <= 0:
+            # Resident-only or NR-only handling: skip empty lane
+            continue
+
+        # Demand series by point
+        by_point_year: Dict[int, List[Tuple[int, int]]] = defaultdict(list)
+        for r in rows:
+            yr = to_int(r.get("year"), 0)
+            pt = to_int(r.get("points"), 0)
+            app = to_int(r.get("eligible_applicants"), 0)
+            if yr > 0:
+                by_point_year[pt].append((yr, app))
+
+        points_desc = sorted(by_point_year.keys(), reverse=True)
+        if not points_desc:
+            continue
+
+        reserved_fraction = infer_reserved_fraction(rows)
+        reserved_quota = int(round(residency_quota * reserved_fraction))
+        random_quota = max(0, residency_quota - reserved_quota)
+
+        # Monte Carlo containers by point
+        p_draw_samples: Dict[int, List[float]] = defaultdict(list)
+        p_reserved_samples: Dict[int, List[float]] = defaultdict(list)
+        cutoff_samples: List[float] = []
+
+        for _ in range(max(1, iterations)):
+            demand_iter: Dict[int, int] = {}
+            for p in points_desc:
+                series = sorted(by_point_year[p])
+                latest = series[-1][1]
+                g = growth_rate(series)
+                base = max(0.0, latest * (1.0 + g))
+                # History-calibrated uncertainty: demand variance grows with base and volatility
+                sigma = max(1.0, math.sqrt(max(base, 1.0)) * 0.25)
+                sampled = int(round(max(0.0, rng.gauss(base, sigma))))
+                demand_iter[p] = sampled
+
+            p_draw_map, p_res_map, cutoff = simulate_iteration(points_desc, demand_iter, reserved_quota, random_quota)
+            if cutoff is not None:
+                cutoff_samples.append(cutoff)
+            for p in points_desc:
+                p_draw_samples[p].append(p_draw_map.get(p, 0.0))
+                p_reserved_samples[p].append(p_res_map.get(p, 0.0))
+
+        expected_cutoff = round(mean(cutoff_samples), 3) if cutoff_samples else None
+
+        # Build per-point prediction rows
+        for p in points_desc:
+            draws = p_draw_samples[p]
+            pres = p_reserved_samples[p]
+            p_draw_mean = mean(draws) if draws else 0.0
+            p10 = percentile(draws, 0.10)
+            p50 = percentile(draws, 0.50)
+            p90 = percentile(draws, 0.90)
+            p_reserved_mean = mean(pres) if pres else 0.0
+            p_random_mean = max(0.0, min(1.0, p_draw_mean - p_reserved_mean))
+            guaranteed_probability = sum(1 for x in draws if x >= 0.999) / len(draws) if draws else 0.0
+
+            reasons = [
+                "BONUS_RULE_SIMULATED",
+                f"HUNT_KIND_{kind}",
+                f"DRAW_POOL_{draw_pool.upper()}",
+                "MAX_POOL_DEPRECATED_NO_AUTO_100",
+            ]
+            if guaranteed_probability >= 0.999:
+                reasons.append("MODELED_100_CONFIRMED")
+
+            prediction_rows.append(
+                {
+                    "draw_year": prediction_year,
+                    "hunt_code": code,
+                    "residency": residency,
+                    "points": p,
+                    "p_draw_mean": round(p_draw_mean, 6),
+                    "p_draw_p10": round(p10, 6),
+                    "p_draw_p50": round(p50, 6),
+                    "p_draw_p90": round(p90, 6),
+                    "p_reserved_mean": round(p_reserved_mean, 6),
+                    "p_random_mean": round(p_random_mean, 6),
+                    "p_preference_mean": 0.0,
+                    "p_youth_mean": 1.0 if draw_pool.startswith("youth") else 0.0,
+                    "expected_cutoff_points": expected_cutoff,
+                    "cutoff_bucket_probability": round(p_draw_mean, 6),
+                    "guaranteed_probability": round(guaranteed_probability, 6),
+                    "point_creep_1yr": 0.0,
+                    "point_creep_3yr": 0.0,
+                    "quota_source": "approved_2026_residency_split",
+                    "applicant_pool_source": "public_historical_proxy",
+                    "model_version": MODEL_VERSION,
+                    "rule_version": RULE_VERSION,
+                    "data_cutoff_date": str(date.today()),
+                    "data_quality_grade": "B",
+                    "reason_codes": tuple(reasons),
+                    "display_odds_pct": round(p_draw_mean * 100.0, 3),
+                    "draw_pool": draw_pool,
+                    "hunt_type": hunt_type,
+                }
+            )
+
+        audit_rows.append(
+            {
+                "hunt_code": code,
+                "hunt_type": hunt_type,
+                "hunt_kind": kind,
+                "draw_pool": draw_pool,
+                "residency": residency,
+                "prediction_year": prediction_year,
+                "quota_residency": residency_quota,
+                "reserved_quota": reserved_quota,
+                "random_quota": random_quota,
+                "reserved_fraction": round(reserved_fraction, 4),
+                "points_modeled": len(points_desc),
+                "expected_cutoff_points": "" if expected_cutoff is None else expected_cutoff,
+                "iterations": iterations,
+            }
+        )
+
+    prediction_rows.sort(key=lambda r: (r["hunt_code"], r["draw_pool"], r["residency"], int(r["points"])))
+    audit_rows.sort(key=lambda r: (r["hunt_code"], r["draw_pool"], r["residency"]))
+    return prediction_rows, audit_rows
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Build predictive Utah bonus draw engine for OIL/LE/PLE hunts.")
+    parser.add_argument("--prediction-year", type=int, default=2026)
+    parser.add_argument("--iterations", type=int, default=600)
+    parser.add_argument("--seed", type=int, default=20260520)
+    parser.add_argument("--out-dir", default=str(OUT_DIR_DEFAULT))
+    args = parser.parse_args()
+
+    out_dir = Path(args.out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    history = read_csv(INPUT_DRAW_V2)
+    db_rows = read_csv(INPUT_DATABASE)
+    legacy_engine = read_csv(INPUT_LEGACY_ENGINE)
+
+    db_by_code = {clean(r.get("hunt_code")).upper(): r for r in db_rows if clean(r.get("hunt_code"))}
+
+    predictions, audit = build_predictions(
+        history_rows=history,
+        db_by_code=db_by_code,
+        prediction_year=args.prediction_year,
+        iterations=args.iterations,
+        seed=args.seed,
+    )
+
+    # Materialize bridge-compatible rows (legacy + modeled fields)
+    materialized = materialize_rows(
+        predictions,
+        legacy_rows=legacy_engine,
+        prediction_year=args.prediction_year,
+        model_version=MODEL_VERSION,
+        rule_version=RULE_VERSION,
+        quota_source="approved_2026_residency_split",
+        applicant_pool_source="public_historical_proxy",
+    )
+
+    # Carry draw_pool/hunt_type through for downstream research filters and auditing.
+    pred_index = {}
+    for p in predictions:
+        pred_index[(p["hunt_code"], p["residency"], int(p["points"]))] = p
+
+    for r in materialized:
+        key = (clean(r.get("hunt_code")).upper(), clean(r.get("residency")), to_int(r.get("points"), 0))
+        src = pred_index.get(key, {})
+        r["draw_pool"] = clean(src.get("draw_pool")) or clean(r.get("draw_pool")) or "standard"
+        r["hunt_type"] = clean(src.get("hunt_type")) or clean(r.get("hunt_type"))
+
+    predictions_path = out_dir / f"predictive_bonus_engine_{args.prediction_year}.predictions.csv"
+    materialized_path = out_dir / f"predictive_bonus_engine_{args.prediction_year}.materialized.csv"
+    audit_path = out_dir / f"predictive_bonus_engine_{args.prediction_year}.audit.csv"
+
+    # Write raw predictions
+    pred_headers = [
+        "draw_year", "hunt_code", "hunt_type", "draw_pool", "residency", "points",
+        "p_draw_mean", "p_draw_p10", "p_draw_p50", "p_draw_p90",
+        "p_reserved_mean", "p_random_mean", "p_preference_mean", "p_youth_mean",
+        "expected_cutoff_points", "cutoff_bucket_probability", "guaranteed_probability",
+        "point_creep_1yr", "point_creep_3yr", "quota_source", "applicant_pool_source",
+        "model_version", "rule_version", "data_cutoff_date", "data_quality_grade",
+        "reason_codes", "display_odds_pct",
+    ]
+    write_csv(predictions_path, pred_headers, predictions)
+
+    # Write bridge materialized CSV (legacy+modeled)
+    write_materialized_csv(materialized_path, materialized)
+
+    # Write audit
+    audit_headers = [
+        "hunt_code", "hunt_type", "hunt_kind", "draw_pool", "residency", "prediction_year",
+        "quota_residency", "reserved_quota", "random_quota", "reserved_fraction",
+        "points_modeled", "expected_cutoff_points", "iterations",
+    ]
+    write_csv(audit_path, audit_headers, audit)
+
+    print(f"predictions: {predictions_path}")
+    print(f"materialized: {materialized_path}")
+    print(f"audit: {audit_path}")
+    print(f"rows_predictions: {len(predictions)}")
+    print(f"rows_materialized: {len(materialized)}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

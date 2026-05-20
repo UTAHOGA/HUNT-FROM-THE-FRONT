@@ -1,8 +1,8 @@
 {
   "id": "draw_reality_engine_v2_draft",
-  "generated_at_utc": "2026-05-10T17:44:04.273394+00:00",
+  "generated_at_utc": "2026-05-20T22:14:41.558875+00:00",
   "truth_source": "data_truth/draw_results_truth/normalized/draw_results_long.csv",
-  "truth_source_sha256": "670fcbaee53f5eeb4b17d62c91fa254fa566504eabf118dec21739f9de8a365b",
+  "truth_source_sha256": "68b89136a5663683c1f779bb45573bc1d3ef15e91b73fabd4f1677a8f19383e1",
   "output_feed": "data_model/runtime_drafts/draw_reality_engine_v2.csv",
   "required_key": "hunt_code + year + draw_pool + residency + points",
   "required_columns": [

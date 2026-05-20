@@ -1,0 +1,22 @@
+import json
+from pathlib import Path
+
+from engine.utah_draw_predictive.classifier import build_draw_system_coverage_report
+
+
+def test_draw_system_coverage_report_generation(tmp_path: Path) -> None:
+    artifacts = build_draw_system_coverage_report(tmp_path, forecast_year=2026, history_years=[2021, 2022, 2023, 2024, 2025])
+    csv_path = artifacts["csv"]
+    json_path = artifacts["json"]
+    assert csv_path.exists()
+    assert json_path.exists()
+
+    report = json.loads(json_path.read_text(encoding="utf-8"))
+    assert report["forecast_year"] == 2026
+    assert report["answers"]["is_general_season_buck_deer_modeled"] is True
+    assert report["answers"]["is_antlerless_deer_modeled"] is False
+    assert report["answers"]["is_bear_modeled"] is False
+    assert "BONUS_CWMU_BIG_GAME" in report["in_scope_model_pending_categories"]
+    assert "PRIVATE_LANDS_ONLY_ANTLERLESS_ELK" in report["in_scope_model_pending_categories"]
+    assert "BONUS_OIL_BIG_GAME" in report["modeled_bonus_categories"]
+    assert "OUT_OF_SCOPE_NON_TARGET" in report["out_of_scope_non_target_categories"]

@@ -16,9 +16,12 @@ def test_frontend_uses_modeled_probability_before_legacy_max_pool():
     start = text.index("function getDisplayedOdds(row)")
     end = text.index("function isPreferenceAntlerless(meta)")
     block = text[start:end]
-    assert "display_odds_pct" in block
-    assert "p_draw_mean" in block
-    assert block.index("display_odds_pct") < block.index("odds_2026_projected")
+    assert "p_draw_pct" in block
+    assert "p_draw" in block
+    assert "p_bonus_pool_pct" in block
+    assert "p_random_pool_pct" in block
+    assert block.index("p_draw_pct") < block.index("odds_2026_projected")
+    assert block.index("p_draw") < block.index("odds_2026_projected")
     assert "row.status === 'MAX POOL'" not in block
 
 
