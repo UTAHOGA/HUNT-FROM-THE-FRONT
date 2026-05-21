@@ -10,7 +10,7 @@
     2025
   ],
   "command_used": "python -m engine.utah_bonus_predictive.materialize --output-dir processed_data --forecast-year 2026 --history-years 2021,2022,2023,2024,2025 --skip-upstream",
-  "generated_at": "2026-05-21T04:32:50.606468+00:00",
+  "generated_at": "2026-05-21T06:58:13.068167+00:00",
   "output_files": {
     "ml_draw_predictions_v1.csv": "processed_data\\ml_draw_predictions_v1.csv",
     "ml_draw_predictions_v1_report.json": "processed_data\\ml_draw_predictions_v1_report.json",
@@ -32,6 +32,8 @@
     "bear_draw_report.json": "processed_data\\bear_draw_report.json",
     "bear_predictions_v1.csv": "processed_data\\bear_predictions_v1.csv",
     "bear_report.json": "processed_data\\bear_report.json",
+    "bear_draw_odds_source_audit.csv": "processed_data\\bear_draw_odds_source_audit.csv",
+    "bear_draw_odds_source_audit.json": "processed_data\\bear_draw_odds_source_audit.json",
     "sportsman_permit_predictions_v1.csv": "processed_data\\sportsman_permit_predictions_v1.csv",
     "sportsman_permit_report.json": "processed_data\\sportsman_permit_report.json",
     "private_lands_antlerless_elk_predictions_v1.csv": "processed_data\\private_lands_antlerless_elk_predictions_v1.csv",
@@ -41,17 +43,17 @@
     "mountain_lion_availability_report.json": "processed_data\\mountain_lion_availability_report.json"
   },
   "output_row_counts": {
-    "ml_draw_predictions_v1.csv": 27763,
+    "ml_draw_predictions_v1.csv": 27813,
     "backtest_utah_bonus_draw.csv": 10557,
-    "draw_reality_engine_predictive_v2.csv": 27763,
+    "draw_reality_engine_predictive_v2.csv": 27813,
     "draw_reality_engine_v2.csv": 176753
   },
   "duplicate_key_counts": {
     "ml_draw_predictions_v1.csv": 0,
     "draw_reality_engine_predictive_v2.csv": 0
   },
-  "p_draw_non_null_count": 26974,
-  "p_draw_pct_non_null_count": 26974,
+  "p_draw_non_null_count": 27032,
+  "p_draw_pct_non_null_count": 27032,
   "calibration_metric_non_null_count": 10557,
   "EB3024_regression_result": {
     "pass": true,
@@ -90,9 +92,9 @@
   },
   "coverage_report_summary": {
     "total_historical_backtest_hunt_codes": 1616,
-    "total_forecast_hunt_codes": 1065,
+    "total_forecast_hunt_codes": 1067,
     "total_active_2026_forecast_eligible_hunt_codes": 592,
-    "count_excluded_not_OIL_LE_PLE": 241,
+    "count_excluded_not_OIL_LE_PLE": 239,
     "count_excluded_not_active_in_2026": 0,
     "count_excluded_missing_forecast_quota": 20,
     "count_excluded_missing_required_metadata": 0,
@@ -101,10 +103,10 @@
     "count_excluded_missing_model_input_or_not_in_predictive_draft": 128,
     "forecast_codes_match_active_eligible_universe": false,
     "active_eligible_codes_missing_from_forecast": 0,
-    "forecast_codes_outside_active_eligible_universe": 473,
+    "forecast_codes_outside_active_eligible_universe": 475,
     "reason_counts": {
-      "included_forecast": 1065,
-      "not_OIL_LE_PLE": 241,
+      "included_forecast": 1067,
+      "not_OIL_LE_PLE": 239,
       "not_active_in_2026": 0,
       "missing_forecast_quota": 20,
       "missing_required_metadata": 0,
@@ -117,11 +119,11 @@
     "prediction": {
       "p_draw_outside_0_1": 0,
       "p_draw_pct_outside_0_100": 0,
-      "p_draw_pct_null": 789,
-      "public_permits_gt_0_but_p_draw_null": 264,
-      "status_max_pool_and_p_draw_pct_100": 331,
+      "p_draw_pct_null": 781,
+      "public_permits_gt_0_but_p_draw_null": 251,
+      "status_max_pool_and_p_draw_pct_100": 343,
       "status_max_pool_and_p_draw_pct_lt_100": 0,
-      "random_permits_gt_0_and_p_random_pool_0": 2668,
+      "random_permits_gt_0_and_p_random_pool_0": 2671,
       "duplicate_key_count": 0
     },
     "backtest": {
@@ -144,7 +146,7 @@
     "pipeline\\RAW\\hunt_unit_database\\2026\\csv\\DATABASE.csv": "c81d64f13ce045a6f87d8b24ae0030477ec4ae459ebc60f6c9bad7cc6ed11866",
     "processed_data\\draw_reality_engine_v2.csv": "25538c8dfbe374148da90d2650b5d674e60e1ec70eaab142d938628121193044",
     "data_model\\runtime_drafts\\predictive_bonus_engine_2026.materialized.csv": "e6b9827f88f2fc93513fa72d01e971b3438b6ec08b996ff0d243953fb8e54a43",
-    "hunt-research.js": "e6268e65769d4d70d2d15c70f9ff92eafe520dbc030b614158ad8ea43bfcff73",
-    "config.js": "7853236e04e9af86b68f19d889d7b31e83ef6c6b33f52f9a350067a278d32741"
+    "hunt-research.js": "655586010d4329eaf7de3c90ed5300211e1483bb963166bdee80d019949c332d",
+    "config.js": "74f21ac3b95bff3fd7bc6e4865530a94009629e921122c9af08e0ecda7b527c9"
   }
 }

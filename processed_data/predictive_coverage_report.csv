@@ -910,10 +910,10 @@ EB1002,False,True,True,False,not_OIL_LE_PLE,General Season - Any Bull,Elk,Any Bu
 EB1003,False,True,True,False,not_OIL_LE_PLE,General Season - Spike Bull,Elk,Spike Only Units,,,16
 EB1004,False,True,True,False,not_OIL_LE_PLE,General Season - Spike Bull,Elk,Spike Only Units,,,6
 EB1005,False,True,True,False,not_OIL_LE_PLE,General Season - Archery,Elk,Archery Hunters Choice Elk,,,16
-EB1007,False,True,True,False,not_OIL_LE_PLE,General Season - Any Bull,Elk,Draw-only Youth Any Bull/Hunters Choice Elk,,,750
+EB1007,True,True,True,False,included_forecast,General Season - Any Bull,Elk,Draw-only Youth Any Bull/Hunters Choice Elk,,,750
 EB1009,False,True,True,False,not_OIL_LE_PLE,General Season - Spike Bull,Elk,Spike Only Elk Units - Multiseason,,,
 EB1010,False,True,True,False,not_OIL_LE_PLE,General Season - Any Bull,Elk,Any Bull Elk Units,,,17
-EB1011,False,True,True,False,not_OIL_LE_PLE,General Season - Youth,Elk,Youth General Season Bull Elk,,,
+EB1011,True,True,True,False,included_forecast,General Season - Youth,Elk,Youth General Season Bull Elk,,,
 EB1012,False,True,True,False,not_OIL_LE_PLE,General Season - Any Bull,Elk,Uinta Basin Private Lands Any Bull Elk,,,500
 EB3000,True,True,True,True,included_forecast,Limited Entry,Elk,Beaver East,22,3,25
 EB3001,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,

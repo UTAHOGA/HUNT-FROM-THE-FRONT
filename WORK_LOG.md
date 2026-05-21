@@ -1,5 +1,42 @@
 # WORK LOG
 
+## Bear Strategy Correction - Official 2025 Draw Odds Re-Audit
+- Timestamp (UTC): 2026-05-21T00:00:00Z
+- Scope:
+  - Re-audited Utah black bear rows against the official `2025 Black Bear Draw odds.pdf` and the 2026 black bear permit sheet.
+  - Corrected the blanket treatment of unit-specific pursuit rows so official point-table pursuit hunt codes are modeled as bear bonus draw rows.
+  - Preserved `BR1000` as `SPORTSMAN_PERMIT`, `BR1001` as harvest-objective availability, and `BR1007` / `BR1018` as unlimited-pursuit availability.
+- Files updated:
+  - `engine/utah_draw_predictive/bear.py`
+  - `engine/utah_bonus_predictive/materialize.py`
+  - Focused bear audit / subtype / materialization tests
+- Outputs refreshed:
+  - `processed_data/bear_predictions_v1.csv`
+  - `processed_data/bear_report.json`
+  - `processed_data/bear_draw_odds_source_audit.csv`
+  - `processed_data/bear_draw_odds_source_audit.json`
+  - `processed_data/ml_draw_predictions_v1.csv`
+  - `processed_data/draw_reality_engine_predictive_v2.csv`
+  - `processed_data/predictive_coverage_report.csv`
+  - `processed_data/predictive_coverage_report.json`
+  - `processed_data/utah_bonus_predictive_manifest.json`
+- Validation summary:
+  - Focused Python tests run: `21`
+  - Focused Python tests failed: `0`
+  - Official bear hunt codes found in 2025 draw-odds PDF: `97`
+  - Official bear pursuit hunt codes found in 2025 draw-odds PDF: `9`
+  - Pursuit hunt codes corrected from availability to modeled bonus: `9`
+  - `BR1008`, `BR1009`, and `BR1011` now classify as `RESTRICTED_BEAR_PURSUIT` and materialize with bear bonus probability fields.
+  - `BR1000` remains Sportsman-only.
+  - `BR1001` remains harvest-objective availability-only with no `p_draw`.
+  - `BR1007` / `BR1018` remain unlimited-pursuit availability-only with no `p_draw`.
+  - Duplicate key count on `hunt_code,residency,points`: `0`
+- Correction results:
+  - Official point-table pursuit rows are now treated as real point-based bear draw rows for matching 2026 quota hunt families.
+  - Availability-only bear rows still do not receive fake draw odds.
+  - Bear rows still never use `p_preference_draw`.
+  - Existing EB3024, one-permit random-only, MAX POOL, and UI precedence guardrails remained passing.
+
 
 ## Step 1B - Raw Inventory Audit
 - Timestamp (UTC): 2026-05-10T12:43:23.701298Z
@@ -639,3 +676,145 @@
   - No cougar row receives `p_draw`, `p_draw_pct`, `p_bonus_pool`, `p_random_pool`, or `p_preference_draw`.
   - Availability/status fields now explicitly carry permit/rule/season status semantics for the family report and coverage outputs.
   - Bear Phase 12 guardrails remained unchanged and passing.
+
+## Phase 14 Private-Lands-Only Antlerless Elk Allocation / Availability Closeout
+- Timestamp (UTC): 2026-05-21T00:00:00Z
+- Scope:
+  - Closed out `PRIVATE_LANDS_ONLY_ANTLERLESS_ELK` as an allocation / availability family in `C:\Users\tyler\Desktop\GitHub\HUNTS`.
+  - Preserved all accepted bonus, preference, sportsman, bear-subtype, and mountain-lion behaviors.
+  - Promoted the direct 2026 private-lands permit sheet as the allocation source for permit totals and season windows.
+- Files updated:
+  - `engine/utah_draw_predictive/private_lands_antlerless_elk.py`
+  - `engine/utah_draw_predictive/classifier.py`
+  - `engine/utah_bonus_predictive/materialize.py`
+  - `docs/utah_draw_system_scope.md`
+  - Focused private-lands allocation tests and artifact-validation tests
+- Outputs refreshed:
+  - `processed_data/private_lands_antlerless_elk_predictions_v1.csv`
+  - `processed_data/private_lands_antlerless_elk_allocations_v1.csv`
+  - `processed_data/private_lands_antlerless_elk_report.json`
+  - `processed_data/ml_draw_predictions_v1.csv`
+  - `processed_data/draw_reality_engine_predictive_v2.csv`
+  - `processed_data/draw_system_coverage_report.csv`
+  - `processed_data/draw_system_coverage_report.json`
+  - `processed_data/utah_bonus_predictive_manifest.json`
+  - `processed_data/gpt_work_review_report.json`
+  - `processed_data/gpt_work_review_report.md`
+- Validation summary:
+  - Python tests run: `104`
+  - Python tests failed: `0`
+  - Predictive rows: `27763`
+  - `MODELED_BONUS` rows: `25233`
+  - `MODELED_PREFERENCE` rows: `1731`
+  - `MODELED_ALLOCATION` rows: `54`
+  - `MODELED_AVAILABILITY` rows: `139`
+  - `MODELED_SPORTSMAN_DRAW` rows: `10`
+  - `IN_SCOPE_MODEL_PENDING` rows: `394`
+  - `EXCLUDED_NOT_PREDICTIVE_DRAW` rows: `4`
+  - `OUT_OF_SCOPE_NON_TARGET` rows: `198`
+  - Private-lands-only antlerless elk reviewed rows: `27`
+  - Private-lands-only antlerless elk predictive rows: `54`
+  - Private-lands-only antlerless elk hunt codes: `27`
+  - Duplicate key count on `hunt_code,residency,points`: `0`
+- Phase 14 results:
+  - Private-lands-only antlerless elk is now closed out as `MODELED_ALLOCATION`, not preference or bonus draw odds.
+  - No private-lands-only row receives `p_draw`, `p_draw_pct`, `p_preference_draw`, `p_bonus_pool`, or `p_random_pool`.
+  - `permits_allotted` and season dates come from the direct 2026 private-lands permit source, while remaining/availability probability fields stay blank when the source cannot defensibly support them.
+  - Coverage now reports private-lands-only rows as modeled allocation rather than pending, and normal antlerless elk preference remains separate and passing.
+
+## Phase 15 Youth General Deer + Youth Any-Bull Elk Separation / Pending Strategy
+- Timestamp (UTC): 2026-05-20T23:59:00Z
+- Scope:
+  - Implemented the youth-family classifier and reporting pass in `C:\Users\tyler\Desktop\GitHub\HUNTS`.
+  - Kept youth general deer and youth any-bull elk in scope without forcing them into adult general deer, antlerless elk, or OIL / LE / PLE bonus logic.
+  - Surfaced current-year youth elk rows as explicit pending predictive rows with no fake draw odds.
+  - Preserved all accepted bonus, preference, sportsman, bear-subtype, private-lands-only, and mountain-lion behaviors.
+- Files updated:
+  - `engine/utah_draw_predictive/youth.py`
+  - `engine/utah_draw_predictive/classifier.py`
+  - `engine/utah_bonus_predictive/materialize.py`
+  - `docs/utah_draw_system_scope.md`
+  - Focused youth strategy / coverage / materialization tests
+- Outputs refreshed:
+  - `processed_data/youth_draw_predictions_v1.csv`
+  - `processed_data/youth_draw_report.json`
+  - `processed_data/ml_draw_predictions_v1.csv`
+  - `processed_data/draw_reality_engine_predictive_v2.csv`
+  - `processed_data/draw_system_coverage_report.csv`
+  - `processed_data/draw_system_coverage_report.json`
+  - `processed_data/utah_bonus_predictive_manifest.json`
+  - `processed_data/gpt_work_review_report.json`
+  - `processed_data/gpt_work_review_report.md`
+- Validation summary:
+  - Python tests run: `111`
+  - Python tests failed: `0`
+  - Predictive rows: `27767`
+  - `MODELED_BONUS` rows: `25233`
+  - `MODELED_PREFERENCE` rows: `1731`
+  - `MODELED_ALLOCATION` rows: `54`
+  - `MODELED_AVAILABILITY` rows: `139`
+  - `MODELED_SPORTSMAN_DRAW` rows: `10`
+  - `IN_SCOPE_MODEL_PENDING` rows: `398`
+  - `EXCLUDED_NOT_PREDICTIVE_DRAW` rows: `4`
+  - `OUT_OF_SCOPE_NON_TARGET` rows: `198`
+  - Youth general deer reviewed rows: `4853`
+  - Youth general deer active predictive rows: `0`
+  - Youth any-bull elk reviewed rows: `74`
+  - Youth any-bull elk active predictive rows: `4`
+  - Duplicate key count on `hunt_code,residency,points`: `0`
+- Phase 15 results:
+  - Youth general deer and youth any-bull elk now classify as their own in-scope families.
+  - No youth row receives `p_draw`, `p_draw_pct`, `p_preference_draw`, `p_bonus_pool`, or `p_random_pool`.
+  - Youth elk is surfaced from the current-year youth source as pending because quota/mechanics are not yet defensible.
+  - Youth deer remains separate from adult general deer, but no active 2026 predictive youth-deer rows are created because the current-year source surface does not cleanly separate a youth pool from shared general-season permit rows.
+
+## Online Runtime Sync + Final Cross-Checks
+- Timestamp (UTC): 2026-05-21T07:00:00Z
+- Scope:
+  - Synced the Hunt Research support files in `C:\Users\tyler\Desktop\GitHub\HUNTS` so predictive-only groups are now present in the online runtime layer.
+  - Preserved all accepted predictive family math while fixing the website-facing ladder/master/reference mismatch around Sportsman, mountain lion availability, dedicated hunter draw pools, and youth elk pending rows.
+  - Added a frontend fallback so non-point families still render summary cards even when no exact point row exists.
+- Files updated:
+  - `scripts/sync_online_runtime_from_predictive.py`
+  - `hunt-research.js`
+  - `config.js`
+  - `scripts/build-pages-dist.js`
+  - `processed_data/hunt_master_enriched.csv`
+  - `processed_data/hunt_unit_reference_linked.csv`
+  - `processed_data/point_ladder_view.csv`
+  - `processed_data/online_runtime_crosscheck.json`
+  - `processed_data/online_runtime_crosscheck.md`
+  - Focused runtime sync / frontend fallback tests
+- Outputs refreshed:
+  - `processed_data/draw_reality_engine_predictive_v2.csv`
+  - `processed_data/draw_system_coverage_report.csv`
+  - `processed_data/draw_system_coverage_report.json`
+  - `processed_data/ml_draw_predictions_v1.csv`
+  - `processed_data/utah_bonus_predictive_manifest.json`
+  - `processed_data/hunt_master_enriched.csv`
+  - `processed_data/hunt_unit_reference_linked.csv`
+  - `processed_data/point_ladder_view.csv`
+  - `processed_data/online_runtime_crosscheck.json`
+  - `processed_data/online_runtime_crosscheck.md`
+- Validation summary:
+  - Python tests run: `118`
+  - Python tests failed: `0`
+  - Online runtime cross-check status: `PASS`
+  - Engine groups: `2007`
+  - Missing engine groups after sync:
+    - ladder: `0`
+    - master: `0`
+    - reference: `0`
+  - Duplicate key count in synced runtime files:
+    - ladder `(hunt_code,residency,points,draw_pool)`: `0`
+    - master `(hunt_code,residency,points,draw_pool)`: `0`
+    - reference `(hunt_code,residency,draw_pool)`: `0`
+  - Pages build:
+    - `pages-dist` build completed successfully
+    - large runtime files still exceed the 25 MiB Pages cap and rely on the existing Cloudflare object fallback
+- Results:
+  - Sportsman groups now exist in ladder/master/reference with `draw_pool=sportsman`.
+  - Mountain lion availability groups now exist in ladder/master/reference and remain availability-only.
+  - Dedicated Hunter draw-pool groups now exist in the master/reference layer instead of collapsing back to standard deer rows.
+  - Youth elk pending groups now exist in ladder/master/reference and remain in-scope without fake draw odds.
+  - Hunt Research now falls back to the first engine group row for non-point families before dropping to ladder-only summary behavior.

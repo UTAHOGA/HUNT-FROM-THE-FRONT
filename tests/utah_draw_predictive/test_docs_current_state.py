@@ -19,6 +19,7 @@ def test_docs_current_state_reflects_completed_and_pending_phases() -> None:
         "Phase 12: bear subtype-aware quota draw + availability strategy",
         "Phase 13: mountain lion / cougar rule-status + availability closeout",
         "Phase 14: private-lands-only antlerless elk allocation / availability closeout",
+        "Phase 15: youth family separation and pending-strategy closeout",
     ):
         assert phrase in text
 

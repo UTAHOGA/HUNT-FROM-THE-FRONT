@@ -8,20 +8,20 @@
     2024,
     2025
   ],
-  "generated_at": "2026-05-21T04:22:03.088235+00:00",
+  "generated_at": "2026-05-21T05:22:29.952179+00:00",
   "files_reviewed": [
-    "engine/utah_draw_predictive/mountain_lion.py",
+    "engine/utah_draw_predictive/youth.py",
     "engine/utah_draw_predictive/classifier.py",
     "engine/utah_bonus_predictive/materialize.py",
     "docs/utah_draw_system_scope.md",
-    "data/cougar_hunt_table_official.json",
-    "processed_data/mountain_lion_availability_predictions_v1.csv",
-    "processed_data/mountain_lion_availability_report.json",
-    "processed_data/draw_system_coverage_report.json"
+    "processed_data/youth_draw_predictions_v1.csv",
+    "processed_data/youth_draw_report.json",
+    "processed_data/draw_system_coverage_report.json",
+    "processed_data/ml_draw_predictions_v1.csv"
   ],
   "artifacts_reviewed": [
-    "processed_data/mountain_lion_availability_predictions_v1.csv",
-    "processed_data/mountain_lion_availability_report.json",
+    "processed_data/youth_draw_predictions_v1.csv",
+    "processed_data/youth_draw_report.json",
     "processed_data/ml_draw_predictions_v1.csv",
     "processed_data/draw_reality_engine_predictive_v2.csv",
     "processed_data/draw_system_coverage_report.csv",
@@ -33,58 +33,64 @@
     "python -m engine.utah_draw_predictive.classifier --output-dir processed_data --forecast-year 2026 --history-years 2021,2022,2023,2024,2025",
     "python -m pytest -q tests/utah_bonus_predictive tests/utah_draw_predictive tests/utah/test_frontend_probability_selection.py"
   ],
-  "tests_passed": 101,
+  "tests_passed": 111,
   "tests_failed": 0,
   "blocked_dependencies": [],
   "phase_status": {
-    "phase_13_mountain_lion": "implemented_and_validated"
+    "phase_15_youth": "implemented_as_separated_in_scope_pending_families"
   },
   "family_status": {
+    "YOUTH_GENERAL_DEER": "IN_SCOPE_MODEL_PENDING",
+    "YOUTH_GENERAL_ANY_BULL_ELK": "IN_SCOPE_MODEL_PENDING",
+    "PRIVATE_LANDS_ONLY_ANTLERLESS_ELK": "MODELED_ALLOCATION",
     "MOUNTAIN_LION_DRAW": "MODELED_AVAILABILITY",
     "BEAR_DRAW": "subtype_aware_bonus_and_availability",
-    "SPORTSMAN_PERMIT": "MODELED_SPORTSMAN_DRAW",
-    "PRIVATE_LANDS_ONLY_ANTLERLESS_ELK": "MODELED_ALLOCATION"
+    "SPORTSMAN_PERMIT": "MODELED_SPORTSMAN_DRAW"
   },
   "row_counts": {
-    "total_predictive_rows": 27763,
-    "MODELED_SPORTSMAN_DRAW": 10,
+    "total_predictive_rows": 27767,
     "MODELED_BONUS": 25233,
-    "MODELED_AVAILABILITY": 139,
-    "IN_SCOPE_MODEL_PENDING": 394,
-    "EXCLUDED_NOT_PREDICTIVE_DRAW": 4,
     "MODELED_PREFERENCE": 1731,
     "MODELED_ALLOCATION": 54,
+    "MODELED_AVAILABILITY": 139,
+    "MODELED_SPORTSMAN_DRAW": 10,
+    "IN_SCOPE_MODEL_PENDING": 398,
+    "EXCLUDED_NOT_PREDICTIVE_DRAW": 4,
     "OUT_OF_SCOPE_NON_TARGET": 198,
-    "MOUNTAIN_LION_DRAW_rows": 120
+    "YOUTH_GENERAL_DEER_rows": 0,
+    "YOUTH_GENERAL_ANY_BULL_ELK_rows": 4
   },
   "hunt_code_counts": {
-    "MOUNTAIN_LION_DRAW": 60
+    "YOUTH_GENERAL_DEER": 0,
+    "YOUTH_GENERAL_ANY_BULL_ELK": 2
   },
   "guardrail_results": {
     "duplicate_key_count": 0,
     "pending_rows_with_p_draw": 0,
     "out_of_scope_rows_with_p_draw": 0,
-    "mountain_lion_in_scope": true,
-    "mountain_lion_modeled": true,
-    "mountain_lion_still_pending": false,
-    "mountain_lion_p_draw_non_null_count": 0,
-    "mountain_lion_p_draw_pct_non_null_count": 0,
-    "mountain_lion_p_preference_draw_non_null_count": 0,
-    "mountain_lion_p_bonus_pool_non_null_count": 0,
-    "mountain_lion_p_random_pool_non_null_count": 0,
-    "mountain_lion_p_availability_non_null_count": 120,
+    "youth_general_deer_in_scope": true,
+    "youth_general_deer_modeled": false,
+    "youth_general_deer_still_pending": true,
+    "youth_general_any_bull_elk_in_scope": true,
+    "youth_general_any_bull_elk_modeled": false,
+    "youth_general_any_bull_elk_still_pending": true,
+    "bear_phase12_guardrails_pass": true,
     "BR1000_status_pass": true,
     "BR1001_status_pass": true,
     "BR1007_BR1018_status_pass": true,
-    "bear_phase12_guardrails_pass": true,
     "turkey_alignment_pass": true,
+    "private_lands_antlerless_elk_separation_pass": true,
+    "mountain_lion_status_unchanged_pass": true,
     "preference_field_contract_pass": true,
     "EB3024_pass": true,
     "one_permit_random_only_pass": true,
     "MAX_POOL_safety_pass": true,
     "UI_precedence_pass": true
   },
-  "unresolved_issues": [],
-  "recommended_next_phase": "choose the next remaining pending family after Phase 13 mountain lion closeout",
-  "recommended_next_codex_command_summary": "Phase 13 mountain lion is closed out as a rule-status and availability family. The next step should target one of the remaining pending families without reopening accepted bear, sportsman, turkey, or allocation behavior unless a regression appears."
+  "unresolved_issues": [
+    "Youth general deer remains in-scope but has no defensible active 2026 predictive row set because current-year sources do not cleanly separate a youth-only permit pool from shared general-season deer rows.",
+    "Youth general any-bull elk is now separated into its own in-scope family, but current source support is still insufficient to publish odds or allocation probabilities, so active 2026 rows remain model-pending with null draw fields."
+  ],
+  "recommended_next_phase": "random-only, OTC/remaining, landowner, or mitigation strategy selection after confirming which pending family should be separated next",
+  "recommended_next_codex_command_summary": "Youth general deer and youth any-bull elk are now separated from adult and bonus families without fake odds. The next safe step is to choose the next remaining pending family rather than forcing youth rows into unsupported draw math."
 }

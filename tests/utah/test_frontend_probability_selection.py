@@ -25,6 +25,13 @@ def test_frontend_uses_modeled_probability_before_legacy_max_pool():
     assert "row.status === 'MAX POOL'" not in block
 
 
+def test_frontend_uses_engine_group_fallback_for_non_point_families():
+    text = Path("hunt-research.js").read_text(encoding="utf-8")
+    assert "function getEngineGroupFallbackRow(" in text
+    assert "const engineGroupFallbackRow = getEngineGroupFallbackRow(filters.huntCode, filters.residency, filters.drawPool);" in text
+    assert "const summaryRow = engineRow || engineGroupFallbackRow || ladderPointRow || null;" in text
+
+
 def test_fixture_row_with_max_pool_and_modeled_probability_exists():
     rows = list(csv.DictReader(Path("data/utah/fixtures/draw_reality_engine.csv").open(encoding="utf-8")))
     row = next(r for r in rows if r["status"] == "MAX POOL")

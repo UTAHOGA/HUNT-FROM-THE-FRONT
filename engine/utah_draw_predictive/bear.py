@@ -1,8 +1,11 @@
-"""Phase 8 bear bonus predictive helpers for proven Utah public bear draw rows."""
+"""Bear subtype helpers and source-backed predictive logic for Utah bear rows."""
 
 from __future__ import annotations
 
+import re
 from collections import Counter, defaultdict
+from functools import lru_cache
+from pathlib import Path
 from statistics import mean
 from typing import Iterable, Mapping
 
@@ -21,6 +24,10 @@ from .sportsman import is_sportsman_permit_row
 MODEL_STRATEGY_NAME = "bear_bonus_phase8"
 BONUS_RULE_VERSION = "utah_bear_bonus_v1.0.0"
 BEAR_DRAW_SYSTEM_TYPE = "BEAR_DRAW"
+REPO = Path(__file__).resolve().parents[2]
+BEAR_DRAW_ODDS_SOURCE_PDF = REPO / "pipeline" / "RAW" / "hunt_unit_database" / "2026" / "pdf" / "draw_odds" / "2025 Black Bear Draw odds.pdf"
+BEAR_DRAW_ODDS_SOURCE_YEAR = 2025
+BEAR_DRAW_ODDS_SOURCE_RELATIVE = "pipeline/RAW/hunt_unit_database/2026/pdf/draw_odds/2025 Black Bear Draw odds.pdf"
 
 LIMITED_ENTRY_BEAR_HUNT = "LIMITED_ENTRY_BEAR_HUNT"
 RESTRICTED_BEAR_PURSUIT = "RESTRICTED_BEAR_PURSUIT"
@@ -31,7 +38,7 @@ UNLIMITED_PURSUIT_PERMIT = "UNLIMITED_PURSUIT_PERMIT"
 CONSERVATION_OR_NON_PUBLIC = "CONSERVATION_OR_NON_PUBLIC"
 UNKNOWN_BEAR_SUBTYPE = "UNKNOWN_BEAR_SUBTYPE"
 
-MODELED_BEAR_SUBTYPES = {LIMITED_ENTRY_BEAR_HUNT}
+MODELED_BEAR_SUBTYPES = {LIMITED_ENTRY_BEAR_HUNT, RESTRICTED_BEAR_PURSUIT}
 EXCLUDED_BEAR_SUBTYPES = {
     HARVEST_OBJECTIVE_AVAILABILITY,
     REMAINING_PERMIT_AVAILABILITY,
@@ -74,6 +81,13 @@ def _round_count(value: float) -> int:
     return max(0, int(round(value)))
 
 
+def _safe_relative(path: Path) -> str:
+    try:
+        return str(path.relative_to(REPO)).replace("\\", "/")
+    except ValueError:
+        return str(path).replace("\\", "/")
+
+
 def _band_for_points(points: int) -> str:
     if points <= 0:
         return "0"
@@ -113,7 +127,58 @@ def is_bear_row(row: Mapping[str, object]) -> bool:
     return False
 
 
-def classify_bear_subtype(row: Mapping[str, object]) -> str:
+@lru_cache(maxsize=1)
+def _parse_official_bear_draw_odds_pdf() -> dict[str, dict[str, object]]:
+    try:
+        import pdfplumber
+    except Exception as exc:
+        raise RuntimeError("pdfplumber is required to audit official bear draw odds source rows.") from exc
+
+    audit: dict[str, dict[str, object]] = {}
+    with pdfplumber.open(BEAR_DRAW_ODDS_SOURCE_PDF) as pdf:
+        for page_number, page in enumerate(pdf.pages, start=1):
+            text = page.extract_text() or ""
+            hunt_match = re.search(r"Hunt:\s*(BR\d{4})\s+(.+?)\nResident Applicants", text, re.S)
+            if not hunt_match:
+                continue
+            hunt_code = hunt_match.group(1).strip().upper()
+            hunt_name = " ".join(hunt_match.group(2).split()).strip()
+            totals = re.findall(r"Totals\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)", text)
+            resident_totals = totals[0] if len(totals) >= 1 else ("0", "0", "0", "0")
+            nonresident_totals = totals[1] if len(totals) >= 2 else ("0", "0", "0", "0")
+            is_pursuit = "pursuit" in hunt_name.lower()
+            audit[hunt_code] = {
+                "hunt_code": hunt_code,
+                "hunt_name": hunt_name,
+                "source_year": BEAR_DRAW_ODDS_SOURCE_YEAR,
+                "source_file": BEAR_DRAW_ODDS_SOURCE_RELATIVE,
+                "appears_in_draw_odds_pdf": True,
+                "has_point_level_bonus_rows": True,
+                "resident_bonus_permits_total": int(resident_totals[1]),
+                "resident_regular_permits_total": int(resident_totals[2]),
+                "resident_total_permits": int(resident_totals[3]),
+                "nonresident_bonus_permits_total": int(nonresident_totals[1]),
+                "nonresident_regular_permits_total": int(nonresident_totals[2]),
+                "nonresident_total_permits": int(nonresident_totals[3]),
+                "source_classification": "BEAR_PURSUIT_BONUS_DRAW" if is_pursuit else "TRUE_BEAR_BONUS_DRAW",
+                "page_number": page_number,
+            }
+    return audit
+
+
+def official_bear_draw_odds_hunt_codes() -> set[str]:
+    return set(_parse_official_bear_draw_odds_pdf().keys())
+
+
+def official_bear_pursuit_hunt_codes() -> set[str]:
+    return {
+        hunt_code
+        for hunt_code, row in _parse_official_bear_draw_odds_pdf().items()
+        if row.get("source_classification") == "BEAR_PURSUIT_BONUS_DRAW"
+    }
+
+
+def classify_bear_subtype_before_source_correction(row: Mapping[str, object]) -> str:
     if not is_bear_row(row):
         return UNKNOWN_BEAR_SUBTYPE
     if is_sportsman_permit_row(row):
@@ -141,6 +206,50 @@ def classify_bear_subtype(row: Mapping[str, object]) -> str:
     if "harvest objective" in text:
         return HARVEST_OBJECTIVE_AVAILABILITY
     if "restricted pursuit" in text or hunt_type == "pursuit" or hunt_type.startswith("pursuit") or weapon == "pursuit only":
+        return UNLIMITED_PURSUIT_PERMIT
+    if "spot and stalk" in text:
+        return LIMITED_ENTRY_BEAR_HUNT
+    if "limited entry" in text or "limited-entry" in text:
+        return LIMITED_ENTRY_BEAR_HUNT
+    return UNKNOWN_BEAR_SUBTYPE
+
+
+def classify_bear_subtype(row: Mapping[str, object]) -> str:
+    if not is_bear_row(row):
+        return UNKNOWN_BEAR_SUBTYPE
+    if is_sportsman_permit_row(row):
+        return STATEWIDE_BEAR_PERMIT
+    text = _joined_text(row)
+    hunt_type = _clean_lower(row.get("hunt_type"))
+    hunt_class = _clean_lower(row.get("hunt_class"))
+    weapon = _clean_lower(row.get("weapon"))
+    draw_pool = _clean_lower(row.get("draw_pool"))
+    hunt_code = _clean(row.get("hunt_code")).upper()
+    official_draw_codes = official_bear_draw_odds_hunt_codes()
+    official_pursuit_codes = official_bear_pursuit_hunt_codes()
+
+    if hunt_code == "BR1000":
+        return STATEWIDE_BEAR_PERMIT
+    if hunt_code == "BR1001":
+        return HARVEST_OBJECTIVE_AVAILABILITY
+    if hunt_code in {"BR1007", "BR1018"}:
+        return UNLIMITED_PURSUIT_PERMIT
+    if (
+        "cwmu" in text
+        or any(token in text for token in ("conservation", "expo", "sportsman", "private land", "landowner", "private"))
+        or hunt_class == "private"
+        or draw_pool == "sportsman"
+    ):
+        return CONSERVATION_OR_NON_PUBLIC
+    if "remaining permit" in text or " otc" in f" {text}" or "over the counter" in text:
+        return REMAINING_PERMIT_AVAILABILITY
+    if "harvest objective" in text:
+        return HARVEST_OBJECTIVE_AVAILABILITY
+    if hunt_code in official_pursuit_codes:
+        return RESTRICTED_BEAR_PURSUIT
+    if "restricted pursuit" in text:
+        return UNKNOWN_BEAR_SUBTYPE
+    if hunt_code not in official_draw_codes and (hunt_type == "pursuit" or hunt_type.startswith("pursuit") or weapon == "pursuit only"):
         return UNLIMITED_PURSUIT_PERMIT
     if "spot and stalk" in text:
         return LIMITED_ENTRY_BEAR_HUNT
@@ -502,6 +611,90 @@ def _base_row(
         "closure_risk": "",
         "sellout_or_closure_risk": "",
     }
+
+
+def build_bear_draw_odds_source_audit(
+    db_rows: Iterable[Mapping[str, object]],
+) -> tuple[list[dict[str, object]], dict[str, object]]:
+    official_rows = _parse_official_bear_draw_odds_pdf()
+    bear_db_rows: dict[str, Mapping[str, object]] = {}
+    for row in db_rows:
+        hunt_code = _clean(row.get("hunt_code")).upper()
+        if not hunt_code or not is_bear_row(row):
+            continue
+        bear_db_rows.setdefault(hunt_code, row)
+
+    audit_rows: list[dict[str, object]] = []
+    corrected_pursuit_codes: list[str] = []
+    pursuit_codes_in_pdf = sorted(official_bear_pursuit_hunt_codes())
+
+    for hunt_code in sorted(bear_db_rows):
+        row = bear_db_rows[hunt_code]
+        official = official_rows.get(hunt_code, {})
+        before = classify_bear_subtype_before_source_correction(row)
+        after = classify_bear_subtype(row)
+        text = _joined_text(row)
+        if hunt_code == "BR1000" or is_sportsman_permit_row(row):
+            source_classification = "SPORTSMAN_PERMIT"
+            flags = ["SPORTSMAN_SEPARATE"]
+        elif hunt_code == "BR1001" or "harvest objective" in text:
+            source_classification = "BEAR_HARVEST_OBJECTIVE_AVAILABILITY"
+            flags = ["HARVEST_OBJECTIVE_SOURCE"]
+        elif hunt_code in {"BR1007", "BR1018"}:
+            source_classification = "BEAR_UNLIMITED_PURSUIT_AVAILABILITY"
+            flags = ["UNLIMITED_PURSUIT_SOURCE"]
+        elif official:
+            source_classification = str(official.get("source_classification"))
+            flags = ["OFFICIAL_BEAR_DRAW_ODDS_SOURCE"]
+            if source_classification == "BEAR_PURSUIT_BONUS_DRAW":
+                flags.append("PURSUIT_BONUS_SOURCE_PROVEN")
+        elif any(token in text for token in ("conservation", "expo", "private", "sportsman", "landowner", "voucher")):
+            source_classification = "CONSERVATION_OR_NON_PUBLIC"
+            flags = ["NON_PUBLIC_OR_EXCLUDED_SOURCE"]
+        elif any(token in text for token in ("remaining permit", " otc", "over the counter")):
+            source_classification = "BEAR_REMAINING_OR_OTC_AVAILABILITY"
+            flags = ["REMAINING_OR_OTC_SOURCE_ONLY"]
+        else:
+            source_classification = "UNKNOWN_FROM_SOURCE"
+            flags = ["SOURCE_CLASSIFICATION_AMBIGUOUS"]
+
+        correction_needed = before != after
+        if correction_needed and source_classification == "BEAR_PURSUIT_BONUS_DRAW":
+            corrected_pursuit_codes.append(hunt_code)
+
+        audit_rows.append(
+            {
+                "hunt_code": hunt_code,
+                "hunt_name": _clean(row.get("hunt_name")),
+                "source_year": official.get("source_year", BEAR_DRAW_ODDS_SOURCE_YEAR if official else ""),
+                "source_file": official.get("source_file", "pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/black bear.csv"),
+                "appears_in_draw_odds_pdf": "yes" if official else "no",
+                "has_point_level_bonus_rows": "yes" if official else "no",
+                "resident_bonus_permits_total": official.get("resident_bonus_permits_total", ""),
+                "resident_regular_permits_total": official.get("resident_regular_permits_total", ""),
+                "resident_total_permits": official.get("resident_total_permits", ""),
+                "nonresident_bonus_permits_total": official.get("nonresident_bonus_permits_total", ""),
+                "nonresident_regular_permits_total": official.get("nonresident_regular_permits_total", ""),
+                "nonresident_total_permits": official.get("nonresident_total_permits", ""),
+                "source_classification": source_classification,
+                "engine_classification_before": before,
+                "engine_classification_after": after,
+                "correction_needed": "yes" if correction_needed else "no",
+                "data_quality_flags": "|".join(flags),
+            }
+        )
+
+    summary = {
+        "source_year": BEAR_DRAW_ODDS_SOURCE_YEAR,
+        "source_file": BEAR_DRAW_ODDS_SOURCE_RELATIVE,
+        "bear_hunt_codes_found_in_official_draw_odds_pdf": len(official_rows),
+        "bear_pursuit_hunt_codes_found_in_official_draw_odds_pdf": len(pursuit_codes_in_pdf),
+        "pursuit_hunt_codes_found_in_official_draw_odds_pdf": pursuit_codes_in_pdf,
+        "pursuit_rows_corrected_from_availability_to_modeled_bonus": len(corrected_pursuit_codes),
+        "pursuit_hunt_codes_corrected": sorted(corrected_pursuit_codes),
+        "rows": audit_rows,
+    }
+    return audit_rows, summary
 
 
 def build_bear_bonus_predictions(

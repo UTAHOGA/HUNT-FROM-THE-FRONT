@@ -17,6 +17,7 @@ from engine.utah_draw_predictive.bear import (
     RESTRICTED_BEAR_PURSUIT,
     STATEWIDE_BEAR_PERMIT,
     UNLIMITED_PURSUIT_PERMIT,
+    build_bear_draw_odds_source_audit,
     build_bear_bonus_predictions,
 )
 from engine.utah_draw_predictive.dedicated_hunter import build_preference_dedicated_hunter_predictions
@@ -33,6 +34,10 @@ from engine.utah_draw_predictive.private_lands_antlerless_elk import (
 from engine.utah_draw_predictive.special_bonus import PHASE6_DRAW_SYSTEM_TYPES, build_phase6_bonus_special_predictions
 from engine.utah_draw_predictive.sportsman import SPORTSMAN_DRAW_SYSTEM_TYPE, build_sportsman_predictions
 from engine.utah_draw_predictive.turkey import TURKEY_DRAW_SYSTEM_TYPE, build_turkey_bonus_predictions
+from engine.utah_draw_predictive.youth import (
+    YOUTH_DRAW_SYSTEM_TYPES,
+    build_youth_predictions,
+)
 
 from .backtest import build_backtest_rows
 from .forecast import (
@@ -462,6 +467,37 @@ def _write_bear_bonus_artifacts(
     return csv_path, json_path
 
 
+def _write_bear_draw_odds_source_audit_artifacts(
+    output_dir: Path,
+    audit_rows: list[dict[str, object]],
+    audit_summary: dict[str, object],
+) -> tuple[Path, Path]:
+    csv_path = output_dir / "bear_draw_odds_source_audit.csv"
+    json_path = output_dir / "bear_draw_odds_source_audit.json"
+    fieldnames = list(dict.fromkeys(key for row in audit_rows for key in row.keys())) if audit_rows else [
+        "hunt_code",
+        "hunt_name",
+        "source_year",
+        "source_file",
+        "appears_in_draw_odds_pdf",
+        "has_point_level_bonus_rows",
+        "resident_bonus_permits_total",
+        "resident_regular_permits_total",
+        "resident_total_permits",
+        "nonresident_bonus_permits_total",
+        "nonresident_regular_permits_total",
+        "nonresident_total_permits",
+        "source_classification",
+        "engine_classification_before",
+        "engine_classification_after",
+        "correction_needed",
+        "data_quality_flags",
+    ]
+    write_csv(csv_path, audit_rows, fieldnames)
+    json_path.write_text(json.dumps(audit_summary, indent=2), encoding="utf-8")
+    return csv_path, json_path
+
+
 def _write_sportsman_artifacts(
     output_dir: Path,
     prediction_rows: list[dict[str, object]],
@@ -549,6 +585,33 @@ def _write_mountain_lion_artifacts(
     ]
     write_csv(csv_path, rows, fieldnames)
     json_path = output_dir / "mountain_lion_availability_report.json"
+    json_path.write_text(json.dumps(report, indent=2), encoding="utf-8")
+    return csv_path, json_path
+
+
+def _write_youth_artifacts(
+    output_dir: Path,
+    prediction_rows: list[dict[str, object]],
+    report: dict[str, object],
+) -> tuple[Path, Path]:
+    rows = [row for row in prediction_rows if str(row.get("draw_system_type", "")).strip() in YOUTH_DRAW_SYSTEM_TYPES]
+    csv_path = output_dir / "youth_draw_predictions_v1.csv"
+    fieldnames = list(dict.fromkeys(key for row in rows for key in row.keys())) if rows else [
+        "hunt_code",
+        "residency",
+        "draw_system_type",
+        "algorithm_status",
+        "season_dates",
+        "season_status",
+        "availability_status",
+        "p_draw",
+        "p_draw_pct",
+        "p_preference_draw",
+        "p_bonus_pool",
+        "p_random_pool",
+    ]
+    write_csv(csv_path, rows, fieldnames)
+    json_path = output_dir / "youth_draw_report.json"
     json_path.write_text(json.dumps(report, indent=2), encoding="utf-8")
     return csv_path, json_path
 
@@ -899,6 +962,8 @@ def _build_manifest(
         "bear_draw_report.json": output_dir / "bear_draw_report.json",
         "bear_predictions_v1.csv": output_dir / "bear_predictions_v1.csv",
         "bear_report.json": output_dir / "bear_report.json",
+        "bear_draw_odds_source_audit.csv": output_dir / "bear_draw_odds_source_audit.csv",
+        "bear_draw_odds_source_audit.json": output_dir / "bear_draw_odds_source_audit.json",
         "sportsman_permit_predictions_v1.csv": output_dir / "sportsman_permit_predictions_v1.csv",
         "sportsman_permit_report.json": output_dir / "sportsman_permit_report.json",
         "private_lands_antlerless_elk_predictions_v1.csv": output_dir / "private_lands_antlerless_elk_predictions_v1.csv",
@@ -1022,6 +1087,9 @@ def materialize_outputs(
         forecast_year=forecast_year,
         history_years=history_years,
     )
+    bear_draw_audit_rows, bear_draw_audit_summary = build_bear_draw_odds_source_audit(
+        db_rows=db_rows,
+    )
     sportsman_rows, sportsman_report = build_sportsman_predictions(
         truth_rows=truth_rows,
         db_rows=db_rows,
@@ -1029,6 +1097,12 @@ def materialize_outputs(
         history_years=history_years,
     )
     private_lands_rows, private_lands_report = build_private_lands_antlerless_elk_predictions(
+        truth_rows=truth_rows,
+        db_rows=db_rows,
+        forecast_year=forecast_year,
+        history_years=history_years,
+    )
+    youth_rows, youth_report = build_youth_predictions(
         truth_rows=truth_rows,
         db_rows=db_rows,
         forecast_year=forecast_year,
@@ -1070,11 +1144,15 @@ def materialize_outputs(
         private_lands_rows = [sanitize_modeled_probability_fields(dict(row)) for row in private_lands_rows]
         prediction_rows = _replace_rows_by_draw_system_type(prediction_rows, private_lands_rows, {PRIVATE_LANDS_ANTLERLESS_ELK_DRAW_SYSTEM_TYPE})
         successor_rows = _replace_rows_by_draw_system_type(successor_rows, [dict(row) for row in private_lands_rows], {PRIVATE_LANDS_ANTLERLESS_ELK_DRAW_SYSTEM_TYPE})
+    if youth_rows:
+        youth_rows = [sanitize_modeled_probability_fields(dict(row)) for row in youth_rows]
+        prediction_rows = _replace_rows_by_draw_system_type(prediction_rows, youth_rows, set(YOUTH_DRAW_SYSTEM_TYPES))
+        successor_rows = _replace_rows_by_draw_system_type(successor_rows, [dict(row) for row in youth_rows], set(YOUTH_DRAW_SYSTEM_TYPES))
     if mountain_lion_rows:
         mountain_lion_rows = [sanitize_modeled_probability_fields(dict(row)) for row in mountain_lion_rows]
         prediction_rows = _replace_rows_by_draw_system_type(prediction_rows, mountain_lion_rows, {MOUNTAIN_LION_DRAW_SYSTEM_TYPE})
         successor_rows = _replace_rows_by_draw_system_type(successor_rows, [dict(row) for row in mountain_lion_rows], {MOUNTAIN_LION_DRAW_SYSTEM_TYPE})
-    if preference_general_deer_rows or preference_antlerless_rows or preference_dedicated_hunter_rows or phase6_bonus_special_rows or turkey_bonus_rows or bear_bonus_rows or sportsman_rows or private_lands_rows or mountain_lion_rows:
+    if preference_general_deer_rows or preference_antlerless_rows or preference_dedicated_hunter_rows or phase6_bonus_special_rows or turkey_bonus_rows or bear_bonus_rows or sportsman_rows or private_lands_rows or youth_rows or mountain_lion_rows:
         prediction_rows.sort(key=lambda row: (str(row.get("hunt_code", "")), str(row.get("residency", "")), int(float(str(row.get("points", 0)) or 0))))
         successor_rows.sort(key=lambda row: (str(row.get("hunt_code", "")), str(row.get("residency", "")), int(float(str(row.get("points", 0)) or 0))))
 
@@ -1162,7 +1240,6 @@ def materialize_outputs(
         "permits_sold",
         "permits_sold_or_used",
         "allocation_status",
-        "availability_status",
         "sale_date",
         "unit",
         "season_dates",
@@ -1197,8 +1274,14 @@ def materialize_outputs(
     phase6_bonus_csv_path, phase6_bonus_json_path = _write_phase6_bonus_special_artifacts(output_dir, prediction_rows, phase6_bonus_special_report)
     turkey_bonus_csv_path, turkey_bonus_json_path = _write_turkey_bonus_artifacts(output_dir, prediction_rows, turkey_bonus_report)
     bear_bonus_csv_path, bear_bonus_json_path = _write_bear_bonus_artifacts(output_dir, prediction_rows, bear_bonus_report)
+    bear_draw_audit_csv_path, bear_draw_audit_json_path = _write_bear_draw_odds_source_audit_artifacts(
+        output_dir,
+        bear_draw_audit_rows,
+        bear_draw_audit_summary,
+    )
     sportsman_csv_path, sportsman_json_path = _write_sportsman_artifacts(output_dir, prediction_rows, sportsman_report)
     private_lands_csv_path, private_lands_json_path = _write_private_lands_antlerless_elk_artifacts(output_dir, prediction_rows, private_lands_report)
+    youth_csv_path, youth_json_path = _write_youth_artifacts(output_dir, prediction_rows, youth_report)
     mountain_lion_csv_path, mountain_lion_json_path = _write_mountain_lion_artifacts(output_dir, prediction_rows, mountain_lion_report)
 
     backtest_rows = build_backtest_rows(permits, ladders, lambda public_permits: (split_utah_bonus_permits(public_permits).maxPointPermits, split_utah_bonus_permits(public_permits).randomPermits))
@@ -1283,11 +1366,15 @@ def materialize_outputs(
         "bear_draw_report": bear_bonus_json_path,
         "bear_predictions": output_dir / "bear_predictions_v1.csv",
         "bear_report": output_dir / "bear_report.json",
+        "bear_draw_odds_source_audit_csv": bear_draw_audit_csv_path,
+        "bear_draw_odds_source_audit_json": bear_draw_audit_json_path,
         "sportsman_permit_predictions": sportsman_csv_path,
         "sportsman_permit_report": sportsman_json_path,
         "private_lands_antlerless_elk_predictions": private_lands_csv_path,
         "private_lands_antlerless_elk_allocations": output_dir / "private_lands_antlerless_elk_allocations_v1.csv",
         "private_lands_antlerless_elk_report": private_lands_json_path,
+        "youth_draw_predictions": youth_csv_path,
+        "youth_draw_report": youth_json_path,
         "mountain_lion_availability_predictions": mountain_lion_csv_path,
         "mountain_lion_availability_report": mountain_lion_json_path,
         "manifest": manifest_path,

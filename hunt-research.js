@@ -479,6 +479,11 @@
     return state.engineGroups.get(groupKey(huntCode, residency, drawPool)) || [];
   }
 
+  function getEngineGroupFallbackRow(huntCode, residency, drawPool) {
+    const rows = getEngineRows(huntCode, residency, drawPool);
+    return rows.length ? rows[0] : null;
+  }
+
   function getModeledCoverageStatus(meta, hasEngineGroup) {
     if (hasEngineGroup) return '';
     if (!meta) return 'Hunt not found in the current production backbone.';
@@ -1098,11 +1103,13 @@
     const meta = findMeta(filters.huntCode, filters.residency, filters.drawPool);
     const engineRows = getEngineRows(filters.huntCode, filters.residency, filters.drawPool);
     const engineRow = getEngineRow(filters.huntCode, filters.residency, filters.points, filters.drawPool);
+    const engineGroupFallbackRow = getEngineGroupFallbackRow(filters.huntCode, filters.residency, filters.drawPool);
     const ladderRows = getLadderRows(filters.huntCode, filters.residency, filters.drawPool);
     const ladderPointRow = ladderRows.find((row) => Number(row.points) === Number(filters.points)) || null;
-    // Prefer exact engine row when present, otherwise fall back to the ladder row
-    // for the selected point so summary cards don't collapse to "Not available".
-    const summaryRow = engineRow || ladderPointRow || null;
+    // Prefer exact engine row when present. For non-point families like Sportsman,
+    // availability/status rows, and youth pending groups, fall back to the first
+    // engine group row before falling back to the ladder row.
+    const summaryRow = engineRow || engineGroupFallbackRow || ladderPointRow || null;
     const referenceRow = getReferenceRow(filters.huntCode, filters.residency, filters.drawPool);
     const coverageMessage = getModeledCoverageStatus(meta, engineRows.length > 0 || ladderRows.length > 0);
 

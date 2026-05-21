@@ -52,10 +52,14 @@ def test_formal_cli_generates_populated_artifacts(tmp_path: Path) -> None:
     turkey_report_path = tmp_path / "turkey_bonus_report.json"
     bear_csv_path = tmp_path / "bear_draw_predictions_v1.csv"
     bear_report_path = tmp_path / "bear_draw_report.json"
+    bear_audit_csv_path = tmp_path / "bear_draw_odds_source_audit.csv"
+    bear_audit_json_path = tmp_path / "bear_draw_odds_source_audit.json"
     sportsman_csv_path = tmp_path / "sportsman_permit_predictions_v1.csv"
     sportsman_report_path = tmp_path / "sportsman_permit_report.json"
     private_lands_csv_path = tmp_path / "private_lands_antlerless_elk_predictions_v1.csv"
     private_lands_report_path = tmp_path / "private_lands_antlerless_elk_report.json"
+    youth_csv_path = tmp_path / "youth_draw_predictions_v1.csv"
+    youth_report_path = tmp_path / "youth_draw_report.json"
     mountain_lion_csv_path = tmp_path / "mountain_lion_availability_predictions_v1.csv"
     mountain_lion_report_path = tmp_path / "mountain_lion_availability_report.json"
     manifest_path = tmp_path / "utah_bonus_predictive_manifest.json"
@@ -77,10 +81,14 @@ def test_formal_cli_generates_populated_artifacts(tmp_path: Path) -> None:
     assert turkey_report_path.exists()
     assert bear_csv_path.exists()
     assert bear_report_path.exists()
+    assert bear_audit_csv_path.exists()
+    assert bear_audit_json_path.exists()
     assert sportsman_csv_path.exists()
     assert sportsman_report_path.exists()
     assert private_lands_csv_path.exists()
     assert private_lands_report_path.exists()
+    assert youth_csv_path.exists()
+    assert youth_report_path.exists()
     assert mountain_lion_csv_path.exists()
     assert mountain_lion_report_path.exists()
     assert manifest_path.exists()
@@ -92,8 +100,10 @@ def test_formal_cli_generates_populated_artifacts(tmp_path: Path) -> None:
     phase6_rows = _read_csv(phase6_csv_path)
     turkey_rows = _read_csv(turkey_csv_path)
     bear_rows = _read_csv(bear_csv_path)
+    bear_audit_rows = _read_csv(bear_audit_csv_path)
     sportsman_rows = _read_csv(sportsman_csv_path)
     private_lands_rows = _read_csv(private_lands_csv_path)
+    youth_rows = _read_csv(youth_csv_path)
     mountain_lion_rows = _read_csv(mountain_lion_csv_path)
     report = json.loads(report_path.read_text(encoding="utf-8"))
     coverage = json.loads(coverage_json_path.read_text(encoding="utf-8"))
@@ -101,8 +111,10 @@ def test_formal_cli_generates_populated_artifacts(tmp_path: Path) -> None:
     phase6_report = json.loads(phase6_report_path.read_text(encoding="utf-8"))
     turkey_report = json.loads(turkey_report_path.read_text(encoding="utf-8"))
     bear_report = json.loads(bear_report_path.read_text(encoding="utf-8"))
+    bear_audit_report = json.loads(bear_audit_json_path.read_text(encoding="utf-8"))
     sportsman_report = json.loads(sportsman_report_path.read_text(encoding="utf-8"))
     private_lands_report = json.loads(private_lands_report_path.read_text(encoding="utf-8"))
+    youth_report = json.loads(youth_report_path.read_text(encoding="utf-8"))
     mountain_lion_report = json.loads(mountain_lion_report_path.read_text(encoding="utf-8"))
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
 
@@ -122,10 +134,14 @@ def test_formal_cli_generates_populated_artifacts(tmp_path: Path) -> None:
     assert turkey_report["bonus_turkey_rows_active_predictive"] == len(turkey_rows)
     assert bear_report["forecast_year"] == 2026
     assert bear_report["bear_draw_active_predictive_row_count"] == len(bear_rows)
+    assert len(bear_audit_rows) >= bear_audit_report["bear_hunt_codes_found_in_official_draw_odds_pdf"]
+    assert any(row["appears_in_draw_odds_pdf"] == "no" for row in bear_audit_rows)
     assert sportsman_report["forecast_year"] == 2026
     assert sportsman_report["sportsman_rows_reviewed"] == len(sportsman_rows)
     assert private_lands_report["forecast_year"] == 2026
     assert private_lands_report["modeled_allocation_row_count"] == len(private_lands_rows)
+    assert youth_report["forecast_year"] == 2026
+    assert youth_report["active_predictive_youth_row_count"] == len(youth_rows)
     assert mountain_lion_report["forecast_year"] == 2026
     assert mountain_lion_report["total_mountain_lion_rows_produced"] == len(mountain_lion_rows)
     assert manifest["forecast_year"] == 2026

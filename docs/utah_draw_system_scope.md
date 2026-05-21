@@ -67,6 +67,8 @@ These categories must be classified as `OUT_OF_SCOPE_NON_TARGET` when they appea
 - `BEAR_DRAW`
 - `MOUNTAIN_LION_DRAW`
 - `PRIVATE_LANDS_ONLY_ANTLERLESS_ELK`
+- `YOUTH_GENERAL_DEER`
+- `YOUTH_GENERAL_ANY_BULL_ELK`
 - `RANDOM_ONLY_TARGET`
 - `OTC_OR_REMAINING_TARGET`
 - `LANDOWNER_BIG_GAME`
@@ -120,6 +122,8 @@ These categories must not use the OIL/LE/PLE bonus algorithm:
 - `BEAR_DRAW`
 - `MOUNTAIN_LION_DRAW`
 - `PRIVATE_LANDS_ONLY_ANTLERLESS_ELK`
+- `YOUTH_GENERAL_DEER`
+- `YOUTH_GENERAL_ANY_BULL_ELK`
 
 Reason:
 
@@ -144,6 +148,7 @@ Completed:
 - Phase 12: bear subtype-aware quota draw + availability strategy
 - Phase 13: mountain lion / cougar rule-status + availability closeout
 - Phase 14: private-lands-only antlerless elk allocation / availability closeout
+- Phase 15: youth family separation and pending-strategy closeout
 
 Currently modeled as `MODELED_BONUS`:
 
@@ -214,6 +219,12 @@ Mountain lion / cougar note:
 - Phase 13 closes this family as an availability strategy with explicit rule-status reporting, not a draw-odds strategy.
 - `MOUNTAIN_LION_DRAW` rows must not receive `p_draw`, `p_draw_pct`, `p_bonus_pool`, `p_random_pool`, or `p_preference_draw`.
 - Availability fields such as `permit_availability_type`, `season_start`, `season_end`, `unit_name`, `unit_status`, `p_availability`, and `availability_pct` are the user-facing outputs for this family.
+
+Youth note:
+
+- Youth general deer and youth any-bull elk stay in scope and stay separate from the adult general deer, antlerless elk, and OIL / LE / PLE bonus families.
+- Phase 15 closes the youth classifier and reporting pass, but the families remain pending unless the active-year youth mechanics are source-proven.
+- Youth rows must not receive `p_draw`, `p_draw_pct`, `p_preference_draw`, `p_bonus_pool`, or `p_random_pool` until a defensible youth-specific strategy is accepted.
 
 Out of scope:
 
