@@ -7,9 +7,9 @@
     2024,
     2025
   ],
-  "total_rows_seen": 205574,
+  "total_rows_seen": 205548,
   "total_hunt_codes_seen": 1616,
-  "target_scope_rows": 200646,
+  "target_scope_rows": 200620,
   "target_scope_hunt_codes": 1575,
   "out_of_scope_rows": 4928,
   "out_of_scope_hunt_codes": 41,
@@ -20,14 +20,14 @@
     "BONUS_ANTLERLESS_MOOSE": 420,
     "BONUS_CWMU_BIG_GAME": 53770,
     "BONUS_EWE_BIGHORN": 95,
-    "BONUS_LE_BIG_GAME": 80828,
+    "BONUS_LE_BIG_GAME": 80792,
     "BONUS_OIL_BIG_GAME": 17927,
     "BONUS_PLE_BIG_GAME": 2466,
-    "BONUS_TURKEY": 381,
+    "BONUS_TURKEY": 385,
     "GENERAL_BIG_GAME_OTHER": 500,
     "LANDOWNER_BIG_GAME": 484,
     "MOUNTAIN_LION_DRAW": 219,
-    "OTC_OR_REMAINING_TARGET": 178,
+    "OTC_OR_REMAINING_TARGET": 184,
     "OUT_OF_SCOPE_NON_TARGET": 4928,
     "PREFERENCE_ANTLERLESS_DEER": 1493,
     "PREFERENCE_ANTLERLESS_ELK": 9758,
@@ -43,7 +43,7 @@
     "BONUS_CWMU_BIG_GAME": 334,
     "BONUS_ANTLERLESS_MOOSE": 9,
     "BONUS_EWE_BIGHORN": 1,
-    "BONUS_TURKEY": 10,
+    "BONUS_TURKEY": 7,
     "PREFERENCE_GENERAL_SEASON_BUCK_DEER": 130,
     "PREFERENCE_ANTLERLESS_DEER": 25,
     "PREFERENCE_ANTLERLESS_ELK": 158,
@@ -54,16 +54,16 @@
     "BEAR_DRAW": 117,
     "MOUNTAIN_LION_DRAW": 10,
     "RANDOM_ONLY_TARGET": 11,
-    "OTC_OR_REMAINING_TARGET": 40,
+    "OTC_OR_REMAINING_TARGET": 43,
     "LANDOWNER_BIG_GAME": 242,
     "MITIGATION_OR_DEPREDATION_BIG_GAME": 0,
     "OUT_OF_SCOPE_NON_TARGET": 41,
     "UNKNOWN_TARGET": 0
   },
   "counts_by_algorithm_status": {
-    "EXCLUDED_NOT_PREDICTIVE_DRAW": 1307,
-    "IN_SCOPE_MODEL_PENDING": 93396,
-    "MODELED_BONUS": 104309,
+    "EXCLUDED_NOT_PREDICTIVE_DRAW": 1313,
+    "IN_SCOPE_MODEL_PENDING": 93400,
+    "MODELED_BONUS": 104273,
     "MODELED_PREFERENCE": 1634,
     "OUT_OF_SCOPE_NON_TARGET": 4928
   },
@@ -75,15 +75,15 @@
     "Deer": 43762,
     "Desert Bighorn Sheep": 2483,
     "Elk": 41232,
-    "Moose": 5391,
+    "Moose": 5355,
     "Mountain Goat": 2126,
     "Pronghorn": 11269,
     "Rocky Mountain Bighorn Sheep": 2007,
-    "Turkey": 397
+    "Turkey": 407
   },
   "counts_by_residency": {
-    "Nonresident": 94546,
-    "Resident": 111028
+    "Nonresident": 94535,
+    "Resident": 111013
   },
   "counts_by_year": {
     "2021": 27519,
@@ -91,10 +91,10 @@
     "2023": 17128,
     "2024": 37128,
     "2025": 75194,
-    "2026": 29917
+    "2026": 29891
   },
-  "modeled_target_rows": 25000,
-  "unmodeled_target_rows": 175646,
+  "modeled_target_rows": 24964,
+  "unmodeled_target_rows": 175656,
   "modeled_target_hunt_codes": 793,
   "unmodeled_target_hunt_codes": 1575,
   "out_of_scope_non_target_rows": 4928,
@@ -129,13 +129,24 @@
     "mountain_lion_cougar_still_pending": true,
     "private_lands_only_antlerless_elk_allocation_pending": false
   },
+  "phase7_turkey": {
+    "turkey_modeled_bonus_row_count": 0,
+    "turkey_in_scope_model_pending_row_count": 385,
+    "turkey_excluded_not_predictive_draw_row_count": 22,
+    "general_season_turkey_excluded": true,
+    "remaining_turkey_excluded_or_availability_pending": false,
+    "bear_still_pending": true,
+    "mountain_lion_cougar_still_pending": true,
+    "private_lands_only_antlerless_elk_allocation_pending": false
+  },
   "currently_production_modeled_categories": [
     "BONUS_OIL_BIG_GAME",
     "BONUS_LE_BIG_GAME",
     "BONUS_PLE_BIG_GAME",
     "BONUS_CWMU_BIG_GAME",
     "BONUS_ANTLERLESS_MOOSE",
-    "BONUS_EWE_BIGHORN"
+    "BONUS_EWE_BIGHORN",
+    "BONUS_TURKEY"
   ],
   "modeled_bonus_categories": [
     "BONUS_OIL_BIG_GAME",
@@ -143,7 +154,8 @@
     "BONUS_PLE_BIG_GAME",
     "BONUS_CWMU_BIG_GAME",
     "BONUS_ANTLERLESS_MOOSE",
-    "BONUS_EWE_BIGHORN"
+    "BONUS_EWE_BIGHORN",
+    "BONUS_TURKEY"
   ],
   "modeled_preference_categories": [
     "PREFERENCE_GENERAL_SEASON_BUCK_DEER",
@@ -155,7 +167,6 @@
   "modeled_allocation_categories": [],
   "modeled_random_only_categories": [],
   "in_scope_model_pending_categories": [
-    "BONUS_TURKEY",
     "GENERAL_BIG_GAME_OTHER",
     "PRIVATE_LANDS_ONLY_ANTLERLESS_ELK",
     "BEAR_DRAW",
@@ -202,7 +213,7 @@
     },
     {
       "draw_system_type": "BONUS_LE_BIG_GAME",
-      "row_count": 80828,
+      "row_count": 80792,
       "hunt_code_count": 402,
       "algorithm_status": "MODELED_BONUS"
     },
@@ -232,9 +243,9 @@
     },
     {
       "draw_system_type": "BONUS_TURKEY",
-      "row_count": 381,
-      "hunt_code_count": 10,
-      "algorithm_status": "IN_SCOPE_MODEL_PENDING"
+      "row_count": 385,
+      "hunt_code_count": 7,
+      "algorithm_status": "MODELED_BONUS"
     },
     {
       "draw_system_type": "PREFERENCE_GENERAL_SEASON_BUCK_DEER",
@@ -279,6 +290,12 @@
       "algorithm_status": "IN_SCOPE_MODEL_PENDING"
     },
     {
+      "draw_system_type": "BONUS_TURKEY",
+      "row_count": 385,
+      "hunt_code_count": 7,
+      "algorithm_status": "MODELED_BONUS"
+    },
+    {
       "draw_system_type": "BEAR_DRAW",
       "row_count": 10863,
       "hunt_code_count": 117,
@@ -298,8 +315,8 @@
     },
     {
       "draw_system_type": "OTC_OR_REMAINING_TARGET",
-      "row_count": 178,
-      "hunt_code_count": 40,
+      "row_count": 184,
+      "hunt_code_count": 43,
       "algorithm_status": "EXCLUDED_NOT_PREDICTIVE_DRAW"
     },
     {
