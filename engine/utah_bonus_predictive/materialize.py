@@ -499,6 +499,7 @@ def _write_private_lands_antlerless_elk_artifacts(
 ) -> tuple[Path, Path]:
     rows = [row for row in prediction_rows if str(row.get("draw_system_type", "")).strip() == PRIVATE_LANDS_ANTLERLESS_ELK_DRAW_SYSTEM_TYPE]
     csv_path = output_dir / "private_lands_antlerless_elk_predictions_v1.csv"
+    alias_csv_path = output_dir / "private_lands_antlerless_elk_allocations_v1.csv"
     fieldnames = list(dict.fromkeys(key for row in rows for key in row.keys())) if rows else [
         "hunt_code",
         "residency",
@@ -506,11 +507,16 @@ def _write_private_lands_antlerless_elk_artifacts(
         "algorithm_status",
         "permits_allotted",
         "permits_remaining",
+        "permits_sold_or_used",
         "allocation_status",
+        "availability_status",
         "p_availability",
         "availability_pct",
+        "sellout_risk",
+        "season_status",
     ]
     write_csv(csv_path, rows, fieldnames)
+    write_csv(alias_csv_path, rows, fieldnames)
     json_path = output_dir / "private_lands_antlerless_elk_report.json"
     json_path.write_text(json.dumps(report, indent=2), encoding="utf-8")
     return csv_path, json_path
@@ -896,6 +902,7 @@ def _build_manifest(
         "sportsman_permit_predictions_v1.csv": output_dir / "sportsman_permit_predictions_v1.csv",
         "sportsman_permit_report.json": output_dir / "sportsman_permit_report.json",
         "private_lands_antlerless_elk_predictions_v1.csv": output_dir / "private_lands_antlerless_elk_predictions_v1.csv",
+        "private_lands_antlerless_elk_allocations_v1.csv": output_dir / "private_lands_antlerless_elk_allocations_v1.csv",
         "private_lands_antlerless_elk_report.json": output_dir / "private_lands_antlerless_elk_report.json",
         "mountain_lion_availability_predictions_v1.csv": output_dir / "mountain_lion_availability_predictions_v1.csv",
         "mountain_lion_availability_report.json": output_dir / "mountain_lion_availability_report.json",
@@ -1153,7 +1160,9 @@ def materialize_outputs(
         "permits_allotted",
         "permits_remaining",
         "permits_sold",
+        "permits_sold_or_used",
         "allocation_status",
+        "availability_status",
         "sale_date",
         "unit",
         "season_dates",
@@ -1277,6 +1286,7 @@ def materialize_outputs(
         "sportsman_permit_predictions": sportsman_csv_path,
         "sportsman_permit_report": sportsman_json_path,
         "private_lands_antlerless_elk_predictions": private_lands_csv_path,
+        "private_lands_antlerless_elk_allocations": output_dir / "private_lands_antlerless_elk_allocations_v1.csv",
         "private_lands_antlerless_elk_report": private_lands_json_path,
         "mountain_lion_availability_predictions": mountain_lion_csv_path,
         "mountain_lion_availability_report": mountain_lion_json_path,

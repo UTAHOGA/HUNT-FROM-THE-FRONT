@@ -143,6 +143,7 @@ Completed:
 - Phase 11: Sportsman permit odds strategy
 - Phase 12: bear subtype-aware quota draw + availability strategy
 - Phase 13: mountain lion / cougar rule-status + availability closeout
+- Phase 14: private-lands-only antlerless elk allocation / availability closeout
 
 Currently modeled as `MODELED_BONUS`:
 
@@ -189,6 +190,7 @@ Private-lands-only antlerless elk note:
 
 - This category stays in scope.
 - It is modeled as an allocation / availability family, not a preference-draw probability model.
+- Phase 14 closes this family as an allocation-status strategy with explicit availability semantics when source support exists.
 - It must not receive `p_draw`, `p_draw_pct`, `p_bonus_pool`, `p_random_pool`, or `p_preference_draw`.
 - Allocation fields such as `permits_allotted`, `allocation_status`, `p_availability`, and `availability_pct` populate only when source data supports them.
 

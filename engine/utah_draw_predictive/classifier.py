@@ -241,6 +241,8 @@ def classify_draw_system_type(row: Mapping[str, object]) -> str:
 
     if is_bear_row(row):
         return BEAR_DRAW_SYSTEM_TYPE
+    if "mountain lion" in text or "cougar" in text:
+        return "MOUNTAIN_LION_DRAW"
 
     if "mitigation" in text or "depredation" in text:
         return "MITIGATION_OR_DEPREDATION_BIG_GAME"
@@ -261,9 +263,6 @@ def classify_draw_system_type(row: Mapping[str, object]) -> str:
         if is_general_season_turkey_row(row) or is_remaining_turkey_row(row) or is_nonpublic_turkey_row(row) or "fall management" in text or "statewide" in text:
             return "OTC_OR_REMAINING_TARGET"
         return TURKEY_DRAW_SYSTEM_TYPE
-
-    if "mountain lion" in text or "cougar" in text:
-        return "MOUNTAIN_LION_DRAW"
 
     if "moose" in text and ("antlerless" in text or sex_type in {"antlerless", "cow", "cow only"}):
         return "BONUS_ANTLERLESS_MOOSE"
@@ -792,6 +791,7 @@ def build_draw_system_coverage_report(
         "mountain_lion_cougar_still_pending_availability": any(row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING for row in predictive_mountain_lion_rows),
         "mountain_lion_cougar_active_predictive_row_count": len(predictive_mountain_lion_rows),
         "mountain_lion_cougar_hunt_code_count": _distinct_count(predictive_rows, lambda row: row["draw_system_type"] == MOUNTAIN_LION_DRAW_SYSTEM_TYPE),
+        "mountain_lion_cougar_active_predictive_hunt_code_count": _distinct_count(predictive_rows, lambda row: row["draw_system_type"] == MOUNTAIN_LION_DRAW_SYSTEM_TYPE),
         "mountain_lion_cougar_unit_count": len({str(row.get("unit_name", "")).strip() for row in predictive_mountain_lion_rows if str(row.get("unit_name", "")).strip()}),
         "mountain_lion_cougar_p_draw_non_null_count": sum(1 for row in predictive_mountain_lion_rows if str(row.get("p_draw", "")).strip()),
         "mountain_lion_cougar_p_availability_non_null_count": sum(1 for row in predictive_mountain_lion_rows if str(row.get("p_availability", "")).strip()),
@@ -811,11 +811,23 @@ def build_draw_system_coverage_report(
     private_lands_summary = {
         "private_lands_only_antlerless_elk_in_scope": True,
         "private_lands_only_antlerless_elk_modeled_allocation": any(row["algorithm_status"] == ALGORITHM_STATUS_MODELED_ALLOCATION for row in predictive_private_lands_rows),
+        "private_lands_only_antlerless_elk_modeled": any(row["algorithm_status"] == ALGORITHM_STATUS_MODELED_ALLOCATION for row in predictive_private_lands_rows),
         "private_lands_only_antlerless_elk_pending": any(row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING for row in predictive_private_lands_rows),
+        "private_lands_only_antlerless_elk_still_pending": any(row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING for row in predictive_private_lands_rows),
         "private_lands_only_antlerless_elk_row_count": len(predictive_private_lands_rows),
+        "private_lands_only_antlerless_elk_active_predictive_row_count": len(predictive_private_lands_rows),
         "private_lands_only_antlerless_elk_hunt_code_count": _distinct_count(predictive_rows, lambda row: row["draw_system_type"] == PRIVATE_LANDS_ANTLERLESS_ELK_DRAW_SYSTEM_TYPE),
+        "private_lands_only_antlerless_elk_active_predictive_hunt_code_count": _distinct_count(predictive_rows, lambda row: row["draw_system_type"] == PRIVATE_LANDS_ANTLERLESS_ELK_DRAW_SYSTEM_TYPE),
+        "private_lands_only_antlerless_elk_modeled_allocation_row_count": sum(1 for row in predictive_private_lands_rows if row["algorithm_status"] == ALGORITHM_STATUS_MODELED_ALLOCATION),
+        "private_lands_only_antlerless_elk_pending_row_count": sum(1 for row in predictive_private_lands_rows if row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING),
+        "private_lands_only_antlerless_elk_excluded_row_count": sum(1 for row in predictive_private_lands_rows if row["algorithm_status"] == ALGORITHM_STATUS_EXCLUDED_NOT_PREDICTIVE_DRAW),
         "private_lands_only_antlerless_elk_p_draw_count": sum(1 for row in predictive_private_lands_rows if str(row.get("p_draw", "")).strip()),
         "private_lands_only_antlerless_elk_p_availability_count": sum(1 for row in predictive_private_lands_rows if str(row.get("p_availability", "")).strip()),
+        "private_lands_only_antlerless_elk_strategy_status": (
+            ALGORITHM_STATUS_MODELED_ALLOCATION
+            if any(row["algorithm_status"] == ALGORITHM_STATUS_MODELED_ALLOCATION for row in predictive_private_lands_rows)
+            else REGISTRY["PRIVATE_LANDS_ONLY_ANTLERLESS_ELK"].algorithm_status
+        ),
         "normal_antlerless_elk_preference_still_modeled": _distinct_count(rows, lambda row: row["draw_system_type"] == "PREFERENCE_ANTLERLESS_ELK" and str(row["modeled_by_engine"]) == "True") > 0,
         "private_lands_only_antlerless_elk_incorrectly_classified_as_preference_antlerless_elk_count": sum(
             1 for row in rows if "private land only" in _joined_text(row) and row["draw_system_type"] == "PREFERENCE_ANTLERLESS_ELK"
@@ -858,6 +870,7 @@ def build_draw_system_coverage_report(
         "phase8_sportsman": sportsman_summary,
         "phase11_sportsman": sportsman_summary,
         "phase9_private_lands_antlerless_elk": private_lands_summary,
+        "phase14_private_lands_antlerless_elk": private_lands_summary,
         "phase10_mountain_lion": mountain_lion_summary,
         "phase13_mountain_lion": mountain_lion_summary,
         "family_modeling_semantics": {

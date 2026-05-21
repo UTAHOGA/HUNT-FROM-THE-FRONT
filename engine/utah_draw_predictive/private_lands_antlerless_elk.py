@@ -1,8 +1,9 @@
-"""Phase 9 private-lands-only antlerless elk allocation helpers."""
+"""Private-lands-only antlerless elk allocation and availability helpers."""
 
 from __future__ import annotations
 
 from collections import Counter
+from pathlib import Path
 from typing import Iterable, Mapping
 
 from engine.utah_bonus_predictive.rules import MODEL_VERSION
@@ -14,8 +15,11 @@ from . import (
 )
 
 
-MODEL_STRATEGY_NAME = "private_lands_antlerless_elk_allocation_phase9"
-RULE_VERSION = "utah_private_lands_antlerless_elk_allocation_v1.0.0"
+REPO = Path(__file__).resolve().parents[2]
+PRIVATE_LANDS_SOURCE_PATH = REPO / "pipeline" / "RAW" / "hunt_unit_database" / "2026" / "csv" / "2026 Permits" / "elk antlerless private lands.csv"
+
+MODEL_STRATEGY_NAME = "private_lands_antlerless_elk_allocation_phase14"
+RULE_VERSION = "utah_private_lands_antlerless_elk_allocation_v1.1.0"
 DRAW_SYSTEM_TYPE = "PRIVATE_LANDS_ONLY_ANTLERLESS_ELK"
 
 PRIVATE_LANDS_TOKENS = (
@@ -89,6 +93,21 @@ def build_private_lands_antlerless_elk_predictions(
     forecast_year: int,
     history_years: list[int],
 ) -> tuple[list[dict[str, object]], dict[str, object]]:
+    source_rows: dict[str, dict[str, str]] = {}
+    if PRIVATE_LANDS_SOURCE_PATH.exists():
+        with PRIVATE_LANDS_SOURCE_PATH.open(encoding="utf-8-sig", newline="") as handle:
+            import csv
+
+            for row in csv.DictReader(handle):
+                hunt_code = _clean(row.get("hunt_code")).upper()
+                if hunt_code:
+                    source_rows[hunt_code] = {
+                        "hunt_name": _clean(row.get("hunt_name")),
+                        "season_dates": _clean(row.get("season")),
+                        "permits_total": _clean(row.get("permits_2026_total")),
+                        "source_file": str(PRIVATE_LANDS_SOURCE_PATH.relative_to(REPO)),
+                    }
+
     truth_by_code: dict[str, dict[str, str]] = {}
     source_files: set[str] = set()
     for row in truth_rows:
@@ -119,18 +138,25 @@ def build_private_lands_antlerless_elk_predictions(
         hunt_code = _clean(db_row.get("hunt_code")).upper()
         if not hunt_code:
             continue
-        permits_allotted = _to_int(db_row.get("permits_2026_total"))
+        source_meta = source_rows.get(hunt_code, {})
+        permits_allotted = _to_int(source_meta.get("permits_total")) or _to_int(db_row.get("permits_2026_total"))
         truth_meta = truth_by_code.get(hunt_code, {})
         season_dates = _clean(truth_meta.get("season_dates")) or _clean(db_row.get("season"))
-        unit = _clean(truth_meta.get("unit")) or _clean(db_row.get("hunt_name"))
-        source_file = _clean(truth_meta.get("source_file")) or "DATABASE.csv"
+        if _clean(source_meta.get("season_dates")):
+            season_dates = _clean(source_meta.get("season_dates"))
+        unit = _clean(truth_meta.get("unit")) or _clean(source_meta.get("hunt_name")) or _clean(db_row.get("hunt_name"))
+        source_file = _clean(source_meta.get("source_file")) or _clean(truth_meta.get("source_file")) or "DATABASE.csv"
         source_files.add(source_file)
 
         algorithm_status = "MODELED_ALLOCATION" if permits_allotted > 0 else "IN_SCOPE_MODEL_PENDING"
         allocation_status = "ALLOCATION KNOWN / REMAINING UNKNOWN" if permits_allotted > 0 else "SOURCE MISSING"
+        availability_status = "ALLOCATION KNOWN / REMAINING UNKNOWN" if permits_allotted > 0 else "SOURCE MISSING"
+        season_status = "SEASON DATES PRESENT" if season_dates else "SEASON DATES MISSING"
         data_quality_flags = []
         if permits_allotted > 0:
             data_quality_flags.extend(["REMAINING_PERMIT_STATUS_UNKNOWN", "ALLOCATION_NOT_RESIDENCY_SPLIT"])
+            if not season_dates:
+                data_quality_flags.append("SEASON_DATES_MISSING")
         else:
             data_quality_flags.append("SOURCE_MISSING")
         for flag in data_quality_flags:
@@ -165,7 +191,9 @@ def build_private_lands_antlerless_elk_predictions(
                     "permits_allotted": str(permits_allotted) if permits_allotted > 0 else "",
                     "permits_remaining": "",
                     "permits_sold": "",
+                    "permits_sold_or_used": "",
                     "allocation_status": allocation_status,
+                    "availability_status": availability_status,
                     "p_availability": "",
                     "availability_pct": "",
                     "sellout_risk": "",
@@ -173,6 +201,7 @@ def build_private_lands_antlerless_elk_predictions(
                     "sale_date": "",
                     "unit": unit,
                     "season_dates": season_dates,
+                    "season_status": season_status,
                     "private_land_only_flag": "TRUE",
                     "data_quality_flags": "|".join(data_quality_flags),
                     "p_draw": "",
@@ -191,15 +220,22 @@ def build_private_lands_antlerless_elk_predictions(
         "forecast_year": forecast_year,
         "source_years": history_years,
         "total_private_lands_antlerless_elk_rows_reviewed": len(reviewed_rows),
+        "active_predictive_row_count": len(rows),
         "modeled_allocation_row_count": len(modeled_rows),
         "pending_allocation_row_count": len(pending_rows),
         "excluded_row_count": 0,
         "hunt_code_count": len({row.get("hunt_code", "") for row in rows if _clean(row.get("hunt_code"))}),
         "unit_count": len({row.get("unit", "") for row in rows if _clean(row.get("unit"))}),
+        "rows_by_algorithm_status": {
+            "MODELED_ALLOCATION": len(modeled_rows),
+            "IN_SCOPE_MODEL_PENDING": len(pending_rows),
+            "EXCLUDED_NOT_PREDICTIVE_DRAW": 0,
+        },
         "permits_allotted_non_null_count": sum(1 for row in rows if _clean(row.get("permits_allotted"))),
         "permits_remaining_non_null_count": sum(1 for row in rows if _clean(row.get("permits_remaining"))),
         "p_availability_non_null_count": sum(1 for row in rows if _clean(row.get("p_availability"))),
         "availability_pct_non_null_count": sum(1 for row in rows if _clean(row.get("availability_pct"))),
+        "sellout_risk_non_null_count": sum(1 for row in rows if _clean(row.get("sellout_risk"))),
         "p_draw_non_null_count": 0,
         "p_draw_pct_non_null_count": 0,
         "p_bonus_pool_non_null_count": 0,

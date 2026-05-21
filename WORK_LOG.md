@@ -595,3 +595,47 @@
   - `BR1007` and `BR1018` are unlimited-pursuit availability only and never receive draw-odds fields.
   - Unit-specific pursuit rows are also surfaced as availability, not bonus draw odds.
   - Only true limited-entry bear rows remain in the bear bonus path, and bear rows never use preference fields.
+
+## Phase 13 Mountain Lion / Cougar Rule-Status Strategy
+- Timestamp (UTC): 2026-05-21T00:00:00Z
+- Scope:
+  - Completed Phase 13 for `MOUNTAIN_LION_DRAW` only in `C:\Users\tyler\Desktop\GitHub\HUNTS`.
+  - Preserved Phase 12 bear behavior unchanged while tightening cougar report and coverage semantics.
+  - Kept cougar in scope as a rule-status / availability family, not a draw-odds family.
+- Files updated:
+  - `engine/utah_draw_predictive/mountain_lion.py`
+  - `engine/utah_draw_predictive/classifier.py`
+  - `engine/utah_bonus_predictive/materialize.py`
+  - `docs/utah_draw_system_scope.md`
+  - Focused Phase 13 mountain lion tests and artifact-validation tests
+- Outputs refreshed:
+  - `processed_data/mountain_lion_availability_predictions_v1.csv`
+  - `processed_data/mountain_lion_availability_report.json`
+  - `processed_data/ml_draw_predictions_v1.csv`
+  - `processed_data/draw_reality_engine_predictive_v2.csv`
+  - `processed_data/draw_system_coverage_report.csv`
+  - `processed_data/draw_system_coverage_report.json`
+  - `processed_data/utah_bonus_predictive_manifest.json`
+  - `processed_data/gpt_work_review_report.json`
+  - `processed_data/gpt_work_review_report.md`
+- Validation summary:
+  - Python tests run: `101`
+  - Python tests failed: `0`
+  - Predictive rows: `27763`
+  - `MODELED_BONUS` rows: `25233`
+  - `MODELED_PREFERENCE` rows: `1731`
+  - `MODELED_ALLOCATION` rows: `54`
+  - `MODELED_AVAILABILITY` rows: `139`
+  - `MODELED_SPORTSMAN_DRAW` rows: `10`
+  - `IN_SCOPE_MODEL_PENDING` rows: `394`
+  - `EXCLUDED_NOT_PREDICTIVE_DRAW` rows: `4`
+  - `OUT_OF_SCOPE_NON_TARGET` rows: `198`
+  - Mountain lion / cougar predictive rows: `120`
+  - Mountain lion / cougar hunt codes: `60`
+  - Mountain lion / cougar units: `60`
+  - Duplicate key count on `hunt_code,residency,points`: `0`
+- Phase 13 results:
+  - Cougar remains modeled as statewide OTC rule-status and availability, not draw odds.
+  - No cougar row receives `p_draw`, `p_draw_pct`, `p_bonus_pool`, `p_random_pool`, or `p_preference_draw`.
+  - Availability/status fields now explicitly carry permit/rule/season status semantics for the family report and coverage outputs.
+  - Bear Phase 12 guardrails remained unchanged and passing.

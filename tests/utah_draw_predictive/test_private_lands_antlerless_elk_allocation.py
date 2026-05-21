@@ -14,3 +14,6 @@ def test_private_lands_antlerless_elk_rows_are_modeled_as_allocation() -> None:
     assert all(row.get("algorithm_status") == "MODELED_ALLOCATION" for row in rows)
     assert all((row.get("permits_allotted") or "").strip() != "" for row in rows)
     assert all((row.get("allocation_status") or "").strip() == "ALLOCATION KNOWN / REMAINING UNKNOWN" for row in rows)
+    assert all((row.get("availability_status") or "").strip() == "ALLOCATION KNOWN / REMAINING UNKNOWN" for row in rows)
+    assert all((row.get("season_status") or "").strip() == "SEASON DATES PRESENT" for row in rows)
+    assert all((row.get("private_land_only_flag") or "").strip() == "TRUE" for row in rows)

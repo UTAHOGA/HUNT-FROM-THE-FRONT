@@ -8,24 +8,20 @@
     2024,
     2025
   ],
-  "generated_at": "2026-05-21T03:42:43.396429+00:00",
+  "generated_at": "2026-05-21T04:22:03.088235+00:00",
   "files_reviewed": [
-    "engine/utah_draw_predictive/bear.py",
+    "engine/utah_draw_predictive/mountain_lion.py",
     "engine/utah_draw_predictive/classifier.py",
     "engine/utah_bonus_predictive/materialize.py",
     "docs/utah_draw_system_scope.md",
-    "pipeline/RAW/hunt_unit_database/2026/pdf/draw_odds/2025 Black Bear Draw odds.pdf",
-    "pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/black bear.csv",
-    "processed_data/bear_predictions_v1.csv",
-    "processed_data/bear_report.json",
-    "processed_data/ml_draw_predictions_v1.csv",
+    "data/cougar_hunt_table_official.json",
+    "processed_data/mountain_lion_availability_predictions_v1.csv",
+    "processed_data/mountain_lion_availability_report.json",
     "processed_data/draw_system_coverage_report.json"
   ],
   "artifacts_reviewed": [
-    "processed_data/bear_predictions_v1.csv",
-    "processed_data/bear_report.json",
-    "processed_data/bear_draw_predictions_v1.csv",
-    "processed_data/bear_draw_report.json",
+    "processed_data/mountain_lion_availability_predictions_v1.csv",
+    "processed_data/mountain_lion_availability_report.json",
     "processed_data/ml_draw_predictions_v1.csv",
     "processed_data/draw_reality_engine_predictive_v2.csv",
     "processed_data/draw_system_coverage_report.csv",
@@ -37,16 +33,16 @@
     "python -m engine.utah_draw_predictive.classifier --output-dir processed_data --forecast-year 2026 --history-years 2021,2022,2023,2024,2025",
     "python -m pytest -q tests/utah_bonus_predictive tests/utah_draw_predictive tests/utah/test_frontend_probability_selection.py"
   ],
-  "tests_passed": 97,
+  "tests_passed": 101,
   "tests_failed": 0,
   "blocked_dependencies": [],
   "phase_status": {
-    "phase_12_bear": "implemented_and_validated"
+    "phase_13_mountain_lion": "implemented_and_validated"
   },
   "family_status": {
-    "SPORTSMAN_PERMIT": "MODELED_SPORTSMAN_DRAW",
-    "BEAR_DRAW": "subtype_aware_bonus_and_availability",
     "MOUNTAIN_LION_DRAW": "MODELED_AVAILABILITY",
+    "BEAR_DRAW": "subtype_aware_bonus_and_availability",
+    "SPORTSMAN_PERMIT": "MODELED_SPORTSMAN_DRAW",
     "PRIVATE_LANDS_ONLY_ANTLERLESS_ELK": "MODELED_ALLOCATION"
   },
   "row_counts": {
@@ -59,40 +55,36 @@
     "MODELED_PREFERENCE": 1731,
     "MODELED_ALLOCATION": 54,
     "OUT_OF_SCOPE_NON_TARGET": 198,
-    "BEAR_DRAW_rows": 1305,
-    "BEAR_MODELED_BONUS_rows": 1209,
-    "BEAR_MODELED_AVAILABILITY_rows": 19,
-    "BEAR_PENDING_rows": 73,
-    "BEAR_EXCLUDED_rows": 4
+    "MOUNTAIN_LION_DRAW_rows": 120
   },
   "hunt_code_counts": {
-    "BEAR_DRAW": 105,
-    "LIMITED_ENTRY_BEAR_HUNT": 83,
-    "UNLIMITED_PURSUIT_PERMIT": 11
+    "MOUNTAIN_LION_DRAW": 60
   },
   "guardrail_results": {
     "duplicate_key_count": 0,
     "pending_rows_with_p_draw": 0,
     "out_of_scope_rows_with_p_draw": 0,
-    "bear_rows_with_p_draw": 1209,
-    "harvest_objective_p_draw_non_null_count": 0,
-    "unlimited_pursuit_p_draw_non_null_count": 0,
-    "sportsman_bear_stays_out_of_bear_draw": true,
-    "bear_preference_field_non_null_count": 0,
+    "mountain_lion_in_scope": true,
+    "mountain_lion_modeled": true,
+    "mountain_lion_still_pending": false,
+    "mountain_lion_p_draw_non_null_count": 0,
+    "mountain_lion_p_draw_pct_non_null_count": 0,
+    "mountain_lion_p_preference_draw_non_null_count": 0,
+    "mountain_lion_p_bonus_pool_non_null_count": 0,
+    "mountain_lion_p_random_pool_non_null_count": 0,
+    "mountain_lion_p_availability_non_null_count": 120,
+    "BR1000_status_pass": true,
+    "BR1001_status_pass": true,
+    "BR1007_BR1018_status_pass": true,
+    "bear_phase12_guardrails_pass": true,
+    "turkey_alignment_pass": true,
+    "preference_field_contract_pass": true,
     "EB3024_pass": true,
     "one_permit_random_only_pass": true,
     "MAX_POOL_safety_pass": true,
-    "UI_precedence_pass": true,
-    "turkey_alignment_pass": true,
-    "preference_field_contract_pass": true
-  },
-  "bear_subtype_counts": {
-    "CONSERVATION_OR_NON_PUBLIC": 4,
-    "HARVEST_OBJECTIVE_AVAILABILITY": 2,
-    "LIMITED_ENTRY_BEAR_HUNT": 1282,
-    "UNLIMITED_PURSUIT_PERMIT": 17
+    "UI_precedence_pass": true
   },
   "unresolved_issues": [],
-  "recommended_next_phase": "choose the next remaining pending family after Phase 12 bear closeout",
-  "recommended_next_codex_command_summary": "Phase 12 bear is closed out with subtype-aware availability and bonus handling. The next step should target a remaining pending family without reopening Sportsman, mountain lion, private-lands-only antlerless elk, or accepted bear subtypes unless a regression appears."
+  "recommended_next_phase": "choose the next remaining pending family after Phase 13 mountain lion closeout",
+  "recommended_next_codex_command_summary": "Phase 13 mountain lion is closed out as a rule-status and availability family. The next step should target one of the remaining pending families without reopening accepted bear, sportsman, turkey, or allocation behavior unless a regression appears."
 }

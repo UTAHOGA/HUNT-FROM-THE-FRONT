@@ -10,7 +10,7 @@
     2025
   ],
   "command_used": "python -m engine.utah_bonus_predictive.materialize --output-dir processed_data --forecast-year 2026 --history-years 2021,2022,2023,2024,2025 --skip-upstream",
-  "generated_at": "2026-05-21T04:08:00.312260+00:00",
+  "generated_at": "2026-05-21T04:32:50.606468+00:00",
   "output_files": {
     "ml_draw_predictions_v1.csv": "processed_data\\ml_draw_predictions_v1.csv",
     "ml_draw_predictions_v1_report.json": "processed_data\\ml_draw_predictions_v1_report.json",
@@ -35,6 +35,7 @@
     "sportsman_permit_predictions_v1.csv": "processed_data\\sportsman_permit_predictions_v1.csv",
     "sportsman_permit_report.json": "processed_data\\sportsman_permit_report.json",
     "private_lands_antlerless_elk_predictions_v1.csv": "processed_data\\private_lands_antlerless_elk_predictions_v1.csv",
+    "private_lands_antlerless_elk_allocations_v1.csv": "processed_data\\private_lands_antlerless_elk_allocations_v1.csv",
     "private_lands_antlerless_elk_report.json": "processed_data\\private_lands_antlerless_elk_report.json",
     "mountain_lion_availability_predictions_v1.csv": "processed_data\\mountain_lion_availability_predictions_v1.csv",
     "mountain_lion_availability_report.json": "processed_data\\mountain_lion_availability_report.json"

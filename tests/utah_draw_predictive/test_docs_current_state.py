@@ -18,6 +18,7 @@ def test_docs_current_state_reflects_completed_and_pending_phases() -> None:
         "Phase 11: Sportsman permit odds strategy",
         "Phase 12: bear subtype-aware quota draw + availability strategy",
         "Phase 13: mountain lion / cougar rule-status + availability closeout",
+        "Phase 14: private-lands-only antlerless elk allocation / availability closeout",
     ):
         assert phrase in text
 
