@@ -9,8 +9,8 @@
   ],
   "modeled_rows": 796,
   "modeled_hunt_codes_by_type": {
-    "PREFERENCE_DOE_PRONGHORN": 8,
     "PREFERENCE_ANTLERLESS_DEER": 12,
+    "PREFERENCE_DOE_PRONGHORN": 8,
     "PREFERENCE_ANTLERLESS_ELK": 80
   },
   "modeled_inventory_rows": 189,

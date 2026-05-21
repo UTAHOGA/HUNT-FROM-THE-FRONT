@@ -58,7 +58,7 @@ def test_limited_entry_turkey_rows_can_be_modeled_bonus() -> None:
     )
     modeled = [row for row in rows if row["draw_system_type"] == "BONUS_TURKEY" and row["turkey_bonus_valid"] == "TRUE"]
     assert modeled
-    assert report["bonus_turkey_modeled_row_count"] == len(modeled)
+    assert report["bonus_turkey_modeled_rows"] == len(modeled)
     assert all(row["p_bonus_pool"] != "" for row in modeled)
     assert all(row["p_random_pool"] != "" for row in modeled)
     assert all(row["p_draw"] != "" for row in modeled)

@@ -7,8 +7,11 @@ def test_phase7_turkey_coverage_report_fields_exist() -> None:
     report = json.loads(report_path.read_text(encoding="utf-8"))
     phase7 = report["phase7_turkey"]
 
-    assert "turkey_modeled_bonus_row_count" in phase7
-    assert "turkey_in_scope_model_pending_row_count" in phase7
-    assert "turkey_excluded_not_predictive_draw_row_count" in phase7
+    assert "turkey_rows_seen_total" in phase7
+    assert "turkey_rows_seen_active_predictive" in phase7
+    assert "turkey_rows_seen_observed_history" in phase7
+    assert "turkey_modeled_bonus_rows_active_predictive" in phase7
+    assert "turkey_in_scope_model_pending_rows_active_predictive" in phase7
+    assert "turkey_in_scope_model_pending_rows_observed_history" in phase7
     assert "general_season_turkey_excluded" in phase7
     assert "remaining_turkey_excluded_or_availability_pending" in phase7

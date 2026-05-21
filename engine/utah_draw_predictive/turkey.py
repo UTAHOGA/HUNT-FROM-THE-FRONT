@@ -600,31 +600,40 @@ def build_turkey_bonus_predictions(
                 rows.append(row)
                 report_counts["modeled"] += 1
 
+    observed_history_rows = [row for row in truth_rows if _is_turkey(row)]
     excluded_general = sum(1 for row in review_rows if _is_turkey(row) and "general season" in _joined_text(row))
     excluded_remaining = sum(1 for row in review_rows if _is_turkey(row) and ("remaining permit" in _joined_text(row) or "remaining" in _joined_text(row)))
     excluded_non_public = sum(1 for row in review_rows if _is_turkey(row) and ("private land" in _joined_text(row) or "private" in _joined_text(row)))
     excluded_other = sum(1 for row in review_rows if _is_turkey(row) and any(token in _joined_text(row) for token in ("sportsman", "conservation", "expo")))
+    unsupported_or_ambiguous = sum(
+        1
+        for row in review_rows
+        if _is_turkey(row)
+        and not _is_modeled_turkey_db_row(row)
+        and "general season" not in _joined_text(row)
+        and "remaining permit" not in _joined_text(row)
+        and "remaining" not in _joined_text(row)
+        and "private land" not in _joined_text(row)
+        and "private" not in _joined_text(row)
+        and not any(token in _joined_text(row) for token in ("sportsman", "conservation", "expo"))
+    )
 
     report = {
         "forecast_year": forecast_year,
         "source_years": history_years,
-        "total_turkey_rows_reviewed": len(review_rows),
-        "bonus_turkey_row_count": len(rows),
-        "bonus_turkey_modeled_row_count": report_counts["modeled"],
-        "bonus_turkey_pending_row_count": report_counts["pending"],
-        "excluded_general_season_turkey_row_count": excluded_general,
-        "excluded_remaining_permit_turkey_row_count": excluded_remaining,
-        "excluded_non_public_turkey_row_count": excluded_non_public,
-        "excluded_other_non_draw_turkey_row_count": excluded_other,
-        "modeled_turkey_hunt_code_count": len({str(row.get("hunt_code", "")).strip() for row in rows if str(row.get("turkey_bonus_valid", "")).strip() == "TRUE"}),
-        "p_bonus_pool_non_null_count": sum(1 for row in rows if _clean(row.get("p_bonus_pool"))),
-        "p_random_pool_non_null_count": sum(1 for row in rows if _clean(row.get("p_random_pool"))),
-        "p_draw_non_null_count": sum(1 for row in rows if _clean(row.get("p_draw"))),
-        "p_draw_pct_non_null_count": sum(1 for row in rows if _clean(row.get("p_draw_pct"))),
-        "p_preference_draw_non_null_count": sum(1 for row in rows if _clean(row.get("p_preference_draw"))),
-        "p_draw_outside_0_1_count": sum(1 for row in rows if _clean(row.get("p_draw")) and not (0.0 <= float(_clean(row.get("p_draw"))) <= 1.0)),
-        "p_draw_pct_outside_0_100_count": sum(1 for row in rows if _clean(row.get("p_draw_pct")) and not (0.0 <= float(_clean(row.get("p_draw_pct"))) <= 100.0)),
-        "duplicate_key_count": len([(row.get("hunt_code"), row.get("residency"), row.get("points")) for row in rows]) - len({(row.get("hunt_code"), row.get("residency"), row.get("points")) for row in rows}),
+        "turkey_rows_seen_observed_history": len(observed_history_rows),
+        "turkey_rows_seen_active_predictive": len(rows),
+        "turkey_rows_seen_total": len(observed_history_rows) + len(rows),
+        "turkey_rows_forecast_eligible": len(rows),
+        "bonus_turkey_rows_active_predictive": len(rows),
+        "bonus_turkey_modeled_rows": report_counts["modeled"],
+        "bonus_turkey_pending_rows": report_counts["pending"],
+        "bonus_turkey_modeled_hunt_codes": len({str(row.get("hunt_code", "")).strip() for row in rows if str(row.get("turkey_bonus_valid", "")).strip() == "TRUE"}),
+        "general_season_turkey_excluded_rows": excluded_general,
+        "remaining_turkey_excluded_or_availability_rows": excluded_remaining,
+        "non_public_turkey_excluded_rows": excluded_non_public,
+        "unsupported_or_ambiguous_turkey_rows": unsupported_or_ambiguous + excluded_other,
+        "other_non_draw_turkey_rows": excluded_other,
         "source_years_used_non_null_count": sum(1 for row in rows if _clean(row.get("source_years_used"))),
         "data_quality_flags_summary": dict(data_quality_counter),
     }

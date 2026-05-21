@@ -22,6 +22,9 @@ def test_draw_system_coverage_report_generation(tmp_path: Path) -> None:
     assert "PREFERENCE_DOE_PRONGHORN" in report["modeled_preference_categories"]
     assert report["answers"]["is_bear_modeled"] is False
     assert report["answers"]["is_turkey_modeled"] is True
+    assert report["answers"]["oil_big_game_engine_family_modeled"] is True
+    assert report["answers"]["le_big_game_engine_family_modeled"] is True
+    assert report["answers"]["ple_big_game_engine_family_modeled"] is True
     assert "BONUS_TURKEY" in report["modeled_bonus_categories"]
     assert report["answers"]["is_cwmu_public_modeled"] is True
     assert "BONUS_CWMU_BIG_GAME" in report["modeled_bonus_categories"]

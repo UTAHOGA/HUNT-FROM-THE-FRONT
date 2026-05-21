@@ -8,6 +8,8 @@
     2025
   ],
   "total_rows_seen": 205613,
+  "rows_seen_observed_history": 176753,
+  "rows_seen_active_predictive": 28860,
   "total_hunt_codes_seen": 1616,
   "target_scope_rows": 200685,
   "target_scope_hunt_codes": 1575,
@@ -67,6 +69,70 @@
     "MODELED_PREFERENCE": 1634,
     "OUT_OF_SCOPE_NON_TARGET": 4928
   },
+  "counts_by_draw_system_type_by_source_dataset": {
+    "observed_history": {
+      "BONUS_OIL_BIG_GAME": 14616,
+      "BONUS_LE_BIG_GAME": 64390,
+      "BONUS_PLE_BIG_GAME": 1937,
+      "BONUS_CWMU_BIG_GAME": 50429,
+      "BONUS_ANTLERLESS_MOOSE": 376,
+      "BONUS_EWE_BIGHORN": 81,
+      "BONUS_TURKEY": 371,
+      "PREFERENCE_GENERAL_SEASON_BUCK_DEER": 15684,
+      "PREFERENCE_ANTLERLESS_DEER": 1393,
+      "PREFERENCE_ANTLERLESS_ELK": 9177,
+      "PREFERENCE_DOE_PRONGHORN": 1515,
+      "PREFERENCE_DEDICATED_HUNTER_DEER": 2467,
+      "GENERAL_BIG_GAME_OTHER": 500,
+      "PRIVATE_LANDS_ONLY_ANTLERLESS_ELK": 0,
+      "BEAR_DRAW": 8265,
+      "MOUNTAIN_LION_DRAW": 219,
+      "RANDOM_ONLY_TARGET": 645,
+      "OTC_OR_REMAINING_TARGET": 184,
+      "LANDOWNER_BIG_GAME": 484,
+      "MITIGATION_OR_DEPREDATION_BIG_GAME": 0,
+      "OUT_OF_SCOPE_NON_TARGET": 4020,
+      "UNKNOWN_TARGET": 0
+    },
+    "active_predictive": {
+      "BONUS_OIL_BIG_GAME": 3311,
+      "BONUS_LE_BIG_GAME": 16402,
+      "BONUS_PLE_BIG_GAME": 529,
+      "BONUS_CWMU_BIG_GAME": 3341,
+      "BONUS_ANTLERLESS_MOOSE": 44,
+      "BONUS_EWE_BIGHORN": 14,
+      "BONUS_TURKEY": 79,
+      "PREFERENCE_GENERAL_SEASON_BUCK_DEER": 715,
+      "PREFERENCE_ANTLERLESS_DEER": 100,
+      "PREFERENCE_ANTLERLESS_ELK": 581,
+      "PREFERENCE_DOE_PRONGHORN": 115,
+      "PREFERENCE_DEDICATED_HUNTER_DEER": 123,
+      "GENERAL_BIG_GAME_OTHER": 0,
+      "PRIVATE_LANDS_ONLY_ANTLERLESS_ELK": 0,
+      "BEAR_DRAW": 2598,
+      "MOUNTAIN_LION_DRAW": 0,
+      "RANDOM_ONLY_TARGET": 0,
+      "OTC_OR_REMAINING_TARGET": 0,
+      "LANDOWNER_BIG_GAME": 0,
+      "MITIGATION_OR_DEPREDATION_BIG_GAME": 0,
+      "OUT_OF_SCOPE_NON_TARGET": 908,
+      "UNKNOWN_TARGET": 0
+    }
+  },
+  "counts_by_algorithm_status_by_source_dataset": {
+    "observed_history": {
+      "EXCLUDED_NOT_PREDICTIVE_DRAW": 1313,
+      "IN_SCOPE_MODEL_PENDING": 90477,
+      "MODELED_BONUS": 80943,
+      "OUT_OF_SCOPE_NON_TARGET": 4020
+    },
+    "active_predictive": {
+      "IN_SCOPE_MODEL_PENDING": 2911,
+      "MODELED_BONUS": 23407,
+      "MODELED_PREFERENCE": 1634,
+      "OUT_OF_SCOPE_NON_TARGET": 908
+    }
+  },
   "counts_by_species": {
     "(blank)": 84268,
     "Bison": 2932,
@@ -106,9 +172,18 @@
     "is_antlerless_elk_modeled": true,
     "is_doe_pronghorn_modeled": true,
     "are_antlerless_moose_and_ewe_sheep_modeled_under_bonus_rules": true,
-    "are_all_oil_big_game_categories_modeled": false,
-    "are_all_le_big_game_categories_modeled": false,
-    "are_all_ple_big_game_categories_modeled": true,
+    "oil_big_game_engine_family_modeled": true,
+    "le_big_game_engine_family_modeled": true,
+    "ple_big_game_engine_family_modeled": true,
+    "oil_big_game_active_predictive_coverage_complete": true,
+    "le_big_game_active_predictive_coverage_complete": true,
+    "ple_big_game_active_predictive_coverage_complete": true,
+    "oil_big_game_all_seen_history_codes_modeled": false,
+    "le_big_game_all_seen_history_codes_modeled": false,
+    "ple_big_game_all_seen_history_codes_modeled": true,
+    "oil_big_game_unmodeled_seen_hunt_code_count": 246,
+    "le_big_game_unmodeled_seen_hunt_code_count": 132,
+    "ple_big_game_unmodeled_seen_hunt_code_count": 0,
     "is_turkey_modeled": true,
     "is_bear_modeled": false,
     "is_mountain_lion_cougar_modeled": false,
@@ -118,26 +193,92 @@
   },
   "phase6_bonus_special": {
     "cwmu_public_modeled_row_count": 3038,
-    "cwmu_public_pending_row_count": 50732,
+    "cwmu_public_pending_row_count": 303,
     "cwmu_private_excluded_row_count": 4,
     "antlerless_moose_modeled_row_count": 36,
-    "antlerless_moose_pending_row_count": 384,
+    "antlerless_moose_pending_row_count": 8,
     "ewe_bighorn_modeled_row_count": 14,
-    "ewe_bighorn_pending_row_count": 81,
+    "ewe_bighorn_pending_row_count": 0,
     "turkey_still_pending": true,
     "bear_still_pending": true,
-    "mountain_lion_cougar_still_pending": true,
+    "mountain_lion_cougar_still_pending": false,
     "private_lands_only_antlerless_elk_allocation_pending": true
   },
   "phase7_turkey": {
-    "turkey_modeled_bonus_row_count": 77,
-    "turkey_in_scope_model_pending_row_count": 373,
-    "turkey_excluded_not_predictive_draw_row_count": 22,
+    "turkey_rows_seen_total": 472,
+    "turkey_rows_seen_active_predictive": 79,
+    "turkey_rows_seen_observed_history": 393,
+    "turkey_forecast_eligible_rows_active_predictive": 79,
+    "turkey_modeled_bonus_rows_active_predictive": 77,
+    "turkey_in_scope_model_pending_rows_active_predictive": 2,
+    "turkey_in_scope_model_pending_rows_observed_history": 371,
+    "turkey_in_scope_model_pending_hunt_codes_active_predictive": 2,
+    "turkey_in_scope_model_pending_hunt_codes_observed_history": 7,
+    "turkey_excluded_not_predictive_draw_rows_active_predictive": 0,
+    "turkey_excluded_not_predictive_draw_rows_observed_history": 22,
     "general_season_turkey_excluded": true,
     "remaining_turkey_excluded_or_availability_pending": false,
+    "non_public_turkey_excluded_rows_total": 20,
     "bear_still_pending": true,
-    "mountain_lion_cougar_still_pending": true,
+    "mountain_lion_cougar_still_pending": false,
     "private_lands_only_antlerless_elk_allocation_pending": true
+  },
+  "family_modeling_semantics": {
+    "bonus_oil_big_game": {
+      "engine_family_modeled": true,
+      "active_predictive_coverage_complete": true,
+      "all_seen_history_codes_modeled": false,
+      "unmodeled_seen_hunt_code_count": 246,
+      "unmodeled_seen_hunt_codes_sample": [
+        "BI6517",
+        "BI6519",
+        "BI6520",
+        "BI6521",
+        "BI6523",
+        "BI6524",
+        "BI6526",
+        "BI6530",
+        "BI6533",
+        "DB1011"
+      ],
+      "active_predictive_row_count": 3311,
+      "active_predictive_hunt_code_count": 79,
+      "observed_history_row_count": 14616,
+      "observed_history_hunt_code_count": 325
+    },
+    "bonus_le_big_game": {
+      "engine_family_modeled": true,
+      "active_predictive_coverage_complete": true,
+      "all_seen_history_codes_modeled": false,
+      "unmodeled_seen_hunt_code_count": 132,
+      "unmodeled_seen_hunt_codes_sample": [
+        "BI6500",
+        "BI6503",
+        "BI6504",
+        "BI6505",
+        "BI6506",
+        "BI6509",
+        "BI6516",
+        "BI6517",
+        "BI6519",
+        "BI6520"
+      ],
+      "active_predictive_row_count": 16402,
+      "active_predictive_hunt_code_count": 270,
+      "observed_history_row_count": 64390,
+      "observed_history_hunt_code_count": 399
+    },
+    "bonus_ple_big_game": {
+      "engine_family_modeled": true,
+      "active_predictive_coverage_complete": true,
+      "all_seen_history_codes_modeled": true,
+      "unmodeled_seen_hunt_code_count": 0,
+      "unmodeled_seen_hunt_codes_sample": [],
+      "active_predictive_row_count": 529,
+      "active_predictive_hunt_code_count": 9,
+      "observed_history_row_count": 1937,
+      "observed_history_hunt_code_count": 9
+    }
   },
   "currently_production_modeled_categories": [
     "BONUS_OIL_BIG_GAME",
@@ -209,138 +350,176 @@
       "draw_system_type": "BONUS_OIL_BIG_GAME",
       "row_count": 17927,
       "hunt_code_count": 325,
+      "active_predictive_row_count": 3311,
+      "observed_history_row_count": 14616,
       "algorithm_status": "MODELED_BONUS"
     },
     {
       "draw_system_type": "BONUS_LE_BIG_GAME",
       "row_count": 80792,
       "hunt_code_count": 402,
+      "active_predictive_row_count": 16402,
+      "observed_history_row_count": 64390,
       "algorithm_status": "MODELED_BONUS"
     },
     {
       "draw_system_type": "BONUS_PLE_BIG_GAME",
       "row_count": 2466,
       "hunt_code_count": 9,
+      "active_predictive_row_count": 529,
+      "observed_history_row_count": 1937,
       "algorithm_status": "MODELED_BONUS"
     },
     {
       "draw_system_type": "BONUS_CWMU_BIG_GAME",
       "row_count": 53770,
       "hunt_code_count": 334,
+      "active_predictive_row_count": 3341,
+      "observed_history_row_count": 50429,
       "algorithm_status": "MODELED_BONUS"
     },
     {
       "draw_system_type": "BONUS_ANTLERLESS_MOOSE",
       "row_count": 420,
       "hunt_code_count": 9,
+      "active_predictive_row_count": 44,
+      "observed_history_row_count": 376,
       "algorithm_status": "MODELED_BONUS"
     },
     {
       "draw_system_type": "BONUS_EWE_BIGHORN",
       "row_count": 95,
       "hunt_code_count": 1,
+      "active_predictive_row_count": 14,
+      "observed_history_row_count": 81,
       "algorithm_status": "MODELED_BONUS"
     },
     {
       "draw_system_type": "BONUS_TURKEY",
       "row_count": 450,
       "hunt_code_count": 7,
+      "active_predictive_row_count": 79,
+      "observed_history_row_count": 371,
       "algorithm_status": "MODELED_BONUS"
     },
     {
       "draw_system_type": "PREFERENCE_GENERAL_SEASON_BUCK_DEER",
       "row_count": 16399,
       "hunt_code_count": 130,
+      "active_predictive_row_count": 715,
+      "observed_history_row_count": 15684,
       "algorithm_status": "MODELED_PREFERENCE"
     },
     {
       "draw_system_type": "PREFERENCE_ANTLERLESS_DEER",
       "row_count": 1493,
       "hunt_code_count": 25,
+      "active_predictive_row_count": 100,
+      "observed_history_row_count": 1393,
       "algorithm_status": "MODELED_PREFERENCE"
     },
     {
       "draw_system_type": "PREFERENCE_ANTLERLESS_ELK",
       "row_count": 9758,
       "hunt_code_count": 158,
+      "active_predictive_row_count": 581,
+      "observed_history_row_count": 9177,
       "algorithm_status": "MODELED_PREFERENCE"
     },
     {
       "draw_system_type": "PREFERENCE_DOE_PRONGHORN",
       "row_count": 1630,
       "hunt_code_count": 28,
+      "active_predictive_row_count": 115,
+      "observed_history_row_count": 1515,
       "algorithm_status": "MODELED_PREFERENCE"
     },
     {
       "draw_system_type": "PREFERENCE_DEDICATED_HUNTER_DEER",
       "row_count": 2590,
       "hunt_code_count": 36,
+      "active_predictive_row_count": 123,
+      "observed_history_row_count": 2467,
       "algorithm_status": "MODELED_PREFERENCE"
     },
     {
       "draw_system_type": "GENERAL_BIG_GAME_OTHER",
       "row_count": 500,
       "hunt_code_count": 51,
+      "active_predictive_row_count": 0,
+      "observed_history_row_count": 500,
       "algorithm_status": "IN_SCOPE_MODEL_PENDING"
     },
     {
       "draw_system_type": "PRIVATE_LANDS_ONLY_ANTLERLESS_ELK",
       "row_count": 0,
       "hunt_code_count": 0,
+      "active_predictive_row_count": 0,
+      "observed_history_row_count": 0,
       "algorithm_status": "IN_SCOPE_MODEL_PENDING"
-    },
-    {
-      "draw_system_type": "BONUS_TURKEY",
-      "row_count": 450,
-      "hunt_code_count": 7,
-      "algorithm_status": "MODELED_BONUS"
     },
     {
       "draw_system_type": "BEAR_DRAW",
       "row_count": 10863,
       "hunt_code_count": 117,
+      "active_predictive_row_count": 2598,
+      "observed_history_row_count": 8265,
       "algorithm_status": "IN_SCOPE_MODEL_PENDING"
     },
     {
       "draw_system_type": "MOUNTAIN_LION_DRAW",
       "row_count": 219,
       "hunt_code_count": 10,
+      "active_predictive_row_count": 0,
+      "observed_history_row_count": 219,
       "algorithm_status": "IN_SCOPE_MODEL_PENDING"
     },
     {
       "draw_system_type": "RANDOM_ONLY_TARGET",
       "row_count": 645,
       "hunt_code_count": 11,
+      "active_predictive_row_count": 0,
+      "observed_history_row_count": 645,
       "algorithm_status": "EXCLUDED_NOT_PREDICTIVE_DRAW"
     },
     {
       "draw_system_type": "OTC_OR_REMAINING_TARGET",
       "row_count": 184,
       "hunt_code_count": 43,
+      "active_predictive_row_count": 0,
+      "observed_history_row_count": 184,
       "algorithm_status": "EXCLUDED_NOT_PREDICTIVE_DRAW"
     },
     {
       "draw_system_type": "LANDOWNER_BIG_GAME",
       "row_count": 484,
       "hunt_code_count": 242,
+      "active_predictive_row_count": 0,
+      "observed_history_row_count": 484,
       "algorithm_status": "EXCLUDED_NOT_PREDICTIVE_DRAW"
     },
     {
       "draw_system_type": "MITIGATION_OR_DEPREDATION_BIG_GAME",
       "row_count": 0,
       "hunt_code_count": 0,
+      "active_predictive_row_count": 0,
+      "observed_history_row_count": 0,
       "algorithm_status": "EXCLUDED_NOT_PREDICTIVE_DRAW"
     },
     {
       "draw_system_type": "OUT_OF_SCOPE_NON_TARGET",
       "row_count": 4928,
       "hunt_code_count": 41,
+      "active_predictive_row_count": 908,
+      "observed_history_row_count": 4020,
       "algorithm_status": "OUT_OF_SCOPE_NON_TARGET"
     },
     {
       "draw_system_type": "UNKNOWN_TARGET",
       "row_count": 0,
       "hunt_code_count": 0,
+      "active_predictive_row_count": 0,
+      "observed_history_row_count": 0,
       "algorithm_status": "UNKNOWN_TARGET_NEEDS_REVIEW"
     }
   ],

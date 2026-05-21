@@ -95,7 +95,7 @@ def test_formal_cli_generates_populated_artifacts(tmp_path: Path) -> None:
     assert phase6_report["forecast_year"] == 2026
     assert phase6_report["total_phase6_rows"] == len(phase6_rows)
     assert turkey_report["forecast_year"] == 2026
-    assert turkey_report["bonus_turkey_row_count"] == len(turkey_rows)
+    assert turkey_report["bonus_turkey_rows_active_predictive"] == len(turkey_rows)
     assert manifest["forecast_year"] == 2026
     assert manifest["calibration_metric_non_null_count"] == len(bt_rows)
 

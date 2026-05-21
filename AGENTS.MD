@@ -73,6 +73,10 @@ Codex must not create empty modules.
 
 Codex must not create abstract scaffolding without executable code.
 
+Codex must not create placeholder-only files, placeholder-only logic, or placeholder-only reports that merely make a phase look started.
+
+Codex must carry the assigned project step through implementation, validation, artifact generation, and closeout before moving on.
+
 Codex must not start over halfway through a task.
 
 Codex must not switch tasks unless blocked.

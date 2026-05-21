@@ -342,10 +342,13 @@ def _write_turkey_bonus_artifacts(
     turkey_report = dict(turkey_report)
     turkey_report.update(
         {
-            "bonus_turkey_row_count": len(turkey_rows),
-            "bonus_turkey_modeled_row_count": len(modeled_rows),
-            "bonus_turkey_pending_row_count": len(pending_rows),
-            "modeled_turkey_hunt_code_count": len({str(row.get("hunt_code", "")).strip() for row in modeled_rows if str(row.get("hunt_code", "")).strip()}),
+            "turkey_rows_seen_active_predictive": len(turkey_rows),
+            "turkey_rows_seen_total": int(turkey_report.get("turkey_rows_seen_observed_history", 0)) + len(turkey_rows),
+            "turkey_rows_forecast_eligible": len(turkey_rows),
+            "bonus_turkey_rows_active_predictive": len(turkey_rows),
+            "bonus_turkey_modeled_rows": len(modeled_rows),
+            "bonus_turkey_pending_rows": len(pending_rows),
+            "bonus_turkey_modeled_hunt_codes": len({str(row.get("hunt_code", "")).strip() for row in modeled_rows if str(row.get("hunt_code", "")).strip()}),
             "p_bonus_pool_non_null_count": _nonnull(turkey_rows, "p_bonus_pool"),
             "p_random_pool_non_null_count": _nonnull(turkey_rows, "p_random_pool"),
             "p_draw_non_null_count": _nonnull(turkey_rows, "p_draw"),

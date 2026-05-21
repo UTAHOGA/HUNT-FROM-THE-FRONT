@@ -288,3 +288,26 @@
   - Non-promoted quality rows leaked into manifest: 0
   - Non-promoted draw rows leaked into manifest: 0
   - Summary `all_checks_passed`: true
+
+## Utah Predictive Draw Engine Review Audit
+- Timestamp (UTC): 2026-05-20T00:00:00Z
+- Scope:
+  - Review-only audit of the Utah predictive draw-engine work under `C:\Users\tyler\Desktop\GitHub\HUNTS`.
+  - Confirmed the review used the active repo only and did not use `C:\Projects\HUNTS-main`.
+  - Did not start Phase 8 or implement any new family strategy during this pass.
+- Outputs created:
+  - `processed_data/gpt_work_review_report.json`
+  - `processed_data/gpt_work_review_report.md`
+- Validation summary:
+  - Python tests run: `63`
+  - Python tests failed: `0`
+  - Current predictive rows: `28860`
+  - `MODELED_BONUS` rows: `23407`
+  - `MODELED_PREFERENCE` rows: `1634`
+  - `IN_SCOPE_MODEL_PENDING` rows: `2911`
+  - `OUT_OF_SCOPE_NON_TARGET` rows: `908`
+  - Duplicate key count on `hunt_code,residency,points`: `0`
+- Review findings:
+  - Phase 7 turkey report semantics are now explicit in the generated turkey artifacts.
+  - Coverage family-vs-history semantics are present, but one pending-family boolean still uses row presence instead of registry status for mountain lion/cougar.
+  - Utah draw-system docs still describe several modeled Phase 3-7 families as pending and need refresh before the next implementation phase.

@@ -43,6 +43,8 @@ def test_phase7_turkey_artifacts_are_generated(tmp_path: Path) -> None:
 
     assert rows
     assert report["forecast_year"] == 2026
+    assert report["bonus_turkey_rows_active_predictive"] == len(rows)
+    assert report["bonus_turkey_pending_rows"] == len(pending_rows)
     assert report["p_preference_draw_non_null_count"] == 0
     assert all(str(row.get("p_preference_draw") or "").strip() == "" for row in modeled_rows)
     assert all(str(row.get("p_bonus_pool") or "").strip() != "" for row in modeled_rows)
