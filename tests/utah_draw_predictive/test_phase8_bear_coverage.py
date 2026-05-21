@@ -22,4 +22,4 @@ def test_phase8_bear_coverage_matches_predictive_artifact() -> None:
     assert phase8["bear_draw_in_scope_model_pending_row_count"] == len(pending)
     assert phase8["bear_draw_excluded_not_predictive_draw_row_count"] == len(excluded)
     assert phase8["limited_entry_bear_hunt_modeled"] is True
-    assert phase8["restricted_bear_pursuit_modeled"] is True
+    assert phase8["restricted_bear_pursuit_modeled"] is False

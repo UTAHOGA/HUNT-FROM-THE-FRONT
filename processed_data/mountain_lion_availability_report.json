@@ -7,9 +7,18 @@
     2024,
     2025
   ],
+  "total_mountain_lion_cougar_rows_reviewed": 120,
+  "active_predictive_cougar_rows": 120,
   "total_mountain_lion_rows_produced": 120,
   "hunt_code_count": 60,
+  "cougar_hunt_code_count": 60,
   "unit_count": 60,
+  "rows_by_algorithm_status": {
+    "MODELED_AVAILABILITY": 120
+  },
+  "modeled_availability_row_count": 120,
+  "in_scope_model_pending_row_count": 0,
+  "excluded_not_predictive_draw_row_count": 0,
   "unit_status_distribution": {
     "OPEN": 120
   },
@@ -18,6 +27,9 @@
   },
   "p_draw_non_null_count": 0,
   "p_draw_pct_non_null_count": 0,
+  "p_preference_draw_non_null_count": 0,
+  "p_bonus_pool_non_null_count": 0,
+  "p_random_pool_non_null_count": 0,
   "p_availability_non_null_count": 120,
   "availability_pct_non_null_count": 120,
   "source_files_used": [
@@ -27,5 +39,6 @@
   "data_quality_flags_summary": {
     "HARVEST_REPORTING_UNIT_FROM_GEOMETRY": 60,
     "STATEWIDE_OTC_RULE_STATUS": 60
-  }
+  },
+  "duplicate_key_count": 0
 }

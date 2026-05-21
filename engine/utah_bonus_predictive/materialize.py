@@ -400,6 +400,7 @@ def _write_bear_bonus_artifacts(
 ) -> tuple[Path, Path]:
     bear_rows = [row for row in prediction_rows if str(row.get("draw_system_type", "")).strip() == BEAR_DRAW_SYSTEM_TYPE]
     csv_path = output_dir / "bear_draw_predictions_v1.csv"
+    alias_csv_path = output_dir / "bear_predictions_v1.csv"
     fieldnames = list(dict.fromkeys(key for row in bear_rows for key in row.keys())) if bear_rows else [
         "hunt_code",
         "residency",
@@ -414,6 +415,7 @@ def _write_bear_bonus_artifacts(
         "p_preference_draw",
     ]
     write_csv(csv_path, bear_rows, fieldnames)
+    write_csv(alias_csv_path, bear_rows, fieldnames)
     modeled_rows = [row for row in bear_rows if str(row.get("algorithm_status", "")).strip() == "MODELED_BONUS"]
     pending_rows = [row for row in bear_rows if str(row.get("algorithm_status", "")).strip() == "IN_SCOPE_MODEL_PENDING"]
     excluded_rows = [row for row in bear_rows if str(row.get("algorithm_status", "")).strip() == "EXCLUDED_NOT_PREDICTIVE_DRAW"]
@@ -454,7 +456,9 @@ def _write_bear_bonus_artifacts(
         }
     )
     json_path = output_dir / "bear_draw_report.json"
+    alias_json_path = output_dir / "bear_report.json"
     json_path.write_text(json.dumps(bear_report, indent=2), encoding="utf-8")
+    alias_json_path.write_text(json.dumps(bear_report, indent=2), encoding="utf-8")
     return csv_path, json_path
 
 
@@ -471,10 +475,13 @@ def _write_sportsman_artifacts(
         "draw_system_type",
         "algorithm_status",
         "sportsman_species",
+        "sportsman_source_year",
         "sportsman_permit_count",
         "sportsman_applicants",
         "sportsman_odds_text",
         "sportsman_odds_denominator",
+        "sportsman_source_file",
+        "sportsman_residency_scope",
         "p_sportsman_draw",
         "p_draw",
         "p_draw_pct",
@@ -522,10 +529,15 @@ def _write_mountain_lion_artifacts(
         "draw_system_type",
         "algorithm_status",
         "permit_availability_type",
+        "permit_type",
+        "permit_status",
+        "availability_status",
         "season_start",
         "season_end",
+        "season_status",
         "unit_name",
         "unit_status",
+        "rule_status",
         "p_availability",
         "availability_pct",
     ]
@@ -879,6 +891,8 @@ def _build_manifest(
         "turkey_bonus_report.json": output_dir / "turkey_bonus_report.json",
         "bear_draw_predictions_v1.csv": output_dir / "bear_draw_predictions_v1.csv",
         "bear_draw_report.json": output_dir / "bear_draw_report.json",
+        "bear_predictions_v1.csv": output_dir / "bear_predictions_v1.csv",
+        "bear_report.json": output_dir / "bear_report.json",
         "sportsman_permit_predictions_v1.csv": output_dir / "sportsman_permit_predictions_v1.csv",
         "sportsman_permit_report.json": output_dir / "sportsman_permit_report.json",
         "private_lands_antlerless_elk_predictions_v1.csv": output_dir / "private_lands_antlerless_elk_predictions_v1.csv",
@@ -1113,6 +1127,9 @@ def materialize_outputs(
         "weapon",
         "bear_draw_subtype",
         "permit_availability_type",
+        "permit_type",
+        "permit_status",
+        "availability_status",
         "harvest_objective_unit_count",
         "harvest_objective_take_quota",
         "harvest_objective_remaining_quota",
@@ -1123,10 +1140,13 @@ def materialize_outputs(
         "sellout_risk",
         "sellout_or_closure_risk",
         "sportsman_species",
+        "sportsman_source_year",
         "sportsman_permit_count",
         "sportsman_applicants",
         "sportsman_odds_text",
         "sportsman_odds_denominator",
+        "sportsman_source_file",
+        "sportsman_residency_scope",
         "p_sportsman_draw",
         "private_lands_allocation_valid",
         "private_lands_allocation_note",
@@ -1140,9 +1160,11 @@ def materialize_outputs(
         "private_land_only_flag",
         "season_start",
         "season_end",
+        "season_status",
         "unit_name",
         "unit_status",
         "closure_reason",
+        "rule_status",
         "data_quality_flags",
         "draw_system_type",
         "algorithm_status",
@@ -1250,6 +1272,8 @@ def materialize_outputs(
         "turkey_bonus_report": turkey_bonus_json_path,
         "bear_draw_predictions": bear_bonus_csv_path,
         "bear_draw_report": bear_bonus_json_path,
+        "bear_predictions": output_dir / "bear_predictions_v1.csv",
+        "bear_report": output_dir / "bear_report.json",
         "sportsman_permit_predictions": sportsman_csv_path,
         "sportsman_permit_report": sportsman_json_path,
         "private_lands_antlerless_elk_predictions": private_lands_csv_path,

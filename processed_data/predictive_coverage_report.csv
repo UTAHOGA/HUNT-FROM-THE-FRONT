@@ -209,7 +209,7 @@ CG7615,True,False,False,False,included_forecast,,,,,,
 CG7618,True,False,False,False,included_forecast,,,,,,
 CG7619,True,False,False,False,included_forecast,,,,,,
 CG7620,True,False,False,False,included_forecast,,,,,,
-CG9999,True,True,True,False,included_forecast,Statewide,Cougar,Cougar - Statewide,,,
+CG9999,False,True,True,False,not_OIL_LE_PLE,Statewide,Cougar,Cougar - Statewide,,,
 DA1000,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 DA1001,True,True,True,False,included_forecast,General Season,Deer,"Box Elder, West Bear River",,,30
 DA1002,True,True,True,False,included_forecast,General Season,Deer,"Box Elder, West Bear River",,,30

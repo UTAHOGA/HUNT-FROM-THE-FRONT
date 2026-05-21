@@ -140,6 +140,9 @@ Completed:
 - Phase 8: public bear bonus strategy + Sportsman permit classifier
 - Phase 9: private-lands-only antlerless elk allocation / availability strategy
 - Phase 10: mountain lion / cougar rule-status + availability strategy
+- Phase 11: Sportsman permit odds strategy
+- Phase 12: bear subtype-aware quota draw + availability strategy
+- Phase 13: mountain lion / cougar rule-status + availability closeout
 
 Currently modeled as `MODELED_BONUS`:
 
@@ -168,9 +171,12 @@ Currently modeled as `MODELED_AVAILABILITY`:
 
 - `MOUNTAIN_LION_DRAW`
 
-Still pending:
+Currently modeled as `MODELED_SPORTSMAN_DRAW`:
 
 - `SPORTSMAN_PERMIT`
+
+Still pending:
+
 - `YOUTH_GENERAL_DEER`
 - `YOUTH_GENERAL_ANY_BULL_ELK`
 - `GENERAL_BIG_GAME_OTHER`
@@ -189,13 +195,21 @@ Private-lands-only antlerless elk note:
 Sportsman permit note:
 
 - Sportsman permits are classified as their own statewide draw family.
-- They are not modeled with bonus, preference, or bear-availability logic.
-- Until a usable official Sportsman odds source exists, they remain `IN_SCOPE_MODEL_PENDING` with `draw_outlook = SPORTSMAN ODDS SOURCE MISSING`.
+- They are modeled from the official Sportsman odds source, not from hunt-code suffix rules.
+- They do not use bonus pools, preference points, max-point pools, or bear-availability logic.
+- `BR1000`, `DB0007`, `RS0001`, and `TK0001` are all Sportsman permits even though not every Sportsman code ends with `1000`.
+
+Bear note:
+
+- `BR1000` remains `SPORTSMAN_PERMIT`, not `BEAR_DRAW`.
+- Harvest objective and pursuit-only bear rows are surfaced as availability/rule-status rows, not draw odds.
+- Only true limited-entry bear hunts remain in the bear bonus-draw path.
 
 Mountain lion / cougar note:
 
 - Utah cougar hunting is treated as statewide OTC rule-status and availability, not draw odds.
 - The local geometry source lists management/reporting units used for check-in and harvest reporting.
+- Phase 13 closes this family as an availability strategy with explicit rule-status reporting, not a draw-odds strategy.
 - `MOUNTAIN_LION_DRAW` rows must not receive `p_draw`, `p_draw_pct`, `p_bonus_pool`, `p_random_pool`, or `p_preference_draw`.
 - Availability fields such as `permit_availability_type`, `season_start`, `season_end`, `unit_name`, `unit_status`, `p_availability`, and `availability_pct` are the user-facing outputs for this family.
 

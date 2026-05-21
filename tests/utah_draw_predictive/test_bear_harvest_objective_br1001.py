@@ -12,6 +12,7 @@ def test_br1001_is_harvest_objective_availability_not_draw_odds() -> None:
     br1001 = [row for row in ml_rows if row.get("hunt_code") == "BR1001"]
     assert br1001
     assert all(row.get("bear_draw_subtype") == "HARVEST_OBJECTIVE_AVAILABILITY" for row in br1001)
+    assert all(row.get("algorithm_status") == "MODELED_AVAILABILITY" for row in br1001)
     assert all((row.get("p_draw") or "").strip() == "" for row in br1001)
     assert all((row.get("p_bonus_pool") or "").strip() == "" for row in br1001)
     assert all((row.get("p_random_pool") or "").strip() == "" for row in br1001)

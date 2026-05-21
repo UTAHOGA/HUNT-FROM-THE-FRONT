@@ -10,6 +10,7 @@ def test_bear_classification() -> None:
 def test_restricted_pursuit_black_bear_stays_in_bear_family() -> None:
     row = {"hunt_type": "Restricted Pursuit - Summer", "species": "Black Bear", "weapon": "Pursuit Only"}
     assert classify_draw_system_type(row) == "BEAR_DRAW"
+    assert resolve_algorithm_status(row) != "MODELED_BONUS"
 
 
 def test_bear_name_in_non_bear_hunt_does_not_false_positive() -> None:

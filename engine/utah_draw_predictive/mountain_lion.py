@@ -1,4 +1,4 @@
-"""Phase 10 mountain lion / cougar availability helpers."""
+"""Phase 13 mountain lion / cougar rule-status and availability helpers."""
 
 from __future__ import annotations
 
@@ -23,8 +23,8 @@ REPO = Path(__file__).resolve().parents[2]
 COUGAR_TABLE_PATH = REPO / "data" / "cougar_hunt_table_official.json"
 COUGAR_GUIDEBOOK_PATH = REPO / "processed_data" / "hard_data_exports" / "source_pdfs" / "regulations" / "2026" / "2026-bear-cougar-furbearer-guidebook.pdf"
 
-MODEL_STRATEGY_NAME = "mountain_lion_rule_status_phase10"
-RULE_VERSION = "utah_mountain_lion_availability_v1.0.0"
+MODEL_STRATEGY_NAME = "mountain_lion_rule_status_phase13"
+RULE_VERSION = "utah_mountain_lion_availability_v1.1.0"
 DRAW_SYSTEM_TYPE = "MOUNTAIN_LION_DRAW"
 PERMIT_AVAILABILITY_TYPE = "UNLIMITED_OTC_STATEWIDE_REPORTING_UNIT"
 
@@ -153,17 +153,28 @@ def build_mountain_lion_availability_predictions(
         report = {
             "forecast_year": forecast_year,
             "source_years": history_years,
+            "total_mountain_lion_cougar_rows_reviewed": 0,
+            "active_predictive_cougar_rows": 0,
             "total_mountain_lion_rows_produced": 0,
             "hunt_code_count": 0,
+            "cougar_hunt_code_count": 0,
             "unit_count": 0,
+            "rows_by_algorithm_status": {"IN_SCOPE_MODEL_PENDING": 0},
+            "modeled_availability_row_count": 0,
+            "in_scope_model_pending_row_count": 0,
+            "excluded_not_predictive_draw_row_count": 0,
             "unit_status_distribution": {},
             "season_date_coverage_distribution": {},
             "p_draw_non_null_count": 0,
             "p_draw_pct_non_null_count": 0,
+            "p_preference_draw_non_null_count": 0,
+            "p_bonus_pool_non_null_count": 0,
+            "p_random_pool_non_null_count": 0,
             "p_availability_non_null_count": 0,
             "availability_pct_non_null_count": 0,
             "source_files_used": source_files_used,
             "data_quality_flags_summary": {"MOUNTAIN_LION_STATUS_SOURCE_MISSING": 1},
+            "duplicate_key_count": 0,
         }
         return rows, report
 
@@ -202,11 +213,16 @@ def build_mountain_lion_availability_predictions(
                     "weapon": "Any Legal Weapon",
                     "draw_system_type": DRAW_SYSTEM_TYPE,
                     "permit_availability_type": PERMIT_AVAILABILITY_TYPE,
+                    "permit_type": "Statewide OTC Cougar Permit",
+                    "permit_status": "AVAILABLE" if has_year_round_rule else "UNKNOWN",
+                    "availability_status": "AVAILABLE YEAR-ROUND" if has_year_round_rule else "UNKNOWN",
                     "season_start": season_start,
                     "season_end": season_end,
+                    "season_status": "YEAR_ROUND_OPEN" if has_year_round_rule else "UNKNOWN",
                     "unit_name": unit["unit_name"],
                     "unit_status": "OPEN" if has_year_round_rule else "UNKNOWN",
                     "closure_reason": "",
+                    "rule_status": "STATEWIDE_OTC_YEAR_ROUND" if has_year_round_rule else "RULE_STATUS_UNKNOWN",
                     "p_availability": "1.000000" if has_year_round_rule else "",
                     "availability_pct": "100.000" if has_year_round_rule else "",
                     "closure_risk": "NONE" if has_year_round_rule else "",
@@ -231,16 +247,27 @@ def build_mountain_lion_availability_predictions(
     report = {
         "forecast_year": forecast_year,
         "source_years": history_years,
+        "total_mountain_lion_cougar_rows_reviewed": len(rows),
+        "active_predictive_cougar_rows": len(rows),
         "total_mountain_lion_rows_produced": len(rows),
         "hunt_code_count": len({row["hunt_code"] for row in rows}),
+        "cougar_hunt_code_count": len({row["hunt_code"] for row in rows}),
         "unit_count": len({row["unit_name"] for row in rows}),
+        "rows_by_algorithm_status": {"MODELED_AVAILABILITY": len(rows)},
+        "modeled_availability_row_count": len(rows),
+        "in_scope_model_pending_row_count": 0,
+        "excluded_not_predictive_draw_row_count": 0,
         "unit_status_distribution": dict(sorted(unit_status_distribution.items())),
         "season_date_coverage_distribution": dict(sorted(season_distribution.items())),
         "p_draw_non_null_count": 0,
         "p_draw_pct_non_null_count": 0,
+        "p_preference_draw_non_null_count": 0,
+        "p_bonus_pool_non_null_count": 0,
+        "p_random_pool_non_null_count": 0,
         "p_availability_non_null_count": sum(1 for row in rows if _clean(row.get("p_availability"))),
         "availability_pct_non_null_count": sum(1 for row in rows if _clean(row.get("availability_pct"))),
         "source_files_used": sorted(dict.fromkeys(source_files_used)),
         "data_quality_flags_summary": dict(sorted(data_quality_counter.items())),
+        "duplicate_key_count": len(rows) - len({(row["hunt_code"], row["residency"], row.get("points", "")) for row in rows}),
     }
     return rows, report

@@ -24,7 +24,7 @@ def test_public_limited_entry_bear_rows_can_be_modeled_bonus() -> None:
 
 def test_nonpublic_and_ambiguous_bear_rows_do_not_receive_fake_draw_odds() -> None:
     rows = _read_csv(Path(r"C:\Users\tyler\Desktop\GitHub\HUNTS\processed_data\bear_draw_predictions_v1.csv"))
-    nonpublic = [row for row in rows if row.get("bear_draw_subtype") == "NON_PUBLIC_OR_EXCLUDED"]
+    nonpublic = [row for row in rows if row.get("bear_draw_subtype") == "CONSERVATION_OR_NON_PUBLIC"]
     ambiguous = [row for row in rows if row.get("bear_draw_subtype") == "UNKNOWN_BEAR_SUBTYPE"]
     assert all((row.get("p_draw") or "").strip() == "" for row in nonpublic)
     assert all((row.get("p_draw") or "").strip() == "" for row in ambiguous)

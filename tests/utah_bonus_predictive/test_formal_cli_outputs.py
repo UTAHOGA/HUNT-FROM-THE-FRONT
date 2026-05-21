@@ -135,6 +135,7 @@ def test_formal_cli_generates_populated_artifacts(tmp_path: Path) -> None:
     modeled_preference_rows = [row for row in ml_rows if row.get("algorithm_status") == "MODELED_PREFERENCE"]
     modeled_allocation_rows = [row for row in ml_rows if row.get("algorithm_status") == "MODELED_ALLOCATION"]
     modeled_availability_rows = [row for row in ml_rows if row.get("algorithm_status") == "MODELED_AVAILABILITY"]
+    modeled_sportsman_rows = [row for row in ml_rows if row.get("algorithm_status") == "MODELED_SPORTSMAN_DRAW"]
     pending_rows = [row for row in ml_rows if row.get("algorithm_status") == "IN_SCOPE_MODEL_PENDING"]
     dedicated_hunter_modeled_rows = [row for row in dedicated_hunter_rows if row.get("algorithm_status") == "MODELED_PREFERENCE"]
     assert modeled_bonus_rows
@@ -166,7 +167,17 @@ def test_formal_cli_generates_populated_artifacts(tmp_path: Path) -> None:
     assert _nonnull(modeled_availability_rows, "p_bonus_pool") == 0
     assert _nonnull(modeled_availability_rows, "p_random_pool") == 0
     assert _nonnull(modeled_availability_rows, "p_preference_draw") == 0
-    assert _nonnull(modeled_availability_rows, "p_availability") == len(modeled_availability_rows)
+    assert all(
+        any(str(row.get(field) or "").strip() for field in ("p_availability", "unit_status", "harvest_objective_status", "permit_availability_type"))
+        for row in modeled_availability_rows
+    )
+    assert modeled_sportsman_rows
+    assert _nonnull(modeled_sportsman_rows, "p_sportsman_draw") == len(modeled_sportsman_rows)
+    assert _nonnull(modeled_sportsman_rows, "p_draw") == len(modeled_sportsman_rows)
+    assert _nonnull(modeled_sportsman_rows, "p_draw_pct") == len(modeled_sportsman_rows)
+    assert _nonnull(modeled_sportsman_rows, "p_bonus_pool") == 0
+    assert _nonnull(modeled_sportsman_rows, "p_random_pool") == 0
+    assert _nonnull(modeled_sportsman_rows, "p_preference_draw") == 0
     assert _nonnull(ml_rows, "source_years_used") == len(ml_rows)
     assert _nonnull(bt_rows, "calibration_error_by_probability_bucket") == len(bt_rows)
 

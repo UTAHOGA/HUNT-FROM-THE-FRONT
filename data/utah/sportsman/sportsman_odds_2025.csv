@@ -1,0 +1,11 @@
+year,hunt_code,hunt_name,species,resident_quota,nonresident_quota,total_quota,resident_apps,nonresident_apps,total_apps,odds_text,odds_denominator
+2025,BI1000,Sportsman Bison,Bison,1,0,1,4159,0,4159,"1 in 4,159.0",4159
+2025,BR1000,Sportsman Black Bear,Black Bear,1,0,1,1857,0,1857,"1 in 1,857.0",1857
+2025,DB0007,Sportsman Deer,Deer,1,0,1,7663,0,7663,"1 in 7,663.0",7663
+2025,DS1000,Sportsman Desert Bighorn Sheep,Desert Bighorn Sheep,1,0,1,3998,0,3998,"1 in 3,998.0",3998
+2025,EB1000,Sportsman Elk,Elk,1,0,1,7775,0,7775,"1 in 7,775.0",7775
+2025,GO1000,Sportsman Mountain Goat,Mountain Goat,1,0,1,3260,0,3260,"1 in 3,260.0",3260
+2025,MB1000,Sportsman Moose,Moose,1,0,1,4683,0,4683,"1 in 4,683.0",4683
+2025,PB1000,Sportsman Pronghorn,Pronghorn,1,0,1,3632,0,3632,"1 in 3,632.0",3632
+2025,RS0001,Sportsman Rocky Mtn Bighorn Sheep,Rocky Mountain Bighorn Sheep,1,0,1,4142,0,4142,"1 in 4,142.0",4142
+2025,TK0001,Sportsman Bearded Turkey,Turkey,1,0,1,784,0,784,"1 in 784.0",784

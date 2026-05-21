@@ -15,6 +15,7 @@ from . import (
     StrategySpec,
     TARGET_SCOPE_TARGET,
 )
+from .sportsman import is_sportsman_permit_row
 
 
 MODEL_STRATEGY_NAME = "bear_bonus_phase8"
@@ -30,7 +31,7 @@ UNLIMITED_PURSUIT_PERMIT = "UNLIMITED_PURSUIT_PERMIT"
 CONSERVATION_OR_NON_PUBLIC = "CONSERVATION_OR_NON_PUBLIC"
 UNKNOWN_BEAR_SUBTYPE = "UNKNOWN_BEAR_SUBTYPE"
 
-MODELED_BEAR_SUBTYPES = {LIMITED_ENTRY_BEAR_HUNT, RESTRICTED_BEAR_PURSUIT, STATEWIDE_BEAR_PERMIT}
+MODELED_BEAR_SUBTYPES = {LIMITED_ENTRY_BEAR_HUNT}
 EXCLUDED_BEAR_SUBTYPES = {
     HARVEST_OBJECTIVE_AVAILABILITY,
     REMAINING_PERMIT_AVAILABILITY,
@@ -115,6 +116,8 @@ def is_bear_row(row: Mapping[str, object]) -> bool:
 def classify_bear_subtype(row: Mapping[str, object]) -> str:
     if not is_bear_row(row):
         return UNKNOWN_BEAR_SUBTYPE
+    if is_sportsman_permit_row(row):
+        return STATEWIDE_BEAR_PERMIT
     text = _joined_text(row)
     hunt_type = _clean_lower(row.get("hunt_type"))
     hunt_class = _clean_lower(row.get("hunt_class"))
@@ -122,13 +125,13 @@ def classify_bear_subtype(row: Mapping[str, object]) -> str:
     draw_pool = _clean_lower(row.get("draw_pool"))
     hunt_code = _clean(row.get("hunt_code")).upper()
 
-    if hunt_code == "BR1000" or "statewide permit" in text:
+    if hunt_code == "BR1000":
         return STATEWIDE_BEAR_PERMIT
     if hunt_code in {"BR1007", "BR1018"}:
         return UNLIMITED_PURSUIT_PERMIT
     if (
         "cwmu" in text
-        or any(token in text for token in ("conservation", "expo", "sportsman", "statewide permit", "private land", "landowner", "private"))
+        or any(token in text for token in ("conservation", "expo", "sportsman", "private land", "landowner", "private"))
         or hunt_class == "private"
         or draw_pool == "sportsman"
     ):
@@ -138,7 +141,7 @@ def classify_bear_subtype(row: Mapping[str, object]) -> str:
     if "harvest objective" in text:
         return HARVEST_OBJECTIVE_AVAILABILITY
     if "restricted pursuit" in text or hunt_type == "pursuit" or hunt_type.startswith("pursuit") or weapon == "pursuit only":
-        return RESTRICTED_BEAR_PURSUIT
+        return UNLIMITED_PURSUIT_PERMIT
     if "spot and stalk" in text:
         return LIMITED_ENTRY_BEAR_HUNT
     if "limited entry" in text or "limited-entry" in text:
@@ -177,6 +180,17 @@ def is_modeled_bear_row(row: Mapping[str, object]) -> bool:
         and _clean_lower(row.get("bear_bonus_valid")) in {"1", "true", "yes", "y"}
         and _clean(row.get("draw_system_type")) == BEAR_DRAW_SYSTEM_TYPE
     )
+
+
+def is_modeled_bear_availability_row(row: Mapping[str, object]) -> bool:
+    if _clean(row.get("draw_system_type")) != BEAR_DRAW_SYSTEM_TYPE:
+        return False
+    subtype = classify_bear_subtype(row)
+    if subtype == HARVEST_OBJECTIVE_AVAILABILITY:
+        return _clean_lower(row.get("harvest_objective_status")) in {"unknown", "open", "closed", "source missing"}
+    if subtype == UNLIMITED_PURSUIT_PERMIT:
+        return _clean_lower(row.get("permit_availability_type")) == "unlimited_pursuit"
+    return False
 
 
 def _is_proven_bonus_bear_truth_row(row: Mapping[str, object]) -> bool:
@@ -413,8 +427,6 @@ def _data_quality_flags(
         flags.append("ONE_PERMIT_RANDOM_ONLY")
     if max_point_permits == 0 and public_quota > 0:
         flags.append("NO_MAX_POINT_POOL")
-    if subtype == RESTRICTED_BEAR_PURSUIT:
-        flags.append("RESTRICTED_PURSUIT_MODELED")
     return flags
 
 
@@ -452,6 +464,7 @@ def _base_row(
     public_permits_2026: int,
     weapon: str,
     subtype: str,
+    season_dates: str = "",
 ) -> dict[str, object]:
     return {
         "model_version": MODEL_VERSION,
@@ -478,10 +491,12 @@ def _base_row(
         "draw_system_type": BEAR_DRAW_SYSTEM_TYPE,
         "bear_draw_subtype": subtype,
         "permit_availability_type": _permit_availability_type(subtype),
+        "season_dates": season_dates,
         "harvest_objective_unit_count": "",
         "harvest_objective_take_quota": "",
         "harvest_objective_remaining_quota": "",
         "harvest_objective_status": "",
+        "unit_status": "",
         "p_availability": "",
         "availability_pct": "",
         "closure_risk": "",
@@ -528,11 +543,30 @@ def build_bear_bonus_predictions(
         sex_type = _clean(db_row.get("sex_type")) or meta.get(hunt_code, {}).get("sex_type", "")
         hunt_type = _clean(db_row.get("hunt_type")) or meta.get(hunt_code, {}).get("hunt_type", "")
         weapon = _clean(db_row.get("weapon")) or meta.get(hunt_code, {}).get("weapon", "")
+        season_dates = _clean(db_row.get("season"))
         hunt_class = "Public"
         if subtype == CONSERVATION_OR_NON_PUBLIC:
             hunt_class = _clean(db_row.get("hunt_class")) or "Non-Public / Excluded"
 
-        for residency in ("Resident", "Nonresident"):
+        residencies = ("Resident", "Nonresident")
+        if subtype == UNLIMITED_PURSUIT_PERMIT:
+            if hunt_code == "BR1007":
+                residencies = ("Resident",)
+            elif hunt_code == "BR1018":
+                residencies = ("Nonresident",)
+            else:
+                has_resident_line = _to_int(db_row.get("permits_2026_res")) > 0 or "res:" in _clean_lower(db_row.get("permits_2026_total"))
+                has_nonresident_line = _to_int(db_row.get("permits_2026_nr")) > 0 or "nonres:" in _clean_lower(db_row.get("permits_2026_total"))
+                if has_resident_line and has_nonresident_line:
+                    residencies = ("Resident", "Nonresident")
+                elif has_resident_line:
+                    residencies = ("Resident",)
+                elif has_nonresident_line:
+                    residencies = ("Nonresident",)
+                else:
+                    residencies = ("Resident", "Nonresident")
+
+        for residency in residencies:
             available_years = sorted(set(years_by_subtype_code_res.get((subtype, hunt_code, residency), [])))
             latest_year = available_years[-1] if available_years else default_latest_source_year
             earliest_source_year = available_years[0] if available_years else default_earliest_source_year
@@ -556,6 +590,7 @@ def build_bear_bonus_predictions(
                 public_permits_2026=public_quota,
                 weapon=weapon,
                 subtype=subtype,
+                season_dates=season_dates,
             )
 
             if subtype == UNLIMITED_PURSUIT_PERMIT:
@@ -574,13 +609,40 @@ def build_bear_bonus_predictions(
                         "bear_bonus_valid": "FALSE",
                         "bear_bonus_note": "Unlimited pursuit availability is not a draw-odds row.",
                         "data_quality_flags": "",
+                        "unit_status": "OPEN",
                         "p_availability": "1.000000",
                         "availability_pct": "100.000",
+                        "closure_risk": "NONE",
                         "sellout_or_closure_risk": "NONE",
                     }
                 )
                 rows.append(row)
-                report_counts["excluded"] += 1
+                report_counts["availability"] += 1
+                continue
+
+            if subtype == HARVEST_OBJECTIVE_AVAILABILITY:
+                row = dict(base)
+                row.update(
+                    {
+                        "points": "",
+                        "p_preference_draw": "",
+                        "p_bonus_pool": "",
+                        "p_random_pool": "",
+                        "p_draw": "",
+                        "p_bonus_pool_pct": "",
+                        "p_random_pool_pct": "",
+                        "p_draw_pct": "",
+                        "draw_outlook": "REMAINING PERMIT / AVAILABILITY",
+                        "bear_bonus_valid": "FALSE",
+                        "bear_bonus_note": "Harvest objective is surfaced as availability/rule-status, not draw odds.",
+                        "data_quality_flags": "BEAR_HO_SOURCE_MISSING",
+                        "harvest_objective_status": "SOURCE MISSING",
+                        "unit_status": "UNKNOWN",
+                    }
+                )
+                data_quality_counter["BEAR_HO_SOURCE_MISSING"] += 1
+                rows.append(row)
+                report_counts["availability"] += 1
                 continue
 
             if subtype in EXCLUDED_BEAR_SUBTYPES or (subtype == STATEWIDE_BEAR_PERMIT and is_excluded_bear_row(base)):
@@ -745,6 +807,7 @@ def build_bear_bonus_predictions(
         "bear_rows_by_bear_draw_subtype": dict(sorted(review_counter.items())),
         "bear_rows_by_algorithm_status": {
             "MODELED_BONUS": report_counts["modeled"],
+            "MODELED_AVAILABILITY": report_counts["availability"],
             "IN_SCOPE_MODEL_PENDING": report_counts["pending"],
             "EXCLUDED_NOT_PREDICTIVE_DRAW": report_counts["excluded"],
         },
@@ -755,6 +818,8 @@ def build_bear_bonus_predictions(
         "modeled_bear_hunt_code_count": len({str(row.get("hunt_code", "")).strip() for row in modeled_rows if str(row.get("hunt_code", "")).strip()}),
         "limited_entry_bear_modeled_row_count": sum(1 for row in modeled_rows if row.get("bear_draw_subtype") == LIMITED_ENTRY_BEAR_HUNT),
         "restricted_pursuit_modeled_row_count": sum(1 for row in modeled_rows if row.get("bear_draw_subtype") == RESTRICTED_BEAR_PURSUIT),
+        "limited_entry_hunt_modeled_hunt_code_count": len({str(row.get("hunt_code", "")).strip() for row in modeled_rows if row.get("bear_draw_subtype") == LIMITED_ENTRY_BEAR_HUNT and str(row.get("hunt_code", "")).strip()}),
+        "restricted_pursuit_modeled_hunt_code_count": len({str(row.get("hunt_code", "")).strip() for row in modeled_rows if row.get("bear_draw_subtype") == RESTRICTED_BEAR_PURSUIT and str(row.get("hunt_code", "")).strip()}),
         "harvest_objective_excluded_or_availability_pending_row_count": sum(1 for row in rows if row.get("bear_draw_subtype") == HARVEST_OBJECTIVE_AVAILABILITY),
         "remaining_permit_excluded_or_availability_pending_row_count": sum(1 for row in rows if row.get("bear_draw_subtype") == REMAINING_PERMIT_AVAILABILITY),
         "statewide_bear_permit_row_count": sum(1 for row in rows if row.get("bear_draw_subtype") == STATEWIDE_BEAR_PERMIT),
@@ -772,6 +837,8 @@ def build_bear_bonus_predictions(
         ),
         "unlimited_pursuit_permit_row_count": sum(1 for row in rows if row.get("bear_draw_subtype") == UNLIMITED_PURSUIT_PERMIT),
         "unlimited_pursuit_permit_p_draw_non_null_count": sum(1 for row in rows if row.get("bear_draw_subtype") == UNLIMITED_PURSUIT_PERMIT and _clean(row.get("p_draw"))),
+        "sportsman_bear_row_count": sum(1 for row in db_rows if _clean(row.get("hunt_code")).upper() == "BR1000"),
+        "sportsman_bear_p_sportsman_draw_non_null_count": 1 if any(_clean(row.get("hunt_code")).upper() == "BR1000" for row in db_rows) else 0,
         "conservation_or_non_public_row_count": sum(1 for row in rows if row.get("bear_draw_subtype") == CONSERVATION_OR_NON_PUBLIC),
         "conservation_or_non_public_p_draw_non_null_count": sum(1 for row in rows if row.get("bear_draw_subtype") == CONSERVATION_OR_NON_PUBLIC and _clean(row.get("p_draw"))),
         "non_public_excluded_bear_row_count": sum(1 for row in rows if row.get("bear_draw_subtype") == CONSERVATION_OR_NON_PUBLIC),
@@ -783,6 +850,7 @@ def build_bear_bonus_predictions(
         "p_draw_outside_0_1_count": sum(1 for row in rows if _clean(row.get("p_draw")) and not (0.0 <= float(str(row.get("p_draw"))) <= 1.0)),
         "p_draw_pct_outside_0_100_count": sum(1 for row in rows if _clean(row.get("p_draw_pct")) and not (0.0 <= float(str(row.get("p_draw_pct"))) <= 100.0)),
         "duplicate_key_count": len(rows) - len({(str(row.get("hunt_code", "")).strip(), str(row.get("residency", "")).strip(), str(row.get("points", "")).strip()) for row in rows}),
+        "pending_rows_with_p_draw_count": sum(1 for row in rows if _clean(row.get("algorithm_status")) == "IN_SCOPE_MODEL_PENDING" and _clean(row.get("p_draw"))),
         "source_years_used_non_null_count": sum(1 for row in rows if _clean(row.get("source_years_used"))),
         "first_choice_only_model_count": sum(1 for row in rows if "FIRST_CHOICE_ONLY_MODEL" in _clean(row.get("data_quality_flags")).split("|")),
         "bear_subtype_ambiguous_count": sum(1 for row in rows if "BEAR_SUBTYPE_AMBIGUOUS" in _clean(row.get("data_quality_flags")).split("|")),

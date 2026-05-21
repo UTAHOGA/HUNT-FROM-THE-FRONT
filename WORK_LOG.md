@@ -504,3 +504,94 @@
   - No mountain lion row receives `p_draw`, `p_draw_pct`, `p_bonus_pool`, `p_random_pool`, or `p_preference_draw`.
   - The local 2026 cougar guidebook provides year-round availability support, and the local cougar geometry file provides the management/reporting unit surface.
   - Coverage now distinguishes in-scope availability modeling from pending families without showing `0 rows` plus `still pending` confusion for cougar.
+
+## Phase 11 Sportsman Permit Odds Strategy
+- Timestamp (UTC): 2026-05-21T00:00:00Z
+- Scope:
+  - Implemented Phase 11 for `SPORTSMAN_PERMIT` only in `C:\Users\tyler\Desktop\GitHub\HUNTS`.
+  - Normalized the official 2025 Sportsman odds source into `data/utah/sportsman/sportsman_odds_2025.csv`.
+  - Replaced the old pending/source-missing Sportsman path with a resident-only modeled Sportsman odds family.
+- Files updated:
+  - `engine/utah_draw_predictive/sportsman.py`
+  - `engine/utah_draw_predictive/classifier.py`
+  - `engine/utah_bonus_predictive/materialize.py`
+  - `docs/utah_draw_system_scope.md`
+  - Focused Phase 11 Sportsman tests and artifact-validation tests
+- Outputs refreshed:
+  - `processed_data/sportsman_permit_predictions_v1.csv`
+  - `processed_data/sportsman_permit_report.json`
+  - `processed_data/ml_draw_predictions_v1.csv`
+  - `processed_data/draw_reality_engine_predictive_v2.csv`
+  - `processed_data/draw_system_coverage_report.csv`
+  - `processed_data/draw_system_coverage_report.json`
+  - `processed_data/utah_bonus_predictive_manifest.json`
+  - `processed_data/gpt_work_review_report.json`
+  - `processed_data/gpt_work_review_report.md`
+- Validation summary:
+  - Python tests run: `93`
+  - Python tests failed: `0`
+  - Predictive rows: `27811`
+  - `MODELED_BONUS` rows: `25291`
+  - `MODELED_PREFERENCE` rows: `1731`
+  - `MODELED_ALLOCATION` rows: `54`
+  - `MODELED_AVAILABILITY` rows: `120`
+  - `MODELED_SPORTSMAN_DRAW` rows: `10`
+  - `IN_SCOPE_MODEL_PENDING` rows: `397`
+  - `OUT_OF_SCOPE_NON_TARGET` rows: `198`
+  - `SPORTSMAN_PERMIT` hunt codes: `10`
+  - Duplicate key count on `hunt_code,residency,points`: `0`
+- Phase 11 results:
+  - Sportsman permits now use the official Sportsman odds source and no longer depend on suffix-only detection or missing-source placeholders.
+  - `BR1000`, `DB0007`, `RS0001`, and `TK0001` all classify correctly as `SPORTSMAN_PERMIT`.
+  - Sportsman rows are resident-only and modeled with `p_sportsman_draw`, `p_draw`, and `p_draw_pct`.
+  - Sportsman rows do not use `p_bonus_pool`, `p_random_pool`, or `p_preference_draw`.
+  - `BR1000` is handled entirely through `SPORTSMAN_PERMIT`, not `BEAR_DRAW`.
+
+## Phase 12 Bear Subtype Strategy
+- Timestamp (UTC): 2026-05-21T00:00:00Z
+- Scope:
+  - Implemented Phase 12 for subtype-aware bear handling only in `C:\Users\tyler\Desktop\GitHub\HUNTS`.
+  - Used `pipeline/RAW/hunt_unit_database/2026/pdf/draw_odds/2025 Black Bear Draw odds.pdf` and `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/black bear.csv` to lock subtype behavior.
+  - Preserved Phase 11 Sportsman handling so `BR1000` stays outside `BEAR_DRAW`.
+- Files updated:
+  - `engine/utah_draw_predictive/bear.py`
+  - `engine/utah_draw_predictive/classifier.py`
+  - `engine/utah_bonus_predictive/materialize.py`
+  - `docs/utah_draw_system_scope.md`
+  - Focused Phase 12 bear tests and artifact-validation tests
+- Outputs refreshed:
+  - `processed_data/bear_predictions_v1.csv`
+  - `processed_data/bear_report.json`
+  - `processed_data/bear_draw_predictions_v1.csv`
+  - `processed_data/bear_draw_report.json`
+  - `processed_data/ml_draw_predictions_v1.csv`
+  - `processed_data/draw_reality_engine_predictive_v2.csv`
+  - `processed_data/draw_system_coverage_report.csv`
+  - `processed_data/draw_system_coverage_report.json`
+  - `processed_data/utah_bonus_predictive_manifest.json`
+  - `processed_data/gpt_work_review_report.json`
+  - `processed_data/gpt_work_review_report.md`
+- Validation summary:
+  - Python tests run: `97`
+  - Python tests failed: `0`
+  - Predictive rows: `27763`
+  - `MODELED_BONUS` rows: `25233`
+  - `MODELED_PREFERENCE` rows: `1731`
+  - `MODELED_ALLOCATION` rows: `54`
+  - `MODELED_AVAILABILITY` rows: `139`
+  - `MODELED_SPORTSMAN_DRAW` rows: `10`
+  - `IN_SCOPE_MODEL_PENDING` rows: `394`
+  - `EXCLUDED_NOT_PREDICTIVE_DRAW` rows: `4`
+  - `OUT_OF_SCOPE_NON_TARGET` rows: `198`
+  - Bear predictive rows: `1305`
+  - Bear modeled bonus rows: `1209`
+  - Bear modeled availability rows: `19`
+  - Bear pending rows: `73`
+  - Bear excluded rows: `4`
+  - Duplicate key count on `hunt_code,residency,points`: `0`
+- Phase 12 results:
+  - `BR1000` remains Sportsman-only and is not overridden by bear logic.
+  - `BR1001` is harvest-objective availability only and never receives draw-odds fields.
+  - `BR1007` and `BR1018` are unlimited-pursuit availability only and never receive draw-odds fields.
+  - Unit-specific pursuit rows are also surfaced as availability, not bonus draw odds.
+  - Only true limited-entry bear rows remain in the bear bonus path, and bear rows never use preference fields.

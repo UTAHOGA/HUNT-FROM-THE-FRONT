@@ -12,6 +12,8 @@ def test_br1000_is_sportsman_black_bear_not_bear_bonus() -> None:
     br1000 = [row for row in ml_rows if row.get("hunt_code") == "BR1000"]
     assert br1000
     assert all(row.get("draw_system_type") == "SPORTSMAN_PERMIT" for row in br1000)
+    assert all(row.get("algorithm_status") == "MODELED_SPORTSMAN_DRAW" for row in br1000)
+    assert all((row.get("p_sportsman_draw") or "").strip() != "" for row in br1000)
     assert all((row.get("p_bonus_pool") or "").strip() == "" for row in br1000)
     assert all((row.get("p_random_pool") or "").strip() == "" for row in br1000)
     assert all((row.get("p_preference_draw") or "").strip() == "" for row in br1000)

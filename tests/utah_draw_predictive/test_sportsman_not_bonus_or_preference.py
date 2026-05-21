@@ -10,6 +10,9 @@ def _read_csv(path: Path) -> list[dict[str, str]]:
 def test_sportsman_rows_do_not_use_bonus_or_preference_fields() -> None:
     rows = _read_csv(Path(r"C:\Users\tyler\Desktop\GitHub\HUNTS\processed_data\sportsman_permit_predictions_v1.csv"))
     assert rows
+    assert all((row.get("p_sportsman_draw") or "").strip() != "" for row in rows)
+    assert all((row.get("p_draw") or "").strip() != "" for row in rows)
+    assert all((row.get("p_draw_pct") or "").strip() != "" for row in rows)
     assert all((row.get("p_bonus_pool") or "").strip() == "" for row in rows)
     assert all((row.get("p_random_pool") or "").strip() == "" for row in rows)
     assert all((row.get("p_preference_draw") or "").strip() == "" for row in rows)
