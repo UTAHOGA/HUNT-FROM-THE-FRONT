@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import re
 from collections import Counter
 from pathlib import Path
 from typing import Mapping
@@ -13,22 +14,54 @@ from . import (
     ALGORITHM_STATUS_EXCLUDED_NOT_PREDICTIVE_DRAW,
     ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING,
     ALGORITHM_STATUS_MODELED_ALLOCATION,
+    ALGORITHM_STATUS_MODELED_AVAILABILITY,
     ALGORITHM_STATUS_MODELED_BONUS,
     ALGORITHM_STATUS_MODELED_PREFERENCE,
     ALGORITHM_STATUS_MODELED_RANDOM_ONLY,
+    ALGORITHM_STATUS_MODELED_SPORTSMAN_DRAW,
     ALGORITHM_STATUS_OUT_OF_SCOPE_NON_TARGET,
     ALGORITHM_STATUS_UNKNOWN_TARGET_NEEDS_REVIEW,
     TARGET_SCOPE_OUT_OF_SCOPE,
     TARGET_SCOPE_TARGET,
 )
+from .bear import (
+    STRATEGY_SPECS as BEAR_SPECS,
+    BEAR_DRAW_SYSTEM_TYPE,
+    CONSERVATION_OR_NON_PUBLIC,
+    HARVEST_OBJECTIVE_AVAILABILITY,
+    LIMITED_ENTRY_BEAR_HUNT,
+    REMAINING_PERMIT_AVAILABILITY,
+    RESTRICTED_BEAR_PURSUIT,
+    STATEWIDE_BEAR_PERMIT,
+    UNKNOWN_BEAR_SUBTYPE,
+    UNLIMITED_PURSUIT_PERMIT,
+    classify_bear_subtype,
+    is_bear_row,
+    is_excluded_bear_row,
+    is_modeled_bear_row,
+    is_nonpublic_bear_row,
+    is_remaining_bear_row,
+    is_supported_bear_bonus_row,
+)
 from .bonus import STRATEGY_SPECS as BONUS_SPECS
 from .dedicated_hunter import STRATEGY_SPECS as DEDICATED_SPECS, is_modeled_dedicated_hunter_row
 from .exclusions import STRATEGY_SPECS as EXCLUSION_SPECS
+from .mountain_lion import (
+    STRATEGY_SPECS as MOUNTAIN_LION_SPECS,
+    DRAW_SYSTEM_TYPE as MOUNTAIN_LION_DRAW_SYSTEM_TYPE,
+    is_modeled_mountain_lion_row,
+)
 from .preference_antlerless import STRATEGY_SPECS as PREFERENCE_ANTLERLESS_SPECS, is_modeled_antlerless_row
 from .preference_general_deer import STRATEGY_SPECS as PREFERENCE_GENERAL_DEER_SPECS, is_modeled_general_deer_row
-from .private_lands_antlerless_elk import STRATEGY_SPECS as PRIVATE_LANDS_ANTLERLESS_ELK_SPECS
+from .private_lands_antlerless_elk import (
+    STRATEGY_SPECS as PRIVATE_LANDS_ANTLERLESS_ELK_SPECS,
+    DRAW_SYSTEM_TYPE as PRIVATE_LANDS_ANTLERLESS_ELK_DRAW_SYSTEM_TYPE,
+    is_private_lands_antlerless_elk_row,
+    is_modeled_private_lands_antlerless_elk_row,
+)
 from .random_only import STRATEGY_SPECS as RANDOM_ONLY_SPECS
 from .special_bonus import PHASE6_DRAW_SYSTEM_TYPES, is_modeled_phase6_bonus_row
+from .sportsman import STRATEGY_SPECS as SPORTSMAN_SPECS, SPORTSMAN_DRAW_SYSTEM_TYPE, is_modeled_sportsman_row, is_sportsman_permit_row
 from .turkey import (
     STRATEGY_SPECS as TURKEY_SPECS,
     TURKEY_DRAW_SYSTEM_TYPE,
@@ -48,11 +81,14 @@ PREDICTIVE_PATH = REPO / "processed_data" / "draw_reality_engine_predictive_v2.c
 
 ALL_SPECS = (
     BONUS_SPECS
+    + BEAR_SPECS
     + PREFERENCE_GENERAL_DEER_SPECS
     + PREFERENCE_ANTLERLESS_SPECS
     + DEDICATED_SPECS
     + YOUTH_SPECS
     + PRIVATE_LANDS_ANTLERLESS_ELK_SPECS
+    + MOUNTAIN_LION_SPECS
+    + SPORTSMAN_SPECS
     + TURKEY_SPECS
     + RANDOM_ONLY_SPECS
     + EXCLUSION_SPECS
@@ -107,6 +143,7 @@ TARGET_DRAW_SYSTEM_TYPES = {
     "PREFERENCE_ANTLERLESS_DEER",
     "PREFERENCE_ANTLERLESS_ELK",
     "PREFERENCE_DOE_PRONGHORN",
+    "SPORTSMAN_PERMIT",
     "GENERAL_BIG_GAME_OTHER",
     "BEAR_DRAW",
     "MOUNTAIN_LION_DRAW",
@@ -163,9 +200,13 @@ def _joined_text(row: Mapping[str, object]) -> str:
     return " ".join(_clean_lower(part) for part in parts if _clean(part))
 
 
+def _normalized_token_text(row: Mapping[str, object]) -> str:
+    return re.sub(r"[^a-z0-9]+", " ", _joined_text(row)).strip()
+
+
 def is_out_of_scope_non_target(row: Mapping[str, object]) -> bool:
-    text = _joined_text(row)
-    return any(token in text for token in OUT_OF_SCOPE_TOKENS) and "turkey" not in text
+    text = _normalized_token_text(row)
+    return any(f" {token} " in f" {text} " for token in OUT_OF_SCOPE_TOKENS) and " turkey " not in f" {text} "
 
 
 def is_target_scope(row: Mapping[str, object]) -> bool:
@@ -190,9 +231,18 @@ def classify_draw_system_type(row: Mapping[str, object]) -> str:
     if is_out_of_scope_non_target(row):
         return "OUT_OF_SCOPE_NON_TARGET"
 
+    if is_modeled_mountain_lion_row(row):
+        return MOUNTAIN_LION_DRAW_SYSTEM_TYPE
+
+    if is_sportsman_permit_row(row):
+        return SPORTSMAN_DRAW_SYSTEM_TYPE
+
+    if is_bear_row(row):
+        return BEAR_DRAW_SYSTEM_TYPE
+
     if "mitigation" in text or "depredation" in text:
         return "MITIGATION_OR_DEPREDATION_BIG_GAME"
-    if "private land only" in text and "elk" in text and "antlerless" in text:
+    if is_private_lands_antlerless_elk_row(row):
         return "PRIVATE_LANDS_ONLY_ANTLERLESS_ELK"
     if any(token in text for token in ("conservation", "expo", "sportsman")):
         return "OTC_OR_REMAINING_TARGET"
@@ -210,8 +260,6 @@ def classify_draw_system_type(row: Mapping[str, object]) -> str:
             return "OTC_OR_REMAINING_TARGET"
         return TURKEY_DRAW_SYSTEM_TYPE
 
-    if "black bear" in text or species == "bear" or (" bear " in f" {text} " and "bighorn" not in text):
-        return "BEAR_DRAW"
     if "mountain lion" in text or "cougar" in text:
         return "MOUNTAIN_LION_DRAW"
 
@@ -266,8 +314,20 @@ def resolve_algorithm_status(row: Mapping[str, object], draw_system_type: str | 
         return ALGORITHM_STATUS_MODELED_PREFERENCE if is_modeled_antlerless_row(row) else ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING
     if draw_system_type == "PREFERENCE_DEDICATED_HUNTER_DEER":
         return ALGORITHM_STATUS_MODELED_PREFERENCE if is_modeled_dedicated_hunter_row(row) else ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING
+    if draw_system_type == PRIVATE_LANDS_ANTLERLESS_ELK_DRAW_SYSTEM_TYPE:
+        return ALGORITHM_STATUS_MODELED_ALLOCATION if is_modeled_private_lands_antlerless_elk_row(row) else ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING
+    if draw_system_type == MOUNTAIN_LION_DRAW_SYSTEM_TYPE:
+        return ALGORITHM_STATUS_MODELED_AVAILABILITY if is_modeled_mountain_lion_row(row) else ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING
+    if draw_system_type == SPORTSMAN_DRAW_SYSTEM_TYPE:
+        return ALGORITHM_STATUS_MODELED_SPORTSMAN_DRAW if is_modeled_sportsman_row(row) else ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING
     if draw_system_type == TURKEY_DRAW_SYSTEM_TYPE:
         return ALGORITHM_STATUS_MODELED_BONUS if is_modeled_turkey_row(row) else ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING
+    if draw_system_type == BEAR_DRAW_SYSTEM_TYPE:
+        if is_modeled_bear_row(row):
+            return ALGORITHM_STATUS_MODELED_BONUS
+        if is_excluded_bear_row(row):
+            return ALGORITHM_STATUS_EXCLUDED_NOT_PREDICTIVE_DRAW
+        return ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING
     if draw_system_type in PHASE6_DRAW_SYSTEM_TYPES:
         return ALGORITHM_STATUS_MODELED_BONUS if is_modeled_phase6_bonus_row(row) else ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING
     return REGISTRY[draw_system_type].algorithm_status
@@ -283,9 +343,11 @@ def modeled_by_engine(row: Mapping[str, object], draw_system_type: str | None = 
     algorithm_status = algorithm_status or resolve_algorithm_status(row, draw_system_type)
     if algorithm_status not in {
         ALGORITHM_STATUS_MODELED_ALLOCATION,
+        ALGORITHM_STATUS_MODELED_AVAILABILITY,
         ALGORITHM_STATUS_MODELED_BONUS,
         ALGORITHM_STATUS_MODELED_PREFERENCE,
         ALGORITHM_STATUS_MODELED_RANDOM_ONLY,
+        ALGORITHM_STATUS_MODELED_SPORTSMAN_DRAW,
     }:
         return False
     source_dataset = _clean_lower(row.get("source_dataset"))
@@ -295,6 +357,22 @@ def modeled_by_engine(row: Mapping[str, object], draw_system_type: str | None = 
 def classification_reason(row: Mapping[str, object], draw_system_type: str | None = None, algorithm_status: str | None = None) -> str:
     draw_system_type = draw_system_type or classify_draw_system_type(row)
     algorithm_status = algorithm_status or resolve_algorithm_status(row, draw_system_type)
+    if draw_system_type == BEAR_DRAW_SYSTEM_TYPE and algorithm_status != ALGORITHM_STATUS_MODELED_BONUS:
+        subtype = classify_bear_subtype(row)
+        if subtype == HARVEST_OBJECTIVE_AVAILABILITY:
+            return "Bear harvest-objective rows stay in scope but do not receive predictive draw odds."
+        if subtype == REMAINING_PERMIT_AVAILABILITY:
+            return "Bear remaining or availability-only rows do not receive predictive draw odds."
+        if subtype == UNLIMITED_PURSUIT_PERMIT:
+            return "Unlimited bear pursuit rows are availability rows and do not receive predictive draw odds."
+        if subtype == CONSERVATION_OR_NON_PUBLIC:
+            return "Non-public or otherwise excluded bear rows do not receive predictive draw odds."
+        if subtype == STATEWIDE_BEAR_PERMIT:
+            return "The statewide sportsman bear permit stays separate and only receives draw odds if usable public draw history is proven."
+        if subtype == UNKNOWN_BEAR_SUBTYPE:
+            return "Bear remains in scope, but the subtype is ambiguous and stays pending until public draw support is proven."
+    if draw_system_type == SPORTSMAN_DRAW_SYSTEM_TYPE and algorithm_status != ALGORITHM_STATUS_MODELED_SPORTSMAN_DRAW:
+        return "Sportsman permits are tracked separately and stay pending until a usable official sportsman odds source exists."
     spec = REGISTRY[draw_system_type]
     if modeled_by_engine(row, draw_system_type, algorithm_status):
         return f"Modeled by {spec.module_name}."
@@ -325,12 +403,13 @@ def sanitize_modeled_probability_fields(row: dict[str, object]) -> dict[str, obj
         ALGORITHM_STATUS_OUT_OF_SCOPE_NON_TARGET,
         ALGORITHM_STATUS_UNKNOWN_TARGET_NEEDS_REVIEW,
     }:
-        for key in ("p_draw", "p_draw_pct", "p_preference_draw", "p_bonus_pool", "p_random_pool", "p_bonus_pool_pct", "p_random_pool_pct"):
+        for key in ("p_draw", "p_draw_pct", "p_preference_draw", "p_bonus_pool", "p_random_pool", "p_bonus_pool_pct", "p_random_pool_pct", "p_sportsman_draw"):
             row[key] = ""
+        existing_outlook = _clean(row.get("draw_outlook"))
         if classification["algorithm_status"] == ALGORITHM_STATUS_OUT_OF_SCOPE_NON_TARGET:
-            row["draw_outlook"] = "OUT OF SCOPE"
+            row["draw_outlook"] = existing_outlook or "OUT OF SCOPE"
         else:
-            row["draw_outlook"] = "MODEL PENDING" if classification["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING else "NOT MODELED"
+            row["draw_outlook"] = existing_outlook or ("MODEL PENDING" if classification["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING else "NOT MODELED")
     return row
 
 
@@ -362,10 +441,15 @@ def _coverage_rows() -> list[dict[str, object]]:
                     "hunt_class": _clean(raw.get("hunt_class")),
                     "sex_type": _clean(raw.get("sex_type")),
                     "weapon": _clean(raw.get("weapon")),
+                    "bear_draw_subtype": _clean(raw.get("bear_draw_subtype")) or classify_bear_subtype(raw),
                     "p_draw": _clean(sanitized.get("p_draw")),
                     "p_draw_pct": _clean(sanitized.get("p_draw_pct")),
                     "p_bonus_pool": _clean(sanitized.get("p_bonus_pool")),
                     "p_random_pool": _clean(sanitized.get("p_random_pool")),
+                    "p_availability": _clean(sanitized.get("p_availability")),
+                    "availability_pct": _clean(sanitized.get("availability_pct")),
+                    "unit_name": _clean(sanitized.get("unit_name")),
+                    "unit_status": _clean(sanitized.get("unit_status")),
                     "draw_outlook": _clean(sanitized.get("draw_outlook")),
                 }
             )
@@ -465,10 +549,15 @@ def build_draw_system_coverage_report(
             "hunt_class",
             "sex_type",
             "weapon",
+            "bear_draw_subtype",
             "p_draw",
             "p_draw_pct",
             "p_bonus_pool",
             "p_random_pool",
+            "p_availability",
+            "availability_pct",
+            "unit_name",
+            "unit_status",
             "draw_outlook",
         ],
     )
@@ -523,12 +612,20 @@ def build_draw_system_coverage_report(
     le_family = _family_history_semantics(observed_rows, predictive_rows, "BONUS_LE_BIG_GAME")
     ple_family = _family_history_semantics(observed_rows, predictive_rows, "BONUS_PLE_BIG_GAME")
 
+    bear_modeled_rows = sum(1 for row in predictive_rows if row["draw_system_type"] == BEAR_DRAW_SYSTEM_TYPE and str(row["modeled_by_engine"]) == "True")
+    bear_pending_rows = sum(1 for row in predictive_rows if row["draw_system_type"] == BEAR_DRAW_SYSTEM_TYPE and row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING)
+    bear_excluded_rows = sum(1 for row in predictive_rows if row["draw_system_type"] == BEAR_DRAW_SYSTEM_TYPE and row["algorithm_status"] == ALGORITHM_STATUS_EXCLUDED_NOT_PREDICTIVE_DRAW)
+    bear_rows = [row for row in rows if row["draw_system_type"] == BEAR_DRAW_SYSTEM_TYPE]
+    predictive_bear_rows = [row for row in predictive_rows if row["draw_system_type"] == BEAR_DRAW_SYSTEM_TYPE]
+
     answers = {
         "is_general_season_buck_deer_modeled": _distinct_count(rows, lambda row: row["draw_system_type"] == "PREFERENCE_GENERAL_SEASON_BUCK_DEER" and str(row["modeled_by_engine"]) == "True") > 0,
         "is_dedicated_hunter_deer_modeled": _distinct_count(rows, lambda row: row["draw_system_type"] == "PREFERENCE_DEDICATED_HUNTER_DEER" and str(row["modeled_by_engine"]) == "True") > 0,
         "is_antlerless_deer_modeled": _distinct_count(rows, lambda row: row["draw_system_type"] == "PREFERENCE_ANTLERLESS_DEER" and str(row["modeled_by_engine"]) == "True") > 0,
         "is_antlerless_elk_modeled": _distinct_count(rows, lambda row: row["draw_system_type"] == "PREFERENCE_ANTLERLESS_ELK" and str(row["modeled_by_engine"]) == "True") > 0,
         "is_doe_pronghorn_modeled": _distinct_count(rows, lambda row: row["draw_system_type"] == "PREFERENCE_DOE_PRONGHORN" and str(row["modeled_by_engine"]) == "True") > 0,
+        "private_lands_only_antlerless_elk_in_scope": True,
+        "private_lands_only_antlerless_elk_modeled_allocation": _distinct_count(rows, lambda row: row["draw_system_type"] == PRIVATE_LANDS_ANTLERLESS_ELK_DRAW_SYSTEM_TYPE and str(row["modeled_by_engine"]) == "True") > 0,
         "are_antlerless_moose_and_ewe_sheep_modeled_under_bonus_rules": (
             _distinct_count(rows, lambda row: row["draw_system_type"] == "BONUS_ANTLERLESS_MOOSE" and str(row["modeled_by_engine"]) == "True") > 0
             and _distinct_count(rows, lambda row: row["draw_system_type"] == "BONUS_EWE_BIGHORN" and str(row["modeled_by_engine"]) == "True") > 0
@@ -546,8 +643,9 @@ def build_draw_system_coverage_report(
         "le_big_game_unmodeled_seen_hunt_code_count": le_family["unmodeled_seen_hunt_code_count"],
         "ple_big_game_unmodeled_seen_hunt_code_count": ple_family["unmodeled_seen_hunt_code_count"],
         "is_turkey_modeled": _distinct_count(rows, lambda row: row["draw_system_type"] == TURKEY_DRAW_SYSTEM_TYPE and str(row["modeled_by_engine"]) == "True") > 0,
-        "is_bear_modeled": False,
-        "is_mountain_lion_cougar_modeled": False,
+        "is_bear_modeled": bear_modeled_rows > 0,
+        "is_sportsman_modeled": _distinct_count(rows, lambda row: row["draw_system_type"] == SPORTSMAN_DRAW_SYSTEM_TYPE and str(row["modeled_by_engine"]) == "True") > 0,
+        "is_mountain_lion_cougar_modeled": _distinct_count(rows, lambda row: row["draw_system_type"] == MOUNTAIN_LION_DRAW_SYSTEM_TYPE and str(row["modeled_by_engine"]) == "True") > 0,
         "is_cwmu_public_modeled": _distinct_count(rows, lambda row: row["draw_system_type"] == "BONUS_CWMU_BIG_GAME" and str(row["modeled_by_engine"]) == "True") > 0,
         "is_antlerless_moose_modeled": _distinct_count(rows, lambda row: row["draw_system_type"] == "BONUS_ANTLERLESS_MOOSE" and str(row["modeled_by_engine"]) == "True") > 0,
         "is_ewe_bighorn_modeled": _distinct_count(rows, lambda row: row["draw_system_type"] == "BONUS_EWE_BIGHORN" and str(row["modeled_by_engine"]) == "True") > 0,
@@ -566,13 +664,26 @@ def build_draw_system_coverage_report(
         "ewe_bighorn_modeled_row_count": sum(1 for row in predictive_rows if row["draw_system_type"] == "BONUS_EWE_BIGHORN" and str(row["modeled_by_engine"]) == "True"),
         "ewe_bighorn_pending_row_count": sum(1 for row in predictive_rows if row["draw_system_type"] == "BONUS_EWE_BIGHORN" and row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING),
         "turkey_still_pending": "BONUS_TURKEY" in {row["draw_system_type"] for row in predictive_rows if row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING},
-        "bear_still_pending": "BEAR_DRAW" in {row["draw_system_type"] for row in predictive_rows if row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING},
-        "mountain_lion_cougar_still_pending": "MOUNTAIN_LION_DRAW" in {row["draw_system_type"] for row in predictive_rows if row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING},
+        "bear_still_pending": bear_pending_rows > 0,
+        "mountain_lion_cougar_in_scope": REGISTRY["MOUNTAIN_LION_DRAW"].target_scope == TARGET_SCOPE_TARGET,
+        "mountain_lion_cougar_modeled": REGISTRY["MOUNTAIN_LION_DRAW"].algorithm_status in {
+            ALGORITHM_STATUS_MODELED_ALLOCATION,
+            ALGORITHM_STATUS_MODELED_AVAILABILITY,
+            ALGORITHM_STATUS_MODELED_BONUS,
+            ALGORITHM_STATUS_MODELED_PREFERENCE,
+            ALGORITHM_STATUS_MODELED_RANDOM_ONLY,
+        },
+        "mountain_lion_cougar_still_pending": REGISTRY["MOUNTAIN_LION_DRAW"].algorithm_status == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING,
+        "mountain_lion_cougar_active_predictive_row_count": sum(1 for row in predictive_rows if row["draw_system_type"] == "MOUNTAIN_LION_DRAW"),
+        "mountain_lion_cougar_active_predictive_hunt_code_count": _distinct_count(predictive_rows, lambda row: row["draw_system_type"] == "MOUNTAIN_LION_DRAW"),
+        "mountain_lion_cougar_modeled_row_count": sum(1 for row in predictive_rows if row["draw_system_type"] == "MOUNTAIN_LION_DRAW" and str(row["modeled_by_engine"]) == "True"),
+        "mountain_lion_cougar_pending_row_count": sum(1 for row in predictive_rows if row["draw_system_type"] == "MOUNTAIN_LION_DRAW" and row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING),
+        "mountain_lion_cougar_strategy_status": REGISTRY["MOUNTAIN_LION_DRAW"].algorithm_status,
         "private_lands_only_antlerless_elk_allocation_pending": REGISTRY["PRIVATE_LANDS_ONLY_ANTLERLESS_ELK"].algorithm_status == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING,
     }
     turkey_rows = [row for row in rows if "turkey" in _joined_text(row)]
-    predictive_turkey_rows = [row for row in predictive_rows if "turkey" in _joined_text(row)]
-    observed_turkey_rows = [row for row in observed_rows if "turkey" in _joined_text(row)]
+    predictive_turkey_rows = [row for row in predictive_rows if row["draw_system_type"] == TURKEY_DRAW_SYSTEM_TYPE]
+    observed_turkey_rows = [row for row in observed_rows if row["draw_system_type"] == TURKEY_DRAW_SYSTEM_TYPE]
     turkey_summary = {
         "turkey_rows_seen_total": len(turkey_rows),
         "turkey_rows_seen_active_predictive": len(predictive_turkey_rows),
@@ -588,9 +699,99 @@ def build_draw_system_coverage_report(
         "general_season_turkey_excluded": any(is_general_season_turkey_row(row) and row["algorithm_status"] == ALGORITHM_STATUS_EXCLUDED_NOT_PREDICTIVE_DRAW for row in turkey_rows),
         "remaining_turkey_excluded_or_availability_pending": any(is_remaining_turkey_row(row) and row["algorithm_status"] in {ALGORITHM_STATUS_EXCLUDED_NOT_PREDICTIVE_DRAW, ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING} for row in turkey_rows),
         "non_public_turkey_excluded_rows_total": sum(1 for row in turkey_rows if is_nonpublic_turkey_row(row) and row["algorithm_status"] == ALGORITHM_STATUS_EXCLUDED_NOT_PREDICTIVE_DRAW),
-        "bear_still_pending": "BEAR_DRAW" in {row["draw_system_type"] for row in predictive_rows if row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING},
-        "mountain_lion_cougar_still_pending": "MOUNTAIN_LION_DRAW" in {row["draw_system_type"] for row in predictive_rows if row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING},
+        "bear_still_pending": bear_pending_rows > 0,
+        "mountain_lion_cougar_in_scope": REGISTRY["MOUNTAIN_LION_DRAW"].target_scope == TARGET_SCOPE_TARGET,
+        "mountain_lion_cougar_modeled": REGISTRY["MOUNTAIN_LION_DRAW"].algorithm_status in {
+            ALGORITHM_STATUS_MODELED_ALLOCATION,
+            ALGORITHM_STATUS_MODELED_AVAILABILITY,
+            ALGORITHM_STATUS_MODELED_BONUS,
+            ALGORITHM_STATUS_MODELED_PREFERENCE,
+            ALGORITHM_STATUS_MODELED_RANDOM_ONLY,
+        },
+        "mountain_lion_cougar_still_pending": REGISTRY["MOUNTAIN_LION_DRAW"].algorithm_status == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING,
+        "mountain_lion_cougar_active_predictive_row_count": sum(1 for row in predictive_rows if row["draw_system_type"] == "MOUNTAIN_LION_DRAW"),
+        "mountain_lion_cougar_active_predictive_hunt_code_count": _distinct_count(predictive_rows, lambda row: row["draw_system_type"] == "MOUNTAIN_LION_DRAW"),
+        "mountain_lion_cougar_modeled_row_count": sum(1 for row in predictive_rows if row["draw_system_type"] == "MOUNTAIN_LION_DRAW" and str(row["modeled_by_engine"]) == "True"),
+        "mountain_lion_cougar_pending_row_count": sum(1 for row in predictive_rows if row["draw_system_type"] == "MOUNTAIN_LION_DRAW" and row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING),
+        "mountain_lion_cougar_strategy_status": REGISTRY["MOUNTAIN_LION_DRAW"].algorithm_status,
         "private_lands_only_antlerless_elk_allocation_pending": REGISTRY["PRIVATE_LANDS_ONLY_ANTLERLESS_ELK"].algorithm_status == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING,
+    }
+    bear_summary = {
+        "bear_modeled": bear_modeled_rows > 0,
+        "bear_still_pending": bear_pending_rows > 0,
+        "bear_draw_modeled_bonus_row_count": bear_modeled_rows,
+        "bear_draw_in_scope_model_pending_row_count": bear_pending_rows,
+        "bear_draw_excluded_not_predictive_draw_row_count": bear_excluded_rows,
+        "bear_draw_active_predictive_row_count": len(predictive_bear_rows),
+        "bear_draw_active_predictive_hunt_code_count": _distinct_count(predictive_rows, lambda row: row["draw_system_type"] == BEAR_DRAW_SYSTEM_TYPE),
+        "limited_entry_bear_hunt_modeled": any(row["bear_draw_subtype"] == LIMITED_ENTRY_BEAR_HUNT and str(row["modeled_by_engine"]) == "True" for row in predictive_bear_rows),
+        "restricted_bear_pursuit_modeled": any(row["bear_draw_subtype"] == RESTRICTED_BEAR_PURSUIT and str(row["modeled_by_engine"]) == "True" for row in predictive_bear_rows),
+        "limited_entry_bear_modeled_row_count": sum(1 for row in predictive_bear_rows if row["bear_draw_subtype"] == LIMITED_ENTRY_BEAR_HUNT and str(row["modeled_by_engine"]) == "True"),
+        "restricted_pursuit_bear_modeled_row_count": sum(1 for row in predictive_bear_rows if row["bear_draw_subtype"] == RESTRICTED_BEAR_PURSUIT and str(row["modeled_by_engine"]) == "True"),
+        "harvest_objective_bear_excluded_or_availability_pending": any(row["bear_draw_subtype"] == HARVEST_OBJECTIVE_AVAILABILITY for row in bear_rows),
+        "harvest_objective_bear_excluded_or_availability_pending_row_count": sum(1 for row in predictive_bear_rows if row["bear_draw_subtype"] == HARVEST_OBJECTIVE_AVAILABILITY),
+        "remaining_bear_excluded_or_availability_pending": any(row["bear_draw_subtype"] == REMAINING_PERMIT_AVAILABILITY for row in bear_rows),
+        "remaining_bear_excluded_or_availability_pending_row_count": sum(1 for row in predictive_bear_rows if row["bear_draw_subtype"] == REMAINING_PERMIT_AVAILABILITY),
+        "non_public_bear_excluded_row_count": sum(1 for row in predictive_bear_rows if row["bear_draw_subtype"] == CONSERVATION_OR_NON_PUBLIC),
+        "br1001_classified_as_harvest_objective_availability": any(row.get("hunt_code") == "BR1001" and row["bear_draw_subtype"] == HARVEST_OBJECTIVE_AVAILABILITY for row in predictive_bear_rows),
+        "br1001_modeled_as_draw_odds": any(row.get("hunt_code") == "BR1001" and str(row["modeled_by_engine"]) == "True" for row in predictive_bear_rows),
+        "br1001_p_draw_count": sum(1 for row in predictive_bear_rows if row.get("hunt_code") == "BR1001" and str(row.get("p_draw", "")).strip()),
+        "br1007_and_br1018_classified_as_unlimited_pursuit_permit": all(
+            any(row.get("hunt_code") == code and row["bear_draw_subtype"] == UNLIMITED_PURSUIT_PERMIT for row in predictive_bear_rows)
+            for code in ("BR1007", "BR1018")
+        ),
+        "br1007_and_br1018_modeled_as_draw_odds": any(row.get("hunt_code") in {"BR1007", "BR1018"} and str(row["modeled_by_engine"]) == "True" for row in predictive_bear_rows),
+        "conservation_bear_rows_modeled_as_draw_odds": any(row["bear_draw_subtype"] == CONSERVATION_OR_NON_PUBLIC and str(row["modeled_by_engine"]) == "True" for row in predictive_bear_rows),
+        "mountain_lion_cougar_still_pending": REGISTRY["MOUNTAIN_LION_DRAW"].algorithm_status == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING,
+        "private_lands_only_antlerless_elk_allocation_pending": REGISTRY["PRIVATE_LANDS_ONLY_ANTLERLESS_ELK"].algorithm_status == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING,
+        "youth_families_still_pending": True,
+    }
+    sportsman_rows = [row for row in rows if row["draw_system_type"] == SPORTSMAN_DRAW_SYSTEM_TYPE]
+    predictive_sportsman_rows = [row for row in predictive_rows if row["draw_system_type"] == SPORTSMAN_DRAW_SYSTEM_TYPE]
+    sportsman_summary = {
+        "sportsman_modeled": any(str(row["modeled_by_engine"]) == "True" for row in predictive_sportsman_rows),
+        "sportsman_pending_row_count": sum(1 for row in predictive_sportsman_rows if row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING),
+        "sportsman_modeled_row_count": sum(1 for row in predictive_sportsman_rows if row["algorithm_status"] == ALGORITHM_STATUS_MODELED_SPORTSMAN_DRAW),
+        "br1000_classified_as_sportsman_permit": any(row.get("hunt_code") == "BR1000" for row in predictive_sportsman_rows),
+        "br1000_modeled_as_sportsman_draw": any(row.get("hunt_code") == "BR1000" and str(row["modeled_by_engine"]) == "True" for row in predictive_sportsman_rows),
+        "br1000_p_draw_count": sum(1 for row in predictive_sportsman_rows if row.get("hunt_code") == "BR1000" and str(row.get("p_draw", "")).strip()),
+        "sportsman_hunt_code_count": _distinct_count(predictive_rows, lambda row: row["draw_system_type"] == SPORTSMAN_DRAW_SYSTEM_TYPE),
+    }
+    predictive_mountain_lion_rows = [row for row in predictive_rows if row["draw_system_type"] == MOUNTAIN_LION_DRAW_SYSTEM_TYPE]
+    mountain_lion_summary = {
+        "mountain_lion_cougar_in_scope": True,
+        "mountain_lion_cougar_modeled_availability": any(row["algorithm_status"] == ALGORITHM_STATUS_MODELED_AVAILABILITY for row in predictive_mountain_lion_rows),
+        "mountain_lion_cougar_still_pending_availability": any(row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING for row in predictive_mountain_lion_rows),
+        "mountain_lion_cougar_active_predictive_row_count": len(predictive_mountain_lion_rows),
+        "mountain_lion_cougar_hunt_code_count": _distinct_count(predictive_rows, lambda row: row["draw_system_type"] == MOUNTAIN_LION_DRAW_SYSTEM_TYPE),
+        "mountain_lion_cougar_unit_count": len({str(row.get("unit_name", "")).strip() for row in predictive_mountain_lion_rows if str(row.get("unit_name", "")).strip()}),
+        "mountain_lion_cougar_p_draw_non_null_count": sum(1 for row in predictive_mountain_lion_rows if str(row.get("p_draw", "")).strip()),
+        "mountain_lion_cougar_p_availability_non_null_count": sum(1 for row in predictive_mountain_lion_rows if str(row.get("p_availability", "")).strip()),
+        "mountain_lion_cougar_modeled": any(row["algorithm_status"] == ALGORITHM_STATUS_MODELED_AVAILABILITY for row in predictive_mountain_lion_rows),
+        "mountain_lion_cougar_still_pending": any(row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING for row in predictive_mountain_lion_rows),
+        "mountain_lion_cougar_strategy_status": (
+            ALGORITHM_STATUS_MODELED_AVAILABILITY
+            if any(row["algorithm_status"] == ALGORITHM_STATUS_MODELED_AVAILABILITY for row in predictive_mountain_lion_rows)
+            else REGISTRY["MOUNTAIN_LION_DRAW"].algorithm_status
+        ),
+        "mountain_lion_cougar_modeled_row_count": sum(1 for row in predictive_mountain_lion_rows if row["algorithm_status"] == ALGORITHM_STATUS_MODELED_AVAILABILITY),
+        "mountain_lion_cougar_pending_row_count": sum(1 for row in predictive_mountain_lion_rows if row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING),
+    }
+    private_lands_rows = [row for row in rows if row["draw_system_type"] == PRIVATE_LANDS_ANTLERLESS_ELK_DRAW_SYSTEM_TYPE]
+    predictive_private_lands_rows = [row for row in predictive_rows if row["draw_system_type"] == PRIVATE_LANDS_ANTLERLESS_ELK_DRAW_SYSTEM_TYPE]
+    private_lands_summary = {
+        "private_lands_only_antlerless_elk_in_scope": True,
+        "private_lands_only_antlerless_elk_modeled_allocation": any(row["algorithm_status"] == ALGORITHM_STATUS_MODELED_ALLOCATION for row in predictive_private_lands_rows),
+        "private_lands_only_antlerless_elk_pending": any(row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING for row in predictive_private_lands_rows),
+        "private_lands_only_antlerless_elk_row_count": len(predictive_private_lands_rows),
+        "private_lands_only_antlerless_elk_hunt_code_count": _distinct_count(predictive_rows, lambda row: row["draw_system_type"] == PRIVATE_LANDS_ANTLERLESS_ELK_DRAW_SYSTEM_TYPE),
+        "private_lands_only_antlerless_elk_p_draw_count": sum(1 for row in predictive_private_lands_rows if str(row.get("p_draw", "")).strip()),
+        "private_lands_only_antlerless_elk_p_availability_count": sum(1 for row in predictive_private_lands_rows if str(row.get("p_availability", "")).strip()),
+        "normal_antlerless_elk_preference_still_modeled": _distinct_count(rows, lambda row: row["draw_system_type"] == "PREFERENCE_ANTLERLESS_ELK" and str(row["modeled_by_engine"]) == "True") > 0,
+        "private_lands_only_antlerless_elk_incorrectly_classified_as_preference_antlerless_elk_count": sum(
+            1 for row in rows if "private land only" in _joined_text(row) and row["draw_system_type"] == "PREFERENCE_ANTLERLESS_ELK"
+        ),
+        "mountain_lion_cougar_still_pending": REGISTRY["MOUNTAIN_LION_DRAW"].algorithm_status == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING,
     }
 
     report = {
@@ -623,6 +824,10 @@ def build_draw_system_coverage_report(
         "answers": answers,
         "phase6_bonus_special": phase6_summary,
         "phase7_turkey": turkey_summary,
+        "phase8_bear": bear_summary,
+        "phase8_sportsman": sportsman_summary,
+        "phase9_private_lands_antlerless_elk": private_lands_summary,
+        "phase10_mountain_lion": mountain_lion_summary,
         "family_modeling_semantics": {
             "bonus_oil_big_game": oil_family,
             "bonus_le_big_game": le_family,
@@ -632,7 +837,9 @@ def build_draw_system_coverage_report(
         "modeled_bonus_categories": [draw_system_type for draw_system_type, spec in REGISTRY.items() if spec.algorithm_status == ALGORITHM_STATUS_MODELED_BONUS],
         "modeled_preference_categories": [draw_system_type for draw_system_type, spec in REGISTRY.items() if spec.algorithm_status == ALGORITHM_STATUS_MODELED_PREFERENCE],
         "modeled_allocation_categories": [draw_system_type for draw_system_type, spec in REGISTRY.items() if spec.algorithm_status == ALGORITHM_STATUS_MODELED_ALLOCATION],
+        "modeled_availability_categories": [draw_system_type for draw_system_type, spec in REGISTRY.items() if spec.algorithm_status == ALGORITHM_STATUS_MODELED_AVAILABILITY],
         "modeled_random_only_categories": [draw_system_type for draw_system_type, spec in REGISTRY.items() if spec.algorithm_status == ALGORITHM_STATUS_MODELED_RANDOM_ONLY],
+        "modeled_sportsman_categories": [draw_system_type for draw_system_type, spec in REGISTRY.items() if spec.algorithm_status == ALGORITHM_STATUS_MODELED_SPORTSMAN_DRAW],
         "in_scope_model_pending_categories": [draw_system_type for draw_system_type, spec in REGISTRY.items() if spec.algorithm_status == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING],
         "excluded_not_predictive_draw_categories": [draw_system_type for draw_system_type, spec in REGISTRY.items() if spec.algorithm_status == ALGORITHM_STATUS_EXCLUDED_NOT_PREDICTIVE_DRAW],
         "out_of_scope_non_target_categories": [draw_system_type for draw_system_type, spec in REGISTRY.items() if spec.algorithm_status == ALGORITHM_STATUS_OUT_OF_SCOPE_NON_TARGET],

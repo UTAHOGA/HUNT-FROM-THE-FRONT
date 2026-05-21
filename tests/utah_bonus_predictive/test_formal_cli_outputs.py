@@ -50,6 +50,14 @@ def test_formal_cli_generates_populated_artifacts(tmp_path: Path) -> None:
     phase6_report_path = tmp_path / "phase6_bonus_special_report.json"
     turkey_csv_path = tmp_path / "turkey_bonus_predictions_v1.csv"
     turkey_report_path = tmp_path / "turkey_bonus_report.json"
+    bear_csv_path = tmp_path / "bear_draw_predictions_v1.csv"
+    bear_report_path = tmp_path / "bear_draw_report.json"
+    sportsman_csv_path = tmp_path / "sportsman_permit_predictions_v1.csv"
+    sportsman_report_path = tmp_path / "sportsman_permit_report.json"
+    private_lands_csv_path = tmp_path / "private_lands_antlerless_elk_predictions_v1.csv"
+    private_lands_report_path = tmp_path / "private_lands_antlerless_elk_report.json"
+    mountain_lion_csv_path = tmp_path / "mountain_lion_availability_predictions_v1.csv"
+    mountain_lion_report_path = tmp_path / "mountain_lion_availability_report.json"
     manifest_path = tmp_path / "utah_bonus_predictive_manifest.json"
 
     assert ml_path.exists()
@@ -67,6 +75,14 @@ def test_formal_cli_generates_populated_artifacts(tmp_path: Path) -> None:
     assert phase6_report_path.exists()
     assert turkey_csv_path.exists()
     assert turkey_report_path.exists()
+    assert bear_csv_path.exists()
+    assert bear_report_path.exists()
+    assert sportsman_csv_path.exists()
+    assert sportsman_report_path.exists()
+    assert private_lands_csv_path.exists()
+    assert private_lands_report_path.exists()
+    assert mountain_lion_csv_path.exists()
+    assert mountain_lion_report_path.exists()
     assert manifest_path.exists()
 
     ml_rows = _read_csv(ml_path)
@@ -75,11 +91,19 @@ def test_formal_cli_generates_populated_artifacts(tmp_path: Path) -> None:
     dedicated_hunter_rows = _read_csv(dedicated_hunter_csv_path)
     phase6_rows = _read_csv(phase6_csv_path)
     turkey_rows = _read_csv(turkey_csv_path)
+    bear_rows = _read_csv(bear_csv_path)
+    sportsman_rows = _read_csv(sportsman_csv_path)
+    private_lands_rows = _read_csv(private_lands_csv_path)
+    mountain_lion_rows = _read_csv(mountain_lion_csv_path)
     report = json.loads(report_path.read_text(encoding="utf-8"))
     coverage = json.loads(coverage_json_path.read_text(encoding="utf-8"))
     dedicated_hunter_report = json.loads(dedicated_hunter_report_path.read_text(encoding="utf-8"))
     phase6_report = json.loads(phase6_report_path.read_text(encoding="utf-8"))
     turkey_report = json.loads(turkey_report_path.read_text(encoding="utf-8"))
+    bear_report = json.loads(bear_report_path.read_text(encoding="utf-8"))
+    sportsman_report = json.loads(sportsman_report_path.read_text(encoding="utf-8"))
+    private_lands_report = json.loads(private_lands_report_path.read_text(encoding="utf-8"))
+    mountain_lion_report = json.loads(mountain_lion_report_path.read_text(encoding="utf-8"))
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
 
     assert ml_rows
@@ -96,19 +120,31 @@ def test_formal_cli_generates_populated_artifacts(tmp_path: Path) -> None:
     assert phase6_report["total_phase6_rows"] == len(phase6_rows)
     assert turkey_report["forecast_year"] == 2026
     assert turkey_report["bonus_turkey_rows_active_predictive"] == len(turkey_rows)
+    assert bear_report["forecast_year"] == 2026
+    assert bear_report["bear_draw_active_predictive_row_count"] == len(bear_rows)
+    assert sportsman_report["forecast_year"] == 2026
+    assert sportsman_report["sportsman_rows_reviewed"] == len(sportsman_rows)
+    assert private_lands_report["forecast_year"] == 2026
+    assert private_lands_report["modeled_allocation_row_count"] == len(private_lands_rows)
+    assert mountain_lion_report["forecast_year"] == 2026
+    assert mountain_lion_report["total_mountain_lion_rows_produced"] == len(mountain_lion_rows)
     assert manifest["forecast_year"] == 2026
     assert manifest["calibration_metric_non_null_count"] == len(bt_rows)
 
     modeled_bonus_rows = [row for row in ml_rows if row.get("algorithm_status") == "MODELED_BONUS"]
     modeled_preference_rows = [row for row in ml_rows if row.get("algorithm_status") == "MODELED_PREFERENCE"]
+    modeled_allocation_rows = [row for row in ml_rows if row.get("algorithm_status") == "MODELED_ALLOCATION"]
+    modeled_availability_rows = [row for row in ml_rows if row.get("algorithm_status") == "MODELED_AVAILABILITY"]
     pending_rows = [row for row in ml_rows if row.get("algorithm_status") == "IN_SCOPE_MODEL_PENDING"]
     dedicated_hunter_modeled_rows = [row for row in dedicated_hunter_rows if row.get("algorithm_status") == "MODELED_PREFERENCE"]
     assert modeled_bonus_rows
     assert _nonnull(modeled_bonus_rows, "p_draw") == len(modeled_bonus_rows)
     assert _nonnull(modeled_bonus_rows, "p_draw_pct") == len(modeled_bonus_rows)
     assert modeled_preference_rows
+    assert _nonnull(modeled_preference_rows, "p_preference_draw") == len(modeled_preference_rows)
     assert _nonnull(modeled_preference_rows, "p_draw") == len(modeled_preference_rows)
     assert _nonnull(modeled_preference_rows, "p_draw_pct") == len(modeled_preference_rows)
+    assert all((row.get("p_preference_draw") or "") == (row.get("p_draw") or "") for row in modeled_preference_rows)
     assert all(str(row.get("p_draw") or "").strip() == "" for row in pending_rows)
     assert all(str(row.get("p_draw_pct") or "").strip() == "" for row in pending_rows)
     assert _nonnull(dedicated_hunter_modeled_rows, "p_preference_draw") == len(dedicated_hunter_modeled_rows)
@@ -116,6 +152,21 @@ def test_formal_cli_generates_populated_artifacts(tmp_path: Path) -> None:
     assert all((row.get("p_preference_draw") or "") == (row.get("p_draw") or "") for row in dedicated_hunter_modeled_rows)
     assert _nonnull(dedicated_hunter_rows, "p_bonus_pool") == 0
     assert _nonnull(dedicated_hunter_rows, "p_random_pool") == 0
+    assert _nonnull(modeled_preference_rows, "p_bonus_pool") == 0
+    assert _nonnull(modeled_preference_rows, "p_random_pool") == 0
+    assert modeled_allocation_rows
+    assert _nonnull(modeled_allocation_rows, "p_draw") == 0
+    assert _nonnull(modeled_allocation_rows, "p_draw_pct") == 0
+    assert _nonnull(modeled_allocation_rows, "p_bonus_pool") == 0
+    assert _nonnull(modeled_allocation_rows, "p_random_pool") == 0
+    assert _nonnull(modeled_allocation_rows, "p_preference_draw") == 0
+    assert modeled_availability_rows
+    assert _nonnull(modeled_availability_rows, "p_draw") == 0
+    assert _nonnull(modeled_availability_rows, "p_draw_pct") == 0
+    assert _nonnull(modeled_availability_rows, "p_bonus_pool") == 0
+    assert _nonnull(modeled_availability_rows, "p_random_pool") == 0
+    assert _nonnull(modeled_availability_rows, "p_preference_draw") == 0
+    assert _nonnull(modeled_availability_rows, "p_availability") == len(modeled_availability_rows)
     assert _nonnull(ml_rows, "source_years_used") == len(ml_rows)
     assert _nonnull(bt_rows, "calibration_error_by_probability_bucket") == len(bt_rows)
 

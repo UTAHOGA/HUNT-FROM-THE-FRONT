@@ -311,3 +311,196 @@
   - Phase 7 turkey report semantics are now explicit in the generated turkey artifacts.
   - Coverage family-vs-history semantics are present, but one pending-family boolean still uses row presence instead of registry status for mountain lion/cougar.
   - Utah draw-system docs still describe several modeled Phase 3-7 families as pending and need refresh before the next implementation phase.
+
+## Final Cleanup Before Phase 8
+- Timestamp (UTC): 2026-05-21T00:00:00Z
+- Scope:
+  - Completed the final pre-Phase-8 cleanup in `C:\Users\tyler\Desktop\GitHub\HUNTS`.
+  - Did not use `C:\Projects\HUNTS-main`.
+  - Did not start Phase 8 or implement bear, mountain lion/cougar, or private-lands-only antlerless elk strategies.
+- Outputs refreshed:
+  - `processed_data/ml_draw_predictions_v1.csv`
+  - `processed_data/draw_reality_engine_predictive_v2.csv`
+  - `processed_data/draw_system_coverage_report.csv`
+  - `processed_data/draw_system_coverage_report.json`
+  - `processed_data/utah_bonus_predictive_manifest.json`
+  - `processed_data/gpt_work_review_report.json`
+  - `processed_data/gpt_work_review_report.md`
+- Validation summary:
+  - Python tests run: `66`
+  - Python tests failed: `0`
+  - Predictive rows: `28860`
+  - `MODELED_BONUS` rows: `23407`
+  - `MODELED_PREFERENCE` rows: `1634`
+  - `IN_SCOPE_MODEL_PENDING` rows: `2911`
+  - `OUT_OF_SCOPE_NON_TARGET` rows: `908`
+  - Duplicate key count on `hunt_code,residency,points`: `0`
+- Cleanup results:
+  - `docs/utah_draw_system_scope.md` now reflects Phases 1-7 completed and the correct pending families.
+  - Mountain lion/cougar is now reported as in scope, not modeled, and still pending even with `0` active predictive rows.
+  - All `MODELED_PREFERENCE` rows now populate `p_preference_draw` consistently with `p_draw`.
+
+## Phase 8 Bear Strategy
+- Timestamp (UTC): 2026-05-21T00:00:00Z
+- Scope:
+  - Implemented Phase 8 for `BEAR_DRAW` only in `C:\Users\tyler\Desktop\GitHub\HUNTS`.
+  - Did not use `C:\Projects\HUNTS-main`.
+  - Did not begin Phase 9 or implement mountain lion/cougar or private-lands-only antlerless elk strategies.
+- Files updated:
+  - `engine/utah_draw_predictive/bear.py`
+  - `engine/utah_draw_predictive/classifier.py`
+  - `engine/utah_draw_predictive/random_only.py`
+  - `engine/utah_bonus_predictive/materialize.py`
+  - `docs/utah_draw_system_scope.md`
+  - Focused Phase 8 tests and artifact-validation tests
+- Outputs refreshed:
+  - `processed_data/bear_draw_predictions_v1.csv`
+  - `processed_data/bear_draw_report.json`
+  - `processed_data/ml_draw_predictions_v1.csv`
+  - `processed_data/draw_reality_engine_predictive_v2.csv`
+  - `processed_data/draw_system_coverage_report.csv`
+  - `processed_data/draw_system_coverage_report.json`
+  - `processed_data/utah_bonus_predictive_manifest.json`
+  - `processed_data/gpt_work_review_report.json`
+  - `processed_data/gpt_work_review_report.md`
+- Validation summary:
+  - Python tests run: `75`
+  - Python tests failed: `0`
+  - Predictive rows: `27621`
+  - `MODELED_BONUS` rows: `25282`
+  - `MODELED_PREFERENCE` rows: `1731`
+  - `IN_SCOPE_MODEL_PENDING` rows: `402`
+  - `OUT_OF_SCOPE_NON_TARGET` rows: `198`
+  - `BEAR_DRAW` active predictive rows: `1347`
+  - `BEAR_DRAW` modeled rows: `1258`
+  - `BEAR_DRAW` pending rows: `81`
+  - `BEAR_DRAW` excluded rows: `8`
+  - Duplicate key count on `hunt_code,residency,points`: `0`
+- Phase 8 results:
+  - Public limited-entry bear and restricted bear pursuit rows now model as `MODELED_BONUS` with Utah bonus pool / random pool probabilities.
+  - Harvest-objective, non-public, and ambiguous bear rows do not receive fake `p_draw`.
+  - Restricted bear pursuit no longer falls into the generic random-only bucket.
+  - False-positive `BEAR_DRAW` classification from hunt names like `Bear Mountain` / `Fishlake` was removed from unrelated non-bear rows.
+  - Mountain lion/cougar remains in scope, not modeled, and pending.
+  - Private-lands-only antlerless elk remains allocation-pending.
+
+## Phase 8 Sportsman Correction
+- Timestamp (UTC): 2026-05-21T00:00:00Z
+- Scope:
+  - Corrected Sportsman permit handling inside Phase 8 without beginning Phase 9.
+  - Separated `SPORTSMAN_PERMIT` from `BEAR_DRAW` and other bonus/preference families.
+  - Reclassified `BR1000` as `SPORTSMAN_PERMIT`, `BR1001` as harvest-objective availability, and `BR1007` / `BR1018` as unlimited-pursuit availability.
+- Outputs refreshed:
+  - `processed_data/sportsman_permit_predictions_v1.csv`
+  - `processed_data/sportsman_permit_report.json`
+  - `processed_data/ml_draw_predictions_v1.csv`
+  - `processed_data/draw_reality_engine_predictive_v2.csv`
+  - `processed_data/draw_system_coverage_report.csv`
+  - `processed_data/draw_system_coverage_report.json`
+  - `processed_data/utah_bonus_predictive_manifest.json`
+  - `processed_data/gpt_work_review_report.json`
+  - `processed_data/gpt_work_review_report.md`
+- Validation summary:
+  - Python tests run: `82`
+  - Python tests failed: `0`
+  - Predictive rows: `27649`
+  - `MODELED_BONUS` rows: `25291`
+  - `MODELED_PREFERENCE` rows: `1731`
+  - `IN_SCOPE_MODEL_PENDING` rows: `419`
+  - `EXCLUDED_NOT_PREDICTIVE_DRAW` rows: `10`
+  - `OUT_OF_SCOPE_NON_TARGET` rows: `198`
+  - `SPORTSMAN_PERMIT` rows: `22`
+  - `SPORTSMAN_PERMIT` modeled rows: `0`
+  - `SPORTSMAN_PERMIT` pending rows: `22`
+  - Duplicate key count on `hunt_code,residency,points`: `0`
+- Correction results:
+  - Sportsman permits are now classified as their own strategy family and are not detected by a simple `1000` suffix rule.
+  - `BR1000` now classifies as `SPORTSMAN_PERMIT` with `draw_outlook = SPORTSMAN ODDS SOURCE MISSING`.
+  - `BR1001` remains `HARVEST_OBJECTIVE_AVAILABILITY` and does not receive draw-odds fields.
+  - `BR1007` and `BR1018` remain `UNLIMITED_PURSUIT_PERMIT` availability rows and do not receive draw-odds fields.
+  - All current Sportsman rows stay pending because the active repo only exposes `SPORTSMAN_PERMIT_NO_DRAW_ODDS` source rows without usable applicant-denominator odds data.
+
+## Phase 9 Private-Lands-Only Antlerless Elk Allocation Strategy
+- Timestamp (UTC): 2026-05-21T00:00:00Z
+- Scope:
+  - Implemented Phase 9 for `PRIVATE_LANDS_ONLY_ANTLERLESS_ELK` only in `C:\Users\tyler\Desktop\GitHub\HUNTS`.
+  - Did not use `C:\Projects\HUNTS-main`.
+  - Did not begin Phase 10 or implement mountain lion/cougar strategy work.
+- Files updated:
+  - `engine/utah_draw_predictive/private_lands_antlerless_elk.py`
+  - `engine/utah_draw_predictive/classifier.py`
+  - `engine/utah_bonus_predictive/materialize.py`
+  - `docs/utah_draw_system_scope.md`
+  - Focused Phase 9 tests and artifact-validation tests
+- Outputs refreshed:
+  - `processed_data/private_lands_antlerless_elk_predictions_v1.csv`
+  - `processed_data/private_lands_antlerless_elk_report.json`
+  - `processed_data/ml_draw_predictions_v1.csv`
+  - `processed_data/draw_reality_engine_predictive_v2.csv`
+  - `processed_data/draw_system_coverage_report.csv`
+  - `processed_data/draw_system_coverage_report.json`
+  - `processed_data/utah_bonus_predictive_manifest.json`
+  - `processed_data/gpt_work_review_report.json`
+  - `processed_data/gpt_work_review_report.md`
+- Validation summary:
+  - Python tests run: `87`
+  - Python tests failed: `0`
+  - Predictive rows: `27703`
+  - `MODELED_BONUS` rows: `25291`
+  - `MODELED_PREFERENCE` rows: `1731`
+  - `MODELED_ALLOCATION` rows: `54`
+  - `IN_SCOPE_MODEL_PENDING` rows: `419`
+  - `OUT_OF_SCOPE_NON_TARGET` rows: `198`
+  - `PRIVATE_LANDS_ONLY_ANTLERLESS_ELK` modeled allocation rows: `54`
+  - `PRIVATE_LANDS_ONLY_ANTLERLESS_ELK` hunt codes: `27`
+  - Duplicate key count on `hunt_code,residency,points`: `0`
+- Phase 9 results:
+  - Private-lands-only antlerless elk is now modeled as allocation / availability, not as preference or bonus draw odds.
+  - No private-lands-only antlerless elk row receives `p_draw`, `p_draw_pct`, `p_bonus_pool`, `p_random_pool`, or `p_preference_draw`.
+  - Allocation totals from the 2026 permit source are preserved in `permits_allotted`, while missing remaining inventory is called out with `allocation_status = ALLOCATION KNOWN / REMAINING UNKNOWN`.
+  - Normal public antlerless elk preference rows remain modeled and separate.
+  - Mountain lion/cougar remains in scope, not modeled, and pending.
+
+## Phase 10 Mountain Lion / Cougar Availability Strategy
+- Timestamp (UTC): 2026-05-21T00:00:00Z
+- Scope:
+  - Implemented Phase 10 for `MOUNTAIN_LION_DRAW` only in `C:\Users\tyler\Desktop\GitHub\HUNTS`.
+  - Did not use `C:\Projects\HUNTS-main`.
+  - Did not begin any new bear, sportsman, or private-lands-only antlerless elk work.
+- Files updated:
+  - `engine/utah_draw_predictive/mountain_lion.py`
+  - `engine/utah_draw_predictive/__init__.py`
+  - `engine/utah_draw_predictive/classifier.py`
+  - `engine/utah_draw_predictive/random_only.py`
+  - `engine/utah_bonus_predictive/materialize.py`
+  - `docs/utah_draw_system_scope.md`
+  - Focused Phase 10 tests and artifact-validation tests
+- Outputs refreshed:
+  - `processed_data/mountain_lion_availability_predictions_v1.csv`
+  - `processed_data/mountain_lion_availability_report.json`
+  - `processed_data/ml_draw_predictions_v1.csv`
+  - `processed_data/draw_reality_engine_predictive_v2.csv`
+  - `processed_data/draw_system_coverage_report.csv`
+  - `processed_data/draw_system_coverage_report.json`
+  - `processed_data/utah_bonus_predictive_manifest.json`
+  - `processed_data/gpt_work_review_report.json`
+  - `processed_data/gpt_work_review_report.md`
+- Validation summary:
+  - Python tests run: `91`
+  - Python tests failed: `0`
+  - Predictive rows: `27823`
+  - `MODELED_BONUS` rows: `25291`
+  - `MODELED_PREFERENCE` rows: `1731`
+  - `MODELED_ALLOCATION` rows: `54`
+  - `MODELED_AVAILABILITY` rows: `120`
+  - `IN_SCOPE_MODEL_PENDING` rows: `419`
+  - `OUT_OF_SCOPE_NON_TARGET` rows: `198`
+  - `MOUNTAIN_LION_DRAW` rows: `120`
+  - `MOUNTAIN_LION_DRAW` hunt codes: `60`
+  - `MOUNTAIN_LION_DRAW` units: `60`
+  - Duplicate key count on `hunt_code,residency,points`: `0`
+- Phase 10 results:
+  - Mountain lion / cougar is now modeled as statewide OTC rule-status and availability, not draw odds.
+  - No mountain lion row receives `p_draw`, `p_draw_pct`, `p_bonus_pool`, `p_random_pool`, or `p_preference_draw`.
+  - The local 2026 cougar guidebook provides year-round availability support, and the local cougar geometry file provides the management/reporting unit surface.
+  - Coverage now distinguishes in-scope availability modeling from pending families without showing `0 rows` plus `still pending` confusion for cougar.

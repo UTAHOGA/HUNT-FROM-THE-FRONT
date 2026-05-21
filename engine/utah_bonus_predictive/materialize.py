@@ -10,10 +10,28 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from engine.utah_draw_predictive.classifier import sanitize_modeled_probability_fields
+from engine.utah_draw_predictive.bear import (
+    BEAR_DRAW_SYSTEM_TYPE,
+    CONSERVATION_OR_NON_PUBLIC,
+    HARVEST_OBJECTIVE_AVAILABILITY,
+    RESTRICTED_BEAR_PURSUIT,
+    STATEWIDE_BEAR_PERMIT,
+    UNLIMITED_PURSUIT_PERMIT,
+    build_bear_bonus_predictions,
+)
 from engine.utah_draw_predictive.dedicated_hunter import build_preference_dedicated_hunter_predictions
+from engine.utah_draw_predictive.mountain_lion import (
+    DRAW_SYSTEM_TYPE as MOUNTAIN_LION_DRAW_SYSTEM_TYPE,
+    build_mountain_lion_availability_predictions,
+)
 from engine.utah_draw_predictive.preference_antlerless import build_preference_antlerless_predictions
 from engine.utah_draw_predictive.preference_general_deer import build_preference_general_deer_predictions
+from engine.utah_draw_predictive.private_lands_antlerless_elk import (
+    DRAW_SYSTEM_TYPE as PRIVATE_LANDS_ANTLERLESS_ELK_DRAW_SYSTEM_TYPE,
+    build_private_lands_antlerless_elk_predictions,
+)
 from engine.utah_draw_predictive.special_bonus import PHASE6_DRAW_SYSTEM_TYPES, build_phase6_bonus_special_predictions
+from engine.utah_draw_predictive.sportsman import SPORTSMAN_DRAW_SYSTEM_TYPE, build_sportsman_predictions
 from engine.utah_draw_predictive.turkey import TURKEY_DRAW_SYSTEM_TYPE, build_turkey_bonus_predictions
 
 from .backtest import build_backtest_rows
@@ -375,6 +393,148 @@ def _write_turkey_bonus_artifacts(
     return csv_path, json_path
 
 
+def _write_bear_bonus_artifacts(
+    output_dir: Path,
+    prediction_rows: list[dict[str, object]],
+    bear_report: dict[str, object],
+) -> tuple[Path, Path]:
+    bear_rows = [row for row in prediction_rows if str(row.get("draw_system_type", "")).strip() == BEAR_DRAW_SYSTEM_TYPE]
+    csv_path = output_dir / "bear_draw_predictions_v1.csv"
+    fieldnames = list(dict.fromkeys(key for row in bear_rows for key in row.keys())) if bear_rows else [
+        "hunt_code",
+        "residency",
+        "points",
+        "draw_system_type",
+        "algorithm_status",
+        "bear_draw_subtype",
+        "p_bonus_pool",
+        "p_random_pool",
+        "p_draw",
+        "p_draw_pct",
+        "p_preference_draw",
+    ]
+    write_csv(csv_path, bear_rows, fieldnames)
+    modeled_rows = [row for row in bear_rows if str(row.get("algorithm_status", "")).strip() == "MODELED_BONUS"]
+    pending_rows = [row for row in bear_rows if str(row.get("algorithm_status", "")).strip() == "IN_SCOPE_MODEL_PENDING"]
+    excluded_rows = [row for row in bear_rows if str(row.get("algorithm_status", "")).strip() == "EXCLUDED_NOT_PREDICTIVE_DRAW"]
+    bear_report = dict(bear_report)
+    bear_report.update(
+        {
+            "bear_draw_active_predictive_row_count": len(bear_rows),
+            "bear_draw_modeled_row_count": len(modeled_rows),
+            "bear_draw_pending_row_count": len(pending_rows),
+            "bear_draw_excluded_non_draw_row_count": len(excluded_rows),
+            "statewide_bear_permit_row_count": sum(1 for row in bear_rows if str(row.get("bear_draw_subtype", "")).strip() == STATEWIDE_BEAR_PERMIT),
+            "statewide_bear_permit_modeled_row_count": sum(1 for row in modeled_rows if str(row.get("bear_draw_subtype", "")).strip() == STATEWIDE_BEAR_PERMIT),
+            "statewide_bear_permit_pending_row_count": sum(1 for row in pending_rows if str(row.get("bear_draw_subtype", "")).strip() == STATEWIDE_BEAR_PERMIT),
+            "statewide_bear_permit_excluded_row_count": sum(1 for row in excluded_rows if str(row.get("bear_draw_subtype", "")).strip() == STATEWIDE_BEAR_PERMIT),
+            "statewide_bear_permit_p_draw_non_null_count": sum(1 for row in bear_rows if str(row.get("bear_draw_subtype", "")).strip() == STATEWIDE_BEAR_PERMIT and str(row.get("p_draw", "")).strip()),
+            "harvest_objective_row_count": sum(1 for row in bear_rows if str(row.get("bear_draw_subtype", "")).strip() == HARVEST_OBJECTIVE_AVAILABILITY),
+            "harvest_objective_p_draw_non_null_count": sum(1 for row in bear_rows if str(row.get("bear_draw_subtype", "")).strip() == HARVEST_OBJECTIVE_AVAILABILITY and str(row.get("p_draw", "")).strip()),
+            "harvest_objective_availability_fields_populated_count": sum(
+                1
+                for row in bear_rows
+                if str(row.get("bear_draw_subtype", "")).strip() == HARVEST_OBJECTIVE_AVAILABILITY
+                and any(str(row.get(field, "")).strip() for field in ("p_availability", "availability_pct", "harvest_objective_take_quota", "harvest_objective_status"))
+            ),
+            "unlimited_pursuit_permit_row_count": sum(1 for row in bear_rows if str(row.get("bear_draw_subtype", "")).strip() == UNLIMITED_PURSUIT_PERMIT),
+            "unlimited_pursuit_permit_p_draw_non_null_count": sum(1 for row in bear_rows if str(row.get("bear_draw_subtype", "")).strip() == UNLIMITED_PURSUIT_PERMIT and str(row.get("p_draw", "")).strip()),
+            "restricted_pursuit_modeled_row_count": sum(1 for row in modeled_rows if str(row.get("bear_draw_subtype", "")).strip() == RESTRICTED_BEAR_PURSUIT),
+            "multiseason_limited_entry_bear_modeled_row_count": sum(1 for row in modeled_rows if "multiseason" in str(row.get("hunt_type", "")).strip().lower()),
+            "spot_and_stalk_bear_modeled_row_count": sum(1 for row in modeled_rows if "spot and stalk" in str(row.get("hunt_type", "")).strip().lower()),
+            "conservation_or_non_public_row_count": sum(1 for row in bear_rows if str(row.get("bear_draw_subtype", "")).strip() == CONSERVATION_OR_NON_PUBLIC),
+            "conservation_or_non_public_p_draw_non_null_count": sum(1 for row in bear_rows if str(row.get("bear_draw_subtype", "")).strip() == CONSERVATION_OR_NON_PUBLIC and str(row.get("p_draw", "")).strip()),
+            "p_bonus_pool_non_null_count": _nonnull(bear_rows, "p_bonus_pool"),
+            "p_random_pool_non_null_count": _nonnull(bear_rows, "p_random_pool"),
+            "p_draw_non_null_count": _nonnull(bear_rows, "p_draw"),
+            "p_draw_pct_non_null_count": _nonnull(bear_rows, "p_draw_pct"),
+            "p_preference_draw_non_null_count": _nonnull(bear_rows, "p_preference_draw"),
+            "duplicate_key_count": _duplicate_count(bear_rows, ["hunt_code", "residency", "points"]),
+            "source_years_used_non_null_count": _nonnull(bear_rows, "source_years_used"),
+        }
+    )
+    json_path = output_dir / "bear_draw_report.json"
+    json_path.write_text(json.dumps(bear_report, indent=2), encoding="utf-8")
+    return csv_path, json_path
+
+
+def _write_sportsman_artifacts(
+    output_dir: Path,
+    prediction_rows: list[dict[str, object]],
+    sportsman_report: dict[str, object],
+) -> tuple[Path, Path]:
+    sportsman_rows = [row for row in prediction_rows if str(row.get("draw_system_type", "")).strip() == SPORTSMAN_DRAW_SYSTEM_TYPE]
+    csv_path = output_dir / "sportsman_permit_predictions_v1.csv"
+    fieldnames = list(dict.fromkeys(key for row in sportsman_rows for key in row.keys())) if sportsman_rows else [
+        "hunt_code",
+        "residency",
+        "draw_system_type",
+        "algorithm_status",
+        "sportsman_species",
+        "sportsman_permit_count",
+        "sportsman_applicants",
+        "sportsman_odds_text",
+        "sportsman_odds_denominator",
+        "p_sportsman_draw",
+        "p_draw",
+        "p_draw_pct",
+    ]
+    write_csv(csv_path, sportsman_rows, fieldnames)
+    json_path = output_dir / "sportsman_permit_report.json"
+    json_path.write_text(json.dumps(sportsman_report, indent=2), encoding="utf-8")
+    return csv_path, json_path
+
+
+def _write_private_lands_antlerless_elk_artifacts(
+    output_dir: Path,
+    prediction_rows: list[dict[str, object]],
+    report: dict[str, object],
+) -> tuple[Path, Path]:
+    rows = [row for row in prediction_rows if str(row.get("draw_system_type", "")).strip() == PRIVATE_LANDS_ANTLERLESS_ELK_DRAW_SYSTEM_TYPE]
+    csv_path = output_dir / "private_lands_antlerless_elk_predictions_v1.csv"
+    fieldnames = list(dict.fromkeys(key for row in rows for key in row.keys())) if rows else [
+        "hunt_code",
+        "residency",
+        "draw_system_type",
+        "algorithm_status",
+        "permits_allotted",
+        "permits_remaining",
+        "allocation_status",
+        "p_availability",
+        "availability_pct",
+    ]
+    write_csv(csv_path, rows, fieldnames)
+    json_path = output_dir / "private_lands_antlerless_elk_report.json"
+    json_path.write_text(json.dumps(report, indent=2), encoding="utf-8")
+    return csv_path, json_path
+
+
+def _write_mountain_lion_artifacts(
+    output_dir: Path,
+    prediction_rows: list[dict[str, object]],
+    report: dict[str, object],
+) -> tuple[Path, Path]:
+    rows = [row for row in prediction_rows if str(row.get("draw_system_type", "")).strip() == MOUNTAIN_LION_DRAW_SYSTEM_TYPE]
+    csv_path = output_dir / "mountain_lion_availability_predictions_v1.csv"
+    fieldnames = list(dict.fromkeys(key for row in rows for key in row.keys())) if rows else [
+        "hunt_code",
+        "residency",
+        "draw_system_type",
+        "algorithm_status",
+        "permit_availability_type",
+        "season_start",
+        "season_end",
+        "unit_name",
+        "unit_status",
+        "p_availability",
+        "availability_pct",
+    ]
+    write_csv(csv_path, rows, fieldnames)
+    json_path = output_dir / "mountain_lion_availability_report.json"
+    json_path.write_text(json.dumps(report, indent=2), encoding="utf-8")
+    return csv_path, json_path
+
+
 def _replace_rows_by_key(
     base_rows: list[dict[str, object]],
     replacement_rows: list[dict[str, object]],
@@ -717,6 +877,14 @@ def _build_manifest(
         "phase6_bonus_special_report.json": output_dir / "phase6_bonus_special_report.json",
         "turkey_bonus_predictions_v1.csv": output_dir / "turkey_bonus_predictions_v1.csv",
         "turkey_bonus_report.json": output_dir / "turkey_bonus_report.json",
+        "bear_draw_predictions_v1.csv": output_dir / "bear_draw_predictions_v1.csv",
+        "bear_draw_report.json": output_dir / "bear_draw_report.json",
+        "sportsman_permit_predictions_v1.csv": output_dir / "sportsman_permit_predictions_v1.csv",
+        "sportsman_permit_report.json": output_dir / "sportsman_permit_report.json",
+        "private_lands_antlerless_elk_predictions_v1.csv": output_dir / "private_lands_antlerless_elk_predictions_v1.csv",
+        "private_lands_antlerless_elk_report.json": output_dir / "private_lands_antlerless_elk_report.json",
+        "mountain_lion_availability_predictions_v1.csv": output_dir / "mountain_lion_availability_predictions_v1.csv",
+        "mountain_lion_availability_report.json": output_dir / "mountain_lion_availability_report.json",
     }
     anomalies = _anomaly_counts(prediction_rows, backtest_rows)
     manifest = {
@@ -827,6 +995,28 @@ def materialize_outputs(
         forecast_year=forecast_year,
         history_years=history_years,
     )
+    bear_bonus_rows, bear_bonus_report = build_bear_bonus_predictions(
+        truth_rows=truth_rows,
+        db_rows=db_rows,
+        forecast_year=forecast_year,
+        history_years=history_years,
+    )
+    sportsman_rows, sportsman_report = build_sportsman_predictions(
+        truth_rows=truth_rows,
+        db_rows=db_rows,
+        forecast_year=forecast_year,
+        history_years=history_years,
+    )
+    private_lands_rows, private_lands_report = build_private_lands_antlerless_elk_predictions(
+        truth_rows=truth_rows,
+        db_rows=db_rows,
+        forecast_year=forecast_year,
+        history_years=history_years,
+    )
+    mountain_lion_rows, mountain_lion_report = build_mountain_lion_availability_predictions(
+        forecast_year=forecast_year,
+        history_years=history_years,
+    )
     if preference_general_deer_rows:
         preference_general_deer_rows = [sanitize_modeled_probability_fields(dict(row)) for row in preference_general_deer_rows]
         prediction_rows.extend(preference_general_deer_rows)
@@ -847,7 +1037,23 @@ def materialize_outputs(
         turkey_bonus_rows = [sanitize_modeled_probability_fields(dict(row)) for row in turkey_bonus_rows]
         prediction_rows = _replace_rows_by_draw_system_type(prediction_rows, turkey_bonus_rows, {TURKEY_DRAW_SYSTEM_TYPE})
         successor_rows = _replace_rows_by_draw_system_type(successor_rows, [dict(row) for row in turkey_bonus_rows], {TURKEY_DRAW_SYSTEM_TYPE})
-    if preference_general_deer_rows or preference_antlerless_rows or preference_dedicated_hunter_rows or phase6_bonus_special_rows or turkey_bonus_rows:
+    if bear_bonus_rows:
+        bear_bonus_rows = [sanitize_modeled_probability_fields(dict(row)) for row in bear_bonus_rows]
+        prediction_rows = _replace_rows_by_draw_system_type(prediction_rows, bear_bonus_rows, {BEAR_DRAW_SYSTEM_TYPE})
+        successor_rows = _replace_rows_by_draw_system_type(successor_rows, [dict(row) for row in bear_bonus_rows], {BEAR_DRAW_SYSTEM_TYPE})
+    if sportsman_rows:
+        sportsman_rows = [sanitize_modeled_probability_fields(dict(row)) for row in sportsman_rows]
+        prediction_rows = _replace_rows_by_draw_system_type(prediction_rows, sportsman_rows, {SPORTSMAN_DRAW_SYSTEM_TYPE})
+        successor_rows = _replace_rows_by_draw_system_type(successor_rows, [dict(row) for row in sportsman_rows], {SPORTSMAN_DRAW_SYSTEM_TYPE})
+    if private_lands_rows:
+        private_lands_rows = [sanitize_modeled_probability_fields(dict(row)) for row in private_lands_rows]
+        prediction_rows = _replace_rows_by_draw_system_type(prediction_rows, private_lands_rows, {PRIVATE_LANDS_ANTLERLESS_ELK_DRAW_SYSTEM_TYPE})
+        successor_rows = _replace_rows_by_draw_system_type(successor_rows, [dict(row) for row in private_lands_rows], {PRIVATE_LANDS_ANTLERLESS_ELK_DRAW_SYSTEM_TYPE})
+    if mountain_lion_rows:
+        mountain_lion_rows = [sanitize_modeled_probability_fields(dict(row)) for row in mountain_lion_rows]
+        prediction_rows = _replace_rows_by_draw_system_type(prediction_rows, mountain_lion_rows, {MOUNTAIN_LION_DRAW_SYSTEM_TYPE})
+        successor_rows = _replace_rows_by_draw_system_type(successor_rows, [dict(row) for row in mountain_lion_rows], {MOUNTAIN_LION_DRAW_SYSTEM_TYPE})
+    if preference_general_deer_rows or preference_antlerless_rows or preference_dedicated_hunter_rows or phase6_bonus_special_rows or turkey_bonus_rows or bear_bonus_rows or sportsman_rows or private_lands_rows or mountain_lion_rows:
         prediction_rows.sort(key=lambda row: (str(row.get("hunt_code", "")), str(row.get("residency", "")), int(float(str(row.get("points", 0)) or 0))))
         successor_rows.sort(key=lambda row: (str(row.get("hunt_code", "")), str(row.get("residency", "")), int(float(str(row.get("points", 0)) or 0))))
 
@@ -900,7 +1106,43 @@ def materialize_outputs(
         "bonus_special_note",
         "turkey_bonus_valid",
         "turkey_bonus_note",
+        "bear_bonus_valid",
+        "bear_bonus_note",
+        "sportsman_valid",
+        "sportsman_model_note",
         "weapon",
+        "bear_draw_subtype",
+        "permit_availability_type",
+        "harvest_objective_unit_count",
+        "harvest_objective_take_quota",
+        "harvest_objective_remaining_quota",
+        "harvest_objective_status",
+        "p_availability",
+        "availability_pct",
+        "closure_risk",
+        "sellout_risk",
+        "sellout_or_closure_risk",
+        "sportsman_species",
+        "sportsman_permit_count",
+        "sportsman_applicants",
+        "sportsman_odds_text",
+        "sportsman_odds_denominator",
+        "p_sportsman_draw",
+        "private_lands_allocation_valid",
+        "private_lands_allocation_note",
+        "permits_allotted",
+        "permits_remaining",
+        "permits_sold",
+        "allocation_status",
+        "sale_date",
+        "unit",
+        "season_dates",
+        "private_land_only_flag",
+        "season_start",
+        "season_end",
+        "unit_name",
+        "unit_status",
+        "closure_reason",
         "data_quality_flags",
         "draw_system_type",
         "algorithm_status",
@@ -923,6 +1165,10 @@ def materialize_outputs(
     phase4_inventory_csv_path, phase4_inventory_json_path = _write_phase4_antlerless_inventory(output_dir, prediction_rows, forecast_year, history_years)
     phase6_bonus_csv_path, phase6_bonus_json_path = _write_phase6_bonus_special_artifacts(output_dir, prediction_rows, phase6_bonus_special_report)
     turkey_bonus_csv_path, turkey_bonus_json_path = _write_turkey_bonus_artifacts(output_dir, prediction_rows, turkey_bonus_report)
+    bear_bonus_csv_path, bear_bonus_json_path = _write_bear_bonus_artifacts(output_dir, prediction_rows, bear_bonus_report)
+    sportsman_csv_path, sportsman_json_path = _write_sportsman_artifacts(output_dir, prediction_rows, sportsman_report)
+    private_lands_csv_path, private_lands_json_path = _write_private_lands_antlerless_elk_artifacts(output_dir, prediction_rows, private_lands_report)
+    mountain_lion_csv_path, mountain_lion_json_path = _write_mountain_lion_artifacts(output_dir, prediction_rows, mountain_lion_report)
 
     backtest_rows = build_backtest_rows(permits, ladders, lambda public_permits: (split_utah_bonus_permits(public_permits).maxPointPermits, split_utah_bonus_permits(public_permits).randomPermits))
     backtest_fields = [
@@ -1002,6 +1248,14 @@ def materialize_outputs(
         "phase6_bonus_special_report": phase6_bonus_json_path,
         "turkey_bonus_predictions": turkey_bonus_csv_path,
         "turkey_bonus_report": turkey_bonus_json_path,
+        "bear_draw_predictions": bear_bonus_csv_path,
+        "bear_draw_report": bear_bonus_json_path,
+        "sportsman_permit_predictions": sportsman_csv_path,
+        "sportsman_permit_report": sportsman_json_path,
+        "private_lands_antlerless_elk_predictions": private_lands_csv_path,
+        "private_lands_antlerless_elk_report": private_lands_json_path,
+        "mountain_lion_availability_predictions": mountain_lion_csv_path,
+        "mountain_lion_availability_report": mountain_lion_json_path,
         "manifest": manifest_path,
     }
 

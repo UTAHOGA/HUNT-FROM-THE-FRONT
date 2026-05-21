@@ -57,6 +57,7 @@ These categories must be classified as `OUT_OF_SCOPE_NON_TARGET` when they appea
 - `BONUS_ANTLERLESS_MOOSE`
 - `BONUS_EWE_BIGHORN`
 - `BONUS_TURKEY`
+- `SPORTSMAN_PERMIT`
 - `PREFERENCE_GENERAL_SEASON_BUCK_DEER`
 - `PREFERENCE_DEDICATED_HUNTER_DEER`
 - `PREFERENCE_ANTLERLESS_DEER`
@@ -78,6 +79,7 @@ These categories must be classified as `OUT_OF_SCOPE_NON_TARGET` when they appea
 - `MODELED_BONUS`
 - `MODELED_PREFERENCE`
 - `MODELED_ALLOCATION`
+- `MODELED_AVAILABILITY`
 - `MODELED_RANDOM_ONLY`
 - `IN_SCOPE_MODEL_PENDING`
 - `EXCLUDED_NOT_PREDICTIVE_DRAW`
@@ -122,34 +124,56 @@ These categories must not use the OIL/LE/PLE bonus algorithm:
 Reason:
 
 - General-season deer and antlerless deer/elk/doe pronghorn are preference-point systems, not OIL/LE/PLE bonus systems.
-- Bear and mountain lion/cougar remain target-scope, but this repo does not yet contain an accepted production predictive strategy audit proving they match the current big-game bonus model.
+- Mountain lion/cougar uses a rule-status and availability strategy for 2026, not a draw-odds model.
 
 ## Current State
 
-Currently modeled:
+Completed:
+
+- Phase 1: OIL / LE / PLE bonus engine
+- Phase 2: target-scope classifier and guardrails
+- Phase 3: general-season buck deer preference engine
+- Phase 4: antlerless deer / antlerless elk / doe pronghorn preference engine
+- Phase 5: Dedicated Hunter deer preference engine
+- Phase 6: CWMU public + antlerless moose + ewe bighorn bonus families
+- Phase 7: limited-entry turkey bonus strategy
+- Phase 8: public bear bonus strategy + Sportsman permit classifier
+- Phase 9: private-lands-only antlerless elk allocation / availability strategy
+- Phase 10: mountain lion / cougar rule-status + availability strategy
+
+Currently modeled as `MODELED_BONUS`:
 
 - `BONUS_OIL_BIG_GAME`
 - `BONUS_LE_BIG_GAME`
 - `BONUS_PLE_BIG_GAME`
-
-Currently in scope and model pending:
-
 - `BONUS_CWMU_BIG_GAME`
 - `BONUS_ANTLERLESS_MOOSE`
 - `BONUS_EWE_BIGHORN`
 - `BONUS_TURKEY`
+- `BEAR_DRAW`
+
+Currently modeled as `MODELED_PREFERENCE`:
+
 - `PREFERENCE_GENERAL_SEASON_BUCK_DEER`
-- `PREFERENCE_DEDICATED_HUNTER_DEER`
 - `PREFERENCE_ANTLERLESS_DEER`
 - `PREFERENCE_ANTLERLESS_ELK`
 - `PREFERENCE_DOE_PRONGHORN`
-- `GENERAL_BIG_GAME_OTHER`
-- `BEAR_DRAW`
-- `MOUNTAIN_LION_DRAW`
+- `PREFERENCE_DEDICATED_HUNTER_DEER`
+
+Currently modeled as `MODELED_ALLOCATION`:
+
 - `PRIVATE_LANDS_ONLY_ANTLERLESS_ELK`
 
-Excluded from predictive draw modeling:
+Currently modeled as `MODELED_AVAILABILITY`:
 
+- `MOUNTAIN_LION_DRAW`
+
+Still pending:
+
+- `SPORTSMAN_PERMIT`
+- `YOUTH_GENERAL_DEER`
+- `YOUTH_GENERAL_ANY_BULL_ELK`
+- `GENERAL_BIG_GAME_OTHER`
 - `RANDOM_ONLY_TARGET`
 - `OTC_OR_REMAINING_TARGET`
 - `LANDOWNER_BIG_GAME`
@@ -158,9 +182,30 @@ Excluded from predictive draw modeling:
 Private-lands-only antlerless elk note:
 
 - This category stays in scope.
-- It should be promoted to an allocation / availability strategy, not a preference-draw probability model.
-- Until that strategy exists, it remains `IN_SCOPE_MODEL_PENDING` and must not receive fake `p_draw` values.
+- It is modeled as an allocation / availability family, not a preference-draw probability model.
+- It must not receive `p_draw`, `p_draw_pct`, `p_bonus_pool`, `p_random_pool`, or `p_preference_draw`.
+- Allocation fields such as `permits_allotted`, `allocation_status`, `p_availability`, and `availability_pct` populate only when source data supports them.
+
+Sportsman permit note:
+
+- Sportsman permits are classified as their own statewide draw family.
+- They are not modeled with bonus, preference, or bear-availability logic.
+- Until a usable official Sportsman odds source exists, they remain `IN_SCOPE_MODEL_PENDING` with `draw_outlook = SPORTSMAN ODDS SOURCE MISSING`.
+
+Mountain lion / cougar note:
+
+- Utah cougar hunting is treated as statewide OTC rule-status and availability, not draw odds.
+- The local geometry source lists management/reporting units used for check-in and harvest reporting.
+- `MOUNTAIN_LION_DRAW` rows must not receive `p_draw`, `p_draw_pct`, `p_bonus_pool`, `p_random_pool`, or `p_preference_draw`.
+- Availability fields such as `permit_availability_type`, `season_start`, `season_end`, `unit_name`, `unit_status`, `p_availability`, and `availability_pct` are the user-facing outputs for this family.
 
 Out of scope:
 
-- `OUT_OF_SCOPE_NON_TARGET`
+- swan
+- crane
+- grouse
+- waterfowl
+- small game
+- fishing
+- non-turkey upland game
+- other non-target wildlife categories

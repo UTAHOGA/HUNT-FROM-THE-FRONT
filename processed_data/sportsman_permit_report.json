@@ -1,0 +1,53 @@
+{
+  "forecast_year": 2026,
+  "source_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "sportsman_rows_reviewed": 22,
+  "sportsman_rows_modeled": 0,
+  "sportsman_rows_pending": 22,
+  "sportsman_species_list": [
+    "Bison",
+    "Black Bear",
+    "Cougar",
+    "Deer",
+    "Desert Bighorn Sheep",
+    "Elk",
+    "Moose",
+    "Mountain Goat",
+    "Pronghorn",
+    "Rocky Mountain Bighorn Sheep",
+    "Turkey"
+  ],
+  "sportsman_hunt_codes": [
+    "BI1000",
+    "BR1000",
+    "CG9999",
+    "DB0007",
+    "DS1000",
+    "EB1000",
+    "GO1000",
+    "MB1000",
+    "PB1000",
+    "RS0001",
+    "TK0001"
+  ],
+  "sportsman_code_aliases": {},
+  "sportsman_permit_count": 0,
+  "sportsman_applicant_count": 0,
+  "p_sportsman_draw_non_null_count": 0,
+  "p_draw_non_null_count": 0,
+  "p_draw_pct_non_null_count": 0,
+  "p_bonus_pool_non_null_count": 0,
+  "p_random_pool_non_null_count": 0,
+  "p_preference_draw_non_null_count": 0,
+  "rows_with_p_draw_outside_range": 0,
+  "rows_with_p_draw_pct_outside_range": 0,
+  "duplicate_key_count": 0,
+  "source_files_used": [],
+  "source_years_used_non_null_count": 22
+}

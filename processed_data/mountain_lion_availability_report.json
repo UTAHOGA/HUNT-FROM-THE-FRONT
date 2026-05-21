@@ -1,0 +1,31 @@
+{
+  "forecast_year": 2026,
+  "source_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "total_mountain_lion_rows_produced": 120,
+  "hunt_code_count": 60,
+  "unit_count": 60,
+  "unit_status_distribution": {
+    "OPEN": 120
+  },
+  "season_date_coverage_distribution": {
+    "2026-01-01 to 2026-12-31": 120
+  },
+  "p_draw_non_null_count": 0,
+  "p_draw_pct_non_null_count": 0,
+  "p_availability_non_null_count": 120,
+  "availability_pct_non_null_count": 120,
+  "source_files_used": [
+    "data\\cougar_hunt_table_official.json",
+    "processed_data\\hard_data_exports\\source_pdfs\\regulations\\2026\\2026-bear-cougar-furbearer-guidebook.pdf"
+  ],
+  "data_quality_flags_summary": {
+    "HARVEST_REPORTING_UNIT_FROM_GEOMETRY": 60,
+    "STATEWIDE_OTC_RULE_STATUS": 60
+  }
+}

@@ -393,6 +393,7 @@ def build_preference_antlerless_predictions(
                         "guaranteed_at_2026": "" if forecast_guaranteed is None else str(forecast_guaranteed),
                         "applicants_above": applicants_above,
                         "applicants_at_level": applicants_at_level,
+                        "p_preference_draw": f"{probability:.6f}",
                         "p_bonus_pool": "",
                         "p_random_pool": "",
                         "p_draw": f"{probability:.6f}",

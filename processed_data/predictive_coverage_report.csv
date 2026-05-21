@@ -1,5 +1,5 @@
 hunt_code,in_forecast,in_backtest,in_current_database,forecast_eligible_2026,exclusion_reason,hunt_type,species,hunt_name,permits_2026_res,permits_2026_nr,permits_2026_total
-BI1000,False,True,True,False,not_OIL_LE_PLE,Statewide,Bison,Bison - Statewide Permit,,,
+BI1000,True,True,True,False,included_forecast,Statewide,Bison,Bison - Statewide Permit,,,
 BI6500,True,True,True,True,included_forecast,Once-in-a-lifetime,Bison,Antelope Island,2,0,2
 BI6503,True,True,True,True,included_forecast,Once-in-a-lifetime,Bison,Henry Mtns,4,2,6
 BI6504,True,True,True,True,included_forecast,Once-in-a-lifetime,Bison,Henry Mtns,5,2,7
@@ -27,19 +27,19 @@ BI6536,True,True,True,True,included_forecast,Once-in-a-lifetime,Bison,"Book Clif
 BI6537,True,True,True,True,included_forecast,Once-in-a-lifetime,Bison,"Book Cliffs, Little Creek/South",8,7,15
 BI6538,False,True,True,False,not_OIL_LE_PLE,General Season,Bison,"Nine Mile, Private Lands Only",,,
 BI6539,True,True,True,True,included_forecast,Once-in-a-lifetime,Bison,Henry Mtns,11,0,11
-BR1000,False,True,True,False,not_OIL_LE_PLE,Statewide,Black Bear,Black Bear - Statewide Permit,,,
-BR1001,False,True,True,False,not_OIL_LE_PLE,Harvest Objective,Black Bear,Black Bear Harvest Objective Units,,,
-BR1007,False,True,True,False,not_OIL_LE_PLE,Pursuit,Black Bear,Black Bear Pursuit - Resident,,,
-BR1008,False,True,True,False,not_OIL_LE_PLE,Restricted Pursuit - Summer,Black Bear,Book Cliffs,26,2,28
-BR1009,False,True,True,False,not_OIL_LE_PLE,Restricted Pursuit - Summer,Black Bear,La Sal,14,1,15
-BR1010,False,True,True,False,not_OIL_LE_PLE,Restricted Pursuit - Summer,Black Bear,San Juan,14,1,15
-BR1011,False,True,True,False,not_OIL_LE_PLE,Restricted Pursuit - Late Summer,Black Bear,Book Cliffs,26,2,28
-BR1012,False,True,True,False,not_OIL_LE_PLE,Restricted Pursuit - Late Summer,Black Bear,La Sal,14,1,15
-BR1013,False,True,True,False,not_OIL_LE_PLE,Restricted Pursuit - Late Summer,Black Bear,San Juan,14,1,15
-BR1015,False,True,True,False,not_OIL_LE_PLE,Restricted Pursuit - Spring,Black Bear,Book Cliffs,0,2,2
-BR1016,False,True,True,False,not_OIL_LE_PLE,Restricted Pursuit - Spring,Black Bear,San Juan,0,2,2
-BR1017,False,True,True,False,not_OIL_LE_PLE,Restricted Pursuit - Spring,Black Bear,La Sal,0,2,2
-BR1018,False,True,True,False,not_OIL_LE_PLE,Pursuit,Black Bear,Black Bear Pursuit - Nonresident,,,
+BR1000,True,True,True,False,included_forecast,Statewide,Black Bear,Black Bear - Statewide Permit,,,
+BR1001,True,True,True,False,included_forecast,Harvest Objective,Black Bear,Black Bear Harvest Objective Units,,,
+BR1007,True,True,True,False,included_forecast,Pursuit,Black Bear,Black Bear Pursuit - Resident,,,
+BR1008,True,True,True,False,included_forecast,Restricted Pursuit - Summer,Black Bear,Book Cliffs,26,2,28
+BR1009,True,True,True,False,included_forecast,Restricted Pursuit - Summer,Black Bear,La Sal,14,1,15
+BR1010,True,True,True,False,included_forecast,Restricted Pursuit - Summer,Black Bear,San Juan,14,1,15
+BR1011,True,True,True,False,included_forecast,Restricted Pursuit - Late Summer,Black Bear,Book Cliffs,26,2,28
+BR1012,True,True,True,False,included_forecast,Restricted Pursuit - Late Summer,Black Bear,La Sal,14,1,15
+BR1013,True,True,True,False,included_forecast,Restricted Pursuit - Late Summer,Black Bear,San Juan,14,1,15
+BR1015,True,True,True,False,included_forecast,Restricted Pursuit - Spring,Black Bear,Book Cliffs,0,2,2
+BR1016,True,True,True,False,included_forecast,Restricted Pursuit - Spring,Black Bear,San Juan,0,2,2
+BR1017,True,True,True,False,included_forecast,Restricted Pursuit - Spring,Black Bear,La Sal,0,2,2
+BR1018,True,True,True,False,included_forecast,Pursuit,Black Bear,Black Bear Pursuit - Nonresident,,,
 BR7000,True,True,True,True,included_forecast,Limited Entry - Spring,Black Bear,Beaver,9,1,10
 BR7001,True,True,True,True,included_forecast,Limited Entry - Spring,Black Bear,Book Cliffs Bitter Creek/South,49,5,54
 BR7003,True,True,True,True,included_forecast,Limited Entry - Spring,Black Bear,Manti North,17,2,19
@@ -108,7 +108,7 @@ BR7219,True,True,True,True,included_forecast,Limited Entry - Fall,Black Bear,Yel
 BR7220,True,True,True,True,included_forecast,Limited Entry - Fall,Black Bear,Wasatch Mtns Avintaquin/Currant Creek,9,0,9
 BR7221,True,True,True,True,included_forecast,Limited Entry - Fall,Black Bear,Wasatch Mtns West-Central,18,2,20
 BR7224,True,True,True,True,included_forecast,Limited Entry - Spring,Black Bear,Book Cliffs Little Creek Roadless,14,1,15
-BR7225,False,True,True,False,not_OIL_LE_PLE,Spot and Stalk,Black Bear,Book Cliffs Little Creek Roadless,5,0,5
+BR7225,True,True,True,False,included_forecast,Spot and Stalk,Black Bear,Book Cliffs Little Creek Roadless,5,0,5
 BR7226,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 BR7227,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 BR7228,True,True,True,True,included_forecast,Limited Entry - Fall,Black Bear,Cache/Ogden,1,0,1
@@ -128,7 +128,7 @@ BR7301,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black B
 BR7303,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,Manti North,13,1,14
 BR7304,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,Manti South/San Rafael North,18,2,20
 BR7305,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,Nebo,5,0,5
-BR7307,False,True,True,False,not_OIL_LE_PLE,Multiseason - Conservation,Black Bear,La Sal,,,
+BR7307,True,True,True,False,included_forecast,Multiseason - Conservation,Black Bear,La Sal,,,
 BR7308,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,North Slope Three Corners/West Daggett,1,0,1
 BR7309,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,Panguitch Lake/Zion,4,0,4
 BR7310,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,Boulder/Kaiparowits,10,1,11
@@ -144,20 +144,72 @@ BR7320,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black B
 BR7321,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,Kamas/North Slope Summit,5,0,5
 BR7322,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,Mt Dutton,1,0,1
 BR7323,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,Paunsaugunt,1,0,1
-BR7324,False,True,True,False,not_OIL_LE_PLE,Conservation,Black Bear,Chalk Creek/East Canyon/Morgan-South Rich,,,
+BR7324,True,True,True,False,included_forecast,Conservation,Black Bear,Chalk Creek/East Canyon/Morgan-South Rich,,,
 BR7325,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,Chalk Creek/East Canyon/Morgan-South Rich,1,0,1
 BR7326,True,True,True,True,included_forecast,Limited Entry - Multiseason,Black Bear,La Sal Mtns,13,1,14
-CG1029,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-CG1034,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-CG7502,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+CG0001,True,False,False,False,included_forecast,,,,,,
+CG0002,True,False,False,False,included_forecast,,,,,,
+CG0006,True,False,False,False,included_forecast,,,,,,
+CG0009,True,False,False,False,included_forecast,,,,,,
+CG0015,True,False,False,False,included_forecast,,,,,,
+CG0016,True,False,False,False,included_forecast,,,,,,
+CG1001,True,False,False,False,included_forecast,,,,,,
+CG1002,True,False,False,False,included_forecast,,,,,,
+CG1003,True,False,False,False,included_forecast,,,,,,
+CG1004,True,False,False,False,included_forecast,,,,,,
+CG1005,True,False,False,False,included_forecast,,,,,,
+CG1006,True,False,False,False,included_forecast,,,,,,
+CG1007,True,False,False,False,included_forecast,,,,,,
+CG1008,True,False,False,False,included_forecast,,,,,,
+CG1009,True,False,False,False,included_forecast,,,,,,
+CG1010,True,False,False,False,included_forecast,,,,,,
+CG1011,True,False,False,False,included_forecast,,,,,,
+CG1012,True,False,False,False,included_forecast,,,,,,
+CG1013,True,False,False,False,included_forecast,,,,,,
+CG1014,True,False,False,False,included_forecast,,,,,,
+CG1015,True,False,False,False,included_forecast,,,,,,
+CG1016,True,False,False,False,included_forecast,,,,,,
+CG1017,True,False,False,False,included_forecast,,,,,,
+CG1018,True,False,False,False,included_forecast,,,,,,
+CG1019,True,False,False,False,included_forecast,,,,,,
+CG1020,True,False,False,False,included_forecast,,,,,,
+CG1021,True,False,False,False,included_forecast,,,,,,
+CG1022,True,False,False,False,included_forecast,,,,,,
+CG1023,True,False,False,False,included_forecast,,,,,,
+CG1024,True,False,False,False,included_forecast,,,,,,
+CG1025,True,False,False,False,included_forecast,,,,,,
+CG1026,True,False,False,False,included_forecast,,,,,,
+CG1027,True,False,False,False,included_forecast,,,,,,
+CG1028,True,False,False,False,included_forecast,,,,,,
+CG1029,True,True,False,False,included_forecast,,,,,,
+CG1030,True,False,False,False,included_forecast,,,,,,
+CG1031,True,False,False,False,included_forecast,,,,,,
+CG1032,True,False,False,False,included_forecast,,,,,,
+CG1033,True,False,False,False,included_forecast,,,,,,
+CG1034,True,True,False,False,included_forecast,,,,,,
+CG1035,True,False,False,False,included_forecast,,,,,,
+CG7501,True,False,False,False,included_forecast,,,,,,
+CG7502,True,True,False,False,included_forecast,,,,,,
 CG7503,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
+CG7504,True,False,False,False,included_forecast,,,,,,
 CG7506,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-CG7602,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-CG7603,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-CG7605,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-CG7610,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-CG7612,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
-CG9999,False,True,True,False,not_OIL_LE_PLE,Statewide,Cougar,Cougar - Statewide,,,
+CG7600,True,False,False,False,included_forecast,,,,,,
+CG7601,True,False,False,False,included_forecast,,,,,,
+CG7602,True,True,False,False,included_forecast,,,,,,
+CG7603,True,True,False,False,included_forecast,,,,,,
+CG7605,True,True,False,False,included_forecast,,,,,,
+CG7606,True,False,False,False,included_forecast,,,,,,
+CG7607,True,False,False,False,included_forecast,,,,,,
+CG7609,True,False,False,False,included_forecast,,,,,,
+CG7610,True,True,False,False,included_forecast,,,,,,
+CG7611,True,False,False,False,included_forecast,,,,,,
+CG7612,True,True,False,False,included_forecast,,,,,,
+CG7613,True,False,False,False,included_forecast,,,,,,
+CG7615,True,False,False,False,included_forecast,,,,,,
+CG7618,True,False,False,False,included_forecast,,,,,,
+CG7619,True,False,False,False,included_forecast,,,,,,
+CG7620,True,False,False,False,included_forecast,,,,,,
+CG9999,True,True,True,False,included_forecast,Statewide,Cougar,Cougar - Statewide,,,
 DA1000,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 DA1001,True,True,True,False,included_forecast,General Season,Deer,"Box Elder, West Bear River",,,30
 DA1002,True,True,True,False,included_forecast,General Season,Deer,"Box Elder, West Bear River",,,30
@@ -195,7 +247,7 @@ DB0003,False,True,True,False,not_OIL_LE_PLE,Tribal,Deer,Southeastern Navajo Buck
 DB0004,False,True,True,False,not_OIL_LE_PLE,Tribal,Deer,Southern Navajo Buck Deer,,,
 DB0005,False,True,True,False,not_OIL_LE_PLE,Tribal,Deer,Southern Navajo Buck Deer,,,
 DB0006,False,True,True,False,not_OIL_LE_PLE,Tribal,Deer,Southern Navajo Buck Deer,,,
-DB0007,False,True,True,False,not_OIL_LE_PLE,Statewide,Deer,Buck Deer - Statewide Permit,,,1
+DB0007,True,True,True,False,included_forecast,Statewide,Deer,Buck Deer - Statewide Permit,,,1
 DB0008,False,True,True,False,not_OIL_LE_PLE,Extended Archery,Deer,Extended Archery Deer,,,2000
 DB0009,False,True,True,False,missing_forecast_quota,Premium Limited Entry,Deer,Antelope Island - Conservation/Expo,,,
 DB0010,False,True,True,False,not_OIL_LE_PLE,Tribal,Deer,Southern Paiute Buck Deer (early),,,
@@ -591,7 +643,7 @@ DB1803,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"Beaver, West",,
 DB1804,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Cedar/Stansbury,,,42
 DB1805,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,Oquirrh/Tintic,,,65
 DB1806,False,True,True,False,not_OIL_LE_PLE,General Season,Deer,"West Desert, Swasey",,,36
-DS1000,False,True,True,False,not_OIL_LE_PLE,Statewide,Desert Bighorn Sheep,Desert Bighorn Sheep - Statewide Permit,,,
+DS1000,True,True,True,False,included_forecast,Statewide,Desert Bighorn Sheep,Desert Bighorn Sheep - Statewide Permit,,,
 DS1002,False,True,True,False,not_OIL_LE_PLE,Conservation,Desert Bighorn Sheep,"Kaiparowits, East",,,
 DS1003,False,True,True,False,not_OIL_LE_PLE,Conservation,Desert Bighorn Sheep,"Kaiparowits, Escalante East/West",,,
 DS1004,False,True,True,False,not_OIL_LE_PLE,Conservation,Desert Bighorn Sheep,"San Rafael, Dirty Devil",,,
@@ -818,41 +870,41 @@ EA1284,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Panguitch Lake,31
 EA1285,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Panguitch Lake,31,4,35
 EA1286,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Monroe,,,
 EA2000,False,True,True,False,not_OIL_LE_PLE,Antlerless Elk Control,Elk,Antlerless Elk Control,,,
-EA2002,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,Morgan-South Rich,,,600
-EA2003,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,East Canyon,,,500
-EA2004,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,Chalk Creek,,,600
-EA2005,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,"North Slope, West Daggett",,,100
-EA2006,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,Yellowstone,,,2000
-EA2008,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,"Nine Mile, Anthro-Myton Bench",,,250
-EA2009,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,"La Sal, La Sal Mtns",,,70
-EA2010,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,San Juan,,,50
-EA2011,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,Manti,,,300
-EA2012,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,"Wasatch Mtns, West",,,400
-EA2013,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,"Wasatch Mtns, Currant Creek",,,2000
-EA2014,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,"Wasatch Mtns, Avintaquin - White River",,,400
-EA2015,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,Paunsaugunt,,,100
-EA2016,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,Nebo,,,275
-EA2017,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,Mt Dutton,,,75
-EA2018,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,Panguitch Lake,,,75
-EA2019,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,"West Desert, Tintic Valley",,,60
-EA2020,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,Zion,,,320
-EA2021,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,"Beaver, East",,,30
-EA2026,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,"Box Elder, Hansel Mtn",,,200
-EA2027,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,Cache,,,300
-EA2028,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,Vernal/Bonanza,,,450
-EA2029,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,"Nine Mile, Range Creek",,,150
-EA2030,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,Diamond Mtn,,,200
+EA2002,True,True,True,False,included_forecast,Private Lands Only,Elk,Morgan-South Rich,,,600
+EA2003,True,True,True,False,included_forecast,Private Lands Only,Elk,East Canyon,,,500
+EA2004,True,True,True,False,included_forecast,Private Lands Only,Elk,Chalk Creek,,,600
+EA2005,True,True,True,False,included_forecast,Private Lands Only,Elk,"North Slope, West Daggett",,,100
+EA2006,True,True,True,False,included_forecast,Private Lands Only,Elk,Yellowstone,,,2000
+EA2008,True,True,True,False,included_forecast,Private Lands Only,Elk,"Nine Mile, Anthro-Myton Bench",,,250
+EA2009,True,True,True,False,included_forecast,Private Lands Only,Elk,"La Sal, La Sal Mtns",,,70
+EA2010,True,True,True,False,included_forecast,Private Lands Only,Elk,San Juan,,,50
+EA2011,True,True,True,False,included_forecast,Private Lands Only,Elk,Manti,,,300
+EA2012,True,True,True,False,included_forecast,Private Lands Only,Elk,"Wasatch Mtns, West",,,400
+EA2013,True,True,True,False,included_forecast,Private Lands Only,Elk,"Wasatch Mtns, Currant Creek",,,2000
+EA2014,True,True,True,False,included_forecast,Private Lands Only,Elk,"Wasatch Mtns, Avintaquin - White River",,,400
+EA2015,True,True,True,False,included_forecast,Private Lands Only,Elk,Paunsaugunt,,,100
+EA2016,True,True,True,False,included_forecast,Private Lands Only,Elk,Nebo,,,275
+EA2017,True,True,True,False,included_forecast,Private Lands Only,Elk,Mt Dutton,,,75
+EA2018,True,True,True,False,included_forecast,Private Lands Only,Elk,Panguitch Lake,,,75
+EA2019,True,True,True,False,included_forecast,Private Lands Only,Elk,"West Desert, Tintic Valley",,,60
+EA2020,True,True,True,False,included_forecast,Private Lands Only,Elk,Zion,,,320
+EA2021,True,True,True,False,included_forecast,Private Lands Only,Elk,"Beaver, East",,,30
+EA2026,True,True,True,False,included_forecast,Private Lands Only,Elk,"Box Elder, Hansel Mtn",,,200
+EA2027,True,True,True,False,included_forecast,Private Lands Only,Elk,Cache,,,300
+EA2028,True,True,True,False,included_forecast,Private Lands Only,Elk,Vernal/Bonanza,,,450
+EA2029,True,True,True,False,included_forecast,Private Lands Only,Elk,"Nine Mile, Range Creek",,,150
+EA2030,True,True,True,False,included_forecast,Private Lands Only,Elk,Diamond Mtn,,,200
 EA2033,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Kamas,225,25,250
 EA2034,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Nine Mile, Anthro",180,20,200
 EA2036,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,"Oquirrh-Stansbury, East",54,6,60
 EA2037,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Yellowstone,180,20,200
 EA2038,False,True,True,False,not_OIL_LE_PLE,General Season,Elk,Wasatch Mtns,1080,120,1200
-EA2039,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,"Fillmore, Pahvant",,,150
-EA2040,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,Kamas,,,150
+EA2039,True,True,True,False,included_forecast,Private Lands Only,Elk,"Fillmore, Pahvant",,,150
+EA2040,True,True,True,False,included_forecast,Private Lands Only,Elk,Kamas,,,150
 EA2041,False,True,True,False,not_OIL_LE_PLE,Conservation,Elk,Cache (Conservation),,,
 EA2045,False,True,True,False,not_OIL_LE_PLE,Conservation,Elk,Wasatch Mtns (Conservation),,,
-EA2046,False,True,True,False,not_OIL_LE_PLE,Private Lands Only,Elk,"Box Elder, Sawtooth",,,25
-EB1000,False,True,True,False,not_OIL_LE_PLE,Statewide,Elk,Elk - Statewide Permit,,,15
+EA2046,True,True,True,False,included_forecast,Private Lands Only,Elk,"Box Elder, Sawtooth",,,25
+EB1000,True,True,True,False,included_forecast,Statewide,Elk,Elk - Statewide Permit,,,15
 EB1001,False,True,True,False,not_OIL_LE_PLE,General Season - Any Bull,Elk,Any Bull Elk Units,,,10
 EB1002,False,True,True,False,not_OIL_LE_PLE,General Season - Any Bull,Elk,Any Bull Elk Units,,,6
 EB1003,False,True,True,False,not_OIL_LE_PLE,General Season - Spike Bull,Elk,Spike Only Units,,,16
@@ -1232,7 +1284,7 @@ EL3205,False,True,True,True,other_missing_model_input,Limited Entry - Private La
 EL3208,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,Morgan-South Rich,,,28
 EL3210,False,True,True,True,other_missing_model_input,Limited Entry - Private Land Only,Elk,North Slope Three Corners,,,21
 EX1000,False,True,True,False,not_OIL_LE_PLE,Extended Archery,Elk,Elk Extended Archery,,,
-GO1000,False,True,True,False,not_OIL_LE_PLE,Statewide,Mountain Goat,Mountain Goat - Statewide Permit,,,1
+GO1000,True,True,True,False,included_forecast,Statewide,Mountain Goat,Mountain Goat - Statewide Permit,,,1
 GO6800,True,True,True,True,included_forecast,Once-in-a-lifetime,Mountain Goat,Beaver,7,2,9
 GO6801,True,True,True,True,included_forecast,Once-in-a-lifetime,Mountain Goat,Beaver,9,0,9
 GO6803,True,True,True,True,included_forecast,Once-in-a-lifetime,Mountain Goat,Nebo,21,3,24
@@ -1385,7 +1437,7 @@ MA1007,True,True,True,True,included_forecast,Limited Entry,Moose,Morgan-South Ri
 MA1008,True,True,True,True,included_forecast,Limited Entry,Moose,"Wasatch Mtns, Salt Lake-Timpanogos",4,1,5
 MA1009,True,True,True,False,included_forecast,CWMU,Moose,Causey Spring CWMU,1,0,1
 MA1010,True,True,True,False,included_forecast,CWMU,Moose,Deseret CWMU,2,0,2
-MB1000,False,True,True,False,not_OIL_LE_PLE,Statewide,Moose,Moose - Statewide Permit,,,
+MB1000,True,True,True,False,included_forecast,Statewide,Moose,Moose - Statewide Permit,,,
 MB6000,True,True,True,True,included_forecast,Once-in-a-lifetime,Moose,Cache,14,3,17
 MB6001,True,True,True,True,included_forecast,Once-in-a-lifetime,Moose,Chalk Creek,4,0,4
 MB6002,True,True,True,True,included_forecast,Once-in-a-lifetime,Moose,East Canyon,5,0,5
@@ -1430,7 +1482,7 @@ MB6263,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 MB6264,False,True,False,False,hunt_code_changed_or_not_crosswalked,,,,,,
 MB6265,True,True,True,False,included_forecast,CWMU,Moose,Little Pole Canyon CWMU,1,0,1
 MB6266,True,True,True,False,included_forecast,CWMU,Moose,Weber Florence Creek/Stillman Creek CWMU,3,0,3
-PB1000,False,True,True,False,not_OIL_LE_PLE,Statewide,Pronghorn,Pronghorn - Statewide Permit,,,
+PB1000,True,True,True,False,included_forecast,Statewide,Pronghorn,Pronghorn - Statewide Permit,,,
 PB5000,True,True,True,True,included_forecast,Limited Entry,Pronghorn,Beaver,11,1,12
 PB5001,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Book Cliffs, Bitter Creek",13,1,14
 PB5002,True,True,True,True,included_forecast,Limited Entry,Pronghorn,"Book Cliffs, South",8,1,9
@@ -1577,7 +1629,7 @@ PD1058,False,True,True,False,not_OIL_LE_PLE,General Season,Pronghorn,"Parker Mtn
 PD1059,False,True,True,False,not_OIL_LE_PLE,General Season,Pronghorn,"Parker Mtn, Plains",27,3,30
 PD1060,False,True,True,False,not_OIL_LE_PLE,General Season,Pronghorn,"Parker Mtn, Plains",36,4,40
 RE1000,True,True,True,False,included_forecast,General Season,Rocky Mountain Bighorn Sheep,"Box Elder, Newfoundland Mtn",4,1,5
-RS0001,False,True,True,False,not_OIL_LE_PLE,Statewide,Rocky Mountain Bighorn Sheep,Rocky Mountain Bighorn Sheep - Statewide Permit,,,
+RS0001,True,True,True,False,included_forecast,Statewide,Rocky Mountain Bighorn Sheep,Rocky Mountain Bighorn Sheep - Statewide Permit,,,
 RS1000,False,True,True,False,missing_forecast_quota,Once-in-a-lifetime,Rocky Mountain Bighorn Sheep,Antelope Island Conservation,,,
 RS1001,False,True,True,False,not_OIL_LE_PLE,Conservation,Rocky Mountain Bighorn Sheep,"Book Cliffs, South",,,
 RS1003,False,True,True,False,not_OIL_LE_PLE,Conservation,Rocky Mountain Bighorn Sheep,"Box Elder, Newfoundland Mtn",,,
@@ -1597,7 +1649,7 @@ RS6724,True,True,True,True,included_forecast,Once-in-a-lifetime,Rocky Mountain B
 RS6725,True,True,True,True,included_forecast,Once-in-a-lifetime,Rocky Mountain Bighorn Sheep,Nebo,2,0,2
 RS6726,True,True,True,True,included_forecast,Once-in-a-lifetime,Rocky Mountain Bighorn Sheep,"Fillmore, Oak Creek",3,1,4
 RS6727,True,True,True,True,included_forecast,Once-in-a-lifetime,Rocky Mountain Bighorn Sheep,"Fillmore, Oak Creek",2,0,2
-TK0001,False,True,True,False,not_OIL_LE_PLE,Statewide,Turkey,Turkey - Statewide Permit,,,
+TK0001,True,True,True,False,included_forecast,Statewide,Turkey,Turkey - Statewide Permit,,,
 TK1000,False,True,True,False,not_OIL_LE_PLE,Spring General Season,Turkey,Statewide,,,
 TK1001,False,True,True,False,not_OIL_LE_PLE,Fall Management,Turkey,Northern Region - Private land only,,,2060
 TK1003,True,True,True,True,included_forecast,Limited Entry,Turkey,Central Area,,,600

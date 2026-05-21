@@ -8,648 +8,73 @@
     2024,
     2025
   ],
-  "generated_at": "2026-05-21T00:47:49.004405+00:00",
+  "generated_at": "2026-05-21T02:40:32.892208+00:00",
   "files_reviewed": [
-    "engine/utah_bonus_predictive/split.py",
-    "engine/utah_bonus_predictive/materialize.py",
-    "engine/utah_bonus_predictive/forecast.py",
-    "engine/utah_bonus_predictive/backtest.py",
+    "engine/utah_draw_predictive/mountain_lion.py",
     "engine/utah_draw_predictive/classifier.py",
-    "engine/utah_draw_predictive/coverage.py",
-    "engine/utah_draw_predictive/bonus.py",
-    "engine/utah_draw_predictive/special_bonus.py",
-    "engine/utah_draw_predictive/preference_general_deer.py",
-    "engine/utah_draw_predictive/preference_antlerless.py",
-    "engine/utah_draw_predictive/dedicated_hunter.py",
-    "engine/utah_draw_predictive/turkey.py",
-    "engine/utah_draw_predictive/private_lands_antlerless_elk.py",
-    "engine/utah_draw_predictive/youth.py",
-    "engine/utah_draw_predictive/random_only.py",
-    "engine/utah_draw_predictive/exclusions.py",
-    "hunt-research.js",
-    "config.js",
-    "tests/utah_bonus_predictive",
-    "tests/utah_draw_predictive",
-    "tests/utah/test_frontend_probability_selection.py",
+    "engine/utah_bonus_predictive/materialize.py",
     "docs/utah_draw_system_scope.md",
-    "docs/utah_bonus_predictive_engine.md"
+    "processed_data/mountain_lion_availability_predictions_v1.csv",
+    "processed_data/mountain_lion_availability_report.json",
+    "processed_data/ml_draw_predictions_v1.csv",
+    "processed_data/draw_reality_engine_predictive_v2.csv",
+    "processed_data/draw_system_coverage_report.json"
   ],
   "artifacts_reviewed": [
+    "processed_data/mountain_lion_availability_predictions_v1.csv",
+    "processed_data/mountain_lion_availability_report.json",
     "processed_data/ml_draw_predictions_v1.csv",
-    "processed_data/ml_draw_predictions_v1_report.json",
     "processed_data/draw_reality_engine_predictive_v2.csv",
     "processed_data/draw_system_coverage_report.csv",
     "processed_data/draw_system_coverage_report.json",
-    "processed_data/utah_bonus_predictive_manifest.json",
-    "processed_data/backtest_utah_bonus_draw.csv",
-    "processed_data/backtest_utah_bonus_draw_report.json",
-    "processed_data/dedicated_hunter_predictions_v1.csv",
-    "processed_data/dedicated_hunter_report.json",
-    "processed_data/phase4_antlerless_validation_inventory.csv",
-    "processed_data/phase4_antlerless_validation_inventory.json",
-    "processed_data/phase6_bonus_special_predictions_v1.csv",
-    "processed_data/phase6_bonus_special_report.json",
-    "processed_data/turkey_bonus_predictions_v1.csv",
-    "processed_data/turkey_bonus_report.json"
+    "processed_data/utah_bonus_predictive_manifest.json"
   ],
   "tests_run": [
-    "python -m pytest tests/utah_bonus_predictive tests/utah_draw_predictive tests/utah/test_frontend_probability_selection.py"
+    "python -m pytest -q tests/utah_bonus_predictive tests/utah_draw_predictive tests/utah/test_frontend_probability_selection.py"
   ],
-  "tests_passed": 63,
+  "tests_passed": 91,
   "tests_failed": 0,
   "blocked_dependencies": [],
-  "phase_status": [
-    {
-      "phase": "Phase 1",
-      "phase_name": "OIL / LE / PLE bonus engine",
-      "implemented": true,
-      "files_present": [
-        "engine/utah_bonus_predictive/split.py",
-        "engine/utah_bonus_predictive/forecast.py",
-        "engine/utah_bonus_predictive/backtest.py",
-        "engine/utah_draw_predictive/bonus.py"
-      ],
-      "artifacts_present": [
-        "processed_data/ml_draw_predictions_v1.csv",
-        "processed_data/backtest_utah_bonus_draw.csv",
-        "processed_data/backtest_utah_bonus_draw_report.json"
-      ],
-      "test_files_present": [
-        "tests/utah_bonus_predictive/test_split.py",
-        "tests/utah_bonus_predictive/test_eb3024_fixture.py",
-        "tests/utah_bonus_predictive/test_max_pool_not_100.py"
-      ],
-      "current_category_status": "MODELED_BONUS active for BONUS_OIL_BIG_GAME, BONUS_LE_BIG_GAME, BONUS_PLE_BIG_GAME",
-      "important_counts": {
-        "BONUS_OIL_BIG_GAME_rows": 3311,
-        "BONUS_LE_BIG_GAME_rows": 16402,
-        "BONUS_PLE_BIG_GAME_rows": 529
-      },
-      "pass_fail_status": "pass",
-      "unresolved_issues": []
-    },
-    {
-      "phase": "Phase 2",
-      "phase_name": "Scope correction and target universe classifier",
-      "implemented": true,
-      "files_present": [
-        "engine/utah_draw_predictive/classifier.py",
-        "engine/utah_draw_predictive/coverage.py",
-        "engine/utah_draw_predictive/exclusions.py",
-        "engine/utah_draw_predictive/random_only.py",
-        "engine/utah_draw_predictive/private_lands_antlerless_elk.py",
-        "engine/utah_draw_predictive/youth.py"
-      ],
-      "artifacts_present": [
-        "processed_data/draw_system_coverage_report.csv",
-        "processed_data/draw_system_coverage_report.json"
-      ],
-      "test_files_present": [
-        "tests/utah_draw_predictive/test_draw_system_classifier.py",
-        "tests/utah_draw_predictive/test_draw_system_coverage_report.py",
-        "tests/utah_draw_predictive/test_out_of_scope_non_target.py"
-      ],
-      "current_category_status": "Target classifier active; out-of-scope rows retained separately; excluded draw families classified distinctly.",
-      "important_counts": {
-        "out_of_scope_rows": 908,
-        "target_scope_rows_seen_in_coverage": 200685
-      },
-      "pass_fail_status": "pass with reporting caveat",
-      "unresolved_issues": [
-        "Coverage pending-family boolean for mountain lion/cougar is still row-driven instead of registry-driven."
-      ]
-    },
-    {
-      "phase": "Phase 3",
-      "phase_name": "General-season buck deer preference engine",
-      "implemented": true,
-      "files_present": [
-        "engine/utah_draw_predictive/preference_general_deer.py"
-      ],
-      "artifacts_present": [
-        "processed_data/ml_draw_predictions_v1.csv"
-      ],
-      "test_files_present": [
-        "tests/utah_draw_predictive/test_general_season_deer_preference.py"
-      ],
-      "current_category_status": "MODELED_PREFERENCE active",
-      "important_counts": {
-        "rows": 715,
-        "hunt_codes": 73
-      },
-      "pass_fail_status": "pass with field-contract caveat",
-      "unresolved_issues": [
-        "p_preference_draw is blank for this family even though p_draw/p_draw_pct are populated."
-      ]
-    },
-    {
-      "phase": "Phase 4",
-      "phase_name": "Antlerless deer / antlerless elk / doe pronghorn preference engine",
-      "implemented": true,
-      "files_present": [
-        "engine/utah_draw_predictive/preference_antlerless.py"
-      ],
-      "artifacts_present": [
-        "processed_data/phase4_antlerless_validation_inventory.csv",
-        "processed_data/phase4_antlerless_validation_inventory.json"
-      ],
-      "test_files_present": [
-        "tests/utah_draw_predictive/test_antlerless_preference.py"
-      ],
-      "current_category_status": "MODELED_PREFERENCE active",
-      "important_counts": {
-        "antlerless_deer_rows": 100,
-        "antlerless_elk_rows": 581,
-        "doe_pronghorn_rows": 115
-      },
-      "pass_fail_status": "pass with field-contract caveat",
-      "unresolved_issues": [
-        "p_preference_draw is blank for these families even though p_draw/p_draw_pct are populated."
-      ]
-    },
-    {
-      "phase": "Phase 5",
-      "phase_name": "Dedicated Hunter deer preference engine",
-      "implemented": true,
-      "files_present": [
-        "engine/utah_draw_predictive/dedicated_hunter.py"
-      ],
-      "artifacts_present": [
-        "processed_data/dedicated_hunter_predictions_v1.csv",
-        "processed_data/dedicated_hunter_report.json"
-      ],
-      "test_files_present": [
-        "tests/utah_draw_predictive/test_dedicated_hunter_preference.py"
-      ],
-      "current_category_status": "MODELED_PREFERENCE active",
-      "important_counts": {
-        "rows": 123,
-        "hunt_codes": 22
-      },
-      "pass_fail_status": "pass",
-      "unresolved_issues": []
-    },
-    {
-      "phase": "Phase 6",
-      "phase_name": "CWMU public + antlerless moose + ewe bighorn bonus families",
-      "implemented": true,
-      "files_present": [
-        "engine/utah_draw_predictive/special_bonus.py"
-      ],
-      "artifacts_present": [
-        "processed_data/phase6_bonus_special_predictions_v1.csv",
-        "processed_data/phase6_bonus_special_report.json"
-      ],
-      "test_files_present": [
-        "tests/utah_draw_predictive/test_cwmu_bonus_public.py",
-        "tests/utah_draw_predictive/test_special_bonus_antlerless_moose.py",
-        "tests/utah_draw_predictive/test_special_bonus_ewe_bighorn.py"
-      ],
-      "current_category_status": "MODELED_BONUS active with residual pending rows where source support or forecast inputs are incomplete.",
-      "important_counts": {
-        "cwmu_public_modeled_rows": 3038,
-        "antlerless_moose_modeled_rows": 36,
-        "ewe_bighorn_modeled_rows": 14
-      },
-      "pass_fail_status": "pass",
-      "unresolved_issues": []
-    },
-    {
-      "phase": "Phase 7",
-      "phase_name": "Turkey bonus strategy and report-semantics cleanup",
-      "implemented": true,
-      "files_present": [
-        "engine/utah_draw_predictive/turkey.py",
-        "engine/utah_draw_predictive/classifier.py",
-        "engine/utah_bonus_predictive/materialize.py"
-      ],
-      "artifacts_present": [
-        "processed_data/turkey_bonus_predictions_v1.csv",
-        "processed_data/turkey_bonus_report.json",
-        "processed_data/draw_system_coverage_report.json"
-      ],
-      "test_files_present": [
-        "tests/utah_draw_predictive/test_turkey_bonus_strategy.py",
-        "tests/utah_draw_predictive/test_phase7_turkey_report_semantics.py",
-        "tests/utah_draw_predictive/test_phase7_turkey_coverage_semantics.py"
-      ],
-      "current_category_status": "BONUS_TURKEY modeled for proven limited-entry bonus turkey rows; report now separates active predictive and observed/history turkey counts.",
-      "important_counts": {
-        "bonus_turkey_modeled_rows": 77,
-        "bonus_turkey_pending_rows": 2,
-        "bonus_turkey_modeled_hunt_codes": 7
-      },
-      "pass_fail_status": "pass with one remaining coverage-summary caveat",
-      "unresolved_issues": [
-        "Coverage summary still marks mountain_lion_cougar_still_pending false when the family is still unimplemented/pending."
-      ]
-    },
-    {
-      "phase": "Pending",
-      "phase_name": "Bear / private-lands-only antlerless elk / mountain lion-cougar / youth / random-only-OTC-landowner-mitigation families",
-      "implemented": false,
-      "files_present": [
-        "engine/utah_draw_predictive/private_lands_antlerless_elk.py",
-        "engine/utah_draw_predictive/youth.py",
-        "engine/utah_draw_predictive/random_only.py",
-        "engine/utah_draw_predictive/exclusions.py"
-      ],
-      "artifacts_present": [
-        "processed_data/draw_system_coverage_report.json"
-      ],
-      "test_files_present": [
-        "tests/utah_draw_predictive/test_bear_classification.py",
-        "tests/utah_draw_predictive/test_private_lands_antlerless_elk.py"
-      ],
-      "current_category_status": "Families remain classified and separated, but no new predictive strategy has been implemented in this review pass.",
-      "important_counts": {
-        "bear_pending_rows": 2598,
-        "mountain_lion_pending_rows": 0,
-        "private_lands_only_antlerless_elk_rows": 0
-      },
-      "pass_fail_status": "pending",
-      "unresolved_issues": [
-        "No new strategy work was performed, by request."
-      ]
-    }
-  ],
+  "phase_status": {
+    "phase_10_mountain_lion": "implemented_and_validated"
+  },
   "family_status": {
-    "BONUS_OIL_BIG_GAME": {
-      "rows": 3311,
-      "hunt_codes": 79,
-      "algorithm_status_counts": {
-        "MODELED_BONUS": 3311
-      },
-      "p_bonus_pool_non_null_count": 3311,
-      "p_random_pool_non_null_count": 3311,
-      "p_draw_non_null_count": 3311,
-      "p_draw_pct_non_null_count": 3311,
-      "p_preference_draw_non_null_count": 0,
-      "p_draw_outside_range_count": 0,
-      "p_draw_pct_outside_range_count": 0
-    },
-    "BONUS_LE_BIG_GAME": {
-      "rows": 16402,
-      "hunt_codes": 270,
-      "algorithm_status_counts": {
-        "MODELED_BONUS": 16402
-      },
-      "p_bonus_pool_non_null_count": 16402,
-      "p_random_pool_non_null_count": 16402,
-      "p_draw_non_null_count": 16402,
-      "p_draw_pct_non_null_count": 16402,
-      "p_preference_draw_non_null_count": 0,
-      "p_draw_outside_range_count": 0,
-      "p_draw_pct_outside_range_count": 0
-    },
-    "BONUS_PLE_BIG_GAME": {
-      "rows": 529,
-      "hunt_codes": 9,
-      "algorithm_status_counts": {
-        "MODELED_BONUS": 529
-      },
-      "p_bonus_pool_non_null_count": 529,
-      "p_random_pool_non_null_count": 529,
-      "p_draw_non_null_count": 529,
-      "p_draw_pct_non_null_count": 529,
-      "p_preference_draw_non_null_count": 0,
-      "p_draw_outside_range_count": 0,
-      "p_draw_pct_outside_range_count": 0
-    },
-    "BONUS_CWMU_BIG_GAME": {
-      "rows": 3341,
-      "hunt_codes": 271,
-      "algorithm_status_counts": {
-        "IN_SCOPE_MODEL_PENDING": 303,
-        "MODELED_BONUS": 3038
-      },
-      "p_bonus_pool_non_null_count": 3038,
-      "p_random_pool_non_null_count": 3038,
-      "p_draw_non_null_count": 3038,
-      "p_draw_pct_non_null_count": 3038,
-      "p_preference_draw_non_null_count": 0,
-      "p_draw_outside_range_count": 0,
-      "p_draw_pct_outside_range_count": 0
-    },
-    "BONUS_ANTLERLESS_MOOSE": {
-      "rows": 44,
-      "hunt_codes": 5,
-      "algorithm_status_counts": {
-        "MODELED_BONUS": 36,
-        "IN_SCOPE_MODEL_PENDING": 8
-      },
-      "p_bonus_pool_non_null_count": 36,
-      "p_random_pool_non_null_count": 36,
-      "p_draw_non_null_count": 36,
-      "p_draw_pct_non_null_count": 36,
-      "p_preference_draw_non_null_count": 0,
-      "p_draw_outside_range_count": 0,
-      "p_draw_pct_outside_range_count": 0
-    },
-    "BONUS_EWE_BIGHORN": {
-      "rows": 14,
-      "hunt_codes": 1,
-      "algorithm_status_counts": {
-        "MODELED_BONUS": 14
-      },
-      "p_bonus_pool_non_null_count": 14,
-      "p_random_pool_non_null_count": 14,
-      "p_draw_non_null_count": 14,
-      "p_draw_pct_non_null_count": 14,
-      "p_preference_draw_non_null_count": 0,
-      "p_draw_outside_range_count": 0,
-      "p_draw_pct_outside_range_count": 0
-    },
-    "BONUS_TURKEY": {
-      "rows": 79,
-      "hunt_codes": 7,
-      "algorithm_status_counts": {
-        "MODELED_BONUS": 77,
-        "IN_SCOPE_MODEL_PENDING": 2
-      },
-      "p_bonus_pool_non_null_count": 77,
-      "p_random_pool_non_null_count": 77,
-      "p_draw_non_null_count": 77,
-      "p_draw_pct_non_null_count": 77,
-      "p_preference_draw_non_null_count": 0,
-      "p_draw_outside_range_count": 0,
-      "p_draw_pct_outside_range_count": 0
-    },
-    "PREFERENCE_GENERAL_SEASON_BUCK_DEER": {
-      "rows": 715,
-      "hunt_codes": 73,
-      "algorithm_status_counts": {
-        "MODELED_PREFERENCE": 715
-      },
-      "p_bonus_pool_non_null_count": 0,
-      "p_random_pool_non_null_count": 0,
-      "p_draw_non_null_count": 715,
-      "p_draw_pct_non_null_count": 715,
-      "p_preference_draw_non_null_count": 0,
-      "p_draw_outside_range_count": 0,
-      "p_draw_pct_outside_range_count": 0
-    },
-    "PREFERENCE_ANTLERLESS_DEER": {
-      "rows": 100,
-      "hunt_codes": 12,
-      "algorithm_status_counts": {
-        "MODELED_PREFERENCE": 100
-      },
-      "p_bonus_pool_non_null_count": 0,
-      "p_random_pool_non_null_count": 0,
-      "p_draw_non_null_count": 100,
-      "p_draw_pct_non_null_count": 100,
-      "p_preference_draw_non_null_count": 0,
-      "p_draw_outside_range_count": 0,
-      "p_draw_pct_outside_range_count": 0
-    },
-    "PREFERENCE_ANTLERLESS_ELK": {
-      "rows": 581,
-      "hunt_codes": 80,
-      "algorithm_status_counts": {
-        "MODELED_PREFERENCE": 581
-      },
-      "p_bonus_pool_non_null_count": 0,
-      "p_random_pool_non_null_count": 0,
-      "p_draw_non_null_count": 581,
-      "p_draw_pct_non_null_count": 581,
-      "p_preference_draw_non_null_count": 0,
-      "p_draw_outside_range_count": 0,
-      "p_draw_pct_outside_range_count": 0
-    },
-    "PREFERENCE_DOE_PRONGHORN": {
-      "rows": 115,
-      "hunt_codes": 8,
-      "algorithm_status_counts": {
-        "MODELED_PREFERENCE": 115
-      },
-      "p_bonus_pool_non_null_count": 0,
-      "p_random_pool_non_null_count": 0,
-      "p_draw_non_null_count": 115,
-      "p_draw_pct_non_null_count": 115,
-      "p_preference_draw_non_null_count": 0,
-      "p_draw_outside_range_count": 0,
-      "p_draw_pct_outside_range_count": 0
-    },
-    "PREFERENCE_DEDICATED_HUNTER_DEER": {
-      "rows": 123,
-      "hunt_codes": 22,
-      "algorithm_status_counts": {
-        "MODELED_PREFERENCE": 123
-      },
-      "p_bonus_pool_non_null_count": 0,
-      "p_random_pool_non_null_count": 0,
-      "p_draw_non_null_count": 123,
-      "p_draw_pct_non_null_count": 123,
-      "p_preference_draw_non_null_count": 123,
-      "p_draw_outside_range_count": 0,
-      "p_draw_pct_outside_range_count": 0
-    },
-    "BEAR_DRAW": {
-      "rows": 2598,
-      "hunt_codes": 96,
-      "algorithm_status_counts": {
-        "IN_SCOPE_MODEL_PENDING": 2598
-      },
-      "p_bonus_pool_non_null_count": 0,
-      "p_random_pool_non_null_count": 0,
-      "p_draw_non_null_count": 0,
-      "p_draw_pct_non_null_count": 0,
-      "p_preference_draw_non_null_count": 0,
-      "p_draw_outside_range_count": 0,
-      "p_draw_pct_outside_range_count": 0
-    },
-    "MOUNTAIN_LION_DRAW": {
-      "rows": 0,
-      "hunt_codes": 0,
-      "algorithm_status_counts": {},
-      "p_bonus_pool_non_null_count": 0,
-      "p_random_pool_non_null_count": 0,
-      "p_draw_non_null_count": 0,
-      "p_draw_pct_non_null_count": 0,
-      "p_preference_draw_non_null_count": 0,
-      "p_draw_outside_range_count": 0,
-      "p_draw_pct_outside_range_count": 0
-    },
-    "PRIVATE_LANDS_ONLY_ANTLERLESS_ELK": {
-      "rows": 0,
-      "hunt_codes": 0,
-      "algorithm_status_counts": {},
-      "p_bonus_pool_non_null_count": 0,
-      "p_random_pool_non_null_count": 0,
-      "p_draw_non_null_count": 0,
-      "p_draw_pct_non_null_count": 0,
-      "p_preference_draw_non_null_count": 0,
-      "p_draw_outside_range_count": 0,
-      "p_draw_pct_outside_range_count": 0
-    },
-    "YOUTH_GENERAL_DEER": {
-      "rows": 0,
-      "hunt_codes": 0,
-      "algorithm_status_counts": {},
-      "p_bonus_pool_non_null_count": 0,
-      "p_random_pool_non_null_count": 0,
-      "p_draw_non_null_count": 0,
-      "p_draw_pct_non_null_count": 0,
-      "p_preference_draw_non_null_count": 0,
-      "p_draw_outside_range_count": 0,
-      "p_draw_pct_outside_range_count": 0
-    },
-    "YOUTH_GENERAL_ANY_BULL_ELK": {
-      "rows": 0,
-      "hunt_codes": 0,
-      "algorithm_status_counts": {},
-      "p_bonus_pool_non_null_count": 0,
-      "p_random_pool_non_null_count": 0,
-      "p_draw_non_null_count": 0,
-      "p_draw_pct_non_null_count": 0,
-      "p_preference_draw_non_null_count": 0,
-      "p_draw_outside_range_count": 0,
-      "p_draw_pct_outside_range_count": 0
-    },
-    "GENERAL_BIG_GAME_OTHER": {
-      "rows": 0,
-      "hunt_codes": 0,
-      "algorithm_status_counts": {},
-      "p_bonus_pool_non_null_count": 0,
-      "p_random_pool_non_null_count": 0,
-      "p_draw_non_null_count": 0,
-      "p_draw_pct_non_null_count": 0,
-      "p_preference_draw_non_null_count": 0,
-      "p_draw_outside_range_count": 0,
-      "p_draw_pct_outside_range_count": 0
-    },
-    "RANDOM_ONLY_TARGET": {
-      "rows": 0,
-      "hunt_codes": 0,
-      "algorithm_status_counts": {},
-      "p_bonus_pool_non_null_count": 0,
-      "p_random_pool_non_null_count": 0,
-      "p_draw_non_null_count": 0,
-      "p_draw_pct_non_null_count": 0,
-      "p_preference_draw_non_null_count": 0,
-      "p_draw_outside_range_count": 0,
-      "p_draw_pct_outside_range_count": 0
-    },
-    "OTC_OR_REMAINING_TARGET": {
-      "rows": 0,
-      "hunt_codes": 0,
-      "algorithm_status_counts": {},
-      "p_bonus_pool_non_null_count": 0,
-      "p_random_pool_non_null_count": 0,
-      "p_draw_non_null_count": 0,
-      "p_draw_pct_non_null_count": 0,
-      "p_preference_draw_non_null_count": 0,
-      "p_draw_outside_range_count": 0,
-      "p_draw_pct_outside_range_count": 0
-    },
-    "LANDOWNER_BIG_GAME": {
-      "rows": 0,
-      "hunt_codes": 0,
-      "algorithm_status_counts": {},
-      "p_bonus_pool_non_null_count": 0,
-      "p_random_pool_non_null_count": 0,
-      "p_draw_non_null_count": 0,
-      "p_draw_pct_non_null_count": 0,
-      "p_preference_draw_non_null_count": 0,
-      "p_draw_outside_range_count": 0,
-      "p_draw_pct_outside_range_count": 0
-    },
-    "MITIGATION_OR_DEPREDATION_BIG_GAME": {
-      "rows": 0,
-      "hunt_codes": 0,
-      "algorithm_status_counts": {},
-      "p_bonus_pool_non_null_count": 0,
-      "p_random_pool_non_null_count": 0,
-      "p_draw_non_null_count": 0,
-      "p_draw_pct_non_null_count": 0,
-      "p_preference_draw_non_null_count": 0,
-      "p_draw_outside_range_count": 0,
-      "p_draw_pct_outside_range_count": 0
-    },
-    "OUT_OF_SCOPE_NON_TARGET": {
-      "rows": 908,
-      "hunt_codes": 23,
-      "algorithm_status_counts": {
-        "OUT_OF_SCOPE_NON_TARGET": 908
-      },
-      "p_bonus_pool_non_null_count": 0,
-      "p_random_pool_non_null_count": 0,
-      "p_draw_non_null_count": 0,
-      "p_draw_pct_non_null_count": 0,
-      "p_preference_draw_non_null_count": 0,
-      "p_draw_outside_range_count": 0,
-      "p_draw_pct_outside_range_count": 0
-    }
+    "MOUNTAIN_LION_DRAW": "MODELED_AVAILABILITY",
+    "PRIVATE_LANDS_ONLY_ANTLERLESS_ELK": "MODELED_ALLOCATION",
+    "SPORTSMAN_PERMIT": "IN_SCOPE_MODEL_PENDING"
   },
   "row_counts": {
-    "total_predictive_rows": 28860,
-    "modeled_bonus_rows": 23407,
-    "modeled_preference_rows": 1634,
-    "pending_rows": 2911,
-    "out_of_scope_rows": 908
+    "total_predictive_rows": 27823,
+    "MODELED_BONUS": 25291,
+    "MODELED_PREFERENCE": 1731,
+    "MODELED_ALLOCATION": 54,
+    "MODELED_AVAILABILITY": 120,
+    "IN_SCOPE_MODEL_PENDING": 419,
+    "OUT_OF_SCOPE_NON_TARGET": 198,
+    "MOUNTAIN_LION_DRAW_rows": 120,
+    "MOUNTAIN_LION_DRAW_hunt_codes": 60,
+    "MOUNTAIN_LION_DRAW_units": 60
   },
   "hunt_code_counts": {
-    "BONUS_OIL_BIG_GAME": 79,
-    "BONUS_LE_BIG_GAME": 270,
-    "BONUS_PLE_BIG_GAME": 9,
-    "BONUS_CWMU_BIG_GAME": 271,
-    "BONUS_ANTLERLESS_MOOSE": 5,
-    "BONUS_EWE_BIGHORN": 1,
-    "BONUS_TURKEY": 7,
-    "PREFERENCE_GENERAL_SEASON_BUCK_DEER": 73,
-    "PREFERENCE_ANTLERLESS_DEER": 12,
-    "PREFERENCE_ANTLERLESS_ELK": 80,
-    "PREFERENCE_DOE_PRONGHORN": 8,
-    "PREFERENCE_DEDICATED_HUNTER_DEER": 22,
-    "BEAR_DRAW": 96,
-    "MOUNTAIN_LION_DRAW": 0,
-    "PRIVATE_LANDS_ONLY_ANTLERLESS_ELK": 0,
-    "YOUTH_GENERAL_DEER": 0,
-    "YOUTH_GENERAL_ANY_BULL_ELK": 0,
-    "GENERAL_BIG_GAME_OTHER": 0,
-    "RANDOM_ONLY_TARGET": 0,
-    "OTC_OR_REMAINING_TARGET": 0,
-    "LANDOWNER_BIG_GAME": 0,
-    "MITIGATION_OR_DEPREDATION_BIG_GAME": 0,
-    "OUT_OF_SCOPE_NON_TARGET": 23
+    "MOUNTAIN_LION_DRAW": 60
   },
   "guardrail_results": {
-    "EB3024_regression": "pass",
-    "one_permit_random_only_rule": "pass",
-    "MAX_POOL_safety": "pass",
-    "UI_probability_precedence": "pass",
     "duplicate_key_count": 0,
     "pending_rows_with_p_draw": 0,
-    "private_CWMU_landowner_rows_with_p_draw": 0,
-    "private_lands_only_antlerless_elk_p_draw": 0,
-    "general_season_turkey_p_draw": 0,
-    "remaining_turkey_p_draw": 0,
-    "non_public_turkey_p_draw": 0,
-    "Dedicated_Hunter_not_classified_as_general_buck_deer": "pass",
-    "antlerless_preference_not_classified_as_bonus": "pass",
-    "general_season_buck_deer_not_classified_as_bonus": "pass"
+    "out_of_scope_rows_with_p_draw": 0,
+    "mountain_lion_p_draw_non_null_count": 0,
+    "mountain_lion_p_availability_non_null_count": 120,
+    "mountain_lion_cougar_in_scope": true,
+    "mountain_lion_cougar_modeled_availability": true,
+    "mountain_lion_cougar_still_pending_availability": false,
+    "EB3024_pass": true,
+    "one_permit_random_only_pass": true,
+    "MAX_POOL_safety_pass": true,
+    "UI_precedence_pass": true,
+    "turkey_alignment_pass": true,
+    "preference_field_contract_pass": true
   },
-  "unresolved_issues": [
-    {
-      "severity": "medium",
-      "area": "docs/utah_draw_system_scope.md",
-      "issue": "Current State section is stale. It still lists Phase 3-7 families as pending even though the 2026 predictive artifacts and tests show them modeled.",
-      "recommended_next_command": "Refresh Utah docs to match the current 2026 modeled and pending family status before starting Phase 8."
-    },
-    {
-      "severity": "medium",
-      "area": "processed_data/draw_system_coverage_report.json",
-      "issue": "phase7_turkey.mountain_lion_cougar_still_pending is false because it is derived from active predictive rows rather than family registry status. The family remains unimplemented/pending even when there are zero active predictive rows.",
-      "recommended_next_command": "Patch coverage summary booleans so pending-family status comes from registry status, with row counts reported separately."
-    },
-    {
-      "severity": "medium",
-      "area": "preference family field contract",
-      "issue": "General-season buck deer and antlerless preference rows populate p_draw/p_draw_pct but leave p_preference_draw blank. Dedicated Hunter uses p_preference_draw correctly. This is a contract mismatch if preference families are expected to expose p_preference_draw uniformly.",
-      "recommended_next_command": "Decide whether to standardize p_preference_draw across all preference families or narrow the documented contract to Dedicated Hunter only."
-    }
-  ],
-  "recommended_next_phase": "Phase 8: Bear strategy",
-  "recommended_next_codex_command_summary": "First tighten the remaining coverage/doc semantics, then begin Phase 8 bear strategy without changing the accepted Phase 1-7 math."
+  "unresolved_issues": [],
+  "recommended_next_phase": "SPORTSMAN odds source strategy or deferred non-draw reporting cleanup",
+  "recommended_next_codex_command_summary": "If desired, proceed to Sportsman odds-source ingestion next; otherwise pause here because all requested Phase 10 mountain-lion availability work is complete and validated."
 }

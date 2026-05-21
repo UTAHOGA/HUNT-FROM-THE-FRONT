@@ -10,7 +10,7 @@
     2025
   ],
   "command_used": "python -m engine.utah_bonus_predictive.materialize --output-dir processed_data --forecast-year 2026 --history-years 2021,2022,2023,2024,2025 --skip-upstream",
-  "generated_at": "2026-05-21T00:38:45.695727+00:00",
+  "generated_at": "2026-05-21T02:31:05.236577+00:00",
   "output_files": {
     "ml_draw_predictions_v1.csv": "processed_data\\ml_draw_predictions_v1.csv",
     "ml_draw_predictions_v1_report.json": "processed_data\\ml_draw_predictions_v1_report.json",
@@ -27,20 +27,28 @@
     "phase6_bonus_special_predictions_v1.csv": "processed_data\\phase6_bonus_special_predictions_v1.csv",
     "phase6_bonus_special_report.json": "processed_data\\phase6_bonus_special_report.json",
     "turkey_bonus_predictions_v1.csv": "processed_data\\turkey_bonus_predictions_v1.csv",
-    "turkey_bonus_report.json": "processed_data\\turkey_bonus_report.json"
+    "turkey_bonus_report.json": "processed_data\\turkey_bonus_report.json",
+    "bear_draw_predictions_v1.csv": "processed_data\\bear_draw_predictions_v1.csv",
+    "bear_draw_report.json": "processed_data\\bear_draw_report.json",
+    "sportsman_permit_predictions_v1.csv": "processed_data\\sportsman_permit_predictions_v1.csv",
+    "sportsman_permit_report.json": "processed_data\\sportsman_permit_report.json",
+    "private_lands_antlerless_elk_predictions_v1.csv": "processed_data\\private_lands_antlerless_elk_predictions_v1.csv",
+    "private_lands_antlerless_elk_report.json": "processed_data\\private_lands_antlerless_elk_report.json",
+    "mountain_lion_availability_predictions_v1.csv": "processed_data\\mountain_lion_availability_predictions_v1.csv",
+    "mountain_lion_availability_report.json": "processed_data\\mountain_lion_availability_report.json"
   },
   "output_row_counts": {
-    "ml_draw_predictions_v1.csv": 28860,
+    "ml_draw_predictions_v1.csv": 27823,
     "backtest_utah_bonus_draw.csv": 10557,
-    "draw_reality_engine_predictive_v2.csv": 28860,
+    "draw_reality_engine_predictive_v2.csv": 27823,
     "draw_reality_engine_v2.csv": 176753
   },
   "duplicate_key_counts": {
     "ml_draw_predictions_v1.csv": 0,
     "draw_reality_engine_predictive_v2.csv": 0
   },
-  "p_draw_non_null_count": 25041,
-  "p_draw_pct_non_null_count": 25041,
+  "p_draw_non_null_count": 27022,
+  "p_draw_pct_non_null_count": 27022,
   "calibration_metric_non_null_count": 10557,
   "EB3024_regression_result": {
     "pass": true,
@@ -79,25 +87,25 @@
   },
   "coverage_report_summary": {
     "total_historical_backtest_hunt_codes": 1616,
-    "total_forecast_hunt_codes": 953,
+    "total_forecast_hunt_codes": 1066,
     "total_active_2026_forecast_eligible_hunt_codes": 592,
-    "count_excluded_not_OIL_LE_PLE": 293,
+    "count_excluded_not_OIL_LE_PLE": 240,
     "count_excluded_not_active_in_2026": 0,
     "count_excluded_missing_forecast_quota": 20,
     "count_excluded_missing_required_metadata": 0,
-    "count_excluded_hunt_code_changed_or_not_crosswalked": 222,
+    "count_excluded_hunt_code_changed_or_not_crosswalked": 214,
     "count_excluded_other_reason": 128,
     "count_excluded_missing_model_input_or_not_in_predictive_draft": 128,
     "forecast_codes_match_active_eligible_universe": false,
     "active_eligible_codes_missing_from_forecast": 0,
-    "forecast_codes_outside_active_eligible_universe": 361,
+    "forecast_codes_outside_active_eligible_universe": 474,
     "reason_counts": {
-      "included_forecast": 953,
-      "not_OIL_LE_PLE": 293,
+      "included_forecast": 1066,
+      "not_OIL_LE_PLE": 240,
       "not_active_in_2026": 0,
       "missing_forecast_quota": 20,
       "missing_required_metadata": 0,
-      "hunt_code_changed_or_not_crosswalked": 222,
+      "hunt_code_changed_or_not_crosswalked": 214,
       "other_missing_model_input": 128
     },
     "source_csv": "processed_data\\predictive_coverage_report.csv"
@@ -106,11 +114,11 @@
     "prediction": {
       "p_draw_outside_0_1": 0,
       "p_draw_pct_outside_0_100": 0,
-      "p_draw_pct_null": 3819,
-      "public_permits_gt_0_but_p_draw_null": 3479,
-      "status_max_pool_and_p_draw_pct_100": 195,
+      "p_draw_pct_null": 801,
+      "public_permits_gt_0_but_p_draw_null": 249,
+      "status_max_pool_and_p_draw_pct_100": 343,
       "status_max_pool_and_p_draw_pct_lt_100": 0,
-      "random_permits_gt_0_and_p_random_pool_0": 2392,
+      "random_permits_gt_0_and_p_random_pool_0": 2671,
       "duplicate_key_count": 0
     },
     "backtest": {

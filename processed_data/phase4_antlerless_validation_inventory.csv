@@ -1,4 +1,6 @@
 draw_system_type,hunt_code,hunt_name,species,residency,points_modeled,min_points,max_points,public_permits_2026,source_years_used,model_strategy
+PREFERENCE_ANTLERLESS_DEER,DA1001,"Box Elder, West Bear River",Deer,Resident,4,0,3,30,"2022,2023,2025",preference_antlerless
+PREFERENCE_ANTLERLESS_DEER,DA1002,"Box Elder, West Bear River",Deer,Resident,4,0,3,30,"2022,2023,2025",preference_antlerless
 PREFERENCE_ANTLERLESS_DEER,DA1003,"Monroe/Plateau, Sevier Valley",Deer,Nonresident,4,2,6,1,"2022,2023,2025",preference_antlerless
 PREFERENCE_ANTLERLESS_DEER,DA1003,"Monroe/Plateau, Sevier Valley",Deer,Resident,7,0,6,14,"2022,2023,2025",preference_antlerless
 PREFERENCE_ANTLERLESS_DEER,DA1009,"Pine Valley, Enterprise",Deer,Resident,9,0,8,25,"2022,2023,2025",preference_antlerless
@@ -84,6 +86,12 @@ PREFERENCE_ANTLERLESS_ELK,EA1076,Boulder West,Elk,Nonresident,5,0,5,5,"2022,2023
 PREFERENCE_ANTLERLESS_ELK,EA1076,Boulder West,Elk,Resident,7,0,6,45,"2022,2023,2025",preference_antlerless
 PREFERENCE_ANTLERLESS_ELK,EA1077,Boulder-Circle Cliffs,Elk,Nonresident,3,0,2,4,"2022,2023,2025",preference_antlerless
 PREFERENCE_ANTLERLESS_ELK,EA1077,Boulder-Circle Cliffs,Elk,Resident,4,0,3,26,"2022,2023,2025",preference_antlerless
+PREFERENCE_ANTLERLESS_ELK,EA1078,Fishlake/Thousand Lakes,Elk,Nonresident,4,0,3,27,"2022,2023,2025",preference_antlerless
+PREFERENCE_ANTLERLESS_ELK,EA1078,Fishlake/Thousand Lakes,Elk,Resident,7,0,6,243,"2022,2023,2025",preference_antlerless
+PREFERENCE_ANTLERLESS_ELK,EA1079,Fishlake/Thousand Lakes East,Elk,Nonresident,6,0,5,7,"2022,2023,2025",preference_antlerless
+PREFERENCE_ANTLERLESS_ELK,EA1079,Fishlake/Thousand Lakes East,Elk,Resident,7,0,6,58,"2022,2023,2025",preference_antlerless
+PREFERENCE_ANTLERLESS_ELK,EA1080,Fishlake/Thousand Lakes West,Elk,Nonresident,7,0,6,6,"2022,2023,2025",preference_antlerless
+PREFERENCE_ANTLERLESS_ELK,EA1080,Fishlake/Thousand Lakes West,Elk,Resident,8,0,7,54,"2022,2023,2025",preference_antlerless
 PREFERENCE_ANTLERLESS_ELK,EA1081,San Juan,Elk,Nonresident,5,0,4,14,"2022,2023,2025",preference_antlerless
 PREFERENCE_ANTLERLESS_ELK,EA1081,San Juan,Elk,Resident,3,0,2,111,"2022,2023,2025",preference_antlerless
 PREFERENCE_ANTLERLESS_ELK,EA1082,San Juan,Elk,Nonresident,4,0,3,14,"2022,2023,2025",preference_antlerless
