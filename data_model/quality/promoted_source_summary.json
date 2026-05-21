@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-10T13:16:05.986119+00:00",
+  "generated_at": "2026-06-21T00:08:43.920623+00:00",
   "input_audit_file": "data_model/quality/raw_pdf_inventory_audit.csv",
   "outputs": {
     "promoted_quality_sources_csv": "data_model/quality/promoted_quality_sources.csv",
