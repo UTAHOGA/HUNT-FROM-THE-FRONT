@@ -10,7 +10,7 @@
     2025
   ],
   "command_used": "python -m engine.utah_bonus_predictive.materialize --output-dir processed_data --forecast-year 2026 --history-years 2021,2022,2023,2024,2025",
-  "generated_at": "2026-05-21T00:08:28.418792+00:00",
+  "generated_at": "2026-05-21T00:14:17.021069+00:00",
   "output_files": {
     "ml_draw_predictions_v1.csv": "processed_data\\ml_draw_predictions_v1.csv",
     "ml_draw_predictions_v1_report.json": "processed_data\\ml_draw_predictions_v1_report.json",
@@ -30,17 +30,17 @@
     "turkey_bonus_report.json": "processed_data\\turkey_bonus_report.json"
   },
   "output_row_counts": {
-    "ml_draw_predictions_v1.csv": 28795,
+    "ml_draw_predictions_v1.csv": 28860,
     "backtest_utah_bonus_draw.csv": 10557,
-    "draw_reality_engine_predictive_v2.csv": 28795,
+    "draw_reality_engine_predictive_v2.csv": 28860,
     "draw_reality_engine_v2.csv": 176753
   },
   "duplicate_key_counts": {
     "ml_draw_predictions_v1.csv": 0,
     "draw_reality_engine_predictive_v2.csv": 0
   },
-  "p_draw_non_null_count": 24964,
-  "p_draw_pct_non_null_count": 24964,
+  "p_draw_non_null_count": 25041,
+  "p_draw_pct_non_null_count": 25041,
   "calibration_metric_non_null_count": 10557,
   "EB3024_regression_result": {
     "pass": true,
@@ -106,11 +106,11 @@
     "prediction": {
       "p_draw_outside_0_1": 0,
       "p_draw_pct_outside_0_100": 0,
-      "p_draw_pct_null": 3831,
-      "public_permits_gt_0_but_p_draw_null": 3486,
-      "status_max_pool_and_p_draw_pct_100": 174,
+      "p_draw_pct_null": 3819,
+      "public_permits_gt_0_but_p_draw_null": 3479,
+      "status_max_pool_and_p_draw_pct_100": 195,
       "status_max_pool_and_p_draw_pct_lt_100": 0,
-      "random_permits_gt_0_and_p_random_pool_0": 2390,
+      "random_permits_gt_0_and_p_random_pool_0": 2392,
       "duplicate_key_count": 0
     },
     "backtest": {

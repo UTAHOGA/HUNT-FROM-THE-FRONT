@@ -488,7 +488,7 @@ def build_draw_system_coverage_report(
         "turkey_still_pending": "BONUS_TURKEY" in {row["draw_system_type"] for row in rows if row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING},
         "bear_still_pending": "BEAR_DRAW" in {row["draw_system_type"] for row in rows if row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING},
         "mountain_lion_cougar_still_pending": "MOUNTAIN_LION_DRAW" in {row["draw_system_type"] for row in rows if row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING},
-        "private_lands_only_antlerless_elk_allocation_pending": "PRIVATE_LANDS_ONLY_ANTLERLESS_ELK" in {row["draw_system_type"] for row in rows if row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING},
+        "private_lands_only_antlerless_elk_allocation_pending": REGISTRY["PRIVATE_LANDS_ONLY_ANTLERLESS_ELK"].algorithm_status == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING,
     }
     turkey_rows = [row for row in rows if "turkey" in _joined_text(row)]
     turkey_summary = {
@@ -499,7 +499,7 @@ def build_draw_system_coverage_report(
         "remaining_turkey_excluded_or_availability_pending": any(is_remaining_turkey_row(row) and row["algorithm_status"] in {ALGORITHM_STATUS_EXCLUDED_NOT_PREDICTIVE_DRAW, ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING} for row in turkey_rows),
         "bear_still_pending": "BEAR_DRAW" in {row["draw_system_type"] for row in rows if row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING},
         "mountain_lion_cougar_still_pending": "MOUNTAIN_LION_DRAW" in {row["draw_system_type"] for row in rows if row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING},
-        "private_lands_only_antlerless_elk_allocation_pending": "PRIVATE_LANDS_ONLY_ANTLERLESS_ELK" in {row["draw_system_type"] for row in rows if row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING},
+        "private_lands_only_antlerless_elk_allocation_pending": REGISTRY["PRIVATE_LANDS_ONLY_ANTLERLESS_ELK"].algorithm_status == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING,
     }
 
     report = {

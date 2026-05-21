@@ -7,9 +7,9 @@
     2024,
     2025
   ],
-  "total_rows_seen": 205548,
+  "total_rows_seen": 205613,
   "total_hunt_codes_seen": 1616,
-  "target_scope_rows": 200620,
+  "target_scope_rows": 200685,
   "target_scope_hunt_codes": 1575,
   "out_of_scope_rows": 4928,
   "out_of_scope_hunt_codes": 41,
@@ -23,7 +23,7 @@
     "BONUS_LE_BIG_GAME": 80792,
     "BONUS_OIL_BIG_GAME": 17927,
     "BONUS_PLE_BIG_GAME": 2466,
-    "BONUS_TURKEY": 385,
+    "BONUS_TURKEY": 450,
     "GENERAL_BIG_GAME_OTHER": 500,
     "LANDOWNER_BIG_GAME": 484,
     "MOUNTAIN_LION_DRAW": 219,
@@ -62,8 +62,8 @@
   },
   "counts_by_algorithm_status": {
     "EXCLUDED_NOT_PREDICTIVE_DRAW": 1313,
-    "IN_SCOPE_MODEL_PENDING": 93400,
-    "MODELED_BONUS": 104273,
+    "IN_SCOPE_MODEL_PENDING": 93388,
+    "MODELED_BONUS": 104350,
     "MODELED_PREFERENCE": 1634,
     "OUT_OF_SCOPE_NON_TARGET": 4928
   },
@@ -79,11 +79,11 @@
     "Mountain Goat": 2126,
     "Pronghorn": 11269,
     "Rocky Mountain Bighorn Sheep": 2007,
-    "Turkey": 407
+    "Turkey": 472
   },
   "counts_by_residency": {
-    "Nonresident": 94535,
-    "Resident": 111013
+    "Nonresident": 94556,
+    "Resident": 111057
   },
   "counts_by_year": {
     "2021": 27519,
@@ -91,11 +91,11 @@
     "2023": 17128,
     "2024": 37128,
     "2025": 75194,
-    "2026": 29891
+    "2026": 29956
   },
-  "modeled_target_rows": 24964,
-  "unmodeled_target_rows": 175656,
-  "modeled_target_hunt_codes": 793,
+  "modeled_target_rows": 25041,
+  "unmodeled_target_rows": 175644,
+  "modeled_target_hunt_codes": 800,
   "unmodeled_target_hunt_codes": 1575,
   "out_of_scope_non_target_rows": 4928,
   "out_of_scope_non_target_hunt_codes": 41,
@@ -109,7 +109,7 @@
     "are_all_oil_big_game_categories_modeled": false,
     "are_all_le_big_game_categories_modeled": false,
     "are_all_ple_big_game_categories_modeled": true,
-    "is_turkey_modeled": false,
+    "is_turkey_modeled": true,
     "is_bear_modeled": false,
     "is_mountain_lion_cougar_modeled": false,
     "is_cwmu_public_modeled": true,
@@ -127,17 +127,17 @@
     "turkey_still_pending": true,
     "bear_still_pending": true,
     "mountain_lion_cougar_still_pending": true,
-    "private_lands_only_antlerless_elk_allocation_pending": false
+    "private_lands_only_antlerless_elk_allocation_pending": true
   },
   "phase7_turkey": {
-    "turkey_modeled_bonus_row_count": 0,
-    "turkey_in_scope_model_pending_row_count": 385,
+    "turkey_modeled_bonus_row_count": 77,
+    "turkey_in_scope_model_pending_row_count": 373,
     "turkey_excluded_not_predictive_draw_row_count": 22,
     "general_season_turkey_excluded": true,
     "remaining_turkey_excluded_or_availability_pending": false,
     "bear_still_pending": true,
     "mountain_lion_cougar_still_pending": true,
-    "private_lands_only_antlerless_elk_allocation_pending": false
+    "private_lands_only_antlerless_elk_allocation_pending": true
   },
   "currently_production_modeled_categories": [
     "BONUS_OIL_BIG_GAME",
@@ -243,7 +243,7 @@
     },
     {
       "draw_system_type": "BONUS_TURKEY",
-      "row_count": 385,
+      "row_count": 450,
       "hunt_code_count": 7,
       "algorithm_status": "MODELED_BONUS"
     },
@@ -291,7 +291,7 @@
     },
     {
       "draw_system_type": "BONUS_TURKEY",
-      "row_count": 385,
+      "row_count": 450,
       "hunt_code_count": 7,
       "algorithm_status": "MODELED_BONUS"
     },
