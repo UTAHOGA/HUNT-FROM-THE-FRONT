@@ -195,6 +195,23 @@ def test_ladder_odds_use_combined_format():
     assert "formatProbability(rawPrimary)" not in block
 
 
+def test_guaranteed_max_point_pool_display_uses_99_percent_label():
+    text = _frontend_text()
+    block = _block(text, "function getMaxPointPoolDisplay(row)", "function getRandomDrawDisplay(row)")
+    assert "const MAX_POINT_POOL_GUARANTEED_DISPLAY = '~1 in 1 or 99%';" in text
+    assert "zone === 'max_point_pool' || zone === 'max_pool_guaranteed'" in block
+    assert "return MAX_POINT_POOL_GUARANTEED_DISPLAY;" in block
+    assert "formatOddsAsOneInOrPercent(100)" not in block
+
+
+def test_mixed_cutoff_max_point_pool_display_keeps_modeled_fraction():
+    text = _frontend_text()
+    block = _block(text, "function getMaxPointPoolDisplay(row)", "function getRandomDrawDisplay(row)")
+    assert "max_pool_cutoff_mixed" in block
+    assert "display_2026_max_point_pool" in block
+    assert "p_max_pool_mean" in block
+
+
 def test_source_snapshot_odds_use_combined_format():
     text = _frontend_text()
     block = _block(text, "function buildSourceBoxes(meta, row, referenceRow)", "function openSourceModal(meta, row, referenceRow, residency)")

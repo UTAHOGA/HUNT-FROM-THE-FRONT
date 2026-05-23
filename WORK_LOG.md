@@ -2223,6 +2223,20 @@
   - `python -m compileall scripts engine tests` passed.
   - `node --check hunt-research.js` passed.
 
+## Max Point Pool Guaranteed Display Label
+- Timestamp (UTC): 2026-05-23T16:20:00Z
+- Scope:
+  - Updated the point-ladder frontend display so rows in the guaranteed max-point-pool zone show `~1 in 1 or 99%`.
+  - Kept mixed cutoff max-point-pool rows on their modeled fraction/display value.
+  - Kept shared draw-odds formatting and underlying probability math unchanged.
+- Files:
+  - `hunt-research.js`
+  - `tests/utah/test_frontend_probability_selection.py`
+- Validation:
+  - `python -m pytest tests/utah/test_frontend_probability_selection.py -q` passed: `28`.
+  - `node --check hunt-research.js` passed.
+  - `python -m compileall tests hunt-research.js` passed.
+
 ## Repo File Retention And LFS Audit
 - Timestamp (UTC): 2026-05-23T14:55:00Z
 - Scope:

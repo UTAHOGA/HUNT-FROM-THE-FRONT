@@ -206,6 +206,8 @@
     return `~1 in ${denominatorText} or ${percentText}`;
   }
 
+  const MAX_POINT_POOL_GUARANTEED_DISPLAY = '~1 in 1 or 99%';
+
   function formatHistoricalDrawResult(row) {
     const display = String(row?.display_2025_draw_results || row?.dwr_result_display || '').trim();
     if (display) return display;
@@ -222,12 +224,21 @@
   }
 
   function getMaxPointPoolDisplay(row) {
+    const zone = String(row?.point_pool_zone || '').trim();
+    if (!['max_point_pool', 'max_pool_guaranteed', 'max_pool_cutoff_mixed'].includes(zone)) return '';
+    if (zone === 'max_point_pool' || zone === 'max_pool_guaranteed') {
+      return MAX_POINT_POOL_GUARANTEED_DISPLAY;
+    }
+
     const display = String(row?.display_2026_max_point_pool || '').trim();
     if (display) return display;
 
-    const zone = String(row?.point_pool_zone || '').trim();
-    if (!['max_point_pool', 'max_pool_guaranteed', 'max_pool_cutoff_mixed'].includes(zone)) return '';
-    return formatOddsAsOneInOrPercent(100);
+    const pMaxPool = num(row?.p_max_pool_mean);
+    if (pMaxPool !== null) return formatOddsAsOneInOrPercent(toProbabilityPercent(pMaxPool));
+    const pMaxPoolPct = num(row?.p_max_pool_mean_pct ?? row?.p_max_pool_pct);
+    if (pMaxPoolPct !== null) return formatOddsAsOneInOrPercent(pMaxPoolPct);
+    const maxPoolProjection = firstAvailable(row, ['max_pool_projection_2026', 'odds_2026_projected']);
+    return maxPoolProjection ? formatOddsAsOneInOrPercent(maxPoolProjection) : '';
   }
 
   function getRandomDrawDisplay(row) {
