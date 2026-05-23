@@ -32,5 +32,7 @@ def test_draw_system_coverage_report_generation(tmp_path: Path) -> None:
     assert "BONUS_CWMU_BIG_GAME" in report["modeled_bonus_categories"]
     assert "PRIVATE_LANDS_ONLY_ANTLERLESS_ELK" in report["modeled_allocation_categories"]
     assert "MOUNTAIN_LION_DRAW" in report["modeled_availability_categories"]
+    assert report["modeled_availability"]["modeled_availability_total_row_count"] >= 0
+    assert report["modeled_availability"]["modeled_availability_pass"] is True
     assert "BONUS_OIL_BIG_GAME" in report["modeled_bonus_categories"]
     assert "OUT_OF_SCOPE_NON_TARGET" in report["out_of_scope_non_target_categories"]

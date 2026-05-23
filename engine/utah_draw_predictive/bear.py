@@ -17,6 +17,7 @@ from . import (
     ALGORITHM_STATUS_MODELED_BONUS,
     StrategySpec,
     TARGET_SCOPE_TARGET,
+    append_reason_codes,
 )
 from .sportsman import is_sportsman_permit_row
 
@@ -606,6 +607,10 @@ def _base_row(
         "harvest_objective_remaining_quota": "",
         "harvest_objective_status": "",
         "unit_status": "",
+        "availability_reason": "",
+        "probability_model": "",
+        "reason_codes": "",
+        "rule_status": "",
         "p_availability": "",
         "availability_pct": "",
         "closure_risk": "",
@@ -801,8 +806,17 @@ def build_bear_bonus_predictions(
                         "draw_outlook": _draw_outlook(0.0, excluded=True, availability=True),
                         "bear_bonus_valid": "FALSE",
                         "bear_bonus_note": "Unlimited pursuit availability is not a draw-odds row.",
+                        "availability_status": "PURSUIT-ONLY AVAILABLE",
+                        "availability_reason": "Unlimited pursuit permit is a pursuit-only availability row, not a harvested-bear draw-odds row.",
+                        "probability_model": "NONE",
+                        "reason_codes": append_reason_codes(
+                            row.get("reason_codes"),
+                            "AVAILABILITY_ONLY_NO_DRAW_PROBABILITY",
+                            "BEAR_PURSUIT_ONLY_STATUS",
+                        ),
                         "data_quality_flags": "",
                         "unit_status": "OPEN",
+                        "rule_status": "PURSUIT_ONLY_NON_HARVEST",
                         "p_availability": "1.000000",
                         "availability_pct": "100.000",
                         "closure_risk": "NONE",
@@ -828,9 +842,18 @@ def build_bear_bonus_predictions(
                         "draw_outlook": "REMAINING PERMIT / AVAILABILITY",
                         "bear_bonus_valid": "FALSE",
                         "bear_bonus_note": "Harvest objective is surfaced as availability/rule-status, not draw odds.",
+                        "availability_status": "HARVEST OBJECTIVE STATUS UNKNOWN",
+                        "availability_reason": "Harvest objective source confirms status/closure semantics rather than modeled draw odds.",
+                        "probability_model": "NONE",
+                        "reason_codes": append_reason_codes(
+                            row.get("reason_codes"),
+                            "AVAILABILITY_ONLY_NO_DRAW_PROBABILITY",
+                            "BEAR_HARVEST_OBJECTIVE_STATUS",
+                        ),
                         "data_quality_flags": "BEAR_HO_SOURCE_MISSING",
                         "harvest_objective_status": "SOURCE MISSING",
                         "unit_status": "UNKNOWN",
+                        "rule_status": "HARVEST_OBJECTIVE_RULE_STATUS",
                     }
                 )
                 data_quality_counter["BEAR_HO_SOURCE_MISSING"] += 1

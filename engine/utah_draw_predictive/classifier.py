@@ -425,6 +425,18 @@ def classify_runtime_row(row: Mapping[str, object]) -> dict[str, object]:
 def sanitize_modeled_probability_fields(row: dict[str, object]) -> dict[str, object]:
     classification = classify_runtime_row(row)
     row.update(classification)
+    if classification["algorithm_status"] == ALGORITHM_STATUS_MODELED_AVAILABILITY:
+        for key in (
+            "p_draw",
+            "p_draw_pct",
+            "p_preference_draw",
+            "p_bonus_pool",
+            "p_random_pool",
+            "p_bonus_pool_pct",
+            "p_random_pool_pct",
+            "p_sportsman_draw",
+        ):
+            row[key] = ""
     if classification["algorithm_status"] in {
         ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING,
         ALGORITHM_STATUS_EXCLUDED_NOT_PREDICTIVE_DRAW,
@@ -476,6 +488,14 @@ def _coverage_rows() -> list[dict[str, object]]:
                     "p_random_pool": _clean(sanitized.get("p_random_pool")),
                     "p_availability": _clean(sanitized.get("p_availability")),
                     "availability_pct": _clean(sanitized.get("availability_pct")),
+                    "availability_status": _clean(sanitized.get("availability_status")),
+                    "availability_reason": _clean(sanitized.get("availability_reason")),
+                    "permit_availability_type": _clean(sanitized.get("permit_availability_type")),
+                    "probability_model": _clean(sanitized.get("probability_model")),
+                    "reason_codes": _clean(sanitized.get("reason_codes")),
+                    "rule_status": _clean(sanitized.get("rule_status")),
+                    "harvest_objective_status": _clean(sanitized.get("harvest_objective_status")),
+                    "data_quality_flags": _clean(sanitized.get("data_quality_flags")),
                     "unit_name": _clean(sanitized.get("unit_name")),
                     "unit_status": _clean(sanitized.get("unit_status")),
                     "draw_outlook": _clean(sanitized.get("draw_outlook")),
@@ -496,6 +516,11 @@ def _counter(rows: list[dict[str, object]], field: str, predicate=lambda row: Tr
         key = _clean(row.get(field)) or "(blank)"
         counts[key] += 1
     return dict(sorted(counts.items()))
+
+
+def _duplicate_count(rows: list[dict[str, object]], fields: list[str]) -> int:
+    keys = [tuple(_clean(row.get(field)) for field in fields) for row in rows]
+    return len(keys) - len(set(keys))
 
 
 def _family_history_semantics(
@@ -584,6 +609,14 @@ def build_draw_system_coverage_report(
             "p_random_pool",
             "p_availability",
             "availability_pct",
+            "availability_status",
+            "availability_reason",
+            "permit_availability_type",
+            "probability_model",
+            "reason_codes",
+            "rule_status",
+            "harvest_objective_status",
+            "data_quality_flags",
             "unit_name",
             "unit_status",
             "draw_outlook",
@@ -806,6 +839,92 @@ def build_draw_system_coverage_report(
         "sportsman_hunt_code_count": _distinct_count(predictive_rows, lambda row: row["draw_system_type"] == SPORTSMAN_DRAW_SYSTEM_TYPE),
     }
     predictive_mountain_lion_rows = [row for row in predictive_rows if row["draw_system_type"] == MOUNTAIN_LION_DRAW_SYSTEM_TYPE]
+    predictive_availability_rows = [row for row in predictive_rows if row["algorithm_status"] == ALGORITHM_STATUS_MODELED_AVAILABILITY]
+    mountain_lion_availability_rows = [row for row in predictive_availability_rows if row["draw_system_type"] == MOUNTAIN_LION_DRAW_SYSTEM_TYPE]
+    bear_availability_rows = [row for row in predictive_availability_rows if row["draw_system_type"] == BEAR_DRAW_SYSTEM_TYPE]
+    other_availability_rows = [
+        row
+        for row in predictive_availability_rows
+        if row["draw_system_type"] not in {MOUNTAIN_LION_DRAW_SYSTEM_TYPE, BEAR_DRAW_SYSTEM_TYPE}
+    ]
+    availability_duplicate_key_count = _duplicate_count(
+        predictive_availability_rows,
+        ["hunt_code", "residency", "year", "source_dataset"],
+    )
+    availability_signal_fields = (
+        "p_availability",
+        "availability_pct",
+        "availability_status",
+        "permit_availability_type",
+        "unit_status",
+        "rule_status",
+        "harvest_objective_status",
+        "reason_codes",
+    )
+    availability_rows_missing_signal = [
+        row
+        for row in predictive_availability_rows
+        if not any(_clean(row.get(field)) for field in availability_signal_fields)
+    ]
+    availability_rows_with_draw_fields = [
+        row
+        for row in predictive_availability_rows
+        if any(_clean(row.get(field)) for field in ("p_draw", "p_draw_pct", "p_preference_draw", "p_bonus_pool", "p_random_pool"))
+    ]
+    availability_rows_with_invalid_range = [
+        row
+        for row in predictive_availability_rows
+        if (
+            _clean(row.get("p_availability"))
+            and not (0.0 <= float(_clean(row.get("p_availability"))) <= 1.0)
+        )
+        or (
+            _clean(row.get("availability_pct"))
+            and not (0.0 <= float(_clean(row.get("availability_pct"))) <= 100.0)
+        )
+    ]
+    availability_rows_requiring_reclassification = availability_rows_missing_signal + availability_rows_with_draw_fields + availability_rows_with_invalid_range
+    modeled_availability_summary = {
+        "modeled_availability_total_row_count": len(predictive_availability_rows),
+        "modeled_availability_hunt_code_count": _distinct_count(
+            predictive_rows,
+            lambda row: row["algorithm_status"] == ALGORITHM_STATUS_MODELED_AVAILABILITY,
+        ),
+        "modeled_availability_by_draw_system_type": _counter(
+            predictive_availability_rows,
+            "draw_system_type",
+        ),
+        "mountain_lion_cougar_modeled_availability_row_count": len(mountain_lion_availability_rows),
+        "bear_modeled_availability_row_count": len(bear_availability_rows),
+        "other_modeled_availability_row_count": len(other_availability_rows),
+        "modeled_availability_p_draw_non_null_count": sum(1 for row in predictive_availability_rows if _clean(row.get("p_draw"))),
+        "modeled_availability_p_draw_pct_non_null_count": sum(1 for row in predictive_availability_rows if _clean(row.get("p_draw_pct"))),
+        "modeled_availability_p_preference_draw_non_null_count": sum(1 for row in predictive_availability_rows if _clean(row.get("p_preference_draw"))),
+        "modeled_availability_p_bonus_pool_non_null_count": sum(1 for row in predictive_availability_rows if _clean(row.get("p_bonus_pool"))),
+        "modeled_availability_p_random_pool_non_null_count": sum(1 for row in predictive_availability_rows if _clean(row.get("p_random_pool"))),
+        "modeled_availability_p_availability_non_null_count": sum(1 for row in predictive_availability_rows if _clean(row.get("p_availability"))),
+        "modeled_availability_availability_pct_non_null_count": sum(1 for row in predictive_availability_rows if _clean(row.get("availability_pct"))),
+        "modeled_availability_duplicate_key_count": availability_duplicate_key_count,
+        "modeled_availability_rows_requiring_reclassification_count": len({
+            (
+                _clean(row.get("hunt_code")),
+                _clean(row.get("residency")),
+                _clean(row.get("year")),
+                _clean(row.get("source_dataset")),
+            )
+            for row in availability_rows_requiring_reclassification
+        }),
+    }
+    modeled_availability_summary["modeled_availability_pass"] = (
+        modeled_availability_summary["modeled_availability_p_draw_non_null_count"] == 0
+        and modeled_availability_summary["modeled_availability_p_draw_pct_non_null_count"] == 0
+        and modeled_availability_summary["modeled_availability_p_preference_draw_non_null_count"] == 0
+        and modeled_availability_summary["modeled_availability_p_bonus_pool_non_null_count"] == 0
+        and modeled_availability_summary["modeled_availability_p_random_pool_non_null_count"] == 0
+        and len(availability_rows_missing_signal) == 0
+        and modeled_availability_summary["modeled_availability_duplicate_key_count"] == 0
+        and modeled_availability_summary["modeled_availability_rows_requiring_reclassification_count"] == 0
+    )
     mountain_lion_summary = {
         "mountain_lion_cougar_in_scope": True,
         "mountain_lion_cougar_modeled_availability": any(row["algorithm_status"] == ALGORITHM_STATUS_MODELED_AVAILABILITY for row in predictive_mountain_lion_rows),
@@ -949,6 +1068,7 @@ def build_draw_system_coverage_report(
         "phase10_mountain_lion": mountain_lion_summary,
         "phase13_mountain_lion": mountain_lion_summary,
         "phase15_youth": youth_summary,
+        "modeled_availability": modeled_availability_summary,
         "family_modeling_semantics": {
             "bonus_oil_big_game": oil_family,
             "bonus_le_big_game": le_family,

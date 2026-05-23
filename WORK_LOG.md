@@ -1,5 +1,38 @@
 # WORK LOG
 
+## Draw Odds Combined Display Format
+- Timestamp (UTC): 2026-05-22T10:30:00Z
+- Scope:
+  - Updated Hunt Research so every user-facing draw-odds display uses combined `~1 in X or Y%` text instead of percent-only odds.
+  - Added a shared draw-odds formatter and centralized numeric odds selection order in `hunt-research.js`.
+  - Removed any remaining status-driven MAX POOL odds shortcut behavior from the display path.
+  - Updated the Hunt Research signal legend so green is tied to effective numeric guarantee rather than MAX POOL status text.
+  - Added and refreshed regression tests for combined odds examples, MAX POOL fixture behavior, ladder formatting, source snapshot formatting, and no-percent-only primary odds.
+- Files updated:
+  - `hunt-research.js`
+  - `research.html`
+  - `ENGINE_RULES_SPEC.md`
+  - `HYBRID_ML_V1.md`
+  - `docs/predictive_engine_design.md`
+  - `docs/utah_bonus_predictive_engine.md`
+  - `docs/utah_draw_system_scope.md`
+  - `tests/utah/test_frontend_probability_selection.py`
+- Rules locked in:
+  - User-facing draw odds now select numeric values in this order:
+    - `display_odds_pct`
+    - `p_draw_mean * 100`
+    - `odds_2026_projected`
+    - `max_pool_projection_2026`
+    - `random_draw_odds_2026`
+    - `random_draw_projection_2026`
+    - otherwise `Not available`
+  - `MAX POOL` remains descriptive only and does not imply `~1 in 1 or 100%`, a Guaranteed badge, or a green light by itself.
+  - Internal numeric probability fields remain unchanged.
+- Validation target:
+  - `py -3 -m pytest tests/utah -q`
+  - `node --check hunt-research.js`
+  - `py -3 -m compileall engine tests`
+
 ## Premium Limited Entry Deer Truth-Source Normalization
 - Timestamp (UTC): 2026-05-22T00:00:00Z
 - Scope:

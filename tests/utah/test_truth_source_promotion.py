@@ -86,7 +86,7 @@ def test_antlerless_deer_da1051_added_to_runtime_reference() -> None:
     path = PROCESSED / "hunt_unit_reference_linked.csv"
     rows = _rows(path, "DA1051")
     assert len(rows) == 2
-    assert all(row["reason_codes"] == "TRUTH_SOURCE_ADDED_MISSING_RUNTIME_ROW" for row in rows)
+    assert all("TRUTH_SOURCE_ADDED_MISSING_RUNTIME_ROW" in row["reason_codes"] for row in rows)
 
 
 def test_standard_antlerless_elk_truth_source_promoted_to_runtime_reference() -> None:

@@ -28,6 +28,71 @@ This project uses a public-data MVP contract now, with an upgrade path to true a
 
 The existing UI still consumes processed CSVs keyed by `(hunt_code, residency, points)`. New modeled fields must be additive.
 
+## 2026 RAC Truth-Source Promotion
+
+- When a normalized 2026 RAC truth-source table exists for permit counts, that table is authoritative for the 2026 permit overlay.
+- Truth-source promotion is a separate runtime-data step from probability modeling. Updating permit overlays must not rewrite draw math, modeled probability distributions, or frontend odds formatting.
+- The promotion flow is:
+  - normalized RAC truth table
+  - audit against runtime surfaces
+  - promote corrected values into the runtime CSVs
+  - rerun audits until required families show zero mismatches
+- Runtime promotion currently updates:
+  - `processed_data/draw_reality_engine.csv`
+  - `processed_data/point_ladder_view.csv`
+  - `processed_data/hunt_master_enriched.csv`
+  - `processed_data/hunt_unit_reference_linked.csv`
+
+## Promotion Metadata
+
+- The runtime overlay may add or populate these metadata fields:
+  - `permit_source`
+  - `quota_source`
+  - `truth_source_file`
+  - `truth_source_status`
+  - `data_quality_grade`
+  - `reason_codes`
+  - `hunt_category`
+  - `draw_model_class`
+  - `probability_model`
+  - `availability_status`
+  - `new_this_year`
+- The canonical permit-overlay source label for this pass is `2026_RAC_TRUTH_SOURCE`.
+- `reason_codes` append with pipe delimiters rather than replacing useful existing values.
+
+## Total-Only And Dash Rules
+
+- Dashes or blanks in prior-year permit columns are treated as zero for audit delta calculations only.
+- Dash normalization must not be used to fabricate a prior-year runtime row.
+- If a truth source provides only total permits, do not invent a resident/nonresident split.
+- Private-lands-only antlerless elk is availability-only unless a source explicitly provides split-by-residency draw mechanics.
+
+## Availability-Only Runtime Handling
+
+- Availability-only rows must not be forced into normal draw-probability semantics.
+- Private-lands-only antlerless elk rows should use:
+  - `hunt_category = PRIVATE_LANDS_ONLY_ANTLERLESS_ELK`
+  - `draw_model_class = AVAILABILITY_ONLY`
+  - `probability_model = NONE`
+- Availability-only rows may still appear in runtime surfaces for lookup continuity, but they must not receive invented draw probabilities.
+- `MODELED_AVAILABILITY` rows are not draw odds. They must keep `p_draw`, `p_draw_pct`, `p_bonus_pool`, `p_random_pool`, and `p_preference_draw` null.
+- Availability/status rows may use:
+  - `p_availability`
+  - `availability_pct`
+  - `availability_status`
+  - `permit_availability_type`
+  - `unit_status`
+  - `rule_status`
+  - `reason_codes`
+- Mountain lion / cougar uses availability/status semantics rather than draw odds.
+- Bear harvest-objective and pursuit-only rows use availability/status semantics rather than draw odds.
+
+## Control-Unit Overlays
+
+- Control-unit overlays are tracked separately from permit truth rows.
+- An unresolved control-unit overlay must not be auto-converted into a fabricated permit row.
+- The current unresolved overlay item is `Henry Mtns` for the 2026 antlerless elk control-unit list; it remains unresolved until a matching 2026 permit truth row is surfaced.
+
 ## Fixture rebuild pipeline
 
 - The canonical rebuild entrypoint is `engine.utah.materialize`.

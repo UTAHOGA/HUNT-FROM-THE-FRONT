@@ -14,16 +14,54 @@ This repository is moving from a legacy research-page lookup system to a Utah pr
 1. Deterministic Utah draw rules live in `engine/utah/simulator.py` and `engine/utah/rules.py`.
 2. Baseline demand estimation lives in `engine/utah/demand.py`.
 3. Quota forecasting lives in `engine/utah/quota_forecast.py`.
-4. Materialization into legacy-compatible CSVs lives in `engine/utah/materialize.py`.
-5. Backtesting and calibration live in `engine/utah/backtest.py` and `engine/utah/calibration.py`.
-6. The canonical fixture rebuild CLI is `python -m engine.utah.materialize ...` and it writes the four processed CSVs directly into the chosen output directory.
+4. Truth-source permit promotion lives in `engine/utah/truth_source_promotion.py`.
+5. Materialization into legacy-compatible CSVs lives in `engine/utah/materialize.py`.
+6. Backtesting and calibration live in `engine/utah/backtest.py` and `engine/utah/calibration.py`.
+7. The canonical fixture rebuild CLI is `python -m engine.utah.materialize ...` and it writes the four processed CSVs directly into the chosen output directory.
+
+## Permit Truth Flow
+
+- Permit-source promotion is a deterministic data-hygiene step that runs before any downstream runtime publication.
+- The expected flow is:
+  - RAC truth source
+  - normalized truth table
+  - audit
+  - promote to runtime reference surfaces
+  - regenerate processed outputs
+  - audit again
+  - zero mismatches for corrected families
+- This flow updates permit overlays only. It does not change modeled draw math by itself.
+
+## Runtime Promotion Rules
+
+- The runtime contract still centers on `(hunt_code, residency, points)`, but permit-reference promotion is primarily keyed by `hunt_code` and `residency`.
+- Permit promotion may add metadata fields such as `permit_source`, `quota_source`, `truth_source_file`, `truth_source_status`, and `reason_codes`.
+- Existing columns should be preserved whenever possible; promotion is additive unless a stale permit value must be corrected.
+
+## Availability-Only Families
+
+- Availability-only families must not be treated as standard draw-probability rows.
+- Private-lands-only antlerless elk is availability-only in the current design unless a source explicitly provides draw mechanics and a valid residency split.
+- Availability-only rows may appear in the runtime CSVs for lookup continuity, but they must not be assigned invented probabilities.
+- `MODELED_AVAILABILITY` is a source-backed status/availability classification, not draw-odds modeling.
+- Mountain lion / cougar currently uses availability/status semantics rather than draw odds.
+- Bear harvest-objective and pursuit-only subtypes currently use availability/status semantics rather than draw odds.
+- Availability review should run after predictive artifact regeneration so every availability row is explicitly accounted for and no hidden non-draw family drifts into the runtime outputs.
+
+## Overlay Exceptions
+
+- Control-unit overlays are tracked separately from permit-row mismatches.
+- Unresolved overlay items must remain unresolved rather than auto-filled with invented hunt codes.
+- `Henry Mtns` in the 2026 antlerless elk control-unit list is the current tracked unresolved overlay item.
 
 ## Probability units
 
 - `p_*` fields are decimal probabilities in `[0, 1]`.
 - `*_pct` fields are percentages in `[0, 100]`.
-- The UI should prefer `display_odds_pct`, then `p_draw_mean`, then legacy odds fields.
+- The UI should prefer `display_odds_pct`, then `p_draw_mean`, then `odds_2026_projected`, then `max_pool_projection_2026`, then `random_draw_odds_2026`, then `random_draw_projection_2026`.
+- All user-facing draw odds should render in combined `~1 in X or Y%` format rather than percent-only text.
 - `status = MAX POOL` is descriptive only and does not imply a guarantee.
+- Permit-source promotion does not change probability math; it only changes the permit reference surfaces.
 
 ## Current limitations
 

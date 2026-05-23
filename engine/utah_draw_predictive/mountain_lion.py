@@ -16,6 +16,7 @@ from . import (
     ALGORITHM_STATUS_MODELED_AVAILABILITY,
     StrategySpec,
     TARGET_SCOPE_TARGET,
+    append_reason_codes,
 )
 
 
@@ -216,6 +217,8 @@ def build_mountain_lion_availability_predictions(
                     "permit_type": "Statewide OTC Cougar Permit",
                     "permit_status": "AVAILABLE" if has_year_round_rule else "UNKNOWN",
                     "availability_status": "AVAILABLE YEAR-ROUND" if has_year_round_rule else "UNKNOWN",
+                    "availability_reason": "Statewide OTC cougar rule-status / reporting-unit availability",
+                    "probability_model": "NONE",
                     "season_start": season_start,
                     "season_end": season_end,
                     "season_status": "YEAR_ROUND_OPEN" if has_year_round_rule else "UNKNOWN",
@@ -228,6 +231,12 @@ def build_mountain_lion_availability_predictions(
                     "closure_risk": "NONE" if has_year_round_rule else "",
                     "draw_outlook": "AVAILABLE YEAR-ROUND WITH VALID LICENSE" if has_year_round_rule else "RULE STATUS SOURCE MISSING",
                     "data_quality_flags": "|".join(flags),
+                    "reason_codes": append_reason_codes(
+                        "",
+                        "AVAILABILITY_ONLY_NO_DRAW_PROBABILITY",
+                        "MOUNTAIN_LION_RULE_STATUS",
+                        "STATEWIDE_OTC_YEAR_ROUND" if has_year_round_rule else "RULE_STATUS_SOURCE_MISSING",
+                    ),
                     "p_draw": "",
                     "p_draw_pct": "",
                     "p_bonus_pool": "",

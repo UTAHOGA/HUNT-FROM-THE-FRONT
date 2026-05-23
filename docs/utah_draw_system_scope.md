@@ -104,11 +104,14 @@ Preserved behavior:
 - EB3024 regression remains required.
 - `MAX POOL` is descriptive only and must not force `100%`.
 - UI odds precedence remains:
-  1. `p_draw_pct`
-  2. `p_draw`
-  3. `p_bonus_pool_pct / p_random_pool_pct`
-  4. legacy fallback
-  5. `Not available`
+  1. `display_odds_pct`
+  2. `p_draw_mean * 100`
+  3. `odds_2026_projected`
+  4. `max_pool_projection_2026`
+  5. `random_draw_odds_2026`
+  6. `random_draw_projection_2026`
+  7. `Not available`
+- User-facing draw odds should render in combined `~1 in X or Y%` format rather than percent-only text.
 
 ## Categories Requiring Preference Or Other Strategy
 
@@ -176,6 +179,9 @@ Currently modeled as `MODELED_ALLOCATION`:
 Currently modeled as `MODELED_AVAILABILITY`:
 
 - `MOUNTAIN_LION_DRAW`
+- Bear availability/status subtypes inside `BEAR_DRAW`
+  - `HARVEST_OBJECTIVE_AVAILABILITY`
+  - `UNLIMITED_PURSUIT_PERMIT`
 
 Currently modeled as `MODELED_SPORTSMAN_DRAW`:
 
@@ -210,6 +216,8 @@ Bear note:
 
 - `BR1000` remains `SPORTSMAN_PERMIT`, not `BEAR_DRAW`.
 - Harvest objective and pursuit-only bear rows are surfaced as availability/rule-status rows, not draw odds.
+- Bear availability/status rows must keep `p_draw`, `p_draw_pct`, `p_bonus_pool`, `p_random_pool`, and `p_preference_draw` null.
+- Bear availability/status rows may use `permit_availability_type`, `availability_status`, `unit_status`, `rule_status`, `p_availability`, `availability_pct`, and explicit `reason_codes`.
 - Only true limited-entry bear hunts remain in the bear bonus-draw path.
 
 Mountain lion / cougar note:
@@ -219,6 +227,14 @@ Mountain lion / cougar note:
 - Phase 13 closes this family as an availability strategy with explicit rule-status reporting, not a draw-odds strategy.
 - `MOUNTAIN_LION_DRAW` rows must not receive `p_draw`, `p_draw_pct`, `p_bonus_pool`, `p_random_pool`, or `p_preference_draw`.
 - Availability fields such as `permit_availability_type`, `season_start`, `season_end`, `unit_name`, `unit_status`, `p_availability`, and `availability_pct` are the user-facing outputs for this family.
+- `MODELED_AVAILABILITY` is not draw odds and must stay documented as availability/status semantics only.
+
+Availability semantics note:
+
+- `MODELED_AVAILABILITY` means source-supported rule-status / availability reporting, not modeled draw probability.
+- Availability rows must keep `p_draw` and `p_draw_pct` null.
+- The system must not fabricate bonus, preference, or draw-probability fields for availability rows.
+- Any non-mountain-lion and non-bear availability rows must be explicitly documented in the availability review artifacts before they can remain `MODELED_AVAILABILITY`.
 
 Youth note:
 

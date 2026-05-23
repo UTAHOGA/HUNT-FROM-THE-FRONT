@@ -1,0 +1,360 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hunt-builder.uoga.org/schemas/hunt-master-canonical-2026.schema.json",
+  "title": "Hunt Master Canonical 2026 Schema",
+  "type": "object",
+  "required": [
+    "metadata",
+    "versioning",
+    "business_profile",
+    "hunt_catalog",
+    "species",
+    "hunt_units",
+    "seasons",
+    "packages",
+    "pricing",
+    "deposits",
+    "payments",
+    "refund_policy",
+    "licenses_and_tags",
+    "regulations_references",
+    "booking_workflow",
+    "client_intake",
+    "guide_assignment",
+    "lodging",
+    "meals",
+    "transportation",
+    "gear_lists",
+    "physical_requirements",
+    "safety",
+    "medical",
+    "emergency_contacts",
+    "communications",
+    "documents",
+    "waivers",
+    "contracts",
+    "checklists",
+    "post_hunt_followup",
+    "media",
+    "admin_notes"
+  ],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "created_at",
+        "provenance"
+      ]
+    },
+    "versioning": {
+      "type": "object",
+      "required": [
+        "id",
+        "canonical_version",
+        "hunt_year",
+        "data_cutoff_date"
+      ]
+    },
+    "business_profile": {
+      "type": "object",
+      "required": [
+        "id",
+        "display_name",
+        "provenance"
+      ]
+    },
+    "hunt_catalog": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "hunt_code",
+          "huntCode",
+          "code",
+          "title",
+          "hunt_name",
+          "species",
+          "sex_type",
+          "weapon",
+          "hunt_type",
+          "season",
+          "provenance"
+        ]
+      }
+    },
+    "species": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "hunt_count",
+          "hunt_codes",
+          "provenance"
+        ]
+      }
+    },
+    "hunt_units": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "species",
+          "hunt_codes",
+          "provenance"
+        ]
+      }
+    },
+    "seasons": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "hunt_code",
+          "raw_season_text",
+          "provenance"
+        ]
+      }
+    },
+    "packages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "hunt_codes",
+          "provenance"
+        ]
+      }
+    },
+    "pricing": {
+      "type": "object",
+      "required": [
+        "id",
+        "currency",
+        "price_books",
+        "provenance"
+      ]
+    },
+    "deposits": {
+      "type": "object",
+      "required": [
+        "id",
+        "rules",
+        "provenance"
+      ]
+    },
+    "payments": {
+      "type": "object",
+      "required": [
+        "id",
+        "accepted_methods",
+        "schedule_templates",
+        "provenance"
+      ]
+    },
+    "refund_policy": {
+      "type": "object",
+      "required": [
+        "id",
+        "policy_text",
+        "rules",
+        "provenance"
+      ]
+    },
+    "licenses_and_tags": {
+      "type": "object",
+      "required": [
+        "id",
+        "required_license_items",
+        "tag_and_permit_rules",
+        "provenance"
+      ]
+    },
+    "regulations_references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "status",
+          "provenance"
+        ]
+      }
+    },
+    "booking_workflow": {
+      "type": "object",
+      "required": [
+        "id",
+        "steps",
+        "provenance"
+      ]
+    },
+    "client_intake": {
+      "type": "object",
+      "required": [
+        "id",
+        "fields",
+        "provenance"
+      ]
+    },
+    "guide_assignment": {
+      "type": "object",
+      "required": [
+        "id",
+        "required_fields",
+        "provenance"
+      ]
+    },
+    "lodging": {
+      "type": "object",
+      "required": [
+        "id",
+        "lodging_options",
+        "provenance"
+      ]
+    },
+    "meals": {
+      "type": "object",
+      "required": [
+        "id",
+        "meal_plans",
+        "provenance"
+      ]
+    },
+    "transportation": {
+      "type": "object",
+      "required": [
+        "id",
+        "transport_options",
+        "provenance"
+      ]
+    },
+    "gear_lists": {
+      "type": "object",
+      "required": [
+        "id",
+        "lists",
+        "provenance"
+      ]
+    },
+    "physical_requirements": {
+      "type": "object",
+      "required": [
+        "id",
+        "provenance"
+      ]
+    },
+    "safety": {
+      "type": "object",
+      "required": [
+        "id",
+        "plans",
+        "required_briefings",
+        "provenance"
+      ]
+    },
+    "medical": {
+      "type": "object",
+      "required": [
+        "id",
+        "intake_fields",
+        "provenance"
+      ]
+    },
+    "emergency_contacts": {
+      "type": "object",
+      "required": [
+        "id",
+        "contacts",
+        "required_client_fields",
+        "provenance"
+      ]
+    },
+    "communications": {
+      "type": "object",
+      "required": [
+        "id",
+        "templates",
+        "channels",
+        "provenance"
+      ]
+    },
+    "documents": {
+      "type": "object",
+      "required": [
+        "id",
+        "document_register",
+        "provenance"
+      ]
+    },
+    "waivers": {
+      "type": "object",
+      "required": [
+        "id",
+        "waiver_templates",
+        "provenance"
+      ]
+    },
+    "contracts": {
+      "type": "object",
+      "required": [
+        "id",
+        "contract_templates",
+        "provenance"
+      ]
+    },
+    "checklists": {
+      "type": "object",
+      "required": [
+        "id",
+        "lists",
+        "provenance"
+      ]
+    },
+    "post_hunt_followup": {
+      "type": "object",
+      "required": [
+        "id",
+        "steps",
+        "provenance"
+      ]
+    },
+    "media": {
+      "type": "object",
+      "required": [
+        "id",
+        "media_assets",
+        "provenance"
+      ]
+    },
+    "admin_notes": {
+      "type": "object",
+      "required": [
+        "id",
+        "notes",
+        "provenance"
+      ]
+    },
+    "outfitters": {
+      "type": "array"
+    },
+    "data_sources": {
+      "type": "array"
+    },
+    "modeling": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

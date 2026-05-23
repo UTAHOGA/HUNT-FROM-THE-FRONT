@@ -203,7 +203,13 @@ def _read_fixture_tables(source_root: Path) -> dict[str, list[dict[str, str]]]:
     }
     tables: dict[str, list[dict[str, str]]] = {}
     for key, filename in filenames.items():
-        tables[key] = _load_csv(source_root / filename)
+        path = source_root / filename
+        if path.exists():
+            tables[key] = _load_csv(path)
+            continue
+        if key == "seed_predictions":
+            raise FileNotFoundError(path)
+        tables[key] = []
     return tables
 
 

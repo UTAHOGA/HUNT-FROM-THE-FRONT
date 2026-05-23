@@ -461,6 +461,27 @@
     "youth_rows_with_p_random_pool_non_null_count": 0,
     "youth_rows_with_p_preference_draw_non_null_count": 0
   },
+  "modeled_availability": {
+    "modeled_availability_total_row_count": 124,
+    "modeled_availability_hunt_code_count": 63,
+    "modeled_availability_by_draw_system_type": {
+      "BEAR_DRAW": 4,
+      "MOUNTAIN_LION_DRAW": 120
+    },
+    "mountain_lion_cougar_modeled_availability_row_count": 120,
+    "bear_modeled_availability_row_count": 4,
+    "other_modeled_availability_row_count": 0,
+    "modeled_availability_p_draw_non_null_count": 0,
+    "modeled_availability_p_draw_pct_non_null_count": 0,
+    "modeled_availability_p_preference_draw_non_null_count": 0,
+    "modeled_availability_p_bonus_pool_non_null_count": 0,
+    "modeled_availability_p_random_pool_non_null_count": 0,
+    "modeled_availability_p_availability_non_null_count": 122,
+    "modeled_availability_availability_pct_non_null_count": 122,
+    "modeled_availability_duplicate_key_count": 0,
+    "modeled_availability_rows_requiring_reclassification_count": 0,
+    "modeled_availability_pass": true
+  },
   "family_modeling_semantics": {
     "bonus_oil_big_game": {
       "engine_family_modeled": true,

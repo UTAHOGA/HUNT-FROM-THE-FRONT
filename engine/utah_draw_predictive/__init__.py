@@ -30,3 +30,12 @@ class StrategySpec:
     modeled_by_engine: bool = False
     legacy_logic_present: bool = False
     notes: str = ""
+
+
+def append_reason_codes(existing: object, *codes: str) -> str:
+    seen: list[str] = []
+    for raw in (str(existing or "").split("|") + list(codes)):
+        code = str(raw or "").strip()
+        if code and code not in seen:
+            seen.append(code)
+    return "|".join(seen)

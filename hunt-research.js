@@ -167,6 +167,26 @@
     return `${parsed.toFixed(3)}%`;
   }
 
+  function formatOddsAsOneInOrPercent(percentValue) {
+    const parsed = num(percentValue);
+    if (!Number.isFinite(parsed)) return 'Not available';
+    if (parsed <= 0) return 'No modeled chance';
+
+    const capped = clamp(parsed, 0, 100);
+    const percentText = Number.isInteger(capped)
+      ? `${capped}%`
+      : `${Number(capped.toFixed(1)).toString()}%`;
+
+    if (capped >= 99.9) return `~1 in 1 or ${percentText}`;
+
+    const denominator = 100 / capped;
+    const denominatorText = denominator < 10
+      ? Number(denominator.toFixed(1)).toString()
+      : Math.round(denominator).toString();
+
+    return `~1 in ${denominatorText} or ${percentText}`;
+  }
+
   function formatEmpty(value) {
     const text = String(value ?? '').trim();
     if (!text || text === '0.000%' || text.toLowerCase() === 'not available') return '—';
@@ -224,13 +244,6 @@
 
   function getGuaranteedProbability(row) {
     return toProbabilityUnit(firstAvailable(row, ['guaranteed_probability']));
-  }
-
-  function getProbabilityIntervalSuffix(row) {
-    const p10 = toProbabilityPercent(firstAvailable(row, ['p_draw_p10']));
-    const p90 = toProbabilityPercent(firstAvailable(row, ['p_draw_p90']));
-    if (p10 === null || p90 === null) return '';
-    return ` (${formatProbability(p10)}-${formatProbability(p90)})`;
   }
 
   function isRandomOnlyBonusCase(meta, row) {
@@ -512,6 +525,37 @@
     ]));
   }
 
+  function selectDrawOddsPercent(row) {
+    if (!row) return { percent: null, source: 'unavailable' };
+
+    const displayOddsPct = num(firstAvailable(row, ['display_odds_pct']));
+    if (displayOddsPct !== null) return { percent: clamp(displayOddsPct, 0, 100), source: 'display_odds_pct' };
+
+    const pDrawMean = num(firstAvailable(row, ['p_draw_mean']));
+    if (pDrawMean !== null) {
+      return {
+        percent: clamp(toProbabilityPercent(pDrawMean) ?? 0, 0, 100),
+        source: 'p_draw_mean',
+      };
+    }
+
+    const projectedOdds = num(firstAvailable(row, ['odds_2026_projected']));
+    if (projectedOdds !== null) return { percent: clamp(projectedOdds, 0, 100), source: 'odds_2026_projected' };
+
+    const maxPoolProjection = num(firstAvailable(row, ['max_pool_projection_2026']));
+    if (maxPoolProjection !== null) return { percent: clamp(maxPoolProjection, 0, 100), source: 'max_pool_projection_2026' };
+
+    const randomDrawOdds = num(firstAvailable(row, ['random_draw_odds_2026']));
+    if (randomDrawOdds !== null) return { percent: clamp(randomDrawOdds, 0, 100), source: 'random_draw_odds_2026' };
+
+    const randomDrawProjection = num(firstAvailable(row, ['random_draw_projection_2026']));
+    if (randomDrawProjection !== null) {
+      return { percent: clamp(randomDrawProjection, 0, 100), source: 'random_draw_projection_2026' };
+    }
+
+    return { percent: null, source: 'unavailable' };
+  }
+
   function shouldUseMlHybridOdds(row) {
     if (!ML_OPTIONS?.enabled) return false;
     const mlOdds = getMlOddsCandidate(row);
@@ -529,61 +573,12 @@
   }
 
   function getDisplayedOdds(row) {
-    if (!row) return { value: 'Not available', source: 'unavailable' };
-    const hasModeledFields = hasModeledProbabilityFields(row);
-    const intervalSuffix = getProbabilityIntervalSuffix(row);
-
-    const pDrawPct = num(firstAvailable(row, ['p_draw_pct']));
-    if (pDrawPct !== null) {
-      return { value: `${formatProbability(pDrawPct)}${intervalSuffix}`, source: 'p_draw_pct' };
-    }
-
-    const pDraw = num(firstAvailable(row, ['p_draw']));
-    if (pDraw !== null) {
-      return { value: `${formatProbability(toProbabilityPercent(pDraw))}${intervalSuffix}`, source: 'p_draw' };
-    }
-
-    const pBonusPoolPct = num(firstAvailable(row, ['p_bonus_pool_pct']));
-    const pRandomPoolPct = num(firstAvailable(row, ['p_random_pool_pct']));
-    if (pBonusPoolPct !== null || pRandomPoolPct !== null) {
-      const bonusLabel = pBonusPoolPct === null ? 'NA' : formatProbability(pBonusPoolPct);
-      const randomLabel = pRandomPoolPct === null ? 'NA' : formatProbability(pRandomPoolPct);
-      return {
-        value: `${bonusLabel} / ${randomLabel}`,
-        source: 'pool_breakdown',
-      };
-    }
-
-    const displayOddsPct = num(firstAvailable(row, ['display_odds_pct']));
-    if (displayOddsPct !== null) {
-      return { value: `${formatProbability(displayOddsPct)}${intervalSuffix}`, source: 'modeled_display' };
-    }
-
-    const pDrawMean = num(firstAvailable(row, ['p_draw_mean']));
-    if (pDrawMean !== null) {
-      return { value: `${formatProbability(toProbabilityPercent(pDrawMean))}${intervalSuffix}`, source: 'modeled_draw' };
-    }
-
-    if (shouldUseMlHybridOdds(row) && !hasModeledFields) {
-      const mlOdds = getMlOddsCandidate(row);
-      return {
-        value: formatProbability(mlOdds),
-        source: 'ml_hybrid',
-        confidence: getMlConfidence(row),
-      };
-    }
-
-    const projectedOdds = formatProbability(firstAvailable(row, ['odds_2026_projected', 'max_pool_projection_2026']));
-    if (projectedOdds !== 'Not available') {
-      return { value: projectedOdds, source: 'projected_total' };
-    }
-
-    const randomOdds = formatProbability(firstAvailable(row, ['random_draw_odds_2026', 'random_draw_projection_2026']));
-    if (randomOdds !== 'Not available') {
-      return { value: randomOdds, source: 'random_pool' };
-    }
-
-    return { value: 'Not available', source: 'unavailable' };
+    const selectedOdds = selectDrawOddsPercent(row);
+    return {
+      value: formatOddsAsOneInOrPercent(selectedOdds.percent),
+      source: selectedOdds.source,
+      percent: selectedOdds.percent,
+    };
   }
 
   function isPreferenceAntlerless(meta) {
@@ -603,7 +598,8 @@
     }
 
     if (isPreferenceAntlerless(meta)) {
-      if (row.status === 'MAX POOL') {
+      const selectedOdds = selectDrawOddsPercent(row);
+      if ((selectedOdds.percent !== null && selectedOdds.percent >= 99.9) || num(row.gap) === 0) {
         return 'This hunt is currently inside the preference-point line at your selected point level.';
       }
       if (row.draw_outlook === 'POINT CREEP DEFEAT') {
@@ -634,7 +630,7 @@
       return `2026 ML Hybrid Draw: ${displayedOdds.value}${confidenceLabel}`;
     }
     if (isPreferenceAntlerless(meta)) {
-      return `2026 Preference Draw: ${formatProbability(firstAvailable(row, ['odds_2026_projected', 'max_pool_projection_2026']))}`;
+      return `2026 Preference Draw: ${displayedOdds.value}`;
     }
     if (isRandomOnlyBonusCase(meta, row)) {
       return `2026 Random Draw: ${displayedOdds.value}`;
@@ -644,19 +640,17 @@
 
   function getOutlookSignal(meta, row) {
     const guaranteedProbability = getGuaranteedProbability(row);
-    const pDrawMean = num(firstAvailable(row, ['p_draw_mean']));
     if (guaranteedProbability !== null && guaranteedProbability >= 0.999) return 'green';
-    if (pDrawMean !== null) {
-      const pPercent = toProbabilityPercent(pDrawMean) ?? 0;
-      if (pPercent >= 90) return 'green';
-      if (pPercent >= 25) return 'yellow';
+
+    const selectedOdds = selectDrawOddsPercent(row);
+    if (selectedOdds.percent !== null) {
+      if (selectedOdds.percent >= 99.9) return 'green';
+      if (selectedOdds.percent >= 25) return 'yellow';
       return 'red';
     }
 
     const maxPointPermits = num(row?.max_point_permits_2026);
     if (maxPointPermits !== null && maxPointPermits <= 0) return 'red';
-    const maxPoolChance = num(row?.max_pool_projection_2026);
-    if (maxPoolChance !== null && maxPoolChance > 0) return 'yellow';
 
     const nonresidentPermits = num(meta?.public_nonresident_permits);
     const residentPermits = num(meta?.public_resident_permits);
@@ -759,7 +753,6 @@
     }
 
     const guaranteedProbability = getGuaranteedProbability(row);
-    const pDrawMean = num(firstAvailable(row, ['p_draw_mean']));
     if (guaranteedProbability !== null && guaranteedProbability >= 0.999) {
       return {
         badge: 'Guaranteed',
@@ -768,23 +761,30 @@
       };
     }
 
-    if (pDrawMean !== null) {
-      const pPercent = toProbabilityPercent(pDrawMean) ?? 0;
-      if (pPercent >= 90) {
+    const selectedOdds = selectDrawOddsPercent(row);
+    if (selectedOdds.percent !== null) {
+      if (selectedOdds.percent >= 99.9) {
+        return {
+          badge: 'Guaranteed',
+          message: `At ${formatInteger(filters.points)} points, the selected draw-odds field is effectively 100%.`,
+          className: 'is-green',
+        };
+      }
+      if (selectedOdds.percent >= 90) {
         return {
           badge: 'Very likely',
           message: 'This hunt is very likely to draw at your selected point level.',
           className: 'is-green',
         };
       }
-      if (pPercent >= 25) {
+      if (selectedOdds.percent >= 25) {
         return {
           badge: 'On the Line',
           message: 'You are near the modeled line. Pressure and point creep still matter.',
           className: 'is-yellow',
         };
       }
-      if (pPercent > 0) {
+      if (selectedOdds.percent > 0) {
         return {
           badge: 'Random / Long-shot Chance',
           message: 'This hunt still has some modeled draw chance, but it is a long shot.',
@@ -945,7 +945,10 @@
 
   function buildSourceBoxes(meta, row, referenceRow) {
     const boxes = [
-      ['2025 Draw Odds', row?.odds_2025_actual || 'Not available'],
+      ['2025 Draw Odds', Number.isFinite(num(row?.odds_2025_actual))
+        ? formatOddsAsOneInOrPercent(row?.odds_2025_actual)
+        : (row?.odds_2025_actual || 'Not available')],
+      ['2026 Draw Odds', getDisplayedOdds(row).value],
       ['2025 Harvest Success', hasMeaningfulValue(referenceRow?.harvest_success_percent_2025)
         ? `${referenceRow.harvest_success_percent_2025}%`
         : (hasMeaningfulValue(meta?.success_percent) ? `${meta.success_percent}%` : 'Not available')],
@@ -1052,20 +1055,18 @@
         ? firstAvailable(row, ['odds_2026_projected', 'max_pool_projection_2026', 'random_draw_odds_2026'])
         : firstAvailable(row, ['max_pool_projection_2026', 'odds_2026_projected']);
       const primaryValue = hasPointLevelEvidence
-        ? formatEmpty(formatProbability(rawPrimary))
-        : '—';
+        ? formatOddsAsOneInOrPercent(rawPrimary)
+        : 'Not available';
 
       const rawHistoricalOdds = firstAvailable(row, ['odds_2025_actual', 'odds_2025', 'success_ratio'])
         || firstAvailable(historicalPointRow, ['p_draw_percent']);
-      const actual2025Display = formatEmpty(
-        rawHistoricalOdds === null || rawHistoricalOdds === undefined || rawHistoricalOdds === ''
-          ? '—'
-          : (num(rawHistoricalOdds) !== null ? formatProbability(rawHistoricalOdds) : String(rawHistoricalOdds))
-      );
+      const actual2025Display = rawHistoricalOdds === null || rawHistoricalOdds === undefined || rawHistoricalOdds === ''
+        ? 'Not available'
+        : (num(rawHistoricalOdds) !== null ? formatOddsAsOneInOrPercent(rawHistoricalOdds) : String(rawHistoricalOdds));
 
       const secondaryCell = isPreferenceAntlerless(meta)
         ? ''
-        : `<td>${hasPointLevelEvidence ? formatEmpty(formatProbability(firstAvailable(row, ['random_draw_projection_2026', 'random_draw_odds_2026', 'odds_2026_projected']))) : '—'}</td>`;
+        : `<td>${hasPointLevelEvidence ? formatOddsAsOneInOrPercent(firstAvailable(row, ['random_draw_projection_2026', 'random_draw_odds_2026', 'odds_2026_projected'])) : 'Not available'}</td>`;
 
       const rowClass = [isUserRow ? 'is-user-row' : '', ...classes.filter((name) => name !== 'is-user-row')]
         .filter(Boolean)

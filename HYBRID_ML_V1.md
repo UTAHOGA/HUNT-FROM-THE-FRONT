@@ -37,6 +37,8 @@ processed\_data/hunt\_master\_enriched.csv
 processed\_data/hunt\_unit\_reference\_linked.csv
 The hybrid ML layer should not force a frontend redesign. It should produce materialized predictions that preserve legacy fields and add modeled fields.
 
+This file is the active canonical contract for the Utah hybrid ML layer. `HYBRID_ML_V1_ROLLOUT.md`, when present, is a detailed companion document and should be read with this file rather than replacing it.
+
 Rows must remain keyed by:
 
 (hunt\_code, residency, points)
@@ -536,6 +538,14 @@ display\_odds\_pct is a percentage from 0 to 100.
 reason\_codes may be pipe-delimited in CSV output.
 model\_version must change when demand/quota/model logic changes.
 rule\_version must change when simulator rules/config changes.
+
+UI presentation rules:
+
+- model fields stay numeric internally;
+- user-facing draw odds should render in combined `~1 in X or Y%` format;
+- this is a display-only rule and not a model or probability-math change;
+- an optional display-only materialized field such as `display_odds_one_in_or_pct` may be added later, but it must not replace numeric `display_odds_pct`.
+
 Point creep
 Point creep should be computed from modeled cutoff movement.
 
@@ -703,8 +713,8 @@ function getModeledDisplayOdds(row) {
   const displayPct = toNumber(row.display\_odds\_pct);
   if (Number.isFinite(displayPct)) return displayPct;
 
-  const pDraw = toNumber(row.p\_draw\_mean);
-  if (Number.isFinite(pDraw)) return pDraw \* 100;
+  const pDrawMean = toNumber(row.p\_draw\_mean);
+  if (Number.isFinite(pDrawMean)) return pDrawMean * 100;
 
   const projected = toNumber(row.odds\_2026\_projected);
   if (Number.isFinite(projected)) return projected;
@@ -712,14 +722,20 @@ function getModeledDisplayOdds(row) {
   const maxPool = toNumber(row.max\_pool\_projection\_2026);
   if (Number.isFinite(maxPool)) return maxPool;
 
-  const random = toNumber(row.random\_draw\_odds\_2026) ?? toNumber(row.random\_draw\_projection\_2026);
-  if (Number.isFinite(random)) return random;
+  const randomOdds = toNumber(row.random\_draw\_odds\_2026);
+  if (Number.isFinite(randomOdds)) return randomOdds;
+
+  const randomProjection = toNumber(row.random\_draw\_projection\_2026);
+  if (Number.isFinite(randomProjection)) return randomProjection;
 
   return null;
 }
 Do not include logic equivalent to:
 
 if (row.status === "MAX POOL") return 100;
+
+All user-facing draw-odds displays should then format the selected numeric percent into combined `~1 in X or Y%` text.
+
 Model versioning
 Version fields:
 
