@@ -461,6 +461,23 @@
       }
     });
 
+    masterRows.forEach((row) => {
+      const residency = normalizeResidencyLabel(row.residency);
+      const drawPool = normalizeDrawPool(row.draw_pool);
+      const group = groupKey(row.hunt_code, residency, drawPool);
+      const points = num(row.points);
+      const key = rowKey(row.hunt_code, residency, points, drawPool);
+      const normalized = { ...row, residency, draw_pool: drawPool };
+      if (!state.masterByResidency.has(group)) {
+        state.masterByResidency.set(group, normalized);
+      }
+      if (!state.masterByCode.has(normalizeKey(row.hunt_code))) {
+        state.masterByCode.set(normalizeKey(row.hunt_code), normalized);
+      }
+      if (points !== null) {
+        state.masterPointByKey.set(key, { ...row, residency, points, draw_pool: drawPool });
+      }
+    });
     ladderRows.forEach((row) => {
       const residency = normalizeResidencyLabel(row.residency);
       const drawPool = normalizeDrawPool(row.draw_pool);
