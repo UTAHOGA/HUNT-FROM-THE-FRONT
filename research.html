@@ -24,6 +24,7 @@
       --research-warn: #f2b400;
       --research-bad: #e53935;
       --research-info: #1b5fb5;
+      --guaranteed-line-orange: rgb(255, 140, 20);
       --research-shadow: var(--shadow);
       --research-radius: 22px;
       --research-pill: 999px;
@@ -816,9 +817,9 @@
 
     .report-table tbody tr.is-guaranteed-row {
           background:
-            linear-gradient(90deg, rgba(240, 120, 0, 0.18) 0, rgba(240, 120, 0, 0.08) 28px, rgba(255, 248, 241, 0.96) 28px, rgba(255, 248, 241, 0.96) 100%);
+            linear-gradient(90deg, rgba(255, 140, 20, 0.26) 0, rgba(255, 140, 20, 0.14) 28px, rgba(255, 248, 241, 0.96) 28px, rgba(255, 248, 241, 0.96) 100%);
           color: #2f1d12;
-          box-shadow: inset 0 0 0 1px rgba(240, 120, 0, 0.38);
+          box-shadow: inset 0 0 0 1px rgba(255, 140, 20, 0.72);
         }
 
     .report-table tbody tr.is-user-row {
@@ -836,9 +837,9 @@
 
     .report-table tbody tr.is-user-row.is-guaranteed-row {
           background:
-            linear-gradient(90deg, rgba(255, 214, 64, 0.22) 0, rgba(255, 214, 64, 0.10) 18px, rgba(240, 120, 0, 0.16) 18px, rgba(255, 248, 241, 0.98) 38px, rgba(255, 248, 241, 0.98) 100%);
+            linear-gradient(90deg, rgba(255, 214, 64, 0.22) 0, rgba(255, 214, 64, 0.10) 18px, rgba(255, 140, 20, 0.24) 18px, rgba(255, 248, 241, 0.98) 38px, rgba(255, 248, 241, 0.98) 100%);
           color: #2f1d12;
-          box-shadow: inset 0 0 0 1px rgba(240, 120, 0, 0.40);
+          box-shadow: inset 0 0 0 1px rgba(255, 140, 20, 0.76);
         }
 
     .report-table tbody tr.is-guaranteed-row td,
@@ -889,10 +890,10 @@
     }
 
     .marker-pill.guaranteed {
-          border-color: rgba(240, 120, 0, 0.96);
+          border-color: rgba(255, 140, 20, 0.96);
           background: rgba(255, 246, 240, 0.98);
-          color: #f07800;
-          box-shadow: 0 0 0 1px rgba(240, 120, 0, 0.22);
+          color: var(--guaranteed-line-orange);
+          box-shadow: 0 0 0 1px rgba(255, 140, 20, 0.30);
         }
 
     .marker-pill.user {

@@ -245,6 +245,30 @@ def test_ladder_column_labels_use_correct_pool_language():
     assert "els.ladderPrimaryHeader.textContent = '2026 Max Point Pool';" in js
 
 
+def test_guaranteed_to_draw_line_uses_requested_orange():
+    html = RESEARCH_HTML_PATH.read_text(encoding="utf-8")
+    assert "--guaranteed-line-orange: rgb(255, 140, 20);" in html
+    guaranteed_row_block = _block(
+        html,
+        ".report-table tbody tr.is-guaranteed-row {",
+        ".report-table tbody tr.is-user-row {",
+    )
+    user_guaranteed_block = _block(
+        html,
+        ".report-table tbody tr.is-user-row.is-guaranteed-row {",
+        ".report-table tbody tr.is-guaranteed-row td,",
+    )
+    guaranteed_marker_block = _block(
+        html,
+        ".marker-pill.guaranteed {",
+        ".marker-pill.user {",
+    )
+    assert "rgba(255, 140, 20" in guaranteed_row_block
+    assert "rgba(255, 140, 20" in user_guaranteed_block
+    assert "rgba(255, 140, 20" in guaranteed_marker_block
+    assert "color: var(--guaranteed-line-orange);" in guaranteed_marker_block
+
+
 def test_no_status_max_pool_return_100_shortcut():
     text = _frontend_text()
     assert "row.status === 'MAX POOL'" not in _block(text, "function getDisplayedOdds(row)", "function isPreferenceAntlerless(meta)")

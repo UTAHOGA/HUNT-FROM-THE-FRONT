@@ -2252,6 +2252,20 @@
   - `python -m compileall tests hunt-research.js` passed.
   - Browser verification passed locally: `Sources` pill opened the DWR Source Snapshot modal after running `EB3024` resident at `30` points.
 
+## Hunt Research Guaranteed Line Orange
+- Timestamp (UTC): 2026-05-23T18:05:00Z
+- Scope:
+  - Updated the Hunt Research point-ladder guaranteed-to-draw line and `Guaranteed` marker to use the requested orange `rgb(255, 140, 20)`.
+  - Kept this as a visual-only change; no draw odds, prediction math, or runtime data files changed.
+- Files:
+  - `research.html`
+  - `tests/utah/test_frontend_probability_selection.py`
+- Validation:
+  - `python -m pytest tests/utah/test_frontend_probability_selection.py -q` passed: `30`.
+  - `node --check hunt-research.js` passed.
+  - `python -m compileall tests hunt-research.js` passed.
+  - Browser visual pass was attempted, but the in-app browser text-entry path was blocked by its virtual clipboard limitation; static CSS regression covers the exact requested RGB value.
+
 ## Repo File Retention And LFS Audit
 - Timestamp (UTC): 2026-05-23T14:55:00Z
 - Scope:
