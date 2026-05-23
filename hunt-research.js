@@ -400,6 +400,9 @@
         });
         return mapped;
       });
+  }  
+  function isGitLfsPointerText(text) {
+    return String(text || '').startsWith('version https://git-lfs.github.com/spec/v1');
   }
 
   async function tryLoadText(url) {
@@ -407,7 +410,13 @@
     if (!response.ok) {
       throw new Error(`Request failed for ${url}`);
     }
-    return response.text();
+    const text = await response.text();
+
+    if (isGitLfsPointerText(text)) {
+      throw new Error(`Git LFS pointer served instead of data for ${url}`);
+    }
+
+    return text;
   }
 
   async function loadFirstAvailable(sources) {

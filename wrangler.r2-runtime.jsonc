@@ -1,0 +1,12 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "json",
+  "main": "scripts/cloudflare-r2-runtime-worker.js",
+  "compatibility_date": "2026-05-23",
+  "r2_buckets": [
+    {
+      "binding": "DATA",
+      "bucket_name": "uoga-data"
+    }
+  ]
+}
