@@ -84,8 +84,9 @@
   }
 
   function getHeaderNavItems(links) {
-    const seen = new Set(['./index.html|U.O.G.A. HOME']);
-    const items = [{ href: './index.html', label: 'U.O.G.A. HOME', active: false }];
+    const homeHref = 'https://www.uoga.org';
+    const seen = new Set([`${homeHref}|U.O.G.A. HOME`]);
+    const items = [{ href: homeHref, label: 'U.O.G.A. HOME', active: false }];
 
     links.forEach(link => {
       const href = link.getAttribute('href') || '#';
@@ -272,7 +273,7 @@
         display:flex !important;
         align-items:center !important;
         justify-content:center !important;
-        gap:3px !important;
+        gap:8px !important;
         padding:7px 14px !important;
         border:1px solid rgba(209,171,131,.92) !important;
         border-radius:999px !important;
@@ -303,9 +304,13 @@
         align-items:center !important;
         justify-content:center !important;
         min-height:38px !important;
-        padding:0 15px !important;
-        border:1px solid transparent !important;
+        padding:0 16px !important;
+        border:1px solid rgba(240,120,0,.40) !important;
         border-radius:999px !important;
+        background:
+          radial-gradient(circle at top left, rgba(255,255,255,.16), transparent 36%),
+          linear-gradient(180deg, rgba(57,44,34,.92), rgba(28,22,17,.96)) !important;
+        box-shadow:0 7px 16px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,170,76,.08) !important;
         color:#f07800 !important;
         font-size:12px !important;
         font-weight:950 !important;
@@ -332,11 +337,11 @@
         text-shadow:0 0 14px rgba(255,140,20,.46) !important;
       }
       .uoga-primary-nav a.active {
-        color:#ffad52 !important;
+        color:#ffffff !important;
         outline:none !important;
         border-color:rgba(255,140,20,.50) !important;
         background:linear-gradient(180deg,rgba(65,47,29,.84),rgba(30,22,15,.92)) !important;
-        text-shadow:0 0 14px rgba(255,140,20,.42) !important;
+        text-shadow:0 1px 0 rgba(0,0,0,.76), 0 0 14px rgba(255,255,255,.22) !important;
       }
       .uoga-primary-nav a.active::after {
         content:"" !important;

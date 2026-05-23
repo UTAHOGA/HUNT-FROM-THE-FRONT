@@ -19,6 +19,17 @@
   - `node --check header-layout.js`
   - `python -m pytest tests/utah/test_header_layout.py tests/utah/test_frontend_probability_selection.py -q`
 
+### Header Navigation Refinement
+- Timestamp (UTC): 2026-05-23T17:55:00Z
+- Scope:
+  - Pointed `U.O.G.A. HOME` in the shared header navigation to `https://www.uoga.org`.
+  - Gave each navigation page item its own brown rounded inner pillow instead of relying on text-only interaction.
+  - Changed the selected/active page item font color to white.
+  - Kept hover motion on the entire page pillow so it raises and expands toward the viewer.
+- Validation:
+  - `node --check header-layout.js`
+  - `python -m pytest tests/utah/test_header_layout.py tests/utah/test_frontend_probability_selection.py -q`
+
 ## Mixed Predictive Draw-Odds Engine 2026
 - Timestamp (UTC): 2026-05-23T14:20:00Z
 - Scope:

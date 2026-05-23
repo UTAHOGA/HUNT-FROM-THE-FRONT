@@ -22,6 +22,7 @@ def test_shared_header_builds_primary_navigation() -> None:
     assert "ensurePrimaryHeaderNav" in text
     assert "uoga-primary-nav" in text
     assert "U.O.G.A. HOME" in text
+    assert "https://www.uoga.org" in text
     assert "HUNT LIBRARY" in text
 
 
@@ -38,6 +39,14 @@ def test_nav_items_expand_on_hover() -> None:
     assert ".uoga-primary-nav a:hover" in text
     assert "scale(1.10)" in text
     assert "translateY(-4px)" in text
+
+
+def test_active_nav_item_uses_white_text_and_individual_brown_pill() -> None:
+    text = _text(HEADER_LAYOUT)
+    assert ".uoga-primary-nav a.active" in text
+    assert "color:#ffffff" in text
+    assert "border:1px solid rgba(240,120,0,.40)" in text
+    assert "linear-gradient(180deg, rgba(57,44,34,.92)" in text
 
 
 def test_pages_use_fresh_header_asset_and_hunt_library_label() -> None:
