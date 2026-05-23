@@ -8,6 +8,7 @@ from engine.utah.point_ladder_pool import format_historical_draw_result
 
 REPO = Path(__file__).resolve().parents[2]
 LADDER = REPO / "processed_data" / "point_ladder_view.csv"
+RESEARCH_HTML = REPO / "research.html"
 
 
 def _ladder_row(hunt_code: str, residency: str, points: int) -> dict[str, str]:
@@ -103,3 +104,12 @@ def test_ladder_preserves_dwr_historical_result_fields():
         "dwr_result_display",
     ):
         assert field in row
+
+
+def test_guaranteed_ladder_line_uses_requested_orange_and_brown_box():
+    text = RESEARCH_HTML.read_text(encoding="utf-8")
+    assert "--guaranteed-line-orange: rgb(250, 120, 0);" in text
+    assert "--highlight-outline-brown: rgb(55, 34, 22);" in text
+    assert ".report-table tbody tr.is-guaranteed-row" in text
+    assert "background: var(--guaranteed-line-orange);" in text
+    assert "box-shadow: inset 0 0 0 2px var(--highlight-outline-brown);" in text

@@ -65,6 +65,19 @@
   - `node --check ui.js`
   - `python -m pytest tests/utah/test_header_layout.py tests/utah/test_frontend_probability_selection.py -q`
 
+## Hunt Research Point Ladder Guaranteed-Line Highlight
+- Timestamp (UTC): 2026-05-23T18:55:00Z
+- Scope:
+  - Updated the point ladder guaranteed-to-draw line to use `rgb(250, 120, 0)`.
+  - Added a dark brown inset box around the guaranteed line using the existing `rgb(55, 34, 22)` outline token.
+  - Preserved the hunter-points blue highlight while making the combined hunter/guaranteed row keep the same brown outline.
+- Files:
+  - `research.html`
+  - `tests/utah/test_point_ladder_pool_display.py`
+- Validation:
+  - `node --check hunt-research.js`
+  - `python -m pytest tests/utah/test_point_ladder_pool_display.py tests/utah/test_frontend_probability_selection.py -q`
+
 ## Mixed Predictive Draw-Odds Engine 2026
 - Timestamp (UTC): 2026-05-23T14:20:00Z
 - Scope:
