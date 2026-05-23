@@ -127,6 +127,18 @@
     return normalized || 'standard';
   }
 
+  function getDrawPoolHandoffLabel(drawPool) {
+    const labels = {
+      youth: 'Youth draw',
+      lifetime: 'Lifetime license draw',
+      dedicated_hunter: 'Dedicated Hunter',
+      youth_dedicated_hunter: 'Youth Dedicated Hunter',
+      youth_mature_bull: 'Youth mature bull',
+      youth_turkey: 'Youth turkey',
+    };
+    return labels[normalizeDrawPool(drawPool)] || '';
+  }
+
   function groupKey(huntCode, residency, drawPool) {
     return `${normalizeKey(huntCode)}__${normalizeResidencyLabel(residency)}__${normalizeDrawPool(drawPool)}`;
   }
@@ -798,9 +810,13 @@
   }
 
   function renderFilterReadout(filters) {
-    els.filterReadout.textContent = filters.huntCode
-      ? `${filters.huntCode} · ${filters.residency} · ${filters.drawPool} · ${filters.points} point${filters.points === 1 ? '' : 's'}.`
-      : `${filters.residency} · ${filters.drawPool} · ${filters.points} point${filters.points === 1 ? '' : 's'}.`;
+    const parts = filters.huntCode
+      ? [filters.huntCode, filters.residency]
+      : [filters.residency];
+    const poolLabel = getDrawPoolHandoffLabel(filters.drawPool);
+    if (poolLabel) parts.push(poolLabel);
+    parts.push(`${filters.points} point${filters.points === 1 ? '' : 's'}`);
+    els.filterReadout.textContent = `${parts.join(' · ')}.`;
 
     els.plannerReadout.textContent = state.selectedHuntCode
       ? `Planner handoff: ${state.selectedHuntCode}.`
@@ -1339,18 +1355,21 @@
       return;
     }
 
-    els.basketList.innerHTML = items.map((item) => `
-      <div class="backpack-card">
-        <span class="label">${escapeHtml(item.hunt_code)}</span>
-        <h4>${escapeHtml(item.hunt_name || item.hunt_code)}</h4>
-        <p>${escapeHtml(item.species || '')}${item.weapon ? ` · ${escapeHtml(item.weapon)}` : ''} · ${escapeHtml(item.residency || 'Resident')} · ${formatInteger(item.selected_points)} points</p>
-        <p>Pool: ${escapeHtml(normalizeDrawPool(item.draw_pool))}</p>
-        <p>${escapeHtml(item.draw_outlook || 'Saved for later review.')}</p>
-        <div class="backpack-actions">
-          <button class="mini-btn" type="button" data-basket-load="${escapeHtml(item.hunt_code)}">Load</button>
-          <button class="mini-btn" type="button" data-basket-remove="${escapeHtml(item.hunt_code)}">Remove</button>
-        </div>
-      </div>`).join('');
+    els.basketList.innerHTML = items.map((item) => {
+      const poolLabel = getDrawPoolHandoffLabel(item.draw_pool);
+      return `
+        <div class="backpack-card">
+          <span class="label">${escapeHtml(item.hunt_code)}</span>
+          <h4>${escapeHtml(item.hunt_name || item.hunt_code)}</h4>
+          <p>${escapeHtml(item.species || '')}${item.weapon ? ` · ${escapeHtml(item.weapon)}` : ''} · ${escapeHtml(item.residency || 'Resident')} · ${formatInteger(item.selected_points)} points</p>
+          ${poolLabel ? `<p>${escapeHtml(poolLabel)}</p>` : ''}
+          <p>${escapeHtml(item.draw_outlook || 'Saved for later review.')}</p>
+          <div class="backpack-actions">
+            <button class="mini-btn" type="button" data-basket-load="${escapeHtml(item.hunt_code)}">Load</button>
+            <button class="mini-btn" type="button" data-basket-remove="${escapeHtml(item.hunt_code)}">Remove</button>
+          </div>
+        </div>`;
+    }).join('');
 
     els.basketList.querySelectorAll('[data-basket-load]').forEach((button) => {
       button.addEventListener('click', () => {
@@ -1397,9 +1416,10 @@
   function bootstrapSelection() {
     const params = new URLSearchParams(window.location.search);
     const queryHunt = normalizeKey(params.get('hunt_code'));
+    const queryDrawPool = params.has('draw_pool') ? normalizeDrawPool(params.get('draw_pool')) : '';
     const storedHunt = normalizeKey(localStorage.getItem(SELECTED_HUNT_KEY));
     const storedResidency = normalizeResidencyLabel(localStorage.getItem(SELECTED_RESIDENCY_KEY));
-    const storedDrawPool = normalizeDrawPool(localStorage.getItem(SELECTED_DRAW_POOL_KEY));
+    const storedDrawPool = queryDrawPool || normalizeDrawPool(localStorage.getItem(SELECTED_DRAW_POOL_KEY));
     const storedPoints = localStorage.getItem(SELECTED_POINTS_KEY);
     const bootstrapHunt = queryHunt || storedHunt;
 
@@ -1417,6 +1437,10 @@
 
     if (queryHunt) {
       localStorage.setItem(SELECTED_HUNT_KEY, queryHunt);
+    }
+
+    if (queryDrawPool) {
+      localStorage.setItem(SELECTED_DRAW_POOL_KEY, queryDrawPool);
     }
   }
 

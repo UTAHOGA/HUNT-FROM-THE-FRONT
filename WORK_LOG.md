@@ -2507,3 +2507,16 @@
   - `python -m pytest tests/utah/test_current_year_permit_allotments.py tests/utah_bonus_predictive/test_official_2026_quota_inputs.py -q` passed: `15`.
   - `python -m compileall scripts engine tests` passed.
   - `node --check hunt-research.js` passed.
+
+## Hunt Research Draw-Pool UX Simplification
+- Timestamp (UTC): 2026-05-23T17:16:44Z
+- Scope:
+  - Removed the visible Hunt Research draw-pool selector from hunter-facing controls while preserving the internal `draw_pool` key used by the prediction lookup.
+  - Replaced raw `standard` pool readouts with hidden/internal routing; non-standard handoffs can still display hunter-readable labels such as `Youth draw`.
+  - Updated Builder and backpack handoffs to carry the internal draw-pool key into Hunt Research without asking hunters to choose engine categories.
+  - Confirmed this is a frontend routing/display cleanup only; no prediction math, data artifacts, or quota fields were changed.
+- Validation:
+  - `node --check hunt-research.js` passed.
+  - `node --check app.js` passed.
+  - `node --check ui.js` passed.
+  - `python -m pytest tests/utah/test_frontend_probability_selection.py -q` passed: `35`.

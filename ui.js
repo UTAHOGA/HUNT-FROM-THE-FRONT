@@ -23,6 +23,11 @@ window.UOGA_UI = (() => {
     return String(value ?? '');
   }
 
+  function normalizeDrawPool(value) {
+    const normalized = safeText(value).trim().toLowerCase().replace(/[\s-]+/g, '_');
+    return normalized || 'standard';
+  }
+
   function escapeHtml(value) {
     return safeText(value)
       .replace(/&/g, '&amp;')
@@ -122,6 +127,7 @@ window.UOGA_UI = (() => {
       species: safeText(record?.species || '').trim(),
       weapon: safeText(record?.weapon || '').trim(),
       residency: safeText(record?.residency || '').trim(),
+      draw_pool: normalizeDrawPool(record?.draw_pool || record?.drawPool),
       selected_points: record?.selected_points ?? record?.points ?? null,
       projected_total_probability_pct: record?.projected_total_probability_pct ?? null,
       updated_at: Number(record?.updated_at) || Date.now()
@@ -200,27 +206,30 @@ window.UOGA_UI = (() => {
         <span class="uoga-backpack-section-count">${items.length}</span>
       </div>
       <div class="uoga-backpack-list">
-        ${items.map((item) => `
+        ${items.map((item) => {
+          const researchHref = `./research.html?hunt_code=${encodeURIComponent(item.hunt_code)}&draw_pool=${encodeURIComponent(normalizeDrawPool(item.draw_pool))}`;
+          return `
           <article class="uoga-backpack-item" data-hunt-code="${escapeHtml(item.hunt_code)}">
             <div class="uoga-backpack-item-top">
               <div>
                 <p class="uoga-backpack-kicker">${sectionType === 'saved' ? 'Saved shortlist' : 'Recently opened'}</p>
                 <h4>${escapeHtml(item.hunt_code)}</h4>
               </div>
-              <a class="uoga-backpack-chip" href="./research.html?hunt_code=${encodeURIComponent(item.hunt_code)}" data-backpack-link="research" data-hunt-code="${escapeHtml(item.hunt_code)}">Resume</a>
+              <a class="uoga-backpack-chip" href="${researchHref}" data-backpack-link="research" data-hunt-code="${escapeHtml(item.hunt_code)}" data-draw-pool="${escapeHtml(normalizeDrawPool(item.draw_pool))}">Resume</a>
             </div>
             <div class="uoga-backpack-name">${escapeHtml(item.hunt_name || item.hunt_code)}</div>
             <div class="uoga-backpack-meta">${escapeHtml(itemMeta(item) || 'Hunt details will fill in as more research is saved.')}</div>
             <div class="uoga-backpack-subvalue">${escapeHtml(itemSubvalue(item))}</div>
             <div class="uoga-backpack-actions">
-              <a href="./research.html?hunt_code=${encodeURIComponent(item.hunt_code)}" data-backpack-link="research" data-hunt-code="${escapeHtml(item.hunt_code)}">Research</a>
+              <a href="${researchHref}" data-backpack-link="research" data-hunt-code="${escapeHtml(item.hunt_code)}" data-draw-pool="${escapeHtml(normalizeDrawPool(item.draw_pool))}">Research</a>
               <a href="./index.html?hunt_code=${encodeURIComponent(item.hunt_code)}" data-backpack-link="planner" data-hunt-code="${escapeHtml(item.hunt_code)}">Planner</a>
               ${sectionType === 'saved'
                 ? `<button type="button" data-backpack-remove="${escapeHtml(item.hunt_code)}">Remove</button>`
                 : '<span class="uoga-backpack-ghost">Recent</span>'}
             </div>
           </article>
-        `).join('')}
+        `;
+        }).join('')}
       </div>
     `;
   }
@@ -408,6 +417,10 @@ window.UOGA_UI = (() => {
       link.addEventListener('click', () => {
         const huntCode = link.getAttribute('data-hunt-code');
         if (huntCode) setSelectedHuntCode(huntCode);
+        if (link.hasAttribute('data-draw-pool')) {
+          const drawPool = normalizeDrawPool(link.getAttribute('data-draw-pool'));
+          localStorage.setItem('selected_hunt_research_draw_pool', drawPool);
+        }
         closeBackpackTray();
       });
     });

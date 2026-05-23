@@ -310,17 +310,45 @@ function setOwnershipControlsExpandedForEarth(expanded = true) {
   });
 }
 
-function openHuntResearch(huntCode, residency = 'Resident', points = 12) {
+function normalizeResearchDrawPool(value) {
+  const normalized = String(value || '').trim().toLowerCase().replace(/[\s-]+/g, '_');
+  const allowedPools = new Set([
+    'standard',
+    'youth',
+    'lifetime',
+    'dedicated_hunter',
+    'youth_dedicated_hunter',
+    'youth_mature_bull',
+    'youth_turkey',
+  ]);
+  return allowedPools.has(normalized) ? normalized : 'standard';
+}
+
+function inferResearchDrawPool(hunt) {
+  if (!hunt) return 'standard';
+  return normalizeResearchDrawPool(firstNonEmpty(
+    hunt.draw_pool,
+    hunt.drawPool,
+    hunt.draw_pool_type,
+    hunt.hunt_pool,
+    hunt.hunt_class,
+    hunt.huntClass
+  ));
+}
+
+function openHuntResearch(huntCode, residency = 'Resident', points = 12, drawPool = 'standard') {
   const code = String(huntCode || '').trim().toUpperCase();
   const normalizedResidency = String(residency || '').trim().toLowerCase().replace(/[\s_-]+/g, '') === 'nonresident'
     ? 'Nonresident'
     : 'Resident';
+  const normalizedDrawPool = normalizeResearchDrawPool(drawPool);
 
-localStorage.setItem('selected_hunt_code', code);
+  localStorage.setItem('selected_hunt_code', code);
   localStorage.setItem('selected_hunt_research_residency', normalizedResidency);
+  localStorage.setItem('selected_hunt_research_draw_pool', normalizedDrawPool);
   localStorage.setItem('selected_hunt_research_points', String(points));
 
-  window.location.href = `./hunt-research.html?hunt_code=${encodeURIComponent(code)}`;
+  window.location.href = `./research.html?hunt_code=${encodeURIComponent(code)}&draw_pool=${encodeURIComponent(normalizedDrawPool)}`;
 }
 
 // --- DATA NORMALIZATION ---
@@ -2139,7 +2167,7 @@ function openSelectedHuntFloat() {
   selectedHuntFloat.querySelector('[data-close-selected-hunt-float]')?.addEventListener('click', () => closeSelectedHuntFloat());
   selectedHuntFloat.querySelector('[data-inline-view-map]')?.addEventListener('click', () => closeSelectedHuntFloat(true));
   selectedHuntFloat.querySelector('[data-inline-hunt-research]')?.addEventListener('click', () => {
-    openHuntResearch(getHuntCode(selectedHunt));
+    openHuntResearch(getHuntCode(selectedHunt), 'Resident', 12, inferResearchDrawPool(selectedHunt));
   });
 }
 
@@ -2350,6 +2378,7 @@ function renderSelectedHunt() {
     unit: getUnitName(hunt),
     species: getSpeciesDisplay(hunt),
     weapon: getWeapon(hunt),
+    draw_pool: inferResearchDrawPool(hunt),
     updated_at: Date.now()
   });
 
@@ -2378,7 +2407,7 @@ function renderSelectedHunt() {
   `;
 
   document.getElementById('selectedHuntResearchBtn')?.addEventListener('click', () => {
-    openHuntResearch(getHuntCode(hunt));
+    openHuntResearch(getHuntCode(hunt), 'Resident', 12, inferResearchDrawPool(hunt));
   });
 
   if (safe(mapTypeSelect?.value).toLowerCase() === 'dwr') {

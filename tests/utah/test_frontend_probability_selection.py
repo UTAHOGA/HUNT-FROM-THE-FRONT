@@ -245,6 +245,34 @@ def test_ladder_column_labels_use_correct_pool_language():
     assert "els.ladderPrimaryHeader.textContent = '2026 Max Point Pool';" in js
 
 
+def test_draw_pool_selector_is_internal_not_hunter_facing():
+    html = RESEARCH_HTML_PATH.read_text(encoding="utf-8")
+    assert '<label for="drawPoolSelect">Draw Pool</label>' not in html
+    assert 'id="drawPoolSelect"' in html
+    assert 'draw-pool-field is-internal" hidden' in html
+    assert '<label for="drawPoolSelect">Internal draw-pool routing</label>' in html
+
+
+def test_standard_draw_pool_is_not_rendered_as_visible_hunter_copy():
+    text = _frontend_text()
+    readout_block = _block(text, "function renderFilterReadout(filters)", "function getHarvestSuccessDisplay(meta, referenceRow)")
+    basket_block = _block(text, "function renderBasket()", "async function loadData()")
+    assert "getDrawPoolHandoffLabel(filters.drawPool)" in readout_block
+    assert "${filters.drawPool}" not in readout_block
+    assert "Pool: ${escapeHtml(normalizeDrawPool(item.draw_pool))}" not in basket_block
+    assert "getDrawPoolHandoffLabel(item.draw_pool)" in basket_block
+
+
+def test_builder_and_backpack_carry_draw_pool_internally():
+    app_text = Path("app.js").read_text(encoding="utf-8")
+    ui_text = Path("ui.js").read_text(encoding="utf-8")
+    assert "function inferResearchDrawPool(hunt)" in app_text
+    assert "localStorage.setItem('selected_hunt_research_draw_pool', normalizedDrawPool);" in app_text
+    assert "./research.html?hunt_code=${encodeURIComponent(code)}&draw_pool=${encodeURIComponent(normalizedDrawPool)}" in app_text
+    assert "data-draw-pool=" in ui_text
+    assert "localStorage.setItem('selected_hunt_research_draw_pool', drawPool);" in ui_text
+
+
 def test_guaranteed_to_draw_line_uses_requested_orange():
     html = RESEARCH_HTML_PATH.read_text(encoding="utf-8")
     assert "--guaranteed-line-orange: rgb(250, 120, 0);" in html
