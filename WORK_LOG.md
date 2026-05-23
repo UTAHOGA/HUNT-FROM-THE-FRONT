@@ -2222,6 +2222,41 @@
   - `python -m pytest tests/utah/test_all_years_harvest_database.py tests/utah/test_2025_draw_permit_field_promotion.py tests/utah/test_current_year_permit_allotments.py tests/utah/test_draw_family_labels.py -q` passed: `37`.
   - `python -m compileall scripts engine tests` passed.
   - `node --check hunt-research.js` passed.
+
+## Repo File Retention And LFS Audit
+- Timestamp (UTC): 2026-05-23T14:55:00Z
+- Scope:
+  - Audited repository files for GitHub, Cloudflare R2 runtime/archive, local archive, delete-after-backup, and review-required storage actions.
+  - Confirmed `pages-dist/` is a deploy bundle only; root/main repository files remain the source/runtime truth inputs.
+  - Added Git LFS tracking patterns for large processed runtime data, including `processed_data/boundaries/**`, `processed_data/hunt_research_2026_split/**`, major prediction/runtime CSVs, large GeoJSON boundaries, and SQLite artifacts.
+  - No files were deleted, and no prediction/model outputs were changed.
+- Scripts/tests:
+  - `scripts/audit-repo-file-retention.py`
+  - `tests/utah/test_repo_file_retention_audit.py`
+- Outputs:
+  - `processed_data/repo_file_retention_audit.csv`
+  - `processed_data/repo_file_retention_audit.json`
+  - `processed_data/repo_file_retention_audit.md`
+  - `processed_data/repo_file_retention_summary_by_directory.csv`
+  - `processed_data/repo_file_retention_cloudflare_manifest.csv`
+  - `processed_data/repo_file_retention_github_keep_manifest.csv`
+  - `processed_data/repo_file_retention_delete_after_backup_manifest.csv`
+  - `processed_data/repo_file_retention_review_required_manifest.csv`
+- Key results:
+  - Total repo file count: `8984`.
+  - Total repo size: `4339.944 MB`.
+  - Cloudflare R2 runtime-data recommendations: `2989`.
+  - Cloudflare R2 archive-data recommendations: `306`.
+  - GitHub keep recommendations: `1708` across source, docs, scripts/tests, and small canonical data classes.
+  - Local archive recommendations: `914`.
+  - Delete-after-backup recommendations: `393`.
+  - Review-required recommendations: `732`.
+  - Tracked files over 25 MB: `29`.
+  - Tracked files over 100 MB: `1`.
+- Validation:
+  - `python scripts/audit-repo-file-retention.py` passed.
+  - `python -m pytest tests\utah\test_repo_file_retention_audit.py -q` passed: `14`.
+  - `python -m compileall scripts tests` passed.
   - `python scripts/compare-complete-2023-harvest-to-draw.py` passed and refreshed the complete 2023 harvest-vs-draw comparison.
 
 ## Harvest Package Split-Season Year Correction
