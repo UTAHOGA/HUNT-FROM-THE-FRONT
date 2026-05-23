@@ -26,7 +26,7 @@ BI6535,True,True,True,True,included_forecast,Once-in-a-lifetime,Bison,"Book Clif
 BI6536,True,True,True,True,included_forecast,Once-in-a-lifetime,Bison,"Book Cliffs, Bitter Creek",15,0,15
 BI6537,True,True,True,True,included_forecast,Once-in-a-lifetime,Bison,"Book Cliffs, Little Creek/South",8,7,15
 BI6538,False,True,True,False,not_OIL_LE_PLE,General Season,Bison,"Nine Mile, Private Lands Only",,,
-BI6539,True,True,True,True,included_forecast,Once-in-a-lifetime,Bison,Henry Mtns,11,0,11
+BI6539,False,True,True,True,other_missing_model_input,Once-in-a-lifetime,Bison,Henry Mtns,11,0,11
 BR1000,True,True,True,False,included_forecast,Statewide,Black Bear,Black Bear - Statewide Permit,,,
 BR1001,True,True,True,False,included_forecast,Harvest Objective,Black Bear,Black Bear Harvest Objective Units,,,
 BR1007,True,True,True,False,included_forecast,Pursuit,Black Bear,Black Bear Pursuit - Resident,,,
@@ -336,7 +336,7 @@ DB1105,True,True,True,True,included_forecast,Limited Entry,Deer,East Canyon,6,1,
 DB1106,True,True,True,True,included_forecast,Limited Entry,Deer,Thousand Lakes,20,2,22
 DB1107,True,True,True,True,included_forecast,Limited Entry,Deer,Thousand Lakes,20,2,22
 DB1108,True,True,True,True,included_forecast,Limited Entry,Deer,Thousand Lakes,27,3,30
-DB1109,True,True,True,True,included_forecast,Limited Entry,Deer,Thousand Lakes,2,0,2
+DB1109,False,True,True,True,other_missing_model_input,Limited Entry,Deer,Thousand Lakes,2,0,2
 DB1110,True,True,True,True,included_forecast,Limited Entry,Deer,"Beaver, East",10,1,11
 DB1111,True,True,True,True,included_forecast,Limited Entry,Deer,"Beaver, West",4,1,5
 DB1112,True,True,True,True,included_forecast,Limited Entry,Deer,"West Desert, Swasey",4,1,5

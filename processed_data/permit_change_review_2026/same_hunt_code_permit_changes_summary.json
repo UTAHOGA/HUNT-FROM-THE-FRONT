@@ -1,0 +1,10 @@
+{
+  "source": "pipeline\\RAW\\hunt_unit_database\\2026\\csv\\DATABASE.csv",
+  "rows": 1394,
+  "compared": 1394,
+  "changed": 1058,
+  "outputs": [
+    "same_hunt_code_permit_comparison_all.csv",
+    "same_hunt_code_permit_changes_only.csv"
+  ]
+}

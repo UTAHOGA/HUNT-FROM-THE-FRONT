@@ -189,16 +189,35 @@ def test_no_percent_only_primary_odds_display():
 def test_ladder_odds_use_combined_format():
     text = _frontend_text()
     block = _block(text, "function renderLadder(meta, huntCode, residency, points, drawPool)", "function renderEmpty(filters, coverageMessage)")
+    assert "getMaxPointPoolDisplay(row)" in block
+    assert "getRandomDrawDisplay(row)" in block
     assert "formatOddsAsOneInOrPercent(rawPrimary)" in block
-    assert "formatOddsAsOneInOrPercent(firstAvailable(row, ['random_draw_projection_2026', 'random_draw_odds_2026', 'odds_2026_projected']))" in block
     assert "formatProbability(rawPrimary)" not in block
 
 
 def test_source_snapshot_odds_use_combined_format():
     text = _frontend_text()
     block = _block(text, "function buildSourceBoxes(meta, row, referenceRow)", "function openSourceModal(meta, row, referenceRow, residency)")
+    assert "['2025 Draw Results', formatHistoricalDrawResult(row)" in block
     assert "formatOddsAsOneInOrPercent(row?.odds_2025_actual)" in block
     assert "['2026 Draw Odds', getDisplayedOdds(row).value]" in block
+
+
+def test_source_snapshot_shows_official_2026_quota_source():
+    text = _frontend_text()
+    block = _block(text, "function buildSourceBoxes(meta, row, referenceRow)", "function openSourceModal(meta, row, referenceRow, residency)")
+    assert "2026 quota source:" in block
+    assert "['2026 Quota Source', quotaSourceDisplay]" in block
+
+
+def test_ladder_column_labels_use_correct_pool_language():
+    html = RESEARCH_HTML_PATH.read_text(encoding="utf-8")
+    js = _frontend_text()
+    assert "2025 Draw Results" in html
+    assert "2026 Max Point Pool" in html
+    assert "2025 Actual Odds" not in html
+    assert "2026 Max Pool" not in html
+    assert "els.ladderPrimaryHeader.textContent = '2026 Max Point Pool';" in js
 
 
 def test_no_status_max_pool_return_100_shortcut():

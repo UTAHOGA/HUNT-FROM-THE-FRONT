@@ -97,3 +97,22 @@ Optional display-only fields such as `display_odds_one_in_or_pct` may be added i
 - `display_odds_pct` stays numeric
 - internal probability math does not change
 - display formatting remains a UI concern unless an explicit materialized display field is added
+
+## Point ladder max-point and random-pool rules
+
+The ladder separates historical DWR results from next-year predictions:
+
+- `2025 Draw Results` shows the official historical point-row result only when DWR awarded a permit at that point level.
+- DWR `N/A` with `total_permits = 0` renders as a blank ladder cell, not `Not available`.
+- `2026 Max Point Pool` is populated only from the recomputed rolled-forward max-point pool.
+- `2026 Random Draw` is populated from the prediction engine's modeled random-pool probability, not from a same-point historical success ratio.
+
+For bonus-point hunts, the prediction engine rolls the applicant stack forward
+before allocating the current quota. Successful max-point and random-pool
+applicants are removed; unsuccessful applicants advance by one point with
+retention/reapply assumptions; lower-point additions are estimated from observed
+transitions.
+
+Rows fully cleared by max-point permits are `max_pool_guaranteed`. The cutoff
+row where remaining max-point permits are fewer than applicants at that level is
+`max_pool_cutoff_mixed`. Rows below that are `random_pool`.

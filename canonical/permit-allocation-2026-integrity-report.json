@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-10T19:49:17.233Z",
+  "generated_at": "2026-05-23T05:15:31.380Z",
   "mode": "verify",
   "source_file": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
   "source_label": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
@@ -48,16 +48,546 @@
     {
       "file": "processed_data/hunt_master_enriched.csv",
       "type": "csv",
-      "rows_checked": 53060,
-      "matched_rows": 53060,
+      "rows_checked": 54397,
+      "matched_rows": 53115,
       "hunt_codes_checked": 1394,
       "fields_added": [],
       "fields_updated": [],
-      "mismatches_after_sync": 0,
-      "blank_values_preserved": 428388,
-      "target_only_hunt_codes": [],
+      "mismatches_after_sync": 11546,
+      "blank_values_preserved": 428737,
+      "target_only_hunt_codes": [
+        "CG0001",
+        "CG0002",
+        "CG0006",
+        "CG0009",
+        "CG0015",
+        "CG0016",
+        "CG1001",
+        "CG1002",
+        "CG1003",
+        "CG1004",
+        "CG1005",
+        "CG1006",
+        "CG1007",
+        "CG1008",
+        "CG1009",
+        "CG1010",
+        "CG1011",
+        "CG1012",
+        "CG1013",
+        "CG1014",
+        "CG1015",
+        "CG1016",
+        "CG1017",
+        "CG1018",
+        "CG1019",
+        "CG1020",
+        "CG1021",
+        "CG1022",
+        "CG1023",
+        "CG1024",
+        "CG1025",
+        "CG1026",
+        "CG1027",
+        "CG1028",
+        "CG1029",
+        "CG1030",
+        "CG1031",
+        "CG1032",
+        "CG1033",
+        "CG1034",
+        "CG1035",
+        "CG7501",
+        "CG7502",
+        "CG7504",
+        "CG7600",
+        "CG7601",
+        "CG7602",
+        "CG7603",
+        "CG7605",
+        "CG7606",
+        "CG7607",
+        "CG7609",
+        "CG7610",
+        "CG7611",
+        "CG7612",
+        "CG7613",
+        "CG7615",
+        "CG7618",
+        "CG7619",
+        "CG7620",
+        "DA1051",
+        "EA1007",
+        "EA1053",
+        "EA1287",
+        "EA1288",
+        "EA1289",
+        "EA1290",
+        "EA1291",
+        "EA1292",
+        "EA1293",
+        "EA1294",
+        "EA1295",
+        "EA1296",
+        "EA1297",
+        "EA1298",
+        "EA1299",
+        "EA1300",
+        "PD1039"
+      ],
       "database_only_hunt_codes": [],
-      "sample_issues": [],
+      "sample_issues": [
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 3,
+          "hunt_code": "BI1000",
+          "field": "permits_2026_sportsman",
+          "expected": "",
+          "actual": "1"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1002,
+          "hunt_code": "BR1000",
+          "field": "permits_2026_sportsman",
+          "expected": "",
+          "actual": "1"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1456,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1456,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1456,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1456,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1457,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1457,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1457,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1457,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1458,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1458,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1458,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1458,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1459,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1459,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1459,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1459,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1460,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1460,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1460,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1460,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1461,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1461,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1461,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1461,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1462,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1462,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1462,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1462,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1463,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1463,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1463,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1463,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1464,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1464,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1464,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1464,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1465,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1465,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1465,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1465,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1466,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1466,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1466,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1466,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1467,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1467,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1467,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1467,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        }
+      ],
       "mismatches_before_sync": 0,
       "changed_rows": 0,
       "changed_cells": 0
@@ -65,16 +595,546 @@
     {
       "file": "processed_data/hunt_unit_reference_linked.csv",
       "type": "csv",
-      "rows_checked": 2788,
-      "matched_rows": 2788,
+      "rows_checked": 2999,
+      "matched_rows": 2843,
       "hunt_codes_checked": 1394,
       "fields_added": [],
       "fields_updated": [],
-      "mismatches_after_sync": 0,
-      "blank_values_preserved": 24676,
-      "target_only_hunt_codes": [],
+      "mismatches_after_sync": 530,
+      "blank_values_preserved": 25217,
+      "target_only_hunt_codes": [
+        "CG0001",
+        "CG0002",
+        "CG0006",
+        "CG0009",
+        "CG0015",
+        "CG0016",
+        "CG1001",
+        "CG1002",
+        "CG1003",
+        "CG1004",
+        "CG1005",
+        "CG1006",
+        "CG1007",
+        "CG1008",
+        "CG1009",
+        "CG1010",
+        "CG1011",
+        "CG1012",
+        "CG1013",
+        "CG1014",
+        "CG1015",
+        "CG1016",
+        "CG1017",
+        "CG1018",
+        "CG1019",
+        "CG1020",
+        "CG1021",
+        "CG1022",
+        "CG1023",
+        "CG1024",
+        "CG1025",
+        "CG1026",
+        "CG1027",
+        "CG1028",
+        "CG1029",
+        "CG1030",
+        "CG1031",
+        "CG1032",
+        "CG1033",
+        "CG1034",
+        "CG1035",
+        "CG7501",
+        "CG7502",
+        "CG7504",
+        "CG7600",
+        "CG7601",
+        "CG7602",
+        "CG7603",
+        "CG7605",
+        "CG7606",
+        "CG7607",
+        "CG7609",
+        "CG7610",
+        "CG7611",
+        "CG7612",
+        "CG7613",
+        "CG7615",
+        "CG7618",
+        "CG7619",
+        "CG7620",
+        "DA1051",
+        "EA1007",
+        "EA1053",
+        "EA1287",
+        "EA1288",
+        "EA1289",
+        "EA1290",
+        "EA1291",
+        "EA1292",
+        "EA1293",
+        "EA1294",
+        "EA1295",
+        "EA1296",
+        "EA1297",
+        "EA1298",
+        "EA1299",
+        "EA1300",
+        "PD1039"
+      ],
       "database_only_hunt_codes": [],
-      "sample_issues": [],
+      "sample_issues": [
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 3,
+          "hunt_code": "BI1000",
+          "field": "permits_2026_sportsman",
+          "expected": "",
+          "actual": "1"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 42,
+          "hunt_code": "BR1000",
+          "field": "permits_2026_sportsman",
+          "expected": "",
+          "actual": "1"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 382,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 382,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 382,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 382,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 383,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 383,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 383,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 383,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 390,
+          "hunt_code": "DA1018",
+          "field": "permits_2026_total",
+          "expected": "20",
+          "actual": "15"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 390,
+          "hunt_code": "DA1018",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 390,
+          "hunt_code": "DA1018",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 390,
+          "hunt_code": "DA1018",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 391,
+          "hunt_code": "DA1018",
+          "field": "permits_2026_total",
+          "expected": "20",
+          "actual": "15"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 391,
+          "hunt_code": "DA1018",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 391,
+          "hunt_code": "DA1018",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 391,
+          "hunt_code": "DA1018",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 398,
+          "hunt_code": "DA1033",
+          "field": "permits_2026_total",
+          "expected": "5",
+          "actual": "10"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 398,
+          "hunt_code": "DA1033",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 398,
+          "hunt_code": "DA1033",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 398,
+          "hunt_code": "DA1033",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 399,
+          "hunt_code": "DA1033",
+          "field": "permits_2026_total",
+          "expected": "5",
+          "actual": "10"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 399,
+          "hunt_code": "DA1033",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 399,
+          "hunt_code": "DA1033",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 399,
+          "hunt_code": "DA1033",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 431,
+          "hunt_code": "DB0007",
+          "field": "permits_2026_sportsman",
+          "expected": "",
+          "actual": "1"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1151,
+          "hunt_code": "DS1000",
+          "field": "permits_2026_sportsman",
+          "expected": "",
+          "actual": "1"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1203,
+          "hunt_code": "EA1010",
+          "field": "permits_2026_res",
+          "expected": "18",
+          "actual": "31"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1203,
+          "hunt_code": "EA1010",
+          "field": "permits_2026_nr",
+          "expected": "2",
+          "actual": "4"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1203,
+          "hunt_code": "EA1010",
+          "field": "permits_2026_total",
+          "expected": "20",
+          "actual": "35"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1203,
+          "hunt_code": "EA1010",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1203,
+          "hunt_code": "EA1010",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_elk_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1203,
+          "hunt_code": "EA1010",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1204,
+          "hunt_code": "EA1010",
+          "field": "permits_2026_res",
+          "expected": "18",
+          "actual": "31"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1204,
+          "hunt_code": "EA1010",
+          "field": "permits_2026_nr",
+          "expected": "2",
+          "actual": "4"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1204,
+          "hunt_code": "EA1010",
+          "field": "permits_2026_total",
+          "expected": "20",
+          "actual": "35"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1204,
+          "hunt_code": "EA1010",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1204,
+          "hunt_code": "EA1010",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_elk_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1204,
+          "hunt_code": "EA1010",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1205,
+          "hunt_code": "EA1011",
+          "field": "permits_2026_res",
+          "expected": "9",
+          "actual": "18"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1205,
+          "hunt_code": "EA1011",
+          "field": "permits_2026_nr",
+          "expected": "1",
+          "actual": "2"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1205,
+          "hunt_code": "EA1011",
+          "field": "permits_2026_total",
+          "expected": "10",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1205,
+          "hunt_code": "EA1011",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1205,
+          "hunt_code": "EA1011",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_elk_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1205,
+          "hunt_code": "EA1011",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1206,
+          "hunt_code": "EA1011",
+          "field": "permits_2026_res",
+          "expected": "9",
+          "actual": "18"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1206,
+          "hunt_code": "EA1011",
+          "field": "permits_2026_nr",
+          "expected": "1",
+          "actual": "2"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1206,
+          "hunt_code": "EA1011",
+          "field": "permits_2026_total",
+          "expected": "10",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1206,
+          "hunt_code": "EA1011",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        }
+      ],
       "mismatches_before_sync": 0,
       "changed_rows": 0,
       "changed_cells": 0
@@ -82,13 +1142,13 @@
     {
       "file": "processed_data/draw_reality_engine.csv",
       "type": "csv",
-      "rows_checked": 36862,
+      "rows_checked": 36894,
       "matched_rows": 31285,
       "hunt_codes_checked": 1394,
       "fields_added": [],
       "fields_updated": [],
-      "mismatches_after_sync": 0,
-      "blank_values_preserved": 256894,
+      "mismatches_after_sync": 2357,
+      "blank_values_preserved": 256888,
       "target_only_hunt_codes": [
         "BI6517",
         "BI6519",
@@ -134,6 +1194,7 @@
         "DA1040",
         "DA1043",
         "DA1044",
+        "DA1051",
         "DB1027",
         "DB1036",
         "DB1059",
@@ -196,6 +1257,7 @@
         "EA1034",
         "EA1040",
         "EA1052",
+        "EA1053",
         "EA1055",
         "EA1066",
         "EA1067",
@@ -219,6 +1281,20 @@
         "EA1252",
         "EA1253",
         "EA1255",
+        "EA1287",
+        "EA1288",
+        "EA1289",
+        "EA1290",
+        "EA1291",
+        "EA1292",
+        "EA1293",
+        "EA1294",
+        "EA1295",
+        "EA1296",
+        "EA1297",
+        "EA1298",
+        "EA1299",
+        "EA1300",
         "EB3001",
         "EB3007",
         "EB3016",
@@ -306,7 +1382,458 @@
         "PD1042"
       ],
       "database_only_hunt_codes": [],
-      "sample_issues": [],
+      "sample_issues": [
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4672,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4672,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4672,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4672,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4673,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4673,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4673,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4673,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4674,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4674,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4674,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4674,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4675,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4675,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4675,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4675,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4676,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4676,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4676,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4676,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4677,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4677,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4677,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4677,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4678,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4678,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4678,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4678,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4679,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4679,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4679,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4679,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4680,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4680,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4680,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4680,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4681,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4681,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4681,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4681,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4682,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4682,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4682,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4682,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4683,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4683,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4683,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4683,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4684,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4684,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        }
+      ],
       "mismatches_before_sync": 0,
       "changed_rows": 0,
       "changed_cells": 0
@@ -314,16 +1841,546 @@
     {
       "file": "processed_data/point_ladder_view.csv",
       "type": "csv",
-      "rows_checked": 91588,
-      "matched_rows": 91588,
+      "rows_checked": 92884,
+      "matched_rows": 91602,
       "hunt_codes_checked": 1394,
       "fields_added": [],
       "fields_updated": [],
-      "mismatches_after_sync": 0,
-      "blank_values_preserved": 810148,
-      "target_only_hunt_codes": [],
+      "mismatches_after_sync": 16858,
+      "blank_values_preserved": 810087,
+      "target_only_hunt_codes": [
+        "CG0001",
+        "CG0002",
+        "CG0006",
+        "CG0009",
+        "CG0015",
+        "CG0016",
+        "CG1001",
+        "CG1002",
+        "CG1003",
+        "CG1004",
+        "CG1005",
+        "CG1006",
+        "CG1007",
+        "CG1008",
+        "CG1009",
+        "CG1010",
+        "CG1011",
+        "CG1012",
+        "CG1013",
+        "CG1014",
+        "CG1015",
+        "CG1016",
+        "CG1017",
+        "CG1018",
+        "CG1019",
+        "CG1020",
+        "CG1021",
+        "CG1022",
+        "CG1023",
+        "CG1024",
+        "CG1025",
+        "CG1026",
+        "CG1027",
+        "CG1028",
+        "CG1029",
+        "CG1030",
+        "CG1031",
+        "CG1032",
+        "CG1033",
+        "CG1034",
+        "CG1035",
+        "CG7501",
+        "CG7502",
+        "CG7504",
+        "CG7600",
+        "CG7601",
+        "CG7602",
+        "CG7603",
+        "CG7605",
+        "CG7606",
+        "CG7607",
+        "CG7609",
+        "CG7610",
+        "CG7611",
+        "CG7612",
+        "CG7613",
+        "CG7615",
+        "CG7618",
+        "CG7619",
+        "CG7620",
+        "DA1051",
+        "EA1007",
+        "EA1053",
+        "EA1287",
+        "EA1288",
+        "EA1289",
+        "EA1290",
+        "EA1291",
+        "EA1292",
+        "EA1293",
+        "EA1294",
+        "EA1295",
+        "EA1296",
+        "EA1297",
+        "EA1298",
+        "EA1299",
+        "EA1300",
+        "PD1039"
+      ],
       "database_only_hunt_codes": [],
-      "sample_issues": [],
+      "sample_issues": [
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 35,
+          "hunt_code": "BI1000",
+          "field": "permits_2026_sportsman",
+          "expected": "",
+          "actual": "1"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 1290,
+          "hunt_code": "BR1000",
+          "field": "permits_2026_sportsman",
+          "expected": "",
+          "actual": "1"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8560,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8560,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8560,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8560,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8561,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8561,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8561,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8561,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8562,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8562,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8562,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8562,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8563,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8563,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8563,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8563,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8564,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8564,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8564,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8564,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8565,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8565,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8565,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8565,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8566,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8566,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8566,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8566,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8567,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8567,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8567,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8567,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8568,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8568,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8568,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8568,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8569,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8569,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8569,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8569,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8570,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8570,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8570,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8570,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8571,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8571,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8571,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8571,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        }
+      ],
       "mismatches_before_sync": 0,
       "changed_rows": 0,
       "changed_cells": 0
@@ -455,9 +2512,1830 @@
     "fields_added": [],
     "fields_updated": [],
     "mismatches_before_sync": 0,
-    "mismatches_after_sync": 0,
-    "blank_values_preserved": 1594134
+    "mismatches_after_sync": 31291,
+    "blank_values_preserved": 1594957
   },
-  "promotion_blocker_count": 0,
-  "promotion_blockers": []
+  "promotion_blocker_count": 4,
+  "promotion_blockers": [
+    {
+      "file": "processed_data/hunt_master_enriched.csv",
+      "issues": [
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 3,
+          "hunt_code": "BI1000",
+          "field": "permits_2026_sportsman",
+          "expected": "",
+          "actual": "1"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1002,
+          "hunt_code": "BR1000",
+          "field": "permits_2026_sportsman",
+          "expected": "",
+          "actual": "1"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1456,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1456,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1456,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1456,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1457,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1457,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1457,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1457,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1458,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1458,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1458,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1458,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1459,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1459,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1459,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1459,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1460,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1460,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1460,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1460,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1461,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1461,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1461,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1461,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1462,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1462,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1462,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1462,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1463,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1463,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1463,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1463,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1464,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1464,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1464,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1464,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1465,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1465,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1465,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1465,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1466,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1466,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1466,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1466,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1467,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1467,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1467,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_master_enriched.csv",
+          "row": 1467,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        }
+      ]
+    },
+    {
+      "file": "processed_data/hunt_unit_reference_linked.csv",
+      "issues": [
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 3,
+          "hunt_code": "BI1000",
+          "field": "permits_2026_sportsman",
+          "expected": "",
+          "actual": "1"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 42,
+          "hunt_code": "BR1000",
+          "field": "permits_2026_sportsman",
+          "expected": "",
+          "actual": "1"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 382,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 382,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 382,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 382,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 383,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 383,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 383,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 383,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 390,
+          "hunt_code": "DA1018",
+          "field": "permits_2026_total",
+          "expected": "20",
+          "actual": "15"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 390,
+          "hunt_code": "DA1018",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 390,
+          "hunt_code": "DA1018",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 390,
+          "hunt_code": "DA1018",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 391,
+          "hunt_code": "DA1018",
+          "field": "permits_2026_total",
+          "expected": "20",
+          "actual": "15"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 391,
+          "hunt_code": "DA1018",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 391,
+          "hunt_code": "DA1018",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 391,
+          "hunt_code": "DA1018",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 398,
+          "hunt_code": "DA1033",
+          "field": "permits_2026_total",
+          "expected": "5",
+          "actual": "10"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 398,
+          "hunt_code": "DA1033",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 398,
+          "hunt_code": "DA1033",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 398,
+          "hunt_code": "DA1033",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 399,
+          "hunt_code": "DA1033",
+          "field": "permits_2026_total",
+          "expected": "5",
+          "actual": "10"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 399,
+          "hunt_code": "DA1033",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 399,
+          "hunt_code": "DA1033",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 399,
+          "hunt_code": "DA1033",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 431,
+          "hunt_code": "DB0007",
+          "field": "permits_2026_sportsman",
+          "expected": "",
+          "actual": "1"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1151,
+          "hunt_code": "DS1000",
+          "field": "permits_2026_sportsman",
+          "expected": "",
+          "actual": "1"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1203,
+          "hunt_code": "EA1010",
+          "field": "permits_2026_res",
+          "expected": "18",
+          "actual": "31"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1203,
+          "hunt_code": "EA1010",
+          "field": "permits_2026_nr",
+          "expected": "2",
+          "actual": "4"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1203,
+          "hunt_code": "EA1010",
+          "field": "permits_2026_total",
+          "expected": "20",
+          "actual": "35"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1203,
+          "hunt_code": "EA1010",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1203,
+          "hunt_code": "EA1010",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_elk_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1203,
+          "hunt_code": "EA1010",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1204,
+          "hunt_code": "EA1010",
+          "field": "permits_2026_res",
+          "expected": "18",
+          "actual": "31"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1204,
+          "hunt_code": "EA1010",
+          "field": "permits_2026_nr",
+          "expected": "2",
+          "actual": "4"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1204,
+          "hunt_code": "EA1010",
+          "field": "permits_2026_total",
+          "expected": "20",
+          "actual": "35"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1204,
+          "hunt_code": "EA1010",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1204,
+          "hunt_code": "EA1010",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_elk_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1204,
+          "hunt_code": "EA1010",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1205,
+          "hunt_code": "EA1011",
+          "field": "permits_2026_res",
+          "expected": "9",
+          "actual": "18"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1205,
+          "hunt_code": "EA1011",
+          "field": "permits_2026_nr",
+          "expected": "1",
+          "actual": "2"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1205,
+          "hunt_code": "EA1011",
+          "field": "permits_2026_total",
+          "expected": "10",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1205,
+          "hunt_code": "EA1011",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1205,
+          "hunt_code": "EA1011",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_elk_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1205,
+          "hunt_code": "EA1011",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1206,
+          "hunt_code": "EA1011",
+          "field": "permits_2026_res",
+          "expected": "9",
+          "actual": "18"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1206,
+          "hunt_code": "EA1011",
+          "field": "permits_2026_nr",
+          "expected": "1",
+          "actual": "2"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1206,
+          "hunt_code": "EA1011",
+          "field": "permits_2026_total",
+          "expected": "10",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/hunt_unit_reference_linked.csv",
+          "row": 1206,
+          "hunt_code": "EA1011",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        }
+      ]
+    },
+    {
+      "file": "processed_data/draw_reality_engine.csv",
+      "issues": [
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4672,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4672,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4672,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4672,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4673,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4673,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4673,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4673,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4674,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4674,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4674,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4674,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4675,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4675,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4675,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4675,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4676,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4676,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4676,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4676,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4677,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4677,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4677,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4677,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4678,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4678,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4678,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4678,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4679,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4679,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4679,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4679,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4680,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4680,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4680,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4680,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4681,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4681,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4681,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4681,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4682,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4682,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4682,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4682,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4683,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4683,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4683,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4683,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4684,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/draw_reality_engine.csv",
+          "row": 4684,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        }
+      ]
+    },
+    {
+      "file": "processed_data/point_ladder_view.csv",
+      "issues": [
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 35,
+          "hunt_code": "BI1000",
+          "field": "permits_2026_sportsman",
+          "expected": "",
+          "actual": "1"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 1290,
+          "hunt_code": "BR1000",
+          "field": "permits_2026_sportsman",
+          "expected": "",
+          "actual": "1"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8560,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8560,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8560,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8560,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8561,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8561,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8561,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8561,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8562,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8562,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8562,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8562,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8563,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8563,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8563,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8563,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8564,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8564,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8564,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8564,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8565,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8565,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8565,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8565,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8566,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8566,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8566,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8566,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8567,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8567,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8567,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8567,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8568,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8568,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8568,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8568,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8569,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8569,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8569,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8569,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8570,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8570,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8570,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8570,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8571,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_total",
+          "expected": "25",
+          "actual": "20"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8571,
+          "hunt_code": "DA1009",
+          "field": "permit_source_authority",
+          "expected": "Utah DWR published 2026 permit allocation",
+          "actual": "2026 RAC truth-source permit table"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8571,
+          "hunt_code": "DA1009",
+          "field": "permit_overlay_source",
+          "expected": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+          "actual": "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv"
+        },
+        {
+          "type": "ALLOCATION_FIELD_MISMATCH",
+          "file": "processed_data/point_ladder_view.csv",
+          "row": 8571,
+          "hunt_code": "DA1009",
+          "field": "permits_2026_source",
+          "expected": "DATABASE_2026_DWR_APPROVED_PUBLISHED_PERMIT_ALLOCATIONS",
+          "actual": "2026_RAC_TRUTH_SOURCE"
+        }
+      ]
+    }
+  ]
 }

@@ -1,8 +1,10 @@
 from engine.utah_bonus_predictive.cohort_forecast import (
     compute_unsuccessful,
     infer_retention_rate,
+    roll_forward_applicant_stack,
 )
 from engine.utah_bonus_predictive.monte_carlo import compute_bonus_pool_probability
+from scripts.build_predictive_bonus_engine_v1 import deterministic_pool_probabilities
 
 
 def test_eb3024_2024_resident_bonus_pool() -> None:
@@ -26,4 +28,39 @@ def test_eb3024_2025_resident_bonus_pool_and_retention() -> None:
     assert above29 == 1
     assert round(p29, 6) == 0.8
     assert round(infer_retention_rate(6, 5), 6) == 0.833333
+
+
+def test_eb3024_rolls_unsuccessful_2025_applicants_into_2026_stack() -> None:
+    history = {
+        2024: {
+            28: {"eligible": 9, "bonus": 3, "regular": 0},
+            29: {"eligible": 1, "bonus": 1, "regular": 0},
+        },
+        2025: {
+            28: {"eligible": 21, "bonus": 0, "regular": 0},
+            29: {"eligible": 5, "bonus": 4, "regular": 0},
+            30: {"eligible": 1, "bonus": 1, "regular": 0},
+        },
+    }
+    rollover = roll_forward_applicant_stack(history, 2025, retention_rate=1.0)
+    assert rollover.applicants_by_points.get(31, 0) == 0
+    assert rollover.applicants_by_points[30] == 2
+    assert rollover.applicants_by_points[29] == 21
+
+
+def test_eb3024_2026_mixed_cutoff_probability_after_rollover() -> None:
+    applicants = {30: 2, 29: 21, 28: 12}
+    p_draw, p_max, p_random, zones, cutoff = deterministic_pool_probabilities(
+        points_desc=sorted(applicants, reverse=True),
+        demand_by_point=applicants,
+        reserved_quota=5,
+        random_quota=4,
+    )
+    assert cutoff == 29.0
+    assert p_max[30] == 1.0
+    assert zones[30] == "max_pool_guaranteed"
+    assert round(p_max[29], 6) == round(3 / 21, 6)
+    assert zones[29] == "max_pool_cutoff_mixed"
+    assert zones[28] == "random_pool"
+    assert p_draw[29] == p_max[29] + ((1 - p_max[29]) * p_random[29])
 

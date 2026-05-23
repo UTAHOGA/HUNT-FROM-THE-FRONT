@@ -16,6 +16,7 @@ from .split import split_utah_bonus_permits
 REPO = Path(__file__).resolve().parents[2]
 RUNTIME_TRUTH_SCRIPT = REPO / "scripts" / "build_runtime_draw_feed_v2.py"
 PREDICTIVE_BUILD_SCRIPT = REPO / "scripts" / "build_predictive_bonus_engine_v1.py"
+OFFICIAL_2026_QUOTA_SOURCE_FILE = "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv"
 
 
 def to_int(value: object) -> int:
@@ -162,20 +163,26 @@ def materialize_prediction_rows(
 
         prior = permits.get((prior_year_text, hunt_code, residency), {"public": 0, "bonus": 0, "regular": 0})
         forecast = permits.get((forecast_year_text, hunt_code, residency))
-        public_permits_2026 = forecast["public"] if forecast and forecast["public"] > 0 else prior["public"]
+        row_quota_total = to_int(row.get("quota_2026_total")) or to_int(row.get("public_permits_2026"))
+        public_permits_2026 = row_quota_total or (forecast["public"] if forecast and forecast["public"] > 0 else prior["public"])
         split = split_utah_bonus_permits(public_permits_2026)
-        max_point_permits_2026 = split.maxPointPermits
-        random_permits_2026 = split.randomPermits
+        max_point_permits_2026 = to_int(row.get("quota_2026_max_pool")) or split.maxPointPermits
+        random_permits_2026 = to_int(row.get("quota_2026_random_pool")) or split.randomPermits
         if forecast and (forecast["bonus"] > 0 or forecast["regular"] > 0):
             max_point_permits_2026 = forecast["bonus"]
             random_permits_2026 = forecast["regular"]
+        projected_cutoff = row.get("projected_2026_max_cutoff_point", "")
+        projected_random_start = row.get("projected_2026_random_pool_start_point", "")
+        point_pool_zone = row.get("point_pool_zone", "")
 
         ladder_key_2026 = (forecast_year_text, hunt_code, residency)
         ladder_key_2025 = (prior_year_text, hunt_code, residency)
         # Only use forecast-year ladder rows when that year is part of the approved historical source set.
         chosen_key = ladder_key_2026 if forecast_year <= latest_source_year and ladder_key_2026 in ladders else ladder_key_2025
-        applicants_at_level = ladders.get(chosen_key, {}).get(points, {}).get("eligible", 0)
-        applicants_above = above_index.get(chosen_key, {}).get(points, 0)
+        forecast_applicants_at_level_text = str(row.get("forecast_applicants_at_level", "")).strip()
+        forecast_applicants_above_text = str(row.get("forecast_applicants_above", "")).strip()
+        applicants_at_level = to_int(forecast_applicants_at_level_text) if forecast_applicants_at_level_text else ladders.get(chosen_key, {}).get(points, {}).get("eligible", 0)
+        applicants_above = to_int(forecast_applicants_above_text) if forecast_applicants_above_text else above_index.get(chosen_key, {}).get(points, 0)
 
         p_bonus_pool = to_float(row.get("p_bonus_pool"))
         if p_bonus_pool is None:
@@ -191,6 +198,9 @@ def materialize_prediction_rows(
             p_draw_pct = to_float(row.get("display_odds_pct"))
         p_draw_pct_value = p_draw_pct if p_draw_pct is not None else (p_draw * 100.0 if p_draw is not None else None)
         status = row.get("status", "") or ("RANDOM ONLY" if max_point_permits_2026 == 0 and random_permits_2026 > 0 else "")
+        reason_codes = row.get("reason_codes", "")
+        if "OFFICIAL_2026_QUOTA_USED" not in str(reason_codes):
+            reason_codes = f"{reason_codes}|OFFICIAL_2026_QUOTA_USED".strip("|")
 
         prediction_row = {
             "model_version": row.get("model_version", ""),
@@ -214,6 +224,9 @@ def materialize_prediction_rows(
             "guaranteed_at_2026": "",
             "applicants_above": applicants_above,
             "applicants_at_level": applicants_at_level,
+            "p_draw_mean": "" if p_draw is None else f"{p_draw:.6f}",
+            "p_max_pool_mean": "" if p_bonus_pool is None else f"{p_bonus_pool:.6f}",
+            "p_random_mean": "" if p_random_pool is None else f"{p_random_pool:.6f}",
             "p_bonus_pool": "" if p_bonus_pool is None else f"{p_bonus_pool:.6f}",
             "p_random_pool": "" if p_random_pool is None else f"{p_random_pool:.6f}",
             "p_draw": "" if p_draw is None else f"{p_draw:.6f}",
@@ -226,6 +239,26 @@ def materialize_prediction_rows(
             "status": status,
             "trend": row.get("trend", ""),
             "draw_outlook": row.get("draw_outlook", ""),
+            "point_pool_zone": point_pool_zone,
+            "quota_source_status": row.get("quota_source_status", "official"),
+            "quota_source_year": row.get("quota_source_year", forecast_year_text) or forecast_year_text,
+            "quota_source_file": row.get("quota_source_file", OFFICIAL_2026_QUOTA_SOURCE_FILE) or OFFICIAL_2026_QUOTA_SOURCE_FILE,
+            "quota_2026_total": public_permits_2026,
+            "quota_2026_max_pool": max_point_permits_2026,
+            "quota_2026_random_pool": random_permits_2026,
+            "projected_2026_max_cutoff_point": projected_cutoff,
+            "projected_2026_random_pool_start_point": projected_random_start,
+            "is_2026_max_point_pool": row.get("is_2026_max_point_pool", str(point_pool_zone in {"max_pool_guaranteed", "max_pool_cutoff_mixed"})),
+            "is_2026_mixed_cutoff": row.get("is_2026_mixed_cutoff", str(point_pool_zone == "max_pool_cutoff_mixed")),
+            "is_2026_random_pool": row.get("is_2026_random_pool", str(point_pool_zone == "random_pool")),
+            "data_cutoff_date": row.get("data_cutoff_date", ""),
+            "reason_codes": reason_codes,
+            "applicant_rollover_source_year": row.get("applicant_rollover_source_year", ""),
+            "retention_rate_raw": row.get("retention_rate_raw", ""),
+            "retention_rate_smoothed": row.get("retention_rate_smoothed", ""),
+            "forecast_applicants_at_level": row.get("forecast_applicants_at_level", ""),
+            "forecast_applicants_above": row.get("forecast_applicants_above", ""),
+            "rolled_forward_total_applicants": row.get("rolled_forward_total_applicants", ""),
             "source_years_used": source_years_used,
             "source_year_count": source_year_count,
             "latest_source_year": latest_source_year,
@@ -237,6 +270,8 @@ def materialize_prediction_rows(
         successor_rows.append(
             {
                 "year": prediction_row["year"],
+                "model_version": prediction_row["model_version"],
+                "rule_version": prediction_row["rule_version"],
                 "hunt_code": hunt_code,
                 "hunt_name": prediction_row["hunt_name"],
                 "species": prediction_row["species"],
@@ -254,8 +289,31 @@ def materialize_prediction_rows(
                 "applicants_at_level": applicants_at_level,
                 "p_bonus_pool": prediction_row["p_bonus_pool"],
                 "p_random_pool": prediction_row["p_random_pool"],
+                "p_draw_mean": prediction_row["p_draw_mean"],
+                "p_max_pool_mean": prediction_row["p_max_pool_mean"],
+                "p_random_mean": prediction_row["p_random_mean"],
                 "p_draw": prediction_row["p_draw"],
                 "p_draw_pct": prediction_row["p_draw_pct"],
+                "point_pool_zone": prediction_row["point_pool_zone"],
+                "quota_source_status": prediction_row["quota_source_status"],
+                "quota_source_year": prediction_row["quota_source_year"],
+                "quota_source_file": prediction_row["quota_source_file"],
+                "quota_2026_total": prediction_row["quota_2026_total"],
+                "quota_2026_max_pool": prediction_row["quota_2026_max_pool"],
+                "quota_2026_random_pool": prediction_row["quota_2026_random_pool"],
+                "projected_2026_max_cutoff_point": prediction_row["projected_2026_max_cutoff_point"],
+                "projected_2026_random_pool_start_point": prediction_row["projected_2026_random_pool_start_point"],
+                "is_2026_max_point_pool": prediction_row["is_2026_max_point_pool"],
+                "is_2026_mixed_cutoff": prediction_row["is_2026_mixed_cutoff"],
+                "is_2026_random_pool": prediction_row["is_2026_random_pool"],
+                "data_cutoff_date": prediction_row["data_cutoff_date"],
+                "reason_codes": prediction_row["reason_codes"],
+                "applicant_rollover_source_year": prediction_row["applicant_rollover_source_year"],
+                "retention_rate_raw": prediction_row["retention_rate_raw"],
+                "retention_rate_smoothed": prediction_row["retention_rate_smoothed"],
+                "forecast_applicants_at_level": prediction_row["forecast_applicants_at_level"],
+                "forecast_applicants_above": prediction_row["forecast_applicants_above"],
+                "rolled_forward_total_applicants": prediction_row["rolled_forward_total_applicants"],
                 "status": status,
                 "trend": prediction_row["trend"],
                 "draw_outlook": prediction_row["draw_outlook"],

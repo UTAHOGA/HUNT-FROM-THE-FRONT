@@ -3,8 +3,8 @@
 from __future__ import annotations
 
 BONUS_HUNT_TYPES = {"OIL", "LE", "PLE"}
-MODEL_VERSION = "hybrid_ml_v2.0.0"
-RULE_VERSION = "utah_bonus_rules_v1.0.0"
+MODEL_VERSION = "hybrid_ml_v2.1.0"
+RULE_VERSION = "utah_bonus_rules_v1.1.0"
 
 
 def normalize_hunt_type(hunt_type: str) -> str:

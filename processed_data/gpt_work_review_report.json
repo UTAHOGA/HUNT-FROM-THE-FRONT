@@ -8,7 +8,7 @@
     2024,
     2025
   ],
-  "generated_at": "2026-05-23T02:55:31.839017+00:00",
+  "generated_at": "2026-05-23T05:02:05.174613+00:00",
   "files_reviewed": [
     "engine/utah_draw_predictive/youth.py",
     "engine/utah_draw_predictive/classifier.py",
@@ -54,8 +54,8 @@
     "SPORTSMAN_PERMIT": "MODELED_SPORTSMAN_DRAW"
   },
   "row_counts": {
-    "total_predictive_rows": 27813,
-    "MODELED_BONUS": 25489,
+    "total_predictive_rows": 27815,
+    "MODELED_BONUS": 25491,
     "MODELED_PREFERENCE": 1731,
     "MODELED_ALLOCATION": 54,
     "MODELED_AVAILABILITY": 124,

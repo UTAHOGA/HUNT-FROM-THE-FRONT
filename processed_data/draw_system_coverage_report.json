@@ -7,11 +7,11 @@
     2024,
     2025
   ],
-  "total_rows_seen": 204566,
+  "total_rows_seen": 204568,
   "rows_seen_observed_history": 176753,
-  "rows_seen_active_predictive": 27813,
+  "rows_seen_active_predictive": 27815,
   "total_hunt_codes_seen": 1668,
-  "target_scope_rows": 204566,
+  "target_scope_rows": 204568,
   "target_scope_hunt_codes": 1668,
   "out_of_scope_rows": 0,
   "out_of_scope_hunt_codes": 0,
@@ -23,7 +23,7 @@
     "BONUS_CWMU_BIG_GAME": 55752,
     "BONUS_EWE_BIGHORN": 95,
     "BONUS_LE_BIG_GAME": 83929,
-    "BONUS_OIL_BIG_GAME": 18145,
+    "BONUS_OIL_BIG_GAME": 18147,
     "BONUS_PLE_BIG_GAME": 2466,
     "BONUS_TURKEY": 450,
     "GENERAL_BIG_GAME_OTHER": 384,
@@ -73,7 +73,7 @@
     "IN_SCOPE_MODEL_PENDING": 92807,
     "MODELED_ALLOCATION": 54,
     "MODELED_AVAILABILITY": 124,
-    "MODELED_BONUS": 109060,
+    "MODELED_BONUS": 109062,
     "MODELED_PREFERENCE": 1731,
     "MODELED_SPORTSMAN_DRAW": 10
   },
@@ -106,7 +106,7 @@
       "UNKNOWN_TARGET": 0
     },
     "active_predictive": {
-      "BONUS_OIL_BIG_GAME": 3311,
+      "BONUS_OIL_BIG_GAME": 3313,
       "BONUS_LE_BIG_GAME": 17129,
       "BONUS_PLE_BIG_GAME": 529,
       "BONUS_CWMU_BIG_GAME": 3437,
@@ -144,28 +144,28 @@
       "IN_SCOPE_MODEL_PENDING": 401,
       "MODELED_ALLOCATION": 54,
       "MODELED_AVAILABILITY": 124,
-      "MODELED_BONUS": 25489,
+      "MODELED_BONUS": 25491,
       "MODELED_PREFERENCE": 1731,
       "MODELED_SPORTSMAN_DRAW": 10
     }
   },
   "counts_by_species": {
-    "(blank)": 84268,
-    "Bison": 2933,
+    "(blank)": 84271,
+    "Bison": 2932,
     "Black Bear": 8471,
     "Cougar": 122,
-    "Deer": 43763,
+    "Deer": 43762,
     "Desert Bighorn Sheep": 2484,
     "Elk": 41291,
-    "Moose": 5356,
+    "Moose": 5357,
     "Mountain Goat": 2127,
     "Pronghorn": 11270,
     "Rocky Mountain Bighorn Sheep": 2008,
     "Turkey": 473
   },
   "counts_by_residency": {
-    "Nonresident": 94308,
-    "Resident": 110258
+    "Nonresident": 94311,
+    "Resident": 110257
   },
   "counts_by_year": {
     "2021": 27519,
@@ -173,11 +173,11 @@
     "2023": 17128,
     "2024": 37128,
     "2025": 75194,
-    "2026": 28909
+    "2026": 28911
   },
-  "modeled_target_rows": 27408,
+  "modeled_target_rows": 27410,
   "unmodeled_target_rows": 177158,
-  "modeled_target_hunt_codes": 1021,
+  "modeled_target_hunt_codes": 1019,
   "unmodeled_target_hunt_codes": 1616,
   "out_of_scope_non_target_rows": 0,
   "out_of_scope_non_target_hunt_codes": 0,
@@ -199,8 +199,8 @@
     "oil_big_game_all_seen_history_codes_modeled": false,
     "le_big_game_all_seen_history_codes_modeled": false,
     "ple_big_game_all_seen_history_codes_modeled": true,
-    "oil_big_game_unmodeled_seen_hunt_code_count": 256,
-    "le_big_game_unmodeled_seen_hunt_code_count": 132,
+    "oil_big_game_unmodeled_seen_hunt_code_count": 257,
+    "le_big_game_unmodeled_seen_hunt_code_count": 133,
     "ple_big_game_unmodeled_seen_hunt_code_count": 0,
     "is_turkey_modeled": true,
     "is_bear_modeled": true,
@@ -483,7 +483,7 @@
       "engine_family_modeled": true,
       "active_predictive_coverage_complete": true,
       "all_seen_history_codes_modeled": false,
-      "unmodeled_seen_hunt_code_count": 256,
+      "unmodeled_seen_hunt_code_count": 257,
       "unmodeled_seen_hunt_codes_sample": [
         "BI6517",
         "BI6519",
@@ -494,10 +494,10 @@
         "BI6526",
         "BI6530",
         "BI6533",
-        "DB1011"
+        "BI6539"
       ],
-      "active_predictive_row_count": 3311,
-      "active_predictive_hunt_code_count": 79,
+      "active_predictive_row_count": 3313,
+      "active_predictive_hunt_code_count": 78,
       "observed_history_row_count": 14834,
       "observed_history_hunt_code_count": 335
     },
@@ -505,7 +505,7 @@
       "engine_family_modeled": true,
       "active_predictive_coverage_complete": true,
       "all_seen_history_codes_modeled": false,
-      "unmodeled_seen_hunt_code_count": 132,
+      "unmodeled_seen_hunt_code_count": 133,
       "unmodeled_seen_hunt_codes_sample": [
         "BI6500",
         "BI6503",
@@ -519,7 +519,7 @@
         "BI6520"
       ],
       "active_predictive_row_count": 17129,
-      "active_predictive_hunt_code_count": 281,
+      "active_predictive_hunt_code_count": 280,
       "observed_history_row_count": 66800,
       "observed_history_hunt_code_count": 410
     },
@@ -617,9 +617,9 @@
   "summary_by_draw_system_type": [
     {
       "draw_system_type": "BONUS_OIL_BIG_GAME",
-      "row_count": 18145,
+      "row_count": 18147,
       "hunt_code_count": 335,
-      "active_predictive_row_count": 3311,
+      "active_predictive_row_count": 3313,
       "observed_history_row_count": 14834,
       "algorithm_status": "MODELED_BONUS"
     },

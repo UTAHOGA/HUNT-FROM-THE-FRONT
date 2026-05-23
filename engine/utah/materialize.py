@@ -121,7 +121,7 @@ def materialize_row(
     p_preference = _num(row.get("p_preference_mean")) or 0.0
     p_youth = _num(row.get("p_youth_mean")) or 0.0
     guarantee = _num(row.get("guaranteed_probability")) or 0.0
-    display_odds_pct = _to_percent(row.get("display_odds_pct"))
+    display_odds_pct = _num(row.get("display_odds_pct"))
     if display_odds_pct is None:
         display_odds_pct = p_draw_mean * 100.0
 
@@ -136,6 +136,7 @@ def materialize_row(
         "p_draw_p90": _num(row.get("p_draw_p90")) or p_draw_mean,
         "p_reserved_mean": p_reserved,
         "p_random_mean": p_random,
+        "p_max_pool_mean": _num(row.get("p_max_pool_mean")) if _num(row.get("p_max_pool_mean")) is not None else p_reserved,
         "p_preference_mean": p_preference,
         "p_youth_mean": p_youth,
         "expected_cutoff_points": row.get("expected_cutoff_points"),
@@ -144,12 +145,30 @@ def materialize_row(
         "point_creep_1yr": row.get("point_creep_1yr", 0.0),
         "point_creep_3yr": row.get("point_creep_3yr", 0.0),
         "quota_source": str(quota_source or row.get("quota_source") or legacy_row.get("quota_source") or "fixture"),
+        "quota_source_status": str(row.get("quota_source_status") or legacy_row.get("quota_source_status") or ""),
+        "quota_source_year": row.get("quota_source_year") or legacy_row.get("quota_source_year") or "",
+        "quota_source_file": row.get("quota_source_file") or legacy_row.get("quota_source_file") or "",
+        "quota_2026_total": row.get("quota_2026_total") or legacy_row.get("quota_2026_total") or "",
+        "quota_2026_max_pool": row.get("quota_2026_max_pool") or legacy_row.get("quota_2026_max_pool") or "",
+        "quota_2026_random_pool": row.get("quota_2026_random_pool") or legacy_row.get("quota_2026_random_pool") or "",
+        "projected_2026_max_cutoff_point": row.get("projected_2026_max_cutoff_point") or legacy_row.get("projected_2026_max_cutoff_point") or "",
+        "projected_2026_random_pool_start_point": row.get("projected_2026_random_pool_start_point") or legacy_row.get("projected_2026_random_pool_start_point") or "",
+        "is_2026_max_point_pool": row.get("is_2026_max_point_pool") if row.get("is_2026_max_point_pool") is not None else legacy_row.get("is_2026_max_point_pool", ""),
+        "is_2026_mixed_cutoff": row.get("is_2026_mixed_cutoff") if row.get("is_2026_mixed_cutoff") is not None else legacy_row.get("is_2026_mixed_cutoff", ""),
+        "is_2026_random_pool": row.get("is_2026_random_pool") if row.get("is_2026_random_pool") is not None else legacy_row.get("is_2026_random_pool", ""),
         "applicant_pool_source": str(applicant_pool_source or row.get("applicant_pool_source") or legacy_row.get("applicant_pool_source") or "fixture"),
         "model_version": str(model_version or row.get("model_version") or MODEL_VERSION),
         "rule_version": str(rule_version or row.get("rule_version") or RULE_VERSION),
         "data_cutoff_date": str(row.get("data_cutoff_date") or legacy_row.get("data_cutoff_date") or ""),
         "data_quality_grade": str(row.get("data_quality_grade") or legacy_row.get("data_quality_grade") or "F"),
         "reason_codes": _normalize_reason_codes(row.get("reason_codes")),
+        "point_pool_zone": str(row.get("point_pool_zone") or legacy_row.get("point_pool_zone") or ""),
+        "applicant_rollover_source_year": row.get("applicant_rollover_source_year") or legacy_row.get("applicant_rollover_source_year") or "",
+        "retention_rate_raw": row.get("retention_rate_raw") or legacy_row.get("retention_rate_raw") or "",
+        "retention_rate_smoothed": row.get("retention_rate_smoothed") or legacy_row.get("retention_rate_smoothed") or "",
+        "forecast_applicants_at_level": row.get("forecast_applicants_at_level") or legacy_row.get("forecast_applicants_at_level") or "",
+        "forecast_applicants_above": row.get("forecast_applicants_above") or legacy_row.get("forecast_applicants_above") or "",
+        "rolled_forward_total_applicants": row.get("rolled_forward_total_applicants") or legacy_row.get("rolled_forward_total_applicants") or "",
         "display_odds_pct": round(display_odds_pct, 3),
         "odds_2026_projected": round(_num(row.get("odds_2026_projected")) if _num(row.get("odds_2026_projected")) is not None else display_odds_pct, 3),
         "max_pool_projection_2026": round(_num(row.get("max_pool_projection_2026")) if _num(row.get("max_pool_projection_2026")) is not None else p_reserved * 100.0, 3),

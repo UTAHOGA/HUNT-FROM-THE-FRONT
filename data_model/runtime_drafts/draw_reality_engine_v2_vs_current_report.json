@@ -1,10 +1,10 @@
 {
-  "generated_at_utc": "2026-05-21T00:11:41.539504+00:00",
+  "generated_at_utc": "2026-05-23T05:22:06.580933+00:00",
   "current_runtime_path": "processed_data/draw_reality_engine.csv",
-  "current_runtime_row_count": 36862,
+  "current_runtime_row_count": 36894,
   "current_runtime_has_draw_pool": true,
   "v2_runtime_row_count": 176753,
-  "rows_added_vs_current_feed": 139891,
+  "rows_added_vs_current_feed": 139859,
   "v2_rows_not_in_current_by_no_pool_key_count": 139891,
   "common_no_pool_key_count": 36862,
   "comparable_common_no_pool_key_count": 36862,
@@ -12,7 +12,7 @@
   "v2_no_pool_duplicate_key_count": 11998,
   "core_draw_value_mismatch_count": 0,
   "core_draw_value_mismatch_samples": [],
-  "metadata_value_mismatch_count": 32379,
+  "metadata_value_mismatch_count": 32781,
   "metadata_value_mismatch_samples": [
     {
       "key_no_pool": "BI1000|2026|Nonresident|0",

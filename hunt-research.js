@@ -206,6 +206,44 @@
     return `~1 in ${denominatorText} or ${percentText}`;
   }
 
+  function formatHistoricalDrawResult(row) {
+    const display = String(row?.display_2025_draw_results || row?.dwr_result_display || '').trim();
+    if (display) return display;
+
+    const totalPermits = num(row?.total_permits);
+    if (totalPermits === null || totalPermits <= 0) return '';
+
+    const applicants = num(row?.applicants ?? row?.eligible_applicants);
+    if (applicants === null || applicants <= 0) return '';
+
+    const denominator = applicants / totalPermits;
+    const percent = Math.min(100, 100 / denominator);
+    return `~1 in ${denominator.toFixed(1)} or ${percent.toFixed(1)}%`;
+  }
+
+  function getMaxPointPoolDisplay(row) {
+    const display = String(row?.display_2026_max_point_pool || '').trim();
+    if (display) return display;
+
+    const zone = String(row?.point_pool_zone || '').trim();
+    if (!['max_point_pool', 'max_pool_guaranteed', 'max_pool_cutoff_mixed'].includes(zone)) return '';
+    return formatOddsAsOneInOrPercent(100);
+  }
+
+  function getRandomDrawDisplay(row) {
+    const display = String(row?.display_2026_random_draw || '').trim();
+    if (display) return display;
+
+    const zone = String(row?.point_pool_zone || '').trim();
+    if (!['random_pool', 'max_pool_cutoff_mixed'].includes(zone)) return '';
+    const pRandomPool = num(row?.p_random_pool);
+    if (pRandomPool !== null) return formatOddsAsOneInOrPercent(toProbabilityPercent(pRandomPool));
+    const pRandomPoolPct = num(row?.p_random_pool_pct);
+    if (pRandomPoolPct !== null) return formatOddsAsOneInOrPercent(pRandomPoolPct);
+    const randomDraw = firstAvailable(row, ['random_draw_projection_2026', 'random_draw_odds_2026']);
+    return randomDraw ? formatOddsAsOneInOrPercent(randomDraw) : '';
+  }
+
   function formatEmpty(value) {
     const text = String(value ?? '').trim();
     if (!text || text === '0.000%' || text.toLowerCase() === 'not available') return '—';
@@ -716,7 +754,7 @@
       els.ladderPrimaryHeader.textContent = '2026 Preference Draw';
       els.ladderSecondaryHeader.hidden = true;
     } else {
-      els.ladderPrimaryHeader.textContent = '2026 Max Pool';
+      els.ladderPrimaryHeader.textContent = '2026 Max Point Pool';
       els.ladderSecondaryHeader.textContent = '2026 Random Draw';
       els.ladderSecondaryHeader.hidden = false;
     }
@@ -995,11 +1033,17 @@
   }
 
   function buildSourceBoxes(meta, row, referenceRow) {
+    const quotaSourceStatus = String(row?.quota_source_status || referenceRow?.quota_source_status || '').trim();
+    const quotaSourceDisplay = quotaSourceStatus
+      ? `2026 quota source: ${quotaSourceStatus}`
+      : '2026 quota source: Not available';
     const boxes = [
-      ['2025 Draw Odds', Number.isFinite(num(row?.odds_2025_actual))
-        ? formatOddsAsOneInOrPercent(row?.odds_2025_actual)
-        : (row?.odds_2025_actual || 'Not available')],
+      ['2025 Draw Results', formatHistoricalDrawResult(row)
+        || (Number.isFinite(num(row?.odds_2025_actual))
+          ? formatOddsAsOneInOrPercent(row?.odds_2025_actual)
+          : (row?.odds_2025_actual || ''))],
       ['2026 Draw Odds', getDisplayedOdds(row).value],
+      ['2026 Quota Source', quotaSourceDisplay],
       ['2025 Harvest Success', hasMeaningfulValue(referenceRow?.harvest_success_percent_2025)
         ? `${referenceRow.harvest_success_percent_2025}%`
         : (hasMeaningfulValue(meta?.success_percent) ? `${meta.success_percent}%` : 'Not available')],
@@ -1099,25 +1143,19 @@
         markers.push({ kind: 'sources', label: 'Sources', point: row.points });
       }
 
-      const hasPointLevelEvidence = historicalPointRow
-        || num(row.applicants_above) !== null
-        || num(row.applicants_at_level) !== null;
-      const rawPrimary = isPreferenceAntlerless(meta)
-        ? firstAvailable(row, ['odds_2026_projected', 'max_pool_projection_2026', 'random_draw_odds_2026'])
-        : firstAvailable(row, ['max_pool_projection_2026', 'odds_2026_projected']);
-      const primaryValue = hasPointLevelEvidence
-        ? formatOddsAsOneInOrPercent(rawPrimary)
-        : 'Not available';
+      const rawPrimary = firstAvailable(row, ['odds_2026_projected', 'max_pool_projection_2026', 'random_draw_odds_2026']);
+      const primaryValue = isPreferenceAntlerless(meta)
+        ? (rawPrimary ? formatOddsAsOneInOrPercent(rawPrimary) : '')
+        : getMaxPointPoolDisplay(row);
 
-      const rawHistoricalOdds = firstAvailable(row, ['odds_2025_actual', 'odds_2025', 'success_ratio'])
-        || firstAvailable(historicalPointRow, ['p_draw_percent']);
-      const actual2025Display = rawHistoricalOdds === null || rawHistoricalOdds === undefined || rawHistoricalOdds === ''
-        ? 'Not available'
-        : (num(rawHistoricalOdds) !== null ? formatOddsAsOneInOrPercent(rawHistoricalOdds) : String(rawHistoricalOdds));
+      const actual2025Display = formatHistoricalDrawResult(row)
+        || formatHistoricalDrawResult(historicalPointRow)
+        || '';
 
+      const secondaryValue = getRandomDrawDisplay(row);
       const secondaryCell = isPreferenceAntlerless(meta)
         ? ''
-        : `<td>${hasPointLevelEvidence ? formatOddsAsOneInOrPercent(firstAvailable(row, ['random_draw_projection_2026', 'random_draw_odds_2026', 'odds_2026_projected'])) : 'Not available'}</td>`;
+        : `<td>${escapeHtml(secondaryValue)}</td>`;
 
       const rowClass = [isUserRow ? 'is-user-row' : '', ...classes.filter((name) => name !== 'is-user-row')]
         .filter(Boolean)
@@ -1127,7 +1165,7 @@
         <tr class="${rowClass}" data-ladder-point="${escapeHtml(row.points)}">
           <td>${formatInteger(row.points)}</td>
           <td>${escapeHtml(actual2025Display)}</td>
-          <td>${primaryValue}</td>
+          <td>${escapeHtml(primaryValue)}</td>
           ${secondaryCell}
           <td>${markerHtml(markers)}</td>
         </tr>`;

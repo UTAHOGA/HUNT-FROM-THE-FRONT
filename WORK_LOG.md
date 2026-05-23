@@ -1447,3 +1447,149 @@
     - `BR1007` unlimited pursuit availability
     - `BR1018` unlimited pursuit availability
   - Mountain lion / cougar remains modeled as availability/status only with no draw-odds fields.
+
+## Canonical Database Vs Modeled Hunt-Code Reconciliation
+- Timestamp (UTC): 2026-05-23T03:45:00Z
+- Scope:
+  - Added a dedicated reconciliation audit that compares the canonical database hunt-code universe against modeled and coverage hunt-code universes.
+  - Generated bucketed gap artifacts for:
+    - `in_database_and_modeled`
+    - `in_database_not_modeled`
+    - `modeled_not_in_database`
+    - `coverage_seen_not_in_database`
+    - `historical_or_observed_only`
+    - `pending_or_non_probability_status`
+    - `out_of_scope_or_excluded`
+  - Added focused tests to lock canonical-count discovery, gap math, and reason coverage for every database-not-modeled hunt code.
+- Files updated:
+  - `engine/utah_draw_predictive/database_hunt_code_model_gap.py`
+  - `processed_data/database_hunt_code_model_gap.csv`
+  - `processed_data/database_hunt_code_model_gap.json`
+  - `processed_data/database_hunt_code_model_gap.md`
+  - `tests/utah_draw_predictive/test_database_hunt_code_model_gap.py`
+  - `WORK_LOG.md`
+- Validation summary:
+  - Reconciliation generator command completed and wrote all three artifacts.
+  - Focused reconciliation tests: `6 passed`
+  - Full focused suite:
+    - `tests/utah_bonus_predictive`
+    - `tests/utah_draw_predictive`
+    - `tests/utah/test_frontend_probability_selection.py`
+    - Result: `158 passed`, `0 failed`
+- Results:
+  - Canonical database file used: `pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv`
+  - Canonical database unique hunt-code count: `1394`
+  - Modeled target hunt-code count: `1021`
+  - Database-to-modeled gap: `373`
+  - Coverage target-scope hunt-code count: `1668`
+  - Coverage-to-database overage: `274`
+  - The audit did not find a canonical database candidate with exactly `1294` unique hunt codes in this repo snapshot and recorded that discrepancy explicitly in the report.
+
+## Point Ladder Max-Point Vs Random-Pool Display Correction
+- Timestamp (UTC): 2026-05-23T04:30:00Z
+- Scope:
+  - Corrected the point ladder presentation so DWR historical point-row successes remain historical draw results and do not become 2026 max-point guarantees.
+  - Added a reusable enrichment step that joins `point_ladder_view.csv` to `draw_reality_engine_v2.csv` and `draw_reality_engine_predictive_v2.csv`.
+  - Added DWR historical fields, max-point boundary fields, pool-zone classification, and display-only ladder columns.
+  - Updated frontend ladder labels from `2025 Actual Odds` to `2025 Draw Results` and from `2026 Max Pool` to `2026 Max Point Pool`.
+- Files updated:
+  - `engine/utah/point_ladder_pool.py`
+  - `hunt-research.js`
+  - `research.html`
+  - `processed_data/point_ladder_view.csv`
+  - `tests/utah/test_frontend_probability_selection.py`
+  - `tests/utah/test_point_ladder_pool_display.py`
+  - `WORK_LOG.md`
+- EB3024 resident verification:
+  - `max_point_pool_boundary = 29`
+  - `random_pool_start_point = 28`
+  - 30 and 29 points show `2026 Max Point Pool = ~1 in 1 or 100%`.
+  - 28 and below are random-pool rows for 2026 random-draw display.
+  - 12 points preserves the 2025 DWR random-pool success as `~1 in 49.0 or 2.0%` while using predictive `p_random_pool` for 2026 Random Draw.
+- Validation status:
+  - Enrichment command completed for source year `2025`.
+  - Focused regression tests were added; final command results are recorded in the assistant closeout for this task.
+
+## Bonus-Point Rollover And Mixed Cutoff Prediction Correction
+- Timestamp (UTC): 2026-05-23T05:20:00Z
+- Scope:
+  - Refined the Utah bonus-point predictive builder so 2026 forecasts use a rolled-forward applicant stack instead of hard-coding the 2025 cutoff.
+  - Successful max-point and random-pool applicants are removed; unsuccessful applicants advance by one bonus point with inferred retention; lower-point additions are estimated from observed transitions.
+  - Official 2026 quota splits are applied with `quota_source_status = official`.
+  - Recomputed max-point zones now distinguish `max_pool_guaranteed`, `max_pool_cutoff_mixed`, and `random_pool`.
+  - Added explicit `p_max_pool_mean`, `p_random_mean`, `p_draw_mean`, `point_pool_zone`, quota status, rollover source year, retention, and reason-code metadata to runtime outputs.
+- Files updated:
+  - `scripts/build_predictive_bonus_engine_v1.py`
+  - `engine/utah_bonus_predictive/cohort_forecast.py`
+  - `engine/utah_bonus_predictive/forecast.py`
+  - `engine/utah_bonus_predictive/materialize.py`
+  - `engine/utah_bonus_predictive/rules.py`
+  - `engine/utah/materialize.py`
+  - `engine/utah/point_ladder_pool.py`
+  - `HYBRID_ML_V1.md`
+  - `ENGINE_RULES_SPEC.md`
+  - `processed_data/ml_draw_predictions_v1.csv`
+  - `processed_data/draw_reality_engine_predictive_v2.csv`
+  - `processed_data/point_ladder_view.csv`
+  - `data_model/runtime_drafts/predictive_bonus_engine_2026.predictions.csv`
+  - `data_model/runtime_drafts/predictive_bonus_engine_2026.materialized.csv`
+  - `data_model/runtime_drafts/predictive_bonus_engine_2026.audit.csv`
+  - `tests/utah_bonus_predictive/test_eb3024_fixture.py`
+  - `tests/utah/test_point_ladder_pool_display.py`
+- EB3024 resident verification after correction:
+  - 2026 rolled-forward stack has 2 applicants at 30 points and 21 applicants at 29 points.
+  - 30 points is `max_pool_guaranteed` with `p_max_pool_mean = 1.000000`.
+  - 29 points is `max_pool_cutoff_mixed` with `p_max_pool_mean = 0.142857` and modeled random fallback.
+  - 28 points and below are `random_pool` rows with modeled random-draw values.
+  - 2025 historical random successes remain in `2025 Draw Results` only.
+
+## 2025 Limited Entry Elk Permit Reconciliation Utility
+- Timestamp (UTC): 2026-05-23T06:00:00Z
+- Scope:
+  - Added `scripts/reconcile-le-elk-2025-permits.js` to reconcile 2025 LE Elk patch values into the canonical database and runtime/catalog files.
+  - Added dry-run and write commands in `package.json`.
+  - The utility patches only EB-code/LE Elk rows, preserves 2026 official permit columns, adds missing runtime draw-result columns when needed, writes timestamp backups before write-mode changes, and emits reconciliation reports.
+- Current blocker:
+  - Required input `processed_data/le_elk_2025_database_patch.csv` was not present in this repo snapshot.
+  - The utility now writes explicit dry-run/write reports and exits nonzero when that required patch source is missing rather than fabricating values.
+
+## Official 2026 Quota Input Verification
+- Timestamp (UTC): 2026-05-23T06:45:00Z
+- Scope:
+  - Verified the official 2026 permit allotment source as `pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv`.
+  - Added explicit quota provenance and allocation fields to bonus predictive rows:
+    - `quota_2026_total`
+    - `quota_2026_max_pool`
+    - `quota_2026_random_pool`
+    - `quota_source_status`
+    - `quota_source_year`
+    - `quota_source_file`
+    - projected 2026 cutoff / random-pool-start fields
+    - max-point, mixed-cutoff, and random-pool boolean flags
+  - Fixed formal materialization so processed outputs preserve the official 2026 quota values instead of relabeling 2025 historical totals as 2026 public permits.
+  - Added a source snapshot/debug UI field that displays `2026 quota source: official`.
+  - Added regression coverage using `EB3022 Resident`, where the 2025 draw-result quota was `160` and the official 2026 quota is `130`.
+- Validation summary:
+  - `processed_data/ml_draw_predictions_v1.csv`, `processed_data/draw_reality_engine_predictive_v2.csv`, and `processed_data/point_ladder_view.csv` now include the required quota fields.
+  - `EB3022 Resident` now reports `public_permits_2025 = 160`, `public_permits_2026 = 130`, `quota_2026_max_pool = 65`, and `quota_2026_random_pool = 65`.
+  - Official quota rows join back to `DATABASE.csv` by `hunt_code + residency` with zero quota mismatches.
+  - Historical 2025 random-pool draw results are not copied into 2026 random-draw prediction cells.
+  - Focused quota/frontend/ladder tests passed, and all `tests/utah_bonus_predictive` tests passed when run in split chunks.
+
+## Compiled 2026 Allotment Vs 2025 Draw-Available Comparison
+- Timestamp (UTC): 2026-05-23T07:10:00Z
+- Scope:
+  - Compared `pipeline/RAW/hunt_unit_database/2026/csv/draw_results_long_cumulative_2025_draw_folder_DATABASE_ALIGNED_V3.csv` against current compiled 2026 quota outputs.
+  - Aggregated 2025 draw-available permits by `hunt_code + residency` from the aligned point-level draw file.
+  - Compared against `processed_data/ml_draw_predictions_v1.csv` compiled 2026 quota values, with `DATABASE.csv` as a fallback only when a key was absent from compiled predictions.
+  - Wrote:
+    - `processed_data/compiled_2026_allotment_vs_2025_draw_available_significant_differences.csv`
+    - `processed_data/compiled_2026_allotment_vs_2025_draw_available_significant_differences.json`
+- Result:
+  - Significant threshold used: absolute permit delta greater than `5`.
+  - Significant differences found: `250`.
+  - Increases: `222`.
+  - Decreases: `28`.
+  - Species breakdown: Deer `175`, Elk `48`, Turkey `11`, Pronghorn `11`, Bison `3`, Black Bear `2`.
+  - Largest increase: `DB1556 Resident` Wasatch Mtns, West late any-legal-weapon deer, `3207 -> 4590`, delta `+1383`.
+  - Largest decrease: `DB1775 Resident` Fillmore dedicated hunter deer, `159 -> 38`, delta `-121`.

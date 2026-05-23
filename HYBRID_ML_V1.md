@@ -95,6 +95,40 @@ quota\_source
 quota\_uncertainty
 When final approved quotas are available, use them instead of forecasting.
 
+### Bonus-point cohort rollover and mixed cutoff rows
+
+For Utah bonus-point hunts, the forecasting layer must not hard-code the prior
+year's cutoff into the next prediction year. The prior official point-level draw
+results are the baseline applicant stack, then the stack is rolled forward:
+
+- successful max-point applicants are removed from the applicant stack;
+- successful random-pool applicants are removed from the applicant stack;
+- unsuccessful applicants advance one bonus point, adjusted by the inferred
+  reapply/retention rate when true applicant return data is unavailable;
+- lower-point new/switch-in applicants are estimated from observed year-to-year
+  transitions.
+
+When official 2026 permit values are present, quota allocation must be rerun
+with `quota_source_status = official`, current max-point/random permit splits,
+the rolled-forward applicant stack, the current `data_cutoff_date`, and reason
+codes including `APPLICANT_STACK_ROLLED_FORWARD`,
+`MAX_POINT_BOUNDARY_RECOMPUTED`, and `OFFICIAL_2026_QUOTA_USED`.
+
+The recomputed max-point pool sorts the rolled-forward stack from highest point
+level down. Fully cleared rows are `max_pool_guaranteed`. The row where
+remaining max-point permits are fewer than applicants at that point level is
+`max_pool_cutoff_mixed`. Rows below that are `random_pool`.
+
+For a mixed cutoff row:
+
+```text
+p_max_pool_mean = remaining_max_point_pool_permits / applicants_at_cutoff_point
+p_draw_mean = p_max_pool_mean + ((1 - p_max_pool_mean) * p_random_mean)
+```
+
+Historical random-pool successes remain source results only. They must not be
+copied into the next-year random-draw prediction.
+
 Stage 4 — Monte Carlo probability forecast
 Combines demand uncertainty and quota uncertainty, then repeatedly runs the deterministic simulator.
 
