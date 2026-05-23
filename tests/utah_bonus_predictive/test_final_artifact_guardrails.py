@@ -25,11 +25,12 @@ def test_modeled_availability_does_not_change_bonus_or_preference_counts_unexpec
         counts[row["algorithm_status"]] = counts.get(row["algorithm_status"], 0) + 1
 
     expected = {
-        "MODELED_BONUS": 25291,
+        "MODELED_BONUS": 25489,
         "MODELED_PREFERENCE": 1731,
         "MODELED_ALLOCATION": 54,
         "MODELED_AVAILABILITY": 124,
         "MODELED_SPORTSMAN_DRAW": 10,
+        "OUT_OF_SCOPE_NON_TARGET": 0,
     }
     for key, value in expected.items():
         assert counts.get(key, 0) == value
@@ -41,4 +42,5 @@ def test_modeled_availability_does_not_change_bonus_or_preference_counts_unexpec
     assert gpt_review["row_counts"]["MODELED_ALLOCATION"] == expected["MODELED_ALLOCATION"]
     assert gpt_review["row_counts"]["MODELED_AVAILABILITY"] == expected["MODELED_AVAILABILITY"]
     assert gpt_review["row_counts"]["MODELED_SPORTSMAN_DRAW"] == expected["MODELED_SPORTSMAN_DRAW"]
+    assert gpt_review["row_counts"]["OUT_OF_SCOPE_NON_TARGET"] == expected["OUT_OF_SCOPE_NON_TARGET"]
     assert "stale" in review["conclusion"].lower()

@@ -41,12 +41,18 @@ These categories must be classified as `OUT_OF_SCOPE_NON_TARGET` when they appea
 
 - Swan
 - Sandhill crane
-- Grouse
+- Grouse species categories such as sharp-tailed grouse and sage grouse
 - Waterfowl
 - Upland game other than turkey
 - Small game
 - Fishing
 - Other non-target wildlife categories
+
+Important guardrail:
+
+- Geographic names must not trigger out-of-scope classification by themselves.
+- Example: `Box Elder, Grouse Creek` elk rows remain target-scope big-game rows.
+- `OUT_OF_SCOPE_NON_TARGET` rows stay in coverage and audit artifacts, but they must not appear in the standard Hunt Research prediction view unless audit/debug mode is enabled.
 
 ## Classifier Values
 

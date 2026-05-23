@@ -847,11 +847,14 @@ def _ui_probability_checks() -> dict[str, object]:
     precedence_ok = all(
         token in text
         for token in [
-            "const pDrawPct = num(firstAvailable(row, ['p_draw_pct']))",
-            "const pDraw = num(firstAvailable(row, ['p_draw']))",
+            "function selectDrawOddsPercent(row)",
+            "display_odds_pct",
+            "p_draw_mean",
             "p_bonus_pool_pct",
-            "pool_breakdown",
             "odds_2026_projected",
+            "max_pool_projection_2026",
+            "random_draw_odds_2026",
+            "random_draw_projection_2026",
         ]
     )
     max_pool_force_absent = "if (row.status === 'MAX POOL') return 100;" not in text and 'status == "MAX POOL"' not in text

@@ -118,6 +118,8 @@ def _sync_gpt_work_review_report(
     history_years: list[int],
     coverage_report: dict[str, object],
     availability_report: dict[str, object],
+    tests_passed: int | None = None,
+    tests_failed: int | None = None,
 ) -> None:
     json_path = output_dir / "gpt_work_review_report.json"
     md_path = output_dir / "gpt_work_review_report.md"
@@ -200,6 +202,10 @@ def _sync_gpt_work_review_report(
     }
     updated["recommended_next_phase"] = "Availability cleanup complete; remaining work is outside MODELED_AVAILABILITY semantics unless a new in-scope availability family is introduced."
     updated["recommended_next_codex_command_summary"] = availability_report["conclusion"]
+    if tests_passed is not None:
+        updated["tests_passed"] = tests_passed
+    if tests_failed is not None:
+        updated["tests_failed"] = tests_failed
     _write_json(json_path, updated)
 
     markdown = [
@@ -211,6 +217,8 @@ def _sync_gpt_work_review_report(
         f"- Forecast year: `{forecast_year}`",
         f"- Source years: `{', '.join(str(year) for year in history_years)}`",
         f"- Total predictive rows: `{updated['row_counts']['total_predictive_rows']}`",
+        f"- Tests passed: `{updated.get('tests_passed', '(not recorded)')}`",
+        f"- Tests failed: `{updated.get('tests_failed', '(not recorded)')}`",
         f"- MODELED_AVAILABILITY rows: `{updated['row_counts']['MODELED_AVAILABILITY']}`",
         f"- Mountain lion/cougar availability rows: `{availability_report['mountain_lion_availability_row_count']}`",
         f"- Bear availability rows: `{availability_report['bear_availability_row_count']}`",
@@ -236,6 +244,8 @@ def build_modeled_availability_review(
     output_dir: Path,
     forecast_year: int = 2026,
     history_years: list[int] | None = None,
+    tests_passed: int | None = None,
+    tests_failed: int | None = None,
 ) -> dict[str, Path]:
     history_years = history_years or [2021, 2022, 2023, 2024, 2025]
     ml_path = output_dir / "ml_draw_predictions_v1.csv"
@@ -366,6 +376,8 @@ def build_modeled_availability_review(
         history_years=history_years,
         coverage_report=coverage_report,
         availability_report=report,
+        tests_passed=tests_passed,
+        tests_failed=tests_failed,
     )
     return {"json": json_path, "md": md_path}
 
@@ -375,12 +387,16 @@ def main() -> None:
     parser.add_argument("--output-dir", default=str(REPO / "processed_data"))
     parser.add_argument("--forecast-year", type=int, default=2026)
     parser.add_argument("--history-years", default="2021,2022,2023,2024,2025")
+    parser.add_argument("--tests-passed", type=int, default=None)
+    parser.add_argument("--tests-failed", type=int, default=None)
     args = parser.parse_args()
     history_years = [int(token.strip()) for token in str(args.history_years).split(",") if token.strip()]
     artifacts = build_modeled_availability_review(
         output_dir=Path(args.output_dir),
         forecast_year=args.forecast_year,
         history_years=history_years,
+        tests_passed=args.tests_passed,
+        tests_failed=args.tests_failed,
     )
     print(json.dumps({key: str(value) for key, value in artifacts.items()}, indent=2))
 

@@ -8,7 +8,7 @@
     2024,
     2025
   ],
-  "generated_at": "2026-05-23T02:25:16.258946+00:00",
+  "generated_at": "2026-05-23T02:55:31.839017+00:00",
   "files_reviewed": [
     "engine/utah_draw_predictive/youth.py",
     "engine/utah_draw_predictive/classifier.py",
@@ -39,7 +39,7 @@
     "python -m engine.utah_draw_predictive.classifier --output-dir processed_data --forecast-year 2026 --history-years 2021,2022,2023,2024,2025",
     "python -m pytest -q tests/utah_bonus_predictive tests/utah_draw_predictive tests/utah/test_frontend_probability_selection.py"
   ],
-  "tests_passed": 111,
+  "tests_passed": 0,
   "tests_failed": 0,
   "blocked_dependencies": [],
   "phase_status": {
@@ -55,14 +55,14 @@
   },
   "row_counts": {
     "total_predictive_rows": 27813,
-    "MODELED_BONUS": 25291,
+    "MODELED_BONUS": 25489,
     "MODELED_PREFERENCE": 1731,
     "MODELED_ALLOCATION": 54,
     "MODELED_AVAILABILITY": 124,
     "MODELED_SPORTSMAN_DRAW": 10,
     "IN_SCOPE_MODEL_PENDING": 401,
     "EXCLUDED_NOT_PREDICTIVE_DRAW": 4,
-    "OUT_OF_SCOPE_NON_TARGET": 198
+    "OUT_OF_SCOPE_NON_TARGET": 0
   },
   "hunt_code_counts": {
     "YOUTH_GENERAL_DEER": 0,
@@ -104,7 +104,7 @@
     "mountain_lion_rows": 120,
     "bear_rows": 4,
     "other_rows": 0,
-    "legacy_review_reference_modeled_availability_count": 139,
-    "legacy_review_reference_stale": true
+    "legacy_review_reference_modeled_availability_count": 124,
+    "legacy_review_reference_stale": false
   }
 }

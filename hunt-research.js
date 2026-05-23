@@ -24,6 +24,16 @@
   const SELECTED_DRAW_POOL_KEY = 'selected_hunt_research_draw_pool';
   const BASKET_KEY = 'uoga_hunt_basket_v1';
   const LEGACY_BASKET_KEY = 'hunt_research_recent_hunts';
+  const PAGE_PARAMS = new URLSearchParams(window.location.search);
+  const SHOW_AUDIT_ONLY_ROWS = (() => {
+    const configured = window.UOGA_CONFIG?.HUNT_RESEARCH_DEBUG_AUDIT_MODE;
+    const configuredText = typeof configured === 'boolean'
+      ? String(configured)
+      : String(configured || '').trim().toLowerCase();
+    const flagText = String(PAGE_PARAMS.get('debug') || PAGE_PARAMS.get('audit') || '').trim().toLowerCase();
+    return ['1', 'true', 'yes', 'on'].includes(flagText)
+      || ['1', 'true', 'yes', 'on'].includes(configuredText);
+  })();
   // Public draw permits already account for Expo permits. Conservation permits are not part of draw odds.
 
   const state = {
@@ -142,6 +152,15 @@
   function hasValue(value) {
     const text = String(value ?? '').trim();
     return !!text && text.toUpperCase() !== 'N/A' && text.toUpperCase() !== 'NOT AVAILABLE';
+  }
+
+  function isOutOfScopeNonTargetRow(row) {
+    return String(row?.algorithm_status || '').trim().toUpperCase() === 'OUT_OF_SCOPE_NON_TARGET'
+      || String(row?.draw_system_type || '').trim().toUpperCase() === 'OUT_OF_SCOPE_NON_TARGET';
+  }
+
+  function getOutOfScopeAuditLabel() {
+    return 'Out of scope / not a target prediction category';
   }
 
   function firstAvailable(source, keys) {
@@ -744,6 +763,14 @@
       };
     }
 
+    if (isOutOfScopeNonTargetRow(row)) {
+      return {
+        badge: 'Out of scope',
+        message: getOutOfScopeAuditLabel(),
+        className: 'is-red',
+      };
+    }
+
     if (isRandomOnlyBonusCase(meta, row)) {
       return {
         badge: 'Random Chance Only',
@@ -872,6 +899,30 @@
       if (els.selectedNonresidentPermits) {
         els.selectedNonresidentPermits.textContent = getNonresidentPermitsDisplay(meta, referenceRow);
       }
+      if (els.selectedHarvestSuccess) {
+        els.selectedHarvestSuccess.textContent = getHarvestSuccessDisplay(meta, referenceRow);
+      }
+      return;
+    }
+
+    if (isOutOfScopeNonTargetRow(row)) {
+      renderOutlookLight('red');
+      if (els.summaryGuaranteed) els.summaryGuaranteed.textContent = 'Not applicable';
+      if (els.summaryPoints) els.summaryPoints.textContent = `${formatInteger(filters.points)} pts`;
+      if (els.summaryStatus) els.summaryStatus.textContent = getOutOfScopeAuditLabel();
+      if (els.summaryOdds) els.summaryOdds.textContent = 'Not available';
+      renderTrendLight('red');
+      if (els.summaryTrendText) els.summaryTrendText.textContent = getOutOfScopeAuditLabel();
+      if (els.summaryRecommendation) els.summaryRecommendation.textContent = getOutOfScopeAuditLabel();
+
+      if (els.selectedResidentPermits) {
+        els.selectedResidentPermits.textContent = getResidentPermitsDisplay(meta, referenceRow);
+      }
+
+      if (els.selectedNonresidentPermits) {
+        els.selectedNonresidentPermits.textContent = getNonresidentPermitsDisplay(meta, referenceRow);
+      }
+
       if (els.selectedHarvestSuccess) {
         els.selectedHarvestSuccess.textContent = getHarvestSuccessDisplay(meta, referenceRow);
       }
@@ -1102,9 +1153,18 @@
 
   function renderDetail(filters) {
     const meta = findMeta(filters.huntCode, filters.residency, filters.drawPool);
-    const engineRows = getEngineRows(filters.huntCode, filters.residency, filters.drawPool);
-    const engineRow = getEngineRow(filters.huntCode, filters.residency, filters.points, filters.drawPool);
-    const engineGroupFallbackRow = getEngineGroupFallbackRow(filters.huntCode, filters.residency, filters.drawPool);
+    const rawEngineRows = getEngineRows(filters.huntCode, filters.residency, filters.drawPool);
+    const rawEngineRow = getEngineRow(filters.huntCode, filters.residency, filters.points, filters.drawPool);
+    const rawEngineGroupFallbackRow = getEngineGroupFallbackRow(filters.huntCode, filters.residency, filters.drawPool);
+    const engineRows = SHOW_AUDIT_ONLY_ROWS
+      ? rawEngineRows
+      : rawEngineRows.filter((row) => !isOutOfScopeNonTargetRow(row));
+    const engineRow = SHOW_AUDIT_ONLY_ROWS || !isOutOfScopeNonTargetRow(rawEngineRow)
+      ? rawEngineRow
+      : null;
+    const engineGroupFallbackRow = SHOW_AUDIT_ONLY_ROWS || !isOutOfScopeNonTargetRow(rawEngineGroupFallbackRow)
+      ? rawEngineGroupFallbackRow
+      : null;
     const ladderRows = getLadderRows(filters.huntCode, filters.residency, filters.drawPool);
     const ladderPointRow = ladderRows.find((row) => Number(row.points) === Number(filters.points)) || null;
     // Prefer exact engine row when present. For non-point families like Sportsman,
@@ -1112,9 +1172,14 @@
     // engine group row before falling back to the ladder row.
     const summaryRow = engineRow || engineGroupFallbackRow || ladderPointRow || null;
     const referenceRow = getReferenceRow(filters.huntCode, filters.residency, filters.drawPool);
-    const coverageMessage = getModeledCoverageStatus(meta, engineRows.length > 0 || ladderRows.length > 0);
+    const onlyOutOfScopeRowsHidden = !SHOW_AUDIT_ONLY_ROWS && rawEngineRows.length > 0 && engineRows.length === 0;
+    const coverageMessage = onlyOutOfScopeRowsHidden
+      ? 'This category is outside the approved target prediction universe and is hidden from the standard Hunt Research view.'
+      : (SHOW_AUDIT_ONLY_ROWS && isOutOfScopeNonTargetRow(summaryRow)
+        ? getOutOfScopeAuditLabel()
+        : getModeledCoverageStatus(meta, engineRows.length > 0 || ladderRows.length > 0));
 
-    if (!filters.huntCode || (!meta && !engineRows.length)) {
+    if (!filters.huntCode || onlyOutOfScopeRowsHidden || (!meta && !engineRows.length)) {
       renderEmpty(filters, coverageMessage || 'Type a hunt code or load one from Hunt Backpack.');
       return;
     }

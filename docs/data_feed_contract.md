@@ -87,6 +87,14 @@ The existing UI still consumes processed CSVs keyed by `(hunt_code, residency, p
 - Mountain lion / cougar uses availability/status semantics rather than draw odds.
 - Bear harvest-objective and pursuit-only rows use availability/status semantics rather than draw odds.
 
+## Out-Of-Scope Non-Target Handling
+
+- `OUT_OF_SCOPE_NON_TARGET` rows are preserved in coverage and audit artifacts for traceability.
+- `OUT_OF_SCOPE_NON_TARGET` rows must keep `p_draw`, `p_draw_pct`, `p_preference_draw`, `p_bonus_pool`, and `p_random_pool` null.
+- Normal user-facing Hunt Research prediction output should hide `OUT_OF_SCOPE_NON_TARGET` rows unless audit/debug mode is explicitly enabled.
+- When shown in audit/debug mode, the UI should label them as `Out of scope / not a target prediction category`.
+- Target big-game, turkey, bear, and mountain lion / cougar rows must not be pushed into `OUT_OF_SCOPE_NON_TARGET` merely because they are pending, non-draw, or missing a modeled probability.
+
 ## Control-Unit Overlays
 
 - Control-unit overlays are tracked separately from permit truth rows.

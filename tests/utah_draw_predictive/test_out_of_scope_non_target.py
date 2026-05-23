@@ -14,6 +14,15 @@ def test_non_target_species_classify_as_out_of_scope() -> None:
     assert classify_draw_system_type({"species": "Upland Game", "hunt_name": "Sharp-tailed Grouse"}) == "OUT_OF_SCOPE_NON_TARGET"
 
 
+def test_target_elk_row_with_grouse_creek_name_is_not_out_of_scope() -> None:
+    row = {
+        "hunt_code": "EB3147",
+        "hunt_name": "Limited-entry Alw (rifle) Bull Elk - Early - Box Elder, Grouse Creek - Any Legal Weapon",
+        "hunt_type": "Limited Entry",
+    }
+    assert classify_draw_system_type(row) == "BONUS_LE_BIG_GAME"
+
+
 def test_out_of_scope_rows_do_not_receive_modeled_odds() -> None:
     row = sanitize_modeled_probability_fields(
         {

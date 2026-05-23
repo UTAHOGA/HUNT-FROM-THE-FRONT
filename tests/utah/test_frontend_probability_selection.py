@@ -115,7 +115,8 @@ def test_frontend_uses_modeled_probability_before_legacy_max_pool():
 def test_frontend_uses_engine_group_fallback_for_non_point_families():
     text = _frontend_text()
     assert "function getEngineGroupFallbackRow(" in text
-    assert "const engineGroupFallbackRow = getEngineGroupFallbackRow(filters.huntCode, filters.residency, filters.drawPool);" in text
+    assert "const rawEngineGroupFallbackRow = getEngineGroupFallbackRow(filters.huntCode, filters.residency, filters.drawPool);" in text
+    assert "const engineGroupFallbackRow = SHOW_AUDIT_ONLY_ROWS || !isOutOfScopeNonTargetRow(rawEngineGroupFallbackRow)" in text
     assert "const summaryRow = engineRow || engineGroupFallbackRow || ladderPointRow || null;" in text
 
 
@@ -224,3 +225,16 @@ def test_research_page_green_legend_no_longer_claims_max_pool_guarantee():
     text = RESEARCH_HTML_PATH.read_text(encoding="utf-8")
     assert "Green:</strong> Guaranteed draw." not in text
     assert "Green:</strong> The selected draw-odds field is effectively guaranteed." in text
+
+
+def test_out_of_scope_rows_hidden_from_normal_prediction_display():
+    text = _frontend_text()
+    assert "const SHOW_AUDIT_ONLY_ROWS = (() => {" in text
+    assert "rawEngineRows.filter((row) => !isOutOfScopeNonTargetRow(row))" in text
+    assert "This category is outside the approved target prediction universe and is hidden from the standard Hunt Research view." in text
+
+
+def test_out_of_scope_rows_have_audit_label_when_debug_mode_is_enabled():
+    text = _frontend_text()
+    assert "function getOutOfScopeAuditLabel()" in text
+    assert "return 'Out of scope / not a target prediction category';" in text

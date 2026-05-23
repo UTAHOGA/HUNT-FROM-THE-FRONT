@@ -1,5 +1,28 @@
 # WORK LOG
 
+## Out-Of-Scope Non-Target Cleanup
+- Timestamp (UTC): 2026-05-22T18:30:00Z
+- Scope:
+  - Tightened `OUT_OF_SCOPE_NON_TARGET` handling without deleting audit data.
+  - Fixed a false-positive classifier rule where the generic token `grouse` incorrectly pushed `Box Elder, Grouse Creek` limited-entry elk rows into the out-of-scope bucket.
+  - Rebuilt predictive artifacts so `EB3147`, `EB3150`, and `EB3153` now classify as `BONUS_LE_BIG_GAME` / `MODELED_BONUS`.
+  - Added Hunt Research gating so true out-of-scope rows remain hidden from the standard prediction view and only surface in audit/debug mode with an explicit out-of-scope label.
+  - Preserved out-of-scope categories in coverage/audit reporting with null probability fields.
+- Files updated:
+  - `engine/utah_draw_predictive/classifier.py`
+  - `hunt-research.js`
+  - `docs/utah_draw_system_scope.md`
+  - `docs/data_feed_contract.md`
+  - `tests/utah_draw_predictive/test_out_of_scope_non_target.py`
+  - `tests/utah_draw_predictive/test_out_of_scope_runtime_policy.py`
+  - `tests/utah/test_frontend_probability_selection.py`
+  - `tests/utah_bonus_predictive/test_final_artifact_guardrails.py`
+- Validation notes:
+  - Live `OUT_OF_SCOPE_NON_TARGET` predictive row count after rebuild: `0`
+  - `EB3147`, `EB3150`, and `EB3153` are no longer misclassified as out-of-scope
+  - Out-of-scope rows, if present, keep probability fields null and remain countable in coverage artifacts
+  - Standard Hunt Research view now hides out-of-scope rows unless audit/debug mode is enabled
+
 ## Draw Odds Combined Display Format
 - Timestamp (UTC): 2026-05-22T10:30:00Z
 - Scope:
@@ -1364,3 +1387,63 @@
 - Control-unit overlay handling:
   - `Box Elder, Grouse Creek` remains marked `new_this_year = YES` and maps to `EA1287`.
   - `Henry Mtns` remains an unresolved control-unit overlay item with no fabricated 2026 permit row.
+
+## MODELED_AVAILABILITY Final Consistency Review
+- Timestamp (UTC): 2026-05-23T02:40:00Z
+- Scope:
+  - Added a dedicated modeled-availability review CLI and report artifacts.
+  - Preserved availability-only semantics while adding explicit availability metadata and reason codes to mountain lion/cougar and bear availability rows.
+  - Extended the draw-system coverage report with a dedicated `modeled_availability` summary block.
+  - Verified that availability rows do not receive draw-probability, bonus, or preference fields.
+- Files updated:
+  - `engine/utah_draw_predictive/__init__.py`
+  - `engine/utah_draw_predictive/availability_review.py`
+  - `engine/utah_draw_predictive/classifier.py`
+  - `engine/utah_draw_predictive/mountain_lion.py`
+  - `engine/utah_draw_predictive/bear.py`
+  - `engine/utah_bonus_predictive/materialize.py`
+  - `docs/utah_draw_system_scope.md`
+  - `docs/utah_bonus_predictive_engine.md`
+  - `docs/data_feed_contract.md`
+  - `docs/predictive_engine_design.md`
+  - `processed_data/ml_draw_predictions_v1.csv`
+  - `processed_data/draw_reality_engine_predictive_v2.csv`
+  - `processed_data/draw_system_coverage_report.csv`
+  - `processed_data/draw_system_coverage_report.json`
+  - `processed_data/utah_bonus_predictive_manifest.json`
+  - `processed_data/gpt_work_review_report.json`
+  - `processed_data/gpt_work_review_report.md`
+  - `processed_data/mountain_lion_availability_report.json`
+  - `processed_data/mountain_lion_availability_predictions_v1.csv`
+  - `processed_data/bear_report.json`
+  - `processed_data/modeled_availability_review_report.json`
+  - `processed_data/modeled_availability_review_report.md`
+  - `tests/utah_draw_predictive/test_draw_system_coverage_report.py`
+  - `tests/utah_draw_predictive/test_modeled_availability_semantics.py`
+  - `tests/utah_draw_predictive/test_modeled_availability_report.py`
+  - `tests/utah_bonus_predictive/test_final_artifact_guardrails.py`
+- Validation summary:
+  - Materialize command passed for `forecast_year=2026` and `history_years=2021,2022,2023,2024,2025`.
+  - Classifier coverage rebuild passed.
+  - Availability review CLI passed and wrote both JSON and Markdown reports.
+  - `tests/utah_draw_predictive`: `95 passed`
+  - `tests/utah_bonus_predictive`: `28 passed` across file-by-file execution
+  - `tests/utah/test_frontend_probability_selection.py`: `22 passed`
+  - Combined focused-suite total: `145 passed`, `0 failed`
+  - `node --check hunt-research.js`: passed
+  - `python -m compileall engine tests`: passed
+- Results:
+  - Live predictive artifacts currently contain `124` `MODELED_AVAILABILITY` rows, not `139`.
+  - The full live availability breakdown is:
+    - `120` mountain lion / cougar availability rows
+    - `4` bear availability rows
+    - `0` other availability rows
+  - The earlier `139` count was confirmed to be a stale prior review reference, not an unexplained third availability family.
+  - All live `MODELED_AVAILABILITY` rows now carry explicit `reason_codes`.
+  - All live `MODELED_AVAILABILITY` rows now carry `probability_model = NONE`.
+  - All live `MODELED_AVAILABILITY` rows keep `p_draw`, `p_draw_pct`, `p_preference_draw`, `p_bonus_pool`, and `p_random_pool` null.
+  - Bear availability/status semantics remain:
+    - `BR1001` harvest-objective availability
+    - `BR1007` unlimited pursuit availability
+    - `BR1018` unlimited pursuit availability
+  - Mountain lion / cougar remains modeled as availability/status only with no draw-odds fields.

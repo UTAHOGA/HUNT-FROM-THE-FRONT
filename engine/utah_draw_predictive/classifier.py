@@ -115,7 +115,6 @@ OUT_OF_SCOPE_TOKENS = (
     "sage-grouse",
     "sage grouse",
     "greater sage grouse",
-    "grouse",
     "waterfowl",
     "duck",
     "goose",
@@ -217,6 +216,8 @@ def _normalized_token_text(row: Mapping[str, object]) -> str:
 
 def is_out_of_scope_non_target(row: Mapping[str, object]) -> bool:
     text = _normalized_token_text(row)
+    # Keep explicit bird-species exclusions, but do not let geographic names like
+    # "Grouse Creek" force target-scope elk rows into the out-of-scope bucket.
     return any(f" {token} " in f" {text} " for token in OUT_OF_SCOPE_TOKENS) and " turkey " not in f" {text} "
 
 
