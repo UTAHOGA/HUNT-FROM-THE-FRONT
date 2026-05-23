@@ -5,6 +5,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 HEADER_LAYOUT = ROOT / "header-layout.js"
+UI_JS = ROOT / "ui.js"
 PAGES = [
     ROOT / "index.html",
     ROOT / "research.html",
@@ -31,14 +32,15 @@ def test_center_nav_uses_double_pillow_visual_language() -> None:
     assert ".uoga-primary-nav::before" in text
     assert "border-radius:999px" in text
     assert "linear-gradient(180deg,#fffdfa" in text
-    assert "linear-gradient(180deg, rgba(57,44,34,.96)" in text
+    assert "linear-gradient(180deg,#fffefa" in text
 
 
 def test_nav_items_expand_on_hover() -> None:
     text = _text(HEADER_LAYOUT)
     assert ".uoga-primary-nav a:hover" in text
-    assert "scale(1.10)" in text
-    assert "translateY(-4px)" in text
+    assert "scale(1.035)" in text
+    assert "translateY(-2px)" in text
+    assert "border-color:#ff8c14" in text
 
 
 def test_active_nav_item_uses_white_text_and_individual_brown_pill() -> None:
@@ -49,9 +51,18 @@ def test_active_nav_item_uses_white_text_and_individual_brown_pill() -> None:
     assert "linear-gradient(180deg, rgba(57,44,34,.92)" in text
 
 
+def test_backpack_shell_matches_rounded_header_pill_shape() -> None:
+    text = _text(UI_JS)
+    assert ".uoga-backpack-toggle" in text
+    assert "border-radius: 999px" in text
+    assert "20260523-backpack-pill-1" not in text
+    assert "translateY(-2px) scale(1.015)" in text
+
+
 def test_pages_use_fresh_header_asset_and_hunt_library_label() -> None:
     for page in PAGES:
         text = _text(page)
-        assert "header-layout.js?v=20260523-double-pillow-header-1" in text
+        assert "header-layout.js?v=20260523-header-polish-1" in text
+        assert "ui.js?v=20260523-backpack-pill-1" in text
         assert "HUNT LIBRARY" in text
         assert "HARD COPIES" not in text

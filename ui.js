@@ -449,26 +449,31 @@ window.UOGA_UI = (() => {
         display: inline-flex;
         align-items: center;
         gap: 10px;
-        min-height: var(--uoga-shell-min-h, 46px);
-        padding: var(--uoga-shell-pad, 6px 14px 6px 8px);
-        border-radius: 18px 18px 22px 18px;
-        border: 1px solid var(--uoga-case-border, var(--line));
-        background: var(--uoga-case-bg, linear-gradient(180deg, color-mix(in srgb, var(--panel2) 78%, transparent), color-mix(in srgb, var(--panel) 90%, transparent)));
+        min-height: var(--uoga-shell-min-h, 50px);
+        padding: var(--uoga-shell-pad, 6px 12px 6px 8px);
+        border-radius: 999px;
+        border: 1px solid var(--uoga-case-border, #d1ab83);
+        background: var(--uoga-case-bg,
+          radial-gradient(circle at 20% 0%, rgba(255,255,255,.98), transparent 36%),
+          linear-gradient(180deg, #fffefa 0%, #f7efe6 52%, #ead8c4 100%));
         color: var(--text);
         font: inherit;
         cursor: pointer;
-        box-shadow: var(--uoga-case-shadow, 0 10px 24px rgba(0, 0, 0, 0.14));
+        box-shadow: var(--uoga-case-shadow, inset 0 1px 0 rgba(255,255,255,.98), inset 0 -2px 6px rgba(84,47,18,.12), 0 10px 24px rgba(58, 37, 18, 0.16));
+        transition: transform 150ms ease, border-color 150ms ease, box-shadow 150ms ease, background 150ms ease;
       }
         .uoga-backpack-shell.is-open .uoga-backpack-toggle {
-          border-color: #d1ab83;
-          background: linear-gradient(180deg, rgba(240, 120, 0, 0.98), rgba(240, 120, 0, 0.98));
+          border-color: var(--accent);
+          background:
+            radial-gradient(circle at 20% 0%, rgba(255,255,255,.98), transparent 36%),
+            linear-gradient(180deg, #fffefa 0%, #fff3e4 48%, #ead8c4 100%);
           color: #2f1d12;
-          box-shadow: 0 10px 24px rgba(82, 44, 20, 0.28);
+          box-shadow: 0 0 0 2px rgba(240, 120, 0, 0.18), 0 12px 28px rgba(82, 44, 20, 0.28);
         }
         .uoga-backpack-toggle:hover {
-          transform: translateY(-2px);
+          transform: translateY(-2px) scale(1.015);
           border-color: var(--accent);
-          box-shadow: 0 0 0 2px rgba(240, 120, 0, 0.16), 0 12px 28px rgba(82, 44, 20, 0.30);
+          box-shadow: 0 0 0 2px rgba(240, 120, 0, 0.18), 0 12px 28px rgba(82, 44, 20, 0.28);
         }
       .uoga-backpack-mark-wrap {
         display: inline-flex;

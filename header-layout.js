@@ -287,14 +287,14 @@
       .uoga-primary-nav::before {
         content:"" !important;
         position:absolute !important;
-        inset:7px !important;
+        inset:6px !important;
         z-index:0 !important;
         border-radius:999px !important;
-        border:1px solid rgba(240,120,0,.38) !important;
+        border:1px solid rgba(209,171,131,.80) !important;
         background:
-          radial-gradient(circle at top left, rgba(255,255,255,.20), transparent 32%),
-          linear-gradient(180deg, rgba(57,44,34,.96), rgba(28,22,17,.98)) !important;
-        box-shadow:0 8px 18px rgba(0,0,0,.26), inset 0 1px 0 rgba(255,170,76,.10) !important;
+          radial-gradient(circle at 18% 0%, rgba(255,255,255,.98), transparent 38%),
+          linear-gradient(180deg,#fffefa 0%,#f8efe3 52%,#ead8c4 100%) !important;
+        box-shadow:inset 0 1px 0 rgba(255,255,255,.98), inset 0 -2px 5px rgba(84,47,18,.10) !important;
         pointer-events:none !important;
       }
       .uoga-primary-nav a {
@@ -327,19 +327,19 @@
       .uoga-primary-nav a:focus-visible {
         color:#ffad52 !important;
         outline:none !important;
-        transform:translateY(-4px) scale(1.10) !important;
-        border-color:rgba(255,140,20,.72) !important;
+        transform:translateY(-2px) scale(1.035) !important;
+        border-color:#ff8c14 !important;
         background:
           radial-gradient(circle at top left, rgba(255,255,255,.18), transparent 38%),
           linear-gradient(180deg,#4f3a23,#21170f) !important;
-        box-shadow:0 13px 24px rgba(20,12,7,.38), 0 0 0 2px rgba(255,140,20,.18) !important;
+        box-shadow:0 10px 20px rgba(20,12,7,.30), 0 0 0 2px rgba(255,140,20,.22) !important;
         z-index:4 !important;
         text-shadow:0 0 14px rgba(255,140,20,.46) !important;
       }
       .uoga-primary-nav a.active {
         color:#ffffff !important;
         outline:none !important;
-        border-color:rgba(255,140,20,.50) !important;
+        border-color:#ff8c14 !important;
         background:linear-gradient(180deg,rgba(65,47,29,.84),rgba(30,22,15,.92)) !important;
         text-shadow:0 1px 0 rgba(0,0,0,.76), 0 0 14px rgba(255,255,255,.22) !important;
       }

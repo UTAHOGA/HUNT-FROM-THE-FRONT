@@ -30,6 +30,18 @@
   - `node --check header-layout.js`
   - `python -m pytest tests/utah/test_header_layout.py tests/utah/test_frontend_probability_selection.py -q`
 
+### Header Navigation Visual Polish
+- Timestamp (UTC): 2026-05-23T18:10:00Z
+- Scope:
+  - Changed the center navigation tray between page pillows back to a light cream/white inset so the individual brown page pillows stand apart.
+  - Reduced page-pillow hover expansion to a subtle lift/scale and made the hover outline orange.
+  - Rounded the Hunt Backpack outer shell into the same long oval language as the Google Maps header pillow.
+  - Bumped `ui.js` cache keys on the visible pages so the updated backpack shell styling loads immediately.
+- Validation:
+  - `node --check header-layout.js`
+  - `node --check ui.js`
+  - `python -m pytest tests/utah/test_header_layout.py tests/utah/test_frontend_probability_selection.py -q`
+
 ## Mixed Predictive Draw-Odds Engine 2026
 - Timestamp (UTC): 2026-05-23T14:20:00Z
 - Scope:
