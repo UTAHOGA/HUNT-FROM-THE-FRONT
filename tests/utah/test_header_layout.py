@@ -20,11 +20,29 @@ def _text(path: Path) -> str:
 
 def test_shared_header_builds_primary_navigation() -> None:
     text = _text(HEADER_LAYOUT)
+    expected_links = [
+        "https://www.uoga.org",
+        "./index.html#google-maps",
+        "./research.html",
+        "./verify.html",
+        "./hard-copy.html",
+    ]
     assert "ensurePrimaryHeaderNav" in text
     assert "uoga-primary-nav" in text
     assert "U.O.G.A. HOME" in text
-    assert "https://www.uoga.org" in text
     assert "HUNT LIBRARY" in text
+    for link in expected_links:
+        assert link in text
+
+
+def test_primary_header_nav_uses_fixed_desktop_slot() -> None:
+    text = _text(HEADER_LAYOUT)
+    assert "PRIMARY_HEADER_NAV_ITEMS" in text
+    assert "position:absolute" in text
+    assert "left:50%" in text
+    assert "top:50%" in text
+    assert "transform:translate(-50%, -50%)" in text
+    assert "width:clamp(760px, 52vw, 860px)" in text
 
 
 def test_center_nav_uses_double_pillow_visual_language() -> None:
@@ -62,7 +80,7 @@ def test_backpack_shell_matches_rounded_header_pill_shape() -> None:
 def test_pages_use_fresh_header_asset_and_hunt_library_label() -> None:
     for page in PAGES:
         text = _text(page)
-        assert "header-layout.js?v=20260523-header-polish-1" in text
+        assert "header-layout.js?v=20260523-header-unified-1" in text
         assert "ui.js?v=20260523-backpack-pill-1" in text
         assert "HUNT LIBRARY" in text
         assert "HARD COPIES" not in text

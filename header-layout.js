@@ -1,5 +1,12 @@
 (() => {
   const DWR_MAP_URL = 'https://dwrapps.utah.gov/huntboundary/hbstart';
+  const PRIMARY_HEADER_NAV_ITEMS = [
+    { href: 'https://www.uoga.org', label: 'U.O.G.A. HOME' },
+    { href: './index.html#google-maps', label: 'HUNT BUILDER' },
+    { href: './research.html', label: 'HUNT RESEARCH' },
+    { href: './verify.html', label: 'OUTFITTERS' },
+    { href: './hard-copy.html', label: 'HUNT LIBRARY' },
+  ];
   const isBuilderPage = () => {
     const path = (window.location && window.location.pathname ? window.location.pathname : '').toLowerCase();
     return path.endsWith('/index.html') || path.endsWith('/builder.html') || path === '/' || path === '';
@@ -84,25 +91,21 @@
   }
 
   function getHeaderNavItems(links) {
-    const homeHref = 'https://www.uoga.org';
-    const seen = new Set([`${homeHref}|U.O.G.A. HOME`]);
-    const items = [{ href: homeHref, label: 'U.O.G.A. HOME', active: false }];
+    const activeLabels = new Set();
+    const activeHrefs = new Set();
 
     links.forEach(link => {
       const href = link.getAttribute('href') || '#';
       const label = normalizeHeaderNavLabel(link.textContent);
-      if (!label) return;
-      const key = `${href}|${label}`;
-      if (seen.has(key)) return;
-      seen.add(key);
-      items.push({
-        href,
-        label,
-        active: link.classList.contains('active') || link.getAttribute('aria-current') === 'page',
-      });
+      const active = link.classList.contains('active') || link.getAttribute('aria-current') === 'page';
+      if (active && label) activeLabels.add(label);
+      if (active && href) activeHrefs.add(href);
     });
 
-    return items;
+    return PRIMARY_HEADER_NAV_ITEMS.map(item => ({
+      ...item,
+      active: activeLabels.has(item.label) || activeHrefs.has(item.href),
+    }));
   }
 
   function ensurePrimaryHeaderNav(header, links) {
@@ -252,6 +255,7 @@
         border-bottom:1px solid #c9a27f !important;
         box-shadow:0 8px 22px rgba(58,37,18,.14) !important;
         color:#2b1c12 !important;
+        position:relative !important;
         display:flex !important;
         align-items:center !important;
         justify-content:space-between !important;
@@ -266,10 +270,14 @@
       .page-nav-strip { display:none !important; visibility:hidden !important; opacity:0 !important; background:transparent !important; border:0 !important; }
       .uoga-primary-nav {
         order:2 !important;
-        flex:1 1 680px !important;
-        max-width:860px !important;
+        position:absolute !important;
+        left:50% !important;
+        top:50% !important;
+        transform:translate(-50%, -50%) !important;
+        width:clamp(760px, 52vw, 860px) !important;
+        max-width:calc(100vw - 620px) !important;
+        flex:0 0 auto !important;
         min-height:54px !important;
-        position:relative !important;
         display:flex !important;
         align-items:center !important;
         justify-content:center !important;
@@ -415,7 +423,7 @@
       }
       #googleEarth3dMap, #dwrMapFrame { background:#fffdf8 !important; z-index:2 !important; }
       .map-mode-native { position:absolute !important; width:1px !important; height:1px !important; opacity:0 !important; pointer-events:none !important; }
-       .topbar-left { display:flex !important; align-items:center !important; justify-content:flex-start !important; gap:14px !important; flex:0 0 auto !important; width:auto !important; min-width:0 !important; order:1 !important; }
+       .topbar-left { display:flex !important; align-items:center !important; justify-content:flex-start !important; gap:14px !important; flex:0 0 auto !important; width:auto !important; min-width:0 !important; order:1 !important; z-index:2 !important; }
        .topbar-right {
          display:flex !important;
          align-items:center !important;
@@ -423,6 +431,7 @@
          flex:0 0 auto !important;
          margin-left:auto !important;
          order:3 !important;
+         z-index:2 !important;
        }
        .uoga-page-nav-control { display:none !important; }
        .map-mode-control { position:relative !important; display:flex !important; align-items:center !important; justify-content:center !important; }
@@ -603,6 +612,11 @@
         .uoga-primary-nav {
           order:4 !important;
           flex:1 1 100% !important;
+          position:relative !important;
+          left:auto !important;
+          top:auto !important;
+          transform:none !important;
+          width:100% !important;
           max-width:100% !important;
           overflow-x:auto !important;
         }

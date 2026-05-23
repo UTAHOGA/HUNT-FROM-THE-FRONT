@@ -42,6 +42,18 @@
   - `node --check ui.js`
   - `python -m pytest tests/utah/test_header_layout.py tests/utah/test_frontend_probability_selection.py -q`
 
+### Unified Header Navigation Placement
+- Timestamp (UTC): 2026-05-23T18:25:00Z
+- Scope:
+  - Made the shared header navigation use one canonical five-link set on every page.
+  - Fixed the desktop navigation into the same centered header slot across Builder, Hunt Research, Outfitters, and Hunt Library.
+  - Preserved the same color, size, active-page treatment, page-pillow styling, and mobile wrap behavior across pages.
+  - Bumped `header-layout.js` cache keys so all pages load the unified placement rules.
+- Validation:
+  - `node --check header-layout.js`
+  - `node --check ui.js`
+  - `python -m pytest tests/utah/test_header_layout.py tests/utah/test_frontend_probability_selection.py -q`
+
 ## Mixed Predictive Draw-Odds Engine 2026
 - Timestamp (UTC): 2026-05-23T14:20:00Z
 - Scope:
