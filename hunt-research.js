@@ -1494,7 +1494,7 @@
 
       const point = Number.parseInt(trigger.getAttribute('data-point') || '', 10);
       const row = getLadderRows(state.selectedFilters.huntCode, state.selectedFilters.residency, state.selectedFilters.drawPool)
-        .find((candidate) => candidate.points === point);
+        .find((candidate) => Number(candidate.points) === point);
 
       if (!row) return;
 

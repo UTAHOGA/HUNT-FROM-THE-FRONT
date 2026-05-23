@@ -2237,6 +2237,21 @@
   - `node --check hunt-research.js` passed.
   - `python -m compileall tests hunt-research.js` passed.
 
+## Hunt Research Source Pill Button Fix
+- Timestamp (UTC): 2026-05-23T17:45:00Z
+- Scope:
+  - Fixed the Hunt Research ladder `Sources` pill click handler so CSV string point values match numeric button point values.
+  - Kept the fix display/interactivity-only; no prediction math or data outputs changed.
+- Files:
+  - `hunt-research.js`
+  - `research.html`
+  - `tests/utah/test_frontend_probability_selection.py`
+- Validation:
+  - `python -m pytest tests/utah/test_frontend_probability_selection.py -q` passed: `29`.
+  - `node --check hunt-research.js` passed.
+  - `python -m compileall tests hunt-research.js` passed.
+  - Browser verification passed locally: `Sources` pill opened the DWR Source Snapshot modal after running `EB3024` resident at `30` points.
+
 ## Repo File Retention And LFS Audit
 - Timestamp (UTC): 2026-05-23T14:55:00Z
 - Scope:

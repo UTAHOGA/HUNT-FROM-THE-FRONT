@@ -220,6 +220,14 @@ def test_source_snapshot_odds_use_combined_format():
     assert "['2026 Draw Odds', getDisplayedOdds(row).value]" in block
 
 
+def test_ladder_source_pill_click_matches_csv_point_values_numerically():
+    text = _frontend_text()
+    block = _block(text, 'els.ladderTableBody?.addEventListener(\'click\'', 'els.sourceModalClose?.addEventListener')
+    assert 'const point = Number.parseInt(trigger.getAttribute(\'data-point\') || \'\', 10);' in block
+    assert '.find((candidate) => Number(candidate.points) === point);' in block
+    assert '.find((candidate) => candidate.points === point);' not in block
+
+
 def test_source_snapshot_shows_official_2026_quota_source():
     text = _frontend_text()
     block = _block(text, "function buildSourceBoxes(meta, row, referenceRow)", "function openSourceModal(meta, row, referenceRow, residency)")
