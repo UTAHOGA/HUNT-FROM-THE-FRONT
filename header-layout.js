@@ -274,15 +274,15 @@
         left:50% !important;
         top:50% !important;
         transform:translate(-50%, -50%) !important;
-        width:clamp(760px, 52vw, 860px) !important;
-        max-width:calc(100vw - 620px) !important;
+        width:max-content !important;
+        max-width:calc(100vw - 560px) !important;
         flex:0 0 auto !important;
         min-height:54px !important;
         display:flex !important;
         align-items:center !important;
         justify-content:center !important;
-        gap:8px !important;
-        padding:7px 14px !important;
+        gap:6px !important;
+        padding:6px 7px !important;
         border:1px solid rgba(209,171,131,.92) !important;
         border-radius:999px !important;
         background:
@@ -291,6 +291,7 @@
         box-shadow:inset 0 1px 0 rgba(255,255,255,.98), inset 0 -3px 7px rgba(84,47,18,.16), 0 10px 24px rgba(58,37,18,.16) !important;
         isolation:isolate !important;
         overflow:visible !important;
+        z-index:1 !important;
       }
       .uoga-primary-nav::before {
         content:"" !important;
@@ -333,7 +334,7 @@
       }
       .uoga-primary-nav a:hover,
       .uoga-primary-nav a:focus-visible {
-        color:#ffad52 !important;
+        color:#f07800 !important;
         outline:none !important;
         transform:translateY(-2px) scale(1.035) !important;
         border-color:#ff8c14 !important;
@@ -423,15 +424,16 @@
       }
       #googleEarth3dMap, #dwrMapFrame { background:#fffdf8 !important; z-index:2 !important; }
       .map-mode-native { position:absolute !important; width:1px !important; height:1px !important; opacity:0 !important; pointer-events:none !important; }
-       .topbar-left { display:flex !important; align-items:center !important; justify-content:flex-start !important; gap:14px !important; flex:0 0 auto !important; width:auto !important; min-width:0 !important; order:1 !important; z-index:2 !important; }
+       .topbar-left { position:relative !important; display:flex !important; align-items:center !important; justify-content:flex-start !important; gap:14px !important; flex:0 0 auto !important; width:auto !important; min-width:0 !important; order:1 !important; z-index:10 !important; }
        .topbar-right {
+         position:relative !important;
          display:flex !important;
          align-items:center !important;
          justify-content:flex-end !important;
          flex:0 0 auto !important;
          margin-left:auto !important;
          order:3 !important;
-         z-index:2 !important;
+         z-index:10 !important;
        }
        .uoga-page-nav-control { display:none !important; }
        .map-mode-control { position:relative !important; display:flex !important; align-items:center !important; justify-content:center !important; }
