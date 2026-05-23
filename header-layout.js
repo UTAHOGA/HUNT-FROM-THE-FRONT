@@ -76,11 +76,73 @@
     }, { capture: true });
   }
 
+  function normalizeHeaderNavLabel(text) {
+    const label = String(text || '').replace(/\s+/g, ' ').trim();
+    if (!label) return '';
+    if (label.toUpperCase() === 'HARD COPIES') return 'HUNT LIBRARY';
+    return label.toUpperCase();
+  }
+
+  function getHeaderNavItems(links) {
+    const seen = new Set(['./index.html|U.O.G.A. HOME']);
+    const items = [{ href: './index.html', label: 'U.O.G.A. HOME', active: false }];
+
+    links.forEach(link => {
+      const href = link.getAttribute('href') || '#';
+      const label = normalizeHeaderNavLabel(link.textContent);
+      if (!label) return;
+      const key = `${href}|${label}`;
+      if (seen.has(key)) return;
+      seen.add(key);
+      items.push({
+        href,
+        label,
+        active: link.classList.contains('active') || link.getAttribute('aria-current') === 'page',
+      });
+    });
+
+    return items;
+  }
+
+  function ensurePrimaryHeaderNav(header, links) {
+    if (!header || !links || !links.length) return;
+    let nav = header.querySelector('.uoga-primary-nav');
+    if (!nav) {
+      nav = document.createElement('nav');
+      nav.className = 'uoga-primary-nav';
+      nav.setAttribute('aria-label', 'Primary site navigation');
+    }
+
+    nav.textContent = '';
+    getHeaderNavItems(links).forEach(item => {
+      const anchor = document.createElement('a');
+      anchor.href = item.href;
+      anchor.textContent = item.label;
+      if (item.active) {
+        anchor.className = 'active';
+        anchor.setAttribute('aria-current', 'page');
+      }
+      nav.appendChild(anchor);
+    });
+
+    if (!nav.parentElement) {
+      const rightRail = header.querySelector('.topbar-right, .controls');
+      if (rightRail && rightRail.parentElement === header) {
+        header.insertBefore(nav, rightRail);
+      } else {
+        header.appendChild(nav);
+      }
+    }
+  }
+
   function buildPageNavDropdown() {
     const strip = document.querySelector('.page-nav-strip');
     const header = document.querySelector('header.topbar');
     const existingWrapper = document.querySelector('[data-uoga-page-nav]');
     if (existingWrapper) {
+      const existingLinks = Array.from(existingWrapper.querySelectorAll('a'));
+      const stripLinks = strip ? Array.from(strip.querySelectorAll('a.utility-link')) : [];
+      ensurePrimaryHeaderNav(header || existingWrapper.closest('header.topbar'), stripLinks.length ? stripLinks : existingLinks);
       bindPageNavControl(existingWrapper);
       if (strip) strip.remove();
       return;
@@ -91,7 +153,8 @@
     const links = Array.from(nav.querySelectorAll('a.utility-link'));
     if (!links.length) return;
     const active = links.find(link => link.classList.contains('active')) || links[0];
-    const activeLabel = active?.textContent?.trim() || 'Hunt Builder';
+    const activeLabel = normalizeHeaderNavLabel(active?.textContent) || 'HUNT BUILDER';
+    ensurePrimaryHeaderNav(header, links);
     const wrapper = document.createElement('div');
     wrapper.className = 'uoga-page-nav-control';
     wrapper.setAttribute('data-uoga-page-nav', 'true');
@@ -123,6 +186,12 @@
     links.forEach(link => {
       const clone = link.cloneNode(true);
       clone.classList.add('uoga-page-nav-link');
+      const span = clone.querySelector('span');
+      if (span) {
+        span.textContent = normalizeHeaderNavLabel(span.textContent);
+      } else {
+        clone.textContent = normalizeHeaderNavLabel(clone.textContent);
+      }
       menu.appendChild(clone);
     });
     const host = header.querySelector('.topbar-left') || header;
@@ -143,13 +212,13 @@
     const mapControl = host.querySelector('.map-mode-control, [data-uoga-engine-pills], [data-map-mode-picker]');
     const instructions = host.querySelector('.instructions-control');
 
-    // Desired order:
-    // 1) Page Navigation (left)
-    // 2) Map Selector (middle)
-    // 3) Instructions (right of those controls)
-    if (pageNav && pageNav.parentElement === host) host.prepend(pageNav);
-    if (mapControl && mapControl.parentElement === host && pageNav) pageNav.insertAdjacentElement('afterend', mapControl);
-    if (instructions && instructions.parentElement === host) host.appendChild(instructions);
+    // Desired order mirrors the visual header: action button, map selector, hidden mobile nav fallback.
+    if (instructions && instructions.parentElement === host) host.prepend(instructions);
+    if (mapControl && mapControl.parentElement === host) {
+      if (instructions && instructions.parentElement === host) instructions.insertAdjacentElement('afterend', mapControl);
+      else host.prepend(mapControl);
+    }
+    if (pageNav && pageNav.parentElement === host) host.appendChild(pageNav);
   }
 
   function injectLightPillStyle() {
@@ -184,13 +253,102 @@
         color:#2b1c12 !important;
         display:flex !important;
         align-items:center !important;
-        gap:14px !important;
-        flex-wrap:wrap !important;
+        justify-content:space-between !important;
+        gap:18px !important;
+        flex-wrap:nowrap !important;
+        min-height:70px !important;
+        padding:10px clamp(14px, 2.2vw, 30px) !important;
       }
       .topbar-title { display:none !important; }
       .topbar-title h1 { margin:0 !important; width:min(720px, 100%) !important; padding:8px 22px 9px !important; border:2px solid rgba(198,42,42,.95) !important; font-family:Georgia, "Times New Roman", serif !important; font-size:clamp(20px,2.15vw,31px) !important; line-height:1.02 !important; font-weight:900 !important; letter-spacing:.04em !important; text-transform:uppercase !important; color:#2b1c12 !important; background:rgba(255,253,248,.78) !important; text-shadow:0 1px 0 rgba(255,255,255,.9), 0 4px 12px rgba(92,55,24,.16) !important; box-shadow:0 8px 20px rgba(58,37,18,.10) !important; }
       .topbar-title h1::after { content:none !important; }
       .page-nav-strip { display:none !important; visibility:hidden !important; opacity:0 !important; background:transparent !important; border:0 !important; }
+      .uoga-primary-nav {
+        order:2 !important;
+        flex:1 1 680px !important;
+        max-width:860px !important;
+        min-height:54px !important;
+        position:relative !important;
+        display:flex !important;
+        align-items:center !important;
+        justify-content:center !important;
+        gap:3px !important;
+        padding:7px 14px !important;
+        border:1px solid rgba(209,171,131,.92) !important;
+        border-radius:999px !important;
+        background:
+          radial-gradient(circle at 20% 0%, rgba(255,255,255,.92), transparent 34%),
+          linear-gradient(180deg,#fffdfa 0%,#f4eadc 48%,#dfc9af 100%) !important;
+        box-shadow:inset 0 1px 0 rgba(255,255,255,.98), inset 0 -3px 7px rgba(84,47,18,.16), 0 10px 24px rgba(58,37,18,.16) !important;
+        isolation:isolate !important;
+        overflow:visible !important;
+      }
+      .uoga-primary-nav::before {
+        content:"" !important;
+        position:absolute !important;
+        inset:7px !important;
+        z-index:0 !important;
+        border-radius:999px !important;
+        border:1px solid rgba(240,120,0,.38) !important;
+        background:
+          radial-gradient(circle at top left, rgba(255,255,255,.20), transparent 32%),
+          linear-gradient(180deg, rgba(57,44,34,.96), rgba(28,22,17,.98)) !important;
+        box-shadow:0 8px 18px rgba(0,0,0,.26), inset 0 1px 0 rgba(255,170,76,.10) !important;
+        pointer-events:none !important;
+      }
+      .uoga-primary-nav a {
+        position:relative !important;
+        z-index:1 !important;
+        display:inline-flex !important;
+        align-items:center !important;
+        justify-content:center !important;
+        min-height:38px !important;
+        padding:0 15px !important;
+        border:1px solid transparent !important;
+        border-radius:999px !important;
+        color:#f07800 !important;
+        font-size:12px !important;
+        font-weight:950 !important;
+        line-height:1 !important;
+        letter-spacing:.22em !important;
+        text-transform:uppercase !important;
+        text-decoration:none !important;
+        text-shadow:0 1px 0 rgba(0,0,0,.46), 0 0 12px rgba(240,120,0,.22) !important;
+        white-space:nowrap !important;
+        transition:transform 150ms ease, color 150ms ease, background 150ms ease, border-color 150ms ease, box-shadow 150ms ease !important;
+        transform-origin:center center !important;
+      }
+      .uoga-primary-nav a:hover,
+      .uoga-primary-nav a:focus-visible {
+        color:#ffad52 !important;
+        outline:none !important;
+        transform:translateY(-4px) scale(1.10) !important;
+        border-color:rgba(255,140,20,.72) !important;
+        background:
+          radial-gradient(circle at top left, rgba(255,255,255,.18), transparent 38%),
+          linear-gradient(180deg,#4f3a23,#21170f) !important;
+        box-shadow:0 13px 24px rgba(20,12,7,.38), 0 0 0 2px rgba(255,140,20,.18) !important;
+        z-index:4 !important;
+        text-shadow:0 0 14px rgba(255,140,20,.46) !important;
+      }
+      .uoga-primary-nav a.active {
+        color:#ffad52 !important;
+        outline:none !important;
+        border-color:rgba(255,140,20,.50) !important;
+        background:linear-gradient(180deg,rgba(65,47,29,.84),rgba(30,22,15,.92)) !important;
+        text-shadow:0 0 14px rgba(255,140,20,.42) !important;
+      }
+      .uoga-primary-nav a.active::after {
+        content:"" !important;
+        position:absolute !important;
+        left:18px !important;
+        right:18px !important;
+        bottom:6px !important;
+        height:2px !important;
+        border-radius:999px !important;
+        background:#ff8c14 !important;
+        box-shadow:0 0 10px rgba(255,140,20,.6) !important;
+      }
       .page-nav-case { display:flex !important; align-items:center !important; justify-content:center !important; width:100% !important; }
       .utility-nav { display:flex !important; align-items:center !important; justify-content:center !important; gap:12px !important; flex-wrap:wrap !important; }
       .utility-link,
@@ -252,18 +410,24 @@
       }
       #googleEarth3dMap, #dwrMapFrame { background:#fffdf8 !important; z-index:2 !important; }
       .map-mode-native { position:absolute !important; width:1px !important; height:1px !important; opacity:0 !important; pointer-events:none !important; }
-       .topbar-left { display:flex !important; align-items:center !important; justify-content:flex-start !important; gap:14px !important; flex:0 0 auto !important; width:auto !important; min-width:0 !important; }
+       .topbar-left { display:flex !important; align-items:center !important; justify-content:flex-start !important; gap:14px !important; flex:0 0 auto !important; width:auto !important; min-width:0 !important; order:1 !important; }
        .topbar-right {
          display:flex !important;
          align-items:center !important;
          justify-content:flex-end !important;
          flex:0 0 auto !important;
          margin-left:auto !important;
+         order:3 !important;
        }
-       .uoga-page-nav-control,
+       .uoga-page-nav-control { display:none !important; }
        .map-mode-control { position:relative !important; display:flex !important; align-items:center !important; justify-content:center !important; }
        .uoga-page-nav-toggle,
        .map-mode-toggle { display:inline-flex !important; flex-direction:column !important; align-items:center !important; justify-content:center !important; gap:2px !important; width:224px !important; min-height:48px !important; padding:5px 14px !important; cursor:pointer !important; }
+       .map-mode-toggle {
+         border:2px solid #f07800 !important;
+         background:linear-gradient(180deg,#fffefb,#f7efe6) !important;
+         box-shadow:inset 0 1px 0 rgba(255,255,255,.95), 0 7px 15px rgba(58,37,18,.16) !important;
+       }
        .uoga-page-nav-label,
        .map-mode-label { font-size:10px !important; line-height:1 !important; color:#f07800 !important; white-space:nowrap !important; }
        .uoga-page-nav-current,
@@ -308,7 +472,8 @@
           align-items:center !important;
           justify-content:center !important;
           min-height:42px !important;
-          padding:8px 16px !important;
+          min-width:166px !important;
+          padding:8px 20px !important;
           border-radius:999px !important;
           border:1px solid #b45e00 !important;
           background:linear-gradient(180deg,#f28a12,#d66f00) !important;
@@ -419,6 +584,10 @@
        .uoga-engine-pill { min-height:40px !important; padding:0 16px !important; cursor:pointer !important; display:inline-flex !important; align-items:center !important; justify-content:center !important; gap:8px !important; }
       .uoga-engine-pill img { max-height:20px !important; max-width:110px !important; display:block !important; }
       @media (max-width: 1200px) {
+        .topbar, .topbar.topbar-planner {
+          flex-wrap:wrap !important;
+          justify-content:center !important;
+        }
         .topbar-left {
           display:flex !important;
           flex-wrap:wrap !important;
@@ -426,6 +595,13 @@
           align-items:center !important;
           gap:12px !important;
         }
+        .uoga-primary-nav {
+          order:4 !important;
+          flex:1 1 100% !important;
+          max-width:100% !important;
+          overflow-x:auto !important;
+        }
+        .uoga-primary-nav a { padding:0 12px !important; }
         .topbar-right { margin-left:auto !important; }
         .instructions-control {
           margin-left:0 !important;
@@ -442,8 +618,20 @@
           gap:10px !important;
         }
         .instructions-control { margin:0 !important; order:0 !important; }
-        .uoga-page-nav-control, .map-mode-control { width:auto !important; }
+        .uoga-page-nav-control { display:none !important; }
+        .map-mode-control { width:auto !important; }
         .uoga-page-nav-toggle, .map-mode-toggle { width:min(224px, 86vw) !important; }
+        .uoga-primary-nav {
+          min-height:42px !important;
+          padding:0 8px !important;
+          justify-content:flex-start !important;
+        }
+        .uoga-primary-nav a {
+          min-height:40px !important;
+          padding:0 10px !important;
+          font-size:10px !important;
+          letter-spacing:.16em !important;
+        }
         .topbar-right {
           width:auto !important;
           justify-content:center !important;
