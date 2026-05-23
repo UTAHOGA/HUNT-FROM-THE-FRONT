@@ -498,9 +498,6 @@ def _update_runtime_permit_fields(row: dict[str, str], truth_row: dict[str, str]
     row["permits_2026_nr"] = clean(truth_row.get("permits_2026_nr"))
     row["permits_2026_total"] = clean(truth_row.get("permits_2026_total"))
     row["permits_2026_source"] = TRUTH_SOURCE_LABEL
-    row["permits_year_res"] = clean(truth_row.get("permits_2026_res"))
-    row["permits_year_nr"] = clean(truth_row.get("permits_2026_nr"))
-    row["permits_year_total"] = clean(truth_row.get("permits_2026_total"))
     row["permit_status"] = clean(truth_row.get("permit_status"))
     row["permit_allocation_type"] = clean(truth_row.get("permit_allocation_type"))
     row["permit_source_authority"] = TRUTH_SOURCE_AUTHORITY

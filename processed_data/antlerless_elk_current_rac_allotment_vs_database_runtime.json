@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-05-23T08:08:02.552108+00:00",
+    "generated_at": "2026-05-23T09:05:21.783839+00:00",
     "source_allotment_file": "pipeline\\RAW\\hunt_unit_database\\2026\\csv\\2026_rac_antlerless_elk_permits.csv",
     "database_file": "pipeline\\RAW\\hunt_unit_database\\2026\\csv\\DATABASE.csv",
     "runtime_file": "processed_data\\hunt_unit_reference_linked.csv",

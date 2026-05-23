@@ -5,7 +5,7 @@
 - Active repo: `C:\Users\tyler\Desktop\GitHub\HUNTS`
 - Forecast year: `2026`
 - Source years: `2021, 2022, 2023, 2024, 2025`
-- Total predictive rows: `27815`
+- Total predictive rows: `27940`
 - Tests passed: `0`
 - Tests failed: `0`
 - MODELED_AVAILABILITY rows: `124`

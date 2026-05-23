@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-05-23T08:07:55.848603+00:00",
+  "generated_at_utc": "2026-05-23T08:29:20.952019+00:00",
   "mode": "write",
   "truth_root": "pipeline/RAW/hunt_unit_database/2026/csv",
   "rac_current_year_allotment_source_label": "2026_RAC_CURRENT_YEAR_ALLOTMENT",
@@ -69,14 +69,14 @@
     },
     {
       "file": "processed_data/ml_draw_predictions_v1.csv",
-      "status": "updated",
+      "status": "unchanged",
       "rows_checked": 27940,
       "rac_rows": 20104,
       "fallback_rows": 2046,
       "blank_rows": 5790,
-      "changed_cells": 11302,
-      "written": true,
-      "backup_path": "processed_data/backups/current_year_allotment_overlay_20260523_080750/ml_draw_predictions_v1.csv",
+      "changed_cells": 0,
+      "written": false,
+      "backup_path": "",
       "source_counts": {
         "2026_RAC_CURRENT_YEAR_ALLOTMENT": 20104,
         "FALLBACK_EXISTING_2026_PERMITS": 2046
@@ -84,14 +84,14 @@
     },
     {
       "file": "processed_data/draw_reality_engine_predictive_v2.csv",
-      "status": "updated",
+      "status": "unchanged",
       "rows_checked": 27940,
       "rac_rows": 20104,
       "fallback_rows": 2046,
       "blank_rows": 5790,
-      "changed_cells": 11302,
-      "written": true,
-      "backup_path": "processed_data/backups/current_year_allotment_overlay_20260523_080750/draw_reality_engine_predictive_v2.csv",
+      "changed_cells": 0,
+      "written": false,
+      "backup_path": "",
       "source_counts": {
         "2026_RAC_CURRENT_YEAR_ALLOTMENT": 20104,
         "FALLBACK_EXISTING_2026_PERMITS": 2046
@@ -103,8 +103,8 @@
     "rac_rows": 126649,
     "fallback_rows": 87093,
     "blank_rows": 29228,
-    "changed_cells": 22604,
-    "files_written": 2
+    "changed_cells": 0,
+    "files_written": 0
   },
   "notes": [
     "RAC rows with direct hunt_code are canonical current-year allotments.",

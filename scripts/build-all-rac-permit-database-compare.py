@@ -64,9 +64,6 @@ COMPARE_FIELDS = OUTPUT_FIELDS + [
     "db_permits_2026_res",
     "db_permits_2026_nr",
     "db_permits_2026_total",
-    "db_permits_year_res",
-    "db_permits_year_nr",
-    "db_permits_year_total",
     "comparison_status",
     "comparison_detail",
     "delta_res",
@@ -232,9 +229,6 @@ def compare_row(row: dict[str, str], db: dict[str, dict[str, str]]) -> dict[str,
         "permits_2026_res",
         "permits_2026_nr",
         "permits_2026_total",
-        "permits_year_res",
-        "permits_year_nr",
-        "permits_year_total",
     ]:
         out[f"db_{field}"] = clean(db_row.get(field)) if db_row else ""
 

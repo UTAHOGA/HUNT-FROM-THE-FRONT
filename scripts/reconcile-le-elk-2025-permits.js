@@ -8,7 +8,12 @@ const WRITE_MODE = process.argv.includes('--write');
 const MODE = WRITE_MODE ? 'write' : 'dry_run';
 const SOURCE_LABEL = '2025 LE Elk Draw Results PDF';
 
-const DATABASE_FIELDS = ['permits_year_res', 'permits_year_nr', 'permits_year_total'];
+const DATABASE_FIELDS = [
+  'permits_2025_draw_res',
+  'permits_2025_draw_nr',
+  'permits_2025_draw_total',
+  'permits_2025_draw_source',
+];
 const RUNTIME_FIELDS = [
   'permits_2025_draw_res_total',
   'permits_2025_draw_nr_total',
@@ -201,6 +206,10 @@ function looksLikeLeElk(row) {
 
 function patchValue(patch, field) {
   if (field === 'permits_2025_source') return SOURCE_LABEL;
+  if (field === 'permits_2025_draw_source') return SOURCE_LABEL;
+  if (field === 'permits_2025_draw_res') return patch.permits_year_res || patch.permits_2025_draw_res_total || '';
+  if (field === 'permits_2025_draw_nr') return patch.permits_year_nr || patch.permits_2025_draw_nr_total || '';
+  if (field === 'permits_2025_draw_total') return patch.permits_year_total || patch.permits_2025_draw_total || '';
   return patch[field] == null ? '' : String(patch[field]);
 }
 

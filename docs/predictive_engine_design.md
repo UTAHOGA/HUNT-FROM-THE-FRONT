@@ -66,6 +66,30 @@ This repository is moving from a legacy research-page lookup system to a Utah pr
 - `status = MAX POOL` is descriptive only and does not imply a guarantee.
 - Permit-source promotion does not change probability formulas. When RAC current-year allotments exist, it changes the quota input used by the existing draw simulator and point-ladder probability calculations.
 
+## Mixed Predictive Engine
+
+The mixed predictive engine is materialized by
+`scripts/build_mixed_predictive_engine_2026.py` and `engine/utah_predictive_mixed/`.
+It combines:
+
+- prior-year DWR draw-result behavior;
+- official 2026 RAC/DATABASE quota/allotment;
+- applicant rollover and point-pool mechanics;
+- harvest quality / demand-pressure features;
+- calibration and explanatory metadata.
+
+Default weights are `0.60` prior-year behavior, `0.20` quota change, `0.15`
+applicant rollover, and `0.05` harvest demand signal. Prior-year behavior is the
+highest-weighted public signal. Harvest quality is a capped demand-pressure
+nudge only; it must not directly create `p_draw`, `p_random_mean`,
+`p_max_pool_mean`, or `p_preference_draw`.
+
+Special permit overlays such as Expo, Conservation, Sportsman, CWMU,
+landowner, mitigation, and private/boundary overlays are retained for total
+permit reconciliation and source traceability only. They must not be merged into
+public draw quotas, max-pool quotas, random-pool quotas, or public `p_draw`
+math. Sportsman permits use the separate sportsman model.
+
 ## Current limitations
 
 - Public data does not fully expose group membership, choice rank behavior, or current applicant pools.

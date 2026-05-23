@@ -3,5 +3,5 @@ processed_data/hunt_unit_reference_linked.csv,unchanged,2997,1038,1506,453,0,Fal
 processed_data/hunt_master_enriched.csv,unchanged,54357,32046,21858,453,0,False,
 processed_data/draw_reality_engine.csv,unchanged,36892,19519,11452,5921,0,False,
 processed_data/point_ladder_view.csv,unchanged,92844,33838,48185,10821,0,False,
-processed_data/ml_draw_predictions_v1.csv,updated,27940,20104,2046,5790,11302,True,processed_data/backups/current_year_allotment_overlay_20260523_080750/ml_draw_predictions_v1.csv
-processed_data/draw_reality_engine_predictive_v2.csv,updated,27940,20104,2046,5790,11302,True,processed_data/backups/current_year_allotment_overlay_20260523_080750/draw_reality_engine_predictive_v2.csv
+processed_data/ml_draw_predictions_v1.csv,unchanged,27940,20104,2046,5790,0,False,
+processed_data/draw_reality_engine_predictive_v2.csv,unchanged,27940,20104,2046,5790,0,False,

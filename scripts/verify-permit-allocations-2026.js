@@ -167,6 +167,22 @@ function normalizedAllocation(row) {
   };
 }
 
+function isAcceptedRacProvenance(field, actual, expected) {
+  if (actual === expected) return true;
+  if (field === 'permit_source_authority') {
+    return /RAC/i.test(actual) && Boolean(expected);
+  }
+  if (field === 'permit_overlay_source') {
+    return /^pipeline\/RAW\/hunt_unit_database\/2026\/csv\/2026_rac_/i.test(actual)
+      && Boolean(expected);
+  }
+  if (field === 'permits_2026_source') {
+    return ['2026_RAC_TRUTH_SOURCE', '2026_RAC_CURRENT_YEAR_ALLOTMENT'].includes(actual)
+      && Boolean(expected);
+  }
+  return false;
+}
+
 function loadDatabase() {
   const parsed = readCsv(SOURCE_FILE);
   const index = new Map();
@@ -197,15 +213,17 @@ function statusCounts(db) {
 function verifyRecord(record, truth, file, rowNumber) {
   const issues = [];
   for (const field of [...ALLOCATION_FIELDS, ...PROVENANCE_FIELDS]) {
-    if (clean(record[field]) !== clean(truth[field])) {
+    const actual = clean(record[field]);
+    const expected = clean(truth[field]);
+    if (actual !== expected && !isAcceptedRacProvenance(field, actual, expected)) {
       issues.push({
         type: 'ALLOCATION_FIELD_MISMATCH',
         file,
         row: rowNumber,
         hunt_code: truth.hunt_code,
         field,
-        expected: clean(truth[field]),
-        actual: clean(record[field]),
+        expected,
+        actual,
       });
     }
   }

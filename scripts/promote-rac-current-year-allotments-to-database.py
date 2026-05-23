@@ -162,6 +162,17 @@ def hunt_type_for_family(family: str, row: dict[str, str]) -> str:
     return "General Season"
 
 
+def draw_family_for_family(family: str, row: dict[str, str]) -> str:
+    hunt_type = hunt_type_for_family(family, row).lower()
+    if "private lands only" in hunt_type:
+        return "Allocation"
+    if "oial" in family or "limited_entry" in family or "buck_pronghorn" in family:
+        return "Limited Entry"
+    if "antlerless" in family or "doe_pronghorn" in family or "general_season" in family:
+        return "General"
+    return "Review"
+
+
 def derive_hunt_name(row: dict[str, str]) -> str:
     return clean(row.get("hunt_name")) or clean(row.get("permit_group")) or clean(row.get("category"))
 
@@ -314,7 +325,7 @@ def new_canonical_record(fieldnames: list[str], rac: RacRow) -> dict[str, str]:
     row["weapon"] = rac.weapon
     row["hunt_type"] = rac.hunt_type
     row["hunt_class"] = rac.hunt_class
-    row["draw_family"] = "NONE"
+    row["draw_family"] = draw_family_for_family(rac.family, {})
     row["season"] = rac.season
     row["youth_flag"] = "FALSE"
     row["eligibility_class"] = "STANDARD"

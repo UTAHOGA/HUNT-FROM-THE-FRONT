@@ -1688,3 +1688,565 @@
   - Species breakdown: Deer `175`, Elk `48`, Turkey `11`, Pronghorn `11`, Bison `3`, Black Bear `2`.
   - Largest increase: `DB1556 Resident` Wasatch Mtns, West late any-legal-weapon deer, `3207 -> 4590`, delta `+1383`.
   - Largest decrease: `DB1775 Resident` Fillmore dedicated hunter deer, `159 -> 38`, delta `-121`.
+
+## 2026 RAC Current-Year Permit Allotment Promotion And Engine Reconciliation
+- Timestamp (UTC): 2026-05-23T08:35:00Z
+- Scope:
+  - Treated normalized `2026_rac_*.csv` files as the canonical current-year allotment source for 2026 draw/hunt permit availability when a direct `hunt_code` row is present.
+  - Promoted direct RAC current-year values into `pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv` and canonical/feed files.
+  - Preserved total-only rows without inventing resident/nonresident splits.
+  - Kept unit-level/category/shared RAC rows in cumulative audit outputs without blindly expanding them into hunt-code database rows.
+  - Wired RAC current-year allotments into the bonus prediction quota path so max-point pool, random pool, cutoffs, and `p_draw_mean` use the current allotment when present.
+- Key implementation files:
+  - `engine/utah/current_year_allotments.py`
+  - `scripts/promote-rac-current-year-allotments-to-database.py`
+  - `scripts/apply-current-year-permit-allotments.py`
+  - `scripts/build_predictive_bonus_engine_v1.py`
+  - `engine/utah_bonus_predictive/materialize.py`
+  - `engine/utah_bonus_predictive/forecast.py`
+  - `scripts/verify-permit-allocations-2026.js`
+- Canonical promotion results:
+  - Direct RAC hunt-code allotments promoted: `519`.
+  - `DATABASE.csv` rows after promotion: `1411`.
+  - `DATABASE.csv` unique hunt codes after promotion: `1411`.
+  - Direct RAC missing after promotion: `0`.
+  - Direct RAC numeric mismatches after promotion: `0`.
+  - Blank RAC descriptive fields no longer overwrite known database seasons; affected season values were repaired from timestamped backups and the promoter was hardened.
+- Cumulative RAC audit:
+  - Cumulative RAC rows: `562`.
+  - RAC hunt-code rows: `528`.
+  - RAC unique hunt codes: `528`.
+  - RAC hunt codes missing in `DATABASE.csv`: `0`.
+  - Numeric mismatch rows: `0`.
+  - Significant difference rows with absolute delta greater than 5: `0`.
+- Antlerless elk verification:
+  - `2026_rac_antlerless_elk_permits.csv` rows checked: `116`.
+  - Unique antlerless elk hunt codes checked: `116`.
+  - Database match rows: `116`.
+  - Runtime match rows: `116`.
+  - Database/runtime difference rows: `0`.
+  - Example corrected current-year allotments: `EA1267 = 180/20/200`, `EA2033 = 180/20/200`, `EA1021 = 252/28/280`, `EA1208 = 292/33/325`.
+- Prediction engine checks:
+  - `EB3024 Resident` uses RAC current-year allotment `9/1/10`, with Resident quota `9`, max-point permits `5`, and random permits `4`.
+  - `EB3022 Resident` uses RAC current-year allotment `130/15/145`, with Resident quota `130`, max-point permits `65`, and random permits `65`.
+  - Prediction rows carry `permit_allotment_2026_*`, `quota_2026_*`, `quota_source_file`, and `RAC_CURRENT_YEAR_ALLOTMENT_USED` reason-code provenance where applicable.
+  - Model/probability formulas were not changed; the current-year quota input was corrected.
+- Private-lands-only handling:
+  - Total-only private-lands antlerless elk rows remain availability/allocation style, not normal resident/nonresident draw rows.
+  - `EA2012` is total-only `500`; resident and nonresident allotment fields remain blank.
+  - `public_permits_2026` remains blank for private-lands-only total-only rows after the final truth-source promotion.
+- Reports regenerated:
+  - `processed_data/rac_current_year_database_promotion_write.json`
+  - `processed_data/all_rac_2026_permits_cumulative.csv`
+  - `processed_data/all_rac_2026_permits_cumulative.json`
+  - `processed_data/all_rac_2026_permits_vs_DATABASE.csv`
+  - `processed_data/all_rac_2026_permits_vs_DATABASE.json`
+  - `processed_data/all_rac_2026_permits_vs_DATABASE.md`
+  - `processed_data/antlerless_elk_current_rac_allotment_vs_database_runtime.csv`
+  - `processed_data/antlerless_elk_current_rac_allotment_vs_database_runtime.json`
+  - `processed_data/antlerless_elk_current_rac_allotment_vs_database_runtime.md`
+  - `canonical/permit-allocation-2026-integrity-report.json`
+  - `docs/permit-allocation-2026-integrity-report.md`
+- Validation:
+  - `python -m pytest tests/utah/test_current_year_permit_allotments.py tests/utah/test_truth_source_promotion.py tests/utah_bonus_predictive/test_official_2026_quota_inputs.py tests/utah/test_point_ladder_pool_display.py -q` passed: `43`.
+  - `python -m pytest -q tests/utah_draw_predictive tests/utah/test_frontend_probability_selection.py` passed: `132`.
+  - `python -m pytest -q tests/utah_bonus_predictive` passed: `36`.
+  - `python -m compileall engine scripts tests` passed.
+  - `node --check hunt-research.js` passed.
+  - `node --check scripts/verify-permit-allocations-2026.js` passed.
+  - `npm.cmd test` passed, including canonical JSON validation, canonical rebuild guardrails, and permit verification.
+- Notes:
+  - Added `schemas/hunt-master-canonical-2026.schema.json` because the repo's Node canonical test expected it and it was missing.
+  - Added existing `drawPoolSelect` to `canonical/shared-2026.json` so the shared UI contract matches `research.html`.
+  - Command-line git was unavailable in this environment, so no commit was created here.
+
+## Canonical Draw Family Label Normalization
+- Timestamp (UTC): 2026-05-23T08:55:00Z
+- Scope:
+  - Replaced internal catalog `draw_family` buckets such as `BONUS`, `ANTLERLESS`, `TURKEY_DRAW`, `NONE`, `HARVEST_OBJECTIVE`, and `UNKNOWN` with user-facing family labels.
+  - Preserved model mechanics fields separately; no `algorithm_status`, `draw_system_type`, model strategy, or probability math was changed.
+  - Added `scripts/normalize-draw-family-labels.py` so future catalog surfaces can be normalized repeatably.
+  - Updated `scripts/promote-rac-current-year-allotments-to-database.py` so newly added RAC rows receive descriptive draw-family labels instead of `NONE`.
+- Current family labels:
+  - `Limited Entry` for split bonus/random-style limited-entry, premium, once-in-a-lifetime, limited turkey, limited pronghorn/deer/elk, and quota-backed restricted bear rows.
+  - `General` for preference-style public draw rows, including antlerless and doe pronghorn style rows.
+  - `O.T.C.` for true statewide/unlimited/no-quota availability-style rows and extended archery style rows.
+  - `CWMU`, `Allocation`, `Sportsman`, and `Availability` are retained as explicit non-standard/offering-specific families where forcing `General` would hide important context.
+- Active catalog counts after normalization:
+  - `data/hunt-master-canonical-2026-database-candidate.csv`: `Limited Entry=477`, `Allocation=323`, `General=302`, `CWMU=283`, `O.T.C.=14`, `Sportsman=11`, `Availability=1`.
+  - `canonical/hunt-planner-2026.json`: `Limited Entry=477`, `Allocation=323`, `General=308`, `CWMU=283`, `Sportsman=11`, `O.T.C.=8`, `Availability=1`.
+  - `generated/pages/hunt-planner.json`: `Limited Entry=480`, `Allocation=323`, `General=288`, `CWMU=283`, `Sportsman=11`, `O.T.C.=8`, `Availability=1`.
+- Validation:
+  - `python -m pytest tests/utah/test_draw_family_labels.py tests/utah/test_current_year_permit_allotments.py -q` passed: `15`.
+  - `python -m compileall scripts tests` passed.
+  - `npm.cmd test` passed, including canonical JSON validation, canonical rebuild guardrails, and permit verification.
+
+## Database Publish Readiness Gate
+- Timestamp (UTC): 2026-05-23T09:20:00Z
+- Scope:
+  - Added a final database publish-readiness audit that ties together promoted source checks, canonical `DATABASE.csv`, runtime feed surfaces, prediction guardrails, draw-family semantics, duplicate-key checks, and sensitive-row spot checks.
+  - Wrote:
+    - `scripts/build-database-publish-readiness-report.py`
+    - `processed_data/database_publish_readiness_report.json`
+    - `processed_data/database_publish_readiness_report.md`
+- Final readiness result:
+  - `publish_ready = true`.
+  - Blockers: `0`.
+  - Warning retained: Henry Mtns remains an unresolved antlerless elk control-unit overlay item and is not fabricated into a permit row.
+- Source-to-database checks:
+  - Database rows: `1411`.
+  - Database unique hunt codes: `1411`.
+  - RAC hunt codes missing in database: `0`.
+  - RAC numeric mismatch rows: `0`.
+  - RAC significant differences greater than 5: `0`.
+  - Truth-source family mismatches after promotion: `0`.
+- Database-to-runtime checks:
+  - Permit allocation integrity promotion blockers: `0`.
+  - Permit allocation mismatches after sync: `0`.
+  - Antlerless elk database/runtime differences: `0 / 0`.
+- Semantic guardrails:
+  - Null-probability violations for availability/allocation/pending/excluded/out-of-scope rows: `0`.
+  - `ml_draw_predictions_v1.csv` duplicate keys: `0`.
+  - `draw_reality_engine_predictive_v2.csv` duplicate keys: `0`.
+  - Old internal draw-family label hits: `0`.
+  - Sensitive row failed checks: `0`.
+- Validation:
+  - `npm.cmd run verify:permits-2026` passed.
+  - `python -m pytest tests/utah/test_draw_family_labels.py tests/utah/test_current_year_permit_allotments.py tests/utah/test_truth_source_promotion.py tests/utah_bonus_predictive/test_official_2026_quota_inputs.py tests/utah/test_point_ladder_pool_display.py -q` passed: `49`.
+  - `python -m pytest -q tests/utah_draw_predictive tests/utah/test_frontend_probability_selection.py` passed: `132`.
+  - `python -m pytest -q tests/utah_bonus_predictive` passed: `36`.
+  - `python -m compileall engine scripts tests` passed.
+  - `node --check hunt-research.js` passed.
+  - `node --check scripts/verify-permit-allocations-2026.js` passed.
+  - `npm.cmd test` passed.
+
+## Canonical Vs DATABASE Hunt Code / Name / Permit-Year Cross-Check
+- Timestamp (UTC): 2026-05-23T09:28:00Z
+- Scope:
+  - Added `scripts/compare-canonical-hunt-database.py`.
+  - Compared `pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv` against active canonical/catalog surfaces by `hunt_code`, normalized `hunt_name`, active 2026 permit fields, and prior-year alias fields.
+  - Wrote:
+    - `processed_data/canonical_vs_DATABASE_hunt_code_name_permits_year.csv`
+    - `processed_data/canonical_vs_DATABASE_hunt_code_name_permits_year.json`
+    - `processed_data/canonical_vs_DATABASE_hunt_code_name_permits_year.md`
+- Key findings:
+  - `DATABASE.csv` has `1411` rows and `1411` unique hunt codes.
+  - `canonical/hunt-planner-2026.json` has `1411` hunt codes, no database-only/canonical-only hunt codes, and `0` active 2026/name mismatches against `DATABASE.csv`.
+  - `data/hunt-master-canonical-2026-source-of-truth.csv` has `1411` hunt codes, no database-only/canonical-only hunt codes, and `0` active 2026/name mismatches against `DATABASE.csv`.
+  - Root `hunt-master-canonical-2026.json` is behind the current database by `17` hunt codes: `EA1007`, `EA1053`, `EA1287`, `EA1288`, `EA1289`, `EA1290`, `EA1291`, `EA1292`, `EA1293`, `EA1294`, `EA1295`, `EA1296`, `EA1297`, `EA1298`, `EA1299`, `EA1300`, and `PD1039`.
+  - `generated/pages/hunt-planner.json` is also behind by the same `17` hunt codes and has `91` name-only active mismatches.
+  - Prior-year `permits_year_*` to `permits_2025_*` alias mismatches remain reported separately because legacy/catalog files do not share one consistent prior-year permit semantics.
+- Validation:
+  - `python scripts/compare-canonical-hunt-database.py` passed.
+  - `python -m compileall scripts` passed.
+
+## 2025 Draw-Result Permit Field Promotion
+- Timestamp (UTC): 2026-05-23T09:44:00Z
+- Scope:
+  - Added `scripts/promote-2025-draw-permits-to-runtime.py`.
+  - Promoted canonical explicit 2025 draw-result permit fields into database, runtime, predictive, and catalog surfaces:
+    - `permits_2025_draw_res`
+    - `permits_2025_draw_nr`
+    - `permits_2025_draw_total`
+    - `draw_2025_bg_pdf_page`
+    - `draw_2025_bg_report_page`
+    - `draw_2025_type`
+    - `draw_2025_species_section`
+    - `permits_2025_draw_source`
+  - Synced legacy `permits_year_*` to the explicit 2025 draw-result fields only on current hunt-level/reference surfaces where those columns were being used as current prior-year permit references:
+    - `pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv`
+    - `processed_data/hunt_master_enriched.csv`
+    - `processed_data/hunt_unit_reference_linked.csv`
+    - `processed_data/point_ladder_view.csv`
+  - Did not overwrite historical row-year `permits_year_*` values in `processed_data/draw_reality_engine.csv` or predictive output files.
+  - Added `tests/utah/test_2025_draw_permit_field_promotion.py`.
+- Outputs:
+  - `processed_data/permits_2025_draw_field_promotion_report.json`
+  - `processed_data/permits_2025_draw_field_promotion_report.csv`
+  - `processed_data/permits_2025_draw_field_promotion_report.md`
+- Key findings:
+  - Canonical source has `572` hunt codes with explicit 2025 draw-result permit values.
+  - `DB1002` now resolves to `1 / 0 / 1` in `DATABASE.csv` for both explicit 2025 draw fields and legacy `permits_year_*`.
+  - `DB1002` retains 2026 RAC allotment `1 / 0 / 1`.
+  - `DB1002` draw-result provenance carries DWR report page `19`.
+- Validation:
+  - `python scripts/promote-2025-draw-permits-to-runtime.py` passed.
+  - `python scripts/compare-canonical-hunt-database.py` passed after promotion.
+  - `python -m compileall scripts tests` passed.
+  - `python -m pytest tests/utah/test_2025_draw_permit_field_promotion.py tests/utah/test_current_year_permit_allotments.py tests/utah/test_draw_family_labels.py -q` passed: `20`.
+  - `npm.cmd run verify:permits-2026` passed.
+  - `npm.cmd test` passed.
+  - `node --check hunt-research.js` passed.
+  - `python scripts/build-database-publish-readiness-report.py` passed with `publish_ready = true`.
+  - `python -m pytest -q tests/utah_draw_predictive tests/utah/test_frontend_probability_selection.py` passed: `132`.
+  - `tests/utah_bonus_predictive` passed when run in split groups: `36` total. The all-at-once command timed out in this environment before completion, but the same test files passed in smaller batches.
+
+## New 2026 RAC Rows Explaining 1,411 To 1,394 Gap
+- Timestamp (UTC): 2026-05-23T10:20:00Z
+- Scope:
+  - Documented the 17 hunt-code gap between `DATABASE.csv` / current canonical source-of-truth (`1411`) and stale 1,394-code catalog files.
+  - Wrote:
+    - `processed_data/new_2026_rac_hunts_explain_1394_gap.csv`
+    - `processed_data/new_2026_rac_hunts_explain_1394_gap.json`
+    - `processed_data/new_2026_rac_hunts_explain_1394_gap.md`
+  - Updated:
+    - `processed_data/canonical_vs_DATABASE_hunt_code_name_permits_year.md`
+    - `processed_data/canonical_vs_DATABASE_hunt_code_name_permits_year.json`
+    - `processed_data/database_publish_readiness_report.md`
+    - `processed_data/database_publish_readiness_report.json`
+    - `docs/permit-allocation-2026-integrity-report.md`
+    - `canonical/permit-allocation-2026-integrity-report.json`
+- Findings:
+  - 16 gap codes are new 2026 antlerless elk general-season hunts from `2026_rac_antlerless_elk_permits.csv`.
+  - 1 gap code is new 2026 doe pronghorn `PD1039` from `2026_rac_doe_pronghorn_permits.csv`.
+  - Together these 17 rows account for `1,150` current-year permits: `1,034` resident and `116` nonresident.
+
+## Catalog Surface 1,411 Sync And 1,305 Gap Breakdown
+- Timestamp (UTC): 2026-05-23T11:00:00Z
+- Scope:
+  - Added `scripts/sync-catalog-surfaces-to-1411.py`.
+  - Synced stale catalog surfaces to the current `1411`-code `DATABASE.csv` universe.
+  - Root `hunt-master-canonical-2026.json` now has `1411` hunt codes and `1411` matching season records.
+  - `generated/pages/hunt-planner.json` now has `1411` hunt codes.
+  - `processed_data/hunt-master-canonical-2026-source-of-truth.csv` now has `1411` hunt codes.
+  - `data/hunt-master-canonical-2026-database-candidate.csv` active 2026 permit/name fields now match `DATABASE.csv`.
+- Outputs:
+  - `processed_data/catalog_surface_1411_sync_report.json`
+  - `processed_data/catalog_surface_1411_sync_report.md`
+  - `processed_data/stale_1305_to_1411_gap_breakdown.csv`
+  - `processed_data/stale_1305_to_1411_gap_breakdown.json`
+  - `processed_data/stale_1305_to_1411_gap_breakdown.md`
+  - `processed_data/hunt_code_surface_counts_after_catalog_sync.csv`
+  - `processed_data/hunt_code_surface_counts_after_catalog_sync.json`
+  - `processed_data/hunt_code_surface_counts_after_catalog_sync.md`
+- 1,305 to 1,411 gap:
+  - The old `processed_data/hunt-master-canonical-2026-source-of-truth.csv` was missing `106` current database hunt codes.
+  - Missing-code makeup: `104` black bear (`BR*`) rows, `1` desert bighorn sheep (`DS1000`) row, and `1` deer landowner/private-land row (`LO0010`).
+  - This stale CSV gap is now resolved by copying the current 1,411-code source-of-truth CSV into `processed_data`.
+- Current post-sync counts:
+  - `DATABASE.csv`: `1411` unique hunt codes.
+  - Root canonical JSON: `1411`.
+  - Canonical planner JSON: `1411`.
+  - Generated planner JSON: `1411`.
+  - Data/processed source-of-truth JSON/CSV catalog surfaces: `1411`.
+  - Enriched/reference/ladder runtime surfaces retain all database codes plus `60` cougar availability codes.
+  - Predictive outputs remain `1065` hunt codes by model scope and still are not forced to include non-predictive database rows.
+- Validation:
+  - `python scripts/sync-catalog-surfaces-to-1411.py` passed.
+  - `python scripts/compare-canonical-hunt-database.py` passed.
+  - `python -m compileall scripts` passed.
+  - `npm.cmd run verify:permits-2026` passed.
+  - `npm.cmd test` passed with root canonical `hunt_catalog_count = 1411`.
+
+## Ambiguous `permits_year_*` Column Removal
+- Timestamp (UTC): 2026-05-23T11:14:00Z
+- Scope:
+  - Removed ambiguous generic permit-year columns from active current-year database/runtime/source-of-truth CSV surfaces:
+    - `permits_year_res`
+    - `permits_year_nr`
+    - `permits_year_total`
+  - Preserved explicit year-specific fields:
+    - 2025 draw-result permits: `permits_2025_draw_res`, `permits_2025_draw_nr`, `permits_2025_draw_total`
+    - 2026 current allotments: `permits_2026_res`, `permits_2026_nr`, `permits_2026_total`, `permit_allotment_2026_res`, `permit_allotment_2026_nr`, `permit_allotment_2026_total`
+  - Added `scripts/remove-ambiguous-permits-year-columns.py` so the cleanup is repeatable.
+  - Updated comparison/promotion/permit-change/reconciliation helpers so they no longer write ambiguous current-surface aliases.
+- Outputs:
+  - `processed_data/permits_year_column_removal_report.json`
+  - `processed_data/permits_year_column_removal_report.csv`
+  - `processed_data/permits_year_column_removal_report.md`
+- Key checks:
+  - `DATABASE.csv` remains `1411` rows / `1411` unique hunt codes.
+  - Canonical/catalog surfaces remain aligned at `1411` hunt codes with `0` active 2026/name mismatches.
+  - All RAC 2026 permit rows still match `DATABASE.csv`: missing in database `0`, numeric mismatches `0`, significant differences greater than 5 `0`.
+  - `DB1002` now uses explicit 2025 draw-result permits `1 / 0 / 1` and explicit 2026 allotment permits `1 / 0 / 1`; no ambiguous `permits_year_*` columns are required.
+- Validation:
+  - `python scripts/remove-ambiguous-permits-year-columns.py` passed and wrote removal reports.
+  - `python scripts/promote-2025-draw-permits-to-runtime.py` passed with `0` changed cells after explicit-field cleanup.
+  - `python scripts/build-all-rac-permit-database-compare.py` passed with RAC missing in database `0`, numeric mismatches `0`, significant differences greater than 5 `0`.
+  - `python scripts/compare-canonical-hunt-database.py` passed with all checked canonical/catalog surfaces at `1411` codes and `0` active 2026/name mismatches.
+  - Header audit confirmed no active current CSV surface still carries `permits_year_res`, `permits_year_nr`, or `permits_year_total`.
+  - `python -m pytest tests/utah/test_2025_draw_permit_field_promotion.py tests/utah/test_current_year_permit_allotments.py tests/utah/test_draw_family_labels.py -q` passed: `22`.
+  - `python -m compileall scripts engine tests` passed.
+  - `node --check scripts/permit-change-report-2026.js`, `node --check scripts/reconcile-le-elk-2025-permits.js`, and `node --check hunt-research.js` passed.
+  - `npm.cmd run verify:permits-2026` passed with post-sync mismatches `0`.
+  - `npm.cmd test` passed with canonical JSON count `1411` and permit verification post-sync mismatches `0`.
+
+## 2025 Draw-Results Permit Promotion
+- Timestamp (UTC): 2026-05-23T11:26:00Z
+- Scope:
+  - Promoted explicit `permits_2025_res`, `permits_2025_nr`, and `permits_2025_total` from the local official 2025 draw-results extraction:
+    - `pipeline/RAW/hunt_unit_database/2026/csv/draw_results_long_cumulative_2025_draw_folder_DATABASE_ALIGNED_V3.csv`
+  - Kept this separate from:
+    - `permit_allotment_2026_*`, which remains current 2026 RAC draw allotment.
+    - `permits_2025_draw_*`, which remains detailed DWR draw-result permit extraction fields.
+  - Added `scripts/promote-2025-draw-results-permits.py`.
+- Outputs:
+  - `processed_data/permits_2025_draw_results_promotion_report.json`
+  - `processed_data/permits_2025_draw_results_promotion_report.csv`
+  - `processed_data/permits_2025_draw_results_promotion_report.md`
+- Key findings:
+  - Source rows scanned: `112056`.
+  - Source rows used for 2025 database-matched draw permits: `73604`.
+  - Database hunt codes with promoted 2025 draw-results permit totals: `1028`.
+  - Promoted hunt codes with nonzero 2025 draw-result permits: `1026`.
+  - Existing `permits_2025_draw_total` cross-check mismatches: `0`.
+  - Spot checks:
+    - `DB1002`: `1 / 0 / 1` from `2025 LE Deer Draw Results.pdf`.
+    - `EB3024`: `9 / 1 / 10` from `2025 LE Elk Draw Results(1).pdf`.
+    - `EA1010`: `18 / 2 / 20` from `2025 Antlerless Draw Results(1).pdf` / `2025 Youth Antlerless Draw.pdf`.
+    - `PB5025`: `39 / 4 / 43` from `2025 LE Pronghorn Draw Results.pdf`.
+    - `BR1008`: `26 / 2 / 28` from `2025 Black Bear Draw odds.pdf`.
+    - `PD1039`: no 2025 draw-results row, consistent with a new 2026 hunt row.
+- Validation:
+  - `python scripts/promote-2025-draw-results-permits.py` passed with draw-field mismatch count `0`.
+  - `python scripts/compare-canonical-hunt-database.py` passed with all checked canonical/catalog surfaces at `1411` codes and `0` active 2026/name mismatches.
+  - `python scripts/build-all-rac-permit-database-compare.py` passed with RAC missing in database `0`, numeric mismatches `0`, significant differences greater than 5 `0`.
+  - `python -m pytest tests/utah/test_2025_draw_permit_field_promotion.py tests/utah/test_current_year_permit_allotments.py tests/utah/test_draw_family_labels.py -q` passed: `24`.
+  - `python -m compileall scripts engine tests` passed.
+  - `node --check scripts/permit-change-report-2026.js`, `node --check scripts/reconcile-le-elk-2025-permits.js`, and `node --check hunt-research.js` passed.
+  - `npm.cmd run verify:permits-2026` passed with post-sync mismatches `0`.
+  - `npm.cmd test` passed with canonical JSON count `1411` and permit verification post-sync mismatches `0`.
+
+## 2025 Permit Prior-Generation Reconciliation
+- Timestamp (UTC): 2026-05-23T11:33:00Z
+- Scope:
+  - Compared active 1411-code `DATABASE.csv` / canonical catalog surfaces against the prior 1394-code foundation:
+    - `data/hunt-master-canonical-2026-foundation.json`
+  - Added `scripts/reconcile-2025-permits-prior-generation.py`.
+  - Ensured active CSV and JSON surfaces all carry:
+    - `permits_2025_res`
+    - `permits_2025_nr`
+    - `permits_2025_total`
+  - Ensured the 17 new 2026 RAC hunt codes carry blank 2025 permit values rather than missing fields.
+- Outputs:
+  - `processed_data/permits_2025_prior_generation_reconciliation.json`
+  - `processed_data/permits_2025_prior_generation_reconciliation.csv`
+  - `processed_data/permits_2025_prior_generation_reconciliation.md`
+- Key findings:
+  - Prior-generation hunt-code count: `1394`.
+  - Active database hunt-code count: `1411`.
+  - Active-not-prior count: `17`.
+  - Active-not-prior hunt codes exactly match the new 2026 RAC gap list:
+    - `EA1007`, `EA1053`, `EA1287`, `EA1288`, `EA1289`, `EA1290`, `EA1291`, `EA1292`, `EA1293`, `EA1294`, `EA1295`, `EA1296`, `EA1297`, `EA1298`, `EA1299`, `EA1300`, `PD1039`.
+  - New 2026 hunt rows with nonblank 2025 permit values across checked active surfaces: `0`.
+  - Prior-overlap differences were documented in the CSV report; active values remain sourced from official draw-results tables when `permits_2025_source = 2025_DRAW_RESULTS_TABLES`.
+- Validation:
+  - `python scripts/reconcile-2025-permits-prior-generation.py` passed.
+  - `python scripts/compare-canonical-hunt-database.py` passed with all checked canonical/catalog surfaces at `1411` codes and `0` active 2026/name mismatches.
+  - `python scripts/build-all-rac-permit-database-compare.py` passed with RAC missing in database `0`, numeric mismatches `0`, significant differences greater than 5 `0`.
+  - `python -m pytest tests/utah/test_2025_draw_permit_field_promotion.py tests/utah/test_current_year_permit_allotments.py tests/utah/test_draw_family_labels.py -q` passed: `25`.
+  - `python -m compileall scripts engine tests` passed.
+  - `node --check scripts/permit-change-report-2026.js`, `node --check scripts/reconcile-le-elk-2025-permits.js`, and `node --check hunt-research.js` passed.
+  - `npm.cmd run verify:permits-2026` passed with post-sync mismatches `0`.
+  - `npm.cmd test` passed with canonical JSON count `1411` and permit verification post-sync mismatches `0`.
+
+## Empty DATABASE Column Cleanup
+- Timestamp (UTC): 2026-05-23T12:00:00Z
+- Scope:
+  - Audited Excel-style `DATABASE.csv` columns `M` and `T`.
+  - Column `M` was an unnamed blank-header field with `0` populated values.
+  - Column `T` was `draw_2025_species_section` with `0` populated values.
+  - Removed both empty fields from active database, runtime, canonical, and catalog surfaces rather than keeping ambiguous unpopulated data.
+  - Added `scripts/remove-empty-database-columns.py` so the cleanup is repeatable and guarded.
+  - Updated `scripts/promote-2025-draw-permits-to-runtime.py` so `draw_2025_species_section` is not recreated by the 2025 draw permit promotion step.
+- Outputs:
+  - `processed_data/empty_database_column_removal_report.json`
+  - `processed_data/empty_database_column_removal_report.csv`
+  - `processed_data/empty_database_column_removal_report.md`
+- Key checks:
+  - `DATABASE.csv` remains `1411` rows / `1411` unique hunt codes.
+  - Fully blank database rows found/removed: `0`.
+  - Nonblank rows missing `hunt_code`: `0`.
+  - Blank header columns remaining in `DATABASE.csv`: `0`.
+  - `draw_2025_species_section` columns remaining in `DATABASE.csv`: `0`.
+- Validation:
+  - `python scripts/remove-empty-database-columns.py` passed; final post-verifier pass found `0` remaining empty fields to remove.
+  - `python scripts/promote-2025-draw-permits-to-runtime.py` passed with `0` changed cells.
+  - `python scripts/promote-2025-draw-results-permits.py` passed with draw-field mismatch count `0`.
+  - `python scripts/reconcile-2025-permits-prior-generation.py` passed and confirmed the 17 new 2026 RAC rows remain blank for 2025 permits.
+  - `python scripts/compare-canonical-hunt-database.py` passed with all checked canonical/catalog surfaces at `1411` codes and `0` active 2026/name mismatches.
+  - `python scripts/build-all-rac-permit-database-compare.py` passed with RAC missing in database `0`, numeric mismatches `0`, significant differences greater than 5 `0`.
+  - `python -m pytest tests/utah/test_2025_draw_permit_field_promotion.py tests/utah/test_current_year_permit_allotments.py tests/utah/test_draw_family_labels.py -q` passed: `28`.
+  - `python -m compileall scripts engine tests` passed.
+  - `node --check scripts/permit-change-report-2026.js`, `node --check scripts/reconcile-le-elk-2025-permits.js`, and `node --check hunt-research.js` passed.
+  - `npm.cmd run verify:permits-2026` passed with post-sync mismatches `0`.
+  - `npm.cmd test` passed with canonical JSON count `1411` and permit verification post-sync mismatches `0`.
+
+## All-Years Harvest Package Import And Harvest Quality Database
+- Timestamp (UTC): 2026-05-23T13:12:00Z
+- Scope:
+  - Imported existing harvest ZIP packages as source/truth inputs without re-extracting PDFs.
+  - Extracted package contents into:
+    - `data_truth/harvest_results_truth/raw_packages/`
+    - `data_model/harvest_quality/raw_packages/`
+  - Built cumulative normalized harvest outputs for reported hunt years `2021`, `2022`, `2023`, `2024`, and `2025`.
+  - Mirrored feature-ready harvest tables into `data_model/harvest_quality/`.
+  - Preserved harvest data as quality/history/demand-signal input only.
+  - Added special permit overlay classification for `CONSERVATION`, `CWMU`, `EXPO`, and `SPORTSMAN` rows as total-permit reconciliation only.
+  - Confirmed special permit overlays are not public draw-odds rows and are not p_draw math inputs.
+- Scripts:
+  - `scripts/import-harvest-packages-to-truth.py`
+  - `scripts/build-all-years-harvest-database.py`
+- Outputs:
+  - `data_truth/harvest_results_truth/raw_packages_manifest.csv`
+  - `data_truth/harvest_results_truth/raw_packages_manifest.json`
+  - `data_truth/harvest_results_truth/raw_packages_manifest.md`
+  - `data_truth/harvest_results_truth/normalized/harvest_results_all_years_long.csv`
+  - `data_truth/harvest_results_truth/normalized/harvest_quality_features_all_years_by_hunt_code.csv`
+  - `data_truth/harvest_results_truth/normalized/harvest_results_all_years_source_audit.csv`
+  - `data_truth/harvest_results_truth/normalized/harvest_results_all_years_summary.json`
+  - `data_truth/harvest_results_truth/normalized/harvest_results_all_years_summary.md`
+  - `data_model/harvest_quality/harvest_results_all_years_long.csv`
+  - `data_model/harvest_quality/harvest_quality_features_all_years_by_hunt_code.csv`
+  - `data_model/permit_overlays/special_permit_overlay_classes_all_years.csv`
+  - `processed_data/harvest_results_all_years_long.csv`
+  - `processed_data/harvest_quality_features_all_years_by_hunt_code.csv`
+  - `processed_data/special_permit_overlay_classes_all_years.csv`
+- Key findings:
+  - Unique harvest packages imported: `7`.
+  - Duplicate package paths de-duplicated by SHA: `5`.
+  - Extracted files: `104`.
+  - Extracted CSV files: `83`.
+  - Extracted SQLite files: `7`.
+  - Extracted PDF files: `0`.
+  - PDF re-extraction performed: `NO`.
+  - Normalized long harvest rows: `28669`.
+  - Best-by-year/hunt-code rows: `5149`.
+  - Reported hunt year counts:
+    - `2021`: `974`
+    - `2022`: `924`
+    - `2023`: `1078`
+    - `2024`: `1046`
+    - `2025`: `1127`
+  - Model target year counts:
+    - `2022`: `974`
+    - `2023`: `924`
+    - `2024`: `1078`
+    - `2025`: `1046`
+    - `2026`: `1127`
+  - Active database coverage by reported hunt year:
+    - `2021`: `803`
+    - `2022`: `781`
+    - `2023`: `960`
+    - `2024`: `956`
+    - `2025`: `1097`
+  - Unique hunt codes across all harvest years: `1423`.
+  - Special permit overlay rows: `1530`.
+  - Special permit overlay class counts:
+    - `CONSERVATION`: `76`
+    - `CWMU`: `1429`
+    - `EXPO`: `9`
+    - `SPORTSMAN`: `16`
+- Guardrails:
+  - Harvest permit fields remain harvest-report context only.
+  - Harvest rows have `do_not_use_for_permit_quota = True`.
+  - Harvest rows have `do_not_use_directly_for_p_draw = True`.
+  - Expo, Conservation, Sportsman, and CWMU rows are marked `TOTAL_PERMIT_RECONCILIATION_ONLY`, `public_draw_odds_use = NO`, and `p_draw_math_use = NO`.
+- Validation:
+  - `python scripts/import-harvest-packages-to-truth.py` passed.
+  - `python scripts/build-all-years-harvest-database.py` passed.
+  - `python -m pytest tests/utah/test_all_years_harvest_database.py -q` passed: `9`.
+  - `python -m pytest tests/utah/test_all_years_harvest_database.py tests/utah/test_2025_draw_permit_field_promotion.py tests/utah/test_current_year_permit_allotments.py tests/utah/test_draw_family_labels.py -q` passed: `37`.
+  - `python -m compileall scripts engine tests` passed.
+  - `node --check hunt-research.js` passed.
+  - `python scripts/compare-complete-2023-harvest-to-draw.py` passed and refreshed the complete 2023 harvest-vs-draw comparison.
+
+## Harvest Package Split-Season Year Correction
+- Timestamp (UTC): 2026-05-23T13:20:00Z
+- Scope:
+  - Corrected split-season package year inference so season spans such as `2023_24` and `23-24` use the ending season year as the reported hunt year.
+  - Confirmed `turkey_harvest_results_2023_24_for_2025_database.zip` now resolves to reported hunt year `2024` and model target year `2025`.
+  - Confirmed `turkey_harvest_results_2024_25_for_2026_database.zip` now resolves to reported hunt year `2025` and model target year `2026`.
+  - Materialized the supplied master package bundle into truth/model source-bundle folders without PDF re-extraction.
+  - Preferred master-bundle package filenames over older loose ZIP copies to avoid double-counting rebuilt packages with the same filename.
+  - Kept overlay/backcheck packages available as source material while limiting harvest normalization to harvest/turkey database and harvest supplement ZIPs.
+- Scripts:
+  - `scripts/import-harvest-packages-to-truth.py`
+  - `scripts/build-all-years-harvest-database.py`
+- Key results:
+  - Unique source packages imported from the master bundle: `14`.
+  - Extracted files: `183`.
+  - Extracted CSV files: `143`.
+  - Extracted SQLite files: `11`.
+  - Extracted PDF files: `0`.
+  - PDF re-extraction performed: `NO`.
+  - Normalized long harvest rows: `68657`.
+  - Best-by-year/hunt-code rows: `5151`.
+  - Reported hunt year counts:
+    - `2021`: `974`
+    - `2022`: `924`
+    - `2023`: `1078`
+    - `2024`: `1048`
+    - `2025`: `1127`
+  - Model target year counts:
+    - `2022`: `974`
+    - `2023`: `924`
+    - `2024`: `1078`
+    - `2025`: `1048`
+    - `2026`: `1127`
+  - Unique hunt codes across all harvest years: `1424`.
+  - Special permit overlay rows: `1531`.
+  - Special permit overlay class counts:
+    - `CONSERVATION`: `77`
+    - `CWMU`: `1429`
+    - `EXPO`: `9`
+    - `SPORTSMAN`: `16`
+- Validation:
+  - `python scripts/import-harvest-packages-to-truth.py` passed.
+  - `python scripts/build-all-years-harvest-database.py` passed.
+  - `python -m pytest tests/utah/test_all_years_harvest_database.py -q` passed: `10`.
+  - `python -m pytest tests/utah/test_all_years_harvest_database.py tests/utah/test_2025_draw_permit_field_promotion.py tests/utah/test_current_year_permit_allotments.py tests/utah/test_draw_family_labels.py -q` passed: `38`.
+  - `python -m compileall scripts engine tests` passed.
+
+## Final Harvest Database Audit And Feature Contract
+- Timestamp (UTC): 2026-05-23T13:40:00Z
+- Scope:
+  - Audited the completed all-years harvest-result database for source inventory, required-field missingness, key integrity, metric integrity, year coverage, hunt-code alignment, and active 2026 feature readiness.
+  - Created a formal harvest modeling contract clarifying that harvest data is quality/demand-signal metadata only.
+  - Implemented harvest quality feature helpers and a guarded materializer that joins harvest-derived features without changing probability or quota/allotment fields.
+  - Confirmed harvest report permit counts are not used as 2026 public draw quota/allotment.
+  - Confirmed Expo, Conservation, Sportsman, and CWMU overlays remain total-permit reconciliation only and are not p_draw inputs.
+- Scripts/modules:
+  - `scripts/audit-harvest-results-database-final.py`
+  - `engine/utah/quality/harvest_feature_model.py`
+  - `engine/utah/quality/materialize_harvest_feature_model.py`
+- Outputs:
+  - `processed_data/harvest_results_database_final_audit.csv`
+  - `processed_data/harvest_results_database_final_audit.json`
+  - `processed_data/harvest_results_database_final_audit.md`
+  - `processed_data/harvest_results_database_key_integrity_audit.csv`
+  - `processed_data/harvest_results_database_metric_integrity_audit.csv`
+  - `processed_data/harvest_results_database_year_coverage_audit.csv`
+  - `processed_data/harvest_results_database_hunt_code_alignment_audit.csv`
+  - `processed_data/harvest_results_database_feature_readiness_audit.csv`
+  - `processed_data/harvest_results_database_modeling_contract.md`
+  - `data_model/harvest_quality/harvest_feature_model_by_hunt_code_2026.csv`
+  - `data_model/harvest_quality/harvest_feature_model_by_species_year.csv`
+  - `data_model/harvest_quality/ml_draw_predictions_with_harvest_features.csv`
+  - `data_model/harvest_quality/draw_reality_engine_predictive_with_harvest_features.csv`
+  - `processed_data/harvest_feature_model_audit.csv`
+  - `processed_data/harvest_feature_model_audit.json`
+  - `processed_data/harvest_feature_model_audit.md`
+- Key results:
+  - Harvest database row count: `68657`.
+  - Best-by-year/hunt-code rows: `5151`.
+  - Reported hunt-year coverage: `2021`, `2022`, `2023`, `2024`, `2025`.
+  - Model target-year coverage: `2022`, `2023`, `2024`, `2025`, `2026`.
+  - Active 2026 feature rows: `1411`.
+  - Exact hunt-code feature matches: `1188`.
+  - Fallback feature matches: `222`.
+  - No-history rows: `1`.
+  - Harvest quality index count: `1384`.
+  - Demand pressure signal count: `1404`.
+  - Audit blocker count: `0`.
+  - Audit warning count: `15529`.
+  - Metric issue count: `15521`.
+  - Success-rate math conflict rows reported for review: `12923`.
+  - Protected probability and quota/allotment fields unchanged: `true`.
+- Validation:
+  - `python scripts/audit-harvest-results-database-final.py` passed.
+  - `python -m engine.utah.quality.materialize_harvest_feature_model --output-dir processed_data --forecast-year 2026` passed.
+  - `python -m pytest tests/utah_quality -q` passed: `18`.
+  - `python -m pytest tests/utah/test_current_year_permit_allotments.py tests/utah_bonus_predictive/test_official_2026_quota_inputs.py -q` passed: `15`.
+  - `python -m compileall scripts engine tests` passed.
+  - `node --check hunt-research.js` passed.

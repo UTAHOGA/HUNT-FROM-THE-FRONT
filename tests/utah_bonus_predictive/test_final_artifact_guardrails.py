@@ -25,11 +25,13 @@ def test_modeled_availability_does_not_change_bonus_or_preference_counts_unexpec
         counts[row["algorithm_status"]] = counts.get(row["algorithm_status"], 0) + 1
 
     expected = {
-        "MODELED_BONUS": 25491,
-        "MODELED_PREFERENCE": 1731,
+        "MODELED_BONUS": 25610,
+        "MODELED_PREFERENCE": 1605,
         "MODELED_ALLOCATION": 54,
         "MODELED_AVAILABILITY": 124,
         "MODELED_SPORTSMAN_DRAW": 10,
+        "IN_SCOPE_MODEL_PENDING": 533,
+        "EXCLUDED_NOT_PREDICTIVE_DRAW": 4,
         "OUT_OF_SCOPE_NON_TARGET": 0,
     }
     for key, value in expected.items():

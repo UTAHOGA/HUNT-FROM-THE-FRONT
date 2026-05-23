@@ -884,5 +884,36 @@ applicant\_pool\_source
 quota\_source
 reason\_codes
 frontend source modal
+
+Mixed predictive layer
+The active mixed predictive layer is `mixed_predictive_v1.0.0` with
+`rule_version = utah_draw_model_v1.0.0`.
+
+It combines public-data components in this order:
+
+1. prior-year DWR draw-result behavior;
+2. official current-year RAC/DATABASE quota/allotment;
+3. applicant pool rollover and point-bank movement;
+4. harvest-quality / demand-pressure features;
+5. calibration and uncertainty metadata.
+
+Default blend weights are:
+
+- prior-year behavior: `0.60`
+- quota change: `0.20`
+- applicant rollover: `0.15`
+- harvest-quality demand signal: `0.05`
+
+Prior-year behavior carries the highest weight because it is the strongest
+observed public signal of actual applicant behavior and draw mechanics. Harvest
+quality may only nudge demand pressure and must not directly create draw odds.
+Special permit overlays may reconcile total permit counts, but they must not be
+added to public draw quotas or max/random pool permit counts.
+
+Changing blend weights, rollover logic, quota adjustment logic, harvest feature
+weighting, calibration method, or output-field semantics requires a
+`model_version` increment. `rule_version` changes only when Utah draw mechanics
+rules change.
+
 One-sentence summary
 The hybrid ML layer predicts the future applicant and quota environment; the Utah draw simulator determines what those forecasts mean under Utah's actual draw mechanics.

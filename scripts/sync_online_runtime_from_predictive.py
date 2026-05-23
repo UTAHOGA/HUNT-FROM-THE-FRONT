@@ -151,9 +151,6 @@ def _synth_master_row(
         "special_permit_category": _prefer(base.get("special_permit_category")),
         "special_permit_note": _prefer(base.get("special_permit_note")),
         "special_permit_overlay_source": _prefer(base.get("special_permit_overlay_source")),
-        "permits_year_res": _prefer(base.get("permits_year_res")),
-        "permits_year_nr": _prefer(base.get("permits_year_nr")),
-        "permits_year_total": _prefer(base.get("permits_year_total")),
         "draw_pool": _norm_draw_pool(engine_row.get("draw_pool")),
     })
     return row
@@ -229,9 +226,6 @@ def _synth_reference_row(
         "special_permit_note": _prefer(base.get("special_permit_note")),
         "special_permit_overlay_source": _prefer(base.get("special_permit_overlay_source")),
         "boundary_id": _prefer(base.get("boundary_id"), db_row.get("boundary_id")),
-        "permits_year_res": _prefer(base.get("permits_year_res")),
-        "permits_year_nr": _prefer(base.get("permits_year_nr")),
-        "permits_year_total": _prefer(base.get("permits_year_total")),
         "draw_pool": draw_pool,
     })
     return row
@@ -287,9 +281,6 @@ def _synth_ladder_row(
         "special_permit_category": _prefer(base.get("special_permit_category")),
         "special_permit_note": _prefer(base.get("special_permit_note")),
         "special_permit_overlay_source": _prefer(base.get("special_permit_overlay_source")),
-        "permits_year_res": _prefer(base.get("permits_year_res")),
-        "permits_year_nr": _prefer(base.get("permits_year_nr")),
-        "permits_year_total": _prefer(base.get("permits_year_total")),
         "boundary_id": _prefer(base.get("boundary_id"), db_row.get("boundary_id")),
         "draw_pool": draw_pool,
     })

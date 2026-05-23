@@ -173,9 +173,6 @@
         "permits_2026_source",
         "public_permits_2026",
         "public_permits_2026_source",
-        "permits_year_res",
-        "permits_year_nr",
-        "permits_year_total",
         "boundary_id"
       ],
       "key_fields": [
@@ -1838,9 +1835,6 @@
         "special_permit_category",
         "special_permit_note",
         "special_permit_overlay_source",
-        "permits_year_res",
-        "permits_year_nr",
-        "permits_year_total",
         "boundary_id"
       ],
       "key_fields": [
@@ -3289,10 +3283,7 @@
         "special_permit_area_id",
         "special_permit_category",
         "special_permit_note",
-        "special_permit_overlay_source",
-        "permits_year_res",
-        "permits_year_nr",
-        "permits_year_total"
+        "special_permit_overlay_source"
       ],
       "key_fields": [
         "hunt_code",
@@ -4758,10 +4749,7 @@
         "special_permit_category",
         "special_permit_note",
         "special_permit_overlay_source",
-        "boundary_id",
-        "permits_year_res",
-        "permits_year_nr",
-        "permits_year_total"
+        "boundary_id"
       ],
       "key_fields": [
         "hunt_code",

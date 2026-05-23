@@ -53,6 +53,45 @@ The existing UI still consumes processed CSVs keyed by `(hunt_code, residency, p
   - `processed_data/hunt_master_enriched.csv`
   - `processed_data/hunt_unit_reference_linked.csv`
 
+## Mixed Predictive Engine Contract
+
+- `mixed_predictive_v1.0.0` is an additive prediction layer over the existing runtime files.
+- The mixed engine uses prior-year DWR draw behavior as the anchor, then applies official current-year quota, applicant rollover / point-bank movement, and a small harvest-quality demand adjustment.
+- Default component weights are:
+  - `prior_year_behavior_weight = 0.60`
+  - `quota_change_weight = 0.20`
+  - `applicant_rollover_weight = 0.15`
+  - `harvest_quality_demand_weight = 0.05`
+- The harvest quality component must not exceed `0.10` without an explicit model version bump and regression coverage.
+- Official 2026 RAC/DATABASE allotment fields drive `quota_2026_total`, `quota_2026_max_pool`, and `quota_2026_random_pool` when available.
+- `quota_source_status = official` means the row is using the current-year official allotment source.
+- Prior-year random-pool successes are historical draw results only; they must not be copied into 2026 point-specific odds.
+- MAX POOL status text is descriptive only and must not create a guaranteed probability unless the modeled 2026 applicant/permit state supports it.
+- Materialized mixed-model outputs remain keyed by `hunt_code`, `residency`, and `points`.
+
+## Harvest Features In Prediction
+
+- Harvest data may contribute quality and demand-pressure features only.
+- Harvest data may not directly create or overwrite `p_draw`, `p_draw_mean`, `p_random_mean`, `p_max_pool_mean`, `p_preference_draw`, `p_bonus_pool`, 2026 quota fields, or 2026 public draw permit allotments.
+- Harvest report permit counts are not 2026 public draw quota.
+- Harvest feature rows may populate:
+  - `harvest_quality_index`
+  - `demand_pressure_signal`
+  - `demand_pressure_category`
+  - `point_creep_quality_adjustment`
+  - `harvest_feature_match_method`
+  - `harvest_feature_source_years`
+  - `harvest_feature_reason_codes`
+- The mixed engine may apply only a capped demand-pressure adjustment derived from those fields.
+
+## Special Permit Overlay Guardrails
+
+- Expo, Conservation, Sportsman, CWMU, landowner, mitigation, private, and boundary overlay permits are not public draw odds quota.
+- Special permit overlays may be used for total-permit reconciliation, source metadata, explanatory display, and audit traceability.
+- Special permit overlays must not increase `p_draw_mean`.
+- Special permit overlays must not enter max-point-pool or random-pool quota.
+- Sportsman rows use their own sportsman strategy and are not folded into bonus/preference public draw pools.
+
 ## Promotion Metadata
 
 - The runtime overlay may add or populate these metadata fields:
