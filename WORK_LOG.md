@@ -1,5 +1,285 @@
 # WORK LOG
 
+## Premium Limited Entry Deer Truth-Source Normalization
+- Timestamp (UTC): 2026-05-22T00:00:00Z
+- Scope:
+  - Reviewed user-supplied 2025 to 2026 premium limited-entry / management / cactus deer permit counts and treated them as the truth-source reference.
+  - Normalized `DB1121` Antelope Island Management 2025 values from blank to explicit zeroes in the RAC supplemental source table.
+  - Added missing `DB1058` Paunsaugunt Cactus to the same source table so the repo carries the full user-confirmed permit set.
+  - Built a compact audit artifact showing which changes are unchanged, minor, or significant.
+- Files updated:
+  - `pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_buck_deer_premium_management_permits.csv`
+- Outputs created:
+  - `processed_data/ple_deer_truth_source_audit.csv`
+  - `processed_data/ple_deer_truth_source_audit.json`
+- Validation summary:
+  - All current 2026 repo-side permit values for the audited rows match the truth-source table: `true`
+  - Smoke tests run: `6`
+  - Smoke tests failed: `0`
+  - Significant row-level changes greater than 5 permits:
+    - `DB1010` Paunsaugunt Management Any Legal Weapon resident: `24 -> 30` (`+6`)
+    - `DB1058` Paunsaugunt Cactus Any Legal Weapon resident: `27 -> 18` (`-9`)
+  - Major group-level changes:
+    - `Paunsaugunt Management`: `45 -> 55` (`+10`)
+    - `Paunsaugunt Cactus`: `30 -> 20` (`-10`)
+  - Minor notable changes:
+    - `Henry Mtns Premium`: `44 -> 46` (`+2`)
+    - `Antelope Island Management`: `0 -> 2` (`+2`, new 2026 row)
+
+## Limited Entry Deer Truth-Source Normalization
+- Timestamp (UTC): 2026-05-22T00:00:00Z
+- Scope:
+  - Added the user-provided 2025 to 2026 limited-entry buck deer permit table as a supplemental truth-source reference.
+  - Built a focused audit comparing the truth-source table against current repo-side 2026 permit values.
+- Files updated:
+  - `pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_buck_deer_limited_entry_permits.csv`
+- Outputs created:
+  - `processed_data/le_deer_truth_source_audit.csv`
+  - `processed_data/le_deer_truth_source_audit.json`
+- Validation summary:
+  - All current 2026 repo-side permit values for the audited rows match the truth-source table: `true`
+  - Smoke tests run: `6`
+  - Smoke tests failed: `0`
+  - Major group-level changes:
+    - `Book Cliffs, North`: `127 -> 152` (`+25`)
+    - `Book Cliffs`: `107 -> 131` (`+24`)
+    - `West Desert, Vernon`: `230 -> 254` (`+24`)
+    - `Diamond Mtn`: `110 -> 120` (`+10`)
+  - Significant group-level change:
+    - `Book Cliffs, South`: `32 -> 38` (`+6`)
+  - Significant row-level changes greater than 5 permits:
+    - `DB1017` Book Cliffs, North resident: `114 -> 137` (`+23`)
+    - `DB1024` West Desert, Vernon resident: `118 -> 130` (`+12`)
+    - `DB1011` Book Cliffs archery resident: `45 -> 55` (`+10`)
+    - `DB1025` Book Cliffs muzzleloader resident: `45 -> 55` (`+10`)
+
+## O.I.L. Bull Moose Truth-Source Normalization
+- Timestamp (UTC): 2026-05-22T00:00:00Z
+- Scope:
+  - Added the user-provided 2025 to 2026 O.I.L. bull moose permit table as a supplemental truth-source reference.
+  - Built a focused audit comparing the truth-source table against current repo-side 2026 permit values.
+- Files updated:
+  - `pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_oial_bull_moose_permits.csv`
+- Outputs created:
+  - `processed_data/oial_moose_truth_source_audit.csv`
+  - `processed_data/oial_moose_truth_source_audit.json`
+- Validation summary:
+  - All current 2026 repo-side permit values for the audited rows match the truth-source table: `true`
+  - Smoke tests run: `6`
+  - Smoke tests failed: `0`
+  - Grand total changed from `106` to `113` (`+7`)
+  - Largest unit-level change:
+    - `MB6000` Cache resident: `12 -> 14` (`+2`)
+  - Minor unit-level increases:
+    - `Chalk Creek`: `3 -> 4`
+    - `East Canyon, Morgan-Summit`: `4 -> 5`
+    - `Kamas`: `5 -> 6`
+    - `North Slope, Summit`: `22 -> 23`
+    - `Yellowstone`: `5 -> 6`
+  - Nonresident total remained flat at `11`; resident total increased from `95` to `102`
+
+## O.I.L. Mountain Goat Truth-Source Normalization
+- Timestamp (UTC): 2026-05-22T00:00:00Z
+- Scope:
+  - Added the user-provided 2025 to 2026 O.I.L. mountain goat permit table as a supplemental truth-source reference.
+  - Built a focused audit comparing the truth-source table against current repo-side 2026 permit values.
+- Files updated:
+  - `pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_oial_mountain_goat_permits.csv`
+- Outputs created:
+  - `processed_data/oial_goat_truth_source_audit.csv`
+  - `processed_data/oial_goat_truth_source_audit.json`
+- Validation summary:
+  - All current 2026 repo-side permit values for the audited rows match the truth-source table: `true`
+  - Smoke tests run: `6`
+  - Smoke tests failed: `0`
+  - Grand total changed from `103` to `112` (`+9`)
+  - Largest unit-level change:
+    - `GO6803` Nebo any legal weapon: `18 -> 24` (`+6`)
+  - Minor unit-level increases:
+    - `High Uintas East`: `2 -> 3`
+    - `High Uintas Leidy Peak`: `1 -> 2`
+    - `La Sal Mtns`: `11 -> 12`
+  - Nonresident total increased from `10` to `11`; resident total increased from `93` to `101`
+
+## O.I.L. Bison Truth-Source Normalization
+- Timestamp (UTC): 2026-05-22T00:00:00Z
+- Scope:
+  - Added the user-provided 2025 to 2026 O.I.L. bison permit table as a supplemental truth-source reference.
+  - Built a focused audit comparing the truth-source table against current repo-side 2026 permit values.
+  - Treated `BI6527` Nine Mile OTC as a non-quota context row and kept it out of the numeric quota audit.
+- Files updated:
+  - `pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_oial_bison_permits.csv`
+- Outputs created:
+  - `processed_data/oial_bison_truth_source_audit.csv`
+  - `processed_data/oial_bison_truth_source_audit.json`
+- Validation summary:
+  - All current 2026 repo-side permit values for the audited quota rows match the truth-source table: `true`
+  - Smoke tests run: `6`
+  - Smoke tests failed: `0`
+  - Grand total changed from `133` to `135` (`+2`)
+  - Largest positive changes:
+    - `BI6536` Book Cliffs, Bitter Creek female only: `3 -> 15` (`+12`)
+    - `BI6534` Book Cliffs, Bitter Creek hunter's choice: `5 -> 10` (`+5`)
+    - `BI6537` Book Cliffs, Little Creek/South hunter's choice: `10 -> 15` (`+5`)
+  - Largest negative changes:
+    - `BI6506` Henry Mtns female only: `30 -> 11` (`-19`)
+    - `BI6505` Henry Mtns female only: `29 -> 11` (`-18`)
+  - `BI6539` Henry Mtns female only is a new 2026 quota row normalized from 2025 dashes to zero for comparison.
+
+## O.I.L. Desert Bighorn Sheep Truth-Source Normalization
+- Timestamp (UTC): 2026-05-22T00:00:00Z
+- Scope:
+  - Added the user-provided 2025 to 2026 O.I.L. desert bighorn sheep permit table as a supplemental truth-source reference.
+  - Built a focused audit comparing the truth-source table against current repo-side 2026 permit values.
+- Files updated:
+  - `pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_oial_desert_bighorn_sheep_permits.csv`
+- Outputs created:
+  - `processed_data/oial_desert_sheep_truth_source_audit.csv`
+  - `processed_data/oial_desert_sheep_truth_source_audit.json`
+- Validation summary:
+  - All current 2026 repo-side permit values for the audited rows match the truth-source table: `true`
+  - Smoke tests run: `6`
+  - Smoke tests failed: `0`
+  - Grand total changed from `88` to `85` (`-3`)
+  - Largest decreases:
+    - `DS6621` Pine Valley, Beaver Dam: `5 -> 2` (`-3`)
+    - `DS6608` San Rafael, Dirty Devil: `7 -> 4` (`-3`)
+  - Largest increase:
+    - `DS6604` La Sal, Potash/South Cisco: `6 -> 8` (`+2`)
+  - Minor increases:
+    - `DS6601` Kaiparowits, East: `12 -> 13`
+    - `DS6625` Mineral Mtns: `3 -> 4`
+
+## O.I.L. Rocky Mountain Bighorn Sheep Truth-Source Normalization
+- Timestamp (UTC): 2026-05-22T00:00:00Z
+- Scope:
+  - Added the user-provided 2025 to 2026 O.I.L. Rocky Mountain bighorn sheep permit table as a supplemental truth-source reference.
+  - Built a focused audit comparing the truth-source table against current repo-side 2026 permit values.
+- Files updated:
+  - `pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_oial_rocky_mountain_bighorn_sheep_permits.csv`
+- Outputs created:
+  - `processed_data/oial_rocky_sheep_truth_source_audit.csv`
+  - `processed_data/oial_rocky_sheep_truth_source_audit.json`
+- Validation summary:
+  - All current 2026 repo-side permit values for the audited rows match the truth-source table: `true`
+  - Smoke tests run: `6`
+  - Smoke tests failed: `0`
+  - Grand total changed from `52` to `51` (`-1`)
+  - Largest decreases:
+    - `RS6726` Fillmore, Oak Creek: `5 -> 4` (`-1`)
+    - `RS6709` North Slope, Summit/West Daggett: `4 -> 3` (`-1`)
+    - `RS6708` North Slope, Three Corners: `3 -> 2` (`-1`)
+  - Largest increases:
+    - `RS6700` Antelope Island: `1 -> 2` (`+1`)
+    - `RS6724` Wasatch Mtns, West: `2 -> 3` (`+1`)
+
+## General Season Bull Elk Truth-Source Normalization
+- Timestamp (UTC): 2026-05-22T00:00:00Z
+- Scope:
+  - Added the user-provided 2025 to 2026 general season bull elk category table as a supplemental truth-source reference.
+  - Built a focused audit comparing the truth-source category totals against current repo-side 2026 category or code-level support.
+  - Kept the audit explicit about category-level gaps where the repo currently stores code-level context rows instead of a clean category total.
+- Files updated:
+  - `pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_general_season_bull_elk_permits.csv`
+- Outputs created:
+  - `processed_data/general_bull_elk_truth_source_audit.csv`
+  - `processed_data/general_bull_elk_truth_source_audit.json`
+- Validation summary:
+  - Smoke tests run: `6`
+  - Smoke tests failed: `0`
+  - Clear 2026 match:
+    - `EB1007` draw-only youth any bull stayed `750 -> 750`
+  - Clear 2026 mismatch:
+    - `EB1012` Uinta Basin private lands only any bull is `500` in current repo-side source rows but `750` in the user-provided truth table
+  - Category-level verification gaps remain for:
+    - `Spike Bull` `15000 -> 15000`
+    - `Any Bull Elk (includes muzzleloader)` `15000 -> 15000`
+    - `Any Bull Late` `Unlimited -> Unlimited`
+    - `Youth General Season` `Unlimited -> Unlimited`
+
+## Limited Entry Bull Elk Truth-Source Normalization
+- Timestamp (UTC): 2026-05-22T00:00:00Z
+- Scope:
+  - Added the user-provided 2025 to 2026 limited-entry bull elk permit table as a supplemental truth-source reference.
+  - Built a focused audit comparing the truth-source table against current repo-side 2026 permit values.
+- Files updated:
+  - `pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_limited_entry_bull_elk_permits.csv`
+- Outputs created:
+  - `processed_data/le_bull_elk_truth_source_audit.csv`
+  - `processed_data/le_bull_elk_truth_source_audit.json`
+- Validation summary:
+  - Smoke tests run: `6`
+  - Smoke tests failed: `0`
+  - Current repo-side mismatches are limited to a Monroe cluster:
+    - `EB3010`
+    - `EB3047`
+    - `EB3088`
+    - `EB3112`
+    - `EB3185`
+  - Large increases:
+    - `Nebo/San Pitch Mtns`: `95 -> 128` (`+33`)
+    - `Boulder`: `125 -> 139` (`+14`)
+    - `San Juan Bull Elk`: `115 -> 127` (`+12`)
+    - `Diamond Mtn`: `100 -> 111` (`+11`)
+  - Large decreases:
+    - `Wasatch Mtns`: `726 -> 580` (`-146`)
+    - `Manti`: `700 -> 660` (`-40`)
+  - `EB3024` Beaver, East early any legal weapon remained unchanged at `10`.
+
+## Limited Entry Bull Elk Late Archery Truth-Source Normalization
+- Timestamp (UTC): 2026-05-22T00:00:00Z
+- Scope:
+  - Added the user-provided 2025 to 2026 limited-entry late archery bull elk permit table as a supplemental truth-source reference.
+  - Built a focused audit comparing the truth-source table against current repo-side 2026 permit values.
+  - Preserved the row-level truth values as canonical because the printed 2025 resident subtotal in the user block does not reconcile with the listed rows.
+- Files updated:
+  - `pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_limited_entry_bull_elk_late_archery_permits.csv`
+- Outputs created:
+  - `processed_data/le_bull_elk_late_archery_truth_source_audit.csv`
+  - `processed_data/le_bull_elk_late_archery_truth_source_audit.json`
+- Validation summary:
+  - Smoke tests run: `6`
+  - Smoke tests failed: `0`
+  - Row-summed totals:
+    - `2025`: `158`
+    - `2026`: `193`
+  - The printed `2025` line `95 / 11 / 158` is partially inconsistent with the listed rows:
+    - row-summed resident subtotal = `138`
+    - row-summed nonresident subtotal = `20`
+    - row-summed grand total = `158`
+  - The grand total `158` reconciles, but the displayed resident/nonresident subtotals do not.
+  - Largest increases:
+    - `Beaver, East`: `15 -> 20` (`+5`)
+    - `Fillmore, Pahvant`: `15 -> 20` (`+5`)
+    - `Southwest Desert, South`: `10 -> 20` (`+10`)
+  - Other notable increases:
+    - `Mt Dutton`: `10 -> 15` (`+5`)
+    - `Nebo/San Pitch Mtns`: `10 -> 15` (`+5`)
+    - `Panguitch Lake`: `10 -> 15` (`+5`)
+
+## Limited Entry Bull Elk HAMSS And September Archery Truth-Source Normalization
+- Timestamp (UTC): 2026-05-22T00:00:00Z
+- Scope:
+  - Added the user-provided 2025 to 2026 limited-entry HAMSS and September archery bull elk permit tables as a supplemental truth-source reference.
+  - Built a focused audit comparing the truth-source table against current repo-side 2026 permit values.
+- Files updated:
+  - `pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_limited_entry_bull_elk_hamss_and_september_archery_permits.csv`
+- Outputs created:
+  - `processed_data/le_bull_elk_hamss_september_archery_truth_source_audit.csv`
+  - `processed_data/le_bull_elk_hamss_september_archery_truth_source_audit.json`
+- Validation summary:
+  - Smoke tests run: `6`
+  - Smoke tests failed: `0`
+  - All current repo-side 2026 rows for these hunt codes match the truth-source table: `true`
+  - HAMSS totals remained flat at `80 -> 80`
+  - September archery totals increased from `70 -> 72` (`+2`)
+  - Largest decreases:
+    - `Cache, North`: `28 -> 24` (`-4`) for both HAMSS and September archery
+    - `East Canyon`: `10 -> 8` (`-2`) for HAMSS
+  - Largest increases:
+    - `Southwest Desert, North`: `18 -> 23` (`+5`) for both HAMSS and September archery
+    - `West Desert, Deep Creek`: `14 -> 15` (`+1`) for both HAMSS and September archery
+
 ## Bear Strategy Correction - Official 2025 Draw Odds Re-Audit
 - Timestamp (UTC): 2026-05-21T00:00:00Z
 - Scope:
@@ -818,3 +1098,236 @@
   - Dedicated Hunter draw-pool groups now exist in the master/reference layer instead of collapsing back to standard deer rows.
   - Youth elk pending groups now exist in ladder/master/reference and remain in-scope without fake draw odds.
   - Hunt Research now falls back to the first engine group row for non-point families before dropping to ladder-only summary behavior.
+
+## Limited Entry Buck Pronghorn Truth-Source Normalization
+- Timestamp (UTC): 2026-05-22T00:00:00Z
+- Scope:
+  - Added the user-verified 2025-to-2026 limited-entry buck pronghorn permit table as a normalized truth-source CSV.
+  - Generated a row-by-row and group-level audit against the current 2026 linked hunt reference.
+  - Kept the work isolated to truth-source normalization and audit outputs only.
+- Files updated:
+  - `pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_limited_entry_buck_pronghorn_permits.csv`
+  - `processed_data/le_buck_pronghorn_truth_source_audit.csv`
+  - `processed_data/le_buck_pronghorn_truth_source_audit.json`
+  - `WORK_LOG.md`
+- Validation summary:
+  - Python smoke tests run: `6`
+  - Python smoke tests failed: `0`
+  - Truth rows normalized: `66`
+  - Unique hunt codes audited: `66`
+  - Repo-side 2026 row mismatches: `0`
+- Results:
+  - All current repo-side 2026 limited-entry buck pronghorn values matched the supplied truth table.
+  - The largest group increase was `Parker Mtn`, moving from `200` total permits in 2025 to `250` in 2026.
+  - Other major shifts were `West Desert, Snake Valley` from `120` to `132`, `Fillmore, Oak Creek South` from `75` to `85`, `North Slope, Three Corners/West Daggett` from `64` to `54`, and `Vernal` from `110` to `100`.
+  - The normalized audit cleanly separates unchanged groups from minor, significant, and major permit changes for downstream review.
+
+## Doe Pronghorn Truth-Source Normalization
+- Timestamp (UTC): 2026-05-22T00:30:00Z
+- Scope:
+  - Added the user-verified 2025-to-2026 doe pronghorn permit table as a normalized truth-source CSV, including 2026 season dates.
+  - Generated a row-by-row and group-level audit against the current 2026 linked hunt reference.
+  - Kept the work isolated to truth-source normalization and audit outputs only.
+- Files updated:
+  - `pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_doe_pronghorn_permits.csv`
+  - `processed_data/doe_pronghorn_truth_source_audit.csv`
+  - `processed_data/doe_pronghorn_truth_source_audit.json`
+  - `WORK_LOG.md`
+- Validation summary:
+  - Python smoke tests run: `6`
+  - Python smoke tests failed: `0`
+  - Truth rows normalized: `16`
+  - Unique hunt codes audited: `16`
+  - Repo-side 2026 row mismatches: `13`
+- Results:
+  - The current linked reference does not yet match the supplied doe-pronghorn truth table.
+  - The affected hunt codes are `PD1000`, `PD1012`, `PD1017`, `PD1039`, `PD1044`, `PD1057`, and `PD1059`.
+  - The largest group decrease was `Box Elder, Snowville`, moving from `80` total permits in 2025 to `40` in 2026.
+  - `Panguitch Lake/Zion, North` appears as a new 2026 quota row at `40` total permits and is absent from the current linked reference.
+  - Other notable changes were `Box Elder, West` from `55` to `35`, `Vernal-Ouray Valley` from `10` to `5`, `Parker Mtn, Highlands` from `75` to `70`, and `Parker Mtn, Plains` from `70` to `75`.
+
+## Antlerless Deer Truth-Source Normalization
+- Timestamp (UTC): 2026-05-22T01:00:00Z
+- Scope:
+  - Added the user-verified 2025-to-2026 antlerless deer permit table as a normalized truth-source CSV, including 2026 season dates.
+  - Generated a hunt-code-level total-permit audit against the current 2026 linked hunt reference.
+  - Kept the work isolated to truth-source normalization and audit outputs only.
+- Files updated:
+  - `pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_deer_permits.csv`
+  - `processed_data/antlerless_deer_truth_source_audit.csv`
+  - `processed_data/antlerless_deer_truth_source_audit.json`
+  - `WORK_LOG.md`
+- Validation summary:
+  - Python smoke tests run: `6`
+  - Python smoke tests failed: `0`
+  - Truth rows normalized: `17`
+  - Unique hunt codes audited: `17`
+  - Repo-side 2026 row mismatches: `4`
+- Results:
+  - The current linked reference matches most of the supplied antlerless-deer truth table, but it still disagrees on `DA1009`, `DA1018`, and `DA1033`, and it is missing `DA1051`.
+  - `Beaver City` appears as a new 2026 row at `10` total permits after normalizing the 2025 dashes to zero for audit use.
+  - `Pine Valley, Enterprise` dropped from `25` to `20`, and `Pine Valley, New Harmony` dropped from `20` to `15`.
+  - `San Juan, Monticello` hunt `DA1033` increased from `5` to `10`.
+  - Grand total moved from `340` permits in 2025 to `345` in 2026.
+
+## Antlerless Elk Truth-Source Normalization
+- Timestamp (UTC): 2026-05-22T01:30:00Z
+- Scope:
+  - Added the user-verified 2025-to-2026 standard antlerless elk permit table as a normalized truth-source CSV with season dates and residency splits.
+  - Added the user-verified 2025-to-2026 private-lands-only antlerless elk permit table as a separate normalized truth-source CSV.
+  - Generated separate audits for the standard antlerless-elk surface and the private-lands-only surface against the current 2026 linked hunt reference.
+- Files updated:
+  - `pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_elk_permits.csv`
+  - `pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_private_lands_only_antlerless_elk_permits.csv`
+  - `processed_data/antlerless_elk_truth_source_audit.csv`
+  - `processed_data/antlerless_elk_truth_source_audit.json`
+  - `processed_data/private_lands_antlerless_elk_truth_source_audit.csv`
+  - `processed_data/private_lands_antlerless_elk_truth_source_audit.json`
+  - `WORK_LOG.md`
+- Validation summary:
+  - Python smoke tests run: `6`
+  - Python smoke tests failed: `0`
+  - Standard antlerless elk truth rows normalized: `116`
+  - Standard antlerless elk repo-side mismatch rows: `74`
+  - Private-lands-only antlerless elk truth rows normalized: `26`
+  - Private-lands-only antlerless elk repo-side mismatch rows: `5`
+- Results:
+  - The standard antlerless-elk linked reference is still stale for many of the largest 2026 changes and several new 2026 rows.
+  - The affected standard antlerless-elk hunt codes include `EA1007`, `EA1010`, `EA1011`, `EA1021`, `EA1033`, `EA1035`, `EA1053`, `EA1054`, `EA1063`, `EA1069`, `EA1193`, `EA1208`, `EA1222`, `EA1223`, `EA1251`, `EA1266`, `EA1267`, `EA1269`, `EA1284`, `EA1285`, `EA1286`, `EA1287`, `EA1288`, `EA1289`, `EA1290`, `EA1291`, `EA1292`, `EA1293`, `EA1294`, `EA1295`, `EA1296`, `EA1297`, `EA1298`, `EA1299`, `EA1300`, `EA2033`, and `EA2036`.
+  - The largest standard-antlerless increases were `EA1007` Wasatch Mtns, Currant Creek from `0` to `200`, `EA1267` Cache from `90` to `200`, `EA1269` Ogden (excludes Hyrum) from `200` to `300`, and multiple new Wasatch / Manti / Mt Dutton rows promoted from zero in 2025 to active 2026 quotas.
+  - Major standard-antlerless decreases include `EA2033` Kamas archery from `250` to `200`, `EA1033` Kamas from `125` to `100`, `EA1035` Kamas, Oakley from `125` to `100`, and `EA1069` Panguitch Lake from `35` to `25`.
+  - The private-lands-only mismatch cluster is narrower and limited to `EA2012`, `EA2015`, `EA2016`, `EA2027`, and `EA2046`.
+  - The largest private-lands-only moves were `EA2012` Wasatch Mtns, West-Central from `400` to `500`, `EA2027` Cache from `300` to `250`, `EA2016` Nebo from `275` to `325`, `EA2046` Box Elder, Sawtooth from `25` to `50`, and `EA2015` Paunsaugunt from `100` to `75`.
+
+## Antlerless Elk Control Unit Truth-Source Overlay
+- Timestamp (UTC): 2026-05-22T02:00:00Z
+- Scope:
+  - Added the user-verified 2026 antlerless elk control-unit list as a normalized truth-source CSV.
+  - Mapped each listed control unit against the normalized standard antlerless elk and private-lands-only antlerless elk truth-source tables.
+  - Generated an audit showing which hunt codes currently fall under each control unit.
+- Files updated:
+  - `pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_elk_control_units.csv`
+  - `processed_data/antlerless_elk_control_unit_audit.csv`
+  - `processed_data/antlerless_elk_control_unit_audit.json`
+  - `WORK_LOG.md`
+- Validation summary:
+  - Python smoke tests run: `6`
+  - Python smoke tests failed: `0`
+  - Control units listed: `9`
+  - Control units matched to normalized 2026 truth rows: `8`
+  - Unmatched control units: `Henry Mtns`
+- Results:
+  - `Box Elder, Grouse Creek` is correctly captured as a new control unit and maps to antlerless elk hunt code `EA1287`.
+  - `Chalk Creek`, `East Canyon`, `Kamas`, `Morgan-South Rich`, `Pine Valley`, and `Zion` all map into both the standard antlerless elk and private-lands-only antlerless elk truth surfaces.
+  - `Ogden` maps into the standard antlerless elk surface through `EA1063`, `EA1064`, and `EA1269`.
+  - `Henry Mtns` does not currently map to any normalized 2026 antlerless elk or private-lands-only antlerless elk truth rows and should be treated as an unmatched control-unit note until a corresponding permit row is surfaced.
+
+## Antlerless Moose Truth-Source Normalization
+- Timestamp (UTC): 2026-05-22T02:15:00Z
+- Scope:
+  - Added the user-verified 2025-to-2026 antlerless moose permit table as a normalized truth-source CSV with season dates and residency splits.
+  - Generated a row-by-row audit against the current 2026 linked hunt reference.
+  - Kept the work isolated to truth-source normalization and audit outputs only.
+- Files updated:
+  - `pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_moose_permits.csv`
+  - `processed_data/antlerless_moose_truth_source_audit.csv`
+  - `processed_data/antlerless_moose_truth_source_audit.json`
+  - `WORK_LOG.md`
+- Validation summary:
+  - Python smoke tests run: `6`
+  - Python smoke tests failed: `0`
+  - Truth rows normalized: `3`
+  - Unique hunt codes audited: `3`
+  - Repo-side 2026 row mismatches: `0`
+- Results:
+  - All current linked-reference antlerless moose values match the supplied 2026 truth table.
+  - `Morgan-South Rich` remains unchanged in both any-legal-weapon and archery surfaces.
+  - `Wasatch Mtns, Salt Lake-Timpanogos` remains unchanged at `5` total permits.
+  - Grand total remains unchanged from `15` in 2025 to `15` in 2026.
+
+## Ewe Rocky Mountain Bighorn Sheep Truth-Source Normalization
+- Timestamp (UTC): 2026-05-22T02:30:00Z
+- Scope:
+  - Added the user-verified 2025-to-2026 ewe Rocky Mountain bighorn sheep permit table as a normalized truth-source CSV with season dates and residency splits.
+  - Generated a row-by-row audit against the current 2026 linked hunt reference.
+  - Kept the work isolated to truth-source normalization and audit outputs only.
+- Files updated:
+  - `pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_ewe_rocky_mountain_bighorn_sheep_permits.csv`
+  - `processed_data/ewe_rocky_sheep_truth_source_audit.csv`
+  - `processed_data/ewe_rocky_sheep_truth_source_audit.json`
+  - `WORK_LOG.md`
+- Validation summary:
+  - Python smoke tests run: `6`
+  - Python smoke tests failed: `0`
+  - Truth rows normalized: `1`
+  - Unique hunt codes audited: `1`
+  - Repo-side 2026 row mismatches: `0`
+- Results:
+  - All current linked-reference ewe Rocky Mountain bighorn sheep values match the supplied 2026 truth table.
+  - `Box Elder, Newfoundland Mtn` remains unchanged at `5` total permits.
+  - Grand total remains unchanged from `5` in 2025 to `5` in 2026.
+
+## 2026 Permit Truth-Source Promotion
+- Timestamp (UTC): 2026-05-22T09:00:00Z
+- Scope:
+  - Added `engine/utah/truth_source_promotion.py` as the reusable promotion and re-audit module for 2026 RAC permit truth tables.
+  - Promoted corrected 2026 permit counts into the live runtime CSV surfaces:
+    - `processed_data/hunt_unit_reference_linked.csv`
+    - `processed_data/hunt_master_enriched.csv`
+    - `processed_data/point_ladder_view.csv`
+    - `processed_data/draw_reality_engine.csv`
+  - Regenerated audits for doe pronghorn, antlerless deer, standard antlerless elk, private-lands-only antlerless elk, antlerless moose, ewe Rocky Mountain bighorn sheep, and the antlerless elk control-unit overlay.
+  - Added targeted tests for truth-source promotion, metadata propagation, private-lands-only structure, and control-unit overlay handling.
+- Files updated:
+  - `engine/utah/truth_source_promotion.py`
+  - `tests/utah/test_truth_source_promotion.py`
+  - `docs/data_feed_contract.md`
+  - `docs/predictive_engine_design.md`
+  - `processed_data/hunt_unit_reference_linked.csv`
+  - `processed_data/hunt_master_enriched.csv`
+  - `processed_data/point_ladder_view.csv`
+  - `processed_data/draw_reality_engine.csv`
+  - `processed_data/truth_source_promotion_summary.json`
+  - `processed_data/doe_pronghorn_truth_source_audit.csv`
+  - `processed_data/doe_pronghorn_truth_source_audit.json`
+  - `processed_data/antlerless_deer_truth_source_audit.csv`
+  - `processed_data/antlerless_deer_truth_source_audit.json`
+  - `processed_data/antlerless_elk_truth_source_audit.csv`
+  - `processed_data/antlerless_elk_truth_source_audit.json`
+  - `processed_data/private_lands_antlerless_elk_truth_source_audit.csv`
+  - `processed_data/private_lands_antlerless_elk_truth_source_audit.json`
+  - `processed_data/antlerless_moose_truth_source_audit.csv`
+  - `processed_data/antlerless_moose_truth_source_audit.json`
+  - `processed_data/ewe_rocky_sheep_truth_source_audit.csv`
+  - `processed_data/ewe_rocky_sheep_truth_source_audit.json`
+  - `processed_data/antlerless_elk_control_unit_audit.csv`
+  - `processed_data/antlerless_elk_control_unit_audit.json`
+  - `WORK_LOG.md`
+- Validation summary:
+  - Targeted promotion tests passed: `20`
+  - Corrected-family mismatches after promotion:
+    - doe pronghorn: `0`
+    - antlerless deer: `0`
+    - standard antlerless elk: `0`
+    - private-lands-only antlerless elk: `0`
+    - antlerless moose: `0`
+    - ewe Rocky Mountain bighorn sheep: `0`
+  - Private-lands-only duplicated-by-residency structural errors after promotion: `0`
+- Runtime promotion results:
+  - Doe pronghorn rows corrected from stale overlay values and `PD1039` was added to all runtime surfaces.
+  - Antlerless deer rows corrected and `DA1051` was added to all runtime surfaces.
+  - Standard antlerless elk rows were corrected across large quota shifts and the missing 2026 rows such as `EA1287`, `EA1288`, `EA1289`, `EA1290`, `EA1291`, `EA1292`, `EA1293`, `EA1294`, `EA1295`, `EA1296`, `EA1297`, `EA1298`, `EA1299`, and `EA1300` were added where supported by the truth source.
+  - Private-lands-only antlerless elk rows were converted to explicit availability-only runtime handling with:
+    - `hunt_category = PRIVATE_LANDS_ONLY_ANTLERLESS_ELK`
+    - `draw_model_class = AVAILABILITY_ONLY`
+    - `probability_model = NONE`
+    - no duplicated total values in `public_permits_2026` across resident and nonresident rows
+  - Corrected and added rows now carry truth-source metadata including `permit_source`, `quota_source`, `truth_source_file`, `truth_source_status`, `data_quality_grade`, and `reason_codes`.
+- Locked families preserved:
+  - Limited-entry bull elk HAMSS / September archery remains clean.
+  - Limited-entry buck pronghorn remains clean.
+  - Antlerless moose remains zero mismatch.
+  - Ewe Rocky Mountain bighorn sheep remains zero mismatch.
+- Control-unit overlay handling:
+  - `Box Elder, Grouse Creek` remains marked `new_this_year = YES` and maps to `EA1287`.
+  - `Henry Mtns` remains an unresolved control-unit overlay item with no fabricated 2026 permit row.

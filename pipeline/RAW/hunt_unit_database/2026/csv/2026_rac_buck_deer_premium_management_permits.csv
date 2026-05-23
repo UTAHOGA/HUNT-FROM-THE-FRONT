@@ -1,6 +1,6 @@
 ﻿permit_group,weapon,hunt_code,permits_2025_res,permits_2025_nr,permits_2025_total,permits_2026_res,permits_2026_nr,permits_2026_total,source_document,source_note
 Antelope Island Premium,Any Legal Weapon,DB1002,1,0,1,1,0,1,2026-04-rac-packet.pdf,User-provided supplemental RAC premium/management permit table for 2026.
-Antelope Island Management,Any Legal Weapon,DB1121,,,,2,0,2,2026-04-rac-packet.pdf,User-provided supplemental RAC premium/management permit table for 2026.
+Antelope Island Management,Any Legal Weapon,DB1121,0,0,0,2,0,2,2026-04-rac-packet.pdf,User-provided supplemental RAC premium/management permit table for 2026.
 Henry Mtns Premium,Any Legal Weapon,DB1003,22,3,25,24,3,27,2026-04-rac-packet.pdf,User-provided supplemental RAC premium/management permit table for 2026.
 Henry Mtns Premium,Archery,DB1000,8,1,9,8,1,9,2026-04-rac-packet.pdf,User-provided supplemental RAC premium/management permit table for 2026.
 Henry Mtns Premium,Multiseason,DB1007,1,0,1,1,0,1,2026-04-rac-packet.pdf,User-provided supplemental RAC premium/management permit table for 2026.
@@ -11,5 +11,6 @@ Paunsaugunt Premium,Archery,DB1001,26,3,29,26,3,29,2026-04-rac-packet.pdf,User-p
 Paunsaugunt Premium,Multiseason,DB1008,3,1,4,3,1,4,2026-04-rac-packet.pdf,User-provided supplemental RAC premium/management permit table for 2026.
 Paunsaugunt Premium,Muzzleloader,DB1006,26,3,29,26,3,29,2026-04-rac-packet.pdf,User-provided supplemental RAC premium/management permit table for 2026.
 Paunsaugunt Management,Any Legal Weapon,DB1010,24,3,27,30,3,33,2026-04-rac-packet.pdf,User-provided supplemental RAC premium/management permit table for 2026.
+Paunsaugunt Cactus,Any Legal Weapon,DB1058,27,3,30,18,2,20,2026-04-rac-packet.pdf,User-provided supplemental RAC premium/management permit table for 2026.
 Paunsaugunt Management,Archery,DB1073,8,1,9,10,1,11,2026-04-rac-packet.pdf,User-provided supplemental RAC premium/management permit table for 2026.
 Paunsaugunt Management,Muzzleloader,DB1074,8,1,9,10,1,11,2026-04-rac-packet.pdf,User-provided supplemental RAC premium/management permit table for 2026.
