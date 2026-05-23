@@ -2279,6 +2279,21 @@
   - `node --check hunt-research.js` passed.
   - `python -m compileall tests hunt-research.js` passed.
 
+## Hunt Research Distinct Ladder Highlight Colors
+- Timestamp (UTC): 2026-05-23T18:35:00Z
+- Scope:
+  - Changed the hunter-selected point row to a pale blue highlight with a stronger blue accent.
+  - Kept the predicted guaranteed-to-draw line orange and preserved the dark-brown outline.
+  - Added a combined-row treatment so rows that are both `YOU` and `Guaranteed` show both blue and orange cues.
+  - Kept this visual-only; no draw odds, prediction math, or runtime data files changed.
+- Files:
+  - `research.html`
+  - `tests/utah/test_frontend_probability_selection.py`
+- Validation:
+  - `python -m pytest tests/utah/test_frontend_probability_selection.py -q` passed: `32`.
+  - `node --check hunt-research.js` passed.
+  - `python -m compileall tests hunt-research.js` passed.
+
 ## Repo File Retention And LFS Audit
 - Timestamp (UTC): 2026-05-23T14:55:00Z
 - Scope:

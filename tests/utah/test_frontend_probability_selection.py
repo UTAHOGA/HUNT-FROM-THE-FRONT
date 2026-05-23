@@ -294,6 +294,34 @@ def test_highlighted_ladder_boxes_use_dark_brown_outline():
     assert "border-color: var(--highlight-outline-brown);" in guaranteed_marker_block
 
 
+def test_hunter_points_and_guaranteed_line_use_distinct_highlight_colors():
+    html = RESEARCH_HTML_PATH.read_text(encoding="utf-8")
+    assert "--hunter-points-blue: rgb(219, 242, 255);" in html
+    assert "--hunter-points-blue-strong: rgb(0, 96, 140);" in html
+    assert "--guaranteed-line-orange: rgb(255, 140, 20);" in html
+
+    user_row_block = _block(
+        html,
+        ".report-table tbody tr.is-user-row {",
+        ".report-table tbody tr.is-cutoff-row {",
+    )
+    guaranteed_row_block = _block(
+        html,
+        ".report-table tbody tr.is-guaranteed-row {",
+        ".report-table tbody tr.is-user-row {",
+    )
+    user_guaranteed_block = _block(
+        html,
+        ".report-table tbody tr.is-user-row.is-guaranteed-row {",
+        ".report-table tbody tr.is-guaranteed-row td,",
+    )
+    assert "background: var(--hunter-points-blue);" in user_row_block
+    assert "var(--hunter-points-blue-strong)" in user_row_block
+    assert "rgba(255, 140, 20" in guaranteed_row_block
+    assert "var(--hunter-points-blue)" in user_guaranteed_block
+    assert "rgba(255, 140, 20" in user_guaranteed_block
+
+
 def test_no_status_max_pool_return_100_shortcut():
     text = _frontend_text()
     assert "row.status === 'MAX POOL'" not in _block(text, "function getDisplayedOdds(row)", "function isPreferenceAntlerless(meta)")
