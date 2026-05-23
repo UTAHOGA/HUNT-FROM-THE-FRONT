@@ -1,5 +1,74 @@
 # WORK LOG
 
+## Mixed Predictive Draw-Odds Engine 2026
+- Timestamp (UTC): 2026-05-23T14:20:00Z
+- Scope:
+  - Built the additive Utah mixed predictive draw-odds engine under `engine/utah_predictive_mixed/`.
+  - Combined prior-year DWR draw behavior, official 2026 RAC/DATABASE quota inputs, applicant rollover / point-bank movement, harvest-quality demand pressure, and calibrated mixed probability.
+  - Kept prior-year draw behavior as the highest-weighted signal with default weights:
+    - prior-year behavior `0.60`
+    - quota change `0.20`
+    - applicant rollover `0.15`
+    - harvest quality / demand `0.05`
+  - Preserved the rule that harvest features are quality/demand signals only and do not overwrite probability or quota/allotment fields.
+  - Preserved the rule that Expo, Conservation, Sportsman, CWMU, landowner, mitigation, private, and boundary overlays are not public draw quota.
+  - Preserved the rule that MAX POOL status text does not force `100%`.
+  - Preserved the rule that 2025 historical random-pool success is not copied into 2026 point-specific odds.
+- Scripts/modules:
+  - `scripts/build_mixed_predictive_engine_2026.py`
+  - `engine/utah_predictive_mixed/__init__.py`
+  - `engine/utah_predictive_mixed/models.py`
+  - `engine/utah_predictive_mixed/prior_year.py`
+  - `engine/utah_predictive_mixed/quota.py`
+  - `engine/utah_predictive_mixed/rollover.py`
+  - `engine/utah_predictive_mixed/harvest_features.py`
+  - `engine/utah_predictive_mixed/mixed_probability.py`
+  - `engine/utah_predictive_mixed/backtest.py`
+  - `engine/utah_predictive_mixed/materialize.py`
+- Outputs:
+  - `data_model/runtime_drafts/mixed_predictive_engine_2026.predictions.csv`
+  - `data_model/runtime_drafts/mixed_predictive_engine_2026.materialized.csv`
+  - `data_model/runtime_drafts/mixed_predictive_engine_2026.audit.csv`
+  - `data_model/runtime_drafts/mixed_predictive_engine_2026.summary.json`
+  - `processed_data/ml_draw_predictions_v1.csv`
+  - `processed_data/draw_reality_engine_predictive_v2.csv`
+  - `processed_data/point_ladder_view.csv`
+  - `processed_data/mixed_predictive_engine_2026_summary.json`
+  - `processed_data/mixed_predictive_engine_2026_audit.csv`
+  - `processed_data/mixed_predictive_engine_2026_audit.md`
+- Key results:
+  - Prediction rows: `27940`.
+  - MODELED_BONUS rows: `25610`.
+  - MODELED_PREFERENCE rows: `1605`.
+  - MODELED_SPORTSMAN_DRAW rows: `10`.
+  - Availability/allocation rows: `178`.
+  - Prior-year exact matches: `27940`.
+  - Quota-adjusted rows: `16145`.
+  - Rollover-adjusted rows: `22719`.
+  - Harvest-adjusted rows: `22719`.
+  - Rows using fallback harvest features: `120`.
+  - Rows with no harvest history: `0`.
+  - Duplicate key count: `0`.
+  - Probability field guardrail: `PASS`.
+  - Special permit guardrail: `PASS`.
+  - Publish ready for mixed predictive engine: `true`.
+- Spot checks:
+  - `DB1004` reconciles public draw `80` plus Expo `3` to all-class total `83`; Conservation was not used to explain the gap.
+  - `EB3024` Resident point `30` is `max_pool_guaranteed`.
+  - `EB3024` Resident point `29` is `max_pool_cutoff_mixed` with `p_max_pool_mean = 0.142857`, `p_random_mean = 0.006257`, and `projected_applicants = 21`.
+  - `EB3024` Resident point `28` is `random_pool`.
+  - `EB3022` uses `quota_source_status = official`, `quota_2026_total = 130`, and source file `pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_limited_entry_bull_elk_permits.csv`.
+- Docs/tests:
+  - Updated `HYBRID_ML_V1.md`, `docs/predictive_engine_design.md`, `docs/data_feed_contract.md`, and `ENGINE_RULES_SPEC.md`.
+  - Added focused mixed-engine tests under `tests/utah_predictive_mixed/`.
+- Validation:
+  - `python scripts/build_mixed_predictive_engine_2026.py` passed.
+  - `python -m pytest tests/utah_predictive_mixed -q` passed: `19`.
+  - `python -m pytest tests/utah_bonus_predictive tests/utah_draw_predictive tests/utah/test_frontend_probability_selection.py -q` passed: `168`.
+  - `python -m compileall engine scripts tests` passed.
+  - `node --check hunt-research.js` passed.
+  - `npm.cmd run verify:permits-2026` passed with files audited `11`, rows updated `156`, mismatches after sync `0`, and promotion blockers `0`.
+
 ## All RAC 2026 Permit Cumulative Vs DATABASE Comparison
 - Timestamp (UTC): 2026-05-23T06:14:00Z
 - Scope:

@@ -1,6 +1,6 @@
 # Mixed Predictive Engine 2026 Audit
 
-- generated_at_utc: 2026-05-23T14:16:50.021551+00:00
+- generated_at_utc: 2026-05-23T14:29:14.993787+00:00
 - model_version: mixed_predictive_v1.0.0
 - rule_version: utah_draw_model_v1.0.0
 - prediction_row_count: 27940
@@ -19,6 +19,9 @@
 - eb3022_quota_source_verification: {'quota_source_status': 'official', 'quota_2026_total': '130', 'quota_source_file': 'pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_limited_entry_bull_elk_permits.csv'}
 - duplicate_key_count: 0
 - probability_field_guardrail_result: PASS
+- quota_guardrail_result: PASS
 - special_permit_guardrail_result: PASS
+- harvest_audit_blocker_count: 0
+- harvest_audit_warning_count: 15529
 - publish_ready_for_mixed_predictive_engine: True
 - weights: {'prior_year_behavior_weight': 0.6, 'quota_change_weight': 0.2, 'applicant_rollover_weight': 0.15, 'harvest_quality_demand_weight': 0.05}

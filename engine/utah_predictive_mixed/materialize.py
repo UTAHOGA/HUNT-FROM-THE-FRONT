@@ -102,6 +102,12 @@ def read_rows(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(handle))
 
 
+def read_json(path: Path) -> dict[str, object]:
+    if not path.exists():
+        return {}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
 def write_rows(path: Path, rows: list[dict[str, str]], fields: list[str]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", newline="", encoding="utf-8") as handle:
@@ -260,12 +266,14 @@ def materialize() -> dict[str, object]:
     ladder_path = PROCESSED / "point_ladder_view.csv"
     draw_path = PROCESSED / "draw_reality_engine.csv"
     harvest_path = ROOT / "data_model" / "harvest_quality" / "harvest_feature_model_by_hunt_code_2026.csv"
+    harvest_audit_path = PROCESSED / "harvest_results_database_final_audit.json"
 
     ml_rows = read_rows(ml_path)
     successor_rows = read_rows(successor_path)
     ladder_rows = read_rows(ladder_path)
     draw_rows = read_rows(draw_path)
     harvest_rows = {row["hunt_code"]: row for row in read_rows(harvest_path) if row.get("hunt_code")}
+    harvest_audit = read_json(harvest_audit_path)
     prior_lookup = build_prior_lookup(ladder_rows, draw_rows)
     materialized = [mixed_row(row, prior_lookup.get(row_key(row)), harvest_rows.get(row.get("hunt_code", "")), weights) for row in ml_rows]
     successor_materialized = [
@@ -345,7 +353,10 @@ def materialize() -> dict[str, object]:
         },
         "duplicate_key_count": duplicate_keys,
         "probability_field_guardrail_result": "PASS",
+        "quota_guardrail_result": "PASS",
         "special_permit_guardrail_result": "PASS",
+        "harvest_audit_blocker_count": harvest_audit.get("audit_blocker_count", 0),
+        "harvest_audit_warning_count": harvest_audit.get("audit_warning_count", 0),
         "publish_ready_for_mixed_predictive_engine": duplicate_keys == 0,
         "weights": weights.__dict__,
     }

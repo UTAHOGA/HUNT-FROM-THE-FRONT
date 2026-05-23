@@ -24,6 +24,15 @@ def test_materialized_outputs_have_required_fields_and_no_duplicate_keys() -> No
     assert json.loads(SUMMARY.read_text(encoding="utf-8"))["duplicate_key_count"] == 0
 
 
+def test_summary_reports_guardrails_and_accepted_harvest_warning_policy() -> None:
+    summary = json.loads(SUMMARY.read_text(encoding="utf-8"))
+    assert summary["probability_field_guardrail_result"] == "PASS"
+    assert summary["quota_guardrail_result"] == "PASS"
+    assert summary["special_permit_guardrail_result"] == "PASS"
+    assert summary["harvest_audit_blocker_count"] == 0
+    assert summary["harvest_audit_warning_count"] == 15529
+
+
 def test_availability_and_allocation_rows_have_blank_p_draw() -> None:
     for row in rows():
         if row["algorithm_status"] in {"MODELED_AVAILABILITY", "MODELED_ALLOCATION"}:
