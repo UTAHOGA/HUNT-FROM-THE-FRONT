@@ -2,6 +2,11 @@
 <html lang="en">
 <head>
 <script>
+  if (window.location.hash === '#google-maps') {
+    history.replaceState(null, '', window.location.pathname + window.location.search);
+  }
+</script>
+<script>
   // 1. Force the app to recognize the maps route if no hash is present
   if (!window.location.hash || window.location.hash === '#/') {
     window.location.hash = '#google-maps';
