@@ -25,6 +25,7 @@
       --research-bad: #e53935;
       --research-info: #1b5fb5;
       --guaranteed-line-orange: rgb(255, 140, 20);
+      --highlight-outline-brown: rgb(55, 34, 22);
       --research-shadow: var(--shadow);
       --research-radius: 22px;
       --research-pill: 999px;
@@ -803,7 +804,7 @@
 
     .report-table tbody tr.is-user-row {
         background: rgba(255, 255, 255, 0.96);
-        box-shadow: inset 3px 0 0 #f4c542;
+        box-shadow: inset 0 0 0 2px var(--highlight-outline-brown), inset 4px 0 0 #f4c542;
         color: #2f1d12;
       }
 
@@ -819,13 +820,13 @@
           background:
             linear-gradient(90deg, rgba(255, 140, 20, 0.26) 0, rgba(255, 140, 20, 0.14) 28px, rgba(255, 248, 241, 0.96) 28px, rgba(255, 248, 241, 0.96) 100%);
           color: #2f1d12;
-          box-shadow: inset 0 0 0 1px rgba(255, 140, 20, 0.72);
+          box-shadow: inset 0 0 0 2px var(--highlight-outline-brown), inset 8px 0 0 rgba(255, 140, 20, 0.72);
         }
 
     .report-table tbody tr.is-user-row {
       background: #fff5b8 !important;
       font-weight: 800;
-      box-shadow: inset 4px 0 0 #d19a00;
+      box-shadow: inset 0 0 0 2px var(--highlight-outline-brown), inset 5px 0 0 #d19a00;
     }
     .report-table tbody tr.jump-flash td {
       animation: ladderJumpFlash .9s ease;
@@ -839,7 +840,7 @@
           background:
             linear-gradient(90deg, rgba(255, 214, 64, 0.22) 0, rgba(255, 214, 64, 0.10) 18px, rgba(255, 140, 20, 0.24) 18px, rgba(255, 248, 241, 0.98) 38px, rgba(255, 248, 241, 0.98) 100%);
           color: #2f1d12;
-          box-shadow: inset 0 0 0 1px rgba(255, 140, 20, 0.76);
+          box-shadow: inset 0 0 0 2px var(--highlight-outline-brown), inset 5px 0 0 #d19a00, inset 12px 0 0 rgba(255, 140, 20, 0.78);
         }
 
     .report-table tbody tr.is-guaranteed-row td,
@@ -878,9 +879,10 @@
     }
 
     .marker-pill.user {
-        border-color: rgba(244, 197, 66, 0.95);
+        border-color: var(--highlight-outline-brown);
         background: rgba(255, 249, 222, 0.98);
         color: #a06c00;
+        box-shadow: 0 0 0 1px var(--highlight-outline-brown);
       }
 
     .marker-pill.cutoff {
@@ -890,17 +892,17 @@
     }
 
     .marker-pill.guaranteed {
-          border-color: rgba(255, 140, 20, 0.96);
+          border-color: var(--highlight-outline-brown);
           background: rgba(255, 246, 240, 0.98);
           color: var(--guaranteed-line-orange);
-          box-shadow: 0 0 0 1px rgba(255, 140, 20, 0.30);
+          box-shadow: 0 0 0 1px var(--highlight-outline-brown), 0 0 0 3px rgba(255, 140, 20, 0.22);
         }
 
     .marker-pill.user {
-          border-color: rgba(255, 214, 64, 0.95);
+          border-color: var(--highlight-outline-brown);
           background: rgba(47, 29, 18, 0.94);
           color: #ffd640;
-          box-shadow: 0 0 0 1px rgba(255, 214, 64, 0.18);
+          box-shadow: 0 0 0 1px var(--highlight-outline-brown), 0 0 0 3px rgba(255, 214, 64, 0.18);
         }
 
     .marker-pill.sources {

@@ -2266,6 +2266,19 @@
   - `python -m compileall tests hunt-research.js` passed.
   - Browser visual pass was attempted, but the in-app browser text-entry path was blocked by its virtual clipboard limitation; static CSS regression covers the exact requested RGB value.
 
+## Hunt Research Highlight Outline
+- Timestamp (UTC): 2026-05-23T18:20:00Z
+- Scope:
+  - Added a dark-brown outline to highlighted Hunt Research point-ladder boxes, including selected-user rows, guaranteed rows, and `YOU` / `Guaranteed` marker pills.
+  - Kept this visual-only; no draw odds, prediction math, or runtime data files changed.
+- Files:
+  - `research.html`
+  - `tests/utah/test_frontend_probability_selection.py`
+- Validation:
+  - `python -m pytest tests/utah/test_frontend_probability_selection.py -q` passed: `31`.
+  - `node --check hunt-research.js` passed.
+  - `python -m compileall tests hunt-research.js` passed.
+
 ## Repo File Retention And LFS Audit
 - Timestamp (UTC): 2026-05-23T14:55:00Z
 - Scope:
