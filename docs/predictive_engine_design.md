@@ -31,6 +31,9 @@ This repository is moving from a legacy research-page lookup system to a Utah pr
   - audit again
   - zero mismatches for corrected families
 - This flow updates permit overlays only. It does not change modeled draw math by itself.
+- Current-year RAC allotment tables are the preferred source for available 2026 permits when a direct `hunt_code` row exists. They are active quota inputs for current-year draw-odds behavior. Runtime files also expose them separately from historical draw-result permit fields using `permit_allotment_2026_res`, `permit_allotment_2026_nr`, and `permit_allotment_2026_total`.
+- When the RAC source provides only a total permit value, the resident/nonresident allotment fields stay blank. The engine must not infer a split from the total.
+- When a direct RAC current-year allotment is unavailable, runtime files may fall back to existing `permits_2026_*` values and must mark that fallback in `permit_allotment_2026_source`.
 
 ## Runtime Promotion Rules
 
@@ -61,7 +64,7 @@ This repository is moving from a legacy research-page lookup system to a Utah pr
 - The UI should prefer `display_odds_pct`, then `p_draw_mean`, then `odds_2026_projected`, then `max_pool_projection_2026`, then `random_draw_odds_2026`, then `random_draw_projection_2026`.
 - All user-facing draw odds should render in combined `~1 in X or Y%` format rather than percent-only text.
 - `status = MAX POOL` is descriptive only and does not imply a guarantee.
-- Permit-source promotion does not change probability math; it only changes the permit reference surfaces.
+- Permit-source promotion does not change probability formulas. When RAC current-year allotments exist, it changes the quota input used by the existing draw simulator and point-ladder probability calculations.
 
 ## Current limitations
 

@@ -8,6 +8,7 @@ from scripts.build_predictive_bonus_engine_v1 import build_predictions
 
 REPO = Path(__file__).resolve().parents[2]
 OFFICIAL_QUOTA_FILE = REPO / "pipeline" / "RAW" / "hunt_unit_database" / "2026" / "csv" / "DATABASE.csv"
+RAC_LE_ELK_FILE = REPO / "pipeline" / "RAW" / "hunt_unit_database" / "2026" / "csv" / "2026_rac_limited_entry_bull_elk_permits.csv"
 HISTORY_FILE = REPO / "data_model" / "runtime_drafts" / "draw_reality_engine_v2.csv"
 ML_OUTPUT = REPO / "processed_data" / "ml_draw_predictions_v1.csv"
 SUCCESSOR_OUTPUT = REPO / "processed_data" / "draw_reality_engine_predictive_v2.csv"
@@ -62,6 +63,10 @@ def test_official_2026_quota_source_file_exists_and_is_database_csv() -> None:
     assert "permits_2026_res" in _headers(OFFICIAL_QUOTA_FILE)
     assert "permits_2026_nr" in _headers(OFFICIAL_QUOTA_FILE)
     assert "permits_2026_total" in _headers(OFFICIAL_QUOTA_FILE)
+    assert RAC_LE_ELK_FILE.exists()
+    assert "permits_2026_res" in _headers(RAC_LE_ELK_FILE)
+    assert "permits_2026_nr" in _headers(RAC_LE_ELK_FILE)
+    assert "permits_2026_total" in _headers(RAC_LE_ELK_FILE)
 
 
 def test_materialized_outputs_include_official_quota_contract_fields() -> None:
@@ -81,8 +86,13 @@ def test_eb3022_resident_prediction_uses_official_2026_quota_not_2025_result() -
     assert row["quota_2026_random_pool"] == "65"
     assert row["quota_source_status"] == "official"
     assert row["quota_source_year"] == "2026"
-    assert row["quota_source_file"] == "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv"
+    assert row["quota_source_file"] == "pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_limited_entry_bull_elk_permits.csv"
+    assert row["permit_allotment_2026_res"] == "130"
+    assert row["permit_allotment_2026_nr"] == "15"
+    assert row["permit_allotment_2026_total"] == "145"
+    assert row["permit_allotment_2026_source"] == "2026_RAC_CURRENT_YEAR_ALLOTMENT"
     assert "OFFICIAL_2026_QUOTA_USED" in row["reason_codes"]
+    assert "RAC_CURRENT_YEAR_ALLOTMENT_USED" in row["reason_codes"]
 
 
 def test_2026_official_quota_fields_drive_cutoff_and_probability_outputs() -> None:
@@ -107,8 +117,20 @@ def test_quota_change_regression_changes_projected_probability() -> None:
         if row["hunt_code"] == "EB3022" and row["residency"] == "Resident"
     ]
     official_db = _db_row("EB3022")
-    quota_2025_like = dict(official_db, permits_2026_res="160", permits_2026_total="175")
-    quota_2026_official = dict(official_db, permits_2026_res="130", permits_2026_total="145")
+    quota_2025_like = dict(
+        official_db,
+        permits_2026_res="160",
+        permits_2026_total="175",
+        permit_allotment_2026_res="160",
+        permit_allotment_2026_total="175",
+    )
+    quota_2026_official = dict(
+        official_db,
+        permits_2026_res="130",
+        permits_2026_total="145",
+        permit_allotment_2026_res="130",
+        permit_allotment_2026_total="145",
+    )
 
     predictions_2025_quota, _ = build_predictions(
         history_rows,

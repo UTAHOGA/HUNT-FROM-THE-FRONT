@@ -68,10 +68,9 @@ def test_doe_pronghorn_pd1039_added_to_runtime_reference() -> None:
 def test_antlerless_deer_truth_source_promoted_to_runtime_reference() -> None:
     path = PROCESSED / "hunt_unit_reference_linked.csv"
     expected = {
-        "DA1009": "20",
-        "DA1018": "15",
-        "DA1033": "10",
-        "DA1051": "10",
+        "DA1009": "25",
+        "DA1018": "20",
+        "DA1033": "5",
     }
     for hunt_code, total in expected.items():
         resident = _row(path, hunt_code, "Resident")
@@ -82,11 +81,10 @@ def test_antlerless_deer_truth_source_promoted_to_runtime_reference() -> None:
         assert nonresident["permits_2026_total"] == total
 
 
-def test_antlerless_deer_da1051_added_to_runtime_reference() -> None:
+def test_antlerless_deer_da1051_not_present_in_runtime_reference() -> None:
     path = PROCESSED / "hunt_unit_reference_linked.csv"
     rows = _rows(path, "DA1051")
-    assert len(rows) == 2
-    assert all("TRUTH_SOURCE_ADDED_MISSING_RUNTIME_ROW" in row["reason_codes"] for row in rows)
+    assert rows == []
 
 
 def test_standard_antlerless_elk_truth_source_promoted_to_runtime_reference() -> None:
@@ -243,7 +241,7 @@ def test_truth_source_audits_zero_mismatches_after_promotion() -> None:
 def test_truth_source_rows_preserve_source_metadata() -> None:
     for path, hunt_code, residency in [
         (PROCESSED / "hunt_unit_reference_linked.csv", "PD1039", "Resident"),
-        (PROCESSED / "hunt_unit_reference_linked.csv", "DA1051", "Resident"),
+        (PROCESSED / "hunt_unit_reference_linked.csv", "DA1009", "Resident"),
         (PROCESSED / "hunt_unit_reference_linked.csv", "EA2012", "Resident"),
     ]:
         row = _row(path, hunt_code, residency)
@@ -293,10 +291,8 @@ def test_truth_source_promotion_does_not_change_probability_math(tmp_path: Path)
 
 def test_truth_source_dash_values_normalized_to_zero_for_delta_only() -> None:
     audit = _read_json(PROCESSED / "antlerless_deer_truth_source_audit.json")
-    beaver_city = next(item for item in audit["group_changes"] if item["permit_group"] == "Beaver City")
-    assert beaver_city["permits_2025_total"] == 0
-    row = _row(PROCESSED / "hunt_unit_reference_linked.csv", "DA1051", "Resident")
-    assert row["permits_2025_total"] == ""
+    assert all(item["permit_group"] != "Beaver City" for item in audit["group_changes"])
+    assert _rows(PROCESSED / "hunt_unit_reference_linked.csv", "DA1051") == []
 
 
 def test_truth_source_promotion_preserves_existing_columns() -> None:

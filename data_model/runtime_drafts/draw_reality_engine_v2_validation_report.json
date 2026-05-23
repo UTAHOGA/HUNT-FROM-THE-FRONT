@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-05-23T05:22:06.517609+00:00",
+  "generated_at_utc": "2026-05-23T08:05:05.207963+00:00",
   "input_v3_path": "data_truth/draw_results_truth/normalized/draw_results_long.csv",
   "input_v3_sha256": "68b89136a5663683c1f779bb45573bc1d3ef15e91b73fabd4f1677a8f19383e1",
   "output_v2_path": "data_model/runtime_drafts/draw_reality_engine_v2.csv",
@@ -16,8 +16,8 @@
   },
   "db_matched_rows_count": 163149,
   "db_matched_rows_missing_boundary_id_count": 0,
-  "hunt_code_not_in_2026_database_rows_count": 13604,
-  "hunt_code_not_in_2026_database_hunt_code_count": 222,
+  "hunt_code_not_in_2026_database_rows_count": 13572,
+  "hunt_code_not_in_2026_database_hunt_code_count": 220,
   "hunt_code_not_in_2026_database_hunt_codes_sample": [
     "BI6517",
     "BI6519",
@@ -123,7 +123,6 @@
     "DS6602",
     "DS6612",
     "EA1004",
-    "EA1007",
     "EA1008",
     "EA1009",
     "EA1034",
@@ -238,7 +237,6 @@
     "PD1036",
     "PD1037",
     "PD1038",
-    "PD1039",
     "PD1041",
     "PD1042"
   ],

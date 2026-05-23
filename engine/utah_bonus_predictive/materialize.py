@@ -10,6 +10,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from engine.utah_draw_predictive.classifier import sanitize_modeled_probability_fields
+from engine.utah.current_year_allotments import apply_current_year_allotments_to_rows
 from engine.utah_draw_predictive.bear import (
     BEAR_DRAW_SYSTEM_TYPE,
     CONSERVATION_OR_NON_PUBLIC,
@@ -653,9 +654,9 @@ def _replace_rows_by_draw_system_type(
 
 
 def _quota_info(row: dict[str, str]) -> tuple[bool, bool]:
-    raw_res = str(row.get("permits_2026_res", "")).strip()
-    raw_nr = str(row.get("permits_2026_nr", "")).strip()
-    raw_total = str(row.get("permits_2026_total", "")).strip()
+    raw_res = str(row.get("permit_allotment_2026_res") or row.get("permits_2026_res", "")).strip()
+    raw_nr = str(row.get("permit_allotment_2026_nr") or row.get("permits_2026_nr", "")).strip()
+    raw_total = str(row.get("permit_allotment_2026_total") or row.get("permits_2026_total", "")).strip()
     quota_blank = raw_res == "" and raw_nr == "" and raw_total == ""
     total = 0
     for value in (raw_res, raw_nr, raw_total):
@@ -752,6 +753,12 @@ def _build_coverage_report(
                 "permits_2026_res": "" if not db_row else db_row.get("permits_2026_res", ""),
                 "permits_2026_nr": "" if not db_row else db_row.get("permits_2026_nr", ""),
                 "permits_2026_total": "" if not db_row else db_row.get("permits_2026_total", ""),
+                "permit_allotment_2026_res": "" if not db_row else db_row.get("permit_allotment_2026_res", ""),
+                "permit_allotment_2026_nr": "" if not db_row else db_row.get("permit_allotment_2026_nr", ""),
+                "permit_allotment_2026_total": "" if not db_row else db_row.get("permit_allotment_2026_total", ""),
+                "permit_allotment_2026_source": "" if not db_row else db_row.get("permit_allotment_2026_source", ""),
+                "permit_allotment_2026_source_file": "" if not db_row else db_row.get("permit_allotment_2026_source_file", ""),
+                "permit_allotment_2026_status": "" if not db_row else db_row.get("permit_allotment_2026_status", ""),
             }
         )
 
@@ -772,6 +779,12 @@ def _build_coverage_report(
             "permits_2026_res",
             "permits_2026_nr",
             "permits_2026_total",
+            "permit_allotment_2026_res",
+            "permit_allotment_2026_nr",
+            "permit_allotment_2026_total",
+            "permit_allotment_2026_source",
+            "permit_allotment_2026_source_file",
+            "permit_allotment_2026_status",
         ],
     )
 
@@ -1053,7 +1066,7 @@ def materialize_outputs(
         latest_source_year=max(history_years),
     )
 
-    db_rows = read_csv(DATABASE_2026_PATH)
+    db_rows = apply_current_year_allotments_to_rows(read_csv(DATABASE_2026_PATH))
     preference_general_deer_rows = build_preference_general_deer_predictions(
         truth_rows=truth_rows,
         db_rows=db_rows,
@@ -1206,6 +1219,12 @@ def materialize_outputs(
         "quota_2026_total",
         "quota_2026_max_pool",
         "quota_2026_random_pool",
+        "permit_allotment_2026_res",
+        "permit_allotment_2026_nr",
+        "permit_allotment_2026_total",
+        "permit_allotment_2026_source",
+        "permit_allotment_2026_source_file",
+        "permit_allotment_2026_status",
         "projected_2026_max_cutoff_point",
         "projected_2026_random_pool_start_point",
         "is_2026_max_point_pool",

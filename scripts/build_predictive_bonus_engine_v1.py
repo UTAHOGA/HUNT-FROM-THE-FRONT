@@ -23,6 +23,11 @@ if str(REPO) not in sys.path:
     sys.path.insert(0, str(REPO))
 
 from engine.utah.materialize import materialize_rows, write_materialized_csv
+from engine.utah.current_year_allotments import (
+    RAC_SOURCE_LABEL,
+    apply_current_year_allotments_to_rows,
+    current_year_quota_for_residency,
+)
 from engine.utah_bonus_predictive.cohort_forecast import roll_forward_applicant_stack
 from engine.utah_bonus_predictive.rules import MODEL_VERSION, RULE_VERSION
 from engine.utah_bonus_predictive.split import split_utah_bonus_permits
@@ -267,11 +272,13 @@ def build_predictions(history_rows: List[dict], db_by_code: Dict[str, dict], pre
         if not is_target_bonus_hunt(hunt_type):
             continue
 
-        # Quota per residency from approved DB (forecast can evolve later)
-        q_res = to_int(db.get("permits_2026_res"), 0)
-        q_nr = to_int(db.get("permits_2026_nr"), 0)
-        q_total = to_int(db.get("permits_2026_total"), q_res + q_nr)
-        residency_quota = q_res if residency.lower().startswith("res") else q_nr
+        # Quota per residency from RAC current-year allotment first, then DB fallback.
+        q_res = to_int(db.get("permit_allotment_2026_res") or db.get("permits_2026_res"), 0)
+        q_nr = to_int(db.get("permit_allotment_2026_nr") or db.get("permits_2026_nr"), 0)
+        q_total = to_int(db.get("permit_allotment_2026_total") or db.get("permits_2026_total"), q_res + q_nr)
+        residency_quota = current_year_quota_for_residency(db, residency)
+        quota_source_file = clean(db.get("permit_allotment_2026_source_file")) or OFFICIAL_2026_QUOTA_SOURCE_FILE
+        quota_source_label = clean(db.get("permit_allotment_2026_source")) or "DATABASE_2026_PERMITS"
         if residency_quota <= 0:
             # Resident-only or NR-only handling: skip empty lane
             continue
@@ -370,6 +377,8 @@ def build_predictions(history_rows: List[dict], db_by_code: Dict[str, dict], pre
                 "MAX_POINT_BOUNDARY_RECOMPUTED",
                 "OFFICIAL_2026_QUOTA_USED",
             ]
+            if quota_source_label == RAC_SOURCE_LABEL:
+                reasons.append("RAC_CURRENT_YEAR_ALLOTMENT_USED")
             if guaranteed_probability >= 0.999:
                 reasons.append("MODELED_100_CONFIRMED")
             if point_pool_zone == "max_pool_cutoff_mixed":
@@ -398,10 +407,16 @@ def build_predictions(history_rows: List[dict], db_by_code: Dict[str, dict], pre
                     "quota_source": "approved_2026_residency_split",
                     "quota_source_status": quota_source_status,
                     "quota_source_year": quota_source_year,
-                    "quota_source_file": OFFICIAL_2026_QUOTA_SOURCE_FILE,
+                    "quota_source_file": quota_source_file,
                     "quota_2026_total": residency_quota,
                     "quota_2026_max_pool": reserved_quota,
                     "quota_2026_random_pool": random_quota,
+                    "permit_allotment_2026_res": clean(db.get("permit_allotment_2026_res")),
+                    "permit_allotment_2026_nr": clean(db.get("permit_allotment_2026_nr")),
+                    "permit_allotment_2026_total": clean(db.get("permit_allotment_2026_total")),
+                    "permit_allotment_2026_source": quota_source_label,
+                    "permit_allotment_2026_source_file": quota_source_file,
+                    "permit_allotment_2026_status": clean(db.get("permit_allotment_2026_status")),
                     "projected_2026_max_cutoff_point": deterministic_cutoff if deterministic_cutoff is not None else "",
                     "projected_2026_random_pool_start_point": projected_random_pool_start_point,
                     "is_2026_max_point_pool": point_pool_zone in {"max_pool_guaranteed", "max_pool_cutoff_mixed"},
@@ -439,6 +454,8 @@ def build_predictions(history_rows: List[dict], db_by_code: Dict[str, dict], pre
                 "reserved_quota": reserved_quota,
                 "random_quota": random_quota,
                 "quota_source_status": quota_source_status,
+                "quota_source_file": quota_source_file,
+                "permit_allotment_2026_source": quota_source_label,
                 "reserved_fraction": round(reserved_fraction, 4),
                 "applicant_rollover_source_year": source_year,
                 "retention_rate_raw": round(rollover.retention_rate_raw, 6),
@@ -469,7 +486,7 @@ def main() -> int:
     out_dir.mkdir(parents=True, exist_ok=True)
 
     history = read_csv(INPUT_DRAW_V2)
-    db_rows = read_csv(INPUT_DATABASE)
+    db_rows = apply_current_year_allotments_to_rows(read_csv(INPUT_DATABASE))
     legacy_engine = read_csv(INPUT_LEGACY_ENGINE)
 
     db_by_code = {clean(r.get("hunt_code")).upper(): r for r in db_rows if clean(r.get("hunt_code"))}
@@ -517,6 +534,8 @@ def main() -> int:
         "point_creep_1yr", "point_creep_3yr", "quota_source", "applicant_pool_source",
         "quota_source_status", "quota_source_year", "quota_source_file",
         "quota_2026_total", "quota_2026_max_pool", "quota_2026_random_pool",
+        "permit_allotment_2026_res", "permit_allotment_2026_nr", "permit_allotment_2026_total",
+        "permit_allotment_2026_source", "permit_allotment_2026_source_file", "permit_allotment_2026_status",
         "projected_2026_max_cutoff_point", "projected_2026_random_pool_start_point",
         "is_2026_max_point_pool", "is_2026_mixed_cutoff", "is_2026_random_pool",
         "model_version", "rule_version", "data_cutoff_date", "data_quality_grade",
@@ -532,7 +551,8 @@ def main() -> int:
     # Write audit
     audit_headers = [
         "hunt_code", "hunt_type", "hunt_kind", "draw_pool", "residency", "prediction_year",
-        "quota_residency", "reserved_quota", "random_quota", "quota_source_status", "reserved_fraction",
+        "quota_residency", "reserved_quota", "random_quota", "quota_source_status", "quota_source_file",
+        "permit_allotment_2026_source", "reserved_fraction",
         "applicant_rollover_source_year", "retention_rate_raw", "retention_rate_smoothed",
         "rolled_forward_total_applicants", "rolled_forward_unsuccessful_applicants", "lower_point_additions",
         "points_modeled", "expected_cutoff_points", "iterations",

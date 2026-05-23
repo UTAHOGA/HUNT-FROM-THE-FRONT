@@ -31,7 +31,17 @@ The existing UI still consumes processed CSVs keyed by `(hunt_code, residency, p
 ## 2026 RAC Truth-Source Promotion
 
 - When a normalized 2026 RAC truth-source table exists for permit counts, that table is authoritative for the 2026 permit overlay.
-- Truth-source promotion is a separate runtime-data step from probability modeling. Updating permit overlays must not rewrite draw math, modeled probability distributions, or frontend odds formatting.
+- Current-year RAC allotment values are the canonical available-permit counts for draw-odds modeling when a direct `hunt_code` row exists. These values are active quota inputs, not display-only reference fields.
+- Runtime files carry these additive current-year allotment fields:
+  - `permit_allotment_2026_res`
+  - `permit_allotment_2026_nr`
+  - `permit_allotment_2026_total`
+  - `permit_allotment_2026_source`
+  - `permit_allotment_2026_source_file`
+  - `permit_allotment_2026_status`
+- If RAC provides resident/nonresident values, all three allotment fields are populated. If RAC provides only a total, only `permit_allotment_2026_total` is populated and the resident/nonresident allotment fields remain blank.
+- If no direct RAC allotment row exists, the allotment fields may fall back to existing `permits_2026_res`, `permits_2026_nr`, and `permits_2026_total` values, marked with `permit_allotment_2026_source = FALLBACK_EXISTING_2026_PERMITS`.
+- Truth-source promotion is a separate data step from probability math changes. When current-year RAC allotments exist, they feed the existing quota allocation and draw-odds machinery; the formulas stay the same, but the current-year quota input changes to the RAC value.
 - The promotion flow is:
   - normalized RAC truth table
   - audit against runtime surfaces

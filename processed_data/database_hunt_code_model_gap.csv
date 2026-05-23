@@ -155,7 +155,6 @@ coverage_seen_not_in_database,DB1797,,,,GENERAL_BIG_GAME_OTHER|PREFERENCE_DEDICA
 coverage_seen_not_in_database,DS6602,,,,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Keep in coverage history unless a current canonical mapping is restored.
 coverage_seen_not_in_database,DS6612,,,,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Keep in coverage history unless a current canonical mapping is restored.
 coverage_seen_not_in_database,EA1004,,,,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Keep in coverage history unless a current canonical mapping is restored.
-coverage_seen_not_in_database,EA1007,,,,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Keep in coverage history unless a current canonical mapping is restored.
 coverage_seen_not_in_database,EA1008,,,,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Keep in coverage history unless a current canonical mapping is restored.
 coverage_seen_not_in_database,EA1009,,,,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Keep in coverage history unless a current canonical mapping is restored.
 coverage_seen_not_in_database,EA1034,,,,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Keep in coverage history unless a current canonical mapping is restored.
@@ -270,7 +269,6 @@ coverage_seen_not_in_database,PD1032,,,,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDI
 coverage_seen_not_in_database,PD1036,,,,PREFERENCE_DOE_PRONGHORN,IN_SCOPE_MODEL_PENDING,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Keep in coverage history unless a current canonical mapping is restored.
 coverage_seen_not_in_database,PD1037,,,,PREFERENCE_DOE_PRONGHORN,IN_SCOPE_MODEL_PENDING,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Keep in coverage history unless a current canonical mapping is restored.
 coverage_seen_not_in_database,PD1038,,,,PREFERENCE_DOE_PRONGHORN,IN_SCOPE_MODEL_PENDING,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Keep in coverage history unless a current canonical mapping is restored.
-coverage_seen_not_in_database,PD1039,,,,PREFERENCE_DOE_PRONGHORN,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Keep in coverage history unless a current canonical mapping is restored.
 coverage_seen_not_in_database,PD1041,,,,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Keep in coverage history unless a current canonical mapping is restored.
 coverage_seen_not_in_database,PD1042,,,,PREFERENCE_DOE_PRONGHORN,IN_SCOPE_MODEL_PENDING,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Keep in coverage history unless a current canonical mapping is restored.
 historical_or_observed_only,BI6517,,,,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
@@ -284,6 +282,7 @@ historical_or_observed_only,BI6527,Nine Mile,Bison,General Season,GENERAL_BIG_GA
 historical_or_observed_only,BI6530,,,,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,BI6533,,,,BONUS_OIL_BIG_GAME,MODELED_BONUS,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,BI6538,"Nine Mile, Private Lands Only",Bison,General Season,GENERAL_BIG_GAME_OTHER,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
+historical_or_observed_only,BI6539,Henry Mtns,Bison,Once-in-a-lifetime,BONUS_OIL_BIG_GAME,MODELED_BONUS,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,BR7008,,,,BEAR_DRAW,IN_SCOPE_MODEL_PENDING,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,BR7019,,,,BEAR_DRAW,IN_SCOPE_MODEL_PENDING,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,BR7108,,,,BEAR_DRAW,IN_SCOPE_MODEL_PENDING,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
@@ -326,7 +325,6 @@ historical_or_observed_only,DB0010,Southern Paiute Buck Deer (early),Deer,Tribal
 historical_or_observed_only,DB0011,Southern Paiute Buck Deer,Deer,Tribal,GENERAL_BIG_GAME_OTHER,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,DB0012,Southern Paiute Buck Deer,Deer,Tribal,GENERAL_BIG_GAME_OTHER,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,DB0013,Southern Paiute Buck Deer (late),Deer,Tribal,GENERAL_BIG_GAME_OTHER,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
-historical_or_observed_only,DB1009,Henry Mtns (Management Buck Deer),Deer,Management Buck Deer,PREFERENCE_GENERAL_SEASON_BUCK_DEER,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,DB1027,,,,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,DB1036,,,,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,DB1056,Book Cliffs (North & South),Deer,Conservation,OTC_OR_REMAINING_TARGET,EXCLUDED_NOT_PREDICTIVE_DRAW,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
@@ -338,8 +336,9 @@ historical_or_observed_only,DB1088,,,,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODEL
 historical_or_observed_only,DB1089,,,,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,DB1092,,,,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,DB1094,,,,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
+historical_or_observed_only,DB1109,Thousand Lakes,Deer,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,DB1118,Dolores Triangle,Deer,Conservation,OTC_OR_REMAINING_TARGET,EXCLUDED_NOT_PREDICTIVE_DRAW,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
-historical_or_observed_only,DB1121,Antelope Island,Deer,Management Buck Deer,PREFERENCE_GENERAL_SEASON_BUCK_DEER,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
+historical_or_observed_only,DB1121,Antelope Island Management,Deer,Premium Limited Entry,PREFERENCE_GENERAL_SEASON_BUCK_DEER,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,DB1210,,,,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,DB1223,,,,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,DB1257,,,,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
@@ -438,7 +437,7 @@ historical_or_observed_only,DS6602,,,,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODEL
 historical_or_observed_only,DS6605,"Pine Valley, Beaver Dam",Desert Bighorn Sheep,Conservation,OTC_OR_REMAINING_TARGET,EXCLUDED_NOT_PREDICTIVE_DRAW,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,DS6612,,,,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,EA1004,,,,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
-historical_or_observed_only,EA1007,,,,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
+historical_or_observed_only,EA1007,"Wasatch Mtns, Currant Creek",Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,EA1008,,,,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,EA1009,,,,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,EA1034,,,,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
@@ -477,7 +476,7 @@ historical_or_observed_only,EA1265,"Wasatch Mtns, Tabby Mtn",Elk,General Season,
 historical_or_observed_only,EA1266,"Box Elder, Hansel Mtn",Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,EA1267,Cache,Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,EA1268,"North Slope, Summit",Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
-historical_or_observed_only,EA1269,Ogden (Excludes Hyrum),Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
+historical_or_observed_only,EA1269,Ogden (excludes Hyrum),Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,EA1270,Fishlake (Conservation),Elk,Conservation,OTC_OR_REMAINING_TARGET,EXCLUDED_NOT_PREDICTIVE_DRAW,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,EA1271,Manti (Conservation),Elk,Conservation,OTC_OR_REMAINING_TARGET,EXCLUDED_NOT_PREDICTIVE_DRAW,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,EA1272,"East Canyon, East",Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
@@ -850,7 +849,7 @@ historical_or_observed_only,PD1032,,,,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING
 historical_or_observed_only,PD1036,,,,PREFERENCE_DOE_PRONGHORN,IN_SCOPE_MODEL_PENDING,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,PD1037,,,,PREFERENCE_DOE_PRONGHORN,IN_SCOPE_MODEL_PENDING,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,PD1038,,,,PREFERENCE_DOE_PRONGHORN,IN_SCOPE_MODEL_PENDING,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
-historical_or_observed_only,PD1039,,,,PREFERENCE_DOE_PRONGHORN,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
+historical_or_observed_only,PD1039,"Panguitch Lake/Zion, North",Pronghorn,General Season,PREFERENCE_DOE_PRONGHORN,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,PD1041,,,,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,PD1042,,,,PREFERENCE_DOE_PRONGHORN,IN_SCOPE_MODEL_PENDING,NO,NO,NO,NO,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,PD1054,Parker Mtn,Pronghorn,General Season,PREFERENCE_DOE_PRONGHORN,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
@@ -860,6 +859,7 @@ historical_or_observed_only,PD1057,"Parker Mtn, Highlands",Pronghorn,General Sea
 historical_or_observed_only,PD1058,"Parker Mtn, Highlands",Pronghorn,General Season,PREFERENCE_DOE_PRONGHORN,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,PD1059,"Parker Mtn, Plains",Pronghorn,General Season,PREFERENCE_DOE_PRONGHORN,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,PD1060,"Parker Mtn, Plains",Pronghorn,General Season,PREFERENCE_DOE_PRONGHORN,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
+historical_or_observed_only,RE1000,"Box Elder, Newfoundland Mtn",Rocky Mountain Bighorn Sheep,General Season,BONUS_EWE_BIGHORN,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,RS1000,Antelope Island Conservation,Rocky Mountain Bighorn Sheep,Once-in-a-lifetime,OTC_OR_REMAINING_TARGET,EXCLUDED_NOT_PREDICTIVE_DRAW,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,RS1001,"Book Cliffs, South",Rocky Mountain Bighorn Sheep,Conservation,OTC_OR_REMAINING_TARGET,EXCLUDED_NOT_PREDICTIVE_DRAW,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
 historical_or_observed_only,RS1003,"Box Elder, Newfoundland Mtn",Rocky Mountain Bighorn Sheep,Conservation,OTC_OR_REMAINING_TARGET,EXCLUDED_NOT_PREDICTIVE_DRAW,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Historical/observed-only code; do not force into active modeled predictions.
@@ -890,7 +890,6 @@ in_database_and_modeled,BI6534,"Book Cliffs, Bitter Creek",Bison,Once-in-a-lifet
 in_database_and_modeled,BI6535,"Book Cliffs, Bitter Creek",Bison,Once-in-a-lifetime,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,BI6536,"Book Cliffs, Bitter Creek",Bison,Once-in-a-lifetime,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,BI6537,"Book Cliffs, Little Creek/South",Bison,Once-in-a-lifetime,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,BI6539,Henry Mtns,Bison,Once-in-a-lifetime,BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,BR1000,Black Bear - Statewide Permit,Black Bear,Statewide,SPORTSMAN_PERMIT,IN_SCOPE_MODEL_PENDING|MODELED_SPORTSMAN_DRAW,YES,YES,YES,YES,,
 in_database_and_modeled,BR1001,Black Bear Harvest Objective Units,Black Bear,Harvest Objective,BEAR_DRAW,EXCLUDED_NOT_PREDICTIVE_DRAW|MODELED_AVAILABILITY,YES,YES,YES,YES,,
 in_database_and_modeled,BR1007,Black Bear Pursuit - Resident,Black Bear,Pursuit,BEAR_DRAW,EXCLUDED_NOT_PREDICTIVE_DRAW|MODELED_AVAILABILITY,YES,YES,YES,YES,,
@@ -1005,16 +1004,16 @@ in_database_and_modeled,DA1045,"Fillmore, Oak City",Deer,General Season,PREFEREN
 in_database_and_modeled,DA1046,"Nine Mile, Price River Valley",Deer,General Season,PREFERENCE_ANTLERLESS_DEER,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
 in_database_and_modeled,DA1047,Vernal-Ouray Valley,Deer,General Season,PREFERENCE_ANTLERLESS_DEER,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
 in_database_and_modeled,DB0007,Buck Deer - Statewide Permit,Deer,Statewide,SPORTSMAN_PERMIT,IN_SCOPE_MODEL_PENDING|MODELED_SPORTSMAN_DRAW,YES,YES,YES,YES,,
-in_database_and_modeled,DB1000,Henry Mtns,Deer,Premium Limited Entry,BONUS_LE_BIG_GAME|BONUS_PLE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,DB1001,Paunsaugunt,Deer,Premium Limited Entry,BONUS_LE_BIG_GAME|BONUS_PLE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,DB1002,Antelope Island,Deer,Premium Limited Entry,BONUS_LE_BIG_GAME|BONUS_PLE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,DB1003,Henry Mtns,Deer,Premium Limited Entry,BONUS_LE_BIG_GAME|BONUS_PLE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,DB1004,Paunsaugunt,Deer,Premium Limited Entry,BONUS_LE_BIG_GAME|BONUS_PLE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,DB1005,Henry Mtns,Deer,Premium Limited Entry,BONUS_LE_BIG_GAME|BONUS_PLE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,DB1006,Paunsaugunt,Deer,Premium Limited Entry,BONUS_LE_BIG_GAME|BONUS_PLE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,DB1007,Henry Mtns,Deer,Premium Limited Entry,BONUS_PLE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,DB1008,Paunsaugunt,Deer,Premium Limited Entry,BONUS_PLE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,DB1010,Paunsaugunt,Deer,Management Buck Deer,BONUS_LE_BIG_GAME|PREFERENCE_GENERAL_SEASON_BUCK_DEER,IN_SCOPE_MODEL_PENDING|MODELED_BONUS|MODELED_PREFERENCE,YES,YES,YES,YES,,
+in_database_and_modeled,DB1000,Henry Mtns Premium,Deer,Premium Limited Entry,BONUS_LE_BIG_GAME|BONUS_PLE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,DB1001,Paunsaugunt Premium,Deer,Premium Limited Entry,BONUS_LE_BIG_GAME|BONUS_PLE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,DB1002,Antelope Island Premium,Deer,Premium Limited Entry,BONUS_LE_BIG_GAME|BONUS_PLE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,DB1003,Henry Mtns Premium,Deer,Premium Limited Entry,BONUS_LE_BIG_GAME|BONUS_PLE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,DB1004,Paunsaugunt Premium,Deer,Premium Limited Entry,BONUS_LE_BIG_GAME|BONUS_PLE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,DB1005,Henry Mtns Premium,Deer,Premium Limited Entry,BONUS_LE_BIG_GAME|BONUS_PLE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,DB1006,Paunsaugunt Premium,Deer,Premium Limited Entry,BONUS_LE_BIG_GAME|BONUS_PLE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,DB1007,Henry Mtns Premium,Deer,Premium Limited Entry,BONUS_PLE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,DB1008,Paunsaugunt Premium,Deer,Premium Limited Entry,BONUS_PLE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,DB1010,Paunsaugunt Management,Deer,Premium Limited Entry,BONUS_LE_BIG_GAME|BONUS_PLE_BIG_GAME|PREFERENCE_GENERAL_SEASON_BUCK_DEER,IN_SCOPE_MODEL_PENDING|MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,DB1011,Book Cliffs,Deer,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,DB1012,"Fillmore, Oak Creek LE",Deer,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,DB1013,Dolores Triangle,Deer,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
@@ -1052,10 +1051,9 @@ in_database_and_modeled,DB1048,"West Desert, Vernon",Deer,Limited Entry,BONUS_LE
 in_database_and_modeled,DB1053,Mt Dutton,Deer,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,DB1054,Ogden,Deer,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,DB1055,Fishlake,Deer,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,DB1058,Paunsaugunt,Deer,Cactus Buck,PREFERENCE_GENERAL_SEASON_BUCK_DEER,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
 in_database_and_modeled,DB1065,North Slope,Deer,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,DB1073,Paunsaugunt,Deer,Management Buck Deer,BONUS_LE_BIG_GAME|PREFERENCE_GENERAL_SEASON_BUCK_DEER,IN_SCOPE_MODEL_PENDING|MODELED_BONUS|MODELED_PREFERENCE,YES,YES,YES,YES,,
-in_database_and_modeled,DB1074,Paunsaugunt,Deer,Management Buck Deer,BONUS_LE_BIG_GAME|PREFERENCE_GENERAL_SEASON_BUCK_DEER,IN_SCOPE_MODEL_PENDING|MODELED_BONUS|MODELED_PREFERENCE,YES,YES,YES,YES,,
+in_database_and_modeled,DB1073,Paunsaugunt Management,Deer,Premium Limited Entry,BONUS_LE_BIG_GAME|BONUS_PLE_BIG_GAME|PREFERENCE_GENERAL_SEASON_BUCK_DEER,IN_SCOPE_MODEL_PENDING|MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,DB1074,Paunsaugunt Management,Deer,Premium Limited Entry,BONUS_LE_BIG_GAME|BONUS_PLE_BIG_GAME|PREFERENCE_GENERAL_SEASON_BUCK_DEER,IN_SCOPE_MODEL_PENDING|MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,DB1077,Box Elder,Deer,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,DB1078,Cache,Deer,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,DB1079,Manti/San Rafael,Deer,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
@@ -1066,23 +1064,22 @@ in_database_and_modeled,DB1084,Boulder/Kaiparowits,Deer,Limited Entry,BONUS_LE_B
 in_database_and_modeled,DB1085,"San Juan, Abajo Mtns",Deer,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,DB1086,Vernal/Bonanza,Deer,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,DB1087,"Wasatch Mtns, West",Deer,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,DB1090,"Book Cliffs, Floy Canyon",Deer,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,DB1091,Kaiparowits HAMSS,Deer,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,DB1090,HAMSS,Deer,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,DB1091,HAMSS,Deer,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,DB1100,Chalk Creek,Deer,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,DB1101,East Canyon,Deer,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,DB1103,Morgan-South Rich,Deer,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,DB1105,East Canyon,Deer,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,DB1105,HAMSS,Deer,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,DB1106,Thousand Lakes,Deer,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,DB1107,Thousand Lakes,Deer,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,DB1108,Thousand Lakes,Deer,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,DB1109,Thousand Lakes,Deer,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,DB1110,"Beaver, East",Deer,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,DB1111,"Beaver, West",Deer,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,DB1112,"West Desert, Swasey",Deer,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,DB1113,Oquirrh/Tintic,Deer,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,DB1114,Cedar/Stansbury,Deer,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,DB1115,Little Rockies,Deer,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,DB1116,"San Juan, Mancos Mesa",Deer,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,DB1116,HAMSS,Deer,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,DB1119,Moab Valley,Deer,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,DB1120,Castle Valley,Deer,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,DB1200,Alton - Premium Buck CWMU,Deer,CWMU,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING|MODELED_BONUS,YES,YES,YES,YES,,
@@ -1320,14 +1317,14 @@ in_database_and_modeled,EA1030,"Fillmore, Pahvant",Elk,General Season,PREFERENCE
 in_database_and_modeled,EA1031,"Fillmore, Pahvant",Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
 in_database_and_modeled,EA1033,Kamas,Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
 in_database_and_modeled,EA1035,"Kamas, Oakley",Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
-in_database_and_modeled,EA1037,"La Sal, Dolores Triangle",Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
-in_database_and_modeled,EA1038,"La Sal, La Sal Mtns",Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
-in_database_and_modeled,EA1039,"La Sal, La Sal Mtns",Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
+in_database_and_modeled,EA1037,Dolores Triangle,Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
+in_database_and_modeled,EA1038,La Sal Mtns,Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
+in_database_and_modeled,EA1039,La Sal Mtns,Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
 in_database_and_modeled,EA1044,"Morgan-South Rich, South Rich",Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
 in_database_and_modeled,EA1049,"Mt Dutton, Deep Creek",Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
 in_database_and_modeled,EA1054,"Nine Mile, West Anthro",Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
 in_database_and_modeled,EA1056,"North Slope, Greendale",Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
-in_database_and_modeled,EA1058,"North Slope, Henry's Fork-Burnt Fork",Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
+in_database_and_modeled,EA1058,"North Slope, Henrys Fork-Burnt Fork",Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
 in_database_and_modeled,EA1060,"North Slope, West Daggett",Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
 in_database_and_modeled,EA1061,"North Slope, West Daggett",Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
 in_database_and_modeled,EA1063,Ogden,Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
@@ -1344,7 +1341,7 @@ in_database_and_modeled,EA1081,San Juan,Elk,General Season,PREFERENCE_ANTLERLESS
 in_database_and_modeled,EA1082,San Juan,Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
 in_database_and_modeled,EA1084,"San Rafael, North",Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
 in_database_and_modeled,EA1085,Vernal/Bonanza,Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
-in_database_and_modeled,EA1087,Bonanza/Vernal,Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
+in_database_and_modeled,EA1087,Vernal/Bonanza,Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
 in_database_and_modeled,EA1089,Diamond Mtn,Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
 in_database_and_modeled,EA1090,Diamond Mtn,Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
 in_database_and_modeled,EA1094,"Vernal, Mosby Mtn",Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
@@ -1426,7 +1423,7 @@ in_database_and_modeled,EA1233,Avintaquin Canyon CWMU,Elk,CWMU,BONUS_CWMU_BIG_GA
 in_database_and_modeled,EA1234,Royal Ivory Outfitters CWMU,Elk,CWMU,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING|MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EA1235,Sharp Mountain CWMU,Elk,CWMU,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING|MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EA1236,East Canyon,Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
-in_database_and_modeled,EA1237,"La Sal, La Sal Mtns-North",Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
+in_database_and_modeled,EA1237,"La Sal Mtns, North",Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
 in_database_and_modeled,EA1239,"Nine Mile, Range Creek",Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
 in_database_and_modeled,EA1240,"Nine Mile, Range Creek",Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
 in_database_and_modeled,EA1242,"Vernal, Buckskin Hills-Jensen",Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
@@ -1444,12 +1441,12 @@ in_database_and_modeled,EA2004,Chalk Creek,Elk,Private Lands Only,PRIVATE_LANDS_
 in_database_and_modeled,EA2005,"North Slope, West Daggett",Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,,
 in_database_and_modeled,EA2006,Yellowstone,Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,,
 in_database_and_modeled,EA2008,"Nine Mile, Anthro-Myton Bench",Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,,
-in_database_and_modeled,EA2009,"La Sal, La Sal Mtns",Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,,
+in_database_and_modeled,EA2009,La Sal Mtns,Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,,
 in_database_and_modeled,EA2010,San Juan,Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,,
 in_database_and_modeled,EA2011,Manti,Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,,
-in_database_and_modeled,EA2012,"Wasatch Mtns, West",Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,,
+in_database_and_modeled,EA2012,"Wasatch Mtns, West-Central",Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,,
 in_database_and_modeled,EA2013,"Wasatch Mtns, Currant Creek",Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,,
-in_database_and_modeled,EA2014,"Wasatch Mtns, Avintaquin - White River",Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,,
+in_database_and_modeled,EA2014,"Wasatch Mtns, Avintaquin-White River",Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,,
 in_database_and_modeled,EA2015,Paunsaugunt,Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,,
 in_database_and_modeled,EA2016,Nebo,Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,,
 in_database_and_modeled,EA2017,Mt Dutton,Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,,
@@ -1466,33 +1463,33 @@ in_database_and_modeled,EA2039,"Fillmore, Pahvant",Elk,Private Lands Only,PRIVAT
 in_database_and_modeled,EA2040,Kamas,Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,,
 in_database_and_modeled,EA2046,"Box Elder, Sawtooth",Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,,
 in_database_and_modeled,EB1000,Elk - Statewide Permit,Elk,Statewide,SPORTSMAN_PERMIT,IN_SCOPE_MODEL_PENDING|MODELED_SPORTSMAN_DRAW,YES,YES,YES,YES,,
-in_database_and_modeled,EB3000,Beaver East,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3002,Book Cliffs Little Creek Roadless,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3003,Cache Meadowville,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3005,Cache South,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3000,"Beaver, East",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3002,"Book Cliffs, Little Creek Roadless",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3003,"Cache, Meadowville",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3005,"Cache, South",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3006,Manti,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3008,Fillmore Pahvant,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3008,"Fillmore, Pahvant",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3009,La Sal Mtns,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3010,Monroe,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3011,Mt Dutton,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3013,North Slope Three Corners,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3013,"North Slope, Three Corners",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3015,Panguitch Lake,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3018,Fishlake/Thousand Lakes,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3019,San Juan Bull Elk,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3020,Diamond Mtn,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3022,Wasatch Mtns,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3024,Beaver East,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3025,Beaver East,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3028,Book Cliffs Little Creek Roadless,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3031,Box Elder Pilot Mtn,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3032,Cache Meadowville,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3033,Cache Meadowville,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3036,Cache South,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3037,Cache South,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3024,"Beaver, East",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3025,"Beaver, East",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3028,"Book Cliffs, Little Creek Roadless",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3031,"Box Elder, Pilot Mtn",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3032,"Cache, Meadowville",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3033,"Cache, Meadowville",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3036,"Cache, South",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3037,"Cache, South",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3038,Manti,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3039,Manti,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3042,Fillmore Pahvant,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3043,Fillmore Pahvant,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3042,"Fillmore, Pahvant",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3043,"Fillmore, Pahvant",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3044,Dolores Triangle,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3045,La Sal Mtns,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3046,La Sal Mtns,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
@@ -1500,7 +1497,7 @@ in_database_and_modeled,EB3047,Monroe,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_
 in_database_and_modeled,EB3048,Monroe,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3049,Mt Dutton,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3050,Mt Dutton,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3053,North Slope Three Corners,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3053,"North Slope, Three Corners",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3056,Panguitch Lake,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3057,Panguitch Lake,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3063,Fishlake/Thousand Lakes,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
@@ -1512,31 +1509,31 @@ in_database_and_modeled,EB3068,Diamond Mtn,Elk,Limited Entry,BONUS_LE_BIG_GAME|B
 in_database_and_modeled,EB3069,Diamond Mtn,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3072,Wasatch Mtns,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3073,Wasatch Mtns,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3077,Beaver East,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3079,Book Cliffs Little Creek Roadless,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3081,Cache Meadowville,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3083,Cache South,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3077,"Beaver, East",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3079,"Book Cliffs, Little Creek Roadless",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3081,"Cache, Meadowville",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3083,"Cache, South",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3084,Manti,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3086,Fillmore Pahvant,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3086,"Fillmore, Pahvant",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3087,La Sal Mtns,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3088,Monroe,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3089,Mt Dutton,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3091,North Slope Three Corners,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3091,"North Slope, Three Corners",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3093,Panguitch Lake,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3096,Fishlake/Thousand Lakes,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3097,San Juan Bull Elk,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3098,Diamond Mtn,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3100,Wasatch Mtns,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3102,Beaver East,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3104,Book Cliffs Little Creek Roadless,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3105,Cache Meadowville,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3107,Cache South,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3102,"Beaver, East",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3104,"Book Cliffs, Little Creek Roadless",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3105,"Cache, Meadowville",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3107,"Cache, South",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3108,Manti,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3110,Fillmore Pahvant,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3110,"Fillmore, Pahvant",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3111,La Sal Mtns,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3112,Monroe,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3113,Mt Dutton,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3115,North Slope Three Corners,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3115,"North Slope, Three Corners",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3117,Panguitch Lake,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3120,Fishlake/Thousand Lakes,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3121,San Juan Bull Elk,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
@@ -1544,42 +1541,42 @@ in_database_and_modeled,EB3122,Diamond Mtn,Elk,Limited Entry,BONUS_LE_BIG_GAME|B
 in_database_and_modeled,EB3124,Wasatch Mtns,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3126,Manti,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3127,Wasatch Mtns,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3130,Box Elder Pilot Mtn,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3132,Cache North,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3130,"Box Elder, Pilot Mtn",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3132,"Cache, North",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3135,Barney Top/Kaiparowits,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3136,Southwest Desert North,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3137,West Desert Deep Creek,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3139,Cache North,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3136,"Southwest Desert, North",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3137,"West Desert, Deep Creek",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3139,"Cache, North",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3142,Barney Top/Kaiparowits,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3143,Southwest Desert North,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3144,West Desert Deep Creek,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3143,"Southwest Desert, North",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3144,"West Desert, Deep Creek",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3145,Boulder,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3146,Southwest Desert South,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3147,Box Elder Grouse Creek,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3146,"Southwest Desert, South",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3147,"Box Elder, Grouse Creek",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3148,Boulder,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3149,Southwest Desert South,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3150,Box Elder Grouse Creek,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3149,"Southwest Desert, South",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3150,"Box Elder, Grouse Creek",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3151,Boulder,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3152,Southwest Desert South,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3153,Box Elder Grouse Creek,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3152,"Southwest Desert, South",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3153,"Box Elder, Grouse Creek",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3154,Boulder,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3155,Southwest Desert South,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3155,"Southwest Desert, South",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3156,Boulder,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3157,Southwest Desert South,Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3158,Beaver East,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3159,Beaver East,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3160,Book Cliffs Bitter Creek/East,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3161,Book Cliffs Bitter Creek/East,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3162,Book Cliffs Bitter Creek/East,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3163,Book Cliffs Bitter Creek/East,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3164,Book Cliffs Bitter Creek/East,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3165,Book Cliffs Bitter Creek/East,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3166,Book Cliffs Bitter Creek/East,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3167,Book Cliffs Little Creek Roadless,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3168,Cache Meadowville,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3169,Cache Meadowville,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3170,Cache South,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3171,Cache South,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3157,"Southwest Desert, South",Elk,Limited Entry,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3158,"Beaver, East",Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3159,"Beaver, East",Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3160,"Book Cliffs, Bitter Creek/East",Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3161,"Book Cliffs, Bitter Creek/East",Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3162,"Book Cliffs, Bitter Creek/East",Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3163,"Book Cliffs, Bitter Creek/East",Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3164,"Book Cliffs, Bitter Creek/East",Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3165,"Book Cliffs, Bitter Creek/East",Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3166,"Book Cliffs, Bitter Creek/East",Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3167,"Book Cliffs, Little Creek Roadless",Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3168,"Cache, Meadowville",Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3169,"Cache, Meadowville",Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3170,"Cache, South",Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3171,"Cache, South",Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3172,Manti,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3173,Nebo/San Pitch Mtns,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3174,Nebo/San Pitch Mtns,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
@@ -1588,8 +1585,8 @@ in_database_and_modeled,EB3176,Nebo/San Pitch Mtns,Elk,Limited Entry,BONUS_LE_BI
 in_database_and_modeled,EB3177,Nebo/San Pitch Mtns,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3178,Nebo/San Pitch Mtns,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3179,Nebo/San Pitch Mtns,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3180,Fillmore Pahvant,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3181,Fillmore Pahvant,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3180,"Fillmore, Pahvant",Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3181,"Fillmore, Pahvant",Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3182,La Sal Mtns,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3183,La Sal Mtns,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3184,Monroe,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
@@ -1605,12 +1602,12 @@ in_database_and_modeled,EB3193,San Juan Bull Elk,Elk,Limited Entry,BONUS_LE_BIG_
 in_database_and_modeled,EB3194,San Juan Bull Elk,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3195,Diamond Mtn,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3196,Diamond Mtn,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3197,Southwest Desert South,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3198,Southwest Desert South,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3197,"Southwest Desert, South",Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3198,"Southwest Desert, South",Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3199,Wasatch Mtns,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3205,East Canyon,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3208,Morgan-South Rich,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,EB3210,North Slope Three Corners,Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,EB3210,"North Slope, Three Corners",Elk,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3500,Alton CWMU,Elk,CWMU,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING|MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3501,Bar J Ranch CWMU,Elk,CWMU,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING|MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,EB3502,Bear Mountain CWMU,Elk,CWMU,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING|MODELED_BONUS,YES,YES,YES,YES,,
@@ -1691,9 +1688,7 @@ in_database_and_modeled,GO6819,"Wasatch Mtns, Lone Peak",Mountain Goat,Once-in-a
 in_database_and_modeled,GO6820,"Wasatch Mtns, Timpanogos",Mountain Goat,Once-in-a-lifetime,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,GO6821,Nebo,Mountain Goat,Once-in-a-lifetime,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,GO6822,Beaver,Mountain Goat,Once-in-a-lifetime,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,MA1005,Morgan-South Rich,Moose,Limited Entry,BONUS_ANTLERLESS_MOOSE|BONUS_LE_BIG_GAME,IN_SCOPE_MODEL_PENDING|MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,MA1007,Morgan-South Rich,Moose,Limited Entry,BONUS_ANTLERLESS_MOOSE|BONUS_LE_BIG_GAME,IN_SCOPE_MODEL_PENDING|MODELED_BONUS,YES,YES,YES,YES,,
-in_database_and_modeled,MA1008,"Wasatch Mtns, Salt Lake-Timpanogos",Moose,Limited Entry,BONUS_ANTLERLESS_MOOSE|BONUS_LE_BIG_GAME,IN_SCOPE_MODEL_PENDING|MODELED_BONUS,YES,YES,YES,YES,,
+in_database_and_modeled,MA1005,Morgan-South Rich,Moose,General Season,BONUS_ANTLERLESS_MOOSE,IN_SCOPE_MODEL_PENDING|MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,MB1000,Moose - Statewide Permit,Moose,Statewide,SPORTSMAN_PERMIT,IN_SCOPE_MODEL_PENDING|MODELED_SPORTSMAN_DRAW,YES,YES,YES,YES,,
 in_database_and_modeled,MB6000,Cache,Moose,Once-in-a-lifetime,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,MB6001,Chalk Creek,Moose,Once-in-a-lifetime,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
@@ -1810,7 +1805,6 @@ in_database_and_modeled,PD1034,"Fillmore, Oak Creek South",Pronghorn,General Sea
 in_database_and_modeled,PD1035,"Fillmore, Oak Creek South",Pronghorn,General Season,PREFERENCE_DOE_PRONGHORN,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
 in_database_and_modeled,PD1043,"Nine Mile, Anthro-Pleasant Valley",Pronghorn,General Season,PREFERENCE_DOE_PRONGHORN,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
 in_database_and_modeled,PD1044,Vernal-Ouray Valley,Pronghorn,General Season,PREFERENCE_DOE_PRONGHORN,IN_SCOPE_MODEL_PENDING|MODELED_PREFERENCE,YES,YES,YES,YES,,
-in_database_and_modeled,RE1000,"Box Elder, Newfoundland Mtn",Rocky Mountain Bighorn Sheep,General Season,BONUS_EWE_BIGHORN,IN_SCOPE_MODEL_PENDING|MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,RS0001,Rocky Mountain Bighorn Sheep - Statewide Permit,Rocky Mountain Bighorn Sheep,Statewide,SPORTSMAN_PERMIT,IN_SCOPE_MODEL_PENDING|MODELED_SPORTSMAN_DRAW,YES,YES,YES,YES,,
 in_database_and_modeled,RS6700,Antelope Island,Rocky Mountain Bighorn Sheep,Once-in-a-lifetime,BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
 in_database_and_modeled,RS6701,"Book Cliffs, South",Rocky Mountain Bighorn Sheep,Once-in-a-lifetime,BONUS_LE_BIG_GAME|BONUS_OIL_BIG_GAME,MODELED_BONUS,YES,YES,YES,YES,,
@@ -1837,6 +1831,7 @@ in_database_and_modeled,TK1018,Pahvant Ensign CWMU,Turkey,CWMU,BONUS_TURKEY,IN_S
 in_database_and_modeled,TK1021,East Zion CWMU,Turkey,CWMU,BONUS_TURKEY,IN_SCOPE_MODEL_PENDING|MODELED_BONUS,YES,YES,YES,YES,,
 in_database_not_modeled,BI6527,Nine Mile,Bison,General Season,GENERAL_BIG_GAME_OTHER,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
 in_database_not_modeled,BI6538,"Nine Mile, Private Lands Only",Bison,General Season,GENERAL_BIG_GAME_OTHER,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
+in_database_not_modeled,BI6539,Henry Mtns,Bison,Once-in-a-lifetime,BONUS_OIL_BIG_GAME,MODELED_BONUS,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
 in_database_not_modeled,BR7021,Dolores Triangle,Black Bear,Limited Entry - Spring,BEAR_DRAW,IN_SCOPE_MODEL_PENDING,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,Needs strategy implementation before predictive draw-odds modeling.
 in_database_not_modeled,BR7022,La Sal Mtns,Black Bear,Limited Entry - Spring,BEAR_DRAW,IN_SCOPE_MODEL_PENDING,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,Needs strategy implementation before predictive draw-odds modeling.
 in_database_not_modeled,BR7126,Dolores Triangle,Black Bear,Limited Entry - Summer,BEAR_DRAW,IN_SCOPE_MODEL_PENDING,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,Needs strategy implementation before predictive draw-odds modeling.
@@ -1863,12 +1858,14 @@ in_database_not_modeled,DB0010,Southern Paiute Buck Deer (early),Deer,Tribal,GEN
 in_database_not_modeled,DB0011,Southern Paiute Buck Deer,Deer,Tribal,GENERAL_BIG_GAME_OTHER,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
 in_database_not_modeled,DB0012,Southern Paiute Buck Deer,Deer,Tribal,GENERAL_BIG_GAME_OTHER,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
 in_database_not_modeled,DB0013,Southern Paiute Buck Deer (late),Deer,Tribal,GENERAL_BIG_GAME_OTHER,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
-in_database_not_modeled,DB1009,Henry Mtns (Management Buck Deer),Deer,Management Buck Deer,PREFERENCE_GENERAL_SEASON_BUCK_DEER,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
+in_database_not_modeled,DB1009,Henry Mtns Management,Deer,Premium Limited Entry,PREFERENCE_GENERAL_SEASON_BUCK_DEER,IN_SCOPE_MODEL_PENDING,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,Needs strategy implementation before predictive draw-odds modeling.
 in_database_not_modeled,DB1056,Book Cliffs (North & South),Deer,Conservation,OTC_OR_REMAINING_TARGET,EXCLUDED_NOT_PREDICTIVE_DRAW,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
+in_database_not_modeled,DB1058,Paunsaugunt Cactus,Deer,Premium Limited Entry,PREFERENCE_GENERAL_SEASON_BUCK_DEER,IN_SCOPE_MODEL_PENDING,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,Needs strategy implementation before predictive draw-odds modeling.
 in_database_not_modeled,DB1075,Book Cliffs (North & South),Deer,Conservation,OTC_OR_REMAINING_TARGET,EXCLUDED_NOT_PREDICTIVE_DRAW,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
 in_database_not_modeled,DB1076,Book Cliffs (North & South),Deer,Conservation,OTC_OR_REMAINING_TARGET,EXCLUDED_NOT_PREDICTIVE_DRAW,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
+in_database_not_modeled,DB1109,Thousand Lakes,Deer,Limited Entry,BONUS_LE_BIG_GAME,MODELED_BONUS,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
 in_database_not_modeled,DB1118,Dolores Triangle,Deer,Conservation,OTC_OR_REMAINING_TARGET,EXCLUDED_NOT_PREDICTIVE_DRAW,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
-in_database_not_modeled,DB1121,Antelope Island,Deer,Management Buck Deer,PREFERENCE_GENERAL_SEASON_BUCK_DEER,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
+in_database_not_modeled,DB1121,Antelope Island Management,Deer,Premium Limited Entry,PREFERENCE_GENERAL_SEASON_BUCK_DEER,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
 in_database_not_modeled,DB1202,Antelope Creek CWMU,Deer,CWMU,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,Needs strategy implementation before predictive draw-odds modeling.
 in_database_not_modeled,DB1208,Blackhawk CWMU,Deer,CWMU,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,Needs strategy implementation before predictive draw-odds modeling.
 in_database_not_modeled,DB1239,Fort Ranch CWMU,Deer,CWMU,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,Needs strategy implementation before predictive draw-odds modeling.
@@ -1923,6 +1920,8 @@ in_database_not_modeled,DS1004,"San Rafael, Dirty Devil",Desert Bighorn Sheep,Co
 in_database_not_modeled,DS1006,"Kaiparowits, West",Desert Bighorn Sheep,Conservation,OTC_OR_REMAINING_TARGET,EXCLUDED_NOT_PREDICTIVE_DRAW,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
 in_database_not_modeled,DS1007,"San Rafael, South",Desert Bighorn Sheep,Conservation,OTC_OR_REMAINING_TARGET,EXCLUDED_NOT_PREDICTIVE_DRAW,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
 in_database_not_modeled,DS6605,"Pine Valley, Beaver Dam",Desert Bighorn Sheep,Conservation,OTC_OR_REMAINING_TARGET,EXCLUDED_NOT_PREDICTIVE_DRAW,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
+in_database_not_modeled,EA1007,"Wasatch Mtns, Currant Creek",Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
+in_database_not_modeled,EA1053,"Nine Mile, West Anthro",Elk,General Season,,,NO,NO,YES,YES,SOURCE_SUPPORT_INSUFFICIENT,Current source support is insufficient to publish modeled draw-odds rows.
 in_database_not_modeled,EA1106,"Wasatch Mtns, Avintaquin",Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
 in_database_not_modeled,EA1171,Summit Point CWMU,Elk,CWMU,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,Needs strategy implementation before predictive draw-odds modeling.
 in_database_not_modeled,EA1180,La Sal (Conservation),Elk,Conservation,OTC_OR_REMAINING_TARGET,EXCLUDED_NOT_PREDICTIVE_DRAW,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
@@ -1939,7 +1938,7 @@ in_database_not_modeled,EA1265,"Wasatch Mtns, Tabby Mtn",Elk,General Season,PREF
 in_database_not_modeled,EA1266,"Box Elder, Hansel Mtn",Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
 in_database_not_modeled,EA1267,Cache,Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
 in_database_not_modeled,EA1268,"North Slope, Summit",Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
-in_database_not_modeled,EA1269,Ogden (Excludes Hyrum),Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
+in_database_not_modeled,EA1269,Ogden (excludes Hyrum),Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
 in_database_not_modeled,EA1270,Fishlake (Conservation),Elk,Conservation,OTC_OR_REMAINING_TARGET,EXCLUDED_NOT_PREDICTIVE_DRAW,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
 in_database_not_modeled,EA1271,Manti (Conservation),Elk,Conservation,OTC_OR_REMAINING_TARGET,EXCLUDED_NOT_PREDICTIVE_DRAW,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
 in_database_not_modeled,EA1272,"East Canyon, East",Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
@@ -1956,6 +1955,20 @@ in_database_not_modeled,EA1283,Panguitch Lake,Elk,General Season,PREFERENCE_ANTL
 in_database_not_modeled,EA1284,Panguitch Lake,Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
 in_database_not_modeled,EA1285,Panguitch Lake,Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
 in_database_not_modeled,EA1286,Monroe,Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
+in_database_not_modeled,EA1287,"Box Elder, Grouse Creek",Elk,General Season,,,NO,NO,YES,YES,SOURCE_SUPPORT_INSUFFICIENT,Current source support is insufficient to publish modeled draw-odds rows.
+in_database_not_modeled,EA1288,"Manti, Ferron Lower Escarpment",Elk,General Season,,,NO,NO,YES,YES,SOURCE_SUPPORT_INSUFFICIENT,Current source support is insufficient to publish modeled draw-odds rows.
+in_database_not_modeled,EA1289,"Manti, Ferron Lower Escarpment",Elk,General Season,,,NO,NO,YES,YES,SOURCE_SUPPORT_INSUFFICIENT,Current source support is insufficient to publish modeled draw-odds rows.
+in_database_not_modeled,EA1290,"Manti, Ferron Lower Escarpment",Elk,General Season,,,NO,NO,YES,YES,SOURCE_SUPPORT_INSUFFICIENT,Current source support is insufficient to publish modeled draw-odds rows.
+in_database_not_modeled,EA1291,"Mt Dutton, North",Elk,General Season,,,NO,NO,YES,YES,SOURCE_SUPPORT_INSUFFICIENT,Current source support is insufficient to publish modeled draw-odds rows.
+in_database_not_modeled,EA1292,"Mt Dutton, North",Elk,General Season,,,NO,NO,YES,YES,SOURCE_SUPPORT_INSUFFICIENT,Current source support is insufficient to publish modeled draw-odds rows.
+in_database_not_modeled,EA1293,"North Slope, Three Corners",Elk,General Season,,,NO,NO,YES,YES,SOURCE_SUPPORT_INSUFFICIENT,Current source support is insufficient to publish modeled draw-odds rows.
+in_database_not_modeled,EA1294,"Paunsaugunt, East Creek",Elk,General Season,,,NO,NO,YES,YES,SOURCE_SUPPORT_INSUFFICIENT,Current source support is insufficient to publish modeled draw-odds rows.
+in_database_not_modeled,EA1295,"Wasatch Mtns, Avintaquin",Elk,General Season,,,NO,NO,YES,YES,SOURCE_SUPPORT_INSUFFICIENT,Current source support is insufficient to publish modeled draw-odds rows.
+in_database_not_modeled,EA1296,"Wasatch Mtns, Currant Creek",Elk,General Season,,,NO,NO,YES,YES,SOURCE_SUPPORT_INSUFFICIENT,Current source support is insufficient to publish modeled draw-odds rows.
+in_database_not_modeled,EA1297,"Wasatch Mtns, Red Creek West",Elk,General Season,,,NO,NO,YES,YES,SOURCE_SUPPORT_INSUFFICIENT,Current source support is insufficient to publish modeled draw-odds rows.
+in_database_not_modeled,EA1298,"Wasatch Mtns, Wildcat/Timber Canyon",Elk,General Season,,,NO,NO,YES,YES,SOURCE_SUPPORT_INSUFFICIENT,Current source support is insufficient to publish modeled draw-odds rows.
+in_database_not_modeled,EA1299,"Wasatch Mtns, West-Central",Elk,General Season,,,NO,NO,YES,YES,SOURCE_SUPPORT_INSUFFICIENT,Current source support is insufficient to publish modeled draw-odds rows.
+in_database_not_modeled,EA1300,"Wasatch Mtns, West-Central",Elk,General Season,,,NO,NO,YES,YES,SOURCE_SUPPORT_INSUFFICIENT,Current source support is insufficient to publish modeled draw-odds rows.
 in_database_not_modeled,EA2000,Antlerless Elk Control,Elk,Antlerless Elk Control,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
 in_database_not_modeled,EA2033,Kamas,Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
 in_database_not_modeled,EA2034,"Nine Mile, Anthro",Elk,General Season,PREFERENCE_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
@@ -2230,6 +2243,8 @@ in_database_not_modeled,LP5033,"Fillmore, Oak Creek South - Private Land Only",P
 in_database_not_modeled,LP5046,"San Rafael, North - Private Land Only",Pronghorn,Limited Entry - Private Land Only,LANDOWNER_BIG_GAME,EXCLUDED_NOT_PREDICTIVE_DRAW,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
 in_database_not_modeled,LP5049,Southwest Desert - Private Land Only,Pronghorn,Limited Entry - Private Land Only,LANDOWNER_BIG_GAME,EXCLUDED_NOT_PREDICTIVE_DRAW,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
 in_database_not_modeled,LP5051,"West Desert, Rush Valley - Private Land Only",Pronghorn,Limited Entry - Private Land Only,LANDOWNER_BIG_GAME,EXCLUDED_NOT_PREDICTIVE_DRAW,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
+in_database_not_modeled,MA1007,Morgan-South Rich,Moose,General Season,BONUS_ANTLERLESS_MOOSE,IN_SCOPE_MODEL_PENDING,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,Needs strategy implementation before predictive draw-odds modeling.
+in_database_not_modeled,MA1008,"Wasatch Mtns, Salt Lake-Timpanogos",Moose,General Season,BONUS_ANTLERLESS_MOOSE,IN_SCOPE_MODEL_PENDING,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,Needs strategy implementation before predictive draw-odds modeling.
 in_database_not_modeled,MA1009,Causey Spring CWMU,Moose,CWMU,BONUS_ANTLERLESS_MOOSE,IN_SCOPE_MODEL_PENDING,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,Needs strategy implementation before predictive draw-odds modeling.
 in_database_not_modeled,MA1010,Deseret CWMU,Moose,CWMU,BONUS_ANTLERLESS_MOOSE,IN_SCOPE_MODEL_PENDING,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,Needs strategy implementation before predictive draw-odds modeling.
 in_database_not_modeled,MB6201,Beaver Hollow CWMU,Moose,CWMU,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,Needs strategy implementation before predictive draw-odds modeling.
@@ -2240,6 +2255,7 @@ in_database_not_modeled,PB5338,Castle Valley Outdoors CWMU,Pronghorn,CWMU,BONUS_
 in_database_not_modeled,PB5342,Salt Wells CWMU,Pronghorn,CWMU,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,Needs strategy implementation before predictive draw-odds modeling.
 in_database_not_modeled,PB5345,Green River Flat CWMU,Pronghorn,CWMU,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,Needs strategy implementation before predictive draw-odds modeling.
 in_database_not_modeled,PB5346,Junction Valley CWMU,Pronghorn,CWMU,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,Needs strategy implementation before predictive draw-odds modeling.
+in_database_not_modeled,PD1039,"Panguitch Lake/Zion, North",Pronghorn,General Season,PREFERENCE_DOE_PRONGHORN,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
 in_database_not_modeled,PD1047,Antelope Creek CWMU,Pronghorn,CWMU,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,Needs strategy implementation before predictive draw-odds modeling.
 in_database_not_modeled,PD1048,The Rose of Snowville CWMU,Pronghorn,CWMU,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,Needs strategy implementation before predictive draw-odds modeling.
 in_database_not_modeled,PD1049,Zane CWMU,Pronghorn,CWMU,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,Needs strategy implementation before predictive draw-odds modeling.
@@ -2254,6 +2270,7 @@ in_database_not_modeled,PD1057,"Parker Mtn, Highlands",Pronghorn,General Season,
 in_database_not_modeled,PD1058,"Parker Mtn, Highlands",Pronghorn,General Season,PREFERENCE_DOE_PRONGHORN,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
 in_database_not_modeled,PD1059,"Parker Mtn, Plains",Pronghorn,General Season,PREFERENCE_DOE_PRONGHORN,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
 in_database_not_modeled,PD1060,"Parker Mtn, Plains",Pronghorn,General Season,PREFERENCE_DOE_PRONGHORN,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
+in_database_not_modeled,RE1000,"Box Elder, Newfoundland Mtn",Rocky Mountain Bighorn Sheep,General Season,BONUS_EWE_BIGHORN,IN_SCOPE_MODEL_PENDING,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
 in_database_not_modeled,RS1000,Antelope Island Conservation,Rocky Mountain Bighorn Sheep,Once-in-a-lifetime,OTC_OR_REMAINING_TARGET,EXCLUDED_NOT_PREDICTIVE_DRAW,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
 in_database_not_modeled,RS1001,"Book Cliffs, South",Rocky Mountain Bighorn Sheep,Conservation,OTC_OR_REMAINING_TARGET,EXCLUDED_NOT_PREDICTIVE_DRAW,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
 in_database_not_modeled,RS1003,"Box Elder, Newfoundland Mtn",Rocky Mountain Bighorn Sheep,Conservation,OTC_OR_REMAINING_TARGET,EXCLUDED_NOT_PREDICTIVE_DRAW,NO,NO,YES,YES,OBSERVED_HISTORY_ONLY,Appears only in observed-history coverage and is not active in predictive runtime.
@@ -2467,6 +2484,8 @@ pending_or_non_probability_status,DA1011,George Creek CWMU,Deer,CWMU,BONUS_CWMU_
 pending_or_non_probability_status,DA1012,Junction Valley CWMU,Deer,CWMU,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING|MODELED_BONUS,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
 pending_or_non_probability_status,DA1013,Mt Carmel CWMU,Deer,CWMU,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING|MODELED_BONUS,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
 pending_or_non_probability_status,DA1050,The Rose of Snowville CWMU,Deer,CWMU,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
+pending_or_non_probability_status,DB1009,Henry Mtns Management,Deer,Premium Limited Entry,PREFERENCE_GENERAL_SEASON_BUCK_DEER,IN_SCOPE_MODEL_PENDING,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
+pending_or_non_probability_status,DB1058,Paunsaugunt Cactus,Deer,Premium Limited Entry,PREFERENCE_GENERAL_SEASON_BUCK_DEER,IN_SCOPE_MODEL_PENDING,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
 pending_or_non_probability_status,DB1200,Alton - Premium Buck CWMU,Deer,CWMU,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING|MODELED_BONUS,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
 pending_or_non_probability_status,DB1201,Alton - Management Buck CWMU,Deer,CWMU,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING|MODELED_BONUS,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
 pending_or_non_probability_status,DB1202,Antelope Creek CWMU,Deer,CWMU,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
@@ -2642,12 +2661,12 @@ pending_or_non_probability_status,EA2004,Chalk Creek,Elk,Private Lands Only,PRIV
 pending_or_non_probability_status,EA2005,"North Slope, West Daggett",Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
 pending_or_non_probability_status,EA2006,Yellowstone,Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
 pending_or_non_probability_status,EA2008,"Nine Mile, Anthro-Myton Bench",Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
-pending_or_non_probability_status,EA2009,"La Sal, La Sal Mtns",Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
+pending_or_non_probability_status,EA2009,La Sal Mtns,Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
 pending_or_non_probability_status,EA2010,San Juan,Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
 pending_or_non_probability_status,EA2011,Manti,Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
-pending_or_non_probability_status,EA2012,"Wasatch Mtns, West",Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
+pending_or_non_probability_status,EA2012,"Wasatch Mtns, West-Central",Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
 pending_or_non_probability_status,EA2013,"Wasatch Mtns, Currant Creek",Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
-pending_or_non_probability_status,EA2014,"Wasatch Mtns, Avintaquin - White River",Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
+pending_or_non_probability_status,EA2014,"Wasatch Mtns, Avintaquin-White River",Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
 pending_or_non_probability_status,EA2015,Paunsaugunt,Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
 pending_or_non_probability_status,EA2016,Nebo,Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
 pending_or_non_probability_status,EA2017,Mt Dutton,Elk,Private Lands Only,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,IN_SCOPE_MODEL_PENDING|MODELED_ALLOCATION,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
@@ -2729,8 +2748,8 @@ pending_or_non_probability_status,EB3613,Little Pole Canyon CWMU,Elk,CWMU,BONUS_
 pending_or_non_probability_status,EB3614,Tunnel Hollow CWMU,Elk,CWMU,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING|MODELED_BONUS,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
 pending_or_non_probability_status,EB3619,Weber Florence Creek/Stillman Creek CWMU,Elk,CWMU,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
 pending_or_non_probability_status,EB3620,The Dirty Dozen,Elk,CWMU,BONUS_CWMU_BIG_GAME|LANDOWNER_BIG_GAME,EXCLUDED_NOT_PREDICTIVE_DRAW|IN_SCOPE_MODEL_PENDING,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
-pending_or_non_probability_status,MA1007,Morgan-South Rich,Moose,Limited Entry,BONUS_ANTLERLESS_MOOSE|BONUS_LE_BIG_GAME,IN_SCOPE_MODEL_PENDING|MODELED_BONUS,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
-pending_or_non_probability_status,MA1008,"Wasatch Mtns, Salt Lake-Timpanogos",Moose,Limited Entry,BONUS_ANTLERLESS_MOOSE|BONUS_LE_BIG_GAME,IN_SCOPE_MODEL_PENDING|MODELED_BONUS,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
+pending_or_non_probability_status,MA1007,Morgan-South Rich,Moose,General Season,BONUS_ANTLERLESS_MOOSE,IN_SCOPE_MODEL_PENDING,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
+pending_or_non_probability_status,MA1008,"Wasatch Mtns, Salt Lake-Timpanogos",Moose,General Season,BONUS_ANTLERLESS_MOOSE,IN_SCOPE_MODEL_PENDING,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
 pending_or_non_probability_status,MA1009,Causey Spring CWMU,Moose,CWMU,BONUS_ANTLERLESS_MOOSE,IN_SCOPE_MODEL_PENDING,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
 pending_or_non_probability_status,MA1010,Deseret CWMU,Moose,CWMU,BONUS_ANTLERLESS_MOOSE,IN_SCOPE_MODEL_PENDING,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.
 pending_or_non_probability_status,MB6201,Beaver Hollow CWMU,Moose,CWMU,BONUS_CWMU_BIG_GAME,IN_SCOPE_MODEL_PENDING,YES,YES,YES,YES,IN_SCOPE_MODEL_PENDING,In scope but pending/non-probability strategy; keep out of draw-odds modeled totals.

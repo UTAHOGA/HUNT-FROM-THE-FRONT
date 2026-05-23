@@ -1,5 +1,67 @@
 # WORK LOG
 
+## All RAC 2026 Permit Cumulative Vs DATABASE Comparison
+- Timestamp (UTC): 2026-05-23T06:14:00Z
+- Scope:
+  - Built a fresh cumulative 2026 RAC permit table from normalized `pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_*.csv` family files.
+  - Excluded metadata, prior comparison outputs, supplemental parsing intermediates, control-unit overlays, and raw PDF permit-row extraction files from the cumulative permit table.
+  - Compared the cumulative RAC rows against `pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv` by `hunt_code`.
+  - Kept unit-level general-season deer rows and category-level general bull elk rows in the cumulative output, but marked them as not directly comparable one-to-one where appropriate.
+- Files written:
+  - `scripts/build-all-rac-permit-database-compare.py`
+  - `processed_data/all_rac_2026_permits_cumulative.csv`
+  - `processed_data/all_rac_2026_permits_cumulative.json`
+  - `processed_data/all_rac_2026_permits_vs_DATABASE.csv`
+  - `processed_data/all_rac_2026_permits_vs_DATABASE.json`
+  - `processed_data/all_rac_2026_permits_vs_DATABASE.md`
+- Result:
+  - Corrected follow-up (UTC): 2026-05-23T06:39:00Z.
+  - Removed invalid `DA1051` / Beaver City antlerless deer row after user supplied the corrected official antlerless deer availability list.
+  - Corrected `DA1009`, `DA1018`, and `DA1033` antlerless deer permit totals back to the supplied truth source and current `DATABASE.csv` values.
+  - Cumulative RAC rows: `562`.
+  - RAC rows with hunt codes: `528`.
+  - Unique RAC hunt codes: `528`.
+  - DATABASE unique hunt codes: `1394`.
+  - RAC hunt codes missing in DATABASE: `17`.
+  - Numeric mismatch rows: `39`.
+  - Significant numeric differences with absolute total delta greater than `5`: `28`.
+  - Missing DATABASE hunt codes: `EA1007`, `EA1053`, `EA1287`, `EA1288`, `EA1289`, `EA1290`, `EA1291`, `EA1292`, `EA1293`, `EA1294`, `EA1295`, `EA1296`, `EA1297`, `EA1298`, `EA1299`, `EA1300`, `PD1039`.
+  - Corrected antlerless deer truth rows: `16`.
+  - Corrected antlerless deer 2026 total: `340`.
+- Validation:
+  - Ran `python scripts/build-all-rac-permit-database-compare.py`.
+  - Ran `python -m compileall scripts/build-all-rac-permit-database-compare.py`.
+  - Ran `python -m engine.utah.truth_source_promotion --truth-root pipeline/RAW/hunt_unit_database/2026/csv --processed-root processed_data --families doe_pronghorn antlerless_deer standard_antlerless_elk private_lands_antlerless_elk antlerless_elk_control_units antlerless_moose ewe_rocky_sheep --promote --write-audits`.
+  - Ran `python -m pytest tests/utah/test_truth_source_promotion.py -q` and passed `20`.
+  - Ran `python -m compileall engine tests scripts/build-all-rac-permit-database-compare.py`.
+  - Confirmed all five processed output artifacts exist and the comparison CSV has `562` rows.
+  - Confirmed `DA1051` count is `0` in the corrected antlerless deer truth file, audit CSV, runtime reference, enriched master, draw reality, point ladder, RAC cumulative, and RAC-vs-DATABASE comparison.
+
+## Antlerless Elk Allotment Vs Current Runtime Comparison
+- Timestamp (UTC): 2026-05-23T06:44:00Z
+- Scope:
+  - Initial pass incorrectly used `DATABASE.csv` as the allotment baseline.
+  - Corrected pass (UTC): 2026-05-23T06:50:00Z.
+  - Compared the current RAC allotment values from `pipeline/RAW/hunt_unit_database/2026/csv/2026_rac_antlerless_elk_permits.csv` against `DATABASE.csv` and the promoted runtime reference.
+  - Did not change model math or active permit values in this pass.
+- Files written:
+  - `scripts/compare-antlerless-elk-allotments.py`
+  - `processed_data/antlerless_elk_current_rac_allotment_vs_database_runtime.csv`
+  - `processed_data/antlerless_elk_current_rac_allotment_vs_database_runtime.json`
+  - `processed_data/antlerless_elk_current_rac_allotment_vs_database_runtime.md`
+- Result:
+  - Current RAC rows compared: `116`.
+  - Runtime matches current RAC: `116`.
+  - Runtime difference rows: `0`.
+  - DATABASE difference rows: `37`.
+  - DATABASE stale/different rows: `20`.
+  - DATABASE missing current RAC hunt codes: `17`.
+  - Significant DATABASE differences with absolute total delta greater than `5`: `19`.
+  - Largest DATABASE differences: `EA1267` Cache RAC `200` vs DATABASE `90`, `EA1269` Ogden excludes Hyrum RAC `300` vs DATABASE `200`, `EA2033` Kamas archery RAC `200` vs DATABASE `250`.
+- Validation:
+  - Ran `python scripts/compare-antlerless-elk-allotments.py`.
+  - Ran `python -m compileall scripts/compare-antlerless-elk-allotments.py`.
+
 ## Out-Of-Scope Non-Target Cleanup
 - Timestamp (UTC): 2026-05-22T18:30:00Z
 - Scope:
@@ -1484,6 +1546,39 @@
   - Coverage target-scope hunt-code count: `1668`
   - Coverage-to-database overage: `274`
   - The audit did not find a canonical database candidate with exactly `1294` unique hunt codes in this repo snapshot and recorded that discrepancy explicitly in the report.
+
+## 2026 RAC Current-Year Allotment Overlay
+- Timestamp (UTC): 2026-05-23T00:00:00Z
+- Scope:
+  - Added explicit current-year available-permit/allotment fields to the runtime CSV surfaces so 2026 RAC allotments are not confused with 2025 draw-result permit fields.
+  - Wired RAC direct hunt-code allotments into the active bonus-draw quota path so max-point pool, random pool, cutoff, and draw probability calculations use RAC 2026 permit values when available.
+  - Created `scripts/apply-current-year-permit-allotments.py` to read direct hunt-code rows from normalized `2026_rac_*.csv` tables.
+  - Populated:
+    - `permit_allotment_2026_res`
+    - `permit_allotment_2026_nr`
+    - `permit_allotment_2026_total`
+    - `permit_allotment_2026_source`
+    - `permit_allotment_2026_source_file`
+    - `permit_allotment_2026_status`
+  - RAC direct hunt-code rows use `permit_allotment_2026_source = 2026_RAC_CURRENT_YEAR_ALLOTMENT`.
+  - Rows without direct RAC support fall back to existing `permits_2026_*` values and are marked `FALLBACK_EXISTING_2026_PERMITS`.
+  - Total-only RAC rows keep resident/nonresident allotment fields blank rather than inventing a split.
+- Key checks:
+  - `EA1267` now carries RAC current-year allotment `180 / 20 / 200`.
+  - `EA2012` private-lands-only antlerless elk carries total-only allotment `500` with blank resident/nonresident allotment fields.
+  - `DA1009` antlerless deer carries total-only allotment `25`.
+  - `EB3024` uses RAC current-year allotment `9 / 1 / 10`; Resident quota behavior uses `9`, resulting in `quota_2026_max_pool = 5` and `quota_2026_random_pool = 4`.
+  - `EB3022` uses RAC current-year allotment `130 / 15 / 145`; Resident quota behavior uses `130`, resulting in `quota_2026_max_pool = 65` and `quota_2026_random_pool = 65`.
+  - `BR1008` uses fallback existing 2026 permit fields because there is no direct RAC row.
+- Outputs:
+  - `processed_data/current_year_permit_allotment_overlay_dry_run.json`
+  - `processed_data/current_year_permit_allotment_overlay_dry_run_summary.csv`
+  - `processed_data/current_year_permit_allotment_overlay_write.json`
+  - `processed_data/current_year_permit_allotment_overlay_write_summary.csv`
+  - `processed_data/current_year_permit_allotment_rac_index.csv`
+- Validation:
+  - Focused current-year allotment tests were added in `tests/utah/test_current_year_permit_allotments.py`.
+  - Probability formulas and frontend odds formatting were not changed; current-year RAC allotments now feed the existing quota-driven draw-odds behavior.
 
 ## Point Ladder Max-Point Vs Random-Pool Display Correction
 - Timestamp (UTC): 2026-05-23T04:30:00Z

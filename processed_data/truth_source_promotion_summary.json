@@ -20,10 +20,10 @@
       }
     },
     "antlerless_deer": {
-      "truth_rows": 17,
+      "truth_rows": 16,
       "runtime_rows_corrected": 0,
       "runtime_rows_added": 0,
-      "runtime_rows_unchanged": 1658,
+      "runtime_rows_unchanged": 1574,
       "mismatch_rows_before_promotion": 0,
       "mismatch_rows_after_promotion": 0,
       "availability_only_rows": 0,
