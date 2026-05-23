@@ -1,6 +1,24 @@
 <!doctype html>
 <html lang="en">
 <head>
+<script>
+  // 1. Force the app to recognize the maps route if no hash is present
+  if (!window.location.hash || window.location.hash === '#/') {
+    window.location.hash = '#google-maps';
+  }
+
+  // 2. Wait for the app to finish loading, then mask the URL bar cleanly
+  window.addEventListener('DOMContentLoaded', () => {
+    // This removes '#google-maps' from the user's view without reloading the page
+    if (window.location.hash === '#google-maps') {
+      window.history.replaceState(
+        null, 
+        document.title, 
+        window.location.pathname + window.location.search
+      );
+    }
+  });
+</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="./assets/logos/favicon.ico.png" />
