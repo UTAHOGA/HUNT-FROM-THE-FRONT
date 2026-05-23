@@ -50,7 +50,10 @@
   - Rows with no harvest history: `0`.
   - Duplicate key count: `0`.
   - Probability field guardrail: `PASS`.
+  - Quota guardrail: `PASS`.
   - Special permit guardrail: `PASS`.
+  - Harvest audit blocker count: `0`.
+  - Harvest audit warning count: `15529` and preserved as source-review metadata, not a blocker.
   - Publish ready for mixed predictive engine: `true`.
 - Spot checks:
   - `DB1004` reconciles public draw `80` plus Expo `3` to all-class total `83`; Conservation was not used to explain the gap.
@@ -63,7 +66,8 @@
   - Added focused mixed-engine tests under `tests/utah_predictive_mixed/`.
 - Validation:
   - `python scripts/build_mixed_predictive_engine_2026.py` passed.
-  - `python -m pytest tests/utah_predictive_mixed -q` passed: `19`.
+  - `python -m pytest tests/utah_predictive_mixed -q` passed: `20`.
+  - `python -m pytest tests/utah_quality -q` passed: `18`.
   - `python -m pytest tests/utah_bonus_predictive tests/utah_draw_predictive tests/utah/test_frontend_probability_selection.py -q` passed: `168`.
   - `python -m compileall engine scripts tests` passed.
   - `node --check hunt-research.js` passed.
