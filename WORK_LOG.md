@@ -54,6 +54,17 @@
   - `node --check ui.js`
   - `python -m pytest tests/utah/test_header_layout.py tests/utah/test_frontend_probability_selection.py -q`
 
+### Hunt Research Header Centering Fix
+- Timestamp (UTC): 2026-05-23T18:40:00Z
+- Scope:
+  - Kept Hunt Research using the fixed centered desktop nav position even when narrower viewport rules are active.
+  - Scoped the wrapped nav fallback to headers that actually have left-side controls, so Builder can protect Instructions/Google Maps while Research remains centered.
+  - Preserved deep orange hover text, orange border highlight, subtle page-pillow lift, and white selected-page text.
+- Validation:
+  - `node --check header-layout.js`
+  - `node --check ui.js`
+  - `python -m pytest tests/utah/test_header_layout.py tests/utah/test_frontend_probability_selection.py -q`
+
 ## Mixed Predictive Draw-Odds Engine 2026
 - Timestamp (UTC): 2026-05-23T14:20:00Z
 - Scope:

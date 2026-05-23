@@ -38,6 +38,7 @@ def test_shared_header_builds_primary_navigation() -> None:
 def test_primary_header_nav_uses_fixed_desktop_slot() -> None:
     text = _text(HEADER_LAYOUT)
     assert "PRIMARY_HEADER_NAV_ITEMS" in text
+    assert "uoga-header-has-left-controls" in text
     assert "position:absolute" in text
     assert "left:50%" in text
     assert "top:50%" in text
@@ -45,6 +46,7 @@ def test_primary_header_nav_uses_fixed_desktop_slot() -> None:
     assert "width:max-content" in text
     assert "max-width:calc(100vw - 560px)" in text
     assert "z-index:10" in text
+    assert ".topbar.uoga-header-has-left-controls .uoga-primary-nav" in text
 
 
 def test_center_nav_uses_double_pillow_visual_language() -> None:

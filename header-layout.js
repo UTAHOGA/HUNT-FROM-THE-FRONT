@@ -110,6 +110,7 @@
 
   function ensurePrimaryHeaderNav(header, links) {
     if (!header || !links || !links.length) return;
+    header.classList.toggle('uoga-header-has-left-controls', !!header.querySelector('.topbar-left'));
     let nav = header.querySelector('.uoga-primary-nav');
     if (!nav) {
       nav = document.createElement('nav');
@@ -611,7 +612,7 @@
           align-items:center !important;
           gap:12px !important;
         }
-        .uoga-primary-nav {
+        .topbar.uoga-header-has-left-controls .uoga-primary-nav {
           order:4 !important;
           flex:1 1 100% !important;
           position:relative !important;
