@@ -1,9 +1,8 @@
 directory,file_count,size_bytes,size_mb
-processed_data,3391,1710220883,1630.994
+processed_data,3391,1710219768,1630.993
 pipeline,1850,1204370932,1148.578
 data,491,548604416,523.190
 data_model,268,527218465,502.795
-pages-dist,1879,358634174,342.020
 data_truth,230,143677051,137.021
 assets,30,16562767,15.795
 canonical,18,8872951,8.462
@@ -26,9 +25,10 @@ hunt_master_canonical_2026_built.csv,1,367463,0.350
 app.js,1,223298,0.213
 hunt_database_gaps.csv,1,215102,0.205
 favicon.ico,1,151252,0.144
-WORK_LOG.md,1,136185,0.130
+WORK_LOG.md,1,138182,0.132
 package-lock.json,1,63280,0.060
-hunt-research.js,1,60655,0.058
+hunt-research.js,1,61451,0.059
+hunt-research.js.bak,1,60655,0.058
 processed_data_hunt_database_2026_completeness_report.json,1,55253,0.053
 lib,8,47062,0.045
 research.html,1,41312,0.039
@@ -79,7 +79,7 @@ Git Bash Here.lnk,1,1891,0.002
 uoga-analytics.js,1,1742,0.002
 config.local.js,1,1617,0.002
 HARVEST_AND_REPORT_YEAR_RULES.md,1,1528,0.001
-.gitattributes,1,1169,0.001
+.gitattributes,1,1075,0.001
 .gitignore,1,979,0.001
 Canonical JSON rules.md,1,742,0.001
 sentry-browser-init.js,1,728,0.001

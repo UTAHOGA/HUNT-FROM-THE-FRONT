@@ -1,6 +1,6 @@
 # Mixed Predictive Engine 2026 Audit
 
-- generated_at_utc: 2026-05-23T14:29:14.993787+00:00
+- generated_at_utc: 2026-05-23T15:33:48.999383+00:00
 - model_version: mixed_predictive_v1.0.0
 - rule_version: utah_draw_model_v1.0.0
 - prediction_row_count: 27940

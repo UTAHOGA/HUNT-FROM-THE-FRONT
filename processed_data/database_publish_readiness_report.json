@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-05-23T10:14:59.597529+00:00",
+  "generated_at_utc": "2026-05-23T15:32:53.382352+00:00",
   "publish_ready": true,
   "blockers": [],
   "warnings": [
@@ -249,13 +249,13 @@
         {
           "file": "generated/pages/hunt-planner.json",
           "exists": true,
-          "rows": 1394,
+          "rows": 1411,
           "counts": {
             "Allocation": 323,
             "Availability": 1,
             "CWMU": 283,
-            "General": 288,
-            "Limited Entry": 480,
+            "General": 308,
+            "Limited Entry": 477,
             "O.T.C.": 8,
             "Sportsman": 11
           }
@@ -263,12 +263,12 @@
         {
           "file": "hunt-master-canonical-2026.json",
           "exists": true,
-          "rows": 1394,
+          "rows": 1411,
           "counts": {
             "Allocation": 323,
             "Availability": 1,
             "CWMU": 283,
-            "General": 281,
+            "General": 298,
             "Limited Entry": 480,
             "O.T.C.": 15,
             "Sportsman": 11
@@ -339,7 +339,7 @@
           "pass": true
         },
         "EB3024_RESIDENT_RAC_REASON_CODE": {
-          "actual": "BONUS_RULE_SIMULATED|HUNT_KIND_LE|DRAW_POOL_STANDARD|MAX_POOL_DEPRECATED_NO_AUTO_100|APPLICANT_STACK_ROLLED_FORWARD|MAX_POINT_BOUNDARY_RECOMPUTED|OFFICIAL_2026_QUOTA_USED|RAC_CURRENT_YEAR_ALLOTMENT_USED|MIXED_MAX_POINT_CUTOFF",
+          "actual": "BONUS_RULE_SIMULATED|HUNT_KIND_LE|DRAW_POOL_STANDARD|MAX_POOL_DEPRECATED_NO_AUTO_100|APPLICANT_STACK_ROLLED_FORWARD|MAX_POINT_BOUNDARY_RECOMPUTED|OFFICIAL_2026_QUOTA_USED|RAC_CURRENT_YEAR_ALLOTMENT_USED|MIXED_MAX_POINT_CUTOFF|QUOTA_UNCHANGED|ROLLOVER_ADJUSTED_PROBABILITY_USED|HARVEST_DEMAND_NEUTRAL|MIXED_MODEL_USED|PRIOR_YEAR_WEIGHTED_BASELINE|QUOTA_ADJUSTED_COMPONENT_USED|ROLLOVER_COMPONENT_USED|HARVEST_COMPONENT_USED|UNCERTAINTY_BAND_A",
           "expected_contains": "RAC_CURRENT_YEAR_ALLOTMENT_USED",
           "pass": true
         },
@@ -401,39 +401,5 @@
     "node --check hunt-research.js",
     "node --check scripts/verify-permit-allocations-2026.js",
     "npm.cmd test"
-  ],
-  "new_2026_rac_hunts_explain_1394_gap": {
-    "database_count": 1411,
-    "stale_catalog_count": 1394,
-    "gap_count": 17,
-    "antlerless_elk_new_2026_count": 16,
-    "doe_pronghorn_new_2026_count": 1,
-    "total_2026_permits": 1150,
-    "total_2026_res": 1034,
-    "total_2026_nr": 116,
-    "hunt_codes": [
-      "EA1287",
-      "EA1288",
-      "EA1289",
-      "EA1290",
-      "EA1291",
-      "EA1292",
-      "EA1053",
-      "EA1293",
-      "EA1294",
-      "EA1295",
-      "EA1007",
-      "EA1296",
-      "EA1297",
-      "EA1299",
-      "EA1300",
-      "EA1298",
-      "PD1039"
-    ],
-    "report_files": {
-      "csv": "processed_data/new_2026_rac_hunts_explain_1394_gap.csv",
-      "json": "processed_data/new_2026_rac_hunts_explain_1394_gap.json",
-      "md": "processed_data/new_2026_rac_hunts_explain_1394_gap.md"
-    }
-  }
+  ]
 }

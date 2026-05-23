@@ -1,30 +1,29 @@
 # Repository File Retention Audit
 
-- Generated: `2026-05-23T15:01:16.749697+00:00`
-- Total repo file count: `8984`
-- Total repo size: `4339.944 MB`
+- Generated: `2026-05-23T15:34:06.365040+00:00`
+- Total repo file count: `7106`
+- Total repo size: `3997.983 MB`
 - Git metadata available: `True`
 
 ## Action Counts
 
 - `CLOUDFLARE_R2_ARCHIVE_DATA`: `306`
 - `CLOUDFLARE_R2_RUNTIME_DATA`: `2989`
-- `DELETE_AFTER_BACKUP`: `393`
+- `DELETE_AFTER_BACKUP`: `394`
 - `KEEP_IN_GITHUB`: `1255`
 - `KEEP_IN_GITHUB_DOC_OR_SCHEMA`: `42`
 - `KEEP_IN_GITHUB_REBUILD_SCRIPT_OR_TEST`: `309`
 - `KEEP_IN_GITHUB_SMALL_CANONICAL_DATA`: `102`
 - `LOCAL_ARCHIVE_ONLY`: `914`
-- `ONLINE_STATIC_SITE`: `1942`
+- `ONLINE_STATIC_SITE`: `63`
 - `REVIEW_REQUIRED`: `732`
 
 ## Size By Top-Level Directory
 
-- `processed_data`: `3391` files, `1630.994 MB`
+- `processed_data`: `3391` files, `1630.993 MB`
 - `pipeline`: `1850` files, `1148.578 MB`
 - `data`: `491` files, `523.190 MB`
 - `data_model`: `268` files, `502.795 MB`
-- `pages-dist`: `1879` files, `342.020 MB`
 - `data_truth`: `230` files, `137.021 MB`
 - `assets`: `30` files, `15.795 MB`
 - `canonical`: `18` files, `8.462 MB`
@@ -47,9 +46,10 @@
 - `app.js`: `1` files, `0.213 MB`
 - `hunt_database_gaps.csv`: `1` files, `0.205 MB`
 - `favicon.ico`: `1` files, `0.144 MB`
-- `WORK_LOG.md`: `1` files, `0.130 MB`
+- `WORK_LOG.md`: `1` files, `0.132 MB`
 - `package-lock.json`: `1` files, `0.060 MB`
-- `hunt-research.js`: `1` files, `0.058 MB`
+- `hunt-research.js`: `1` files, `0.059 MB`
+- `hunt-research.js.bak`: `1` files, `0.058 MB`
 - `processed_data_hunt_database_2026_completeness_report.json`: `1` files, `0.053 MB`
 - `lib`: `8` files, `0.045 MB`
 - `research.html`: `1` files, `0.039 MB`
@@ -171,7 +171,6 @@
 - `processed_data/backups/permit_allocations_2026_20260510_160357/processed_data/hunt_master_enriched.csv`: `20.333 MB`, `REVIEW_REQUIRED`, `ROLE_UNCLEAR`
 - `data_model/runtime_drafts/point_ladder_view_v3.csv`: `20.116 MB`, `CLOUDFLARE_R2_RUNTIME_DATA`, `LARGE_RUNTIME_DATA`
 - `processed_data/backups/current_year_allotment_overlay_20260523_071315/draw_reality_engine_predictive_v2.csv`: `19.902 MB`, `REVIEW_REQUIRED`, `ROLE_UNCLEAR`
-- `pages-dist/processed_data/draw_reality_engine.csv`: `19.581 MB`, `ONLINE_STATIC_SITE`, `PAGES_DIST_BUILD_ARTIFACT`
 - `processed_data/draw_reality_engine.csv`: `19.581 MB`, `REVIEW_REQUIRED`, `ROLE_UNCLEAR`
 - `data_model/runtime_drafts/predictive_bonus_engine_2026.materialized.csv`: `18.209 MB`, `CLOUDFLARE_R2_RUNTIME_DATA`, `LARGE_RUNTIME_DATA`
 - `data_model/runtime_drafts/predictive_bonus_engine_2026.predictions.csv`: `17.824 MB`, `CLOUDFLARE_R2_RUNTIME_DATA`, `LARGE_RUNTIME_DATA`
@@ -188,7 +187,6 @@
 - `data_model/runtime_drafts/mixed_predictive_engine_2026.audit.csv`: `12.752 MB`, `CLOUDFLARE_R2_RUNTIME_DATA`, `LARGE_RUNTIME_DATA`
 - `processed_data/mixed_predictive_engine_2026_audit.csv`: `12.752 MB`, `REVIEW_REQUIRED`, `ROLE_UNCLEAR`
 - `processed_data/backups/current_year_allotment_overlay_20260523_071315/draw_reality_engine.csv`: `12.717 MB`, `REVIEW_REQUIRED`, `ROLE_UNCLEAR`
-- `pages-dist/processed_data/hard_data_exports/source_pdfs/draw_odds/2025/2025-big-game-draw-results.pdf`: `12.142 MB`, `ONLINE_STATIC_SITE`, `PAGES_DIST_BUILD_ARTIFACT`
 - `pipeline/RAW/hunt_unit_database/2026/pdf/draw_odds/2025 Big Game Draw Results.pdf`: `12.142 MB`, `LOCAL_ARCHIVE_ONLY`, `RAW_SOURCE_ARCHIVE`
 - `pipeline/RAW/hunt_unit_database/_quarantine/duplicates/exact_hash/25_bg-draw-results.pdf`: `12.142 MB`, `LOCAL_ARCHIVE_ONLY`, `RAW_SOURCE_ARCHIVE`
 - `processed_data/hard_data_exports/source_pdfs/draw_odds/2025/2025-big-game-draw-results.pdf`: `12.142 MB`, `REVIEW_REQUIRED`, `ROLE_UNCLEAR`
@@ -208,19 +206,21 @@
 - `data/utah-elk-habitat.geojson`: `9.044 MB`, `REVIEW_REQUIRED`, `ROLE_UNCLEAR`
 - `pipeline/RAW/hunt_unit_mapping/geojson/habitat/Utah_Elk_Habitat_4997622948054316130.geojson`: `9.044 MB`, `REVIEW_REQUIRED`, `ROLE_UNCLEAR`
 - `data_model/runtime_drafts/applicant_pool_2026_from_2025_actual.csv`: `8.763 MB`, `CLOUDFLARE_R2_RUNTIME_DATA`, `LARGE_RUNTIME_DATA`
-- `pages-dist/processed_data/boundaries/5107.geojson`: `8.659 MB`, `ONLINE_STATIC_SITE`, `PAGES_DIST_BUILD_ARTIFACT`
 - `processed_data/boundaries/5107.geojson`: `8.659 MB`, `CLOUDFLARE_R2_RUNTIME_DATA`, `LARGE_RUNTIME_DATA`
 - `processed_data/model_outputs/draw_prediction_engine_v1.csv`: `8.475 MB`, `REVIEW_REQUIRED`, `ROLE_UNCLEAR`
 - `pipeline/RAW/hunt_unit_database/2023/pdf/harvest_report/22_bg_report.pdf`: `8.344 MB`, `LOCAL_ARCHIVE_ONLY`, `RAW_SOURCE_ARCHIVE`
 - `data/utah/foundation_bundle_2026/utah_boundaries_canonical_2026.kmz`: `8.086 MB`, `REVIEW_REQUIRED`, `ROLE_UNCLEAR`
 - `data/big_game_draw_point_level.csv`: `8.071 MB`, `REVIEW_REQUIRED`, `ROLE_UNCLEAR`
 - `data/boundaries/kml/CG9999.kml`: `8.010 MB`, `REVIEW_REQUIRED`, `ROLE_UNCLEAR`
-- `pages-dist/data/boundaries/kml/CG9999.kml`: `8.010 MB`, `ONLINE_STATIC_SITE`, `PAGES_DIST_BUILD_ARTIFACT`
 - `processed_data/hunt_research_2026_split/hunt_research_2026.index.json`: `7.805 MB`, `CLOUDFLARE_R2_RUNTIME_DATA`, `LARGE_RUNTIME_DATA`
-- `pages-dist/processed_data/boundaries/5128.geojson`: `7.336 MB`, `ONLINE_STATIC_SITE`, `PAGES_DIST_BUILD_ARTIFACT`
 - `processed_data/boundaries/5128.geojson`: `7.336 MB`, `CLOUDFLARE_R2_RUNTIME_DATA`, `LARGE_RUNTIME_DATA`
 - `pipeline/RAW/hunt_unit_mapping/geojson/2026MuleDeerLimitedEntry2.geojson`: `7.271 MB`, `REVIEW_REQUIRED`, `ROLE_UNCLEAR`
-- `pages-dist/processed_data/boundaries/5124.geojson`: `7.133 MB`, `ONLINE_STATIC_SITE`, `PAGES_DIST_BUILD_ARTIFACT`
+- `processed_data/boundaries/5124.geojson`: `7.133 MB`, `CLOUDFLARE_R2_RUNTIME_DATA`, `LARGE_RUNTIME_DATA`
+- `pipeline/RAW/hunt_unit_database/2026/geojson/EB1011_from_kmz.geojson`: `7.058 MB`, `REVIEW_REQUIRED`, `ROLE_UNCLEAR`
+- `pipeline/RAW/hunt_unit_database/2026/geojson/EB1005_from_kmz.geojson`: `6.861 MB`, `REVIEW_REQUIRED`, `ROLE_UNCLEAR`
+- `data/boundaries/kml/EB1011.kml`: `6.790 MB`, `REVIEW_REQUIRED`, `ROLE_UNCLEAR`
+- `pipeline/RAW/hunt_unit_database/2026/kmz/eb1011_doc.kml`: `6.790 MB`, `REVIEW_REQUIRED`, `ROLE_UNCLEAR`
+- `hunt-master-canonical-2026.json`: `6.666 MB`, `REVIEW_REQUIRED`, `ROLE_UNCLEAR`
 
 ## Tracked Files Over 25 MB
 
@@ -945,6 +945,7 @@
 - `engine/utah_predictive_mixed/__pycache__/prior_year.cpython-312.pyc`: `CACHE_TEMP_OR_EMPTY_ARTIFACT`
 - `engine/utah_predictive_mixed/__pycache__/quota.cpython-312.pyc`: `CACHE_TEMP_OR_EMPTY_ARTIFACT`
 - `engine/utah_predictive_mixed/__pycache__/rollover.cpython-312.pyc`: `CACHE_TEMP_OR_EMPTY_ARTIFACT`
+- `hunt-research.js.bak`: `CACHE_TEMP_OR_EMPTY_ARTIFACT`
 - `scripts/__pycache__/append_elk_general_season_otc_to_2024_permits_fixed.cpython-312.pyc`: `CACHE_TEMP_OR_EMPTY_ARTIFACT`
 - `scripts/__pycache__/apply-current-year-permit-allotments.cpython-312.pyc`: `CACHE_TEMP_OR_EMPTY_ARTIFACT`
 - `scripts/__pycache__/audit-2023-harvest-supplements.cpython-312.pyc`: `CACHE_TEMP_OR_EMPTY_ARTIFACT`
@@ -1068,7 +1069,6 @@
 - `tests/utah_bonus_predictive/__pycache__/test_bear_phase12_correction_materialization.cpython-312.pyc`: `CACHE_TEMP_OR_EMPTY_ARTIFACT`
 - `tests/utah_bonus_predictive/__pycache__/test_eb3024_fixture.cpython-312-pytest-9.0.3.pyc`: `CACHE_TEMP_OR_EMPTY_ARTIFACT`
 - `tests/utah_bonus_predictive/__pycache__/test_eb3024_fixture.cpython-312.pyc`: `CACHE_TEMP_OR_EMPTY_ARTIFACT`
-- `tests/utah_bonus_predictive/__pycache__/test_final_artifact_guardrails.cpython-312-pytest-9.0.3.pyc`: `CACHE_TEMP_OR_EMPTY_ARTIFACT`
 
 ## Review-Required Files
 

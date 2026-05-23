@@ -1,20 +1,20 @@
 {
-  "generated_at_utc": "2026-05-23T15:01:16.749697+00:00",
+  "generated_at_utc": "2026-05-23T15:34:06.365040+00:00",
   "repo_root": "C:\\Users\\tyler\\Desktop\\GitHub\\HUNTS",
-  "total_repo_file_count": 8984,
-  "total_repo_size_bytes": 4550761141,
-  "total_repo_size_mb": 4339.944,
+  "total_repo_file_count": 7106,
+  "total_repo_size_bytes": 4192189206,
+  "total_repo_size_mb": 3997.983,
   "git_available": true,
   "action_counts": {
     "CLOUDFLARE_R2_ARCHIVE_DATA": 306,
     "CLOUDFLARE_R2_RUNTIME_DATA": 2989,
-    "DELETE_AFTER_BACKUP": 393,
+    "DELETE_AFTER_BACKUP": 394,
     "KEEP_IN_GITHUB": 1255,
     "KEEP_IN_GITHUB_DOC_OR_SCHEMA": 42,
     "KEEP_IN_GITHUB_REBUILD_SCRIPT_OR_TEST": 309,
     "KEEP_IN_GITHUB_SMALL_CANONICAL_DATA": 102,
     "LOCAL_ARCHIVE_ONLY": 914,
-    "ONLINE_STATIC_SITE": 1942,
+    "ONLINE_STATIC_SITE": 63,
     "REVIEW_REQUIRED": 732
   },
   "tracked_files_over_25mb": 29,
@@ -421,14 +421,6 @@
       "git_tracked": "TRUE"
     },
     {
-      "path": "pages-dist/processed_data/draw_reality_engine.csv",
-      "size_bytes": 20532122,
-      "size_mb": "19.581",
-      "recommended_action": "ONLINE_STATIC_SITE",
-      "reason_code": "PAGES_DIST_BUILD_ARTIFACT",
-      "git_tracked": "FALSE"
-    },
-    {
       "path": "processed_data/draw_reality_engine.csv",
       "size_bytes": 20532122,
       "size_mb": "19.581",
@@ -555,14 +547,6 @@
       "recommended_action": "REVIEW_REQUIRED",
       "reason_code": "ROLE_UNCLEAR",
       "git_tracked": "TRUE"
-    },
-    {
-      "path": "pages-dist/processed_data/hard_data_exports/source_pdfs/draw_odds/2025/2025-big-game-draw-results.pdf",
-      "size_bytes": 12732089,
-      "size_mb": "12.142",
-      "recommended_action": "ONLINE_STATIC_SITE",
-      "reason_code": "PAGES_DIST_BUILD_ARTIFACT",
-      "git_tracked": "FALSE"
     },
     {
       "path": "pipeline/RAW/hunt_unit_database/2026/pdf/draw_odds/2025 Big Game Draw Results.pdf",
@@ -717,14 +701,6 @@
       "git_tracked": "TRUE"
     },
     {
-      "path": "pages-dist/processed_data/boundaries/5107.geojson",
-      "size_bytes": 9079105,
-      "size_mb": "8.659",
-      "recommended_action": "ONLINE_STATIC_SITE",
-      "reason_code": "PAGES_DIST_BUILD_ARTIFACT",
-      "git_tracked": "FALSE"
-    },
-    {
       "path": "processed_data/boundaries/5107.geojson",
       "size_bytes": 9079105,
       "size_mb": "8.659",
@@ -773,28 +749,12 @@
       "git_tracked": "TRUE"
     },
     {
-      "path": "pages-dist/data/boundaries/kml/CG9999.kml",
-      "size_bytes": 8399106,
-      "size_mb": "8.010",
-      "recommended_action": "ONLINE_STATIC_SITE",
-      "reason_code": "PAGES_DIST_BUILD_ARTIFACT",
-      "git_tracked": "FALSE"
-    },
-    {
       "path": "processed_data/hunt_research_2026_split/hunt_research_2026.index.json",
       "size_bytes": 8184191,
       "size_mb": "7.805",
       "recommended_action": "CLOUDFLARE_R2_RUNTIME_DATA",
       "reason_code": "LARGE_RUNTIME_DATA",
       "git_tracked": "TRUE"
-    },
-    {
-      "path": "pages-dist/processed_data/boundaries/5128.geojson",
-      "size_bytes": 7691953,
-      "size_mb": "7.336",
-      "recommended_action": "ONLINE_STATIC_SITE",
-      "reason_code": "PAGES_DIST_BUILD_ARTIFACT",
-      "git_tracked": "FALSE"
     },
     {
       "path": "processed_data/boundaries/5128.geojson",
@@ -813,12 +773,52 @@
       "git_tracked": "FALSE"
     },
     {
-      "path": "pages-dist/processed_data/boundaries/5124.geojson",
+      "path": "processed_data/boundaries/5124.geojson",
       "size_bytes": 7479079,
       "size_mb": "7.133",
-      "recommended_action": "ONLINE_STATIC_SITE",
-      "reason_code": "PAGES_DIST_BUILD_ARTIFACT",
+      "recommended_action": "CLOUDFLARE_R2_RUNTIME_DATA",
+      "reason_code": "LARGE_RUNTIME_DATA",
+      "git_tracked": "TRUE"
+    },
+    {
+      "path": "pipeline/RAW/hunt_unit_database/2026/geojson/EB1011_from_kmz.geojson",
+      "size_bytes": 7400410,
+      "size_mb": "7.058",
+      "recommended_action": "REVIEW_REQUIRED",
+      "reason_code": "ROLE_UNCLEAR",
       "git_tracked": "FALSE"
+    },
+    {
+      "path": "pipeline/RAW/hunt_unit_database/2026/geojson/EB1005_from_kmz.geojson",
+      "size_bytes": 7193928,
+      "size_mb": "6.861",
+      "recommended_action": "REVIEW_REQUIRED",
+      "reason_code": "ROLE_UNCLEAR",
+      "git_tracked": "FALSE"
+    },
+    {
+      "path": "data/boundaries/kml/EB1011.kml",
+      "size_bytes": 7119317,
+      "size_mb": "6.790",
+      "recommended_action": "REVIEW_REQUIRED",
+      "reason_code": "ROLE_UNCLEAR",
+      "git_tracked": "TRUE"
+    },
+    {
+      "path": "pipeline/RAW/hunt_unit_database/2026/kmz/eb1011_doc.kml",
+      "size_bytes": 7119317,
+      "size_mb": "6.790",
+      "recommended_action": "REVIEW_REQUIRED",
+      "reason_code": "ROLE_UNCLEAR",
+      "git_tracked": "FALSE"
+    },
+    {
+      "path": "hunt-master-canonical-2026.json",
+      "size_bytes": 6989741,
+      "size_mb": "6.666",
+      "recommended_action": "REVIEW_REQUIRED",
+      "reason_code": "ROLE_UNCLEAR",
+      "git_tracked": "TRUE"
     }
   ],
   "outputs": {
