@@ -1,23 +1,27 @@
 {
   "classification": "CURRENT_2026_HUNT_CODE_FAMILY_GAP_SCAN",
-  "timestamp_utc": "2026-05-24T13:49:35.410557+00:00",
+  "timestamp_utc": "2026-05-24T14:06:25.992542+00:00",
   "database_code_count": 1411,
   "hunt_master_code_count": 1471,
   "point_ladder_code_count": 1471,
   "draw_reality_code_count": 1623,
-  "predictive_v2_code_count": 1119,
+  "predictive_v2_code_count": 1181,
   "family_count": 21,
-  "resolved_family_count": 6,
-  "predictive_gap_family_count": 15,
+  "resolved_family_count": 10,
+  "predictive_gap_family_count": 11,
   "required_surface_blocker_family_count": 0,
-  "total_missing_predictive_v2_current_database_codes": 352,
+  "total_missing_predictive_v2_current_database_codes": 290,
   "total_required_surface_missing_current_database_codes": 0,
   "resolved_families": [
     "BR",
+    "DA",
+    "EA",
     "GO",
     "MA",
     "MB",
     "PB",
+    "PD",
+    "RE",
     "TK"
   ],
   "predictive_gap_families_ranked": [
@@ -279,66 +283,6 @@
       ]
     },
     {
-      "code_prefix": "EA",
-      "label": "Antlerless Elk",
-      "dominant_species": "Elk",
-      "missing_predictive_v2_count": 51,
-      "database_code_count": 220,
-      "missing_predictive_v2_codes": [
-        "EA1007",
-        "EA1053",
-        "EA1106",
-        "EA1180",
-        "EA1220",
-        "EA1221",
-        "EA1258",
-        "EA1264",
-        "EA1265",
-        "EA1266",
-        "EA1267",
-        "EA1268",
-        "EA1269",
-        "EA1270",
-        "EA1271",
-        "EA1272",
-        "EA1273",
-        "EA1274",
-        "EA1276",
-        "EA1277",
-        "EA1278",
-        "EA1279",
-        "EA1280",
-        "EA1281",
-        "EA1282",
-        "EA1283",
-        "EA1284",
-        "EA1285",
-        "EA1286",
-        "EA1287",
-        "EA1288",
-        "EA1289",
-        "EA1290",
-        "EA1291",
-        "EA1292",
-        "EA1293",
-        "EA1294",
-        "EA1295",
-        "EA1296",
-        "EA1297",
-        "EA1298",
-        "EA1299",
-        "EA1300",
-        "EA2000",
-        "EA2033",
-        "EA2034",
-        "EA2036",
-        "EA2037",
-        "EA2038",
-        "EA2041",
-        "EA2045"
-      ]
-    },
-    {
       "code_prefix": "DB",
       "label": "Buck Deer",
       "dominant_species": "Deer",
@@ -379,23 +323,6 @@
         "EB1012",
         "EB3128",
         "EB3209"
-      ]
-    },
-    {
-      "code_prefix": "PD",
-      "label": "Doe Pronghorn",
-      "dominant_species": "Pronghorn",
-      "missing_predictive_v2_count": 8,
-      "database_code_count": 24,
-      "missing_predictive_v2_codes": [
-        "PD1039",
-        "PD1054",
-        "PD1055",
-        "PD1056",
-        "PD1057",
-        "PD1058",
-        "PD1059",
-        "PD1060"
       ]
     },
     {
@@ -468,17 +395,6 @@
       ]
     },
     {
-      "code_prefix": "DA",
-      "label": "Antlerless Deer",
-      "dominant_species": "Deer",
-      "missing_predictive_v2_count": 2,
-      "database_code_count": 20,
-      "missing_predictive_v2_codes": [
-        "DA1048",
-        "DA1049"
-      ]
-    },
-    {
       "code_prefix": "CG",
       "label": "Cougar",
       "dominant_species": "Cougar",
@@ -496,16 +412,6 @@
       "database_code_count": 1,
       "missing_predictive_v2_codes": [
         "EX1000"
-      ]
-    },
-    {
-      "code_prefix": "RE",
-      "label": "Rocky Mountain Bighorn Ewe",
-      "dominant_species": "Rocky Mountain Bighorn Sheep",
-      "missing_predictive_v2_count": 1,
-      "database_code_count": 1,
-      "missing_predictive_v2_codes": [
-        "RE1000"
       ]
     }
   ],

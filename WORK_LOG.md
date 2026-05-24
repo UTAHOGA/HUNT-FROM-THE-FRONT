@@ -2978,3 +2978,44 @@
   - `python scripts\scan-2026-hunt-code-family-gaps.py` passed.
   - `python -m pytest tests\utah\test_hunt_code_family_gap_scan_2026.py -q` passed: `3`.
   - `python -m compileall scripts\scan-2026-hunt-code-family-gaps.py tests\utah\test_hunt_code_family_gap_scan_2026.py` passed.
+
+## 2026 Antlerless Hunt-Code Resolution
+- Timestamp (UTC): 2026-05-24T14:04:05Z
+- Scope:
+  - Added a repeatable antlerless hunt-code resolver using `pipeline/RAW/hunt_unit_database/2025/pdf/draw_odds/2024 antlerless draw results.pdf` as prior draw-results context.
+  - Materialized 2024 antlerless draw-results text lines and parsed hunt rows under `data_truth/draw_results_truth/extracted/`.
+  - Reconciled the current 2026 `DA`, `EA`, `PD`, and `RE` code families across `DATABASE.csv`, `hunt_master_enriched.csv`, `point_ladder_view.csv`, `draw_reality_engine.csv`, and `draw_reality_engine_predictive_v2.csv`.
+  - Promoted 62 missing antlerless current database codes into predictive v2 as non-modeled reference rows only.
+  - Kept promoted rows explicitly marked with `algorithm_status = ANTLERLESS_REFERENCE`, `modeled_by_engine = False`, `probability_model = NONE`, and `display_odds_text = Antlerless reference only; odds not modeled`.
+  - Refreshed the 2026 family gap scan after antlerless resolution.
+  - No raw PDFs, website feeds, permit values, harvest features, quota fields, or prediction probability math were changed.
+- Outputs:
+  - `scripts/resolve-antlerless-hunt-codes-2026.py`
+  - `data_truth/draw_results_truth/extracted/2024_antlerless_draw_results_text_lines.csv`
+  - `data_truth/draw_results_truth/extracted/2024_antlerless_draw_results_hunt_rows.csv`
+  - `data_truth/draw_results_truth/validation/2026_antlerless_hunt_code_reconciliation.csv`
+  - `processed_data/2024_antlerless_draw_results_audit.json`
+  - `processed_data/2024_antlerless_draw_results_audit.md`
+  - `processed_data/2026_antlerless_hunt_code_reconciliation_summary.json`
+  - `processed_data/2026_antlerless_hunt_code_reconciliation.md`
+  - `processed_data/2026_antlerless_predictive_v2_reference_promotion.csv`
+  - `processed_data/2026_antlerless_predictive_v2_reference_promotion_summary.json`
+- Key results:
+  - Source PDF pages: `198`.
+  - Source SHA-256: `21ea12abd24abb29b074520eccae1ab1b689d6e969d622803f220c0ca4664789`.
+  - Extracted text lines: `5346`.
+  - Parsed draw-result hunt rows: `198`.
+  - Parsed draw-result prefix counts: `DA 21`, `EA 158`, `MA 2`, `PD 16`, `RE 1`.
+  - Current target database codes checked: `265`.
+  - Current target database codes present in 2024 draw results: `182`.
+  - Promoted reference hunt-code count: `62` (`EA 51`, `PD 8`, `DA 2`, `RE 1`).
+  - Antlerless reconciliation failures: `0`.
+  - Audit blockers: `0`.
+  - Updated gap scan current database codes missing predictive v2: `290`, down from `352`.
+  - Updated resolved families: `10` (`BR`, `DA`, `EA`, `GO`, `MA`, `MB`, `PB`, `PD`, `RE`, `TK`).
+  - Remaining largest predictive gaps: `EL` (`126`), `LO` (`113`), and `DB` (`15`).
+- Validation:
+  - `python scripts\resolve-antlerless-hunt-codes-2026.py` passed.
+  - `python scripts\scan-2026-hunt-code-family-gaps.py` passed.
+  - `python -m pytest tests\utah\test_antlerless_hunt_code_resolution_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py -q` passed: `6`.
+  - `python -m compileall scripts\resolve-antlerless-hunt-codes-2026.py scripts\scan-2026-hunt-code-family-gaps.py tests\utah\test_antlerless_hunt_code_resolution_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py` passed.
