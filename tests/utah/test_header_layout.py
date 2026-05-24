@@ -66,6 +66,17 @@ def test_nav_items_expand_on_hover() -> None:
     assert "border-color:#ff8c14" in text
 
 
+def test_primary_nav_hover_instruction_popups() -> None:
+    text = _text(HEADER_LAYOUT)
+    assert "FIND YOUR TARGET GAME ANIMAL" in text
+    assert "MATCH HUNTS TO YOUR POINT LEVEL" in text
+    assert "FIND AN OUTFITTER TO OPTIMIZE THE EXPERIENCE" in text
+    assert "HARD-COPY LIBRARY FOR SOURCE VERIFICATION" in text
+    assert "data-nav-tip" in text
+    assert ".uoga-primary-nav a[data-nav-tip]::before" in text
+    assert "content:attr(data-nav-tip)" in text
+
+
 def test_active_nav_item_uses_white_text_and_individual_brown_pill() -> None:
     text = _text(HEADER_LAYOUT)
     assert ".uoga-primary-nav a.active" in text

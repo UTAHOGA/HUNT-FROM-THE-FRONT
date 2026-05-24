@@ -2589,3 +2589,15 @@
   - Confirmed GitHub redirects the old `UTAHOGA/HUNT-FROM-THE-FRONT` remote to `UTAHOGA/HUNT-BUILDER`.
   - Restored the `CNAME` on `main` because `HUNT-BUILDER` is the renamed live repo, not a separate duplicate target.
   - Updated local remote naming to point directly at `UTAHOGA/HUNT-BUILDER`.
+
+## Header Navigation Hover Instructions
+- Timestamp (UTC): 2026-05-24T04:53:00Z
+- Scope:
+  - Added small hover/focus instruction popups to the shared primary header navigation.
+  - Hints now explain Builder, Research, Outfitters, Library, and U.O.G.A. Home without adding more permanent page clutter.
+  - No prediction data, runtime feeds, permit logic, or model outputs were changed.
+- Validation:
+  - `node --check header-layout.js` passed.
+  - `python -m pytest tests/utah/test_header_layout.py -q` passed: `8`.
+  - `python -m compileall tests/utah/test_header_layout.py` passed.
+  - Local static smoke check confirmed `header-layout.js` serves with the new hover help text.

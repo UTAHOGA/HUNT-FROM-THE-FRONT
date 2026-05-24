@@ -1,11 +1,11 @@
 (() => {
   const DWR_MAP_URL = 'https://dwrapps.utah.gov/huntboundary/hbstart';
   const PRIMARY_HEADER_NAV_ITEMS = [
-    { href: 'https://www.uoga.org', label: 'U.O.G.A. HOME' },
-    { href: './', label: 'HUNT BUILDER' },
-    { href: './research.html', label: 'HUNT RESEARCH' },
-    { href: './verify.html', label: 'OUTFITTERS' },
-    { href: './hard-copy.html', label: 'HUNT LIBRARY' },
+    { href: 'https://www.uoga.org', label: 'U.O.G.A. HOME', tip: 'RETURN TO THE U.O.G.A. HOME SITE' },
+    { href: './', label: 'HUNT BUILDER', tip: 'FIND YOUR TARGET GAME ANIMAL' },
+    { href: './research.html', label: 'HUNT RESEARCH', tip: 'MATCH HUNTS TO YOUR POINT LEVEL' },
+    { href: './verify.html', label: 'OUTFITTERS', tip: 'FIND AN OUTFITTER TO OPTIMIZE THE EXPERIENCE' },
+    { href: './hard-copy.html', label: 'HUNT LIBRARY', tip: 'HARD-COPY LIBRARY FOR SOURCE VERIFICATION' },
   ];
   const isBuilderPage = () => {
     const path = (window.location && window.location.pathname ? window.location.pathname : '').toLowerCase();
@@ -123,6 +123,10 @@
       const anchor = document.createElement('a');
       anchor.href = item.href;
       anchor.textContent = item.label;
+      if (item.tip) {
+        anchor.dataset.navTip = item.tip;
+        anchor.title = item.tip;
+      }
       if (item.active) {
         anchor.className = 'active';
         anchor.setAttribute('aria-current', 'page');
@@ -345,6 +349,38 @@
         box-shadow:0 10px 20px rgba(20,12,7,.30), 0 0 0 2px rgba(255,140,20,.22) !important;
         z-index:4 !important;
         text-shadow:0 0 14px rgba(255,140,20,.46) !important;
+      }
+      .uoga-primary-nav a[data-nav-tip]::before {
+        content:attr(data-nav-tip) !important;
+        position:absolute !important;
+        left:50% !important;
+        top:calc(100% + 12px) !important;
+        transform:translate(-50%, -6px) scale(.96) !important;
+        min-width:190px !important;
+        max-width:min(310px, 72vw) !important;
+        padding:10px 13px 11px !important;
+        border:1px solid rgba(255,140,20,.88) !important;
+        border-radius:16px !important;
+        background:
+          radial-gradient(circle at 16% 0%, rgba(255,255,255,.18), transparent 42%),
+          linear-gradient(180deg, rgba(63,43,25,.98), rgba(29,20,13,.98)) !important;
+        box-shadow:0 12px 24px rgba(20,12,7,.32), inset 0 1px 0 rgba(255,210,160,.16) !important;
+        color:#fff7ea !important;
+        font-size:10px !important;
+        font-weight:950 !important;
+        line-height:1.25 !important;
+        letter-spacing:.13em !important;
+        text-align:center !important;
+        white-space:normal !important;
+        text-shadow:0 1px 0 rgba(0,0,0,.62) !important;
+        opacity:0 !important;
+        pointer-events:none !important;
+        transition:opacity 150ms ease, transform 150ms ease !important;
+      }
+      .uoga-primary-nav a[data-nav-tip]:hover::before,
+      .uoga-primary-nav a[data-nav-tip]:focus-visible::before {
+        opacity:1 !important;
+        transform:translate(-50%, 0) scale(1) !important;
       }
       .uoga-primary-nav a.active {
         color:#ffffff !important;
