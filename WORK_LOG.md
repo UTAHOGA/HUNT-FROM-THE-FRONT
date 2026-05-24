@@ -2614,3 +2614,11 @@
   - `python -m pytest tests/utah/test_header_layout.py -q` passed: `9`.
   - `python -m compileall tests/utah/test_header_layout.py` passed.
   - Local static smoke check confirmed the logo asset and updated header script serve successfully.
+
+## Header Logo Removed
+- Timestamp (UTC): 2026-05-24T05:05:00Z
+- Scope:
+  - Removed the upper-left header logo after layout review showed it consumed too much header space.
+  - Removed the temporary cropped logo asset and bumped the `header-layout.js` cache tag to force the no-logo header layout.
+  - Preserved the shared navigation hover instructions and all domain/CNAME settings.
+  - No prediction data, runtime feeds, permit logic, or model outputs were changed.
