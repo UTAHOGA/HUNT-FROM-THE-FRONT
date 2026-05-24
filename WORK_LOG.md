@@ -2575,3 +2575,10 @@
 - Scope:
   - Returned both source and published Pages `CNAME` files to `hunt-builder.uoga.org` because Wix DNS is being corrected to that hostname.
   - No website source, model output, or runtime data was changed.
+
+## Live Domain Handoff To HUNT-BUILDER Repo
+- Timestamp (UTC): 2026-05-24T04:38:00Z
+- Scope:
+  - Began moving the live GitHub Pages custom-domain claim from `UTAHOGA/HUNT-FROM-THE-FRONT` to `UTAHOGA/HUNT-BUILDER`.
+  - Removed the source-branch `CNAME` from the old `HUNT-FROM-THE-FRONT` repo so `HUNT-BUILDER` can be the sole repo for `hunt-builder.uoga.org`.
+  - No prediction data, runtime feed, or website content was changed.
