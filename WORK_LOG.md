@@ -2954,3 +2954,27 @@
   - `python scripts\resolve-turkey-hunt-codes-2026.py` passed with `0` blockers.
   - `python -m pytest tests\utah\test_turkey_guidebook_2026_audit.py tests\utah\test_turkey_hunt_code_resolution_2026.py -q` passed: `7`.
   - `python -m compileall scripts\resolve-turkey-hunt-codes-2026.py tests\utah\test_turkey_hunt_code_resolution_2026.py` passed.
+
+## 2026 Hunt-Code Family Gap Scan
+- Timestamp (UTC): 2026-05-24T13:50:00Z
+- Scope:
+  - Added a read-only, repeatable family-level hunt-code gap scan across current 2026 `DATABASE.csv`, `hunt_master_enriched.csv`, `point_ladder_view.csv`, `draw_reality_engine.csv`, and `draw_reality_engine_predictive_v2.csv`.
+  - Grouped current hunt-code coverage by code prefix/species family and ranked families by current database codes missing from predictive v2.
+  - Confirmed no current `DATABASE.csv` codes are missing from the required reference surfaces `hunt_master_enriched.csv`, `point_ladder_view.csv`, or `draw_reality_engine.csv`.
+  - Kept the scan audit-only; no reference rows were promoted and no prediction math was changed.
+- Outputs:
+  - `processed_data/2026_hunt_code_family_gap_scan.csv`
+  - `processed_data/2026_hunt_code_family_gap_scan_summary.json`
+  - `processed_data/2026_hunt_code_family_gap_scan.md`
+- Key results:
+  - Current `DATABASE.csv` hunt codes: `1411`.
+  - Families scanned: `21`.
+  - Fully resolved families: `6` (`BR`, `GO`, `MA`, `MB`, `PB`, `TK`).
+  - Families with predictive v2 gaps: `15`.
+  - Current database codes missing predictive v2: `352`.
+  - Required-surface missing current database codes: `0`.
+  - Largest predictive v2 gaps: `EL` limited-entry elk reference (`126`), `LO` limited-entry deer reference (`113`), and `EA` antlerless elk (`51`).
+- Validation:
+  - `python scripts\scan-2026-hunt-code-family-gaps.py` passed.
+  - `python -m pytest tests\utah\test_hunt_code_family_gap_scan_2026.py -q` passed: `3`.
+  - `python -m compileall scripts\scan-2026-hunt-code-family-gaps.py tests\utah\test_hunt_code_family_gap_scan_2026.py` passed.
