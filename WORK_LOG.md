@@ -3063,3 +3063,33 @@
   - `python scripts\scan-2026-hunt-code-family-gaps.py` passed.
   - `python -m pytest tests\utah\test_deer_hunt_code_resolution_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py -q` passed: `6`.
   - `python -m compileall scripts\resolve-deer-hunt-codes-2026.py scripts\scan-2026-hunt-code-family-gaps.py tests\utah\test_deer_hunt_code_resolution_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py` passed.
+
+## 2023 Big Game Field Regulations Source Audit
+- Timestamp (UTC): 2026-05-24T21:59:22Z
+- Scope:
+  - Added a repeatable source audit for `pipeline/RAW/hunt_unit_database/2023/pdf/regulation/2023_field_regs.pdf`.
+  - Locked the file identity as `2023 Utah Big Game Field Regulations` with SHA-256 `c68a0ef12e09e810449e2a5f569bcf445709249c9354036bc1ef17086477284f`.
+  - Materialized 2023 field-regulations text lines, number/date/citation tokens, and pasted-text anchor checks under `data_truth/regulations_truth/normalized/`.
+  - Classified the source as `REGULATION_REFERENCE_ONLY` with guardrail `DO_NOT_USE_AS_DRAW_ODDS_HARVEST_FEATURE_OR_2026_QUOTA_INPUT`.
+  - Confirmed this source did not promote draw rows, prediction rows, harvest features, permit quotas, or website-facing files.
+- Outputs:
+  - `scripts/audit-big-game-field-regulations-2023.py`
+  - `tests/utah/test_big_game_field_regulations_2023_source_audit.py`
+  - `data_truth/regulations_truth/normalized/2023_big_game_field_regulations_text_lines.csv`
+  - `data_truth/regulations_truth/normalized/2023_big_game_field_regulations_number_tokens.csv`
+  - `data_truth/regulations_truth/normalized/2023_big_game_field_regulations_expected_text_checks.csv`
+  - `processed_data/2023_big_game_field_regulations_source_audit.json`
+  - `processed_data/2023_big_game_field_regulations_source_audit.md`
+- Key results:
+  - Source PDF pages: `72`.
+  - Source file size: `5,784,679` bytes.
+  - Extracted text lines: `4014`.
+  - Extracted number/date/citation tokens: `1582` (`number_or_money 1286`, `code_citation 191`, `date 105`).
+  - Pasted-text checks: `69`.
+  - Pasted-text failures: `0`.
+  - Audit blockers: `0`.
+  - Database reconciliation effect: `NO_DRAW_OR_PREDICTION_ROWS_PROMOTED`.
+- Validation:
+  - `python scripts\audit-big-game-field-regulations-2023.py` passed.
+  - `python -m pytest tests\utah\test_big_game_field_regulations_2023_source_audit.py -q` passed: `2`.
+  - `python -m compileall scripts\audit-big-game-field-regulations-2023.py tests\utah\test_big_game_field_regulations_2023_source_audit.py` passed.
