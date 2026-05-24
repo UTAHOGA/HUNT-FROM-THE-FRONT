@@ -68,13 +68,15 @@ def test_nav_items_expand_on_hover() -> None:
 
 def test_primary_nav_hover_instruction_popups() -> None:
     text = _text(HEADER_LAYOUT)
-    assert "FIND YOUR TARGET GAME ANIMAL" in text
-    assert "MATCH HUNTS TO YOUR POINT LEVEL" in text
-    assert "FIND AN OUTFITTER TO OPTIMIZE THE EXPERIENCE" in text
-    assert "HARD-COPY LIBRARY FOR SOURCE VERIFICATION" in text
+    assert "FIND TARGET GAME" in text
+    assert "MATCH HUNTS TO POINTS" in text
+    assert "FIND AN OUTFITTER" in text
+    assert "VERIFY SOURCE DOCS" in text
     assert "data-nav-tip" in text
     assert ".uoga-primary-nav a[data-nav-tip]::before" in text
     assert "content:attr(data-nav-tip)" in text
+    assert "top:calc(100% + 12px)" not in text
+    assert "inset:0" in text
 
 
 def test_active_nav_item_uses_white_text_and_individual_brown_pill() -> None:
@@ -83,6 +85,7 @@ def test_active_nav_item_uses_white_text_and_individual_brown_pill() -> None:
     assert "color:#ffffff" in text
     assert "border:1px solid rgba(240,120,0,.40)" in text
     assert "linear-gradient(180deg, rgba(57,44,34,.92)" in text
+    assert ".uoga-primary-nav a.active::after" not in text
 
 
 def test_backpack_shell_matches_rounded_header_pill_shape() -> None:

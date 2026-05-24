@@ -2622,3 +2622,16 @@
   - Removed the temporary cropped logo asset and bumped the `header-layout.js` cache tag to force the no-logo header layout.
   - Preserved the shared navigation hover instructions and all domain/CNAME settings.
   - No prediction data, runtime feeds, permit logic, or model outputs were changed.
+
+## Header Nav Inline Helper Text
+- Timestamp (UTC): 2026-05-24T05:19:00Z
+- Scope:
+  - Replaced the floating nav helper popups with inline hover/focus helper text inside each navigation pill.
+  - Shortened helper copy so it fits within each pill without expanding the header.
+  - Removed the orange underline from the selected nav pill while preserving selected-page white text.
+  - No prediction data, runtime feeds, permit logic, or model outputs were changed.
+- Validation:
+  - `node --check header-layout.js` passed.
+  - `python -m pytest tests/utah/test_header_layout.py -q` passed: `8`.
+  - `python -m compileall tests/utah/test_header_layout.py` passed.
+  - Local static smoke check confirmed the inline helper text is present and the selected underline CSS is absent.
