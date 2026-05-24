@@ -68,10 +68,10 @@ def test_nav_items_expand_on_hover() -> None:
 
 def test_primary_nav_hover_instruction_popups() -> None:
     text = _text(HEADER_LAYOUT)
-    assert "FIND TARGET GAME" in text
-    assert "MATCH HUNTS TO POINTS" in text
-    assert "FIND AN OUTFITTER" in text
-    assert "VERIFY SOURCE DOCS" in text
+    assert "FIND YOUR DREAM HUNT" in text
+    assert "MATCH HUNT TO YOUR POINTS" in text
+    assert "FIND YOUR OUTFITTER" in text
+    assert "CANONICAL DOCS" in text
     assert "data-nav-tip" in text
     assert ".uoga-primary-nav a[data-nav-tip]::before" in text
     assert "content:attr(data-nav-tip)" in text

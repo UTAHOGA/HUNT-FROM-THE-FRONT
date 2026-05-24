@@ -2636,3 +2636,10 @@
   - `python -m pytest tests/utah/test_header_layout.py -q` passed: `8`.
   - `python -m compileall tests/utah/test_header_layout.py` passed.
   - Local static smoke check confirmed the inline helper text is present and the selected underline CSS is absent.
+
+## Header Nav Helper Copy Refinement
+- Timestamp (UTC): 2026-05-24T05:28:00Z
+- Scope:
+  - Updated inline nav helper copy to the final visitor-facing wording:
+    Builder `FIND YOUR DREAM HUNT`, Research `MATCH HUNT TO YOUR POINTS`, Outfitters `FIND YOUR OUTFITTER`, Library `CANONICAL DOCS`.
+  - No layout, prediction data, runtime feeds, permit logic, or model outputs were changed.
