@@ -1151,6 +1151,22 @@
     }).join('')}</div>`;
   }
 
+  function getGuaranteedLinePoint(row) {
+    return num(firstAvailable(row, [
+      'projected_2026_max_cutoff_point',
+      'guaranteed_at_2026',
+    ]));
+  }
+
+  function isGuaranteedLineRow(row) {
+    if (!row) return false;
+    if (row.guaranteed_marker === 'TRUE') return true;
+    const rowPoint = num(row.points);
+    const guaranteedLinePoint = getGuaranteedLinePoint(row);
+    if (rowPoint === null || guaranteedLinePoint === null) return false;
+    return Math.round(rowPoint) === Math.round(guaranteedLinePoint);
+  }
+
   function renderLadder(meta, huntCode, residency, points, drawPool) {
     if (!els.ladderTableWrap || !els.ladderTableEmpty || !els.ladderTableBody) return;
     setLadderHeaders(meta);
@@ -1187,8 +1203,8 @@
         classes.push('is-user-row');
       }
 
-      if (row.guaranteed_marker === 'TRUE') {
-        markers.push({ kind: 'guaranteed', label: 'Guaranteed' });
+      if (isGuaranteedLineRow(row)) {
+        markers.push({ kind: 'guaranteed', label: 'Guaranteed Line' });
         classes.push('is-guaranteed-row');
       }
 
