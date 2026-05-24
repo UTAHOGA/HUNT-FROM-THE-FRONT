@@ -2719,3 +2719,21 @@
   - Hardened the hard-copy publish script so it can read JSON manifests with a UTF-8 byte-order marker and skip unnecessary manifest rewrites when entries are already correct.
   - Re-ran the hard-copy harvest/regulation publisher; it confirmed the guidebook entry was already present and refreshed the 2025 preliminary big-game harvest report export to match its raw source PDF.
   - No prediction data, runtime feeds, permit logic, or model outputs were changed.
+
+## 2026 Big Game Application Guidebook Database Audit
+- Timestamp (UTC): 2026-05-24T09:20:00Z
+- Scope:
+  - Added a repeatable guidebook audit that extracts 728 hunt codes from the 2026 Big Game Application Guidebook hunt-table pages and compares them to `DATABASE.csv`.
+  - Materialized the regulation-reference hunt table at `data_truth/regulations_truth/normalized/2026_big_game_application_guidebook_hunt_tables.csv`.
+  - Wrote comparison outputs at `processed_data/2026_big_game_application_guidebook_vs_DATABASE.csv`, `.json`, and `.md`.
+  - Confirmed all 728 extracted guidebook hunt codes exist in `DATABASE.csv`.
+  - Found one real season-date conflict from the pasted/official guidebook text: `RS6700` Antelope Island Rocky Mountain bighorn sheep is `Nov. 9-Nov. 16`, while the database/catalog had `Nov 11-Nov 18`.
+  - Patched `RS6700` season to `Nov 09, 2026 - Nov 16, 2026` where the existing file format used comma-style dates, and `Nov 09 2026 - Nov 16 2026` where the existing file format used no-comma dates.
+  - Left remaining guidebook warnings as label-only review notes for management/HAMSS display naming; no remaining season mismatches or missing guidebook hunt codes.
+  - No permit counts, draw odds, harvest features, quota fields, or prediction math were changed.
+- Validation:
+  - `python scripts/audit-big-game-application-guidebook-2026.py` passed with `728` guidebook hunt codes, `728` database matches, `0` missing codes, `0` season review warnings and `0` blockers.
+  - `python -m pytest tests/utah/test_big_game_application_guidebook_ingest.py tests/utah/test_big_game_application_guidebook_database_audit.py -q` passed: `5`.
+  - `python -m compileall scripts\audit-big-game-application-guidebook-2026.py scripts\patch-big-game-application-guidebook-season-corrections-2026.py tests\utah\test_big_game_application_guidebook_ingest.py tests\utah\test_big_game_application_guidebook_database_audit.py` passed.
+  - `npm.cmd run verify:permits-2026` passed with `promotion_blockers = 0`.
+  - `python scripts/build-database-publish-readiness-report.py` passed with `publish_ready = true`.
