@@ -298,6 +298,7 @@ def test_guaranteed_to_draw_line_uses_requested_orange():
         ".marker-pill.user {",
     )
     assert "background: var(--guaranteed-line-orange);" in guaranteed_row_block
+    assert ".report-table tbody tr.is-guaranteed-row td" in html
     assert "var(--guaranteed-line-orange)" in user_guaranteed_block
     assert "rgba(250, 120, 0" in guaranteed_marker_block
     assert "color: var(--guaranteed-line-orange);" in guaranteed_marker_block

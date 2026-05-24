@@ -2687,5 +2687,6 @@
 - Scope:
   - Updated the point ladder row classification so the orange guaranteed-line highlight applies to the modeled 2026 cutoff row, falling back to `guaranteed_at_2026` when no cutoff is available.
   - Changed the ladder marker label to `Guaranteed Line` for that row and preserved the requested orange `rgb(250, 120, 0)` with the dark brown outline.
+  - Applied the orange fill to the guaranteed-line row cells as well as the row container so the highlight cannot be washed out by table-cell backgrounds.
   - Bumped the `hunt-research.js` cache tag to `20260524-guaranteed-line-1`.
   - No prediction data, runtime feeds, permit logic, or model outputs were changed.
