@@ -2,10 +2,10 @@
   const DWR_MAP_URL = 'https://dwrapps.utah.gov/huntboundary/hbstart';
   const PRIMARY_HEADER_NAV_ITEMS = [
     { href: 'https://www.uoga.org', label: 'U.O.G.A. HOME', tip: 'U.O.G.A. MAIN' },
-    { href: './', label: 'HUNT BUILDER', tip: 'FIND YOUR DREAM HUNT' },
-    { href: './research.html', label: 'HUNT RESEARCH', tip: 'MATCH THE HUNT TO YOUR POINTS' },
-    { href: './verify.html', label: 'OUTFITTERS', tip: 'FIND YOUR OUTFITTER' },
-    { href: './hard-copy.html', label: 'HUNT LIBRARY', tip: 'YOUR BIBLE SOURCE DOCS' },
+    { href: './', label: 'HUNT BUILDER', tip: 'FIND YOUR\nDREAM HUNT' },
+    { href: './research.html', label: 'HUNT RESEARCH', tip: 'MATCH\nHUNT = POINTS' },
+    { href: './verify.html', label: 'OUTFITTERS', tip: 'OPTIMIZE\nYOUR ODDS' },
+    { href: './hard-copy.html', label: 'HUNTING BIBLE', tip: 'YOUR BIBLE\nSOURCE DOCS' },
   ];
   const isBuilderPage = () => {
     const path = (window.location && window.location.pathname ? window.location.pathname : '').toLowerCase();
@@ -86,7 +86,8 @@
   function normalizeHeaderNavLabel(text) {
     const label = String(text || '').replace(/\s+/g, ' ').trim();
     if (!label) return '';
-    if (label.toUpperCase() === 'HARD COPIES') return 'HUNT LIBRARY';
+    if (label.toUpperCase() === 'HARD COPIES') return 'HUNTING BIBLE';
+    if (label.toUpperCase() === 'HUNT LIBRARY') return 'HUNTING BIBLE';
     return label.toUpperCase();
   }
 
@@ -358,14 +359,14 @@
         align-items:center !important;
         justify-content:center !important;
         padding:0 8px !important;
-        color:#f07800 !important;
-        font-size:8px !important;
+        color:#ffffff !important;
+        font-size:10px !important;
         font-weight:950 !important;
-        line-height:1.05 !important;
-        letter-spacing:.035em !important;
+        line-height:1.03 !important;
+        letter-spacing:.055em !important;
         text-align:center !important;
-        white-space:normal !important;
-        text-shadow:0 0 13px rgba(255,140,20,.48) !important;
+        white-space:pre-line !important;
+        text-shadow:0 1px 0 rgba(0,0,0,.72), 0 0 11px rgba(255,255,255,.22) !important;
         opacity:0 !important;
         pointer-events:none !important;
         transition:opacity 150ms ease !important;

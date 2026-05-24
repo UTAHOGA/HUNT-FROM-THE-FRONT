@@ -2656,3 +2656,13 @@
   - `node --check header-layout.js` passed.
   - `python -m pytest tests/utah/test_header_layout.py -q` passed: `8`.
   - `python -m compileall tests/utah/test_header_layout.py` passed.
+
+## Header Nav Two-Line Helper Text
+- Timestamp (UTC): 2026-05-24T06:05:00Z
+- Scope:
+  - Updated the nav replacement helper text to two-line white text inside the same fixed-size pill.
+  - Renamed the visible `HUNT LIBRARY` nav label to `HUNTING BIBLE`.
+  - Helper copy now uses: Builder `FIND YOUR / DREAM HUNT`, Research `MATCH / HUNT = POINTS`, Outfitters `OPTIMIZE / YOUR ODDS`, Hunting Bible `YOUR BIBLE / SOURCE DOCS`.
+  - Active/selected nav pills still do not show helper replacement text.
+  - Bumped the `header-layout.js` cache tag to `20260524-bible-help-1`.
+  - No prediction data, runtime feeds, permit logic, or model outputs were changed.

@@ -30,7 +30,7 @@ def test_shared_header_builds_primary_navigation() -> None:
     assert "ensurePrimaryHeaderNav" in text
     assert "uoga-primary-nav" in text
     assert "U.O.G.A. HOME" in text
-    assert "HUNT LIBRARY" in text
+    assert "HUNTING BIBLE" in text
     for link in expected_links:
         assert link in text
 
@@ -69,16 +69,18 @@ def test_nav_items_expand_on_hover() -> None:
 def test_primary_nav_hover_instruction_popups() -> None:
     text = _text(HEADER_LAYOUT)
     assert "U.O.G.A. MAIN" in text
-    assert "FIND YOUR DREAM HUNT" in text
-    assert "MATCH THE HUNT TO YOUR POINTS" in text
-    assert "FIND YOUR OUTFITTER" in text
-    assert "YOUR BIBLE SOURCE DOCS" in text
+    assert "FIND YOUR\\nDREAM HUNT" in text
+    assert "MATCH\\nHUNT = POINTS" in text
+    assert "OPTIMIZE\\nYOUR ODDS" in text
+    assert "YOUR BIBLE\\nSOURCE DOCS" in text
     assert "data-nav-tip" in text
     assert ".uoga-primary-nav a[data-nav-tip]::before" in text
     assert "content:attr(data-nav-tip)" in text
     assert "inset:0" in text
     assert "color:transparent" in text
-    assert "font-size:8px" in text
+    assert "color:#ffffff" in text
+    assert "font-size:10px" in text
+    assert "white-space:pre-line" in text
     assert ".uoga-primary-nav a.active[data-nav-tip]::before" in text
     assert "bottom:calc(100% + 8px)" not in text
 
@@ -103,7 +105,8 @@ def test_backpack_shell_matches_rounded_header_pill_shape() -> None:
 def test_pages_use_fresh_header_asset_and_hunt_library_label() -> None:
     for page in PAGES:
         text = _text(page)
-        assert "header-layout.js?v=20260524-inline-help-1" in text
+        assert "header-layout.js?v=20260524-bible-help-1" in text
         assert "ui.js?v=20260523-backpack-pill-1" in text
-        assert "HUNT LIBRARY" in text
+        assert "HUNTING BIBLE" in text
         assert "HARD COPIES" not in text
+        assert "HUNT LIBRARY" not in text
