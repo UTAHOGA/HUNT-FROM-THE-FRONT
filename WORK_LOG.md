@@ -2666,3 +2666,10 @@
   - Active/selected nav pills still do not show helper replacement text.
   - Bumped the `header-layout.js` cache tag to `20260524-bible-help-1`.
   - No prediction data, runtime feeds, permit logic, or model outputs were changed.
+
+## Header Nav Cache Refresh
+- Timestamp (UTC): 2026-05-24T06:18:00Z
+- Scope:
+  - Bumped the shared header script cache tag to `20260524-bible-help-2` on all static pages.
+  - This is a deploy refresh only; the two-line helper text, `HUNTING BIBLE` label, and selected-page behavior are unchanged.
+  - No prediction data, runtime feeds, permit logic, or model outputs were changed.

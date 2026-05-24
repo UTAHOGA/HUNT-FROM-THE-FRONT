@@ -105,7 +105,7 @@ def test_backpack_shell_matches_rounded_header_pill_shape() -> None:
 def test_pages_use_fresh_header_asset_and_hunt_library_label() -> None:
     for page in PAGES:
         text = _text(page)
-        assert "header-layout.js?v=20260524-bible-help-1" in text
+        assert "header-layout.js?v=20260524-bible-help-2" in text
         assert "ui.js?v=20260523-backpack-pill-1" in text
         assert "HUNTING BIBLE" in text
         assert "HARD COPIES" not in text
