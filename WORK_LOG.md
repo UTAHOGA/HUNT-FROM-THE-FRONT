@@ -2915,3 +2915,42 @@
   - `python scripts\audit-bear-cougar-furbearer-guidebook-2026.py` passed with `0` blockers.
   - `python -m pytest tests\utah\test_bear_cougar_furbearer_guidebook_2026_audit.py -q` passed: `4`.
   - `python -m compileall scripts\audit-bear-cougar-furbearer-guidebook-2026.py tests\utah\test_bear_cougar_furbearer_guidebook_2026_audit.py` passed.
+
+## 2026 Turkey Hunt-Code Resolution
+- Timestamp (UTC): 2026-05-24T11:10:00Z
+- Scope:
+  - Added a repeatable full Turkey code resolver using the 2024-25 Upland Game and Turkey Guidebook as prior-year context and the already-audited 2025-26 guidebook as current guidebook context.
+  - Materialized the 2024-25 guidebook text-line, token, expected-anchor, and hunt-code/name reconciliation truth-source outputs.
+  - Confirmed the 2024-25 guidebook prints the same seven real Turkey hunt codes as the 2025-26 guidebook: `TK1003`, `TK1004`, `TK1005`, `TK1006`, `TK1007`, `TK1018`, and `TK1021`.
+  - Confirmed `TKY` remains a bonus-point/application code and is not a missing `DATABASE.csv` hunt row.
+  - Resolved all 18 current `DATABASE.csv` Turkey codes across `hunt_master_enriched.csv`, `point_ladder_view.csv`, `draw_reality_engine.csv`, and `draw_reality_engine_predictive_v2.csv`.
+  - Promoted 10 current Turkey database-reference codes into predictive v2 as `TURKEY_GUIDEBOOK_REFERENCE` rows only: `TK1000`, `TK1001`, `TK1012`, `TK1013`, `TK1014`, `TK1015`, `TK1016`, `TK1019`, `TK1020`, and `TK1022`.
+  - Kept those promoted rows non-modeled with no draw odds or probability fields invented.
+  - No raw PDFs, website feeds, permit values, harvest features, or prediction probability math were changed.
+- Outputs:
+  - `data_truth/regulations_truth/normalized/2025_turkey_guidebook_text_lines.csv`
+  - `data_truth/regulations_truth/normalized/2025_turkey_guidebook_number_tokens.csv`
+  - `data_truth/regulations_truth/normalized/2025_turkey_guidebook_expected_text_checks.csv`
+  - `data_truth/regulations_truth/normalized/2025_turkey_guidebook_hunt_code_name_reconciliation.csv`
+  - `data_truth/regulations_truth/normalized/2026_turkey_full_hunt_code_reconciliation.csv`
+  - `processed_data/2025_turkey_guidebook_audit.json`
+  - `processed_data/2025_turkey_guidebook_audit.md`
+  - `processed_data/2026_turkey_full_hunt_code_reconciliation_summary.json`
+  - `processed_data/2026_turkey_full_hunt_code_reconciliation.md`
+  - `processed_data/2026_turkey_predictive_v2_reference_promotion.csv`
+  - `processed_data/2026_turkey_predictive_v2_reference_promotion_summary.json`
+- Key results:
+  - 2024-25 guidebook PDF pages: `63`.
+  - 2024-25 extracted text lines: `3431`.
+  - 2024-25 extracted number/date/code tokens: `2459`.
+  - 2024-25 pasted-data anchor checks: `35`.
+  - 2024-25 anchor failures: `0`.
+  - Current `DATABASE.csv` Turkey codes: `18`.
+  - 2025-26 guidebook-printed current Turkey hunt codes: `7`.
+  - Current database Turkey codes not printed in the 2025-26 guidebook code list: `11`.
+  - Current predictive v2 Turkey code coverage after reference promotion: `18`.
+  - Full Turkey reconciliation blockers: `0`.
+- Validation:
+  - `python scripts\resolve-turkey-hunt-codes-2026.py` passed with `0` blockers.
+  - `python -m pytest tests\utah\test_turkey_guidebook_2026_audit.py tests\utah\test_turkey_hunt_code_resolution_2026.py -q` passed: `7`.
+  - `python -m compileall scripts\resolve-turkey-hunt-codes-2026.py tests\utah\test_turkey_hunt_code_resolution_2026.py` passed.
