@@ -2629,6 +2629,7 @@
   - Replaced the floating nav helper popups with inline hover/focus helper text inside each navigation pill.
   - Shortened helper copy so it fits within each pill without expanding the header.
   - Removed the orange underline from the selected nav pill while preserving selected-page white text.
+  - Bumped the `header-layout.js` cache tag again so browsers fetch the inline-helper script instead of the older floating-popup script.
   - No prediction data, runtime feeds, permit logic, or model outputs were changed.
 - Validation:
   - `node --check header-layout.js` passed.
