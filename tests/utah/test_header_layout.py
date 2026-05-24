@@ -22,7 +22,7 @@ def test_shared_header_builds_primary_navigation() -> None:
     text = _text(HEADER_LAYOUT)
     expected_links = [
         "https://www.uoga.org",
-        "./index.html#google-maps",
+        "./",
         "./research.html",
         "./verify.html",
         "./hard-copy.html",

@@ -2520,3 +2520,15 @@
   - `node --check app.js` passed.
   - `node --check ui.js` passed.
   - `python -m pytest tests/utah/test_frontend_probability_selection.py -q` passed: `35`.
+
+## Clean Builder Root Navigation Links
+- Timestamp (UTC): 2026-05-24T00:20:00Z
+- Scope:
+  - Replaced internal `./index.html#google-maps` Builder navigation targets with clean `./` links across the shared header, static pages, generated page metadata, and canonical nav metadata.
+  - Kept map-mode hash behavior out of visible navigation so Wix/GitHub/browser routing can resolve the Builder root cleanly.
+  - No model, data, prediction, or permit outputs were changed.
+- Validation:
+  - `python -m pytest tests/utah/test_header_layout.py -q` passed: `7`.
+  - `node --check header-layout.js` passed.
+  - JSON validation passed for touched canonical/generated page metadata.
+  - `python -m compileall tests/utah/test_header_layout.py` passed.

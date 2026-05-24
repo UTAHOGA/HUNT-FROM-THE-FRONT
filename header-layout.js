@@ -2,7 +2,7 @@
   const DWR_MAP_URL = 'https://dwrapps.utah.gov/huntboundary/hbstart';
   const PRIMARY_HEADER_NAV_ITEMS = [
     { href: 'https://www.uoga.org', label: 'U.O.G.A. HOME' },
-    { href: './index.html#google-maps', label: 'HUNT BUILDER' },
+    { href: './', label: 'HUNT BUILDER' },
     { href: './research.html', label: 'HUNT RESEARCH' },
     { href: './verify.html', label: 'OUTFITTERS' },
     { href: './hard-copy.html', label: 'HUNT LIBRARY' },
