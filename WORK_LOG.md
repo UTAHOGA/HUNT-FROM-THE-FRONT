@@ -2582,3 +2582,10 @@
   - Began moving the live GitHub Pages custom-domain claim from `UTAHOGA/HUNT-FROM-THE-FRONT` to `UTAHOGA/HUNT-BUILDER`.
   - Removed the source-branch `CNAME` from the old `HUNT-FROM-THE-FRONT` repo so `HUNT-BUILDER` can be the sole repo for `hunt-builder.uoga.org`.
   - No prediction data, runtime feed, or website content was changed.
+
+## HUNT-BUILDER Repo Rename Confirmed
+- Timestamp (UTC): 2026-05-24T04:40:00Z
+- Scope:
+  - Confirmed GitHub redirects the old `UTAHOGA/HUNT-FROM-THE-FRONT` remote to `UTAHOGA/HUNT-BUILDER`.
+  - Restored the `CNAME` on `main` because `HUNT-BUILDER` is the renamed live repo, not a separate duplicate target.
+  - Updated local remote naming to point directly at `UTAHOGA/HUNT-BUILDER`.
