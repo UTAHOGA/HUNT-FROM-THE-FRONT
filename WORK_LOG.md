@@ -2569,3 +2569,9 @@
   - Corrected the published Pages `CNAME` hostname from `hunt-builder.uoga.org` to `hunt-builder.utahoga.org` to match the Wix DNS record.
   - Confirmed Wix DNS resolves `hunt-builder.utahoga.org` as a CNAME to `utahoga.github.io`.
   - No website source, model output, or runtime data was changed.
+
+## Pages Custom Domain Returned To UOGA
+- Timestamp (UTC): 2026-05-24T03:47:00Z
+- Scope:
+  - Returned both source and published Pages `CNAME` files to `hunt-builder.uoga.org` because Wix DNS is being corrected to that hostname.
+  - No website source, model output, or runtime data was changed.
