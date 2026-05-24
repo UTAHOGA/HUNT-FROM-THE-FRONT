@@ -6,6 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 HEADER_LAYOUT = ROOT / "header-layout.js"
 UI_JS = ROOT / "ui.js"
+HEADER_LOGO = ROOT / "assets" / "logos" / "uoga-license-plate-logo.jpg"
 PAGES = [
     ROOT / "index.html",
     ROOT / "research.html",
@@ -29,10 +30,18 @@ def test_shared_header_builds_primary_navigation() -> None:
     ]
     assert "ensurePrimaryHeaderNav" in text
     assert "uoga-primary-nav" in text
+    assert "ensureHeaderLogo" in text
+    assert "uoga-license-plate-logo.jpg" in text
+    assert "uoga-header-logo-link" in text
     assert "U.O.G.A. HOME" in text
     assert "HUNT LIBRARY" in text
     for link in expected_links:
         assert link in text
+
+
+def test_header_logo_asset_is_available() -> None:
+    assert HEADER_LOGO.exists()
+    assert HEADER_LOGO.stat().st_size > 10_000
 
 
 def test_primary_header_nav_uses_fixed_desktop_slot() -> None:
@@ -96,7 +105,7 @@ def test_backpack_shell_matches_rounded_header_pill_shape() -> None:
 def test_pages_use_fresh_header_asset_and_hunt_library_label() -> None:
     for page in PAGES:
         text = _text(page)
-        assert "header-layout.js?v=20260523-header-visibility-1" in text
+        assert "header-layout.js?v=20260524-logo-1" in text
         assert "ui.js?v=20260523-backpack-pill-1" in text
         assert "HUNT LIBRARY" in text
         assert "HARD COPIES" not in text

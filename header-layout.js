@@ -1,7 +1,9 @@
 (() => {
+  const UOGA_HOME_URL = 'https://www.uoga.org';
+  const UOGA_HEADER_LOGO_SRC = './assets/logos/uoga-license-plate-logo.jpg';
   const DWR_MAP_URL = 'https://dwrapps.utah.gov/huntboundary/hbstart';
   const PRIMARY_HEADER_NAV_ITEMS = [
-    { href: 'https://www.uoga.org', label: 'U.O.G.A. HOME', tip: 'RETURN TO THE U.O.G.A. HOME SITE' },
+    { href: UOGA_HOME_URL, label: 'U.O.G.A. HOME', tip: 'RETURN TO THE U.O.G.A. HOME SITE' },
     { href: './', label: 'HUNT BUILDER', tip: 'FIND YOUR TARGET GAME ANIMAL' },
     { href: './research.html', label: 'HUNT RESEARCH', tip: 'MATCH HUNTS TO YOUR POINT LEVEL' },
     { href: './verify.html', label: 'OUTFITTERS', tip: 'FIND AN OUTFITTER TO OPTIMIZE THE EXPERIENCE' },
@@ -108,8 +110,27 @@
     }));
   }
 
+  function ensureHeaderLogo(header) {
+    if (!header) return;
+    let logo = header.querySelector('.uoga-header-logo-link');
+    if (!logo) {
+      logo = document.createElement('a');
+      logo.className = 'uoga-header-logo-link';
+      const image = document.createElement('img');
+      image.src = UOGA_HEADER_LOGO_SRC;
+      image.alt = 'U.O.G.A. Wildlife Elevated';
+      image.loading = 'eager';
+      logo.appendChild(image);
+      header.insertBefore(logo, header.firstChild);
+    }
+    logo.href = UOGA_HOME_URL;
+    logo.setAttribute('aria-label', 'Go to U.O.G.A. home');
+    logo.title = 'Go to U.O.G.A. home';
+  }
+
   function ensurePrimaryHeaderNav(header, links) {
     if (!header || !links || !links.length) return;
+    ensureHeaderLogo(header);
     header.classList.toggle('uoga-header-has-left-controls', !!header.querySelector('.topbar-left'));
     let nav = header.querySelector('.uoga-primary-nav');
     if (!nav) {
@@ -272,6 +293,41 @@
       .topbar-title { display:none !important; }
       .topbar-title h1 { margin:0 !important; width:min(720px, 100%) !important; padding:8px 22px 9px !important; border:2px solid rgba(198,42,42,.95) !important; font-family:Georgia, "Times New Roman", serif !important; font-size:clamp(20px,2.15vw,31px) !important; line-height:1.02 !important; font-weight:900 !important; letter-spacing:.04em !important; text-transform:uppercase !important; color:#2b1c12 !important; background:rgba(255,253,248,.78) !important; text-shadow:0 1px 0 rgba(255,255,255,.9), 0 4px 12px rgba(92,55,24,.16) !important; box-shadow:0 8px 20px rgba(58,37,18,.10) !important; }
       .topbar-title h1::after { content:none !important; }
+      .uoga-header-logo-link {
+        order:0 !important;
+        flex:0 0 auto !important;
+        align-self:center !important;
+        display:inline-flex !important;
+        align-items:center !important;
+        justify-content:center !important;
+        width:clamp(108px, 10vw, 154px) !important;
+        height:54px !important;
+        padding:3px !important;
+        border:1px solid rgba(255,140,20,.82) !important;
+        border-radius:14px !important;
+        background:linear-gradient(180deg,#14100c,#050403) !important;
+        box-shadow:0 8px 18px rgba(32,20,10,.24), inset 0 1px 0 rgba(255,214,126,.28) !important;
+        overflow:hidden !important;
+        text-decoration:none !important;
+        transform:translateY(0) !important;
+        transition:transform 150ms ease, border-color 150ms ease, box-shadow 150ms ease !important;
+        z-index:12 !important;
+      }
+      .uoga-header-logo-link:hover,
+      .uoga-header-logo-link:focus-visible {
+        outline:none !important;
+        transform:translateY(-2px) scale(1.015) !important;
+        border-color:#ff8c14 !important;
+        box-shadow:0 11px 22px rgba(32,20,10,.30), 0 0 0 2px rgba(255,140,20,.20), inset 0 1px 0 rgba(255,214,126,.32) !important;
+      }
+      .uoga-header-logo-link img {
+        display:block !important;
+        width:100% !important;
+        height:100% !important;
+        object-fit:cover !important;
+        object-position:center center !important;
+        border-radius:10px !important;
+      }
       .page-nav-strip { display:none !important; visibility:hidden !important; opacity:0 !important; background:transparent !important; border:0 !important; }
       .uoga-primary-nav {
         order:2 !important;

@@ -2601,3 +2601,16 @@
   - `python -m pytest tests/utah/test_header_layout.py -q` passed: `8`.
   - `python -m compileall tests/utah/test_header_layout.py` passed.
   - Local static smoke check confirmed `header-layout.js` serves with the new hover help text.
+
+## Header UOGA Logo Link
+- Timestamp (UTC): 2026-05-24T04:59:00Z
+- Scope:
+  - Added a cropped U.O.G.A. Wildlife Elevated license-plate logo asset to the shared website header.
+  - The logo sits inside the header at the upper-left side and links to `https://www.uoga.org`.
+  - Bumped the `header-layout.js` cache-busting query on site pages so browsers pick up the new header behavior.
+  - No prediction data, runtime feeds, permit logic, or model outputs were changed.
+- Validation:
+  - `node --check header-layout.js` passed.
+  - `python -m pytest tests/utah/test_header_layout.py -q` passed: `9`.
+  - `python -m compileall tests/utah/test_header_layout.py` passed.
+  - Local static smoke check confirmed the logo asset and updated header script serve successfully.
