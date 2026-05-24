@@ -2854,3 +2854,37 @@
   - `python scripts\audit-bear-cougar-furbearer-guidebook-2026.py` passed with `0` blockers.
   - `python -m pytest tests\utah\test_big_game_predictive_guidebook_promotion.py tests\utah\test_big_game_hunt_code_reconciliation.py tests\utah\test_bear_cougar_furbearer_guidebook_2026_audit.py -q` passed: `5`.
   - `python -m compileall scripts\promote-guidebook-codes-to-predictive-v2-2026.py scripts\audit-bear-cougar-furbearer-guidebook-2026.py tests\utah\test_big_game_predictive_guidebook_promotion.py tests\utah\test_big_game_hunt_code_reconciliation.py tests\utah\test_bear_cougar_furbearer_guidebook_2026_audit.py` passed.
+
+
+## 2026 Turkey Guidebook Truth-Source Audit
+- Timestamp (UTC): 2026-05-24T10:23:00Z
+- Scope:
+  - Added a repeatable truth-source audit for `pipeline/RAW/hunt_unit_database/2026/pdf/regulations/2026 Turkey.pdf`, titled `2025-26 Utah Upland Game and Turkey Guidebook`.
+  - Materialized extracted PDF text lines, number/date/code tokens, expected pasted-data anchor checks, and turkey hunt-code/name reconciliation outputs.
+  - Confirmed the guidebook's printed turkey hunt codes `TK1003`, `TK1004`, `TK1005`, `TK1006`, `TK1007`, `TK1018`, and `TK1021` all resolve to database hunt names.
+  - Confirmed guidebook labels such as `Central (TK1003)` resolve to normalized database names such as `Central Area`.
+  - Confirmed `TKY` is a bonus-point application code, not a `DATABASE.csv` hunt row, and should not be treated as a missing hunt name.
+  - Confirmed all 7 printed turkey hunt codes are also present in `draw_reality_engine_predictive_v2.csv`.
+  - No raw PDFs, website feeds, permit values, harvest features, or prediction probability math were changed.
+- Outputs:
+  - `data_truth/regulations_truth/normalized/2026_turkey_guidebook_text_lines.csv`
+  - `data_truth/regulations_truth/normalized/2026_turkey_guidebook_number_tokens.csv`
+  - `data_truth/regulations_truth/normalized/2026_turkey_guidebook_expected_text_checks.csv`
+  - `data_truth/regulations_truth/normalized/2026_turkey_guidebook_hunt_code_name_reconciliation.csv`
+  - `processed_data/2026_turkey_guidebook_audit.json`
+  - `processed_data/2026_turkey_guidebook_audit.md`
+- Key results:
+  - PDF pages: `45`.
+  - Extracted text lines: `2521`.
+  - Extracted number/date/code tokens: `1968`.
+  - Pasted-data anchor checks: `53`.
+  - Anchor failures: `0`.
+  - Printed turkey hunt codes checked: `7`.
+  - Database name-resolved printed hunt codes: `7`.
+  - Hunt-code reconciliation failures: `0`.
+  - Bonus-point code handled separately: `TKY`.
+  - Extra database turkey codes not printed in the guidebook code list: `11`.
+- Validation:
+  - `python scripts\audit-turkey-guidebook-2026.py` passed with `0` blockers.
+  - `python -m pytest tests\utah\test_turkey_guidebook_2026_audit.py -q` passed: `3`.
+  - `python -m compileall scripts\audit-turkey-guidebook-2026.py tests\utah\test_turkey_guidebook_2026_audit.py` passed.
