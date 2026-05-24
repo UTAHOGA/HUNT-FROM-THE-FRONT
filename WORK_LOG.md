@@ -2750,3 +2750,17 @@
 - Validation:
   - `python scripts/audit-big-game-application-guidebook-2026.py` passed with `4` post-publication corrections checked and `0` correction review items.
   - `python -m compileall scripts\audit-big-game-application-guidebook-2026.py tests\utah\test_big_game_application_guidebook_database_audit.py` passed.
+
+## 2025 Big Game Field Regulations Source Label Audit
+- Timestamp (UTC): 2026-05-24T10:45:00Z
+- Scope:
+  - Added a repeatable source-label audit for `pipeline/RAW/hunt_unit_database/2025/pdf/regulation/field_regs 2025.pdf`.
+  - Confirmed the PDF is the `2025 Utah Big Game Field Regulations` source, with SHA-256 `05a87b5babd0a22af62c993bd3fe0ba106fb18f7029ed60fc75f6babe4dbdaa7`.
+  - Confirmed no Hunting Bible/hard-copy manifest entry currently labels this PDF as `2026 Field Regulations`.
+  - Confirmed the source is not exported to the Hunting Bible yet and is not present in the quality raw PDF inventory/promoted source manifests.
+  - Captured the pasted post-publication corrections and updates in `data_truth/regulations_truth/normalized/2025_big_game_field_regulations_post_publication_corrections.csv`.
+  - Kept the file as regulation/reference material only; no permit counts, draw odds, harvest features, quota fields, or prediction math were changed.
+- Validation:
+  - `python scripts/audit-big-game-field-regulations-2025.py` passed with `9` source-label checks and `0` blockers.
+  - `python -m pytest tests/utah/test_big_game_field_regulations_2025_source_audit.py -q` passed: `2`.
+  - `python -m compileall scripts\audit-big-game-field-regulations-2025.py tests\utah\test_big_game_field_regulations_2025_source_audit.py` passed.
