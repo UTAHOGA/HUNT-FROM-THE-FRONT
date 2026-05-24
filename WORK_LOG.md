@@ -2764,3 +2764,31 @@
   - `python scripts/audit-big-game-field-regulations-2025.py` passed with `9` source-label checks and `0` blockers.
   - `python -m pytest tests/utah/test_big_game_field_regulations_2025_source_audit.py -q` passed: `2`.
   - `python -m compileall scripts\audit-big-game-field-regulations-2025.py tests\utah\test_big_game_field_regulations_2025_source_audit.py` passed.
+
+## 2025 Big Game Field Regulations Comprehensive Text Audit
+- Timestamp (UTC): 2026-05-24T09:35:00Z
+- Scope:
+  - Expanded the 2025 field-regulations audit into a page/line/token cross-check against `pipeline/RAW/hunt_unit_database/2025/pdf/regulation/field_regs 2025.pdf`.
+  - Materialized every extracted PDF text line with source file, PDF page, printed page, line number, and text.
+  - Materialized every extracted date, number/money, phone/code, and Utah Admin./Code citation token with page and line traceability.
+  - Added 50 pasted-data anchor checks covering contents, season dates, license/application fees, over-the-counter dates, youth elk updates, CWD/reporting rules, weapon restrictions, special restrictions, donation/Red Butte removals, antlerless/CWMU sections, and definitions.
+  - Confirmed the PDF is the 2025 field-regulations source only and remains regulation/reference material, not draw odds, harvest feature, quota, prediction, or 2026 field-regulations input.
+  - No raw PDF, website feed, permit counts, draw odds, harvest features, quota fields, or prediction math were changed.
+- Outputs:
+  - `data_truth/regulations_truth/normalized/2025_big_game_field_regulations_text_lines.csv`
+  - `data_truth/regulations_truth/normalized/2025_big_game_field_regulations_number_tokens.csv`
+  - `data_truth/regulations_truth/normalized/2025_big_game_field_regulations_expected_text_checks.csv`
+  - `processed_data/2025_big_game_field_regulations_source_label_audit.json`
+  - `processed_data/2025_big_game_field_regulations_source_label_audit.md`
+- Key results:
+  - PDF pages: `68`.
+  - Extracted text lines: `3723`.
+  - Extracted number/date/citation tokens: `1483`.
+  - Token type counts: `1217` number/money, `141` code citation, `125` date.
+  - Pasted-data anchor checks: `50`.
+  - Pasted-data anchor failures: `0`.
+  - Audit blockers: `0`.
+- Validation:
+  - `python scripts\audit-big-game-field-regulations-2025.py` passed.
+  - `python -m pytest tests\utah\test_big_game_field_regulations_2025_source_audit.py -q` passed: `3`.
+  - `python -m compileall scripts\audit-big-game-field-regulations-2025.py tests\utah\test_big_game_field_regulations_2025_source_audit.py` passed.

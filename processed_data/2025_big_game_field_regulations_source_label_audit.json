@@ -11,6 +11,19 @@
   "source_inventory_status": "NOT_IN_QUALITY_RAW_INVENTORY",
   "library_export_status": "NOT_EXPORTED_TO_HUNTING_BIBLE",
   "post_publication_correction_count": 7,
+  "pdf_page_count": 68,
+  "text_line_count": 3723,
+  "number_token_count": 1483,
+  "token_type_counts": {
+    "number_or_money": 1217,
+    "code_citation": 141,
+    "date": 125
+  },
+  "expected_text_check_count": 50,
+  "expected_text_check_failures": 0,
+  "text_lines_output": "data_truth/regulations_truth/normalized/2025_big_game_field_regulations_text_lines.csv",
+  "number_tokens_output": "data_truth/regulations_truth/normalized/2025_big_game_field_regulations_number_tokens.csv",
+  "expected_text_checks_output": "data_truth/regulations_truth/normalized/2025_big_game_field_regulations_expected_text_checks.csv",
   "manifest_field_regulation_items_found": 0,
   "mislabeled_2026_manifest_items": 0,
   "checks": {
