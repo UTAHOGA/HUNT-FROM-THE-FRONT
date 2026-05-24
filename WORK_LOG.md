@@ -2707,3 +2707,15 @@
   - Added a `Hunt Data` action to Hunt Backpack items that links to the Hunting Bible with the hunt code carried forward.
   - Bumped the `ui.js` cache tag on Hunt Research to `20260524-backpack-hunt-data-1`.
   - No prediction data, runtime feeds, permit logic, or model outputs were changed.
+
+## 2026 Big Game Application Guidebook Ingest Verification
+- Timestamp (UTC): 2026-05-24T08:37:00Z
+- Scope:
+  - Verified `pipeline/RAW/hunt_unit_database/2026/pdf/regulations/2026 Big Game Application.pdf` is already present in the raw PDF inventory.
+  - Verified the Hunting Bible export copy exists at `processed_data/hard_data_exports/source_pdfs/regulations/2026/2026-big-game-application-guidebook.pdf`.
+  - Verified the exported PDF SHA-256 matches the raw source PDF, so the library copy is byte-for-byte identical to the official source file.
+  - Verified the hard-copy manifest exposes it as `2026 Big Game Application Guidebook` with `group = regulation` and `source_role = official_source`.
+  - Kept the guidebook as regulation/reference material only; it is not promoted as draw-results truth, harvest truth, quota input, or prediction math input.
+  - Hardened the hard-copy publish script so it can read JSON manifests with a UTF-8 byte-order marker and skip unnecessary manifest rewrites when entries are already correct.
+  - Re-ran the hard-copy harvest/regulation publisher; it confirmed the guidebook entry was already present and refreshed the 2025 preliminary big-game harvest report export to match its raw source PDF.
+  - No prediction data, runtime feeds, permit logic, or model outputs were changed.
