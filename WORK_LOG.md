@@ -2542,3 +2542,13 @@
 - Validation:
   - Confirmed `CNAME` contains exactly `hunt-builder.uoga.org`.
   - `python -m compileall scripts tests` passed.
+
+## Emergency Pages Fallback While DNS Is Missing
+- Timestamp (UTC): 2026-05-24T03:26:00Z
+- Scope:
+  - Removed the root `CNAME` file temporarily because public DNS returned `NXDOMAIN` for `hunt-builder.uoga.org`.
+  - This prevents GitHub Pages project URLs from redirecting to an unresolved custom domain while Wix DNS is repaired.
+  - The correct Wix DNS record must be restored before re-adding `CNAME`: host/name `hunt-builder`, value/target `utahoga.github.io`.
+- Validation:
+  - Public DNS checks returned no CNAME/A record for `hunt-builder.uoga.org` before this fallback.
+  - No website source, model output, or runtime data was changed.
