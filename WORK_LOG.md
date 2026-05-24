@@ -2562,3 +2562,10 @@
 - Validation:
   - Pushed `gh-pages` commit `d5cefe1` with the custom-domain `CNAME`.
   - Public DNS still needs to resolve `hunt-builder.uoga.org` to GitHub Pages before the custom domain can render reliably.
+
+## Pages Custom Domain Corrected To Utahoga
+- Timestamp (UTC): 2026-05-24T03:43:00Z
+- Scope:
+  - Corrected the published Pages `CNAME` hostname from `hunt-builder.uoga.org` to `hunt-builder.utahoga.org` to match the Wix DNS record.
+  - Confirmed Wix DNS resolves `hunt-builder.utahoga.org` as a CNAME to `utahoga.github.io`.
+  - No website source, model output, or runtime data was changed.
