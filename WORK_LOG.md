@@ -2888,3 +2888,30 @@
   - `python scripts\audit-turkey-guidebook-2026.py` passed with `0` blockers.
   - `python -m pytest tests\utah\test_turkey_guidebook_2026_audit.py -q` passed: `3`.
   - `python -m compileall scripts\audit-turkey-guidebook-2026.py tests\utah\test_turkey_guidebook_2026_audit.py` passed.
+
+
+## 2026 Bear Hunt-Code Resolution
+- Timestamp (UTC): 2026-05-24T10:44:00Z
+- Scope:
+  - Expanded the 2026 Bear/Cougar/Furbearer guidebook audit to resolve the full black-bear `BR` code universe across current and historical surfaces.
+  - Materialized `data_truth/regulations_truth/normalized/2026_bear_cougar_furbearer_guidebook_bear_hunt_code_reconciliation.csv`.
+  - Classified all `BR` codes as guidebook-printed current hunt-table codes, current database reference codes not printed in the hunt tables, or historical-only draw-reality codes.
+  - Confirmed current `DATABASE.csv`, `hunt_master_enriched.csv`, `point_ladder_view.csv`, and `draw_reality_engine_predictive_v2.csv` each carry `106` current bear codes.
+  - Resolved the 7 current database reference codes not printed in the guidebook hunt tables: `BR1000`, `BR1001`, `BR1007`, `BR1018`, `BR7237`, `BR7307`, and `BR7324`.
+  - Identified 14 historical-only bear codes present in `draw_reality_engine.csv` but not current 2026 `DATABASE.csv`: `BR7008`, `BR7019`, `BR7108`, `BR7208`, `BR7209`, `BR7226`, `BR7227`, `BR7230`, `BR7231`, `BR7232`, `BR7233`, `BR7234`, `BR7235`, and `BR7236`.
+  - No raw PDFs, website feeds, permit values, harvest features, or prediction probability math were changed.
+- Key results:
+  - Guidebook-printed current bear hunt-table codes: `99`.
+  - Current database bear codes: `106`.
+  - Current predictive v2 bear codes: `106`.
+  - Current hunt-master bear codes: `106`.
+  - Current point-ladder bear codes: `106`.
+  - Historical draw-reality bear codes: `120`.
+  - Current database reference codes not printed in hunt tables: `7`.
+  - Historical-only draw-reality bear codes: `14`.
+  - Current bear-code reconciliation failures: `0`.
+  - Audit blockers: `0`.
+- Validation:
+  - `python scripts\audit-bear-cougar-furbearer-guidebook-2026.py` passed with `0` blockers.
+  - `python -m pytest tests\utah\test_bear_cougar_furbearer_guidebook_2026_audit.py -q` passed: `4`.
+  - `python -m compileall scripts\audit-bear-cougar-furbearer-guidebook-2026.py tests\utah\test_bear_cougar_furbearer_guidebook_2026_audit.py` passed.

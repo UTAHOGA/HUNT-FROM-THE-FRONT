@@ -16,6 +16,9 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE_PDF = ROOT / "pipeline/RAW/hunt_unit_database/2026/pdf/regulations/2026 Bear Cougar Furbearer Guidebook.pdf"
 DATABASE = ROOT / "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv"
 PREDICTIVE = ROOT / "processed_data/draw_reality_engine_predictive_v2.csv"
+HUNT_MASTER = ROOT / "processed_data/hunt_master_enriched.csv"
+POINT_LADDER = ROOT / "processed_data/point_ladder_view.csv"
+DRAW_REALITY = ROOT / "processed_data/draw_reality_engine.csv"
 OUT_DIR = ROOT / "data_truth/regulations_truth/normalized"
 REPORT_DIR = ROOT / "processed_data"
 
@@ -23,6 +26,7 @@ TEXT_LINES_CSV = OUT_DIR / "2026_bear_cougar_furbearer_guidebook_text_lines.csv"
 NUMBER_TOKENS_CSV = OUT_DIR / "2026_bear_cougar_furbearer_guidebook_number_tokens.csv"
 EXPECTED_TEXT_CHECKS_CSV = OUT_DIR / "2026_bear_cougar_furbearer_guidebook_expected_text_checks.csv"
 BEAR_HUNT_TABLES_CSV = OUT_DIR / "2026_bear_cougar_furbearer_guidebook_bear_hunt_tables.csv"
+BEAR_CODE_RECONCILIATION_CSV = OUT_DIR / "2026_bear_cougar_furbearer_guidebook_bear_hunt_code_reconciliation.csv"
 SUMMARY = REPORT_DIR / "2026_bear_cougar_furbearer_guidebook_audit.json"
 REPORT_MD = REPORT_DIR / "2026_bear_cougar_furbearer_guidebook_audit.md"
 
@@ -138,6 +142,44 @@ def read_code_set(path: Path) -> set[str]:
         return {row.get("hunt_code", "") for row in csv.DictReader(handle) if row.get("hunt_code", "").startswith("BR")}
 
 
+def read_code_rows(path: Path) -> dict[str, list[dict[str, str]]]:
+    with path.open(newline="", encoding="utf-8-sig") as handle:
+        rows: dict[str, list[dict[str, str]]] = {}
+        for row in csv.DictReader(handle):
+            code = row.get("hunt_code", "")
+            if code.startswith("BR"):
+                rows.setdefault(code, []).append(row)
+        return rows
+
+
+def compact_name(value: str) -> str:
+    value = normalized(value).lower()
+    value = value.replace("(new)", "")
+    value = value.replace(" - any legal weapon", "")
+    value = value.replace("central mtns, ", "")
+    value = value.replace("plateau, ", "")
+    return re.sub(r"[^a-z0-9]+", "", value)
+
+
+def infer_guidebook_name(line_text: str, code: str) -> str:
+    prefix = normalized(line_text.split(code, 1)[0])
+    prefix = re.sub(r"^(?:Any legal weapon(?:, no bait allowed|, no dogs allowed)?|Unit name)\s+", "", prefix)
+    return prefix.strip()
+
+
+def name_resolution_status(guidebook_name: str, database_name: str, predictive_name: str) -> str:
+    if not guidebook_name:
+        return "NOT_PRINTED_IN_GUIDEBOOK_TABLE"
+    guide = compact_name(guidebook_name)
+    database = compact_name(database_name)
+    predictive = compact_name(predictive_name)
+    if guide and database and (guide in database or database in guide):
+        return "PASS_GUIDEBOOK_TO_DATABASE_NAME"
+    if guide and predictive and (guide in predictive or predictive in guide):
+        return "PASS_GUIDEBOOK_TO_PREDICTIVE_NAME"
+    return "REVIEW_NAME_VARIANT"
+
+
 def extract_lines() -> list[dict[str, str]]:
     rows: list[dict[str, str]] = []
     with pdfplumber.open(SOURCE_PDF) as pdf:
@@ -243,6 +285,96 @@ def build_bear_hunt_rows(text_lines: list[dict[str, str]]) -> list[dict[str, str
     return rows
 
 
+def build_bear_code_reconciliation(bear_hunt_rows: list[dict[str, str]]) -> list[dict[str, str]]:
+    database_rows = read_code_rows(DATABASE)
+    predictive_rows = read_code_rows(PREDICTIVE)
+    hunt_master_rows = read_code_rows(HUNT_MASTER)
+    point_ladder_rows = read_code_rows(POINT_LADDER)
+    draw_reality_rows = read_code_rows(DRAW_REALITY)
+
+    guidebook_rows_by_code: dict[str, dict[str, str]] = {}
+    for row in bear_hunt_rows:
+        guidebook_rows_by_code.setdefault(row["hunt_code"], row)
+
+    all_codes = sorted(set(database_rows) | set(guidebook_rows_by_code) | set(predictive_rows) | set(draw_reality_rows))
+    rows: list[dict[str, str]] = []
+    for code in all_codes:
+        database_row = (database_rows.get(code) or [{}])[0]
+        predictive_row = (predictive_rows.get(code) or [{}])[0]
+        guidebook_row = guidebook_rows_by_code.get(code, {})
+        draw_reality_present = bool(draw_reality_rows.get(code))
+        database_present = bool(database_row)
+        predictive_present = bool(predictive_row)
+        current_surface_present = database_present and code in hunt_master_rows and code in point_ladder_rows and predictive_present
+
+        if code in guidebook_rows_by_code:
+            source_class = "GUIDEBOOK_PRINTED_HUNT_TABLE_CODE"
+        elif database_present:
+            source_class = "CURRENT_DATABASE_REFERENCE_CODE_NOT_PRINTED_IN_HUNT_TABLE"
+        else:
+            source_class = "HISTORICAL_DRAW_REALITY_ONLY_CODE"
+
+        guidebook_name = infer_guidebook_name(guidebook_row.get("guidebook_line_text", ""), code) if guidebook_row else ""
+        name_status = name_resolution_status(
+            guidebook_name,
+            database_row.get("hunt_name", ""),
+            predictive_row.get("hunt_name", ""),
+        )
+
+        if source_class == "GUIDEBOOK_PRINTED_HUNT_TABLE_CODE" and current_surface_present:
+            resolution_status = "PASS_CURRENT_GUIDEBOOK_CODE_RESOLVED"
+        elif source_class == "CURRENT_DATABASE_REFERENCE_CODE_NOT_PRINTED_IN_HUNT_TABLE" and current_surface_present:
+            resolution_status = "PASS_CURRENT_DATABASE_REFERENCE_CODE_RESOLVED"
+        elif source_class == "HISTORICAL_DRAW_REALITY_ONLY_CODE":
+            resolution_status = "INFO_HISTORICAL_ONLY_NOT_CURRENT_2026_DATABASE"
+        else:
+            resolution_status = "FAIL_CURRENT_SURFACE_GAP"
+
+        notes = []
+        if code == "BR1000":
+            notes.append("Database carries statewide permit label; predictive carries sportsman black bear model row.")
+        if code in {"BR1001", "BR1007", "BR1018"}:
+            notes.append("Guidebook text establishes availability/rule context; not printed as a hunt-table draw code.")
+        if code in {"BR7307", "BR7324"}:
+            notes.append("Conservation-style rows are current database references and excluded from public predictive draw odds.")
+        if code == "BR7237":
+            notes.append("Current database row resolves Monroe fall limited-entry reference; not printed in extracted 2026 guidebook table text.")
+        if source_class == "HISTORICAL_DRAW_REALITY_ONLY_CODE":
+            notes.append("Present in historical draw_reality_engine only; not part of current 2026 DATABASE universe.")
+
+        rows.append(
+            {
+                "source_file": SOURCE_PATH,
+                "source_sha256": EXPECTED_SHA256,
+                "hunt_code": code,
+                "source_class": source_class,
+                "resolution_status": resolution_status,
+                "guidebook_printed": str(code in guidebook_rows_by_code).lower(),
+                "guidebook_name_inferred": guidebook_name,
+                "guidebook_line_text": guidebook_row.get("guidebook_line_text", ""),
+                "database_present": str(database_present).lower(),
+                "hunt_master_present": str(code in hunt_master_rows).lower(),
+                "point_ladder_present": str(code in point_ladder_rows).lower(),
+                "predictive_present": str(predictive_present).lower(),
+                "draw_reality_present": str(draw_reality_present).lower(),
+                "database_hunt_name": database_row.get("hunt_name", ""),
+                "predictive_hunt_name": predictive_row.get("hunt_name", ""),
+                "database_species": database_row.get("species", ""),
+                "database_sex_type": database_row.get("sex_type", ""),
+                "database_hunt_type": database_row.get("hunt_type", ""),
+                "database_weapon": database_row.get("weapon", ""),
+                "database_season": database_row.get("season", ""),
+                "permits_2026_res": database_row.get("permits_2026_res", ""),
+                "permits_2026_nr": database_row.get("permits_2026_nr", ""),
+                "permits_2026_total": database_row.get("permits_2026_total", ""),
+                "predictive_algorithm_status": predictive_row.get("algorithm_status", ""),
+                "name_resolution_status": name_status,
+                "notes": " ".join(notes),
+            }
+        )
+    return rows
+
+
 def main() -> int:
     actual_sha = sha256(SOURCE_PDF)
     text_lines = extract_lines()
@@ -250,9 +382,13 @@ def main() -> int:
     number_tokens = build_number_tokens(text_lines)
     expected_checks = build_expected_checks(all_text)
     bear_hunt_rows = build_bear_hunt_rows(text_lines)
+    bear_code_reconciliation_rows = build_bear_code_reconciliation(bear_hunt_rows)
     guidebook_br_codes = sorted({row["hunt_code"] for row in bear_hunt_rows})
     database_codes = read_code_set(DATABASE)
     predictive_codes = read_code_set(PREDICTIVE)
+    hunt_master_codes = read_code_set(HUNT_MASTER)
+    point_ladder_codes = read_code_set(POINT_LADDER)
+    draw_reality_codes = read_code_set(DRAW_REALITY)
 
     write_rows(TEXT_LINES_CSV, ["source_file", "source_sha256", "pdf_page", "printed_page", "line_number", "text"], text_lines)
     write_rows(
@@ -289,11 +425,56 @@ def main() -> int:
         ],
         bear_hunt_rows,
     )
+    write_rows(
+        BEAR_CODE_RECONCILIATION_CSV,
+        [
+            "source_file",
+            "source_sha256",
+            "hunt_code",
+            "source_class",
+            "resolution_status",
+            "guidebook_printed",
+            "guidebook_name_inferred",
+            "guidebook_line_text",
+            "database_present",
+            "hunt_master_present",
+            "point_ladder_present",
+            "predictive_present",
+            "draw_reality_present",
+            "database_hunt_name",
+            "predictive_hunt_name",
+            "database_species",
+            "database_sex_type",
+            "database_hunt_type",
+            "database_weapon",
+            "database_season",
+            "permits_2026_res",
+            "permits_2026_nr",
+            "permits_2026_total",
+            "predictive_algorithm_status",
+            "name_resolution_status",
+            "notes",
+        ],
+        bear_code_reconciliation_rows,
+    )
 
     anchor_failures = [row for row in expected_checks if row["status"] != "PASS"]
     missing_database = sorted(set(guidebook_br_codes) - database_codes)
     missing_predictive = sorted(set(guidebook_br_codes) - predictive_codes)
     token_counts = Counter(row["token_type"] for row in number_tokens)
+    reconciliation_failures = [
+        row for row in bear_code_reconciliation_rows if row["resolution_status"] == "FAIL_CURRENT_SURFACE_GAP"
+    ]
+    database_only_reference_codes = sorted(
+        row["hunt_code"]
+        for row in bear_code_reconciliation_rows
+        if row["source_class"] == "CURRENT_DATABASE_REFERENCE_CODE_NOT_PRINTED_IN_HUNT_TABLE"
+    )
+    historical_only_codes = sorted(
+        row["hunt_code"]
+        for row in bear_code_reconciliation_rows
+        if row["source_class"] == "HISTORICAL_DRAW_REALITY_ONLY_CODE"
+    )
     blockers = []
     if actual_sha != EXPECTED_SHA256:
         blockers.append("source_sha256_mismatch")
@@ -305,6 +486,8 @@ def main() -> int:
         blockers.append("bear_hunt_codes_missing_predictive")
     if anchor_failures:
         blockers.append("expected_text_anchor_failures")
+    if reconciliation_failures:
+        blockers.append("bear_current_code_reconciliation_failures")
 
     summary = {
         "classification": "REGULATION_AND_GUIDEBOOK_TRUTH_SOURCE_AUDIT",
@@ -322,8 +505,18 @@ def main() -> int:
         "expected_text_anchor_failures": len(anchor_failures),
         "bear_guidebook_hunt_code_count": len(guidebook_br_codes),
         "bear_guidebook_hunt_codes": guidebook_br_codes,
+        "bear_current_database_code_count": len(database_codes),
+        "bear_current_predictive_code_count": len(predictive_codes),
+        "bear_current_hunt_master_code_count": len(hunt_master_codes),
+        "bear_current_point_ladder_code_count": len(point_ladder_codes),
+        "bear_historical_draw_reality_code_count": len(draw_reality_codes),
+        "bear_database_reference_codes_not_printed_in_hunt_table_count": len(database_only_reference_codes),
+        "bear_database_reference_codes_not_printed_in_hunt_table": database_only_reference_codes,
+        "bear_historical_only_draw_reality_code_count": len(historical_only_codes),
+        "bear_historical_only_draw_reality_codes": historical_only_codes,
         "bear_codes_missing_database": missing_database,
         "bear_codes_missing_predictive": missing_predictive,
+        "bear_current_code_reconciliation_failures": len(reconciliation_failures),
         "blockers": len(blockers),
         "blocker_reasons": blockers,
         "guardrail": "Guidebook text, numbers, hunt codes, seasons, fees, and rules are truth-source references; this audit does not model draw odds.",
@@ -342,8 +535,12 @@ def main() -> int:
                 f"- Expected pasted-data anchor checks: `{len(expected_checks)}`",
                 f"- Anchor failures: `{len(anchor_failures)}`",
                 f"- Bear guidebook hunt codes: `{len(guidebook_br_codes)}`",
+                f"- Current DATABASE bear codes: `{len(database_codes)}`",
+                f"- Current DATABASE reference codes not printed in hunt tables: `{len(database_only_reference_codes)}`",
+                f"- Historical-only draw reality bear codes: `{len(historical_only_codes)}`",
                 f"- Bear codes missing DATABASE: `{len(missing_database)}`",
                 f"- Bear codes missing predictive v2: `{len(missing_predictive)}`",
+                f"- Current bear-code reconciliation failures: `{len(reconciliation_failures)}`",
                 f"- Blockers: `{len(blockers)}`",
                 "",
                 "This is a truth-source guidebook audit only; it does not invent draw odds or change prediction math.",
