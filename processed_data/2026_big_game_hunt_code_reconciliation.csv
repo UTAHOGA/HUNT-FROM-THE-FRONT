@@ -15,10 +15,10 @@ BI6534,65,BISON_HUNT_TABLES,Bison,"Book Cliffs, Bitter Creek",PASS,,PASS,,true,t
 BI6535,65,BISON_HUNT_TABLES,Bison,"Book Cliffs, Bitter Creek",PASS,,PASS,,true,true,true,true,true,true
 BI6536,65,BISON_HUNT_TABLES,Bison,"Book Cliffs, Bitter Creek",PASS,,PASS,,true,true,true,true,true,true
 BI6537,65,BISON_HUNT_TABLES,Bison,"Book Cliffs, Little Creek/South",PASS,,PASS,,true,true,true,true,true,true
-BI6539,65,BISON_HUNT_TABLES,Bison,Henry Mtns (new),PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
+BI6539,65,BISON_HUNT_TABLES,Bison,Henry Mtns (new),PASS,,PASS,,true,true,true,true,true,true
 BR1000,10,SPORTSMAN_AND_STATEWIDE_CONSERVATION_DATES,Black Bear,Black bear,PASS,,PASS,,true,true,true,true,true,true
 DB0007,10,SPORTSMAN_AND_STATEWIDE_CONSERVATION_DATES,Deer,Buck deer,PASS,,PASS,,true,true,true,true,true,true
-DB0008,44,BUCK_DEER_HUNT_TABLES,Deer,Deer extended archery only,PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
+DB0008,44,BUCK_DEER_HUNT_TABLES,Deer,Deer extended archery only,PASS,,PASS,,true,true,true,true,true,true
 DB1000,49,BUCK_DEER_HUNT_TABLES,Deer,Henry Mtns,PASS,,PASS,,true,true,true,true,true,true
 DB1001,49,BUCK_DEER_HUNT_TABLES,Deer,Paunsaugunt,PASS,,PASS,,true,true,true,true,true,true
 DB1002,49,BUCK_DEER_HUNT_TABLES,Deer,Antelope Island,PASS,,PASS,,true,true,true,true,true,true
@@ -90,7 +90,7 @@ DB1105,53,BUCK_DEER_HUNT_TABLES,Deer,East Canyon,PASS,,PASS,,true,true,true,true
 DB1106,50,BUCK_DEER_HUNT_TABLES,Deer,Thousand Lakes,PASS,,PASS,,true,true,true,true,true,true
 DB1107,51,BUCK_DEER_HUNT_TABLES,Deer,Thousand Lakes,PASS,,PASS,,true,true,true,true,true,true
 DB1108,51,BUCK_DEER_HUNT_TABLES,Deer,Thousand Lakes,PASS,,PASS,,true,true,true,true,true,true
-DB1109,53,BUCK_DEER_HUNT_TABLES,Deer,Thousand Lakes,PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
+DB1109,53,BUCK_DEER_HUNT_TABLES,Deer,Thousand Lakes,PASS,,PASS,,true,true,true,true,true,true
 DB1110,52,BUCK_DEER_HUNT_TABLES,Deer,"Beaver, East",PASS,,PASS,,true,true,true,true,true,true
 DB1111,52,BUCK_DEER_HUNT_TABLES,Deer,"Beaver, West",PASS,,PASS,,true,true,true,true,true,true
 DB1112,53,BUCK_DEER_HUNT_TABLES,Deer,"West Desert, Swasey",PASS,,PASS,,true,true,true,true,true,true
@@ -100,7 +100,7 @@ DB1115,51,BUCK_DEER_HUNT_TABLES,Deer,Little Rockies,PASS,,PASS,,true,true,true,t
 DB1116,53,BUCK_DEER_HUNT_TABLES,Deer,"San Juan, Mancos Mesa",PASS,,PASS,,true,true,true,true,true,true
 DB1119,51,BUCK_DEER_HUNT_TABLES,Deer,Moab Valley,PASS,,PASS,,true,true,true,true,true,true
 DB1120,51,BUCK_DEER_HUNT_TABLES,Deer,Castle Valley,PASS,,PASS,,true,true,true,true,true,true
-DB1121,50,BUCK_DEER_HUNT_TABLES,Deer,Antelope Island (any legal weapon) (new),PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
+DB1121,50,BUCK_DEER_HUNT_TABLES,Deer,Antelope Island (any legal weapon) (new),PASS,,PASS,,true,true,true,true,true,true
 DB1200,69,CWMU_HUNT_TABLES,Deer,Alton,PASS,,PASS,,true,true,true,true,true,true
 DB1201,69,CWMU_HUNT_TABLES,Deer,Alton (management buck),PASS,,PASS,,true,true,true,true,true,true
 DB1202,70,CWMU_HUNT_TABLES,Deer,Antelope Creek,PASS,,PASS,,true,true,true,true,true,true
@@ -284,38 +284,38 @@ DB1595,44,BUCK_DEER_HUNT_TABLES,Deer,Pine Valley,PASS,,PASS,,true,true,true,true
 DB1596,44,BUCK_DEER_HUNT_TABLES,Deer,Fishlake,PASS,,PASS,,true,true,true,true,true,true
 DB1597,44,BUCK_DEER_HUNT_TABLES,Deer,Zion,PASS,,PASS,,true,true,true,true,true,true
 DB1598,44,BUCK_DEER_HUNT_TABLES,Deer,North Slope,PASS,,PASS,,true,true,true,true,true,true
-DB1599,45,BUCK_DEER_HUNT_TABLES,Deer,Chalk Creek,PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1600,43,BUCK_DEER_HUNT_TABLES,Deer,Chalk Creek,PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1601,44,BUCK_DEER_HUNT_TABLES,Deer,Chalk Creek,PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1602,46,BUCK_DEER_HUNT_TABLES,Deer,Chalk Creek,PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1603,45,BUCK_DEER_HUNT_TABLES,Deer,East Canyon,PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1604,43,BUCK_DEER_HUNT_TABLES,Deer,East Canyon,PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1605,44,BUCK_DEER_HUNT_TABLES,Deer,East Canyon,PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1606,46,BUCK_DEER_HUNT_TABLES,Deer,East Canyon,PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1607,45,BUCK_DEER_HUNT_TABLES,Deer,Morgan-South Rich,PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1608,43,BUCK_DEER_HUNT_TABLES,Deer,Morgan-South Rich,PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1609,44,BUCK_DEER_HUNT_TABLES,Deer,Morgan-South Rich,PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1610,46,BUCK_DEER_HUNT_TABLES,Deer,Morgan-South Rich,PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1611,43,BUCK_DEER_HUNT_TABLES,Deer,"Beaver, East",PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1612,46,BUCK_DEER_HUNT_TABLES,Deer,"Beaver, East",PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1613,45,BUCK_DEER_HUNT_TABLES,Deer,"Beaver, East",PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1614,43,BUCK_DEER_HUNT_TABLES,Deer,"Beaver, West",PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1615,47,BUCK_DEER_HUNT_TABLES,Deer,"Beaver, West",PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1616,46,BUCK_DEER_HUNT_TABLES,Deer,"Beaver, West",PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1617,44,BUCK_DEER_HUNT_TABLES,Deer,"West Desert, Swasey",PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1618,47,BUCK_DEER_HUNT_TABLES,Deer,"West Desert, Swasey",PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1619,45,BUCK_DEER_HUNT_TABLES,Deer,"West Desert, Swasey",PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1620,43,BUCK_DEER_HUNT_TABLES,Deer,Oquirrh/Tintic,PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1621,46,BUCK_DEER_HUNT_TABLES,Deer,Oquirrh/Tintic,PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1622,45,BUCK_DEER_HUNT_TABLES,Deer,Oquirrh/Tintic,PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1623,43,BUCK_DEER_HUNT_TABLES,Deer,Cedar/Stansbury,PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1624,46,BUCK_DEER_HUNT_TABLES,Deer,Cedar/Stansbury,PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1625,45,BUCK_DEER_HUNT_TABLES,Deer,Cedar/Stansbury,PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1627,46,BUCK_DEER_HUNT_TABLES,Deer,Cache,PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1628,47,BUCK_DEER_HUNT_TABLES,Deer,Cache,PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1629,46,BUCK_DEER_HUNT_TABLES,Deer,Boulder/Kaiparowits,PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1630,47,BUCK_DEER_HUNT_TABLES,Deer,Boulder/Kaiparowits,PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1631,44,BUCK_DEER_HUNT_TABLES,Deer,Box Elder,PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
+DB1599,45,BUCK_DEER_HUNT_TABLES,Deer,Chalk Creek,PASS,,PASS,,true,true,true,true,true,true
+DB1600,43,BUCK_DEER_HUNT_TABLES,Deer,Chalk Creek,PASS,,PASS,,true,true,true,true,true,true
+DB1601,44,BUCK_DEER_HUNT_TABLES,Deer,Chalk Creek,PASS,,PASS,,true,true,true,true,true,true
+DB1602,46,BUCK_DEER_HUNT_TABLES,Deer,Chalk Creek,PASS,,PASS,,true,true,true,true,true,true
+DB1603,45,BUCK_DEER_HUNT_TABLES,Deer,East Canyon,PASS,,PASS,,true,true,true,true,true,true
+DB1604,43,BUCK_DEER_HUNT_TABLES,Deer,East Canyon,PASS,,PASS,,true,true,true,true,true,true
+DB1605,44,BUCK_DEER_HUNT_TABLES,Deer,East Canyon,PASS,,PASS,,true,true,true,true,true,true
+DB1606,46,BUCK_DEER_HUNT_TABLES,Deer,East Canyon,PASS,,PASS,,true,true,true,true,true,true
+DB1607,45,BUCK_DEER_HUNT_TABLES,Deer,Morgan-South Rich,PASS,,PASS,,true,true,true,true,true,true
+DB1608,43,BUCK_DEER_HUNT_TABLES,Deer,Morgan-South Rich,PASS,,PASS,,true,true,true,true,true,true
+DB1609,44,BUCK_DEER_HUNT_TABLES,Deer,Morgan-South Rich,PASS,,PASS,,true,true,true,true,true,true
+DB1610,46,BUCK_DEER_HUNT_TABLES,Deer,Morgan-South Rich,PASS,,PASS,,true,true,true,true,true,true
+DB1611,43,BUCK_DEER_HUNT_TABLES,Deer,"Beaver, East",PASS,,PASS,,true,true,true,true,true,true
+DB1612,46,BUCK_DEER_HUNT_TABLES,Deer,"Beaver, East",PASS,,PASS,,true,true,true,true,true,true
+DB1613,45,BUCK_DEER_HUNT_TABLES,Deer,"Beaver, East",PASS,,PASS,,true,true,true,true,true,true
+DB1614,43,BUCK_DEER_HUNT_TABLES,Deer,"Beaver, West",PASS,,PASS,,true,true,true,true,true,true
+DB1615,47,BUCK_DEER_HUNT_TABLES,Deer,"Beaver, West",PASS,,PASS,,true,true,true,true,true,true
+DB1616,46,BUCK_DEER_HUNT_TABLES,Deer,"Beaver, West",PASS,,PASS,,true,true,true,true,true,true
+DB1617,44,BUCK_DEER_HUNT_TABLES,Deer,"West Desert, Swasey",PASS,,PASS,,true,true,true,true,true,true
+DB1618,47,BUCK_DEER_HUNT_TABLES,Deer,"West Desert, Swasey",PASS,,PASS,,true,true,true,true,true,true
+DB1619,45,BUCK_DEER_HUNT_TABLES,Deer,"West Desert, Swasey",PASS,,PASS,,true,true,true,true,true,true
+DB1620,43,BUCK_DEER_HUNT_TABLES,Deer,Oquirrh/Tintic,PASS,,PASS,,true,true,true,true,true,true
+DB1621,46,BUCK_DEER_HUNT_TABLES,Deer,Oquirrh/Tintic,PASS,,PASS,,true,true,true,true,true,true
+DB1622,45,BUCK_DEER_HUNT_TABLES,Deer,Oquirrh/Tintic,PASS,,PASS,,true,true,true,true,true,true
+DB1623,43,BUCK_DEER_HUNT_TABLES,Deer,Cedar/Stansbury,PASS,,PASS,,true,true,true,true,true,true
+DB1624,46,BUCK_DEER_HUNT_TABLES,Deer,Cedar/Stansbury,PASS,,PASS,,true,true,true,true,true,true
+DB1625,45,BUCK_DEER_HUNT_TABLES,Deer,Cedar/Stansbury,PASS,,PASS,,true,true,true,true,true,true
+DB1627,46,BUCK_DEER_HUNT_TABLES,Deer,Cache,PASS,,PASS,,true,true,true,true,true,true
+DB1628,47,BUCK_DEER_HUNT_TABLES,Deer,Cache,PASS,,PASS,,true,true,true,true,true,true
+DB1629,46,BUCK_DEER_HUNT_TABLES,Deer,Boulder/Kaiparowits,PASS,,PASS,,true,true,true,true,true,true
+DB1630,47,BUCK_DEER_HUNT_TABLES,Deer,Boulder/Kaiparowits,PASS,,PASS,,true,true,true,true,true,true
+DB1631,44,BUCK_DEER_HUNT_TABLES,Deer,Box Elder,PASS,,PASS,,true,true,true,true,true,true
 DB1770,47,BUCK_DEER_HUNT_TABLES,Deer,Box Elder,PASS,,PASS,,true,true,true,true,true,true
 DB1771,47,BUCK_DEER_HUNT_TABLES,Deer,Cache,PASS,,PASS,,true,true,true,true,true,true
 DB1772,48,BUCK_DEER_HUNT_TABLES,Deer,Manti/San Rafael,PASS,,PASS,,true,true,true,true,true,true
@@ -339,14 +339,14 @@ DB1793,48,BUCK_DEER_HUNT_TABLES,Deer,Southwest Desert,PASS,,PASS,,true,true,true
 DB1794,48,BUCK_DEER_HUNT_TABLES,Deer,"Wasatch Mtns, East",PASS,,PASS,,true,true,true,true,true,true
 DB1795,48,BUCK_DEER_HUNT_TABLES,Deer,"Wasatch Mtns, West",PASS,,PASS,,true,true,true,true,true,true
 DB1798,48,BUCK_DEER_HUNT_TABLES,Deer,Zion,PASS,,PASS,,true,true,true,true,true,true
-DB1799,47,BUCK_DEER_HUNT_TABLES,Deer,Chalk Creek,PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1800,47,BUCK_DEER_HUNT_TABLES,Deer,East Canyon,PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1801,48,BUCK_DEER_HUNT_TABLES,Deer,Morgan-South Rich,PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1802,47,BUCK_DEER_HUNT_TABLES,Deer,"Beaver, East",PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1803,47,BUCK_DEER_HUNT_TABLES,Deer,"Beaver, West",PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1804,47,BUCK_DEER_HUNT_TABLES,Deer,Cedar/Stansbury,PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1805,48,BUCK_DEER_HUNT_TABLES,Deer,Oquirrh/Tintic,PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
-DB1806,48,BUCK_DEER_HUNT_TABLES,Deer,"West Desert, Swasey",PASS,,INFO_MISSING_PREDICTIVE_ROW,draw_reality_engine_predictive_v2,true,true,true,true,true,false
+DB1799,47,BUCK_DEER_HUNT_TABLES,Deer,Chalk Creek,PASS,,PASS,,true,true,true,true,true,true
+DB1800,47,BUCK_DEER_HUNT_TABLES,Deer,East Canyon,PASS,,PASS,,true,true,true,true,true,true
+DB1801,48,BUCK_DEER_HUNT_TABLES,Deer,Morgan-South Rich,PASS,,PASS,,true,true,true,true,true,true
+DB1802,47,BUCK_DEER_HUNT_TABLES,Deer,"Beaver, East",PASS,,PASS,,true,true,true,true,true,true
+DB1803,47,BUCK_DEER_HUNT_TABLES,Deer,"Beaver, West",PASS,,PASS,,true,true,true,true,true,true
+DB1804,47,BUCK_DEER_HUNT_TABLES,Deer,Cedar/Stansbury,PASS,,PASS,,true,true,true,true,true,true
+DB1805,48,BUCK_DEER_HUNT_TABLES,Deer,Oquirrh/Tintic,PASS,,PASS,,true,true,true,true,true,true
+DB1806,48,BUCK_DEER_HUNT_TABLES,Deer,"West Desert, Swasey",PASS,,PASS,,true,true,true,true,true,true
 DS1000,10,SPORTSMAN_AND_STATEWIDE_CONSERVATION_DATES,Desert Bighorn Sheep,Desert bighorn sheep Any legal weapon:,PASS,,PASS,,true,true,true,true,true,true
 DS6600,66,BIGHORN_SHEEP_HUNT_TABLES,Desert Bighorn Sheep,Henry Mtns,PASS,,PASS,,true,true,true,true,true,true
 DS6601,66,BIGHORN_SHEEP_HUNT_TABLES,Desert Bighorn Sheep,"Kaiparowits, East",PASS,,PASS,,true,true,true,true,true,true

@@ -2815,3 +2815,42 @@
   - `python scripts\reconcile-big-game-hunt-codes-2026.py` passed.
   - `python -m pytest tests\utah\test_big_game_application_guidebook_database_audit.py tests\utah\test_big_game_hunt_code_reconciliation.py -q` passed: `4`.
   - `python -m compileall scripts\reconcile-big-game-hunt-codes-2026.py tests\utah\test_big_game_hunt_code_reconciliation.py` passed.
+
+
+## 2026 Big Game Predictive Guidebook Promotion And Bear/Cougar/Furbearer Audit
+- Timestamp (UTC): 2026-05-24T09:57:00Z
+- Scope:
+  - Promoted the 44 corrected 2026 Big Game Application Guidebook hunt codes that were absent from `processed_data/draw_reality_engine_predictive_v2.csv`.
+  - Added those rows as `GUIDEBOOK_TRUTH_REFERENCE` records only; hunt-code, permit-reference, season, weapon, and source lineage fields were populated, while draw odds remain explicitly unmodeled.
+  - Materialized the promotion manifest and summary at `processed_data/2026_big_game_predictive_v2_guidebook_promotion.csv` and `.json`.
+  - Refreshed the 2026 big-game hunt-code reconciliation; all 728 corrected guidebook codes now pass the optional predictive v2 surface check.
+  - Added a full truth-source audit for `pipeline/RAW/hunt_unit_database/2026/pdf/regulations/2026 Bear Cougar Furbearer Guidebook.pdf`.
+  - Materialized page/line text, number/date/code tokens, 55 pasted-data anchor checks, and 99 black-bear hunt-code rows from the Bear/Cougar/Furbearer guidebook.
+  - Confirmed all 99 Bear guidebook `BR` hunt codes are present in both `DATABASE.csv` and `draw_reality_engine_predictive_v2.csv`.
+  - No raw PDFs, website feeds, harvest features, or prediction probability math were changed.
+- Outputs:
+  - `processed_data/2026_big_game_predictive_v2_guidebook_promotion.csv`
+  - `processed_data/2026_big_game_predictive_v2_guidebook_promotion_summary.json`
+  - `data_truth/regulations_truth/normalized/2026_bear_cougar_furbearer_guidebook_text_lines.csv`
+  - `data_truth/regulations_truth/normalized/2026_bear_cougar_furbearer_guidebook_number_tokens.csv`
+  - `data_truth/regulations_truth/normalized/2026_bear_cougar_furbearer_guidebook_expected_text_checks.csv`
+  - `data_truth/regulations_truth/normalized/2026_bear_cougar_furbearer_guidebook_bear_hunt_tables.csv`
+  - `processed_data/2026_bear_cougar_furbearer_guidebook_audit.json`
+  - `processed_data/2026_bear_cougar_furbearer_guidebook_audit.md`
+- Key results:
+  - Promoted guidebook truth-reference hunt codes into predictive v2: `44`.
+  - Still-missing corrected 2026 big-game guidebook codes in predictive v2: `0`.
+  - Bear/Cougar/Furbearer PDF pages: `88`.
+  - Extracted Bear/Cougar/Furbearer text lines: `3501`.
+  - Extracted Bear/Cougar/Furbearer number/date/code tokens: `2506`.
+  - Bear/Cougar/Furbearer pasted-data anchor checks: `55`.
+  - Bear/Cougar/Furbearer anchor failures: `0`.
+  - Bear guidebook hunt codes checked: `99`.
+  - Bear guidebook hunt codes missing DATABASE: `0`.
+  - Bear guidebook hunt codes missing predictive v2: `0`.
+- Validation:
+  - `python scripts\promote-guidebook-codes-to-predictive-v2-2026.py` passed.
+  - `python scripts\reconcile-big-game-hunt-codes-2026.py` passed with optional predictive missing count `0`.
+  - `python scripts\audit-bear-cougar-furbearer-guidebook-2026.py` passed with `0` blockers.
+  - `python -m pytest tests\utah\test_big_game_predictive_guidebook_promotion.py tests\utah\test_big_game_hunt_code_reconciliation.py tests\utah\test_bear_cougar_furbearer_guidebook_2026_audit.py -q` passed: `5`.
+  - `python -m compileall scripts\promote-guidebook-codes-to-predictive-v2-2026.py scripts\audit-bear-cougar-furbearer-guidebook-2026.py tests\utah\test_big_game_predictive_guidebook_promotion.py tests\utah\test_big_game_hunt_code_reconciliation.py tests\utah\test_bear_cougar_furbearer_guidebook_2026_audit.py` passed.

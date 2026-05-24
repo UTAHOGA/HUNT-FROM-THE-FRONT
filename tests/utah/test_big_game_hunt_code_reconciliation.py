@@ -27,7 +27,7 @@ def test_big_game_hunt_codes_reconcile_across_required_surfaces() -> None:
         "point_ladder_view": 0,
         "draw_reality_engine": 0,
     }
-    assert summary["optional_predictive_missing_count"] == 44
+    assert summary["optional_predictive_missing_count"] == 0
 
     with RECONCILIATION.open(newline="", encoding="utf-8-sig") as handle:
         rows = list(csv.DictReader(handle))
@@ -35,6 +35,6 @@ def test_big_game_hunt_codes_reconcile_across_required_surfaces() -> None:
     assert len(rows) == 728
     assert {row["required_surface_status"] for row in rows} == {"PASS"}
     assert any(
-        row["hunt_code"] == "DB0008" and row["optional_predictive_status"] == "INFO_MISSING_PREDICTIVE_ROW"
+        row["hunt_code"] == "DB0008" and row["optional_predictive_status"] == "PASS"
         for row in rows
     )

@@ -12,13 +12,12 @@
     "point_ladder_view": 0,
     "draw_reality_engine": 0
   },
-  "optional_predictive_missing_count": 44,
+  "optional_predictive_missing_count": 0,
   "optional_status_counts": {
-    "PASS": 684,
-    "INFO_MISSING_PREDICTIVE_ROW": 44
+    "PASS": 728
   },
   "optional_missing_by_surface": {
-    "draw_reality_engine_predictive_v2": 44
+    "draw_reality_engine_predictive_v2": 0
   },
   "required_surface_code_counts": {
     "DATABASE": 1411,
@@ -28,7 +27,7 @@
     "draw_reality_engine": 1623
   },
   "optional_surface_code_counts": {
-    "draw_reality_engine_predictive_v2": 1065
+    "draw_reality_engine_predictive_v2": 1109
   },
   "extra_database_codes_not_in_guidebook": 683,
   "extra_database_code_note": "Expected: DATABASE includes antlerless, other current-year rows, and broader active references not printed in the big-game application hunt tables.",
