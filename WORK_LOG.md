@@ -3093,3 +3093,37 @@
   - `python scripts\audit-big-game-field-regulations-2023.py` passed.
   - `python -m pytest tests\utah\test_big_game_field_regulations_2023_source_audit.py -q` passed: `2`.
   - `python -m compileall scripts\audit-big-game-field-regulations-2023.py tests\utah\test_big_game_field_regulations_2023_source_audit.py` passed.
+
+## 2023 Big Game Application Guidebook Source Audit
+- Timestamp (UTC): 2026-05-24T22:06:00Z
+- Scope:
+  - Added a repeatable source audit for `pipeline/RAW/hunt_unit_database/2023/pdf/regulation/2023_biggameapp.pdf`.
+  - Locked the file identity as the revised May `2023 Utah Big Game Application Guidebook` with SHA-256 `7357df71939b084d5e6807a1bc01670bb6f1c04369e550946b1363c57ed2082b`.
+  - Materialized 2023 application-guidebook text lines, number/date/citation tokens, pasted-text anchor checks, and hunt-table reference rows under `data_truth/regulations_truth/normalized/`.
+  - Classified the source as `APPLICATION_GUIDEBOOK_REFERENCE_ONLY` with guardrail `DO_NOT_USE_AS_DRAW_ODDS_HARVEST_FEATURE_OR_2026_QUOTA_INPUT`.
+  - Confirmed this source did not promote draw rows, prediction rows, harvest features, permit quotas, or website-facing files.
+- Outputs:
+  - `scripts/audit-big-game-application-guidebook-2023.py`
+  - `tests/utah/test_big_game_application_guidebook_2023_source_audit.py`
+  - `data_truth/regulations_truth/normalized/2023_big_game_application_guidebook_text_lines.csv`
+  - `data_truth/regulations_truth/normalized/2023_big_game_application_guidebook_number_tokens.csv`
+  - `data_truth/regulations_truth/normalized/2023_big_game_application_guidebook_expected_text_checks.csv`
+  - `data_truth/regulations_truth/normalized/2023_big_game_application_guidebook_hunt_tables.csv`
+  - `processed_data/2023_big_game_application_guidebook_source_audit.json`
+  - `processed_data/2023_big_game_application_guidebook_source_audit.md`
+- Key results:
+  - Source PDF pages: `80`.
+  - Source file size: `2,880,571` bytes.
+  - Extracted text lines: `3915`.
+  - Extracted number/date/citation tokens: `3422` (`number_or_money 2841`, `date 508`, `code_citation 73`).
+  - Hunt-table reference rows: `719`.
+  - Unique hunt codes: `719`.
+  - Hunt-code prefix counts: `DB 326`, `EB 212`, `PB 87`, `MB 30`, `BI 17`, `GO 17`, `DS 16`, `RS 14`.
+  - Pasted-text checks: `66`.
+  - Pasted-text failures: `0`.
+  - Audit blockers: `0`.
+  - Database reconciliation effect: `NO_DRAW_OR_PREDICTION_ROWS_PROMOTED`.
+- Validation:
+  - `python scripts\audit-big-game-application-guidebook-2023.py` passed.
+  - `python -m pytest tests\utah\test_big_game_application_guidebook_2023_source_audit.py -q` passed: `2`.
+  - `python -m compileall scripts\audit-big-game-application-guidebook-2023.py tests\utah\test_big_game_application_guidebook_2023_source_audit.py` passed.
