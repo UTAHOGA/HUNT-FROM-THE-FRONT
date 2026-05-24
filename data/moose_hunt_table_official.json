@@ -1,0 +1,594 @@
+[
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Cache",
+      "BOUNDARYID": "29",
+      "HUNT_NUMBER": "MB6000",
+      "SEASON": "Sept 12 2026 - Oct 31 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Moose - Statewide Permit",
+      "BOUNDARYID": "29",
+      "HUNT_NUMBER": "MB1000",
+      "SEASON": "Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Morgan-South Rich",
+      "BOUNDARYID": "117",
+      "HUNT_NUMBER": "MB6005",
+      "SEASON": "Sept 12 2026 - Oct 31 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Moose - Statewide Permit",
+      "BOUNDARYID": "117",
+      "HUNT_NUMBER": "MB1000",
+      "SEASON": "Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Morgan-South Rich",
+      "BOUNDARYID": "117",
+      "HUNT_NUMBER": "MA1005",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Morgan-South Rich",
+      "BOUNDARYID": "117",
+      "HUNT_NUMBER": "MA1007",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "North Slope, Summit",
+      "BOUNDARYID": "138",
+      "HUNT_NUMBER": "MB6006",
+      "SEASON": "Sept 12 2026 - Oct 31 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "North Slope, Summit",
+      "BOUNDARYID": "138",
+      "HUNT_NUMBER": "MA1004",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Moose - Statewide Permit",
+      "BOUNDARYID": "138",
+      "HUNT_NUMBER": "MB1000",
+      "SEASON": "Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "East Canyon",
+      "BOUNDARYID": "276",
+      "HUNT_NUMBER": "MB6002",
+      "SEASON": "Sept 12 2026 - Oct 31 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Moose - Statewide Permit",
+      "BOUNDARYID": "276",
+      "HUNT_NUMBER": "MB1000",
+      "SEASON": "Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "North Slope, Three Corners/West Daggett",
+      "BOUNDARYID": "289",
+      "HUNT_NUMBER": "MB6007",
+      "SEASON": "Sept 12 2026 - Oct 31 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Moose - Statewide Permit",
+      "BOUNDARYID": "289",
+      "HUNT_NUMBER": "MB1000",
+      "SEASON": "Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Weber Florence Creek CWMU",
+      "BOUNDARYID": "524",
+      "HUNT_NUMBER": "MB6226",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Weber Florence Creek/Stillman Creek CWMU",
+      "BOUNDARYID": "524",
+      "HUNT_NUMBER": "MB6266",
+      "SEASON": "Contact Operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Grass Valley/Clark Canyon CWMU",
+      "BOUNDARYID": "525",
+      "HUNT_NUMBER": "MB6211",
+      "SEASON": "Contact Operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Three C CWMU",
+      "BOUNDARYID": "553",
+      "HUNT_NUMBER": "MB6223",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Coyote Little Pole CWMU",
+      "BOUNDARYID": "556",
+      "HUNT_NUMBER": "MB6205",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Little Pole Canyon CWMU",
+      "BOUNDARYID": "556",
+      "HUNT_NUMBER": "MB6265",
+      "SEASON": "Contact Operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Bally Watts CWMU",
+      "BOUNDARYID": "559",
+      "HUNT_NUMBER": "MB6261",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Causey Spring CWMU",
+      "BOUNDARYID": "560",
+      "HUNT_NUMBER": "MB6202",
+      "SEASON": "Contact Operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Causey Spring CWMU",
+      "BOUNDARYID": "560",
+      "HUNT_NUMBER": "MA1009",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Beaver Hollow CWMU",
+      "BOUNDARYID": "561",
+      "HUNT_NUMBER": "MB6201",
+      "SEASON": "Contact Operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Strawberry Ridge CWMU",
+      "BOUNDARYID": "562",
+      "HUNT_NUMBER": "MB6222",
+      "SEASON": "Contact Operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Cedar Canyon CWMU",
+      "BOUNDARYID": "566",
+      "HUNT_NUMBER": "MB6250",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Durst Mountain CWMU",
+      "BOUNDARYID": "567",
+      "HUNT_NUMBER": "MB6207",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Deseret CWMU",
+      "BOUNDARYID": "568",
+      "HUNT_NUMBER": "MB6206",
+      "SEASON": "Contact Operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Deseret CWMU",
+      "BOUNDARYID": "568",
+      "HUNT_NUMBER": "MA1010",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Lone Tree Tunnel Hollow CWMU",
+      "BOUNDARYID": "569",
+      "HUNT_NUMBER": "MB6215",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Woodruff Creek South CWMU",
+      "BOUNDARYID": "571",
+      "HUNT_NUMBER": "MB6256",
+      "SEASON": "Contact Operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Bear Springs CWMU",
+      "BOUNDARYID": "575",
+      "HUNT_NUMBER": "MB6200",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "SJ Ranch CWMU",
+      "BOUNDARYID": "576",
+      "HUNT_NUMBER": "MB6254",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Hardscrabble CWMU",
+      "BOUNDARYID": "577",
+      "HUNT_NUMBER": "MB6251",
+      "SEASON": "Contact Operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Skull Crack CWMU",
+      "BOUNDARYID": "578",
+      "HUNT_NUMBER": "MB6219",
+      "SEASON": "Contact Operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Folley Ridge CWMU",
+      "BOUNDARYID": "579",
+      "HUNT_NUMBER": "MB6210",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Jacob's Creek CWMU",
+      "BOUNDARYID": "580",
+      "HUNT_NUMBER": "MB6252",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Jacob's Creek CWMU",
+      "BOUNDARYID": "580",
+      "HUNT_NUMBER": "MB6258",
+      "SEASON": "Contact Operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Wallsburg CWMU",
+      "BOUNDARYID": "586",
+      "HUNT_NUMBER": "MB6225",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Junction Valley CWMU",
+      "BOUNDARYID": "589",
+      "HUNT_NUMBER": "MB6262",
+      "SEASON": "Contact Operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Wasatch Mtns, West",
+      "BOUNDARYID": "620",
+      "HUNT_NUMBER": "MA1006",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "East Canyon, Davis-North Salt Lake",
+      "BOUNDARYID": "859",
+      "HUNT_NUMBER": "MA1000",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Wasatch Mtns, Salt Lake-Timpanogos",
+      "BOUNDARYID": "937",
+      "HUNT_NUMBER": "MA1008",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Chalk Creek",
+      "BOUNDARYID": "69",
+      "HUNT_NUMBER": "MB6001",
+      "SEASON": "Sept 12 2026 - Oct 31 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Moose - Statewide Permit",
+      "BOUNDARYID": "69",
+      "HUNT_NUMBER": "MB1000",
+      "SEASON": "Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "East Canyon, Morgan-Summit",
+      "BOUNDARYID": "79",
+      "HUNT_NUMBER": "MB6003",
+      "SEASON": "Sept 12 2026 - Oct 31 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "East Canyon, Morgan-Summit",
+      "BOUNDARYID": "79",
+      "HUNT_NUMBER": "MA1001",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Moose - Statewide Permit",
+      "BOUNDARYID": "79",
+      "HUNT_NUMBER": "MB1000",
+      "SEASON": "Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Box Elder",
+      "BOUNDARYID": "607",
+      "HUNT_NUMBER": "MB6012",
+      "SEASON": "Sept 12 2026 - Oct 31 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Ogden",
+      "BOUNDARYID": "609",
+      "HUNT_NUMBER": "MB6008",
+      "SEASON": "Sept 12 2026 - Oct 31 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Ogden",
+      "BOUNDARYID": "609",
+      "HUNT_NUMBER": "MA1002",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Moose - Statewide Permit",
+      "BOUNDARYID": "609",
+      "HUNT_NUMBER": "MB1000",
+      "SEASON": "Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Kamas",
+      "BOUNDARYID": "611",
+      "HUNT_NUMBER": "MB6004",
+      "SEASON": "Sept 12 2026 - Oct 31 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Moose - Statewide Permit",
+      "BOUNDARYID": "611",
+      "HUNT_NUMBER": "MB1000",
+      "SEASON": "Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Yellowstone",
+      "BOUNDARYID": "613",
+      "HUNT_NUMBER": "MB6010",
+      "SEASON": "Sept 12 2026 - Oct 31 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Moose - Statewide Permit",
+      "BOUNDARYID": "613",
+      "HUNT_NUMBER": "MB1000",
+      "SEASON": "Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Diamond Mtn/Vernal",
+      "BOUNDARYID": "452",
+      "HUNT_NUMBER": "MB6009",
+      "SEASON": "Sept 12 2026 - Oct 31 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Moose - Statewide Permit",
+      "BOUNDARYID": "452",
+      "HUNT_NUMBER": "MB1000",
+      "SEASON": "Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Statewide Conservation",
+      "BOUNDARYID": "454",
+      "HUNT_NUMBER": "MB6260",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Little Red Creek CWMU",
+      "BOUNDARYID": "484",
+      "HUNT_NUMBER": "MB6253",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Moon Ranch CWMU",
+      "BOUNDARYID": "485",
+      "HUNT_NUMBER": "MB6263",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Sharp Mountain CWMU",
+      "BOUNDARYID": "490",
+      "HUNT_NUMBER": "MB6217",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "South Canyon CWMU",
+      "BOUNDARYID": "491",
+      "HUNT_NUMBER": "MB6220",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Ingham Peak CWMU",
+      "BOUNDARYID": "493",
+      "HUNT_NUMBER": "MB6257",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "East Fork Chalk Creek CWMU",
+      "BOUNDARYID": "520",
+      "HUNT_NUMBER": "MB6208",
+      "SEASON": "Contact Operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Two Bear CWMU",
+      "BOUNDARYID": "521",
+      "HUNT_NUMBER": "MB6224",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Ensign Ranches CWMU",
+      "BOUNDARYID": "522",
+      "HUNT_NUMBER": "MB6209",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "State Corner CWMU",
+      "BOUNDARYID": "523",
+      "HUNT_NUMBER": "MB6221",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Chimney Rock CWMU",
+      "BOUNDARYID": "732",
+      "HUNT_NUMBER": "MB6240",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Powder Mountain CWMU",
+      "BOUNDARYID": "738",
+      "HUNT_NUMBER": "MB6216",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Sand Creek CWMU",
+      "BOUNDARYID": "740",
+      "HUNT_NUMBER": "MB6264",
+      "SEASON": "Contact Operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Wasatch Mtns/Central Mtns",
+      "BOUNDARYID": "743",
+      "HUNT_NUMBER": "MB6011",
+      "SEASON": "Sept 12 2026 - Oct 31 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Moose - Statewide Permit",
+      "BOUNDARYID": "743",
+      "HUNT_NUMBER": "MB1000",
+      "SEASON": "Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Ogden, West",
+      "BOUNDARYID": "812",
+      "HUNT_NUMBER": "MA1003",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Royal Ivory Outfitters CWMU",
+      "BOUNDARYID": "828",
+      "HUNT_NUMBER": "MB6259",
+      "SEASON": null
+    }
+  }
+]

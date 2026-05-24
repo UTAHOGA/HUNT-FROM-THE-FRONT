@@ -1,0 +1,1666 @@
+[
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pronghorn - Statewide Permit",
+      "BOUNDARYID": "8",
+      "HUNT_NUMBER": "PB1000",
+      "SEASON": "Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Book Cliffs, South",
+      "BOUNDARYID": "15",
+      "HUNT_NUMBER": "PB5002",
+      "SEASON": "Aug 15 2026 - Sept 11 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Book Cliffs, South",
+      "BOUNDARYID": "15",
+      "HUNT_NUMBER": "PB5027",
+      "SEASON": "Sept 12 2026 - Sept 20 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pronghorn - Statewide Permit",
+      "BOUNDARYID": "15",
+      "HUNT_NUMBER": "PB1000",
+      "SEASON": "Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Box Elder, Promontory",
+      "BOUNDARYID": "24",
+      "HUNT_NUMBER": "PB5003",
+      "SEASON": "Aug 15 2026 - Sept 11 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Box Elder, Promontory",
+      "BOUNDARYID": "24",
+      "HUNT_NUMBER": "PB5028",
+      "SEASON": "Sept 12 2026 - Sept 20 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Box Elder, Promontory",
+      "BOUNDARYID": "24",
+      "HUNT_NUMBER": "PD1012",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pronghorn - Statewide Permit",
+      "BOUNDARYID": "24",
+      "HUNT_NUMBER": "PB1000",
+      "SEASON": "Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Box Elder, Puddle Valley",
+      "BOUNDARYID": "25",
+      "HUNT_NUMBER": "PB5004",
+      "SEASON": "Aug 15 2026 - Sept 11 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Box Elder, Puddle Valley",
+      "BOUNDARYID": "25",
+      "HUNT_NUMBER": "PB5029",
+      "SEASON": "Sept 12 2026 - Sept 20 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pronghorn - Statewide Permit",
+      "BOUNDARYID": "25",
+      "HUNT_NUMBER": "PB1000",
+      "SEASON": "Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Box Elder, Snowville",
+      "BOUNDARYID": "27",
+      "HUNT_NUMBER": "PB5005",
+      "SEASON": "Aug 15 2026 - Sept 11 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Box Elder, Snowville",
+      "BOUNDARYID": "27",
+      "HUNT_NUMBER": "PB5030",
+      "SEASON": "Sept 12 2026 - Sept 20 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Box Elder, Snowville",
+      "BOUNDARYID": "27",
+      "HUNT_NUMBER": "PD1000",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pronghorn - Statewide Permit",
+      "BOUNDARYID": "27",
+      "HUNT_NUMBER": "PB1000",
+      "SEASON": "Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Box Elder, Snowville",
+      "BOUNDARYID": "27",
+      "HUNT_NUMBER": "PB5080",
+      "SEASON": "Sept 23 2026 - Oct 01 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Cache, Rich",
+      "BOUNDARYID": "38",
+      "HUNT_NUMBER": "PB5073",
+      "SEASON": "Sept 12 2026 - Sept 20 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Cache, Rich",
+      "BOUNDARYID": "38",
+      "HUNT_NUMBER": "PB5074",
+      "SEASON": "Aug 15 2026 - Sept 11 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Cache, Rich",
+      "BOUNDARYID": "38",
+      "HUNT_NUMBER": "PB5075",
+      "SEASON": "Sept 23 2026 - Oct 01 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "San Rafael, Poison Springs Bench",
+      "BOUNDARYID": "110",
+      "HUNT_NUMBER": "PD1033",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Nine Mile, Anthro-Myton Bench",
+      "BOUNDARYID": "129",
+      "HUNT_NUMBER": "PB5011",
+      "SEASON": "Aug 15 2026 - Sept 11 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Nine Mile, Anthro-Myton Bench",
+      "BOUNDARYID": "129",
+      "HUNT_NUMBER": "PB5037",
+      "SEASON": "Sept 12 2026 - Sept 20 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pronghorn - Statewide Permit",
+      "BOUNDARYID": "129",
+      "HUNT_NUMBER": "PB1000",
+      "SEASON": "Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Nine Mile, Anthro-Myton Bench",
+      "BOUNDARYID": "129",
+      "HUNT_NUMBER": "PB5059",
+      "SEASON": "Sept 23 2026 - Oct 01 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "North Slope, Summit",
+      "BOUNDARYID": "138",
+      "HUNT_NUMBER": "PB5039",
+      "SEASON": "Sept 12 2026 - Sept 20 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "North Slope, Summit",
+      "BOUNDARYID": "138",
+      "HUNT_NUMBER": "PD1005",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pronghorn - Statewide Permit",
+      "BOUNDARYID": "138",
+      "HUNT_NUMBER": "PB1000",
+      "SEASON": "Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "North Slope, Three Corners",
+      "BOUNDARYID": "140",
+      "HUNT_NUMBER": "PD1037",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "North Slope, West Daggett",
+      "BOUNDARYID": "142",
+      "HUNT_NUMBER": "PD1038",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "West Desert, Riverbed",
+      "BOUNDARYID": "244",
+      "HUNT_NUMBER": "PB5019",
+      "SEASON": "Aug 15 2026 - Sept 11 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "West Desert, Riverbed",
+      "BOUNDARYID": "244",
+      "HUNT_NUMBER": "PB5050",
+      "SEASON": "Sept 12 2026 - Sept 20 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pronghorn - Statewide Permit",
+      "BOUNDARYID": "244",
+      "HUNT_NUMBER": "PB1000",
+      "SEASON": "Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "West Desert, Rush Valley",
+      "BOUNDARYID": "245",
+      "HUNT_NUMBER": "PB5020",
+      "SEASON": "Aug 15 2026 - Sept 11 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "West Desert, Rush Valley",
+      "BOUNDARYID": "245",
+      "HUNT_NUMBER": "PB5051",
+      "SEASON": "Sept 12 2026 - Sept 20 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pronghorn - Statewide Permit",
+      "BOUNDARYID": "245",
+      "HUNT_NUMBER": "PB1000",
+      "SEASON": "Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "West Desert, Snake Valley",
+      "BOUNDARYID": "246",
+      "HUNT_NUMBER": "PB5021",
+      "SEASON": "Aug 15 2026 - Sept 11 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "West Desert, Snake Valley",
+      "BOUNDARYID": "246",
+      "HUNT_NUMBER": "PB5052",
+      "SEASON": "Sept 12 2026 - Sept 20 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pronghorn - Statewide Permit",
+      "BOUNDARYID": "246",
+      "HUNT_NUMBER": "PB1000",
+      "SEASON": "Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Nine Mile, Range Creek",
+      "BOUNDARYID": "277",
+      "HUNT_NUMBER": "PB5038",
+      "SEASON": "Sept 12 2026 - Sept 20 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Nine Mile, Range Creek",
+      "BOUNDARYID": "277",
+      "HUNT_NUMBER": "PB5053",
+      "SEASON": "Aug 15 2026 - Sept 11 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pronghorn - Statewide Permit",
+      "BOUNDARYID": "277",
+      "HUNT_NUMBER": "PB1000",
+      "SEASON": "Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "North Slope, Three Corners/West Daggett",
+      "BOUNDARYID": "289",
+      "HUNT_NUMBER": "PB5012",
+      "SEASON": "Aug 15 2026 - Sept 11 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "North Slope, Three Corners/West Daggett",
+      "BOUNDARYID": "289",
+      "HUNT_NUMBER": "PB5040",
+      "SEASON": "Sept 12 2026 - Sept 20 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pronghorn - Statewide Permit",
+      "BOUNDARYID": "289",
+      "HUNT_NUMBER": "PB1000",
+      "SEASON": "Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "North Slope, Three Corners/West Daggett",
+      "BOUNDARYID": "289",
+      "HUNT_NUMBER": "PB5066",
+      "SEASON": "Sept 23 2026 - Oct 01 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "San Rafael, Desert",
+      "BOUNDARYID": "443",
+      "HUNT_NUMBER": "PB5045",
+      "SEASON": "Sept 12 2026 - Sept 20 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "San Rafael, Desert",
+      "BOUNDARYID": "443",
+      "HUNT_NUMBER": "PB5055",
+      "SEASON": "Aug 15 2026 - Sept 11 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pronghorn - Statewide Permit",
+      "BOUNDARYID": "443",
+      "HUNT_NUMBER": "PB1000",
+      "SEASON": "Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Black Point CWMU",
+      "BOUNDARYID": "528",
+      "HUNT_NUMBER": "PB5301",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Black Point CWMU",
+      "BOUNDARYID": "528",
+      "HUNT_NUMBER": "PD1010",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Zane CWMU",
+      "BOUNDARYID": "537",
+      "HUNT_NUMBER": "PD1049",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Zane CWMU",
+      "BOUNDARYID": "537",
+      "HUNT_NUMBER": "PB5315",
+      "SEASON": "Contact operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Zane CWMU",
+      "BOUNDARYID": "537",
+      "HUNT_NUMBER": "PD1016",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Castle Valley Outdoors CWMU",
+      "BOUNDARYID": "545",
+      "HUNT_NUMBER": "PB5338",
+      "SEASON": "Contact operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Allen Ranch CWMU",
+      "BOUNDARYID": "557",
+      "HUNT_NUMBER": "PB5325",
+      "SEASON": "Contact operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Westlake CWMU",
+      "BOUNDARYID": "558",
+      "HUNT_NUMBER": "PB5314",
+      "SEASON": "Contact operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Westlake CWMU",
+      "BOUNDARYID": "558",
+      "HUNT_NUMBER": "PD1031",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Strawberry Ridge CWMU",
+      "BOUNDARYID": "562",
+      "HUNT_NUMBER": "PB5310",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Middle Ridge CWMU",
+      "BOUNDARYID": "565",
+      "HUNT_NUMBER": "PB5304",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Middle Ridge CWMU",
+      "BOUNDARYID": "565",
+      "HUNT_NUMBER": "PD1021",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Deseret CWMU",
+      "BOUNDARYID": "568",
+      "HUNT_NUMBER": "PB5302",
+      "SEASON": "Contact operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Deseret CWMU",
+      "BOUNDARYID": "568",
+      "HUNT_NUMBER": "PD1011",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "SJ Ranch CWMU",
+      "BOUNDARYID": "576",
+      "HUNT_NUMBER": "PB5308",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "SJ Ranch CWMU",
+      "BOUNDARYID": "576",
+      "HUNT_NUMBER": "PD1015",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Antelope Creek CWMU",
+      "BOUNDARYID": "581",
+      "HUNT_NUMBER": "PD1047",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Antelope Creek CWMU",
+      "BOUNDARYID": "581",
+      "HUNT_NUMBER": "PB5300",
+      "SEASON": "Contact operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Antelope Creek CWMU",
+      "BOUNDARYID": "581",
+      "HUNT_NUMBER": "PD1032",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Skull Valley South CWMU",
+      "BOUNDARYID": "585",
+      "HUNT_NUMBER": "PB5309",
+      "SEASON": "Contact operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Junction Valley CWMU",
+      "BOUNDARYID": "589",
+      "HUNT_NUMBER": "PB5346",
+      "SEASON": "Contact operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Southwest Desert",
+      "BOUNDARYID": "625",
+      "HUNT_NUMBER": "PB5018",
+      "SEASON": "Aug 15 2026 - Sept 11 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Southwest Desert",
+      "BOUNDARYID": "625",
+      "HUNT_NUMBER": "PB5024",
+      "SEASON": "Sept 23 2026 - Oct 01 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Southwest Desert",
+      "BOUNDARYID": "625",
+      "HUNT_NUMBER": "PB5049",
+      "SEASON": "Sept 12 2026 - Sept 20 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pronghorn - Statewide Permit",
+      "BOUNDARYID": "625",
+      "HUNT_NUMBER": "PB1000",
+      "SEASON": "Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Beaver",
+      "BOUNDARYID": "628",
+      "HUNT_NUMBER": "PB5000",
+      "SEASON": "Aug 15 2026 - Sept 11 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Beaver",
+      "BOUNDARYID": "628",
+      "HUNT_NUMBER": "PB5025",
+      "SEASON": "Sept 12 2026 - Sept 20 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pronghorn - Statewide Permit",
+      "BOUNDARYID": "628",
+      "HUNT_NUMBER": "PB1000",
+      "SEASON": "Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Beaver",
+      "BOUNDARYID": "628",
+      "HUNT_NUMBER": "PD1036",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "La Sal, Potash/South Cisco",
+      "BOUNDARYID": "688",
+      "HUNT_NUMBER": "PB5009",
+      "SEASON": "Aug 15 2026 - Sept 11 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "La Sal, Potash/South Cisco",
+      "BOUNDARYID": "688",
+      "HUNT_NUMBER": "PB5035",
+      "SEASON": "Sept 12 2026 - Sept 20 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pronghorn - Statewide Permit",
+      "BOUNDARYID": "688",
+      "HUNT_NUMBER": "PB1000",
+      "SEASON": "Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Parker Mtn",
+      "BOUNDARYID": "703",
+      "HUNT_NUMBER": "PD1054",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Parker Mtn",
+      "BOUNDARYID": "703",
+      "HUNT_NUMBER": "PD1055",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Parker Mtn",
+      "BOUNDARYID": "703",
+      "HUNT_NUMBER": "PD1056",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Cache/Morgan-South Rich/Ogden",
+      "BOUNDARYID": "715",
+      "HUNT_NUMBER": "PB5007",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Cache/Morgan-South Rich/Ogden",
+      "BOUNDARYID": "715",
+      "HUNT_NUMBER": "PB5022",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Cache/Morgan-South Rich/Ogden",
+      "BOUNDARYID": "715",
+      "HUNT_NUMBER": "PB5032",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Cache/Morgan-South Rich/Ogden",
+      "BOUNDARYID": "715",
+      "HUNT_NUMBER": "PD1001",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Cache/Morgan-South Rich/Ogden",
+      "BOUNDARYID": "715",
+      "HUNT_NUMBER": "PD1002",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Cache/Morgan-South Rich/Ogden",
+      "BOUNDARYID": "715",
+      "HUNT_NUMBER": "PD1003",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pronghorn - Statewide Permit",
+      "BOUNDARYID": "715",
+      "HUNT_NUMBER": "PB1000",
+      "SEASON": "Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Mt Dutton/Paunsaugunt",
+      "BOUNDARYID": "717",
+      "HUNT_NUMBER": "PB5010",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Mt Dutton/Paunsaugunt",
+      "BOUNDARYID": "717",
+      "HUNT_NUMBER": "PB5036",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Panguitch Lake/Zion, North",
+      "BOUNDARYID": "718",
+      "HUNT_NUMBER": "PB5041",
+      "SEASON": "Sept 12 2026 - Sept 20 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Panguitch Lake/Zion, North",
+      "BOUNDARYID": "718",
+      "HUNT_NUMBER": "PB5054",
+      "SEASON": "Aug 15 2026 - Sept 11 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pronghorn - Statewide Permit",
+      "BOUNDARYID": "718",
+      "HUNT_NUMBER": "PB1000",
+      "SEASON": "Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Panguitch Lake/Zion, North",
+      "BOUNDARYID": "718",
+      "HUNT_NUMBER": "PD1039",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Panguitch Lake/Zion, North",
+      "BOUNDARYID": "718",
+      "HUNT_NUMBER": "PB5061",
+      "SEASON": "Sept 23 2026 - Oct 01 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Parker Mtn",
+      "BOUNDARYID": "719",
+      "HUNT_NUMBER": "PB5014",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Parker Mtn",
+      "BOUNDARYID": "719",
+      "HUNT_NUMBER": "PB5023",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Parker Mtn",
+      "BOUNDARYID": "719",
+      "HUNT_NUMBER": "PB5043",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pronghorn - Statewide Permit",
+      "BOUNDARYID": "719",
+      "HUNT_NUMBER": "PB1000",
+      "SEASON": "Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "TL Bar Ranch CWMU",
+      "BOUNDARYID": "721",
+      "HUNT_NUMBER": "PB5312",
+      "SEASON": "Contact operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "TL Bar Ranch CWMU",
+      "BOUNDARYID": "721",
+      "HUNT_NUMBER": "PD1022",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Mt Dutton/Paunsaugunt, Johns Valley (doe pronghorn) - #PD1004",
+      "BOUNDARYID": "725",
+      "HUNT_NUMBER": "PD1004",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Highlands",
+      "BOUNDARYID": "873",
+      "HUNT_NUMBER": "PB5067",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Highlands",
+      "BOUNDARYID": "873",
+      "HUNT_NUMBER": "PB5063",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Highlands",
+      "BOUNDARYID": "873",
+      "HUNT_NUMBER": "PB5064",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Parker Mtn, Highlands",
+      "BOUNDARYID": "873",
+      "HUNT_NUMBER": "PD1057",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Parker Mtn, Highlands",
+      "BOUNDARYID": "873",
+      "HUNT_NUMBER": "PD1058",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Iron Spring CWMU",
+      "BOUNDARYID": "876",
+      "HUNT_NUMBER": "PB5339",
+      "SEASON": "Contact operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Nine Mile, Anthro-Pleasant Valley",
+      "BOUNDARYID": "882",
+      "HUNT_NUMBER": "PD1043",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Sweetwater CWMU",
+      "BOUNDARYID": "891",
+      "HUNT_NUMBER": "PB5341",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Vernal-Ouray Valley",
+      "BOUNDARYID": "895",
+      "HUNT_NUMBER": "PD1044",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Salt Wells CWMU",
+      "BOUNDARYID": "906",
+      "HUNT_NUMBER": "PB5342",
+      "SEASON": "Contact operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Green River Flat CWMU",
+      "BOUNDARYID": "918",
+      "HUNT_NUMBER": "PD1046",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Green River Flat CWMU",
+      "BOUNDARYID": "918",
+      "HUNT_NUMBER": "PB5345",
+      "SEASON": "Contact operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Green River Flat CWMU",
+      "BOUNDARYID": "918",
+      "HUNT_NUMBER": "PD1053",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Prohibition Springs CWMU",
+      "BOUNDARYID": "919",
+      "HUNT_NUMBER": "PB5343",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Parker Mtn, Plains",
+      "BOUNDARYID": "940",
+      "HUNT_NUMBER": "PD1059",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Parker Mtn, Plains",
+      "BOUNDARYID": "940",
+      "HUNT_NUMBER": "PD1060",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Parker Mtn",
+      "BOUNDARYID": "171",
+      "HUNT_NUMBER": "PD1006",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Parker Mtn",
+      "BOUNDARYID": "171",
+      "HUNT_NUMBER": "PD1019",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Parker Mtn",
+      "BOUNDARYID": "171",
+      "HUNT_NUMBER": "PD1020",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Parker Mtn",
+      "BOUNDARYID": "171",
+      "HUNT_NUMBER": "PB5333",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Parker Mtn",
+      "BOUNDARYID": "171",
+      "HUNT_NUMBER": "PB5334",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Parker Mtn",
+      "BOUNDARYID": "171",
+      "HUNT_NUMBER": "PB5335",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pronghorn - Statewide Permit",
+      "BOUNDARYID": "171",
+      "HUNT_NUMBER": "PB1000",
+      "SEASON": "Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Parker Mtn",
+      "BOUNDARYID": "171",
+      "HUNT_NUMBER": "PB5076",
+      "SEASON": "Sept 12 2026 - Sept 20 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Parker Mtn",
+      "BOUNDARYID": "171",
+      "HUNT_NUMBER": "PB5077",
+      "SEASON": "Aug 15 2026 - Sept 11 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Parker Mtn",
+      "BOUNDARYID": "171",
+      "HUNT_NUMBER": "PB5078",
+      "SEASON": "Sept 23 2026 - Oct 01 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "San Juan, Hatch Point",
+      "BOUNDARYID": "186",
+      "HUNT_NUMBER": "PB5044",
+      "SEASON": "Sept 12 2026 - Sept 20 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pronghorn - Statewide Permit",
+      "BOUNDARYID": "186",
+      "HUNT_NUMBER": "PB1000",
+      "SEASON": "Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "San Juan, Hatch Point",
+      "BOUNDARYID": "186",
+      "HUNT_NUMBER": "PB5058",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pronghorn - Statewide Permit",
+      "BOUNDARYID": "194",
+      "HUNT_NUMBER": "PB1000",
+      "SEASON": "Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Heist CWMU",
+      "BOUNDARYID": "201",
+      "HUNT_NUMBER": "PB5337",
+      "SEASON": "Contact operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Heist CWMU",
+      "BOUNDARYID": "201",
+      "HUNT_NUMBER": "PD1052",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Heist CWMU",
+      "BOUNDARYID": "201",
+      "HUNT_NUMBER": "PD1041",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "San Rafael, North",
+      "BOUNDARYID": "202",
+      "HUNT_NUMBER": "PB5015",
+      "SEASON": "Aug 15 2026 - Sept 11 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "San Rafael, North",
+      "BOUNDARYID": "202",
+      "HUNT_NUMBER": "PB5046",
+      "SEASON": "Sept 12 2026 - Sept 20 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "San Rafael, North",
+      "BOUNDARYID": "202",
+      "HUNT_NUMBER": "PB5056",
+      "SEASON": "Sept 23 2026 - Oct 01 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Vernal",
+      "BOUNDARYID": "208",
+      "HUNT_NUMBER": "PB5017",
+      "SEASON": "Aug 15 2026 - Sept 11 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Vernal",
+      "BOUNDARYID": "208",
+      "HUNT_NUMBER": "PB5048",
+      "SEASON": "Sept 12 2026 - Sept 20 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pronghorn - Statewide Permit",
+      "BOUNDARYID": "208",
+      "HUNT_NUMBER": "PB1000",
+      "SEASON": "Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Vernal",
+      "BOUNDARYID": "208",
+      "HUNT_NUMBER": "PB5072",
+      "SEASON": "Sept 23 2026 - Oct 01 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Southwest Desert, Milford Flat",
+      "BOUNDARYID": "217",
+      "HUNT_NUMBER": "PD1008",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Southwest Desert, Milford Flat",
+      "BOUNDARYID": "217",
+      "HUNT_NUMBER": "PD1009",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Fillmore, Oak Creek South",
+      "BOUNDARYID": "81",
+      "HUNT_NUMBER": "PB5008",
+      "SEASON": "Aug 15 2026 - Sept 11 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Fillmore, Oak Creek South",
+      "BOUNDARYID": "81",
+      "HUNT_NUMBER": "PB5033",
+      "SEASON": "Sept 12 2026 - Sept 20 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Fillmore, Oak Creek South",
+      "BOUNDARYID": "81",
+      "HUNT_NUMBER": "PD1027",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pronghorn - Statewide Permit",
+      "BOUNDARYID": "81",
+      "HUNT_NUMBER": "PB1000",
+      "SEASON": "Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Fillmore, Oak Creek South",
+      "BOUNDARYID": "81",
+      "HUNT_NUMBER": "PD1034",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Fillmore, Oak Creek South",
+      "BOUNDARYID": "81",
+      "HUNT_NUMBER": "PD1035",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Fillmore, Oak Creek South",
+      "BOUNDARYID": "81",
+      "HUNT_NUMBER": "PB5065",
+      "SEASON": "Sept 23 2026 - Oct 01 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "San Rafael North, Mounds Reef",
+      "BOUNDARYID": "90",
+      "HUNT_NUMBER": "PD1028",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "San Rafael North, Mounds Reef",
+      "BOUNDARYID": "90",
+      "HUNT_NUMBER": "PD1029",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Kaiparowits",
+      "BOUNDARYID": "97",
+      "HUNT_NUMBER": "PB5034",
+      "SEASON": "Sept 12 2026 - Sept 20 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pronghorn - Statewide Permit",
+      "BOUNDARYID": "97",
+      "HUNT_NUMBER": "PB1000",
+      "SEASON": "Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Rabbit Creek CWMU",
+      "BOUNDARYID": "590",
+      "HUNT_NUMBER": "PB5306",
+      "SEASON": "Contact operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Rabbit Creek CWMU",
+      "BOUNDARYID": "590",
+      "HUNT_NUMBER": "PD1013",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Park Valley CWMU",
+      "BOUNDARYID": "603",
+      "HUNT_NUMBER": "PB5305",
+      "SEASON": "Contact operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pine Valley",
+      "BOUNDARYID": "636",
+      "HUNT_NUMBER": "PB5013",
+      "SEASON": "Aug 15 2026 - Sept 11 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pine Valley",
+      "BOUNDARYID": "636",
+      "HUNT_NUMBER": "PB5042",
+      "SEASON": "Sept 12 2026 - Sept 20 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pronghorn - Statewide Permit",
+      "BOUNDARYID": "636",
+      "HUNT_NUMBER": "PB1000",
+      "SEASON": "Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pine Valley",
+      "BOUNDARYID": "636",
+      "HUNT_NUMBER": "PB5062",
+      "SEASON": "Sept 23 2026 - Oct 01 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pine Valley",
+      "BOUNDARYID": "636",
+      "HUNT_NUMBER": "PD1042",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Book Cliffs, Bitter Creek",
+      "BOUNDARYID": "667",
+      "HUNT_NUMBER": "PB5001",
+      "SEASON": "Aug 15 2026 - Sept 11 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Book Cliffs, Bitter Creek",
+      "BOUNDARYID": "667",
+      "HUNT_NUMBER": "PB5026",
+      "SEASON": "Sept 12 2026 - Sept 20 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Mt Dutton/Paunsaugunt",
+      "BOUNDARYID": "453",
+      "HUNT_NUMBER": "PD1018",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Mt Dutton/Paunsaugunt",
+      "BOUNDARYID": "453",
+      "HUNT_NUMBER": "PB5331",
+      "SEASON": "Sept 12 2026 - Sept 20 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Mt Dutton/Paunsaugunt",
+      "BOUNDARYID": "453",
+      "HUNT_NUMBER": "PB5332",
+      "SEASON": "Aug 15 2026 - Sept 11 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pronghorn - Statewide Permit",
+      "BOUNDARYID": "453",
+      "HUNT_NUMBER": "PB1000",
+      "SEASON": "Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Statewide Conservation",
+      "BOUNDARYID": "454",
+      "HUNT_NUMBER": "PB5057",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Diamond Mtn/Bonanza",
+      "BOUNDARYID": "461",
+      "HUNT_NUMBER": "PB5016",
+      "SEASON": "Aug 15 2026 - Sept 11 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Diamond Mtn/Bonanza",
+      "BOUNDARYID": "461",
+      "HUNT_NUMBER": "PB5047",
+      "SEASON": "Sept 12 2026 - Sept 20 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pronghorn - Statewide Permit",
+      "BOUNDARYID": "461",
+      "HUNT_NUMBER": "PB1000",
+      "SEASON": "Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Diamond Mtn/Bonanza",
+      "BOUNDARYID": "461",
+      "HUNT_NUMBER": "PB5060",
+      "SEASON": "Sept 23 2026 - Oct 01 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Bonanza/Diamond Mtn",
+      "BOUNDARYID": "461",
+      "HUNT_NUMBER": "PD1040",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "The Rose of Snowville CWMU",
+      "BOUNDARYID": "509",
+      "HUNT_NUMBER": "PD1048",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "The Rose of Snowville CWMU",
+      "BOUNDARYID": "509",
+      "HUNT_NUMBER": "PB5311",
+      "SEASON": "Contact operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "The Rose of Snowville CWMU",
+      "BOUNDARYID": "509",
+      "HUNT_NUMBER": "PD1045",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Ensign Ranches CWMU",
+      "BOUNDARYID": "522",
+      "HUNT_NUMBER": "PB5303",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "RLF Deep Creek CWMU",
+      "BOUNDARYID": "739",
+      "HUNT_NUMBER": "PB5307",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "RLF Deep Creek CWMU",
+      "BOUNDARYID": "739",
+      "HUNT_NUMBER": "PD1014",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Box Elder, West",
+      "BOUNDARYID": "755",
+      "HUNT_NUMBER": "PB5006",
+      "SEASON": "Aug 15 2026 - Sept 11 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Box Elder, West",
+      "BOUNDARYID": "755",
+      "HUNT_NUMBER": "PB5031",
+      "SEASON": "Sept 12 2026 - Sept 20 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Box Elder, West",
+      "BOUNDARYID": "755",
+      "HUNT_NUMBER": "PD1017",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pronghorn - Statewide Permit",
+      "BOUNDARYID": "755",
+      "HUNT_NUMBER": "PB1000",
+      "SEASON": "Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1 - Nov 15, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Box Elder, West",
+      "BOUNDARYID": "755",
+      "HUNT_NUMBER": "PB5079",
+      "SEASON": "Sept 23 2026 - Oct 01 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "West Willow Creek Ranch CWMU",
+      "BOUNDARYID": "805",
+      "HUNT_NUMBER": "PB5313",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "George Creek CWMU",
+      "BOUNDARYID": "806",
+      "HUNT_NUMBER": "PB5330",
+      "SEASON": "Contact operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "George Creek CWMU",
+      "BOUNDARYID": "806",
+      "HUNT_NUMBER": "PD1023",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "San Rafael North, Cleveland",
+      "BOUNDARYID": "813",
+      "HUNT_NUMBER": "PD1007",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "San Rafael North, Cleveland",
+      "BOUNDARYID": "813",
+      "HUNT_NUMBER": "PD1030",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Cottonwood Ridge CWMU",
+      "BOUNDARYID": "824",
+      "HUNT_NUMBER": "PB5327",
+      "SEASON": "Contact operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Cottonwood Ridge CWMU",
+      "BOUNDARYID": "824",
+      "HUNT_NUMBER": "PD1050",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Cottonwood Ridge CWMU",
+      "BOUNDARYID": "824",
+      "HUNT_NUMBER": "PD1025",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pahvant Ensign CWMU",
+      "BOUNDARYID": "826",
+      "HUNT_NUMBER": "PB5328",
+      "SEASON": "Contact operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pahvant Ensign CWMU",
+      "BOUNDARYID": "826",
+      "HUNT_NUMBER": "PD1051",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Pahvant Ensign CWMU",
+      "BOUNDARYID": "826",
+      "HUNT_NUMBER": "PD1026",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Snowville Flat CWMU",
+      "BOUNDARYID": "829",
+      "HUNT_NUMBER": "PB5329",
+      "SEASON": "Contact operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Snowville Flat CWMU",
+      "BOUNDARYID": "829",
+      "HUNT_NUMBER": "PD1024",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Cedar Springs CWMU",
+      "BOUNDARYID": "830",
+      "HUNT_NUMBER": "PB5326",
+      "SEASON": "Contact operator for 2026 season dates"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Box Elder, West - Private Land Only",
+      "BOUNDARYID": "755",
+      "HUNT_NUMBER": "LP5031",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "San Rafael, North - Private Land Only",
+      "BOUNDARYID": "202",
+      "HUNT_NUMBER": "LP5046",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Fillmore, Oak Creek South - Private Land Only",
+      "BOUNDARYID": "81",
+      "HUNT_NUMBER": "LP5033",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "West Desert, Rush Valley - Private Land Only",
+      "BOUNDARYID": "245",
+      "HUNT_NUMBER": "LP5051",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Southwest Desert - Private Land Only",
+      "BOUNDARYID": "625",
+      "HUNT_NUMBER": "LP5049",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Beaver - Private Land Only",
+      "BOUNDARYID": "628",
+      "HUNT_NUMBER": "LP5025",
+      "SEASON": null
+    }
+  }
+]

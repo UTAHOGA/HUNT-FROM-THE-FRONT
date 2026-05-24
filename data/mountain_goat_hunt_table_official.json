@@ -1,0 +1,298 @@
+[
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "High Uintas Central",
+      "BOUNDARYID": "145",
+      "HUNT_NUMBER": "GO6805",
+      "SEASON": "Sept 05 2026 - Oct 31 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "North Slope/South Slope, High Uintas Central",
+      "BOUNDARYID": "145",
+      "HUNT_NUMBER": "GO6815",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Mountain Goat - Statewide Permit",
+      "BOUNDARYID": "145",
+      "HUNT_NUMBER": "GO1000",
+      "SEASON": "Sept 1 - Dec 31, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "High Uintas East",
+      "BOUNDARYID": "146",
+      "HUNT_NUMBER": "GO6806",
+      "SEASON": "Sept 05 2026 - Oct 31 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Mountain Goat - Statewide Permit",
+      "BOUNDARYID": "146",
+      "HUNT_NUMBER": "GO1000",
+      "SEASON": "Sept 1 - Dec 31, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "High Uintas Leidy Peak",
+      "BOUNDARYID": "147",
+      "HUNT_NUMBER": "GO6807",
+      "SEASON": "Sept 05 2026 - Oct 31 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Mountain Goat - Statewide Permit",
+      "BOUNDARYID": "147",
+      "HUNT_NUMBER": "GO1000",
+      "SEASON": "Sept 1 - Dec 31, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "High Uintas West",
+      "BOUNDARYID": "148",
+      "HUNT_NUMBER": "GO6808",
+      "SEASON": "Sept 05 2026 - Oct 31 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Mountain Goat - Statewide Permit",
+      "BOUNDARYID": "148",
+      "HUNT_NUMBER": "GO1000",
+      "SEASON": "Sept 1 - Dec 31, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Ogden, Willard Peak",
+      "BOUNDARYID": "157",
+      "HUNT_NUMBER": "GO6809",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Ogden, Willard Peak",
+      "BOUNDARYID": "157",
+      "HUNT_NUMBER": "GO6810",
+      "SEASON": "Sept 05 2026 - Nov 25 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Ogden, Willard Peak",
+      "BOUNDARYID": "157",
+      "HUNT_NUMBER": "GO6811",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Mountain Goat - Statewide Permit",
+      "BOUNDARYID": "157",
+      "HUNT_NUMBER": "GO1000",
+      "SEASON": "Sept 1 - Dec 31, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Nebo",
+      "BOUNDARYID": "616",
+      "HUNT_NUMBER": "GO6803",
+      "SEASON": "Sept 26 2026 - Nov 25 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Mountain Goat - Statewide Permit",
+      "BOUNDARYID": "616",
+      "HUNT_NUMBER": "GO1000",
+      "SEASON": "Sept 1 - Dec 31, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Nebo",
+      "BOUNDARYID": "616",
+      "HUNT_NUMBER": "GO6821",
+      "SEASON": "Sept 16 2026 - Sept 25 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Beaver",
+      "BOUNDARYID": "617",
+      "HUNT_NUMBER": "GO6802",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "La Sal Mtns",
+      "BOUNDARYID": "617",
+      "HUNT_NUMBER": "GO6817",
+      "SEASON": "Sept 05 2026 - Nov 25 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Mountain Goat - Statewide Permit",
+      "BOUNDARYID": "617",
+      "HUNT_NUMBER": "GO1000",
+      "SEASON": "Sept 1 - Dec 31, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Beaver",
+      "BOUNDARYID": "628",
+      "HUNT_NUMBER": "GO6800",
+      "SEASON": "Sept 05 2026 - Sept 27 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Beaver",
+      "BOUNDARYID": "628",
+      "HUNT_NUMBER": "GO6822",
+      "SEASON": "Nov 14 2026 - Nov 23 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Beaver",
+      "BOUNDARYID": "628",
+      "HUNT_NUMBER": "GO6801",
+      "SEASON": "Sept 28 2026 - Oct 26 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Mountain Goat - Statewide Permit",
+      "BOUNDARYID": "628",
+      "HUNT_NUMBER": "GO1000",
+      "SEASON": "Sept 1 - Dec 31, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Wasatch Mtns, Box Elder Peak/Lone Peak/Timpanogos",
+      "BOUNDARYID": "720",
+      "HUNT_NUMBER": "GO6812",
+      "SEASON": null
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Wasatch Mtns, Timpanogos",
+      "BOUNDARYID": "200",
+      "HUNT_NUMBER": "GO6820",
+      "SEASON": "Sept 05 2026 - Nov 25 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Mountain Goat - Statewide Permit",
+      "BOUNDARYID": "200",
+      "HUNT_NUMBER": "GO1000",
+      "SEASON": "Sept 1 - Dec 31, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Wasatch Mtns, Box Elder Peak",
+      "BOUNDARYID": "225",
+      "HUNT_NUMBER": "GO6818",
+      "SEASON": "Sept 05 2026 - Nov 25 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Mountain Goat - Statewide Permit",
+      "BOUNDARYID": "225",
+      "HUNT_NUMBER": "GO1000",
+      "SEASON": "Sept 1 - Dec 31, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Wasatch Mtns, Lone Peak",
+      "BOUNDARYID": "231",
+      "HUNT_NUMBER": "GO6819",
+      "SEASON": "Sept 05 2026 - Nov 25 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Mountain Goat - Statewide Permit",
+      "BOUNDARYID": "231",
+      "HUNT_NUMBER": "GO1000",
+      "SEASON": "Sept 1 - Dec 31, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Wasatch Mtns, Provo Peak",
+      "BOUNDARYID": "233",
+      "HUNT_NUMBER": "GO6813",
+      "SEASON": "Sept 05 2026 - Nov 25 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Mountain Goat - Statewide Permit",
+      "BOUNDARYID": "233",
+      "HUNT_NUMBER": "GO1000",
+      "SEASON": "Sept 1 - Dec 31, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "High Uintas Kamas",
+      "BOUNDARYID": "102",
+      "HUNT_NUMBER": "GO6804",
+      "SEASON": "Sept 05 2026 - Oct 31 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Mountain Goat - Statewide Permit",
+      "BOUNDARYID": "102",
+      "HUNT_NUMBER": "GO1000",
+      "SEASON": "Sept 1 - Dec 31, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Mt Dutton",
+      "BOUNDARYID": "630",
+      "HUNT_NUMBER": "GO6814",
+      "SEASON": "Sept 05 2026 - Nov 25 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Mountain Goat - Statewide Permit",
+      "BOUNDARYID": "630",
+      "HUNT_NUMBER": "GO1000",
+      "SEASON": "Sept 1 - Dec 31, 2026"
+    }
+  },
+  {
+    "attributes": {
+      "BOUNDARY_NAME": "Statewide Conservation",
+      "BOUNDARYID": "454",
+      "HUNT_NUMBER": "GO6816",
+      "SEASON": null
+    }
+  }
+]

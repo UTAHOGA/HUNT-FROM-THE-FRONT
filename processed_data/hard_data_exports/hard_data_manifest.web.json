@@ -1,0 +1,142 @@
+[
+  {
+    "group": "tools",
+    "type": "html",
+    "title": "Coverage Matrix",
+    "subtitle": "Which hunts have engine, ladder, harvest, and research coverage.",
+    "href": "./coverage.html"
+  },
+  {
+    "group": "tools",
+    "type": "html",
+    "title": "Staging Audit",
+    "subtitle": "Normalized staging readiness report.",
+    "href": "./staging-audit.html"
+  },
+  {
+    "group": "tools",
+    "type": "csv",
+    "title": "Raw Backup Catalog",
+    "subtitle": "Index of raw source files by year and type.",
+    "href": "./processed_data/raw-backup-catalog.csv"
+  },
+  {
+    "group": "canonical",
+    "type": "csv",
+    "title": "Canonical Hunt Master (Priority Ordered)",
+    "subtitle": "Primary source-of-truth hunt table with boundary mapping.",
+    "href": "./processed_data/hunt_master_canonical_2026_priority_ordered_SOURCE_OF_TRUTH_APPLIED_with_statewide_boundary_ids.csv"
+  },
+  {
+    "group": "canonical",
+    "type": "csv",
+    "title": "Draw Reality Engine",
+    "subtitle": "CSV output used by hunt research page logic.",
+    "href": "./processed_data/draw_reality_engine.csv"
+  },
+  {
+    "group": "canonical",
+    "type": "csv",
+    "title": "Point Ladder View",
+    "subtitle": "Point-by-point pressure table.",
+    "href": "./processed_data/point_ladder_view.csv"
+  },
+  {
+    "group": "exports",
+    "type": "csv",
+    "title": "Statewide Permits",
+    "subtitle": "Pattern-specific statewide permit export.",
+    "href": "./processed_data/hard_data_exports/statewide_permits.csv"
+  },
+  {
+    "group": "exports",
+    "type": "xlsx",
+    "title": "Statewide Permits (XLSX)",
+    "subtitle": "Workbook version of statewide permits.",
+    "href": "./processed_data/hard_data_exports/statewide_permits.xlsx"
+  },
+  {
+    "group": "exports",
+    "type": "csv",
+    "title": "General Bull Any Bull Permits",
+    "subtitle": "Multi-unit general bull permit pattern export.",
+    "href": "./processed_data/hard_data_exports/general_bull_any_bull_permits.csv"
+  },
+  {
+    "group": "exports",
+    "type": "csv",
+    "title": "Spike Only Permits",
+    "subtitle": "Spike-only permit export.",
+    "href": "./processed_data/hard_data_exports/spike_only_permits.csv"
+  },
+  {
+    "group": "exports",
+    "type": "csv",
+    "title": "Youth Permits",
+    "subtitle": "Youth permit pattern export.",
+    "href": "./processed_data/hard_data_exports/youth_permits.csv"
+  },
+  {
+    "group": "exports",
+    "type": "csv",
+    "title": "Extended Archery Permits",
+    "subtitle": "Extended archery permit pattern export.",
+    "href": "./processed_data/hard_data_exports/extended_archery_permits.csv"
+  },
+  {
+    "group": "exports",
+    "type": "csv",
+    "title": "Unit-Specific Conservation Expo Bundles",
+    "subtitle": "Conservation/expo unit-specific permit export.",
+    "href": "./processed_data/hard_data_exports/unit_specific_conservation_expo_bundles.csv"
+  },
+  {
+    "group": "raw_library",
+    "type": "geojson",
+    "title": "Hunt Boundaries (Lite)",
+    "subtitle": "Local lightweight boundary geometry.",
+    "href": "./data/hunt-boundaries-lite.geojson"
+  },
+  {
+    "group": "raw_library",
+    "type": "geojson",
+    "title": "Hunt Boundaries (Full)",
+    "subtitle": "Full-resolution boundary geometry hosted on Cloudflare.",
+    "href": "https://json.uoga.workers.dev/hunt_boundaries.geojson"
+  },
+  {
+    "group": "raw_library",
+    "type": "geojson",
+    "title": "Statewide Composite Boundaries 2026",
+    "subtitle": "Synthetic and merged boundary geometries for statewide and special hunts.",
+    "href": "./processed_data/statewide_composite_boundaries_2026.geojson"
+  },
+  {
+    "group": "raw_library",
+    "type": "geojson",
+    "title": "CWMU Boundaries",
+    "subtitle": "CWMU boundary source used in map overlays.",
+    "href": "./data/cwmu-boundaries.geojson"
+  },
+  {
+    "group": "raw_library",
+    "type": "json",
+    "title": "CWMU Boundary ID Map",
+    "subtitle": "Lookup map for CWMU boundary IDs.",
+    "href": "./data/dwr-GetCWMUBoundaries.json"
+  },
+  {
+    "group": "raw_library",
+    "type": "json",
+    "title": "Conservation Permit Hunt Table",
+    "subtitle": "Raw conservation permit table JSON (2025-27).",
+    "href": "./data/conservation-permit-hunt-table-2025-27.json"
+  },
+  {
+    "group": "raw_library",
+    "type": "json",
+    "title": "Hunt Research 2026 (Full)",
+    "subtitle": "Full hunt research JSON hosted on Cloudflare.",
+    "href": "https://json.uoga.workers.dev/hunt_research_2026.json"
+  }
+]
