@@ -2552,3 +2552,13 @@
 - Validation:
   - Public DNS checks returned no CNAME/A record for `hunt-builder.uoga.org` before this fallback.
   - No website source, model output, or runtime data was changed.
+
+## Pages Branch Custom Domain Restore
+- Timestamp (UTC): 2026-05-24T03:38:00Z
+- Scope:
+  - Restored the GitHub Pages `CNAME` file on the published `gh-pages` branch with `hunt-builder.uoga.org`.
+  - Kept source/runtime data and prediction outputs unchanged.
+  - Used the Pages branch because the emergency static site is currently being served from `gh-pages`.
+- Validation:
+  - Pushed `gh-pages` commit `d5cefe1` with the custom-domain `CNAME`.
+  - Public DNS still needs to resolve `hunt-builder.uoga.org` to GitHub Pages before the custom domain can render reliably.
