@@ -2737,3 +2737,16 @@
   - `python -m compileall scripts\audit-big-game-application-guidebook-2026.py scripts\patch-big-game-application-guidebook-season-corrections-2026.py tests\utah\test_big_game_application_guidebook_ingest.py tests\utah\test_big_game_application_guidebook_database_audit.py` passed.
   - `npm.cmd run verify:permits-2026` passed with `promotion_blockers = 0`.
   - `python scripts/build-database-publish-readiness-report.py` passed with `publish_ready = true`.
+
+## 2026 Big Game Application Guidebook Post-Publication Corrections
+- Timestamp (UTC): 2026-05-24T10:10:00Z
+- Scope:
+  - Added the official post-publication correction notes to the repeatable guidebook audit as regulation/reference corrections.
+  - Materialized the correction audit at `data_truth/regulations_truth/normalized/2026_big_game_application_guidebook_post_publication_corrections.csv`.
+  - Confirmed `DB1276` Plymouth Peak is absent and superseded by `DB1306` Washakie CWMU.
+  - Confirmed `MB6264` Sand Creek CWMU moose and `DB1350` Milburn CWMU buck deer are absent from the corrected guidebook reference and current DATABASE.
+  - Confirmed `DB1115` is named `Little Rockies` in both the corrected guidebook reference and DATABASE.
+  - Kept these notes as regulation/reference corrections only; no permit counts, draw odds, harvest features, quota fields, or prediction math were changed.
+- Validation:
+  - `python scripts/audit-big-game-application-guidebook-2026.py` passed with `4` post-publication corrections checked and `0` correction review items.
+  - `python -m compileall scripts\audit-big-game-application-guidebook-2026.py tests\utah\test_big_game_application_guidebook_database_audit.py` passed.

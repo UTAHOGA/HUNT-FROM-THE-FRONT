@@ -9,6 +9,11 @@
   "season_review_warnings": 0,
   "blockers": 0,
   "warnings": 6,
+  "post_publication_correction_count": 4,
+  "post_publication_correction_review_count": 0,
+  "post_publication_correction_status_counts": {
+    "PASS": 4
+  },
   "status_counts": {
     "OK": 722,
     "WARNING": 6

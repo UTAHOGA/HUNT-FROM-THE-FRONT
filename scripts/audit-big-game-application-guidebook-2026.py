@@ -18,6 +18,9 @@ OUT_DIR = ROOT / "data_truth/regulations_truth/normalized"
 REPORT_DIR = ROOT / "processed_data"
 
 GUIDEBOOK_HUNT_TABLES = OUT_DIR / "2026_big_game_application_guidebook_hunt_tables.csv"
+GUIDEBOOK_POST_PUBLICATION_CORRECTIONS = (
+    OUT_DIR / "2026_big_game_application_guidebook_post_publication_corrections.csv"
+)
 GUIDEBOOK_COMPARE = REPORT_DIR / "2026_big_game_application_guidebook_vs_DATABASE.csv"
 GUIDEBOOK_SUMMARY = REPORT_DIR / "2026_big_game_application_guidebook_vs_DATABASE_summary.json"
 GUIDEBOOK_MD = REPORT_DIR / "2026_big_game_application_guidebook_vs_DATABASE.md"
@@ -46,6 +49,45 @@ SPECIES_BY_PREFIX = {
     "BR": "Black Bear",
     "TK": "Turkey",
 }
+
+POST_PUBLICATION_CORRECTIONS = [
+    {
+        "hunt_code": "DB1276",
+        "guidebook_page": "72",
+        "correction_date": "2026-04-06",
+        "action": "DELETE_HUNT_ROW",
+        "corrected_value": "",
+        "superseded_by_hunt_code": "DB1306",
+        "reason": "Plymouth Peak is no longer a CWMU and was combined with Washakie CWMU.",
+    },
+    {
+        "hunt_code": "MB6264",
+        "guidebook_page": "78",
+        "correction_date": "2026-03-13",
+        "action": "DELETE_HUNT_ROW",
+        "corrected_value": "",
+        "superseded_by_hunt_code": "",
+        "reason": "Sand Creek CWMU was included in error; there is no public moose permit this year on that CWMU.",
+    },
+    {
+        "hunt_code": "DB1115",
+        "guidebook_page": "51",
+        "correction_date": "2026-03-03",
+        "action": "RENAME_HUNT",
+        "corrected_value": "Little Rockies",
+        "superseded_by_hunt_code": "",
+        "reason": "Hunt name shortened from Henry Mtns, Little Rockies to Little Rockies.",
+    },
+    {
+        "hunt_code": "DB1350",
+        "guidebook_page": "71",
+        "correction_date": "2026-02-25",
+        "action": "DELETE_HUNT_ROW",
+        "corrected_value": "",
+        "superseded_by_hunt_code": "",
+        "reason": "Milburn CWMU withdrew from the program.",
+    },
+]
 
 
 @dataclass
@@ -225,9 +267,92 @@ def extract_guidebook_rows() -> list[GuidebookRow]:
     return choose_best_rows(rows)
 
 
+def apply_post_publication_corrections(rows: list[GuidebookRow]) -> list[GuidebookRow]:
+    delete_codes = {
+        correction["hunt_code"]
+        for correction in POST_PUBLICATION_CORRECTIONS
+        if correction["action"] == "DELETE_HUNT_ROW"
+    }
+    rename_by_code = {
+        correction["hunt_code"]: correction["corrected_value"]
+        for correction in POST_PUBLICATION_CORRECTIONS
+        if correction["action"] == "RENAME_HUNT"
+    }
+
+    corrected_rows = []
+    for row in rows:
+        if row.hunt_code in delete_codes:
+            continue
+        if row.hunt_code in rename_by_code and row.guidebook_hunt_name != rename_by_code[row.hunt_code]:
+            row = GuidebookRow(
+                hunt_code=row.hunt_code,
+                guidebook_page=row.guidebook_page,
+                guidebook_section=row.guidebook_section,
+                species_inferred=row.species_inferred,
+                guidebook_hunt_name=rename_by_code[row.hunt_code],
+                guidebook_detail_text=row.guidebook_detail_text,
+                guidebook_season_text=row.guidebook_season_text,
+                guidebook_county_text=row.guidebook_county_text,
+                guidebook_public_permits=row.guidebook_public_permits,
+                raw_line=row.raw_line,
+            )
+        corrected_rows.append(row)
+    return corrected_rows
+
+
 def read_database() -> dict[str, dict[str, str]]:
     with DATABASE.open(newline="", encoding="utf-8-sig") as handle:
         return {row["hunt_code"]: row for row in csv.DictReader(handle)}
+
+
+def build_post_publication_correction_rows(
+    extracted_rows: list[GuidebookRow],
+    corrected_rows: list[GuidebookRow],
+    database: dict[str, dict[str, str]],
+) -> list[dict[str, str]]:
+    extracted_by_code = {row.hunt_code: row for row in extracted_rows}
+    corrected_by_code = {row.hunt_code: row for row in corrected_rows}
+    output = []
+
+    for correction in POST_PUBLICATION_CORRECTIONS:
+        code = correction["hunt_code"]
+        extracted_row = extracted_by_code.get(code)
+        corrected_row = corrected_by_code.get(code)
+        database_row = database.get(code, {})
+        superseded_by = correction["superseded_by_hunt_code"]
+        superseded_row = database.get(superseded_by, {}) if superseded_by else {}
+
+        if correction["action"] == "DELETE_HUNT_ROW":
+            status = "PASS" if corrected_row is None and code not in database else "REVIEW"
+        else:
+            expected = correction["corrected_value"]
+            status = (
+                "PASS"
+                if corrected_row is not None
+                and corrected_row.guidebook_hunt_name == expected
+                and database_row.get("hunt_name", "") == expected
+                else "REVIEW"
+            )
+
+        output.append(
+            {
+                "hunt_code": code,
+                "guidebook_page": correction["guidebook_page"],
+                "correction_date": correction["correction_date"],
+                "action": correction["action"],
+                "corrected_value": correction["corrected_value"],
+                "superseded_by_hunt_code": superseded_by,
+                "reason": correction["reason"],
+                "source_row_found_before_correction": str(extracted_row is not None).lower(),
+                "source_row_present_after_correction": str(corrected_row is not None).lower(),
+                "database_row_present": str(code in database).lower(),
+                "database_hunt_name": database_row.get("hunt_name", ""),
+                "superseded_by_database_row_present": str(bool(superseded_row)).lower(),
+                "superseded_by_database_hunt_name": superseded_row.get("hunt_name", ""),
+                "validation_status": status,
+            }
+        )
+    return output
 
 
 def overlap_score(left: str, right: str) -> float:
@@ -316,7 +441,11 @@ def write_csv(path: Path, rows: list[dict[str, object]]) -> None:
         writer.writerows(rows)
 
 
-def write_markdown(summary: dict[str, object], comparisons: list[dict[str, object]]) -> None:
+def write_markdown(
+    summary: dict[str, object],
+    comparisons: list[dict[str, object]],
+    post_publication_corrections: list[dict[str, str]],
+) -> None:
     blockers = [row for row in comparisons if row["difference_severity"] == "BLOCKER"]
     warnings = [row for row in comparisons if row["difference_severity"] == "WARNING"]
     lines = [
@@ -334,10 +463,25 @@ def write_markdown(summary: dict[str, object], comparisons: list[dict[str, objec
         f"- Name review warnings: `{summary['name_review_warnings']}`",
         f"- Season review warnings: `{summary['season_review_warnings']}`",
         f"- Blockers: `{summary['blockers']}`",
+        f"- Post-publication corrections checked: `{summary['post_publication_correction_count']}`",
+        f"- Post-publication correction review items: `{summary['post_publication_correction_review_count']}`",
         "",
-        "## Significant Differences",
+        "## Post-Publication Corrections",
         "",
+        "| hunt_code | action | status | correction |",
+        "|---|---|---:|---|",
     ]
+    for correction in post_publication_corrections:
+        lines.append(
+            "| {hunt_code} | {action} | {validation_status} | {reason} |".format(**correction)
+        )
+    lines.extend(
+        [
+            "",
+            "## Significant Differences",
+            "",
+        ]
+    )
     if not blockers and not warnings:
         lines.append("No blocker-level differences were found. All extracted guidebook hunt codes are present in `DATABASE.csv`.")
     else:
@@ -354,8 +498,12 @@ def write_markdown(summary: dict[str, object], comparisons: list[dict[str, objec
 
 
 def main() -> None:
-    guidebook_rows = extract_guidebook_rows()
+    extracted_guidebook_rows = extract_guidebook_rows()
+    guidebook_rows = apply_post_publication_corrections(extracted_guidebook_rows)
     database = read_database()
+    post_publication_corrections = build_post_publication_correction_rows(
+        extracted_guidebook_rows, guidebook_rows, database
+    )
     comparisons = compare_rows(guidebook_rows, database)
 
     status_counts = Counter(row["difference_severity"] for row in comparisons)
@@ -374,6 +522,13 @@ def main() -> None:
         "season_review_warnings": sum(1 for row in comparisons if row["season_status"] == "REVIEW"),
         "blockers": status_counts.get("BLOCKER", 0),
         "warnings": status_counts.get("WARNING", 0),
+        "post_publication_correction_count": len(post_publication_corrections),
+        "post_publication_correction_review_count": sum(
+            1 for row in post_publication_corrections if row["validation_status"] != "PASS"
+        ),
+        "post_publication_correction_status_counts": dict(
+            Counter(row["validation_status"] for row in post_publication_corrections)
+        ),
         "status_counts": dict(status_counts),
         "name_status_counts": dict(name_counts),
         "season_status_counts": dict(season_counts),
@@ -383,9 +538,10 @@ def main() -> None:
     }
 
     write_csv(GUIDEBOOK_HUNT_TABLES, [row.to_dict() for row in guidebook_rows])
+    write_csv(GUIDEBOOK_POST_PUBLICATION_CORRECTIONS, post_publication_corrections)
     write_csv(GUIDEBOOK_COMPARE, comparisons)
     GUIDEBOOK_SUMMARY.write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
-    write_markdown(summary, comparisons)
+    write_markdown(summary, comparisons, post_publication_corrections)
     print(json.dumps(summary, indent=2))
 
 
