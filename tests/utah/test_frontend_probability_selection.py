@@ -275,7 +275,13 @@ def test_builder_and_backpack_carry_draw_pool_internally():
 
 def test_guaranteed_to_draw_line_uses_requested_orange():
     html = RESEARCH_HTML_PATH.read_text(encoding="utf-8")
+    js = _frontend_text()
     assert "--guaranteed-line-orange: rgb(250, 120, 0);" in html
+    assert "function isGuaranteedLineRow(row)" in js
+    assert "'projected_2026_max_cutoff_point'" in js
+    assert "'guaranteed_at_2026'" in js
+    assert "Math.round(rowPoint) === Math.round(guaranteedLinePoint)" in js
+    assert "if (isGuaranteedLineRow(row))" in js
     guaranteed_row_block = _block(
         html,
         ".report-table tbody tr.is-guaranteed-row {",
