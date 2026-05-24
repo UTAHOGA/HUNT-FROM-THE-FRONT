@@ -2532,3 +2532,13 @@
   - `node --check header-layout.js` passed.
   - JSON validation passed for touched canonical/generated page metadata.
   - `python -m compileall tests/utah/test_header_layout.py` passed.
+
+## GitHub Pages Custom Domain Mapping
+- Timestamp (UTC): 2026-05-24T00:30:00Z
+- Scope:
+  - Added the root `CNAME` file required by GitHub Pages so the published `HUNTS` site maps to `hunt-builder.uoga.org`.
+  - Confirmed the site build script already includes `CNAME` when present.
+  - No website content, model output, or runtime data was changed.
+- Validation:
+  - Confirmed `CNAME` contains exactly `hunt-builder.uoga.org`.
+  - `python -m compileall scripts tests` passed.
