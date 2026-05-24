@@ -107,7 +107,10 @@ def test_pages_use_fresh_header_asset_and_hunt_library_label() -> None:
     for page in PAGES:
         text = _text(page)
         assert "header-layout.js?v=20260524-bible-help-3" in text
-        assert "ui.js?v=20260523-backpack-pill-1" in text
+        if page.name == "research.html":
+            assert "ui.js?v=20260524-backpack-hunt-data-1" in text
+        else:
+            assert "ui.js?v=20260523-backpack-pill-1" in text
         assert "HUNTING BIBLE" in text
         assert "HARD COPIES" not in text
         assert "HUNT LIBRARY" not in text

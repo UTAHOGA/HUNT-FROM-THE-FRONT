@@ -229,6 +229,22 @@ def test_ladder_source_pill_click_matches_csv_point_values_numerically():
     assert '.find((candidate) => candidate.points === point);' not in block
 
 
+def test_ladder_hunt_data_pills_only_render_on_user_and_guaranteed_rows():
+    text = _frontend_text()
+    block = _block(text, "els.ladderTableBody.innerHTML = rows.map((row) => {", "const rawPrimary = firstAvailable")
+    assert "Hunt Data" in block
+    assert "(isUserRow || isGuaranteedLineRow(row)) && hasSourceData" in block
+    assert "label: 'Sources'" not in block
+
+
+def test_backpack_includes_hunt_data_action():
+    ui_text = Path("ui.js").read_text(encoding="utf-8")
+    assert "function huntDataHref(item)" in ui_text
+    assert "./hard-copy.html?hunt_code=${encodeURIComponent(item.hunt_code)}" in ui_text
+    assert 'data-backpack-link="hunt-data"' in ui_text
+    assert ">Hunt Data</a>" in ui_text
+
+
 def test_source_snapshot_shows_official_2026_quota_source():
     text = _frontend_text()
     block = _block(text, "function buildSourceBoxes(meta, row, referenceRow)", "function openSourceModal(meta, row, referenceRow, residency)")

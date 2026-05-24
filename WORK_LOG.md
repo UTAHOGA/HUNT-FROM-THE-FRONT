@@ -2698,3 +2698,12 @@
   - Confirmed the MB6011 Resident data pattern: `guaranteed_at_2026 = 29` while `projected_2026_max_cutoff_point = 28.0`, so 28 is the mixed cutoff boundary, not the guaranteed-to-draw line.
   - Bumped the `hunt-research.js` cache tag to `20260524-guaranteed-line-2`.
   - No prediction data, runtime feeds, permit logic, or model outputs were changed.
+
+## Hunt Research Hunt Data Pill Cleanup
+- Timestamp (UTC): 2026-05-24T08:05:00Z
+- Scope:
+  - Reduced point-ladder data pills so they appear only on the selected hunter-point row and the true guaranteed-line row.
+  - Renamed the ladder marker button from `Sources` to `Hunt Data` to better describe the cumulative source snapshot.
+  - Added a `Hunt Data` action to Hunt Backpack items that links to the Hunting Bible with the hunt code carried forward.
+  - Bumped the `ui.js` cache tag on Hunt Research to `20260524-backpack-hunt-data-1`.
+  - No prediction data, runtime feeds, permit logic, or model outputs were changed.
