@@ -26,27 +26,27 @@ def test_hunt_code_family_gap_scan_runs_and_writes_outputs() -> None:
     assert summary["hunt_master_code_count"] == 1471
     assert summary["point_ladder_code_count"] == 1471
     assert summary["draw_reality_code_count"] == 1623
-    assert summary["predictive_v2_code_count"] == 1181
+    assert summary["predictive_v2_code_count"] == 1309
     assert summary["family_count"] == 21
-    assert summary["resolved_family_count"] == 10
-    assert summary["predictive_gap_family_count"] == 11
+    assert summary["resolved_family_count"] == 12
+    assert summary["predictive_gap_family_count"] == 9
     assert summary["required_surface_blocker_family_count"] == 0
-    assert summary["total_missing_predictive_v2_current_database_codes"] == 290
+    assert summary["total_missing_predictive_v2_current_database_codes"] == 162
     assert summary["total_required_surface_missing_current_database_codes"] == 0
-    assert set(summary["resolved_families"]) == {"BR", "DA", "EA", "GO", "MA", "MB", "PB", "PD", "RE", "TK"}
+    assert set(summary["resolved_families"]) == {"BR", "DA", "DB", "EA", "GO", "LO", "MA", "MB", "PB", "PD", "RE", "TK"}
 
 
 def test_hunt_code_family_gap_scan_ranks_largest_predictive_gaps() -> None:
     summary = json.loads(SUMMARY.read_text(encoding="utf-8"))
     ranked = summary["predictive_gap_families_ranked"]
 
-    assert [item["code_prefix"] for item in ranked[:3]] == ["EL", "LO", "DB"]
+    assert [item["code_prefix"] for item in ranked[:3]] == ["EL", "EB", "DS"]
     assert ranked[0]["missing_predictive_v2_count"] == 126
-    assert ranked[1]["missing_predictive_v2_count"] == 113
-    assert ranked[2]["missing_predictive_v2_count"] == 15
+    assert ranked[1]["missing_predictive_v2_count"] == 10
+    assert ranked[2]["missing_predictive_v2_count"] == 6
     assert "EL3000" in ranked[0]["missing_predictive_v2_codes"]
-    assert "LO0008" in ranked[1]["missing_predictive_v2_codes"]
-    assert "DB0001" in ranked[2]["missing_predictive_v2_codes"]
+    assert "EB1001" in ranked[1]["missing_predictive_v2_codes"]
+    assert "DS1002" in ranked[2]["missing_predictive_v2_codes"]
 
 
 def test_hunt_code_family_gap_scan_marks_resolved_reference_families() -> None:
@@ -63,11 +63,11 @@ def test_hunt_code_family_gap_scan_marks_resolved_reference_families() -> None:
     assert rows["TK"]["predictive_v2_code_count"] == "18"
     assert rows["TK"]["missing_predictive_v2_count"] == "0"
 
-    for prefix in ("DA", "EA", "PD", "RE"):
+    for prefix in ("DA", "DB", "EA", "LO", "PD", "RE"):
         assert rows[prefix]["status"] == "RESOLVED"
         assert rows[prefix]["database_code_count"] == rows[prefix]["predictive_v2_code_count"]
         assert rows[prefix]["missing_predictive_v2_count"] == "0"
 
     assert rows["EL"]["status"] == "PREDICTIVE_GAP"
-    assert rows["LO"]["status"] == "PREDICTIVE_GAP"
-    assert rows["DB"]["status"] == "PREDICTIVE_GAP"
+    assert rows["EB"]["status"] == "PREDICTIVE_GAP"
+    assert rows["DS"]["status"] == "PREDICTIVE_GAP"

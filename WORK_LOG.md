@@ -3019,3 +3019,47 @@
   - `python scripts\scan-2026-hunt-code-family-gaps.py` passed.
   - `python -m pytest tests\utah\test_antlerless_hunt_code_resolution_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py -q` passed: `6`.
   - `python -m compileall scripts\resolve-antlerless-hunt-codes-2026.py scripts\scan-2026-hunt-code-family-gaps.py tests\utah\test_antlerless_hunt_code_resolution_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py` passed.
+
+## 2026 Deer Hunt-Code Resolution
+- Timestamp (UTC): 2026-05-24T21:51:10Z
+- Scope:
+  - Added a repeatable deer hunt-code resolver using `pipeline/RAW/hunt_unit_database/2024/pdf/draw_odds/2023 DEER ODDS.pdf` as prior draw-results context.
+  - Cross-checked the PDF hunt headers against `pipeline/RAW/hunt_unit_database/2024/csv/draw_results_2023_for_2024_long.csv`.
+  - Materialized 2023 Deer Odds text lines and hunt-header rows under `data_truth/draw_results_truth/extracted/`.
+  - Reconciled current 2026 `DB` and `LO` code families across `DATABASE.csv`, `hunt_master_enriched.csv`, `point_ladder_view.csv`, `draw_reality_engine.csv`, and `draw_reality_engine_predictive_v2.csv`.
+  - Promoted 128 missing deer current database codes into predictive v2 as non-modeled reference rows only.
+  - Kept promoted rows explicitly marked with `algorithm_status = DEER_REFERENCE`, `modeled_by_engine = False`, `probability_model = NONE`, and `display_odds_text = Deer reference only; odds not modeled`.
+  - Classified the remaining DB gaps as tribal or special-permit reference-only rows and the LO family as private-land reference-only rows.
+  - Refreshed the 2026 family gap scan after deer resolution.
+  - No raw PDFs, website feeds, permit values, harvest features, quota fields, or prediction probability math were changed.
+- Outputs:
+  - `scripts/resolve-deer-hunt-codes-2026.py`
+  - `data_truth/draw_results_truth/extracted/2023_deer_odds_text_lines.csv`
+  - `data_truth/draw_results_truth/extracted/2023_deer_odds_hunt_headers.csv`
+  - `data_truth/draw_results_truth/validation/2026_deer_hunt_code_reconciliation.csv`
+  - `processed_data/2023_deer_odds_audit.json`
+  - `processed_data/2023_deer_odds_audit.md`
+  - `processed_data/2026_deer_hunt_code_reconciliation_summary.json`
+  - `processed_data/2026_deer_hunt_code_reconciliation.md`
+  - `processed_data/2026_deer_predictive_v2_reference_promotion.csv`
+  - `processed_data/2026_deer_predictive_v2_reference_promotion_summary.json`
+- Key results:
+  - Source PDF pages: `190`.
+  - Source SHA-256: `4188e4c1b712ec1c4973b735b6cb06e489680f15a1b2011857046b49707efabf`.
+  - Extracted text lines: `7220`.
+  - Parsed DB hunt headers: `189`.
+  - Long CSV DB draw-result rows cross-checked: `11718`.
+  - PDF header codes match long CSV DB codes: `true`.
+  - Current target database codes checked: `458`.
+  - Current database codes present in 2023 Deer Odds: `172`.
+  - Promoted reference hunt-code count: `128` (`DB 15`, `LO 113`).
+  - Deer reconciliation failures: `0`.
+  - Audit blockers: `0`.
+  - Updated gap scan current database codes missing predictive v2: `162`, down from `290`.
+  - Updated resolved families: `12` (`BR`, `DA`, `DB`, `EA`, `GO`, `LO`, `MA`, `MB`, `PB`, `PD`, `RE`, `TK`).
+  - Remaining largest predictive gaps: `EL` (`126`), `EB` (`10`), and `DS` (`6`).
+- Validation:
+  - `python scripts\resolve-deer-hunt-codes-2026.py` passed.
+  - `python scripts\scan-2026-hunt-code-family-gaps.py` passed.
+  - `python -m pytest tests\utah\test_deer_hunt_code_resolution_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py -q` passed: `6`.
+  - `python -m compileall scripts\resolve-deer-hunt-codes-2026.py scripts\scan-2026-hunt-code-family-gaps.py tests\utah\test_deer_hunt_code_resolution_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py` passed.
