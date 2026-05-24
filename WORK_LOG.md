@@ -2673,3 +2673,11 @@
   - Bumped the shared header script cache tag to `20260524-bible-help-2` on all static pages.
   - This is a deploy refresh only; the two-line helper text, `HUNTING BIBLE` label, and selected-page behavior are unchanged.
   - No prediction data, runtime feeds, permit logic, or model outputs were changed.
+
+## Header Nav Helper Text Enlargement
+- Timestamp (UTC): 2026-05-24T06:31:00Z
+- Scope:
+  - Enlarged the in-pill helper replacement text from `10px` to `12px` so it matches the normal nav title size more closely.
+  - Tightened helper letter spacing and strengthened the white text shadow so the two-line copy reads as the button title instead of a small inset note.
+  - Bumped the shared header script cache tag to `20260524-bible-help-3`.
+  - No prediction data, runtime feeds, permit logic, or model outputs were changed.

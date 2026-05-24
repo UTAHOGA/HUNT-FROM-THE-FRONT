@@ -79,7 +79,8 @@ def test_primary_nav_hover_instruction_popups() -> None:
     assert "inset:0" in text
     assert "color:transparent" in text
     assert "color:#ffffff" in text
-    assert "font-size:10px" in text
+    assert "font-size:12px" in text
+    assert "letter-spacing:.095em" in text
     assert "white-space:pre-line" in text
     assert ".uoga-primary-nav a.active[data-nav-tip]::before" in text
     assert "bottom:calc(100% + 8px)" not in text
@@ -105,7 +106,7 @@ def test_backpack_shell_matches_rounded_header_pill_shape() -> None:
 def test_pages_use_fresh_header_asset_and_hunt_library_label() -> None:
     for page in PAGES:
         text = _text(page)
-        assert "header-layout.js?v=20260524-bible-help-2" in text
+        assert "header-layout.js?v=20260524-bible-help-3" in text
         assert "ui.js?v=20260523-backpack-pill-1" in text
         assert "HUNTING BIBLE" in text
         assert "HARD COPIES" not in text
