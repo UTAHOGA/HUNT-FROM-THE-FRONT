@@ -1209,8 +1209,8 @@
         classes.push('is-guaranteed-row');
       }
 
-      if (hasSourceData(meta, row, referenceRow)) {
-        markers.push({ kind: 'sources', label: 'Sources', point: row.points });
+      if ((isUserRow || isGuaranteedLineRow(row)) && hasSourceData(meta, row, referenceRow)) {
+        markers.push({ kind: 'sources', label: 'Hunt Data', point: row.points });
       }
 
       const rawPrimary = firstAvailable(row, ['odds_2026_projected', 'max_pool_projection_2026', 'random_draw_odds_2026']);
