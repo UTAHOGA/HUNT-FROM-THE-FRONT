@@ -1152,19 +1152,20 @@
   }
 
   function getGuaranteedLinePoint(row) {
-    return num(firstAvailable(row, [
-      'projected_2026_max_cutoff_point',
-      'guaranteed_at_2026',
-    ]));
+    const summaryGuaranteedPoint = num(row?.guaranteed_at_2026);
+    if (summaryGuaranteedPoint !== null) return summaryGuaranteedPoint;
+    return num(row?.projected_2026_max_cutoff_point);
   }
 
   function isGuaranteedLineRow(row) {
     if (!row) return false;
-    if (row.guaranteed_marker === 'TRUE') return true;
     const rowPoint = num(row.points);
     const guaranteedLinePoint = getGuaranteedLinePoint(row);
-    if (rowPoint === null || guaranteedLinePoint === null) return false;
-    return Math.round(rowPoint) === Math.round(guaranteedLinePoint);
+    if (rowPoint !== null && guaranteedLinePoint !== null) {
+      return Math.round(rowPoint) === Math.round(guaranteedLinePoint);
+    }
+    if (row.guaranteed_marker === 'TRUE') return true;
+    return false;
   }
 
   function renderLadder(meta, huntCode, residency, points, drawPool) {

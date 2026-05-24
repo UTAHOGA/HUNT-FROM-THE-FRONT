@@ -2690,3 +2690,11 @@
   - Applied the orange fill to the guaranteed-line row cells as well as the row container so the highlight cannot be washed out by table-cell backgrounds.
   - Bumped the `hunt-research.js` cache tag to `20260524-guaranteed-line-1`.
   - No prediction data, runtime feeds, permit logic, or model outputs were changed.
+
+## Hunt Research Guaranteed Line Field Correction
+- Timestamp (UTC): 2026-05-24T07:43:00Z
+- Scope:
+  - Corrected the orange guaranteed-line row to use `guaranteed_at_2026` before `projected_2026_max_cutoff_point`, matching the top summary value.
+  - Confirmed the MB6011 Resident data pattern: `guaranteed_at_2026 = 29` while `projected_2026_max_cutoff_point = 28.0`, so 28 is the mixed cutoff boundary, not the guaranteed-to-draw line.
+  - Bumped the `hunt-research.js` cache tag to `20260524-guaranteed-line-2`.
+  - No prediction data, runtime feeds, permit logic, or model outputs were changed.
