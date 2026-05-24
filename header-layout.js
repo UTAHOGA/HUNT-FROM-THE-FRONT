@@ -2,10 +2,10 @@
   const DWR_MAP_URL = 'https://dwrapps.utah.gov/huntboundary/hbstart';
   const PRIMARY_HEADER_NAV_ITEMS = [
     { href: 'https://www.uoga.org', label: 'U.O.G.A. HOME', tip: 'RETURN HOME' },
-    { href: './', label: 'HUNT BUILDER', tip: 'FIND TARGET GAME' },
-    { href: './research.html', label: 'HUNT RESEARCH', tip: 'MATCH HUNTS TO POINTS' },
-    { href: './verify.html', label: 'OUTFITTERS', tip: 'FIND AN OUTFITTER' },
-    { href: './hard-copy.html', label: 'HUNT LIBRARY', tip: 'VERIFY SOURCE DOCS' },
+    { href: './', label: 'HUNT BUILDER', tip: 'FIND YOUR DREAM HUNT' },
+    { href: './research.html', label: 'HUNT RESEARCH', tip: 'MATCH HUNT TO YOUR POINTS' },
+    { href: './verify.html', label: 'OUTFITTERS', tip: 'FIND YOUR OUTFITTER' },
+    { href: './hard-copy.html', label: 'HUNT LIBRARY', tip: 'CANONICAL DOCS' },
   ];
   const isBuilderPage = () => {
     const path = (window.location && window.location.pathname ? window.location.pathname : '').toLowerCase();
