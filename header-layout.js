@@ -1,11 +1,11 @@
 (() => {
   const DWR_MAP_URL = 'https://dwrapps.utah.gov/huntboundary/hbstart';
   const PRIMARY_HEADER_NAV_ITEMS = [
-    { href: 'https://www.uoga.org', label: 'U.O.G.A. HOME', tip: 'RETURN HOME' },
+    { href: 'https://www.uoga.org', label: 'U.O.G.A. HOME', tip: 'U.O.G.A. MAIN' },
     { href: './', label: 'HUNT BUILDER', tip: 'FIND YOUR DREAM HUNT' },
-    { href: './research.html', label: 'HUNT RESEARCH', tip: 'MATCH HUNT TO YOUR POINTS' },
+    { href: './research.html', label: 'HUNT RESEARCH', tip: 'MATCH THE HUNT TO YOUR POINTS' },
     { href: './verify.html', label: 'OUTFITTERS', tip: 'FIND YOUR OUTFITTER' },
-    { href: './hard-copy.html', label: 'HUNT LIBRARY', tip: 'CANONICAL DOCS' },
+    { href: './hard-copy.html', label: 'HUNT LIBRARY', tip: 'YOUR BIBLE SOURCE DOCS' },
   ];
   const isBuilderPage = () => {
     const path = (window.location && window.location.pathname ? window.location.pathname : '').toLowerCase();
@@ -359,10 +359,10 @@
         justify-content:center !important;
         padding:0 8px !important;
         color:#f07800 !important;
-        font-size:9px !important;
+        font-size:8px !important;
         font-weight:950 !important;
         line-height:1.05 !important;
-        letter-spacing:.10em !important;
+        letter-spacing:.035em !important;
         text-align:center !important;
         white-space:normal !important;
         text-shadow:0 0 13px rgba(255,140,20,.48) !important;
@@ -373,6 +373,11 @@
       .uoga-primary-nav a[data-nav-tip]:hover::before,
       .uoga-primary-nav a[data-nav-tip]:focus-visible::before {
         opacity:1 !important;
+      }
+      .uoga-primary-nav a.active[data-nav-tip]::before,
+      .uoga-primary-nav a.active[data-nav-tip]:hover::before,
+      .uoga-primary-nav a.active[data-nav-tip]:focus-visible::before {
+        opacity:0 !important;
       }
       .uoga-primary-nav a.active {
         color:#ffffff !important;

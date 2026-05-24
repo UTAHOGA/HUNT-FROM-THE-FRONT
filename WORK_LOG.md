@@ -2643,3 +2643,16 @@
   - Updated inline nav helper copy to the final visitor-facing wording:
     Builder `FIND YOUR DREAM HUNT`, Research `MATCH HUNT TO YOUR POINTS`, Outfitters `FIND YOUR OUTFITTER`, Library `CANONICAL DOCS`.
   - No layout, prediction data, runtime feeds, permit logic, or model outputs were changed.
+
+## Header Nav Replacement Helper Final
+- Timestamp (UTC): 2026-05-24T05:40:00Z
+- Scope:
+  - Kept the helper behavior as text replacement inside the same nav pill rather than a separate advice line.
+  - Updated helper copy to: Builder `FIND YOUR DREAM HUNT`, Research `MATCH THE HUNT TO YOUR POINTS`, Outfitters `FIND YOUR OUTFITTER`, Library `YOUR BIBLE SOURCE DOCS`.
+  - Active/selected nav pills do not show helper replacement text.
+  - Pill dimensions remain unchanged and the selected underline remains removed.
+  - No prediction data, runtime feeds, permit logic, or model outputs were changed.
+- Validation:
+  - `node --check header-layout.js` passed.
+  - `python -m pytest tests/utah/test_header_layout.py -q` passed: `8`.
+  - `python -m compileall tests/utah/test_header_layout.py` passed.
