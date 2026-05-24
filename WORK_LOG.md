@@ -2792,3 +2792,26 @@
   - `python scripts\audit-big-game-field-regulations-2025.py` passed.
   - `python -m pytest tests\utah\test_big_game_field_regulations_2025_source_audit.py -q` passed: `3`.
   - `python -m compileall scripts\audit-big-game-field-regulations-2025.py tests\utah\test_big_game_field_regulations_2025_source_audit.py` passed.
+
+## 2026 Big Game Hunt Code Reconciliation
+- Timestamp (UTC): 2026-05-24T09:55:00Z
+- Scope:
+  - Added a repeatable hunt-code reconciliation that starts from the corrected 2026 Big Game Application Guidebook hunt table and checks every guidebook code against the core source/database/runtime reference surfaces.
+  - Required surfaces checked: `DATABASE.csv`, `hunt_master_enriched.csv`, `hunt_unit_reference_linked.csv`, `point_ladder_view.csv`, and `draw_reality_engine.csv`.
+  - Kept `draw_reality_engine_predictive_v2.csv` as an optional predictive coverage surface so source-code reconciliation is not confused with model-row coverage.
+  - No raw PDF, website feed, permit count, draw odds, harvest feature, quota field, or prediction math was changed.
+- Outputs:
+  - `processed_data/2026_big_game_hunt_code_reconciliation.csv`
+  - `processed_data/2026_big_game_hunt_code_reconciliation_summary.json`
+  - `processed_data/2026_big_game_hunt_code_reconciliation.md`
+- Key results:
+  - Corrected guidebook hunt codes checked: `728`.
+  - Codes present in all required surfaces: `728`.
+  - Required-surface blockers: `0`.
+  - Missing by required surface: `0` for every required surface.
+  - Optional predictive coverage notes: `44` codes absent from `draw_reality_engine_predictive_v2.csv`.
+  - Extra DATABASE codes not printed in the big-game application hunt tables: `683`, expected because DATABASE also carries antlerless and broader active reference rows.
+- Validation:
+  - `python scripts\reconcile-big-game-hunt-codes-2026.py` passed.
+  - `python -m pytest tests\utah\test_big_game_application_guidebook_database_audit.py tests\utah\test_big_game_hunt_code_reconciliation.py -q` passed: `4`.
+  - `python -m compileall scripts\reconcile-big-game-hunt-codes-2026.py tests\utah\test_big_game_hunt_code_reconciliation.py` passed.
