@@ -39,7 +39,7 @@ def test_database_authoritative_overlay_plan_outputs_are_written():
     assert summary["target_only_blocker_codes"] == ["DB1276"]
     assert summary["action_counts"]["USE_DATABASE_2026_PERMITS_IN_DERIVED_OUTPUTS"] > 250
     assert "2026 permit/allotment cells" in summary["guardrail"]
-    assert "2025 or older permit fields are historical evidence" in summary["guardrail"]
+    assert "canonical historical source truth" in summary["guardrail"]
     assert "does not modify DATABASE.csv" in summary["guardrail"]
 
 

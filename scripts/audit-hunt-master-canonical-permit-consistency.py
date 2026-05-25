@@ -443,7 +443,7 @@ def build_audit_rows() -> tuple[list[dict[str, str]], dict]:
             "Promotion still requires reviewed source-date context. Populated numeric 2026 permit/allotment cells "
             "in canonical DATABASE.csv are treated as direct Utah DWR Hunt Planner truth and must not be overwritten "
             "by comparison files, inferred values, draw reports, RAC files, or audit outputs. Populated 2025 or older "
-            "permit fields are historical evidence fields unless separately sourced as current Hunt Planner data."
+            "permit fields with reviewed source lineage are canonical historical source truth and must not drift."
         ),
         "outputs": {
             "csv": OUTPUT.relative_to(ROOT).as_posix(),

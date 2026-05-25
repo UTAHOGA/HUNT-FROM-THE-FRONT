@@ -41,7 +41,7 @@ def test_hunt_master_canonical_permit_deep_dive_outputs_are_written():
     assert summary["target_duplicate_hunt_codes"] == []
     assert "does not promote 2025 permit values" in summary["guardrail"]
     assert "2026 permit/allotment cells" in summary["guardrail"]
-    assert "2025 or older permit fields are historical evidence" in summary["guardrail"]
+    assert "canonical historical source truth" in summary["guardrail"]
     assert "must not be overwritten" in summary["guardrail"]
 
 

@@ -19,7 +19,7 @@ Read-only audit comparing the target file against DATABASE, direct RAC CSV evide
 
 ## Guardrail
 
-This audit is evidence only. It does not promote 2025 permit values into 2026 available allotment. Promotion still requires reviewed source-date context. Populated numeric 2026 permit/allotment cells in canonical DATABASE.csv are treated as direct Utah DWR Hunt Planner truth and must not be overwritten by comparison files, inferred values, draw reports, RAC files, or audit outputs. Populated 2025 or older permit fields are historical evidence fields unless separately sourced as current Hunt Planner data.
+This audit is evidence only. It does not promote 2025 permit values into 2026 available allotment. Promotion still requires reviewed source-date context. Populated numeric 2026 permit/allotment cells in canonical DATABASE.csv are treated as direct Utah DWR Hunt Planner truth and must not be overwritten by comparison files, inferred values, draw reports, RAC files, or audit outputs. Populated 2025 or older permit fields with reviewed source lineage are canonical historical source truth and must not drift.
 
 ## Status Counts
 

@@ -11,7 +11,7 @@ This is a reviewable action queue. It does not modify `DATABASE.csv` or runtime 
 
 ## Guardrail
 
-Populated numeric 2026 permit/allotment cells in canonical DATABASE.csv are direct Utah DWR Hunt Planner truth. Populated 2025 or older permit fields are historical evidence fields unless separately sourced as current Hunt Planner data. This plan only directs derived outputs to use DATABASE values where populated; it does not modify DATABASE.csv or promote comparison-source values over DATABASE.csv.
+Populated numeric 2026 permit/allotment cells in canonical DATABASE.csv are direct Utah DWR Hunt Planner truth. Populated 2025 or older permit fields with reviewed source lineage are canonical historical source truth and must not drift. This plan only directs derived outputs to use DATABASE values where populated; it does not modify DATABASE.csv or promote comparison-source values over DATABASE.csv.
 
 ## Action Counts
 

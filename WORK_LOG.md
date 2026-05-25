@@ -2914,3 +2914,37 @@
   - `python scripts\build-database-authoritative-permit-overlay-plan-2026.py` passed.
   - `python -m py_compile scripts\audit-hunt-master-canonical-permit-consistency.py scripts\build-database-authoritative-permit-overlay-plan-2026.py tests\utah\test_hunt_master_canonical_permit_deep_dive.py tests\utah\test_database_authoritative_permit_overlay_plan_2026.py` passed.
   - `python -m pytest tests\utah\test_hunt_master_canonical_permit_deep_dive.py tests\utah\test_database_authoritative_permit_overlay_plan_2026.py -q` passed: `6`.
+
+## Historical Permit Source-Lineage Lock
+- Timestamp (UTC): 2026-05-25T09:10:00Z
+- Scope:
+  - Corrected the canonical rule for passed hunt-year permit values.
+  - Locked source-lined 2025 and older permit fields in `DATABASE.csv` as canonical historical source truth, not soft evidence.
+  - Added a historical permit lineage audit for canonical `DATABASE.csv`.
+  - Verified that populated 2025 historical permit fields carry source lineage and do not have paired-family strays.
+  - Clarified that `permits_2025` is the full populated 2025 historical permit universe in `DATABASE.csv`, while `permits_2025_draw` is a narrower bonus-point draw-results subset, not the full 2025 draw/permit universe.
+  - Regenerated the existing permit deep-dive and database-authoritative overlay summaries with the corrected historical-truth language.
+  - No source CSV values, `DATABASE.csv`, website feeds, runtime files, materializer code, or prediction surfaces were changed.
+- Outputs:
+  - `scripts/audit-database-historical-permit-lineage-2026.py`
+  - `tests/utah/test_database_historical_permit_lineage_2026.py`
+  - `processed_data/database_historical_permit_lineage_2026.csv`
+  - `processed_data/database_historical_permit_lineage_2026_summary.json`
+  - `processed_data/database_historical_permit_lineage_2026.md`
+  - `data_truth/comparison_outputs/validation/database_historical_permit_lineage_2026_summary.json`
+- Key results:
+  - Canonical `DATABASE.csv` rows audited: `1411`.
+  - Historical audit rows: `2822`.
+  - Historical years detected: `2025`.
+  - Canonical historical source-truth rows: `1600`.
+  - Full populated 2025 historical permit universe (`permits_2025`): `1028`, all sourced to `2025_DRAW_RESULTS_TABLES`.
+  - 2025 bonus-point draw-results subset (`permits_2025_draw`): `572`, all sourced to `canonical_2026_source_of_truth_draw_results`.
+  - 2025 non-bonus/general subset in the base historical permit universe: `456`.
+  - Lineage blockers: `0`.
+  - Paired-family comparison: `572` matches, `456` primary-only, `383` both blank, `0` mismatches.
+- Validation:
+  - `python scripts\audit-hunt-master-canonical-permit-consistency.py` passed.
+  - `python scripts\build-database-authoritative-permit-overlay-plan-2026.py` passed.
+  - `python scripts\audit-database-historical-permit-lineage-2026.py` passed.
+  - `python -m py_compile scripts\audit-database-historical-permit-lineage-2026.py tests\utah\test_database_historical_permit_lineage_2026.py scripts\audit-hunt-master-canonical-permit-consistency.py scripts\build-database-authoritative-permit-overlay-plan-2026.py tests\utah\test_hunt_master_canonical_permit_deep_dive.py tests\utah\test_database_authoritative_permit_overlay_plan_2026.py` passed.
+  - `python -m pytest tests\utah\test_database_historical_permit_lineage_2026.py tests\utah\test_hunt_master_canonical_permit_deep_dive.py tests\utah\test_database_authoritative_permit_overlay_plan_2026.py -q` passed: `9`.
