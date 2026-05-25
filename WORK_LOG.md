@@ -3434,3 +3434,12 @@
   - The executable research-library master build and validation artifacts were created in the sibling `HUNT-BUILDER` workspace where the library catalog currently lives.
 - Validation:
   - Confirmed `AGENTS.MD` now contains the required research-library mapping contract.
+
+## Research Library Feeder Source Law
+- Timestamp (UTC): 2026-05-25T06:35:00Z
+- Scope:
+  - Extended `AGENTS.MD` so `DATABASE.csv` is explicitly treated as the canonical current hunt-code and boundary-id source unless replaced by a later reviewed canonical database.
+  - Added the rule that feeder/reference files such as `hunt_master_enriched.csv`, `point_ladder_view.csv`, canonical JSON, and boundary GeoJSON must be registered as source rows with hashes before supporting alignment work.
+  - The executable source registry update was completed in the sibling `HUNT-BUILDER` workspace where the research library master is built.
+- Validation:
+  - Confirmed `AGENTS.MD` now contains the feeder/source registration rule.
