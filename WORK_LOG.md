@@ -3396,3 +3396,32 @@
   - `python scripts\scan-2026-hunt-code-family-gaps.py` passed.
   - `python -m pytest tests\utah\test_private_land_deer_code_lock_2026.py tests\utah\test_final_reference_hunt_code_lock_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py tests\utah\test_deer_hunt_code_resolution_2026.py tests\utah\test_elk_bull_reference_resolution_2026.py tests\utah\test_elk_private_land_resolution_2026.py tests\utah\test_desert_bighorn_conservation_code_lock_2026.py tests\utah\test_conservation_permit_code_lock_2026.py -q` passed: `29`.
   - `python -m py_compile scripts\lock-private-land-deer-hunt-codes-2026.py scripts\lock-final-reference-hunt-codes-2026.py scripts\resolve-deer-hunt-codes-2026.py` passed.
+
+## 2026 Current-To-Historical Hunt-Code Crosswalk Truth
+- Timestamp (UTC): 2026-05-25T03:10:26Z
+- Scope:
+  - Promoted the older backcheck/crosswalk evidence into an explicit crosswalk truth artifact for changed/current reference hunt-code families.
+  - Used `pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv` as the current-code authority and crosschecked every promoted current code against it.
+  - Included all current `LD`, `LP`, and `EL` codes; the user-supplied `LO0008`-`LO0015` private-land/landowner association codes; and the locked conservation/reference codes for `DS`, `EA`, `EB`, `RS`, `BI`, `EX`, and `CG`.
+  - Preserved current Hunt Planner codes as current truth and stored historical candidates separately so 2023 guidebook/public codes are not silently treated as identical to current private-land or conservation codes.
+  - No website feeds, `public_client_engine.csv`, materializer code, harvest features, probability math, or runtime prediction surfaces were changed.
+- Outputs:
+  - `scripts/build-current-historical-hunt-code-crosswalk-2026.py`
+  - `tests/utah/test_current_historical_hunt_code_crosswalk_2026.py`
+  - `data_truth/crosswalk_truth/normalized/current_to_historical_hunt_code_crosswalk_2026.csv`
+  - `data_truth/crosswalk_truth/validation/current_to_historical_hunt_code_crosswalk_2026_summary.json`
+  - `processed_data/current_to_historical_hunt_code_crosswalk_2026.csv`
+  - `processed_data/current_to_historical_hunt_code_crosswalk_2026.md`
+- Key results:
+  - Crosswalk target rows: `169`.
+  - `DATABASE.csv` missing current-code rows: `0`.
+  - Duplicate current-code rows: `0`.
+  - Blockers: `0`.
+  - Prefix counts: `EL=126`, `LD=6`, `LP=6`, `LO=8`, `DS=7`, `EA=5`, `RS=5`, `BI=2`, `EB=2`, `EX=1`, `CG=1`.
+  - Status counts: `PROMOTED_PREFIX_SWAP_CANDIDATE=138`, `PROMOTED_EXACT_HISTORY=19`, `PROMOTED_PINNED_CANDIDATE=8`, `CURRENT_REFERENCE_ONLY_NEEDS_REVIEW=4`.
+  - Spot checks: `LD1001 -> DB1001`, `LP5025 -> PB5025`, `EL3000 -> EB3000`, `EL3210 -> EB3210`, `RS1001 -> RS6701`, `DS1004 -> DS6608`, `BI6527 -> BI6527`, while `EX1000` and `CG9999` remain current-reference-only.
+- Validation:
+  - `python scripts\build-current-historical-hunt-code-crosswalk-2026.py` passed.
+  - `python -m pytest tests\utah\test_current_historical_hunt_code_crosswalk_2026.py -q` passed: `3`.
+  - `python -m pytest tests\utah\test_current_historical_hunt_code_crosswalk_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py tests\utah\test_private_land_deer_code_lock_2026.py tests\utah\test_pronghorn_private_land_resolution_2026.py tests\utah\test_elk_private_land_resolution_2026.py tests\utah\test_conservation_permit_code_lock_2026.py tests\utah\test_desert_bighorn_conservation_code_lock_2026.py tests\utah\test_final_reference_hunt_code_lock_2026.py -q` passed: `28`.
+  - `python -m py_compile scripts\build-current-historical-hunt-code-crosswalk-2026.py` passed.
