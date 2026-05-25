@@ -5,13 +5,15 @@ This is the governed research-library master generated from the existing library
 ## Status
 
 - Status: `REVIEW_REQUIRED`
-- Rows: `359`
+- Rows: `447`
 - Source catalog rows: `328`
-- Feeder file rows: `31`
+- Feeder file rows: `119`
+- Direct DWR Hunt Planner CSV feeder rows: `88`
 - Reviewed hunt-code rows: `0`
 - Candidate hunt-code rows: `318`
 - Unique candidate hunt codes: `147`
-- Boundary-alignment feeder rows: `30`
+- Boundary-alignment feeder rows: `118`
+- Rows missing source-year context: `8`
 - Rows requiring review: `328`
 - Blockers: `0`
 
@@ -21,14 +23,16 @@ This is the governed research-library master generated from the existing library
 - Blank reviewed hunt_code/boundary_id fields require explicit mapping status fields.
 - Candidate hunt codes and candidate boundary IDs are not truth fields.
 - DATABASE.csv is the canonical current hunt-code and boundary-id source.
+- Direct Utah DWR Hunt Planner CSV-folder files are registered as source evidence.
 - Feeder files are registered as source evidence with hashes before their values can be used.
+- Do not promote 2025 permit values to 2026 available allotment without reviewed source-date context.
 - Historical/current prefix changes must flow through the crosswalk before promotion.
 - Document-level rows must be extracted into per-hunt-code rows before they can feed prediction/runtime data.
 
 ## Mapping Status Counts
 
 - `DOCUMENT_LEVEL_MAPPING_REQUIRED`: `10`
-- `FILE_LEVEL_REFERENCE_CONTAINS_OR_SUPPORTS_HUNT_CODES`: `31`
+- `FILE_LEVEL_REFERENCE_CONTAINS_OR_SUPPORTS_HUNT_CODES`: `119`
 - `HISTORICAL_PREFIX_REVIEW_REQUIRED`: `318`
 
 ## Outputs

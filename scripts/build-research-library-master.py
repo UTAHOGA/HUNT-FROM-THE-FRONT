@@ -15,6 +15,7 @@ import json
 import re
 import zipfile
 from collections import Counter
+from datetime import datetime, timezone
 from pathlib import Path
 from xml.etree import ElementTree
 
@@ -26,6 +27,7 @@ SOURCE_LIBRARY = ROOT / "pipeline/RAW/hunt_unit_database/library-master.csv"
 RECONCILED_LIBRARY = ROOT / "pipeline/RAW/hunt_unit_database/library-master.reconciled.csv"
 DATABASE = HUNTS_ROOT / "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv"
 LOCAL_DATABASE_FALLBACK = ROOT / "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv"
+DWR_HUNT_PLANNER_CSV_DIR = ROOT / "pipeline/RAW/hunt_unit_database/2026/csv"
 HUNT_MASTER = ROOT / "processed_data/hunt_master_enriched.csv"
 CROSSWALK = ROOT / "data_truth/crosswalk_truth/normalized/current_to_historical_hunt_code_crosswalk_2026.csv"
 
@@ -340,6 +342,11 @@ OUTPUT_FIELDS = [
     "source_unique_boundary_ids",
     "source_page_count",
     "source_sheet_count",
+    "source_filename_years",
+    "source_path_years",
+    "source_file_modified_utc",
+    "permit_allotment_2026_promotion_status",
+    "permit_allotment_2026_promotion_notes",
     "data_status",
     "source_truth_status",
     "mapping_review_required",
@@ -413,6 +420,18 @@ def sha256_for_path(path: Path | None) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def years_in_text(value: str) -> str:
+    years = sorted(set(re.findall(r"(?<!\d)(20\d{2})(?!\d)", value or "")))
+    return "|".join(years)
+
+
+def file_modified_utc(path: Path | None) -> str:
+    if path is None or not path.exists() or not path.is_file():
+        return ""
+    modified = datetime.fromtimestamp(path.stat().st_mtime, tz=timezone.utc)
+    return modified.replace(microsecond=0).isoformat().replace("+00:00", "Z")
+
+
 def source_file_profile(path: Path | None) -> dict[str, str]:
     if path is None or not path.exists() or not path.is_file():
         return {
@@ -422,6 +441,7 @@ def source_file_profile(path: Path | None) -> dict[str, str]:
             "source_unique_boundary_ids": "",
             "source_page_count": "",
             "source_sheet_count": "",
+            "source_file_modified_utc": "",
         }
 
     profile = {
@@ -431,20 +451,43 @@ def source_file_profile(path: Path | None) -> dict[str, str]:
         "source_unique_boundary_ids": "",
         "source_page_count": "",
         "source_sheet_count": "",
+        "source_file_modified_utc": file_modified_utc(path),
     }
 
     if path.suffix.lower() == ".csv":
         try:
-            rows = read_csv(path)
+            row_count = 0
+            hunt_codes: set[str] = set()
+            boundary_ids: set[str] = set()
+            with path.open(newline="", encoding="utf-8-sig") as handle:
+                reader = csv.DictReader(handle)
+                for row in reader:
+                    row_count += 1
+                    normalized_row = {re.sub(r"[^a-z0-9]+", "", (key or "").lower()): value for key, value in row.items()}
+                    hunt_code = (
+                        normalized_row.get("huntcode")
+                        or normalized_row.get("huntnumber")
+                        or normalized_row.get("hunt")
+                        or normalized_row.get("huntid")
+                        or ""
+                    ).strip()
+                    boundary_id = (
+                        normalized_row.get("boundaryid")
+                        or normalized_row.get("boundaryids")
+                        or normalized_row.get("boundary")
+                        or ""
+                    ).strip()
+                    if hunt_code:
+                        hunt_codes.add(hunt_code)
+                    if boundary_id:
+                        for part in re.split(r"[|,; ]+", boundary_id):
+                            if part.strip():
+                                boundary_ids.add(part.strip())
         except Exception:
             return profile
-        profile["source_row_count"] = str(len(rows))
-        profile["source_unique_hunt_codes"] = str(
-            len({row.get("hunt_code", "") for row in rows if row.get("hunt_code", "")})
-        )
-        profile["source_unique_boundary_ids"] = str(
-            len({row.get("boundary_id", "") for row in rows if row.get("boundary_id", "")})
-        )
+        profile["source_row_count"] = str(row_count)
+        profile["source_unique_hunt_codes"] = str(len(hunt_codes))
+        profile["source_unique_boundary_ids"] = str(len(boundary_ids))
         return profile
 
     if path.suffix.lower() == ".xlsx":
@@ -567,12 +610,76 @@ def mapping_for_row(
     }
 
 
+def slugify(value: str) -> str:
+    slug = re.sub(r"[^a-z0-9]+", "_", value.lower()).strip("_")
+    return slug or "source"
+
+
+def classify_direct_dwr_csv(path: Path) -> tuple[str, str, str]:
+    name = path.name.lower()
+    if name == "database.csv":
+        return (
+            "DATABASE_MIRROR",
+            "BOUNDARY_ID_CROSSCHECK_SOURCE",
+            "Direct Utah DWR Hunt Planner CSV folder database mirror.",
+        )
+    if "hunt_master_canonical" in name:
+        return (
+            "CANONICAL_BUILD_REFERENCE",
+            "BOUNDARY_ID_CROSSCHECK_SOURCE",
+            "Direct Utah DWR Hunt Planner CSV folder canonical hunt master build.",
+        )
+    if name.startswith("2026_rac_") or "rac_" in name or "permit" in name or "current_year_permit" in name:
+        return (
+            "DWR_HUNT_PLANNER_PERMIT_CSV",
+            "BOUNDARY_ID_CROSSCHECK_SOURCE",
+            "Direct Utah DWR Hunt Planner CSV folder permit/recommendation source.",
+        )
+    if "draw_results" in name or "draw_database" in name or "le_elk_2025_draw" in name:
+        return (
+            "DWR_HUNT_PLANNER_DRAW_RESULT_CSV",
+            "HUNT_CODE_DRAW_CROSSCHECK_SOURCE",
+            "Direct Utah DWR Hunt Planner CSV folder draw-results/reference source.",
+        )
+    if "harvest" in name:
+        return (
+            "DWR_HUNT_PLANNER_HARVEST_CSV",
+            "HUNT_CODE_HARVEST_CROSSCHECK_SOURCE",
+            "Direct Utah DWR Hunt Planner CSV folder harvest source.",
+        )
+    return (
+        "DWR_HUNT_PLANNER_DIRECT_CSV",
+        "BOUNDARY_ID_CROSSCHECK_SOURCE",
+        "Direct Utah DWR Hunt Planner CSV folder source.",
+    )
+
+
+def discover_direct_dwr_csv_sources() -> list[dict[str, object]]:
+    if not DWR_HUNT_PLANNER_CSV_DIR.exists():
+        return []
+
+    sources: list[dict[str, object]] = []
+    for path in sorted(DWR_HUNT_PLANNER_CSV_DIR.glob("*.csv"), key=lambda item: item.name.lower()):
+        source_role, boundary_role, notes = classify_direct_dwr_csv(path)
+        sources.append(
+            {
+                "record_id": f"feeder_dwr_csv_{slugify(path.stem)}",
+                "title": f"Direct DWR Hunt Planner CSV - {path.name}",
+                "path": path,
+                "source_role": source_role,
+                "boundary_alignment_role": boundary_role,
+                "notes": notes,
+            }
+        )
+    return sources
+
+
 def build_feeder_file_rows(start_index: int) -> list[dict[str, str]]:
     rows: list[dict[str, str]] = []
     seen_paths: set[str] = set()
     next_index = start_index
 
-    for feeder in FEEDER_SOURCES:
+    for feeder in [*FEEDER_SOURCES, *discover_direct_dwr_csv_sources()]:
         path = Path(feeder["path"])
         normalized_path = str(path.resolve()).lower() if path.exists() else str(path).lower()
         if normalized_path in seen_paths:
@@ -631,6 +738,14 @@ def build_feeder_file_rows(start_index: int) -> list[dict[str, str]]:
                 "source_unique_boundary_ids": profile["source_unique_boundary_ids"],
                 "source_page_count": profile["source_page_count"],
                 "source_sheet_count": profile["source_sheet_count"],
+                "source_filename_years": years_in_text(path.name),
+                "source_path_years": years_in_text(str(path)),
+                "source_file_modified_utc": profile["source_file_modified_utc"],
+                "permit_allotment_2026_promotion_status": "NOT_PROMOTED_SOURCE_REGISTRY_ONLY",
+                "permit_allotment_2026_promotion_notes": (
+                    "Registered as source evidence only. Do not promote 2025 permit values to 2026 available "
+                    "allotment without reviewed source-date context and explicit promotion step."
+                ),
                 "data_status": "REFERENCE_FILE_REGISTERED",
                 "source_truth_status": feeder["source_role"],
                 "mapping_review_required": "NO",
@@ -712,6 +827,13 @@ def build_rows() -> tuple[list[dict[str, str]], dict]:
                 "source_file_status": "FOUND" if path else row.get("document_file_status", "NOT_RESOLVED"),
                 "source_sha256": sha256_for_path(path),
                 **source_file_profile(path),
+                "source_filename_years": years_in_text((path.name if path else "") or row.get("source_pdf", "")),
+                "source_path_years": years_in_text((str(path) if path else "") or row.get("source_repo_path", "")),
+                "permit_allotment_2026_promotion_status": "NOT_PROMOTED_CATALOG_REVIEW_REQUIRED",
+                "permit_allotment_2026_promotion_notes": (
+                    "Catalog/candidate row only. Permit values must not feed 2026 available allotment without "
+                    "reviewed source-date context and explicit promotion step."
+                ),
                 "data_status": row.get("data_status", ""),
                 "source_truth_status": "CATALOG_ONLY_NOT_TRUTH",
                 "mapping_review_required": mapping.get("mapping_review_required", "YES"),
@@ -735,6 +857,11 @@ def build_rows() -> tuple[list[dict[str, str]], dict]:
         "source_record_count": len(output_rows),
         "source_catalog_record_count": len(source_rows),
         "feeder_file_record_count": len(feeder_rows),
+        "direct_dwr_hunt_planner_csv_folder": relative(DWR_HUNT_PLANNER_CSV_DIR),
+        "direct_dwr_hunt_planner_csv_files_discovered": len(discover_direct_dwr_csv_sources()),
+        "direct_dwr_hunt_planner_csv_feeder_rows": sum(
+            1 for row in feeder_rows if row.get("source_record_id", "").startswith("feeder_dwr_csv_")
+        ),
         "record_type_counts": dict(sorted(Counter(row["record_type"] for row in output_rows).items())),
         "source_role_counts": dict(sorted(Counter(row["source_role"] for row in output_rows).items())),
         "boundary_alignment_role_counts": dict(
@@ -755,6 +882,14 @@ def build_rows() -> tuple[list[dict[str, str]], dict]:
         "candidate_boundary_id_rows": sum(1 for row in output_rows if row.get("candidate_boundary_id")),
         "candidate_historical_hunt_code_rows": sum(
             1 for row in output_rows if row.get("candidate_historical_hunt_code")
+        ),
+        "permit_allotment_2026_promotion_status_counts": dict(
+            sorted(Counter(row.get("permit_allotment_2026_promotion_status", "") for row in output_rows).items())
+        ),
+        "source_rows_missing_year_context": sum(
+            1
+            for row in output_rows
+            if not row.get("source_filename_years") and not row.get("source_path_years")
         ),
         "feeder_files_missing": [
             row["source_repo_path"] for row in feeder_rows if row.get("source_file_status") != "FOUND"
@@ -780,7 +915,9 @@ def build_rows() -> tuple[list[dict[str, str]], dict]:
             "Blank reviewed hunt_code/boundary_id fields require explicit mapping status fields.",
             "Candidate hunt codes and candidate boundary IDs are not truth fields.",
             "DATABASE.csv is the canonical current hunt-code and boundary-id source.",
+            "Direct Utah DWR Hunt Planner CSV-folder files are registered as source evidence.",
             "Feeder files are registered as source evidence with hashes before their values can be used.",
+            "Do not promote 2025 permit values to 2026 available allotment without reviewed source-date context.",
             "Historical/current prefix changes must flow through the crosswalk before promotion.",
             "Document-level rows must be extracted into per-hunt-code rows before they can feed prediction/runtime data.",
         ],
@@ -809,6 +946,8 @@ def build_rows() -> tuple[list[dict[str, str]], dict]:
         blockers.append("FEEDER_FILES_MISSING")
     if summary["canonical_database_feeder_rows"] != 1:
         blockers.append("CANONICAL_DATABASE_FEEDER_NOT_REGISTERED")
+    if summary["direct_dwr_hunt_planner_csv_feeder_rows"] < 80:
+        blockers.append("DIRECT_DWR_HUNT_PLANNER_CSV_FOLDER_UNDER_REGISTERED")
     summary["blockers"] = blockers
     summary["blocker_count"] = len(blockers)
     if blockers:
@@ -829,10 +968,12 @@ def write_markdown(summary: dict) -> None:
         f"- Rows: `{summary['record_count']}`",
         f"- Source catalog rows: `{summary['source_catalog_record_count']}`",
         f"- Feeder file rows: `{summary['feeder_file_record_count']}`",
+        f"- Direct DWR Hunt Planner CSV feeder rows: `{summary['direct_dwr_hunt_planner_csv_feeder_rows']}`",
         f"- Reviewed hunt-code rows: `{summary['reviewed_hunt_code_rows']}`",
         f"- Candidate hunt-code rows: `{summary['candidate_hunt_code_rows']}`",
         f"- Unique candidate hunt codes: `{summary['candidate_hunt_code_unique_count']}`",
         f"- Boundary-alignment feeder rows: `{summary['boundary_alignment_feeder_rows']}`",
+        f"- Rows missing source-year context: `{summary['source_rows_missing_year_context']}`",
         f"- Rows requiring review: `{summary['review_required_rows']}`",
         f"- Blockers: `{summary['blocker_count']}`",
         "",

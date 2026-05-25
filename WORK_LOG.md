@@ -2806,3 +2806,30 @@
   - `python -m py_compile scripts\build-research-library-master.py tests\utah\test_research_library_master.py` passed.
   - `python -m pytest tests\utah\test_research_library_master.py -q` passed: `3`.
   - `python -m pytest tests\utah\test_research_library_master.py tests\utah\test_current_historical_hunt_code_crosswalk_2026.py tests\utah\test_library_master_database_reconciliation.py tests\utah\test_library_master_hunt_master_enriched_comparison.py -q` passed: `10`.
+
+## Direct DWR Hunt Planner CSV Folder Registration And 2025 Permit Guard
+- Timestamp (UTC): 2026-05-25T07:35:00Z
+- Scope:
+  - Registered the direct Utah DWR Hunt Planner CSV folder `pipeline/RAW/hunt_unit_database/2026/csv` as source evidence.
+  - Auto-discovered all `89` `.csv` files in the folder and added `88` direct-folder feeder rows after de-duping the already registered local `DATABASE.csv` mirror.
+  - Added source filename year context, source path year context, and source file modified timestamp metadata to the research-library master.
+  - Added explicit `permit_allotment_2026_promotion_status` fields so source rows cannot be mistaken for promoted 2026 available allotment values.
+  - Guardrail added: 2025 permit values must not be promoted into 2026 available allotment unless every imported source used in that promotion has reviewed source-date context.
+  - Kept `DATABASE.csv` as the canonical current hunt-code and boundary-id source; direct folder CSVs are source evidence only.
+  - No website feeds, `pages-dist`, `public_client_engine.csv`, materializer code, prediction math, original `library-master.csv`, or source CSV files were changed.
+- Key results:
+  - Research-library rows built: `447`.
+  - Source catalog rows: `328`.
+  - Feeder file rows: `119`.
+  - Direct DWR Hunt Planner CSV files discovered: `89`.
+  - Direct DWR Hunt Planner CSV feeder rows: `88`.
+  - Boundary-alignment feeder rows: `118`.
+  - Promotion status counts: `NOT_PROMOTED_CATALOG_REVIEW_REQUIRED=328`, `NOT_PROMOTED_SOURCE_REGISTRY_ONLY=119`.
+  - Source rows missing year context: `8`.
+  - Missing feeder files: `0`.
+  - Validation blockers: `0`.
+- Validation:
+  - `python scripts\build-research-library-master.py` passed.
+  - `python -m py_compile scripts\build-research-library-master.py tests\utah\test_research_library_master.py` passed.
+  - `python -m pytest tests\utah\test_research_library_master.py -q` passed: `4`.
+  - `python -m pytest tests\utah\test_research_library_master.py tests\utah\test_current_historical_hunt_code_crosswalk_2026.py tests\utah\test_library_master_database_reconciliation.py tests\utah\test_library_master_hunt_master_enriched_comparison.py -q` passed: `11`.
