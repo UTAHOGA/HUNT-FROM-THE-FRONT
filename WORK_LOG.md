@@ -3425,3 +3425,12 @@
   - `python -m pytest tests\utah\test_current_historical_hunt_code_crosswalk_2026.py -q` passed: `3`.
   - `python -m pytest tests\utah\test_current_historical_hunt_code_crosswalk_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py tests\utah\test_private_land_deer_code_lock_2026.py tests\utah\test_pronghorn_private_land_resolution_2026.py tests\utah\test_elk_private_land_resolution_2026.py tests\utah\test_conservation_permit_code_lock_2026.py tests\utah\test_desert_bighorn_conservation_code_lock_2026.py tests\utah\test_final_reference_hunt_code_lock_2026.py -q` passed: `28`.
   - `python -m py_compile scripts\build-current-historical-hunt-code-crosswalk-2026.py` passed.
+
+## Research Library Mapping Law
+- Timestamp (UTC): 2026-05-25T06:05:00Z
+- Scope:
+  - Added an explicit mapping-law section to `AGENTS.MD` so future research-library documents and rows must carry reviewed `hunt_code` and `boundary_id` fields plus mapping-status and candidate fields.
+  - Reinforced that candidate/fuzzy/current-to-historical evidence must not be treated as promoted truth until reviewed.
+  - The executable research-library master build and validation artifacts were created in the sibling `HUNT-BUILDER` workspace where the library catalog currently lives.
+- Validation:
+  - Confirmed `AGENTS.MD` now contains the required research-library mapping contract.
