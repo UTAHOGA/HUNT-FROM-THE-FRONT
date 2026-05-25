@@ -1,22 +1,23 @@
 {
   "classification": "CURRENT_2026_HUNT_CODE_FAMILY_GAP_SCAN",
-  "timestamp_utc": "2026-05-25T01:00:39.623121+00:00",
+  "timestamp_utc": "2026-05-25T01:25:18.587274+00:00",
   "database_code_count": 1411,
   "hunt_master_code_count": 1471,
   "point_ladder_code_count": 1471,
   "draw_reality_code_count": 1623,
-  "predictive_v2_code_count": 1441,
+  "predictive_v2_code_count": 1451,
   "family_count": 21,
-  "resolved_family_count": 14,
-  "predictive_gap_family_count": 7,
+  "resolved_family_count": 15,
+  "predictive_gap_family_count": 6,
   "required_surface_blocker_family_count": 0,
-  "total_missing_predictive_v2_current_database_codes": 30,
+  "total_missing_predictive_v2_current_database_codes": 20,
   "total_required_surface_missing_current_database_codes": 0,
   "resolved_families": [
     "BR",
     "DA",
     "DB",
     "EA",
+    "EB",
     "EL",
     "GO",
     "LO",
@@ -29,25 +30,6 @@
     "TK"
   ],
   "predictive_gap_families_ranked": [
-    {
-      "code_prefix": "EB",
-      "label": "Bull Elk",
-      "dominant_species": "Elk",
-      "missing_predictive_v2_count": 10,
-      "database_code_count": 222,
-      "missing_predictive_v2_codes": [
-        "EB1001",
-        "EB1002",
-        "EB1003",
-        "EB1004",
-        "EB1005",
-        "EB1009",
-        "EB1010",
-        "EB1012",
-        "EB3128",
-        "EB3209"
-      ]
-    },
     {
       "code_prefix": "DS",
       "label": "Desert Bighorn Sheep",

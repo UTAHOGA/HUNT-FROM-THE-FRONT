@@ -3268,3 +3268,45 @@
   - `python scripts\scan-2026-hunt-code-family-gaps.py` passed.
   - `python -m pytest tests\utah\test_elk_private_land_resolution_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py tests\utah\test_elk_bull_private_lands_spreadsheet.py -q` passed: `9`.
   - `python -m compileall scripts\resolve-elk-private-land-hunt-codes-2026.py tests\utah\test_elk_private_land_resolution_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py` passed.
+
+## 2026 Elk Bull EB Reference Hunt-Code Resolution
+- Timestamp (UTC): 2026-05-25T01:20:24Z
+- Scope:
+  - Added a repeatable resolver for current 2026 Utah DWR Hunt Planner `EB` elk bull reference rows supplied from the current Hunt Planner surface.
+  - Reconciled `13` reference rows: `5` `TOTAL_ONLY` rows and `8` `NO_QUOTA_PUBLISHED` rows.
+  - Promoted the `10` missing `EB` rows into `draw_reality_engine_predictive_v2.csv` as non-modeled reference rows only.
+  - Kept promoted rows explicitly marked with `algorithm_status = ELK_BULL_REFERENCE`, `modeled_by_engine = False`, `probability_model = NONE`, and `display_odds_text = Elk bull reference only; odds not modeled`.
+  - Preserved canonical total-only values for `EB1012 = 500`, `EB3128 = 1`, and `EB3209 = 1`.
+  - Preserved blank quota/allotment fields on `NO_QUOTA_PUBLISHED` general-season rows, ignoring stale DATABASE season-length-looking totals.
+  - Created an elk bull reference spreadsheet export with explicit `Non Res`, `Res`, and `Total` columns.
+  - Refreshed the 2026 family gap scan after `EB` resolution.
+  - No website feeds, harvest features, public-client files, materializer code, or probability math were changed.
+- Outputs:
+  - `scripts/resolve-elk-bull-reference-hunt-codes-2026.py`
+  - `scripts/export-elk-bull-reference-spreadsheet.mjs`
+  - `tests/utah/test_elk_bull_reference_resolution_2026.py`
+  - `data_truth/draw_results_truth/validation/2026_elk_bull_reference_hunt_code_reconciliation.csv`
+  - `processed_data/2026_elk_bull_reference_hunt_code_reconciliation_summary.json`
+  - `processed_data/2026_elk_bull_reference_hunt_code_reconciliation.md`
+  - `processed_data/2026_elk_bull_reference_predictive_v2_reference_promotion.csv`
+  - `processed_data/2026_elk_bull_reference_predictive_v2_reference_promotion_summary.json`
+  - `processed_data/elk_bull_reference_hunt_planner_reference.csv`
+  - `processed_data/elk_bull_reference_hunt_planner_reference.xlsx`
+  - `processed_data/elk_bull_reference_hunt_planner_reference_report.json`
+- Key results:
+  - Current `EB` reference rows checked: `13`.
+  - Newly promoted `EB` reference rows: `10`.
+  - `TOTAL_ONLY` rows: `5` (`EB1000`, `EB1007`, `EB1012`, `EB3128`, `EB3209`).
+  - `NO_QUOTA_PUBLISHED` rows: `8`.
+  - Stale quota leaks: `0`.
+  - Reconciliation blockers: `0`.
+  - Updated gap scan current database codes missing predictive v2: `20`, down from `30`.
+  - Updated resolved families: `15` (`BR`, `DA`, `DB`, `EA`, `EB`, `EL`, `GO`, `LO`, `LP`, `MA`, `MB`, `PB`, `PD`, `RE`, `TK`).
+  - Remaining largest predictive gaps: `DS` (`6`), `LD` (`6`), and `RS` (`4`).
+- Validation:
+  - `python scripts\resolve-elk-bull-reference-hunt-codes-2026.py` passed.
+  - `node scripts\export-elk-bull-reference-spreadsheet.mjs` passed with bundled workspace Node runtime.
+  - `python scripts\scan-2026-hunt-code-family-gaps.py` passed.
+  - `python -m pytest tests\utah\test_elk_bull_reference_resolution_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py -q` passed: `7`.
+  - `python -m compileall scripts\resolve-elk-bull-reference-hunt-codes-2026.py tests\utah\test_elk_bull_reference_resolution_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py` passed.
+  - `node --check scripts\export-elk-bull-reference-spreadsheet.mjs` passed with bundled workspace Node runtime.
