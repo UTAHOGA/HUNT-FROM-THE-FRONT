@@ -2833,3 +2833,39 @@
   - `python -m py_compile scripts\build-research-library-master.py tests\utah\test_research_library_master.py` passed.
   - `python -m pytest tests\utah\test_research_library_master.py -q` passed: `4`.
   - `python -m pytest tests\utah\test_research_library_master.py tests\utah\test_current_historical_hunt_code_crosswalk_2026.py tests\utah\test_library_master_database_reconciliation.py tests\utah\test_library_master_hunt_master_enriched_comparison.py -q` passed: `11`.
+
+## Hunt Master Canonical Permit Deep Dive
+- Timestamp (UTC): 2026-05-25T08:15:00Z
+- Scope:
+  - Built a read-only permit consistency audit for `pipeline/RAW/hunt_unit_database/2026/csv/hunt_master_canonical_2026_built.csv`.
+  - Compared the target file's duplicate permit triples positionally against canonical HUNTS `DATABASE.csv`, direct RAC/current-year CSV evidence, and high-confidence current-year total-scan evidence.
+  - Treated the first duplicate permit triple as 2025 permit evidence and the second duplicate permit triple as 2026/current allotment evidence for audit purposes only.
+  - Added the hard guardrail that populated numeric permit cells in canonical `DATABASE.csv` are direct Utah DWR Hunt Planner truth and must not be changed or overwritten by comparison files, inferred values, draw reports, RAC files, audit outputs, or rebuilt library/master documents.
+  - No `DATABASE.csv`, website feeds, `pages-dist`, `public_client_engine.csv`, materializer code, source CSV files, or runtime prediction surfaces were changed.
+- Outputs:
+  - `scripts/audit-hunt-master-canonical-permit-consistency.py`
+  - `tests/utah/test_hunt_master_canonical_permit_deep_dive.py`
+  - `processed_data/hunt_master_canonical_2026_built_permit_deep_dive.csv`
+  - `processed_data/hunt_master_canonical_2026_built_permit_deep_dive_summary.json`
+  - `processed_data/hunt_master_canonical_2026_built_permit_deep_dive.md`
+  - `data_truth/comparison_outputs/validation/hunt_master_canonical_2026_built_permit_deep_dive_summary.json`
+- Key results:
+  - Target rows: `1289`.
+  - Target unique hunt codes: `1289`.
+  - Canonical `DATABASE.csv` rows: `1411`.
+  - Target duplicate hunt codes: `0`.
+  - Target codes missing canonical `DATABASE.csv`: `1` (`DB1276`).
+  - Canonical `DATABASE.csv` codes missing target: `123`.
+  - Direct RAC hunt-code evidence rows: `519`.
+  - Total-scan high-confidence hunt-code evidence rows: `855`.
+  - High-confidence rows: `318`.
+  - Medium 2026 database-match rows: `370`.
+  - Low 2025-only match rows: `109`.
+  - Review-required rows: `492`.
+  - Large target 2025-to-2026 total-change review rows: `42`.
+  - Spot checks confirmed `BI6505` and `BI6506` second triples match canonical 2026/allotment values; `DB1200` is correctly flagged as a zero-placeholder target case against populated canonical 2026 permit values.
+- Validation:
+  - `python scripts\audit-hunt-master-canonical-permit-consistency.py` passed.
+  - `python -m py_compile scripts\audit-hunt-master-canonical-permit-consistency.py tests\utah\test_hunt_master_canonical_permit_deep_dive.py` passed.
+  - `python -m pytest tests\utah\test_hunt_master_canonical_permit_deep_dive.py -q` passed: `3`.
+  - `python -m pytest tests\utah\test_research_library_master.py -q` passed: `4`.
