@@ -13,8 +13,10 @@ import csv
 import hashlib
 import json
 import re
+import zipfile
 from collections import Counter
 from pathlib import Path
+from xml.etree import ElementTree
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -70,6 +72,30 @@ FEEDER_SOURCES = [
         "source_role": "POINT_LADDER_REFERENCE",
         "boundary_alignment_role": "BOUNDARY_ID_CROSSCHECK_SOURCE",
         "notes": "Point ladder reference keyed by hunt_code/residency/points.",
+    },
+    {
+        "record_id": "feeder_rac_recommended_permits_2026_xlsx",
+        "title": "2026 RAC Recommended Permits Workbook",
+        "path": ROOT / "pipeline/RAW/hunt_unit_database/2026/pdf/current_year_permit_numbers/Draw Odds/2026 rac recommended permits.xlsx",
+        "source_role": "CURRENT_YEAR_PERMIT_RECOMMENDATION",
+        "boundary_alignment_role": "BOUNDARY_ID_CROSSCHECK_SOURCE",
+        "notes": "User-supplied current-year RAC recommended permit numbers workbook.",
+    },
+    {
+        "record_id": "feeder_rac_recommended_permits_2026_pdf",
+        "title": "2026 RAC Recommended Permits PDF",
+        "path": ROOT / "pipeline/RAW/hunt_unit_database/2026/pdf/current_year_permit_numbers/Draw Odds/2026 rac recommended permits.pdf",
+        "source_role": "CURRENT_YEAR_PERMIT_RECOMMENDATION",
+        "boundary_alignment_role": "BOUNDARY_ID_CROSSCHECK_SOURCE",
+        "notes": "User-supplied current-year RAC recommended permit numbers PDF companion.",
+    },
+    {
+        "record_id": "feeder_preliminary_bg_harvest_2025_pdf",
+        "title": "2025 Preliminary Big Game Harvest Report PDF",
+        "path": ROOT / "pipeline/RAW/hunt_unit_database/2026/pdf/harvest_report/2026-03-06-2025-preliminary-bg-harvest.pdf",
+        "source_role": "PRELIMINARY_HARVEST_REPORT",
+        "boundary_alignment_role": "HUNT_CODE_HARVEST_CROSSCHECK_SOURCE",
+        "notes": "User-supplied preliminary 2025 big game harvest report PDF.",
     },
     {
         "record_id": "feeder_hunt_master_canonical_json",
@@ -312,6 +338,8 @@ OUTPUT_FIELDS = [
     "source_row_count",
     "source_unique_hunt_codes",
     "source_unique_boundary_ids",
+    "source_page_count",
+    "source_sheet_count",
     "data_status",
     "source_truth_status",
     "mapping_review_required",
@@ -392,6 +420,8 @@ def source_file_profile(path: Path | None) -> dict[str, str]:
             "source_row_count": "",
             "source_unique_hunt_codes": "",
             "source_unique_boundary_ids": "",
+            "source_page_count": "",
+            "source_sheet_count": "",
         }
 
     profile = {
@@ -399,6 +429,8 @@ def source_file_profile(path: Path | None) -> dict[str, str]:
         "source_row_count": "",
         "source_unique_hunt_codes": "",
         "source_unique_boundary_ids": "",
+        "source_page_count": "",
+        "source_sheet_count": "",
     }
 
     if path.suffix.lower() == ".csv":
@@ -413,6 +445,32 @@ def source_file_profile(path: Path | None) -> dict[str, str]:
         profile["source_unique_boundary_ids"] = str(
             len({row.get("boundary_id", "") for row in rows if row.get("boundary_id", "")})
         )
+        return profile
+
+    if path.suffix.lower() == ".xlsx":
+        try:
+            with zipfile.ZipFile(path) as archive:
+                workbook_xml = archive.read("xl/workbook.xml")
+            root = ElementTree.fromstring(workbook_xml)
+            namespaces = {"main": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
+            sheets = root.findall(".//main:sheet", namespaces)
+            profile["source_sheet_count"] = str(len(sheets))
+        except Exception:
+            return profile
+        return profile
+
+    if path.suffix.lower() == ".pdf":
+        try:
+            from pypdf import PdfReader  # type: ignore
+
+            profile["source_page_count"] = str(len(PdfReader(str(path)).pages))
+        except Exception:
+            try:
+                from PyPDF2 import PdfReader  # type: ignore
+
+                profile["source_page_count"] = str(len(PdfReader(str(path)).pages))
+            except Exception:
+                profile["source_page_count"] = ""
         return profile
 
     # Lightweight JSON scan only. Very large boundary files are intentionally not parsed here.
@@ -571,6 +629,8 @@ def build_feeder_file_rows(start_index: int) -> list[dict[str, str]]:
                 "source_row_count": profile["source_row_count"],
                 "source_unique_hunt_codes": profile["source_unique_hunt_codes"],
                 "source_unique_boundary_ids": profile["source_unique_boundary_ids"],
+                "source_page_count": profile["source_page_count"],
+                "source_sheet_count": profile["source_sheet_count"],
                 "data_status": "REFERENCE_FILE_REGISTERED",
                 "source_truth_status": feeder["source_role"],
                 "mapping_review_required": "NO",

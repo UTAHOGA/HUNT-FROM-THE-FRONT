@@ -2,7 +2,7 @@
   "artifact": "research_library_master",
   "blocker_count": 0,
   "blockers": [],
-  "boundary_alignment_feeder_rows": 27,
+  "boundary_alignment_feeder_rows": 30,
   "boundary_alignment_role_counts": {
     "ARCGIS_BOUNDARY_SOURCE": 1,
     "BOUNDARY_COVERAGE_REFERENCE": 2,
@@ -10,8 +10,9 @@
     "BOUNDARY_GAP_REFERENCE": 1,
     "BOUNDARY_ID_ALIGNMENT_REPORT": 2,
     "BOUNDARY_ID_ASSIGNMENT_REPORT": 1,
-    "BOUNDARY_ID_CROSSCHECK_SOURCE": 12,
+    "BOUNDARY_ID_CROSSCHECK_SOURCE": 14,
     "CWMU_GEOMETRY_SOURCE": 1,
+    "HUNT_CODE_HARVEST_CROSSCHECK_SOURCE": 1,
     "HUNT_UNIT_GEOMETRY_MAPPING_SOURCE": 1,
     "NO_BOUNDARY_ALIGNMENT": 1,
     "PRIMARY_BOUNDARY_ID_SOURCE": 1,
@@ -21,7 +22,7 @@
   },
   "boundary_id_mapping_status_counts": {
     "DOCUMENT_LEVEL_MAPPING_REQUIRED": 10,
-    "FILE_LEVEL_REFERENCE_CONTAINS_OR_SUPPORTS_BOUNDARY_IDS": 28,
+    "FILE_LEVEL_REFERENCE_CONTAINS_OR_SUPPORTS_BOUNDARY_IDS": 31,
     "HISTORICAL_PREFIX_REVIEW_REQUIRED": 318
   },
   "candidate_boundary_id_rows": 318,
@@ -33,11 +34,11 @@
   "canonical_database_feeder_rows": 1,
   "database_source": "C:/Users/tyler/Desktop/GitHub/HUNTS/pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
   "duplicate_research_record_ids": [],
-  "feeder_file_record_count": 28,
+  "feeder_file_record_count": 31,
   "feeder_files_missing": [],
   "hunt_code_mapping_status_counts": {
     "DOCUMENT_LEVEL_MAPPING_REQUIRED": 10,
-    "FILE_LEVEL_REFERENCE_CONTAINS_OR_SUPPORTS_HUNT_CODES": 28,
+    "FILE_LEVEL_REFERENCE_CONTAINS_OR_SUPPORTS_HUNT_CODES": 31,
     "HISTORICAL_PREFIX_REVIEW_REQUIRED": 318
   },
   "law": [
@@ -51,7 +52,7 @@
   ],
   "mapping_scope_counts": {
     "DOCUMENT_LEVEL": 10,
-    "FILE_LEVEL_REFERENCE": 28,
+    "FILE_LEVEL_REFERENCE": 31,
     "PERMIT_ALLOCATION_ROW": 318
   },
   "missing_required_mapping_fields": [],
@@ -63,10 +64,10 @@
     "processed_md": "processed_data/research_library_master.md",
     "summary_json": "data_truth/research_library_truth/validation/research_library_master_summary.json"
   },
-  "record_count": 356,
+  "record_count": 359,
   "record_type_counts": {
     "document": 10,
-    "feeder_file": 28,
+    "feeder_file": 31,
     "permit_allocation": 318
   },
   "review_required_rows": 328,
@@ -75,7 +76,7 @@
   "source_catalog_record_count": 328,
   "source_library": "pipeline/RAW/hunt_unit_database/library-master.csv",
   "source_reconciled_library": "pipeline/RAW/hunt_unit_database/library-master.reconciled.csv",
-  "source_record_count": 356,
+  "source_record_count": 359,
   "source_role_counts": {
     "BOUNDARY_ALIGNMENT_REFERENCE": 3,
     "BOUNDARY_AUDIT_REFERENCE": 1,
@@ -85,11 +86,13 @@
     "CANONICAL_BUILD_REFERENCE": 2,
     "CANONICAL_DATABASE": 1,
     "CANONICAL_JSON_REFERENCE": 6,
+    "CURRENT_YEAR_PERMIT_RECOMMENDATION": 2,
     "DATABASE_MIRROR": 1,
     "DOCUMENT_LIBRARY_REFERENCE": 1,
     "ENRICHED_RUNTIME_REFERENCE": 1,
     "LIBRARY_CATALOG_SOURCE": 328,
     "POINT_LADDER_REFERENCE": 1,
+    "PRELIMINARY_HARVEST_REPORT": 1,
     "RESEARCH_RUNTIME_REFERENCE": 2
   },
   "status": "REVIEW_REQUIRED"

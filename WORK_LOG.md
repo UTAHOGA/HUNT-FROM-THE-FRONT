@@ -2782,3 +2782,27 @@
   - `python -m py_compile scripts\build-research-library-master.py tests\utah\test_research_library_master.py` passed.
   - `python -m pytest tests\utah\test_research_library_master.py -q` passed: `3`.
   - `python -m pytest tests\utah\test_research_library_master.py tests\utah\test_current_historical_hunt_code_crosswalk_2026.py tests\utah\test_library_master_database_reconciliation.py tests\utah\test_library_master_hunt_master_enriched_comparison.py -q` passed: `10`.
+
+## RAC Recommended Permits And Preliminary Harvest Source Registration
+- Timestamp (UTC): 2026-05-25T07:05:00Z
+- Scope:
+  - Registered the user-supplied `2026 rac recommended permits.xlsx` workbook as a current-year permit recommendation feeder source.
+  - Registered the companion `2026 rac recommended permits.pdf` as a current-year permit recommendation feeder source.
+  - Registered `2026-03-06-2025-preliminary-bg-harvest.pdf` as a preliminary 2025 big game harvest feeder source.
+  - Added PDF page-count and workbook sheet-count metadata to the governed research-library master schema.
+  - Did not parse or promote permit/harvest values into truth tables in this step; these files are registered and hashed as source evidence first.
+  - No website feeds, `pages-dist`, `public_client_engine.csv`, materializer code, prediction math, original `library-master.csv`, or source files were changed.
+- Key results:
+  - Research-library rows built: `359`.
+  - Feeder file rows: `31`.
+  - Boundary-alignment feeder rows: `30`.
+  - Missing feeder files: `0`.
+  - RAC workbook sheet count: `1`.
+  - RAC PDF page count: `39`.
+  - Preliminary harvest PDF page count: `23`.
+  - Validation blockers: `0`.
+- Validation:
+  - `python scripts\build-research-library-master.py` passed.
+  - `python -m py_compile scripts\build-research-library-master.py tests\utah\test_research_library_master.py` passed.
+  - `python -m pytest tests\utah\test_research_library_master.py -q` passed: `3`.
+  - `python -m pytest tests\utah\test_research_library_master.py tests\utah\test_current_historical_hunt_code_crosswalk_2026.py tests\utah\test_library_master_database_reconciliation.py tests\utah\test_library_master_hunt_master_enriched_comparison.py -q` passed: `10`.

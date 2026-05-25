@@ -5,13 +5,13 @@ This is the governed research-library master generated from the existing library
 ## Status
 
 - Status: `REVIEW_REQUIRED`
-- Rows: `356`
+- Rows: `359`
 - Source catalog rows: `328`
-- Feeder file rows: `28`
+- Feeder file rows: `31`
 - Reviewed hunt-code rows: `0`
 - Candidate hunt-code rows: `318`
 - Unique candidate hunt codes: `147`
-- Boundary-alignment feeder rows: `27`
+- Boundary-alignment feeder rows: `30`
 - Rows requiring review: `328`
 - Blockers: `0`
 
@@ -28,7 +28,7 @@ This is the governed research-library master generated from the existing library
 ## Mapping Status Counts
 
 - `DOCUMENT_LEVEL_MAPPING_REQUIRED`: `10`
-- `FILE_LEVEL_REFERENCE_CONTAINS_OR_SUPPORTS_HUNT_CODES`: `28`
+- `FILE_LEVEL_REFERENCE_CONTAINS_OR_SUPPORTS_HUNT_CODES`: `31`
 - `HISTORICAL_PREFIX_REVIEW_REQUIRED`: `318`
 
 ## Outputs

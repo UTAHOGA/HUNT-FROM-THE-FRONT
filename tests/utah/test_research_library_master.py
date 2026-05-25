@@ -33,11 +33,11 @@ def test_research_library_master_builds_with_required_mapping_contract():
     rows = read_rows(MASTER)
     summary = json.loads(SUMMARY.read_text(encoding="utf-8"))
 
-    assert len(rows) == 356
-    assert summary["record_count"] == 356
-    assert summary["source_record_count"] == 356
+    assert len(rows) == 359
+    assert summary["record_count"] == 359
+    assert summary["source_record_count"] == 359
     assert summary["source_catalog_record_count"] == 328
-    assert summary["feeder_file_record_count"] == 28
+    assert summary["feeder_file_record_count"] == 31
     assert summary["blocker_count"] == 0
 
     required = {
@@ -68,9 +68,9 @@ def test_research_library_master_keeps_old_candidate_codes_out_of_truth_fields()
     assert len(document_rows) == 10
     assert summary["candidate_hunt_code_rows"] == 318
     assert summary["candidate_hunt_code_unique_count"] == 147
-    assert summary["feeder_file_record_count"] == 28
+    assert summary["feeder_file_record_count"] == 31
     assert summary["canonical_database_feeder_rows"] == 1
-    assert summary["boundary_alignment_feeder_rows"] == 27
+    assert summary["boundary_alignment_feeder_rows"] == 30
     assert summary["feeder_files_missing"] == []
     assert summary["reviewed_hunt_code_rows"] == 0
     assert summary["reviewed_boundary_id_rows"] == 0
@@ -103,3 +103,9 @@ def test_research_library_master_registers_boundary_alignment_feeders():
     assert by_id["feeder_point_ladder_view"]["source_role"] == "POINT_LADDER_REFERENCE"
     assert by_id["feeder_statewide_composite_boundaries_geojson"]["source_role"] == "BOUNDARY_GEOJSON_REFERENCE"
     assert by_id["feeder_statewide_composite_boundaries_geojson"]["source_file_status"] == "FOUND"
+    assert by_id["feeder_rac_recommended_permits_2026_xlsx"]["source_role"] == "CURRENT_YEAR_PERMIT_RECOMMENDATION"
+    assert by_id["feeder_rac_recommended_permits_2026_xlsx"]["source_sheet_count"] == "1"
+    assert by_id["feeder_rac_recommended_permits_2026_pdf"]["source_role"] == "CURRENT_YEAR_PERMIT_RECOMMENDATION"
+    assert by_id["feeder_rac_recommended_permits_2026_pdf"]["source_page_count"] == "39"
+    assert by_id["feeder_preliminary_bg_harvest_2025_pdf"]["source_role"] == "PRELIMINARY_HARVEST_REPORT"
+    assert by_id["feeder_preliminary_bg_harvest_2025_pdf"]["source_page_count"] == "23"
