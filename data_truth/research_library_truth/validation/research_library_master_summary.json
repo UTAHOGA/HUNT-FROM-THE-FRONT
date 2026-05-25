@@ -1,0 +1,53 @@
+{
+  "artifact": "research_library_master",
+  "blocker_count": 0,
+  "blockers": [],
+  "boundary_id_mapping_status_counts": {
+    "DOCUMENT_LEVEL_MAPPING_REQUIRED": 10,
+    "HISTORICAL_PREFIX_REVIEW_REQUIRED": 318
+  },
+  "candidate_boundary_id_rows": 318,
+  "candidate_codes_missing_database": [],
+  "candidate_codes_missing_hunt_master": [],
+  "candidate_historical_hunt_code_rows": 47,
+  "candidate_hunt_code_rows": 318,
+  "candidate_hunt_code_unique_count": 147,
+  "database_source": "C:/Users/tyler/Desktop/GitHub/HUNTS/pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+  "duplicate_research_record_ids": [],
+  "hunt_code_mapping_status_counts": {
+    "DOCUMENT_LEVEL_MAPPING_REQUIRED": 10,
+    "HISTORICAL_PREFIX_REVIEW_REQUIRED": 318
+  },
+  "law": [
+    "Every research library row must carry hunt_code and boundary_id columns.",
+    "Blank reviewed hunt_code/boundary_id fields require explicit mapping status fields.",
+    "Candidate hunt codes and candidate boundary IDs are not truth fields.",
+    "Historical/current prefix changes must flow through the crosswalk before promotion.",
+    "Document-level rows must be extracted into per-hunt-code rows before they can feed prediction/runtime data."
+  ],
+  "mapping_scope_counts": {
+    "DOCUMENT_LEVEL": 10,
+    "PERMIT_ALLOCATION_ROW": 318
+  },
+  "missing_required_mapping_fields": [],
+  "outputs": {
+    "mapping_gaps_csv": "data_truth/research_library_truth/validation/research_library_master_mapping_gaps.csv",
+    "master_csv": "data_truth/research_library_truth/normalized/research_library_master.csv",
+    "master_json": "data_truth/research_library_truth/normalized/research_library_master.json",
+    "processed_csv": "processed_data/research_library_master.csv",
+    "processed_md": "processed_data/research_library_master.md",
+    "summary_json": "data_truth/research_library_truth/validation/research_library_master_summary.json"
+  },
+  "record_count": 328,
+  "record_type_counts": {
+    "document": 10,
+    "permit_allocation": 318
+  },
+  "review_required_rows": 328,
+  "reviewed_boundary_id_rows": 0,
+  "reviewed_hunt_code_rows": 0,
+  "source_library": "pipeline/RAW/hunt_unit_database/library-master.csv",
+  "source_reconciled_library": "pipeline/RAW/hunt_unit_database/library-master.reconciled.csv",
+  "source_record_count": 328,
+  "status": "REVIEW_REQUIRED"
+}

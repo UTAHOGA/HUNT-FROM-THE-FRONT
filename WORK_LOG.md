@@ -2707,3 +2707,42 @@
   - `python scripts\compare-library-master-to-hunt-master-enriched.py` passed.
   - `python -m pytest tests\utah\test_library_master_hunt_master_enriched_comparison.py -q` passed: `2`.
   - `python -m py_compile scripts\compare-library-master-to-hunt-master-enriched.py tests\utah\test_library_master_hunt_master_enriched_comparison.py` passed.
+
+## Governed Research Library Master Mapping Contract
+- Timestamp (UTC): 2026-05-25T06:05:00Z
+- Scope:
+  - Made hunt-code mapping a governed research-library contract instead of an implicit/fuzzy side effect.
+  - Added the required reviewed mapping columns `hunt_code` and `boundary_id` plus candidate/status columns for every research-library row.
+  - Kept the existing `library-master.csv` unchanged and built a normalized research-library truth candidate under `data_truth/research_library_truth`.
+  - Used the HUNTS 2026 `DATABASE.csv` as the database authority, `hunt_master_enriched.csv` as the runtime/reference crosscheck, and the current-to-historical crosswalk as prefix-change evidence.
+  - Preserved 2022-2024 conservation-permit rows as candidate evidence only because current/historical prefix changes require reviewed crosswalk promotion.
+  - Added the same mapping law to `AGENTS.MD` and a standalone `RESEARCH_LIBRARY_MASTER_RULES.md`.
+  - No website feeds, `pages-dist`, `public_client_engine.csv`, materializer code, prediction math, original `library-master.csv`, or source `DATABASE.csv` files were changed.
+- Outputs:
+  - `scripts/build-research-library-master.py`
+  - `tests/utah/test_research_library_master.py`
+  - `RESEARCH_LIBRARY_MASTER_RULES.md`
+  - `data_truth/research_library_truth/normalized/research_library_master.csv`
+  - `data_truth/research_library_truth/normalized/research_library_master.json`
+  - `data_truth/research_library_truth/validation/research_library_master_summary.json`
+  - `data_truth/research_library_truth/validation/research_library_master_mapping_gaps.csv`
+  - `processed_data/research_library_master.csv`
+  - `processed_data/research_library_master.md`
+- Key results:
+  - Research-library rows built: `328`.
+  - Document-level rows: `10`.
+  - Permit-allocation rows: `318`.
+  - Candidate hunt-code rows: `318`.
+  - Unique candidate hunt codes: `147`.
+  - Candidate boundary-id rows: `318`.
+  - Candidate codes missing HUNTS `DATABASE.csv`: `0`.
+  - Candidate codes missing `hunt_master_enriched.csv`: `0`.
+  - Reviewed/promoted hunt-code rows: `0`.
+  - Reviewed/promoted boundary-id rows: `0`.
+  - Rows requiring review before promotion: `328`.
+  - Validation blockers: `0`.
+- Validation:
+  - `python scripts\build-research-library-master.py` passed.
+  - `python -m py_compile scripts\build-research-library-master.py tests\utah\test_research_library_master.py` passed.
+  - `python -m pytest tests\utah\test_research_library_master.py -q` passed: `2`.
+  - `python -m pytest tests\utah\test_research_library_master.py tests\utah\test_current_historical_hunt_code_crosswalk_2026.py tests\utah\test_library_master_database_reconciliation.py tests\utah\test_library_master_hunt_master_enriched_comparison.py -q` passed: `9`.

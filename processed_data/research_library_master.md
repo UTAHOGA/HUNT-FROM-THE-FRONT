@@ -1,0 +1,35 @@
+# Research Library Master
+
+This is the governed research-library master generated from the existing library catalog.
+
+## Status
+
+- Status: `REVIEW_REQUIRED`
+- Rows: `328`
+- Reviewed hunt-code rows: `0`
+- Candidate hunt-code rows: `318`
+- Unique candidate hunt codes: `147`
+- Rows requiring review: `328`
+- Blockers: `0`
+
+## Law
+
+- Every research library row must carry hunt_code and boundary_id columns.
+- Blank reviewed hunt_code/boundary_id fields require explicit mapping status fields.
+- Candidate hunt codes and candidate boundary IDs are not truth fields.
+- Historical/current prefix changes must flow through the crosswalk before promotion.
+- Document-level rows must be extracted into per-hunt-code rows before they can feed prediction/runtime data.
+
+## Mapping Status Counts
+
+- `DOCUMENT_LEVEL_MAPPING_REQUIRED`: `10`
+- `HISTORICAL_PREFIX_REVIEW_REQUIRED`: `318`
+
+## Outputs
+
+- `master_csv`: `data_truth/research_library_truth/normalized/research_library_master.csv`
+- `master_json`: `data_truth/research_library_truth/normalized/research_library_master.json`
+- `summary_json`: `data_truth/research_library_truth/validation/research_library_master_summary.json`
+- `mapping_gaps_csv`: `data_truth/research_library_truth/validation/research_library_master_mapping_gaps.csv`
+- `processed_csv`: `processed_data/research_library_master.csv`
+- `processed_md`: `processed_data/research_library_master.md`
