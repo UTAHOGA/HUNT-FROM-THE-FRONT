@@ -3452,3 +3452,12 @@
   - The executable source registry update was completed in the sibling `HUNT-BUILDER` workspace where the research library master is built.
 - Validation:
   - Confirmed `AGENTS.MD` now contains the direct CSV source-evidence and 2025-to-2026 promotion guardrails.
+
+## Canonical DATABASE Numeric Cell Protection
+- Timestamp (UTC): 2026-05-25T08:15:00Z
+- Scope:
+  - Extended `AGENTS.MD` so populated numeric permit cells in canonical `DATABASE.csv` are explicitly treated as direct Utah DWR Hunt Planner truth.
+  - Added the rule that populated numeric permit cells in canonical `DATABASE.csv` must not be changed or overwritten by comparison files, inferred values, draw reports, RAC files, audit outputs, or rebuilt library/master documents.
+  - The executable permit deep-dive audit was completed in the sibling `HUNT-BUILDER` workspace where `hunt_master_canonical_2026_built.csv` and the direct CSV folder live.
+- Validation:
+  - Confirmed `AGENTS.MD` now contains the canonical numeric-cell protection rule.
