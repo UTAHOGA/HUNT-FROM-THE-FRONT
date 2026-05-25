@@ -2869,3 +2869,34 @@
   - `python -m py_compile scripts\audit-hunt-master-canonical-permit-consistency.py tests\utah\test_hunt_master_canonical_permit_deep_dive.py` passed.
   - `python -m pytest tests\utah\test_hunt_master_canonical_permit_deep_dive.py -q` passed: `3`.
   - `python -m pytest tests\utah\test_research_library_master.py -q` passed: `4`.
+
+## Database-Authoritative Permit Overlay Plan
+- Timestamp (UTC): 2026-05-25T08:35:00Z
+- Scope:
+  - Built a safe overlay action queue from the permit deep-dive audit.
+  - Used canonical HUNTS `DATABASE.csv` as the authoritative source anywhere populated numeric 2026 permit or allotment cells exist.
+  - Marked target/master disagreements as downstream overlay actions or review evidence; did not modify `DATABASE.csv`, source CSV files, website feeds, runtime files, materializer code, or prediction surfaces.
+  - Added database-only hunt codes to the downstream action queue so derived universes can be expanded from canonical `DATABASE.csv` rather than from incomplete target/master rows.
+- Outputs:
+  - `scripts/build-database-authoritative-permit-overlay-plan-2026.py`
+  - `tests/utah/test_database_authoritative_permit_overlay_plan_2026.py`
+  - `processed_data/database_authoritative_permit_overlay_plan_2026.csv`
+  - `processed_data/database_authoritative_permit_overlay_plan_2026_summary.json`
+  - `processed_data/database_authoritative_permit_overlay_plan_2026.md`
+  - `data_truth/comparison_outputs/validation/database_authoritative_permit_overlay_plan_2026_summary.json`
+- Key results:
+  - Overlay plan rows: `1412`.
+  - Unique hunt codes: `1412`.
+  - Database numeric protected rows: `1261`.
+  - Target-and-database rows: `1288`.
+  - Database-only rows to add to derived universe: `123`.
+  - Target-only blocker codes: `1` (`DB1276`).
+  - Rows already matching database: `688`.
+  - Rows where derived outputs should use canonical `DATABASE.csv` 2026 permit values over target/master disagreement: `455`.
+  - Rows with no numeric permit data: `140`.
+  - Target-only 2026 values needing review: `5`.
+- Validation:
+  - `python scripts\build-database-authoritative-permit-overlay-plan-2026.py` passed.
+  - `python -m py_compile scripts\build-database-authoritative-permit-overlay-plan-2026.py tests\utah\test_database_authoritative_permit_overlay_plan_2026.py` passed.
+  - `python -m pytest tests\utah\test_database_authoritative_permit_overlay_plan_2026.py -q` passed: `3`.
+  - `python -m pytest tests\utah\test_database_authoritative_permit_overlay_plan_2026.py tests\utah\test_hunt_master_canonical_permit_deep_dive.py -q` passed: `6`.
