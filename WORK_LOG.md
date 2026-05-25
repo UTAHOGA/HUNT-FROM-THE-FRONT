@@ -2575,3 +2575,42 @@
 - Scope:
   - Returned both source and published Pages `CNAME` files to `hunt-builder.uoga.org` because Wix DNS is being corrected to that hostname.
   - No website source, model output, or runtime data was changed.
+
+## Cumulative Harvest And Draw Truth Databases Finalized
+- Timestamp (UTC): 2026-05-25T03:49:12Z
+- Scope:
+  - Rebuilt and validated the cumulative harvest truth database from the existing all-year harvest builder.
+  - Finalized the cumulative draw-results truth validation layer around `data_truth/draw_results_truth/normalized/draw_results_long.csv` without rewriting the runtime long table.
+  - Added draw all-years summary and source-audit artifacts to match the harvest truth database validation pattern.
+  - Confirmed the 2026 current-to-historical crosswalk is present in draw truth coverage: `169` of `169` crosswalk current codes appear in draw rows.
+  - Did not modify `hard-copy`, Pages output branches, public website feeds, materializers, or probability math.
+- Harvest results:
+  - Normalized long rows: `68,657`.
+  - Best by reported year and hunt code rows: `5,151`.
+  - Reported hunt years: `2021`, `2022`, `2023`, `2024`, `2025`.
+  - Model target years: `2022`, `2023`, `2024`, `2025`, `2026`.
+  - Final harvest audit blocker count: `0`.
+- Draw results:
+  - Normalized long rows: `176,753`.
+  - Draw years: `2021`, `2022`, `2023`, `2024`, `2025`, `2026`.
+  - Model target years: `2022`, `2023`, `2024`, `2025`, `2026`, `2027`.
+  - Duplicate `(hunt_code, year, draw_pool, residency, points)` keys: `0`.
+  - Blank hunt-code rows: `0`.
+  - Invalid year rows: `0`.
+  - Draw validation blocker count: `0`.
+- Outputs:
+  - `scripts/finalize-draw-results-cumulative-database.py`
+  - `tests/utah/test_draw_results_cumulative_database.py`
+  - `data_truth/draw_results_truth/normalized/draw_results_all_years_summary.json`
+  - `data_truth/draw_results_truth/normalized/draw_results_all_years_summary.md`
+  - `data_truth/draw_results_truth/normalized/draw_results_all_years_source_audit.csv`
+  - `processed_data/draw_results_all_years_summary.json`
+  - `processed_data/draw_results_all_years_summary.md`
+  - `processed_data/draw_results_all_years_source_audit.csv`
+- Validation:
+  - `python scripts\finalize-draw-results-cumulative-database.py` passed.
+  - `python scripts\build-all-years-harvest-database.py` passed.
+  - `python scripts\audit-harvest-results-database-final.py` passed with `audit_blocker_count = 0`.
+  - `python -m pytest tests\utah\test_all_years_harvest_database.py tests\utah\test_draw_results_cumulative_database.py -q` passed: `13`.
+  - `python -m pytest tests\utah_quality\test_harvest_database_final_audit.py tests\utah_quality\test_harvest_feature_model.py tests\utah\test_all_years_harvest_database.py tests\utah\test_draw_results_cumulative_database.py -q` passed: `27`.
+  - `python -m py_compile scripts\finalize-draw-results-cumulative-database.py scripts\build-all-years-harvest-database.py tests\utah\test_draw_results_cumulative_database.py tests\utah\test_all_years_harvest_database.py` passed.
