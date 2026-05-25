@@ -1,5 +1,26 @@
 # WORK LOG
 
+## Conservation Permit Hunt Code Lock 2026
+- Timestamp (UTC): 2026-05-25T01:40:00Z
+- Scope:
+  - Locked the supplied conservation permit hunt codes into the current 2026 permit/reference surfaces so they do not drift or disappear from downstream coverage.
+  - Added a traceable conservation permit code lock table with `Non Res`, `Res`, and `Total` headers.
+  - Cleared the stale `EA1180` public/total quota value of `17` and preserved all five antlerless elk conservation codes as source-confirmed `NO_QUOTA_PUBLISHED` reference rows.
+  - Pushed `EB3128` and `EB3209` through the reference surfaces as conservation `TOTAL_ONLY` bull elk records with total `1`, without inventing resident/nonresident splits or draw odds.
+  - Regenerated the current hunt-code family gap scan after the lock; `EA` and `EB` remain resolved with zero missing predictive-v2 codes.
+- Files:
+  - `scripts/lock-conservation-permit-hunt-codes-2026.py`
+  - `data_truth/permit_overlay_truth/normalized/conservation_permit_hunt_code_lock_2026.csv`
+  - `processed_data/conservation_permit_hunt_code_lock_2026_summary.json`
+  - `processed_data/conservation_permit_hunt_code_lock_2026.md`
+  - `processed_data/conservation_permit_hunt_code_lock_2026_runtime_updates.csv`
+  - `tests/utah/test_conservation_permit_code_lock_2026.py`
+- Validation:
+  - `python scripts\lock-conservation-permit-hunt-codes-2026.py`
+  - `python scripts\scan-2026-hunt-code-family-gaps.py`
+  - `python -m compileall scripts\lock-conservation-permit-hunt-codes-2026.py tests\utah\test_conservation_permit_code_lock_2026.py`
+  - `python -m pytest tests\utah\test_conservation_permit_code_lock_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py tests\utah\test_elk_bull_reference_resolution_2026.py -q` passed: `12`
+
 ## Shared Double-Pillow Header Navigation
 - Timestamp (UTC): 2026-05-23T17:35:00Z
 - Scope:
