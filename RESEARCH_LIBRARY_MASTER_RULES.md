@@ -8,6 +8,8 @@ This repository now treats research-library mapping as a truth-source contract.
 - Every research-library row must include `hunt_code_mapping_status` and `boundary_id_mapping_status`.
 - Blank reviewed `hunt_code` or `boundary_id` fields are allowed only when the status explains why they are blank.
 - Candidate fields, including `candidate_hunt_code` and `candidate_boundary_id`, are evidence only. They are not truth fields.
+- `DATABASE.csv` is the canonical current hunt-code and boundary-id source unless a later reviewed canonical database explicitly replaces it.
+- Feeder/reference files such as `hunt_master_enriched.csv`, `point_ladder_view.csv`, canonical JSON, and boundary GeoJSON must be registered as source rows with hashes before they can support alignment work.
 - Fuzzy matches, old-prefix matches, and document-level matches must not be promoted into `hunt_code` or `boundary_id` without reviewed crosswalk evidence.
 - Historical/current prefix changes must flow through `data_truth/crosswalk_truth/normalized/current_to_historical_hunt_code_crosswalk_2026.csv`.
 - Document-level rows must be extracted into per-hunt-code rows before they can feed prediction, draw, harvest, runtime, or website-facing outputs.

@@ -12,6 +12,7 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
+import re
 from collections import Counter
 from pathlib import Path
 
@@ -37,11 +38,240 @@ GAPS_CSV = VALIDATION_DIR / "research_library_master_mapping_gaps.csv"
 PROCESSED_CSV = PROCESSED_DIR / "research_library_master.csv"
 PROCESSED_MD = PROCESSED_DIR / "research_library_master.md"
 
+FEEDER_SOURCES = [
+    {
+        "record_id": "feeder_database_2026_canonical",
+        "title": "2026 DATABASE.csv Canonical Hunt-Code And Boundary-ID Source",
+        "path": DATABASE,
+        "source_role": "CANONICAL_DATABASE",
+        "boundary_alignment_role": "PRIMARY_BOUNDARY_ID_SOURCE",
+        "notes": "Primary current 2026 hunt_code + boundary_id authority supplied from HUNTS.",
+    },
+    {
+        "record_id": "feeder_database_2026_local_mirror",
+        "title": "2026 DATABASE.csv Local Mirror",
+        "path": LOCAL_DATABASE_FALLBACK,
+        "source_role": "DATABASE_MIRROR",
+        "boundary_alignment_role": "BOUNDARY_ID_CROSSCHECK_SOURCE",
+        "notes": "Local mirror used only as fallback/crosscheck, not as primary authority when HUNTS DATABASE exists.",
+    },
+    {
+        "record_id": "feeder_hunt_master_enriched",
+        "title": "hunt_master_enriched.csv",
+        "path": ROOT / "processed_data/hunt_master_enriched.csv",
+        "source_role": "ENRICHED_RUNTIME_REFERENCE",
+        "boundary_alignment_role": "BOUNDARY_ID_CROSSCHECK_SOURCE",
+        "notes": "Current enriched hunt reference with repeated rows by residency, points, and draw pool.",
+    },
+    {
+        "record_id": "feeder_point_ladder_view",
+        "title": "point_ladder_view.csv",
+        "path": ROOT / "point_ladder_view.csv",
+        "source_role": "POINT_LADDER_REFERENCE",
+        "boundary_alignment_role": "BOUNDARY_ID_CROSSCHECK_SOURCE",
+        "notes": "Point ladder reference keyed by hunt_code/residency/points.",
+    },
+    {
+        "record_id": "feeder_hunt_master_canonical_json",
+        "title": "hunt-master-canonical-2026.json",
+        "path": ROOT / "hunt-master-canonical-2026.json",
+        "source_role": "CANONICAL_JSON_REFERENCE",
+        "boundary_alignment_role": "BOUNDARY_ID_CROSSCHECK_SOURCE",
+        "notes": "Major canonical JSON surface.",
+    },
+    {
+        "record_id": "feeder_hunt_master_canonical_coverage_json",
+        "title": "hunt-master-canonical-2026.coverage.json",
+        "path": ROOT / "hunt-master-canonical-2026.coverage.json",
+        "source_role": "CANONICAL_JSON_REFERENCE",
+        "boundary_alignment_role": "BOUNDARY_COVERAGE_REFERENCE",
+        "notes": "Canonical coverage report used to audit current surface coverage.",
+    },
+    {
+        "record_id": "feeder_hunt_master_canonical_built_csv",
+        "title": "hunt_master_canonical_2026_built.csv",
+        "path": ROOT / "hunt_master_canonical_2026_built.csv",
+        "source_role": "CANONICAL_BUILD_REFERENCE",
+        "boundary_alignment_role": "BOUNDARY_ID_CROSSCHECK_SOURCE",
+        "notes": "Built canonical CSV snapshot.",
+    },
+    {
+        "record_id": "feeder_hunt_master_canonical_built_sqlite",
+        "title": "hunt_master_canonical_2026_built.sqlite",
+        "path": ROOT / "hunt_master_canonical_2026_built.sqlite",
+        "source_role": "CANONICAL_BUILD_REFERENCE",
+        "boundary_alignment_role": "BOUNDARY_ID_CROSSCHECK_SOURCE",
+        "notes": "Built canonical SQLite snapshot.",
+    },
+    {
+        "record_id": "feeder_hunt_planner_2026_json",
+        "title": "canonical/hunt-planner-2026.json",
+        "path": ROOT / "canonical/hunt-planner-2026.json",
+        "source_role": "CANONICAL_JSON_REFERENCE",
+        "boundary_alignment_role": "BOUNDARY_ID_CROSSCHECK_SOURCE",
+        "notes": "Canonical Hunt Planner JSON.",
+    },
+    {
+        "record_id": "feeder_hunt_research_2026_processed_json",
+        "title": "processed_data/hunt_research_2026.json",
+        "path": ROOT / "processed_data/hunt_research_2026.json",
+        "source_role": "RESEARCH_RUNTIME_REFERENCE",
+        "boundary_alignment_role": "BOUNDARY_ID_CROSSCHECK_SOURCE",
+        "notes": "Large processed research JSON surface.",
+    },
+    {
+        "record_id": "feeder_hunt_research_2026_index_json",
+        "title": "processed_data/hunt_research_2026_split/hunt_research_2026.index.json",
+        "path": ROOT / "processed_data/hunt_research_2026_split/hunt_research_2026.index.json",
+        "source_role": "RESEARCH_RUNTIME_REFERENCE",
+        "boundary_alignment_role": "BOUNDARY_ID_CROSSCHECK_SOURCE",
+        "notes": "Split research index JSON.",
+    },
+    {
+        "record_id": "feeder_canonical_hunt_research_json",
+        "title": "canonical/hunt-research-2026.json",
+        "path": ROOT / "canonical/hunt-research-2026.json",
+        "source_role": "CANONICAL_JSON_REFERENCE",
+        "boundary_alignment_role": "BOUNDARY_ID_CROSSCHECK_SOURCE",
+        "notes": "Canonical hunt-research contract.",
+    },
+    {
+        "record_id": "feeder_canonical_hard_copies_json",
+        "title": "canonical/hard-copies-2026.json",
+        "path": ROOT / "canonical/hard-copies-2026.json",
+        "source_role": "DOCUMENT_LIBRARY_REFERENCE",
+        "boundary_alignment_role": "NO_BOUNDARY_ALIGNMENT",
+        "notes": "Canonical hard-copy document contract.",
+    },
+    {
+        "record_id": "feeder_canonical_shared_json",
+        "title": "canonical/shared-2026.json",
+        "path": ROOT / "canonical/shared-2026.json",
+        "source_role": "CANONICAL_JSON_REFERENCE",
+        "boundary_alignment_role": "BOUNDARY_ID_CROSSCHECK_SOURCE",
+        "notes": "Shared canonical constants/reference contract.",
+    },
+    {
+        "record_id": "feeder_canonical_outfitter_verification_json",
+        "title": "canonical/outfitter-verification-2026.json",
+        "path": ROOT / "canonical/outfitter-verification-2026.json",
+        "source_role": "CANONICAL_JSON_REFERENCE",
+        "boundary_alignment_role": "BOUNDARY_ID_CROSSCHECK_SOURCE",
+        "notes": "Canonical outfitter verification surface.",
+    },
+    {
+        "record_id": "feeder_canonical_field_usage_map_json",
+        "title": "canonical/canonical-field-usage-map.json",
+        "path": ROOT / "canonical/canonical-field-usage-map.json",
+        "source_role": "CANONICAL_AUDIT_REFERENCE",
+        "boundary_alignment_role": "BOUNDARY_FIELD_USAGE_REFERENCE",
+        "notes": "Field usage map for canonical surfaces.",
+    },
+    {
+        "record_id": "feeder_canonical_rebuild_coverage_json",
+        "title": "canonical/canonical-rebuild-coverage.json",
+        "path": ROOT / "canonical/canonical-rebuild-coverage.json",
+        "source_role": "CANONICAL_AUDIT_REFERENCE",
+        "boundary_alignment_role": "BOUNDARY_COVERAGE_REFERENCE",
+        "notes": "Canonical rebuild coverage report.",
+    },
+    {
+        "record_id": "feeder_boundary_alignment_reconcile_json",
+        "title": "canonical/boundary-id-alignment-reconcile-2026-20260508_143652.json",
+        "path": ROOT / "canonical/boundary-id-alignment-reconcile-2026-20260508_143652.json",
+        "source_role": "BOUNDARY_ALIGNMENT_REFERENCE",
+        "boundary_alignment_role": "BOUNDARY_ID_ALIGNMENT_REPORT",
+        "notes": "Boundary-ID alignment reconciliation report.",
+    },
+    {
+        "record_id": "feeder_boundary_alignment_reconcile_followup_json",
+        "title": "canonical/boundary-id-alignment-reconcile-2026-20260508_143854.json",
+        "path": ROOT / "canonical/boundary-id-alignment-reconcile-2026-20260508_143854.json",
+        "source_role": "BOUNDARY_ALIGNMENT_REFERENCE",
+        "boundary_alignment_role": "BOUNDARY_ID_ALIGNMENT_REPORT",
+        "notes": "Follow-up boundary-ID alignment reconciliation report.",
+    },
+    {
+        "record_id": "feeder_composite_synthetic_boundary_assign_json",
+        "title": "canonical/composite-synthetic-boundary-id-assign-2026-20260508_144635.json",
+        "path": ROOT / "canonical/composite-synthetic-boundary-id-assign-2026-20260508_144635.json",
+        "source_role": "BOUNDARY_ALIGNMENT_REFERENCE",
+        "boundary_alignment_role": "BOUNDARY_ID_ASSIGNMENT_REPORT",
+        "notes": "Composite synthetic boundary-ID assignment evidence.",
+    },
+    {
+        "record_id": "feeder_statewide_composite_boundaries_geojson",
+        "title": "processed_data/statewide_composite_boundaries_2026.geojson",
+        "path": ROOT / "processed_data/statewide_composite_boundaries_2026.geojson",
+        "source_role": "BOUNDARY_GEOJSON_REFERENCE",
+        "boundary_alignment_role": "PRIMARY_GEOMETRY_SOURCE",
+        "notes": "Major statewide composite boundary geometry source.",
+    },
+    {
+        "record_id": "feeder_utah_boundaries_canonical_geojson",
+        "title": "data/utah/foundation_bundle_2026/utah_boundaries_canonical_2026.geojson",
+        "path": ROOT / "data/utah/foundation_bundle_2026/utah_boundaries_canonical_2026.geojson",
+        "source_role": "BOUNDARY_GEOJSON_REFERENCE",
+        "boundary_alignment_role": "PRIMARY_GEOMETRY_SOURCE",
+        "notes": "Foundation-bundle canonical boundary geometry source.",
+    },
+    {
+        "record_id": "feeder_composite_hunt_unit_mapping_geojson",
+        "title": "processed_data/composite_hunt_unit_mapping_2026.geojson",
+        "path": ROOT / "processed_data/composite_hunt_unit_mapping_2026.geojson",
+        "source_role": "BOUNDARY_GEOJSON_REFERENCE",
+        "boundary_alignment_role": "HUNT_UNIT_GEOMETRY_MAPPING_SOURCE",
+        "notes": "Composite hunt-unit mapping geometry.",
+    },
+    {
+        "record_id": "feeder_hunt_boundaries_arcgis_json",
+        "title": "data/hunt_boundaries_arcgis.json",
+        "path": ROOT / "data/hunt_boundaries_arcgis.json",
+        "source_role": "BOUNDARY_JSON_REFERENCE",
+        "boundary_alignment_role": "ARCGIS_BOUNDARY_SOURCE",
+        "notes": "ArcGIS hunt-boundary source JSON.",
+    },
+    {
+        "record_id": "feeder_hunt_boundaries_geojson",
+        "title": "data/hunt_boundaries.geojson",
+        "path": ROOT / "data/hunt_boundaries.geojson",
+        "source_role": "BOUNDARY_GEOJSON_REFERENCE",
+        "boundary_alignment_role": "PUBLISHED_GEOMETRY_SOURCE",
+        "notes": "Published hunt boundary GeoJSON.",
+    },
+    {
+        "record_id": "feeder_hunt_boundaries_lite_geojson",
+        "title": "data/hunt-boundaries-lite.geojson",
+        "path": ROOT / "data/hunt-boundaries-lite.geojson",
+        "source_role": "BOUNDARY_GEOJSON_REFERENCE",
+        "boundary_alignment_role": "PUBLISHED_GEOMETRY_SOURCE",
+        "notes": "Published lite hunt boundary GeoJSON.",
+    },
+    {
+        "record_id": "feeder_cwmu_boundaries_geojson",
+        "title": "data/cwmu-boundaries.geojson",
+        "path": ROOT / "data/cwmu-boundaries.geojson",
+        "source_role": "BOUNDARY_GEOJSON_REFERENCE",
+        "boundary_alignment_role": "CWMU_GEOMETRY_SOURCE",
+        "notes": "Published CWMU boundary GeoJSON.",
+    },
+    {
+        "record_id": "feeder_unavailable_boundary_rows_json",
+        "title": "processed_data/unavailable_boundary_rows_2026.json",
+        "path": ROOT / "processed_data/unavailable_boundary_rows_2026.json",
+        "source_role": "BOUNDARY_AUDIT_REFERENCE",
+        "boundary_alignment_role": "BOUNDARY_GAP_REFERENCE",
+        "notes": "Boundary rows that were unavailable during boundary processing.",
+    },
+]
+
 OUTPUT_FIELDS = [
     "research_record_id",
     "source_record_id",
     "source_document_id",
     "record_type",
+    "source_role",
+    "boundary_alignment_role",
     "mapping_scope",
     "hunt_code",
     "boundary_id",
@@ -78,6 +308,10 @@ OUTPUT_FIELDS = [
     "source_repo_path",
     "source_file_status",
     "source_sha256",
+    "file_size_bytes",
+    "source_row_count",
+    "source_unique_hunt_codes",
+    "source_unique_boundary_ids",
     "data_status",
     "source_truth_status",
     "mapping_review_required",
@@ -149,6 +383,49 @@ def sha256_for_path(path: Path | None) -> str:
     if path is None:
         return ""
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def source_file_profile(path: Path | None) -> dict[str, str]:
+    if path is None or not path.exists() or not path.is_file():
+        return {
+            "file_size_bytes": "",
+            "source_row_count": "",
+            "source_unique_hunt_codes": "",
+            "source_unique_boundary_ids": "",
+        }
+
+    profile = {
+        "file_size_bytes": str(path.stat().st_size),
+        "source_row_count": "",
+        "source_unique_hunt_codes": "",
+        "source_unique_boundary_ids": "",
+    }
+
+    if path.suffix.lower() == ".csv":
+        try:
+            rows = read_csv(path)
+        except Exception:
+            return profile
+        profile["source_row_count"] = str(len(rows))
+        profile["source_unique_hunt_codes"] = str(
+            len({row.get("hunt_code", "") for row in rows if row.get("hunt_code", "")})
+        )
+        profile["source_unique_boundary_ids"] = str(
+            len({row.get("boundary_id", "") for row in rows if row.get("boundary_id", "")})
+        )
+        return profile
+
+    # Lightweight JSON scan only. Very large boundary files are intentionally not parsed here.
+    if path.suffix.lower() == ".json" and path.stat().st_size <= 10_000_000:
+        try:
+            text = path.read_text(encoding="utf-8", errors="ignore")
+        except OSError:
+            return profile
+        profile["source_unique_hunt_codes"] = str(len(set(re.findall(r"\b[A-Z]{1,3}\d{4}\b", text))))
+        boundary_ids = set(re.findall(r'"boundary_id"\s*:\s*"?([A-Za-z0-9_-]+)"?', text))
+        profile["source_unique_boundary_ids"] = str(len(boundary_ids))
+
+    return profile
 
 
 def source_document_id(row: dict[str, str]) -> str:
@@ -232,6 +509,81 @@ def mapping_for_row(
     }
 
 
+def build_feeder_file_rows(start_index: int) -> list[dict[str, str]]:
+    rows: list[dict[str, str]] = []
+    seen_paths: set[str] = set()
+    next_index = start_index
+
+    for feeder in FEEDER_SOURCES:
+        path = Path(feeder["path"])
+        normalized_path = str(path.resolve()).lower() if path.exists() else str(path).lower()
+        if normalized_path in seen_paths:
+            continue
+        seen_paths.add(normalized_path)
+
+        source_exists = path.exists() and path.is_file()
+        profile = source_file_profile(path if source_exists else None)
+        rows.append(
+            {
+                "research_record_id": f"research_library_{next_index:04d}",
+                "source_record_id": feeder["record_id"],
+                "source_document_id": feeder["record_id"],
+                "record_type": "feeder_file",
+                "source_role": feeder["source_role"],
+                "boundary_alignment_role": feeder["boundary_alignment_role"],
+                "mapping_scope": "FILE_LEVEL_REFERENCE",
+                "hunt_code": "",
+                "boundary_id": "",
+                "hunt_code_mapping_status": "FILE_LEVEL_REFERENCE_CONTAINS_OR_SUPPORTS_HUNT_CODES",
+                "boundary_id_mapping_status": "FILE_LEVEL_REFERENCE_CONTAINS_OR_SUPPORTS_BOUNDARY_IDS",
+                "candidate_hunt_code": "",
+                "candidate_boundary_id": "",
+                "candidate_historical_hunt_code": "",
+                "candidate_historical_relationship": "",
+                "candidate_match_status": "SOURCE_FILE_REGISTERED",
+                "candidate_hunt_name": "",
+                "candidate_species": "",
+                "candidate_sex_type": "",
+                "candidate_weapon": "",
+                "candidate_hunt_type": "",
+                "candidate_season": "",
+                "candidate_permits_2026_res": "",
+                "candidate_permits_2026_nr": "",
+                "candidate_permits_2026_total": "",
+                "candidate_permits_2026_source": "",
+                "source_title": feeder["title"],
+                "source_species": "Mixed",
+                "source_category": "Feeder Reference",
+                "source_organization": "",
+                "source_group": "",
+                "source_area": "",
+                "source_condition": "",
+                "year_start": "2026",
+                "year_end": "2026",
+                "public_visible": "NO",
+                "prediction_engine_source": "NO",
+                "source_pdf": "",
+                "source_page": "",
+                "source_repo_path": relative(path),
+                "source_file_status": "FOUND" if source_exists else "MISSING",
+                "source_sha256": sha256_for_path(path if source_exists else None),
+                "file_size_bytes": profile["file_size_bytes"],
+                "source_row_count": profile["source_row_count"],
+                "source_unique_hunt_codes": profile["source_unique_hunt_codes"],
+                "source_unique_boundary_ids": profile["source_unique_boundary_ids"],
+                "data_status": "REFERENCE_FILE_REGISTERED",
+                "source_truth_status": feeder["source_role"],
+                "mapping_review_required": "NO",
+                "mapping_method": "registered_feeder_reference_file",
+                "mapping_notes": feeder["notes"],
+                "original_notes": "",
+            }
+        )
+        next_index += 1
+
+    return rows
+
+
 def build_rows() -> tuple[list[dict[str, str]], dict]:
     source_rows = read_csv(SOURCE_LIBRARY)
     reconciled_rows = {row["record_id"]: row for row in read_csv(RECONCILED_LIBRARY)}
@@ -253,6 +605,8 @@ def build_rows() -> tuple[list[dict[str, str]], dict]:
                 "source_record_id": row.get("record_id", ""),
                 "source_document_id": source_document_id(row),
                 "record_type": row.get("record_type", ""),
+                "source_role": "LIBRARY_CATALOG_SOURCE",
+                "boundary_alignment_role": "ROW_LEVEL_CANDIDATE_BOUNDARY_ALIGNMENT",
                 "mapping_scope": mapping.get("mapping_scope", ""),
                 "hunt_code": mapping.get("hunt_code", ""),
                 "boundary_id": mapping.get("boundary_id", ""),
@@ -297,6 +651,7 @@ def build_rows() -> tuple[list[dict[str, str]], dict]:
                 "source_repo_path": row.get("source_repo_path") or row.get("file_path", ""),
                 "source_file_status": "FOUND" if path else row.get("document_file_status", "NOT_RESOLVED"),
                 "source_sha256": sha256_for_path(path),
+                **source_file_profile(path),
                 "data_status": row.get("data_status", ""),
                 "source_truth_status": "CATALOG_ONLY_NOT_TRUTH",
                 "mapping_review_required": mapping.get("mapping_review_required", "YES"),
@@ -306,7 +661,10 @@ def build_rows() -> tuple[list[dict[str, str]], dict]:
             }
         )
 
+    output_rows.extend(build_feeder_file_rows(len(output_rows) + 1))
+
     candidate_codes = {row["candidate_hunt_code"] for row in output_rows if row.get("candidate_hunt_code")}
+    feeder_rows = [row for row in output_rows if row.get("record_type") == "feeder_file"]
     summary = {
         "artifact": "research_library_master",
         "status": "REVIEW_REQUIRED",
@@ -314,8 +672,14 @@ def build_rows() -> tuple[list[dict[str, str]], dict]:
         "source_reconciled_library": relative(RECONCILED_LIBRARY),
         "database_source": relative(DATABASE if DATABASE.exists() else LOCAL_DATABASE_FALLBACK),
         "record_count": len(output_rows),
-        "source_record_count": len(source_rows),
+        "source_record_count": len(output_rows),
+        "source_catalog_record_count": len(source_rows),
+        "feeder_file_record_count": len(feeder_rows),
         "record_type_counts": dict(sorted(Counter(row["record_type"] for row in output_rows).items())),
+        "source_role_counts": dict(sorted(Counter(row["source_role"] for row in output_rows).items())),
+        "boundary_alignment_role_counts": dict(
+            sorted(Counter(row["boundary_alignment_role"] for row in output_rows).items())
+        ),
         "mapping_scope_counts": dict(sorted(Counter(row["mapping_scope"] for row in output_rows).items())),
         "hunt_code_mapping_status_counts": dict(
             sorted(Counter(row["hunt_code_mapping_status"] for row in output_rows).items())
@@ -332,6 +696,15 @@ def build_rows() -> tuple[list[dict[str, str]], dict]:
         "candidate_historical_hunt_code_rows": sum(
             1 for row in output_rows if row.get("candidate_historical_hunt_code")
         ),
+        "feeder_files_missing": [
+            row["source_repo_path"] for row in feeder_rows if row.get("source_file_status") != "FOUND"
+        ],
+        "canonical_database_feeder_rows": sum(1 for row in feeder_rows if row.get("source_role") == "CANONICAL_DATABASE"),
+        "boundary_alignment_feeder_rows": sum(
+            1
+            for row in feeder_rows
+            if row.get("boundary_alignment_role") not in {"", "NO_BOUNDARY_ALIGNMENT"}
+        ),
         "candidate_codes_missing_database": sorted(code for code in candidate_codes if code not in database),
         "candidate_codes_missing_hunt_master": sorted(code for code in candidate_codes if code not in hunt_master_codes),
         "missing_required_mapping_fields": [
@@ -346,6 +719,8 @@ def build_rows() -> tuple[list[dict[str, str]], dict]:
             "Every research library row must carry hunt_code and boundary_id columns.",
             "Blank reviewed hunt_code/boundary_id fields require explicit mapping status fields.",
             "Candidate hunt codes and candidate boundary IDs are not truth fields.",
+            "DATABASE.csv is the canonical current hunt-code and boundary-id source.",
+            "Feeder files are registered as source evidence with hashes before their values can be used.",
             "Historical/current prefix changes must flow through the crosswalk before promotion.",
             "Document-level rows must be extracted into per-hunt-code rows before they can feed prediction/runtime data.",
         ],
@@ -360,7 +735,7 @@ def build_rows() -> tuple[list[dict[str, str]], dict]:
     }
 
     blockers = []
-    if summary["record_count"] != summary["source_record_count"]:
+    if summary["source_catalog_record_count"] != len(source_rows):
         blockers.append("SOURCE_ROW_COUNT_MISMATCH")
     if summary["missing_required_mapping_fields"]:
         blockers.append("MISSING_REQUIRED_MAPPING_FIELDS")
@@ -370,6 +745,10 @@ def build_rows() -> tuple[list[dict[str, str]], dict]:
         blockers.append("CANDIDATE_CODES_MISSING_DATABASE")
     if summary["candidate_codes_missing_hunt_master"]:
         blockers.append("CANDIDATE_CODES_MISSING_HUNT_MASTER")
+    if summary["feeder_files_missing"]:
+        blockers.append("FEEDER_FILES_MISSING")
+    if summary["canonical_database_feeder_rows"] != 1:
+        blockers.append("CANONICAL_DATABASE_FEEDER_NOT_REGISTERED")
     summary["blockers"] = blockers
     summary["blocker_count"] = len(blockers)
     if blockers:
@@ -388,9 +767,12 @@ def write_markdown(summary: dict) -> None:
         "",
         f"- Status: `{summary['status']}`",
         f"- Rows: `{summary['record_count']}`",
+        f"- Source catalog rows: `{summary['source_catalog_record_count']}`",
+        f"- Feeder file rows: `{summary['feeder_file_record_count']}`",
         f"- Reviewed hunt-code rows: `{summary['reviewed_hunt_code_rows']}`",
         f"- Candidate hunt-code rows: `{summary['candidate_hunt_code_rows']}`",
         f"- Unique candidate hunt codes: `{summary['candidate_hunt_code_unique_count']}`",
+        f"- Boundary-alignment feeder rows: `{summary['boundary_alignment_feeder_rows']}`",
         f"- Rows requiring review: `{summary['review_required_rows']}`",
         f"- Blockers: `{summary['blocker_count']}`",
         "",

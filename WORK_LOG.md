@@ -2746,3 +2746,39 @@
   - `python -m py_compile scripts\build-research-library-master.py tests\utah\test_research_library_master.py` passed.
   - `python -m pytest tests\utah\test_research_library_master.py -q` passed: `2`.
   - `python -m pytest tests\utah\test_research_library_master.py tests\utah\test_current_historical_hunt_code_crosswalk_2026.py tests\utah\test_library_master_database_reconciliation.py tests\utah\test_library_master_hunt_master_enriched_comparison.py -q` passed: `9`.
+
+## Research Library Feeder And Boundary Source Registry
+- Timestamp (UTC): 2026-05-25T06:35:00Z
+- Scope:
+  - Expanded the governed research-library master to register canonical feeder/reference files as first-class `feeder_file` rows.
+  - Registered the HUNTS 2026 `DATABASE.csv` as the canonical current hunt-code and boundary-id source.
+  - Registered the local `DATABASE.csv` mirror, `hunt_master_enriched.csv`, `point_ladder_view.csv`, canonical build files, canonical JSON surfaces, research JSON surfaces, boundary alignment reports, and major boundary JSON/GeoJSON files.
+  - Added file hashes, file sizes, row counts, unique hunt-code counts, and unique boundary-id counts where safe and applicable.
+  - Updated the mapping law to require feeder/reference files to be registered before they support boundary alignment work.
+  - No website feeds, `pages-dist`, `public_client_engine.csv`, materializer code, prediction math, original `library-master.csv`, or source database files were changed.
+- Outputs refreshed:
+  - `scripts/build-research-library-master.py`
+  - `tests/utah/test_research_library_master.py`
+  - `RESEARCH_LIBRARY_MASTER_RULES.md`
+  - `data_truth/research_library_truth/normalized/research_library_master.csv`
+  - `data_truth/research_library_truth/normalized/research_library_master.json`
+  - `data_truth/research_library_truth/validation/research_library_master_summary.json`
+  - `data_truth/research_library_truth/validation/research_library_master_mapping_gaps.csv`
+  - `processed_data/research_library_master.csv`
+  - `processed_data/research_library_master.md`
+- Key results:
+  - Research-library rows built: `356`.
+  - Source catalog rows: `328`.
+  - Feeder file rows: `28`.
+  - Boundary-alignment feeder rows: `27`.
+  - Canonical database feeder rows: `1`.
+  - Missing feeder files: `0`.
+  - Candidate hunt-code rows remain: `318`.
+  - Unique candidate hunt codes remain: `147`.
+  - Rows requiring mapping review remain: `328`.
+  - Validation blockers: `0`.
+- Validation:
+  - `python scripts\build-research-library-master.py` passed.
+  - `python -m py_compile scripts\build-research-library-master.py tests\utah\test_research_library_master.py` passed.
+  - `python -m pytest tests\utah\test_research_library_master.py -q` passed: `3`.
+  - `python -m pytest tests\utah\test_research_library_master.py tests\utah\test_current_historical_hunt_code_crosswalk_2026.py tests\utah\test_library_master_database_reconciliation.py tests\utah\test_library_master_hunt_master_enriched_comparison.py -q` passed: `10`.
