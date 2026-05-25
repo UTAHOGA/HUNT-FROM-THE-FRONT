@@ -2677,3 +2677,33 @@
   - `python scripts\reconcile-library-master-to-database-2026.py` passed.
   - `python -m pytest tests\utah\test_library_master_database_reconciliation.py -q` passed: `2`.
   - `python -m py_compile scripts\reconcile-library-master-to-database-2026.py tests\utah\test_library_master_database_reconciliation.py` passed.
+
+## Library Master vs Hunt Master Enriched Comparison
+- Timestamp (UTC): 2026-05-25T05:12:00Z
+- Scope:
+  - Compared the reconciled library candidate against `processed_data/hunt_master_enriched.csv`.
+  - Used `database_hunt_code` from `library-master.reconciled.csv` as the comparison key.
+  - Accounted for `hunt_master_enriched.csv` being a runtime surface with repeated rows by residency, point bucket, and draw pool.
+  - Did not modify `hunt_master_enriched.csv`, website feeds, prediction math, `pages-dist`, or the original `library-master.csv`.
+- Results:
+  - Library rows compared: `328`.
+  - Library reconciled hunt codes: `147`.
+  - Hunt master rows: `54,357`.
+  - Hunt master unique hunt codes: `1,471`.
+  - Library codes found in hunt master: `147`.
+  - Library codes missing from hunt master: `0`.
+  - Document-only rows not hunt-coded: `10`.
+  - Fully aligned rows: `31`.
+  - Found but prior library/database review still required: `96`.
+  - Found with runtime field drift: `191`.
+  - Largest field drift bucket: `database_permits_2026_source -> permits_2026_source` on `191` rows, mostly source-label normalization differences.
+- Outputs:
+  - `scripts/compare-library-master-to-hunt-master-enriched.py`
+  - `tests/utah/test_library_master_hunt_master_enriched_comparison.py`
+  - `processed_data/library_master_vs_hunt_master_enriched.csv`
+  - `processed_data/library_master_vs_hunt_master_enriched.md`
+  - `processed_data/library_master_vs_hunt_master_enriched_summary.json`
+- Validation:
+  - `python scripts\compare-library-master-to-hunt-master-enriched.py` passed.
+  - `python -m pytest tests\utah\test_library_master_hunt_master_enriched_comparison.py -q` passed: `2`.
+  - `python -m py_compile scripts\compare-library-master-to-hunt-master-enriched.py tests\utah\test_library_master_hunt_master_enriched_comparison.py` passed.
