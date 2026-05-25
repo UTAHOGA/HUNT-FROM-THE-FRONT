@@ -3127,3 +3127,32 @@
   - `python scripts\audit-big-game-application-guidebook-2023.py` passed.
   - `python -m pytest tests\utah\test_big_game_application_guidebook_2023_source_audit.py -q` passed: `2`.
   - `python -m compileall scripts\audit-big-game-application-guidebook-2023.py tests\utah\test_big_game_application_guidebook_2023_source_audit.py` passed.
+
+## Elk Bull Private-Land Hunt Planner Spreadsheet Export
+- Timestamp (UTC): 2026-05-25T00:22:44Z
+- Scope:
+  - Created a repeatable spreadsheet export for current Utah DWR Hunt Planner elk bull private-land-only reference rows.
+  - Included `126` `EL` limited-entry private-land-only bull elk rows and `5` Diamond Mtn Landowner Association `LO` rows.
+  - Preserved explicit `Non Res`, `Res`, and `Total` columns as blank because the source confirms no resident/nonresident/total permit allotment is published for these private-land-only hunts.
+  - Preserved source authority as `Utah DWR Hunt Planner`.
+  - Did not promote these rows as public draw odds, harvest features, prediction rows, or website-facing outputs.
+- Outputs:
+  - `scripts/export-elk-bull-private-lands-spreadsheet.mjs`
+  - `tests/utah/test_elk_bull_private_lands_spreadsheet.py`
+  - `processed_data/elk_bull_private_lands_hunt_planner_reference.csv`
+  - `processed_data/elk_bull_private_lands_hunt_planner_reference.xlsx`
+  - `processed_data/elk_bull_private_lands_hunt_planner_reference_report.json`
+- Key results:
+  - Output rows: `131`.
+  - `EL` rows: `126`.
+  - `LO` rows: `5`.
+  - Duplicate hunt codes: `0`.
+  - Required quota columns present: `Non Res`, `Res`, `Total`.
+  - Blank quota columns confirmed: `true`.
+  - Permit status: `NO_QUOTA_PUBLISHED`.
+  - Data status: `SOURCE_CONFIRMED_NO_QUOTA_PUBLISHED`.
+- Validation:
+  - `node scripts\export-elk-bull-private-lands-spreadsheet.mjs` passed.
+  - `python -m pytest tests\utah\test_elk_bull_private_lands_spreadsheet.py -q` passed: `3`.
+  - `python -m compileall tests\utah\test_elk_bull_private_lands_spreadsheet.py` passed.
+  - `node --check scripts\export-elk-bull-private-lands-spreadsheet.mjs` passed.
