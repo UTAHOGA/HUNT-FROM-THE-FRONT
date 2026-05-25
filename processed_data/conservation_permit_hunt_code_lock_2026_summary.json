@@ -1,6 +1,6 @@
 {
   "classification": "CONSERVATION_PERMIT_HUNT_CODE_LOCK_2026",
-  "timestamp_utc": "2026-05-25T01:50:19.430736+00:00",
+  "timestamp_utc": "2026-05-25T02:48:13.897218+00:00",
   "data_cutoff_date": "2026-05-25",
   "lock_code_count": 7,
   "lock_codes": [
@@ -48,7 +48,7 @@
       "rows_changed": 0
     },
     "processed_data/draw_reality_engine_predictive_v2.csv": {
-      "row_count": 28332,
+      "row_count": 28346,
       "rows_touched": 7,
       "rows_changed": 0
     }

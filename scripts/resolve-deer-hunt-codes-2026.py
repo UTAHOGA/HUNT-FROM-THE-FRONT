@@ -196,9 +196,39 @@ def build_reference_row(fieldnames: list[str], database_row: dict[str, str], sou
     if prefix == "LO":
         draw_system_type = "PRIVATE_LAND_DEER_REFERENCE"
         draw_pool = "private_land_deer_reference"
+        hunt_class = "Private Land Deer Reference"
+        model_strategy = "PRIVATE_LAND_DEER_REFERENCE"
+        algorithm_status = "PRIVATE_LAND_DEER_REFERENCE"
+        status = "private_land_deer_reference_no_draw_odds"
+        rule_status = "private_land_deer_reference"
+        availability_status = "private_land_deer_reference"
+        applicant_forecast_method = "not_modeled_private_land_deer_reference"
+        display_odds_text = "Private-land deer reference only; odds not modeled"
+        quota_source_status = "NO_QUOTA_PUBLISHED"
+        quota_source_file = "2026_deer_buck_limited_entry_private_lands_only.csv"
+        permit_allotment_status = "NO_QUOTA_PUBLISHED"
+        permit_allotment_source = "Utah DWR Hunt Planner"
+        permit_allotment_source_file = quota_source_file
+        reason_codes = "PRIVATE_LAND_DEER_REFERENCE|NO_QUOTA_PUBLISHED|NO_DRAW_PROBABILITY_INVENTED"
+        data_quality_flags = "PROMOTED_PRIVATE_LAND_DEER_REFERENCE_CODE;NO_DRAW_PROBABILITY_MODELED;NO_QUOTA_PUBLISHED"
     else:
         draw_system_type = "DEER_REFERENCE"
         draw_pool = "deer_reference"
+        hunt_class = "Deer Reference"
+        model_strategy = "DEER_REFERENCE"
+        algorithm_status = "DEER_REFERENCE"
+        status = "deer_reference_no_draw_odds"
+        rule_status = "deer_reference"
+        availability_status = "deer_reference"
+        applicant_forecast_method = "not_modeled_deer_reference"
+        display_odds_text = "Deer reference only; odds not modeled"
+        quota_source_status = "official_database_reference"
+        quota_source_file = "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv"
+        permit_allotment_status = "official_database_reference"
+        permit_allotment_source = "DATABASE"
+        permit_allotment_source_file = quota_source_file
+        reason_codes = "DEER_CURRENT_DATABASE_REFERENCE|NO_PREDICTIVE_DRAW_MODEL_ROW|NO_DRAW_PROBABILITY_INVENTED"
+        data_quality_flags = "PROMOTED_DEER_REFERENCE_CODE;NO_DRAW_PROBABILITY_MODELED"
     reason = (
         "Promoted from current 2026 deer reference coverage"
         f" with source basis {source_basis}; no draw-odds probability was invented."
@@ -212,7 +242,7 @@ def build_reference_row(fieldnames: list[str], database_row: dict[str, str], sou
             "species": database_row.get("species", "Deer") or "Deer",
             "sex_type": database_row.get("sex_type", ""),
             "hunt_type": database_row.get("hunt_type", ""),
-            "hunt_class": "Deer Reference",
+            "hunt_class": hunt_class,
             "residency": choose_residency(database_row),
             "points": "0",
             "draw_pool": draw_pool,
@@ -221,40 +251,40 @@ def build_reference_row(fieldnames: list[str], database_row: dict[str, str], sou
             "latest_source_year": "2026",
             "earliest_source_year": "2023",
             "source_dataset": "2026_deer_hunt_code_reconciliation",
-            "model_strategy": "DEER_REFERENCE",
+            "model_strategy": model_strategy,
             "draw_system_type": draw_system_type,
             "season_dates": database_row.get("season", ""),
             "weapon": database_row.get("weapon", ""),
-            "algorithm_status": "DEER_REFERENCE",
+            "algorithm_status": algorithm_status,
             "target_scope": "TARGET",
             "modeled_by_engine": "False",
             "reason": reason,
             "model_version": REFERENCE_MODEL_VERSION,
             "rule_version": REFERENCE_RULE_VERSION,
             "public_permits_2026": total_permits,
-            "quota_source_status": "official_database_reference",
+            "quota_source_status": quota_source_status,
             "quota_source_year": "2026",
-            "quota_source_file": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+            "quota_source_file": quota_source_file,
             "quota_2026_total": total_permits,
             "permit_allotment_2026_res": database_row.get("permits_2026_res", ""),
             "permit_allotment_2026_nr": database_row.get("permits_2026_nr", ""),
             "permit_allotment_2026_total": total_permits,
-            "permit_allotment_2026_source": "DATABASE",
-            "permit_allotment_2026_source_file": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
-            "permit_allotment_2026_status": "official_database_reference",
+            "permit_allotment_2026_source": permit_allotment_source,
+            "permit_allotment_2026_source_file": permit_allotment_source_file,
+            "permit_allotment_2026_status": permit_allotment_status,
             "data_cutoff_date": DATA_CUTOFF_DATE,
-            "reason_codes": "DEER_CURRENT_DATABASE_REFERENCE|NO_PREDICTIVE_DRAW_MODEL_ROW|NO_DRAW_PROBABILITY_INVENTED",
-            "status": "deer_reference_no_draw_odds",
+            "reason_codes": reason_codes,
+            "status": status,
             "trend": "not_modeled",
             "permit_availability_type": draw_pool,
             "probability_model": "NONE",
-            "rule_status": "deer_reference",
-            "availability_status": "deer_reference",
-            "data_quality_flags": "PROMOTED_DEER_REFERENCE_CODE;NO_DRAW_PROBABILITY_MODELED",
+            "rule_status": rule_status,
+            "availability_status": availability_status,
+            "data_quality_flags": data_quality_flags,
             "prediction_year": "2026",
             "source_year": "2026",
-            "applicant_forecast_method": "not_modeled_deer_reference",
-            "display_odds_text": "Deer reference only; odds not modeled",
+            "applicant_forecast_method": applicant_forecast_method,
+            "display_odds_text": display_odds_text,
             "data_quality_grade": "A",
         }
     )

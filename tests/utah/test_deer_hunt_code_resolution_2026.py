@@ -75,10 +75,20 @@ def test_deer_reference_codes_promoted_without_modeling_odds() -> None:
         ]
 
     assert len({row["hunt_code"] for row in reference_rows}) == 128
-    assert {row["algorithm_status"] for row in reference_rows} == {"DEER_REFERENCE"}
+    non_lo_rows = [row for row in reference_rows if not row["hunt_code"].startswith("LO")]
+    locked_private_land_lo_rows = [
+        row for row in reference_rows if row["hunt_code"] in {"LO0008", "LO0009", "LO0010"}
+    ]
+    assert {row["algorithm_status"] for row in non_lo_rows} == {"DEER_REFERENCE"}
+    assert {row["algorithm_status"] for row in locked_private_land_lo_rows} == {"PRIVATE_LAND_DEER_REFERENCE"}
+    assert {row["draw_system_type"] for row in locked_private_land_lo_rows} == {"PRIVATE_LAND_DEER_REFERENCE"}
+    assert {row["draw_pool"] for row in locked_private_land_lo_rows} == {"private_land_deer_reference"}
     assert {row["modeled_by_engine"] for row in reference_rows} == {"False"}
     assert {row["probability_model"] for row in reference_rows} == {"NONE"}
-    assert {row["display_odds_text"] for row in reference_rows} == {"Deer reference only; odds not modeled"}
+    assert {row["display_odds_text"] for row in non_lo_rows} == {"Deer reference only; odds not modeled"}
+    assert {row["display_odds_text"] for row in locked_private_land_lo_rows} == {
+        "Private-land deer reference only; odds not modeled"
+    }
     assert {row["data_quality_grade"] for row in reference_rows} == {"A"}
 
 

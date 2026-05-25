@@ -3353,3 +3353,46 @@
   - `python -m pytest tests\utah\test_elk_bull_reference_resolution_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py -q` passed: `7`.
   - `python -m compileall scripts\resolve-elk-bull-reference-hunt-codes-2026.py tests\utah\test_elk_bull_reference_resolution_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py` passed.
   - `node --check scripts\export-elk-bull-reference-spreadsheet.mjs` passed with bundled workspace Node runtime.
+
+## 2026 Private-Land Deer And Final Reference Hunt-Code Locks
+- Timestamp (UTC): 2026-05-25T02:23:00Z
+- Scope:
+  - Locked the current Utah DWR Hunt Planner private-land deer rows supplied by the user: `LD1001`, `LD1004`, `LD1006`, `LD1019`, `LD1023`, `LD1108`, `LO0008`, `LO0009`, and `LO0010`.
+  - Promoted the six missing `LD` rows into `draw_reality_engine_predictive_v2.csv` as non-modeled private-land deer reference rows only.
+  - Preserved the three existing Diamond Mtn `LO0008`-`LO0010` rows as non-modeled private-land deer references and fixed the deer resolver so reruns do not flatten those rows back into generic deer references.
+  - Locked the remaining current-database predictive gaps supplied by the user: `RS0001`, `RS1000`, `RS1001`, `RS1003`, `RS1006`, `BI6527`, `BI6538`, `EX1000`, and `CG9999`.
+  - Pulled Rocky Mountain bighorn conservation/statewide permit counts from `data_truth/permit_overlay_truth/normalized/conservation_permit_cycle_rows_2022_2027.csv` where available: `RS0001`, `RS1001`, `RS1003`, and `RS1006` each have `Res=1`, `Non Res=0`, `Total=1`.
+  - Preserved blank quota/allotment fields for source-confirmed no-quota reference rows: `RS1000`, `BI6527`, `BI6538`, `EX1000`, and `CG9999`.
+  - Verified that the six private-land pronghorn `LP` rows are already resolved in the current predictive surface and did not duplicate them.
+  - Refreshed the 2026 family gap scan after the locks.
+  - No website feeds, `public_client_engine.csv`, materializer code, harvest features, or probability math were changed.
+- Outputs:
+  - `scripts/lock-private-land-deer-hunt-codes-2026.py`
+  - `scripts/lock-final-reference-hunt-codes-2026.py`
+  - `tests/utah/test_private_land_deer_code_lock_2026.py`
+  - `tests/utah/test_final_reference_hunt_code_lock_2026.py`
+  - `data_truth/permit_overlay_truth/normalized/private_land_deer_hunt_code_lock_2026.csv`
+  - `data_truth/permit_overlay_truth/normalized/final_reference_hunt_code_lock_2026.csv`
+  - `processed_data/private_land_deer_hunt_code_lock_2026_summary.json`
+  - `processed_data/final_reference_hunt_code_lock_2026_summary.json`
+  - `processed_data/private_land_deer_hunt_code_lock_2026.md`
+  - `processed_data/final_reference_hunt_code_lock_2026.md`
+  - `processed_data/private_land_deer_hunt_code_lock_2026_runtime_updates.csv`
+  - `processed_data/final_reference_hunt_code_lock_2026_runtime_updates.csv`
+- Key results:
+  - Private-land deer locked rows: `9`.
+  - New `LD` predictive reference rows: `6`.
+  - Final reference locked rows: `9`.
+  - Final reference `FULL_SPLIT` rows: `4`.
+  - Final reference `NO_QUOTA_PUBLISHED` rows: `5`.
+  - Updated gap scan current database codes missing predictive v2: `0`, down from `8`.
+  - Updated resolved families: `21`.
+  - Predictive gap families remaining: `0`.
+  - Required-surface blocker families remaining: `0`.
+  - Follow-up needed: build an explicit current-code-to-historical-code crosswalk for changed code families instead of treating 2023 guidebook codes as identical to current Hunt Planner codes.
+- Validation:
+  - `python scripts\lock-private-land-deer-hunt-codes-2026.py` passed.
+  - `python scripts\lock-final-reference-hunt-codes-2026.py` passed.
+  - `python scripts\scan-2026-hunt-code-family-gaps.py` passed.
+  - `python -m pytest tests\utah\test_private_land_deer_code_lock_2026.py tests\utah\test_final_reference_hunt_code_lock_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py tests\utah\test_deer_hunt_code_resolution_2026.py tests\utah\test_elk_bull_reference_resolution_2026.py tests\utah\test_elk_private_land_resolution_2026.py tests\utah\test_desert_bighorn_conservation_code_lock_2026.py tests\utah\test_conservation_permit_code_lock_2026.py -q` passed: `29`.
+  - `python -m py_compile scripts\lock-private-land-deer-hunt-codes-2026.py scripts\lock-final-reference-hunt-codes-2026.py scripts\resolve-deer-hunt-codes-2026.py` passed.

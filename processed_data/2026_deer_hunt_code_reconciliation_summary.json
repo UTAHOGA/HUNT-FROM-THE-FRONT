@@ -1,6 +1,6 @@
 {
   "classification": "DEER_HUNT_CODE_RECONCILIATION",
-  "timestamp_utc": "2026-05-24T21:50:49.554231+00:00",
+  "timestamp_utc": "2026-05-25T02:47:36.710983+00:00",
   "target_prefixes": [
     "DB",
     "LO"
@@ -12,7 +12,7 @@
   "current_database_reconciliation_failures": [],
   "promotion_summary": {
     "classification": "DEER_REFERENCE_PROMOTION",
-    "timestamp_utc": "2026-05-24T21:50:45.120261+00:00",
+    "timestamp_utc": "2026-05-25T02:47:31.922043+00:00",
     "target_prefixes": [
       "DB",
       "LO"

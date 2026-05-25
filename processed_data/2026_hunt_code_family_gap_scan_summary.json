@@ -1,26 +1,30 @@
 {
   "classification": "CURRENT_2026_HUNT_CODE_FAMILY_GAP_SCAN",
-  "timestamp_utc": "2026-05-25T01:50:03.956735+00:00",
+  "timestamp_utc": "2026-05-25T02:46:43.775500+00:00",
   "database_code_count": 1411,
   "hunt_master_code_count": 1471,
   "point_ladder_code_count": 1471,
   "draw_reality_code_count": 1623,
-  "predictive_v2_code_count": 1457,
+  "predictive_v2_code_count": 1471,
   "family_count": 21,
-  "resolved_family_count": 16,
-  "predictive_gap_family_count": 5,
+  "resolved_family_count": 21,
+  "predictive_gap_family_count": 0,
   "required_surface_blocker_family_count": 0,
-  "total_missing_predictive_v2_current_database_codes": 14,
+  "total_missing_predictive_v2_current_database_codes": 0,
   "total_required_surface_missing_current_database_codes": 0,
   "resolved_families": [
+    "BI",
     "BR",
+    "CG",
     "DA",
     "DB",
     "DS",
     "EA",
     "EB",
     "EL",
+    "EX",
     "GO",
+    "LD",
     "LO",
     "LP",
     "MA",
@@ -28,69 +32,10 @@
     "PB",
     "PD",
     "RE",
+    "RS",
     "TK"
   ],
-  "predictive_gap_families_ranked": [
-    {
-      "code_prefix": "LD",
-      "label": "Limited Deer Reference",
-      "dominant_species": "Deer",
-      "missing_predictive_v2_count": 6,
-      "database_code_count": 6,
-      "missing_predictive_v2_codes": [
-        "LD1001",
-        "LD1004",
-        "LD1006",
-        "LD1019",
-        "LD1023",
-        "LD1108"
-      ]
-    },
-    {
-      "code_prefix": "RS",
-      "label": "Rocky Mountain Bighorn Ram",
-      "dominant_species": "Rocky Mountain Bighorn Sheep",
-      "missing_predictive_v2_count": 4,
-      "database_code_count": 20,
-      "missing_predictive_v2_codes": [
-        "RS1000",
-        "RS1001",
-        "RS1003",
-        "RS1006"
-      ]
-    },
-    {
-      "code_prefix": "BI",
-      "label": "Bison",
-      "dominant_species": "Bison",
-      "missing_predictive_v2_count": 2,
-      "database_code_count": 19,
-      "missing_predictive_v2_codes": [
-        "BI6527",
-        "BI6538"
-      ]
-    },
-    {
-      "code_prefix": "CG",
-      "label": "Cougar",
-      "dominant_species": "Cougar",
-      "missing_predictive_v2_count": 1,
-      "database_code_count": 1,
-      "missing_predictive_v2_codes": [
-        "CG9999"
-      ]
-    },
-    {
-      "code_prefix": "EX",
-      "label": "Expo",
-      "dominant_species": "Elk",
-      "missing_predictive_v2_count": 1,
-      "database_code_count": 1,
-      "missing_predictive_v2_codes": [
-        "EX1000"
-      ]
-    }
-  ],
+  "predictive_gap_families_ranked": [],
   "required_surface_blocker_families": [],
   "guardrail": "Gap scan is read-only except for audit outputs; it does not promote rows or change prediction math."
 }

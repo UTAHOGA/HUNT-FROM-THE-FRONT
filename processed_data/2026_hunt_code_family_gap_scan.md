@@ -1,19 +1,15 @@
 # 2026 Hunt-Code Family Gap Scan
 
 - Current DATABASE code count: `1411`
-- Predictive v2 code count: `1457`
+- Predictive v2 code count: `1471`
 - Families scanned: `21`
-- Fully resolved families: `16`
-- Families with predictive v2 gaps: `5`
+- Fully resolved families: `21`
+- Families with predictive v2 gaps: `0`
 - Required-surface blocker families: `0`
-- Current DATABASE codes missing predictive v2: `14`
+- Current DATABASE codes missing predictive v2: `0`
 
 ## Largest Predictive Gaps
 
-- `LD` Limited Deer Reference: `6` missing predictive v2 codes
-- `RS` Rocky Mountain Bighorn Ram: `4` missing predictive v2 codes
-- `BI` Bison: `2` missing predictive v2 codes
-- `CG` Cougar: `1` missing predictive v2 codes
-- `EX` Expo: `1` missing predictive v2 codes
+- None
 
 This scan only identifies gaps. It does not promote reference rows or alter draw-odds math.
