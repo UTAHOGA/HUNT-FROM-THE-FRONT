@@ -3443,3 +3443,12 @@
   - The executable source registry update was completed in the sibling `HUNT-BUILDER` workspace where the research library master is built.
 - Validation:
   - Confirmed `AGENTS.MD` now contains the feeder/source registration rule.
+
+## 2025 Permit Promotion Guard
+- Timestamp (UTC): 2026-05-25T07:35:00Z
+- Scope:
+  - Extended `AGENTS.MD` so direct Utah DWR Hunt Planner CSV-folder files are explicitly source evidence only until a reviewed promotion step identifies source dates/year context.
+  - Added the guardrail that 2025 permit values must not be promoted into 2026 available allotment fields unless every imported source used in that promotion has reviewed source-date context.
+  - The executable source registry update was completed in the sibling `HUNT-BUILDER` workspace where the research library master is built.
+- Validation:
+  - Confirmed `AGENTS.MD` now contains the direct CSV source-evidence and 2025-to-2026 promotion guardrails.

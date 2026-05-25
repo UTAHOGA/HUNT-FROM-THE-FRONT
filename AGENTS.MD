@@ -428,6 +428,8 @@ Rules:
 - Blank reviewed fields are allowed only when the mapping status explains why they are blank.
 - `DATABASE.csv` is the canonical current hunt-code and boundary-id source unless a later reviewed canonical database explicitly replaces it.
 - Feeder/reference files such as `hunt_master_enriched.csv`, `point_ladder_view.csv`, canonical JSON, and boundary GeoJSON must be registered as source rows with hashes before they can support alignment work.
+- Direct Utah DWR Hunt Planner CSV-folder files are source evidence only until a reviewed promotion step identifies source dates/year context.
+- Do not promote 2025 permit values into 2026 available allotment fields unless every imported source used in that promotion has reviewed source-date context.
 - Old-prefix, private-land, conservation, and document-level matches must flow through the current-to-historical crosswalk before promotion.
 - Fuzzy reconciliation output is review evidence, not a promoted mapping.
 - Document-level source rows must be extracted into per-hunt-code rows before promotion.
