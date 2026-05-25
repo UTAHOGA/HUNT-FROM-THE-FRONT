@@ -3194,3 +3194,45 @@
   - `python scripts\model-conservation-permit-trends-2022-2027.py` passed.
   - `python -m pytest tests\utah\test_conservation_permits_2022_2024_vault.py tests\utah\test_conservation_permit_trends_2022_2027.py -q` passed: `8`.
   - `python -m compileall scripts\vault-conservation-permits-2022-2024.py scripts\model-conservation-permit-trends-2022-2027.py tests\utah\test_conservation_permits_2022_2024_vault.py tests\utah\test_conservation_permit_trends_2022_2027.py` passed.
+
+## 2026 Pronghorn Buck Hunt-Code Resolution And Export
+- Timestamp (UTC): 2026-05-25T00:51:44Z
+- Scope:
+  - Created a repeatable pronghorn buck reference export from the current 2026 Utah DWR Hunt Planner canonical surface.
+  - Included `88` `PB` pronghorn buck rows and the six source-confirmed private-land-only `LP` rows supplied by the user: `LP5025`, `LP5031`, `LP5033`, `LP5046`, `LP5049`, and `LP5051`.
+  - Preserved published `Non Res`, `Res`, and `Total` quota values on public `PB` rows.
+  - Preserved blank `Non Res`, `Res`, and `Total` quota values on private-land-only `LP` rows because the source confirms no quota is published.
+  - Promoted the six `LP` rows into `draw_reality_engine_predictive_v2.csv` as non-modeled reference rows only.
+  - Kept promoted rows explicitly marked with `algorithm_status = PRONGHORN_PRIVATE_LAND_REFERENCE`, `modeled_by_engine = False`, `probability_model = NONE`, and `display_odds_text = Private-land pronghorn reference only; odds not modeled`.
+  - Refreshed the 2026 family gap scan after pronghorn resolution.
+  - No website feeds, harvest features, public draw quotas, or probability math were changed.
+- Outputs:
+  - `scripts/resolve-pronghorn-hunt-codes-2026.py`
+  - `scripts/export-pronghorn-buck-reference-spreadsheet.mjs`
+  - `tests/utah/test_pronghorn_private_land_resolution_2026.py`
+  - `processed_data/pronghorn_buck_limited_entry_reference_export.csv`
+  - `processed_data/pronghorn_buck_limited_entry_reference_export.xlsx`
+  - `processed_data/pronghorn_buck_limited_entry_reference_export_report.json`
+  - `processed_data/pronghorn_buck_limited_entry_reference_export_xlsx_report.json`
+  - `data_truth/draw_results_truth/validation/2026_pronghorn_hunt_code_reconciliation.csv`
+  - `processed_data/2026_pronghorn_hunt_code_reconciliation_summary.json`
+  - `processed_data/2026_pronghorn_hunt_code_reconciliation.md`
+  - `processed_data/2026_pronghorn_private_land_predictive_v2_reference_promotion.csv`
+  - `processed_data/2026_pronghorn_private_land_predictive_v2_reference_promotion_summary.json`
+- Key results:
+  - Current pronghorn buck rows checked: `94`.
+  - `PB` rows: `88`.
+  - `LP` rows: `6`.
+  - Newly promoted `LP` reference rows: `6`.
+  - `LP` quota leak count: `0`.
+  - Pronghorn reconciliation blockers: `0`.
+  - Updated gap scan current database codes missing predictive v2: `156`, down from `162`.
+  - Updated resolved families: `13` (`BR`, `DA`, `DB`, `EA`, `GO`, `LO`, `LP`, `MA`, `MB`, `PB`, `PD`, `RE`, `TK`).
+  - Remaining largest predictive gaps: `EL` (`126`), `EB` (`10`), and `DS` (`6`).
+- Validation:
+  - `python scripts\resolve-pronghorn-hunt-codes-2026.py` passed.
+  - `node scripts\export-pronghorn-buck-reference-spreadsheet.mjs` passed.
+  - `python scripts\scan-2026-hunt-code-family-gaps.py` passed.
+  - `python -m pytest tests\utah\test_pronghorn_private_land_resolution_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py -q` passed: `6`.
+  - `python -m compileall scripts\resolve-pronghorn-hunt-codes-2026.py tests\utah\test_pronghorn_private_land_resolution_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py` passed.
+  - `node --check scripts\export-pronghorn-buck-reference-spreadsheet.mjs` passed.

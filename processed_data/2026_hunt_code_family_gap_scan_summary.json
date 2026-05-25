@@ -1,16 +1,16 @@
 {
   "classification": "CURRENT_2026_HUNT_CODE_FAMILY_GAP_SCAN",
-  "timestamp_utc": "2026-05-24T21:50:55.071457+00:00",
+  "timestamp_utc": "2026-05-25T00:54:20.825992+00:00",
   "database_code_count": 1411,
   "hunt_master_code_count": 1471,
   "point_ladder_code_count": 1471,
   "draw_reality_code_count": 1623,
-  "predictive_v2_code_count": 1309,
+  "predictive_v2_code_count": 1315,
   "family_count": 21,
-  "resolved_family_count": 12,
-  "predictive_gap_family_count": 9,
+  "resolved_family_count": 13,
+  "predictive_gap_family_count": 8,
   "required_surface_blocker_family_count": 0,
-  "total_missing_predictive_v2_current_database_codes": 162,
+  "total_missing_predictive_v2_current_database_codes": 156,
   "total_required_surface_missing_current_database_codes": 0,
   "resolved_families": [
     "BR",
@@ -19,6 +19,7 @@
     "EA",
     "GO",
     "LO",
+    "LP",
     "MA",
     "MB",
     "PB",
@@ -209,21 +210,6 @@
         "LD1019",
         "LD1023",
         "LD1108"
-      ]
-    },
-    {
-      "code_prefix": "LP",
-      "label": "Limited Pronghorn Reference",
-      "dominant_species": "Pronghorn",
-      "missing_predictive_v2_count": 6,
-      "database_code_count": 6,
-      "missing_predictive_v2_codes": [
-        "LP5025",
-        "LP5031",
-        "LP5033",
-        "LP5046",
-        "LP5049",
-        "LP5051"
       ]
     },
     {
