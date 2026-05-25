@@ -2645,3 +2645,35 @@
   - `python scripts\audit-hard-copy-library.py` passed and wrote the audit artifacts.
   - `python -m pytest tests\utah\test_hard_copy_library_audit.py -q` passed: `2`.
   - `python -m py_compile scripts\audit-hard-copy-library.py tests\utah\test_hard_copy_library_audit.py` passed.
+
+## Library Master Database Reconciliation
+- Timestamp (UTC): 2026-05-25T04:55:00Z
+- Scope:
+  - Reconciled `pipeline/RAW/hunt_unit_database/library-master.csv` against the current 2026 `DATABASE.csv` truth source at `C:\Users\tyler\Desktop\GitHub\HUNTS\pipeline\RAW\hunt_unit_database\2026\csv\DATABASE.csv`.
+  - Treated `library-master` as a candidate catalog, not as a truth source.
+  - Wrote database-enriched candidate outputs instead of overwriting the existing library master.
+  - Crosschecked public document rows against `public/hard-copy/data/documents.json` and local hard-copy file paths.
+  - Did not modify website runtime feeds, prediction math, `pages-dist`, or the original `library-master.csv`.
+- Results:
+  - Library master rows: `328`.
+  - 2026 `DATABASE.csv` rows: `1,411`.
+  - 2026 `DATABASE.csv` unique hunt codes: `1,411`.
+  - Match status: `REVIEW_REQUIRED`.
+  - High-confidence database matches: `104`.
+  - Review database matches: `30`.
+  - Ambiguous database matches: `184`.
+  - Document rows not hunt-coded: `10`.
+  - Public/source document files found: `9`.
+  - Missing source path document rows: `1` (`2022-2024 Conservation Permits` source path still needs final public file placement).
+- Outputs:
+  - `scripts/reconcile-library-master-to-database-2026.py`
+  - `tests/utah/test_library_master_database_reconciliation.py`
+  - `processed_data/library_master_database_reconciliation.csv`
+  - `processed_data/library_master_database_reconciliation.md`
+  - `processed_data/library_master_database_reconciliation_summary.json`
+  - `pipeline/RAW/hunt_unit_database/library-master.reconciled.csv`
+  - `pipeline/RAW/hunt_unit_database/library-master.reconciled.json`
+- Validation:
+  - `python scripts\reconcile-library-master-to-database-2026.py` passed.
+  - `python -m pytest tests\utah\test_library_master_database_reconciliation.py -q` passed: `2`.
+  - `python -m py_compile scripts\reconcile-library-master-to-database-2026.py tests\utah\test_library_master_database_reconciliation.py` passed.

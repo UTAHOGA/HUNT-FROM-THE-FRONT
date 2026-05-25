@@ -1,0 +1,34 @@
+{
+  "artifact": "library_master_database_reconciliation",
+  "database_match_blocker_count": 184,
+  "database_match_status_counts": {
+    "AMBIGUOUS_DATABASE_MATCH": 184,
+    "DOCUMENT_ROW_NOT_HUNT_CODED": 10,
+    "MATCH_HIGH": 104,
+    "MATCH_REVIEW": 30
+  },
+  "database_record_count": 1411,
+  "database_unique_hunt_codes": 1411,
+  "document_file_status_counts": {
+    "FOUND": 9,
+    "MISSING_SOURCE_PATH": 1
+  },
+  "hard_copy_file_count": 15,
+  "library_record_count": 328,
+  "missing_document_file_count": 1,
+  "notes": [
+    "DATABASE.csv is used as the current hunt-code and permit-allocation authority.",
+    "library-master remains a candidate catalog until REVIEW_REQUIRED rows are resolved.",
+    "Fuzzy database matches are intentionally not promoted without review."
+  ],
+  "outputs": {
+    "reconciled_library_csv": "pipeline/RAW/hunt_unit_database/library-master.reconciled.csv",
+    "reconciled_library_json": "pipeline/RAW/hunt_unit_database/library-master.reconciled.json",
+    "reconciliation_csv": "processed_data/library_master_database_reconciliation.csv"
+  },
+  "record_type_counts": {
+    "document": 10,
+    "permit_allocation": 318
+  },
+  "status": "REVIEW_REQUIRED"
+}
