@@ -1,5 +1,27 @@
 # WORK LOG
 
+## Desert Bighorn Conservation Permit Code Lock 2026
+- Timestamp (UTC): 2026-05-25T01:55:00Z
+- Scope:
+  - Resolved the current `DS` predictive gap by treating the unmapped desert bighorn rows as conservation/statewide permit reference rows.
+  - Pulled permit counts from `data_truth/permit_overlay_truth/normalized/conservation_permit_cycle_rows_2022_2027.csv`, using the 2025-2027 conservation permit cycle.
+  - Locked `DS1000`, `DS1002`, `DS1003`, `DS1004`, `DS1006`, `DS1007`, and `DS6605` with `Res=1`, `Non Res=0`, and `Total=1`.
+  - Added non-modeled predictive-v2 reference rows for `DS1002`, `DS1003`, `DS1004`, `DS1006`, `DS1007`, and `DS6605`; preserved `DS1000` as the existing sportsman/statewide row.
+  - Regenerated the current hunt-code family gap scan; `DS` is now resolved and total missing current DATABASE codes dropped from `20` to `14`.
+- Files:
+  - `scripts/lock-desert-bighorn-conservation-permit-codes-2026.py`
+  - `data_truth/permit_overlay_truth/normalized/desert_bighorn_conservation_permit_code_lock_2026.csv`
+  - `processed_data/desert_bighorn_conservation_permit_code_lock_2026_summary.json`
+  - `processed_data/desert_bighorn_conservation_permit_code_lock_2026.md`
+  - `processed_data/desert_bighorn_conservation_permit_code_lock_2026_runtime_updates.csv`
+  - `tests/utah/test_desert_bighorn_conservation_code_lock_2026.py`
+- Validation:
+  - `python scripts\lock-desert-bighorn-conservation-permit-codes-2026.py`
+  - `python scripts\scan-2026-hunt-code-family-gaps.py`
+  - `python -m compileall scripts\lock-desert-bighorn-conservation-permit-codes-2026.py tests\utah\test_desert_bighorn_conservation_code_lock_2026.py`
+  - `python -m pytest tests\utah\test_desert_bighorn_conservation_code_lock_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py tests\utah\test_elk_bull_reference_resolution_2026.py tests\utah\test_elk_private_land_resolution_2026.py tests\utah\test_conservation_permit_code_lock_2026.py -q` passed: `19`
+  - `python -m pytest tests\utah_bonus_predictive\test_phase11_sportsman_materialization.py tests\utah_draw_predictive\test_sportsman_permit_classification.py -q` passed: `2`
+
 ## Conservation Permit Hunt Code Lock 2026
 - Timestamp (UTC): 2026-05-25T01:40:00Z
 - Scope:

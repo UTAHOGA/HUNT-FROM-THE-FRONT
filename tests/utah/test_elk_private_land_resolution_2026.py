@@ -70,5 +70,5 @@ def test_elk_private_land_gap_scan_is_resolved():
             encoding="utf-8"
         )
     )
-    assert summary["total_missing_predictive_v2_current_database_codes"] == 30
+    assert summary["total_missing_predictive_v2_current_database_codes"] == 14
     assert "EL" in summary["resolved_families"]

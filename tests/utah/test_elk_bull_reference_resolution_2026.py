@@ -109,5 +109,5 @@ def test_elk_bull_reference_gap_scan_is_resolved():
             encoding="utf-8"
         )
     )
-    assert summary["total_missing_predictive_v2_current_database_codes"] == 20
+    assert summary["total_missing_predictive_v2_current_database_codes"] == 14
     assert "EB" in summary["resolved_families"]
