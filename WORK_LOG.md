@@ -3461,3 +3461,13 @@
   - The executable permit deep-dive audit was completed in the sibling `HUNT-BUILDER` workspace where `hunt_master_canonical_2026_built.csv` and the direct CSV folder live.
 - Validation:
   - Confirmed `AGENTS.MD` now contains the canonical numeric-cell protection rule.
+
+## Canonical DATABASE 2026 Authority Clarification
+- Timestamp (UTC): 2026-05-25T08:50:00Z
+- Scope:
+  - Tightened the canonical `DATABASE.csv` numeric-cell protection rule.
+  - Clarified that populated numeric `2026` permit/allotment cells are the direct Utah DWR Hunt Planner truth source.
+  - Clarified that populated `2025` or older permit fields are historical evidence fields unless separately sourced as current Hunt Planner data; they likely originate from raw PDF/import pipelines and must retain lineage before being used as truth.
+  - The executable audit and overlay-plan artifacts were regenerated in the sibling `HUNT-BUILDER` workspace.
+- Validation:
+  - Confirmed `AGENTS.MD` now contains the corrected 2026 authority and historical-field lineage rule.
