@@ -1,16 +1,15 @@
 # 2026 Hunt-Code Family Gap Scan
 
 - Current DATABASE code count: `1411`
-- Predictive v2 code count: `1315`
+- Predictive v2 code count: `1441`
 - Families scanned: `21`
-- Fully resolved families: `13`
-- Families with predictive v2 gaps: `8`
+- Fully resolved families: `14`
+- Families with predictive v2 gaps: `7`
 - Required-surface blocker families: `0`
-- Current DATABASE codes missing predictive v2: `156`
+- Current DATABASE codes missing predictive v2: `30`
 
 ## Largest Predictive Gaps
 
-- `EL` Limited-Entry Elk Reference: `126` missing predictive v2 codes
 - `EB` Bull Elk: `10` missing predictive v2 codes
 - `DS` Desert Bighorn Sheep: `6` missing predictive v2 codes
 - `LD` Limited Deer Reference: `6` missing predictive v2 codes

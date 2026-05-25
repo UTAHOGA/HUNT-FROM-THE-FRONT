@@ -3236,3 +3236,35 @@
   - `python -m pytest tests\utah\test_pronghorn_private_land_resolution_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py -q` passed: `6`.
   - `python -m compileall scripts\resolve-pronghorn-hunt-codes-2026.py tests\utah\test_pronghorn_private_land_resolution_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py` passed.
   - `node --check scripts\export-pronghorn-buck-reference-spreadsheet.mjs` passed.
+
+## 2026 Elk Private-Land Hunt-Code Resolution
+- Timestamp (UTC): 2026-05-25T00:58:47Z
+- Scope:
+  - Added a repeatable resolver for current 2026 Utah DWR Hunt Planner `EL` private-land-only bull elk rows.
+  - Promoted all `126` `EL` rows into `draw_reality_engine_predictive_v2.csv` as non-modeled reference rows only.
+  - Kept promoted rows explicitly marked with `algorithm_status = ELK_PRIVATE_LAND_REFERENCE`, `modeled_by_engine = False`, `probability_model = NONE`, and `display_odds_text = Private-land elk reference only; odds not modeled`.
+  - Preserved blank `Non Res`, `Res`, and `Total` quota/allotment fields because the source confirms no quota is published for these private-land-only hunts.
+  - Recorded the five Diamond Mtn `LO0011`-`LO0015` elk rows as already exported elk private-land references but not part of the `EL` prefix gap.
+  - Refreshed the 2026 family gap scan after elk private-land resolution.
+  - No website feeds, harvest features, public `EB` quotas, or probability math were changed.
+- Outputs:
+  - `scripts/resolve-elk-private-land-hunt-codes-2026.py`
+  - `tests/utah/test_elk_private_land_resolution_2026.py`
+  - `data_truth/draw_results_truth/validation/2026_elk_private_land_hunt_code_reconciliation.csv`
+  - `processed_data/2026_elk_private_land_hunt_code_reconciliation_summary.json`
+  - `processed_data/2026_elk_private_land_hunt_code_reconciliation.md`
+  - `processed_data/2026_elk_private_land_predictive_v2_reference_promotion.csv`
+  - `processed_data/2026_elk_private_land_predictive_v2_reference_promotion_summary.json`
+- Key results:
+  - Current `EL` private-land bull elk rows checked: `126`.
+  - Newly promoted `EL` reference rows: `126`.
+  - `EL` quota leak count: `0`.
+  - Elk private-land reconciliation blockers: `0`.
+  - Updated gap scan current database codes missing predictive v2: `30`, down from `156`.
+  - Updated resolved families: `14` (`BR`, `DA`, `DB`, `EA`, `EL`, `GO`, `LO`, `LP`, `MA`, `MB`, `PB`, `PD`, `RE`, `TK`).
+  - Remaining largest predictive gaps: `EB` (`10`), `DS` (`6`), and `LD` (`6`).
+- Validation:
+  - `python scripts\resolve-elk-private-land-hunt-codes-2026.py` passed.
+  - `python scripts\scan-2026-hunt-code-family-gaps.py` passed.
+  - `python -m pytest tests\utah\test_elk_private_land_resolution_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py tests\utah\test_elk_bull_private_lands_spreadsheet.py -q` passed: `9`.
+  - `python -m compileall scripts\resolve-elk-private-land-hunt-codes-2026.py tests\utah\test_elk_private_land_resolution_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py` passed.
