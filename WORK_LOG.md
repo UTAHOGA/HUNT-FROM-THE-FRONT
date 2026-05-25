@@ -3156,3 +3156,41 @@
   - `python -m pytest tests\utah\test_elk_bull_private_lands_spreadsheet.py -q` passed: `3`.
   - `python -m compileall tests\utah\test_elk_bull_private_lands_spreadsheet.py` passed.
   - `node --check scripts\export-elk-bull-private-lands-spreadsheet.mjs` passed.
+
+## 2022-2027 Conservation Permit Vault And Trend Model
+- Timestamp (UTC): 2026-05-25T00:33:42Z
+- Scope:
+  - Vaulted the `2022-2024 Conservation Permits` source package under permit-overlay truth storage.
+  - Preserved the canonical source PDF and one extracted workbook copy with SHA-256 validation.
+  - Held the second extracted workbook copy as an exact SHA-256 duplicate instead of copying it twice.
+  - Built a deterministic cycle-to-cycle conservation permit trend model comparing `2022-2024` to `2025-2027`.
+  - Classified outputs as trend/reference only with guardrail `TREND_MODEL_ONLY_DO_NOT_USE_AS_DRAW_ODDS_OR_HARVEST_RESULTS`.
+  - Did not modify website-facing files, prediction outputs, harvest-result truth, draw-result truth, or materializer code.
+- Outputs:
+  - `scripts/vault-conservation-permits-2022-2024.py`
+  - `scripts/model-conservation-permit-trends-2022-2027.py`
+  - `tests/utah/test_conservation_permits_2022_2024_vault.py`
+  - `tests/utah/test_conservation_permit_trends_2022_2027.py`
+  - `data_truth/permit_overlay_truth/raw_sources/2022_2024_conservation_permits/`
+  - `data_truth/permit_overlay_truth/normalized/conservation_permit_cycle_rows_2022_2027.csv`
+  - `data_truth/permit_overlay_truth/normalized/conservation_permit_trends_by_species_2022_2027.csv`
+  - `data_truth/permit_overlay_truth/normalized/conservation_permit_trends_by_group_2022_2027.csv`
+  - `data_truth/permit_overlay_truth/normalized/conservation_permit_trends_2022_2027_summary.json`
+  - `processed_data/conservation_permit_trends_2022_2027.md`
+- Key results:
+  - 2022-2024 conservation permits: `318`.
+  - 2025-2027 conservation permits: `336`.
+  - Cycle change: `+18` permits.
+  - Percent change: `+5.66%`.
+  - Annual average changed from `106.0` to `112.0` permits/year.
+  - Largest species-family increases: Elk `+11`, Pronghorn `+9`, Black Bear `+3`.
+  - Largest species-family decreases: Bison `-2`, Rocky Mountain Bighorn Sheep `-2`, Cougar `-1`, Moose `-1`.
+  - Largest group increase: SFW `+37`.
+  - Largest group decreases: SCI `-16`, RMEF `-7`, UWSF `-7`.
+  - Vault validation status: `PASS`.
+  - Trend-model validation status: `PASS`.
+- Validation:
+  - `python scripts\vault-conservation-permits-2022-2024.py` passed.
+  - `python scripts\model-conservation-permit-trends-2022-2027.py` passed.
+  - `python -m pytest tests\utah\test_conservation_permits_2022_2024_vault.py tests\utah\test_conservation_permit_trends_2022_2027.py -q` passed: `8`.
+  - `python -m compileall scripts\vault-conservation-permits-2022-2024.py scripts\model-conservation-permit-trends-2022-2027.py tests\utah\test_conservation_permits_2022_2024_vault.py tests\utah\test_conservation_permit_trends_2022_2027.py` passed.
