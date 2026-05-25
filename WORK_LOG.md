@@ -3467,7 +3467,8 @@
 - Scope:
   - Tightened the canonical `DATABASE.csv` numeric-cell protection rule.
   - Clarified that populated numeric `2026` permit/allotment cells are the direct Utah DWR Hunt Planner truth source.
-  - Clarified that populated `2025` or older permit fields are historical evidence fields unless separately sourced as current Hunt Planner data; they likely originate from raw PDF/import pipelines and must retain lineage before being used as truth.
+  - Clarified that populated `2025` or older permit fields with reviewed source lineage are canonical historical source truth, not soft evidence.
+  - Clarified that `permits_2025` is the full populated 2025 historical permit universe in `DATABASE.csv`, while `permits_2025_draw` is a narrower bonus-point draw-results subset and must not be described as the full 2025 draw/permit universe.
   - The executable audit and overlay-plan artifacts were regenerated in the sibling `HUNT-BUILDER` workspace.
 - Validation:
   - Confirmed `AGENTS.MD` now contains the corrected 2026 authority and historical-field lineage rule.
