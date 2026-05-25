@@ -45,6 +45,7 @@ const OUTPUTS = {
   hardDataExportSummary: 'processed_data/hard_data_exports/library/library_page_summary.json',
   hardDataExportManifestCsv: 'processed_data/hard_data_exports/library/hard_data_manifest.csv',
   hardDataExportManifestJson: 'processed_data/hard_data_exports/library/hard_data_manifest.json',
+  hardDataWebManifestJson: 'processed_data/hard_data_exports/hard_data_manifest.web.json',
   publicCsv: 'public/hard-copy/data/library_page_hunts.csv',
   publicJson: 'public/hard-copy/data/library_page_data.json',
   publicSummary: 'public/hard-copy/data/library_page_summary.json',
@@ -125,15 +126,13 @@ function parseCsv(text) {
 function readCsv(rel) {
   if (!exists(rel)) return [];
   const rows = parseCsv(fs.readFileSync(abs(rel), 'utf8'));
-  rows.forEach((row) => {
-    row.__source_file = rel;
-  });
+  rows.forEach((row) => { row.__source_file = rel; });
   return rows;
 }
 
 function writeJson(rel, value) {
   ensureParent(rel);
-  fs.writeFileSync(abs(rel), JSON.stringify(value, null, 2), 'utf8');
+  fs.writeFileSync(abs(rel), `${JSON.stringify(value, null, 2)}\n`, 'utf8');
 }
 
 function writeCsv(rel, rows) {
@@ -153,7 +152,7 @@ function writeCsv(rel, rows) {
   const lines = [headers.map(escape).join(',')].concat(
     rows.map((row) => headers.map((header) => escape(row[header])).join(',')),
   );
-  fs.writeFileSync(abs(rel), lines.join('\n'), 'utf8');
+  fs.writeFileSync(abs(rel), `${lines.join('\n')}\n`, 'utf8');
 }
 
 function copyIfExists(fromRel, toRel) {
@@ -250,6 +249,35 @@ function roleFor(rel) {
   return 'supporting input';
 }
 
+function groupFor(rel) {
+  if (rel.includes('library_page')) return 'exports';
+  if (rel.includes('manifest')) return 'exports';
+  if (rel.includes('DATABASE.csv') || rel.includes('hunt-master-canonical') || rel.includes('hunt_master_canonical')) return 'canonical';
+  if (rel.includes('draw_reality') || rel.includes('point_ladder') || rel.includes('prediction')) return 'exports';
+  if (rel.includes('coverage') || rel.includes('audit')) return 'pipeline_logs';
+  if (rel.includes('crosswalk')) return 'raw_library';
+  if (rel.includes('harvest')) return 'raw_library';
+  if (rel.includes('research')) return 'raw_library';
+  return 'exports';
+}
+
+function typeFor(rel) {
+  const ext = path.extname(rel).replace('.', '').toLowerCase();
+  return ext || 'file';
+}
+
+function titleFromRel(rel) {
+  return path.basename(rel, path.extname(rel))
+    .replace(/[_-]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/\b\w/g, (m) => m.toUpperCase());
+}
+
+function webHref(rel) {
+  return `./${rel.replace(/\\/g, '/')}`;
+}
+
 function inputStatus(name, rel) {
   const rows = exists(rel) ? readCsv(rel) : [];
   return {
@@ -262,14 +290,13 @@ function inputStatus(name, rel) {
 }
 
 function pickCurrentSource() {
-  const candidates = [
+  return [
     INPUTS.currentDatabase,
     INPUTS.currentCanonicalProcessed,
     INPUTS.currentCanonicalRaw,
     INPUTS.huntDatabaseComplete,
     INPUTS.huntMasterEnriched,
-  ];
-  return candidates.find((rel) => exists(rel)) || null;
+  ].find((rel) => exists(rel)) || null;
 }
 
 function classifyState({ hasPrediction, hasCoverage, classText }) {
@@ -278,11 +305,23 @@ function classifyState({ hasPrediction, hasCoverage, classText }) {
     'HARVEST_OBJECTIVE', 'UNLIMITED', 'PRIVATE_LANDS', 'SPORTSMAN', 'CONSERVATION',
     'EXPO', 'AVAILABILITY', 'ALLOCATION', 'NONPREDICTIVE', 'NON_PREDICTIVE', 'OUT_OF_SCOPE',
   ];
-
   if (hasPrediction) return 'PREDICTION_ELIGIBLE_AND_MODELED';
   if (nonPredictiveTerms.some((term) => upper.includes(term))) return 'EXCLUDED_WITH_DOCUMENTED_NON_PREDICTIVE_REASON';
   if (hasCoverage) return 'CLASSIFIED_NEEDS_MODEL_OR_EXCLUSION_REVIEW';
   return 'MANUAL_REVIEW_REQUIRED';
+}
+
+function manifestItem(rel, subtitle, options = {}) {
+  return {
+    group: options.group || groupFor(rel),
+    type: options.type || typeFor(rel),
+    year: options.year || '2026',
+    title: options.title || titleFromRel(rel),
+    subtitle,
+    href: webHref(rel),
+    source: options.source || (rel.startsWith('processed_data/') ? 'processed_data' : 'pipeline'),
+    scope: options.scope || 'runtime',
+  };
 }
 
 function main() {
@@ -425,6 +464,25 @@ function main() {
   writeCsv(OUTPUTS.publicManifestCsv, manifestRows);
   writeJson(OUTPUTS.publicManifestJson, summary);
 
+  const webManifest = [
+    manifestItem(OUTPUTS.hardDataExportCsv, 'Page-ready hard-data hunt library records as CSV.', { group: 'exports', title: 'Hard Data Library Page Records CSV' }),
+    manifestItem(OUTPUTS.hardDataExportJson, 'Page-ready hard-data hunt library records as JSON.', { group: 'exports', title: 'Hard Data Library Page Records JSON' }),
+    manifestItem(OUTPUTS.hardDataExportSummary, 'Build summary for modeled, excluded, manual-review, and gate status counts.', { group: 'exports', title: 'Hard Data Library Page Summary' }),
+    manifestItem(OUTPUTS.hardDataExportManifestCsv, 'CSV manifest of source files used to build the hard-data library page package.', { group: 'exports', title: 'Hard Data Library Source Manifest CSV', scope: 'audit' }),
+    manifestItem(OUTPUTS.hardDataExportManifestJson, 'JSON manifest and build status for the hard-data library page package.', { group: 'exports', title: 'Hard Data Library Source Manifest JSON', scope: 'audit' }),
+  ];
+
+  for (const input of inputs.filter((item) => item.exists === 'true')) {
+    webManifest.push(manifestItem(input.source_file, `${input.role}; ${input.row_count} detected rows.`, {
+      group: groupFor(input.source_file),
+      title: titleFromRel(input.source_file),
+      scope: input.role.includes('coverage') || input.role.includes('crosswalk') ? 'audit' : 'runtime',
+    }));
+  }
+
+  const uniqueManifest = Array.from(new Map(webManifest.map((item) => [item.href, item])).values());
+  writeJson(OUTPUTS.hardDataWebManifestJson, uniqueManifest);
+
   writeJson(OUTPUTS.buildReport, summary);
 
   console.log('\nHard-data library page build complete');
@@ -440,7 +498,7 @@ function main() {
   console.log(`- ${OUTPUTS.libraryCsv}`);
   console.log(`- ${OUTPUTS.librarySummary}`);
   console.log(`- ${OUTPUTS.hardDataExportJson}`);
-  console.log(`- ${OUTPUTS.publicJson}`);
+  console.log(`- ${OUTPUTS.hardDataWebManifestJson}`);
   console.log(`\n${summary.recommendation}`);
 }
 
