@@ -2614,3 +2614,34 @@
   - `python -m pytest tests\utah\test_all_years_harvest_database.py tests\utah\test_draw_results_cumulative_database.py -q` passed: `13`.
   - `python -m pytest tests\utah_quality\test_harvest_database_final_audit.py tests\utah_quality\test_harvest_feature_model.py tests\utah\test_all_years_harvest_database.py tests\utah\test_draw_results_cumulative_database.py -q` passed: `27`.
   - `python -m py_compile scripts\finalize-draw-results-cumulative-database.py scripts\build-all-years-harvest-database.py tests\utah\test_draw_results_cumulative_database.py tests\utah\test_all_years_harvest_database.py` passed.
+
+## Hard-Copy Library Publish Audit
+- Timestamp (UTC): 2026-05-25T04:22:00Z
+- Scope:
+  - Added a focused hard-copy document library audit for the website/library package.
+  - Audited existing library-master records, public document records, processed/public/pages-dist manifests, generated/canonical page libraries, duplicate keys, and href resolvability.
+  - Did not modify `hard-copy`, `public/hard-copy`, generated page libraries, `pages-dist`, publish scripts, website feeds, or truth databases.
+- Result:
+  - Status: `NOT_PUBLISH_SAFE`.
+  - Blockers: `478`.
+  - Warnings: `2`.
+  - Master library records: `328`.
+  - Public document records: `9`.
+  - Processed PDF manifest records: `405`.
+  - Pages-dist PDF manifest records: `405`.
+  - Generated page library records: `405`.
+- Major blockers:
+  - `hard-copy/documents.json` is still a stub source file.
+  - `hard-copy.html` fetches `/hard-copy/data/documents.json`, but `pages-dist/hard-copy/data/documents.json` is missing.
+  - Manifest hrefs are not publish-safe: `476` broken href findings across root and pages-dist checks.
+  - Master library duplicate-key warning remains and needs cleanup before relying on the library as canonical.
+- Outputs:
+  - `scripts/audit-hard-copy-library.py`
+  - `tests/utah/test_hard_copy_library_audit.py`
+  - `processed_data/hard_copy_library_audit_report.json`
+  - `processed_data/hard_copy_library_audit_report.md`
+  - `processed_data/hard_copy_library_audit_issues.csv`
+- Validation:
+  - `python scripts\audit-hard-copy-library.py` passed and wrote the audit artifacts.
+  - `python -m pytest tests\utah\test_hard_copy_library_audit.py -q` passed: `2`.
+  - `python -m py_compile scripts\audit-hard-copy-library.py tests\utah\test_hard_copy_library_audit.py` passed.
