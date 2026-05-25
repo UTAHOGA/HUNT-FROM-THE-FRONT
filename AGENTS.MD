@@ -427,7 +427,8 @@ Rules:
 - Candidate fields are evidence only and must not feed runtime, prediction, draw, harvest, or website outputs as truth.
 - Blank reviewed fields are allowed only when the mapping status explains why they are blank.
 - `DATABASE.csv` is the canonical current hunt-code and boundary-id source unless a later reviewed canonical database explicitly replaces it.
-- Populated numeric permit cells in canonical `DATABASE.csv` are direct Utah DWR Hunt Planner truth and must not be changed or overwritten by comparison files, inferred values, draw reports, RAC files, audit outputs, or rebuilt library/master documents.
+- Populated numeric 2026 permit/allotment cells in canonical `DATABASE.csv` are direct Utah DWR Hunt Planner truth and must not be changed or overwritten by comparison files, inferred values, draw reports, RAC files, audit outputs, or rebuilt library/master documents.
+- Populated 2025 or older permit fields in `DATABASE.csv` are historical evidence fields unless separately sourced as current Hunt Planner data; they likely originate from raw PDF/import pipelines and must retain lineage before being used as truth.
 - Feeder/reference files such as `hunt_master_enriched.csv`, `point_ladder_view.csv`, canonical JSON, and boundary GeoJSON must be registered as source rows with hashes before they can support alignment work.
 - Direct Utah DWR Hunt Planner CSV-folder files are source evidence only until a reviewed promotion step identifies source dates/year context.
 - Do not promote 2025 permit values into 2026 available allotment fields unless every imported source used in that promotion has reviewed source-date context.

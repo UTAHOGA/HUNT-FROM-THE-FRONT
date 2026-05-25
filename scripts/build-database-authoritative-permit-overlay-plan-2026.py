@@ -3,7 +3,7 @@
 
 This script does not modify DATABASE.csv or runtime files. It turns the permit
 deep-dive audit into an action queue that protects populated DATABASE numeric
-permit cells as Utah DWR Hunt Planner truth.
+2026 permit/allotment cells as Utah DWR Hunt Planner truth.
 """
 
 from __future__ import annotations
@@ -240,7 +240,9 @@ def build_plan() -> tuple[list[dict[str, str]], dict]:
         "review_priority_counts": dict(sorted(priority_counts.items())),
         "row_origin_counts": dict(sorted(origin_counts.items())),
         "guardrail": (
-            "Populated numeric permit cells in canonical DATABASE.csv are direct Utah DWR Hunt Planner truth. "
+            "Populated numeric 2026 permit/allotment cells in canonical DATABASE.csv are direct Utah DWR Hunt "
+            "Planner truth. Populated 2025 or older permit fields are historical evidence fields unless separately "
+            "sourced as current Hunt Planner data. "
             "This plan only directs derived outputs to use DATABASE values where populated; it does not modify "
             "DATABASE.csv or promote comparison-source values over DATABASE.csv."
         ),

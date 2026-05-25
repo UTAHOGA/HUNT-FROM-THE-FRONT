@@ -2900,3 +2900,17 @@
   - `python -m py_compile scripts\build-database-authoritative-permit-overlay-plan-2026.py tests\utah\test_database_authoritative_permit_overlay_plan_2026.py` passed.
   - `python -m pytest tests\utah\test_database_authoritative_permit_overlay_plan_2026.py -q` passed: `3`.
   - `python -m pytest tests\utah\test_database_authoritative_permit_overlay_plan_2026.py tests\utah\test_hunt_master_canonical_permit_deep_dive.py -q` passed: `6`.
+
+## DATABASE 2026 Authority Clarification
+- Timestamp (UTC): 2026-05-25T08:50:00Z
+- Scope:
+  - Tightened the previously broad `DATABASE.csv` numeric-cell guardrail.
+  - Clarified that populated numeric `2026` permit/allotment cells in canonical `DATABASE.csv` are the direct Utah DWR Hunt Planner truth source.
+  - Clarified that populated `2025` or older permit fields in `DATABASE.csv` are historical evidence fields unless separately sourced as current Hunt Planner data; they likely originate from raw PDF/import pipelines and must retain lineage before being used as truth.
+  - Regenerated the permit deep-dive and database-authoritative overlay summaries with the corrected authority language.
+  - No source CSV values, `DATABASE.csv`, website feeds, runtime files, materializer code, or prediction surfaces were changed.
+- Validation:
+  - `python scripts\audit-hunt-master-canonical-permit-consistency.py` passed.
+  - `python scripts\build-database-authoritative-permit-overlay-plan-2026.py` passed.
+  - `python -m py_compile scripts\audit-hunt-master-canonical-permit-consistency.py scripts\build-database-authoritative-permit-overlay-plan-2026.py tests\utah\test_hunt_master_canonical_permit_deep_dive.py tests\utah\test_database_authoritative_permit_overlay_plan_2026.py` passed.
+  - `python -m pytest tests\utah\test_hunt_master_canonical_permit_deep_dive.py tests\utah\test_database_authoritative_permit_overlay_plan_2026.py -q` passed: `6`.

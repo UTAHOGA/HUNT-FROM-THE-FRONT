@@ -130,7 +130,7 @@
   "database_unique_hunt_codes": 1411,
   "direct_rac_hunt_code_count": 519,
   "direct_rac_source_file_count": 19,
-  "guardrail": "This audit is evidence only. It does not promote 2025 permit values into 2026 available allotment. Promotion still requires reviewed source-date context. Populated numeric permit cells in canonical DATABASE.csv are treated as direct Utah DWR Hunt Planner truth and must not be overwritten by comparison files, inferred values, draw reports, RAC files, or audit outputs.",
+  "guardrail": "This audit is evidence only. It does not promote 2025 permit values into 2026 available allotment. Promotion still requires reviewed source-date context. Populated numeric 2026 permit/allotment cells in canonical DATABASE.csv are treated as direct Utah DWR Hunt Planner truth and must not be overwritten by comparison files, inferred values, draw reports, RAC files, or audit outputs. Populated 2025 or older permit fields are historical evidence fields unless separately sourced as current Hunt Planner data.",
   "high_confidence_rows": 318,
   "large_change_review_rows": 42,
   "outputs": {
