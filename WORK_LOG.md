@@ -1,5 +1,27 @@
 # WORK LOG
 
+## Current Active EA Hunts Reconciliation
+- Timestamp (UTC): 2026-05-26T17:09:52Z
+- Scope:
+  - Reconciled canonical `DATABASE.csv` `EA` rows against the current active Utah DWR Hunt Planner antlerless elk `EA` list provided by the user and available through the live Hunt Planner table endpoint.
+  - Did not delete or modify any additional active `EA` rows after user clarified the remaining active `EA` list should be protected.
+  - Wrote a reviewed audit identifying active coverage and extra DATABASE rows that require separate review as possible RAC-only, future-season, or code-remap rows.
+  - Preserved prior retirement state: only `EA1007`, `EA1053`, and `PD1039` remain retired from active 2026 DATABASE.
+- Outputs:
+  - `scripts/audit-current-active-ea-hunts-2026.py`
+  - `data_truth/crosswalk_truth/validation/current_active_ea_hunts_2026_reconciliation.csv`
+  - `data_truth/crosswalk_truth/validation/current_active_ea_hunts_2026_reconciliation_summary.json`
+  - `processed_data/current_active_ea_hunts_2026_reconciliation.md`
+- Key results:
+  - Live/current active `EA` count: `204`.
+  - DATABASE active `EA` count: `218`.
+  - Active `EA` codes missing from DATABASE: `0`.
+  - DATABASE extra `EA` rows not in current active list: `14`.
+  - Extra rows are `EA1287`, `EA1288`, `EA1289`, `EA1290`, `EA1291`, `EA1292`, `EA1293`, `EA1294`, `EA1295`, `EA1296`, `EA1297`, `EA1298`, `EA1299`, and `EA1300`.
+- Validation:
+  - `python scripts\audit-current-active-ea-hunts-2026.py` passed.
+  - `python -m py_compile scripts\audit-current-active-ea-hunts-2026.py` passed.
+
 ## Retire Invalid 2026 Current Hunt Codes
 - Timestamp (UTC): 2026-05-26T17:01:51Z
 - Scope:
