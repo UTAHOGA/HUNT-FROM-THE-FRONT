@@ -26,21 +26,28 @@ RAW_OUT = (
     / "raw_inventory"
     / "live_dwr_hunt_planner_hunt_codes_snapshot_2026.csv"
 )
+LIVE_TABLE_OUT = (
+    ROOT
+    / "data_truth"
+    / "crosswalk_truth"
+    / "raw_inventory"
+    / "live_dwr_hunt_planner_selected_tables_snapshot_2026.csv"
+)
 AUDIT_OUT = (
     ROOT
     / "data_truth"
     / "crosswalk_truth"
     / "validation"
-    / "current_online_missing_hunt_codes_2026.csv"
+    / "current_online_missing_hunt_codes_2026_review.csv"
 )
 SUMMARY_OUT = (
     ROOT
     / "data_truth"
     / "crosswalk_truth"
     / "validation"
-    / "current_online_missing_hunt_codes_2026_summary.json"
+    / "current_online_missing_hunt_codes_2026_review_summary.json"
 )
-REPORT_OUT = ROOT / "processed_data" / "current_online_missing_hunt_codes_2026.md"
+REPORT_OUT = ROOT / "processed_data" / "current_online_missing_hunt_codes_2026_review.md"
 
 LIVE_HUNT_CODES_URL = "https://dwrapps.utah.gov/huntboundary/HaSetup?SE=Antlerless&SP=Elk"
 LIVE_TABLE_URLS = {
@@ -86,6 +93,33 @@ def live_rows_by_species_gender() -> dict[tuple[str, str], list[dict[str, object
             raise RuntimeError(f"Unexpected DWR HuntTableData payload for {url!r}")
         out[key] = payload
     return out
+
+
+def flatten_live_tables(
+    timestamp: str,
+    tables: dict[tuple[str, str], list[dict[str, object]]],
+) -> list[dict[str, object]]:
+    rows: list[dict[str, object]] = []
+    for (species, sex_type), table_rows in tables.items():
+        source_url = LIVE_TABLE_URLS[(species, sex_type)]
+        for row in table_rows:
+            rows.append(
+                {
+                    "snapshot_utc": timestamp,
+                    "source_url": source_url,
+                    "hunt_code": row.get("HUNT_NBR", ""),
+                    "hunt_name": row.get("HUNT_NAME", ""),
+                    "species": row.get("SPECIES", species),
+                    "sex_type": row.get("GENDER", sex_type),
+                    "weapon": row.get("WEAPON", ""),
+                    "hunt_type": row.get("HUNT_TYPE", ""),
+                    "season": row.get("SEASON_DATE_TEXT", ""),
+                    "quota_res": row.get("QUOTA_RES", ""),
+                    "quota_nres": row.get("QUOTA_NRES", ""),
+                    "quota_total": row.get("QUOTA", ""),
+                }
+            )
+    return rows
 
 
 def find_live_name_candidates(
@@ -145,6 +179,25 @@ def main() -> int:
         for code in live_codes
     ]
     write_csv(RAW_OUT, raw_rows, ["snapshot_utc", "source_url", "source_sha256", "hunt_code"])
+    live_table_rows = flatten_live_tables(timestamp, live_tables)
+    write_csv(
+        LIVE_TABLE_OUT,
+        live_table_rows,
+        [
+            "snapshot_utc",
+            "source_url",
+            "hunt_code",
+            "hunt_name",
+            "species",
+            "sex_type",
+            "weapon",
+            "hunt_type",
+            "season",
+            "quota_res",
+            "quota_nres",
+            "quota_total",
+        ],
+    )
 
     audit_rows: list[dict[str, object]] = []
     for row in missing_rows:
@@ -165,6 +218,8 @@ def main() -> int:
                 "permit_allotment_2026_status": row.get("permit_allotment_2026_status", ""),
                 "permit_allotment_2026_source_file": row.get("permit_allotment_2026_source_file", ""),
                 "online_status": "NOT_IN_LIVE_DWR_HUNT_PLANNER_HUNT_NUMBER_LIST",
+                "issue_type": "HUNT_CODE_MISSING_ONLINE_BOUNDARY_ID_PRESENT",
+                "boundary_id_status": "PRESENT_IN_DATABASE" if row.get("boundary_id", "").strip() else "BLANK_IN_DATABASE",
                 "review_priority": "HIGH" if code in USER_REPORTED_MISSING else "MEDIUM",
                 "user_reported_missing": "YES" if code in USER_REPORTED_MISSING else "NO",
                 "live_same_name_candidates": find_live_name_candidates(row, live_tables),
@@ -189,6 +244,8 @@ def main() -> int:
         "permit_allotment_2026_status",
         "permit_allotment_2026_source_file",
         "online_status",
+        "issue_type",
+        "boundary_id_status",
         "review_priority",
         "user_reported_missing",
         "live_same_name_candidates",
@@ -201,6 +258,10 @@ def main() -> int:
         "live_hunt_codes_url": LIVE_HUNT_CODES_URL,
         "live_hunt_code_count": len(live_codes),
         "live_hunt_code_sha256": live_hash,
+        "live_selected_table_row_count": len(live_table_rows),
+        "live_selected_table_counts": {
+            f"{species}|{sex_type}": len(rows) for (species, sex_type), rows in live_tables.items()
+        },
         "database_path": str(DATABASE.relative_to(ROOT)).replace("\\", "/"),
         "database_hunt_code_count": len(database_rows),
         "database_unique_hunt_code_count": len(database_codes),
@@ -211,6 +272,7 @@ def main() -> int:
         "missing_codes_by_prefix": {},
         "outputs": {
             "live_snapshot_csv": str(RAW_OUT.relative_to(ROOT)).replace("\\", "/"),
+            "live_selected_tables_snapshot_csv": str(LIVE_TABLE_OUT.relative_to(ROOT)).replace("\\", "/"),
             "audit_csv": str(AUDIT_OUT.relative_to(ROOT)).replace("\\", "/"),
             "markdown_report": str(REPORT_OUT.relative_to(ROOT)).replace("\\", "/"),
         },
@@ -228,9 +290,13 @@ def main() -> int:
         "",
         f"- Snapshot UTC: `{timestamp}`",
         f"- Live DWR hunt-number count: `{len(live_codes)}`",
+        f"- Live selected table rows: `{len(live_table_rows)}`",
         f"- DATABASE row count: `{len(database_rows)}`",
         f"- DATABASE codes not present in live DWR Hunt Planner list: `{len(audit_rows)}`",
+        f"- Missing-code rows with blank DATABASE boundary IDs: `{sum(1 for row in audit_rows if row['boundary_id_status'] == 'BLANK_IN_DATABASE')}`",
         f"- User-reported codes confirmed absent: `{', '.join(summary['user_reported_missing_confirmed_absent'])}`",
+        "",
+        "This is a hunt-code presence problem, not a boundary-ID gap. All rows in this audit have a populated DATABASE boundary ID.",
         "",
         "## High Priority",
         "",

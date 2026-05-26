@@ -25,6 +25,27 @@
   - `python -m py_compile scripts\audit-current-online-hunt-codes-2026.py` passed.
   - Inline validation confirmed `17` audit rows and high-priority absent status for `EA1007`, `EA1053`, and `PD1039`.
 
+## Current Online Missing Hunt Code Audit Review 2026
+- Timestamp (UTC): 2026-05-26T16:57:06Z
+- Scope:
+  - Refined the live-online audit after user clarification that `EA1007`, `EA1053`, and `PD1039` are hunt codes that no longer exist online.
+  - Added a selected live DWR Hunt Planner table snapshot for the current online `Elk|Antlerless` and `Pronghorn|Doe` rows.
+  - Added explicit audit fields distinguishing the issue as `HUNT_CODE_MISSING_ONLINE_BOUNDARY_ID_PRESENT`.
+  - Confirmed this is not a boundary-ID gap: all `17` missing-online rows have populated DATABASE boundary IDs.
+  - Preserved protected `DATABASE.csv` numeric cells and did not modify website-facing outputs.
+- Outputs:
+  - `data_truth/crosswalk_truth/raw_inventory/live_dwr_hunt_planner_selected_tables_snapshot_2026.csv`
+  - `data_truth/crosswalk_truth/validation/current_online_missing_hunt_codes_2026_review.csv`
+  - `data_truth/crosswalk_truth/validation/current_online_missing_hunt_codes_2026_review_summary.json`
+  - `processed_data/current_online_missing_hunt_codes_2026_review.md`
+- Key results:
+  - Live selected table rows: `227` (`204` `Elk|Antlerless`, `23` `Pronghorn|Doe`).
+  - User-reported codes confirmed absent from live online hunt-code list: `EA1007`, `EA1053`, `PD1039`.
+  - Live same-name candidates: `EA1053 -> EA1054` for `Nine Mile, West Anthro`; `EA1007 -> EA2013` for `Wasatch Mtns, Currant Creek` private-lands-only; no live same-name candidate for `PD1039`.
+- Validation:
+  - `python scripts\audit-current-online-hunt-codes-2026.py` passed.
+  - `python -m py_compile scripts\audit-current-online-hunt-codes-2026.py` passed.
+
 ## 2026 DATABASE Boundary ID Fill From JSON/GeoJSON
 - Timestamp (UTC): 2026-05-26T16:36:35Z
 - Scope:
