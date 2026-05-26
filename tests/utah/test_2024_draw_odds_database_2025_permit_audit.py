@@ -22,17 +22,15 @@ def test_2024_draw_odds_audit_is_reference_only_not_overwrite_instruction() -> N
 
     assert summary["source_rows"] == 874
     assert summary["source_unique_hunt_codes"] == 874
-    assert summary["source_codes_missing_database_count"] == 49
+    assert summary["source_codes_missing_database_count"] == 0
     assert summary["permits_2025_status_counts"] == {
         "DIFFERS": 448,
-        "MATCH": 377,
-        "SOURCE_CODE_NOT_IN_DATABASE": 49,
+        "MATCH": 426,
     }
     assert summary["permits_2025_draw_status_counts"] == {
         "DATABASE_BLANK": 222,
         "DIFFERS": 277,
-        "MATCH": 326,
-        "SOURCE_CODE_NOT_IN_DATABASE": 49,
+        "MATCH": 375,
     }
     assert summary["safe_blank_candidate_codes"] == []
     assert "No DATABASE.csv permit fields are modified" in summary["guardrail"]
@@ -57,11 +55,32 @@ def test_2025_database_broad_fields_are_filled_only_for_safe_blank_candidates() 
     assert summary["candidate_count"] == 2
     assert summary["promoted_row_count"] == 2
     assert summary["promoted_codes"] == ["EB3168", "MB6265"]
-    assert len(database_rows) == 1398
-    assert len(broad_populated) == 1034
+    assert len(database_rows) == 1447
+    assert len(broad_populated) == 1083
     assert (
         database_rows["EB3168"]["permits_2025_res"],
         database_rows["EB3168"]["permits_2025_nr"],
         database_rows["EB3168"]["permits_2025_total"],
         database_rows["EB3168"]["permits_2025_source"],
     ) == ("2", "1", "3", "2024_DRAW_ODDS_MODEL_TARGET_2025_BLANK_FILL")
+
+
+def test_source_only_pdf_rows_are_promoted_as_historical_2025_rows() -> None:
+    summary_path = (
+        ROOT
+        / "data_truth/draw_results_truth/validation/"
+        / "source_only_2024_draw_pdf_values_promoted_to_DATABASE_2025_summary.json"
+    )
+    summary = json.loads(summary_path.read_text(encoding="utf-8"))
+    database_rows = _csv_by_code(DATABASE)
+
+    assert summary["inserted_row_count"] == 49
+    assert summary["skipped_existing_count"] == 0
+    assert database_rows["DB1082"]["boundary_id"] == "622"
+    assert database_rows["DB1082"]["permits_2025_total"] == "13"
+    assert database_rows["DB1082"]["permits_2026_total"] == ""
+    assert database_rows["DB1082"]["permit_allotment_2026_total"] == ""
+    assert (
+        database_rows["DB1082"]["permits_2025_source"]
+        == "2024_DRAW_RESULTS_PDF_MODEL_TARGET_2025_SOURCE_ONLY_PROMOTION"
+    )

@@ -1,6 +1,6 @@
 # Database Publish Readiness Report
 
-Generated UTC: 2026-05-26T23:21:46.208474+00:00
+Generated UTC: 2026-05-26T23:35:47.024802+00:00
 Publish ready: **YES**
 
 ## Blockers
@@ -13,8 +13,8 @@ Publish ready: **YES**
 
 ## Source To Database
 
-- Database rows: 1398
-- Database unique hunt codes: 1398
+- Database rows: 1447
+- Database unique hunt codes: 1447
 - RAC hunt codes missing in database: 0
 - RAC numeric mismatch rows: 0
 - RAC significant differences > 5: 0

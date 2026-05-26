@@ -48,7 +48,12 @@ def test_live_dwr_comparison_has_no_numeric_mismatches_after_shape_rules() -> No
 def test_cwmu_live_values_are_total_only_not_resident_split() -> None:
     rows = _database_by_code()
     row = rows["EA1129"]
-    cwmu_rows = [row for row in rows.values() if row["hunt_type"] == "CWMU"]
+    cwmu_rows = [
+        row
+        for row in rows.values()
+        if row["hunt_type"] == "CWMU"
+        and row["permit_allotment_2026_status"] == "LIVE_DWR_CWMU_TOTAL_ONLY_FROM_QUOTA_RES"
+    ]
 
     assert row["hunt_name"] == "Deseret CWMU"
     assert row["permits_2026_res"] == ""
@@ -214,10 +219,11 @@ def test_comprehensive_live_dwr_extraction_confirms_broad_database_coverage() ->
 
     assert summary["endpoint_count"] == 19
     assert summary["live_unique_hunt_code_count"] == 1389
-    assert summary["database_row_count"] == 1394
+    assert summary["database_row_count"] == 1447
     assert summary["live_only_count"] == 0
     assert summary["live_numeric_database_blank_count"] == 0
-    assert summary["database_only_codes"] == ["BI6505", "BI6506", "BI6529", "BI6536", "BI6539"]
+    assert summary["database_only_count"] == 58
+    assert {"DB1082", "EA1040", "PB5313"}.issubset(set(summary["database_only_codes"]))
     assert summary["numeric_mismatch_count"] == 0
     assert summary["numeric_mismatch_codes"] == []
     assert summary["comparison_status_counts"]["MATCH"] == 1068

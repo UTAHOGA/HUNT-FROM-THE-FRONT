@@ -31,13 +31,24 @@ HISTORICAL_FAMILIES = [
         "family": "permits_2025",
         "historical_year": "2025",
         "source_field": "permits_2025_source",
-        "expected_source": "2025_DRAW_RESULTS_TABLES",
+        "expected_sources": {
+            "2025_DRAW_RESULTS_TABLES",
+            "2024_DRAW_ODDS_MODEL_TARGET_2025_BLANK_FILL",
+            "2024_DRAW_ODDS_PDF_VALUES_MODEL_TARGET_2025",
+            "2024_BEAR_DRAW_RESULTS_PDF_MODEL_TARGET_2025",
+            "2024_DRAW_RESULTS_PDF_MODEL_TARGET_2025_SOURCE_ONLY_PROMOTION",
+        },
     },
     {
         "family": "permits_2025_draw",
         "historical_year": "2025",
         "source_field": "permits_2025_draw_source",
-        "expected_source": "canonical_2026_source_of_truth_draw_results",
+        "expected_sources": {
+            "canonical_2026_source_of_truth_draw_results",
+            "2024_DRAW_ODDS_PDF_VALUES_MODEL_TARGET_2025",
+            "2024_BEAR_DRAW_RESULTS_PDF_MODEL_TARGET_2025",
+            "2024_DRAW_RESULTS_PDF_MODEL_TARGET_2025_SOURCE_ONLY_PROMOTION",
+        },
     },
 ]
 
@@ -133,11 +144,11 @@ def family_audit_row(
         canonical_status = "NO_HISTORICAL_VALUE"
         review_reason = ""
 
-    expected_source = family_def.get("expected_source", "")
-    if numeric and source_value and expected_source and source_value != expected_source:
+    expected_sources = family_def.get("expected_sources", set())
+    if numeric and source_value and expected_sources and source_value not in expected_sources:
         lineage_status = "SOURCE_PRESENT_UNEXPECTED_VALUE"
         canonical_status = "REVIEW_SOURCE_VALUE"
-        review_reason = f"Expected source value {expected_source}, found {source_value}."
+        review_reason = f"Expected one of {sorted(expected_sources)}, found {source_value}."
 
     return {
         "hunt_code": clean(row.get("hunt_code")).upper(),

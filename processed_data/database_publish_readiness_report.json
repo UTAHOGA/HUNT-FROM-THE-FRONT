@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-26T23:21:46.208474+00:00",
+  "generated_at_utc": "2026-05-26T23:35:47.024802+00:00",
   "publish_ready": true,
   "blockers": [],
   "warnings": [
     "Control-unit overlay unresolved warnings retained: Henry Mtns"
   ],
   "source_to_database": {
-    "database_rows": 1398,
-    "database_unique_hunt_codes": 1398,
+    "database_rows": 1447,
+    "database_unique_hunt_codes": 1447,
     "database_duplicate_hunt_code_count": 0,
     "rac_cumulative_rows": 562,
     "rac_hunt_code_rows": 528,

@@ -1,20 +1,20 @@
 # Comprehensive Live DWR Permit Numbers Vs DATABASE 2026
 
-- Snapshot UTC: `2026-05-26T22:12:50+00:00`
+- Snapshot UTC: `2026-05-26T23:35:41+00:00`
 - DWR endpoints queried: `19`
 - Live rows extracted: `1389`
 - Live unique hunt codes: `1389`
-- DATABASE rows compared: `1394`
+- DATABASE rows compared: `1447`
 - Numeric mismatches: `0`
 - Live numeric / database blank: `0`
 - Database numeric / live blank: `0`
-- Database-only rows not exposed by queried DWR endpoints: `5`
+- Database-only rows not exposed by queried DWR endpoints: `58`
 - Live-only rows not in DATABASE: `0`
 
 ## Comparison Status Counts
 
 - `BOTH_BLANK`: `274`
-- `DATABASE_ONLY`: `5`
+- `DATABASE_ONLY`: `58`
 - `LIVE_NO_QUOTA_DATABASE_PRESERVED`: `47`
 - `MATCH`: `1068`
 

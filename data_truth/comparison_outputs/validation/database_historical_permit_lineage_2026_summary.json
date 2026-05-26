@@ -1,32 +1,39 @@
 {
   "artifact": "database_historical_permit_lineage_2026",
-  "canonical_historical_source_truth_rows": 1600,
+  "canonical_historical_source_truth_rows": 1763,
   "database_file": "C:/Users/tyler/Desktop/GitHub/HUNT-BUILDER/pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
-  "database_row_count": 1394,
+  "database_row_count": 1447,
   "family_canonical_status_counts": {
     "permits_2025": {
-      "CANONICAL_HISTORICAL_SOURCE_TRUTH": 1028,
-      "NO_HISTORICAL_VALUE": 366
+      "CANONICAL_HISTORICAL_SOURCE_TRUTH": 1083,
+      "NO_HISTORICAL_VALUE": 364
     },
     "permits_2025_draw": {
-      "CANONICAL_HISTORICAL_SOURCE_TRUTH": 572,
-      "NO_HISTORICAL_VALUE": 822
+      "CANONICAL_HISTORICAL_SOURCE_TRUTH": 680,
+      "NO_HISTORICAL_VALUE": 767
     }
   },
   "family_source_value_counts": {
     "permits_2025": {
-      "2025_DRAW_RESULTS_TABLES": 1028,
-      "BLANK": 366
+      "2024_BEAR_DRAW_RESULTS_PDF_MODEL_TARGET_2025": 4,
+      "2024_DRAW_ODDS_MODEL_TARGET_2025_BLANK_FILL": 2,
+      "2024_DRAW_ODDS_PDF_VALUES_MODEL_TARGET_2025": 63,
+      "2024_DRAW_RESULTS_PDF_MODEL_TARGET_2025_SOURCE_ONLY_PROMOTION": 49,
+      "2025_DRAW_RESULTS_TABLES": 965,
+      "BLANK": 364
     },
     "permits_2025_draw": {
-      "BLANK": 822,
-      "canonical_2026_source_of_truth_draw_results": 572
+      "2024_BEAR_DRAW_RESULTS_PDF_MODEL_TARGET_2025": 4,
+      "2024_DRAW_ODDS_PDF_VALUES_MODEL_TARGET_2025": 63,
+      "2024_DRAW_RESULTS_PDF_MODEL_TARGET_2025_SOURCE_ONLY_PROMOTION": 49,
+      "BLANK": 767,
+      "canonical_2026_source_of_truth_draw_results": 564
     }
   },
   "guardrail": "Passed hunt-year permit values are canonical source truth when populated with reviewed source lineage. They must not drift because a newer working file, RAC file, inferred value, or comparison output disagrees. Historical populated values without lineage are blocked for lineage repair. The permits_2025 family is the full 2025 historical permit universe in DATABASE.csv; permits_2025_draw is a narrower bonus-point draw-results subset and must not be described as the full 2025 draw/permit universe.",
-  "historical_2025_bonus_point_draw_subset_rows": 572,
-  "historical_2025_full_permit_universe_rows": 1028,
-  "historical_2025_non_bonus_or_general_subset_rows": 456,
+  "historical_2025_bonus_point_draw_subset_rows": 680,
+  "historical_2025_full_permit_universe_rows": 1083,
+  "historical_2025_non_bonus_or_general_subset_rows": 403,
   "historical_field_families": [
     "permits_2025",
     "permits_2025_draw"
@@ -36,7 +43,7 @@
   ],
   "lineage_blocker_codes": [],
   "lineage_blocker_count": 0,
-  "output_row_count": 2788,
+  "output_row_count": 2894,
   "outputs": {
     "csv": "processed_data/database_historical_permit_lineage_2026.csv",
     "summary_json": "processed_data/database_historical_permit_lineage_2026_summary.json",
@@ -44,8 +51,8 @@
     "validation_json": "data_truth/comparison_outputs/validation/database_historical_permit_lineage_2026_summary.json"
   },
   "paired_family_compare_counts": {
-    "BOTH_BLANK": 366,
-    "MATCH": 572,
-    "PRIMARY_ONLY": 456
+    "BOTH_BLANK": 364,
+    "MATCH": 680,
+    "PRIMARY_ONLY": 403
   }
 }

@@ -4,19 +4,19 @@
     "blank_boundary_id_count": 0,
     "duplicate_hunt_code_count": 0,
     "path": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
-    "row_count": 1398,
-    "unique_hunt_code_count": 1398
+    "row_count": 1447,
+    "unique_hunt_code_count": 1447
   },
   "fatal_blocker_count": 0,
-  "generated_at_utc": "2026-05-26T23:21:41+00:00",
+  "generated_at_utc": "2026-05-26T23:35:41+00:00",
   "guardrails": [
     "No protected numeric DATABASE cells were changed by this audit.",
     "Website feeds and materializer outputs were not modified.",
     "Warning-class historical rows are review evidence, not promoted current truth."
   ],
-  "open_issue_count": 47,
+  "open_issue_count": 24,
   "open_issue_counts_by_type": {
-    "HARVEST_2025_CODE_NOT_IN_ACTIVE_DATABASE": 29,
+    "HARVEST_2025_CODE_NOT_IN_ACTIVE_DATABASE": 6,
     "LE_DEER_2025_DRAW_TO_DATABASE_MISSING_DATABASE_ROW": 6,
     "OIL_2025_DRAW_TO_DATABASE_MISSING_DATABASE_ROW": 12
   },

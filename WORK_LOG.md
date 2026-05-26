@@ -1,5 +1,47 @@
 # WORK LOG
 
+## Remaining Source-Only 2024 Draw PDF Rows Promoted As 2025 Historical Truth
+- Timestamp (UTC): 2026-05-26T23:40:00Z
+- Scope:
+  - Promoted the remaining `49` source-only 2024 draw PDF rows into canonical `DATABASE.csv` as historical 2025 draw-result rows.
+  - Populated only reviewed historical 2025 fields: `permits_2025_*`, `permits_2025_draw_*`, draw page/source lineage, and historical-only notes/status.
+  - Left all 2026 live permit and 2026 allotment fields blank for the inserted historical rows.
+  - Mapped all inserted rows to reviewed boundary IDs from official hunt-number/boundary evidence and current canonical reference rows.
+  - Updated the historical-lineage audit to recognize reviewed PDF promotion source labels as canonical 2025 source lineage.
+  - Refreshed the 2024 draw audit, comprehensive live DWR comparison, final permit crosscheck, publish-readiness report, and comprehensive history-integrity audit.
+  - No website feeds, `public_client_engine.csv`, prediction math, or materializer code were changed.
+- Outputs:
+  - `scripts/promote-source-only-2024-draw-pdf-values-2025.py`
+  - `data_truth/draw_results_truth/validation/source_only_2024_draw_pdf_values_promoted_to_DATABASE_2025.csv`
+  - `data_truth/draw_results_truth/validation/source_only_2024_draw_pdf_values_promoted_to_DATABASE_2025_summary.json`
+  - `processed_data/source_only_2024_draw_pdf_values_promoted_to_DATABASE_2025.md`
+  - refreshed 2024 draw audit, live DWR comparison, final permit crosscheck, historical lineage, publish-readiness, and history-integrity artifacts.
+- Key results:
+  - Inserted historical 2025 rows: `49`.
+  - 2024 draw PDF source-code rows missing from `DATABASE.csv`: `0`, down from `49`.
+  - `DATABASE.csv` row count: `1447`.
+  - Duplicate hunt codes: `0`.
+  - Blank boundary IDs: `0`.
+  - Populated `permits_2025_total` rows: `1083`.
+  - Populated `permits_2025_draw_total` rows: `680`.
+  - Populated `permits_2026_total` rows remain `1120`.
+  - 2026 permit/allotment total mismatches remain `0`.
+  - Live DWR numeric mismatches remain `0`.
+  - Historical lineage blockers: `0`.
+  - Comprehensive history-integrity fatal blockers: `0`; open issues dropped to `24`.
+  - Publish-ready remains `true`.
+- Validation:
+  - `python scripts\promote-source-only-2024-draw-pdf-values-2025.py` passed.
+  - `python scripts\audit-2024-draw-odds-against-database-2025-permits.py` passed.
+  - `python scripts\report-br-rs-2024-draw-permit-differences.py` passed.
+  - `python scripts\pull-live-dwr-permit-numbers-comprehensive-2026.py` passed.
+  - `python scripts\build-database-publish-readiness-report.py` passed.
+  - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed.
+  - `python scripts\audit-database-historical-permit-lineage-2026.py` passed.
+  - `python scripts\final-permit-database-crosscheck-2026.py` passed.
+  - `python -m py_compile scripts\promote-source-only-2024-draw-pdf-values-2025.py scripts\audit-database-historical-permit-lineage-2026.py scripts\pull-live-dwr-permit-numbers-comprehensive-2026.py scripts\final-permit-database-crosscheck-2026.py` passed.
+  - `python -m pytest tests\utah\test_2024_draw_odds_database_2025_permit_audit.py tests\utah\test_final_permit_database_crosscheck_2026.py tests\utah\test_database_historical_permit_lineage_2026.py tests\utah\test_live_dwr_and_expo_permit_promotion_2026.py -q` passed: `18`.
+
 ## Source-Only Bear 2024 Draw Rows Promoted As 2025 Historical Truth
 - Timestamp (UTC): 2026-05-26T23:25:00Z
 - Scope:
