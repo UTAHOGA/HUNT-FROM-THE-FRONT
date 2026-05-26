@@ -221,18 +221,18 @@ EA2008,EA,"Nine Mile, Anthro-Myton Bench",Elk,Private Lands Only,Any Legal Weapo
 EA2009,EA,La Sal Mtns,Elk,Private Lands Only,Any Legal Weapon,Aug 01 2026 - Jan 31 2027,70,false,true,true,true,true,true,current_2026_database_reference_only,PASS
 EA2010,EA,San Juan,Elk,Private Lands Only,Any Legal Weapon,Aug 01 2026 - Jan 31 2027,50,false,true,true,true,true,true,current_2026_database_reference_only,PASS
 EA2011,EA,Manti,Elk,Private Lands Only,Any Legal Weapon,Aug 01 2026 - Jan 31 2027,300,false,true,true,true,true,true,current_2026_database_reference_only,PASS
-EA2012,EA,"Wasatch Mtns, West-Central",Elk,Private Lands Only,Any Legal Weapon,Aug 01 2026 - Jan 31 2027,500,false,true,true,true,true,true,current_2026_database_reference_only,PASS
+EA2012,EA,"Wasatch Mtns, West-Central",Elk,Private Lands Only,Any Legal Weapon,Aug 01 2026 - Jan 31 2027,400,false,true,true,true,true,true,current_2026_database_reference_only,PASS
 EA2013,EA,"Wasatch Mtns, Currant Creek",Elk,Private Lands Only,Any Legal Weapon,Aug 01 2026 - Jan 31 2027,2000,false,true,true,true,true,true,current_2026_database_reference_only,PASS
 EA2014,EA,"Wasatch Mtns, Avintaquin-White River",Elk,Private Lands Only,Any Legal Weapon,Aug 01 2026 - Jan 31 2027,400,false,true,true,true,true,true,current_2026_database_reference_only,PASS
-EA2015,EA,Paunsaugunt,Elk,Private Lands Only,Any Legal Weapon,Aug 01 2026 - Jan 31 2027,75,false,true,true,true,true,true,current_2026_database_reference_only,PASS
-EA2016,EA,Nebo,Elk,Private Lands Only,Any Legal Weapon,Aug 01 2026 - Jan 31 2027,325,false,true,true,true,true,true,current_2026_database_reference_only,PASS
+EA2015,EA,Paunsaugunt,Elk,Private Lands Only,Any Legal Weapon,Aug 01 2026 - Jan 31 2027,100,false,true,true,true,true,true,current_2026_database_reference_only,PASS
+EA2016,EA,Nebo,Elk,Private Lands Only,Any Legal Weapon,Aug 01 2026 - Jan 31 2027,275,false,true,true,true,true,true,current_2026_database_reference_only,PASS
 EA2017,EA,Mt Dutton,Elk,Private Lands Only,Any Legal Weapon,Aug 01 2025 - Jan 31 2026,75,false,true,true,true,true,true,current_2026_database_reference_only,PASS
 EA2018,EA,Panguitch Lake,Elk,Private Lands Only,Any Legal Weapon,Aug 01 2026 - Jan 31 2027,75,false,true,true,true,true,true,current_2026_database_reference_only,PASS
 EA2019,EA,"West Desert, Tintic Valley",Elk,Private Lands Only,Any Legal Weapon,Aug 01 2026 - Jan 31 2027,60,false,true,true,true,true,true,current_2026_database_reference_only,PASS
 EA2020,EA,Zion,Elk,Private Lands Only,Any Legal Weapon,Aug 01 2026 - Jan 31 2027,320,false,true,true,true,true,true,current_2026_database_reference_only,PASS
 EA2021,EA,"Beaver, East",Elk,Private Lands Only,Any Legal Weapon,Aug 01 2026 - Jan 31 2027,30,false,true,true,true,true,true,current_2026_database_reference_only,PASS
 EA2026,EA,"Box Elder, Hansel Mtn",Elk,Private Lands Only,Any Legal Weapon,Aug 01 2026 - Jan 31 2027,200,false,true,true,true,true,true,current_2026_database_reference_only,PASS
-EA2027,EA,Cache,Elk,Private Lands Only,Any Legal Weapon,Aug 01 2026 - Jan 31 2027,250,false,true,true,true,true,true,current_2026_database_reference_only,PASS
+EA2027,EA,Cache,Elk,Private Lands Only,Any Legal Weapon,Aug 01 2026 - Jan 31 2027,300,false,true,true,true,true,true,current_2026_database_reference_only,PASS
 EA2028,EA,Vernal/Bonanza,Elk,Private Lands Only,Any Legal Weapon,Aug 01 2026 - Jan 31 2027,450,false,true,true,true,true,true,current_2026_database_reference_only,PASS
 EA2029,EA,"Nine Mile, Range Creek",Elk,Private Lands Only,Any Legal Weapon,Aug 01 2026 - Jan 31 2027,150,false,true,true,true,true,true,current_2026_database_reference_only,PASS
 EA2030,EA,Diamond Mtn,Elk,Private Lands Only,Any Legal Weapon,Aug 01 2026 - Jan 31 2027,200,false,true,true,true,true,true,current_2026_database_reference_only,PASS
@@ -245,7 +245,7 @@ EA2039,EA,"Fillmore, Pahvant",Elk,Private Lands Only,Any Legal Weapon,Aug 01 202
 EA2040,EA,Kamas,Elk,Private Lands Only,Any Legal Weapon,Aug 01 2026 - Jan 31 2027,150,false,true,true,true,true,true,current_2026_database_reference_only,PASS
 EA2041,EA,Cache (Conservation),Elk,Conservation,Any Legal Weapon,"Oct 4 - Oct 26, 2025",,false,true,true,true,true,true,current_2026_database_reference_only,PASS
 EA2045,EA,Wasatch Mtns (Conservation),Elk,Conservation,Any Legal Weapon,"Oct 4 - Oct 16, 2025 & Nov 15, 2025 - Jan 31, 2026",,false,true,true,true,true,true,current_2026_database_reference_only,PASS
-EA2046,EA,"Box Elder, Sawtooth",Elk,Private Lands Only,Any Legal Weapon,Aug 01 2026 - Jan 31 2027,50,false,true,true,true,true,true,current_2026_database_reference_only,PASS
+EA2046,EA,"Box Elder, Sawtooth",Elk,Private Lands Only,Any Legal Weapon,Aug 01 2026 - Jan 31 2027,25,false,true,true,true,true,true,current_2026_database_reference_only,PASS
 PD1000,PD,"Box Elder, Snowville",Pronghorn,General Season,Any Legal Weapon,Nov 07 2026 - Dec 06 2026,40,true,true,true,true,true,true,prior_2024_antlerless_draw_results,PASS
 PD1006,PD,,,,,,,true,false,false,false,false,false,prior_2024_antlerless_draw_results,PASS
 PD1012,PD,"Box Elder, Promontory",Pronghorn,General Season,Any Legal Weapon,Oct 03 2026 - Oct 25 2026,20,true,true,true,true,true,true,prior_2024_antlerless_draw_results,PASS

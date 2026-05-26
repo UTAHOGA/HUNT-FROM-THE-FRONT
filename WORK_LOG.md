@@ -1,5 +1,29 @@
 # WORK LOG
 
+## EA Private-Lands Canonical Permit Promotion 2026
+- Timestamp (UTC): 2026-05-26T13:33:39Z
+- Scope:
+  - Promoted the reviewed DWR Hunt Planner `EA` antlerless elk private-lands source into current 2026 permit/allotment surfaces.
+  - Corrected the five DATABASE mismatches identified by the canonical EA validation: `EA2012` `500 -> 400`, `EA2015` `75 -> 100`, `EA2016` `325 -> 275`, `EA2027` `250 -> 300`, and `EA2046` `50 -> 25`.
+  - Preserved historical 2025 and older fields; only current 2026 permit/allotment/quota fields and source traceability fields were synchronized.
+  - Re-ran the canonical EA validation; DATABASE now has zero missing rows and zero mismatches against the reviewed source.
+- Files:
+  - `scripts/promote-ea-private-lands-canonical-2026.py`
+  - `tests/utah/test_ea_private_lands_canonical_promotion_2026.py`
+  - `tests/utah/test_ea_private_lands_canonical_2026.py`
+  - `data_truth/permit_overlay_truth/validation/elk_antlerless_private_lands_EA_2026_promotion_audit.csv`
+  - `data_truth/permit_overlay_truth/validation/elk_antlerless_private_lands_EA_2026_promotion_summary.json`
+  - `data_truth/permit_overlay_truth/validation/elk_antlerless_private_lands_EA_2026_vs_DATABASE.csv`
+  - `data_truth/permit_overlay_truth/validation/elk_antlerless_private_lands_EA_2026_summary.json`
+  - `processed_data/elk_antlerless_private_lands_EA_2026_promotion.md`
+  - Current 2026 DATABASE/runtime/reference CSV surfaces carrying the affected `EA` rows.
+- Validation:
+  - `python scripts\promote-ea-private-lands-canonical-2026.py`
+  - `python scripts\validate-ea-private-lands-canonical-2026.py`
+  - `python -m compileall scripts\promote-ea-private-lands-canonical-2026.py tests\utah\test_ea_private_lands_canonical_promotion_2026.py tests\utah\test_ea_private_lands_canonical_2026.py`
+  - `python -m pytest tests\utah\test_ea_private_lands_canonical_2026.py tests\utah\test_ea_private_lands_canonical_promotion_2026.py -q` passed: `6`
+  - Focused stale-value scan across active current surfaces returned `0` stale current cells.
+
 ## Desert Bighorn Conservation Permit Code Lock 2026
 - Timestamp (UTC): 2026-05-25T01:55:00Z
 - Scope:

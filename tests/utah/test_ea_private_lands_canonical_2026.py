@@ -66,7 +66,7 @@ def test_ea_private_lands_canonical_rows_are_clean_and_ea_only():
     assert len({row["hunt_code"] for row in rows}) == len(rows)
 
 
-def test_ea_private_lands_canonical_flags_database_mismatches_without_promotion():
+def test_ea_private_lands_canonical_matches_promoted_database_values():
     run_validation()
     rows = read_csv(COMPARISON)
     mismatches = [
@@ -74,11 +74,5 @@ def test_ea_private_lands_canonical_flags_database_mismatches_without_promotion(
         for row in rows
         if row["comparison_status"] == "DATABASE_PROTECTED_VALUE_DIFFERS_FROM_CANONICAL_SOURCE"
     ]
-    assert {row["hunt_code"] for row in mismatches} == {
-        "EA2012",
-        "EA2015",
-        "EA2016",
-        "EA2027",
-        "EA2046",
-    }
-    assert all("do not overwrite" in row["review_action"] for row in mismatches)
+    assert mismatches == []
+    assert all(row["comparison_status"] == "MATCH" for row in rows)

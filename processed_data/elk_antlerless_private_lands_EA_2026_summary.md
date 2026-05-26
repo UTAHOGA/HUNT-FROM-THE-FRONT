@@ -8,16 +8,12 @@ User-supplied DWR Hunt Planner source for antlerless elk private-lands-only `EA`
 - Unique hunt codes: `27`
 - Source total 2026 permits: `9830`
 - Missing in DATABASE: `0`
-- DATABASE protected-value mismatches: `5`
+- DATABASE protected-value mismatches: `0`
 - Blockers: `0`
 
 ## DATABASE Mismatch Codes
 
-- `EA2012`
-- `EA2015`
-- `EA2016`
-- `EA2027`
-- `EA2046`
+- None
 
 ## Guardrail
 
