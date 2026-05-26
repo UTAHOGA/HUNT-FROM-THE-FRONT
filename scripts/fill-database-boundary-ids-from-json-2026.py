@@ -46,22 +46,7 @@ AUDIT_COLUMNS = [
     "review_note",
 ]
 
-REVIEW_TARGET_CODES = {
-    "EA1287",
-    "EA1288",
-    "EA1289",
-    "EA1290",
-    "EA1291",
-    "EA1292",
-    "EA1293",
-    "EA1294",
-    "EA1295",
-    "EA1296",
-    "EA1297",
-    "EA1298",
-    "EA1299",
-    "EA1300",
-}
+REVIEW_TARGET_CODES: set[str] = set()
 
 
 def read_csv(path: Path) -> tuple[list[dict[str, str]], list[str]]:
