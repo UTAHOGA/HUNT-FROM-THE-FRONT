@@ -1,5 +1,40 @@
 # WORK LOG
 
+## Comprehensive Live DWR 2026 Permit Totals Promoted Over Allotment
+- Timestamp (UTC): 2026-05-26T22:07:00Z
+- Scope:
+  - Promoted all numeric 2026 Utah DWR Hunt Planner live permit totals from the comprehensive live snapshot into canonical `DATABASE.csv`.
+  - Wrote the same live-shaped numbers into the 2026 allotment fields wherever live DWR numeric values exist, so `permit_allotment_2026_*` now mirrors current live permit truth instead of older allotment-derived values.
+  - Preserved reviewed database-entered values for DWR no-quota rows, including conservation, expo, statewide, control, and other rows where the live website does not publish a quota.
+  - Kept CWMU rows as total-only values, using the DWR-published public permit count as `permits_2026_total` / `permit_allotment_2026_total`.
+  - Did not change 2025 permit fields; `permits_2025_draw_total` remains low at `572` and needs a separate historical repair pass.
+  - No website feeds, `public_client_engine.csv`, prediction math, or materializer code were changed.
+- Outputs:
+  - `scripts/promote-comprehensive-live-dwr-permit-totals-2026.py`
+  - `data_truth/crosswalk_truth/validation/comprehensive_live_dwr_permit_totals_promoted_to_DATABASE_2026.csv`
+  - `data_truth/crosswalk_truth/validation/comprehensive_live_dwr_permit_totals_promoted_to_DATABASE_2026_summary.json`
+  - `processed_data/comprehensive_live_dwr_permit_totals_promoted_to_DATABASE_2026.md`
+  - refreshed comprehensive live DWR comparison, final permit crosscheck, publish-readiness, and history-integrity artifacts.
+- Key results:
+  - Live DWR rows: `1389`.
+  - Live/DATABASE matched rows: `1389`.
+  - Numeric live rows promoted over allotment: `1068`.
+  - DWR no-quota rows preserved from reviewed database values: `321`.
+  - Missing DATABASE rows from live DWR snapshot: `0`.
+  - Final populated `permit_allotment_2026_total` rows: `1091`, up from `912`.
+  - Final populated `permits_2026_total` rows: `1120`.
+  - 2026 permit/allotment total mismatches: `0`.
+  - Comprehensive live comparison exact matches: `1068`; split-difference bucket eliminated.
+  - Publish readiness remains `true`; comprehensive history fatal blockers remain `0`.
+- Validation:
+  - `python scripts\promote-comprehensive-live-dwr-permit-totals-2026.py` passed.
+  - `python scripts\pull-live-dwr-permit-numbers-comprehensive-2026.py` passed.
+  - `python scripts\build-database-publish-readiness-report.py` passed.
+  - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed.
+  - `python scripts\final-permit-database-crosscheck-2026.py` passed.
+  - `python -m py_compile scripts\promote-comprehensive-live-dwr-permit-totals-2026.py scripts\final-permit-database-crosscheck-2026.py scripts\pull-live-dwr-permit-numbers-comprehensive-2026.py` passed.
+  - `python -m pytest tests\utah\test_final_permit_database_crosscheck_2026.py tests\utah\test_live_dwr_and_expo_permit_promotion_2026.py -q` passed: `11`.
+
 ## Comprehensive Live DWR Permit Number Extraction
 - Timestamp (UTC): 2026-05-26T21:38:00Z
 - Scope:

@@ -20,6 +20,10 @@ SHEEP_SUMMARY = ROOT / "data_truth/crosswalk_truth/validation/sheep_sex_type_nor
 REVIEWED_CORRECTIONS_SUMMARY = (
     ROOT / "data_truth/crosswalk_truth/validation/reviewed_live_permit_corrections_2026_summary.json"
 )
+COMPREHENSIVE_PROMOTION_SUMMARY = (
+    ROOT
+    / "data_truth/crosswalk_truth/validation/comprehensive_live_dwr_permit_totals_promoted_to_DATABASE_2026_summary.json"
+)
 
 
 def _database_by_code() -> dict[str, dict[str, str]]:
@@ -164,8 +168,8 @@ def test_reviewed_live_permit_corrections_are_applied() -> None:
     for hunt_code, values in expected.items():
         row = rows[hunt_code]
         assert (row["permits_2026_res"], row["permits_2026_nr"], row["permits_2026_total"]) == values
-        assert row["permits_2026_source"] == "2026_DWR_HUNT_PLANNER_REVIEWED_LIVE_BLOCK"
-        assert row["permit_allotment_2026_status"] == "REVIEWED_LIVE_DWR_SPLIT"
+        assert row["permits_2026_source"] == "2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE"
+        assert row["permit_allotment_2026_status"] == "LIVE_DWR_RES_NR_SPLIT"
 
     assert rows["EB3135"]["hunt_name"] == "Barney Top/Kaiparowits"
     assert rows["EB3135"]["weapon"] == "September Archery"
@@ -176,6 +180,20 @@ def test_reviewed_live_permit_corrections_are_applied() -> None:
     ) == ("9", "1", "10")
     assert rows["EB3185"]["hunt_name"] == "Monroe"
     assert rows["EB3185"]["weapon"] == "Mid Any Legal Weapon"
+
+
+def test_comprehensive_live_dwr_promotion_supersedes_allotment_values() -> None:
+    summary = json.loads(COMPREHENSIVE_PROMOTION_SUMMARY.read_text(encoding="utf-8"))
+
+    assert summary["live_row_count"] == 1389
+    assert summary["live_database_matched_row_count"] == 1389
+    assert summary["numeric_promoted_rows"] == 1068
+    assert summary["preserved_no_quota_rows"] == 321
+    assert summary["missing_database_count"] == 0
+    assert summary["promotion_status_counts"] == {
+        "PRESERVED_DATABASE_VALUE_NO_LIVE_DWR_QUOTA": 321,
+        "PROMOTED_LIVE_DWR_OVER_ALLOTMENT": 1068,
+    }
 
 
 def test_comprehensive_live_dwr_extraction_confirms_broad_database_coverage() -> None:
@@ -189,5 +207,5 @@ def test_comprehensive_live_dwr_extraction_confirms_broad_database_coverage() ->
     assert summary["database_only_codes"] == ["BI6505", "BI6506", "BI6529", "BI6536", "BI6539"]
     assert summary["numeric_mismatch_count"] == 0
     assert summary["numeric_mismatch_codes"] == []
-    assert summary["comparison_status_counts"]["MATCH"] == 904
-    assert summary["comparison_status_counts"]["TOTAL_MATCH_SPLIT_DIFFERS"] == 164
+    assert summary["comparison_status_counts"]["MATCH"] == 1068
+    assert "TOTAL_MATCH_SPLIT_DIFFERS" not in summary["comparison_status_counts"]

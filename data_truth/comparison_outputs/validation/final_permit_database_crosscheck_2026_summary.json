@@ -7,7 +7,7 @@
   "duplicate_hunt_code_count": 0,
   "duplicate_hunt_codes": [],
   "field_populated_counts": {
-    "permit_allotment_2026_total": 912,
+    "permit_allotment_2026_total": 1091,
     "permits_2025_draw_total": 572,
     "permits_2025_total": 1028,
     "permits_2026_total": 1120
@@ -49,8 +49,7 @@
     "BOTH_BLANK": 274,
     "DATABASE_ONLY": 5,
     "LIVE_NO_QUOTA_DATABASE_PRESERVED": 47,
-    "MATCH": 904,
-    "TOTAL_MATCH_SPLIT_DIFFERS": 164
+    "MATCH": 1068
   },
   "outputs": {
     "detail_csv": "data_truth/comparison_outputs/validation/final_permit_database_crosscheck_2026.csv",
@@ -84,7 +83,7 @@
     "RS": 20,
     "TK": 18
   },
-  "snapshot_utc": "2026-05-26T21:59:32+00:00",
+  "snapshot_utc": "2026-05-26T22:04:28+00:00",
   "species_counts": {
     "Bison": 19,
     "Black Bear": 106,
@@ -99,8 +98,8 @@
     "Turkey": 18
   },
   "total_status_counts": {
-    "2026_PERMIT_TOTAL_MATCHES_ALLOTMENT_TOTAL": 912,
-    "2026_PERMIT_TOTAL_ONLY": 208,
+    "2026_PERMIT_TOTAL_MATCHES_ALLOTMENT_TOTAL": 1091,
+    "2026_PERMIT_TOTAL_ONLY": 29,
     "NO_2026_TOTAL": 274
   },
   "unique_hunt_code_count": 1394,
