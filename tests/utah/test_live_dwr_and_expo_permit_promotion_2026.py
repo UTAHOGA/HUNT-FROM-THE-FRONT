@@ -168,7 +168,7 @@ def test_reviewed_live_permit_corrections_are_applied() -> None:
         assert row["permit_allotment_2026_status"] == "REVIEWED_LIVE_DWR_SPLIT"
 
     assert rows["EB3135"]["hunt_name"] == "Barney Top/Kaiparowits"
-    assert rows["EB3135"]["weapon"] == "Archery"
+    assert rows["EB3135"]["weapon"] == "September Archery"
     assert (
         rows["EB3135"]["permits_2026_res"],
         rows["EB3135"]["permits_2026_nr"],

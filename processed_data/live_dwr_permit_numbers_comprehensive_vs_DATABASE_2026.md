@@ -1,6 +1,6 @@
 # Comprehensive Live DWR Permit Numbers Vs DATABASE 2026
 
-- Snapshot UTC: `2026-05-26T21:53:44+00:00`
+- Snapshot UTC: `2026-05-26T21:55:39+00:00`
 - DWR endpoints queried: `19`
 - Live rows extracted: `1389`
 - Live unique hunt codes: `1389`

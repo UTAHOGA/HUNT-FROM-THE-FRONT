@@ -73,8 +73,8 @@ REVIEWED_CORRECTIONS = {
 
 REVIEWED_LABEL_CORRECTIONS = {
     "EB3135": {
-        "weapon": "Archery",
-        "reason": "Reviewed DWR Hunt Planner block: EB3135 Barney Top/Kaiparowits weapon type is Archery, not September Archery.",
+        "weapon": "September Archery",
+        "reason": "Reviewed season-specific distinction: EB3135 must retain September Archery because this unit has multiple archery-season contexts.",
     }
 }
 
