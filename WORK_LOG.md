@@ -3472,3 +3472,30 @@
   - The executable audit and overlay-plan artifacts were regenerated in the sibling `HUNT-BUILDER` workspace.
 - Validation:
   - Confirmed `AGENTS.MD` now contains the corrected 2026 authority and historical-field lineage rule.
+
+## 2026 EA Private-Lands Canonical Source Validation
+- Timestamp (UTC): 2026-05-26T13:20:58Z
+- Scope:
+  - Registered the user-supplied DWR Hunt Planner file `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/elk antlerless private lands only EA.csv` as canonical source evidence for antlerless elk private-lands-only `EA` permit totals.
+  - Normalized the source into a committed permit-overlay truth table with source path, source SHA-256, and numeric `permits_2026_total` values.
+  - Compared every supplied `EA` hunt code against protected current `DATABASE.csv` values without modifying `DATABASE.csv`.
+  - Preserved the rule that populated `DATABASE.csv` numeric cells are not overwritten by comparison output without explicit review and promotion approval.
+- Outputs:
+  - `scripts/validate-ea-private-lands-canonical-2026.py`
+  - `tests/utah/test_ea_private_lands_canonical_2026.py`
+  - `data_truth/permit_overlay_truth/normalized/elk_antlerless_private_lands_EA_2026_canonical.csv`
+  - `data_truth/permit_overlay_truth/validation/elk_antlerless_private_lands_EA_2026_vs_DATABASE.csv`
+  - `data_truth/permit_overlay_truth/validation/elk_antlerless_private_lands_EA_2026_summary.json`
+  - `processed_data/elk_antlerless_private_lands_EA_2026_summary.md`
+- Key results:
+  - Source rows: `27`.
+  - Unique `EA` hunt codes: `27`.
+  - Source total 2026 permits: `9830`.
+  - Structural blockers: `0`.
+  - Missing DATABASE hunt codes: `0`.
+  - DATABASE protected-value differences: `5`.
+  - Difference codes: `EA2012`, `EA2015`, `EA2016`, `EA2027`, and `EA2046`.
+- Validation:
+  - `python scripts\validate-ea-private-lands-canonical-2026.py` passed.
+  - `python -m py_compile scripts\validate-ea-private-lands-canonical-2026.py tests\utah\test_ea_private_lands_canonical_2026.py` passed.
+  - `python -m pytest tests\utah\test_ea_private_lands_canonical_2026.py -q` passed: `3`.
