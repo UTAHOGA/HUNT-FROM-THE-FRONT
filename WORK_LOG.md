@@ -2982,3 +2982,33 @@
   - `python -m py_compile scripts\compare-2025-2026-hunt-codes.py tests\utah\test_hunt_code_comparison_2025_to_2026.py` passed.
   - `python -m pytest tests\utah\test_hunt_code_comparison_2025_to_2026.py -q` passed: `4`.
   - `python -m pytest tests\utah\test_hunt_code_comparison_2025_to_2026.py tests\utah\test_database_historical_permit_lineage_2026.py tests\utah\test_current_historical_hunt_code_crosswalk_2026.py -q` passed: `10`.
+
+## 2025 Guidebook Code Lookup For 2026 Gaps
+- Timestamp (UTC): 2026-05-26T01:00:00Z
+- Scope:
+  - Extracted hunt-code lines from `HUNTS/pipeline/RAW/hunt_unit_database/2025/pdf/regulation/2025_biggameapp.pdf`.
+  - Compared extracted 2025 guidebook codes to the 102 unresolved rows from the 2025-to-2026 hunt-code comparison (`101` current 2026 populated codes with no mapped 2025 history plus `1` 2025 historical code without populated 2026 permits).
+  - Classified evidence as exact current-code hits, same-number prefix swaps, name/species candidates, or no guidebook code found.
+  - Kept name-only candidates as review evidence only; no source CSV values, `DATABASE.csv`, website feeds, runtime files, materializer code, or prediction surfaces were changed.
+- Outputs:
+  - `scripts/find-2025-regulation-codes-for-2026-gaps.py`
+  - `tests/utah/test_guidebook_2025_codes_for_2026_gaps.py`
+  - `processed_data/guidebook_2025_extracted_hunt_codes.csv`
+  - `processed_data/guidebook_2025_codes_for_2026_gaps.csv`
+  - `processed_data/guidebook_2025_codes_for_2026_gaps_summary.json`
+  - `processed_data/guidebook_2025_codes_for_2026_gaps.md`
+  - `data_truth/comparison_outputs/validation/guidebook_2025_codes_for_2026_gaps_summary.json`
+- Key results:
+  - 2025 guidebook code-line rows extracted: `743`.
+  - Unique 2025 guidebook codes extracted: `734`.
+  - Gap rows checked: `102`.
+  - Exact current-code hits in guidebook: `2` (`EB3168`, `DB1109`).
+  - Same-number prefix-swap hits in guidebook: `21` (mostly `LO -> DB`, plus `EL3168 -> EB3168`).
+  - Same-species/name-only candidates: `15`.
+  - No guidebook code found: `64`.
+  - Name-only examples kept as review evidence: `BI6539` has Henry Mtns bison candidates, `DS6605` has `DS6621`, `PD1039` has `PB5054|PB5061|PB5041`.
+- Validation:
+  - `python scripts\find-2025-regulation-codes-for-2026-gaps.py` passed.
+  - `python -m py_compile scripts\find-2025-regulation-codes-for-2026-gaps.py tests\utah\test_guidebook_2025_codes_for_2026_gaps.py` passed.
+  - `python -m pytest tests\utah\test_guidebook_2025_codes_for_2026_gaps.py -q` passed: `3`.
+  - `python -m pytest tests\utah\test_guidebook_2025_codes_for_2026_gaps.py tests\utah\test_hunt_code_comparison_2025_to_2026.py -q` passed: `7`.
