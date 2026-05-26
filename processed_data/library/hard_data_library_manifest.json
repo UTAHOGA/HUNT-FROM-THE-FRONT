@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-26T17:19:14.690Z",
+  "generated_at": "2026-05-26T18:14:11.392Z",
   "current_source_used": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
   "cloudflare_fallback_base": "https://json.uoga.workers.dev",
   "pages_file_limit_mb": 25,
@@ -10,7 +10,7 @@
     "manual_review_count": 0,
     "promotion_gate_pass_count": 1394,
     "promotion_gate_block_count": 0,
-    "cloudflare_fallback_file_count": 9
+    "cloudflare_fallback_file_count": 6
   },
   "species_counts": {
     "Bison": 19,
@@ -74,12 +74,12 @@
       "name": "currentCanonicalRaw",
       "source_file": "pipeline/RAW/hunt_unit_database/2026/csv/hunt_master_canonical_2026_built.csv",
       "role": "canonical current hunt source of truth",
-      "exists": "false",
-      "row_count": 0,
-      "size_bytes": 0,
-      "size_mb": 0,
-      "delivery": "cloudflare-fallback",
-      "href": "https://json.uoga.workers.dev/pipeline/RAW/hunt_unit_database/2026/csv/hunt_master_canonical_2026_built.csv",
+      "exists": "true",
+      "row_count": "not_scanned",
+      "size_bytes": 367463,
+      "size_mb": 0.35,
+      "delivery": "pages-local",
+      "href": "./pipeline/RAW/hunt_unit_database/2026/csv/hunt_master_canonical_2026_built.csv",
       "local_href": "./pipeline/RAW/hunt_unit_database/2026/csv/hunt_master_canonical_2026_built.csv",
       "cloudflare_href": "https://json.uoga.workers.dev/pipeline/RAW/hunt_unit_database/2026/csv/hunt_master_canonical_2026_built.csv"
     },
@@ -269,12 +269,12 @@
       "name": "harvestQuality2026",
       "source_file": "pipeline/RAW/hunt_unit_database/2026/csv/harvest_quality_features_by_hunt_code_2025_for_2026.csv",
       "role": "harvest evidence",
-      "exists": "false",
-      "row_count": 0,
-      "size_bytes": 0,
-      "size_mb": 0,
-      "delivery": "cloudflare-fallback",
-      "href": "https://json.uoga.workers.dev/pipeline/RAW/hunt_unit_database/2026/csv/harvest_quality_features_by_hunt_code_2025_for_2026.csv",
+      "exists": "true",
+      "row_count": "not_scanned",
+      "size_bytes": 313722,
+      "size_mb": 0.3,
+      "delivery": "pages-local",
+      "href": "./pipeline/RAW/hunt_unit_database/2026/csv/harvest_quality_features_by_hunt_code_2025_for_2026.csv",
       "local_href": "./pipeline/RAW/hunt_unit_database/2026/csv/harvest_quality_features_by_hunt_code_2025_for_2026.csv",
       "cloudflare_href": "https://json.uoga.workers.dev/pipeline/RAW/hunt_unit_database/2026/csv/harvest_quality_features_by_hunt_code_2025_for_2026.csv"
     },
@@ -282,12 +282,12 @@
       "name": "researchLibraryMaster",
       "source_file": "processed_data/research_library_master.csv",
       "role": "research-page source",
-      "exists": "false",
-      "row_count": 0,
-      "size_bytes": 0,
-      "size_mb": 0,
-      "delivery": "cloudflare-fallback",
-      "href": "https://json.uoga.workers.dev/processed_data/research_library_master.csv",
+      "exists": "true",
+      "row_count": "not_scanned",
+      "size_bytes": 542563,
+      "size_mb": 0.52,
+      "delivery": "pages-local",
+      "href": "./processed_data/research_library_master.csv",
       "local_href": "./processed_data/research_library_master.csv",
       "cloudflare_href": "https://json.uoga.workers.dev/processed_data/research_library_master.csv"
     }
@@ -305,7 +305,7 @@
     "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv": 169,
     "processed_data/harvest_master.csv": 1764,
     "processed_data/harvest_quality_features_all_years_by_hunt_code.csv": 5151,
-    "pipeline/RAW/hunt_unit_database/2026/csv/harvest_quality_features_by_hunt_code_2025_for_2026.csv": 0
+    "pipeline/RAW/hunt_unit_database/2026/csv/harvest_quality_features_by_hunt_code_2025_for_2026.csv": 1120
   },
   "recommendation": "PASS: hard-data library page package built with no blocked current hunt rows."
 }

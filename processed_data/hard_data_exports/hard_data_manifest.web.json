@@ -264,5 +264,19 @@
     "size_mb": 1.84,
     "source": "processed_data",
     "scope": "runtime"
+  },
+  {
+    "group": "raw_library",
+    "type": "csv",
+    "year": "2026",
+    "title": "Research Library Master",
+    "subtitle": "research-page source; size 0.52 MB.",
+    "href": "./processed_data/research_library_master.csv",
+    "local_href": "./processed_data/research_library_master.csv",
+    "cloudflare_href": "https://json.uoga.workers.dev/processed_data/research_library_master.csv",
+    "delivery": "pages-local",
+    "size_mb": 0.52,
+    "source": "processed_data",
+    "scope": "runtime"
   }
 ]
