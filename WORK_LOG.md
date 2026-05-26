@@ -1,5 +1,30 @@
 # WORK LOG
 
+## Correct Live DWR Total-Only Shape After Permit Promotion
+- Timestamp (UTC): 2026-05-26T22:13:00Z
+- Scope:
+  - Corrected the comprehensive live DWR shape rule so rows where DWR publishes only a total (`resident=0`, `nonresident=0`, `total>0`) remain total-only instead of being interpreted as nonresident-only.
+  - Kept true resident/nonresident split rows intact; rows with nonzero resident plus total can still derive nonresident as `total - resident` when DWR omits the explicit nonresident value.
+  - Re-ran the comprehensive live DWR promotion, live comparison, final crosscheck, publish-readiness report, and comprehensive history audit.
+  - Verified that 2025 permit and 2025 draw-permit fields had `0` changed rows and `0` changed cells from the pre-promotion database state.
+  - No website feeds, `public_client_engine.csv`, prediction math, or materializer code were changed.
+- Key results:
+  - Live numeric rows represented in current 2026 permit fields: `1068`.
+  - Shape counts: `594` true resident/nonresident split rows, `191` live total-only rows, `283` CWMU total-only rows, and `321` DWR no-quota preserved rows.
+  - Current `DATABASE.csv` 2026 permit shape: `611` split rows and `510` total-only rows.
+  - Split-row math mismatches: `0`.
+  - Example correction: `DA1001` is now blank resident / blank nonresident / total `30` with status `LIVE_DWR_TOTAL_ONLY`.
+  - Example true split retained: `BR7004` remains `18 / 2 / 20` with status `LIVE_DWR_RES_NR_SPLIT`.
+  - Final 2026 permit/allotment total mismatches remain `0`.
+- Validation:
+  - `python scripts\promote-comprehensive-live-dwr-permit-totals-2026.py` passed.
+  - `python scripts\pull-live-dwr-permit-numbers-comprehensive-2026.py` passed.
+  - `python scripts\final-permit-database-crosscheck-2026.py` passed.
+  - `python scripts\build-database-publish-readiness-report.py` passed.
+  - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed.
+  - `python -m py_compile scripts\promote-comprehensive-live-dwr-permit-totals-2026.py scripts\pull-live-dwr-permit-numbers-comprehensive-2026.py` passed.
+  - `python -m pytest tests\utah\test_final_permit_database_crosscheck_2026.py tests\utah\test_live_dwr_and_expo_permit_promotion_2026.py -q` passed: `11`.
+
 ## Comprehensive Live DWR 2026 Permit Totals Promoted Over Allotment
 - Timestamp (UTC): 2026-05-26T22:07:00Z
 - Scope:

@@ -184,16 +184,29 @@ def test_reviewed_live_permit_corrections_are_applied() -> None:
 
 def test_comprehensive_live_dwr_promotion_supersedes_allotment_values() -> None:
     summary = json.loads(COMPREHENSIVE_PROMOTION_SUMMARY.read_text(encoding="utf-8"))
+    rows = _database_by_code()
 
     assert summary["live_row_count"] == 1389
     assert summary["live_database_matched_row_count"] == 1389
     assert summary["numeric_promoted_rows"] == 1068
     assert summary["preserved_no_quota_rows"] == 321
     assert summary["missing_database_count"] == 0
-    assert summary["promotion_status_counts"] == {
-        "PRESERVED_DATABASE_VALUE_NO_LIVE_DWR_QUOTA": 321,
-        "PROMOTED_LIVE_DWR_OVER_ALLOTMENT": 1068,
+    assert (
+        summary["promotion_status_counts"].get("PROMOTED_LIVE_DWR_OVER_ALLOTMENT", 0)
+        + summary["promotion_status_counts"].get("UNCHANGED_ALREADY_MATCHED_LIVE_DWR", 0)
+    ) == 1068
+    assert summary["shape_status_counts"] == {
+        "LIVE_DWR_CWMU_TOTAL_ONLY_FROM_QUOTA_RES": 283,
+        "LIVE_DWR_NO_QUOTA_PUBLISHED": 321,
+        "LIVE_DWR_RES_NR_SPLIT": 594,
+        "LIVE_DWR_TOTAL_ONLY": 191,
     }
+    assert (
+        rows["DA1001"]["permits_2026_res"],
+        rows["DA1001"]["permits_2026_nr"],
+        rows["DA1001"]["permits_2026_total"],
+        rows["DA1001"]["permit_allotment_2026_status"],
+    ) == ("", "", "30", "LIVE_DWR_TOTAL_ONLY")
 
 
 def test_comprehensive_live_dwr_extraction_confirms_broad_database_coverage() -> None:

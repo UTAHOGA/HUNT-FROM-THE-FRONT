@@ -49,8 +49,8 @@
   "live_shape_status_counts": {
     "LIVE_DWR_CWMU_TOTAL_ONLY_FROM_QUOTA_RES": 283,
     "LIVE_DWR_NO_QUOTA_PUBLISHED": 321,
-    "LIVE_DWR_RES_NR_SPLIT": 758,
-    "LIVE_DWR_TOTAL_ONLY": 27
+    "LIVE_DWR_RES_NR_SPLIT": 594,
+    "LIVE_DWR_TOTAL_ONLY": 191
   },
   "live_unique_hunt_code_count": 1389,
   "numeric_mismatch_codes": [],
@@ -65,5 +65,5 @@
     "DATABASE_ONLY": 5,
     "LIVE_AND_DATABASE": 1389
   },
-  "snapshot_utc": "2026-05-26T22:04:14+00:00"
+  "snapshot_utc": "2026-05-26T22:12:50+00:00"
 }
