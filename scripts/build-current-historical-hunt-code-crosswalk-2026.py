@@ -33,6 +33,9 @@ OLD_LE_CROSSWALK_PATH = ROOT / "processed_data/historical_le_to_eb_crosswalk_202
 DESERT_BIGHORN_PUBLIC_PERMITS_PATH = (
     ROOT / "data_truth/permit_overlay_truth/normalized/desert_bighorn_permits_2026_canonical.csv"
 )
+ROCKY_BIGHORN_PUBLIC_PERMITS_PATH = (
+    ROOT / "data_truth/permit_overlay_truth/normalized/rocky_bighorn_permits_2026_canonical.csv"
+)
 
 OVERLAY_LOCK_PATHS = [
     ROOT / "data_truth/permit_overlay_truth/normalized/private_land_deer_hunt_code_lock_2026.csv",
@@ -88,6 +91,13 @@ DS_PARALLEL_PUBLIC_OIAL_CODES = {
     "DS1006": "DS6603",
     "DS1007": "DS6610",
     "DS6605": "DS6621",
+}
+
+RS_PARALLEL_PUBLIC_OIAL_CODES = {
+    "RS1000": "RS6700",
+    "RS1001": "RS6701",
+    "RS1003": "RS6703|RS6704|RS6722",
+    "RS1006": "RS6712",
 }
 
 OUTPUT_COLUMNS = [
@@ -218,6 +228,8 @@ def target_current_codes(database_codes: set[str], overlay_codes: set[str]) -> l
     targets = {code for code in database_codes if code_prefix(code) in CHANGED_CURRENT_PREFIXES}
     targets.update(overlay_codes)
     targets.update(code for code in PINNED_TARGET_CODES if code in database_codes)
+    targets.update(code for code in DS_PARALLEL_PUBLIC_OIAL_CODES if code in database_codes)
+    targets.update(code for code in RS_PARALLEL_PUBLIC_OIAL_CODES if code in database_codes)
     return sorted(targets)
 
 
@@ -242,6 +254,14 @@ def choose_historical_code(
     if current_code in DS_PARALLEL_PUBLIC_OIAL_CODES:
         return (
             DS_PARALLEL_PUBLIC_OIAL_CODES[current_code],
+            "PARALLEL_CONSERVATION_TO_PUBLIC_OIAL_2026",
+            "PROMOTED_PARALLEL_PUBLIC_UNIT_REFERENCE",
+            "HIGH",
+        )
+
+    if current_code in RS_PARALLEL_PUBLIC_OIAL_CODES:
+        return (
+            RS_PARALLEL_PUBLIC_OIAL_CODES[current_code],
             "PARALLEL_CONSERVATION_TO_PUBLIC_OIAL_2026",
             "PROMOTED_PARALLEL_PUBLIC_UNIT_REFERENCE",
             "HIGH",
@@ -296,6 +316,9 @@ def build_rows() -> tuple[list[dict[str, str]], dict[str, object]]:
                 str(DESERT_BIGHORN_PUBLIC_PERMITS_PATH.relative_to(ROOT)).replace("\\", "/")
                 if code in DS_PARALLEL_PUBLIC_OIAL_CODES and DESERT_BIGHORN_PUBLIC_PERMITS_PATH.exists()
                 else "",
+                str(ROCKY_BIGHORN_PUBLIC_PERMITS_PATH.relative_to(ROOT)).replace("\\", "/")
+                if code in RS_PARALLEL_PUBLIC_OIAL_CODES and ROCKY_BIGHORN_PUBLIC_PERMITS_PATH.exists()
+                else "",
             ]
         )
 
@@ -306,6 +329,8 @@ def build_rows() -> tuple[list[dict[str, str]], dict[str, object]]:
             notes.append("Code was independently locked by permit overlay/reference workflow.")
         if code in DS_PARALLEL_PUBLIC_OIAL_CODES:
             notes.append("Desert bighorn conservation code is a parallel current permit opportunity, not a replacement for the public once-in-a-lifetime row(s).")
+        if code in RS_PARALLEL_PUBLIC_OIAL_CODES:
+            notes.append("Rocky Mountain bighorn conservation/current code is a parallel current permit opportunity, not a replacement for the public once-in-a-lifetime row(s).")
         if status.endswith("NEEDS_REVIEW"):
             notes.append("No dependable older-code mapping was promoted; keep as current reference only.")
 
@@ -405,7 +430,7 @@ def write_markdown_report(rows: list[dict[str, str]], summary: dict[str, object]
         ("LD1001", "private-land deer prefix crosswalk"),
         ("LP5025", "private-land pronghorn prefix crosswalk"),
         ("EL3000", "private-land bull elk prefix crosswalk"),
-        ("RS1001", "bighorn conservation candidate"),
+        ("RS1001", "Rocky Mountain bighorn conservation parallel"),
         ("BI6527", "exact bison history/reference"),
         ("EX1000", "extended archery reference-only"),
         ("CG9999", "cougar reference-only"),

@@ -3767,3 +3767,41 @@
   - `python scripts\extract-oil-2025-draw-results-permits.py` passed.
   - `python -m py_compile scripts\extract-oil-2025-draw-results-permits.py tests\utah\test_oil_2025_draw_results_extraction.py` passed.
   - `python -m pytest tests\utah\test_oil_2025_draw_results_extraction.py -q` passed: `4`.
+
+## Rocky Mountain Bighorn 2026 Permit Audit And Parallel Conservation Crosswalk
+- Timestamp (UTC): 2026-05-26T16:05:25Z
+- Scope:
+  - Registered the user-supplied current Utah DWR Hunt Planner Rocky Mountain bighorn `RS/RE` rows as source evidence.
+  - Normalized the 2026 resident, nonresident, and total permit fields into a reviewed export with mapping-law columns.
+  - Cross-checked reviewed rows against canonical `DATABASE.csv`, the RAC/OIAL Rocky Mountain bighorn comparison CSV, and the RAC ewe comparison CSV.
+  - Filled blank conservation/statewide count cells from canonical `DATABASE.csv` only where `DATABASE.csv` already had populated 2026 values.
+  - Resolved the `RS100x` conservation/current mismatch class by marking those rows as parallel permit opportunities, not replacements for the public once-in-a-lifetime rows.
+  - Updated the current-to-historical crosswalk builder so `RS1000`, `RS1001`, `RS1003`, and `RS1006` use `PROMOTED_PARALLEL_PUBLIC_UNIT_REFERENCE`.
+  - Did not change protected `DATABASE.csv` numeric cells.
+- Outputs:
+  - `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 rocky mountain bighorn user verified.csv`
+  - `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 rocky mountain bighorn reviewed res-nr-total.csv`
+  - `scripts/normalize-rocky-bighorn-permits-2026.py`
+  - `tests/utah/test_rocky_bighorn_permit_normalization_2026.py`
+  - `data_truth/permit_overlay_truth/normalized/rocky_bighorn_permits_2026_canonical.csv`
+  - `data_truth/permit_overlay_truth/validation/rocky_bighorn_permits_2026_vs_DATABASE.csv`
+  - `data_truth/permit_overlay_truth/validation/rocky_bighorn_permits_2026_vs_RAC.csv`
+  - `data_truth/permit_overlay_truth/validation/rocky_bighorn_public_vs_conservation_parallel_2026.csv`
+  - `data_truth/permit_overlay_truth/validation/rocky_bighorn_permits_2026_summary.json`
+  - `processed_data/rocky_bighorn_permits_2026_summary.md`
+  - `data_truth/crosswalk_truth/normalized/current_to_historical_hunt_code_crosswalk_2026.csv`
+  - `data_truth/crosswalk_truth/validation/current_to_historical_hunt_code_crosswalk_2026_summary.json`
+- Key results:
+  - Source rows: `21`.
+  - Unique `RS/RE` hunt codes: `21`.
+  - Numeric 2026 total permits carried in reviewed output: `60`.
+  - DATABASE numeric comparison: `0` mismatches.
+  - RAC numeric comparison: `0` mismatches.
+  - One row has no published numeric permit count: `RS1000`.
+  - Semantic review flags: `16` rows where current source sex/season wording differs from `DATABASE.csv`; no numeric changes were made.
+  - Resolved parallel conservation/current rows: `RS1000 -> RS6700`, `RS1001 -> RS6701`, `RS1003 -> RS6703|RS6704|RS6722`, and `RS1006 -> RS6712`.
+- Validation:
+  - `python scripts\normalize-rocky-bighorn-permits-2026.py` passed.
+  - `python scripts\build-current-historical-hunt-code-crosswalk-2026.py` passed.
+  - `python -m py_compile scripts\normalize-rocky-bighorn-permits-2026.py scripts\build-current-historical-hunt-code-crosswalk-2026.py` passed.
+  - `python -m pytest tests\utah\test_rocky_bighorn_permit_normalization_2026.py tests\utah\test_current_historical_hunt_code_crosswalk_2026.py -q` passed: `7`.

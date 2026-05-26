@@ -64,9 +64,18 @@ def test_conservation_and_reference_codes_keep_current_truth_with_history_eviden
     run_builder()
     rows = {row["current_hunt_code"]: row for row in read_rows(OUTPUT)}
 
+    assert rows["RS1000"]["historical_hunt_code"] == "RS6700"
+    assert rows["RS1000"]["relationship_type"] == "PARALLEL_CONSERVATION_TO_PUBLIC_OIAL_2026"
+    assert rows["RS1000"]["crosswalk_status"] == "PROMOTED_PARALLEL_PUBLIC_UNIT_REFERENCE"
+
     assert rows["RS1001"]["historical_hunt_code"] == "RS6701"
     assert "RS6701" in rows["RS1001"]["candidate_historical_codes"]
-    assert rows["RS1001"]["crosswalk_status"] == "PROMOTED_PINNED_CANDIDATE"
+    assert rows["RS1001"]["relationship_type"] == "PARALLEL_CONSERVATION_TO_PUBLIC_OIAL_2026"
+    assert rows["RS1001"]["crosswalk_status"] == "PROMOTED_PARALLEL_PUBLIC_UNIT_REFERENCE"
+    assert rows["RS1003"]["historical_hunt_code"] == "RS6703|RS6704|RS6722"
+    assert rows["RS1003"]["crosswalk_status"] == "PROMOTED_PARALLEL_PUBLIC_UNIT_REFERENCE"
+    assert rows["RS1006"]["historical_hunt_code"] == "RS6712"
+    assert rows["RS1006"]["crosswalk_status"] == "PROMOTED_PARALLEL_PUBLIC_UNIT_REFERENCE"
 
     assert rows["DS1004"]["historical_hunt_code"] == "DS6608|DS6624"
     assert rows["DS1004"]["relationship_type"] == "PARALLEL_CONSERVATION_TO_PUBLIC_OIAL_2026"
