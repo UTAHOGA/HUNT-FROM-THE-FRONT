@@ -1,5 +1,36 @@
 # WORK LOG
 
+## Comprehensive 2026/2025 History Integrity Audit
+- Timestamp (UTC): 2026-05-26T17:26:29Z
+- Scope:
+  - Built a consolidated audit over active 2026 `DATABASE.csv`, retired current-code ledger, live/current DWR snapshot summaries, active EA reconciliation, current-to-historical crosswalk summary, 2026 permit-overlay validation files, 2025 draw-results validation files, and 2025 harvest-results truth rows.
+  - Did not modify protected numeric `DATABASE.csv` cells, website feeds, generated pages, or materializer outputs.
+  - Wrote a dashboard and open-issue queue that separates fatal blockers from historical-review warnings.
+- Outputs:
+  - `scripts/audit-comprehensive-2026-2025-history-integrity.py`
+  - `tests/utah/test_comprehensive_2026_2025_history_integrity_audit.py`
+  - `data_truth/comparison_outputs/validation/comprehensive_2026_2025_history_integrity_audit.csv`
+  - `data_truth/comparison_outputs/validation/comprehensive_2026_2025_history_integrity_open_issues.csv`
+  - `data_truth/comparison_outputs/validation/comprehensive_2026_2025_history_integrity_summary.json`
+  - `processed_data/comprehensive_2026_2025_history_integrity_audit.md`
+- Key results:
+  - Active `DATABASE.csv` rows: `1394`.
+  - Unique active hunt codes: `1394`.
+  - Duplicate active hunt codes: `0`.
+  - Blank active boundary IDs: `0`.
+  - Retired current-code ledger rows: `17`.
+  - Retired codes still active in `DATABASE.csv`: `0`.
+  - Permit-overlay numeric mismatches against protected `DATABASE.csv` cells: `0`.
+  - Fatal blockers: `0`.
+  - Review-warning classes: `3`.
+  - Open review issue rows: `47`.
+  - Open issue breakdown: `6` 2025 LE deer draw source rows missing from active 2026 DATABASE, `12` 2025 O.I.L. draw source rows missing from active 2026 DATABASE, and `29` 2025 harvest source codes not present in active 2026 DATABASE.
+- Validation:
+  - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed.
+  - `python -m py_compile scripts\audit-comprehensive-2026-2025-history-integrity.py tests\utah\test_comprehensive_2026_2025_history_integrity_audit.py` passed.
+  - `python -m pytest tests\utah\test_comprehensive_2026_2025_history_integrity_audit.py -q` passed: `3`.
+  - `python -m pytest tests\utah\test_comprehensive_2026_2025_history_integrity_audit.py tests\utah\test_retired_current_hunt_codes_2026.py tests\utah\test_database_boundary_id_fill_2026.py tests\utah\test_current_historical_hunt_code_crosswalk_2026.py tests\utah\test_black_bear_br_crosscompare_2024_2025_2026.py tests\utah\test_le_deer_2025_draw_results_extraction.py tests\utah\test_oil_2025_draw_results_extraction.py -q` passed: `22`.
+
 ## Archive Defunct EA1287-EA1300 Effective 2026
 - Timestamp (UTC): 2026-05-26T17:12:46Z
 - Scope:
