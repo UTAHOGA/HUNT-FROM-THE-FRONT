@@ -6,6 +6,7 @@
 - NO_PUBLISHED_NUMERIC_PERMIT rows: 5
 - DATABASE numeric mismatches after promotion: 0
 - DATABASE missing rows after promotion: 0
+- Reviewed res/nr/total export: `pipeline\RAW\hunt_unit_database\2026\csv\2026 Permits\2026 black bear permits reviewed res-nr-total.csv`
 - 2026 codes missing from 2025 draw-results BR universe: 12
 - 2025 draw-results BR codes missing from 2026 source: 3
 

@@ -37,13 +37,14 @@
       "NO_NUMERIC_SOURCE": 5
     }
   },
-  "generated_at_utc": "2026-05-26T13:54:51.146092+00:00",
+  "generated_at_utc": "2026-05-26T15:07:41.727869+00:00",
   "normalized_rows": 106,
   "outputs": {
     "code_comparison": "data_truth\\permit_overlay_truth\\validation\\black_bear_2026_vs_2025_code_comparison.csv",
     "database_comparison": "data_truth\\permit_overlay_truth\\validation\\black_bear_permits_2026_vs_DATABASE.csv",
     "normalized": "data_truth\\permit_overlay_truth\\normalized\\black_bear_permits_2026_canonical.csv",
-    "report": "processed_data\\black_bear_permits_2026_summary.md"
+    "report": "processed_data\\black_bear_permits_2026_summary.md",
+    "reviewed_source_export": "pipeline\\RAW\\hunt_unit_database\\2026\\csv\\2026 Permits\\2026 black bear permits reviewed res-nr-total.csv"
   },
   "promotion_counts": {
     "rows_promoted": 101

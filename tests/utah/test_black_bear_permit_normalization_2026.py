@@ -8,6 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 SCRIPT = ROOT / "scripts/normalize-black-bear-permits-2026.py"
 NORMALIZED = ROOT / "data_truth/permit_overlay_truth/normalized/black_bear_permits_2026_canonical.csv"
+REVIEWED_EXPORT = ROOT / "pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 black bear permits reviewed res-nr-total.csv"
 DB_COMPARE = ROOT / "data_truth/permit_overlay_truth/validation/black_bear_permits_2026_vs_DATABASE.csv"
 CODE_COMPARE = ROOT / "data_truth/permit_overlay_truth/validation/black_bear_2026_vs_2025_code_comparison.csv"
 SUMMARY = ROOT / "data_truth/permit_overlay_truth/validation/black_bear_permits_2026_summary.json"
@@ -46,6 +47,33 @@ def test_black_bear_source_continuation_rows_are_folded_into_one_row_per_code() 
     assert lookup["BR7326"]["permits_2026_res"] == "13"
     assert lookup["BR7326"]["permits_2026_nr"] == "1"
     assert lookup["BR7326"]["permits_2026_total"] == "14"
+
+
+def test_reviewed_export_has_one_row_per_code_with_numeric_res_nr_total() -> None:
+    run_script()
+    rows = read_csv(REVIEWED_EXPORT)
+    lookup = by_code(rows)
+
+    assert len(rows) == 106
+    assert len(lookup) == 106
+    assert list(rows[0]) == [
+        "hunt_name",
+        "hunt_code",
+        "sex_type",
+        "species",
+        "weapon",
+        "hunt_type",
+        "season",
+        "permits_2026_res",
+        "permits_2026_nr",
+        "permits_2026_total",
+    ]
+    assert lookup["BR7004"]["permits_2026_res"] == "18"
+    assert lookup["BR7004"]["permits_2026_nr"] == "0"
+    assert lookup["BR7004"]["permits_2026_total"] == "18"
+    assert lookup["BR7210"]["permits_2026_total"] == "3"
+    assert lookup["BR7211"]["permits_2026_total"] == "29"
+    assert lookup["BR7317"]["permits_2026_total"] == "10"
 
 
 def test_br7307_keeps_total_only_conservation_lock() -> None:

@@ -21,6 +21,7 @@ from typing import Iterable
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 black bear permits.csv"
+REVIEWED_SOURCE_EXPORT = ROOT / "pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 black bear permits reviewed res-nr-total.csv"
 DATABASE = ROOT / "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv"
 DRAW_RESULTS_LONG = ROOT / "data_truth/draw_results_truth/normalized/draw_results_long.csv"
 BR7307_LOCK = ROOT / "data_truth/permit_overlay_truth/normalized/black_bear_conservation_BR7307_lock_2026.csv"
@@ -53,6 +54,19 @@ NORMALIZED_FIELDS = [
     "source_sha256",
     "source_row_numbers",
     "notes",
+]
+
+REVIEWED_SOURCE_EXPORT_FIELDS = [
+    "hunt_name",
+    "hunt_code",
+    "sex_type",
+    "species",
+    "weapon",
+    "hunt_type",
+    "season",
+    "permits_2026_res",
+    "permits_2026_nr",
+    "permits_2026_total",
 ]
 
 DB_COMPARE_FIELDS = [
@@ -375,6 +389,7 @@ def build_report(summary: dict[str, object]) -> str:
             f"- NO_PUBLISHED_NUMERIC_PERMIT rows: {summary['status_counts'].get('NO_PUBLISHED_NUMERIC_PERMIT', 0)}",
             f"- DATABASE numeric mismatches after promotion: {summary['database_after_promotion']['numeric_mismatch_count']}",
             f"- DATABASE missing rows after promotion: {summary['database_after_promotion']['missing_database_count']}",
+            f"- Reviewed res/nr/total export: `{summary['outputs']['reviewed_source_export']}`",
             f"- 2026 codes missing from 2025 draw-results BR universe: {len(missing_2025)}",
             f"- 2025 draw-results BR codes missing from 2026 source: {len(retired_2025)}",
             "",
@@ -404,6 +419,7 @@ def main() -> int:
     code_compare = build_code_comparison(normalized, db_rows)
 
     write_csv(NORMALIZED_OUT, normalized, NORMALIZED_FIELDS)
+    write_csv(REVIEWED_SOURCE_EXPORT, normalized, REVIEWED_SOURCE_EXPORT_FIELDS)
     write_csv(DB_COMPARE_OUT, after_compare, DB_COMPARE_FIELDS)
     write_csv(CODE_COMPARE_OUT, code_compare, CODE_COMPARE_FIELDS)
 
@@ -438,6 +454,7 @@ def main() -> int:
         },
         "outputs": {
             "normalized": str(NORMALIZED_OUT.relative_to(ROOT)),
+            "reviewed_source_export": str(REVIEWED_SOURCE_EXPORT.relative_to(ROOT)),
             "database_comparison": str(DB_COMPARE_OUT.relative_to(ROOT)),
             "code_comparison": str(CODE_COMPARE_OUT.relative_to(ROOT)),
             "report": str(REPORT_OUT.relative_to(ROOT)),

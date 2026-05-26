@@ -3655,3 +3655,26 @@
   - `python scripts\crosscompare-black-bear-draw-odds-2024-2025-2026.py` passed.
   - `python -m py_compile scripts\crosscompare-black-bear-draw-odds-2024-2025-2026.py tests\utah\test_black_bear_br_crosscompare_2024_2025_2026.py` passed.
   - `python -m pytest tests\utah\test_black_bear_br_crosscompare_2024_2025_2026.py -q` passed: `4`.
+
+## Black Bear 2026 Reviewed Res/NR/Total Export
+- Timestamp (UTC): 2026-05-26T15:10:00Z
+- Scope:
+  - Preserved the raw DWR Hunt Planner CSV with its two-line `Res:` / `NonRes:` source layout.
+  - Extended the black bear 2026 normalizer to also write a reviewed, one-row-per-code CSV export beside the source pull with numeric `permits_2026_res`, `permits_2026_nr`, and `permits_2026_total` columns.
+  - Added test coverage for the reviewed export and the four checked rows: `BR7004`, `BR7210`, `BR7211`, and `BR7317`.
+- Outputs:
+  - `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 black bear permits reviewed res-nr-total.csv`
+  - `data_truth/permit_overlay_truth/normalized/black_bear_permits_2026_canonical.csv`
+  - `data_truth/permit_overlay_truth/validation/black_bear_permits_2026_summary.json`
+  - `processed_data/black_bear_permits_2026_summary.md`
+- Key results:
+  - Reviewed export rows: `106`.
+  - Unique `BR` hunt codes: `106`.
+  - `FULL_SPLIT` rows: `100`.
+  - `TOTAL_ONLY` rows: `1` (`BR7307` conservation package total `4`, no published resident/nonresident split).
+  - `NO_PUBLISHED_NUMERIC_PERMIT` rows: `5`.
+  - Confirmed 2026 values: `BR7004 = 18/0/18`, `BR7210 = 3/0/3`, `BR7211 = 26/3/29`, and `BR7317 = 9/1/10`.
+- Validation:
+  - `python scripts\normalize-black-bear-permits-2026.py` passed.
+  - `python -m py_compile scripts\normalize-black-bear-permits-2026.py tests\utah\test_black_bear_permit_normalization_2026.py` passed.
+  - `python -m pytest tests\utah\test_black_bear_permit_normalization_2026.py -q` passed: `6`.
