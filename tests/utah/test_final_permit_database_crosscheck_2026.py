@@ -29,7 +29,7 @@ def test_final_permit_crosscheck_has_no_identity_or_total_blockers() -> None:
     assert summary["field_populated_counts"] == {
         "permit_allotment_2026_total": 1091,
         "permits_2025_draw_total": 572,
-        "permits_2025_total": 1028,
+        "permits_2025_total": 1030,
         "permits_2026_total": 1120,
     }
 

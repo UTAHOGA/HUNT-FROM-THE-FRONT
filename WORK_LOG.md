@@ -1,5 +1,49 @@
 # WORK LOG
 
+## 2024 Draw Odds 2025 Permit Audit And Safe Blank Fill
+- Timestamp (UTC): 2026-05-26T22:35:00Z
+- Scope:
+  - Reprocessed the 2024 draw odds PDF package stored under the 2025 draw-odds folder as model-target-year 2025 permit evidence.
+  - Fixed the 2024 draw-odds parser so odds-ratio text such as `1 in 2464.0` is not misread as nonresident permit count data.
+  - Built a comprehensive 2024 draw-results package and audited it against canonical `DATABASE.csv` 2025 permit fields.
+  - Treated the 2024 draw-odds package as reference evidence, not a bulk overwrite source, because many populated `permits_2025` values already carry reviewed historical lineage and differ from the draw-odds package.
+  - Promoted only blank broad 2025 permit cells where the audit identified safe review candidates.
+  - No populated 2025 historical permit values were overwritten.
+  - `permits_2025_draw_total` remains the narrower bonus-point draw subset and was not expanded into the full 2025 permit universe.
+  - No website feeds, `public_client_engine.csv`, prediction math, or materializer code were changed.
+- Outputs:
+  - `scripts/audit-2024-draw-odds-against-database-2025-permits.py`
+  - `scripts/promote-2024-draw-odds-blank-2025-permits.py`
+  - `data_truth/draw_results_truth/normalized/draw_odds_2024_model_target_2025_permit_totals.csv`
+  - `data_truth/draw_results_truth/validation/draw_odds_2024_model_target_2025_vs_DATABASE_2025_permits.csv`
+  - `data_truth/draw_results_truth/validation/draw_odds_2024_model_target_2025_vs_DATABASE_2025_permits_summary.json`
+  - `data_truth/draw_results_truth/validation/draw_odds_2024_blank_2025_permits_promoted.csv`
+  - `data_truth/draw_results_truth/validation/draw_odds_2024_blank_2025_permits_promoted_summary.json`
+  - `processed_data/draw_odds_2024_model_target_2025_vs_DATABASE_2025_permits.md`
+  - `processed_data/draw_odds_2024_blank_2025_permits_promoted.md`
+  - refreshed final permit crosscheck, publish-readiness, and history-integrity artifacts.
+- Key results:
+  - Comprehensive 2024 source rows/codes: `874`.
+  - Source prefix counts included `EB=209`, `DB=187`, `EA=158`, `BR=96`, `PB=85`, plus OIL and smaller categories.
+  - Source codes missing from active 2026-era `DATABASE.csv`: `53`, consistent with retired/history-only rows.
+  - Broad `permits_2025` comparison: `308` matches, `511` differs, `2` blank, `53` source-code-not-in-database.
+  - Narrow `permits_2025_draw` comparison: `259` matches, `285` differs, `277` blank, `53` source-code-not-in-database.
+  - Safe blank promotions: `2` rows, `EB3168` and `MB6265`.
+  - Final populated `permits_2025_total` rows: `1030`, up from `1028`.
+  - Final populated `permits_2025_draw_total` rows: `572`, unchanged by design.
+  - Final 2026 permit/allotment total mismatches remain `0`.
+- Validation:
+  - `python scripts\process_draw_odds_folder_2024.py` passed.
+  - `python scripts\extract_2024_antlerless_draw_odds_and_compare.py` passed.
+  - `python scripts\build_comprehensive_draw_results_2024.py` passed.
+  - `python scripts\audit-2024-draw-odds-against-database-2025-permits.py` passed.
+  - `python scripts\promote-2024-draw-odds-blank-2025-permits.py` passed.
+  - `python scripts\final-permit-database-crosscheck-2026.py` passed.
+  - `python scripts\build-database-publish-readiness-report.py` passed.
+  - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed.
+  - `python -m py_compile scripts\process_draw_odds_folder_2024.py scripts\extract_2024_antlerless_draw_odds_and_compare.py scripts\build_comprehensive_draw_results_2024.py scripts\audit-2024-draw-odds-against-database-2025-permits.py scripts\promote-2024-draw-odds-blank-2025-permits.py` passed.
+  - `python -m pytest tests\utah\test_2024_draw_odds_database_2025_permit_audit.py tests\utah\test_2025_draw_permit_field_promotion.py tests\utah\test_final_permit_database_crosscheck_2026.py -q` passed: `18`.
+
 ## Correct Live DWR Total-Only Shape After Permit Promotion
 - Timestamp (UTC): 2026-05-26T22:13:00Z
 - Scope:

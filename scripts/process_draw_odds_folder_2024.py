@@ -27,6 +27,12 @@ OUT_DIR = Path(
 HUNT_RE = re.compile(r"Hunt:\s*([A-Z]{2}\d{4})\s+(.+)")
 TOTALS_LINE_RE = re.compile(r"^\s*Totals\b.*$", re.IGNORECASE)
 NUM_RE = re.compile(r"[\d,]+")
+RES_NR_TOTALS_RE = re.compile(
+    r"Totals\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+"
+    r"(?:1\s+in\s+[\d,.]+|N\s*/?\s*A|N/A)\s+"
+    r"Totals\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)",
+    re.IGNORECASE,
+)
 
 
 @dataclass
@@ -54,6 +60,19 @@ def parse_totals_line(line: str) -> dict[str, Any]:
     - Totals <res_app> <res_bonus> <res_regular> <res_total> ... Totals <nr_app> <nr_bonus> <nr_regular> <nr_total> ...
     - Totals <applicants> <permits>
     """
+    split_match = RES_NR_TOTALS_RE.search(" ".join(line.split()))
+    if split_match:
+        values = [to_int_token(split_match.group(i)) for i in range(1, 9)]
+        res_total = values[3]
+        nr_total = values[7]
+        return {
+            "totals_numbers": ";".join(str(x) for x in values),
+            "res_total_permits": res_total,
+            "nr_total_permits": nr_total,
+            "total_permits": res_total + nr_total,
+            "parse_style": "res_nr_split",
+        }
+
     tokens = [to_int_token(t) for t in NUM_RE.findall(line)]
     if not tokens:
         return {

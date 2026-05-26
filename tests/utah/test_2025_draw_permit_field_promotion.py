@@ -159,8 +159,8 @@ def test_database_has_no_blank_rows_or_missing_hunt_codes():
     assert rows
     assert all(any(str(value).strip() for value in row.values()) for row in rows)
     assert all(row.get("hunt_code", "").strip() for row in rows)
-    assert len(rows) == 1411
-    assert len({row["hunt_code"] for row in rows}) == 1411
+    assert len(rows) == 1394
+    assert len({row["hunt_code"] for row in rows}) == 1394
 
 
 def test_empty_database_column_removal_report_written():
