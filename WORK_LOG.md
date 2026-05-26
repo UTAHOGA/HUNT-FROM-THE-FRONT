@@ -2948,3 +2948,37 @@
   - `python scripts\audit-database-historical-permit-lineage-2026.py` passed.
   - `python -m py_compile scripts\audit-database-historical-permit-lineage-2026.py tests\utah\test_database_historical_permit_lineage_2026.py scripts\audit-hunt-master-canonical-permit-consistency.py scripts\build-database-authoritative-permit-overlay-plan-2026.py tests\utah\test_hunt_master_canonical_permit_deep_dive.py tests\utah\test_database_authoritative_permit_overlay_plan_2026.py` passed.
   - `python -m pytest tests\utah\test_database_historical_permit_lineage_2026.py tests\utah\test_hunt_master_canonical_permit_deep_dive.py tests\utah\test_database_authoritative_permit_overlay_plan_2026.py -q` passed: `9`.
+
+## 2025 To 2026 Hunt-Code Comparison
+- Timestamp (UTC): 2026-05-26T00:30:00Z
+- Scope:
+  - Built a read-only hunt-code comparison between source-lined 2025 historical permit codes and current 2026 DWR Hunt Planner `DATABASE.csv` codes.
+  - Used `permits_2025` as the full populated 2025 historical permit-code universe.
+  - Used populated `permits_2026` rows as the current 2026 permit-code universe and all `DATABASE.csv` rows as the 2026 reference universe.
+  - Enriched exact-code gaps with the promoted `current_to_historical_hunt_code_crosswalk_2026.csv`.
+  - Used only promoted `historical_hunt_code` mappings for continuity; candidate/name-match fields remain review evidence and were not used as truth.
+  - No source CSV values, `DATABASE.csv`, website feeds, runtime files, materializer code, or prediction surfaces were changed.
+- Outputs:
+  - `scripts/compare-2025-2026-hunt-codes.py`
+  - `tests/utah/test_hunt_code_comparison_2025_to_2026.py`
+  - `processed_data/hunt_code_comparison_2025_to_2026.csv`
+  - `processed_data/hunt_code_comparison_2025_to_2026_summary.json`
+  - `processed_data/hunt_code_comparison_2025_to_2026.md`
+  - `data_truth/comparison_outputs/validation/hunt_code_comparison_2025_to_2026_summary.json`
+- Key results:
+  - 2026 `DATABASE.csv` reference universe: `1411`.
+  - Source-lined 2025 historical permit codes: `1028`.
+  - Populated 2026 permit codes: `1261`.
+  - Exact same-code continuity: `1027`.
+  - 2025 historical codes absent from 2026 `DATABASE.csv`: `0`.
+  - 2025 historical codes present but without populated 2026 permits: `1` (`BR7307`).
+  - Populated 2026 permit codes without exact 2025 code: `234`.
+  - Populated 2026 permit codes with promoted mapped 2025 history: `133`.
+  - Populated 2026 permit codes with no mapped 2025 history: `101`.
+  - 2026 reference-only rows without 2025 or 2026 permit values: `149`.
+  - Spot checks: `EL3000 -> EB3000` via promoted prefix-swap mapping; `BI6539` remains no mapped 2025 history; `CG9999` remains reference-only.
+- Validation:
+  - `python scripts\compare-2025-2026-hunt-codes.py` passed.
+  - `python -m py_compile scripts\compare-2025-2026-hunt-codes.py tests\utah\test_hunt_code_comparison_2025_to_2026.py` passed.
+  - `python -m pytest tests\utah\test_hunt_code_comparison_2025_to_2026.py -q` passed: `4`.
+  - `python -m pytest tests\utah\test_hunt_code_comparison_2025_to_2026.py tests\utah\test_database_historical_permit_lineage_2026.py tests\utah\test_current_historical_hunt_code_crosswalk_2026.py -q` passed: `10`.
