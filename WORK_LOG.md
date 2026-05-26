@@ -3627,3 +3627,31 @@
   - `python scripts\extract-black-bear-2024-draw-odds-permits.py` passed.
   - `python -m py_compile scripts\clear-elk-private-lands-el-lo-2026-permit-fields.py scripts\extract-black-bear-2024-draw-odds-permits.py tests\utah\test_elk_private_lands_el_lo_clear_2026.py tests\utah\test_black_bear_2024_draw_odds_extraction.py tests\utah\test_elk_private_lands_el_lo_audit_2026.py` passed.
   - `python -m pytest tests\utah\test_elk_private_lands_el_lo_clear_2026.py tests\utah\test_elk_private_lands_el_lo_audit_2026.py tests\utah\test_elk_private_land_resolution_2026.py tests\utah\test_black_bear_2024_draw_odds_extraction.py tests\utah\test_black_bear_permit_normalization_2026.py -q` passed: `16`.
+
+## Black Bear BR 2024-2025-2026 Draw/Permit Crosswalk
+- Timestamp (UTC): 2026-05-26T14:50:00Z
+- Scope:
+  - Added an executable cross-comparison for black bear `BR` hunt codes across the 2024 draw-odds PDF, the user-supplied 2025 draw-odds PDF, and the current 2026 DWR Hunt Planner permit overlay.
+  - Extracted the 2025 black bear draw-odds PDF as model-target-year 2026 historical draw evidence.
+  - Built a reviewed BR crosswalk artifact that resolves high-confidence historical recodes without modifying protected `DATABASE.csv` current permit cells.
+  - Preserved current-only Dolores Triangle split rows and conservation rows as source evidence instead of forcing them into public draw-result rows.
+- Outputs:
+  - `scripts/crosscompare-black-bear-draw-odds-2024-2025-2026.py`
+  - `tests/utah/test_black_bear_br_crosscompare_2024_2025_2026.py`
+  - `data_truth/draw_results_truth/normalized/black_bear_2025_draw_odds_model_target_2026_permit_totals.csv`
+  - `data_truth/crosswalk_truth/normalized/black_bear_BR_2024_2025_2026_crosswalk.csv`
+  - `data_truth/crosswalk_truth/validation/black_bear_BR_2024_2025_2026_crosswalk_summary.json`
+  - `processed_data/black_bear_BR_2024_2025_2026_crosswalk.md`
+- Key results:
+  - 2024 draw rows: `96`; 2025 draw rows: `97`; current 2026 permit rows: `106`.
+  - 2025 draw total public permits: `994`; current 2026 numeric permit total: `1020`.
+  - 2024-only draw code: `BR7019`.
+  - 2025-only versus 2024 draw codes: `BR7237` and `BR7325`.
+  - High-confidence recodes: `BR7008 -> BR7022`, `BR7108 -> BR7127`, `BR7208 -> BR7239`, and `BR7307 -> BR7326`.
+  - `BR7307` is explicitly flagged as code reuse: historical 2025 La Sal limited-entry multiseason mapped to current `BR7326`, while current `BR7307` is the 2026 La Sal conservation package with `4` total permits and no resident/nonresident split.
+  - After applying reviewed recodes, all `97` 2025 draw rows map to current 2026 hunt codes.
+  - Remaining mapped 2025-to-2026 numeric differences: `BR7004->BR7004`, `BR7210->BR7210`, `BR7211->BR7211`, and `BR7317->BR7317`.
+- Validation:
+  - `python scripts\crosscompare-black-bear-draw-odds-2024-2025-2026.py` passed.
+  - `python -m py_compile scripts\crosscompare-black-bear-draw-odds-2024-2025-2026.py tests\utah\test_black_bear_br_crosscompare_2024_2025_2026.py` passed.
+  - `python -m pytest tests\utah\test_black_bear_br_crosscompare_2024_2025_2026.py -q` passed: `4`.
