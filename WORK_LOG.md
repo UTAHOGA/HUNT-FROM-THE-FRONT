@@ -3740,3 +3740,30 @@
   - `python scripts\build-current-historical-hunt-code-crosswalk-2026.py` passed.
   - `python -m py_compile scripts\normalize-desert-bighorn-permits-2026.py scripts\build-current-historical-hunt-code-crosswalk-2026.py tests\utah\test_desert_bighorn_permit_normalization_2026.py tests\utah\test_current_historical_hunt_code_crosswalk_2026.py` passed.
   - `python -m pytest tests\utah\test_desert_bighorn_permit_normalization_2026.py tests\utah\test_current_historical_hunt_code_crosswalk_2026.py -q` passed: `7`.
+
+## 2025 All O.I.L. Draw Results Extraction
+- Timestamp (UTC): 2026-05-26T15:57:29Z
+- Scope:
+  - Registered and extracted the user-supplied `2025 O.I.L. Draw Results.pdf` as historical draw-results evidence.
+  - Applied project year rules: `reported_draw_year=2025`, `model_target_year=2026`.
+  - Extracted one hunt-code row from every PDF page with resident/nonresident eligible applicants, bonus permits, regular permits, total draw permits, source PDF page, source report page, and SHA-256.
+  - Added research-library mapping-law fields to the normalized draw-results rows.
+  - Compared the extracted totals to `DATABASE.csv` 2025 draw-result fields only; no current 2026 permit/allotment cells were modified.
+- Outputs:
+  - `scripts/extract-oil-2025-draw-results-permits.py`
+  - `tests/utah/test_oil_2025_draw_results_extraction.py`
+  - `data_truth/draw_results_truth/normalized/oil_2025_draw_results_model_target_2026_permit_totals.csv`
+  - `data_truth/draw_results_truth/validation/oil_2025_draw_results_model_target_2026_vs_DATABASE.csv`
+  - `data_truth/draw_results_truth/validation/oil_2025_draw_results_model_target_2026_summary.json`
+  - `processed_data/oil_2025_draw_results_model_target_2026_permit_totals.md`
+- Key results:
+  - PDF pages extracted: `101`.
+  - Unique hunt codes: `101`.
+  - Prefix counts: `BI=15`, `DS=18`, `GO=17`, `MB=36`, `RS=15`.
+  - Source total public draw permits: `502` (`457` resident, `45` nonresident).
+  - DATABASE comparison: `89` matches against `permits_2025_draw_*`, `0` numeric differences, `0` blank draw fields.
+  - Historical source codes missing from current `DATABASE.csv`: `12`, all CWMU bull moose rows: `MB6200`, `MB6207`, `MB6209`, `MB6217`, `MB6220`, `MB6223`, `MB6224`, `MB6225`, `MB6240`, `MB6254`, `MB6257`, and `MB6259`.
+- Validation:
+  - `python scripts\extract-oil-2025-draw-results-permits.py` passed.
+  - `python -m py_compile scripts\extract-oil-2025-draw-results-permits.py tests\utah\test_oil_2025_draw_results_extraction.py` passed.
+  - `python -m pytest tests\utah\test_oil_2025_draw_results_extraction.py -q` passed: `4`.
