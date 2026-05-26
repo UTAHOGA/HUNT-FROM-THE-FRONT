@@ -4843,3 +4843,41 @@
   - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed.
   - `python -m py_compile scripts\apply-reviewed-live-permit-corrections-2026.py` passed.
   - `python -m pytest tests\utah\test_live_dwr_and_expo_permit_promotion_2026.py -q` passed: `8`.
+
+## Final All-Species Permit Database Crosscheck
+- Timestamp (UTC): 2026-05-26T22:10:00Z
+- Scope:
+  - Added a read-only all-species crosscheck for canonical `DATABASE.csv`.
+  - Compared populated `permits_2026_total`, `permit_allotment_2026_total`, `permits_2025_total`, and `permits_2025_draw_total` across all hunt codes.
+  - Generated detail, species-summary, prefix-summary, JSON summary, and Markdown report outputs.
+  - Re-ran comprehensive live DWR extraction first so live comparison statuses were current.
+  - Re-ran database publish readiness and comprehensive 2026/2025 history-integrity audit.
+  - No database cells, website feeds, `public_client_engine.csv`, prediction math, or materializer code were changed by the final crosscheck.
+- Outputs:
+  - `scripts/final-permit-database-crosscheck-2026.py`
+  - `tests/utah/test_final_permit_database_crosscheck_2026.py`
+  - `data_truth/comparison_outputs/validation/final_permit_database_crosscheck_2026.csv`
+  - `data_truth/comparison_outputs/validation/final_permit_database_crosscheck_2026_by_species.csv`
+  - `data_truth/comparison_outputs/validation/final_permit_database_crosscheck_2026_by_prefix.csv`
+  - `data_truth/comparison_outputs/validation/final_permit_database_crosscheck_2026_summary.json`
+  - `processed_data/final_permit_database_crosscheck_2026.md`
+- Key results:
+  - DATABASE rows: `1394`.
+  - Unique hunt codes: `1394`.
+  - Duplicate hunt codes: `0`.
+  - Blank boundary IDs: `0`.
+  - Populated `permits_2026_total` rows: `1120`.
+  - Populated `permit_allotment_2026_total` rows: `912`.
+  - Populated `permits_2025_total` rows: `1028`.
+  - Populated `permits_2025_draw_total` rows: `572`.
+  - Populated 2026 permit totals that differ from populated 2026 allotment totals: `0`.
+  - Live DWR numeric mismatches remain `0`.
+  - Publish readiness remains `true`.
+  - Comprehensive history audit fatal blockers remain `0`.
+- Validation:
+  - `python scripts\pull-live-dwr-permit-numbers-comprehensive-2026.py` passed.
+  - `python scripts\build-database-publish-readiness-report.py` passed.
+  - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed.
+  - `python scripts\final-permit-database-crosscheck-2026.py` passed.
+  - `python -m py_compile scripts\final-permit-database-crosscheck-2026.py` passed.
+  - `python -m pytest tests\utah\test_final_permit_database_crosscheck_2026.py tests\utah\test_live_dwr_and_expo_permit_promotion_2026.py -q` passed: `10`.

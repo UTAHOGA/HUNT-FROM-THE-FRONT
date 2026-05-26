@@ -1,0 +1,12 @@
+species,hunt_code_count,permits_2026_total_row_count,permits_2026_total_sum,permit_allotment_2026_total_row_count,permit_allotment_2026_total_sum,permits_2025_total_row_count,permits_2025_total_sum,permits_2025_draw_total_row_count,permits_2025_draw_total_sum,live_status_MATCH,live_status_TOTAL_MATCH_SPLIT_DIFFERS,live_status_BOTH_BLANK,live_status_LIVE_NO_QUOTA_DATABASE_PRESERVED,live_status_DATABASE_ONLY
+Bison,19,16,137,16,137,15,129,15,129,11,,3,,5
+Black Bear,106,101,1022,101,1022,94,918,,,100,,5,1,
+Cougar,1,,,,,,,,,,,1,,
+Deer,479,370,95125,181,1874,346,70439,189,1708,196,153,109,21,
+Desert Bighorn Sheep,25,25,92,25,92,18,86,18,86,18,,,7,
+Elk,558,418,27052,409,25716,376,14348,207,3569,403,2,140,13,
+Moose,32,31,151,31,151,29,142,24,124,31,,1,,
+Mountain Goat,18,18,113,17,112,17,101,17,101,17,,,1,
+Pronghorn,117,110,2445,110,2445,110,2290,87,1746,110,,7,,
+Rocky Mountain Bighorn Sheep,21,20,60,20,60,16,55,15,50,16,,1,4,
+Turkey,18,11,5330,2,10,7,317,,,2,9,7,,
