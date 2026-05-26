@@ -1,6 +1,6 @@
 # Retired Current Hunt Codes 2026
 
-- Retired at UTC: `2026-05-26T18:24:42+00:00`
+- Retired at UTC: `2026-05-26T18:48:39+00:00`
 - Effective year: `2026`
 - Reason: `USER_CONFIRMED_CEASES_TO_EXIST_ONLINE_EFFECTIVE_2026`
 - DATABASE rows before: `1394`

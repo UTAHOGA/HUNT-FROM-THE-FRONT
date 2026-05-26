@@ -4,9 +4,9 @@ This is a reviewable action queue. It does not modify `DATABASE.csv` or runtime 
 
 ## Summary
 
-- Output rows: `1412`
-- Unique hunt codes: `1412`
-- Database numeric protected rows: `1261`
+- Output rows: `1395`
+- Unique hunt codes: `1395`
+- Database numeric protected rows: `1245`
 - Target-only blocker codes: `1`
 
 ## Guardrail
@@ -15,7 +15,7 @@ Populated numeric 2026 permit/allotment cells in canonical DATABASE.csv are dire
 
 ## Action Counts
 
-- `ADD_DATABASE_CODE_TO_DERIVED_UNIVERSE`: `123`
+- `ADD_DATABASE_CODE_TO_DERIVED_UNIVERSE`: `106`
 - `BLOCK_TARGET_CODE_NOT_IN_DATABASE`: `1`
 - `NO_ACTION_DATABASE_MATCH`: `688`
 - `NO_NUMERIC_PERMIT_DATA`: `140`
@@ -24,12 +24,12 @@ Populated numeric 2026 permit/allotment cells in canonical DATABASE.csv are dire
 
 ## Review Priority Counts
 
-- `HIGH`: `579`
+- `HIGH`: `562`
 - `MEDIUM`: `5`
 - `NONE`: `828`
 
 ## Row Origin Counts
 
-- `DATABASE_ONLY`: `123`
+- `DATABASE_ONLY`: `106`
 - `TARGET_AND_DATABASE`: `1288`
 - `TARGET_ONLY`: `1`

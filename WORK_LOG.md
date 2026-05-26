@@ -1,5 +1,37 @@
 # WORK LOG
 
+## Database Audit Resumed After Sync
+- Timestamp (UTC): 2026-05-26T18:44:00Z
+- Scope:
+  - Resumed canonical database audit after local `main` was synced with `origin/main`.
+  - Corrected database audit scripts that still referenced the old `HUNTS` repo path so they now read active `HUNT-BUILDER` `DATABASE.csv`.
+  - Updated stale audit/test assumptions from the pre-retirement `1411` active-code universe to the current `1394` active-code universe.
+  - Updated publish-readiness sensitive checks so `PD1039` is expected in the retired current-code ledger, not active `DATABASE.csv`, and `EA2012` uses the canonical `400` total.
+  - Rebuilt draw and harvest cumulative summaries so embedded active DATABASE coverage now reflects `1394` active hunt codes.
+  - Did not modify protected numeric `DATABASE.csv` cells or website feeds.
+- Key results:
+  - Active DATABASE rows: `1394`.
+  - Active DATABASE duplicate hunt codes: `0`.
+  - Active DATABASE blank boundary IDs: `0`.
+  - Current active EA reconciliation: `204` live/current rows and `204` DATABASE rows.
+  - Current online missing DATABASE rows: `0`.
+  - Historical 2025 permit lineage blockers: `0`.
+  - Comprehensive audit fatal blockers: `0`.
+  - Database publish-ready status: `true`, with retained Henry Mtns control-unit warning only.
+- Validation:
+  - `python scripts\audit-database-historical-permit-lineage-2026.py` passed.
+  - `python scripts\build-database-authoritative-permit-overlay-plan-2026.py` passed.
+  - `python scripts\build-database-publish-readiness-report.py` passed.
+  - `python scripts\fill-database-boundary-ids-from-json-2026.py` passed.
+  - `python scripts\audit-current-active-ea-hunts-2026.py` passed.
+  - `python scripts\audit-current-online-hunt-codes-2026.py` passed.
+  - `python scripts\build-all-years-harvest-database.py` passed.
+  - `python scripts\finalize-draw-results-cumulative-database.py` passed.
+  - `python scripts\audit-harvest-results-database-final.py` passed.
+  - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed.
+  - `python -m py_compile ...` passed for the modified audit scripts and tests.
+  - Focused database-audit pytest bundle passed: `59`.
+
 ## Merge Conflict Resolution For Diverged Main
 - Timestamp (UTC): 2026-05-26T18:35:00Z
 - Scope:

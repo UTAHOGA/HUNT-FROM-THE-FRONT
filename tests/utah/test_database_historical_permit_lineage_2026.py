@@ -29,8 +29,8 @@ def test_database_historical_permit_lineage_outputs_are_written():
     assert VALIDATION.exists()
 
     summary = json.loads(SUMMARY.read_text(encoding="utf-8"))
-    assert summary["database_row_count"] == 1411
-    assert summary["output_row_count"] == 2822
+    assert summary["database_row_count"] == 1394
+    assert summary["output_row_count"] == 2788
     assert summary["historical_years_detected"] == ["2025"]
     assert summary["lineage_blocker_count"] == 0
     assert summary["canonical_historical_source_truth_rows"] == 1600
@@ -48,9 +48,9 @@ def test_database_historical_permit_lineage_confirms_2025_source_coverage():
     permit_counts = summary["family_canonical_status_counts"]["permits_2025"]
     draw_counts = summary["family_canonical_status_counts"]["permits_2025_draw"]
     assert permit_counts["CANONICAL_HISTORICAL_SOURCE_TRUTH"] == 1028
-    assert permit_counts["NO_HISTORICAL_VALUE"] == 383
+    assert permit_counts["NO_HISTORICAL_VALUE"] == 366
     assert draw_counts["CANONICAL_HISTORICAL_SOURCE_TRUTH"] == 572
-    assert draw_counts["NO_HISTORICAL_VALUE"] == 839
+    assert draw_counts["NO_HISTORICAL_VALUE"] == 822
 
     permit_sources = summary["family_source_value_counts"]["permits_2025"]
     draw_sources = summary["family_source_value_counts"]["permits_2025_draw"]
@@ -62,7 +62,7 @@ def test_database_historical_permit_lineage_has_no_paired_family_strays():
     run_audit()
     summary = json.loads(SUMMARY.read_text(encoding="utf-8"))
     assert summary["paired_family_compare_counts"] == {
-        "BOTH_BLANK": 383,
+        "BOTH_BLANK": 366,
         "MATCH": 572,
         "PRIMARY_ONLY": 456,
     }

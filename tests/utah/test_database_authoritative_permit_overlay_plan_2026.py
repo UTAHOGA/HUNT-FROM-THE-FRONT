@@ -34,8 +34,8 @@ def test_database_authoritative_overlay_plan_outputs_are_written():
     assert VALIDATION.exists()
 
     summary = json.loads(SUMMARY.read_text(encoding="utf-8"))
-    assert summary["output_row_count"] == 1412
-    assert summary["unique_hunt_codes"] == 1412
+    assert summary["output_row_count"] == 1395
+    assert summary["unique_hunt_codes"] == 1395
     assert summary["target_only_blocker_codes"] == ["DB1276"]
     assert summary["action_counts"]["USE_DATABASE_2026_PERMITS_IN_DERIVED_OUTPUTS"] > 250
     assert "2026 permit/allotment cells" in summary["guardrail"]

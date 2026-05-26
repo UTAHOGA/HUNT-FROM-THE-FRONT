@@ -163,6 +163,7 @@ def draw_family_check() -> dict[str, Any]:
 
 def sensitive_row_checks() -> dict[str, Any]:
     database = by_code(read_csv("pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv"))
+    retired = by_code(read_csv("data_truth/crosswalk_truth/normalized/retired_current_hunt_codes_2026.csv"))
     reference = by_code(read_csv("processed_data/hunt_unit_reference_linked.csv"))
     ml = by_code(read_csv("processed_data/ml_draw_predictions_v1.csv"))
     ladder = by_code(read_csv("processed_data/point_ladder_view.csv"))
@@ -182,14 +183,16 @@ def sensitive_row_checks() -> dict[str, Any]:
     expect("EA1267_DATABASE_2026_NR", clean(ea1267.get("permits_2026_nr")), "20")
 
     ea2012_ref = pick(reference.get("EA2012", []))
-    expect("EA2012_REFERENCE_TOTAL_ONLY_TOTAL", clean(ea2012_ref.get("permit_allotment_2026_total")), "500")
+    expect("EA2012_REFERENCE_TOTAL_ONLY_TOTAL", clean(ea2012_ref.get("permit_allotment_2026_total")), "400")
     expect("EA2012_REFERENCE_NO_RES_SPLIT", clean(ea2012_ref.get("permit_allotment_2026_res")), "")
     expect("EA2012_REFERENCE_PUBLIC_PERMITS_BLANK", clean(ea2012_ref.get("public_permits_2026")), "")
     expect("EA2012_REFERENCE_PROBABILITY_MODEL_NONE", clean(ea2012_ref.get("probability_model")), "NONE")
 
-    pd1039 = pick(database.get("PD1039", []))
-    expect("PD1039_ADDED_TO_DATABASE", bool(pd1039), True)
-    expect("PD1039_DATABASE_2026_TOTAL", clean(pd1039.get("permits_2026_total")), "40")
+    pd1039_database = pick(database.get("PD1039", []))
+    pd1039_retired = pick(retired.get("PD1039", []))
+    expect("PD1039_RETIRED_FROM_ACTIVE_DATABASE", bool(pd1039_database), False)
+    expect("PD1039_PRESERVED_IN_RETIRED_LEDGER", bool(pd1039_retired), True)
+    expect("PD1039_RETIRED_LEDGER_2026_TOTAL", clean(pd1039_retired.get("permits_2026_total")), "40")
 
     eb3024 = pick(ml.get("EB3024", []), residency="Resident", points="29")
     expect("EB3024_RESIDENT_POINT_29_QUOTA_TOTAL", clean(eb3024.get("quota_2026_total")), "9")

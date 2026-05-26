@@ -1,25 +1,25 @@
 {
   "artifact": "database_historical_permit_lineage_2026",
   "canonical_historical_source_truth_rows": 1600,
-  "database_file": "C:/Users/tyler/Desktop/GitHub/HUNTS/pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
-  "database_row_count": 1411,
+  "database_file": "C:/Users/tyler/Desktop/GitHub/HUNT-BUILDER/pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+  "database_row_count": 1394,
   "family_canonical_status_counts": {
     "permits_2025": {
       "CANONICAL_HISTORICAL_SOURCE_TRUTH": 1028,
-      "NO_HISTORICAL_VALUE": 383
+      "NO_HISTORICAL_VALUE": 366
     },
     "permits_2025_draw": {
       "CANONICAL_HISTORICAL_SOURCE_TRUTH": 572,
-      "NO_HISTORICAL_VALUE": 839
+      "NO_HISTORICAL_VALUE": 822
     }
   },
   "family_source_value_counts": {
     "permits_2025": {
       "2025_DRAW_RESULTS_TABLES": 1028,
-      "BLANK": 383
+      "BLANK": 366
     },
     "permits_2025_draw": {
-      "BLANK": 839,
+      "BLANK": 822,
       "canonical_2026_source_of_truth_draw_results": 572
     }
   },
@@ -36,7 +36,7 @@
   ],
   "lineage_blocker_codes": [],
   "lineage_blocker_count": 0,
-  "output_row_count": 2822,
+  "output_row_count": 2788,
   "outputs": {
     "csv": "processed_data/database_historical_permit_lineage_2026.csv",
     "summary_json": "processed_data/database_historical_permit_lineage_2026_summary.json",
@@ -44,7 +44,7 @@
     "validation_json": "data_truth/comparison_outputs/validation/database_historical_permit_lineage_2026_summary.json"
   },
   "paired_family_compare_counts": {
-    "BOTH_BLANK": 383,
+    "BOTH_BLANK": 366,
     "MATCH": 572,
     "PRIMARY_ONLY": 456
   }

@@ -70,7 +70,7 @@ def test_draw_results_cumulative_key_contract_and_crosswalk_presence():
     summary = json.loads(SUMMARY.read_text(encoding="utf-8"))
 
     assert summary["duplicate_key_fields"] == ["hunt_code", "year", "draw_pool", "residency", "points"]
-    assert summary["active_database_hunt_codes"] == 1411
+    assert summary["active_database_hunt_codes"] == 1394
     assert summary["crosswalk_current_code_count"] == 169
     assert summary["crosswalk_current_codes_present_in_draw_rows"] >= 140
 

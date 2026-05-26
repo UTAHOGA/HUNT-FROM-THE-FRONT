@@ -4,8 +4,8 @@
 - best_by_year_hunt_code_row_count: 5151
 - reported_hunt_year_coverage: ['2021', '2022', '2023', '2024', '2025']
 - model_target_year_coverage: ['2022', '2023', '2024', '2025', '2026']
-- exact_hunt_code_feature_matches: 1188
-- fallback_feature_matches: 222
+- exact_hunt_code_feature_matches: 1187
+- fallback_feature_matches: 206
 - no_history_rows: 1
 - audit_blocker_count: 0
 - audit_warning_count: 15529

@@ -7,8 +7,8 @@
 - unique_reported_hunt_years: 2021, 2022, 2023, 2024, 2025
 - reported_hunt_year_counts: {'2021': 974, '2022': 924, '2023': 1078, '2024': 1048, '2025': 1127}
 - model_target_year_counts: {'2022': 974, '2023': 924, '2024': 1078, '2025': 1048, '2026': 1127}
-- active_database_hunt_codes: 1411
-- active_database_coverage_by_reported_hunt_year: {'2021': 803, '2022': 781, '2023': 960, '2024': 957, '2025': 1097}
+- active_database_hunt_codes: 1394
+- active_database_coverage_by_reported_hunt_year: {'2021': 802, '2022': 780, '2023': 960, '2024': 957, '2025': 1097}
 - unique_hunt_codes_all_years: 1424
 - special_permit_overlay_rows: 1531
 - special_permit_overlay_class_counts: {'CONSERVATION': 77, 'CWMU': 1429, 'EXPO': 9, 'SPORTSMAN': 16}

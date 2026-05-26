@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-05-24T09:19:39.721406+00:00",
+  "generated_at_utc": "2026-05-26T18:43:27.871906+00:00",
   "publish_ready": true,
   "blockers": [],
   "warnings": [
     "Control-unit overlay unresolved warnings retained: Henry Mtns"
   ],
   "source_to_database": {
-    "database_rows": 1411,
-    "database_unique_hunt_codes": 1411,
+    "database_rows": 1394,
+    "database_unique_hunt_codes": 1394,
     "database_duplicate_hunt_code_count": 0,
     "rac_cumulative_rows": 562,
     "rac_hunt_code_rows": 528,
@@ -294,8 +294,8 @@
           "pass": true
         },
         "EA2012_REFERENCE_TOTAL_ONLY_TOTAL": {
-          "actual": "500",
-          "expected": "500",
+          "actual": "400",
+          "expected": "400",
           "pass": true
         },
         "EA2012_REFERENCE_NO_RES_SPLIT": {
@@ -313,12 +313,17 @@
           "expected": "NONE",
           "pass": true
         },
-        "PD1039_ADDED_TO_DATABASE": {
+        "PD1039_RETIRED_FROM_ACTIVE_DATABASE": {
+          "actual": false,
+          "expected": false,
+          "pass": true
+        },
+        "PD1039_PRESERVED_IN_RETIRED_LEDGER": {
           "actual": true,
           "expected": true,
           "pass": true
         },
-        "PD1039_DATABASE_2026_TOTAL": {
+        "PD1039_RETIRED_LEDGER_2026_TOTAL": {
           "actual": "40",
           "expected": "40",
           "pass": true

@@ -16,8 +16,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-HUNTS_ROOT = Path(r"C:\Users\tyler\Desktop\GitHub\HUNTS")
-DATABASE = HUNTS_ROOT / "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv"
+DATABASE = ROOT / "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv"
 
 OUTPUT = ROOT / "processed_data/database_historical_permit_lineage_2026.csv"
 SUMMARY_JSON = ROOT / "processed_data/database_historical_permit_lineage_2026_summary.json"

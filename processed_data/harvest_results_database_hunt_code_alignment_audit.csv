@@ -579,7 +579,7 @@ DS6625,Mineral Mtns,Desert Bighorn Sheep,2024|2025,ACTIVE_2026_DATABASE_CODE,YES
 DS6626,"Escalante, East",Desert Bighorn Sheep,2025,ACTIVE_2026_DATABASE_CODE,YES,1
 DS6627,"Escalante, West",Desert Bighorn Sheep,2025,ACTIVE_2026_DATABASE_CODE,YES,1
 EA1004,"Book Cliffs, Little Creek Roadless",Antlerless Elk,2021|2022,HARVEST_ONLY_CODE,NO,2
-EA1007,"Box Elder, Grouse Creek",Antlerless Elk,2021|2022,ACTIVE_2026_DATABASE_CODE,YES,2
+EA1007,"Box Elder, Grouse Creek",Antlerless Elk,2021|2022,HARVEST_ONLY_CODE,NO,2
 EA1008,"Box Elder, Grouse Creek",Antlerless Elk,2021|2022,HARVEST_ONLY_CODE,NO,2
 EA1009,"Cache, East",Antlerless Elk,2021|2022|2023,HARVEST_ONLY_CODE,NO,3
 EA1010,"Cache, Rich",Elk,2021|2022|2023|2024|2025,ACTIVE_2026_DATABASE_CODE,YES,5
@@ -1630,19 +1630,3 @@ EX1000,Elk Extended Archery,Elk,,NEW_2026_NO_PRIOR_HARVEST,YES,0
 TK1001,Northern Region - Private land only,Turkey,,NEW_2026_NO_PRIOR_HARVEST,YES,0
 TK1019,Southeastern Region - Select areas only,Turkey,,NEW_2026_NO_PRIOR_HARVEST,YES,0
 TK1022,Southern Region - Select areas only,Turkey,,NEW_2026_NO_PRIOR_HARVEST,YES,0
-EA1287,"Box Elder, Grouse Creek",Elk,,NEW_2026_NO_PRIOR_HARVEST,YES,0
-EA1288,"Manti, Ferron Lower Escarpment",Elk,,NEW_2026_NO_PRIOR_HARVEST,YES,0
-EA1289,"Manti, Ferron Lower Escarpment",Elk,,NEW_2026_NO_PRIOR_HARVEST,YES,0
-EA1290,"Manti, Ferron Lower Escarpment",Elk,,NEW_2026_NO_PRIOR_HARVEST,YES,0
-EA1291,"Mt Dutton, North",Elk,,NEW_2026_NO_PRIOR_HARVEST,YES,0
-EA1292,"Mt Dutton, North",Elk,,NEW_2026_NO_PRIOR_HARVEST,YES,0
-EA1053,"Nine Mile, West Anthro",Elk,,NEW_2026_NO_PRIOR_HARVEST,YES,0
-EA1293,"North Slope, Three Corners",Elk,,NEW_2026_NO_PRIOR_HARVEST,YES,0
-EA1294,"Paunsaugunt, East Creek",Elk,,NEW_2026_NO_PRIOR_HARVEST,YES,0
-EA1295,"Wasatch Mtns, Avintaquin",Elk,,NEW_2026_NO_PRIOR_HARVEST,YES,0
-EA1296,"Wasatch Mtns, Currant Creek",Elk,,NEW_2026_NO_PRIOR_HARVEST,YES,0
-EA1297,"Wasatch Mtns, Red Creek West",Elk,,NEW_2026_NO_PRIOR_HARVEST,YES,0
-EA1299,"Wasatch Mtns, West-Central",Elk,,NEW_2026_NO_PRIOR_HARVEST,YES,0
-EA1300,"Wasatch Mtns, West-Central",Elk,,NEW_2026_NO_PRIOR_HARVEST,YES,0
-EA1298,"Wasatch Mtns, Wildcat/Timber Canyon",Elk,,NEW_2026_NO_PRIOR_HARVEST,YES,0
-PD1039,"Panguitch Lake/Zion, North",Pronghorn,,NEW_2026_NO_PRIOR_HARVEST,YES,0

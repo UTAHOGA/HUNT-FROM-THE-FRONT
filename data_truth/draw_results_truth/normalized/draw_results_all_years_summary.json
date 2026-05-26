@@ -1,13 +1,13 @@
 {
   "active_database_coverage_by_draw_year": {
     "2021": 23261,
-    "2022": 15576,
-    "2023": 14692,
+    "2022": 15553,
+    "2023": 14683,
     "2024": 34952,
     "2025": 73604,
     "2026": 1096
   },
-  "active_database_hunt_codes": 1411,
+  "active_database_hunt_codes": 1394,
   "artifact": "draw_results_all_years_cumulative_truth",
   "blank_hunt_code_rows": 0,
   "blocker_count": 0,

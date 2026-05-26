@@ -15,10 +15,9 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-HUNTS_ROOT = Path(r"C:\Users\tyler\Desktop\GitHub\HUNTS")
 
 AUDIT = ROOT / "processed_data/hunt_master_canonical_2026_built_permit_deep_dive.csv"
-DATABASE = HUNTS_ROOT / "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv"
+DATABASE = ROOT / "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv"
 
 OUTPUT = ROOT / "processed_data/database_authoritative_permit_overlay_plan_2026.csv"
 SUMMARY_JSON = ROOT / "processed_data/database_authoritative_permit_overlay_plan_2026_summary.json"
