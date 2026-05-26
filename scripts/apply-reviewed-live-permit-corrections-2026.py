@@ -71,6 +71,13 @@ REVIEWED_CORRECTIONS = {
     },
 }
 
+REVIEWED_LABEL_CORRECTIONS = {
+    "EB3135": {
+        "weapon": "Archery",
+        "reason": "Reviewed DWR Hunt Planner block: EB3135 Barney Top/Kaiparowits weapon type is Archery, not September Archery.",
+    }
+}
+
 
 def clean(value: object) -> str:
     if value is None:
@@ -163,6 +170,30 @@ def main() -> int:
             }
         )
 
+    for code, correction in REVIEWED_LABEL_CORRECTIONS.items():
+        if code not in by_code:
+            continue
+        row = by_code[code]
+        before = snapshot(row, "old")
+        old_weapon = row.get("weapon", "")
+        changed = old_weapon != correction["weapon"]
+        row["weapon"] = correction["weapon"]
+        audit_rows.append(
+            {
+                "snapshot_utc": timestamp,
+                "hunt_code": code,
+                "hunt_name": row.get("hunt_name", ""),
+                "species": row.get("species", ""),
+                "weapon": row.get("weapon", ""),
+                "hunt_type": row.get("hunt_type", ""),
+                "action": "REVIEWED_LABEL_CORRECTION",
+                "changed": str(changed).lower(),
+                **before,
+                **snapshot(row, "new"),
+                "reason": f"{correction['reason']} Old weapon: {old_weapon}. New weapon: {correction['weapon']}.",
+            }
+        )
+
     for row in rows:
         if row.get("hunt_type") != "CWMU":
             continue
@@ -234,6 +265,7 @@ def main() -> int:
         "snapshot_utc": timestamp,
         "missing_reviewed_codes": missing_codes,
         "reviewed_correction_codes": sorted(REVIEWED_CORRECTIONS),
+        "reviewed_label_correction_codes": sorted(REVIEWED_LABEL_CORRECTIONS),
         "audit_row_count": len(audit_rows),
         "action_counts": dict(sorted(action_counts.items())),
         "changed_counts": dict(sorted(changed_counts.items())),

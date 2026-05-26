@@ -8,7 +8,7 @@
     "unique_hunt_code_count": 1394
   },
   "fatal_blocker_count": 0,
-  "generated_at_utc": "2026-05-26T21:50:46+00:00",
+  "generated_at_utc": "2026-05-26T21:53:44+00:00",
   "guardrails": [
     "No protected numeric DATABASE cells were changed by this audit.",
     "Website feeds and materializer outputs were not modified.",

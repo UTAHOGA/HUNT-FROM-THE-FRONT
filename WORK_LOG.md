@@ -4798,3 +4798,25 @@
   - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed.
   - `python -m py_compile scripts\apply-reviewed-live-permit-corrections-2026.py scripts\pull-live-dwr-permit-numbers-comprehensive-2026.py` passed.
   - `python -m pytest tests\utah\test_live_dwr_and_expo_permit_promotion_2026.py -q` passed: `8`.
+
+## EB3135 Barney Top Label Check
+- Timestamp (UTC): 2026-05-26T22:00:00Z
+- Scope:
+  - Confirmed `EB3135` is `Barney Top/Kaiparowits` archery with 2026 permits `9 / 1 / 10`.
+  - Confirmed Monroe mid-season any-legal-weapon remains `EB3185` with 2026 permits `18 / 3 / 21`.
+  - Corrected the canonical `EB3135` weapon label from `September Archery` to the DWR Hunt Planner label `Archery`.
+  - Added `EB3135` to the reviewed live permit correction audit as a label-only correction.
+  - Re-ran comprehensive live DWR permit extraction, database publish readiness, and comprehensive 2026/2025 history-integrity audit after the label correction.
+  - No website feeds, `public_client_engine.csv`, prediction math, or materializer code were changed.
+- Key results:
+  - `EB3135` comparison status remains `MATCH`.
+  - `EB3185` comparison status remains `MATCH`.
+  - Comprehensive live DWR numeric mismatches remain `0`.
+  - Publish readiness remains `true`.
+  - Comprehensive history audit fatal blockers remain `0`.
+- Validation:
+  - `python scripts\apply-reviewed-live-permit-corrections-2026.py` passed.
+  - `python scripts\pull-live-dwr-permit-numbers-comprehensive-2026.py` passed.
+  - `python scripts\build-database-publish-readiness-report.py` passed.
+  - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed.
+  - `python -m pytest tests\utah\test_live_dwr_and_expo_permit_promotion_2026.py -q` passed.

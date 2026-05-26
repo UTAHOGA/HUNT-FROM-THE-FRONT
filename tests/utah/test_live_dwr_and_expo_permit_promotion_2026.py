@@ -145,9 +145,11 @@ def test_reviewed_live_permit_corrections_are_applied() -> None:
     assert summary["missing_reviewed_codes"] == []
     assert summary["action_counts"] == {
         "CWMU_TOTAL_ONLY_NORMALIZATION": 283,
+        "REVIEWED_LABEL_CORRECTION": 1,
         "REVIEWED_NUMERIC_CORRECTION": 8,
     }
     assert summary["cwmu_not_total_only_count"] == 0
+    assert summary["reviewed_label_correction_codes"] == ["EB3135"]
 
     expected = {
         "BI6528": ("6", "0", "6"),
@@ -164,6 +166,16 @@ def test_reviewed_live_permit_corrections_are_applied() -> None:
         assert (row["permits_2026_res"], row["permits_2026_nr"], row["permits_2026_total"]) == values
         assert row["permits_2026_source"] == "2026_DWR_HUNT_PLANNER_REVIEWED_LIVE_BLOCK"
         assert row["permit_allotment_2026_status"] == "REVIEWED_LIVE_DWR_SPLIT"
+
+    assert rows["EB3135"]["hunt_name"] == "Barney Top/Kaiparowits"
+    assert rows["EB3135"]["weapon"] == "Archery"
+    assert (
+        rows["EB3135"]["permits_2026_res"],
+        rows["EB3135"]["permits_2026_nr"],
+        rows["EB3135"]["permits_2026_total"],
+    ) == ("9", "1", "10")
+    assert rows["EB3185"]["hunt_name"] == "Monroe"
+    assert rows["EB3185"]["weapon"] == "Mid Any Legal Weapon"
 
 
 def test_comprehensive_live_dwr_extraction_confirms_broad_database_coverage() -> None:

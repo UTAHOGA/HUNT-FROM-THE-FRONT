@@ -1,13 +1,13 @@
 {
   "action_counts": {
     "CWMU_TOTAL_ONLY_NORMALIZATION": 283,
+    "REVIEWED_LABEL_CORRECTION": 1,
     "REVIEWED_NUMERIC_CORRECTION": 8
   },
   "artifact": "reviewed_live_permit_corrections_2026",
-  "audit_row_count": 291,
+  "audit_row_count": 292,
   "changed_counts": {
-    "CWMU_TOTAL_ONLY_NORMALIZATION": 283,
-    "REVIEWED_NUMERIC_CORRECTION": 8
+    "REVIEWED_LABEL_CORRECTION": 1
   },
   "cwmu_not_total_only_codes": [],
   "cwmu_not_total_only_count": 0,
@@ -29,5 +29,8 @@
     "EB3112",
     "EB3185"
   ],
-  "snapshot_utc": "2026-05-26T21:50:37+00:00"
+  "reviewed_label_correction_codes": [
+    "EB3135"
+  ],
+  "snapshot_utc": "2026-05-26T21:53:35+00:00"
 }
