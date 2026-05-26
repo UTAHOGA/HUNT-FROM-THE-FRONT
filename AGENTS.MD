@@ -1,4 +1,4 @@
-# AGENTS.md — HUNTS Repo Execution Orders
+# AGENTS.md — HUNT-BUILDER Repo Execution Orders
 
 ## Purpose Of This File
 
@@ -46,7 +46,7 @@ The project must produce defensible, traceable data. Every final number must be 
 
 Local repo path:
 
-`C:\Users\tyler\Desktop\GitHub\HUNTS`
+`C:\Users\tyler\Desktop\GitHub\HUNT-BUILDER`
 
 ---
 

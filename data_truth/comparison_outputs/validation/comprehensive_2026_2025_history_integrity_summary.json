@@ -1,0 +1,63 @@
+{
+  "artifact": "comprehensive_2026_2025_history_integrity_audit",
+  "database": {
+    "blank_boundary_id_count": 0,
+    "duplicate_hunt_code_count": 0,
+    "path": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+    "row_count": 1394,
+    "unique_hunt_code_count": 1394
+  },
+  "fatal_blocker_count": 0,
+  "generated_at_utc": "2026-05-26T17:41:16+00:00",
+  "guardrails": [
+    "No protected numeric DATABASE cells were changed by this audit.",
+    "Website feeds and materializer outputs were not modified.",
+    "Warning-class historical rows are review evidence, not promoted current truth."
+  ],
+  "open_issue_count": 47,
+  "open_issue_counts_by_type": {
+    "HARVEST_2025_CODE_NOT_IN_ACTIVE_DATABASE": 29,
+    "LE_DEER_2025_DRAW_TO_DATABASE_MISSING_DATABASE_ROW": 6,
+    "OIL_2025_DRAW_TO_DATABASE_MISSING_DATABASE_ROW": 12
+  },
+  "outputs": {
+    "dashboard_csv": "data_truth/comparison_outputs/validation/comprehensive_2026_2025_history_integrity_audit.csv",
+    "markdown_report": "processed_data/comprehensive_2026_2025_history_integrity_audit.md",
+    "open_issues_csv": "data_truth/comparison_outputs/validation/comprehensive_2026_2025_history_integrity_open_issues.csv",
+    "summary_json": "data_truth/comparison_outputs/validation/comprehensive_2026_2025_history_integrity_summary.json"
+  },
+  "permit_overlay_numeric_issue_total": 0,
+  "retired_current_codes": {
+    "codes": [
+      "EA1007",
+      "EA1053",
+      "EA1287",
+      "EA1288",
+      "EA1289",
+      "EA1290",
+      "EA1291",
+      "EA1292",
+      "EA1293",
+      "EA1294",
+      "EA1295",
+      "EA1296",
+      "EA1297",
+      "EA1298",
+      "EA1299",
+      "EA1300",
+      "PD1039"
+    ],
+    "ledger_row_count": 17,
+    "path": "data_truth/crosswalk_truth/normalized/retired_current_hunt_codes_2026.csv",
+    "retired_codes_still_active_count": 0
+  },
+  "review_warning_count": 3,
+  "severity_counts": {
+    "INFO": 14,
+    "WARNING": 3
+  },
+  "status_counts": {
+    "PASS": 14,
+    "WARN": 3
+  }
+}

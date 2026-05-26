@@ -1,5 +1,373 @@
 # WORK LOG
 
+## HUNT-BUILDER Active Repo Correction And HUNTS Change Transfer
+- Timestamp (UTC): 2026-05-26T17:37:01Z
+- Scope:
+  - Corrected the local repo instruction file so Codex operates from `C:\Users\tyler\Desktop\GitHub\HUNT-BUILDER` as the active repository.
+  - Copied the recent truth-source, crosswalk, permit-overlay, draw-results, harvest-integrity, and comprehensive audit artifacts that were mistakenly built in `C:\Users\tyler\Desktop\GitHub\HUNTS` into this active repository.
+  - Merged the missing HUNTS work-log sections into this active repo without overwriting HUNT-BUILDER's existing website, library, and research-library history.
+  - Preserved guardrails: no website feed promotion was performed as part of the transfer, and protected numeric DATABASE cells were copied only as the current HUNTS truth-state requested by the user.
+- Validation plan:
+  - Run the transferred comprehensive integrity audit.
+  - Run the focused transferred pytest bundle for retirement, boundary IDs, crosswalk, black bear, LE deer, O.I.L., and comprehensive audit integrity.
+  - Commit the HUNT-BUILDER transfer when validation is complete.
+- Validation completed:
+  - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed in `C:\Users\tyler\Desktop\GitHub\HUNT-BUILDER`.
+  - `python -m py_compile scripts\audit-comprehensive-2026-2025-history-integrity.py tests\utah\test_comprehensive_2026_2025_history_integrity_audit.py` passed.
+  - `python -m pytest tests\utah\test_comprehensive_2026_2025_history_integrity_audit.py tests\utah\test_retired_current_hunt_codes_2026.py tests\utah\test_database_boundary_id_fill_2026.py tests\utah\test_current_historical_hunt_code_crosswalk_2026.py tests\utah\test_black_bear_br_crosscompare_2024_2025_2026.py tests\utah\test_le_deer_2025_draw_results_extraction.py tests\utah\test_oil_2025_draw_results_extraction.py -q` passed: `22`.
+
+## Comprehensive 2026/2025 History Integrity Audit
+- Timestamp (UTC): 2026-05-26T17:26:29Z
+- Scope:
+  - Built a consolidated audit over active 2026 `DATABASE.csv`, retired current-code ledger, live/current DWR snapshot summaries, active EA reconciliation, current-to-historical crosswalk summary, 2026 permit-overlay validation files, 2025 draw-results validation files, and 2025 harvest-results truth rows.
+  - Did not modify protected numeric `DATABASE.csv` cells, website feeds, generated pages, or materializer outputs.
+  - Wrote a dashboard and open-issue queue that separates fatal blockers from historical-review warnings.
+- Outputs:
+  - `scripts/audit-comprehensive-2026-2025-history-integrity.py`
+  - `tests/utah/test_comprehensive_2026_2025_history_integrity_audit.py`
+  - `data_truth/comparison_outputs/validation/comprehensive_2026_2025_history_integrity_audit.csv`
+  - `data_truth/comparison_outputs/validation/comprehensive_2026_2025_history_integrity_open_issues.csv`
+  - `data_truth/comparison_outputs/validation/comprehensive_2026_2025_history_integrity_summary.json`
+  - `processed_data/comprehensive_2026_2025_history_integrity_audit.md`
+- Key results:
+  - Active `DATABASE.csv` rows: `1394`.
+  - Unique active hunt codes: `1394`.
+  - Duplicate active hunt codes: `0`.
+  - Blank active boundary IDs: `0`.
+  - Retired current-code ledger rows: `17`.
+  - Retired codes still active in `DATABASE.csv`: `0`.
+  - Permit-overlay numeric mismatches against protected `DATABASE.csv` cells: `0`.
+  - Fatal blockers: `0`.
+  - Review-warning classes: `3`.
+  - Open review issue rows: `47`.
+  - Open issue breakdown: `6` 2025 LE deer draw source rows missing from active 2026 DATABASE, `12` 2025 O.I.L. draw source rows missing from active 2026 DATABASE, and `29` 2025 harvest source codes not present in active 2026 DATABASE.
+- Validation:
+  - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed.
+  - `python -m py_compile scripts\audit-comprehensive-2026-2025-history-integrity.py tests\utah\test_comprehensive_2026_2025_history_integrity_audit.py` passed.
+  - `python -m pytest tests\utah\test_comprehensive_2026_2025_history_integrity_audit.py -q` passed: `3`.
+  - `python -m pytest tests\utah\test_comprehensive_2026_2025_history_integrity_audit.py tests\utah\test_retired_current_hunt_codes_2026.py tests\utah\test_database_boundary_id_fill_2026.py tests\utah\test_current_historical_hunt_code_crosswalk_2026.py tests\utah\test_black_bear_br_crosscompare_2024_2025_2026.py tests\utah\test_le_deer_2025_draw_results_extraction.py tests\utah\test_oil_2025_draw_results_extraction.py -q` passed: `22`.
+
+## Archive Defunct EA1287-EA1300 Effective 2026
+- Timestamp (UTC): 2026-05-26T17:12:46Z
+- Scope:
+  - Archived `EA1287` through `EA1300` from active 2026 `DATABASE.csv` after user rechecked and confirmed those codes no longer exist online effective 2026.
+  - Preserved all `14` newly archived rows in the retired current-code ledger alongside the previously retired `EA1007`, `EA1053`, and `PD1039`.
+  - Reran boundary, live-online, and active-EA reconciliation audits after the archive.
+  - Did not modify website feeds, generated pages, materializer files, or historical draw/harvest rows.
+- Outputs:
+  - `pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv`
+  - `data_truth/crosswalk_truth/normalized/retired_current_hunt_codes_2026.csv`
+  - `data_truth/crosswalk_truth/validation/retired_current_hunt_codes_2026_summary.json`
+  - `processed_data/retired_current_hunt_codes_2026.md`
+  - `data_truth/crosswalk_truth/validation/current_online_missing_hunt_codes_2026_review.csv`
+  - `data_truth/crosswalk_truth/validation/current_online_missing_hunt_codes_2026_review_summary.json`
+  - `data_truth/crosswalk_truth/validation/current_active_ea_hunts_2026_reconciliation.csv`
+  - `data_truth/crosswalk_truth/validation/current_active_ea_hunts_2026_reconciliation_summary.json`
+  - `data_truth/crosswalk_truth/validation/database_boundary_id_fill_2026_audit.csv`
+  - `data_truth/crosswalk_truth/validation/database_boundary_id_fill_2026_summary.json`
+- Key results:
+  - DATABASE rows before this archive: `1408`.
+  - DATABASE rows after this archive: `1394`.
+  - Newly archived rows: `14`.
+  - Total retired current-code ledger rows: `17`.
+  - DATABASE duplicate hunt codes: `0`.
+  - DATABASE blank boundary IDs: `0`.
+  - Live-online missing DATABASE rows: `0`.
+  - Active `EA` reconciliation: `204` live active `EA` rows, `204` DATABASE `EA` rows, `0` missing, `0` extras.
+- Validation:
+  - `python scripts\retire-current-hunt-codes-2026.py` passed.
+  - `python scripts\fill-database-boundary-ids-from-json-2026.py` passed.
+  - `python scripts\audit-current-online-hunt-codes-2026.py` passed.
+  - `python scripts\audit-current-active-ea-hunts-2026.py` passed.
+  - `python -m py_compile scripts\retire-current-hunt-codes-2026.py scripts\audit-current-online-hunt-codes-2026.py scripts\audit-current-active-ea-hunts-2026.py scripts\fill-database-boundary-ids-from-json-2026.py tests\utah\test_retired_current_hunt_codes_2026.py tests\utah\test_database_boundary_id_fill_2026.py` passed.
+  - `python -m pytest tests\utah\test_retired_current_hunt_codes_2026.py tests\utah\test_database_boundary_id_fill_2026.py -q` passed: `4`.
+  - Targeted inline validation confirmed `DATABASE.csv` has `1394` rows, none of the `17` retired codes remain active, the retired ledger has exactly those `17` codes, and live-online/active-EA audit blockers are `0`.
+
+## Current Active EA Hunts Reconciliation
+- Timestamp (UTC): 2026-05-26T17:09:52Z
+- Scope:
+  - Reconciled canonical `DATABASE.csv` `EA` rows against the current active Utah DWR Hunt Planner antlerless elk `EA` list provided by the user and available through the live Hunt Planner table endpoint.
+  - Did not delete or modify any additional active `EA` rows after user clarified the remaining active `EA` list should be protected.
+  - Wrote a reviewed audit identifying active coverage and extra DATABASE rows that require separate review as possible RAC-only, future-season, or code-remap rows.
+  - Preserved prior retirement state: only `EA1007`, `EA1053`, and `PD1039` remain retired from active 2026 DATABASE.
+- Outputs:
+  - `scripts/audit-current-active-ea-hunts-2026.py`
+  - `data_truth/crosswalk_truth/validation/current_active_ea_hunts_2026_reconciliation.csv`
+  - `data_truth/crosswalk_truth/validation/current_active_ea_hunts_2026_reconciliation_summary.json`
+  - `processed_data/current_active_ea_hunts_2026_reconciliation.md`
+- Key results:
+  - Live/current active `EA` count: `204`.
+  - DATABASE active `EA` count: `218`.
+  - Active `EA` codes missing from DATABASE: `0`.
+  - DATABASE extra `EA` rows not in current active list: `14`.
+  - Extra rows are `EA1287`, `EA1288`, `EA1289`, `EA1290`, `EA1291`, `EA1292`, `EA1293`, `EA1294`, `EA1295`, `EA1296`, `EA1297`, `EA1298`, `EA1299`, and `EA1300`.
+- Validation:
+  - `python scripts\audit-current-active-ea-hunts-2026.py` passed.
+  - `python -m py_compile scripts\audit-current-active-ea-hunts-2026.py` passed.
+
+## Retire Invalid 2026 Current Hunt Codes
+- Timestamp (UTC): 2026-05-26T17:01:51Z
+- Scope:
+  - Retired `EA1007`, `EA1053`, and `PD1039` from canonical 2026 `DATABASE.csv` after user confirmed those hunt codes and their 2026 data cease to exist online effective 2026.
+  - Preserved the removed rows in a reviewed retirement ledger before deleting them from the current DATABASE universe.
+  - Reran the boundary-ID fill audit after retirement; reviewed target count dropped from `17` to `14`, with `0` blockers, `0` blank boundary IDs, and `0` duplicate hunt codes.
+  - Reran the live DWR Hunt Planner online-missing audit after retirement; the user-reported codes no longer appear in current DATABASE and are listed as retired from DATABASE.
+  - Removed the superseded pre-retirement online-missing audit files so current validation artifacts no longer list `EA1007`, `EA1053`, or `PD1039` as current DATABASE rows.
+  - Did not modify website feeds, generated pages, materializer files, or historical draw/harvest rows.
+- Outputs:
+  - `scripts/retire-current-hunt-codes-2026.py`
+  - `tests/utah/test_retired_current_hunt_codes_2026.py`
+  - `data_truth/crosswalk_truth/normalized/retired_current_hunt_codes_2026.csv`
+  - `data_truth/crosswalk_truth/validation/retired_current_hunt_codes_2026_summary.json`
+  - `processed_data/retired_current_hunt_codes_2026.md`
+  - `pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv`
+  - `data_truth/crosswalk_truth/validation/current_online_missing_hunt_codes_2026_review.csv`
+  - `data_truth/crosswalk_truth/validation/current_online_missing_hunt_codes_2026_review_summary.json`
+  - `data_truth/crosswalk_truth/validation/database_boundary_id_fill_2026_audit.csv`
+  - `data_truth/crosswalk_truth/validation/database_boundary_id_fill_2026_summary.json`
+- Key results:
+  - DATABASE rows before retirement: `1411`.
+  - DATABASE rows after retirement: `1408`.
+  - Retired current codes: `EA1007`, `EA1053`, `PD1039`.
+  - Retired rows preserved: `3`.
+  - Remaining DATABASE duplicate hunt codes: `0`.
+  - Remaining DATABASE blank boundary IDs: `0`.
+  - Live-online missing DATABASE rows after retirement: `14`, all `EA` rows; no user-reported retired code remains in DATABASE.
+- Validation:
+  - `python scripts\retire-current-hunt-codes-2026.py` passed.
+  - `python scripts\fill-database-boundary-ids-from-json-2026.py` passed.
+  - `python scripts\audit-current-online-hunt-codes-2026.py` passed.
+  - `python -m py_compile scripts\retire-current-hunt-codes-2026.py scripts\audit-current-online-hunt-codes-2026.py scripts\fill-database-boundary-ids-from-json-2026.py tests\utah\test_retired_current_hunt_codes_2026.py tests\utah\test_database_boundary_id_fill_2026.py` passed.
+  - `python -m pytest tests\utah\test_retired_current_hunt_codes_2026.py tests\utah\test_database_boundary_id_fill_2026.py -q` passed: `4`.
+  - Targeted inline validation confirmed `DATABASE.csv` has `1408` rows, no `EA1007`/`EA1053`/`PD1039` rows, `0` duplicates, and `0` blank boundary IDs.
+  - Broader `tests\utah\test_current_year_permit_allotments.py` was checked and still has unrelated pre-existing runtime failures: `hunt_master_enriched.csv` is a Git LFS pointer and `EA2012` runtime expectations differ from current source values.
+
+## Current Online Missing Hunt Code Audit 2026
+- Timestamp (UTC): 2026-05-26T16:46:26Z
+- Scope:
+  - Audited canonical `DATABASE.csv` hunt codes against the live Utah DWR Hunt Planner `HaSetup` hunt-number list.
+  - Confirmed user-reported codes `EA1007`, `EA1053`, and `PD1039` are not present in the live online Hunt Planner hunt-number list at audit time.
+  - Identified `17` canonical DATABASE rows not present in the live online hunt-number list: `16` antlerless elk `EA` rows and `1` doe pronghorn `PD` row.
+  - Preserved protected numeric DATABASE cells; this audit is sidecar quarantine evidence only and does not delete or overwrite RAC/current-year allotment values.
+  - Marked missing-online rows with recommendation `QUARANTINE_CURRENT_ONLINE_MAPPING; do not promote as live-online-current without a new DWR export`.
+- Outputs:
+  - `scripts/audit-current-online-hunt-codes-2026.py`
+  - `data_truth/crosswalk_truth/raw_inventory/live_dwr_hunt_planner_hunt_codes_snapshot_2026.csv`
+  - `data_truth/crosswalk_truth/validation/current_online_missing_hunt_codes_2026.csv`
+  - `data_truth/crosswalk_truth/validation/current_online_missing_hunt_codes_2026_summary.json`
+  - `processed_data/current_online_missing_hunt_codes_2026.md`
+- Key results:
+  - Live DWR Hunt Planner hunt-number count: `1422`.
+  - DATABASE hunt-code row count: `1411`.
+  - DATABASE codes missing from live online list: `17`.
+  - User-reported missing codes confirmed absent: `EA1007`, `EA1053`, `PD1039`.
+  - Same-name live candidates found: `EA1053 -> EA1054` for `Nine Mile, West Anthro` on the current live table, and `EA1007 -> EA2013` for `Wasatch Mtns, Currant Creek` private-lands-only; no same-name live candidate found for `PD1039`.
+- Validation:
+  - `python scripts\audit-current-online-hunt-codes-2026.py` passed.
+  - `python -m py_compile scripts\audit-current-online-hunt-codes-2026.py` passed.
+  - Inline validation confirmed `17` audit rows and high-priority absent status for `EA1007`, `EA1053`, and `PD1039`.
+
+## Current Online Missing Hunt Code Audit Review 2026
+- Timestamp (UTC): 2026-05-26T16:57:06Z
+- Scope:
+  - Refined the live-online audit after user clarification that `EA1007`, `EA1053`, and `PD1039` are hunt codes that no longer exist online.
+  - Added a selected live DWR Hunt Planner table snapshot for the current online `Elk|Antlerless` and `Pronghorn|Doe` rows.
+  - Added explicit audit fields distinguishing the issue as `HUNT_CODE_MISSING_ONLINE_BOUNDARY_ID_PRESENT`.
+  - Confirmed this is not a boundary-ID gap: all `17` missing-online rows have populated DATABASE boundary IDs.
+  - Preserved protected `DATABASE.csv` numeric cells and did not modify website-facing outputs.
+- Outputs:
+  - `data_truth/crosswalk_truth/raw_inventory/live_dwr_hunt_planner_selected_tables_snapshot_2026.csv`
+  - `data_truth/crosswalk_truth/validation/current_online_missing_hunt_codes_2026_review.csv`
+  - `data_truth/crosswalk_truth/validation/current_online_missing_hunt_codes_2026_review_summary.json`
+  - `processed_data/current_online_missing_hunt_codes_2026_review.md`
+- Key results:
+  - Live selected table rows: `227` (`204` `Elk|Antlerless`, `23` `Pronghorn|Doe`).
+  - User-reported codes confirmed absent from live online hunt-code list: `EA1007`, `EA1053`, `PD1039`.
+  - Live same-name candidates: `EA1053 -> EA1054` for `Nine Mile, West Anthro`; `EA1007 -> EA2013` for `Wasatch Mtns, Currant Creek` private-lands-only; no live same-name candidate for `PD1039`.
+- Validation:
+  - `python scripts\audit-current-online-hunt-codes-2026.py` passed.
+  - `python -m py_compile scripts\audit-current-online-hunt-codes-2026.py` passed.
+
+## 2026 DATABASE Boundary ID Fill From JSON/GeoJSON
+- Timestamp (UTC): 2026-05-26T16:36:35Z
+- Scope:
+  - Filled the `17` remaining blank `boundary_id` cells in canonical `DATABASE.csv` using reviewed JSON/GeoJSON evidence.
+  - Used direct official hunt-table JSON matches only when `HUNT_NUMBER` and boundary name agreed with the current DATABASE row.
+  - Used exact official boundary-name matches from `data/elk_antlerless_hunt_table_official.json` and `data/pronghorn_hunt_table_official.json` where current RAC split codes did not appear as direct `HUNT_NUMBER` rows.
+  - Used exact unique DWR boundary-layer name matches from `data/hunt_boundaries.geojson` for new current RAC split units not present by code in the official hunt-table JSON.
+  - Caught and corrected a code-reuse trap: current `EA1007` is `Wasatch Mtns, Currant Creek`, so it maps by current boundary name to `227`; the stale direct `EA1007` JSON row for `Box Elder, Grouse Creek` was not promoted.
+  - Final DATABASE health check: `1411` rows, `1411` unique hunt codes, `0` duplicate hunt codes, and `0` blank boundary IDs.
+- Outputs:
+  - `scripts/fill-database-boundary-ids-from-json-2026.py`
+  - `tests/utah/test_database_boundary_id_fill_2026.py`
+  - `data_truth/crosswalk_truth/validation/database_boundary_id_fill_2026_audit.csv`
+  - `data_truth/crosswalk_truth/validation/database_boundary_id_fill_2026_summary.json`
+  - `processed_data/database_boundary_id_fill_2026.md`
+  - `pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv`
+- Validation:
+  - `python scripts\fill-database-boundary-ids-from-json-2026.py` passed.
+  - `python -m py_compile scripts\fill-database-boundary-ids-from-json-2026.py tests\utah\test_database_boundary_id_fill_2026.py` passed.
+  - `python -m pytest tests\utah\test_database_boundary_id_fill_2026.py tests\utah\test_current_historical_hunt_code_crosswalk_2026.py -q` passed: `6`.
+
+## Current Reference-Only Hunt Code Review 2026
+- Timestamp (UTC): 2026-05-26T16:26:44Z
+- Scope:
+  - Resolved the four remaining current-reference-only rows identified for manual review: `CG9999`, `EX1000`, `LO0008`, and `LO0011`.
+  - Promoted `CG9999` as the reviewed statewide cougar current reference row with `season=open`, `permits_2026_total=unlimited`, and `permit_allotment_2026_status=UNLIMITED_PERMITS` from the DWR Hunt Planner cougar CSV.
+  - Preserved `EX1000`, `LO0008`, and `LO0011` as reviewed no-quota-published reference rows and did not invent numeric resident, nonresident, or total permit counts.
+  - Updated the current-to-historical crosswalk builder so reviewed current-reference rows are no longer counted as unresolved manual-review gaps.
+  - Rebuilt the current-to-historical crosswalk: `169` rows, `0` missing from `DATABASE.csv`, `0` duplicate current-code rows, and `4` `REVIEWED_CURRENT_REFERENCE` rows.
+- Outputs:
+  - `scripts/resolve-current-reference-codes-2026.py`
+  - `tests/utah/test_current_reference_codes_2026.py`
+  - `data_truth/crosswalk_truth/validation/current_reference_codes_2026_review.csv`
+  - `data_truth/crosswalk_truth/validation/current_reference_codes_2026_summary.json`
+  - `processed_data/current_reference_codes_2026_review.md`
+  - `data_truth/crosswalk_truth/normalized/current_to_historical_hunt_code_crosswalk_2026.csv`
+  - `data_truth/crosswalk_truth/validation/current_to_historical_hunt_code_crosswalk_2026_summary.json`
+  - `processed_data/current_to_historical_hunt_code_crosswalk_2026.csv`
+  - `processed_data/current_to_historical_hunt_code_crosswalk_2026.md`
+- Validation:
+  - `python scripts\resolve-current-reference-codes-2026.py` passed.
+  - `python scripts\build-current-historical-hunt-code-crosswalk-2026.py` passed.
+  - `python -m py_compile scripts\resolve-current-reference-codes-2026.py scripts\build-current-historical-hunt-code-crosswalk-2026.py tests\utah\test_current_reference_codes_2026.py tests\utah\test_current_historical_hunt_code_crosswalk_2026.py` passed.
+  - `python -m pytest tests\utah\test_current_reference_codes_2026.py tests\utah\test_current_historical_hunt_code_crosswalk_2026.py -q` passed: `6`.
+
+## 2026 EL/LO Private-Lands Elk Source Audit
+- Timestamp (UTC): 2026-05-26T14:01:30Z
+- Scope:
+  - Audited the attached DWR Hunt Planner private-lands bull elk file `2026 l.e. elk.private lands  EL-2025 and LO-2026.csv`.
+  - Confirmed the source has `131` rows: `126` `EL` rows and `5` elk `LO` Diamond Mtn Landowner Association rows.
+  - Confirmed the attached source publishes `0` permit-number values; therefore no numeric permit values were promoted from this source.
+  - Confirmed date context: `125` `EL` rows have 2025-only season dates, `1` `EL` row crosses 2025-2026, and all `5` elk `LO` rows have 2026 dates.
+  - Compared against `DATABASE.csv`: `0` missing rows, `128` rows where DATABASE already has protected numeric values not present in the attached source, and `3` rows blank in both source and DATABASE (`LO0012`, `LO0013`, `LO0014`).
+  - Checked RAC/private permit evidence: `0` exact `EL`/elk `LO` RAC code matches and `126` `EL -> EB` prefix-swap RAC candidate matches, all marked review evidence only because public `EB` RAC recommendations must not be promoted into private-land `EL/LO` rows without reviewed access-class confirmation.
+- Files:
+  - `scripts/audit-elk-private-lands-el-lo-2026.py`
+  - `tests/utah/test_elk_private_lands_el_lo_audit_2026.py`
+  - `data_truth/permit_overlay_truth/normalized/elk_private_lands_EL_LO_2026_source_audit.csv`
+  - `data_truth/permit_overlay_truth/validation/elk_private_lands_EL_LO_2026_vs_DATABASE.csv`
+  - `data_truth/permit_overlay_truth/validation/elk_private_lands_EL_LO_2026_rac_candidate_matches.csv`
+  - `data_truth/permit_overlay_truth/validation/elk_private_lands_EL_LO_2026_summary.json`
+  - `processed_data/elk_private_lands_EL_LO_2026_audit.md`
+- Validation:
+  - `python scripts\audit-elk-private-lands-el-lo-2026.py`
+  - `python -m compileall scripts\audit-elk-private-lands-el-lo-2026.py tests\utah\test_elk_private_lands_el_lo_audit_2026.py`
+  - `python -m pytest tests\utah\test_elk_private_lands_el_lo_audit_2026.py -q` passed: `3`
+
+## 2026 Black Bear Permit Split Normalization
+- Timestamp (UTC): 2026-05-26T13:56:00Z
+- Scope:
+  - Normalized the DWR Hunt Planner `2026 black bear permits.csv` source where resident and nonresident permit counts were stored in the same physical column with `NonRes:` continuation rows.
+  - Collapsed `207` physical source rows into `106` one-row-per-`BR` hunt-code records with explicit `permits_2026_res`, `permits_2026_nr`, and `permits_2026_total` fields.
+  - Preserved `BR7307` as the reviewed La Sal black bear conservation lock with `Total=4` and blank resident/nonresident split fields because no split is published for that conservation package.
+  - Compared normalized 2026 `BR` rows against canonical `DATABASE.csv`; there were `0` numeric mismatches and `0` missing DATABASE rows after promotion.
+  - Promoted reviewed 2026 black bear permit/allotment source lineage into `DATABASE.csv` without changing historical 2025 or older permit fields.
+  - Wrote a 2026-to-2025 black bear hunt-code comparison: `12` current 2026 BR codes were not present in the 2025 draw-results BR universe, and `3` 2025 draw-result BR codes were not present in the 2026 source.
+- Files:
+  - `scripts/normalize-black-bear-permits-2026.py`
+  - `tests/utah/test_black_bear_permit_normalization_2026.py`
+  - `data_truth/permit_overlay_truth/normalized/black_bear_permits_2026_canonical.csv`
+  - `data_truth/permit_overlay_truth/validation/black_bear_permits_2026_vs_DATABASE.csv`
+  - `data_truth/permit_overlay_truth/validation/black_bear_2026_vs_2025_code_comparison.csv`
+  - `data_truth/permit_overlay_truth/validation/black_bear_permits_2026_summary.json`
+  - `processed_data/black_bear_permits_2026_summary.md`
+  - `pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv`
+- Validation:
+  - `python scripts\normalize-black-bear-permits-2026.py`
+  - `python -m compileall scripts\normalize-black-bear-permits-2026.py tests\utah\test_black_bear_permit_normalization_2026.py`
+  - `python -m pytest tests\utah\test_black_bear_permit_normalization_2026.py -q` passed: `5`
+  - Focused `black_bear_permits_2026_vs_DATABASE.csv` scan returned `0` numeric mismatches and `0` missing DATABASE rows.
+
+## BR7307 Black Bear Conservation Permit Lock 2026
+- Timestamp (UTC): 2026-05-26T13:46:57Z
+- Scope:
+  - Confirmed `BR7307` exists as the current La Sal black bear `Multiseason - Conservation` hunt-code row in the 2026 black bear permit source and `DATABASE.csv`.
+  - Locked `BR7307` as a total-only conservation reference with `Total=4`, preserving blank resident/nonresident split fields because no split is published for this conservation package.
+  - Recorded the four PDF evidence rows supplied for the 2025-2027 conservation permit table: UHA row `36`, SFW row `37`, MDF row `38`, and SFW row `39`, one tag each.
+  - Cross-checked the normalized conservation table, where the two SFW rows are compressed as `permit_count=2`; normalized source total also sums to `4`.
+  - Synchronized the active current 2026 DATABASE/runtime/reference surfaces for `BR7307` without changing historical 2025 draw/harvest permit fields.
+- Files:
+  - `scripts/lock-black-bear-conservation-br7307-2026.py`
+  - `tests/utah/test_black_bear_conservation_br7307_lock_2026.py`
+  - `data_truth/permit_overlay_truth/normalized/black_bear_conservation_BR7307_lock_2026.csv`
+  - `data_truth/permit_overlay_truth/validation/black_bear_conservation_BR7307_lock_2026_audit.csv`
+  - `processed_data/black_bear_conservation_BR7307_lock_2026_summary.json`
+  - `processed_data/black_bear_conservation_BR7307_lock_2026.md`
+  - Current 2026 DATABASE/runtime/reference CSV surfaces carrying `BR7307`.
+- Validation:
+  - `python scripts\lock-black-bear-conservation-br7307-2026.py`
+  - `python -m compileall scripts\lock-black-bear-conservation-br7307-2026.py tests\utah\test_black_bear_conservation_br7307_lock_2026.py`
+  - `python -m pytest tests\utah\test_black_bear_conservation_br7307_lock_2026.py -q` passed: `3`
+  - Focused `BR7307` stale/blank/zero current-total scan across active surfaces returned `0` bad current total cells.
+
+## EA Private-Lands Canonical Permit Promotion 2026
+- Timestamp (UTC): 2026-05-26T13:33:39Z
+- Scope:
+  - Promoted the reviewed DWR Hunt Planner `EA` antlerless elk private-lands source into current 2026 permit/allotment surfaces.
+  - Corrected the five DATABASE mismatches identified by the canonical EA validation: `EA2012` `500 -> 400`, `EA2015` `75 -> 100`, `EA2016` `325 -> 275`, `EA2027` `250 -> 300`, and `EA2046` `50 -> 25`.
+  - Preserved historical 2025 and older fields; only current 2026 permit/allotment/quota fields and source traceability fields were synchronized.
+  - Re-ran the canonical EA validation; DATABASE now has zero missing rows and zero mismatches against the reviewed source.
+- Files:
+  - `scripts/promote-ea-private-lands-canonical-2026.py`
+  - `tests/utah/test_ea_private_lands_canonical_promotion_2026.py`
+  - `tests/utah/test_ea_private_lands_canonical_2026.py`
+  - `data_truth/permit_overlay_truth/validation/elk_antlerless_private_lands_EA_2026_promotion_audit.csv`
+  - `data_truth/permit_overlay_truth/validation/elk_antlerless_private_lands_EA_2026_promotion_summary.json`
+  - `data_truth/permit_overlay_truth/validation/elk_antlerless_private_lands_EA_2026_vs_DATABASE.csv`
+  - `data_truth/permit_overlay_truth/validation/elk_antlerless_private_lands_EA_2026_summary.json`
+  - `processed_data/elk_antlerless_private_lands_EA_2026_promotion.md`
+  - Current 2026 DATABASE/runtime/reference CSV surfaces carrying the affected `EA` rows.
+- Validation:
+  - `python scripts\promote-ea-private-lands-canonical-2026.py`
+  - `python scripts\validate-ea-private-lands-canonical-2026.py`
+  - `python -m compileall scripts\promote-ea-private-lands-canonical-2026.py tests\utah\test_ea_private_lands_canonical_promotion_2026.py tests\utah\test_ea_private_lands_canonical_2026.py`
+  - `python -m pytest tests\utah\test_ea_private_lands_canonical_2026.py tests\utah\test_ea_private_lands_canonical_promotion_2026.py -q` passed: `6`
+  - Focused stale-value scan across active current surfaces returned `0` stale current cells.
+
+## Desert Bighorn Conservation Permit Code Lock 2026
+- Timestamp (UTC): 2026-05-25T01:55:00Z
+- Scope:
+  - Resolved the current `DS` predictive gap by treating the unmapped desert bighorn rows as conservation/statewide permit reference rows.
+  - Pulled permit counts from `data_truth/permit_overlay_truth/normalized/conservation_permit_cycle_rows_2022_2027.csv`, using the 2025-2027 conservation permit cycle.
+  - Locked `DS1000`, `DS1002`, `DS1003`, `DS1004`, `DS1006`, `DS1007`, and `DS6605` with `Res=1`, `Non Res=0`, and `Total=1`.
+  - Added non-modeled predictive-v2 reference rows for `DS1002`, `DS1003`, `DS1004`, `DS1006`, `DS1007`, and `DS6605`; preserved `DS1000` as the existing sportsman/statewide row.
+  - Regenerated the current hunt-code family gap scan; `DS` is now resolved and total missing current DATABASE codes dropped from `20` to `14`.
+- Files:
+  - `scripts/lock-desert-bighorn-conservation-permit-codes-2026.py`
+  - `data_truth/permit_overlay_truth/normalized/desert_bighorn_conservation_permit_code_lock_2026.csv`
+  - `processed_data/desert_bighorn_conservation_permit_code_lock_2026_summary.json`
+  - `processed_data/desert_bighorn_conservation_permit_code_lock_2026.md`
+  - `processed_data/desert_bighorn_conservation_permit_code_lock_2026_runtime_updates.csv`
+  - `tests/utah/test_desert_bighorn_conservation_code_lock_2026.py`
+- Validation:
+  - `python scripts\lock-desert-bighorn-conservation-permit-codes-2026.py`
+  - `python scripts\scan-2026-hunt-code-family-gaps.py`
+  - `python -m compileall scripts\lock-desert-bighorn-conservation-permit-codes-2026.py tests\utah\test_desert_bighorn_conservation_code_lock_2026.py`
+  - `python -m pytest tests\utah\test_desert_bighorn_conservation_code_lock_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py tests\utah\test_elk_bull_reference_resolution_2026.py tests\utah\test_elk_private_land_resolution_2026.py tests\utah\test_conservation_permit_code_lock_2026.py -q` passed: `19`
+  - `python -m pytest tests\utah_bonus_predictive\test_phase11_sportsman_materialization.py tests\utah_draw_predictive\test_sportsman_permit_classification.py -q` passed: `2`
+
+## Conservation Permit Hunt Code Lock 2026
+- Timestamp (UTC): 2026-05-25T01:40:00Z
+- Scope:
+  - Locked the supplied conservation permit hunt codes into the current 2026 permit/reference surfaces so they do not drift or disappear from downstream coverage.
+  - Added a traceable conservation permit code lock table with `Non Res`, `Res`, and `Total` headers.
+  - Cleared the stale `EA1180` public/total quota value of `17` and preserved all five antlerless elk conservation codes as source-confirmed `NO_QUOTA_PUBLISHED` reference rows.
+  - Pushed `EB3128` and `EB3209` through the reference surfaces as conservation `TOTAL_ONLY` bull elk records with total `1`, without inventing resident/nonresident splits or draw odds.
+  - Regenerated the current hunt-code family gap scan after the lock; `EA` and `EB` remain resolved with zero missing predictive-v2 codes.
+- Files:
+  - `scripts/lock-conservation-permit-hunt-codes-2026.py`
+  - `data_truth/permit_overlay_truth/normalized/conservation_permit_hunt_code_lock_2026.csv`
+  - `processed_data/conservation_permit_hunt_code_lock_2026_summary.json`
+  - `processed_data/conservation_permit_hunt_code_lock_2026.md`
+  - `processed_data/conservation_permit_hunt_code_lock_2026_runtime_updates.csv`
+  - `tests/utah/test_conservation_permit_code_lock_2026.py`
+- Validation:
+  - `python scripts\lock-conservation-permit-hunt-codes-2026.py`
+  - `python scripts\scan-2026-hunt-code-family-gaps.py`
+  - `python -m compileall scripts\lock-conservation-permit-hunt-codes-2026.py tests\utah\test_conservation_permit_code_lock_2026.py`
+  - `python -m pytest tests\utah\test_conservation_permit_code_lock_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py tests\utah\test_elk_bull_reference_resolution_2026.py -q` passed: `12`
+
 ## Shared Double-Pillow Header Navigation
 - Timestamp (UTC): 2026-05-23T17:35:00Z
 - Scope:
@@ -3036,3 +3404,311 @@
   - `python -m py_compile scripts\find-2025-regulation-codes-for-2026-gaps.py tests\utah\test_guidebook_2025_codes_for_2026_gaps.py` passed.
   - `python -m pytest tests\utah\test_guidebook_2025_codes_for_2026_gaps.py -q` passed: `4`.
   - Direct scan of `processed_data\guidebook_2025_codes_for_2026_gaps.csv` and `processed_data\guidebook_2025_extracted_hunt_codes.csv` found no `â`, `Â`, replacement characters, smart dashes, daggers, or bullets.
+
+## 2026 EA Private-Lands Canonical Source Validation
+- Timestamp (UTC): 2026-05-26T13:20:58Z
+- Scope:
+  - Registered the user-supplied DWR Hunt Planner file `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/elk antlerless private lands only EA.csv` as canonical source evidence for antlerless elk private-lands-only `EA` permit totals.
+  - Normalized the source into a committed permit-overlay truth table with source path, source SHA-256, and numeric `permits_2026_total` values.
+  - Compared every supplied `EA` hunt code against protected current `DATABASE.csv` values without modifying `DATABASE.csv`.
+  - Preserved the rule that populated `DATABASE.csv` numeric cells are not overwritten by comparison output without explicit review and promotion approval.
+- Outputs:
+  - `scripts/validate-ea-private-lands-canonical-2026.py`
+  - `tests/utah/test_ea_private_lands_canonical_2026.py`
+  - `data_truth/permit_overlay_truth/normalized/elk_antlerless_private_lands_EA_2026_canonical.csv`
+  - `data_truth/permit_overlay_truth/validation/elk_antlerless_private_lands_EA_2026_vs_DATABASE.csv`
+  - `data_truth/permit_overlay_truth/validation/elk_antlerless_private_lands_EA_2026_summary.json`
+  - `processed_data/elk_antlerless_private_lands_EA_2026_summary.md`
+- Key results:
+  - Source rows: `27`.
+  - Unique `EA` hunt codes: `27`.
+  - Source total 2026 permits: `9830`.
+  - Structural blockers: `0`.
+  - Missing DATABASE hunt codes: `0`.
+  - DATABASE protected-value differences: `5`.
+  - Difference codes: `EA2012`, `EA2015`, `EA2016`, `EA2027`, and `EA2046`.
+- Validation:
+  - `python scripts\validate-ea-private-lands-canonical-2026.py` passed.
+  - `python -m py_compile scripts\validate-ea-private-lands-canonical-2026.py tests\utah\test_ea_private_lands_canonical_2026.py` passed.
+  - `python -m pytest tests\utah\test_ea_private_lands_canonical_2026.py -q` passed: `3`.
+
+## Private-Land Bull Elk 2026 Quota Cleanup And 2024 Bear Draw Extraction
+- Timestamp (UTC): 2026-05-26T14:30:00Z
+- Scope:
+  - Enforced the user clarification that private-land bull elk `EL` and elk `LO` rows must not carry 2026 permit availability or allotment numbers.
+  - Cleared leaked 2026 permit/quota/allotment fields from the 131 private-land elk `EL/LO` codes in `DATABASE.csv`, enriched/canonical CSV surfaces, predictive reference rows, and ladder/reference drafts while leaving public `EB` rows untouched.
+  - Re-ran the EL/LO private-land elk audit after cleanup; all 131 rows are now `SOURCE_AND_DATABASE_BLANK` for numeric 2026 permit comparison, with zero database numeric values unsupported by the private-land source.
+  - Extracted the attached `24 bear draw odds complete.pdf` into a normalized 2024 black bear draw-results permit-total artifact aligned to model target year 2025.
+  - Stored bear resident/nonresident eligible applicants, bonus permits, regular permits, total permits, page numbers, source SHA-256, and DATABASE comparison status.
+- Outputs:
+  - `scripts/clear-elk-private-lands-el-lo-2026-permit-fields.py`
+  - `scripts/extract-black-bear-2024-draw-odds-permits.py`
+  - `tests/utah/test_elk_private_lands_el_lo_clear_2026.py`
+  - `tests/utah/test_black_bear_2024_draw_odds_extraction.py`
+  - `data_truth/permit_overlay_truth/validation/elk_private_lands_EL_LO_2026_cleared_permit_fields.csv`
+  - `data_truth/permit_overlay_truth/validation/elk_private_lands_EL_LO_2026_cleared_permit_fields_summary.json`
+  - `processed_data/elk_private_lands_EL_LO_2026_cleared_permit_fields.md`
+  - `data_truth/draw_results_truth/normalized/black_bear_2024_draw_odds_model_target_2025_permit_totals.csv`
+  - `data_truth/draw_results_truth/validation/black_bear_2024_draw_odds_model_target_2025_vs_DATABASE.csv`
+  - `data_truth/draw_results_truth/validation/black_bear_2024_draw_odds_model_target_2025_summary.json`
+  - `processed_data/black_bear_2024_draw_odds_model_target_2025_permit_totals.md`
+- Key results:
+  - EL/LO target codes: `131` (`EL=126`, `LO=5`).
+  - Remaining EL/LO numeric 2026 permit/quota leak cells: `0`.
+  - Public `EB3020` retained 2026 quota values, proving public limited-entry elk rows were not cleared.
+  - Bear draw-odds extracted rows: `96` unique `BR` hunt codes.
+  - Bear source public permits: `943` total (`887` resident, `56` nonresident).
+  - Bear source classifications: `9` pursuit bonus-draw rows and `87` true bear bonus-draw rows.
+  - Bear comparison to current `DATABASE.csv` 2025 fields: `37` matches, `55` differences requiring lineage review, `4` source codes missing from current DATABASE (`BR7008`, `BR7019`, `BR7108`, `BR7208`).
+  - Bear draw source is historical draw-results evidence (`reported_draw_year=2024`, `model_target_year=2025`) and was not promoted into 2026 availability fields.
+- Validation:
+  - `python scripts\clear-elk-private-lands-el-lo-2026-permit-fields.py` passed and is idempotent.
+  - `python scripts\audit-elk-private-lands-el-lo-2026.py` passed after cleanup.
+  - `python scripts\extract-black-bear-2024-draw-odds-permits.py` passed.
+  - `python -m py_compile scripts\clear-elk-private-lands-el-lo-2026-permit-fields.py scripts\extract-black-bear-2024-draw-odds-permits.py tests\utah\test_elk_private_lands_el_lo_clear_2026.py tests\utah\test_black_bear_2024_draw_odds_extraction.py tests\utah\test_elk_private_lands_el_lo_audit_2026.py` passed.
+  - `python -m pytest tests\utah\test_elk_private_lands_el_lo_clear_2026.py tests\utah\test_elk_private_lands_el_lo_audit_2026.py tests\utah\test_elk_private_land_resolution_2026.py tests\utah\test_black_bear_2024_draw_odds_extraction.py tests\utah\test_black_bear_permit_normalization_2026.py -q` passed: `16`.
+
+## Black Bear BR 2024-2025-2026 Draw/Permit Crosswalk
+- Timestamp (UTC): 2026-05-26T14:50:00Z
+- Scope:
+  - Added an executable cross-comparison for black bear `BR` hunt codes across the 2024 draw-odds PDF, the user-supplied 2025 draw-odds PDF, and the current 2026 DWR Hunt Planner permit overlay.
+  - Extracted the 2025 black bear draw-odds PDF as model-target-year 2026 historical draw evidence.
+  - Built a reviewed BR crosswalk artifact that resolves high-confidence historical recodes without modifying protected `DATABASE.csv` current permit cells.
+  - Preserved current-only Dolores Triangle split rows and conservation rows as source evidence instead of forcing them into public draw-result rows.
+- Outputs:
+  - `scripts/crosscompare-black-bear-draw-odds-2024-2025-2026.py`
+  - `tests/utah/test_black_bear_br_crosscompare_2024_2025_2026.py`
+  - `data_truth/draw_results_truth/normalized/black_bear_2025_draw_odds_model_target_2026_permit_totals.csv`
+  - `data_truth/crosswalk_truth/normalized/black_bear_BR_2024_2025_2026_crosswalk.csv`
+  - `data_truth/crosswalk_truth/validation/black_bear_BR_2024_2025_2026_crosswalk_summary.json`
+  - `processed_data/black_bear_BR_2024_2025_2026_crosswalk.md`
+- Key results:
+  - 2024 draw rows: `96`; 2025 draw rows: `97`; current 2026 permit rows: `106`.
+  - 2025 draw total public permits: `994`; current 2026 numeric permit total: `1020`.
+  - 2024-only draw code: `BR7019`.
+  - 2025-only versus 2024 draw codes: `BR7237` and `BR7325`.
+  - High-confidence recodes: `BR7008 -> BR7022`, `BR7108 -> BR7127`, `BR7208 -> BR7239`, and `BR7307 -> BR7326`.
+  - `BR7307` is explicitly flagged as code reuse: historical 2025 La Sal limited-entry multiseason mapped to current `BR7326`, while current `BR7307` is the 2026 La Sal conservation package with `4` total permits and no resident/nonresident split.
+  - After applying reviewed recodes, all `97` 2025 draw rows map to current 2026 hunt codes.
+  - Remaining mapped 2025-to-2026 numeric differences: `BR7004->BR7004`, `BR7210->BR7210`, `BR7211->BR7211`, and `BR7317->BR7317`.
+- Validation:
+  - `python scripts\crosscompare-black-bear-draw-odds-2024-2025-2026.py` passed.
+  - `python -m py_compile scripts\crosscompare-black-bear-draw-odds-2024-2025-2026.py tests\utah\test_black_bear_br_crosscompare_2024_2025_2026.py` passed.
+  - `python -m pytest tests\utah\test_black_bear_br_crosscompare_2024_2025_2026.py -q` passed: `4`.
+
+## Black Bear 2026 Reviewed Res/NR/Total Export
+- Timestamp (UTC): 2026-05-26T15:10:00Z
+- Scope:
+  - Preserved the raw DWR Hunt Planner CSV with its two-line `Res:` / `NonRes:` source layout.
+  - Extended the black bear 2026 normalizer to also write a reviewed, one-row-per-code CSV export beside the source pull with numeric `permits_2026_res`, `permits_2026_nr`, and `permits_2026_total` columns.
+  - Added test coverage for the reviewed export and the four checked rows: `BR7004`, `BR7210`, `BR7211`, and `BR7317`.
+- Outputs:
+  - `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 black bear permits reviewed res-nr-total.csv`
+  - `data_truth/permit_overlay_truth/normalized/black_bear_permits_2026_canonical.csv`
+  - `data_truth/permit_overlay_truth/validation/black_bear_permits_2026_summary.json`
+  - `processed_data/black_bear_permits_2026_summary.md`
+- Key results:
+  - Reviewed export rows: `106`.
+  - Unique `BR` hunt codes: `106`.
+  - `FULL_SPLIT` rows: `100`.
+  - `TOTAL_ONLY` rows: `1` (`BR7307` conservation package total `4`, no published resident/nonresident split).
+  - `NO_PUBLISHED_NUMERIC_PERMIT` rows: `5`.
+  - Confirmed 2026 values: `BR7004 = 18/0/18`, `BR7210 = 3/0/3`, `BR7211 = 26/3/29`, and `BR7317 = 9/1/10`.
+- Validation:
+  - `python scripts\normalize-black-bear-permits-2026.py` passed.
+  - `python -m py_compile scripts\normalize-black-bear-permits-2026.py tests\utah\test_black_bear_permit_normalization_2026.py` passed.
+  - `python -m pytest tests\utah\test_black_bear_permit_normalization_2026.py -q` passed: `6`.
+
+## Black Bear 2026 Production Library PDF/XLSX
+- Timestamp (UTC): 2026-05-26T15:17:19Z
+- Scope:
+  - Built the library-facing production PDF and companion XLSX from the reviewed 2026 black bear res/non-res/total export.
+  - Replaced the older black bear library PDF that exposed internal notes paths with a clean 10-column table: hunt name, hunt code, sex, species, weapon, hunt type, season, resident permits, nonresident permits, and total permits.
+  - Preserved the existing library manifest path by regenerating `2026_BLACK_BEAR.pdf` and `2026_BLACK_BEAR.xlsx` in place.
+  - Added a validation JSON artifact for the production document build.
+  - Added an explicit `BR7307` code-reuse warning: in 2026, `BR7307` is the La Sal multiseason conservation package with 4 total permits and no resident/nonresident split; older La Sal limited-entry multiseason history crosswalks to current `BR7326`.
+- Outputs:
+  - `scripts/build-black-bear-production-documents-2026.py`
+  - `tests/utah/test_black_bear_production_documents_2026.py`
+  - `processed_data/hard_data_exports/hunt_tables/2026/2026_BLACK_BEAR.pdf`
+  - `processed_data/hard_data_exports/hunt_tables/2026/2026_BLACK_BEAR.xlsx`
+  - `processed_data/hard_data_exports/hunt_tables/2026/2026_BLACK_BEAR.validation.json`
+- Key results:
+  - Production rows: `106`.
+  - Unique `BR` hunt codes: `106`.
+  - Permit status counts: `100` full resident/nonresident splits, `1` total-only conservation package, and `5` rows with no published numeric permit count.
+  - Numeric 2026 total permits represented: `1020`.
+  - Checked values: `BR7004 = 18/0/18`, `BR7210 = 3/0/3`, `BR7211 = 26/3/29`, `BR7307 = total-only 4`, `BR7317 = 9/1/10`, and `BR7326 = 13/1/14`.
+  - PDF validation confirmed the title, checked codes, the `BR7307` code-reuse note, and no `../notes/DATABASE` internal path leakage.
+- Validation:
+  - `python scripts\build-black-bear-production-documents-2026.py` passed.
+  - `python -m py_compile scripts\build-black-bear-production-documents-2026.py tests\utah\test_black_bear_production_documents_2026.py` passed.
+  - `python -m pytest tests\utah\test_black_bear_production_documents_2026.py tests\utah\test_black_bear_permit_normalization_2026.py -q` passed: `10`.
+
+## Desert Bighorn 2026 Public/OIAL Permit Audit And Parallel Conservation Crosswalk
+- Timestamp (UTC): 2026-05-26T15:46:12Z
+- Scope:
+  - Normalized the reviewed 2026 public/once-in-a-lifetime desert bighorn permit rows from the DWR Hunt Planner source file.
+  - Split source `Res:` and `NonRes:` values into reviewed numeric `permits_2026_res`, `permits_2026_nr`, and `permits_2026_total` fields.
+  - Cross-checked those 18 public/OIAL rows against `DATABASE.csv` and the 2026 RAC/OIAL comparison CSV.
+  - Added mapping-law columns to the reviewed DS export: `hunt_code`, `boundary_id`, `hunt_code_mapping_status`, `boundary_id_mapping_status`, `candidate_hunt_code`, and `candidate_boundary_id`.
+  - Resolved the DS conservation mismatch class by marking conservation rows as parallel one-permit opportunities, not replacements for the public once-in-a-lifetime rows.
+  - Updated the current-to-historical crosswalk builder so DS conservation rows use `PROMOTED_PARALLEL_PUBLIC_UNIT_REFERENCE`.
+  - Did not change protected `DATABASE.csv` numeric cells.
+- Outputs:
+  - `scripts/normalize-desert-bighorn-permits-2026.py`
+  - `tests/utah/test_desert_bighorn_permit_normalization_2026.py`
+  - `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 desert bighorn reviewed res-nr-total.csv`
+  - `data_truth/permit_overlay_truth/normalized/desert_bighorn_permits_2026_canonical.csv`
+  - `data_truth/permit_overlay_truth/validation/desert_bighorn_permits_2026_vs_DATABASE.csv`
+  - `data_truth/permit_overlay_truth/validation/desert_bighorn_permits_2026_vs_RAC.csv`
+  - `data_truth/permit_overlay_truth/validation/desert_bighorn_public_vs_conservation_parallel_2026.csv`
+  - `data_truth/permit_overlay_truth/validation/desert_bighorn_permits_2026_summary.json`
+  - `processed_data/desert_bighorn_permits_2026_summary.md`
+  - `data_truth/crosswalk_truth/normalized/current_to_historical_hunt_code_crosswalk_2026.csv`
+  - `data_truth/crosswalk_truth/validation/current_to_historical_hunt_code_crosswalk_2026_summary.json`
+- Key results:
+  - Public/OIAL DS source rows: `18`.
+  - Unique public/OIAL DS hunt codes: `18`.
+  - Public/OIAL 2026 total permits: `85`.
+  - DATABASE comparison: `18` matches, `0` mismatches.
+  - RAC comparison: `18` matches, `0` mismatches.
+  - Resolved parallel conservation rows: `DS1002 -> DS6601`, `DS1003 -> DS6626|DS6627`, `DS1004 -> DS6608|DS6624`, `DS1006 -> DS6603`, `DS1007 -> DS6610`, and `DS6605 -> DS6621`.
+  - Crosswalk status counts now include `6` `PROMOTED_PARALLEL_PUBLIC_UNIT_REFERENCE` rows.
+- Validation:
+  - `python scripts\normalize-desert-bighorn-permits-2026.py` passed.
+  - `python scripts\build-current-historical-hunt-code-crosswalk-2026.py` passed.
+  - `python -m py_compile scripts\normalize-desert-bighorn-permits-2026.py scripts\build-current-historical-hunt-code-crosswalk-2026.py tests\utah\test_desert_bighorn_permit_normalization_2026.py tests\utah\test_current_historical_hunt_code_crosswalk_2026.py` passed.
+  - `python -m pytest tests\utah\test_desert_bighorn_permit_normalization_2026.py tests\utah\test_current_historical_hunt_code_crosswalk_2026.py -q` passed: `7`.
+
+## 2025 All O.I.L. Draw Results Extraction
+- Timestamp (UTC): 2026-05-26T15:57:29Z
+- Scope:
+  - Registered and extracted the user-supplied `2025 O.I.L. Draw Results.pdf` as historical draw-results evidence.
+  - Applied project year rules: `reported_draw_year=2025`, `model_target_year=2026`.
+  - Extracted one hunt-code row from every PDF page with resident/nonresident eligible applicants, bonus permits, regular permits, total draw permits, source PDF page, source report page, and SHA-256.
+  - Added research-library mapping-law fields to the normalized draw-results rows.
+  - Compared the extracted totals to `DATABASE.csv` 2025 draw-result fields only; no current 2026 permit/allotment cells were modified.
+- Outputs:
+  - `scripts/extract-oil-2025-draw-results-permits.py`
+  - `tests/utah/test_oil_2025_draw_results_extraction.py`
+  - `data_truth/draw_results_truth/normalized/oil_2025_draw_results_model_target_2026_permit_totals.csv`
+  - `data_truth/draw_results_truth/validation/oil_2025_draw_results_model_target_2026_vs_DATABASE.csv`
+  - `data_truth/draw_results_truth/validation/oil_2025_draw_results_model_target_2026_summary.json`
+  - `processed_data/oil_2025_draw_results_model_target_2026_permit_totals.md`
+- Key results:
+  - PDF pages extracted: `101`.
+  - Unique hunt codes: `101`.
+  - Prefix counts: `BI=15`, `DS=18`, `GO=17`, `MB=36`, `RS=15`.
+  - Source total public draw permits: `502` (`457` resident, `45` nonresident).
+  - DATABASE comparison: `89` matches against `permits_2025_draw_*`, `0` numeric differences, `0` blank draw fields.
+  - Historical source codes missing from current `DATABASE.csv`: `12`, all CWMU bull moose rows: `MB6200`, `MB6207`, `MB6209`, `MB6217`, `MB6220`, `MB6223`, `MB6224`, `MB6225`, `MB6240`, `MB6254`, `MB6257`, and `MB6259`.
+- Validation:
+  - `python scripts\extract-oil-2025-draw-results-permits.py` passed.
+  - `python -m py_compile scripts\extract-oil-2025-draw-results-permits.py tests\utah\test_oil_2025_draw_results_extraction.py` passed.
+  - `python -m pytest tests\utah\test_oil_2025_draw_results_extraction.py -q` passed: `4`.
+
+## Rocky Mountain Bighorn 2026 Permit Audit And Parallel Conservation Crosswalk
+- Timestamp (UTC): 2026-05-26T16:05:25Z
+- Scope:
+  - Registered the user-supplied current Utah DWR Hunt Planner Rocky Mountain bighorn `RS/RE` rows as source evidence.
+  - Normalized the 2026 resident, nonresident, and total permit fields into a reviewed export with mapping-law columns.
+  - Cross-checked reviewed rows against canonical `DATABASE.csv`, the RAC/OIAL Rocky Mountain bighorn comparison CSV, and the RAC ewe comparison CSV.
+  - Filled blank conservation/statewide count cells from canonical `DATABASE.csv` only where `DATABASE.csv` already had populated 2026 values.
+  - Resolved the `RS100x` conservation/current mismatch class by marking those rows as parallel permit opportunities, not replacements for the public once-in-a-lifetime rows.
+  - Updated the current-to-historical crosswalk builder so `RS1000`, `RS1001`, `RS1003`, and `RS1006` use `PROMOTED_PARALLEL_PUBLIC_UNIT_REFERENCE`.
+  - Did not change protected `DATABASE.csv` numeric cells.
+- Outputs:
+  - `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 rocky mountain bighorn user verified.csv`
+  - `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 rocky mountain bighorn reviewed res-nr-total.csv`
+  - `scripts/normalize-rocky-bighorn-permits-2026.py`
+  - `tests/utah/test_rocky_bighorn_permit_normalization_2026.py`
+  - `data_truth/permit_overlay_truth/normalized/rocky_bighorn_permits_2026_canonical.csv`
+  - `data_truth/permit_overlay_truth/validation/rocky_bighorn_permits_2026_vs_DATABASE.csv`
+  - `data_truth/permit_overlay_truth/validation/rocky_bighorn_permits_2026_vs_RAC.csv`
+  - `data_truth/permit_overlay_truth/validation/rocky_bighorn_public_vs_conservation_parallel_2026.csv`
+  - `data_truth/permit_overlay_truth/validation/rocky_bighorn_permits_2026_summary.json`
+  - `processed_data/rocky_bighorn_permits_2026_summary.md`
+  - `data_truth/crosswalk_truth/normalized/current_to_historical_hunt_code_crosswalk_2026.csv`
+  - `data_truth/crosswalk_truth/validation/current_to_historical_hunt_code_crosswalk_2026_summary.json`
+- Key results:
+  - Source rows: `21`.
+  - Unique `RS/RE` hunt codes: `21`.
+  - Numeric 2026 total permits carried in reviewed output: `60`.
+  - DATABASE numeric comparison: `0` mismatches.
+  - RAC numeric comparison: `0` mismatches.
+  - One row has no published numeric permit count: `RS1000`.
+  - Semantic review flags: `16` rows where current source sex/season wording differs from `DATABASE.csv`; no numeric changes were made.
+  - Resolved parallel conservation/current rows: `RS1000 -> RS6700`, `RS1001 -> RS6701`, `RS1003 -> RS6703|RS6704|RS6722`, and `RS1006 -> RS6712`.
+- Validation:
+  - `python scripts\normalize-rocky-bighorn-permits-2026.py` passed.
+  - `python scripts\build-current-historical-hunt-code-crosswalk-2026.py` passed.
+  - `python -m py_compile scripts\normalize-rocky-bighorn-permits-2026.py scripts\build-current-historical-hunt-code-crosswalk-2026.py` passed.
+  - `python -m pytest tests\utah\test_rocky_bighorn_permit_normalization_2026.py tests\utah\test_current_historical_hunt_code_crosswalk_2026.py -q` passed: `7`.
+
+## Buck Deer 2026 Permit Audit And 2025 LE Deer Draw Results Extraction
+- Timestamp (UTC): 2026-05-26T16:14:20Z
+- Scope:
+  - Normalized the 2026 limited-entry buck deer `DB` source rows into reviewed resident, nonresident, and total permit fields.
+  - Normalized the 2026 limited-entry private-land deer `LD/LO` rows into a reviewed no-quota-published export.
+  - Repaired the reviewed private-land export for `LO0010`, which is present in canonical `DATABASE.csv` and the user-supplied DWR Hunt Planner row but omitted from the local private-land source CSV.
+  - Compared 2026 `DB/LD/LO` rows against protected `DATABASE.csv` and RAC limited-entry buck deer comparison evidence.
+  - Extracted the attached `2025 LE Deer Draw Results.pdf` into per-hunt-code draw-result permit totals using project year rules: `reported_draw_year=2025`, `model_target_year=2026`.
+  - Compared extracted 2025 draw-result totals to `DATABASE.csv` 2025 draw-result fields only.
+  - Did not change protected `DATABASE.csv` numeric cells.
+- Outputs:
+  - `scripts/normalize-buck-deer-permits-2026.py`
+  - `scripts/extract-le-deer-2025-draw-results-permits.py`
+  - `tests/utah/test_buck_deer_permit_normalization_2026.py`
+  - `tests/utah/test_le_deer_2025_draw_results_extraction.py`
+  - `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 buck deer limited entry reviewed res-nr-total.csv`
+  - `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 buck deer private land reviewed res-nr-total.csv`
+  - `data_truth/permit_overlay_truth/normalized/buck_deer_permits_2026_canonical.csv`
+  - `data_truth/permit_overlay_truth/validation/buck_deer_permits_2026_vs_DATABASE.csv`
+  - `data_truth/permit_overlay_truth/validation/buck_deer_limited_entry_2026_vs_RAC.csv`
+  - `data_truth/permit_overlay_truth/validation/buck_deer_private_land_2026_source_completeness.csv`
+  - `data_truth/permit_overlay_truth/validation/buck_deer_permits_2026_summary.json`
+  - `data_truth/draw_results_truth/normalized/le_deer_2025_draw_results_model_target_2026_permit_totals.csv`
+  - `data_truth/draw_results_truth/validation/le_deer_2025_draw_results_model_target_2026_vs_DATABASE.csv`
+  - `data_truth/draw_results_truth/validation/le_deer_2025_draw_results_model_target_2026_summary.json`
+  - `processed_data/buck_deer_permits_2026_summary.md`
+  - `processed_data/le_deer_2025_draw_results_model_target_2026_permit_totals.md`
+- Key results:
+  - 2026 limited-entry `DB` rows: `67`.
+  - 2026 limited-entry private-land `LD/LO` rows: `9`.
+  - 2026 numeric total permits represented: `1428`.
+  - DATABASE numeric comparison for 2026 permit rows: `0` mismatches.
+  - RAC numeric comparison for 2026 limited-entry `DB` subset: `0` mismatches.
+  - Private-land source omission repaired in reviewed export: `LO0010`.
+  - 2025 LE Deer PDF pages: `196`; extracted hunt-code rows: `195`.
+  - 2025 LE Deer draw-result total public permits: `1714` (`1560` resident, `154` nonresident).
+  - DATABASE comparison for 2025 LE Deer draw results: `189` matches, `0` numeric differences, and `6` historical CWMU source codes missing from current `DATABASE.csv`: `DB1320`, `DB1324`, `DB1343`, `DB1344`, `DB1345`, and `DB1348`.
+  - Semantic review flags: `DB1090`, `DB1091`, `DB1105`, and `DB1116` have HAMSS label placement differences between source and `DATABASE.csv`; numeric fields match.
+- Validation:
+  - `python scripts\normalize-buck-deer-permits-2026.py` passed.
+  - `python scripts\extract-le-deer-2025-draw-results-permits.py` passed.
+  - `python -m py_compile scripts\normalize-buck-deer-permits-2026.py scripts\extract-le-deer-2025-draw-results-permits.py tests\utah\test_buck_deer_permit_normalization_2026.py tests\utah\test_le_deer_2025_draw_results_extraction.py` passed.
+  - `python -m pytest tests\utah\test_buck_deer_permit_normalization_2026.py tests\utah\test_le_deer_2025_draw_results_extraction.py -q` passed: `7`.
+
+## Rocky Mountain Bighorn Sex-Type Correction
+- Timestamp (UTC): 2026-05-26T16:18:17Z
+- Scope:
+  - Corrected Rocky Mountain bighorn semantic labels so `RS` rows are `Ram` and `RE` rows are `Ewe`.
+  - Updated canonical `DATABASE.csv` sex-type values for all current Rocky Mountain bighorn rows.
+  - Updated the reviewed Rocky Mountain bighorn permit source/export and regenerated the normalized permit audit outputs.
+  - Updated O.I.L. draw extraction logic so historical `RS` draw-result rows extract as `Ram` instead of `Male Only`.
+  - Regenerated the 2025 O.I.L. draw-results normalized and validation outputs after the sex-type correction.
+  - Rebuilt the current-to-historical crosswalk output after the corrected `DATABASE.csv` semantic values.
+  - Did not change protected numeric permit/allotment fields.
+- Key results:
+  - Canonical `DATABASE.csv` Rocky Mountain bighorn sex-type counts now show `20` `Ram` rows and `1` `Ewe` row.
+  - Checked primary Rocky artifacts show no `Either Sex` values for `RS/RE` Rocky Mountain bighorn rows.
+  - Rocky permit numeric comparison remains clean: `0` DATABASE mismatches and `0` RAC mismatches.
+  - Remaining Rocky permit semantic review flags are date-text only: `RS6700` and `RE1000`; there are no sex-type review flags.
+- Validation:
+  - `python scripts\normalize-rocky-bighorn-permits-2026.py` passed.
+  - `python scripts\extract-oil-2025-draw-results-permits.py` passed.
+  - `python scripts\build-current-historical-hunt-code-crosswalk-2026.py` passed.
+  - `python -m py_compile scripts\normalize-rocky-bighorn-permits-2026.py scripts\extract-oil-2025-draw-results-permits.py tests\utah\test_rocky_bighorn_permit_normalization_2026.py tests\utah\test_oil_2025_draw_results_extraction.py` passed.
+  - `python -m pytest tests\utah\test_rocky_bighorn_permit_normalization_2026.py tests\utah\test_oil_2025_draw_results_extraction.py -q` passed: `8`.
+
