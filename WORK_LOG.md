@@ -1,5 +1,41 @@
 # WORK LOG
 
+## Live DWR Permit Numbers Promoted With No-Quota Preservation
+- Timestamp (UTC): 2026-05-26T21:05:00Z
+- Scope:
+  - Promoted reviewed live Utah DWR Hunt Planner permit numbers for antlerless elk and doe pronghorn into canonical `DATABASE.csv`.
+  - Shaped CWMU live rows as `permits_2026_total` only because DWR publishes CWMU public permit counts in the live `QUOTA_RES` field while `QUOTA` is zero.
+  - Preserved database-entered values whenever the live DWR endpoint published blank/zero quota rows, including conservation, expo, control, and hard-copy/RAC-sourced values.
+  - Verified Expo hard-copy permit totals from `pipeline/RAW/hunt_unit_database/2026/xlsx/expo permits 2026.xlsx` and promoted the three antlerless elk Expo rows as total-only values.
+- Outputs:
+  - `scripts/promote-live-dwr-permit-numbers-2026.py`
+  - `scripts/promote-expo-hard-copy-permits-2026.py`
+  - `data_truth/crosswalk_truth/validation/live_dwr_permit_numbers_promoted_to_DATABASE_2026.csv`
+  - `data_truth/crosswalk_truth/validation/live_dwr_permit_numbers_promoted_to_DATABASE_2026_summary.json`
+  - `data_truth/crosswalk_truth/validation/expo_hard_copy_promoted_to_DATABASE_2026.csv`
+  - `data_truth/crosswalk_truth/validation/expo_hard_copy_promoted_to_DATABASE_2026_summary.json`
+  - `processed_data/live_dwr_permit_numbers_promoted_to_DATABASE_2026.md`
+  - `processed_data/expo_hard_copy_promoted_to_DATABASE_2026.md`
+  - `tests/utah/test_live_dwr_and_expo_permit_promotion_2026.py`
+- Key results:
+  - Live rows reviewed: `227`.
+  - Live/DATABASE matches after shaping: `217`.
+  - DWR blank/no-quota rows preserved from database: `4`.
+  - Blank on both sides: `6`.
+  - Numeric mismatches: `0`.
+  - CWMU total-only rows shaped from live `QUOTA_RES`: `67`.
+  - Expo hard-copy rows promoted: `3` (`EA1220=3`, `EA1258=1`, `EA1221=1`).
+  - `EA1286` Monroe preserved as `36/4/40` from entered RAC data despite live DWR publishing no quota in the selected endpoint.
+- Validation:
+  - `python scripts\promote-expo-hard-copy-permits-2026.py` passed.
+  - `python scripts\pull-live-dwr-permit-numbers-2026.py` passed.
+  - `python scripts\promote-live-dwr-permit-numbers-2026.py` passed.
+  - `python scripts\build-database-publish-readiness-report.py` passed with `publish_ready=true`.
+  - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed with `fatal_blocker_count=0`.
+  - `python scripts\audit-current-active-ea-hunts-2026.py` passed with `204` active EA rows reconciled.
+  - `python scripts\audit-current-online-hunt-codes-2026.py` passed with `0` database codes missing from live.
+  - `python -m pytest tests\utah\test_live_dwr_and_expo_permit_promotion_2026.py tests\utah\test_database_historical_permit_lineage_2026.py tests\utah\test_database_authoritative_permit_overlay_plan_2026.py tests\utah\test_comprehensive_2026_2025_history_integrity_audit.py tests\utah\test_retired_current_hunt_codes_2026.py -q` passed: `15`.
+
 ## Live DWR Permit Number Pull
 - Timestamp (UTC): 2026-05-26T18:58:00Z
 - Scope:

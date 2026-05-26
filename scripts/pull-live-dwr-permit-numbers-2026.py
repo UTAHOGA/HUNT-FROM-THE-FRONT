@@ -8,10 +8,12 @@ from __future__ import annotations
 
 import csv
 import json
+import time
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.request import urlopen
+from urllib.error import HTTPError, URLError
+from urllib.request import Request, urlopen
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -21,6 +23,7 @@ LIVE_TABLE_URLS = {
     ("Elk", "Antlerless"): "https://dwrapps.utah.gov/huntboundary/HuntTableData?species=Elk&gender=Antlerless",
     ("Pronghorn", "Doe"): "https://dwrapps.utah.gov/huntboundary/HuntTableData?species=Pronghorn&gender=Doe",
 }
+TOTAL_ONLY_TYPES = {"CWMU", "Private Lands Only", "Conservation", "Expo", "Antlerless Elk Control"}
 
 RAW_OUT = (
     ROOT
@@ -44,6 +47,15 @@ SUMMARY_OUT = (
     / "live_dwr_permit_numbers_vs_DATABASE_2026_summary.json"
 )
 REPORT_OUT = ROOT / "processed_data/live_dwr_permit_numbers_vs_DATABASE_2026.md"
+REQUEST_HEADERS = {
+    "Accept": "application/json,text/plain,*/*",
+    "Referer": "https://dwrapps.utah.gov/huntboundary/hbstart",
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/126.0 Safari/537.36"
+    ),
+}
 
 
 def clean(value: object) -> str:
@@ -78,11 +90,24 @@ def write_csv(path: Path, rows: list[dict[str, object]], fields: list[str]) -> N
             writer.writerow({field: row.get(field, "") for field in fields})
 
 
+def fetch_json(source_url: str) -> object:
+    last_error: Exception | None = None
+    for attempt in range(1, 4):
+        request = Request(source_url, headers=REQUEST_HEADERS)
+        try:
+            with urlopen(request, timeout=30) as response:
+                return json.load(response)
+        except (HTTPError, URLError, TimeoutError) as exc:
+            last_error = exc
+            if attempt < 3:
+                time.sleep(2 * attempt)
+    raise RuntimeError(f"Unable to fetch DWR HuntTableData after retries: {source_url}") from last_error
+
+
 def fetch_live_rows(timestamp: str) -> list[dict[str, object]]:
     rows: list[dict[str, object]] = []
     for (species, sex_type), source_url in LIVE_TABLE_URLS.items():
-        with urlopen(source_url, timeout=30) as response:
-            payload = json.load(response)
+        payload = fetch_json(source_url)
         if not isinstance(payload, list):
             raise RuntimeError(f"Unexpected DWR payload for {source_url}")
         for row in payload:
@@ -129,6 +154,23 @@ def compare_triple(live: tuple[str, str, str], database: tuple[str, str, str]) -
     return "NUMERIC_MISMATCH"
 
 
+def live_shape(row: dict[str, object]) -> tuple[str, str, str, str]:
+    hunt_type = clean(row.get("hunt_type"))
+    live_res = int_text(row.get("live_res"))
+    live_nr = int_text(row.get("live_nr"))
+    live_total = int_text(row.get("live_total"))
+    if hunt_type == "CWMU":
+        return "", "", live_res or live_total, "LIVE_DWR_CWMU_TOTAL_ONLY_FROM_QUOTA_RES"
+    if hunt_type in TOTAL_ONLY_TYPES:
+        total = live_total or live_res
+        if total in {"", "0"}:
+            return "", "", "", "LIVE_DWR_NO_QUOTA_PUBLISHED"
+        return "", "", total, "LIVE_DWR_TOTAL_ONLY"
+    if live_total in {"", "0"} and live_res in {"", "0"} and live_nr in {"", "0"}:
+        return "", "", "", "LIVE_DWR_NO_QUOTA_PUBLISHED"
+    return live_res, live_nr, live_total, "LIVE_DWR_RES_NR_SPLIT"
+
+
 def build_compare(live_rows: list[dict[str, object]]) -> list[dict[str, object]]:
     live_by_code = {str(row["hunt_code"]): row for row in live_rows if row.get("hunt_code")}
     db_by_code = {row["hunt_code"]: row for row in db_selected_rows() if row.get("hunt_code")}
@@ -136,11 +178,16 @@ def build_compare(live_rows: list[dict[str, object]]) -> list[dict[str, object]]
     for code in sorted(set(live_by_code) | set(db_by_code)):
         live = live_by_code.get(code, {})
         db = db_by_code.get(code, {})
-        live_triple = (
+        live_raw_triple = (
             int_text(live.get("live_res")),
             int_text(live.get("live_nr")),
             int_text(live.get("live_total")),
         )
+        live_triple = ("", "", "", "")
+        live_shape_status = ""
+        if live:
+            live_res, live_nr, live_total, live_shape_status = live_shape(live)
+            live_triple = (live_res, live_nr, live_total)
         db_triple = (
             int_text(db.get("permits_2026_res")),
             int_text(db.get("permits_2026_nr")),
@@ -166,12 +213,18 @@ def build_compare(live_rows: list[dict[str, object]]) -> list[dict[str, object]]
             presence_status = "LIVE_ONLY"
         else:
             presence_status = "DATABASE_ONLY"
-        comparison_status = compare_triple(live_triple, compare_db_triple) if live and db else presence_status
+        if live and db and live_shape_status == "LIVE_DWR_NO_QUOTA_PUBLISHED":
+            comparison_status = (
+                "LIVE_NO_QUOTA_DATABASE_PRESERVED" if any(compare_db_triple) else "BOTH_BLANK"
+            )
+        else:
+            comparison_status = compare_triple(live_triple, compare_db_triple) if live and db else presence_status
         rows.append(
             {
                 "hunt_code": code,
                 "presence_status": presence_status,
                 "comparison_status": comparison_status,
+                "live_shape_status": live_shape_status,
                 "database_compare_source": compare_triple_source,
                 "source_url": live.get("source_url", ""),
                 "live_hunt_name": live.get("hunt_name", ""),
@@ -186,6 +239,9 @@ def build_compare(live_rows: list[dict[str, object]]) -> list[dict[str, object]]
                 "database_hunt_type": db.get("hunt_type", ""),
                 "live_season": live.get("season", ""),
                 "database_season": db.get("season", ""),
+                "live_raw_res": live_raw_triple[0],
+                "live_raw_nr": live_raw_triple[1],
+                "live_raw_total": live_raw_triple[2],
                 "live_res": live_triple[0],
                 "live_nr": live_triple[1],
                 "live_total": live_triple[2],
@@ -226,6 +282,7 @@ def main() -> int:
         "hunt_code",
         "presence_status",
         "comparison_status",
+        "live_shape_status",
         "database_compare_source",
         "source_url",
         "live_hunt_name",
@@ -240,6 +297,9 @@ def main() -> int:
         "database_hunt_type",
         "live_season",
         "database_season",
+        "live_raw_res",
+        "live_raw_nr",
+        "live_raw_total",
         "live_res",
         "live_nr",
         "live_total",

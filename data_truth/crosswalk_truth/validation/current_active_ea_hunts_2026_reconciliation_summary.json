@@ -10,7 +10,7 @@
   "live_active_ea_count": 204,
   "live_source_url": "https://dwrapps.utah.gov/huntboundary/HuntTableData?species=Elk&gender=Antlerless",
   "retired_ea_count": 16,
-  "snapshot_utc": "2026-05-26T18:42:31+00:00",
+  "snapshot_utc": "2026-05-26T21:05:09+00:00",
   "status_counts": {
     "ACTIVE_EA_CONFIRMED_IN_DATABASE": 204
   }

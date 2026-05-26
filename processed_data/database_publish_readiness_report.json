@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-05-26T18:43:27.871906+00:00",
+  "generated_at_utc": "2026-05-26T21:05:09.255450+00:00",
   "publish_ready": true,
   "blockers": [],
   "warnings": [
@@ -279,18 +279,18 @@
     "sensitive_rows": {
       "checks": {
         "EA1267_DATABASE_2026_TOTAL": {
-          "actual": "200",
-          "expected": "200",
+          "actual": "90",
+          "expected": "90",
           "pass": true
         },
         "EA1267_DATABASE_2026_RES": {
-          "actual": "180",
-          "expected": "180",
+          "actual": "81",
+          "expected": "81",
           "pass": true
         },
         "EA1267_DATABASE_2026_NR": {
-          "actual": "20",
-          "expected": "20",
+          "actual": "9",
+          "expected": "9",
           "pass": true
         },
         "EA2012_REFERENCE_TOTAL_ONLY_TOTAL": {

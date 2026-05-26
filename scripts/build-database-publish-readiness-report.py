@@ -178,9 +178,9 @@ def sensitive_row_checks() -> dict[str, Any]:
         }
 
     ea1267 = pick(database.get("EA1267", []))
-    expect("EA1267_DATABASE_2026_TOTAL", clean(ea1267.get("permits_2026_total")), "200")
-    expect("EA1267_DATABASE_2026_RES", clean(ea1267.get("permits_2026_res")), "180")
-    expect("EA1267_DATABASE_2026_NR", clean(ea1267.get("permits_2026_nr")), "20")
+    expect("EA1267_DATABASE_2026_TOTAL", clean(ea1267.get("permits_2026_total")), "90")
+    expect("EA1267_DATABASE_2026_RES", clean(ea1267.get("permits_2026_res")), "81")
+    expect("EA1267_DATABASE_2026_NR", clean(ea1267.get("permits_2026_nr")), "9")
 
     ea2012_ref = pick(reference.get("EA2012", []))
     expect("EA2012_REFERENCE_TOTAL_ONLY_TOTAL", clean(ea2012_ref.get("permit_allotment_2026_total")), "400")
