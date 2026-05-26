@@ -1,5 +1,41 @@
 # WORK LOG
 
+## Archive Defunct EA1287-EA1300 Effective 2026
+- Timestamp (UTC): 2026-05-26T17:12:46Z
+- Scope:
+  - Archived `EA1287` through `EA1300` from active 2026 `DATABASE.csv` after user rechecked and confirmed those codes no longer exist online effective 2026.
+  - Preserved all `14` newly archived rows in the retired current-code ledger alongside the previously retired `EA1007`, `EA1053`, and `PD1039`.
+  - Reran boundary, live-online, and active-EA reconciliation audits after the archive.
+  - Did not modify website feeds, generated pages, materializer files, or historical draw/harvest rows.
+- Outputs:
+  - `pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv`
+  - `data_truth/crosswalk_truth/normalized/retired_current_hunt_codes_2026.csv`
+  - `data_truth/crosswalk_truth/validation/retired_current_hunt_codes_2026_summary.json`
+  - `processed_data/retired_current_hunt_codes_2026.md`
+  - `data_truth/crosswalk_truth/validation/current_online_missing_hunt_codes_2026_review.csv`
+  - `data_truth/crosswalk_truth/validation/current_online_missing_hunt_codes_2026_review_summary.json`
+  - `data_truth/crosswalk_truth/validation/current_active_ea_hunts_2026_reconciliation.csv`
+  - `data_truth/crosswalk_truth/validation/current_active_ea_hunts_2026_reconciliation_summary.json`
+  - `data_truth/crosswalk_truth/validation/database_boundary_id_fill_2026_audit.csv`
+  - `data_truth/crosswalk_truth/validation/database_boundary_id_fill_2026_summary.json`
+- Key results:
+  - DATABASE rows before this archive: `1408`.
+  - DATABASE rows after this archive: `1394`.
+  - Newly archived rows: `14`.
+  - Total retired current-code ledger rows: `17`.
+  - DATABASE duplicate hunt codes: `0`.
+  - DATABASE blank boundary IDs: `0`.
+  - Live-online missing DATABASE rows: `0`.
+  - Active `EA` reconciliation: `204` live active `EA` rows, `204` DATABASE `EA` rows, `0` missing, `0` extras.
+- Validation:
+  - `python scripts\retire-current-hunt-codes-2026.py` passed.
+  - `python scripts\fill-database-boundary-ids-from-json-2026.py` passed.
+  - `python scripts\audit-current-online-hunt-codes-2026.py` passed.
+  - `python scripts\audit-current-active-ea-hunts-2026.py` passed.
+  - `python -m py_compile scripts\retire-current-hunt-codes-2026.py scripts\audit-current-online-hunt-codes-2026.py scripts\audit-current-active-ea-hunts-2026.py scripts\fill-database-boundary-ids-from-json-2026.py tests\utah\test_retired_current_hunt_codes_2026.py tests\utah\test_database_boundary_id_fill_2026.py` passed.
+  - `python -m pytest tests\utah\test_retired_current_hunt_codes_2026.py tests\utah\test_database_boundary_id_fill_2026.py -q` passed: `4`.
+  - Targeted inline validation confirmed `DATABASE.csv` has `1394` rows, none of the `17` retired codes remain active, the retired ledger has exactly those `17` codes, and live-online/active-EA audit blockers are `0`.
+
 ## Current Active EA Hunts Reconciliation
 - Timestamp (UTC): 2026-05-26T17:09:52Z
 - Scope:

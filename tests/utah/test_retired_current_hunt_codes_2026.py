@@ -39,15 +39,18 @@ def read_rows(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(handle))
 
 
-def test_retirement_script_is_idempotently_guarded_after_retirement() -> None:
+def test_retirement_script_is_idempotent_after_retirement() -> None:
     result = subprocess.run(
         [sys.executable, str(SCRIPT)],
         cwd=ROOT,
         capture_output=True,
         text=True,
     )
-    assert result.returncode != 0
-    assert "Requested retired codes not found in DATABASE.csv" in result.stderr
+    assert result.returncode == 0
+    summary = json.loads(SUMMARY.read_text(encoding="utf-8"))
+    assert summary["newly_retired_row_count"] == 0
+    assert summary["total_retired_codes"] == sorted(RETIRED_CODES)
+    assert summary["total_retired_ledger_row_count"] == 17
 
 
 def test_retired_codes_removed_from_current_database_and_preserved_in_ledger() -> None:
