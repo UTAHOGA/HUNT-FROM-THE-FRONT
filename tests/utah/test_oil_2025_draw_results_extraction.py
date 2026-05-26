@@ -52,6 +52,7 @@ def test_oil_2025_key_hunt_totals_are_extracted_correctly() -> None:
     assert lookup["GO6800"]["total_public_draw_permits"] == "8"
     assert lookup["RS6726"]["resident_total_permits"] == "4"
     assert lookup["RS6726"]["nonresident_total_permits"] == "1"
+    assert lookup["RS6726"]["sex_type"] == "Ram"
 
 
 def test_oil_2025_extraction_carries_mapping_law_columns() -> None:

@@ -43,9 +43,13 @@ def test_rocky_bighorn_source_is_normalized_to_one_row_per_code() -> None:
     assert lookup["RS6712"]["permits_2026_total"] == "6"
     assert lookup["RE1000"]["permits_2026_res"] == "4"
     assert lookup["RE1000"]["permits_2026_nr"] == "1"
+    assert lookup["RE1000"]["sex_type"] == "Ewe"
     assert lookup["RS1001"]["permits_2026_total"] == "1"
+    assert lookup["RS1001"]["sex_type"] == "Ram"
+    assert lookup["RS6727"]["sex_type"] == "Ram"
     assert lookup["RS1000"]["permit_count_status"] == "NO_PUBLISHED_NUMERIC_PERMIT"
     assert sum(int(row["permits_2026_total"] or 0) for row in rows) == 60
+    assert not [row for row in rows if row["sex_type"] == "Either Sex"]
 
 
 def test_rocky_bighorn_reviewed_export_carries_mapping_law_columns() -> None:
@@ -77,6 +81,7 @@ def test_rocky_bighorn_source_matches_database_and_rac_numeric_values() -> None:
     assert summary["database_mismatch_count"] == 0
     assert summary["rac_mismatch_count"] == 0
     assert summary["source_total_permits_2026"] == 60
+    assert not [row for row in db_rows if "SEX_TYPE_REVIEW" in row["semantic_review_flags"]]
 
 
 def test_rocky_bighorn_conservation_rows_are_parallel_not_replacements() -> None:

@@ -7,7 +7,7 @@ Reviewed current 2026 Rocky Mountain bighorn sheep permit rows against DATABASE.
 - Numeric total permits carried in reviewed output: 60
 - DATABASE numeric mismatches: 0
 - RAC numeric mismatches: 0
-- Rows needing semantic review: 16
+- Rows needing semantic review: 2
 - Parallel conservation rows resolved: 4
 
 The `RS100x` conservation/current rows are parallel opportunities, not replacements for the public/OIAL `RS67xx` rows.

@@ -3849,3 +3849,25 @@
   - `python scripts\extract-le-deer-2025-draw-results-permits.py` passed.
   - `python -m py_compile scripts\normalize-buck-deer-permits-2026.py scripts\extract-le-deer-2025-draw-results-permits.py tests\utah\test_buck_deer_permit_normalization_2026.py tests\utah\test_le_deer_2025_draw_results_extraction.py` passed.
   - `python -m pytest tests\utah\test_buck_deer_permit_normalization_2026.py tests\utah\test_le_deer_2025_draw_results_extraction.py -q` passed: `7`.
+
+## Rocky Mountain Bighorn Sex-Type Correction
+- Timestamp (UTC): 2026-05-26T16:18:17Z
+- Scope:
+  - Corrected Rocky Mountain bighorn semantic labels so `RS` rows are `Ram` and `RE` rows are `Ewe`.
+  - Updated canonical `DATABASE.csv` sex-type values for all current Rocky Mountain bighorn rows.
+  - Updated the reviewed Rocky Mountain bighorn permit source/export and regenerated the normalized permit audit outputs.
+  - Updated O.I.L. draw extraction logic so historical `RS` draw-result rows extract as `Ram` instead of `Male Only`.
+  - Regenerated the 2025 O.I.L. draw-results normalized and validation outputs after the sex-type correction.
+  - Rebuilt the current-to-historical crosswalk output after the corrected `DATABASE.csv` semantic values.
+  - Did not change protected numeric permit/allotment fields.
+- Key results:
+  - Canonical `DATABASE.csv` Rocky Mountain bighorn sex-type counts now show `20` `Ram` rows and `1` `Ewe` row.
+  - Checked primary Rocky artifacts show no `Either Sex` values for `RS/RE` Rocky Mountain bighorn rows.
+  - Rocky permit numeric comparison remains clean: `0` DATABASE mismatches and `0` RAC mismatches.
+  - Remaining Rocky permit semantic review flags are date-text only: `RS6700` and `RE1000`; there are no sex-type review flags.
+- Validation:
+  - `python scripts\normalize-rocky-bighorn-permits-2026.py` passed.
+  - `python scripts\extract-oil-2025-draw-results-permits.py` passed.
+  - `python scripts\build-current-historical-hunt-code-crosswalk-2026.py` passed.
+  - `python -m py_compile scripts\normalize-rocky-bighorn-permits-2026.py scripts\extract-oil-2025-draw-results-permits.py tests\utah\test_rocky_bighorn_permit_normalization_2026.py tests\utah\test_oil_2025_draw_results_extraction.py` passed.
+  - `python -m pytest tests\utah\test_rocky_bighorn_permit_normalization_2026.py tests\utah\test_oil_2025_draw_results_extraction.py -q` passed: `8`.

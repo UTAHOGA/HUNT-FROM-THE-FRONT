@@ -50,7 +50,7 @@ SEX_BY_PREFIX = {
     "DS": "Male Only",
     "GO": "Either Sex",
     "MB": "Bull",
-    "RS": "Male Only",
+    "RS": "Ram",
 }
 
 TOTALS_PATTERN = re.compile(
