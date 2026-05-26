@@ -3678,3 +3678,29 @@
   - `python scripts\normalize-black-bear-permits-2026.py` passed.
   - `python -m py_compile scripts\normalize-black-bear-permits-2026.py tests\utah\test_black_bear_permit_normalization_2026.py` passed.
   - `python -m pytest tests\utah\test_black_bear_permit_normalization_2026.py -q` passed: `6`.
+
+## Black Bear 2026 Production Library PDF/XLSX
+- Timestamp (UTC): 2026-05-26T15:17:19Z
+- Scope:
+  - Built the library-facing production PDF and companion XLSX from the reviewed 2026 black bear res/non-res/total export.
+  - Replaced the older black bear library PDF that exposed internal notes paths with a clean 10-column table: hunt name, hunt code, sex, species, weapon, hunt type, season, resident permits, nonresident permits, and total permits.
+  - Preserved the existing library manifest path by regenerating `2026_BLACK_BEAR.pdf` and `2026_BLACK_BEAR.xlsx` in place.
+  - Added a validation JSON artifact for the production document build.
+  - Added an explicit `BR7307` code-reuse warning: in 2026, `BR7307` is the La Sal multiseason conservation package with 4 total permits and no resident/nonresident split; older La Sal limited-entry multiseason history crosswalks to current `BR7326`.
+- Outputs:
+  - `scripts/build-black-bear-production-documents-2026.py`
+  - `tests/utah/test_black_bear_production_documents_2026.py`
+  - `processed_data/hard_data_exports/hunt_tables/2026/2026_BLACK_BEAR.pdf`
+  - `processed_data/hard_data_exports/hunt_tables/2026/2026_BLACK_BEAR.xlsx`
+  - `processed_data/hard_data_exports/hunt_tables/2026/2026_BLACK_BEAR.validation.json`
+- Key results:
+  - Production rows: `106`.
+  - Unique `BR` hunt codes: `106`.
+  - Permit status counts: `100` full resident/nonresident splits, `1` total-only conservation package, and `5` rows with no published numeric permit count.
+  - Numeric 2026 total permits represented: `1020`.
+  - Checked values: `BR7004 = 18/0/18`, `BR7210 = 3/0/3`, `BR7211 = 26/3/29`, `BR7307 = total-only 4`, `BR7317 = 9/1/10`, and `BR7326 = 13/1/14`.
+  - PDF validation confirmed the title, checked codes, the `BR7307` code-reuse note, and no `../notes/DATABASE` internal path leakage.
+- Validation:
+  - `python scripts\build-black-bear-production-documents-2026.py` passed.
+  - `python -m py_compile scripts\build-black-bear-production-documents-2026.py tests\utah\test_black_bear_production_documents_2026.py` passed.
+  - `python -m pytest tests\utah\test_black_bear_production_documents_2026.py tests\utah\test_black_bear_permit_normalization_2026.py -q` passed: `10`.
