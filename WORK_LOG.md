@@ -1,5 +1,42 @@
 # WORK LOG
 
+## Retire Invalid 2026 Current Hunt Codes
+- Timestamp (UTC): 2026-05-26T17:01:51Z
+- Scope:
+  - Retired `EA1007`, `EA1053`, and `PD1039` from canonical 2026 `DATABASE.csv` after user confirmed those hunt codes and their 2026 data cease to exist online effective 2026.
+  - Preserved the removed rows in a reviewed retirement ledger before deleting them from the current DATABASE universe.
+  - Reran the boundary-ID fill audit after retirement; reviewed target count dropped from `17` to `14`, with `0` blockers, `0` blank boundary IDs, and `0` duplicate hunt codes.
+  - Reran the live DWR Hunt Planner online-missing audit after retirement; the user-reported codes no longer appear in current DATABASE and are listed as retired from DATABASE.
+  - Removed the superseded pre-retirement online-missing audit files so current validation artifacts no longer list `EA1007`, `EA1053`, or `PD1039` as current DATABASE rows.
+  - Did not modify website feeds, generated pages, materializer files, or historical draw/harvest rows.
+- Outputs:
+  - `scripts/retire-current-hunt-codes-2026.py`
+  - `tests/utah/test_retired_current_hunt_codes_2026.py`
+  - `data_truth/crosswalk_truth/normalized/retired_current_hunt_codes_2026.csv`
+  - `data_truth/crosswalk_truth/validation/retired_current_hunt_codes_2026_summary.json`
+  - `processed_data/retired_current_hunt_codes_2026.md`
+  - `pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv`
+  - `data_truth/crosswalk_truth/validation/current_online_missing_hunt_codes_2026_review.csv`
+  - `data_truth/crosswalk_truth/validation/current_online_missing_hunt_codes_2026_review_summary.json`
+  - `data_truth/crosswalk_truth/validation/database_boundary_id_fill_2026_audit.csv`
+  - `data_truth/crosswalk_truth/validation/database_boundary_id_fill_2026_summary.json`
+- Key results:
+  - DATABASE rows before retirement: `1411`.
+  - DATABASE rows after retirement: `1408`.
+  - Retired current codes: `EA1007`, `EA1053`, `PD1039`.
+  - Retired rows preserved: `3`.
+  - Remaining DATABASE duplicate hunt codes: `0`.
+  - Remaining DATABASE blank boundary IDs: `0`.
+  - Live-online missing DATABASE rows after retirement: `14`, all `EA` rows; no user-reported retired code remains in DATABASE.
+- Validation:
+  - `python scripts\retire-current-hunt-codes-2026.py` passed.
+  - `python scripts\fill-database-boundary-ids-from-json-2026.py` passed.
+  - `python scripts\audit-current-online-hunt-codes-2026.py` passed.
+  - `python -m py_compile scripts\retire-current-hunt-codes-2026.py scripts\audit-current-online-hunt-codes-2026.py scripts\fill-database-boundary-ids-from-json-2026.py tests\utah\test_retired_current_hunt_codes_2026.py tests\utah\test_database_boundary_id_fill_2026.py` passed.
+  - `python -m pytest tests\utah\test_retired_current_hunt_codes_2026.py tests\utah\test_database_boundary_id_fill_2026.py -q` passed: `4`.
+  - Targeted inline validation confirmed `DATABASE.csv` has `1408` rows, no `EA1007`/`EA1053`/`PD1039` rows, `0` duplicates, and `0` blank boundary IDs.
+  - Broader `tests\utah\test_current_year_permit_allotments.py` was checked and still has unrelated pre-existing runtime failures: `hunt_master_enriched.csv` is a Git LFS pointer and `EA2012` runtime expectations differ from current source values.
+
 ## Current Online Missing Hunt Code Audit 2026
 - Timestamp (UTC): 2026-05-26T16:46:26Z
 - Scope:

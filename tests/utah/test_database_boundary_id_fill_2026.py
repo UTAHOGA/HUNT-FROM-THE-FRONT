@@ -18,18 +18,17 @@ EXPECTED = {
     "EA1290": "952",
     "EA1291": "950",
     "EA1292": "950",
-    "EA1053": "132",
     "EA1293": "140",
     "EA1294": "951",
     "EA1295": "224",
-    "EA1007": "227",
     "EA1296": "227",
     "EA1297": "953",
     "EA1299": "845",
     "EA1300": "845",
     "EA1298": "954",
-    "PD1039": "718",
 }
+
+RETIRED_EFFECTIVE_2026 = {"EA1007", "EA1053", "PD1039"}
 
 
 def run_script():
@@ -52,6 +51,9 @@ def test_boundary_fill_promotes_all_blank_database_rows_from_exact_sources():
     assert summary["duplicate_hunt_code_count"] == 0
 
     database_rows = {row["hunt_code"]: row for row in read_rows(DATABASE)}
+    for code in RETIRED_EFFECTIVE_2026:
+        assert code not in database_rows
+
     for code, boundary_id in EXPECTED.items():
         assert database_rows[code]["boundary_id"] == boundary_id
 
@@ -74,8 +76,8 @@ def test_boundary_fill_audit_has_mapping_law_evidence():
         assert row["source_file"]
         assert row["source_sha256"]
 
-    assert audit_rows["EA1053"]["match_method"] == "DIRECT_OFFICIAL_HUNT_CODE_JSON"
-    assert audit_rows["PD1039"]["match_method"] == "DIRECT_OFFICIAL_HUNT_CODE_JSON"
-    assert audit_rows["EA1007"]["match_method"] == "EXACT_OFFICIAL_BOUNDARY_NAME_JSON"
+    for code in RETIRED_EFFECTIVE_2026:
+        assert code not in audit_rows
+
     assert audit_rows["EA1299"]["match_method"] == "EXACT_OFFICIAL_BOUNDARY_NAME_JSON"
     assert audit_rows["EA1288"]["match_method"] == "EXACT_UNIQUE_DWR_BOUNDARY_GEOJSON_NAME"

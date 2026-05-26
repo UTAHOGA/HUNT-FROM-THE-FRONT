@@ -47,8 +47,6 @@ AUDIT_COLUMNS = [
 ]
 
 REVIEW_TARGET_CODES = {
-    "EA1007",
-    "EA1053",
     "EA1287",
     "EA1288",
     "EA1289",
@@ -63,7 +61,6 @@ REVIEW_TARGET_CODES = {
     "EA1298",
     "EA1299",
     "EA1300",
-    "PD1039",
 }
 
 

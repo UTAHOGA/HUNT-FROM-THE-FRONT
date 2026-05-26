@@ -19,6 +19,7 @@ from urllib.request import urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
 DATABASE = ROOT / "pipeline" / "RAW" / "hunt_unit_database" / "2026" / "csv" / "DATABASE.csv"
+RETIRED_LEDGER = ROOT / "data_truth" / "crosswalk_truth" / "normalized" / "retired_current_hunt_codes_2026.csv"
 RAW_OUT = (
     ROOT
     / "data_truth"
@@ -61,6 +62,12 @@ USER_REPORTED_MISSING = {"EA1007", "EA1053", "PD1039"}
 def read_csv(path: Path) -> list[dict[str, str]]:
     with path.open(newline="", encoding="utf-8-sig") as handle:
         return list(csv.DictReader(handle))
+
+
+def read_optional_csv(path: Path) -> list[dict[str, str]]:
+    if not path.exists():
+        return []
+    return read_csv(path)
 
 
 def write_csv(path: Path, rows: list[dict[str, object]], fieldnames: list[str]) -> None:
@@ -165,6 +172,9 @@ def main() -> int:
     live_hash = sha256_text("\n".join(live_codes))
 
     database_rows = read_csv(DATABASE)
+    retired_rows = read_optional_csv(RETIRED_LEDGER)
+    retired_codes = {row.get("hunt_code", "") for row in retired_rows}
+    user_reported_retired_codes = sorted(USER_REPORTED_MISSING & retired_codes)
     database_codes = {row["hunt_code"] for row in database_rows}
     missing_rows = [row for row in database_rows if row["hunt_code"] not in live_code_set]
     live_not_in_database = sorted(live_code_set - database_codes)
@@ -269,6 +279,10 @@ def main() -> int:
         "live_codes_not_in_database_count": len(live_not_in_database),
         "user_reported_missing_codes": sorted(USER_REPORTED_MISSING),
         "user_reported_missing_confirmed_absent": sorted(USER_REPORTED_MISSING & {row["hunt_code"] for row in missing_rows}),
+        "user_reported_missing_retired_from_database": user_reported_retired_codes,
+        "retired_ledger_path": (
+            str(RETIRED_LEDGER.relative_to(ROOT)).replace("\\", "/") if RETIRED_LEDGER.exists() else ""
+        ),
         "missing_codes_by_prefix": {},
         "outputs": {
             "live_snapshot_csv": str(RAW_OUT.relative_to(ROOT)).replace("\\", "/"),
@@ -294,20 +308,24 @@ def main() -> int:
         f"- DATABASE row count: `{len(database_rows)}`",
         f"- DATABASE codes not present in live DWR Hunt Planner list: `{len(audit_rows)}`",
         f"- Missing-code rows with blank DATABASE boundary IDs: `{sum(1 for row in audit_rows if row['boundary_id_status'] == 'BLANK_IN_DATABASE')}`",
-        f"- User-reported codes confirmed absent: `{', '.join(summary['user_reported_missing_confirmed_absent'])}`",
+        f"- User-reported missing codes still in DATABASE and absent online: `{', '.join(summary['user_reported_missing_confirmed_absent']) or 'none'}`",
+        f"- User-reported missing codes retired from DATABASE: `{', '.join(user_reported_retired_codes) or 'none'}`",
         "",
-        "This is a hunt-code presence problem, not a boundary-ID gap. All rows in this audit have a populated DATABASE boundary ID.",
+        "This is a hunt-code presence problem, not a boundary-ID gap. All rows remaining in this audit have a populated DATABASE boundary ID.",
         "",
         "## High Priority",
         "",
     ]
-    for row in high_priority:
-        report_lines.append(
-            "- "
-            f"`{row['hunt_code']}`: {row['hunt_name']} | {row['species']} | "
-            f"{row['sex_type']} | {row['weapon']} | {row['season']} | "
-            f"2026 total `{row['permits_2026_total']}` | source `{row['permit_allotment_2026_status']}`"
-        )
+    if high_priority:
+        for row in high_priority:
+            report_lines.append(
+                "- "
+                f"`{row['hunt_code']}`: {row['hunt_name']} | {row['species']} | "
+                f"{row['sex_type']} | {row['weapon']} | {row['season']} | "
+                f"2026 total `{row['permits_2026_total']}` | source `{row['permit_allotment_2026_status']}`"
+            )
+    else:
+        report_lines.append("- No high-priority user-reported missing codes remain in DATABASE.")
     report_lines.extend(
         [
             "",

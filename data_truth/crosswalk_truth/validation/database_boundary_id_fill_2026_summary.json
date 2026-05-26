@@ -4,19 +4,18 @@
   "blank_boundary_id_before": 0,
   "blocker_count": 0,
   "blockers": [],
-  "confirmed_count": 17,
+  "confirmed_count": 14,
   "corrected_count": 0,
   "database_source": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
   "duplicate_hunt_code_count": 0,
   "duplicate_hunt_codes": [],
   "match_method_counts": {
-    "DIRECT_OFFICIAL_HUNT_CODE_JSON": 2,
-    "EXACT_OFFICIAL_BOUNDARY_NAME_JSON": 7,
+    "EXACT_OFFICIAL_BOUNDARY_NAME_JSON": 6,
     "EXACT_UNIQUE_DWR_BOUNDARY_GEOJSON_NAME": 8
   },
   "promoted_count": 0,
   "remaining_blank_hunt_codes": [],
-  "review_target_count": 17,
-  "reviewed_count": 17,
+  "review_target_count": 14,
+  "reviewed_count": 14,
   "unresolved_count": 0
 }

@@ -94,12 +94,9 @@ def test_database_missing_direct_rac_rows_added() -> None:
     assert ea1287["permits_2026_total"] == "30"
     assert ea1287["season"] == "Nov 06 2026 - Jan 31 2027"
 
-    pd1039 = _first_row(DATABASE, "PD1039")
-    assert pd1039["hunt_name"] == "Panguitch Lake/Zion, North"
-    assert pd1039["species"] == "Pronghorn"
-    assert pd1039["permits_2026_res"] == "36"
-    assert pd1039["permits_2026_nr"] == "4"
-    assert pd1039["permits_2026_total"] == "40"
+    retired_codes = {"EA1007", "EA1053", "PD1039"}
+    for code in retired_codes:
+        assert not _rows(DATABASE, code)
 
 
 def test_all_rac_vs_database_audit_zero_numeric_mismatches_after_promotion() -> None:
