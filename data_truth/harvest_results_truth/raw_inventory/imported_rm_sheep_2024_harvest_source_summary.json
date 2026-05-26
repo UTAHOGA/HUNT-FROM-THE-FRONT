@@ -1,6 +1,6 @@
 {
   "artifact": "imported_rm_sheep_2024_harvest_source",
-  "generated_at_utc": "2026-05-26T23:05:44+00:00",
+  "generated_at_utc": "2026-05-26T23:21:41+00:00",
   "imported_source_count": 1,
   "guardrail": "Import manifest only. No harvest values were parsed and no DATABASE.csv values were modified.",
   "source_file": "pipeline/RAW/hunt_unit_database/2025/pdf/harvest_report/rocky mountain sheep/r.m. sheep 2024 harvest by unit.pdf",

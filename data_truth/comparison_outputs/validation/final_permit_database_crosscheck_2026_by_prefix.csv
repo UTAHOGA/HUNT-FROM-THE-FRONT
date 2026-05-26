@@ -1,6 +1,6 @@
 prefix,hunt_code_count,permits_2026_total_row_count,permits_2026_total_sum,permit_allotment_2026_total_row_count,permit_allotment_2026_total_sum,permits_2025_total_row_count,permits_2025_total_sum,permits_2025_draw_total_row_count,permits_2025_draw_total_sum,live_status_MATCH,live_status_TOTAL_MATCH_SPLIT_DIFFERS,live_status_BOTH_BLANK,live_status_LIVE_NO_QUOTA_DATABASE_PRESERVED,live_status_DATABASE_ONLY
 BI,19,16,137,16,137,15,129,15,129,11,,3,,5
-BR,106,101,1022,101,1022,94,864,55,628,100,,5,1,
+BR,110,101,1022,101,1022,98,945,59,709,100,,5,1,
 CG,1,,,,,,,,,,,1,,
 DA,20,20,373,20,373,20,367,,,20,,,,
 DB,345,330,94719,329,94718,326,70072,189,1708,329,,15,1,

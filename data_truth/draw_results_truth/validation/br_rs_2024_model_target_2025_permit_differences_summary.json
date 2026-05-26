@@ -1,22 +1,13 @@
 {
   "artifact": "br_rs_2024_model_target_2025_permit_differences",
-  "generated_at_utc": "2026-05-26T23:05:44+00:00",
+  "generated_at_utc": "2026-05-26T23:21:41+00:00",
   "source_audit_csv": "data_truth/draw_results_truth/validation/draw_odds_2024_model_target_2025_vs_DATABASE_2025_permits.csv",
   "guardrail": "Read-only difference report. No DATABASE.csv values are modified.",
-  "difference_row_count": 4,
+  "difference_row_count": 0,
   "numeric_difference_count": 0,
-  "status_counts": {
-    "SOURCE_CODE_NOT_IN_DATABASE": 4
-  },
-  "prefix_counts": {
-    "BR": 4
-  },
-  "source_codes_missing_database": [
-    "BR7008",
-    "BR7019",
-    "BR7108",
-    "BR7208"
-  ],
+  "status_counts": {},
+  "prefix_counts": {},
+  "source_codes_missing_database": [],
   "outputs": {
     "difference_csv": "data_truth/draw_results_truth/validation/br_rs_2024_model_target_2025_permit_differences.csv",
     "summary_json": "data_truth/draw_results_truth/validation/br_rs_2024_model_target_2025_permit_differences_summary.json",

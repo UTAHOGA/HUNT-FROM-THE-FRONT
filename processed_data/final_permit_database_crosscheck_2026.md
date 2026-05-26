@@ -1,8 +1,8 @@
 # Final Permit Database Crosscheck 2026
 
-- Snapshot UTC: `2026-05-26T23:05:07+00:00`
-- DATABASE rows: `1394`
-- Unique hunt codes: `1394`
+- Snapshot UTC: `2026-05-26T23:21:31+00:00`
+- DATABASE rows: `1398`
+- Unique hunt codes: `1398`
 - Duplicate hunt codes: `0`
 - Blank boundary IDs: `0`
 - 2026 permit vs allotment total mismatches: `0`
@@ -10,8 +10,8 @@
 ## Populated Permit Fields
 
 - `permit_allotment_2026_total`: `1091`
-- `permits_2025_draw_total`: `627`
-- `permits_2025_total`: `1030`
+- `permits_2025_draw_total`: `631`
+- `permits_2025_total`: `1034`
 - `permits_2026_total`: `1120`
 
 ## Live DWR Comparison Status Counts
@@ -25,12 +25,12 @@
 
 - `2026_PERMIT_TOTAL_MATCHES_ALLOTMENT_TOTAL`: `1091`
 - `2026_PERMIT_TOTAL_ONLY`: `29`
-- `NO_2026_TOTAL`: `274`
+- `NO_2026_TOTAL`: `278`
 
 ## Species Hunt-Code Counts
 
 - `Bison`: `19`
-- `Black Bear`: `106`
+- `Black Bear`: `110`
 - `Cougar`: `1`
 - `Deer`: `479`
 - `Desert Bighorn Sheep`: `25`

@@ -22,17 +22,17 @@ def test_2024_draw_odds_audit_is_reference_only_not_overwrite_instruction() -> N
 
     assert summary["source_rows"] == 874
     assert summary["source_unique_hunt_codes"] == 874
-    assert summary["source_codes_missing_database_count"] == 53
+    assert summary["source_codes_missing_database_count"] == 49
     assert summary["permits_2025_status_counts"] == {
         "DIFFERS": 448,
-        "MATCH": 373,
-        "SOURCE_CODE_NOT_IN_DATABASE": 53,
+        "MATCH": 377,
+        "SOURCE_CODE_NOT_IN_DATABASE": 49,
     }
     assert summary["permits_2025_draw_status_counts"] == {
         "DATABASE_BLANK": 222,
         "DIFFERS": 277,
-        "MATCH": 322,
-        "SOURCE_CODE_NOT_IN_DATABASE": 53,
+        "MATCH": 326,
+        "SOURCE_CODE_NOT_IN_DATABASE": 49,
     }
     assert summary["safe_blank_candidate_codes"] == []
     assert "No DATABASE.csv permit fields are modified" in summary["guardrail"]
@@ -57,8 +57,8 @@ def test_2025_database_broad_fields_are_filled_only_for_safe_blank_candidates() 
     assert summary["candidate_count"] == 2
     assert summary["promoted_row_count"] == 2
     assert summary["promoted_codes"] == ["EB3168", "MB6265"]
-    assert len(database_rows) == 1394
-    assert len(broad_populated) == 1030
+    assert len(database_rows) == 1398
+    assert len(broad_populated) == 1034
     assert (
         database_rows["EB3168"]["permits_2025_res"],
         database_rows["EB3168"]["permits_2025_nr"],

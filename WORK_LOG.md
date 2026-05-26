@@ -1,5 +1,39 @@
 # WORK LOG
 
+## Source-Only Bear 2024 Draw Rows Promoted As 2025 Historical Truth
+- Timestamp (UTC): 2026-05-26T23:25:00Z
+- Scope:
+  - Promoted the four user-confirmed source-only bear rows from `2024 Bear Draw Results.pdf` into canonical `DATABASE.csv` as historical 2025 draw-result rows.
+  - Confirmed these values are for 2025 historical draw truth only; no 2026 permit/allotment values were populated for the inserted rows.
+  - Added explicit historical-only notes/status to the inserted rows.
+  - Mapped boundary IDs from official black-bear hunt table evidence: `BR7008`, `BR7108`, and `BR7208` to `La Sal` boundary `684`; `BR7019` to `Chalk Creek/East Canyon/Morgan-South Rich` boundary `610`.
+  - Refreshed the 2024 draw audit, focused BR/RS difference report, final permit crosscheck, publish-readiness report, and comprehensive history-integrity audit after promotion.
+  - No website feeds, `public_client_engine.csv`, prediction math, or materializer code were changed.
+- Outputs:
+  - `scripts/promote-source-only-br-2024-draw-pdf-values-2025.py`
+  - `data_truth/draw_results_truth/validation/source_only_br_2024_draw_pdf_values_promoted_to_DATABASE_2025.csv`
+  - `data_truth/draw_results_truth/validation/source_only_br_2024_draw_pdf_values_promoted_to_DATABASE_2025_summary.json`
+  - `processed_data/source_only_br_2024_draw_pdf_values_promoted_to_DATABASE_2025.md`
+  - refreshed 2024 draw audit, BR/RS difference report, final permit crosscheck, publish-readiness, and history-integrity artifacts.
+- Key results:
+  - Inserted historical 2025 rows: `4`.
+  - Inserted codes and permit totals: `BR7008=40/3/43`, `BR7019=5/0/5`, `BR7108=25/2/27`, `BR7208=6/0/6`.
+  - Source PDF SHA256: `518b6b257c35e326c1d8a9900067ebde2569c0f8231c29b5c1b502a1dd10447b`.
+  - Active database row count increased from `1394` to `1398`.
+  - Final populated `permits_2025_total` rows increased from `1030` to `1034`.
+  - Final populated `permits_2025_draw_total` rows increased from `627` to `631`.
+  - BR/RS focused difference report now has `0` rows.
+  - Final 2026 permit/allotment total mismatches remain `0`; publish-ready remains `true`.
+- Validation:
+  - `python scripts\promote-source-only-br-2024-draw-pdf-values-2025.py` passed.
+  - `python scripts\audit-2024-draw-odds-against-database-2025-permits.py` passed.
+  - `python scripts\report-br-rs-2024-draw-permit-differences.py` passed.
+  - `python scripts\final-permit-database-crosscheck-2026.py` passed.
+  - `python scripts\build-database-publish-readiness-report.py` passed.
+  - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed.
+  - `python -m py_compile scripts\promote-source-only-br-2024-draw-pdf-values-2025.py scripts\promote-br-rs-2024-draw-pdf-values-2025.py scripts\report-br-rs-2024-draw-permit-differences.py scripts\audit-2024-draw-odds-against-database-2025-permits.py` passed.
+  - `python -m pytest tests\utah\test_br_rs_2024_draw_permit_differences.py tests\utah\test_2024_draw_odds_database_2025_permit_audit.py tests\utah\test_final_permit_database_crosscheck_2026.py -q` passed: `9`.
+
 ## BR/RS 2024 Draw PDF Values Promoted To 2025 Draw Results
 - Timestamp (UTC): 2026-05-26T23:10:00Z
 - Scope:

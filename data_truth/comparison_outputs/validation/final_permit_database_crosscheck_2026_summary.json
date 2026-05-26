@@ -3,13 +3,13 @@
   "blank_boundary_id_codes": [],
   "blank_boundary_id_count": 0,
   "database_path": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
-  "database_row_count": 1394,
+  "database_row_count": 1398,
   "duplicate_hunt_code_count": 0,
   "duplicate_hunt_codes": [],
   "field_populated_counts": {
     "permit_allotment_2026_total": 1091,
-    "permits_2025_draw_total": 627,
-    "permits_2025_total": 1030,
+    "permits_2025_draw_total": 631,
+    "permits_2025_total": 1034,
     "permits_2026_total": 1120
   },
   "guardrail": "Read-only audit. No database, website, prediction, or materializer files are modified.",
@@ -27,11 +27,11 @@
     "General Season - Youth": 1,
     "Harvest Objective": 1,
     "Limited Entry": 283,
-    "Limited Entry - Fall": 23,
+    "Limited Entry - Fall": 24,
     "Limited Entry - Multiseason": 22,
     "Limited Entry - Private Land Only": 146,
-    "Limited Entry - Spring": 20,
-    "Limited Entry - Summer": 25,
+    "Limited Entry - Spring": 22,
+    "Limited Entry - Summer": 26,
     "Multiseason - Conservation": 1,
     "Once-in-a-lifetime": 80,
     "Premium Limited Entry": 16,
@@ -62,7 +62,7 @@
   "permit_vs_allotment_total_mismatch_count": 0,
   "prefix_counts": {
     "BI": 19,
-    "BR": 106,
+    "BR": 110,
     "CG": 1,
     "DA": 20,
     "DB": 345,
@@ -83,10 +83,10 @@
     "RS": 20,
     "TK": 18
   },
-  "snapshot_utc": "2026-05-26T23:05:07+00:00",
+  "snapshot_utc": "2026-05-26T23:21:31+00:00",
   "species_counts": {
     "Bison": 19,
-    "Black Bear": 106,
+    "Black Bear": 110,
     "Cougar": 1,
     "Deer": 479,
     "Desert Bighorn Sheep": 25,
@@ -100,14 +100,15 @@
   "total_status_counts": {
     "2026_PERMIT_TOTAL_MATCHES_ALLOTMENT_TOTAL": 1091,
     "2026_PERMIT_TOTAL_ONLY": 29,
-    "NO_2026_TOTAL": 274
+    "NO_2026_TOTAL": 278
   },
-  "unique_hunt_code_count": 1394,
+  "unique_hunt_code_count": 1398,
   "year_delta_status_counts": {
     "2026_EQ_2025": 508,
     "2026_GT_2025": 429,
     "2026_LT_2025": 93,
     "NO_2025_OR_2026_TOTAL": 274,
+    "ONLY_2025_TOTAL": 4,
     "ONLY_2026_TOTAL": 90
   }
 }
