@@ -1,5 +1,33 @@
 # WORK LOG
 
+## Bear And Rocky Mountain Sheep 2024 Draw Difference Audit
+- Timestamp (UTC): 2026-05-26T22:45:00Z
+- Scope:
+  - Imported the missing 2024 Rocky Mountain bighorn sheep harvest-by-unit PDF from the `HUNTS` raw library into the active `HUNT-BUILDER` raw library.
+  - Registered the imported harvest PDF as source inventory evidence only; no harvest values were parsed in this step.
+  - Generated a focused BR/RS permit-number difference report from the 2024 draw-odds model-target-2025 audit against canonical `DATABASE.csv`.
+  - Kept the report read-only. No populated `DATABASE.csv` permit fields were changed or overwritten.
+  - No website feeds, `public_client_engine.csv`, prediction math, or materializer code were changed.
+- Outputs:
+  - `pipeline/RAW/hunt_unit_database/2025/pdf/harvest_report/rocky mountain sheep/r.m. sheep 2024 harvest by unit.pdf`
+  - `scripts/report-br-rs-2024-draw-permit-differences.py`
+  - `data_truth/harvest_results_truth/raw_inventory/imported_rm_sheep_2024_harvest_source.csv`
+  - `data_truth/harvest_results_truth/raw_inventory/imported_rm_sheep_2024_harvest_source_summary.json`
+  - `data_truth/draw_results_truth/validation/br_rs_2024_model_target_2025_permit_differences.csv`
+  - `data_truth/draw_results_truth/validation/br_rs_2024_model_target_2025_permit_differences_summary.json`
+  - `processed_data/br_rs_2024_model_target_2025_permit_differences.md`
+  - `tests/utah/test_br_rs_2024_draw_permit_differences.py`
+- Key results:
+  - Imported RM sheep harvest PDF SHA256: `ed380919970757e585d867146e3e44c5ec720a03dcce291157c3dcc11c11b4a7`.
+  - BR/RS differing-or-missing rows: `67`.
+  - Numeric permit differences: `63` total, with `55` BR rows and `8` RS rows.
+  - Source-code-not-in-current-database rows: `4`, all BR (`BR7008`, `BR7019`, `BR7108`, `BR7208`).
+  - Largest total delta: `BR7004`, source total `8` vs database 2025 total `20`, delta `-12`.
+- Validation:
+  - `python scripts\report-br-rs-2024-draw-permit-differences.py` passed.
+  - `python -m py_compile scripts\report-br-rs-2024-draw-permit-differences.py` passed.
+  - `python -m pytest tests\utah\test_br_rs_2024_draw_permit_differences.py -q` passed: `3`.
+
 ## 2024 Draw Odds 2025 Permit Audit And Safe Blank Fill
 - Timestamp (UTC): 2026-05-26T22:35:00Z
 - Scope:

@@ -1,0 +1,77 @@
+from __future__ import annotations
+
+import csv
+import hashlib
+import json
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[2]
+DIFF_CSV = (
+    ROOT
+    / "data_truth/draw_results_truth/validation/"
+    / "br_rs_2024_model_target_2025_permit_differences.csv"
+)
+SUMMARY_JSON = (
+    ROOT
+    / "data_truth/draw_results_truth/validation/"
+    / "br_rs_2024_model_target_2025_permit_differences_summary.json"
+)
+IMPORT_MANIFEST_CSV = (
+    ROOT
+    / "data_truth/harvest_results_truth/raw_inventory/"
+    / "imported_rm_sheep_2024_harvest_source.csv"
+)
+IMPORT_MANIFEST_JSON = (
+    ROOT
+    / "data_truth/harvest_results_truth/raw_inventory/"
+    / "imported_rm_sheep_2024_harvest_source_summary.json"
+)
+RM_SHEEP_PDF = (
+    ROOT
+    / "pipeline/RAW/hunt_unit_database/2025/pdf/harvest_report/rocky mountain sheep/"
+    / "r.m. sheep 2024 harvest by unit.pdf"
+)
+
+
+def _read_csv(path: Path) -> list[dict[str, str]]:
+    with path.open(newline="", encoding="utf-8") as handle:
+        return list(csv.DictReader(handle))
+
+
+def test_br_rs_difference_summary_is_stable() -> None:
+    summary = json.loads(SUMMARY_JSON.read_text(encoding="utf-8"))
+    rows = _read_csv(DIFF_CSV)
+
+    assert summary["difference_row_count"] == 67
+    assert summary["numeric_difference_count"] == 63
+    assert summary["status_counts"] == {"DIFFERS": 63, "SOURCE_CODE_NOT_IN_DATABASE": 4}
+    assert summary["prefix_counts"] == {"BR": 59, "RS": 8}
+    assert summary["source_codes_missing_database"] == ["BR7008", "BR7019", "BR7108", "BR7208"]
+    assert len(rows) == 67
+
+
+def test_key_bear_differences_and_missing_codes_are_reported() -> None:
+    rows = {row["hunt_code"]: row for row in _read_csv(DIFF_CSV)}
+
+    assert rows["BR7004"]["source_total_permits"] == "8"
+    assert rows["BR7004"]["database_permits_2025_total"] == "20"
+    assert rows["BR7004"]["total_delta_source_minus_database"] == "-12"
+
+    assert rows["BR7008"]["permits_2025_comparison_status"] == "SOURCE_CODE_NOT_IN_DATABASE"
+    assert rows["BR7008"]["source_total_permits"] == "43"
+    assert rows["BR7008"]["database_permits_2025_total"] == ""
+
+
+def test_rm_sheep_harvest_pdf_import_manifest_matches_file() -> None:
+    summary = json.loads(IMPORT_MANIFEST_JSON.read_text(encoding="utf-8"))
+    rows = _read_csv(IMPORT_MANIFEST_CSV)
+
+    assert RM_SHEEP_PDF.exists()
+    digest = hashlib.sha256(RM_SHEEP_PDF.read_bytes()).hexdigest()
+
+    assert summary["imported_source_count"] == 1
+    assert summary["source_sha256"] == digest
+    assert rows[0]["source_sha256"] == digest
+    assert rows[0]["promotion_status"] == "IMPORTED_NOT_EXTRACTED"
+    assert rows[0]["source_class"] == "harvest_results"
