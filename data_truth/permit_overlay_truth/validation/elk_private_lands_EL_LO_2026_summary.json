@@ -1,16 +1,15 @@
 {
   "database_missing_rows": 0,
-  "database_numeric_not_in_source_count": 128,
+  "database_numeric_not_in_source_count": 0,
   "database_status_counts": {
-    "DATABASE_HAS_NUMERIC_VALUE_NOT_IN_SOURCE": 128,
-    "SOURCE_AND_DATABASE_BLANK": 3
+    "SOURCE_AND_DATABASE_BLANK": 131
   },
   "date_context_counts": {
     "CROSSES_2025_2026": 1,
     "HAS_2025_DATE_ONLY": 125,
     "HAS_2026_DATE": 5
   },
-  "generated_at_utc": "2026-05-26T14:01:21.791971+00:00",
+  "generated_at_utc": "2026-05-26T14:29:09.336458+00:00",
   "outputs": {
     "database_comparison": "data_truth\\permit_overlay_truth\\validation\\elk_private_lands_EL_LO_2026_vs_DATABASE.csv",
     "normalized": "data_truth\\permit_overlay_truth\\normalized\\elk_private_lands_EL_LO_2026_source_audit.csv",

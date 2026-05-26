@@ -3591,3 +3591,39 @@
   - `python scripts\validate-ea-private-lands-canonical-2026.py` passed.
   - `python -m py_compile scripts\validate-ea-private-lands-canonical-2026.py tests\utah\test_ea_private_lands_canonical_2026.py` passed.
   - `python -m pytest tests\utah\test_ea_private_lands_canonical_2026.py -q` passed: `3`.
+
+## Private-Land Bull Elk 2026 Quota Cleanup And 2024 Bear Draw Extraction
+- Timestamp (UTC): 2026-05-26T14:30:00Z
+- Scope:
+  - Enforced the user clarification that private-land bull elk `EL` and elk `LO` rows must not carry 2026 permit availability or allotment numbers.
+  - Cleared leaked 2026 permit/quota/allotment fields from the 131 private-land elk `EL/LO` codes in `DATABASE.csv`, enriched/canonical CSV surfaces, predictive reference rows, and ladder/reference drafts while leaving public `EB` rows untouched.
+  - Re-ran the EL/LO private-land elk audit after cleanup; all 131 rows are now `SOURCE_AND_DATABASE_BLANK` for numeric 2026 permit comparison, with zero database numeric values unsupported by the private-land source.
+  - Extracted the attached `24 bear draw odds complete.pdf` into a normalized 2024 black bear draw-results permit-total artifact aligned to model target year 2025.
+  - Stored bear resident/nonresident eligible applicants, bonus permits, regular permits, total permits, page numbers, source SHA-256, and DATABASE comparison status.
+- Outputs:
+  - `scripts/clear-elk-private-lands-el-lo-2026-permit-fields.py`
+  - `scripts/extract-black-bear-2024-draw-odds-permits.py`
+  - `tests/utah/test_elk_private_lands_el_lo_clear_2026.py`
+  - `tests/utah/test_black_bear_2024_draw_odds_extraction.py`
+  - `data_truth/permit_overlay_truth/validation/elk_private_lands_EL_LO_2026_cleared_permit_fields.csv`
+  - `data_truth/permit_overlay_truth/validation/elk_private_lands_EL_LO_2026_cleared_permit_fields_summary.json`
+  - `processed_data/elk_private_lands_EL_LO_2026_cleared_permit_fields.md`
+  - `data_truth/draw_results_truth/normalized/black_bear_2024_draw_odds_model_target_2025_permit_totals.csv`
+  - `data_truth/draw_results_truth/validation/black_bear_2024_draw_odds_model_target_2025_vs_DATABASE.csv`
+  - `data_truth/draw_results_truth/validation/black_bear_2024_draw_odds_model_target_2025_summary.json`
+  - `processed_data/black_bear_2024_draw_odds_model_target_2025_permit_totals.md`
+- Key results:
+  - EL/LO target codes: `131` (`EL=126`, `LO=5`).
+  - Remaining EL/LO numeric 2026 permit/quota leak cells: `0`.
+  - Public `EB3020` retained 2026 quota values, proving public limited-entry elk rows were not cleared.
+  - Bear draw-odds extracted rows: `96` unique `BR` hunt codes.
+  - Bear source public permits: `943` total (`887` resident, `56` nonresident).
+  - Bear source classifications: `9` pursuit bonus-draw rows and `87` true bear bonus-draw rows.
+  - Bear comparison to current `DATABASE.csv` 2025 fields: `37` matches, `55` differences requiring lineage review, `4` source codes missing from current DATABASE (`BR7008`, `BR7019`, `BR7108`, `BR7208`).
+  - Bear draw source is historical draw-results evidence (`reported_draw_year=2024`, `model_target_year=2025`) and was not promoted into 2026 availability fields.
+- Validation:
+  - `python scripts\clear-elk-private-lands-el-lo-2026-permit-fields.py` passed and is idempotent.
+  - `python scripts\audit-elk-private-lands-el-lo-2026.py` passed after cleanup.
+  - `python scripts\extract-black-bear-2024-draw-odds-permits.py` passed.
+  - `python -m py_compile scripts\clear-elk-private-lands-el-lo-2026-permit-fields.py scripts\extract-black-bear-2024-draw-odds-permits.py tests\utah\test_elk_private_lands_el_lo_clear_2026.py tests\utah\test_black_bear_2024_draw_odds_extraction.py tests\utah\test_elk_private_lands_el_lo_audit_2026.py` passed.
+  - `python -m pytest tests\utah\test_elk_private_lands_el_lo_clear_2026.py tests\utah\test_elk_private_lands_el_lo_audit_2026.py tests\utah\test_elk_private_land_resolution_2026.py tests\utah\test_black_bear_2024_draw_odds_extraction.py tests\utah\test_black_bear_permit_normalization_2026.py -q` passed: `16`.

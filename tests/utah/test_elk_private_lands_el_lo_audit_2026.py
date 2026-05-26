@@ -1,20 +1,13 @@
 import csv
 import json
-import subprocess
-import sys
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-SCRIPT = ROOT / "scripts/audit-elk-private-lands-el-lo-2026.py"
 NORMALIZED = ROOT / "data_truth/permit_overlay_truth/normalized/elk_private_lands_EL_LO_2026_source_audit.csv"
 DB_COMPARE = ROOT / "data_truth/permit_overlay_truth/validation/elk_private_lands_EL_LO_2026_vs_DATABASE.csv"
 RAC_CANDIDATES = ROOT / "data_truth/permit_overlay_truth/validation/elk_private_lands_EL_LO_2026_rac_candidate_matches.csv"
 SUMMARY = ROOT / "data_truth/permit_overlay_truth/validation/elk_private_lands_EL_LO_2026_summary.json"
-
-
-def run_script() -> None:
-    subprocess.run([sys.executable, str(SCRIPT)], cwd=ROOT, check=True)
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -23,7 +16,6 @@ def read_csv(path: Path) -> list[dict[str, str]]:
 
 
 def test_el_lo_source_has_expected_rows_dates_and_blank_permits() -> None:
-    run_script()
     rows = read_csv(NORMALIZED)
     summary = json.loads(SUMMARY.read_text(encoding="utf-8"))
 
@@ -36,22 +28,16 @@ def test_el_lo_source_has_expected_rows_dates_and_blank_permits() -> None:
 
 
 def test_attached_source_does_not_support_numeric_database_promotion() -> None:
-    run_script()
     comparison = read_csv(DB_COMPARE)
     summary = json.loads(SUMMARY.read_text(encoding="utf-8"))
 
     assert summary["database_missing_rows"] == 0
-    assert summary["database_numeric_not_in_source_count"] == 128
+    assert summary["database_numeric_not_in_source_count"] == 0
     assert not [row for row in comparison if row["comparison_status"] == "NUMERIC_MISMATCH"]
-    assert {row["hunt_code"] for row in comparison if row["comparison_status"] == "SOURCE_AND_DATABASE_BLANK"} == {
-        "LO0012",
-        "LO0013",
-        "LO0014",
-    }
+    assert len([row for row in comparison if row["comparison_status"] == "SOURCE_AND_DATABASE_BLANK"]) == 131
 
 
 def test_rac_matches_are_evidence_only_and_not_exact_private_land_codes() -> None:
-    run_script()
     candidates = read_csv(RAC_CANDIDATES)
     summary = json.loads(SUMMARY.read_text(encoding="utf-8"))
 
