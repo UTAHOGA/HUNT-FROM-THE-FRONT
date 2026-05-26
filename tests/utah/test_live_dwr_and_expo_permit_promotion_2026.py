@@ -17,6 +17,9 @@ EXPO_TOTAL_ONLY_SUMMARY = (
     ROOT / "data_truth/draw_results_truth/validation/expo_permit_draw_results_2026_total_only_summary.json"
 )
 SHEEP_SUMMARY = ROOT / "data_truth/crosswalk_truth/validation/sheep_sex_type_normalization_2026_summary.json"
+REVIEWED_CORRECTIONS_SUMMARY = (
+    ROOT / "data_truth/crosswalk_truth/validation/reviewed_live_permit_corrections_2026_summary.json"
+)
 
 
 def _database_by_code() -> dict[str, dict[str, str]]:
@@ -39,13 +42,18 @@ def test_live_dwr_comparison_has_no_numeric_mismatches_after_shape_rules() -> No
 
 
 def test_cwmu_live_values_are_total_only_not_resident_split() -> None:
-    row = _database_by_code()["EA1129"]
+    rows = _database_by_code()
+    row = rows["EA1129"]
+    cwmu_rows = [row for row in rows.values() if row["hunt_type"] == "CWMU"]
 
     assert row["hunt_name"] == "Deseret CWMU"
     assert row["permits_2026_res"] == ""
     assert row["permits_2026_nr"] == ""
     assert row["permits_2026_total"] == "425"
     assert row["permit_allotment_2026_status"] == "LIVE_DWR_CWMU_TOTAL_ONLY_FROM_QUOTA_RES"
+    assert len(cwmu_rows) == 283
+    assert all(row["permits_2026_res"] == "" and row["permits_2026_nr"] == "" for row in cwmu_rows)
+    assert all(row["permits_2026_total"] for row in cwmu_rows)
 
 
 def test_live_blank_rows_preserve_entered_database_values() -> None:
@@ -130,6 +138,34 @@ def test_database_sheep_sex_labels_match_dwr_website_shape() -> None:
     )
 
 
+def test_reviewed_live_permit_corrections_are_applied() -> None:
+    summary = json.loads(REVIEWED_CORRECTIONS_SUMMARY.read_text(encoding="utf-8"))
+    rows = _database_by_code()
+
+    assert summary["missing_reviewed_codes"] == []
+    assert summary["action_counts"] == {
+        "CWMU_TOTAL_ONLY_NORMALIZATION": 283,
+        "REVIEWED_NUMERIC_CORRECTION": 8,
+    }
+    assert summary["cwmu_not_total_only_count"] == 0
+
+    expected = {
+        "BI6528": ("6", "0", "6"),
+        "BI6532": ("6", "0", "6"),
+        "BR7004": ("18", "2", "20"),
+        "EB3010": ("10", "1", "11"),
+        "EB3047": ("3", "1", "4"),
+        "EB3088": ("10", "1", "11"),
+        "EB3112": ("2", "0", "2"),
+        "EB3185": ("18", "3", "21"),
+    }
+    for hunt_code, values in expected.items():
+        row = rows[hunt_code]
+        assert (row["permits_2026_res"], row["permits_2026_nr"], row["permits_2026_total"]) == values
+        assert row["permits_2026_source"] == "2026_DWR_HUNT_PLANNER_REVIEWED_LIVE_BLOCK"
+        assert row["permit_allotment_2026_status"] == "REVIEWED_LIVE_DWR_SPLIT"
+
+
 def test_comprehensive_live_dwr_extraction_confirms_broad_database_coverage() -> None:
     summary = json.loads(COMPREHENSIVE_LIVE_SUMMARY.read_text(encoding="utf-8"))
 
@@ -139,15 +175,7 @@ def test_comprehensive_live_dwr_extraction_confirms_broad_database_coverage() ->
     assert summary["live_only_count"] == 0
     assert summary["live_numeric_database_blank_count"] == 0
     assert summary["database_only_codes"] == ["BI6505", "BI6506", "BI6529", "BI6536", "BI6539"]
-    assert summary["numeric_mismatch_codes"] == [
-        "BI6528",
-        "BI6532",
-        "BR7004",
-        "EB3010",
-        "EB3047",
-        "EB3088",
-        "EB3112",
-        "EB3185",
-    ]
-    assert summary["comparison_status_counts"]["MATCH"] == 682
-    assert summary["comparison_status_counts"]["TOTAL_MATCH_SPLIT_DIFFERS"] == 378
+    assert summary["numeric_mismatch_count"] == 0
+    assert summary["numeric_mismatch_codes"] == []
+    assert summary["comparison_status_counts"]["MATCH"] == 904
+    assert summary["comparison_status_counts"]["TOTAL_MATCH_SPLIT_DIFFERS"] == 164

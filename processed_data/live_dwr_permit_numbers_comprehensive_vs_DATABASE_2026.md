@@ -1,11 +1,11 @@
 # Comprehensive Live DWR Permit Numbers Vs DATABASE 2026
 
-- Snapshot UTC: `2026-05-26T21:47:39+00:00`
+- Snapshot UTC: `2026-05-26T21:50:46+00:00`
 - DWR endpoints queried: `19`
 - Live rows extracted: `1389`
 - Live unique hunt codes: `1389`
 - DATABASE rows compared: `1394`
-- Numeric mismatches: `8`
+- Numeric mismatches: `0`
 - Live numeric / database blank: `0`
 - Database numeric / live blank: `0`
 - Database-only rows not exposed by queried DWR endpoints: `5`
@@ -16,9 +16,8 @@
 - `BOTH_BLANK`: `274`
 - `DATABASE_ONLY`: `5`
 - `LIVE_NO_QUOTA_DATABASE_PRESERVED`: `47`
-- `MATCH`: `682`
-- `NUMERIC_MISMATCH`: `8`
-- `TOTAL_MATCH_SPLIT_DIFFERS`: `378`
+- `MATCH`: `904`
+- `TOTAL_MATCH_SPLIT_DIFFERS`: `164`
 
 ## Endpoint Row Counts
 
@@ -41,14 +40,3 @@
 - `Rocky Mountain Bighorn Sheep|Male Only`: `20`
 - `Turkey|Bearded`: `14`
 - `Turkey|Either Sex`: `4`
-
-## Numeric Mismatch Codes
-
-- `BI6528` Book Cliffs, Little Creek/South: live `6/0/6` vs database `5/0/5`
-- `BI6532` Book Cliffs, Bitter Creek: live `6/0/6` vs database `5/0/5`
-- `BR7004` Manti South/San Rafael North: live `18/0/20` vs database `18/0/18`
-- `EB3010` Monroe: live `10/1/11` vs database `21/2/23`
-- `EB3047` Monroe: live `3/1/4` vs database `8/1/9`
-- `EB3088` Monroe: live `10/1/11` vs database `13/1/14`
-- `EB3112` Monroe: live `2/0/2` vs database `3/0/3`
-- `EB3185` Monroe: live `18/3/21` vs database `24/3/27`

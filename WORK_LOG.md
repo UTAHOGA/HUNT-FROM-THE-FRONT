@@ -4768,3 +4768,33 @@
   - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed.
   - `python -m py_compile scripts\normalize-expo-permit-draw-results-2026.py scripts\normalize-sheep-sex-types-2026.py scripts\pull-live-dwr-permit-numbers-comprehensive-2026.py` passed.
   - `python -m pytest tests\utah\test_live_dwr_and_expo_permit_promotion_2026.py -q` passed: `7`.
+
+## Reviewed Live Permit Corrections And CWMU Total-Only Shape
+- Timestamp (UTC): 2026-05-26T21:55:00Z
+- Scope:
+  - Applied reviewed Utah DWR Hunt Planner live permit blocks to the remaining numeric mismatch rows: `BI6528`, `BI6532`, `BR7004`, `EB3010`, `EB3047`, `EB3088`, `EB3112`, and `EB3185`.
+  - Recorded `BR7004` as `18 / 2 / 20` because the DWR block shows resident `18` and total `20`, so nonresident is derived as total minus resident.
+  - Normalized all `283` CWMU rows in `DATABASE.csv` to total-only permit shape: blank `permits_2026_res`, blank `permits_2026_nr`, populated `permits_2026_total`.
+  - Updated the comprehensive live DWR comparison so split rows with resident and total values can derive nonresident as `total - resident` when DWR omits an explicit nonresident field.
+  - Re-ran comprehensive live DWR permit extraction, database publish readiness, and comprehensive 2026/2025 history-integrity audit after the corrections.
+  - No website feeds, `public_client_engine.csv`, prediction math, or materializer code were changed.
+- Outputs:
+  - `scripts/apply-reviewed-live-permit-corrections-2026.py`
+  - `data_truth/crosswalk_truth/validation/reviewed_live_permit_corrections_2026.csv`
+  - `data_truth/crosswalk_truth/validation/reviewed_live_permit_corrections_2026_summary.json`
+  - `processed_data/reviewed_live_permit_corrections_2026.md`
+- Key results:
+  - Reviewed numeric correction rows applied: `8`.
+  - CWMU total-only rows normalized: `283`.
+  - CWMU rows still carrying a resident/nonresident split: `0`.
+  - Comprehensive live DWR numeric mismatches: `0`, down from `8`.
+  - Comprehensive live DWR comparison remains clear of live-only rows and live-numeric/database-blank rows: both counts are `0`.
+  - Publish readiness remains `true`.
+  - Comprehensive history audit fatal blockers remain `0`.
+- Validation:
+  - `python scripts\apply-reviewed-live-permit-corrections-2026.py` passed.
+  - `python scripts\pull-live-dwr-permit-numbers-comprehensive-2026.py` passed.
+  - `python scripts\build-database-publish-readiness-report.py` passed.
+  - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed.
+  - `python -m py_compile scripts\apply-reviewed-live-permit-corrections-2026.py scripts\pull-live-dwr-permit-numbers-comprehensive-2026.py` passed.
+  - `python -m pytest tests\utah\test_live_dwr_and_expo_permit_promotion_2026.py -q` passed: `8`.
