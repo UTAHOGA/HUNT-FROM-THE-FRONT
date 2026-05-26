@@ -1,5 +1,27 @@
 # WORK LOG
 
+## 2026 EL/LO Private-Lands Elk Source Audit
+- Timestamp (UTC): 2026-05-26T14:01:30Z
+- Scope:
+  - Audited the attached DWR Hunt Planner private-lands bull elk file `2026 l.e. elk.private lands  EL-2025 and LO-2026.csv`.
+  - Confirmed the source has `131` rows: `126` `EL` rows and `5` elk `LO` Diamond Mtn Landowner Association rows.
+  - Confirmed the attached source publishes `0` permit-number values; therefore no numeric permit values were promoted from this source.
+  - Confirmed date context: `125` `EL` rows have 2025-only season dates, `1` `EL` row crosses 2025-2026, and all `5` elk `LO` rows have 2026 dates.
+  - Compared against `DATABASE.csv`: `0` missing rows, `128` rows where DATABASE already has protected numeric values not present in the attached source, and `3` rows blank in both source and DATABASE (`LO0012`, `LO0013`, `LO0014`).
+  - Checked RAC/private permit evidence: `0` exact `EL`/elk `LO` RAC code matches and `126` `EL -> EB` prefix-swap RAC candidate matches, all marked review evidence only because public `EB` RAC recommendations must not be promoted into private-land `EL/LO` rows without reviewed access-class confirmation.
+- Files:
+  - `scripts/audit-elk-private-lands-el-lo-2026.py`
+  - `tests/utah/test_elk_private_lands_el_lo_audit_2026.py`
+  - `data_truth/permit_overlay_truth/normalized/elk_private_lands_EL_LO_2026_source_audit.csv`
+  - `data_truth/permit_overlay_truth/validation/elk_private_lands_EL_LO_2026_vs_DATABASE.csv`
+  - `data_truth/permit_overlay_truth/validation/elk_private_lands_EL_LO_2026_rac_candidate_matches.csv`
+  - `data_truth/permit_overlay_truth/validation/elk_private_lands_EL_LO_2026_summary.json`
+  - `processed_data/elk_private_lands_EL_LO_2026_audit.md`
+- Validation:
+  - `python scripts\audit-elk-private-lands-el-lo-2026.py`
+  - `python -m compileall scripts\audit-elk-private-lands-el-lo-2026.py tests\utah\test_elk_private_lands_el_lo_audit_2026.py`
+  - `python -m pytest tests\utah\test_elk_private_lands_el_lo_audit_2026.py -q` passed: `3`
+
 ## 2026 Black Bear Permit Split Normalization
 - Timestamp (UTC): 2026-05-26T13:56:00Z
 - Scope:
