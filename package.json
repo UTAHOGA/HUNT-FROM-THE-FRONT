@@ -5,7 +5,8 @@
     "description":  "Local static server for the U.O.G.A. Hunt Planner",
     "scripts":  {
                     "start":  "node server.js",
-                    "build:pages":  "node scripts/build-pages-dist.js",
+                    "build:library-page":  "node scripts/build-library-page-data.js",
+                    "build:pages":  "npm run build:library-page && node scripts/build-pages-dist.js",
                     "export:data":  "node export-data.js",
                     "audit:2026":  "node audit-2026-completeness.js",
                     "apply:2026:supplements":  "node apply-2026-supplements.js",

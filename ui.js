@@ -186,6 +186,10 @@ window.UOGA_UI = (() => {
       : `${formatProbability(item.projected_total_probability_pct)}${item.unit ? ` · ${item.unit}` : ''}`;
   }
 
+  function huntDataHref(item) {
+    return `./hard-copy.html?hunt_code=${encodeURIComponent(item.hunt_code)}`;
+  }
+
   function createTrayMarkup(title, items, sectionType) {
     if (!items.length) {
       const emptyTitle = sectionType === 'saved' ? 'No saved hunts yet' : 'No recent hunts yet';
@@ -208,6 +212,7 @@ window.UOGA_UI = (() => {
       <div class="uoga-backpack-list">
         ${items.map((item) => {
           const researchHref = `./research.html?hunt_code=${encodeURIComponent(item.hunt_code)}&draw_pool=${encodeURIComponent(normalizeDrawPool(item.draw_pool))}`;
+          const dataHref = huntDataHref(item);
           return `
           <article class="uoga-backpack-item" data-hunt-code="${escapeHtml(item.hunt_code)}">
             <div class="uoga-backpack-item-top">
@@ -222,6 +227,7 @@ window.UOGA_UI = (() => {
             <div class="uoga-backpack-subvalue">${escapeHtml(itemSubvalue(item))}</div>
             <div class="uoga-backpack-actions">
               <a href="${researchHref}" data-backpack-link="research" data-hunt-code="${escapeHtml(item.hunt_code)}" data-draw-pool="${escapeHtml(normalizeDrawPool(item.draw_pool))}">Research</a>
+              <a href="${dataHref}" data-backpack-link="hunt-data" data-hunt-code="${escapeHtml(item.hunt_code)}">Hunt Data</a>
               <a href="./index.html?hunt_code=${encodeURIComponent(item.hunt_code)}" data-backpack-link="planner" data-hunt-code="${escapeHtml(item.hunt_code)}">Planner</a>
               ${sectionType === 'saved'
                 ? `<button type="button" data-backpack-remove="${escapeHtml(item.hunt_code)}">Remove</button>`

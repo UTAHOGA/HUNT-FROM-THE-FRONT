@@ -1,11 +1,11 @@
 (() => {
   const DWR_MAP_URL = 'https://dwrapps.utah.gov/huntboundary/hbstart';
   const PRIMARY_HEADER_NAV_ITEMS = [
-    { href: 'https://www.uoga.org', label: 'U.O.G.A. HOME' },
-    { href: './', label: 'HUNT BUILDER' },
-    { href: './research.html', label: 'HUNT RESEARCH' },
-    { href: './verify.html', label: 'OUTFITTERS' },
-    { href: './hard-copy.html', label: 'HUNT LIBRARY' },
+    { href: 'https://www.uoga.org', label: 'U.O.G.A. HOME', tip: 'U.O.G.A. MAIN' },
+    { href: './', label: 'HUNT BUILDER', tip: 'FIND YOUR\nDREAM HUNT' },
+    { href: './research.html', label: 'HUNT RESEARCH', tip: 'MATCH\nHUNT = POINTS' },
+    { href: './verify.html', label: 'OUTFITTERS', tip: 'OPTIMIZE\nYOUR ODDS' },
+    { href: './hard-copy.html', label: 'HUNTING BIBLE', tip: 'YOUR BIBLE\nSOURCE DOCS' },
   ];
   const isBuilderPage = () => {
     const path = (window.location && window.location.pathname ? window.location.pathname : '').toLowerCase();
@@ -86,7 +86,8 @@
   function normalizeHeaderNavLabel(text) {
     const label = String(text || '').replace(/\s+/g, ' ').trim();
     if (!label) return '';
-    if (label.toUpperCase() === 'HARD COPIES') return 'HUNT LIBRARY';
+    if (label.toUpperCase() === 'HARD COPIES') return 'HUNTING BIBLE';
+    if (label.toUpperCase() === 'HUNT LIBRARY') return 'HUNTING BIBLE';
     return label.toUpperCase();
   }
 
@@ -123,6 +124,10 @@
       const anchor = document.createElement('a');
       anchor.href = item.href;
       anchor.textContent = item.label;
+      if (item.tip) {
+        anchor.dataset.navTip = item.tip;
+        anchor.title = item.tip;
+      }
       if (item.active) {
         anchor.className = 'active';
         anchor.setAttribute('aria-current', 'page');
@@ -335,7 +340,7 @@
       }
       .uoga-primary-nav a:hover,
       .uoga-primary-nav a:focus-visible {
-        color:#f07800 !important;
+        color:transparent !important;
         outline:none !important;
         transform:translateY(-2px) scale(1.035) !important;
         border-color:#ff8c14 !important;
@@ -344,7 +349,36 @@
           linear-gradient(180deg,#4f3a23,#21170f) !important;
         box-shadow:0 10px 20px rgba(20,12,7,.30), 0 0 0 2px rgba(255,140,20,.22) !important;
         z-index:4 !important;
-        text-shadow:0 0 14px rgba(255,140,20,.46) !important;
+        text-shadow:none !important;
+      }
+      .uoga-primary-nav a[data-nav-tip]::before {
+        content:attr(data-nav-tip) !important;
+        position:absolute !important;
+        inset:0 !important;
+        display:flex !important;
+        align-items:center !important;
+        justify-content:center !important;
+        padding:0 6px !important;
+        color:#ffffff !important;
+        font-size:12px !important;
+        font-weight:950 !important;
+        line-height:1.02 !important;
+        letter-spacing:.095em !important;
+        text-align:center !important;
+        white-space:pre-line !important;
+        text-shadow:0 1px 0 rgba(0,0,0,.82), 0 0 14px rgba(255,255,255,.32) !important;
+        opacity:0 !important;
+        pointer-events:none !important;
+        transition:opacity 150ms ease !important;
+      }
+      .uoga-primary-nav a[data-nav-tip]:hover::before,
+      .uoga-primary-nav a[data-nav-tip]:focus-visible::before {
+        opacity:1 !important;
+      }
+      .uoga-primary-nav a.active[data-nav-tip]::before,
+      .uoga-primary-nav a.active[data-nav-tip]:hover::before,
+      .uoga-primary-nav a.active[data-nav-tip]:focus-visible::before {
+        opacity:0 !important;
       }
       .uoga-primary-nav a.active {
         color:#ffffff !important;
@@ -352,17 +386,6 @@
         border-color:#ff8c14 !important;
         background:linear-gradient(180deg,rgba(65,47,29,.84),rgba(30,22,15,.92)) !important;
         text-shadow:0 1px 0 rgba(0,0,0,.76), 0 0 14px rgba(255,255,255,.22) !important;
-      }
-      .uoga-primary-nav a.active::after {
-        content:"" !important;
-        position:absolute !important;
-        left:18px !important;
-        right:18px !important;
-        bottom:6px !important;
-        height:2px !important;
-        border-radius:999px !important;
-        background:#ff8c14 !important;
-        box-shadow:0 0 10px rgba(255,140,20,.6) !important;
       }
       .page-nav-case { display:flex !important; align-items:center !important; justify-content:center !important; width:100% !important; }
       .utility-nav { display:flex !important; align-items:center !important; justify-content:center !important; gap:12px !important; flex-wrap:wrap !important; }

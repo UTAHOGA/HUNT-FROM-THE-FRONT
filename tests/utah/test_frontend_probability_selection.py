@@ -7,6 +7,7 @@ from pathlib import Path
 FRONTEND_PATH = Path("hunt-research.js")
 RESEARCH_HTML_PATH = Path("research.html")
 FIXTURE_PATH = Path("data/utah/fixtures/draw_reality_engine.csv")
+POINT_LADDER_PATH = Path("processed_data/point_ladder_view.csv")
 
 
 def _frontend_text() -> str:
@@ -228,6 +229,22 @@ def test_ladder_source_pill_click_matches_csv_point_values_numerically():
     assert '.find((candidate) => candidate.points === point);' not in block
 
 
+def test_ladder_hunt_data_pills_only_render_on_user_and_guaranteed_rows():
+    text = _frontend_text()
+    block = _block(text, "els.ladderTableBody.innerHTML = rows.map((row) => {", "const rawPrimary = firstAvailable")
+    assert "Hunt Data" in block
+    assert "(isUserRow || isGuaranteedLineRow(row)) && hasSourceData" in block
+    assert "label: 'Sources'" not in block
+
+
+def test_backpack_includes_hunt_data_action():
+    ui_text = Path("ui.js").read_text(encoding="utf-8")
+    assert "function huntDataHref(item)" in ui_text
+    assert "./hard-copy.html?hunt_code=${encodeURIComponent(item.hunt_code)}" in ui_text
+    assert 'data-backpack-link="hunt-data"' in ui_text
+    assert ">Hunt Data</a>" in ui_text
+
+
 def test_source_snapshot_shows_official_2026_quota_source():
     text = _frontend_text()
     block = _block(text, "function buildSourceBoxes(meta, row, referenceRow)", "function openSourceModal(meta, row, referenceRow, residency)")
@@ -275,7 +292,15 @@ def test_builder_and_backpack_carry_draw_pool_internally():
 
 def test_guaranteed_to_draw_line_uses_requested_orange():
     html = RESEARCH_HTML_PATH.read_text(encoding="utf-8")
+    js = _frontend_text()
     assert "--guaranteed-line-orange: rgb(250, 120, 0);" in html
+    assert "function isGuaranteedLineRow(row)" in js
+    assert "row?.projected_2026_max_cutoff_point" in js
+    assert "row?.guaranteed_at_2026" in js
+    assert "const summaryGuaranteedPoint = num(row?.guaranteed_at_2026);" in js
+    assert "if (summaryGuaranteedPoint !== null) return summaryGuaranteedPoint;" in js
+    assert "Math.round(rowPoint) === Math.round(guaranteedLinePoint)" in js
+    assert "if (isGuaranteedLineRow(row))" in js
     guaranteed_row_block = _block(
         html,
         ".report-table tbody tr.is-guaranteed-row {",
@@ -292,9 +317,29 @@ def test_guaranteed_to_draw_line_uses_requested_orange():
         ".marker-pill.user {",
     )
     assert "background: var(--guaranteed-line-orange);" in guaranteed_row_block
+    assert ".report-table tbody tr.is-guaranteed-row td" in html
     assert "var(--guaranteed-line-orange)" in user_guaranteed_block
     assert "rgba(250, 120, 0" in guaranteed_marker_block
     assert "color: var(--guaranteed-line-orange);" in guaranteed_marker_block
+
+
+def test_guaranteed_line_highlight_matches_summary_not_random_start_boundary():
+    rows = [
+        row
+        for row in csv.DictReader(POINT_LADDER_PATH.open(encoding="utf-8"))
+        if row["hunt_code"] == "MB6011"
+        and row["residency"] == "Resident"
+        and row["draw_pool"] == "standard"
+        and row["points"] in {"29", "28"}
+    ]
+    by_point = {row["points"]: row for row in rows}
+    assert by_point["29"]["guaranteed_at_2026"] == "29"
+    assert by_point["28"]["projected_2026_max_cutoff_point"] == "28.0"
+    assert by_point["28"]["point_pool_zone"] == "max_pool_cutoff_mixed"
+
+    js = _frontend_text()
+    guaranteed_fn = _block(js, "function getGuaranteedLinePoint(row)", "function isGuaranteedLineRow(row)")
+    assert guaranteed_fn.index("guaranteed_at_2026") < guaranteed_fn.index("projected_2026_max_cutoff_point")
 
 
 def test_highlighted_ladder_boxes_use_dark_brown_outline():

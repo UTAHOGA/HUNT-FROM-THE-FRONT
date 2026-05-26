@@ -1,5 +1,18 @@
 # WORK LOG
 
+## Merge Conflict Resolution For Diverged Main
+- Timestamp (UTC): 2026-05-26T18:35:00Z
+- Scope:
+  - Resolved the in-progress merge conflicts between local `main` and `origin/main`.
+  - Kept the newer validated generated truth artifacts where both sides only differed by generation timestamp.
+  - Preserved both local and remote-only `WORK_LOG.md` sections so audit/history context was not lost.
+  - Did not overwrite protected numeric `DATABASE.csv` cells as part of conflict resolution.
+- Validation:
+  - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed with `0` fatal blockers and `0` protected permit-overlay numeric mismatches.
+  - `python scripts\validate-ea-private-lands-canonical-2026.py` passed with `0` blockers and `0` DATABASE mismatches.
+  - `python scripts\lock-black-bear-conservation-br7307-2026.py` passed with `BR7307` selected total `4` and `0` validation errors.
+  - Split focused pytest validation passed: `31` tests total.
+
 ## HUNT-BUILDER-CLEAN Missing Artifact Import
 - Timestamp (UTC): 2026-05-26T18:03:00Z
 - Scope:
@@ -980,7 +993,6 @@
   - Availability-only bear rows still do not receive fake draw odds.
   - Bear rows still never use `p_preference_draw`.
   - Existing EB3024, one-permit random-only, MAX POOL, and UI precedence guardrails remained passing.
-
 
 ## Step 1B - Raw Inventory Audit
 - Timestamp (UTC): 2026-05-10T12:43:23.701298Z
@@ -3739,3 +3751,860 @@
   - `python -m py_compile scripts\normalize-rocky-bighorn-permits-2026.py scripts\extract-oil-2025-draw-results-permits.py tests\utah\test_rocky_bighorn_permit_normalization_2026.py tests\utah\test_oil_2025_draw_results_extraction.py` passed.
   - `python -m pytest tests\utah\test_rocky_bighorn_permit_normalization_2026.py tests\utah\test_oil_2025_draw_results_extraction.py -q` passed: `8`.
 
+
+## Merge-Preserved Remote Work Log Sections
+- Timestamp (UTC): 2026-05-26T18:30:00Z
+- Scope:
+  - Preserved work-log sections that existed only on `origin/main` during merge conflict resolution.
+  - No source data, website feed, or DATABASE values are changed by this merge-log marker.
+
+## Live Domain Handoff To HUNT-BUILDER Repo
+- Timestamp (UTC): 2026-05-24T04:38:00Z
+- Scope:
+  - Began moving the live GitHub Pages custom-domain claim from `UTAHOGA/HUNT-FROM-THE-FRONT` to `UTAHOGA/HUNT-BUILDER`.
+  - Removed the source-branch `CNAME` from the old `HUNT-FROM-THE-FRONT` repo so `HUNT-BUILDER` can be the sole repo for `hunt-builder.uoga.org`.
+  - No prediction data, runtime feed, or website content was changed.
+
+## HUNT-BUILDER Repo Rename Confirmed
+- Timestamp (UTC): 2026-05-24T04:40:00Z
+- Scope:
+  - Confirmed GitHub redirects the old `UTAHOGA/HUNT-FROM-THE-FRONT` remote to `UTAHOGA/HUNT-BUILDER`.
+  - Restored the `CNAME` on `main` because `HUNT-BUILDER` is the renamed live repo, not a separate duplicate target.
+  - Updated local remote naming to point directly at `UTAHOGA/HUNT-BUILDER`.
+
+## Header Navigation Hover Instructions
+- Timestamp (UTC): 2026-05-24T04:53:00Z
+- Scope:
+  - Added small hover/focus instruction popups to the shared primary header navigation.
+  - Hints now explain Builder, Research, Outfitters, Library, and U.O.G.A. Home without adding more permanent page clutter.
+  - No prediction data, runtime feeds, permit logic, or model outputs were changed.
+- Validation:
+  - `node --check header-layout.js` passed.
+  - `python -m pytest tests/utah/test_header_layout.py -q` passed: `8`.
+  - `python -m compileall tests/utah/test_header_layout.py` passed.
+  - Local static smoke check confirmed `header-layout.js` serves with the new hover help text.
+
+## Header UOGA Logo Link
+- Timestamp (UTC): 2026-05-24T04:59:00Z
+- Scope:
+  - Added a cropped U.O.G.A. Wildlife Elevated license-plate logo asset to the shared website header.
+  - The logo sits inside the header at the upper-left side and links to `https://www.uoga.org`.
+  - Bumped the `header-layout.js` cache-busting query on site pages so browsers pick up the new header behavior.
+  - No prediction data, runtime feeds, permit logic, or model outputs were changed.
+- Validation:
+  - `node --check header-layout.js` passed.
+  - `python -m pytest tests/utah/test_header_layout.py -q` passed: `9`.
+  - `python -m compileall tests/utah/test_header_layout.py` passed.
+  - Local static smoke check confirmed the logo asset and updated header script serve successfully.
+
+## Header Logo Removed
+- Timestamp (UTC): 2026-05-24T05:05:00Z
+- Scope:
+  - Removed the upper-left header logo after layout review showed it consumed too much header space.
+  - Removed the temporary cropped logo asset and bumped the `header-layout.js` cache tag to force the no-logo header layout.
+  - Preserved the shared navigation hover instructions and all domain/CNAME settings.
+  - No prediction data, runtime feeds, permit logic, or model outputs were changed.
+
+## Header Nav Inline Helper Text
+- Timestamp (UTC): 2026-05-24T05:19:00Z
+- Scope:
+  - Replaced the floating nav helper popups with inline hover/focus helper text inside each navigation pill.
+  - Shortened helper copy so it fits within each pill without expanding the header.
+  - Removed the orange underline from the selected nav pill while preserving selected-page white text.
+  - Bumped the `header-layout.js` cache tag again so browsers fetch the inline-helper script instead of the older floating-popup script.
+  - No prediction data, runtime feeds, permit logic, or model outputs were changed.
+- Validation:
+  - `node --check header-layout.js` passed.
+  - `python -m pytest tests/utah/test_header_layout.py -q` passed: `8`.
+  - `python -m compileall tests/utah/test_header_layout.py` passed.
+  - Local static smoke check confirmed the inline helper text is present and the selected underline CSS is absent.
+
+## Header Nav Helper Copy Refinement
+- Timestamp (UTC): 2026-05-24T05:28:00Z
+- Scope:
+  - Updated inline nav helper copy to the final visitor-facing wording:
+    Builder `FIND YOUR DREAM HUNT`, Research `MATCH HUNT TO YOUR POINTS`, Outfitters `FIND YOUR OUTFITTER`, Library `CANONICAL DOCS`.
+  - No layout, prediction data, runtime feeds, permit logic, or model outputs were changed.
+
+## Header Nav Replacement Helper Final
+- Timestamp (UTC): 2026-05-24T05:40:00Z
+- Scope:
+  - Kept the helper behavior as text replacement inside the same nav pill rather than a separate advice line.
+  - Updated helper copy to: Builder `FIND YOUR DREAM HUNT`, Research `MATCH THE HUNT TO YOUR POINTS`, Outfitters `FIND YOUR OUTFITTER`, Library `YOUR BIBLE SOURCE DOCS`.
+  - Active/selected nav pills do not show helper replacement text.
+  - Pill dimensions remain unchanged and the selected underline remains removed.
+  - No prediction data, runtime feeds, permit logic, or model outputs were changed.
+- Validation:
+  - `node --check header-layout.js` passed.
+  - `python -m pytest tests/utah/test_header_layout.py -q` passed: `8`.
+  - `python -m compileall tests/utah/test_header_layout.py` passed.
+
+## Header Nav Two-Line Helper Text
+- Timestamp (UTC): 2026-05-24T06:05:00Z
+- Scope:
+  - Updated the nav replacement helper text to two-line white text inside the same fixed-size pill.
+  - Renamed the visible `HUNT LIBRARY` nav label to `HUNTING BIBLE`.
+  - Helper copy now uses: Builder `FIND YOUR / DREAM HUNT`, Research `MATCH / HUNT = POINTS`, Outfitters `OPTIMIZE / YOUR ODDS`, Hunting Bible `YOUR BIBLE / SOURCE DOCS`.
+  - Active/selected nav pills still do not show helper replacement text.
+  - Bumped the `header-layout.js` cache tag to `20260524-bible-help-1`.
+  - No prediction data, runtime feeds, permit logic, or model outputs were changed.
+
+## Header Nav Cache Refresh
+- Timestamp (UTC): 2026-05-24T06:18:00Z
+- Scope:
+  - Bumped the shared header script cache tag to `20260524-bible-help-2` on all static pages.
+  - This is a deploy refresh only; the two-line helper text, `HUNTING BIBLE` label, and selected-page behavior are unchanged.
+  - No prediction data, runtime feeds, permit logic, or model outputs were changed.
+
+## Header Nav Helper Text Enlargement
+- Timestamp (UTC): 2026-05-24T06:31:00Z
+- Scope:
+  - Enlarged the in-pill helper replacement text from `10px` to `12px` so it matches the normal nav title size more closely.
+  - Tightened helper letter spacing and strengthened the white text shadow so the two-line copy reads as the button title instead of a small inset note.
+  - Bumped the shared header script cache tag to `20260524-bible-help-3`.
+  - No prediction data, runtime feeds, permit logic, or model outputs were changed.
+
+## Hunt Research Guaranteed Line Highlight Fix
+- Timestamp (UTC): 2026-05-24T07:11:00Z
+- Scope:
+  - Updated the point ladder row classification so the orange guaranteed-line highlight applies to the modeled 2026 cutoff row, falling back to `guaranteed_at_2026` when no cutoff is available.
+  - Changed the ladder marker label to `Guaranteed Line` for that row and preserved the requested orange `rgb(250, 120, 0)` with the dark brown outline.
+  - Applied the orange fill to the guaranteed-line row cells as well as the row container so the highlight cannot be washed out by table-cell backgrounds.
+  - Bumped the `hunt-research.js` cache tag to `20260524-guaranteed-line-1`.
+  - No prediction data, runtime feeds, permit logic, or model outputs were changed.
+
+## Hunt Research Guaranteed Line Field Correction
+- Timestamp (UTC): 2026-05-24T07:43:00Z
+- Scope:
+  - Corrected the orange guaranteed-line row to use `guaranteed_at_2026` before `projected_2026_max_cutoff_point`, matching the top summary value.
+  - Confirmed the MB6011 Resident data pattern: `guaranteed_at_2026 = 29` while `projected_2026_max_cutoff_point = 28.0`, so 28 is the mixed cutoff boundary, not the guaranteed-to-draw line.
+  - Bumped the `hunt-research.js` cache tag to `20260524-guaranteed-line-2`.
+  - No prediction data, runtime feeds, permit logic, or model outputs were changed.
+
+## Hunt Research Hunt Data Pill Cleanup
+- Timestamp (UTC): 2026-05-24T08:05:00Z
+- Scope:
+  - Reduced point-ladder data pills so they appear only on the selected hunter-point row and the true guaranteed-line row.
+  - Renamed the ladder marker button from `Sources` to `Hunt Data` to better describe the cumulative source snapshot.
+  - Added a `Hunt Data` action to Hunt Backpack items that links to the Hunting Bible with the hunt code carried forward.
+  - Bumped the `ui.js` cache tag on Hunt Research to `20260524-backpack-hunt-data-1`.
+  - No prediction data, runtime feeds, permit logic, or model outputs were changed.
+
+## 2026 Big Game Application Guidebook Ingest Verification
+- Timestamp (UTC): 2026-05-24T08:37:00Z
+- Scope:
+  - Verified `pipeline/RAW/hunt_unit_database/2026/pdf/regulations/2026 Big Game Application.pdf` is already present in the raw PDF inventory.
+  - Verified the Hunting Bible export copy exists at `processed_data/hard_data_exports/source_pdfs/regulations/2026/2026-big-game-application-guidebook.pdf`.
+  - Verified the exported PDF SHA-256 matches the raw source PDF, so the library copy is byte-for-byte identical to the official source file.
+  - Verified the hard-copy manifest exposes it as `2026 Big Game Application Guidebook` with `group = regulation` and `source_role = official_source`.
+  - Kept the guidebook as regulation/reference material only; it is not promoted as draw-results truth, harvest truth, quota input, or prediction math input.
+  - Hardened the hard-copy publish script so it can read JSON manifests with a UTF-8 byte-order marker and skip unnecessary manifest rewrites when entries are already correct.
+  - Re-ran the hard-copy harvest/regulation publisher; it confirmed the guidebook entry was already present and refreshed the 2025 preliminary big-game harvest report export to match its raw source PDF.
+  - No prediction data, runtime feeds, permit logic, or model outputs were changed.
+
+## 2026 Big Game Application Guidebook Database Audit
+- Timestamp (UTC): 2026-05-24T09:20:00Z
+- Scope:
+  - Added a repeatable guidebook audit that extracts 728 hunt codes from the 2026 Big Game Application Guidebook hunt-table pages and compares them to `DATABASE.csv`.
+  - Materialized the regulation-reference hunt table at `data_truth/regulations_truth/normalized/2026_big_game_application_guidebook_hunt_tables.csv`.
+  - Wrote comparison outputs at `processed_data/2026_big_game_application_guidebook_vs_DATABASE.csv`, `.json`, and `.md`.
+  - Confirmed all 728 extracted guidebook hunt codes exist in `DATABASE.csv`.
+  - Found one real season-date conflict from the pasted/official guidebook text: `RS6700` Antelope Island Rocky Mountain bighorn sheep is `Nov. 9-Nov. 16`, while the database/catalog had `Nov 11-Nov 18`.
+  - Patched `RS6700` season to `Nov 09, 2026 - Nov 16, 2026` where the existing file format used comma-style dates, and `Nov 09 2026 - Nov 16 2026` where the existing file format used no-comma dates.
+  - Left remaining guidebook warnings as label-only review notes for management/HAMSS display naming; no remaining season mismatches or missing guidebook hunt codes.
+  - No permit counts, draw odds, harvest features, quota fields, or prediction math were changed.
+- Validation:
+  - `python scripts/audit-big-game-application-guidebook-2026.py` passed with `728` guidebook hunt codes, `728` database matches, `0` missing codes, `0` season review warnings and `0` blockers.
+  - `python -m pytest tests/utah/test_big_game_application_guidebook_ingest.py tests/utah/test_big_game_application_guidebook_database_audit.py -q` passed: `5`.
+  - `python -m compileall scripts\audit-big-game-application-guidebook-2026.py scripts\patch-big-game-application-guidebook-season-corrections-2026.py tests\utah\test_big_game_application_guidebook_ingest.py tests\utah\test_big_game_application_guidebook_database_audit.py` passed.
+  - `npm.cmd run verify:permits-2026` passed with `promotion_blockers = 0`.
+  - `python scripts/build-database-publish-readiness-report.py` passed with `publish_ready = true`.
+
+## 2026 Big Game Application Guidebook Post-Publication Corrections
+- Timestamp (UTC): 2026-05-24T10:10:00Z
+- Scope:
+  - Added the official post-publication correction notes to the repeatable guidebook audit as regulation/reference corrections.
+  - Materialized the correction audit at `data_truth/regulations_truth/normalized/2026_big_game_application_guidebook_post_publication_corrections.csv`.
+  - Confirmed `DB1276` Plymouth Peak is absent and superseded by `DB1306` Washakie CWMU.
+  - Confirmed `MB6264` Sand Creek CWMU moose and `DB1350` Milburn CWMU buck deer are absent from the corrected guidebook reference and current DATABASE.
+  - Confirmed `DB1115` is named `Little Rockies` in both the corrected guidebook reference and DATABASE.
+  - Kept these notes as regulation/reference corrections only; no permit counts, draw odds, harvest features, quota fields, or prediction math were changed.
+- Validation:
+  - `python scripts/audit-big-game-application-guidebook-2026.py` passed with `4` post-publication corrections checked and `0` correction review items.
+  - `python -m compileall scripts\audit-big-game-application-guidebook-2026.py tests\utah\test_big_game_application_guidebook_database_audit.py` passed.
+
+## 2025 Big Game Field Regulations Source Label Audit
+- Timestamp (UTC): 2026-05-24T10:45:00Z
+- Scope:
+  - Added a repeatable source-label audit for `pipeline/RAW/hunt_unit_database/2025/pdf/regulation/field_regs 2025.pdf`.
+  - Confirmed the PDF is the `2025 Utah Big Game Field Regulations` source, with SHA-256 `05a87b5babd0a22af62c993bd3fe0ba106fb18f7029ed60fc75f6babe4dbdaa7`.
+  - Confirmed no Hunting Bible/hard-copy manifest entry currently labels this PDF as `2026 Field Regulations`.
+  - Confirmed the source is not exported to the Hunting Bible yet and is not present in the quality raw PDF inventory/promoted source manifests.
+  - Captured the pasted post-publication corrections and updates in `data_truth/regulations_truth/normalized/2025_big_game_field_regulations_post_publication_corrections.csv`.
+  - Kept the file as regulation/reference material only; no permit counts, draw odds, harvest features, quota fields, or prediction math were changed.
+- Validation:
+  - `python scripts/audit-big-game-field-regulations-2025.py` passed with `9` source-label checks and `0` blockers.
+  - `python -m pytest tests/utah/test_big_game_field_regulations_2025_source_audit.py -q` passed: `2`.
+  - `python -m compileall scripts\audit-big-game-field-regulations-2025.py tests\utah\test_big_game_field_regulations_2025_source_audit.py` passed.
+
+## 2025 Big Game Field Regulations Comprehensive Text Audit
+- Timestamp (UTC): 2026-05-24T09:35:00Z
+- Scope:
+  - Expanded the 2025 field-regulations audit into a page/line/token cross-check against `pipeline/RAW/hunt_unit_database/2025/pdf/regulation/field_regs 2025.pdf`.
+  - Materialized every extracted PDF text line with source file, PDF page, printed page, line number, and text.
+  - Materialized every extracted date, number/money, phone/code, and Utah Admin./Code citation token with page and line traceability.
+  - Added 50 pasted-data anchor checks covering contents, season dates, license/application fees, over-the-counter dates, youth elk updates, CWD/reporting rules, weapon restrictions, special restrictions, donation/Red Butte removals, antlerless/CWMU sections, and definitions.
+  - Confirmed the PDF is the 2025 field-regulations source only and remains regulation/reference material, not draw odds, harvest feature, quota, prediction, or 2026 field-regulations input.
+  - No raw PDF, website feed, permit counts, draw odds, harvest features, quota fields, or prediction math were changed.
+- Outputs:
+  - `data_truth/regulations_truth/normalized/2025_big_game_field_regulations_text_lines.csv`
+  - `data_truth/regulations_truth/normalized/2025_big_game_field_regulations_number_tokens.csv`
+  - `data_truth/regulations_truth/normalized/2025_big_game_field_regulations_expected_text_checks.csv`
+  - `processed_data/2025_big_game_field_regulations_source_label_audit.json`
+  - `processed_data/2025_big_game_field_regulations_source_label_audit.md`
+- Key results:
+  - PDF pages: `68`.
+  - Extracted text lines: `3723`.
+  - Extracted number/date/citation tokens: `1483`.
+  - Token type counts: `1217` number/money, `141` code citation, `125` date.
+  - Pasted-data anchor checks: `50`.
+  - Pasted-data anchor failures: `0`.
+  - Audit blockers: `0`.
+- Validation:
+  - `python scripts\audit-big-game-field-regulations-2025.py` passed.
+  - `python -m pytest tests\utah\test_big_game_field_regulations_2025_source_audit.py -q` passed: `3`.
+  - `python -m compileall scripts\audit-big-game-field-regulations-2025.py tests\utah\test_big_game_field_regulations_2025_source_audit.py` passed.
+
+## 2026 Big Game Hunt Code Reconciliation
+- Timestamp (UTC): 2026-05-24T09:55:00Z
+- Scope:
+  - Added a repeatable hunt-code reconciliation that starts from the corrected 2026 Big Game Application Guidebook hunt table and checks every guidebook code against the core source/database/runtime reference surfaces.
+  - Required surfaces checked: `DATABASE.csv`, `hunt_master_enriched.csv`, `hunt_unit_reference_linked.csv`, `point_ladder_view.csv`, and `draw_reality_engine.csv`.
+  - Kept `draw_reality_engine_predictive_v2.csv` as an optional predictive coverage surface so source-code reconciliation is not confused with model-row coverage.
+  - No raw PDF, website feed, permit count, draw odds, harvest feature, quota field, or prediction math was changed.
+- Outputs:
+  - `processed_data/2026_big_game_hunt_code_reconciliation.csv`
+  - `processed_data/2026_big_game_hunt_code_reconciliation_summary.json`
+  - `processed_data/2026_big_game_hunt_code_reconciliation.md`
+- Key results:
+  - Corrected guidebook hunt codes checked: `728`.
+  - Codes present in all required surfaces: `728`.
+  - Required-surface blockers: `0`.
+  - Missing by required surface: `0` for every required surface.
+  - Optional predictive coverage notes: `44` codes absent from `draw_reality_engine_predictive_v2.csv`.
+  - Extra DATABASE codes not printed in the big-game application hunt tables: `683`, expected because DATABASE also carries antlerless and broader active reference rows.
+- Validation:
+  - `python scripts\reconcile-big-game-hunt-codes-2026.py` passed.
+  - `python -m pytest tests\utah\test_big_game_application_guidebook_database_audit.py tests\utah\test_big_game_hunt_code_reconciliation.py -q` passed: `4`.
+  - `python -m compileall scripts\reconcile-big-game-hunt-codes-2026.py tests\utah\test_big_game_hunt_code_reconciliation.py` passed.
+
+## 2026 Big Game Predictive Guidebook Promotion And Bear/Cougar/Furbearer Audit
+- Timestamp (UTC): 2026-05-24T09:57:00Z
+- Scope:
+  - Promoted the 44 corrected 2026 Big Game Application Guidebook hunt codes that were absent from `processed_data/draw_reality_engine_predictive_v2.csv`.
+  - Added those rows as `GUIDEBOOK_TRUTH_REFERENCE` records only; hunt-code, permit-reference, season, weapon, and source lineage fields were populated, while draw odds remain explicitly unmodeled.
+  - Materialized the promotion manifest and summary at `processed_data/2026_big_game_predictive_v2_guidebook_promotion.csv` and `.json`.
+  - Refreshed the 2026 big-game hunt-code reconciliation; all 728 corrected guidebook codes now pass the optional predictive v2 surface check.
+  - Added a full truth-source audit for `pipeline/RAW/hunt_unit_database/2026/pdf/regulations/2026 Bear Cougar Furbearer Guidebook.pdf`.
+  - Materialized page/line text, number/date/code tokens, 55 pasted-data anchor checks, and 99 black-bear hunt-code rows from the Bear/Cougar/Furbearer guidebook.
+  - Confirmed all 99 Bear guidebook `BR` hunt codes are present in both `DATABASE.csv` and `draw_reality_engine_predictive_v2.csv`.
+  - No raw PDFs, website feeds, harvest features, or prediction probability math were changed.
+- Outputs:
+  - `processed_data/2026_big_game_predictive_v2_guidebook_promotion.csv`
+  - `processed_data/2026_big_game_predictive_v2_guidebook_promotion_summary.json`
+  - `data_truth/regulations_truth/normalized/2026_bear_cougar_furbearer_guidebook_text_lines.csv`
+  - `data_truth/regulations_truth/normalized/2026_bear_cougar_furbearer_guidebook_number_tokens.csv`
+  - `data_truth/regulations_truth/normalized/2026_bear_cougar_furbearer_guidebook_expected_text_checks.csv`
+  - `data_truth/regulations_truth/normalized/2026_bear_cougar_furbearer_guidebook_bear_hunt_tables.csv`
+  - `processed_data/2026_bear_cougar_furbearer_guidebook_audit.json`
+  - `processed_data/2026_bear_cougar_furbearer_guidebook_audit.md`
+- Key results:
+  - Promoted guidebook truth-reference hunt codes into predictive v2: `44`.
+  - Still-missing corrected 2026 big-game guidebook codes in predictive v2: `0`.
+  - Bear/Cougar/Furbearer PDF pages: `88`.
+  - Extracted Bear/Cougar/Furbearer text lines: `3501`.
+  - Extracted Bear/Cougar/Furbearer number/date/code tokens: `2506`.
+  - Bear/Cougar/Furbearer pasted-data anchor checks: `55`.
+  - Bear/Cougar/Furbearer anchor failures: `0`.
+  - Bear guidebook hunt codes checked: `99`.
+  - Bear guidebook hunt codes missing DATABASE: `0`.
+  - Bear guidebook hunt codes missing predictive v2: `0`.
+- Validation:
+  - `python scripts\promote-guidebook-codes-to-predictive-v2-2026.py` passed.
+  - `python scripts\reconcile-big-game-hunt-codes-2026.py` passed with optional predictive missing count `0`.
+  - `python scripts\audit-bear-cougar-furbearer-guidebook-2026.py` passed with `0` blockers.
+  - `python -m pytest tests\utah\test_big_game_predictive_guidebook_promotion.py tests\utah\test_big_game_hunt_code_reconciliation.py tests\utah\test_bear_cougar_furbearer_guidebook_2026_audit.py -q` passed: `5`.
+  - `python -m compileall scripts\promote-guidebook-codes-to-predictive-v2-2026.py scripts\audit-bear-cougar-furbearer-guidebook-2026.py tests\utah\test_big_game_predictive_guidebook_promotion.py tests\utah\test_big_game_hunt_code_reconciliation.py tests\utah\test_bear_cougar_furbearer_guidebook_2026_audit.py` passed.
+
+## 2026 Turkey Guidebook Truth-Source Audit
+- Timestamp (UTC): 2026-05-24T10:23:00Z
+- Scope:
+  - Added a repeatable truth-source audit for `pipeline/RAW/hunt_unit_database/2026/pdf/regulations/2026 Turkey.pdf`, titled `2025-26 Utah Upland Game and Turkey Guidebook`.
+  - Materialized extracted PDF text lines, number/date/code tokens, expected pasted-data anchor checks, and turkey hunt-code/name reconciliation outputs.
+  - Confirmed the guidebook's printed turkey hunt codes `TK1003`, `TK1004`, `TK1005`, `TK1006`, `TK1007`, `TK1018`, and `TK1021` all resolve to database hunt names.
+  - Confirmed guidebook labels such as `Central (TK1003)` resolve to normalized database names such as `Central Area`.
+  - Confirmed `TKY` is a bonus-point application code, not a `DATABASE.csv` hunt row, and should not be treated as a missing hunt name.
+  - Confirmed all 7 printed turkey hunt codes are also present in `draw_reality_engine_predictive_v2.csv`.
+  - No raw PDFs, website feeds, permit values, harvest features, or prediction probability math were changed.
+- Outputs:
+  - `data_truth/regulations_truth/normalized/2026_turkey_guidebook_text_lines.csv`
+  - `data_truth/regulations_truth/normalized/2026_turkey_guidebook_number_tokens.csv`
+  - `data_truth/regulations_truth/normalized/2026_turkey_guidebook_expected_text_checks.csv`
+  - `data_truth/regulations_truth/normalized/2026_turkey_guidebook_hunt_code_name_reconciliation.csv`
+  - `processed_data/2026_turkey_guidebook_audit.json`
+  - `processed_data/2026_turkey_guidebook_audit.md`
+- Key results:
+  - PDF pages: `45`.
+  - Extracted text lines: `2521`.
+  - Extracted number/date/code tokens: `1968`.
+  - Pasted-data anchor checks: `53`.
+  - Anchor failures: `0`.
+  - Printed turkey hunt codes checked: `7`.
+  - Database name-resolved printed hunt codes: `7`.
+  - Hunt-code reconciliation failures: `0`.
+  - Bonus-point code handled separately: `TKY`.
+  - Extra database turkey codes not printed in the guidebook code list: `11`.
+- Validation:
+  - `python scripts\audit-turkey-guidebook-2026.py` passed with `0` blockers.
+  - `python -m pytest tests\utah\test_turkey_guidebook_2026_audit.py -q` passed: `3`.
+  - `python -m compileall scripts\audit-turkey-guidebook-2026.py tests\utah\test_turkey_guidebook_2026_audit.py` passed.
+
+## 2026 Bear Hunt-Code Resolution
+- Timestamp (UTC): 2026-05-24T10:44:00Z
+- Scope:
+  - Expanded the 2026 Bear/Cougar/Furbearer guidebook audit to resolve the full black-bear `BR` code universe across current and historical surfaces.
+  - Materialized `data_truth/regulations_truth/normalized/2026_bear_cougar_furbearer_guidebook_bear_hunt_code_reconciliation.csv`.
+  - Classified all `BR` codes as guidebook-printed current hunt-table codes, current database reference codes not printed in the hunt tables, or historical-only draw-reality codes.
+  - Confirmed current `DATABASE.csv`, `hunt_master_enriched.csv`, `point_ladder_view.csv`, and `draw_reality_engine_predictive_v2.csv` each carry `106` current bear codes.
+  - Resolved the 7 current database reference codes not printed in the guidebook hunt tables: `BR1000`, `BR1001`, `BR1007`, `BR1018`, `BR7237`, `BR7307`, and `BR7324`.
+  - Identified 14 historical-only bear codes present in `draw_reality_engine.csv` but not current 2026 `DATABASE.csv`: `BR7008`, `BR7019`, `BR7108`, `BR7208`, `BR7209`, `BR7226`, `BR7227`, `BR7230`, `BR7231`, `BR7232`, `BR7233`, `BR7234`, `BR7235`, and `BR7236`.
+  - No raw PDFs, website feeds, permit values, harvest features, or prediction probability math were changed.
+- Key results:
+  - Guidebook-printed current bear hunt-table codes: `99`.
+  - Current database bear codes: `106`.
+  - Current predictive v2 bear codes: `106`.
+  - Current hunt-master bear codes: `106`.
+  - Current point-ladder bear codes: `106`.
+  - Historical draw-reality bear codes: `120`.
+  - Current database reference codes not printed in hunt tables: `7`.
+  - Historical-only draw-reality bear codes: `14`.
+  - Current bear-code reconciliation failures: `0`.
+  - Audit blockers: `0`.
+- Validation:
+  - `python scripts\audit-bear-cougar-furbearer-guidebook-2026.py` passed with `0` blockers.
+  - `python -m pytest tests\utah\test_bear_cougar_furbearer_guidebook_2026_audit.py -q` passed: `4`.
+  - `python -m compileall scripts\audit-bear-cougar-furbearer-guidebook-2026.py tests\utah\test_bear_cougar_furbearer_guidebook_2026_audit.py` passed.
+
+## 2026 Turkey Hunt-Code Resolution
+- Timestamp (UTC): 2026-05-24T11:10:00Z
+- Scope:
+  - Added a repeatable full Turkey code resolver using the 2024-25 Upland Game and Turkey Guidebook as prior-year context and the already-audited 2025-26 guidebook as current guidebook context.
+  - Materialized the 2024-25 guidebook text-line, token, expected-anchor, and hunt-code/name reconciliation truth-source outputs.
+  - Confirmed the 2024-25 guidebook prints the same seven real Turkey hunt codes as the 2025-26 guidebook: `TK1003`, `TK1004`, `TK1005`, `TK1006`, `TK1007`, `TK1018`, and `TK1021`.
+  - Confirmed `TKY` remains a bonus-point/application code and is not a missing `DATABASE.csv` hunt row.
+  - Resolved all 18 current `DATABASE.csv` Turkey codes across `hunt_master_enriched.csv`, `point_ladder_view.csv`, `draw_reality_engine.csv`, and `draw_reality_engine_predictive_v2.csv`.
+  - Promoted 10 current Turkey database-reference codes into predictive v2 as `TURKEY_GUIDEBOOK_REFERENCE` rows only: `TK1000`, `TK1001`, `TK1012`, `TK1013`, `TK1014`, `TK1015`, `TK1016`, `TK1019`, `TK1020`, and `TK1022`.
+  - Kept those promoted rows non-modeled with no draw odds or probability fields invented.
+  - No raw PDFs, website feeds, permit values, harvest features, or prediction probability math were changed.
+- Outputs:
+  - `data_truth/regulations_truth/normalized/2025_turkey_guidebook_text_lines.csv`
+  - `data_truth/regulations_truth/normalized/2025_turkey_guidebook_number_tokens.csv`
+  - `data_truth/regulations_truth/normalized/2025_turkey_guidebook_expected_text_checks.csv`
+  - `data_truth/regulations_truth/normalized/2025_turkey_guidebook_hunt_code_name_reconciliation.csv`
+  - `data_truth/regulations_truth/normalized/2026_turkey_full_hunt_code_reconciliation.csv`
+  - `processed_data/2025_turkey_guidebook_audit.json`
+  - `processed_data/2025_turkey_guidebook_audit.md`
+  - `processed_data/2026_turkey_full_hunt_code_reconciliation_summary.json`
+  - `processed_data/2026_turkey_full_hunt_code_reconciliation.md`
+  - `processed_data/2026_turkey_predictive_v2_reference_promotion.csv`
+  - `processed_data/2026_turkey_predictive_v2_reference_promotion_summary.json`
+- Key results:
+  - 2024-25 guidebook PDF pages: `63`.
+  - 2024-25 extracted text lines: `3431`.
+  - 2024-25 extracted number/date/code tokens: `2459`.
+  - 2024-25 pasted-data anchor checks: `35`.
+  - 2024-25 anchor failures: `0`.
+  - Current `DATABASE.csv` Turkey codes: `18`.
+  - 2025-26 guidebook-printed current Turkey hunt codes: `7`.
+  - Current database Turkey codes not printed in the 2025-26 guidebook code list: `11`.
+  - Current predictive v2 Turkey code coverage after reference promotion: `18`.
+  - Full Turkey reconciliation blockers: `0`.
+- Validation:
+  - `python scripts\resolve-turkey-hunt-codes-2026.py` passed with `0` blockers.
+  - `python -m pytest tests\utah\test_turkey_guidebook_2026_audit.py tests\utah\test_turkey_hunt_code_resolution_2026.py -q` passed: `7`.
+  - `python -m compileall scripts\resolve-turkey-hunt-codes-2026.py tests\utah\test_turkey_hunt_code_resolution_2026.py` passed.
+
+## 2026 Hunt-Code Family Gap Scan
+- Timestamp (UTC): 2026-05-24T13:50:00Z
+- Scope:
+  - Added a read-only, repeatable family-level hunt-code gap scan across current 2026 `DATABASE.csv`, `hunt_master_enriched.csv`, `point_ladder_view.csv`, `draw_reality_engine.csv`, and `draw_reality_engine_predictive_v2.csv`.
+  - Grouped current hunt-code coverage by code prefix/species family and ranked families by current database codes missing from predictive v2.
+  - Confirmed no current `DATABASE.csv` codes are missing from the required reference surfaces `hunt_master_enriched.csv`, `point_ladder_view.csv`, or `draw_reality_engine.csv`.
+  - Kept the scan audit-only; no reference rows were promoted and no prediction math was changed.
+- Outputs:
+  - `processed_data/2026_hunt_code_family_gap_scan.csv`
+  - `processed_data/2026_hunt_code_family_gap_scan_summary.json`
+  - `processed_data/2026_hunt_code_family_gap_scan.md`
+- Key results:
+  - Current `DATABASE.csv` hunt codes: `1411`.
+  - Families scanned: `21`.
+  - Fully resolved families: `6` (`BR`, `GO`, `MA`, `MB`, `PB`, `TK`).
+  - Families with predictive v2 gaps: `15`.
+  - Current database codes missing predictive v2: `352`.
+  - Required-surface missing current database codes: `0`.
+  - Largest predictive v2 gaps: `EL` limited-entry elk reference (`126`), `LO` limited-entry deer reference (`113`), and `EA` antlerless elk (`51`).
+- Validation:
+  - `python scripts\scan-2026-hunt-code-family-gaps.py` passed.
+  - `python -m pytest tests\utah\test_hunt_code_family_gap_scan_2026.py -q` passed: `3`.
+  - `python -m compileall scripts\scan-2026-hunt-code-family-gaps.py tests\utah\test_hunt_code_family_gap_scan_2026.py` passed.
+
+## 2026 Antlerless Hunt-Code Resolution
+- Timestamp (UTC): 2026-05-24T14:04:05Z
+- Scope:
+  - Added a repeatable antlerless hunt-code resolver using `pipeline/RAW/hunt_unit_database/2025/pdf/draw_odds/2024 antlerless draw results.pdf` as prior draw-results context.
+  - Materialized 2024 antlerless draw-results text lines and parsed hunt rows under `data_truth/draw_results_truth/extracted/`.
+  - Reconciled the current 2026 `DA`, `EA`, `PD`, and `RE` code families across `DATABASE.csv`, `hunt_master_enriched.csv`, `point_ladder_view.csv`, `draw_reality_engine.csv`, and `draw_reality_engine_predictive_v2.csv`.
+  - Promoted 62 missing antlerless current database codes into predictive v2 as non-modeled reference rows only.
+  - Kept promoted rows explicitly marked with `algorithm_status = ANTLERLESS_REFERENCE`, `modeled_by_engine = False`, `probability_model = NONE`, and `display_odds_text = Antlerless reference only; odds not modeled`.
+  - Refreshed the 2026 family gap scan after antlerless resolution.
+  - No raw PDFs, website feeds, permit values, harvest features, quota fields, or prediction probability math were changed.
+- Outputs:
+  - `scripts/resolve-antlerless-hunt-codes-2026.py`
+  - `data_truth/draw_results_truth/extracted/2024_antlerless_draw_results_text_lines.csv`
+  - `data_truth/draw_results_truth/extracted/2024_antlerless_draw_results_hunt_rows.csv`
+  - `data_truth/draw_results_truth/validation/2026_antlerless_hunt_code_reconciliation.csv`
+  - `processed_data/2024_antlerless_draw_results_audit.json`
+  - `processed_data/2024_antlerless_draw_results_audit.md`
+  - `processed_data/2026_antlerless_hunt_code_reconciliation_summary.json`
+  - `processed_data/2026_antlerless_hunt_code_reconciliation.md`
+  - `processed_data/2026_antlerless_predictive_v2_reference_promotion.csv`
+  - `processed_data/2026_antlerless_predictive_v2_reference_promotion_summary.json`
+- Key results:
+  - Source PDF pages: `198`.
+  - Source SHA-256: `21ea12abd24abb29b074520eccae1ab1b689d6e969d622803f220c0ca4664789`.
+  - Extracted text lines: `5346`.
+  - Parsed draw-result hunt rows: `198`.
+  - Parsed draw-result prefix counts: `DA 21`, `EA 158`, `MA 2`, `PD 16`, `RE 1`.
+  - Current target database codes checked: `265`.
+  - Current target database codes present in 2024 draw results: `182`.
+  - Promoted reference hunt-code count: `62` (`EA 51`, `PD 8`, `DA 2`, `RE 1`).
+  - Antlerless reconciliation failures: `0`.
+  - Audit blockers: `0`.
+  - Updated gap scan current database codes missing predictive v2: `290`, down from `352`.
+  - Updated resolved families: `10` (`BR`, `DA`, `EA`, `GO`, `MA`, `MB`, `PB`, `PD`, `RE`, `TK`).
+  - Remaining largest predictive gaps: `EL` (`126`), `LO` (`113`), and `DB` (`15`).
+- Validation:
+  - `python scripts\resolve-antlerless-hunt-codes-2026.py` passed.
+  - `python scripts\scan-2026-hunt-code-family-gaps.py` passed.
+  - `python -m pytest tests\utah\test_antlerless_hunt_code_resolution_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py -q` passed: `6`.
+  - `python -m compileall scripts\resolve-antlerless-hunt-codes-2026.py scripts\scan-2026-hunt-code-family-gaps.py tests\utah\test_antlerless_hunt_code_resolution_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py` passed.
+
+## 2026 Deer Hunt-Code Resolution
+- Timestamp (UTC): 2026-05-24T21:51:10Z
+- Scope:
+  - Added a repeatable deer hunt-code resolver using `pipeline/RAW/hunt_unit_database/2024/pdf/draw_odds/2023 DEER ODDS.pdf` as prior draw-results context.
+  - Cross-checked the PDF hunt headers against `pipeline/RAW/hunt_unit_database/2024/csv/draw_results_2023_for_2024_long.csv`.
+  - Materialized 2023 Deer Odds text lines and hunt-header rows under `data_truth/draw_results_truth/extracted/`.
+  - Reconciled current 2026 `DB` and `LO` code families across `DATABASE.csv`, `hunt_master_enriched.csv`, `point_ladder_view.csv`, `draw_reality_engine.csv`, and `draw_reality_engine_predictive_v2.csv`.
+  - Promoted 128 missing deer current database codes into predictive v2 as non-modeled reference rows only.
+  - Kept promoted rows explicitly marked with `algorithm_status = DEER_REFERENCE`, `modeled_by_engine = False`, `probability_model = NONE`, and `display_odds_text = Deer reference only; odds not modeled`.
+  - Classified the remaining DB gaps as tribal or special-permit reference-only rows and the LO family as private-land reference-only rows.
+  - Refreshed the 2026 family gap scan after deer resolution.
+  - No raw PDFs, website feeds, permit values, harvest features, quota fields, or prediction probability math were changed.
+- Outputs:
+  - `scripts/resolve-deer-hunt-codes-2026.py`
+  - `data_truth/draw_results_truth/extracted/2023_deer_odds_text_lines.csv`
+  - `data_truth/draw_results_truth/extracted/2023_deer_odds_hunt_headers.csv`
+  - `data_truth/draw_results_truth/validation/2026_deer_hunt_code_reconciliation.csv`
+  - `processed_data/2023_deer_odds_audit.json`
+  - `processed_data/2023_deer_odds_audit.md`
+  - `processed_data/2026_deer_hunt_code_reconciliation_summary.json`
+  - `processed_data/2026_deer_hunt_code_reconciliation.md`
+  - `processed_data/2026_deer_predictive_v2_reference_promotion.csv`
+  - `processed_data/2026_deer_predictive_v2_reference_promotion_summary.json`
+- Key results:
+  - Source PDF pages: `190`.
+  - Source SHA-256: `4188e4c1b712ec1c4973b735b6cb06e489680f15a1b2011857046b49707efabf`.
+  - Extracted text lines: `7220`.
+  - Parsed DB hunt headers: `189`.
+  - Long CSV DB draw-result rows cross-checked: `11718`.
+  - PDF header codes match long CSV DB codes: `true`.
+  - Current target database codes checked: `458`.
+  - Current database codes present in 2023 Deer Odds: `172`.
+  - Promoted reference hunt-code count: `128` (`DB 15`, `LO 113`).
+  - Deer reconciliation failures: `0`.
+  - Audit blockers: `0`.
+  - Updated gap scan current database codes missing predictive v2: `162`, down from `290`.
+  - Updated resolved families: `12` (`BR`, `DA`, `DB`, `EA`, `GO`, `LO`, `MA`, `MB`, `PB`, `PD`, `RE`, `TK`).
+  - Remaining largest predictive gaps: `EL` (`126`), `EB` (`10`), and `DS` (`6`).
+- Validation:
+  - `python scripts\resolve-deer-hunt-codes-2026.py` passed.
+  - `python scripts\scan-2026-hunt-code-family-gaps.py` passed.
+  - `python -m pytest tests\utah\test_deer_hunt_code_resolution_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py -q` passed: `6`.
+  - `python -m compileall scripts\resolve-deer-hunt-codes-2026.py scripts\scan-2026-hunt-code-family-gaps.py tests\utah\test_deer_hunt_code_resolution_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py` passed.
+
+## 2023 Big Game Field Regulations Source Audit
+- Timestamp (UTC): 2026-05-24T21:59:22Z
+- Scope:
+  - Added a repeatable source audit for `pipeline/RAW/hunt_unit_database/2023/pdf/regulation/2023_field_regs.pdf`.
+  - Locked the file identity as `2023 Utah Big Game Field Regulations` with SHA-256 `c68a0ef12e09e810449e2a5f569bcf445709249c9354036bc1ef17086477284f`.
+  - Materialized 2023 field-regulations text lines, number/date/citation tokens, and pasted-text anchor checks under `data_truth/regulations_truth/normalized/`.
+  - Classified the source as `REGULATION_REFERENCE_ONLY` with guardrail `DO_NOT_USE_AS_DRAW_ODDS_HARVEST_FEATURE_OR_2026_QUOTA_INPUT`.
+  - Confirmed this source did not promote draw rows, prediction rows, harvest features, permit quotas, or website-facing files.
+- Outputs:
+  - `scripts/audit-big-game-field-regulations-2023.py`
+  - `tests/utah/test_big_game_field_regulations_2023_source_audit.py`
+  - `data_truth/regulations_truth/normalized/2023_big_game_field_regulations_text_lines.csv`
+  - `data_truth/regulations_truth/normalized/2023_big_game_field_regulations_number_tokens.csv`
+  - `data_truth/regulations_truth/normalized/2023_big_game_field_regulations_expected_text_checks.csv`
+  - `processed_data/2023_big_game_field_regulations_source_audit.json`
+  - `processed_data/2023_big_game_field_regulations_source_audit.md`
+- Key results:
+  - Source PDF pages: `72`.
+  - Source file size: `5,784,679` bytes.
+  - Extracted text lines: `4014`.
+  - Extracted number/date/citation tokens: `1582` (`number_or_money 1286`, `code_citation 191`, `date 105`).
+  - Pasted-text checks: `69`.
+  - Pasted-text failures: `0`.
+  - Audit blockers: `0`.
+  - Database reconciliation effect: `NO_DRAW_OR_PREDICTION_ROWS_PROMOTED`.
+- Validation:
+  - `python scripts\audit-big-game-field-regulations-2023.py` passed.
+  - `python -m pytest tests\utah\test_big_game_field_regulations_2023_source_audit.py -q` passed: `2`.
+  - `python -m compileall scripts\audit-big-game-field-regulations-2023.py tests\utah\test_big_game_field_regulations_2023_source_audit.py` passed.
+
+## 2023 Big Game Application Guidebook Source Audit
+- Timestamp (UTC): 2026-05-24T22:06:00Z
+- Scope:
+  - Added a repeatable source audit for `pipeline/RAW/hunt_unit_database/2023/pdf/regulation/2023_biggameapp.pdf`.
+  - Locked the file identity as the revised May `2023 Utah Big Game Application Guidebook` with SHA-256 `7357df71939b084d5e6807a1bc01670bb6f1c04369e550946b1363c57ed2082b`.
+  - Materialized 2023 application-guidebook text lines, number/date/citation tokens, pasted-text anchor checks, and hunt-table reference rows under `data_truth/regulations_truth/normalized/`.
+  - Classified the source as `APPLICATION_GUIDEBOOK_REFERENCE_ONLY` with guardrail `DO_NOT_USE_AS_DRAW_ODDS_HARVEST_FEATURE_OR_2026_QUOTA_INPUT`.
+  - Confirmed this source did not promote draw rows, prediction rows, harvest features, permit quotas, or website-facing files.
+- Outputs:
+  - `scripts/audit-big-game-application-guidebook-2023.py`
+  - `tests/utah/test_big_game_application_guidebook_2023_source_audit.py`
+  - `data_truth/regulations_truth/normalized/2023_big_game_application_guidebook_text_lines.csv`
+  - `data_truth/regulations_truth/normalized/2023_big_game_application_guidebook_number_tokens.csv`
+  - `data_truth/regulations_truth/normalized/2023_big_game_application_guidebook_expected_text_checks.csv`
+  - `data_truth/regulations_truth/normalized/2023_big_game_application_guidebook_hunt_tables.csv`
+  - `processed_data/2023_big_game_application_guidebook_source_audit.json`
+  - `processed_data/2023_big_game_application_guidebook_source_audit.md`
+- Key results:
+  - Source PDF pages: `80`.
+  - Source file size: `2,880,571` bytes.
+  - Extracted text lines: `3915`.
+  - Extracted number/date/citation tokens: `3422` (`number_or_money 2841`, `date 508`, `code_citation 73`).
+  - Hunt-table reference rows: `719`.
+  - Unique hunt codes: `719`.
+  - Hunt-code prefix counts: `DB 326`, `EB 212`, `PB 87`, `MB 30`, `BI 17`, `GO 17`, `DS 16`, `RS 14`.
+  - Pasted-text checks: `66`.
+  - Pasted-text failures: `0`.
+  - Audit blockers: `0`.
+  - Database reconciliation effect: `NO_DRAW_OR_PREDICTION_ROWS_PROMOTED`.
+- Validation:
+  - `python scripts\audit-big-game-application-guidebook-2023.py` passed.
+  - `python -m pytest tests\utah\test_big_game_application_guidebook_2023_source_audit.py -q` passed: `2`.
+  - `python -m compileall scripts\audit-big-game-application-guidebook-2023.py tests\utah\test_big_game_application_guidebook_2023_source_audit.py` passed.
+
+## Elk Bull Private-Land Hunt Planner Spreadsheet Export
+- Timestamp (UTC): 2026-05-25T00:22:44Z
+- Scope:
+  - Created a repeatable spreadsheet export for current Utah DWR Hunt Planner elk bull private-land-only reference rows.
+  - Included `126` `EL` limited-entry private-land-only bull elk rows and `5` Diamond Mtn Landowner Association `LO` rows.
+  - Preserved explicit `Non Res`, `Res`, and `Total` columns as blank because the source confirms no resident/nonresident/total permit allotment is published for these private-land-only hunts.
+  - Preserved source authority as `Utah DWR Hunt Planner`.
+  - Did not promote these rows as public draw odds, harvest features, prediction rows, or website-facing outputs.
+- Outputs:
+  - `scripts/export-elk-bull-private-lands-spreadsheet.mjs`
+  - `tests/utah/test_elk_bull_private_lands_spreadsheet.py`
+  - `processed_data/elk_bull_private_lands_hunt_planner_reference.csv`
+  - `processed_data/elk_bull_private_lands_hunt_planner_reference.xlsx`
+  - `processed_data/elk_bull_private_lands_hunt_planner_reference_report.json`
+- Key results:
+  - Output rows: `131`.
+  - `EL` rows: `126`.
+  - `LO` rows: `5`.
+  - Duplicate hunt codes: `0`.
+  - Required quota columns present: `Non Res`, `Res`, `Total`.
+  - Blank quota columns confirmed: `true`.
+  - Permit status: `NO_QUOTA_PUBLISHED`.
+  - Data status: `SOURCE_CONFIRMED_NO_QUOTA_PUBLISHED`.
+- Validation:
+  - `node scripts\export-elk-bull-private-lands-spreadsheet.mjs` passed.
+  - `python -m pytest tests\utah\test_elk_bull_private_lands_spreadsheet.py -q` passed: `3`.
+  - `python -m compileall tests\utah\test_elk_bull_private_lands_spreadsheet.py` passed.
+  - `node --check scripts\export-elk-bull-private-lands-spreadsheet.mjs` passed.
+
+## 2022-2027 Conservation Permit Vault And Trend Model
+- Timestamp (UTC): 2026-05-25T00:33:42Z
+- Scope:
+  - Vaulted the `2022-2024 Conservation Permits` source package under permit-overlay truth storage.
+  - Preserved the canonical source PDF and one extracted workbook copy with SHA-256 validation.
+  - Held the second extracted workbook copy as an exact SHA-256 duplicate instead of copying it twice.
+  - Built a deterministic cycle-to-cycle conservation permit trend model comparing `2022-2024` to `2025-2027`.
+  - Classified outputs as trend/reference only with guardrail `TREND_MODEL_ONLY_DO_NOT_USE_AS_DRAW_ODDS_OR_HARVEST_RESULTS`.
+  - Did not modify website-facing files, prediction outputs, harvest-result truth, draw-result truth, or materializer code.
+- Outputs:
+  - `scripts/vault-conservation-permits-2022-2024.py`
+  - `scripts/model-conservation-permit-trends-2022-2027.py`
+  - `tests/utah/test_conservation_permits_2022_2024_vault.py`
+  - `tests/utah/test_conservation_permit_trends_2022_2027.py`
+  - `data_truth/permit_overlay_truth/raw_sources/2022_2024_conservation_permits/`
+  - `data_truth/permit_overlay_truth/normalized/conservation_permit_cycle_rows_2022_2027.csv`
+  - `data_truth/permit_overlay_truth/normalized/conservation_permit_trends_by_species_2022_2027.csv`
+  - `data_truth/permit_overlay_truth/normalized/conservation_permit_trends_by_group_2022_2027.csv`
+  - `data_truth/permit_overlay_truth/normalized/conservation_permit_trends_2022_2027_summary.json`
+  - `processed_data/conservation_permit_trends_2022_2027.md`
+- Key results:
+  - 2022-2024 conservation permits: `318`.
+  - 2025-2027 conservation permits: `336`.
+  - Cycle change: `+18` permits.
+  - Percent change: `+5.66%`.
+  - Annual average changed from `106.0` to `112.0` permits/year.
+  - Largest species-family increases: Elk `+11`, Pronghorn `+9`, Black Bear `+3`.
+  - Largest species-family decreases: Bison `-2`, Rocky Mountain Bighorn Sheep `-2`, Cougar `-1`, Moose `-1`.
+  - Largest group increase: SFW `+37`.
+  - Largest group decreases: SCI `-16`, RMEF `-7`, UWSF `-7`.
+  - Vault validation status: `PASS`.
+  - Trend-model validation status: `PASS`.
+- Validation:
+  - `python scripts\vault-conservation-permits-2022-2024.py` passed.
+  - `python scripts\model-conservation-permit-trends-2022-2027.py` passed.
+  - `python -m pytest tests\utah\test_conservation_permits_2022_2024_vault.py tests\utah\test_conservation_permit_trends_2022_2027.py -q` passed: `8`.
+  - `python -m compileall scripts\vault-conservation-permits-2022-2024.py scripts\model-conservation-permit-trends-2022-2027.py tests\utah\test_conservation_permits_2022_2024_vault.py tests\utah\test_conservation_permit_trends_2022_2027.py` passed.
+
+## 2026 Pronghorn Buck Hunt-Code Resolution And Export
+- Timestamp (UTC): 2026-05-25T00:51:44Z
+- Scope:
+  - Created a repeatable pronghorn buck reference export from the current 2026 Utah DWR Hunt Planner canonical surface.
+  - Included `88` `PB` pronghorn buck rows and the six source-confirmed private-land-only `LP` rows supplied by the user: `LP5025`, `LP5031`, `LP5033`, `LP5046`, `LP5049`, and `LP5051`.
+  - Preserved published `Non Res`, `Res`, and `Total` quota values on public `PB` rows.
+  - Preserved blank `Non Res`, `Res`, and `Total` quota values on private-land-only `LP` rows because the source confirms no quota is published.
+  - Promoted the six `LP` rows into `draw_reality_engine_predictive_v2.csv` as non-modeled reference rows only.
+  - Kept promoted rows explicitly marked with `algorithm_status = PRONGHORN_PRIVATE_LAND_REFERENCE`, `modeled_by_engine = False`, `probability_model = NONE`, and `display_odds_text = Private-land pronghorn reference only; odds not modeled`.
+  - Refreshed the 2026 family gap scan after pronghorn resolution.
+  - No website feeds, harvest features, public draw quotas, or probability math were changed.
+- Outputs:
+  - `scripts/resolve-pronghorn-hunt-codes-2026.py`
+  - `scripts/export-pronghorn-buck-reference-spreadsheet.mjs`
+  - `tests/utah/test_pronghorn_private_land_resolution_2026.py`
+  - `processed_data/pronghorn_buck_limited_entry_reference_export.csv`
+  - `processed_data/pronghorn_buck_limited_entry_reference_export.xlsx`
+  - `processed_data/pronghorn_buck_limited_entry_reference_export_report.json`
+  - `processed_data/pronghorn_buck_limited_entry_reference_export_xlsx_report.json`
+  - `data_truth/draw_results_truth/validation/2026_pronghorn_hunt_code_reconciliation.csv`
+  - `processed_data/2026_pronghorn_hunt_code_reconciliation_summary.json`
+  - `processed_data/2026_pronghorn_hunt_code_reconciliation.md`
+  - `processed_data/2026_pronghorn_private_land_predictive_v2_reference_promotion.csv`
+  - `processed_data/2026_pronghorn_private_land_predictive_v2_reference_promotion_summary.json`
+- Key results:
+  - Current pronghorn buck rows checked: `94`.
+  - `PB` rows: `88`.
+  - `LP` rows: `6`.
+  - Newly promoted `LP` reference rows: `6`.
+  - `LP` quota leak count: `0`.
+  - Pronghorn reconciliation blockers: `0`.
+  - Updated gap scan current database codes missing predictive v2: `156`, down from `162`.
+  - Updated resolved families: `13` (`BR`, `DA`, `DB`, `EA`, `GO`, `LO`, `LP`, `MA`, `MB`, `PB`, `PD`, `RE`, `TK`).
+  - Remaining largest predictive gaps: `EL` (`126`), `EB` (`10`), and `DS` (`6`).
+- Validation:
+  - `python scripts\resolve-pronghorn-hunt-codes-2026.py` passed.
+  - `node scripts\export-pronghorn-buck-reference-spreadsheet.mjs` passed.
+  - `python scripts\scan-2026-hunt-code-family-gaps.py` passed.
+  - `python -m pytest tests\utah\test_pronghorn_private_land_resolution_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py -q` passed: `6`.
+  - `python -m compileall scripts\resolve-pronghorn-hunt-codes-2026.py tests\utah\test_pronghorn_private_land_resolution_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py` passed.
+  - `node --check scripts\export-pronghorn-buck-reference-spreadsheet.mjs` passed.
+
+## 2026 Elk Private-Land Hunt-Code Resolution
+- Timestamp (UTC): 2026-05-25T00:58:47Z
+- Scope:
+  - Added a repeatable resolver for current 2026 Utah DWR Hunt Planner `EL` private-land-only bull elk rows.
+  - Promoted all `126` `EL` rows into `draw_reality_engine_predictive_v2.csv` as non-modeled reference rows only.
+  - Kept promoted rows explicitly marked with `algorithm_status = ELK_PRIVATE_LAND_REFERENCE`, `modeled_by_engine = False`, `probability_model = NONE`, and `display_odds_text = Private-land elk reference only; odds not modeled`.
+  - Preserved blank `Non Res`, `Res`, and `Total` quota/allotment fields because the source confirms no quota is published for these private-land-only hunts.
+  - Recorded the five Diamond Mtn `LO0011`-`LO0015` elk rows as already exported elk private-land references but not part of the `EL` prefix gap.
+  - Refreshed the 2026 family gap scan after elk private-land resolution.
+  - No website feeds, harvest features, public `EB` quotas, or probability math were changed.
+- Outputs:
+  - `scripts/resolve-elk-private-land-hunt-codes-2026.py`
+  - `tests/utah/test_elk_private_land_resolution_2026.py`
+  - `data_truth/draw_results_truth/validation/2026_elk_private_land_hunt_code_reconciliation.csv`
+  - `processed_data/2026_elk_private_land_hunt_code_reconciliation_summary.json`
+  - `processed_data/2026_elk_private_land_hunt_code_reconciliation.md`
+  - `processed_data/2026_elk_private_land_predictive_v2_reference_promotion.csv`
+  - `processed_data/2026_elk_private_land_predictive_v2_reference_promotion_summary.json`
+- Key results:
+  - Current `EL` private-land bull elk rows checked: `126`.
+  - Newly promoted `EL` reference rows: `126`.
+  - `EL` quota leak count: `0`.
+  - Elk private-land reconciliation blockers: `0`.
+  - Updated gap scan current database codes missing predictive v2: `30`, down from `156`.
+  - Updated resolved families: `14` (`BR`, `DA`, `DB`, `EA`, `EL`, `GO`, `LO`, `LP`, `MA`, `MB`, `PB`, `PD`, `RE`, `TK`).
+  - Remaining largest predictive gaps: `EB` (`10`), `DS` (`6`), and `LD` (`6`).
+- Validation:
+  - `python scripts\resolve-elk-private-land-hunt-codes-2026.py` passed.
+  - `python scripts\scan-2026-hunt-code-family-gaps.py` passed.
+  - `python -m pytest tests\utah\test_elk_private_land_resolution_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py tests\utah\test_elk_bull_private_lands_spreadsheet.py -q` passed: `9`.
+  - `python -m compileall scripts\resolve-elk-private-land-hunt-codes-2026.py tests\utah\test_elk_private_land_resolution_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py` passed.
+
+## 2026 Elk Bull EB Reference Hunt-Code Resolution
+- Timestamp (UTC): 2026-05-25T01:20:24Z
+- Scope:
+  - Added a repeatable resolver for current 2026 Utah DWR Hunt Planner `EB` elk bull reference rows supplied from the current Hunt Planner surface.
+  - Reconciled `13` reference rows: `5` `TOTAL_ONLY` rows and `8` `NO_QUOTA_PUBLISHED` rows.
+  - Promoted the `10` missing `EB` rows into `draw_reality_engine_predictive_v2.csv` as non-modeled reference rows only.
+  - Kept promoted rows explicitly marked with `algorithm_status = ELK_BULL_REFERENCE`, `modeled_by_engine = False`, `probability_model = NONE`, and `display_odds_text = Elk bull reference only; odds not modeled`.
+  - Preserved canonical total-only values for `EB1012 = 500`, `EB3128 = 1`, and `EB3209 = 1`.
+  - Preserved blank quota/allotment fields on `NO_QUOTA_PUBLISHED` general-season rows, ignoring stale DATABASE season-length-looking totals.
+  - Created an elk bull reference spreadsheet export with explicit `Non Res`, `Res`, and `Total` columns.
+  - Refreshed the 2026 family gap scan after `EB` resolution.
+  - No website feeds, harvest features, public-client files, materializer code, or probability math were changed.
+- Outputs:
+  - `scripts/resolve-elk-bull-reference-hunt-codes-2026.py`
+  - `scripts/export-elk-bull-reference-spreadsheet.mjs`
+  - `tests/utah/test_elk_bull_reference_resolution_2026.py`
+  - `data_truth/draw_results_truth/validation/2026_elk_bull_reference_hunt_code_reconciliation.csv`
+  - `processed_data/2026_elk_bull_reference_hunt_code_reconciliation_summary.json`
+  - `processed_data/2026_elk_bull_reference_hunt_code_reconciliation.md`
+  - `processed_data/2026_elk_bull_reference_predictive_v2_reference_promotion.csv`
+  - `processed_data/2026_elk_bull_reference_predictive_v2_reference_promotion_summary.json`
+  - `processed_data/elk_bull_reference_hunt_planner_reference.csv`
+  - `processed_data/elk_bull_reference_hunt_planner_reference.xlsx`
+  - `processed_data/elk_bull_reference_hunt_planner_reference_report.json`
+- Key results:
+  - Current `EB` reference rows checked: `13`.
+  - Newly promoted `EB` reference rows: `10`.
+  - `TOTAL_ONLY` rows: `5` (`EB1000`, `EB1007`, `EB1012`, `EB3128`, `EB3209`).
+  - `NO_QUOTA_PUBLISHED` rows: `8`.
+  - Stale quota leaks: `0`.
+  - Reconciliation blockers: `0`.
+  - Updated gap scan current database codes missing predictive v2: `20`, down from `30`.
+  - Updated resolved families: `15` (`BR`, `DA`, `DB`, `EA`, `EB`, `EL`, `GO`, `LO`, `LP`, `MA`, `MB`, `PB`, `PD`, `RE`, `TK`).
+  - Remaining largest predictive gaps: `DS` (`6`), `LD` (`6`), and `RS` (`4`).
+- Validation:
+  - `python scripts\resolve-elk-bull-reference-hunt-codes-2026.py` passed.
+  - `node scripts\export-elk-bull-reference-spreadsheet.mjs` passed with bundled workspace Node runtime.
+  - `python scripts\scan-2026-hunt-code-family-gaps.py` passed.
+  - `python -m pytest tests\utah\test_elk_bull_reference_resolution_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py -q` passed: `7`.
+  - `python -m compileall scripts\resolve-elk-bull-reference-hunt-codes-2026.py tests\utah\test_elk_bull_reference_resolution_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py` passed.
+  - `node --check scripts\export-elk-bull-reference-spreadsheet.mjs` passed with bundled workspace Node runtime.
+
+## 2026 Private-Land Deer And Final Reference Hunt-Code Locks
+- Timestamp (UTC): 2026-05-25T02:23:00Z
+- Scope:
+  - Locked the current Utah DWR Hunt Planner private-land deer rows supplied by the user: `LD1001`, `LD1004`, `LD1006`, `LD1019`, `LD1023`, `LD1108`, `LO0008`, `LO0009`, and `LO0010`.
+  - Promoted the six missing `LD` rows into `draw_reality_engine_predictive_v2.csv` as non-modeled private-land deer reference rows only.
+  - Preserved the three existing Diamond Mtn `LO0008`-`LO0010` rows as non-modeled private-land deer references and fixed the deer resolver so reruns do not flatten those rows back into generic deer references.
+  - Locked the remaining current-database predictive gaps supplied by the user: `RS0001`, `RS1000`, `RS1001`, `RS1003`, `RS1006`, `BI6527`, `BI6538`, `EX1000`, and `CG9999`.
+  - Pulled Rocky Mountain bighorn conservation/statewide permit counts from `data_truth/permit_overlay_truth/normalized/conservation_permit_cycle_rows_2022_2027.csv` where available: `RS0001`, `RS1001`, `RS1003`, and `RS1006` each have `Res=1`, `Non Res=0`, `Total=1`.
+  - Preserved blank quota/allotment fields for source-confirmed no-quota reference rows: `RS1000`, `BI6527`, `BI6538`, `EX1000`, and `CG9999`.
+  - Verified that the six private-land pronghorn `LP` rows are already resolved in the current predictive surface and did not duplicate them.
+  - Refreshed the 2026 family gap scan after the locks.
+  - No website feeds, `public_client_engine.csv`, materializer code, harvest features, or probability math were changed.
+- Outputs:
+  - `scripts/lock-private-land-deer-hunt-codes-2026.py`
+  - `scripts/lock-final-reference-hunt-codes-2026.py`
+  - `tests/utah/test_private_land_deer_code_lock_2026.py`
+  - `tests/utah/test_final_reference_hunt_code_lock_2026.py`
+  - `data_truth/permit_overlay_truth/normalized/private_land_deer_hunt_code_lock_2026.csv`
+  - `data_truth/permit_overlay_truth/normalized/final_reference_hunt_code_lock_2026.csv`
+  - `processed_data/private_land_deer_hunt_code_lock_2026_summary.json`
+  - `processed_data/final_reference_hunt_code_lock_2026_summary.json`
+  - `processed_data/private_land_deer_hunt_code_lock_2026.md`
+  - `processed_data/final_reference_hunt_code_lock_2026.md`
+  - `processed_data/private_land_deer_hunt_code_lock_2026_runtime_updates.csv`
+  - `processed_data/final_reference_hunt_code_lock_2026_runtime_updates.csv`
+- Key results:
+  - Private-land deer locked rows: `9`.
+  - New `LD` predictive reference rows: `6`.
+  - Final reference locked rows: `9`.
+  - Final reference `FULL_SPLIT` rows: `4`.
+  - Final reference `NO_QUOTA_PUBLISHED` rows: `5`.
+  - Updated gap scan current database codes missing predictive v2: `0`, down from `8`.
+  - Updated resolved families: `21`.
+  - Predictive gap families remaining: `0`.
+  - Required-surface blocker families remaining: `0`.
+  - Follow-up needed: build an explicit current-code-to-historical-code crosswalk for changed code families instead of treating 2023 guidebook codes as identical to current Hunt Planner codes.
+- Validation:
+  - `python scripts\lock-private-land-deer-hunt-codes-2026.py` passed.
+  - `python scripts\lock-final-reference-hunt-codes-2026.py` passed.
+  - `python scripts\scan-2026-hunt-code-family-gaps.py` passed.
+  - `python -m pytest tests\utah\test_private_land_deer_code_lock_2026.py tests\utah\test_final_reference_hunt_code_lock_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py tests\utah\test_deer_hunt_code_resolution_2026.py tests\utah\test_elk_bull_reference_resolution_2026.py tests\utah\test_elk_private_land_resolution_2026.py tests\utah\test_desert_bighorn_conservation_code_lock_2026.py tests\utah\test_conservation_permit_code_lock_2026.py -q` passed: `29`.
+  - `python -m py_compile scripts\lock-private-land-deer-hunt-codes-2026.py scripts\lock-final-reference-hunt-codes-2026.py scripts\resolve-deer-hunt-codes-2026.py` passed.
+
+## 2026 Current-To-Historical Hunt-Code Crosswalk Truth
+- Timestamp (UTC): 2026-05-25T03:10:26Z
+- Scope:
+  - Promoted the older backcheck/crosswalk evidence into an explicit crosswalk truth artifact for changed/current reference hunt-code families.
+  - Used `pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv` as the current-code authority and crosschecked every promoted current code against it.
+  - Included all current `LD`, `LP`, and `EL` codes; the user-supplied `LO0008`-`LO0015` private-land/landowner association codes; and the locked conservation/reference codes for `DS`, `EA`, `EB`, `RS`, `BI`, `EX`, and `CG`.
+  - Preserved current Hunt Planner codes as current truth and stored historical candidates separately so 2023 guidebook/public codes are not silently treated as identical to current private-land or conservation codes.
+  - No website feeds, `public_client_engine.csv`, materializer code, harvest features, probability math, or runtime prediction surfaces were changed.
+- Outputs:
+  - `scripts/build-current-historical-hunt-code-crosswalk-2026.py`
+  - `tests/utah/test_current_historical_hunt_code_crosswalk_2026.py`
+  - `data_truth/crosswalk_truth/normalized/current_to_historical_hunt_code_crosswalk_2026.csv`
+  - `data_truth/crosswalk_truth/validation/current_to_historical_hunt_code_crosswalk_2026_summary.json`
+  - `processed_data/current_to_historical_hunt_code_crosswalk_2026.csv`
+  - `processed_data/current_to_historical_hunt_code_crosswalk_2026.md`
+- Key results:
+  - Crosswalk target rows: `169`.
+  - `DATABASE.csv` missing current-code rows: `0`.
+  - Duplicate current-code rows: `0`.
+  - Blockers: `0`.
+  - Prefix counts: `EL=126`, `LD=6`, `LP=6`, `LO=8`, `DS=7`, `EA=5`, `RS=5`, `BI=2`, `EB=2`, `EX=1`, `CG=1`.
+  - Status counts: `PROMOTED_PREFIX_SWAP_CANDIDATE=138`, `PROMOTED_EXACT_HISTORY=19`, `PROMOTED_PINNED_CANDIDATE=8`, `CURRENT_REFERENCE_ONLY_NEEDS_REVIEW=4`.
+  - Spot checks: `LD1001 -> DB1001`, `LP5025 -> PB5025`, `EL3000 -> EB3000`, `EL3210 -> EB3210`, `RS1001 -> RS6701`, `DS1004 -> DS6608`, `BI6527 -> BI6527`, while `EX1000` and `CG9999` remain current-reference-only.
+- Validation:
+  - `python scripts\build-current-historical-hunt-code-crosswalk-2026.py` passed.
+  - `python -m pytest tests\utah\test_current_historical_hunt_code_crosswalk_2026.py -q` passed: `3`.
+  - `python -m pytest tests\utah\test_current_historical_hunt_code_crosswalk_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py tests\utah\test_private_land_deer_code_lock_2026.py tests\utah\test_pronghorn_private_land_resolution_2026.py tests\utah\test_elk_private_land_resolution_2026.py tests\utah\test_conservation_permit_code_lock_2026.py tests\utah\test_desert_bighorn_conservation_code_lock_2026.py tests\utah\test_final_reference_hunt_code_lock_2026.py -q` passed: `28`.
+  - `python -m py_compile scripts\build-current-historical-hunt-code-crosswalk-2026.py` passed.
+
+## Research Library Mapping Law
+- Timestamp (UTC): 2026-05-25T06:05:00Z
+- Scope:
+  - Added an explicit mapping-law section to `AGENTS.MD` so future research-library documents and rows must carry reviewed `hunt_code` and `boundary_id` fields plus mapping-status and candidate fields.
+  - Reinforced that candidate/fuzzy/current-to-historical evidence must not be treated as promoted truth until reviewed.
+  - The executable research-library master build and validation artifacts were created in the sibling `HUNT-BUILDER` workspace where the library catalog currently lives.
+- Validation:
+  - Confirmed `AGENTS.MD` now contains the required research-library mapping contract.
+
+## Research Library Feeder Source Law
+- Timestamp (UTC): 2026-05-25T06:35:00Z
+- Scope:
+  - Extended `AGENTS.MD` so `DATABASE.csv` is explicitly treated as the canonical current hunt-code and boundary-id source unless replaced by a later reviewed canonical database.
+  - Added the rule that feeder/reference files such as `hunt_master_enriched.csv`, `point_ladder_view.csv`, canonical JSON, and boundary GeoJSON must be registered as source rows with hashes before supporting alignment work.
+  - The executable source registry update was completed in the sibling `HUNT-BUILDER` workspace where the research library master is built.
+- Validation:
+  - Confirmed `AGENTS.MD` now contains the feeder/source registration rule.
+
+## 2025 Permit Promotion Guard
+- Timestamp (UTC): 2026-05-25T07:35:00Z
+- Scope:
+  - Extended `AGENTS.MD` so direct Utah DWR Hunt Planner CSV-folder files are explicitly source evidence only until a reviewed promotion step identifies source dates/year context.
+  - Added the guardrail that 2025 permit values must not be promoted into 2026 available allotment fields unless every imported source used in that promotion has reviewed source-date context.
+  - The executable source registry update was completed in the sibling `HUNT-BUILDER` workspace where the research library master is built.
+- Validation:
+  - Confirmed `AGENTS.MD` now contains the direct CSV source-evidence and 2025-to-2026 promotion guardrails.
+
+## Canonical DATABASE Numeric Cell Protection
+- Timestamp (UTC): 2026-05-25T08:15:00Z
+- Scope:
+  - Extended `AGENTS.MD` so populated numeric permit cells in canonical `DATABASE.csv` are explicitly treated as direct Utah DWR Hunt Planner truth.
+  - Added the rule that populated numeric permit cells in canonical `DATABASE.csv` must not be changed or overwritten by comparison files, inferred values, draw reports, RAC files, audit outputs, or rebuilt library/master documents.
+  - The executable permit deep-dive audit was completed in the sibling `HUNT-BUILDER` workspace where `hunt_master_canonical_2026_built.csv` and the direct CSV folder live.
+- Validation:
+  - Confirmed `AGENTS.MD` now contains the canonical numeric-cell protection rule.
+
+## Canonical DATABASE 2026 Authority Clarification
+- Timestamp (UTC): 2026-05-25T08:50:00Z
+- Scope:
+  - Tightened the canonical `DATABASE.csv` numeric-cell protection rule.
+  - Clarified that populated numeric `2026` permit/allotment cells are the direct Utah DWR Hunt Planner truth source.
+  - Clarified that populated `2025` or older permit fields with reviewed source lineage are canonical historical source truth, not soft evidence.
+  - Clarified that `permits_2025` is the full populated 2025 historical permit universe in `DATABASE.csv`, while `permits_2025_draw` is a narrower bonus-point draw-results subset and must not be described as the full 2025 draw/permit universe.
+  - The executable audit and overlay-plan artifacts were regenerated in the sibling `HUNT-BUILDER` workspace.
+- Validation:
+  - Confirmed `AGENTS.MD` now contains the corrected 2026 authority and historical-field lineage rule.

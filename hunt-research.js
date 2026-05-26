@@ -1151,6 +1151,23 @@
     }).join('')}</div>`;
   }
 
+  function getGuaranteedLinePoint(row) {
+    const summaryGuaranteedPoint = num(row?.guaranteed_at_2026);
+    if (summaryGuaranteedPoint !== null) return summaryGuaranteedPoint;
+    return num(row?.projected_2026_max_cutoff_point);
+  }
+
+  function isGuaranteedLineRow(row) {
+    if (!row) return false;
+    const rowPoint = num(row.points);
+    const guaranteedLinePoint = getGuaranteedLinePoint(row);
+    if (rowPoint !== null && guaranteedLinePoint !== null) {
+      return Math.round(rowPoint) === Math.round(guaranteedLinePoint);
+    }
+    if (row.guaranteed_marker === 'TRUE') return true;
+    return false;
+  }
+
   function renderLadder(meta, huntCode, residency, points, drawPool) {
     if (!els.ladderTableWrap || !els.ladderTableEmpty || !els.ladderTableBody) return;
     setLadderHeaders(meta);
@@ -1187,13 +1204,13 @@
         classes.push('is-user-row');
       }
 
-      if (row.guaranteed_marker === 'TRUE') {
-        markers.push({ kind: 'guaranteed', label: 'Guaranteed' });
+      if (isGuaranteedLineRow(row)) {
+        markers.push({ kind: 'guaranteed', label: 'Guaranteed Line' });
         classes.push('is-guaranteed-row');
       }
 
-      if (hasSourceData(meta, row, referenceRow)) {
-        markers.push({ kind: 'sources', label: 'Sources', point: row.points });
+      if ((isUserRow || isGuaranteedLineRow(row)) && hasSourceData(meta, row, referenceRow)) {
+        markers.push({ kind: 'sources', label: 'Hunt Data', point: row.points });
       }
 
       const rawPrimary = firstAvailable(row, ['odds_2026_projected', 'max_pool_projection_2026', 'random_draw_odds_2026']);

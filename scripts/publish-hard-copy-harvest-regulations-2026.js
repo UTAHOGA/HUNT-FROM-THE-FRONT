@@ -4,6 +4,11 @@ const path = require('path');
 const repo = process.cwd();
 const manifestPath = path.join(repo, 'processed_data', 'hard_data_exports', 'hard_copy_pdf_manifest.web.json');
 
+function readJsonAllowBom(filePath) {
+  const raw = fs.readFileSync(filePath, 'utf8').replace(/^\uFEFF/, '');
+  return JSON.parse(raw);
+}
+
 const pdfs = [
   {
     source: path.join(repo, 'pipeline', 'RAW', 'hunt_unit_database', '2026', 'pdf', 'harvest_report', '2026-03-06-2025-preliminary-bg-harvest.pdf'),
@@ -81,7 +86,7 @@ for (const item of pdfs) {
   copied.push({ title: item.title, dest, bytes: fs.statSync(dest).size });
 }
 
-const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+const manifest = readJsonAllowBom(manifestPath);
 const titles = new Set(pdfs.map((item) => item.title.toLowerCase()));
 const hrefs = new Set(pdfs.map((item) => `./processed_data/hard_data_exports/${item.publicDir.replace(/\\/g, '/')}/${item.fileName}`));
 const filtered = manifest.filter((entry) => {
@@ -103,5 +108,13 @@ const entries = pdfs.map((item) => ({
   parent_title: null
 }));
 const next = [...entries, ...filtered];
-fs.writeFileSync(manifestPath, JSON.stringify(next, null, 2) + '\n');
-console.log(JSON.stringify({ copied, manifest_entries_added: entries.length, manifest_total: next.length }, null, 2));
+const manifestChanged = JSON.stringify(manifest) !== JSON.stringify(next);
+if (manifestChanged) {
+  fs.writeFileSync(manifestPath, JSON.stringify(next, null, 2) + '\n');
+}
+console.log(JSON.stringify({
+  copied,
+  manifest_entries_added: entries.length,
+  manifest_total: next.length,
+  manifest_updated: manifestChanged,
+}, null, 2));
