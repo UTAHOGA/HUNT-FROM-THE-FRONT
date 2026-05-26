@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import csv
 import json
+import re
 import time
 import urllib.parse
 from collections import Counter
@@ -73,7 +74,8 @@ TOTAL_ONLY_TYPES = {
 def clean(value: object) -> str:
     if value is None:
         return ""
-    text = str(value).strip().replace("\ufeff", "")
+    text = str(value).replace("\ufeff", "")
+    text = re.sub(r"\s+", " ", text).strip()
     return "" if text in {"", "-", "nan", "None"} else text
 
 

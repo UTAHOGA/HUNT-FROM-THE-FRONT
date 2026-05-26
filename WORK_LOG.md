@@ -4733,3 +4733,38 @@
   - The executable audit and overlay-plan artifacts were regenerated in the sibling `HUNT-BUILDER` workspace.
 - Validation:
   - Confirmed `AGENTS.MD` now contains the corrected 2026 authority and historical-field lineage rule.
+
+## Expo Permit Draw Results Total-Only And Sheep Sex Labels
+- Timestamp (UTC): 2026-05-26T21:50:00Z
+- Scope:
+  - Normalized `pipeline/RAW/hunt_unit_database/2026/xlsx/expo permits 2026.xlsx` into a per-hunt-unit/weapon/season draw-result artifact that publishes only `permits_2026_total`.
+  - Verified the Expo workbook has `125` permit rows and the normalized output has the same `125` rows.
+  - Preserved the no resident/nonresident split guardrail for Expo permits because the source publishes total permits only.
+  - Normalized DWR sheep sex labels in canonical `DATABASE.csv`: all desert bighorn sheep rows are `Male Only`; `RE1000` is the single Rocky Mountain bighorn `Ewe` hunt; all other Rocky Mountain bighorn rows are `Ram`.
+  - Re-ran comprehensive live DWR permit extraction, database publish readiness, and comprehensive 2026/2025 history-integrity audit after the sheep normalization.
+  - No website feeds, `public_client_engine.csv`, prediction math, or materializer code were changed.
+- Outputs:
+  - `scripts/normalize-expo-permit-draw-results-2026.py`
+  - `scripts/normalize-sheep-sex-types-2026.py`
+  - `data_truth/draw_results_truth/normalized/expo_permit_draw_results_2026_total_only.csv`
+  - `data_truth/draw_results_truth/validation/expo_permit_draw_results_2026_total_only_summary.json`
+  - `data_truth/crosswalk_truth/validation/sheep_sex_type_normalization_2026.csv`
+  - `data_truth/crosswalk_truth/validation/sheep_sex_type_normalization_2026_summary.json`
+  - `processed_data/expo_permit_draw_results_2026_total_only.md`
+  - `processed_data/sheep_sex_type_normalization_2026.md`
+- Key results:
+  - Expo normalized rows: `125`.
+  - Expo total permits: `200`.
+  - Expo mapping statuses: `MATCH_HIGH=57`, `AMBIGUOUS_DATABASE_MATCH=47`, `NO_DATABASE_MATCH=21`.
+  - Sheep sex counts: `Desert Bighorn Sheep|Male Only=25`, `Rocky Mountain Bighorn Sheep|Ewe=1`, `Rocky Mountain Bighorn Sheep|Ram=20`.
+  - Comprehensive live DWR comparison remains clear of live-only rows and live-numeric/database-blank rows: both counts are `0`.
+  - Publish readiness remains `true`.
+  - Comprehensive history audit fatal blockers remain `0`.
+- Validation:
+  - `python scripts\normalize-expo-permit-draw-results-2026.py` passed.
+  - `python scripts\normalize-sheep-sex-types-2026.py` passed.
+  - `python scripts\pull-live-dwr-permit-numbers-comprehensive-2026.py` passed.
+  - `python scripts\build-database-publish-readiness-report.py` passed.
+  - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed.
+  - `python -m py_compile scripts\normalize-expo-permit-draw-results-2026.py scripts\normalize-sheep-sex-types-2026.py scripts\pull-live-dwr-permit-numbers-comprehensive-2026.py` passed.
+  - `python -m pytest tests\utah\test_live_dwr_and_expo_permit_promotion_2026.py -q` passed: `7`.
