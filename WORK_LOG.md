@@ -1,5 +1,30 @@
 # WORK LOG
 
+## Current Online Missing Hunt Code Audit 2026
+- Timestamp (UTC): 2026-05-26T16:46:26Z
+- Scope:
+  - Audited canonical `DATABASE.csv` hunt codes against the live Utah DWR Hunt Planner `HaSetup` hunt-number list.
+  - Confirmed user-reported codes `EA1007`, `EA1053`, and `PD1039` are not present in the live online Hunt Planner hunt-number list at audit time.
+  - Identified `17` canonical DATABASE rows not present in the live online hunt-number list: `16` antlerless elk `EA` rows and `1` doe pronghorn `PD` row.
+  - Preserved protected numeric DATABASE cells; this audit is sidecar quarantine evidence only and does not delete or overwrite RAC/current-year allotment values.
+  - Marked missing-online rows with recommendation `QUARANTINE_CURRENT_ONLINE_MAPPING; do not promote as live-online-current without a new DWR export`.
+- Outputs:
+  - `scripts/audit-current-online-hunt-codes-2026.py`
+  - `data_truth/crosswalk_truth/raw_inventory/live_dwr_hunt_planner_hunt_codes_snapshot_2026.csv`
+  - `data_truth/crosswalk_truth/validation/current_online_missing_hunt_codes_2026.csv`
+  - `data_truth/crosswalk_truth/validation/current_online_missing_hunt_codes_2026_summary.json`
+  - `processed_data/current_online_missing_hunt_codes_2026.md`
+- Key results:
+  - Live DWR Hunt Planner hunt-number count: `1422`.
+  - DATABASE hunt-code row count: `1411`.
+  - DATABASE codes missing from live online list: `17`.
+  - User-reported missing codes confirmed absent: `EA1007`, `EA1053`, `PD1039`.
+  - Same-name live candidates found: `EA1053 -> EA1054` for `Nine Mile, West Anthro` on the current live table, and `EA1007 -> EA2013` for `Wasatch Mtns, Currant Creek` private-lands-only; no same-name live candidate found for `PD1039`.
+- Validation:
+  - `python scripts\audit-current-online-hunt-codes-2026.py` passed.
+  - `python -m py_compile scripts\audit-current-online-hunt-codes-2026.py` passed.
+  - Inline validation confirmed `17` audit rows and high-priority absent status for `EA1007`, `EA1053`, and `PD1039`.
+
 ## 2026 DATABASE Boundary ID Fill From JSON/GeoJSON
 - Timestamp (UTC): 2026-05-26T16:36:35Z
 - Scope:
