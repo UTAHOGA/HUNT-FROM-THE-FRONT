@@ -19,12 +19,38 @@ LEDGER = ROOT / "data_truth" / "crosswalk_truth" / "normalized" / "retired_curre
 SUMMARY = ROOT / "data_truth" / "crosswalk_truth" / "validation" / "retired_current_hunt_codes_2026_summary.json"
 REPORT = ROOT / "processed_data" / "retired_current_hunt_codes_2026.md"
 
-RETIRED_CODES = {"EA1007", "EA1053", "PD1039"}
+RETIRED_CODES = {
+    "EA1007",
+    "EA1053",
+    "EA1287",
+    "EA1288",
+    "EA1289",
+    "EA1290",
+    "EA1291",
+    "EA1292",
+    "EA1293",
+    "EA1294",
+    "EA1295",
+    "EA1296",
+    "EA1297",
+    "EA1298",
+    "EA1299",
+    "EA1300",
+    "PD1039",
+}
 RETIREMENT_REASON = "USER_CONFIRMED_CEASES_TO_EXIST_ONLINE_EFFECTIVE_2026"
 
 
 def read_database() -> tuple[list[dict[str, str]], list[str]]:
     with DATABASE.open(newline="", encoding="utf-8-sig") as handle:
+        reader = csv.DictReader(handle)
+        return list(reader), reader.fieldnames or []
+
+
+def read_optional_csv(path: Path) -> tuple[list[dict[str, str]], list[str]]:
+    if not path.exists():
+        return [], []
+    with path.open(newline="", encoding="utf-8-sig") as handle:
         reader = csv.DictReader(handle)
         return list(reader), reader.fieldnames or []
 
@@ -41,15 +67,18 @@ def write_csv(path: Path, rows: list[dict[str, str]], columns: list[str]) -> Non
 def main() -> int:
     timestamp = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
     rows, columns = read_database()
+    existing_ledger_rows, _ = read_optional_csv(LEDGER)
+    existing_retired_codes = {row.get("hunt_code", "") for row in existing_ledger_rows}
     retired_rows = [row for row in rows if row["hunt_code"] in RETIRED_CODES]
     remaining_rows = [row for row in rows if row["hunt_code"] not in RETIRED_CODES]
 
     found_codes = {row["hunt_code"] for row in retired_rows}
-    missing_requested_codes = sorted(RETIRED_CODES - found_codes)
-    if missing_requested_codes:
-        raise SystemExit(f"Requested retired codes not found in DATABASE.csv: {missing_requested_codes}")
-    if len(retired_rows) != len(RETIRED_CODES):
-        raise SystemExit(f"Expected {len(RETIRED_CODES)} retired rows, found {len(retired_rows)}")
+    unresolved_requested_codes = sorted(RETIRED_CODES - found_codes - existing_retired_codes)
+    if unresolved_requested_codes:
+        raise SystemExit(
+            "Requested retired codes were not found in DATABASE.csv or the retired ledger: "
+            f"{unresolved_requested_codes}"
+        )
 
     ledger_columns = [
         "retired_at_utc",
@@ -57,7 +86,7 @@ def main() -> int:
         "effective_year",
         *columns,
     ]
-    ledger_rows = [
+    new_ledger_rows = [
         {
             "retired_at_utc": timestamp,
             "retirement_reason": RETIREMENT_REASON,
@@ -66,6 +95,10 @@ def main() -> int:
         }
         for row in retired_rows
     ]
+    ledger_by_code = {row.get("hunt_code", ""): row for row in existing_ledger_rows}
+    for row in new_ledger_rows:
+        ledger_by_code[row["hunt_code"]] = row
+    ledger_rows = [ledger_by_code[code] for code in sorted(RETIRED_CODES) if code in ledger_by_code]
 
     write_csv(DATABASE, remaining_rows, columns)
     write_csv(LEDGER, ledger_rows, ledger_columns)
@@ -87,8 +120,10 @@ def main() -> int:
         "retirement_reason": RETIREMENT_REASON,
         "effective_year": 2026,
         "requested_retired_codes": sorted(RETIRED_CODES),
-        "retired_row_count": len(retired_rows),
-        "retired_codes": sorted(found_codes),
+        "newly_retired_row_count": len(retired_rows),
+        "newly_retired_codes": sorted(found_codes),
+        "total_retired_ledger_row_count": len(ledger_rows),
+        "total_retired_codes": sorted({row.get("hunt_code", "") for row in ledger_rows}),
         "database_row_count_before": len(rows),
         "database_row_count_after": len(remaining_rows),
         "database_row_delta": len(remaining_rows) - len(rows),
@@ -109,14 +144,25 @@ def main() -> int:
         f"- Reason: `{RETIREMENT_REASON}`",
         f"- DATABASE rows before: `{len(rows)}`",
         f"- DATABASE rows after: `{len(remaining_rows)}`",
-        f"- Retired rows: `{len(retired_rows)}`",
+        f"- Newly retired rows: `{len(retired_rows)}`",
+        f"- Total retired ledger rows: `{len(ledger_rows)}`",
         f"- Remaining duplicate hunt codes: `{len(duplicate_codes)}`",
         f"- Remaining blank boundary IDs: `{blank_boundary_ids}`",
         "",
-        "## Retired Rows",
+        "## Newly Retired Rows",
         "",
     ]
+    if not retired_rows:
+        lines.append("- No additional active DATABASE rows needed retirement.")
     for row in retired_rows:
+        lines.append(
+            "- "
+            f"`{row['hunt_code']}`: {row['hunt_name']} | {row['species']} | "
+            f"{row['sex_type']} | {row['weapon']} | {row['season']} | "
+            f"2026 total `{row['permits_2026_total']}`"
+        )
+    lines.extend(["", "## Full Retired Ledger", ""])
+    for row in ledger_rows:
         lines.append(
             "- "
             f"`{row['hunt_code']}`: {row['hunt_name']} | {row['species']} | "
