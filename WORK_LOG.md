@@ -1,5 +1,35 @@
 # WORK LOG
 
+## 2024 PDF To 2025 PDF Hunt-Code Crosswalk
+- Timestamp (UTC): 2026-05-26T23:50:00Z
+- Scope:
+  - Built a read-only crosswalk from 2024 PDF draw evidence for model year 2025 to available 2025 PDF draw evidence for model year 2026 and the current active `DATABASE.csv` universe.
+  - Compared all `874` source rows from `draw_odds_2024_model_target_2025_permit_totals.csv`.
+  - Used the currently extracted next-year PDF evidence from `2025 LE Deer Draw Results.pdf` and `2025 O.I.L. Draw Results.pdf` (`296` combined rows).
+  - Separated same-code carry-forward rows, replacement candidates, next-year PDF same-code/current-database-status review rows, and likely dropped rows.
+  - Kept the output read-only: no `DATABASE.csv` values, website feeds, `public_client_engine.csv`, prediction math, or materializer code were changed.
+- Outputs:
+  - `scripts/build-2024-to-2025-pdf-hunt-code-crosswalk.py`
+  - `data_truth/crosswalk_truth/validation/hunt_code_crosswalk_2024_pdf_to_2025_pdf_model_years.csv`
+  - `data_truth/crosswalk_truth/validation/hunt_code_crosswalk_2024_pdf_to_2025_pdf_dropped_review.csv`
+  - `data_truth/crosswalk_truth/validation/hunt_code_crosswalk_2024_pdf_to_2025_pdf_model_years_summary.json`
+  - `processed_data/hunt_code_crosswalk_2024_pdf_to_2025_pdf_model_years.md`
+  - `tests/utah/test_hunt_code_crosswalk_2024_pdf_to_2025_pdf.py`
+- Key results:
+  - Crosswalk rows: `874`.
+  - Current active database rows used for active-code comparison: `1394`.
+  - Same code in 2025 PDF and current active database: `257`.
+  - Same code current active but no next-year PDF match/source family: `564`.
+  - Replacement candidates: `24`.
+  - Same code exists in 2025 PDF but database row is currently marked historical-only: `16`.
+  - Likely dropped/no current active match rows: `13`.
+  - Dropped/review rows total: `29`.
+  - Guardrail: output is review evidence and does not modify `DATABASE.csv`.
+- Validation:
+  - `python scripts\build-2024-to-2025-pdf-hunt-code-crosswalk.py` passed.
+  - `python -m py_compile scripts\build-2024-to-2025-pdf-hunt-code-crosswalk.py` passed.
+  - `python -m pytest tests\utah\test_hunt_code_crosswalk_2024_pdf_to_2025_pdf.py tests\utah\test_2024_draw_odds_database_2025_permit_audit.py tests\utah\test_final_permit_database_crosscheck_2026.py -q` passed: `8`.
+
 ## Remaining Source-Only 2024 Draw PDF Rows Promoted As 2025 Historical Truth
 - Timestamp (UTC): 2026-05-26T23:40:00Z
 - Scope:
