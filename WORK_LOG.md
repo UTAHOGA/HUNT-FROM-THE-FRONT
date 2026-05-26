@@ -1,5 +1,29 @@
 # WORK LOG
 
+## 2026 Black Bear Permit Split Normalization
+- Timestamp (UTC): 2026-05-26T13:56:00Z
+- Scope:
+  - Normalized the DWR Hunt Planner `2026 black bear permits.csv` source where resident and nonresident permit counts were stored in the same physical column with `NonRes:` continuation rows.
+  - Collapsed `207` physical source rows into `106` one-row-per-`BR` hunt-code records with explicit `permits_2026_res`, `permits_2026_nr`, and `permits_2026_total` fields.
+  - Preserved `BR7307` as the reviewed La Sal black bear conservation lock with `Total=4` and blank resident/nonresident split fields because no split is published for that conservation package.
+  - Compared normalized 2026 `BR` rows against canonical `DATABASE.csv`; there were `0` numeric mismatches and `0` missing DATABASE rows after promotion.
+  - Promoted reviewed 2026 black bear permit/allotment source lineage into `DATABASE.csv` without changing historical 2025 or older permit fields.
+  - Wrote a 2026-to-2025 black bear hunt-code comparison: `12` current 2026 BR codes were not present in the 2025 draw-results BR universe, and `3` 2025 draw-result BR codes were not present in the 2026 source.
+- Files:
+  - `scripts/normalize-black-bear-permits-2026.py`
+  - `tests/utah/test_black_bear_permit_normalization_2026.py`
+  - `data_truth/permit_overlay_truth/normalized/black_bear_permits_2026_canonical.csv`
+  - `data_truth/permit_overlay_truth/validation/black_bear_permits_2026_vs_DATABASE.csv`
+  - `data_truth/permit_overlay_truth/validation/black_bear_2026_vs_2025_code_comparison.csv`
+  - `data_truth/permit_overlay_truth/validation/black_bear_permits_2026_summary.json`
+  - `processed_data/black_bear_permits_2026_summary.md`
+  - `pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv`
+- Validation:
+  - `python scripts\normalize-black-bear-permits-2026.py`
+  - `python -m compileall scripts\normalize-black-bear-permits-2026.py tests\utah\test_black_bear_permit_normalization_2026.py`
+  - `python -m pytest tests\utah\test_black_bear_permit_normalization_2026.py -q` passed: `5`
+  - Focused `black_bear_permits_2026_vs_DATABASE.csv` scan returned `0` numeric mismatches and `0` missing DATABASE rows.
+
 ## BR7307 Black Bear Conservation Permit Lock 2026
 - Timestamp (UTC): 2026-05-26T13:46:57Z
 - Scope:
