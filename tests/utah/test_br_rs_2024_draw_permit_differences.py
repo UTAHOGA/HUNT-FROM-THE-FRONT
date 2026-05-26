@@ -17,6 +17,16 @@ SUMMARY_JSON = (
     / "data_truth/draw_results_truth/validation/"
     / "br_rs_2024_model_target_2025_permit_differences_summary.json"
 )
+PROMOTION_CSV = (
+    ROOT
+    / "data_truth/draw_results_truth/validation/"
+    / "br_rs_2024_draw_pdf_values_promoted_to_DATABASE_2025.csv"
+)
+PROMOTION_SUMMARY_JSON = (
+    ROOT
+    / "data_truth/draw_results_truth/validation/"
+    / "br_rs_2024_draw_pdf_values_promoted_to_DATABASE_2025_summary.json"
+)
 IMPORT_MANIFEST_CSV = (
     ROOT
     / "data_truth/harvest_results_truth/raw_inventory/"
@@ -43,20 +53,31 @@ def test_br_rs_difference_summary_is_stable() -> None:
     summary = json.loads(SUMMARY_JSON.read_text(encoding="utf-8"))
     rows = _read_csv(DIFF_CSV)
 
-    assert summary["difference_row_count"] == 67
-    assert summary["numeric_difference_count"] == 63
-    assert summary["status_counts"] == {"DIFFERS": 63, "SOURCE_CODE_NOT_IN_DATABASE": 4}
-    assert summary["prefix_counts"] == {"BR": 59, "RS": 8}
+    assert summary["difference_row_count"] == 4
+    assert summary["numeric_difference_count"] == 0
+    assert summary["status_counts"] == {"SOURCE_CODE_NOT_IN_DATABASE": 4}
+    assert summary["prefix_counts"] == {"BR": 4}
     assert summary["source_codes_missing_database"] == ["BR7008", "BR7019", "BR7108", "BR7208"]
-    assert len(rows) == 67
+    assert len(rows) == 4
 
 
-def test_key_bear_differences_and_missing_codes_are_reported() -> None:
+def test_br_rs_pdf_promotion_replaced_active_numeric_differences() -> None:
+    summary = json.loads(PROMOTION_SUMMARY_JSON.read_text(encoding="utf-8"))
+    rows = {row["hunt_code"]: row for row in _read_csv(PROMOTION_CSV)}
+
+    assert summary["promoted_row_count"] == 63
+    assert summary["prefix_counts"] == {"BR": 55, "RS": 8}
+    assert summary["skipped_missing_database_codes"] == ["BR7008", "BR7019", "BR7108", "BR7208"]
+
+    assert rows["BR7004"]["before_permits_2025_total"] == "20"
+    assert rows["BR7004"]["after_permits_2025_total"] == "8"
+    assert rows["BR7004"]["after_permits_2025_draw_total"] == "8"
+
+    assert rows["RS6703"]["after_permits_2025_total"] == rows["RS6703"]["after_permits_2025_draw_total"]
+
+
+def test_remaining_br_rs_rows_are_missing_current_database_codes_only() -> None:
     rows = {row["hunt_code"]: row for row in _read_csv(DIFF_CSV)}
-
-    assert rows["BR7004"]["source_total_permits"] == "8"
-    assert rows["BR7004"]["database_permits_2025_total"] == "20"
-    assert rows["BR7004"]["total_delta_source_minus_database"] == "-12"
 
     assert rows["BR7008"]["permits_2025_comparison_status"] == "SOURCE_CODE_NOT_IN_DATABASE"
     assert rows["BR7008"]["source_total_permits"] == "43"

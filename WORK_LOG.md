@@ -1,5 +1,41 @@
 # WORK LOG
 
+## BR/RS 2024 Draw PDF Values Promoted To 2025 Draw Results
+- Timestamp (UTC): 2026-05-26T23:10:00Z
+- Scope:
+  - Treated the 2024 draw PDF values as authoritative for active BR/RS model-target-2025 draw-result permit numbers.
+  - Promoted PDF-derived values into both broad `permits_2025_*` fields and `permits_2025_draw_*` fields for active BR/RS rows where numeric differences existed.
+  - Skipped source-only rows that do not exist in the current active database; those remain review evidence only.
+  - Refreshed the 2024 draw audit, focused BR/RS difference report, final permit crosscheck, publish-readiness report, and comprehensive history-integrity audit after promotion.
+  - No 2026 permit/allotment values, website feeds, `public_client_engine.csv`, prediction math, or materializer code were changed.
+- Outputs:
+  - `scripts/promote-br-rs-2024-draw-pdf-values-2025.py`
+  - `data_truth/draw_results_truth/validation/br_rs_2024_draw_pdf_values_promoted_to_DATABASE_2025.csv`
+  - `data_truth/draw_results_truth/validation/br_rs_2024_draw_pdf_values_promoted_to_DATABASE_2025_summary.json`
+  - `processed_data/br_rs_2024_draw_pdf_values_promoted_to_DATABASE_2025.md`
+  - refreshed `data_truth/draw_results_truth/validation/draw_odds_2024_model_target_2025_vs_DATABASE_2025_permits_summary.json`
+  - refreshed `data_truth/draw_results_truth/validation/br_rs_2024_model_target_2025_permit_differences_summary.json`
+  - refreshed final permit crosscheck, publish-readiness, and history-integrity artifacts.
+- Key results:
+  - Promoted active rows: `63`.
+  - Prefix counts promoted: `55` BR and `8` RS.
+  - Changed cells: `572`.
+  - Skipped current-absent source codes: `BR7008`, `BR7019`, `BR7108`, `BR7208`.
+  - Active BR/RS numeric differences remaining after refresh: `0`.
+  - Focused BR/RS difference report now contains only the four current-absent BR review rows.
+  - Final populated `permits_2025_draw_total` rows increased from `572` to `627`.
+  - Final populated `permits_2025_total` rows remain `1030`.
+  - Final 2026 permit/allotment total mismatches remain `0`; publish-ready remains `true`.
+- Validation:
+  - `python scripts\promote-br-rs-2024-draw-pdf-values-2025.py` passed.
+  - `python scripts\audit-2024-draw-odds-against-database-2025-permits.py` passed.
+  - `python scripts\report-br-rs-2024-draw-permit-differences.py` passed.
+  - `python scripts\final-permit-database-crosscheck-2026.py` passed.
+  - `python scripts\build-database-publish-readiness-report.py` passed.
+  - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed.
+  - `python -m py_compile scripts\promote-br-rs-2024-draw-pdf-values-2025.py scripts\report-br-rs-2024-draw-permit-differences.py scripts\audit-2024-draw-odds-against-database-2025-permits.py` passed.
+  - `python -m pytest tests\utah\test_br_rs_2024_draw_permit_differences.py tests\utah\test_2024_draw_odds_database_2025_permit_audit.py tests\utah\test_final_permit_database_crosscheck_2026.py -q` passed: `9`.
+
 ## Bear And Rocky Mountain Sheep 2024 Draw Difference Audit
 - Timestamp (UTC): 2026-05-26T22:45:00Z
 - Scope:

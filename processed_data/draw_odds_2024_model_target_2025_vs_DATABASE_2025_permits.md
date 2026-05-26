@@ -3,20 +3,19 @@
 - Source rows: `874`
 - Source unique hunt codes: `874`
 - Source codes missing active DATABASE: `53`
-- Safe blank broad-2025 candidates needing review: `2`
+- Safe blank broad-2025 candidates needing review: `0`
 
 ## permits_2025 Status Counts
 
-- `DATABASE_BLANK`: `2`
-- `DIFFERS`: `511`
-- `MATCH`: `308`
+- `DIFFERS`: `448`
+- `MATCH`: `373`
 - `SOURCE_CODE_NOT_IN_DATABASE`: `53`
 
 ## permits_2025_draw Status Counts
 
-- `DATABASE_BLANK`: `277`
-- `DIFFERS`: `285`
-- `MATCH`: `259`
+- `DATABASE_BLANK`: `222`
+- `DIFFERS`: `277`
+- `MATCH`: `322`
 - `SOURCE_CODE_NOT_IN_DATABASE`: `53`
 
 ## Guardrail

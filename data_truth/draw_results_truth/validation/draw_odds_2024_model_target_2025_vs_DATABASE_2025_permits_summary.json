@@ -2,7 +2,7 @@
   "artifact": "draw_odds_2024_model_target_2025_vs_DATABASE_2025_permits",
   "database_csv": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
   "database_row_count": 1394,
-  "generated_at_utc": "2026-05-26T22:27:52+00:00",
+  "generated_at_utc": "2026-05-26T23:05:37+00:00",
   "guardrail": "Reference audit only. No DATABASE.csv permit fields are modified by this script.",
   "model_target_year": 2025,
   "outputs": {
@@ -12,26 +12,21 @@
     "validation_csv": "data_truth/draw_results_truth/validation/draw_odds_2024_model_target_2025_vs_DATABASE_2025_permits.csv"
   },
   "permits_2025_draw_status_counts": {
-    "DATABASE_BLANK": 277,
-    "DIFFERS": 285,
-    "MATCH": 259,
+    "DATABASE_BLANK": 222,
+    "DIFFERS": 277,
+    "MATCH": 322,
     "SOURCE_CODE_NOT_IN_DATABASE": 53
   },
   "permits_2025_status_counts": {
-    "DATABASE_BLANK": 2,
-    "DIFFERS": 511,
-    "MATCH": 308,
+    "DIFFERS": 448,
+    "MATCH": 373,
     "SOURCE_CODE_NOT_IN_DATABASE": 53
   },
   "promotion_recommendation_counts": {
-    "DO_NOT_OVERWRITE_REVIEWED_2025_HISTORY": 511,
-    "REFERENCE_ONLY": 361,
-    "SAFE_BLANK_CANDIDATE_REVIEW_REQUIRED": 2
+    "DO_NOT_OVERWRITE_REVIEWED_2025_HISTORY": 448,
+    "REFERENCE_ONLY": 426
   },
-  "safe_blank_candidate_codes": [
-    "EB3168",
-    "MB6265"
-  ],
+  "safe_blank_candidate_codes": [],
   "source_codes_missing_database": [
     "BI6530",
     "BR7008",

@@ -24,18 +24,17 @@ def test_2024_draw_odds_audit_is_reference_only_not_overwrite_instruction() -> N
     assert summary["source_unique_hunt_codes"] == 874
     assert summary["source_codes_missing_database_count"] == 53
     assert summary["permits_2025_status_counts"] == {
-        "DATABASE_BLANK": 2,
-        "DIFFERS": 511,
-        "MATCH": 308,
+        "DIFFERS": 448,
+        "MATCH": 373,
         "SOURCE_CODE_NOT_IN_DATABASE": 53,
     }
     assert summary["permits_2025_draw_status_counts"] == {
-        "DATABASE_BLANK": 277,
-        "DIFFERS": 285,
-        "MATCH": 259,
+        "DATABASE_BLANK": 222,
+        "DIFFERS": 277,
+        "MATCH": 322,
         "SOURCE_CODE_NOT_IN_DATABASE": 53,
     }
-    assert summary["safe_blank_candidate_codes"] == ["EB3168", "MB6265"]
+    assert summary["safe_blank_candidate_codes"] == []
     assert "No DATABASE.csv permit fields are modified" in summary["guardrail"]
 
 

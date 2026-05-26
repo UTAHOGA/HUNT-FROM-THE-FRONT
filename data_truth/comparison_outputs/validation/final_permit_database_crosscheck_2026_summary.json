@@ -8,7 +8,7 @@
   "duplicate_hunt_codes": [],
   "field_populated_counts": {
     "permit_allotment_2026_total": 1091,
-    "permits_2025_draw_total": 572,
+    "permits_2025_draw_total": 627,
     "permits_2025_total": 1030,
     "permits_2026_total": 1120
   },
@@ -83,7 +83,7 @@
     "RS": 20,
     "TK": 18
   },
-  "snapshot_utc": "2026-05-26T22:30:05+00:00",
+  "snapshot_utc": "2026-05-26T23:05:07+00:00",
   "species_counts": {
     "Bison": 19,
     "Black Bear": 106,
@@ -104,9 +104,9 @@
   },
   "unique_hunt_code_count": 1394,
   "year_delta_status_counts": {
-    "2026_EQ_2025": 559,
-    "2026_GT_2025": 398,
-    "2026_LT_2025": 73,
+    "2026_EQ_2025": 508,
+    "2026_GT_2025": 429,
+    "2026_LT_2025": 93,
     "NO_2025_OR_2026_TOTAL": 274,
     "ONLY_2026_TOTAL": 90
   }
