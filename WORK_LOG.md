@@ -3805,3 +3805,47 @@
   - `python scripts\build-current-historical-hunt-code-crosswalk-2026.py` passed.
   - `python -m py_compile scripts\normalize-rocky-bighorn-permits-2026.py scripts\build-current-historical-hunt-code-crosswalk-2026.py` passed.
   - `python -m pytest tests\utah\test_rocky_bighorn_permit_normalization_2026.py tests\utah\test_current_historical_hunt_code_crosswalk_2026.py -q` passed: `7`.
+
+## Buck Deer 2026 Permit Audit And 2025 LE Deer Draw Results Extraction
+- Timestamp (UTC): 2026-05-26T16:14:20Z
+- Scope:
+  - Normalized the 2026 limited-entry buck deer `DB` source rows into reviewed resident, nonresident, and total permit fields.
+  - Normalized the 2026 limited-entry private-land deer `LD/LO` rows into a reviewed no-quota-published export.
+  - Repaired the reviewed private-land export for `LO0010`, which is present in canonical `DATABASE.csv` and the user-supplied DWR Hunt Planner row but omitted from the local private-land source CSV.
+  - Compared 2026 `DB/LD/LO` rows against protected `DATABASE.csv` and RAC limited-entry buck deer comparison evidence.
+  - Extracted the attached `2025 LE Deer Draw Results.pdf` into per-hunt-code draw-result permit totals using project year rules: `reported_draw_year=2025`, `model_target_year=2026`.
+  - Compared extracted 2025 draw-result totals to `DATABASE.csv` 2025 draw-result fields only.
+  - Did not change protected `DATABASE.csv` numeric cells.
+- Outputs:
+  - `scripts/normalize-buck-deer-permits-2026.py`
+  - `scripts/extract-le-deer-2025-draw-results-permits.py`
+  - `tests/utah/test_buck_deer_permit_normalization_2026.py`
+  - `tests/utah/test_le_deer_2025_draw_results_extraction.py`
+  - `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 buck deer limited entry reviewed res-nr-total.csv`
+  - `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 buck deer private land reviewed res-nr-total.csv`
+  - `data_truth/permit_overlay_truth/normalized/buck_deer_permits_2026_canonical.csv`
+  - `data_truth/permit_overlay_truth/validation/buck_deer_permits_2026_vs_DATABASE.csv`
+  - `data_truth/permit_overlay_truth/validation/buck_deer_limited_entry_2026_vs_RAC.csv`
+  - `data_truth/permit_overlay_truth/validation/buck_deer_private_land_2026_source_completeness.csv`
+  - `data_truth/permit_overlay_truth/validation/buck_deer_permits_2026_summary.json`
+  - `data_truth/draw_results_truth/normalized/le_deer_2025_draw_results_model_target_2026_permit_totals.csv`
+  - `data_truth/draw_results_truth/validation/le_deer_2025_draw_results_model_target_2026_vs_DATABASE.csv`
+  - `data_truth/draw_results_truth/validation/le_deer_2025_draw_results_model_target_2026_summary.json`
+  - `processed_data/buck_deer_permits_2026_summary.md`
+  - `processed_data/le_deer_2025_draw_results_model_target_2026_permit_totals.md`
+- Key results:
+  - 2026 limited-entry `DB` rows: `67`.
+  - 2026 limited-entry private-land `LD/LO` rows: `9`.
+  - 2026 numeric total permits represented: `1428`.
+  - DATABASE numeric comparison for 2026 permit rows: `0` mismatches.
+  - RAC numeric comparison for 2026 limited-entry `DB` subset: `0` mismatches.
+  - Private-land source omission repaired in reviewed export: `LO0010`.
+  - 2025 LE Deer PDF pages: `196`; extracted hunt-code rows: `195`.
+  - 2025 LE Deer draw-result total public permits: `1714` (`1560` resident, `154` nonresident).
+  - DATABASE comparison for 2025 LE Deer draw results: `189` matches, `0` numeric differences, and `6` historical CWMU source codes missing from current `DATABASE.csv`: `DB1320`, `DB1324`, `DB1343`, `DB1344`, `DB1345`, and `DB1348`.
+  - Semantic review flags: `DB1090`, `DB1091`, `DB1105`, and `DB1116` have HAMSS label placement differences between source and `DATABASE.csv`; numeric fields match.
+- Validation:
+  - `python scripts\normalize-buck-deer-permits-2026.py` passed.
+  - `python scripts\extract-le-deer-2025-draw-results-permits.py` passed.
+  - `python -m py_compile scripts\normalize-buck-deer-permits-2026.py scripts\extract-le-deer-2025-draw-results-permits.py tests\utah\test_buck_deer_permit_normalization_2026.py tests\utah\test_le_deer_2025_draw_results_extraction.py` passed.
+  - `python -m pytest tests\utah\test_buck_deer_permit_normalization_2026.py tests\utah\test_le_deer_2025_draw_results_extraction.py -q` passed: `7`.
