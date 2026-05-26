@@ -1,7 +1,10 @@
 const fs = require('fs');
 const path = require('path');
+const readline = require('readline');
 
 const ROOT = path.resolve(__dirname, '..');
+const MAX_PAGES_FILE_BYTES = 25 * 1024 * 1024;
+const CLOUDFLARE_BASE = (process.env.CLOUDFLARE_OBJECT_BASE || process.env.CLOUDFLARE_R2_BASE || 'https://json.uoga.workers.dev').replace(/\/+$/, '');
 
 const INPUTS = {
   currentDatabase: 'pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv',
@@ -25,12 +28,6 @@ const INPUTS = {
 };
 
 const OUTPUTS = {
-  libraryDir: 'processed_data/library',
-  productionDir: 'processed_data/production',
-  auditDir: 'processed_data/audits',
-  hardDataExportDir: 'processed_data/hard_data_exports/library',
-  publicHardCopyDataDir: 'public/hard-copy/data',
-  publicHardCopyManifestDir: 'public/hard-copy/manifests',
   canonicalCurrent: 'processed_data/library/canonical_current_hunts_2026.csv',
   libraryCsv: 'processed_data/library/library_page_hunts.csv',
   libraryJson: 'processed_data/library/library_page_data.json',
@@ -55,79 +52,56 @@ const OUTPUTS = {
   missingInputs: 'processed_data/audits/library_page_missing_inputs.csv',
 };
 
-function abs(rel) {
-  return path.join(ROOT, rel);
-}
-
-function exists(rel) {
-  return fs.existsSync(abs(rel));
-}
-
-function ensureDir(rel) {
-  fs.mkdirSync(abs(rel), { recursive: true });
-}
-
-function ensureParent(rel) {
-  ensureDir(path.dirname(rel));
-}
+function abs(rel) { return path.join(ROOT, rel); }
+function exists(rel) { return fs.existsSync(abs(rel)); }
+function ensureParent(rel) { fs.mkdirSync(path.dirname(abs(rel)), { recursive: true }); }
+function sizeBytes(rel) { return exists(rel) ? fs.statSync(abs(rel)).size : 0; }
+function isPagesPublishable(rel) { return exists(rel) && sizeBytes(rel) <= MAX_PAGES_FILE_BYTES; }
+function cloudflareHref(rel) { return `${CLOUDFLARE_BASE}/${rel.replace(/\\/g, '/')}`; }
+function localHref(rel) { return `./${rel.replace(/\\/g, '/')}`; }
+function hrefFor(rel) { return isPagesPublishable(rel) ? localHref(rel) : cloudflareHref(rel); }
+function deliveryFor(rel) { return isPagesPublishable(rel) ? 'pages-local' : 'cloudflare-fallback'; }
 
 function normalizeHeader(value) {
-  return String(value || '')
-    .replace(/^\uFEFF/, '')
-    .trim()
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '_')
-    .replace(/^_+|_+$/g, '');
+  return String(value || '').replace(/^\uFEFF/, '').trim().toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '');
 }
 
-function parseCsv(text) {
-  const rows = [];
-  let row = [];
+function parseCsvLine(line) {
+  const values = [];
   let field = '';
   let inQuotes = false;
-  const src = String(text || '').replace(/^\uFEFF/, '');
-
+  const src = String(line || '').replace(/^\uFEFF/, '');
   for (let i = 0; i < src.length; i += 1) {
     const c = src[i];
     const n = src[i + 1];
-    if (c === '"' && inQuotes && n === '"') {
-      field += '"';
-      i += 1;
-    } else if (c === '"') {
-      inQuotes = !inQuotes;
-    } else if (c === ',' && !inQuotes) {
-      row.push(field);
-      field = '';
-    } else if ((c === '\n' || c === '\r') && !inQuotes) {
-      if (c === '\r' && n === '\n') i += 1;
-      row.push(field);
-      if (row.some((v) => String(v).trim() !== '')) rows.push(row);
-      row = [];
-      field = '';
-    } else {
-      field += c;
-    }
+    if (c === '"' && inQuotes && n === '"') { field += '"'; i += 1; }
+    else if (c === '"') inQuotes = !inQuotes;
+    else if (c === ',' && !inQuotes) { values.push(field); field = ''; }
+    else field += c;
   }
-
-  row.push(field);
-  if (row.some((v) => String(v).trim() !== '')) rows.push(row);
-  if (!rows.length) return [];
-
-  const headers = rows[0].map(normalizeHeader);
-  return rows.slice(1).map((values) => {
-    const out = {};
-    headers.forEach((header, index) => {
-      out[header] = String(values[index] == null ? '' : values[index]).trim();
-    });
-    return out;
-  });
+  values.push(field);
+  return values;
 }
 
-function readCsv(rel) {
-  if (!exists(rel)) return [];
-  const rows = parseCsv(fs.readFileSync(abs(rel), 'utf8'));
-  rows.forEach((row) => { row.__source_file = rel; });
-  return rows;
+function rowFromValues(headers, values, sourceFile) {
+  const row = {};
+  headers.forEach((header, index) => { row[header] = String(values[index] == null ? '' : values[index]).trim(); });
+  row.__source_file = sourceFile;
+  return row;
+}
+
+async function scanCsv(rel, onRow) {
+  if (!exists(rel)) return 0;
+  const rl = readline.createInterface({ input: fs.createReadStream(abs(rel), { encoding: 'utf8' }), crlfDelay: Infinity });
+  let headers = null;
+  let count = 0;
+  for await (const line of rl) {
+    if (!String(line || '').trim()) continue;
+    if (!headers) { headers = parseCsvLine(line).map(normalizeHeader); continue; }
+    count += 1;
+    await onRow(rowFromValues(headers, parseCsvLine(line), rel), count);
+  }
+  return count;
 }
 
 function writeJson(rel, value) {
@@ -137,22 +111,13 @@ function writeJson(rel, value) {
 
 function writeCsv(rel, rows) {
   ensureParent(rel);
-  if (!rows.length) {
-    fs.writeFileSync(abs(rel), '', 'utf8');
-    return;
-  }
-  const headers = Array.from(rows.reduce((set, row) => {
-    Object.keys(row).forEach((key) => set.add(key));
-    return set;
-  }, new Set()));
-  const escape = (value) => {
+  if (!rows.length) { fs.writeFileSync(abs(rel), '', 'utf8'); return; }
+  const headers = Array.from(rows.reduce((set, row) => { Object.keys(row).forEach((key) => set.add(key)); return set; }, new Set()));
+  const esc = (value) => {
     const s = value == null ? '' : String(value);
     return /[",\r\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
   };
-  const lines = [headers.map(escape).join(',')].concat(
-    rows.map((row) => headers.map((header) => escape(row[header])).join(',')),
-  );
-  fs.writeFileSync(abs(rel), `${lines.join('\n')}\n`, 'utf8');
+  fs.writeFileSync(abs(rel), `${[headers.map(esc).join(',')].concat(rows.map((row) => headers.map((header) => esc(row[header])).join(','))).join('\n')}\n`, 'utf8');
 }
 
 function copyIfExists(fromRel, toRel) {
@@ -164,75 +129,21 @@ function copyIfExists(fromRel, toRel) {
 
 function first(row, candidates) {
   for (const candidate of candidates) {
-    const key = normalizeHeader(candidate);
-    const value = row[key];
+    const value = row[normalizeHeader(candidate)];
     if (value != null && String(value).trim() !== '') return String(value).trim();
   }
   return '';
 }
 
-function huntCode(row) {
-  return first(row, [
-    'hunt_code', 'huntcode', 'hunt_number', 'huntnumber', 'hunt no', 'hunt_no',
-    'hunt', 'code', 'permit_number', 'permit_no', 'hunt id', 'hunt_id',
-  ]).toUpperCase().replace(/\s+/g, '').replace(/[^A-Z0-9]/g, '');
-}
-
-function species(row) {
-  return first(row, ['species', 'hunt_species', 'animal', 'big_game_species', 'category', 'hunt_category', 'hunt_type_species']);
-}
-
-function huntName(row) {
-  return first(row, ['hunt_name', 'huntname', 'name', 'hunt_title', 'display_name', 'description', 'hunt_description', 'unit_name', 'hunt_unit']);
-}
-
-function unit(row) {
-  return first(row, ['unit', 'unit_name', 'hunt_unit', 'management_unit', 'area', 'location', 'boundary_name', 'display_unit']);
-}
-
-function weapon(row) {
-  return first(row, ['weapon', 'weapon_type', 'legal_weapon', 'method', 'season_type']);
-}
-
-function permits(row) {
-  return first(row, ['permits', 'permit_count', 'permit_count_2026', 'permits_2026', 'total_permits', 'available', 'quota', 'allotment']);
-}
-
-function classification(row) {
-  return first(row, ['classification', 'hunt_classification', 'draw_type', 'prediction_type', 'model_type', 'category', 'status', 'coverage_status', 'reason', 'reason_code', 'reason_codes']);
-}
-
-function probability(row) {
-  return first(row, ['display_odds_pct', 'p_draw_mean', 'p_draw_p50', 'draw_probability', 'odds', 'probability', 'p50']);
-}
-
-function modelVersion(row) {
-  return first(row, ['model_version', 'model', 'version', 'rule_version']);
-}
-
-function indexByCode(rows) {
-  const index = new Map();
-  for (const row of rows) {
-    const code = huntCode(row);
-    if (!code) continue;
-    if (!index.has(code)) index.set(code, []);
-    index.get(code).push(row);
-  }
-  return index;
-}
-
-function firstByCode(index, code) {
-  const rows = index.get(code) || [];
-  return rows[0] || {};
-}
-
-function countBy(rows, key) {
-  return rows.reduce((counts, row) => {
-    const value = String(row[key] || 'UNKNOWN').trim() || 'UNKNOWN';
-    counts[value] = (counts[value] || 0) + 1;
-    return counts;
-  }, {});
-}
+function huntCode(row) { return first(row, ['hunt_code', 'huntcode', 'hunt_number', 'huntnumber', 'hunt no', 'hunt_no', 'hunt', 'code', 'permit_number', 'permit_no', 'hunt id', 'hunt_id']).toUpperCase().replace(/\s+/g, '').replace(/[^A-Z0-9]/g, ''); }
+function species(row) { return first(row, ['species', 'hunt_species', 'animal', 'big_game_species', 'category', 'hunt_category', 'hunt_type_species']); }
+function huntName(row) { return first(row, ['hunt_name', 'huntname', 'name', 'hunt_title', 'display_name', 'description', 'hunt_description', 'unit_name', 'hunt_unit']); }
+function unit(row) { return first(row, ['unit', 'unit_name', 'hunt_unit', 'management_unit', 'area', 'location', 'boundary_name', 'display_unit']); }
+function weapon(row) { return first(row, ['weapon', 'weapon_type', 'legal_weapon', 'method', 'season_type']); }
+function permits(row) { return first(row, ['permits', 'permit_count', 'permit_count_2026', 'permits_2026', 'total_permits', 'available', 'quota', 'allotment']); }
+function classification(row) { return first(row, ['classification', 'hunt_classification', 'draw_type', 'prediction_type', 'model_type', 'category', 'status', 'coverage_status', 'reason', 'reason_code', 'reason_codes']); }
+function probability(row) { return first(row, ['display_odds_pct', 'p_draw_mean', 'p_draw_p50', 'draw_probability', 'odds', 'probability', 'p50']); }
+function modelVersion(row) { return first(row, ['model_version', 'model', 'version', 'rule_version']); }
 
 function roleFor(rel) {
   if (rel.endsWith('DATABASE.csv')) return 'current official/canonical 2026 hunt database';
@@ -248,7 +159,6 @@ function roleFor(rel) {
   if (rel.includes('research_library_master')) return 'research-page source';
   return 'supporting input';
 }
-
 function groupFor(rel) {
   if (rel.includes('library_page')) return 'exports';
   if (rel.includes('manifest')) return 'exports';
@@ -260,57 +170,8 @@ function groupFor(rel) {
   if (rel.includes('research')) return 'raw_library';
   return 'exports';
 }
-
-function typeFor(rel) {
-  const ext = path.extname(rel).replace('.', '').toLowerCase();
-  return ext || 'file';
-}
-
-function titleFromRel(rel) {
-  return path.basename(rel, path.extname(rel))
-    .replace(/[_-]+/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim()
-    .replace(/\b\w/g, (m) => m.toUpperCase());
-}
-
-function webHref(rel) {
-  return `./${rel.replace(/\\/g, '/')}`;
-}
-
-function inputStatus(name, rel) {
-  const rows = exists(rel) ? readCsv(rel) : [];
-  return {
-    name,
-    source_file: rel,
-    role: roleFor(rel),
-    exists: exists(rel) ? 'true' : 'false',
-    row_count: rows.length,
-  };
-}
-
-function pickCurrentSource() {
-  return [
-    INPUTS.currentDatabase,
-    INPUTS.currentCanonicalProcessed,
-    INPUTS.currentCanonicalRaw,
-    INPUTS.huntDatabaseComplete,
-    INPUTS.huntMasterEnriched,
-  ].find((rel) => exists(rel)) || null;
-}
-
-function classifyState({ hasPrediction, hasCoverage, classText }) {
-  const upper = String(classText || '').toUpperCase();
-  const nonPredictiveTerms = [
-    'HARVEST_OBJECTIVE', 'UNLIMITED', 'PRIVATE_LANDS', 'SPORTSMAN', 'CONSERVATION',
-    'EXPO', 'AVAILABILITY', 'ALLOCATION', 'NONPREDICTIVE', 'NON_PREDICTIVE', 'OUT_OF_SCOPE',
-  ];
-  if (hasPrediction) return 'PREDICTION_ELIGIBLE_AND_MODELED';
-  if (nonPredictiveTerms.some((term) => upper.includes(term))) return 'EXCLUDED_WITH_DOCUMENTED_NON_PREDICTIVE_REASON';
-  if (hasCoverage) return 'CLASSIFIED_NEEDS_MODEL_OR_EXCLUSION_REVIEW';
-  return 'MANUAL_REVIEW_REQUIRED';
-}
-
+function typeFor(rel) { return path.extname(rel).replace('.', '').toLowerCase() || 'file'; }
+function titleFromRel(rel) { return path.basename(rel, path.extname(rel)).replace(/[_-]+/g, ' ').replace(/\s+/g, ' ').trim().replace(/\b\w/g, (m) => m.toUpperCase()); }
 function manifestItem(rel, subtitle, options = {}) {
   return {
     group: options.group || groupFor(rel),
@@ -318,106 +179,116 @@ function manifestItem(rel, subtitle, options = {}) {
     year: options.year || '2026',
     title: options.title || titleFromRel(rel),
     subtitle,
-    href: webHref(rel),
+    href: options.href || hrefFor(rel),
+    local_href: localHref(rel),
+    cloudflare_href: cloudflareHref(rel),
+    delivery: deliveryFor(rel),
+    size_mb: exists(rel) ? Number((sizeBytes(rel) / (1024 * 1024)).toFixed(2)) : 0,
     source: options.source || (rel.startsWith('processed_data/') ? 'processed_data' : 'pipeline'),
     scope: options.scope || 'runtime',
   };
 }
 
-function main() {
-  for (const dir of [
-    OUTPUTS.libraryDir,
-    OUTPUTS.productionDir,
-    OUTPUTS.auditDir,
-    OUTPUTS.hardDataExportDir,
-    OUTPUTS.publicHardCopyDataDir,
-    OUTPUTS.publicHardCopyManifestDir,
-  ]) ensureDir(dir);
+function pickCurrentSource() { return [INPUTS.currentDatabase, INPUTS.currentCanonicalProcessed, INPUTS.currentCanonicalRaw, INPUTS.huntDatabaseComplete, INPUTS.huntMasterEnriched].find((rel) => exists(rel)) || null; }
+function inputStatus(name, rel) { return { name, source_file: rel, role: roleFor(rel), exists: exists(rel) ? 'true' : 'false', row_count: exists(rel) ? 'not_scanned' : 0, size_bytes: sizeBytes(rel), size_mb: Number((sizeBytes(rel) / (1024 * 1024)).toFixed(2)), delivery: deliveryFor(rel), href: hrefFor(rel), local_href: localHref(rel), cloudflare_href: cloudflareHref(rel) }; }
+function classifyState({ hasPrediction, hasCoverage, classText }) {
+  const upper = String(classText || '').toUpperCase();
+  const nonPredictiveTerms = ['HARVEST_OBJECTIVE', 'UNLIMITED', 'PRIVATE_LANDS', 'SPORTSMAN', 'CONSERVATION', 'EXPO', 'AVAILABILITY', 'ALLOCATION', 'NONPREDICTIVE', 'NON_PREDICTIVE', 'OUT_OF_SCOPE'];
+  if (hasPrediction) return 'PREDICTION_ELIGIBLE_AND_MODELED';
+  if (nonPredictiveTerms.some((term) => upper.includes(term))) return 'EXCLUDED_WITH_DOCUMENTED_NON_PREDICTIVE_REASON';
+  if (hasCoverage) return 'CLASSIFIED_NEEDS_MODEL_OR_EXCLUSION_REVIEW';
+  return 'MANUAL_REVIEW_REQUIRED';
+}
+function mergeFirst(existing, row, sourceName) {
+  if (!existing) return { ...row, __source_file: row.__source_file || sourceName };
+  const merged = { ...existing };
+  for (const [key, value] of Object.entries(row)) if ((merged[key] == null || String(merged[key]).trim() === '') && value != null && String(value).trim() !== '') merged[key] = value;
+  return merged;
+}
+async function buildFirstRowMap(files, currentCodes) {
+  const map = new Map();
+  const rowCounts = {};
+  for (const rel of files) {
+    let count = 0;
+    await scanCsv(rel, (row) => { count += 1; const code = huntCode(row); if (!code || !currentCodes.has(code)) return; map.set(code, mergeFirst(map.get(code), row, rel)); });
+    rowCounts[rel] = count;
+    console.log(`Scanned ${rel}: ${count} rows, matched ${map.size} current codes total`);
+  }
+  return { map, rowCounts };
+}
+function countBy(rows, key) { return rows.reduce((counts, row) => { const value = String(row[key] || 'UNKNOWN').trim() || 'UNKNOWN'; counts[value] = (counts[value] || 0) + 1; return counts; }, {}); }
 
+async function main() {
+  Object.values(OUTPUTS).forEach((rel) => ensureParent(rel));
   const inputs = Object.entries(INPUTS).map(([name, rel]) => inputStatus(name, rel));
   writeCsv(OUTPUTS.missingInputs, inputs.filter((input) => input.exists !== 'true'));
 
   const currentSource = pickCurrentSource();
-  if (!currentSource) {
-    throw new Error('No current 2026 hunt database source found. Expected pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv or canonical processed fallback.');
-  }
+  if (!currentSource) throw new Error('No current 2026 hunt database source found.');
   copyIfExists(currentSource, OUTPUTS.canonicalCurrent);
 
-  const currentRows = readCsv(currentSource);
-  const enrichedRows = readCsv(INPUTS.huntMasterEnriched);
-  const referenceRows = readCsv(INPUTS.huntUnitReferenceLinked);
-  const predictiveRows = readCsv(INPUTS.drawRealityEnginePredictive);
-  const realityRows = readCsv(INPUTS.drawRealityEngine).concat(readCsv(INPUTS.drawRealityEngineV2));
-  const mlRows = readCsv(INPUTS.mlDrawPredictions);
-  const pointRows = readCsv(INPUTS.pointLadderView);
-  const coverageRows = readCsv(INPUTS.coverageReport).concat(readCsv(INPUTS.predictiveCoverageReport));
-  const crosswalkRows = readCsv(INPUTS.crosswalk);
-  const harvestRows = readCsv(INPUTS.harvestMaster).concat(readCsv(INPUTS.harvestQualityAllYears)).concat(readCsv(INPUTS.harvestQuality2026));
-  const researchRows = readCsv(INPUTS.researchLibraryMaster);
+  const currentRows = [];
+  const currentCodes = new Set();
+  await scanCsv(currentSource, (row) => { const code = huntCode(row); if (!code) return; currentRows.push(row); currentCodes.add(code); });
+  console.log(`Current source used: ${currentSource}`);
+  console.log(`Current hunt rows loaded: ${currentRows.length}`);
 
-  const currentIndex = indexByCode(currentRows);
-  const enrichedIndex = indexByCode(enrichedRows);
-  const referenceIndex = indexByCode(referenceRows);
-  const predictiveIndex = indexByCode(predictiveRows);
-  const realityIndex = indexByCode(realityRows);
-  const mlIndex = indexByCode(mlRows);
-  const pointIndex = indexByCode(pointRows);
-  const coverageIndex = indexByCode(coverageRows);
-  const crosswalkIndex = indexByCode(crosswalkRows);
-  const harvestIndex = indexByCode(harvestRows);
+  const enriched = await buildFirstRowMap([INPUTS.huntMasterEnriched], currentCodes);
+  const reference = await buildFirstRowMap([INPUTS.huntUnitReferenceLinked], currentCodes);
+  const predictive = await buildFirstRowMap([INPUTS.drawRealityEnginePredictive], currentCodes);
+  const reality = await buildFirstRowMap([INPUTS.drawRealityEngine, INPUTS.drawRealityEngineV2], currentCodes);
+  const ml = await buildFirstRowMap([INPUTS.mlDrawPredictions], currentCodes);
+  const point = await buildFirstRowMap([INPUTS.pointLadderView], currentCodes);
+  const coverage = await buildFirstRowMap([INPUTS.coverageReport, INPUTS.predictiveCoverageReport], currentCodes);
+  const crosswalk = await buildFirstRowMap([INPUTS.crosswalk], currentCodes);
+  const harvest = await buildFirstRowMap([INPUTS.harvestMaster, INPUTS.harvestQualityAllYears, INPUTS.harvestQuality2026], currentCodes);
 
-  const pageRows = [];
-
-  for (const [code, rows] of currentIndex.entries()) {
-    const cur = rows[0] || {};
-    const enriched = firstByCode(enrichedIndex, code);
-    const reference = firstByCode(referenceIndex, code);
-    const predictive = firstByCode(predictiveIndex, code);
-    const reality = firstByCode(realityIndex, code);
-    const ml = firstByCode(mlIndex, code);
-    const point = firstByCode(pointIndex, code);
-    const coverage = firstByCode(coverageIndex, code);
-
-    const hasPrediction = predictiveIndex.has(code) || realityIndex.has(code) || mlIndex.has(code);
-    const hasPointLadder = pointIndex.has(code);
-    const hasCrosswalk = crosswalkIndex.has(code);
-    const hasHarvestEvidence = harvestIndex.has(code);
-    const hasCoverage = coverageIndex.has(code);
-    const classText = classification(coverage) || classification(enriched) || classification(predictive) || classification(reality) || '';
+  const pageRows = currentRows.map((cur) => {
+    const code = huntCode(cur);
+    const enr = enriched.map.get(code) || {};
+    const ref = reference.map.get(code) || {};
+    const pred = predictive.map.get(code) || {};
+    const real = reality.map.get(code) || {};
+    const mlRow = ml.map.get(code) || {};
+    const pointRow = point.map.get(code) || {};
+    const cov = coverage.map.get(code) || {};
+    const hasPrediction = predictive.map.has(code) || reality.map.has(code) || ml.map.has(code);
+    const hasCoverage = coverage.map.has(code);
+    const classText = classification(cov) || classification(enr) || classification(pred) || classification(real) || '';
     const finalState = classifyState({ hasPrediction, hasCoverage, classText });
-    const gateStatus = finalState === 'PREDICTION_ELIGIBLE_AND_MODELED' || finalState === 'EXCLUDED_WITH_DOCUMENTED_NON_PREDICTIVE_REASON'
-      ? 'PASS'
-      : 'BLOCK';
-
-    pageRows.push({
+    const gateStatus = finalState === 'PREDICTION_ELIGIBLE_AND_MODELED' || finalState === 'EXCLUDED_WITH_DOCUMENTED_NON_PREDICTIVE_REASON' ? 'PASS' : 'BLOCK';
+    return {
       hunt_code: code,
-      species: species(cur) || species(enriched) || species(reference),
-      hunt_name: huntName(cur) || huntName(enriched) || huntName(reference),
-      unit: unit(cur) || unit(enriched) || unit(reference),
-      weapon: weapon(cur) || weapon(enriched) || weapon(reference),
-      permits_2026: permits(cur) || permits(enriched) || permits(reference),
+      species: species(cur) || species(enr) || species(ref),
+      hunt_name: huntName(cur) || huntName(enr) || huntName(ref),
+      unit: unit(cur) || unit(enr) || unit(ref),
+      weapon: weapon(cur) || weapon(enr) || weapon(ref),
+      permits_2026: permits(cur) || permits(enr) || permits(ref),
       classification: classText,
       modeled: hasPrediction ? 'true' : 'false',
       has_prediction: hasPrediction ? 'true' : 'false',
-      has_point_ladder: hasPointLadder ? 'true' : 'false',
-      has_crosswalk: hasCrosswalk ? 'true' : 'false',
-      has_harvest_evidence: hasHarvestEvidence ? 'true' : 'false',
+      has_point_ladder: point.map.has(code) ? 'true' : 'false',
+      has_crosswalk: crosswalk.map.has(code) ? 'true' : 'false',
+      has_harvest_evidence: harvest.map.has(code) ? 'true' : 'false',
       has_coverage_record: hasCoverage ? 'true' : 'false',
-      display_odds_or_probability: probability(predictive) || probability(reality) || probability(ml) || probability(point),
-      model_version: modelVersion(predictive) || modelVersion(reality) || modelVersion(ml),
+      display_odds_or_probability: probability(pred) || probability(real) || probability(mlRow) || probability(pointRow),
+      model_version: modelVersion(pred) || modelVersion(real) || modelVersion(mlRow),
       final_state: finalState,
       gate_status: gateStatus,
       manual_review_required: gateStatus === 'BLOCK' ? 'true' : 'false',
       source_current_database: currentSource,
       source_prediction: hasPrediction ? INPUTS.drawRealityEnginePredictive : '',
-      source_crosswalk: hasCrosswalk ? INPUTS.crosswalk : '',
+      source_crosswalk: crosswalk.map.has(code) ? INPUTS.crosswalk : '',
       source_coverage: hasCoverage ? INPUTS.coverageReport : '',
-    });
-  }
+    };
+  });
 
+  const scannedRowCounts = { ...enriched.rowCounts, ...reference.rowCounts, ...predictive.rowCounts, ...reality.rowCounts, ...ml.rowCounts, ...point.rowCounts, ...coverage.rowCounts, ...crosswalk.rowCounts, ...harvest.rowCounts };
   const summary = {
     generated_at: new Date().toISOString(),
     current_source_used: currentSource,
+    cloudflare_fallback_base: CLOUDFLARE_BASE,
+    pages_file_limit_mb: Number((MAX_PAGES_FILE_BYTES / (1024 * 1024)).toFixed(1)),
     counts: {
       total_current_hunts: pageRows.length,
       modeled_count: pageRows.filter((row) => row.has_prediction === 'true').length,
@@ -425,44 +296,25 @@ function main() {
       manual_review_count: pageRows.filter((row) => row.manual_review_required === 'true').length,
       promotion_gate_pass_count: pageRows.filter((row) => row.gate_status === 'PASS').length,
       promotion_gate_block_count: pageRows.filter((row) => row.gate_status === 'BLOCK').length,
-      research_library_rows_detected: researchRows.length,
+      cloudflare_fallback_file_count: inputs.filter((item) => item.delivery === 'cloudflare-fallback').length,
     },
     species_counts: countBy(pageRows, 'species'),
     classification_counts: countBy(pageRows, 'classification'),
     final_state_counts: countBy(pageRows, 'final_state'),
     gate_status_counts: countBy(pageRows, 'gate_status'),
-    inputs,
-    recommendation: pageRows.some((row) => row.gate_status === 'BLOCK')
-      ? 'REVIEW: hard-data library page package built, but blocked rows remain. Review manual_review_required=true rows before live promotion.'
-      : 'PASS: hard-data library page package built with no blocked current hunt rows.',
+    input_file_status: inputs,
+    scanned_row_counts: scannedRowCounts,
+    recommendation: pageRows.some((row) => row.gate_status === 'BLOCK') ? 'REVIEW: hard-data library page package built, but blocked rows remain.' : 'PASS: hard-data library page package built with no blocked current hunt rows.',
   };
 
-  const manifestRows = inputs.map((input) => ({
-    ...input,
-    used_as_current_source: input.source_file === currentSource ? 'true' : 'false',
-  }));
-
-  writeCsv(OUTPUTS.libraryCsv, pageRows);
-  writeJson(OUTPUTS.libraryJson, pageRows);
-  writeJson(OUTPUTS.librarySummary, summary);
-  writeCsv(OUTPUTS.libraryManifestCsv, manifestRows);
-  writeJson(OUTPUTS.libraryManifestJson, summary);
-
-  writeCsv(OUTPUTS.productionCsv, pageRows);
-  writeJson(OUTPUTS.productionJson, pageRows);
-  writeJson(OUTPUTS.productionSummary, summary);
-
-  writeCsv(OUTPUTS.hardDataExportCsv, pageRows);
-  writeJson(OUTPUTS.hardDataExportJson, pageRows);
-  writeJson(OUTPUTS.hardDataExportSummary, summary);
-  writeCsv(OUTPUTS.hardDataExportManifestCsv, manifestRows);
-  writeJson(OUTPUTS.hardDataExportManifestJson, summary);
-
-  writeCsv(OUTPUTS.publicCsv, pageRows);
-  writeJson(OUTPUTS.publicJson, pageRows);
-  writeJson(OUTPUTS.publicSummary, summary);
-  writeCsv(OUTPUTS.publicManifestCsv, manifestRows);
-  writeJson(OUTPUTS.publicManifestJson, summary);
+  const manifestRows = inputs.map((input) => ({ ...input, used_as_current_source: input.source_file === currentSource ? 'true' : 'false' }));
+  writeCsv(OUTPUTS.libraryCsv, pageRows); writeJson(OUTPUTS.libraryJson, pageRows); writeJson(OUTPUTS.librarySummary, summary);
+  writeCsv(OUTPUTS.libraryManifestCsv, manifestRows); writeJson(OUTPUTS.libraryManifestJson, summary);
+  writeCsv(OUTPUTS.productionCsv, pageRows); writeJson(OUTPUTS.productionJson, pageRows); writeJson(OUTPUTS.productionSummary, summary);
+  writeCsv(OUTPUTS.hardDataExportCsv, pageRows); writeJson(OUTPUTS.hardDataExportJson, pageRows); writeJson(OUTPUTS.hardDataExportSummary, summary);
+  writeCsv(OUTPUTS.hardDataExportManifestCsv, manifestRows); writeJson(OUTPUTS.hardDataExportManifestJson, summary);
+  writeCsv(OUTPUTS.publicCsv, pageRows); writeJson(OUTPUTS.publicJson, pageRows); writeJson(OUTPUTS.publicSummary, summary);
+  writeCsv(OUTPUTS.publicManifestCsv, manifestRows); writeJson(OUTPUTS.publicManifestJson, summary);
 
   const webManifest = [
     manifestItem(OUTPUTS.hardDataExportCsv, 'Page-ready hard-data hunt library records as CSV.', { group: 'exports', title: 'Hard Data Library Page Records CSV' }),
@@ -471,18 +323,10 @@ function main() {
     manifestItem(OUTPUTS.hardDataExportManifestCsv, 'CSV manifest of source files used to build the hard-data library page package.', { group: 'exports', title: 'Hard Data Library Source Manifest CSV', scope: 'audit' }),
     manifestItem(OUTPUTS.hardDataExportManifestJson, 'JSON manifest and build status for the hard-data library page package.', { group: 'exports', title: 'Hard Data Library Source Manifest JSON', scope: 'audit' }),
   ];
-
-  for (const input of inputs.filter((item) => item.exists === 'true')) {
-    webManifest.push(manifestItem(input.source_file, `${input.role}; ${input.row_count} detected rows.`, {
-      group: groupFor(input.source_file),
-      title: titleFromRel(input.source_file),
-      scope: input.role.includes('coverage') || input.role.includes('crosswalk') ? 'audit' : 'runtime',
-    }));
+  for (const input of inputs.filter((item) => item.exists === 'true' && item.source_file.startsWith('processed_data/'))) {
+    webManifest.push(manifestItem(input.source_file, `${input.role}; size ${input.size_mb || 0} MB.`, { group: groupFor(input.source_file), title: titleFromRel(input.source_file), scope: input.role.includes('coverage') || input.role.includes('crosswalk') ? 'audit' : 'runtime' }));
   }
-
-  const uniqueManifest = Array.from(new Map(webManifest.map((item) => [item.href, item])).values());
-  writeJson(OUTPUTS.hardDataWebManifestJson, uniqueManifest);
-
+  writeJson(OUTPUTS.hardDataWebManifestJson, Array.from(new Map(webManifest.map((item) => [item.href, item])).values()));
   writeJson(OUTPUTS.buildReport, summary);
 
   console.log('\nHard-data library page build complete');
@@ -490,8 +334,8 @@ function main() {
   console.log(`Current source used: ${currentSource}`);
   console.log(`Total current hunts: ${summary.counts.total_current_hunts}`);
   console.log(`Modeled:             ${summary.counts.modeled_count}`);
-  console.log(`Excluded:            ${summary.counts.excluded_non_predictive_count}`);
   console.log(`Manual review:       ${summary.counts.manual_review_count}`);
+  console.log(`Cloudflare fallbacks:${summary.counts.cloudflare_fallback_file_count}`);
   console.log(`Gate PASS:           ${summary.counts.promotion_gate_pass_count}`);
   console.log(`Gate BLOCK:          ${summary.counts.promotion_gate_block_count}`);
   console.log('\nPrimary outputs:');
@@ -502,10 +346,4 @@ function main() {
   console.log(`\n${summary.recommendation}`);
 }
 
-try {
-  main();
-} catch (error) {
-  console.error('Failed to build hard-data library page package.');
-  console.error(error);
-  process.exit(1);
-}
+main().catch((error) => { console.error('Failed to build hard-data library page package.'); console.error(error); process.exit(1); });
