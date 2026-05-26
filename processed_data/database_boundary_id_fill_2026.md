@@ -1,0 +1,28 @@
+# 2026 DATABASE Boundary ID Fill
+
+Blank boundary IDs were filled only from exact JSON/GeoJSON evidence.
+
+- Blank before: 0
+- Promoted: 0
+- Blank after: 0
+- Blockers: 0
+
+## Promoted Rows
+
+- EA1287: 867; EXACT_OFFICIAL_BOUNDARY_NAME_JSON; Box Elder, Grouse Creek
+- EA1288: 952; EXACT_UNIQUE_DWR_BOUNDARY_GEOJSON_NAME; Manti, Ferron Lower Escarpment
+- EA1289: 952; EXACT_UNIQUE_DWR_BOUNDARY_GEOJSON_NAME; Manti, Ferron Lower Escarpment
+- EA1290: 952; EXACT_UNIQUE_DWR_BOUNDARY_GEOJSON_NAME; Manti, Ferron Lower Escarpment
+- EA1291: 950; EXACT_UNIQUE_DWR_BOUNDARY_GEOJSON_NAME; Mt Dutton North
+- EA1292: 950; EXACT_UNIQUE_DWR_BOUNDARY_GEOJSON_NAME; Mt Dutton North
+- EA1053: 132; DIRECT_OFFICIAL_HUNT_CODE_JSON; Nine Mile, West Anthro
+- EA1293: 140; EXACT_OFFICIAL_BOUNDARY_NAME_JSON; North Slope, Three Corners
+- EA1294: 951; EXACT_UNIQUE_DWR_BOUNDARY_GEOJSON_NAME; Paunsaugunt, East Creek
+- EA1295: 224; EXACT_OFFICIAL_BOUNDARY_NAME_JSON; Wasatch Mtns, Avintaquin
+- EA1007: 227; EXACT_OFFICIAL_BOUNDARY_NAME_JSON; Wasatch Mtns, Currant Creek
+- EA1296: 227; EXACT_OFFICIAL_BOUNDARY_NAME_JSON; Wasatch Mtns, Currant Creek
+- EA1297: 953; EXACT_UNIQUE_DWR_BOUNDARY_GEOJSON_NAME; Wasatch Mtns, Red Creek West
+- EA1299: 845; EXACT_OFFICIAL_BOUNDARY_NAME_JSON; Wasatch Mtns, West-Central
+- EA1300: 845; EXACT_OFFICIAL_BOUNDARY_NAME_JSON; Wasatch Mtns, West-Central
+- EA1298: 954; EXACT_UNIQUE_DWR_BOUNDARY_GEOJSON_NAME; Wasatch Mtns, Wildcat/Timber Canyon
+- PD1039: 718; DIRECT_OFFICIAL_HUNT_CODE_JSON; Panguitch Lake/Zion, North

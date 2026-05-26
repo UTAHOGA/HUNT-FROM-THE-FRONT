@@ -1,5 +1,26 @@
 # WORK LOG
 
+## 2026 DATABASE Boundary ID Fill From JSON/GeoJSON
+- Timestamp (UTC): 2026-05-26T16:36:35Z
+- Scope:
+  - Filled the `17` remaining blank `boundary_id` cells in canonical `DATABASE.csv` using reviewed JSON/GeoJSON evidence.
+  - Used direct official hunt-table JSON matches only when `HUNT_NUMBER` and boundary name agreed with the current DATABASE row.
+  - Used exact official boundary-name matches from `data/elk_antlerless_hunt_table_official.json` and `data/pronghorn_hunt_table_official.json` where current RAC split codes did not appear as direct `HUNT_NUMBER` rows.
+  - Used exact unique DWR boundary-layer name matches from `data/hunt_boundaries.geojson` for new current RAC split units not present by code in the official hunt-table JSON.
+  - Caught and corrected a code-reuse trap: current `EA1007` is `Wasatch Mtns, Currant Creek`, so it maps by current boundary name to `227`; the stale direct `EA1007` JSON row for `Box Elder, Grouse Creek` was not promoted.
+  - Final DATABASE health check: `1411` rows, `1411` unique hunt codes, `0` duplicate hunt codes, and `0` blank boundary IDs.
+- Outputs:
+  - `scripts/fill-database-boundary-ids-from-json-2026.py`
+  - `tests/utah/test_database_boundary_id_fill_2026.py`
+  - `data_truth/crosswalk_truth/validation/database_boundary_id_fill_2026_audit.csv`
+  - `data_truth/crosswalk_truth/validation/database_boundary_id_fill_2026_summary.json`
+  - `processed_data/database_boundary_id_fill_2026.md`
+  - `pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv`
+- Validation:
+  - `python scripts\fill-database-boundary-ids-from-json-2026.py` passed.
+  - `python -m py_compile scripts\fill-database-boundary-ids-from-json-2026.py tests\utah\test_database_boundary_id_fill_2026.py` passed.
+  - `python -m pytest tests\utah\test_database_boundary_id_fill_2026.py tests\utah\test_current_historical_hunt_code_crosswalk_2026.py -q` passed: `6`.
+
 ## Current Reference-Only Hunt Code Review 2026
 - Timestamp (UTC): 2026-05-26T16:26:44Z
 - Scope:
