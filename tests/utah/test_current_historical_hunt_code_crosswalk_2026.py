@@ -68,8 +68,15 @@ def test_conservation_and_reference_codes_keep_current_truth_with_history_eviden
     assert "RS6701" in rows["RS1001"]["candidate_historical_codes"]
     assert rows["RS1001"]["crosswalk_status"] == "PROMOTED_PINNED_CANDIDATE"
 
-    assert rows["DS1004"]["historical_hunt_code"] == "DS6608"
-    assert rows["DS1004"]["crosswalk_status"] == "PROMOTED_PINNED_CANDIDATE"
+    assert rows["DS1004"]["historical_hunt_code"] == "DS6608|DS6624"
+    assert rows["DS1004"]["relationship_type"] == "PARALLEL_CONSERVATION_TO_PUBLIC_OIAL_2026"
+    assert rows["DS1004"]["crosswalk_status"] == "PROMOTED_PARALLEL_PUBLIC_UNIT_REFERENCE"
+    assert rows["DS1004"]["mapping_confidence"] == "HIGH"
+
+    assert rows["DS1003"]["historical_hunt_code"] == "DS6626|DS6627"
+    assert rows["DS1003"]["crosswalk_status"] == "PROMOTED_PARALLEL_PUBLIC_UNIT_REFERENCE"
+    assert rows["DS6605"]["historical_hunt_code"] == "DS6621"
+    assert rows["DS6605"]["crosswalk_status"] == "PROMOTED_PARALLEL_PUBLIC_UNIT_REFERENCE"
 
     assert rows["BI6527"]["historical_hunt_code"] == "BI6527"
     assert rows["BI6527"]["relationship_type"] == "EXACT_CODE_HISTORY"

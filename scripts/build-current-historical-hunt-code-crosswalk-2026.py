@@ -30,6 +30,9 @@ FULL_JOINED_BACKCHECK_PATH = (
     / "full_joined_hunt_code_backcheck_2021_2026_conservation_annual_per_row.csv"
 )
 OLD_LE_CROSSWALK_PATH = ROOT / "processed_data/historical_le_to_eb_crosswalk_2024.csv"
+DESERT_BIGHORN_PUBLIC_PERMITS_PATH = (
+    ROOT / "data_truth/permit_overlay_truth/normalized/desert_bighorn_permits_2026_canonical.csv"
+)
 
 OVERLAY_LOCK_PATHS = [
     ROOT / "data_truth/permit_overlay_truth/normalized/private_land_deer_hunt_code_lock_2026.csv",
@@ -76,6 +79,15 @@ PINNED_PRIMARY_CANDIDATES = {
     "DS1004": "DS6608",
     "DS1006": "DS6603",
     "DS1007": "DS6610",
+}
+
+DS_PARALLEL_PUBLIC_OIAL_CODES = {
+    "DS1002": "DS6601",
+    "DS1003": "DS6626|DS6627",
+    "DS1004": "DS6608|DS6624",
+    "DS1006": "DS6603",
+    "DS1007": "DS6610",
+    "DS6605": "DS6621",
 }
 
 OUTPUT_COLUMNS = [
@@ -227,6 +239,14 @@ def choose_historical_code(
             return swapped_code, relationship, "PROMOTED_PREFIX_SWAP_CANDIDATE", "MEDIUM"
         return swapped_code, relationship, "PREFIX_SWAP_TARGET_NOT_IN_DATABASE_REVIEW", "LOW"
 
+    if current_code in DS_PARALLEL_PUBLIC_OIAL_CODES:
+        return (
+            DS_PARALLEL_PUBLIC_OIAL_CODES[current_code],
+            "PARALLEL_CONSERVATION_TO_PUBLIC_OIAL_2026",
+            "PROMOTED_PARALLEL_PUBLIC_UNIT_REFERENCE",
+            "HIGH",
+        )
+
     if current_code in PINNED_PRIMARY_CANDIDATES:
         primary = PINNED_PRIMARY_CANDIDATES[current_code]
         return primary, "PINNED_HISTORICAL_PUBLIC_OR_CONSERVATION_CANDIDATE", "PROMOTED_PINNED_CANDIDATE", "MEDIUM"
@@ -273,6 +293,9 @@ def build_rows() -> tuple[list[dict[str, str]], dict[str, object]]:
                 str(BACKCHECK_PATH.relative_to(ROOT)).replace("\\", "/") if backcheck_row else "",
                 str(FULL_JOINED_BACKCHECK_PATH.relative_to(ROOT)).replace("\\", "/") if full_joined_row else "",
                 str(OLD_LE_CROSSWALK_PATH.relative_to(ROOT)).replace("\\", "/") if old_rows else "",
+                str(DESERT_BIGHORN_PUBLIC_PERMITS_PATH.relative_to(ROOT)).replace("\\", "/")
+                if code in DS_PARALLEL_PUBLIC_OIAL_CODES and DESERT_BIGHORN_PUBLIC_PERMITS_PATH.exists()
+                else "",
             ]
         )
 
@@ -281,6 +304,8 @@ def build_rows() -> tuple[list[dict[str, str]], dict[str, object]]:
             notes.append("Current 2026 Hunt Planner code family is treated as current truth; historical code is a crosswalk candidate, not a replacement.")
         if code in overlay_codes:
             notes.append("Code was independently locked by permit overlay/reference workflow.")
+        if code in DS_PARALLEL_PUBLIC_OIAL_CODES:
+            notes.append("Desert bighorn conservation code is a parallel current permit opportunity, not a replacement for the public once-in-a-lifetime row(s).")
         if status.endswith("NEEDS_REVIEW"):
             notes.append("No dependable older-code mapping was promoted; keep as current reference only.")
 
@@ -318,6 +343,8 @@ def build_rows() -> tuple[list[dict[str, str]], dict[str, object]]:
                     if relationship.startswith("PREFIX_SWAP")
                     else "pinned_candidate"
                     if relationship.startswith("PINNED")
+                    else "parallel_conservation_public_oial"
+                    if relationship.startswith("PARALLEL_CONSERVATION")
                     else "exact_history"
                     if relationship == "EXACT_CODE_HISTORY"
                     else "reference_only"

@@ -3704,3 +3704,39 @@
   - `python scripts\build-black-bear-production-documents-2026.py` passed.
   - `python -m py_compile scripts\build-black-bear-production-documents-2026.py tests\utah\test_black_bear_production_documents_2026.py` passed.
   - `python -m pytest tests\utah\test_black_bear_production_documents_2026.py tests\utah\test_black_bear_permit_normalization_2026.py -q` passed: `10`.
+
+## Desert Bighorn 2026 Public/OIAL Permit Audit And Parallel Conservation Crosswalk
+- Timestamp (UTC): 2026-05-26T15:46:12Z
+- Scope:
+  - Normalized the reviewed 2026 public/once-in-a-lifetime desert bighorn permit rows from the DWR Hunt Planner source file.
+  - Split source `Res:` and `NonRes:` values into reviewed numeric `permits_2026_res`, `permits_2026_nr`, and `permits_2026_total` fields.
+  - Cross-checked those 18 public/OIAL rows against `DATABASE.csv` and the 2026 RAC/OIAL comparison CSV.
+  - Added mapping-law columns to the reviewed DS export: `hunt_code`, `boundary_id`, `hunt_code_mapping_status`, `boundary_id_mapping_status`, `candidate_hunt_code`, and `candidate_boundary_id`.
+  - Resolved the DS conservation mismatch class by marking conservation rows as parallel one-permit opportunities, not replacements for the public once-in-a-lifetime rows.
+  - Updated the current-to-historical crosswalk builder so DS conservation rows use `PROMOTED_PARALLEL_PUBLIC_UNIT_REFERENCE`.
+  - Did not change protected `DATABASE.csv` numeric cells.
+- Outputs:
+  - `scripts/normalize-desert-bighorn-permits-2026.py`
+  - `tests/utah/test_desert_bighorn_permit_normalization_2026.py`
+  - `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 desert bighorn reviewed res-nr-total.csv`
+  - `data_truth/permit_overlay_truth/normalized/desert_bighorn_permits_2026_canonical.csv`
+  - `data_truth/permit_overlay_truth/validation/desert_bighorn_permits_2026_vs_DATABASE.csv`
+  - `data_truth/permit_overlay_truth/validation/desert_bighorn_permits_2026_vs_RAC.csv`
+  - `data_truth/permit_overlay_truth/validation/desert_bighorn_public_vs_conservation_parallel_2026.csv`
+  - `data_truth/permit_overlay_truth/validation/desert_bighorn_permits_2026_summary.json`
+  - `processed_data/desert_bighorn_permits_2026_summary.md`
+  - `data_truth/crosswalk_truth/normalized/current_to_historical_hunt_code_crosswalk_2026.csv`
+  - `data_truth/crosswalk_truth/validation/current_to_historical_hunt_code_crosswalk_2026_summary.json`
+- Key results:
+  - Public/OIAL DS source rows: `18`.
+  - Unique public/OIAL DS hunt codes: `18`.
+  - Public/OIAL 2026 total permits: `85`.
+  - DATABASE comparison: `18` matches, `0` mismatches.
+  - RAC comparison: `18` matches, `0` mismatches.
+  - Resolved parallel conservation rows: `DS1002 -> DS6601`, `DS1003 -> DS6626|DS6627`, `DS1004 -> DS6608|DS6624`, `DS1006 -> DS6603`, `DS1007 -> DS6610`, and `DS6605 -> DS6621`.
+  - Crosswalk status counts now include `6` `PROMOTED_PARALLEL_PUBLIC_UNIT_REFERENCE` rows.
+- Validation:
+  - `python scripts\normalize-desert-bighorn-permits-2026.py` passed.
+  - `python scripts\build-current-historical-hunt-code-crosswalk-2026.py` passed.
+  - `python -m py_compile scripts\normalize-desert-bighorn-permits-2026.py scripts\build-current-historical-hunt-code-crosswalk-2026.py tests\utah\test_desert_bighorn_permit_normalization_2026.py tests\utah\test_current_historical_hunt_code_crosswalk_2026.py` passed.
+  - `python -m pytest tests\utah\test_desert_bighorn_permit_normalization_2026.py tests\utah\test_current_historical_hunt_code_crosswalk_2026.py -q` passed: `7`.
