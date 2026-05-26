@@ -1,0 +1,144 @@
+# Live DWR Permit Numbers vs DATABASE 2026
+
+- Snapshot UTC: `2026-05-26T18:57:45+00:00`
+- Live permit rows: `227`
+- Comparison rows: `227`
+- Numeric mismatch rows: `121`
+- Live-only rows: `0`
+- DATABASE-only rows: `0`
+
+## Source URLs
+
+- `Elk|Antlerless`: https://dwrapps.utah.gov/huntboundary/HuntTableData?species=Elk&gender=Antlerless
+- `Pronghorn|Doe`: https://dwrapps.utah.gov/huntboundary/HuntTableData?species=Pronghorn&gender=Doe
+
+## Status Counts
+
+- `LIVE_HAS_NUMERIC_DATABASE_BLANK`: `9`
+- `MATCH`: `97`
+- `NUMERIC_MISMATCH`: `94`
+- `TOTAL_MATCH_SPLIT_DIFFERS`: `27`
+
+## Numeric Mismatches
+
+- `EA1010`: live `18/2/20` vs DATABASE.permits_2026 `31/4/35`
+- `EA1011`: live `9/1/10` vs DATABASE.permits_2026 `18/2/20`
+- `EA1021`: live `207/23/230` vs DATABASE.permits_2026 `252/28/280`
+- `EA1033`: live `112/13/125` vs DATABASE.permits_2026 `90/10/100`
+- `EA1035`: live `112/13/125` vs DATABASE.permits_2026 `90/10/100`
+- `EA1054`: live `45/5/50` vs DATABASE.permits_2026 `90/10/100`
+- `EA1063`: live `67/8/75` vs DATABASE.permits_2026 `90/10/100`
+- `EA1069`: live `31/4/35` vs DATABASE.permits_2026 `22/3/25`
+- `EA1118`: live `6/0/0` vs DATABASE.permits_2026 `6/0/6`
+- `EA1119`: live `12/0/0` vs DATABASE.permits_2026 `12/0/12`
+- `EA1120`: live `20/0/0` vs DATABASE.permits_2026 `20/0/20`
+- `EA1121`: live `10/0/0` vs DATABASE.permits_2026 `10/0/10`
+- `EA1122`: live `5/0/0` vs DATABASE.permits_2026 `5/0/5`
+- `EA1124`: live `12/0/0` vs DATABASE.permits_2026 `12/0/12`
+- `EA1125`: live `25/0/0` vs DATABASE.permits_2026 `25/0/25`
+- `EA1129`: live `425/0/0` vs DATABASE.permits_2026 `425/0/425`
+- `EA1130`: live `7/0/0` vs DATABASE.permits_2026 `7/0/7`
+- `EA1131`: live `30/0/0` vs DATABASE.permits_2026 `30/0/30`
+- `EA1132`: live `30/0/0` vs DATABASE.permits_2026 `30/0/30`
+- `EA1134`: live `60/0/0` vs DATABASE.permits_2026 `60/0/60`
+- `EA1135`: live `20/0/0` vs DATABASE.permits_2026 `20/0/20`
+- `EA1136`: live `50/0/0` vs DATABASE.permits_2026 `50/0/50`
+- `EA1137`: live `9/0/0` vs DATABASE.permits_2026 `9/0/9`
+- `EA1138`: live `20/0/0` vs DATABASE.permits_2026 `20/0/20`
+- `EA1139`: live `10/0/0` vs DATABASE.permits_2026 `10/0/10`
+- `EA1140`: live `24/0/0` vs DATABASE.permits_2026 `24/0/24`
+- `EA1141`: live `12/0/0` vs DATABASE.permits_2026 `12/0/12`
+- `EA1142`: live `12/0/0` vs DATABASE.permits_2026 `12/0/12`
+- `EA1143`: live `21/0/0` vs DATABASE.permits_2026 `21/0/21`
+- `EA1145`: live `20/0/0` vs DATABASE.permits_2026 `20/0/20`
+- `EA1146`: live `9/0/0` vs DATABASE.permits_2026 `9/0/9`
+- `EA1147`: live `15/0/0` vs DATABASE.permits_2026 `15/0/15`
+- `EA1149`: live `15/0/0` vs DATABASE.permits_2026 `15/0/15`
+- `EA1151`: live `6/0/0` vs DATABASE.permits_2026 `6/0/6`
+- `EA1153`: live `4/0/0` vs DATABASE.permits_2026 `4/0/4`
+- `EA1156`: live `21/0/0` vs DATABASE.permits_2026 `21/0/21`
+- `EA1157`: live `35/0/0` vs DATABASE.permits_2026 `35/0/35`
+- `EA1158`: live `7/0/0` vs DATABASE.permits_2026 `7/0/7`
+- `EA1159`: live `6/0/0` vs DATABASE.permits_2026 `6/0/6`
+- `EA1160`: live `5/0/0` vs DATABASE.permits_2026 `5/0/5`
+- `EA1161`: live `9/0/0` vs DATABASE.permits_2026 `9/0/9`
+- `EA1162`: live `14/0/0` vs DATABASE.permits_2026 `14/0/14`
+- `EA1163`: live `19/0/0` vs DATABASE.permits_2026 `19/0/19`
+- `EA1164`: live `6/0/0` vs DATABASE.permits_2026 `6/0/6`
+- `EA1165`: live `15/0/0` vs DATABASE.permits_2026 `15/0/15`
+- `EA1166`: live `16/0/0` vs DATABASE.permits_2026 `16/0/16`
+- `EA1167`: live `12/0/0` vs DATABASE.permits_2026 `12/0/12`
+- `EA1168`: live `15/0/0` vs DATABASE.permits_2026 `15/0/15`
+- `EA1170`: live `10/0/0` vs DATABASE.permits_2026 `10/0/10`
+- `EA1171`: live `5/0/0` vs DATABASE.permits_2026 `5/0/5`
+- `EA1172`: live `9/0/0` vs DATABASE.permits_2026 `9/0/9`
+- `EA1174`: live `60/0/0` vs DATABASE.permits_2026 `60/0/60`
+- `EA1175`: live `10/0/0` vs DATABASE.permits_2026 `10/0/10`
+- `EA1177`: live `8/0/0` vs DATABASE.permits_2026 `8/0/8`
+- `EA1192`: live `6/0/0` vs DATABASE.permits_2026 `6/0/6`
+- `EA1193`: live `18/2/20` vs DATABASE.permits_2026 `31/4/35`
+- `EA1198`: live `2/0/0` vs DATABASE.permits_2026 `2/0/2`
+- `EA1200`: live `10/0/0` vs DATABASE.permits_2026 `10/0/10`
+- `EA1201`: live `10/0/0` vs DATABASE.permits_2026 `10/0/10`
+- `EA1208`: live `247/28/275` vs DATABASE.permits_2026 `292/33/325`
+- `EA1222`: live `27/3/30` vs DATABASE.permits_2026 `36/4/40`
+- `EA1223`: live `27/3/30` vs DATABASE.permits_2026 `36/4/40`
+- `EA1233`: live `4/0/0` vs DATABASE.permits_2026 `4/0/4`
+- `EA1234`: live `15/0/0` vs DATABASE.permits_2026 `15/0/15`
+- `EA1235`: live `10/0/0` vs DATABASE.permits_2026 `10/0/10`
+- `EA1251`: live `13/2/15` vs DATABASE.permits_2026 `11/1/12`
+- `EA1256`: live `9/0/0` vs DATABASE.permits_2026 `9/0/9`
+- `EA1257`: live `5/0/0` vs DATABASE.permits_2026 `5/0/5`
+- `EA1259`: live `2/0/0` vs DATABASE.permits_2026 `2/0/2`
+- `EA1260`: live `5/0/0` vs DATABASE.permits_2026 `5/0/5`
+- `EA1261`: live `5/0/0` vs DATABASE.permits_2026 `5/0/5`
+- `EA1263`: live `35/0/0` vs DATABASE.permits_2026 `35/0/35`
+- `EA1266`: live `18/2/20` vs DATABASE.permits_2026 `27/3/30`
+- `EA1267`: live `81/9/90` vs DATABASE.permits_2026 `180/20/200`
+- `EA1269`: live `180/20/200` vs DATABASE.permits_2026 `270/30/300`
+- `EA1284`: live `31/4/35` vs DATABASE.permits_2026 `49/6/55`
+- `EA1285`: live `31/4/35` vs DATABASE.permits_2026 `22/3/25`
+- `EA1286`: live `0/0/0` vs DATABASE.permits_2026 `36/4/40`
+- `EA2002`: live `0/0/600` vs DATABASE.permits_2026 `//600`
+- `EA2003`: live `0/0/500` vs DATABASE.permits_2026 `//500`
+- `EA2004`: live `0/0/600` vs DATABASE.permits_2026 `//600`
+- `EA2005`: live `0/0/100` vs DATABASE.permits_2026 `//100`
+- `EA2006`: live `0/0/2000` vs DATABASE.permits_2026 `//2000`
+- `EA2008`: live `0/0/250` vs DATABASE.permits_2026 `//250`
+- `EA2009`: live `0/0/70` vs DATABASE.permits_2026 `//70`
+- `EA2010`: live `0/0/50` vs DATABASE.permits_2026 `//50`
+- `EA2011`: live `0/0/300` vs DATABASE.permits_2026 `//300`
+- `EA2012`: live `0/0/400` vs DATABASE.permits_2026 `//400`
+- `EA2013`: live `0/0/2000` vs DATABASE.permits_2026 `//2000`
+- `EA2014`: live `0/0/400` vs DATABASE.permits_2026 `//400`
+- `EA2015`: live `0/0/100` vs DATABASE.permits_2026 `//100`
+- `EA2016`: live `0/0/275` vs DATABASE.permits_2026 `//275`
+- `EA2017`: live `0/0/75` vs DATABASE.permits_2026 `//75`
+- `EA2018`: live `0/0/75` vs DATABASE.permits_2026 `//75`
+- `EA2019`: live `0/0/60` vs DATABASE.permits_2026 `//60`
+- `EA2020`: live `0/0/320` vs DATABASE.permits_2026 `//320`
+- `EA2021`: live `0/0/30` vs DATABASE.permits_2026 `//30`
+- `EA2026`: live `0/0/200` vs DATABASE.permits_2026 `//200`
+- `EA2027`: live `0/0/300` vs DATABASE.permits_2026 `//300`
+- `EA2028`: live `0/0/450` vs DATABASE.permits_2026 `//450`
+- `EA2029`: live `0/0/150` vs DATABASE.permits_2026 `//150`
+- `EA2030`: live `0/0/200` vs DATABASE.permits_2026 `//200`
+- `EA2033`: live `225/25/250` vs DATABASE.permits_2026 `180/20/200`
+- `EA2036`: live `54/6/60` vs DATABASE.permits_2026 `63/7/70`
+- `EA2039`: live `0/0/150` vs DATABASE.permits_2026 `//150`
+- `EA2040`: live `0/0/150` vs DATABASE.permits_2026 `//150`
+- `EA2046`: live `0/0/25` vs DATABASE.permits_2026 `//25`
+- `PD1000`: live `72/8/80` vs DATABASE.permits_2026 `36/4/40`
+- `PD1012`: live `22/3/25` vs DATABASE.permits_2026 `18/2/20`
+- `PD1017`: live `49/6/55` vs DATABASE.permits_2026 `31/4/35`
+- `PD1031`: live `9/0/0` vs DATABASE.permits_2026 `9/0/9`
+- `PD1044`: live `9/1/10` vs DATABASE.permits_2026 `4/1/5`
+- `PD1047`: live `6/0/0` vs DATABASE.permits_2026 `6/0/6`
+- `PD1048`: live `2/0/0` vs DATABASE.permits_2026 `2/0/2`
+- `PD1049`: live `6/0/0` vs DATABASE.permits_2026 `6/0/6`
+- `PD1050`: live `6/0/0` vs DATABASE.permits_2026 `6/0/6`
+- `PD1051`: live `6/0/0` vs DATABASE.permits_2026 `6/0/6`
+- `PD1052`: live `6/0/0` vs DATABASE.permits_2026 `6/0/6`
+- `PD1053`: live `6/0/0` vs DATABASE.permits_2026 `6/0/6`
+- `PD1057`: live `31/4/35` vs DATABASE.permits_2026 `27/3/30`
+- `PD1059`: live `27/3/30` vs DATABASE.permits_2026 `31/4/35`

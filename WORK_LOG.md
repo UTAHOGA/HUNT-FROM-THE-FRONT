@@ -1,5 +1,30 @@
 # WORK LOG
 
+## Live DWR Permit Number Pull
+- Timestamp (UTC): 2026-05-26T18:58:00Z
+- Scope:
+  - Added a repeatable sidecar pull for live Utah DWR Hunt Planner permit numbers from the reviewed `HuntTableData` endpoints.
+  - Captured live `QUOTA_RES`, `QUOTA_NRES`, and `QUOTA` fields for antlerless elk and doe pronghorn.
+  - Compared live values to canonical `DATABASE.csv` permit/allotment fields without modifying `DATABASE.csv`.
+- Outputs:
+  - `scripts/pull-live-dwr-permit-numbers-2026.py`
+  - `data_truth/crosswalk_truth/raw_inventory/live_dwr_hunt_planner_permit_numbers_2026.csv`
+  - `data_truth/crosswalk_truth/validation/live_dwr_permit_numbers_vs_DATABASE_2026.csv`
+  - `data_truth/crosswalk_truth/validation/live_dwr_permit_numbers_vs_DATABASE_2026_summary.json`
+  - `processed_data/live_dwr_permit_numbers_vs_DATABASE_2026.md`
+- Key results:
+  - Live rows pulled: `227`.
+  - Elk antlerless rows: `204`.
+  - Doe pronghorn rows: `23`.
+  - Presence comparison: `227` live rows all present in `DATABASE.csv`.
+  - Exact numeric matches: `97`.
+  - Total-match split-difference rows: `27`.
+  - Numeric mismatch rows: `94`.
+  - Live numeric / database blank rows: `9`.
+- Validation:
+  - `python scripts\pull-live-dwr-permit-numbers-2026.py` passed.
+  - `python -m py_compile scripts\pull-live-dwr-permit-numbers-2026.py` passed.
+
 ## Database Audit Resumed After Sync
 - Timestamp (UTC): 2026-05-26T18:44:00Z
 - Scope:
