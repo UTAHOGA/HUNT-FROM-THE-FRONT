@@ -91,7 +91,33 @@ def test_conservation_and_reference_codes_keep_current_truth_with_history_eviden
     assert rows["BI6527"]["relationship_type"] == "EXACT_CODE_HISTORY"
 
     assert rows["EX1000"]["historical_hunt_code"] == ""
-    assert rows["EX1000"]["crosswalk_status"] == "CURRENT_REFERENCE_ONLY_NEEDS_REVIEW"
+    assert rows["EX1000"]["relationship_type"] == "REVIEWED_CURRENT_REFERENCE_ONLY"
+    assert rows["EX1000"]["crosswalk_status"] == "REVIEWED_CURRENT_REFERENCE"
+    assert rows["EX1000"]["mapping_confidence"] == "HIGH"
 
     assert rows["CG9999"]["historical_hunt_code"] == ""
-    assert rows["CG9999"]["crosswalk_status"] == "CURRENT_REFERENCE_ONLY_NEEDS_REVIEW"
+    assert rows["CG9999"]["relationship_type"] == "REVIEWED_CURRENT_REFERENCE_ONLY"
+    assert rows["CG9999"]["crosswalk_status"] == "REVIEWED_CURRENT_REFERENCE"
+    assert rows["CG9999"]["mapping_confidence"] == "HIGH"
+
+    assert rows["LO0008"]["historical_hunt_code"] == ""
+    assert rows["LO0008"]["relationship_type"] == "REVIEWED_CURRENT_REFERENCE_ONLY"
+    assert rows["LO0008"]["crosswalk_status"] == "REVIEWED_CURRENT_REFERENCE"
+    assert rows["LO0008"]["mapping_confidence"] == "HIGH"
+
+    assert rows["LO0011"]["historical_hunt_code"] == ""
+    assert rows["LO0011"]["relationship_type"] == "REVIEWED_CURRENT_REFERENCE_ONLY"
+    assert rows["LO0011"]["crosswalk_status"] == "REVIEWED_CURRENT_REFERENCE"
+    assert rows["LO0011"]["mapping_confidence"] == "HIGH"
+
+
+def test_reviewed_current_reference_codes_are_no_longer_manual_review():
+    run_builder()
+    summary = json.loads(SUMMARY.read_text(encoding="utf-8"))
+    rows = {row["current_hunt_code"]: row for row in read_rows(OUTPUT)}
+
+    assert summary["status_counts"].get("CURRENT_REFERENCE_ONLY_NEEDS_REVIEW", 0) == 0
+    assert summary["status_counts"]["REVIEWED_CURRENT_REFERENCE"] == 4
+    for code in ["CG9999", "EX1000", "LO0008", "LO0011"]:
+        assert rows[code]["mapping_method"] == "reviewed_current_reference"
+        assert rows[code]["recommended_model_behavior"] == "USE_REVIEWED_CURRENT_REFERENCE_ONLY"

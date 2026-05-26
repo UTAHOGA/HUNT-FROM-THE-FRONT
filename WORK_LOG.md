@@ -1,5 +1,29 @@
 # WORK LOG
 
+## Current Reference-Only Hunt Code Review 2026
+- Timestamp (UTC): 2026-05-26T16:26:44Z
+- Scope:
+  - Resolved the four remaining current-reference-only rows identified for manual review: `CG9999`, `EX1000`, `LO0008`, and `LO0011`.
+  - Promoted `CG9999` as the reviewed statewide cougar current reference row with `season=open`, `permits_2026_total=unlimited`, and `permit_allotment_2026_status=UNLIMITED_PERMITS` from the DWR Hunt Planner cougar CSV.
+  - Preserved `EX1000`, `LO0008`, and `LO0011` as reviewed no-quota-published reference rows and did not invent numeric resident, nonresident, or total permit counts.
+  - Updated the current-to-historical crosswalk builder so reviewed current-reference rows are no longer counted as unresolved manual-review gaps.
+  - Rebuilt the current-to-historical crosswalk: `169` rows, `0` missing from `DATABASE.csv`, `0` duplicate current-code rows, and `4` `REVIEWED_CURRENT_REFERENCE` rows.
+- Outputs:
+  - `scripts/resolve-current-reference-codes-2026.py`
+  - `tests/utah/test_current_reference_codes_2026.py`
+  - `data_truth/crosswalk_truth/validation/current_reference_codes_2026_review.csv`
+  - `data_truth/crosswalk_truth/validation/current_reference_codes_2026_summary.json`
+  - `processed_data/current_reference_codes_2026_review.md`
+  - `data_truth/crosswalk_truth/normalized/current_to_historical_hunt_code_crosswalk_2026.csv`
+  - `data_truth/crosswalk_truth/validation/current_to_historical_hunt_code_crosswalk_2026_summary.json`
+  - `processed_data/current_to_historical_hunt_code_crosswalk_2026.csv`
+  - `processed_data/current_to_historical_hunt_code_crosswalk_2026.md`
+- Validation:
+  - `python scripts\resolve-current-reference-codes-2026.py` passed.
+  - `python scripts\build-current-historical-hunt-code-crosswalk-2026.py` passed.
+  - `python -m py_compile scripts\resolve-current-reference-codes-2026.py scripts\build-current-historical-hunt-code-crosswalk-2026.py tests\utah\test_current_reference_codes_2026.py tests\utah\test_current_historical_hunt_code_crosswalk_2026.py` passed.
+  - `python -m pytest tests\utah\test_current_reference_codes_2026.py tests\utah\test_current_historical_hunt_code_crosswalk_2026.py -q` passed: `6`.
+
 ## 2026 EL/LO Private-Lands Elk Source Audit
 - Timestamp (UTC): 2026-05-26T14:01:30Z
 - Scope:

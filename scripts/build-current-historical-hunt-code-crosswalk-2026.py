@@ -36,6 +36,9 @@ DESERT_BIGHORN_PUBLIC_PERMITS_PATH = (
 ROCKY_BIGHORN_PUBLIC_PERMITS_PATH = (
     ROOT / "data_truth/permit_overlay_truth/normalized/rocky_bighorn_permits_2026_canonical.csv"
 )
+CURRENT_REFERENCE_REVIEW_PATH = (
+    ROOT / "data_truth/crosswalk_truth/validation/current_reference_codes_2026_review.csv"
+)
 
 OVERLAY_LOCK_PATHS = [
     ROOT / "data_truth/permit_overlay_truth/normalized/private_land_deer_hunt_code_lock_2026.csv",
@@ -98,6 +101,13 @@ RS_PARALLEL_PUBLIC_OIAL_CODES = {
     "RS1001": "RS6701",
     "RS1003": "RS6703|RS6704|RS6722",
     "RS1006": "RS6712",
+}
+
+REVIEWED_CURRENT_REFERENCE_CODES = {
+    "CG9999": "Reviewed statewide cougar current reference row; unlimited permits are current-source truth and no older hunt-code replacement is promoted.",
+    "EX1000": "Reviewed extended archery elk current reference row; no older hunt-code replacement is promoted.",
+    "LO0008": "Reviewed Diamond Mtn LOA buck deer archery reference row; no public DB replacement is promoted.",
+    "LO0011": "Reviewed Diamond Mtn LOA bull elk archery reference row; no public EB replacement is promoted.",
 }
 
 OUTPUT_COLUMNS = [
@@ -230,6 +240,7 @@ def target_current_codes(database_codes: set[str], overlay_codes: set[str]) -> l
     targets.update(code for code in PINNED_TARGET_CODES if code in database_codes)
     targets.update(code for code in DS_PARALLEL_PUBLIC_OIAL_CODES if code in database_codes)
     targets.update(code for code in RS_PARALLEL_PUBLIC_OIAL_CODES if code in database_codes)
+    targets.update(code for code in REVIEWED_CURRENT_REFERENCE_CODES if code in database_codes)
     return sorted(targets)
 
 
@@ -266,6 +277,9 @@ def choose_historical_code(
             "PROMOTED_PARALLEL_PUBLIC_UNIT_REFERENCE",
             "HIGH",
         )
+
+    if current_code in REVIEWED_CURRENT_REFERENCE_CODES:
+        return "", "REVIEWED_CURRENT_REFERENCE_ONLY", "REVIEWED_CURRENT_REFERENCE", "HIGH"
 
     if current_code in PINNED_PRIMARY_CANDIDATES:
         primary = PINNED_PRIMARY_CANDIDATES[current_code]
@@ -319,6 +333,9 @@ def build_rows() -> tuple[list[dict[str, str]], dict[str, object]]:
                 str(ROCKY_BIGHORN_PUBLIC_PERMITS_PATH.relative_to(ROOT)).replace("\\", "/")
                 if code in RS_PARALLEL_PUBLIC_OIAL_CODES and ROCKY_BIGHORN_PUBLIC_PERMITS_PATH.exists()
                 else "",
+                str(CURRENT_REFERENCE_REVIEW_PATH.relative_to(ROOT)).replace("\\", "/")
+                if code in REVIEWED_CURRENT_REFERENCE_CODES and CURRENT_REFERENCE_REVIEW_PATH.exists()
+                else "",
             ]
         )
 
@@ -331,6 +348,8 @@ def build_rows() -> tuple[list[dict[str, str]], dict[str, object]]:
             notes.append("Desert bighorn conservation code is a parallel current permit opportunity, not a replacement for the public once-in-a-lifetime row(s).")
         if code in RS_PARALLEL_PUBLIC_OIAL_CODES:
             notes.append("Rocky Mountain bighorn conservation/current code is a parallel current permit opportunity, not a replacement for the public once-in-a-lifetime row(s).")
+        if code in REVIEWED_CURRENT_REFERENCE_CODES:
+            notes.append(REVIEWED_CURRENT_REFERENCE_CODES[code])
         if status.endswith("NEEDS_REVIEW"):
             notes.append("No dependable older-code mapping was promoted; keep as current reference only.")
 
@@ -370,6 +389,8 @@ def build_rows() -> tuple[list[dict[str, str]], dict[str, object]]:
                     if relationship.startswith("PINNED")
                     else "parallel_conservation_public_oial"
                     if relationship.startswith("PARALLEL_CONSERVATION")
+                    else "reviewed_current_reference"
+                    if relationship == "REVIEWED_CURRENT_REFERENCE_ONLY"
                     else "exact_history"
                     if relationship == "EXACT_CODE_HISTORY"
                     else "reference_only"
@@ -382,8 +403,12 @@ def build_rows() -> tuple[list[dict[str, str]], dict[str, object]]:
                 "full_joined_name_match_codes": full_joined_row.get("name_match_hunt_codes", ""),
                 "full_joined_exact_history_years": full_joined_row.get("exact_harvest_history_years", ""),
                 "full_joined_name_match_years": full_joined_row.get("name_match_history_years", ""),
-                "recommended_model_behavior": full_joined_row.get("recommended_model_behavior")
-                or backcheck_row.get("recommended_model_behavior", ""),
+                "recommended_model_behavior": (
+                    "USE_REVIEWED_CURRENT_REFERENCE_ONLY"
+                    if code in REVIEWED_CURRENT_REFERENCE_CODES
+                    else full_joined_row.get("recommended_model_behavior")
+                    or backcheck_row.get("recommended_model_behavior", "")
+                ),
                 "source_files": "|".join(source_files),
                 "notes": " ".join(notes),
             }
