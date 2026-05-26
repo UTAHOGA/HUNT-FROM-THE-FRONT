@@ -33,6 +33,28 @@ VALIDATION_JSON = (
 
 CODE_RE = re.compile(r"\b(?:DB|DA|EB|EL|EA|PB|PD|BI|BR|DS|RS|MB|GO|LO|TK|CG)\d{4}\b")
 
+TEXT_REPLACEMENTS = {
+    "\u00e2\u20ac\u201c": "-",  # mojibake for en dash
+    "\u00e2\u20ac\u201d": "-",  # mojibake for em dash
+    "\u00e2\u20ac\u2122": "'",
+    "\u00e2\u20ac\u0153": '"',
+    "\u00e2\u20ac\u009d": '"',
+    "\u00e2\u20ac\u00a2": "",
+    "\u00e2\u20ac\u00a0": "",
+    "\u00e2\u20ac\u00a1": "",
+    "\u2013": "-",
+    "\u2014": "-",
+    "\u2018": "'",
+    "\u2019": "'",
+    "\u201c": '"',
+    "\u201d": '"',
+    "\u2022": "",
+    "\u2020": "",
+    "\u2021": "",
+    "\u00c2": " ",
+    "\u00a0": " ",
+}
+
 PREFIX_SPECIES = {
     "BI": "Bison",
     "DB": "Deer",
@@ -94,8 +116,16 @@ def clean(value: object) -> str:
     return text
 
 
+def ascii_clean(value: object) -> str:
+    text = clean(value)
+    for bad, good in TEXT_REPLACEMENTS.items():
+        text = text.replace(bad, good)
+    text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode("ascii")
+    return re.sub(r"\s+", " ", text).strip()
+
+
 def normalize(value: object) -> str:
-    text = unicodedata.normalize("NFKD", clean(value)).encode("ascii", "ignore").decode("ascii")
+    text = ascii_clean(value)
     text = text.lower()
     text = re.sub(r"\([^)]*\)", " ", text)
     text = text.replace("&", " and ")
@@ -110,9 +140,9 @@ def species_for_code(code: str) -> str:
 
 def extract_hunt_name_from_line(line: str, code: str) -> str:
     before = line.split(code, 1)[0]
-    before = re.sub(r"^[•*\-–—\s]+", "", before)
-    before = before.strip(" †‡*")
-    return clean(before)
+    before = ascii_clean(before)
+    before = re.sub(r"^[*\-\s]+", "", before)
+    return before.strip(" *")
 
 
 def extract_guidebook_codes() -> list[dict[str, str]]:
@@ -122,7 +152,7 @@ def extract_guidebook_codes() -> list[dict[str, str]]:
     for page_index, page in enumerate(reader.pages, start=1):
         text = page.extract_text() or ""
         for raw_line in text.splitlines():
-            line = clean(raw_line)
+            line = ascii_clean(raw_line)
             if not line:
                 continue
             codes = CODE_RE.findall(line)
@@ -161,7 +191,7 @@ def join_unique(values: list[str]) -> str:
     output: list[str] = []
     seen: set[str] = set()
     for value in values:
-        value = clean(value)
+        value = ascii_clean(value)
         if not value or value in seen:
             continue
         seen.add(value)
@@ -288,11 +318,11 @@ def build_matches() -> tuple[list[dict[str, str]], list[dict[str, str]], dict]:
 
 def write_csv(path: Path, rows: list[dict[str, str]], fieldnames: list[str]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", newline="", encoding="utf-8") as handle:
+    with path.open("w", newline="", encoding="utf-8-sig") as handle:
         writer = csv.DictWriter(handle, fieldnames=fieldnames, extrasaction="ignore")
         writer.writeheader()
         for row in rows:
-            writer.writerow({field: row.get(field, "") for field in fieldnames})
+            writer.writerow({field: ascii_clean(row.get(field, "")) for field in fieldnames})
 
 
 def write_json(path: Path, payload: dict) -> None:

@@ -3012,3 +3012,27 @@
   - `python -m py_compile scripts\find-2025-regulation-codes-for-2026-gaps.py tests\utah\test_guidebook_2025_codes_for_2026_gaps.py` passed.
   - `python -m pytest tests\utah\test_guidebook_2025_codes_for_2026_gaps.py -q` passed: `3`.
   - `python -m pytest tests\utah\test_guidebook_2025_codes_for_2026_gaps.py tests\utah\test_hunt_code_comparison_2025_to_2026.py -q` passed: `7`.
+
+## 2025 Guidebook Evidence Text Sanitization
+- Timestamp (UTC): 2026-05-26T13:14:54Z
+- Scope:
+  - Fixed PDF/Excel text encoding garbage in the 2025 guidebook candidate-line evidence columns.
+  - Normalized extracted guidebook evidence text to ASCII so date ranges write as `Oct. 18-Oct. 26` instead of leaking smart dashes or mojibake such as `â€“`.
+  - Wrote regenerated guidebook CSV outputs with UTF-8 BOM for Excel-friendly opening on Windows.
+  - Added a regression guard that fails if extracted guidebook evidence outputs contain mojibake, smart dashes, daggers, bullets, or replacement characters.
+  - No hunt-code matching logic, source CSV values, `DATABASE.csv`, website feeds, runtime files, materializer code, or prediction surfaces were changed.
+- Outputs:
+  - `scripts/find-2025-regulation-codes-for-2026-gaps.py`
+  - `tests/utah/test_guidebook_2025_codes_for_2026_gaps.py`
+  - `processed_data/guidebook_2025_extracted_hunt_codes.csv`
+  - `processed_data/guidebook_2025_codes_for_2026_gaps.csv`
+- Key results:
+  - Preserved guidebook extraction counts: `743` code-line rows and `734` unique codes.
+  - Preserved gap check count: `102`.
+  - Preserved match status counts: `2` exact current-code hits, `21` prefix-swap hits, `15` name/species candidates, and `64` no-code rows.
+  - Verified `LO1627` candidate line now reads `Cache (new) DB1627 Oct. 18-Oct. 26`.
+- Validation:
+  - `python scripts\find-2025-regulation-codes-for-2026-gaps.py` passed.
+  - `python -m py_compile scripts\find-2025-regulation-codes-for-2026-gaps.py tests\utah\test_guidebook_2025_codes_for_2026_gaps.py` passed.
+  - `python -m pytest tests\utah\test_guidebook_2025_codes_for_2026_gaps.py -q` passed: `4`.
+  - Direct scan of `processed_data\guidebook_2025_codes_for_2026_gaps.csv` and `processed_data\guidebook_2025_extracted_hunt_codes.csv` found no `â`, `Â`, replacement characters, smart dashes, daggers, or bullets.

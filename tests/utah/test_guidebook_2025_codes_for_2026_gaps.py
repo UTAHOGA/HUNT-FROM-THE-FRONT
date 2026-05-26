@@ -24,7 +24,7 @@ def run_lookup():
 
 
 def read_rows():
-    with OUTPUT.open(newline="", encoding="utf-8") as handle:
+    with OUTPUT.open(newline="", encoding="utf-8-sig") as handle:
         return {row["current_hunt_code"]: row for row in csv.DictReader(handle)}
 
 
@@ -77,3 +77,15 @@ def test_guidebook_2025_code_lookup_keeps_name_candidates_and_missing_codes_as_r
 
     br7307 = rows["BR7307"]
     assert br7307["comparison_status"] == "HISTORICAL_2025_CODE_PRESENT_BUT_NO_2026_PERMIT_VALUE"
+
+
+def test_guidebook_2025_code_lookup_outputs_ascii_clean_candidate_text():
+    run_lookup()
+    bad_tokens = ["\u00e2", "\u00c2", "\ufffd", "\u2013", "\u2014", "\u2020", "\u2021", "\u2022"]
+    for path in (OUTPUT, GUIDEBOOK_CODES):
+        text = path.read_text(encoding="utf-8-sig")
+        assert not any(token in text for token in bad_tokens)
+
+    rows = read_rows()
+    assert "Cache (new) DB1627 Oct. 18-Oct. 26" in rows["LO1627"]["guidebook_candidate_lines"]
+    assert "Cache (new)" in rows["LO1627"]["guidebook_candidate_names"]
