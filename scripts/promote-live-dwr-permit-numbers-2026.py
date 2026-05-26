@@ -88,7 +88,7 @@ def live_shape(row: dict[str, str]) -> tuple[str, str, str, str, str]:
     source_url = clean(row.get("source_url"))
 
     if hunt_type == "CWMU":
-        total = live_res or live_total
+        total = live_res if live_res not in {"", "0"} else live_total
         return "", "", total, "LIVE_DWR_CWMU_TOTAL_ONLY_FROM_QUOTA_RES", source_url
 
     if hunt_type in TOTAL_ONLY_TYPES:

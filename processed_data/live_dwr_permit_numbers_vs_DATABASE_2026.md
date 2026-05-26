@@ -1,6 +1,6 @@
 # Live DWR Permit Numbers vs DATABASE 2026
 
-- Snapshot UTC: `2026-05-26T21:04:27+00:00`
+- Snapshot UTC: `2026-05-26T21:38:12+00:00`
 - Live permit rows: `227`
 - Comparison rows: `227`
 - Numeric mismatch rows: `0`

@@ -23,7 +23,7 @@
   "presence_counts": {
     "LIVE_AND_DATABASE": 227
   },
-  "snapshot_utc": "2026-05-26T21:04:27+00:00",
+  "snapshot_utc": "2026-05-26T21:38:12+00:00",
   "source_urls": {
     "Elk|Antlerless": "https://dwrapps.utah.gov/huntboundary/HuntTableData?species=Elk&gender=Antlerless",
     "Pronghorn|Doe": "https://dwrapps.utah.gov/huntboundary/HuntTableData?species=Pronghorn&gender=Doe"

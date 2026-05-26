@@ -1,5 +1,37 @@
 # WORK LOG
 
+## Comprehensive Live DWR Permit Number Extraction
+- Timestamp (UTC): 2026-05-26T21:38:00Z
+- Scope:
+  - Added a comprehensive DWR Hunt Planner extraction across all reviewed `HuntTableData` species/gender endpoints that currently return rows.
+  - Queried 19 live DWR website endpoints and compared results by `hunt_code` to canonical `DATABASE.csv`.
+  - Kept the extraction as confirmation evidence only; this step did not modify `DATABASE.csv`.
+  - Fixed CWMU shaping so total-only CWMU rows use live `QUOTA_RES` when populated, otherwise live `QUOTA`, preventing zero `QUOTA_RES` from masking a valid total.
+- Outputs:
+  - `scripts/pull-live-dwr-permit-numbers-comprehensive-2026.py`
+  - `data_truth/crosswalk_truth/raw_inventory/live_dwr_hunt_planner_permit_numbers_comprehensive_2026.csv`
+  - `data_truth/crosswalk_truth/validation/live_dwr_permit_numbers_comprehensive_vs_DATABASE_2026.csv`
+  - `data_truth/crosswalk_truth/validation/live_dwr_permit_numbers_comprehensive_vs_DATABASE_2026_summary.json`
+  - `processed_data/live_dwr_permit_numbers_comprehensive_vs_DATABASE_2026.md`
+- Key results:
+  - DWR endpoints queried: `19`.
+  - Live DWR rows extracted: `1389`.
+  - Live unique hunt codes: `1389`.
+  - DATABASE rows compared: `1394`.
+  - Exact matches: `682`.
+  - Total-confirmed split-difference rows: `378`.
+  - DWR no-quota rows with database values preserved: `47`.
+  - Blank on both sides: `274`.
+  - Live-only rows: `0`.
+  - Live numeric / database blank rows: `0`.
+  - Database-only rows not exposed by queried endpoints: `5` (`BI6505`, `BI6506`, `BI6529`, `BI6536`, `BI6539`).
+  - Numeric mismatch rows needing review: `8` (`BI6528`, `BI6532`, `BR7004`, `EB3010`, `EB3047`, `EB3088`, `EB3112`, `EB3185`).
+- Validation:
+  - `python scripts\pull-live-dwr-permit-numbers-comprehensive-2026.py` passed.
+  - `python scripts\pull-live-dwr-permit-numbers-2026.py` passed.
+  - `python -m py_compile scripts\pull-live-dwr-permit-numbers-comprehensive-2026.py scripts\pull-live-dwr-permit-numbers-2026.py scripts\promote-live-dwr-permit-numbers-2026.py` passed.
+  - `python -m pytest tests\utah\test_live_dwr_and_expo_permit_promotion_2026.py -q` passed.
+
 ## Live DWR Permit Numbers Promoted With No-Quota Preservation
 - Timestamp (UTC): 2026-05-26T21:05:00Z
 - Scope:

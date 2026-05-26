@@ -160,7 +160,8 @@ def live_shape(row: dict[str, object]) -> tuple[str, str, str, str]:
     live_nr = int_text(row.get("live_nr"))
     live_total = int_text(row.get("live_total"))
     if hunt_type == "CWMU":
-        return "", "", live_res or live_total, "LIVE_DWR_CWMU_TOTAL_ONLY_FROM_QUOTA_RES"
+        total = live_res if live_res not in {"", "0"} else live_total
+        return "", "", total, "LIVE_DWR_CWMU_TOTAL_ONLY_FROM_QUOTA_RES"
     if hunt_type in TOTAL_ONLY_TYPES:
         total = live_total or live_res
         if total in {"", "0"}:

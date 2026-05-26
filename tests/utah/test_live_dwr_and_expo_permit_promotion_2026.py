@@ -8,6 +8,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 DATABASE = ROOT / "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv"
 LIVE_SUMMARY = ROOT / "data_truth/crosswalk_truth/validation/live_dwr_permit_numbers_vs_DATABASE_2026_summary.json"
+COMPREHENSIVE_LIVE_SUMMARY = (
+    ROOT / "data_truth/crosswalk_truth/validation/live_dwr_permit_numbers_comprehensive_vs_DATABASE_2026_summary.json"
+)
 EXPO_SUMMARY = ROOT / "data_truth/crosswalk_truth/validation/expo_hard_copy_promoted_to_DATABASE_2026_summary.json"
 
 
@@ -61,3 +64,26 @@ def test_expo_hard_copy_totals_promoted_as_total_only() -> None:
         assert row["permits_2026_total"] == total
         assert row["permits_2026_source"] == "2026_EXPO_PERMITS_HARD_COPY"
         assert row["permit_allotment_2026_status"] == "HARD_COPY_EXPO_TOTAL_ONLY"
+
+
+def test_comprehensive_live_dwr_extraction_confirms_broad_database_coverage() -> None:
+    summary = json.loads(COMPREHENSIVE_LIVE_SUMMARY.read_text(encoding="utf-8"))
+
+    assert summary["endpoint_count"] == 19
+    assert summary["live_unique_hunt_code_count"] == 1389
+    assert summary["database_row_count"] == 1394
+    assert summary["live_only_count"] == 0
+    assert summary["live_numeric_database_blank_count"] == 0
+    assert summary["database_only_codes"] == ["BI6505", "BI6506", "BI6529", "BI6536", "BI6539"]
+    assert summary["numeric_mismatch_codes"] == [
+        "BI6528",
+        "BI6532",
+        "BR7004",
+        "EB3010",
+        "EB3047",
+        "EB3088",
+        "EB3112",
+        "EB3185",
+    ]
+    assert summary["comparison_status_counts"]["MATCH"] == 682
+    assert summary["comparison_status_counts"]["TOTAL_MATCH_SPLIT_DIFFERS"] == 378
