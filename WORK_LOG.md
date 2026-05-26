@@ -1,5 +1,27 @@
 # WORK LOG
 
+## BR7307 Black Bear Conservation Permit Lock 2026
+- Timestamp (UTC): 2026-05-26T13:46:57Z
+- Scope:
+  - Confirmed `BR7307` exists as the current La Sal black bear `Multiseason - Conservation` hunt-code row in the 2026 black bear permit source and `DATABASE.csv`.
+  - Locked `BR7307` as a total-only conservation reference with `Total=4`, preserving blank resident/nonresident split fields because no split is published for this conservation package.
+  - Recorded the four PDF evidence rows supplied for the 2025-2027 conservation permit table: UHA row `36`, SFW row `37`, MDF row `38`, and SFW row `39`, one tag each.
+  - Cross-checked the normalized conservation table, where the two SFW rows are compressed as `permit_count=2`; normalized source total also sums to `4`.
+  - Synchronized the active current 2026 DATABASE/runtime/reference surfaces for `BR7307` without changing historical 2025 draw/harvest permit fields.
+- Files:
+  - `scripts/lock-black-bear-conservation-br7307-2026.py`
+  - `tests/utah/test_black_bear_conservation_br7307_lock_2026.py`
+  - `data_truth/permit_overlay_truth/normalized/black_bear_conservation_BR7307_lock_2026.csv`
+  - `data_truth/permit_overlay_truth/validation/black_bear_conservation_BR7307_lock_2026_audit.csv`
+  - `processed_data/black_bear_conservation_BR7307_lock_2026_summary.json`
+  - `processed_data/black_bear_conservation_BR7307_lock_2026.md`
+  - Current 2026 DATABASE/runtime/reference CSV surfaces carrying `BR7307`.
+- Validation:
+  - `python scripts\lock-black-bear-conservation-br7307-2026.py`
+  - `python -m compileall scripts\lock-black-bear-conservation-br7307-2026.py tests\utah\test_black_bear_conservation_br7307_lock_2026.py`
+  - `python -m pytest tests\utah\test_black_bear_conservation_br7307_lock_2026.py -q` passed: `3`
+  - Focused `BR7307` stale/blank/zero current-total scan across active surfaces returned `0` bad current total cells.
+
 ## EA Private-Lands Canonical Permit Promotion 2026
 - Timestamp (UTC): 2026-05-26T13:33:39Z
 - Scope:

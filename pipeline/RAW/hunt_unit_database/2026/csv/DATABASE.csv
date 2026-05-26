@@ -1076,7 +1076,7 @@ EL3130,682,Box Elder Pilot Mtn,Bull,Elk,Archery,Limited Entry - Private Land Onl
 BR1009,684,La Sal,Either Sex,Black Bear,Pursuit Only,Restricted Pursuit - Summer,"July 5 - 16, 2026",14,1,15,,,,,,,,,14,1,15,2025_DRAW_RESULTS_TABLES,,,,,,,
 BR1012,684,La Sal,Either Sex,Black Bear,Pursuit Only,Restricted Pursuit - Late Summer,"July 18 - July 31, 2026",14,1,15,,,,,,,,,14,1,15,2025_DRAW_RESULTS_TABLES,,,,,,,
 BR1017,684,La Sal,Either Sex,Black Bear,Pursuit Only,Restricted Pursuit - Spring,"March 28 - May 25, 2026",0,2,2,,,,,,,,,0,2,2,2025_DRAW_RESULTS_TABLES,,,,,,,
-BR7307,684,La Sal,Either Sex,Black Bear,Multiseason,Multiseason - Conservation,"Mar. 28 - May 25 & May 25 - June 28 & Aug. 1 - Aug. 31 & Nov 2 - Nov. 8, 2026",,,,,,,,,,,,13,1,14,2025_DRAW_RESULTS_TABLES,,,,,,,
+BR7307,684,La Sal,Either Sex,Black Bear,Multiseason,Multiseason - Conservation,"Mar. 28 - May 25 & May 25 - June 28 & Aug. 1 - Aug. 31 & Nov 2 - Nov. 8, 2026",,,4,,,,,,,,,13,1,14,2025_DRAW_RESULTS_TABLES,Utah DWR 2025-2027 Conservation Permit Database,,,4,Utah DWR 2025-2027 Conservation Permit Database,conservation-permit-hunt-table-2025-27.csv,TOTAL_ONLY
 DB1110,685,"Beaver, East",Buck,Deer,Muzzleloader,Limited Entry,Oct 28 2026 - Nov 05 2026,10,1,11,,9,1,10,73,88,Bonus Point Draw Results,canonical_2026_source_of_truth_draw_results,9,1,10,2025_DRAW_RESULTS_TABLES,,,,,,,
 DB1611,685,"Beaver, East",Buck,Deer,Archery,General Season,Aug 15 2026 - Sept 11 2026,,,440,,,,,,,,,259,26,285,2025_DRAW_RESULTS_TABLES,,,,,,,
 DB1612,685,"Beaver, East",Buck,Deer,Muzzleloader,General Season,Sept 23 2026 - Oct 01 2026,,,440,,,,,,,,,265,30,295,2025_DRAW_RESULTS_TABLES,,,,,,,
