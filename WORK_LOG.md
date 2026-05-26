@@ -1,5 +1,32 @@
 # WORK LOG
 
+## HUNT-BUILDER-CLEAN Missing Artifact Import
+- Timestamp (UTC): 2026-05-26T18:03:00Z
+- Scope:
+  - Imported files that existed in `C:\Users\tyler\Desktop\GitHub\HUNT-BUILDER-CLEAN` but did not exist at the same paths in active `C:\Users\tyler\Desktop\GitHub\HUNT-BUILDER`.
+  - Used a missing-path-only/no-overwrite policy so active `DATABASE.csv`, canonical runtime files, and same-path active data were not replaced by CLEAN versions.
+  - Wrote a hash manifest for the CLEAN-only import and a separate dependency manifest for the user-supplied EA private-lands raw source needed by the imported validation package.
+  - Confirmed `BR7307` is an active 2026 black bear conservation hunt, not merely an example row, and retained it as total-only conservation source truth.
+- Outputs:
+  - `processed_data/audits/hunt_builder_clean_only_file_import_2026_05_26.csv`
+  - `processed_data/audits/hunt_builder_clean_import_dependency_manifest_2026_05_26.csv`
+  - `data_truth/permit_overlay_truth/normalized/black_bear_conservation_BR7307_lock_2026.csv`
+  - `data_truth/permit_overlay_truth/normalized/elk_antlerless_private_lands_EA_2026_canonical.csv`
+  - `data_truth/permit_overlay_truth/normalized/elk_private_lands_EL_LO_2026_source_audit.csv`
+  - `processed_data/hard_data_exports/library/`
+  - `processed_data/library/`
+  - `processed_data/production/`
+  - `public/hard-copy/`
+- Validation:
+  - Hash verification passed for all `65` CLEAN-only copied files.
+  - `python -m py_compile scripts\audit-elk-private-lands-el-lo-2026.py scripts\lock-black-bear-conservation-br7307-2026.py scripts\promote-ea-private-lands-canonical-2026.py scripts\validate-ea-private-lands-canonical-2026.py` passed.
+  - `python scripts\validate-ea-private-lands-canonical-2026.py` passed with `0` blockers and `0` DATABASE mismatches.
+  - `python -m pytest tests\utah\test_ea_private_lands_canonical_2026.py tests\utah\test_ea_private_lands_canonical_promotion_2026.py -q` passed.
+  - `python scripts\lock-black-bear-conservation-br7307-2026.py` passed with `BR7307` selected total `4`, total-only status, and `0` validation errors.
+- Guardrail:
+  - No existing same-path active files were overwritten during the import copy.
+  - `DATABASE.csv` was not overwritten by CLEAN and remains the canonical active truth source.
+
 ## HUNT-BUILDER Active Repo Correction And HUNTS Change Transfer
 - Timestamp (UTC): 2026-05-26T17:37:01Z
 - Scope:
