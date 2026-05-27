@@ -5201,3 +5201,32 @@
   - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed.
   - `python -m py_compile scripts\promote-same-code-2025-pdf-crosswalk-active.py scripts\promote-oil-2025-draw-pdf-values-to-database.py scripts\audit-database-historical-permit-lineage-2026.py scripts\build-2024-to-2025-pdf-hunt-code-crosswalk.py scripts\extract-le-deer-2025-draw-results-permits.py scripts\extract-oil-2025-draw-results-permits.py scripts\final-permit-database-crosscheck-2026.py` passed.
   - `python -m pytest tests\utah\test_hunt_code_crosswalk_2024_pdf_to_2025_pdf.py tests\utah\test_le_deer_2025_draw_results_extraction.py tests\utah\test_oil_2025_draw_results_extraction.py tests\utah\test_database_historical_permit_lineage_2026.py tests\utah\test_final_permit_database_crosscheck_2026.py tests\utah\test_live_dwr_and_expo_permit_promotion_2026.py -q` passed: `23`.
+
+## Harvest-Only 2025 Code Resolution Ledger
+- Timestamp (UTC): 2026-05-27T00:20:00Z
+- Scope:
+  - Reviewed the final 4 warning-only 2025 harvest codes: `BI0001`, `DB1774`, `PB5343`, and `PD1041`.
+  - Created a reviewed harvest-only resolution ledger instead of inserting these as unverified current 2026 permit rows.
+  - Wired the comprehensive 2026/2025 integrity audit to treat reviewed harvest-only resolutions as closed evidence.
+  - No `DATABASE.csv` permit/allotment values, website feeds, `public_client_engine.csv`, prediction math, or materializer code were changed.
+- Resolution summary:
+  - `BI0001` maps to active Antelope Island bison draw family `BI6500`; `BI0001` itself is official bison boundary/table evidence.
+  - `DB1774` maps to historical draw-reality/draw-results evidence for Chalk Creek/East Canyon/Morgan-South Rich; no active 2026 DATABASE row exists.
+  - `PB5343` maps to the official pronghorn table and point-ladder code for Prohibition Springs CWMU; no active 2026 DATABASE row exists.
+  - `PD1041` maps historically to Heist CWMU doe pronghorn and recodes to current DATABASE row `PD1052`.
+- Outputs:
+  - `scripts/resolve-harvest-only-2025-codes.py`
+  - `data_truth/crosswalk_truth/normalized/harvest_only_2025_code_resolutions.csv`
+  - `data_truth/crosswalk_truth/validation/harvest_only_2025_code_resolutions_summary.json`
+  - `processed_data/harvest_only_2025_code_resolutions.md`
+- Key results:
+  - Harvest-only resolution ledger rows: `4`.
+  - Comprehensive history-integrity open issues: `0`.
+  - Comprehensive history-integrity warning count: `0`.
+  - Comprehensive history-integrity fatal blockers: `0`.
+- Validation:
+  - `python scripts\resolve-harvest-only-2025-codes.py` passed.
+  - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed.
+  - `python scripts\final-permit-database-crosscheck-2026.py` passed.
+  - `python -m py_compile scripts\resolve-harvest-only-2025-codes.py scripts\audit-comprehensive-2026-2025-history-integrity.py` passed.
+  - `python -m pytest tests\utah\test_hunt_code_crosswalk_2024_pdf_to_2025_pdf.py tests\utah\test_le_deer_2025_draw_results_extraction.py tests\utah\test_oil_2025_draw_results_extraction.py tests\utah\test_database_historical_permit_lineage_2026.py tests\utah\test_final_permit_database_crosscheck_2026.py tests\utah\test_live_dwr_and_expo_permit_promotion_2026.py tests\utah\test_comprehensive_2026_2025_history_integrity_audit.py -q` passed: `26`.

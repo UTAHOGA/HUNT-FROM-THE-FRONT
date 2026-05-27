@@ -1,11 +1,11 @@
 # Comprehensive 2026/2025 History Integrity Audit
 
-- Generated UTC: `2026-05-27T00:09:02+00:00`
+- Generated UTC: `2026-05-27T00:22:25+00:00`
 - DATABASE active rows: `1449`
 - DATABASE unique hunt codes: `1449`
 - Retired current-code ledger rows: `17`
 - Fatal blockers: `0`
-- Review warnings: `1`
+- Review warnings: `0`
 
 ## Clean Core Checks
 
@@ -17,7 +17,7 @@
 
 ## Remaining Review Classes
 
-- `harvest_2025_for_2026_database_code_presence`: `4` issue rows. active_database_matches=1114; unmatched_active_database=4; retired_matches=0. Next: Resolve remaining unmatched harvest codes as historical-only, CWMU-retired, or current-code crosswalk candidates.
+- No warning-class issues remain in this audit.
 
 ## Output Files
 

@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 DATABASE = ROOT / "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv"
 RETIRED = ROOT / "data_truth/crosswalk_truth/normalized/retired_current_hunt_codes_2026.csv"
+HARVEST_ONLY_RESOLUTIONS = ROOT / "data_truth/crosswalk_truth/normalized/harvest_only_2025_code_resolutions.csv"
 CROSSWALK_SUMMARY = ROOT / "data_truth/crosswalk_truth/validation/current_to_historical_hunt_code_crosswalk_2026_summary.json"
 LIVE_ONLINE_SUMMARY = ROOT / "data_truth/crosswalk_truth/validation/current_online_missing_hunt_codes_2026_review_summary.json"
 ACTIVE_EA_SUMMARY = ROOT / "data_truth/crosswalk_truth/validation/current_active_ea_hunts_2026_reconciliation_summary.json"
@@ -190,8 +191,10 @@ def main() -> int:
 
     database_rows = read_csv(DATABASE)
     retired_rows = read_csv(RETIRED)
+    harvest_resolution_rows = read_csv(HARVEST_ONLY_RESOLUTIONS)
     database_codes = {row["hunt_code"] for row in database_rows}
     retired_codes = {row["hunt_code"] for row in retired_rows}
+    resolved_harvest_codes = {row["source_hunt_code"] for row in harvest_resolution_rows}
     duplicate_codes = [code for code, count in Counter(row["hunt_code"] for row in database_rows).items() if count > 1]
     blank_boundary = [row for row in database_rows if not row.get("boundary_id", "").strip()]
     retired_still_active = sorted(database_codes & retired_codes)
@@ -226,6 +229,25 @@ def main() -> int:
         issue_codes=retired_still_active,
         notes="Expected retired current-code ledger contains 17 user-confirmed 2026 retired codes.",
         recommended_next_step="Do not restore retired codes to active DATABASE unless user re-confirms live DWR reactivation.",
+    )
+
+    harvest_resolution_still_missing_fields = [
+        row
+        for row in harvest_resolution_rows
+        if not row.get("source_hunt_code") or not row.get("resolution_status") or not row.get("maps_to_draw_odds_code")
+    ]
+    add_check(
+        dashboard,
+        check_id="harvest_only_2025_code_resolution_ledger",
+        domain="crosswalk_truth",
+        status="PASS" if len(harvest_resolution_rows) == len(resolved_harvest_codes) == 4 and not harvest_resolution_still_missing_fields else "FAIL",
+        severity="INFO" if len(harvest_resolution_rows) == len(resolved_harvest_codes) == 4 and not harvest_resolution_still_missing_fields else "BLOCKER",
+        row_count=len(harvest_resolution_rows),
+        issue_count=0 if len(harvest_resolution_rows) == len(resolved_harvest_codes) == 4 and not harvest_resolution_still_missing_fields else 1,
+        evidence_path=HARVEST_ONLY_RESOLUTIONS.relative_to(ROOT),
+        issue_codes=[row.get("source_hunt_code", "") for row in harvest_resolution_still_missing_fields],
+        notes="Reviewed 2025 harvest-only codes resolved to draw-code, boundary-code, or recode evidence.",
+        recommended_next_step="Keep harvest-code resolutions separate from current 2026 permit/allotment truth.",
     )
 
     boundary_summary = read_json(BOUNDARY_SUMMARY)
@@ -385,7 +407,11 @@ def main() -> int:
 
     harvest_rows = read_csv(HARVEST_2025)
     harvest_unmatched = [row for row in harvest_rows if row.get("hunt_code", "") not in database_codes]
-    harvest_unmatched_not_retired = [row for row in harvest_unmatched if row.get("hunt_code", "") not in retired_codes]
+    harvest_unmatched_not_retired = [
+        row
+        for row in harvest_unmatched
+        if row.get("hunt_code", "") not in retired_codes and row.get("hunt_code", "") not in resolved_harvest_codes
+    ]
     add_check(
         dashboard,
         check_id="harvest_2025_for_2026_database_code_presence",
@@ -398,7 +424,8 @@ def main() -> int:
         issue_codes=[row.get("hunt_code", "") for row in harvest_unmatched_not_retired],
         notes=(
             f"active_database_matches={len(harvest_rows) - len(harvest_unmatched)}; "
-            f"unmatched_active_database={len(harvest_unmatched)}; retired_matches={len(harvest_unmatched) - len(harvest_unmatched_not_retired)}."
+            f"unmatched_active_database={len(harvest_unmatched)}; "
+            f"retired_or_review_resolved_matches={len(harvest_unmatched) - len(harvest_unmatched_not_retired)}."
         ),
         recommended_next_step="Resolve remaining unmatched harvest codes as historical-only, CWMU-retired, or current-code crosswalk candidates.",
     )
@@ -447,6 +474,11 @@ def main() -> int:
             "ledger_row_count": len(retired_rows),
             "retired_codes_still_active_count": len(retired_still_active),
             "codes": sorted(retired_codes),
+        },
+        "harvest_only_resolutions": {
+            "path": str(HARVEST_ONLY_RESOLUTIONS.relative_to(ROOT)).replace("\\", "/"),
+            "ledger_row_count": len(harvest_resolution_rows),
+            "resolved_codes": sorted(resolved_harvest_codes),
         },
         "status_counts": dict(status_count),
         "severity_counts": dict(severity_count),

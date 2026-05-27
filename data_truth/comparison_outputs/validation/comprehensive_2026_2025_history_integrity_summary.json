@@ -8,16 +8,24 @@
     "unique_hunt_code_count": 1449
   },
   "fatal_blocker_count": 0,
-  "generated_at_utc": "2026-05-27T00:09:02+00:00",
+  "generated_at_utc": "2026-05-27T00:22:25+00:00",
   "guardrails": [
     "No protected numeric DATABASE cells were changed by this audit.",
     "Website feeds and materializer outputs were not modified.",
     "Warning-class historical rows are review evidence, not promoted current truth."
   ],
-  "open_issue_count": 4,
-  "open_issue_counts_by_type": {
-    "HARVEST_2025_CODE_NOT_IN_ACTIVE_DATABASE": 4
+  "harvest_only_resolutions": {
+    "ledger_row_count": 4,
+    "path": "data_truth/crosswalk_truth/normalized/harvest_only_2025_code_resolutions.csv",
+    "resolved_codes": [
+      "BI0001",
+      "DB1774",
+      "PB5343",
+      "PD1041"
+    ]
   },
+  "open_issue_count": 0,
+  "open_issue_counts_by_type": {},
   "outputs": {
     "dashboard_csv": "data_truth/comparison_outputs/validation/comprehensive_2026_2025_history_integrity_audit.csv",
     "markdown_report": "processed_data/comprehensive_2026_2025_history_integrity_audit.md",
@@ -49,13 +57,11 @@
     "path": "data_truth/crosswalk_truth/normalized/retired_current_hunt_codes_2026.csv",
     "retired_codes_still_active_count": 0
   },
-  "review_warning_count": 1,
+  "review_warning_count": 0,
   "severity_counts": {
-    "INFO": 16,
-    "WARNING": 1
+    "INFO": 18
   },
   "status_counts": {
-    "PASS": 16,
-    "WARN": 1
+    "PASS": 18
   }
 }

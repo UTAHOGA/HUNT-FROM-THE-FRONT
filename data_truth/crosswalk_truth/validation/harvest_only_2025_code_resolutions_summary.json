@@ -1,0 +1,29 @@
+{
+  "artifact": "harvest_only_2025_code_resolutions",
+  "draw_odds_mapping_status_counts": {
+    "YES_HISTORICAL_AND_CURRENT_RECODE": 1,
+    "YES_HISTORICAL_DRAW_REALITY_ENGINE": 1,
+    "YES_POINT_LADDER_CODE": 1,
+    "YES_VIA_CURRENT_DRAW_FAMILY": 1
+  },
+  "generated_at_utc": "2026-05-27T00:19:33+00:00",
+  "guardrail": "Reviewed harvest-code resolution ledger only. Does not modify DATABASE.csv, website feeds, prediction files, or 2026 permit/allotment values.",
+  "outputs": {
+    "ledger_csv": "data_truth/crosswalk_truth/normalized/harvest_only_2025_code_resolutions.csv",
+    "report_md": "processed_data/harvest_only_2025_code_resolutions.md",
+    "summary_json": "data_truth/crosswalk_truth/validation/harvest_only_2025_code_resolutions_summary.json"
+  },
+  "resolved_code_count": 4,
+  "resolved_codes": [
+    "BI0001",
+    "DB1774",
+    "PB5343",
+    "PD1041"
+  ],
+  "status_counts": {
+    "RESOLVED_BOUNDARY_CODE_MAPS_TO_CURRENT_DRAW_FAMILY": 1,
+    "RESOLVED_HISTORICAL_DRAW_REALITY_CODE_NO_CURRENT_DATABASE_ROW": 1,
+    "RESOLVED_OFFICIAL_PRONGHORN_TABLE_AND_POINT_LADDER_CODE": 1,
+    "RESOLVED_RECODED_TO_CURRENT_HEIST_CWMU_DOE_ROW": 1
+  }
+}
