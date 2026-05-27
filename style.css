@@ -461,6 +461,12 @@
     .hunt-card-actions { margin-top:10px; display:flex; gap:10px; flex-wrap:wrap; }
     .hunt-research-ring { border: 2px solid rgba(255, 126, 40, 0.9) !important; box-shadow: 0 0 0 2px rgba(255, 126, 40, 0.18), 0 8px 18px rgba(0,0,0,0.18); }
     .hunt-research-ring:hover { border-color: #ff8a3d !important; box-shadow: 0 0 0 3px rgba(255, 126, 40, 0.20), 0 10px 22px rgba(0,0,0,0.22); }
+    .hunt-research-pill {
+      border-radius: 999px !important;
+      font-weight: 900;
+      letter-spacing: .01em;
+      padding-inline: 16px !important;
+    }
     
     .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 14px; }
     .detail-grid strong { display: block; margin-bottom: 3px; color: var(--accent); font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
@@ -719,6 +725,33 @@
     .hunt-select, .hunt-input { width: 100%; background: var(--panel); border: 1px solid var(--line); color: var(--text); border-radius: 8px; padding: 10px 14px; font-size: 14px; outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
     .hunt-select:focus, .hunt-input:focus { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
     .hunt-select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%); background-position: calc(100% - 18px) calc(50% - 2px), calc(100% - 12px) calc(50% - 2px); background-size: 6px 6px, 6px 6px; background-repeat: no-repeat; cursor: pointer; }
+    .matrix-step {
+      max-height: 92px;
+      opacity: 1;
+      overflow: hidden;
+      transform: translateY(0);
+      transition:
+        max-height 0.34s cubic-bezier(.22, .61, .36, 1),
+        opacity 0.24s ease,
+        transform 0.3s ease,
+        margin-bottom 0.3s ease;
+      will-change: max-height, opacity, transform;
+    }
+    .matrix-step.is-collapsed {
+      max-height: 0;
+      opacity: 0;
+      pointer-events: none;
+      margin-bottom: 0;
+      transform: translateY(-10px);
+    }
+    .matrix-step.is-collapsed .hunt-select {
+      visibility: hidden;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .matrix-step {
+        transition: none;
+      }
+    }
     .filter-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 18px; }
 
     @media (max-width: 1180px) {
