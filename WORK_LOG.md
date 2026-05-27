@@ -1,5 +1,28 @@
 # WORK LOG
 
+## 2023 Draw PDF Source Parity For 2024 Modeling
+- Timestamp (UTC): 2026-05-27T05:40:00Z
+- Scope:
+  - Added a dedicated source-anchor audit for the user-supplied 2023 draw-odds PDF set used for 2024 modeling.
+  - Compared the `17` supplied PDFs from the older `HUNTS` repo against active `HUNT-BUILDER` copies by size and SHA-256 hash.
+  - Confirmed all `17 / 17` supplied PDFs are byte-identical in the active repo.
+  - Confirmed there are no active-only PDFs and no duplicate hash groups in the active 2024 draw-odds PDF folder.
+  - Linked the PDF source set to the previously anchored 2023-for-2024 CSV exports.
+  - Recorded that the two CSV exports directly represent `7 / 17` expected PDF labels and leave `10` expected PDF labels unrepresented as direct CSV `source_file` labels.
+  - Recorded current normalized draw-year/model-year 2024 truth at `37,128` rows and `580` unique hunt codes.
+  - Flagged normalized 2024 draw truth source labels as `SOURCE_LABEL_LINEAGE_REVIEW` because they use `24_*` source labels rather than this anchored 2023 PDF source set.
+  - Kept the audit source-only/read-only: no PDF extraction, normalized draw rewrite, `DATABASE.csv` edit, website feed edit, or prediction output edit was performed.
+- Outputs:
+  - `scripts/audit-draw-2023-for-2024-pdf-source-parity.py`
+  - `tests/utah/test_draw_2023_for_2024_pdf_source_parity.py`
+  - `data_truth/draw_results_truth/validation/draw_2023_for_2024_pdf_source_parity.csv`
+  - `data_truth/draw_results_truth/validation/draw_2023_for_2024_pdf_source_parity_summary.json`
+  - `processed_data/draw_2023_for_2024_pdf_source_parity.md`
+- Validation:
+  - `python scripts\audit-draw-2023-for-2024-pdf-source-parity.py` passed.
+  - `python -m py_compile scripts\audit-draw-2023-for-2024-pdf-source-parity.py tests\utah\test_draw_2023_for_2024_pdf_source_parity.py` passed.
+  - `python -m pytest tests\utah\test_draw_2023_for_2024_pdf_source_parity.py tests\utah\test_draw_2023_for_2024_csv_source_parity.py -q` passed: `9`.
+
 ## 2023 Draw CSV Source Parity For 2024 Modeling
 - Timestamp (UTC): 2026-05-27T05:26:00Z
 - Scope:
