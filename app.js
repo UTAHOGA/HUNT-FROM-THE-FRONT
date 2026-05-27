@@ -1148,9 +1148,28 @@ function normalizeHuntCategoryLabel(raw) {
   if (lower.includes('general')) return 'General Season';
   return value;
 }
+function normalizeSelectionMatrixLabel(value) {
+  return safe(value)
+    .toLowerCase()
+    .replace(/o\.?\s*i\.?\s*l\.?/g, 'once in a lifetime')
+    .replace(/once[-\s]*in[-\s]*a[-\s]*lifetime/g, 'once in a lifetime')
+    .replace(/private lands only/g, 'private land only')
+    .replace(/general-season/g, 'general season')
+    .replace(/limited-entry/g, 'limited entry')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
+}
+function huntClassFurtherDiversifies(huntType, huntClass) {
+  const normalizedType = normalizeSelectionMatrixLabel(huntType);
+  const normalizedClass = normalizeSelectionMatrixLabel(huntClass);
+  if (!normalizedClass) return false;
+  if (normalizedClass === normalizedType) return false;
+  return true;
+}
 function getHuntCategory(h) {
   if (h?.syntheticConservationPermit) {
-    return firstNonEmpty(h.huntCategory, h.HuntCategory, h.category, 'Conservation');
+    const syntheticCategory = normalizeHuntCategoryLabel(firstNonEmpty(h.huntCategory, h.HuntCategory, h.category, 'Conservation'));
+    return huntClassFurtherDiversifies(getHuntType(h), syntheticCategory) ? syntheticCategory : '';
   }
   const raw = firstNonEmpty(h.huntCategory, h.HuntCategory, h.category);
   const normalized = normalizeHuntCategoryLabel(raw);
@@ -1185,6 +1204,7 @@ function getHuntCategory(h) {
     }
   }
 
+  if (!huntClassFurtherDiversifies(huntType, normalized)) return '';
   return normalized;
 }
 function getHuntCodeDigits(h) {

@@ -5362,6 +5362,16 @@
   - `python -m py_compile scripts\promote-2026-draw-permit-subset.py scripts\promote-hunt-class-selection-matrix-2026.py scripts\final-permit-database-crosscheck-2026.py` passed.
   - `python -m pytest tests\utah\test_hunt_class_selection_matrix_2026.py tests\utah\test_2026_draw_permit_subset.py tests\utah\test_2025_draw_permit_field_promotion.py tests\utah\test_database_historical_permit_lineage_2026.py tests\utah\test_remaining_2025_history_crosswalk_boundary_closeout.py tests\utah\test_final_permit_database_crosscheck_2026.py tests\utah\test_comprehensive_2026_2025_history_integrity_audit.py -q` passed: `34`.
 
+## Hunt-Class Duplicate Selection Suppression
+- Timestamp (UTC): 2026-05-27T02:16:00Z
+- Scope:
+  - Updated the website picker logic so `hunt_class` is only shown when it further diversifies the selected `hunt_type`.
+  - Preserved the matrix order as `species -> sex_type -> hunt_type -> hunt_class -> weapon`.
+  - Suppressed exact duplicate class/type labels such as `Once-in-a-lifetime -> Once-in-a-lifetime`, `CWMU -> CWMU`, and singular/plural private-land duplicates.
+  - Kept meaningful refinements like `Youth`, `Spike Only`, `Mature Bull`, and `Antlerless`.
+- Validation:
+  - `node --check app.js` passed.
+
 ## 2025 Historical Source Label Repair
 - Timestamp (UTC): 2026-05-27T01:18:00Z
 - Scope:
