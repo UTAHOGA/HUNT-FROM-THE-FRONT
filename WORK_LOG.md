@@ -6034,3 +6034,48 @@
 - Validation:
   - `node scripts\build-database-candidate-review-package.js` passed.
   - `node tests\database-candidate-review.test.js` passed.
+
+## Database Fragment Manifest And Crosswalk Join Repair
+- Timestamp (UTC): 2026-05-27T09:50:00Z
+- Scope:
+  - Audited database-related draw, harvest, permit, crosswalk, runtime, public-export, and validation fragments in `processed_data`, `pipeline/RAW`, local `data_truth`, and external read-only `C:\Users\tyler\Desktop\GitHub\HUNTS\data_truth`.
+  - Fixed the Hunt Library builder so `current_to_historical_hunt_code_crosswalk_2026.csv` joins on `current_hunt_code`, `current_code`, and `current_hunt_number` as current keys.
+  - Kept `historical_hunt_code` as historical evidence metadata only; it is not treated as a current database key.
+  - Did not modify `DATABASE.csv`, `hunt_master_enriched.csv`, runtime prediction CSVs, permit totals, or any copied fragment files.
+- Outputs:
+  - `scripts/audit-database-fragment-manifest.js`
+  - `tests/database-fragment-manifest.test.js`
+  - `data_truth/comparison_outputs/database_fragment_audit/database_fragment_manifest.csv`
+  - `data_truth/comparison_outputs/database_fragment_audit/database_fragment_recommendations.csv`
+  - `data_truth/comparison_outputs/database_fragment_audit/database_fragment_summary.json`
+  - `processed_data/database_fragment_audit.md`
+- Key results:
+  - Fragment manifest rows: `3,186`.
+  - Official current source files: `1`.
+  - Runtime engine/output files: `11`.
+  - Page public exports: `12`.
+  - Candidate promotion files: `188`.
+  - Normalized truth sources: `51`.
+  - Audit/validation reports: `442`.
+  - Obsolete/archive fragments: `681`, including `276` Windows copy-suffix ` (2)` files.
+  - External `HUNTS` files needing import review: `61`.
+  - Unknown/manual-review files: `1,800`.
+- Build result after repair:
+  - Current `DATABASE.csv` hunt rows: `1,449`.
+  - `hunt_master_enriched.csv`: `53,225` rows, `1,449` current-code matches.
+  - `draw_reality_engine.csv`: `36,912` rows, `1,449` current-code matches.
+  - `draw_reality_engine_v2.csv`: `176,753` rows, `1,449` current-code matches.
+  - `draw_reality_engine_predictive_v2.csv`: `26,387` rows, `863` current-code matches.
+  - `ml_draw_predictions_v1.csv`: `26,387` rows, `863` current-code matches.
+  - `point_ladder_view.csv`: `91,712` rows, `1,449` current-code matches.
+  - `harvest_master.csv`: `1,764` rows, `1,133` current-code matches.
+  - `harvest_quality_features_all_years_by_hunt_code.csv`: `5,151` rows, `1,242` current-code matches.
+  - `current_to_historical_hunt_code_crosswalk_2026.csv`: `169` rows, `169` current-code matches.
+  - Gate PASS: `1,449`.
+  - Gate BLOCK: `0`.
+- Validation:
+  - `node scripts\audit-database-fragment-manifest.js` passed.
+  - `node tests\database-fragment-manifest.test.js` passed.
+  - `npm.cmd run build` passed.
+  - `node tests\database-candidate-review.test.js` passed.
+  - `git diff --check` passed with line-ending warnings only.

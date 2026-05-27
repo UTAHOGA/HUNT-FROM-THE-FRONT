@@ -106,7 +106,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -116,7 +116,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -658,7 +658,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -668,7 +668,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -682,7 +682,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -692,7 +692,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -706,7 +706,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -716,7 +716,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -730,7 +730,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -740,7 +740,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -826,7 +826,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -836,7 +836,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -946,7 +946,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -956,7 +956,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -1834,7 +1834,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -1844,7 +1844,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -1858,7 +1858,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -1868,7 +1868,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -1882,7 +1882,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -1892,7 +1892,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -1906,7 +1906,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -1916,7 +1916,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -1930,7 +1930,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -1940,7 +1940,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -1954,7 +1954,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -1964,7 +1964,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -2026,7 +2026,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -2036,7 +2036,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -2050,7 +2050,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -2060,7 +2060,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -2434,7 +2434,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -2444,7 +2444,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -2458,7 +2458,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -2468,7 +2468,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -2482,7 +2482,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -2492,7 +2492,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -2506,7 +2506,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -2516,7 +2516,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -2530,7 +2530,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -2540,7 +2540,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -2554,7 +2554,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -2564,7 +2564,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -2866,7 +2866,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -2876,7 +2876,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -2890,7 +2890,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -2900,7 +2900,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -2914,7 +2914,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -2924,7 +2924,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -2938,7 +2938,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -2948,7 +2948,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -2962,7 +2962,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -2972,7 +2972,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -2986,7 +2986,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -2996,7 +2996,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -3538,7 +3538,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -3548,7 +3548,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -3802,7 +3802,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -3812,7 +3812,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -4162,7 +4162,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -4172,7 +4172,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -4186,7 +4186,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -4196,7 +4196,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -4210,7 +4210,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -4220,7 +4220,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -4234,7 +4234,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -4244,7 +4244,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -4258,7 +4258,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -4268,7 +4268,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -4282,7 +4282,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -4292,7 +4292,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -4786,7 +4786,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -4796,7 +4796,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -4834,7 +4834,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -4844,7 +4844,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -5194,7 +5194,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -5204,7 +5204,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -5554,7 +5554,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -5564,7 +5564,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -6250,7 +6250,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -6260,7 +6260,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -6274,7 +6274,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -6284,7 +6284,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -6298,7 +6298,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -6308,7 +6308,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -6322,7 +6322,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -6332,7 +6332,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -6946,7 +6946,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -6956,7 +6956,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -6970,7 +6970,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -6980,7 +6980,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -6994,7 +6994,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -7004,7 +7004,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -7210,7 +7210,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -7220,7 +7220,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -7234,7 +7234,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -7244,7 +7244,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -7258,7 +7258,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -7268,7 +7268,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -7282,7 +7282,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -7292,7 +7292,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -7306,7 +7306,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -7316,7 +7316,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -7330,7 +7330,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -7340,7 +7340,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -7642,7 +7642,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -7652,7 +7652,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -7666,7 +7666,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -7676,7 +7676,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -7690,7 +7690,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -7700,7 +7700,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -7714,7 +7714,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -7724,7 +7724,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -7738,7 +7738,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -7748,7 +7748,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -7762,7 +7762,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -7772,7 +7772,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -7954,7 +7954,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -7964,7 +7964,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -7978,7 +7978,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -7988,7 +7988,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -8002,7 +8002,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -8012,7 +8012,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -8026,7 +8026,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -8036,7 +8036,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -8050,7 +8050,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -8060,7 +8060,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -8074,7 +8074,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -8084,7 +8084,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -8266,7 +8266,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -8276,7 +8276,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -8386,7 +8386,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -8396,7 +8396,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -8482,7 +8482,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -8492,7 +8492,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -8938,7 +8938,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -8948,7 +8948,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -8962,7 +8962,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -8972,7 +8972,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -8986,7 +8986,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -8996,7 +8996,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -9010,7 +9010,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -9020,7 +9020,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -9034,7 +9034,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -9044,7 +9044,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -9058,7 +9058,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -9068,7 +9068,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -9082,7 +9082,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -9092,7 +9092,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -9106,7 +9106,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -9116,7 +9116,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -9130,7 +9130,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -9140,7 +9140,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -9154,7 +9154,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -9164,7 +9164,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -9178,7 +9178,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -9188,7 +9188,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -9202,7 +9202,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -9212,7 +9212,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -9226,7 +9226,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -9236,7 +9236,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -9250,7 +9250,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -9260,7 +9260,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -9274,7 +9274,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -9284,7 +9284,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -9562,7 +9562,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -9572,7 +9572,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -9586,7 +9586,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -9596,7 +9596,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -9610,7 +9610,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -9620,7 +9620,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -9634,7 +9634,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -9644,7 +9644,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -9658,7 +9658,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -9668,7 +9668,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -9682,7 +9682,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -9692,7 +9692,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -10018,7 +10018,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -10028,7 +10028,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -10042,7 +10042,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -10052,7 +10052,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -10114,7 +10114,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -10124,7 +10124,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -10594,7 +10594,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -10604,7 +10604,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -11050,7 +11050,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -11060,7 +11060,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -19402,7 +19402,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -19412,7 +19412,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -19426,7 +19426,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -19436,7 +19436,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -20650,7 +20650,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -20660,7 +20660,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -20674,7 +20674,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -20684,7 +20684,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -20698,7 +20698,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -20708,7 +20708,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -20722,7 +20722,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -20732,7 +20732,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -20746,7 +20746,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -20756,7 +20756,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -20770,7 +20770,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -20780,7 +20780,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -21922,7 +21922,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -21932,7 +21932,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -22186,7 +22186,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -22196,7 +22196,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -22642,7 +22642,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -22652,7 +22652,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -22666,7 +22666,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -22676,7 +22676,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -22690,7 +22690,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -22700,7 +22700,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -22714,7 +22714,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -22724,7 +22724,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -22738,7 +22738,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -22748,7 +22748,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -22762,7 +22762,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -22772,7 +22772,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -23266,7 +23266,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -23276,7 +23276,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -23290,7 +23290,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -23300,7 +23300,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -23314,7 +23314,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -23324,7 +23324,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -23338,7 +23338,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -23348,7 +23348,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -23362,7 +23362,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -23372,7 +23372,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -23386,7 +23386,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -23396,7 +23396,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -23602,7 +23602,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -23612,7 +23612,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -24298,7 +24298,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -24308,7 +24308,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -24322,7 +24322,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -24332,7 +24332,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -24346,7 +24346,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -24356,7 +24356,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -24370,7 +24370,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -24380,7 +24380,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -24394,7 +24394,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -24404,7 +24404,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -24418,7 +24418,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -24428,7 +24428,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -25738,7 +25738,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -25748,7 +25748,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -25762,7 +25762,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -25772,7 +25772,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -26242,7 +26242,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -26252,7 +26252,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -26266,7 +26266,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -26276,7 +26276,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -26290,7 +26290,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -26300,7 +26300,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -26314,7 +26314,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -26324,7 +26324,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -26338,7 +26338,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -26348,7 +26348,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -26362,7 +26362,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -26372,7 +26372,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -27610,7 +27610,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -27620,7 +27620,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -28282,7 +28282,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -28292,7 +28292,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -29098,7 +29098,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -29108,7 +29108,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -29194,7 +29194,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -29204,7 +29204,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -29218,7 +29218,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -29228,7 +29228,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -29242,7 +29242,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -29252,7 +29252,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -29338,7 +29338,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -29348,7 +29348,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -29362,7 +29362,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -29372,7 +29372,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -29434,7 +29434,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -29444,7 +29444,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -29458,7 +29458,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -29468,7 +29468,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -29650,7 +29650,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -29660,7 +29660,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -29674,7 +29674,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -29684,7 +29684,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -29698,7 +29698,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -29708,7 +29708,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -29722,7 +29722,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -29732,7 +29732,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -29746,7 +29746,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -29756,7 +29756,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -29770,7 +29770,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -29780,7 +29780,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -30778,7 +30778,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -30788,7 +30788,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -30802,7 +30802,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -30812,7 +30812,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -30826,7 +30826,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -30836,7 +30836,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -30850,7 +30850,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -30860,7 +30860,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -30874,7 +30874,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -30884,7 +30884,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -30898,7 +30898,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -30908,7 +30908,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -31090,7 +31090,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -31100,7 +31100,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -31114,7 +31114,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -31124,7 +31124,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -31138,7 +31138,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -31148,7 +31148,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -31162,7 +31162,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -31172,7 +31172,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -31186,7 +31186,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -31196,7 +31196,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -31210,7 +31210,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -31220,7 +31220,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -32650,7 +32650,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -32660,7 +32660,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -32722,7 +32722,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -32732,7 +32732,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -32746,7 +32746,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -32756,7 +32756,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -32818,7 +32818,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -32828,7 +32828,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -32842,7 +32842,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -32852,7 +32852,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -32890,7 +32890,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -32900,7 +32900,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -32914,7 +32914,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -32924,7 +32924,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -33178,7 +33178,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -33188,7 +33188,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -33202,7 +33202,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "false",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -33212,7 +33212,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -33298,7 +33298,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -33308,7 +33308,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {
@@ -33394,7 +33394,7 @@
     "modeled": "true",
     "has_prediction": "true",
     "has_point_ladder": "true",
-    "has_crosswalk": "false",
+    "has_crosswalk": "true",
     "has_harvest_evidence": "true",
     "has_coverage_record": "true",
     "display_odds_or_probability": "",
@@ -33404,7 +33404,7 @@
     "manual_review_required": "false",
     "source_current_database": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     "source_prediction": "processed_data/draw_reality_engine_predictive_v2.csv",
-    "source_crosswalk": "",
+    "source_crosswalk": "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv",
     "source_coverage": "processed_data/draw_system_coverage_report.csv"
   },
   {

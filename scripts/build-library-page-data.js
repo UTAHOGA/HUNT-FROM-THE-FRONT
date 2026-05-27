@@ -135,7 +135,7 @@ function first(row, candidates) {
   return '';
 }
 
-function huntCode(row) { return first(row, ['hunt_code', 'huntcode', 'hunt_number', 'huntnumber', 'hunt no', 'hunt_no', 'hunt', 'code', 'permit_number', 'permit_no', 'hunt id', 'hunt_id']).toUpperCase().replace(/\s+/g, '').replace(/[^A-Z0-9]/g, ''); }
+function huntCode(row) { return first(row, ['hunt_code', 'current_hunt_code', 'current_code', 'current_hunt_number', 'huntcode', 'hunt_number', 'huntnumber', 'hunt no', 'hunt_no', 'hunt', 'code', 'permit_number', 'permit_no', 'hunt id', 'hunt_id']).toUpperCase().replace(/\s+/g, '').replace(/[^A-Z0-9]/g, ''); }
 function species(row) { return first(row, ['species', 'hunt_species', 'animal', 'big_game_species', 'category', 'hunt_category', 'hunt_type_species']); }
 function huntName(row) { return first(row, ['hunt_name', 'huntname', 'name', 'hunt_title', 'display_name', 'description', 'hunt_description', 'unit_name', 'hunt_unit']); }
 function unit(row) { return first(row, ['unit', 'unit_name', 'hunt_unit', 'management_unit', 'area', 'location', 'boundary_name', 'display_unit']); }
