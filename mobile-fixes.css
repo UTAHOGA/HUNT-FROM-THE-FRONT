@@ -1,0 +1,87 @@
+/* Mobile fixes — UOGA Hunt Builder
+   Adds fluid containers, responsive grid, image/media rules,
+   a responsive map container, touch target sizing, overflow protection,
+   and a compact mobile header helper. */
+* { box-sizing: border-box; }
+
+:root {
+  --gutter: 16px;
+  --container-max: 1200px;
+}
+
+/* Mobile-first container */
+.uoga-container {
+  width: 100%;
+  max-width: var(--container-max);
+  padding: 0 var(--gutter);
+  margin: 0 auto;
+}
+
+/* Responsive grid */
+.uoga-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* Fluid images and media */
+img, picture, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Lazy-load visual fallback (small improvement for browsers that do not support native loading attribute) */
+img[loading="lazy"] { opacity: 1; transition: opacity .2s ease-in; }
+
+/* Prevent long text overflow */
+.long-text, p, td, th {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Map container — responsive height tuned for mobile */
+.map-container {
+  width: 100%;
+  height: min(62vh, 640px);
+  max-height: 80vh;
+  position: relative;
+}
+
+/* Ensure native map layer is visible and interactive on mobile */
+.map-mode-native {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* Touch target sizing */
+button, a.utility-link, .map-mode-toggle, .research-btn, .research-link {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 8px 12px;
+  touch-action: manipulation;
+}
+
+/* Compact mobile header */
+@media (max-width: 767px) {
+  .topbar { padding: 8px 12px; }
+  .brand h1 { font-size: 1rem; margin: 0; }
+  .brand p { display: none; }
+  .utility-nav { display: none; }
+  .utility-nav.open { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+}
+
+/* Prevent horizontal scrollbar due to fixed elements */
+html, body { overflow-x: hidden; }
+
+/* Modal/flyout safety */
+.off-canvas, .drawer { max-height: 95vh; overflow: auto; }
+
+/* Small visual improvements for hero buttons on small screens */
+@media (max-width: 640px) {
+  .hero-actions { flex-direction: column; gap: 10px; }
+  .map-mode-toggle { width: 100%; }
+}
