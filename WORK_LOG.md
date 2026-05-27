@@ -1,5 +1,29 @@
 # WORK LOG
 
+## 2020 Hashed Draw PDF Source Parity For 2021 Modeling
+- Timestamp (UTC): 2026-05-27T05:48:00Z
+- Scope:
+  - Added a dedicated source-anchor audit for the user-supplied hashed-name 2020 draw-odds PDF set used for 2021 modeling.
+  - Compared the `13` supplied PDFs from the older `HUNTS` repo against active `HUNT-BUILDER` copies by size and SHA-256 hash.
+  - Confirmed all `13 / 13` supplied PDFs are byte-identical in the active repo.
+  - Confirmed there are no active-only PDFs and no duplicate hash groups in the active 2020 hashed draw-odds PDF folder.
+  - Compared the hashed-name source lineage to the existing named `20_*` 2020-for-2021 source package.
+  - Recorded `10` same-hash matches to the existing named `20_*` source folder.
+  - Recorded `3` hashed PDFs without a named `20_*` same-hash match: cougar, turkey bonus, and youth turkey.
+  - Anchored current normalized 2021 draw truth at `27,519` rows and `550` native unique hunt codes, with `21_bg-odds.pdf` as the current source label.
+  - Flagged source labels as `SOURCE_LABEL_LINEAGE_REVIEW` because this hashed lineage is source evidence and does not currently appear as normalized row labels.
+  - Kept the audit source-only/read-only: no PDF extraction, normalized draw rewrite, `DATABASE.csv` edit, website feed edit, or prediction output edit was performed.
+- Outputs:
+  - `scripts/audit-draw-2020-hashed-for-2021-source-parity.py`
+  - `tests/utah/test_draw_2020_hashed_for_2021_source_parity.py`
+  - `data_truth/draw_results_truth/validation/draw_2020_hashed_for_2021_source_parity.csv`
+  - `data_truth/draw_results_truth/validation/draw_2020_hashed_for_2021_source_parity_summary.json`
+  - `processed_data/draw_2020_hashed_for_2021_source_parity.md`
+- Validation:
+  - `python scripts\audit-draw-2020-hashed-for-2021-source-parity.py` passed.
+  - `python -m py_compile scripts\audit-draw-2020-hashed-for-2021-source-parity.py tests\utah\test_draw_2020_hashed_for_2021_source_parity.py` passed.
+  - `python -m pytest tests\utah\test_draw_2020_hashed_for_2021_source_parity.py tests\utah\test_draw_2020_for_2021_source_parity.py -q` passed: `7`.
+
 ## 2023 Draw PDF Source Parity For 2024 Modeling
 - Timestamp (UTC): 2026-05-27T05:40:00Z
 - Scope:
