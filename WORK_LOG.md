@@ -1,5 +1,28 @@
 # WORK LOG
 
+## 2023 Harvest Source Parity For 2024 Modeling
+- Timestamp (UTC): 2026-05-27T05:12:00Z
+- Scope:
+  - Added a dedicated parity audit for the user-supplied `2024/csv/Harvest Results` folder from the older `HUNTS` repo.
+  - Compared all `50` supplied 2023 harvest CSVs against active `HUNT-BUILDER` harvest truth raw packages by filename, headers, rows, and hashes.
+  - Verified the promoted 2023 all-species baseline package matches active truth packages by row/header content: `15 / 15` files.
+  - Verified the separate 2023-24 turkey package files match active truth packages by row/header content: `4 / 4` files.
+  - Inventoried `31` uploaded/all-sources/antlerless/supplemental CSVs as review evidence because matching active truth-package copies are not currently promoted.
+  - Anchored the normalized 2023 harvest truth count at `1078` rows and `1078` unique native hunt codes.
+  - Registered the existing 2023 harvest-vs-draw comparison artifact without promoting harvest values into draw/permit truth.
+  - Reconfirmed same-year 2023 harvest/draw alignment: `1078` harvest native codes, `1010` draw native codes, `921` same-code overlap, `157` harvest-only, and `89` draw-only.
+  - Kept the audit read-only for truth data: no `DATABASE.csv`, website feeds, draw predictions, permit/allotment cells, or normalized harvest rows were modified.
+- Outputs:
+  - `scripts/audit-harvest-2023-for-2024-source-parity.py`
+  - `tests/utah_quality/test_harvest_2023_for_2024_source_parity.py`
+  - `data_truth/harvest_results_truth/validation/harvest_2023_for_2024_source_parity.csv`
+  - `data_truth/harvest_results_truth/validation/harvest_2023_for_2024_source_parity_summary.json`
+  - `processed_data/harvest_2023_for_2024_source_parity.md`
+- Validation:
+  - `python scripts\audit-harvest-2023-for-2024-source-parity.py` passed.
+  - `python -m py_compile scripts\audit-harvest-2023-for-2024-source-parity.py tests\utah_quality\test_harvest_2023_for_2024_source_parity.py` passed.
+  - `python -m pytest tests\utah_quality\test_harvest_2023_for_2024_source_parity.py tests\utah_quality\test_harvest_draw_same_year_alignment_2026.py -q` passed: `7`.
+
 ## Harvest Year-By-Year Hardening Audit Against Current 2026 Universe
 - Timestamp (UTC): 2026-05-27T04:36:00Z
 - Scope:
