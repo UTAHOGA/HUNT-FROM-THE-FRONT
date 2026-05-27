@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 HARVEST_ISSUES = (
     ROOT / "data_truth/comparison_outputs/validation/comprehensive_2026_2025_history_integrity_open_issues.csv"
 )
+HARVEST_2025 = ROOT / "data_truth/harvest_results_truth/normalized/harvest_results_2025_for_2026_long.csv"
 DATABASE = ROOT / "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv"
 LEDGER = ROOT / "data_truth/crosswalk_truth/normalized/harvest_only_2025_code_resolutions.csv"
 SUMMARY = ROOT / "data_truth/crosswalk_truth/validation/harvest_only_2025_code_resolutions_summary.json"
@@ -18,11 +19,11 @@ REPORT = ROOT / "processed_data/harvest_only_2025_code_resolutions.md"
 
 RESOLUTIONS: dict[str, dict[str, str]] = {
     "BI0001": {
-        "resolution_status": "RESOLVED_BOUNDARY_CODE_MAPS_TO_CURRENT_DRAW_FAMILY",
-        "mapped_hunt_code": "BI6500",
-        "mapped_boundary_id": "1",
-        "maps_to_draw_odds_code": "YES_VIA_CURRENT_DRAW_FAMILY",
-        "evidence": "Official bison hunt table carries BI0001 as Antelope Island boundary hunt; DATABASE carries current Antelope Island bison draw row BI6500.",
+        "resolution_status": "RESOLVED_SPORTSMAN_CONSERVATION_BOUNDARY_EQUIVALENT",
+        "mapped_hunt_code": "BI1000",
+        "mapped_boundary_id": "5000",
+        "maps_to_draw_odds_code": "YES_SPORTSMAN_STATEWIDE_EQUIVALENT",
+        "evidence": "User review indicates BI0001 is likely the statewide/sportsman-conservation bison permit boundary equivalent. DATABASE carries current statewide hunters choice bison as BI1000; conservation may share the boundary authority without its own distinct hunt code.",
         "source_evidence_files": "data/bison_hunt_table_official.json;pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
     },
     "DB1774": {
@@ -103,6 +104,24 @@ def main() -> int:
         for row in read_csv(HARVEST_ISSUES)
         if row.get("issue_type") == "HARVEST_2025_CODE_NOT_IN_ACTIVE_DATABASE"
     ]
+    if not issue_rows:
+        issue_rows = [
+            {
+                "hunt_code": row.get("hunt_code", ""),
+                "hunt_name": row.get("hunt_name", ""),
+                "species": row.get("species", ""),
+                "sex_type": row.get("sex_type", ""),
+                "weapon": row.get("weapon", ""),
+                "hunt_type": row.get("hunt_type", ""),
+                "source": row.get("source_file", ""),
+                "source_permits": row.get("source_permits", ""),
+                "source_harvest": row.get("harvest", ""),
+                "source_page": row.get("source_page", ""),
+                "source_row": row.get("source_row", ""),
+            }
+            for row in read_csv(HARVEST_2025)
+            if row.get("hunt_code") in RESOLUTIONS
+        ]
     database = {row["hunt_code"]: row for row in read_csv(DATABASE)}
 
     issue_codes = {row["hunt_code"] for row in issue_rows}
@@ -126,11 +145,11 @@ def main() -> int:
                 "source_sex_type": issue.get("sex_type", ""),
                 "source_weapon": issue.get("weapon", ""),
                 "source_hunt_type": issue.get("hunt_type", ""),
-                "source_permits": "",
-                "source_harvest": "",
+                "source_permits": issue.get("source_permits", ""),
+                "source_harvest": issue.get("source_harvest", ""),
                 "source_file": issue.get("source", ""),
-                "source_page": "",
-                "source_row": "",
+                "source_page": issue.get("source_page", ""),
+                "source_row": issue.get("source_row", ""),
                 **resolution,
                 "mapped_hunt_name": mapped.get("hunt_name", ""),
                 "mapped_species": mapped.get("species", ""),
