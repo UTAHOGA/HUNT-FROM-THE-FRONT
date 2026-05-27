@@ -21,10 +21,10 @@ def _by_code(path: Path) -> dict[str, dict[str, str]]:
     return {row["hunt_code"]: row for row in _read_csv(path) if row.get("hunt_code")}
 
 
-def test_selection_matrix_order_is_species_sex_hunt_type_hunt_class_weapon() -> None:
+def test_selection_matrix_order_is_species_sex_hunt_type_weapon_hunt_class() -> None:
     summary = json.loads(SUMMARY.read_text(encoding="utf-8"))
 
-    assert summary["selection_matrix"] == ["species", "sex_type", "hunt_type", "hunt_class", "weapon"]
+    assert summary["selection_matrix"] == ["species", "sex_type", "hunt_type", "weapon", "hunt_class"]
     assert summary["internal_engine_field"] == "draw_2026_system_type"
     assert summary["removed_duplicate_fields"] == ["draw_2026_permit_family"]
     assert summary["database_hunt_class_populated_count"] == 1288

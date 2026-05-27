@@ -1,7 +1,7 @@
 # 2026 Hunt Class Selection Matrix
 
-- Generated UTC: `2026-05-27T02:07:43+00:00`
-- Selection order: `species -> sex_type -> hunt_type -> hunt_class -> weapon`
+- Generated UTC: `2026-05-27T02:14:08+00:00`
+- Selection order: `species -> sex_type -> hunt_type -> weapon -> hunt_class`
 - Internal engine route: `draw_2026_system_type`
 - Removed duplicate selector field: `draw_2026_permit_family`
 - DATABASE hunt_class populated rows: `1288`

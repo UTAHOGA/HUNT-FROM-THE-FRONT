@@ -22,7 +22,7 @@
   },
   "database_hunt_class_populated_count": 1288,
   "files_written": 10,
-  "generated_at_utc": "2026-05-27T02:07:43+00:00",
+  "generated_at_utc": "2026-05-27T02:14:08+00:00",
   "guardrail": "hunt_class is the user-facing selection class; draw_2026_system_type is internal engine routing and must not be exposed as a duplicate selector.",
   "internal_engine_field": "draw_2026_system_type",
   "removed_duplicate_fields": [
@@ -124,8 +124,8 @@
     "species",
     "sex_type",
     "hunt_type",
-    "hunt_class",
-    "weapon"
+    "weapon",
+    "hunt_class"
   ],
   "source": "data/utah/official_downloads_2026/hunt_master_canonical_2026.csv",
   "source_hunt_code_count": 1288

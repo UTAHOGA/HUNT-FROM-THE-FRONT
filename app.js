@@ -1898,17 +1898,17 @@ function refreshSelectionMatrix() {
   huntTypeFilter.innerHTML = huntTypeOptions.map(v => `<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`).join('');
   huntTypeFilter.value = huntTypeOptions.includes(prevHuntType) ? prevHuntType : 'All';
 
-  const categoryData = getFilteredHunts('huntCategory');
-  const categoryOptions = sortWithPreferredOrder(Array.from(new Set(['All', ...categoryData.map(getHuntCategory).filter(Boolean)])), ['All', ...HUNT_CLASS_ORDER]);
-  const prevHuntCategory = huntCategoryFilter.value || 'All';
-  huntCategoryFilter.innerHTML = categoryOptions.map(v => `<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`).join('');
-  huntCategoryFilter.value = categoryOptions.includes(prevHuntCategory) ? prevHuntCategory : 'All';
-
   const weaponData = getFilteredHunts('weapon');
   const weaponOptions = sortWithPreferredOrder(Array.from(new Set(['All', ...weaponData.map(getWeapon).filter(Boolean)])), ['All', ...WEAPON_ORDER]);
   const prevWeapon = weaponFilter.value || 'All';
   weaponFilter.innerHTML = weaponOptions.map(v => `<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`).join('');
   weaponFilter.value = weaponOptions.includes(prevWeapon) ? prevWeapon : 'All';
+
+  const categoryData = getFilteredHunts('huntCategory');
+  const categoryOptions = sortWithPreferredOrder(Array.from(new Set(['All', ...categoryData.map(getHuntCategory).filter(Boolean)])), ['All', ...HUNT_CLASS_ORDER]);
+  const prevHuntCategory = huntCategoryFilter.value || 'All';
+  huntCategoryFilter.innerHTML = categoryOptions.map(v => `<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`).join('');
+  huntCategoryFilter.value = categoryOptions.includes(prevHuntCategory) ? prevHuntCategory : 'All';
 
   const hasNonUnitSelections = [
     safe(searchInput?.value).trim(),
@@ -4949,7 +4949,7 @@ function isAdvancedMatrixSelection(controlId) {
 }
 
 function maybeAutoAdvanceFilterMatrix(changedId) {
-  const sequence = ['speciesFilter', 'sexFilter', 'huntTypeFilter', 'huntCategoryFilter', 'weaponFilter', 'unitFilter'];
+  const sequence = ['speciesFilter', 'sexFilter', 'huntTypeFilter', 'weaponFilter', 'huntCategoryFilter', 'unitFilter'];
   const idx = sequence.indexOf(changedId);
   if (idx < 0) return;
   if (!isAdvancedMatrixSelection(changedId)) return;

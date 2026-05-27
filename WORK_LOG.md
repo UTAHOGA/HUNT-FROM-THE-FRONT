@@ -5372,6 +5372,22 @@
 - Validation:
   - `node --check app.js` passed.
 
+## Hunt-Class Selector Moved After Weapon
+- Timestamp (UTC): 2026-05-27T02:16:00Z
+- Scope:
+  - Reordered the user-facing picker to `species -> sex_type -> hunt_type -> weapon -> hunt_class`.
+  - Moved the Hunt Class selector below Weapon Type in `index.html`.
+  - Updated the matrix refresh order so weapon selection is applied before hunt-class options are recalculated.
+  - Updated auto-advance order to move from Hunt Type to Weapon, then Hunt Class, then DWR Hunt Units.
+  - Regenerated hunt-class selection-matrix validation outputs with the corrected order.
+- Validation:
+  - `python scripts\promote-hunt-class-selection-matrix-2026.py` passed.
+  - `node --check app.js` passed.
+  - `python scripts\final-permit-database-crosscheck-2026.py` passed.
+  - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed.
+  - `python scripts\build-database-publish-readiness-report.py` passed.
+  - `python -m pytest tests\utah\test_hunt_class_selection_matrix_2026.py tests\utah\test_2026_draw_permit_subset.py tests\utah\test_final_permit_database_crosscheck_2026.py tests\utah\test_comprehensive_2026_2025_history_integrity_audit.py -q` passed: `16`.
+
 ## 2025 Historical Source Label Repair
 - Timestamp (UTC): 2026-05-27T01:18:00Z
 - Scope:

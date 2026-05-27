@@ -2,13 +2,13 @@
 
 DWR-facing selection order for the hunt picker is:
 
-    species -> sex_type -> hunt_type -> hunt_class -> weapon
+    species -> sex_type -> hunt_type -> weapon -> hunt_class
 
 `hunt_type` is the primary DWR hunt category. `hunt_class` is the user-facing
-refinement layer under hunt_type. `draw_2026_system_type` remains internal
-engine routing. This script backfills hunt_class where active runtime/database
-files were missing it and removes the duplicate `draw_2026_permit_family`
-column.
+refinement layer after weapon selection, used only when it further diversifies
+the resolved hunt set. `draw_2026_system_type` remains internal engine routing.
+This script backfills hunt_class where active runtime/database files were
+missing it and removes the duplicate `draw_2026_permit_family` column.
 """
 
 from __future__ import annotations
@@ -184,7 +184,7 @@ def main() -> int:
         "generated_at_utc": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
         "source": SOURCE.relative_to(ROOT).as_posix(),
         "source_hunt_code_count": len(source),
-        "selection_matrix": ["species", "sex_type", "hunt_type", "hunt_class", "weapon"],
+        "selection_matrix": ["species", "sex_type", "hunt_type", "weapon", "hunt_class"],
         "internal_engine_field": "draw_2026_system_type",
         "removed_duplicate_fields": REMOVED_FIELDS,
         "database_hunt_class_populated_count": len(database_details),
@@ -204,7 +204,7 @@ def main() -> int:
         "# 2026 Hunt Class Selection Matrix",
         "",
         f"- Generated UTC: `{summary['generated_at_utc']}`",
-        "- Selection order: `species -> sex_type -> hunt_type -> hunt_class -> weapon`",
+        "- Selection order: `species -> sex_type -> hunt_type -> weapon -> hunt_class`",
         "- Internal engine route: `draw_2026_system_type`",
         "- Removed duplicate selector field: `draw_2026_permit_family`",
         f"- DATABASE hunt_class populated rows: `{summary['database_hunt_class_populated_count']}`",
