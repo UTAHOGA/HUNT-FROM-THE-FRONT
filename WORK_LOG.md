@@ -5973,3 +5973,36 @@
   - `python scripts\audit-harvest-2023-moose-gap-fill-candidates.py` passed.
   - `python -m py_compile scripts\audit-harvest-2023-moose-gap-fill-candidates.py tests\utah\test_harvest_2023_moose_gap_fill_candidates.py` passed.
   - `python -m pytest tests\utah\test_harvest_2023_moose_gap_fill_candidates.py -q` passed: `4`.
+
+## Short Modeled Year Source Gap Search
+- Timestamp (UTC): 2026-05-27T06:52:00Z
+- Scope:
+  - Searched local raw source resources and official DWR online source pages for obvious gaps in the short modeled years `2021` and `2024`.
+  - Built a read-only evidence audit that separates draw extraction gaps from harvest re-normalization/enrichment gaps.
+  - Left `DATABASE.csv`, normalized draw truth, normalized harvest truth, materialized runtime CSVs, permit totals, and website/library outputs unchanged.
+- Outputs:
+  - `scripts/audit-short-modeled-year-source-gaps.py`
+  - `data_truth/comparison_outputs/validation/short_modeled_year_source_gap_audit.csv`
+  - `data_truth/comparison_outputs/validation/short_modeled_year_source_gap_audit_summary.json`
+  - `processed_data/short_modeled_year_source_gap_audit.md`
+  - `tests/utah/test_short_modeled_year_source_gap_audit.py`
+- Key results:
+  - Source evidence rows: `26`.
+  - Local draw source families ready for extraction/reconciliation: `20`.
+  - Local harvest re-normalization/enrichment opportunities: `3`.
+  - 2021 draw gap pattern: normalized truth is one bonus-only source label (`21_bg-odds.pdf`), while local raw sources include general deer, lifetime deer, dedicated hunter, antlerless, youth, sportsman, black bear, cougar, and turkey source families.
+  - 2021 harvest gap pattern: value-bearing `harvest_results_2021_for_2022_all_long.csv` exists locally, but current best-by-code 2021 normalized metrics are blank.
+  - 2024 draw gap pattern: local 2023-for-2024 sources include preference/youth/dedicated/turkey/cougar/sportsman families that are not fully represented in normalized 2024 draw truth.
+  - 2024 harvest gap pattern: local supplement files can enrich elk average age and black bear objective/mortality features.
+  - Same-year gap counts recorded:
+    - 2021: `447` harvest-only, `23` draw-only.
+    - 2024: `471` harvest-only, `3` draw-only.
+- Official source pages consulted:
+  - DWR big game draw odds.
+  - DWR other-species draw odds.
+  - DWR big game harvest and survey reports.
+  - DWR annual reports.
+- Validation:
+  - `python scripts\audit-short-modeled-year-source-gaps.py` passed.
+  - `python -m py_compile scripts\audit-short-modeled-year-source-gaps.py tests\utah\test_short_modeled_year_source_gap_audit.py` passed.
+  - `python -m pytest tests\utah\test_short_modeled_year_source_gap_audit.py -q` passed: `5`.
