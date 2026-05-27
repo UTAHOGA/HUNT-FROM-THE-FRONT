@@ -1,5 +1,25 @@
 # WORK LOG
 
+## Utah Draw Routing And Algorithm V1
+- Timestamp (UTC): 2026-05-27T03:08:00Z
+- Scope:
+  - Added the active `HUNT-BUILDER` draw-routing and formula contract that ties the user-facing selection matrix to the internal draw model family.
+  - Documented why `hunt_class` exists and when it should be visible: only when it further separates the selected `species -> sex_type -> hunt_type -> weapon` result into a different draw route.
+  - Grounded the formulas in current Utah DWR source anchors for bonus points, preference points, group applications, youth reserves, draw-only youth elk, sportsman permits, and expo random drawings.
+  - Documented bonus, preference, youth, sportsman, expo, total-only quota, and availability-only guardrails without changing runtime data, permit values, website feeds, or prediction outputs.
+- Outputs:
+  - `docs/utah_draw_routing_and_algorithm_v1.md`
+  - `docs/utah_draw_system_scope.md`
+  - `docs/utah_rules_sources.md`
+- Key results:
+  - The algorithm routes after final hunt selection instead of making `hunt_class` a duplicate visible selector.
+  - `EB1007` is called out as draw-only youth elk, while `EB1011` is called out as availability/OTC-style youth general elk.
+  - Sportsman and Expo rows are documented as random-only families that do not use bonus or preference points.
+  - Total-only CWMU/private/overlay rows are protected from invented resident/nonresident splits.
+- Validation:
+  - Markdown files were read back successfully.
+  - `git diff --check` passed.
+
 ## 2024 PDF To 2025 PDF Hunt-Code Crosswalk
 - Timestamp (UTC): 2026-05-26T23:50:00Z
 - Scope:

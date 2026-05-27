@@ -1,5 +1,9 @@
 # Utah Draw System Scope
 
+Formula and routing contract:
+
+- See `docs/utah_draw_routing_and_algorithm_v1.md` for the active selector-to-engine routing rule, quota resolution formula, bonus/preference/youth formulas, and the `hunt_class` visibility rule.
+
 ## Target Scope
 
 The approved predictive-engine universe is limited to:

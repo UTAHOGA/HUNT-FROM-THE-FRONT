@@ -2,6 +2,10 @@
 
 This file records the rule assumptions and source anchors for the Utah draw engine.
 
+Detailed formula contract:
+
+- `docs/utah_draw_routing_and_algorithm_v1.md`
+
 ## Mechanical anchors
 
 - Utah DWR drawing odds pages and draw-result pages are informational.
