@@ -1,5 +1,29 @@
 # WORK LOG
 
+## 2022 Draw Odds Source Parity For 2023 Modeling
+- Timestamp (UTC): 2026-05-27T05:16:00Z
+- Scope:
+  - Added a dedicated source-anchor audit for the user-supplied 2022 draw-odds PDF set used for 2023 modeling.
+  - Compared the `15` supplied PDFs from the older `HUNTS` repo against active `HUNT-BUILDER` copies by size and SHA-256 hash.
+  - Confirmed all `15 / 15` supplied PDFs are byte-identical in the active repo.
+  - Recorded the active repo's `2` extra same-hash aliases as duplicate aliases, not additional source coverage:
+    - `2022 _Youth antlerless big game draw results.pdf` duplicates `22_youth_antlerless_drawing_odds_report.pdf`.
+    - `2022 Dedicated Hunter deer draw results.pdf` duplicates `22_dh_odds.pdf`.
+  - Recorded the expected same-hash pair in the supplied source set: `2022 Youth draw-only elk bonus point draw results.pdf` and `22_youth_bull_elk.pdf`.
+  - Anchored normalized 2022 draw truth at `18,688` rows and `1,024` native unique hunt codes.
+  - Flagged current normalized 2022 draw source labels as `SOURCE_LABEL_LINEAGE_REVIEW` because they still reference 2021 PDF labels, even though the 2022 source package is now anchored.
+  - Kept the audit source-only/read-only: no PDF extraction, draw truth rewrite, `DATABASE.csv` edit, website feed edit, or prediction output edit was performed.
+- Outputs:
+  - `scripts/audit-draw-2022-for-2023-source-parity.py`
+  - `tests/utah/test_draw_2022_for_2023_source_parity.py`
+  - `data_truth/draw_results_truth/validation/draw_2022_for_2023_source_parity.csv`
+  - `data_truth/draw_results_truth/validation/draw_2022_for_2023_source_parity_summary.json`
+  - `processed_data/draw_2022_for_2023_source_parity.md`
+- Validation:
+  - `python scripts\audit-draw-2022-for-2023-source-parity.py` passed.
+  - `python -m py_compile scripts\audit-draw-2022-for-2023-source-parity.py tests\utah\test_draw_2022_for_2023_source_parity.py` passed.
+  - `python -m pytest tests\utah\test_draw_2022_for_2023_source_parity.py tests\utah\test_draw_year_by_year_hardening_2026.py -q` passed: `7`.
+
 ## 2023 Harvest Source Parity For 2024 Modeling
 - Timestamp (UTC): 2026-05-27T05:12:00Z
 - Scope:
