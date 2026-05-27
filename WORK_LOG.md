@@ -5853,3 +5853,33 @@
   - `python -m py_compile scripts\repair-hunt-research-reference-linked-2026.py` passed.
   - `python -m pytest tests\utah\test_hunt_research_reference_linked_2026.py tests\utah\test_active_runtime_code_cleanup_2026.py tests\utah\test_final_permit_database_crosscheck_2026.py -q` passed: `5`.
   - Browser automation note: local page served, but Playwright was not installed in the available Node runtime, so screenshot/browser automation was not completed in this session.
+
+## 2023 Big Game Draw Odds Page Map Anchor
+- Timestamp (UTC): 2026-05-27T06:00:00Z
+- Scope:
+  - Anchored `23_bg-odds.pdf` as the 2023 big game draw-odds source for 2024 modeling and 2023 harvest-result comparison.
+  - Preserved the user-supplied page map in validation output without forcing it to be the exclusive extraction boundary.
+  - Added an observed physical PDF page map from the current point-level extraction.
+  - Linked the 580 source hunt codes back to the existing complete 2023 harvest-vs-draw comparison.
+  - Left `DATABASE.csv`, normalized draw truth, harvest truth, permit numbers, runtime files, and website feeds unchanged.
+- Outputs:
+  - `scripts/audit-draw-2023-bg-page-map.py`
+  - `data_truth/draw_results_truth/validation/draw_2023_bg_page_map.csv`
+  - `data_truth/draw_results_truth/validation/draw_2023_bg_page_map_summary.json`
+  - `processed_data/draw_2023_bg_page_map.md`
+  - `tests/utah/test_draw_2023_bg_page_map.py`
+- Key results:
+  - PDF page count: `588`.
+  - Legacy/active PDF byte match: `true`.
+  - Source extraction rows: `35960`.
+  - Source extraction unique hunt codes: `580`.
+  - Observed extraction page map coverage: `35960 / 35960` rows, `0` unassigned.
+  - User-supplied page ranges assigned: `35774` rows, with `186` rows on the three seam pages not included by the supplied ranges.
+  - Harvest/draw comparison linkage: `580 / 580` source codes matched.
+  - Comparison buckets for this source: `579` both harvest and draw, `1` draw-only (`MB6252`).
+  - Current 2026 active-database flags for this source: `541` yes, `39` no.
+- Validation:
+  - `python scripts\audit-draw-2023-bg-page-map.py` passed.
+  - `python -m py_compile scripts\audit-draw-2023-bg-page-map.py tests\utah\test_draw_2023_bg_page_map.py` passed.
+  - `python -m pytest tests\utah\test_draw_2023_bg_page_map.py -q` passed: `5`.
+  - `git diff --check` passed.
