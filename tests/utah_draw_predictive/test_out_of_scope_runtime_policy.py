@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 
-REPO = Path(r"C:\Users\tyler\Desktop\GitHub\HUNTS")
+REPO = Path(__file__).resolve().parents[2]
 ML_PATH = REPO / "processed_data" / "ml_draw_predictions_v1.csv"
 COVERAGE_PATH = REPO / "processed_data" / "draw_system_coverage_report.json"
 GPT_REVIEW_PATH = REPO / "processed_data" / "gpt_work_review_report.json"
@@ -59,7 +59,7 @@ def test_target_scope_pending_rows_are_not_incorrectly_marked_out_of_scope() -> 
     rows = _read_csv(ML_PATH)
     assert not [
         row for row in rows
-        if row.get("draw_system_type") in {"YOUTH_GENERAL_DEER", "YOUTH_GENERAL_ANY_BULL_ELK"}
+        if row.get("draw_system_type") in {"YOUTH_GENERAL_DEER", "YOUTH_DRAW_ONLY_ELK"}
         and row.get("algorithm_status") == "OUT_OF_SCOPE_NON_TARGET"
     ]
     assert not [

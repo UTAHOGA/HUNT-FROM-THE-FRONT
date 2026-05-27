@@ -1,4 +1,4 @@
-"""Youth general deer and youth any-bull elk strategy helpers."""
+"""Youth draw strategy helpers."""
 
 from __future__ import annotations
 
@@ -15,14 +15,17 @@ from . import ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING, StrategySpec, TARGET_SCOP
 REPO = Path(__file__).resolve().parents[2]
 
 YOUTH_GENERAL_DEER_DRAW_SYSTEM_TYPE = "YOUTH_GENERAL_DEER"
-YOUTH_GENERAL_ANY_BULL_ELK_DRAW_SYSTEM_TYPE = "YOUTH_GENERAL_ANY_BULL_ELK"
+YOUTH_DRAW_ONLY_ELK_DRAW_SYSTEM_TYPE = "YOUTH_DRAW_ONLY_ELK"
+# Legacy name kept for imports/tests that still reference the old label.  The
+# classifier now emits the clearer draw-only family name.
+YOUTH_GENERAL_ANY_BULL_ELK_DRAW_SYSTEM_TYPE = YOUTH_DRAW_ONLY_ELK_DRAW_SYSTEM_TYPE
 YOUTH_DRAW_SYSTEM_TYPES = {
     YOUTH_GENERAL_DEER_DRAW_SYSTEM_TYPE,
-    YOUTH_GENERAL_ANY_BULL_ELK_DRAW_SYSTEM_TYPE,
+    YOUTH_DRAW_ONLY_ELK_DRAW_SYSTEM_TYPE,
 }
 
 YOUTH_DEER_MODEL_STRATEGY_NAME = "youth_general_deer_pending_phase15"
-YOUTH_ELK_MODEL_STRATEGY_NAME = "youth_general_any_bull_elk_pending_phase15"
+YOUTH_ELK_MODEL_STRATEGY_NAME = "youth_draw_only_elk_pending_phase16"
 RULE_VERSION = "utah_youth_strategy_phase15_v1.0.0"
 
 YOUTH_ELK_SOURCE_PATH = REPO / "pipeline" / "RAW" / "hunt_unit_database" / "2026" / "csv" / "2026_elk_general_anybull_youth.csv"
@@ -59,11 +62,11 @@ STRATEGY_SPECS = [
         legacy_logic_present=True,
     ),
     StrategySpec(
-        draw_system_type=YOUTH_GENERAL_ANY_BULL_ELK_DRAW_SYSTEM_TYPE,
+        draw_system_type=YOUTH_DRAW_ONLY_ELK_DRAW_SYSTEM_TYPE,
         module_name="engine.utah_draw_predictive.youth",
         algorithm_status=ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING,
         target_scope=TARGET_SCOPE_TARGET,
-        reason="Youth general any-bull elk is in scope but remains pending until the current-year mechanics and quota surface support a defensible strategy.",
+        reason="Draw-only youth elk is in scope but remains pending until the current-year mechanics and quota surface support a defensible strategy.",
         legacy_logic_present=True,
     ),
 ]
@@ -128,22 +131,25 @@ def is_youth_general_deer_row(row: Mapping[str, object]) -> bool:
     return False
 
 
-def is_youth_general_any_bull_elk_row(row: Mapping[str, object]) -> bool:
+def is_youth_draw_only_elk_row(row: Mapping[str, object]) -> bool:
     text = _joined_text(row)
     if "elk" not in text or "antlerless" in text:
         return False
     source_name = _source_file_name(row)
-    draw_pool = _clean_lower(row.get("draw_pool"))
     hunt_code = _clean(row.get("hunt_code")).upper()
-    if source_name in YOUTH_ELK_SOURCE_FILES:
+    if hunt_code == "EB1007":
         return True
-    if hunt_code == "EB1011" and "youth" in text:
+    if hunt_code == "EB1011":
+        return False
+    if source_name in YOUTH_ELK_SOURCE_FILES and "youth" in text and "draw-only" in text:
         return True
-    if "youth" in text and any(token in text for token in ("any bull", "any-bull", "bull elk", "hunters choice", "hunters choice", "general season - youth")):
-        return True
-    if draw_pool in {"youth", "youth_mature_bull"}:
+    if "draw-only" in text and "youth" in text and any(token in text for token in ("any bull", "any-bull", "hunters choice", "hunter's choice")):
         return True
     return False
+
+
+def is_youth_general_any_bull_elk_row(row: Mapping[str, object]) -> bool:
+    return is_youth_draw_only_elk_row(row)
 
 
 def resolve_youth_algorithm_status(row: Mapping[str, object], draw_system_type: str) -> str:
@@ -162,7 +168,7 @@ def build_youth_predictions(
     history_years: list[int],
 ) -> tuple[list[dict[str, object]], dict[str, object]]:
     youth_deer_history = [dict(row) for row in truth_rows if is_youth_general_deer_row(row)]
-    youth_elk_history = [dict(row) for row in truth_rows if is_youth_general_any_bull_elk_row(row)]
+    youth_elk_history = [dict(row) for row in truth_rows if is_youth_draw_only_elk_row(row)]
 
     source_files_used: set[str] = {_clean(row.get("source_file")) for row in youth_deer_history + youth_elk_history if _clean(row.get("source_file"))}
     data_quality_counter: Counter[str] = Counter()
@@ -181,7 +187,7 @@ def build_youth_predictions(
                     youth_elk_source_rows[hunt_code] = dict(row)
         source_files_used.add(str(YOUTH_ELK_SOURCE_PATH.relative_to(REPO)))
 
-    elk_predictive_candidates = [dict(row) for row in db_rows if is_youth_general_any_bull_elk_row(row)]
+    elk_predictive_candidates = [dict(row) for row in db_rows if is_youth_draw_only_elk_row(row)]
     elk_by_code: dict[str, dict[str, str]] = {}
     for row in elk_predictive_candidates:
         hunt_code = _clean(row.get("hunt_code")).upper()
@@ -227,13 +233,13 @@ def build_youth_predictions(
                     "weapon": weapon,
                     "season_dates": season_dates,
                     "season_status": "SEASON DATES PRESENT" if season_dates else "SEASON DATES MISSING",
-                    "draw_system_type": YOUTH_GENERAL_ANY_BULL_ELK_DRAW_SYSTEM_TYPE,
+                    "draw_system_type": YOUTH_DRAW_ONLY_ELK_DRAW_SYSTEM_TYPE,
                     "algorithm_status": ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING,
                     "draw_outlook": "MODEL PENDING",
                     "availability_status": "",
                     "p_availability": "",
                     "availability_pct": "",
-                    "permit_type": "Youth General Any-Bull Elk",
+                    "permit_type": "Draw-only Youth Elk",
                     "permit_status": "",
                     "rule_status": "",
                     "data_quality_flags": "|".join(flags),
@@ -259,10 +265,12 @@ def build_youth_predictions(
         "source_years": history_years,
         "total_youth_rows_reviewed": len(youth_deer_history) + len(youth_elk_history) + len(deer_predictive_rows) + len(elk_predictive_candidates),
         "youth_general_deer_rows_reviewed": len(youth_deer_history) + len(deer_predictive_rows),
+        "youth_draw_only_elk_rows_reviewed": len(youth_elk_history) + len(elk_predictive_candidates),
         "youth_general_any_bull_elk_rows_reviewed": len(youth_elk_history) + len(elk_predictive_candidates),
         "active_predictive_youth_row_count": len(youth_rows),
         "youth_general_deer_row_count": len([row for row in youth_rows if row.get("draw_system_type") == YOUTH_GENERAL_DEER_DRAW_SYSTEM_TYPE]),
-        "youth_general_any_bull_elk_row_count": len([row for row in youth_rows if row.get("draw_system_type") == YOUTH_GENERAL_ANY_BULL_ELK_DRAW_SYSTEM_TYPE]),
+        "youth_draw_only_elk_row_count": len([row for row in youth_rows if row.get("draw_system_type") == YOUTH_DRAW_ONLY_ELK_DRAW_SYSTEM_TYPE]),
+        "youth_general_any_bull_elk_row_count": len([row for row in youth_rows if row.get("draw_system_type") == YOUTH_DRAW_ONLY_ELK_DRAW_SYSTEM_TYPE]),
         "youth_hunt_code_count": len({row.get("hunt_code", "") for row in youth_rows if _clean(row.get("hunt_code"))}),
         "rows_by_algorithm_status": {
             "MODELED_PREFERENCE": len(modeled_preference_rows),

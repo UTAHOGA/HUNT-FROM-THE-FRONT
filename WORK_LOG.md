@@ -5453,3 +5453,17 @@
   - `node scripts\verify-boundary-id-render-map-2026.js` passed.
   - `python -m py_compile scripts\repair-2025-historical-source-labels.py scripts\audit-database-historical-permit-lineage-2026.py scripts\promote-2025-draw-permits-to-runtime.py scripts\promote-oil-2025-draw-pdf-values-to-database.py` passed.
   - `python -m pytest tests\utah\test_database_historical_permit_lineage_2026.py tests\utah\test_remaining_2025_history_crosswalk_boundary_closeout.py tests\utah\test_hunt_code_crosswalk_2024_pdf_to_2025_pdf.py tests\utah\test_le_deer_2025_draw_results_extraction.py tests\utah\test_oil_2025_draw_results_extraction.py tests\utah\test_final_permit_database_crosscheck_2026.py tests\utah\test_comprehensive_2026_2025_history_integrity_audit.py -q` passed: `20`.
+
+## Youth Elk Draw-Only Classifier Repair
+- Timestamp (UTC): 2026-05-27T16:58:00Z
+- Scope:
+  - Added the explicit `YOUTH_DRAW_ONLY_ELK` classifier family.
+  - Routed `EB1007` to `YOUTH_DRAW_ONLY_ELK` for the draw-only youth any bull/hunter's choice elk row.
+  - Routed `EB1011` to `OTC_OR_REMAINING_TARGET` so general-season youth elk availability/purchase behavior does not feed youth draw odds.
+  - Updated youth strategy helpers, coverage summary labels, docs, and focused regression tests.
+  - Left permit databases, website feeds, library/page-dist files, and broad generated artifacts unchanged.
+- Validation:
+  - Direct classifier check passed: `EB1007 -> YOUTH_DRAW_ONLY_ELK`; `EB1011 -> OTC_OR_REMAINING_TARGET`.
+  - `python -m py_compile engine\utah_draw_predictive\youth.py engine\utah_draw_predictive\classifier.py tests\utah_draw_predictive\test_youth_general_any_bull_elk_strategy.py tests\utah_draw_predictive\test_youth_not_bonus_or_adult_preference.py tests\utah_draw_predictive\test_out_of_scope_runtime_policy.py tests\utah_draw_predictive\test_youth_coverage.py tests\utah_draw_predictive\test_docs_current_state.py` passed.
+  - `python -m pytest tests\utah_draw_predictive\test_youth_general_any_bull_elk_strategy.py tests\utah_draw_predictive\test_youth_not_bonus_or_adult_preference.py tests\utah_draw_predictive\test_youth_coverage.py tests\utah_draw_predictive\test_out_of_scope_runtime_policy.py tests\utah_draw_predictive\test_docs_current_state.py -q` passed: `11`.
+  - `git diff --check` passed.

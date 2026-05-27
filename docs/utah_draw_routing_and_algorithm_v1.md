@@ -61,7 +61,7 @@ elif hunt_type is General Season buck deer or Dedicated Hunter deer:
 elif species/sex is antlerless deer, antlerless elk, or doe pronghorn in the antlerless draw:
     draw_system_type = PREFERENCE_ANTLERLESS_OR_DOE
 elif hunt_code is draw-only youth any bull/hunter's choice elk:
-    draw_system_type = YOUTH_DRAW_ONLY_ELK_RANDOM_OR_BONUS_STYLE
+    draw_system_type = YOUTH_DRAW_ONLY_ELK
 elif hunt_code is general-season youth elk:
     draw_system_type = OTC_OR_REMAINING_TARGET
 elif row is private-lands-only antlerless elk:

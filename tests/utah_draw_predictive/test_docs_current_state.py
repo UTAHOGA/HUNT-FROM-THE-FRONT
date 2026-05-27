@@ -1,8 +1,11 @@
 from pathlib import Path
 
 
+REPO = Path(__file__).resolve().parents[2]
+
+
 def test_docs_current_state_reflects_completed_and_pending_phases() -> None:
-    text = Path(r"C:\Users\tyler\Desktop\GitHub\HUNTS\docs\utah_draw_system_scope.md").read_text(encoding="utf-8")
+    text = (REPO / "docs" / "utah_draw_system_scope.md").read_text(encoding="utf-8")
 
     for phrase in (
         "Phase 1: OIL / LE / PLE bonus engine",

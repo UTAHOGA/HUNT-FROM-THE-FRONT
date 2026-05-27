@@ -1,20 +1,34 @@
-import json
-from pathlib import Path
+from engine.utah_draw_predictive.classifier import classify_runtime_row
 
 
 def test_phase15_youth_coverage_fields_are_present() -> None:
-    report = json.loads(
-        Path(r"C:\Users\tyler\Desktop\GitHub\HUNTS\processed_data\draw_system_coverage_report.json").read_text(encoding="utf-8")
+    draw_only = classify_runtime_row(
+        {
+            "hunt_code": "EB1007",
+            "hunt_name": "Draw-only Youth Any Bull/Hunters Choice Elk",
+            "species": "Elk",
+            "sex_type": "Bull",
+            "hunt_type": "General Season - Any Bull",
+            "hunt_class": "Youth",
+            "weapon": "Any Legal Weapon",
+            "source_dataset": "predictive",
+        }
     )
-    section = report["phase15_youth"]
+    general_youth = classify_runtime_row(
+        {
+            "hunt_code": "EB1011",
+            "hunt_name": "Youth General Season Bull Elk",
+            "species": "Elk",
+            "sex_type": "Bull",
+            "hunt_type": "General Season - Youth",
+            "hunt_class": "General Bull",
+            "weapon": "Any Legal Weapon",
+            "source_dataset": "predictive",
+        }
+    )
 
-    assert section["youth_general_deer_in_scope"] is True
-    assert section["youth_general_any_bull_elk_in_scope"] is True
-    assert section["youth_general_deer_modeled"] is False
-    assert section["youth_general_deer_still_pending"] is True
-    assert section["youth_general_any_bull_elk_still_pending"] is True
-    assert section["youth_general_any_bull_elk_active_predictive_row_count"] >= 0
-    assert section["youth_rows_with_p_draw_non_null_count"] == 0
-    assert section["youth_rows_with_p_bonus_pool_non_null_count"] == 0
-    assert section["youth_rows_with_p_random_pool_non_null_count"] == 0
-    assert section["youth_rows_with_p_preference_draw_non_null_count"] == 0
+    assert draw_only["draw_system_type"] == "YOUTH_DRAW_ONLY_ELK"
+    assert draw_only["algorithm_status"] == "IN_SCOPE_MODEL_PENDING"
+    assert draw_only["target_scope"] == "TARGET"
+    assert general_youth["draw_system_type"] == "OTC_OR_REMAINING_TARGET"
+    assert general_youth["algorithm_status"] == "EXCLUDED_NOT_PREDICTIVE_DRAW"

@@ -78,7 +78,7 @@ Important guardrail:
 - `MOUNTAIN_LION_DRAW`
 - `PRIVATE_LANDS_ONLY_ANTLERLESS_ELK`
 - `YOUTH_GENERAL_DEER`
-- `YOUTH_GENERAL_ANY_BULL_ELK`
+- `YOUTH_DRAW_ONLY_ELK`
 - `RANDOM_ONLY_TARGET`
 - `OTC_OR_REMAINING_TARGET`
 - `LANDOWNER_BIG_GAME`
@@ -136,7 +136,7 @@ These categories must not use the OIL/LE/PLE bonus algorithm:
 - `MOUNTAIN_LION_DRAW`
 - `PRIVATE_LANDS_ONLY_ANTLERLESS_ELK`
 - `YOUTH_GENERAL_DEER`
-- `YOUTH_GENERAL_ANY_BULL_ELK`
+- `YOUTH_DRAW_ONLY_ELK`
 
 Reason:
 
@@ -200,7 +200,7 @@ Currently modeled as `MODELED_SPORTSMAN_DRAW`:
 Still pending:
 
 - `YOUTH_GENERAL_DEER`
-- `YOUTH_GENERAL_ANY_BULL_ELK`
+- `YOUTH_DRAW_ONLY_ELK`
 - `GENERAL_BIG_GAME_OTHER`
 - `RANDOM_ONLY_TARGET`
 - `OTC_OR_REMAINING_TARGET`
@@ -248,8 +248,10 @@ Availability semantics note:
 
 Youth note:
 
-- Youth general deer and youth any-bull elk stay in scope and stay separate from the adult general deer, antlerless elk, and OIL / LE / PLE bonus families.
+- Youth general deer and draw-only youth elk stay in scope and stay separate from the adult general deer, antlerless elk, and OIL / LE / PLE bonus families.
 - Phase 15 closes the youth classifier and reporting pass, but the families remain pending unless the active-year youth mechanics are source-proven.
+- `EB1007` is the current draw-only youth elk row and routes to `YOUTH_DRAW_ONLY_ELK`.
+- `EB1011` is general-season youth elk availability/purchase behavior and routes to `OTC_OR_REMAINING_TARGET`, not youth draw odds.
 - Youth rows must not receive `p_draw`, `p_draw_pct`, `p_preference_draw`, `p_bonus_pool`, or `p_random_pool` until a defensible youth-specific strategy is accepted.
 
 Out of scope:
