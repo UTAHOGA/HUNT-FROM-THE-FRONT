@@ -5,7 +5,9 @@
 - Scope:
   - Re-ran the year-by-year harvest truth hardening audit against the current canonical `DATABASE.csv` hunt-code universe.
   - Added a dedicated parity audit for the user-supplied `2021_for_2022` harvest CSV source set from the older `HUNTS` repo.
+  - Added a dedicated parity audit for the user-supplied 2023-folder harvest handoff, split into `2022_FOR_2023_MODEL` and `2023_ALL_SPECIES_FOR_2024_MODEL` groups.
   - Verified the external 2021 source files match the active `HUNT-BUILDER` harvest truth package at row/header level before treating the 2021 harvest year as anchored.
+  - Verified the external 2022-for-2023 model files and the 2023 all-species files match active `HUNT-BUILDER` harvest truth packages at row/header level.
   - Added the 2021 unique harvest-code baseline note to the generated hardening audit: `974` unique hunt codes in reported hunt year 2021, with an expectation that later years should generally increase slightly or explain any drop.
   - Added harvest metric publication status to the generated audit so captured truth fields are not confused with website/reference-published fields.
   - Added a draw-side year-by-year hardening audit with the same native-count rule: draw years are counted in draw-land first, and 2026 active-code comparison is only cross-reference evidence.
@@ -16,10 +18,15 @@
   - Refreshed the existing final harvest audit outputs so their active-code feature-readiness counts align to the current `1449`-code active universe instead of the stale `1394`-code universe.
 - Outputs:
   - `scripts/audit-harvest-2021-for-2022-source-parity.py`
+  - `scripts/audit-harvest-2022-for-2023-source-parity.py`
   - `tests/utah_quality/test_harvest_2021_for_2022_source_parity.py`
+  - `tests/utah_quality/test_harvest_2022_for_2023_source_parity.py`
   - `data_truth/harvest_results_truth/validation/harvest_2021_for_2022_source_parity.csv`
   - `data_truth/harvest_results_truth/validation/harvest_2021_for_2022_source_parity_summary.json`
+  - `data_truth/harvest_results_truth/validation/harvest_2022_for_2023_source_parity.csv`
+  - `data_truth/harvest_results_truth/validation/harvest_2022_for_2023_source_parity_summary.json`
   - `processed_data/harvest_2021_for_2022_source_parity.md`
+  - `processed_data/harvest_2022_for_2023_source_parity.md`
   - `data_truth/harvest_results_truth/validation/harvest_year_by_year_hardening_2026.csv`
   - `data_truth/harvest_results_truth/validation/harvest_year_by_year_hardening_2026_missing_codes.csv`
   - `data_truth/harvest_results_truth/validation/harvest_year_by_year_hardening_2026_historical_only_codes.csv`
@@ -49,6 +56,9 @@
   - Historical harvest codes not present in current `DATABASE.csv`: `182`.
   - 2021-for-2022 source parity: `15 / 15` expected CSV files match row-level content between `HUNTS` and `HUNT-BUILDER`.
   - 2021 normalized harvest rows: `974` rows / `974` unique hunt codes.
+  - 2022-for-2023 and 2023 all-species handoff parity: `23 / 23` expected CSV files match row-level content between `HUNTS` and `HUNT-BUILDER`.
+  - 2022 normalized harvest rows: `924` rows / `924` unique hunt codes.
+  - 2023 normalized harvest rows: `1078` rows / `1078` unique hunt codes.
   - Historical harvest years are now shown by native unique hunt-code count first; 2026 active-code matching is labeled `CROSS_REFERENCE_ONLY_NOT_YEAR_COMPLETENESS`.
   - Draw native unique hunt-code counts:
     - 2021: `550`
@@ -65,6 +75,12 @@
     - Same-code overlap: `527`
     - Harvest-only same-year codes: `447`
     - Draw-only same-year codes: `23`
+  - Same-year 2022 comparison:
+    - Harvest native unique hunt codes: `924`
+    - Draw native unique hunt codes: `1024`
+    - Same-code overlap: `846`
+    - Harvest-only same-year codes: `78`
+    - Draw-only same-year codes: `178`
   - Harvest truth captures: `average_age`, `hunter_satisfaction`, `average_days`, `percent_success`, `harvest_total`, `harvest_male`, `harvest_female`, `hunters_afield`, and report-context `permits`.
   - Current `hunt_unit_reference_linked.csv` publishes 2025-facing harvest/hunters/success/average-days/satisfaction fields, but not `average_age`.
   - Current `hunt_master_enriched.csv` publishes only the thinner hunters/harvest/success surface for harvest metrics.
@@ -77,6 +93,7 @@
     - 2025: `1122 / 1449`
 - Validation:
   - `python scripts\audit-harvest-2021-for-2022-source-parity.py` passed.
+  - `python scripts\audit-harvest-2022-for-2023-source-parity.py` passed.
   - `python scripts\audit-harvest-year-by-year-hardening-2026.py` passed.
   - `python scripts\audit-draw-year-by-year-hardening-2026.py` passed.
   - `python scripts\audit-harvest-draw-same-year-alignment-2026.py` passed.
@@ -85,6 +102,7 @@
   - `python -m pytest tests\utah_quality\test_harvest_year_by_year_hardening_2026.py tests\utah_quality\test_harvest_2021_for_2022_source_parity.py -q` passed after publication-status additions: `9`.
   - `python -m pytest tests\utah_quality\test_harvest_year_by_year_hardening_2026.py tests\utah\test_draw_year_by_year_hardening_2026.py -q` passed after native-count/cross-reference rule corrections: `9`.
   - `python -m pytest tests\utah_quality\test_harvest_draw_same_year_alignment_2026.py tests\utah_quality\test_harvest_year_by_year_hardening_2026.py tests\utah\test_draw_year_by_year_hardening_2026.py -q` passed: `12`.
+  - `python -m pytest tests\utah_quality\test_harvest_2022_for_2023_source_parity.py tests\utah_quality\test_harvest_draw_same_year_alignment_2026.py tests\utah_quality\test_harvest_year_by_year_hardening_2026.py tests\utah\test_draw_year_by_year_hardening_2026.py -q` passed: `15`.
 
 ## Main Hunt Master Enriched Hunt-Class And Routing Promotion
 - Timestamp (UTC): 2026-05-27T03:53:00Z
