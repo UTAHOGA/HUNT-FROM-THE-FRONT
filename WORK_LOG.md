@@ -5883,3 +5883,36 @@
   - `python -m py_compile scripts\audit-draw-2023-bg-page-map.py tests\utah\test_draw_2023_bg_page_map.py` passed.
   - `python -m pytest tests\utah\test_draw_2023_bg_page_map.py -q` passed: `5`.
   - `git diff --check` passed.
+
+## 2023 Moose Draw PDF Source Anchor
+- Timestamp (UTC): 2026-05-27T06:26:00Z
+- Scope:
+  - Imported the legacy `bull moose.pdf` and `antlerless moose.pdf` 2023 draw-result sources into the active `HUNT-BUILDER` raw source folder.
+  - Anchored both PDFs with sha256 byte-match checks against the legacy `HUNTS` copies.
+  - Extracted hunt-code evidence only and compared those codes to existing 2023-for-2024 draw CSV rows.
+  - Linked all moose PDF hunt codes to the existing complete 2023 harvest-vs-draw comparison.
+  - Left `DATABASE.csv`, normalized draw truth, harvest truth, permit numbers, runtime files, and website feeds unchanged.
+- Outputs:
+  - `pipeline/RAW/hunt_unit_database/2024/pdf/draw_odds/bull moose.pdf`
+  - `pipeline/RAW/hunt_unit_database/2024/pdf/draw_odds/antlerless moose.pdf`
+  - `scripts/audit-draw-2023-moose-pdf-sources.py`
+  - `data_truth/draw_results_truth/validation/draw_2023_moose_pdf_sources.csv`
+  - `data_truth/draw_results_truth/validation/draw_2023_moose_pdf_hunt_codes.csv`
+  - `data_truth/draw_results_truth/validation/draw_2023_moose_pdf_sources_summary.json`
+  - `processed_data/draw_2023_moose_pdf_sources.md`
+  - `tests/utah/test_draw_2023_moose_pdf_sources.py`
+- Key results:
+  - Source PDFs checked: `2`.
+  - Byte-identical active copies: `2`.
+  - Total PDF hunt codes: `33`.
+  - Bull moose PDF: `41` pages, `30` MB hunt codes, `1860` expected draw CSV rows under `23_bg-odds.pdf`.
+  - Antlerless moose PDF: `3` pages, `3` MA hunt codes, `108` expected draw CSV rows under `2023 Antlerless big game draw results.pdf`.
+  - Codes matched to expected 2023-for-2024 draw CSV rows: `33 / 33`.
+  - Codes matched to harvest/draw comparison: `33 / 33`.
+  - Bull moose comparison buckets: `29` both, `1` draw-only (`MB6252`).
+  - Antlerless moose comparison buckets: `3` both.
+- Validation:
+  - `python scripts\audit-draw-2023-moose-pdf-sources.py` passed.
+  - `python -m py_compile scripts\audit-draw-2023-moose-pdf-sources.py tests\utah\test_draw_2023_moose_pdf_sources.py` passed.
+  - `python -m pytest tests\utah\test_draw_2023_moose_pdf_sources.py -q` passed: `5`.
+  - `git diff --check` passed.
