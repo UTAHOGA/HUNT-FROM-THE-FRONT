@@ -5946,3 +5946,30 @@
   - `python -m py_compile scripts\audit-harvest-2023-moose-sources.py tests\utah\test_harvest_2023_moose_sources.py` passed.
   - `python -m pytest tests\utah\test_harvest_2023_moose_sources.py -q` passed: `5`.
   - `git diff --check` passed.
+
+## 2023 Moose Gap Fill Candidate Evidence
+- Timestamp (UTC): 2026-05-27T06:44:00Z
+- Scope:
+  - Searched local source ledgers/permit overlays and official DWR online sources for obvious 2023 moose harvest/draw gaps.
+  - Recorded review evidence only; no runtime, `DATABASE.csv`, normalized truth, permit totals, or website-facing feeds were changed.
+  - Identified the Jacob's Creek CWMU code transition as the only high-confidence fill candidate.
+- Outputs:
+  - `scripts/audit-harvest-2023-moose-gap-fill-candidates.py`
+  - `data_truth/harvest_results_truth/validation/harvest_2023_moose_gap_fill_candidates.csv`
+  - `data_truth/harvest_results_truth/validation/harvest_2023_moose_gap_fill_summary.json`
+  - `processed_data/harvest_2023_moose_gap_fill_audit.md`
+  - `tests/utah/test_harvest_2023_moose_gap_fill_candidates.py`
+- Key results:
+  - Gap rows reviewed: `8`.
+  - High-confidence fill candidate: `MB6252 -> MB6258` for Jacob's Creek CWMU.
+  - Paired harvest target row: `MB6258`.
+  - Retained harvest-only rows: `MB6200`, `MB6209`, `MB6216`, `MB6217`, `MB6220`, `MB6254`.
+  - Runtime/database changes made: `NO`.
+  - Official-source links recorded:
+    - DWR 2022 Big Game Annual Report.
+    - DWR 2023 Big Game Annual Report.
+    - DWR drawing odds page.
+- Validation:
+  - `python scripts\audit-harvest-2023-moose-gap-fill-candidates.py` passed.
+  - `python -m py_compile scripts\audit-harvest-2023-moose-gap-fill-candidates.py tests\utah\test_harvest_2023_moose_gap_fill_candidates.py` passed.
+  - `python -m pytest tests\utah\test_harvest_2023_moose_gap_fill_candidates.py -q` passed: `4`.
