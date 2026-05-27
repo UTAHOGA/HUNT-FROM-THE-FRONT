@@ -1,5 +1,47 @@
 # WORK LOG
 
+## 2026 Draw Subset Regeneration And Runtime Surface Coverage
+- Timestamp (UTC): 2026-05-27T03:45:00Z
+- Scope:
+  - Regenerated the 2026 draw-routing/classification artifacts after splitting youth draw behavior into explicit families.
+  - Preserved the main `processed_data/hunt_master_enriched.csv` as the full all-hunts enriched surface; it was not replaced by the draw subset.
+  - Rebuilt the 2026 draw subset from refreshed prediction rows and canonical `DATABASE.csv` permit values.
+  - Added an idempotent runtime reference-surface coverage repair script that appends missing `DATABASE.csv` hunt-code reference rows without overwriting existing permit cells or inventing draw odds.
+  - Refreshed final permit crosschecks, comprehensive history integrity, and hunt-code family gap scan outputs.
+- Outputs:
+  - `scripts/repair-runtime-reference-surface-coverage-2026.py`
+  - `data_truth/comparison_outputs/validation/runtime_reference_surface_coverage_repair_2026.csv`
+  - `data_truth/comparison_outputs/validation/runtime_reference_surface_coverage_repair_2026_summary.json`
+  - `processed_data/runtime_reference_surface_coverage_repair_2026.md`
+  - refreshed `processed_data/ml_draw_predictions_v1.csv`
+  - refreshed `data_truth/comparison_outputs/validation/permits_2026_draw_subset_summary.json`
+  - refreshed `processed_data/2026_hunt_code_family_gap_scan*`
+  - refreshed final permit and comprehensive integrity reports
+- Key results:
+  - `DATABASE.csv` remains `1449` rows with `1449` unique hunt codes.
+  - Main `hunt_master_enriched.csv` remains a full enriched surface: `54467` rows and `1526` unique hunt codes.
+  - Current `DATABASE.csv` codes missing from `hunt_master_enriched.csv`: `0`.
+  - Current `DATABASE.csv` codes missing from `point_ladder_view.csv`: `0`.
+  - Current `DATABASE.csv` codes missing from `draw_reality_engine.csv`: `0`.
+  - 2026 draw subset now contains `863` draw-engine hunt codes and `813` numeric 2026 draw-permit rows.
+  - Youth draw-only elk is routed separately as `YOUTH_DRAW_ONLY_ELK` with `1` hunt code.
+  - `permits_2026_total` remains `1120` populated rows.
+  - `permit_allotment_2026_total` remains `1091` populated rows.
+  - `permits_2026_draw_total` is now `813` populated rows after excluding non-draw/availability-only routes from the draw subset.
+  - 2026 permit/allotment total mismatches remain `0`.
+  - Comprehensive history-integrity fatal blockers remain `0`; open issues remain `0`.
+- Validation:
+  - `python -m engine.utah_bonus_predictive.materialize --output-dir processed_data --forecast-year 2026 --history-years 2021,2022,2023,2024,2025` passed.
+  - `python -m engine.utah_draw_predictive.classifier --output-dir processed_data --forecast-year 2026 --history-years 2021,2022,2023,2024,2025` passed.
+  - `python scripts\promote-2026-draw-permit-subset.py` passed.
+  - `python scripts\repair-runtime-reference-surface-coverage-2026.py` passed.
+  - `python scripts\final-permit-database-crosscheck-2026.py` passed.
+  - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed.
+  - `python scripts\scan-2026-hunt-code-family-gaps.py` passed.
+  - `python -m pytest tests\utah\test_2026_draw_permit_subset.py tests\utah\test_final_permit_database_crosscheck_2026.py tests\utah\test_comprehensive_2026_2025_history_integrity_audit.py tests\utah\test_hunt_code_family_gap_scan_2026.py tests\utah_draw_predictive\test_youth_general_deer_strategy.py tests\utah_draw_predictive\test_youth_general_any_bull_elk_strategy.py tests\utah_draw_predictive\test_youth_not_bonus_or_adult_preference.py tests\utah_draw_predictive\test_youth_coverage.py -q` passed: `23`.
+  - `python -m py_compile scripts\repair-runtime-reference-surface-coverage-2026.py scripts\promote-2026-draw-permit-subset.py scripts\final-permit-database-crosscheck-2026.py scripts\scan-2026-hunt-code-family-gaps.py` passed.
+  - `git diff --check` passed.
+
 ## Utah Draw Routing And Algorithm V1
 - Timestamp (UTC): 2026-05-27T03:08:00Z
 - Scope:
