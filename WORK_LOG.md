@@ -1,5 +1,30 @@
 # WORK LOG
 
+## 2023 Draw CSV Source Parity For 2024 Modeling
+- Timestamp (UTC): 2026-05-27T05:26:00Z
+- Scope:
+  - Added a dedicated source-anchor audit for the two large user-supplied 2023-for-2024 draw-result CSV exports.
+  - Verified both files from the older `HUNTS` repo are present in active `HUNT-BUILDER` as exact byte and row-content matches.
+  - Anchored `draw_results_2023_for_2024_long.csv` at `35,960` rows and `580` unique hunt codes, with one represented source file and all rows classified as bonus draw method.
+  - Anchored `draw_results_2023_for_2024_UPLOADED_COMBINED_long.csv` at `38,682` rows and `593` unique hunt codes, with six represented source files and both bonus and preference draw methods.
+  - Recorded the row-key relationship between the two CSVs: `11,718` overlapping row keys, `24,242` standard-only row keys, and `26,964` uploaded-combined-only row keys.
+  - Compared both source exports to current normalized model-year/draw-year 2024 draw truth without promoting either CSV.
+  - Recorded current normalized 2024 draw truth at `37,128` rows and `580` unique hunt codes.
+  - Recorded standard-vs-normalized 2024 overlap: `558` hunt codes and `21,416` row keys.
+  - Recorded uploaded-combined-vs-normalized 2024 overlap: `181` hunt codes and `8,011` row keys.
+  - Confirmed these source files must go through an explicit reconciliation/promotion step before changing normalized draw truth.
+  - Kept the audit source-only/read-only: no normalized draw rewrite, `DATABASE.csv` edit, website feed edit, or prediction output edit was performed.
+- Outputs:
+  - `scripts/audit-draw-2023-for-2024-csv-source-parity.py`
+  - `tests/utah/test_draw_2023_for_2024_csv_source_parity.py`
+  - `data_truth/draw_results_truth/validation/draw_2023_for_2024_csv_source_parity.csv`
+  - `data_truth/draw_results_truth/validation/draw_2023_for_2024_csv_source_parity_summary.json`
+  - `processed_data/draw_2023_for_2024_csv_source_parity.md`
+- Validation:
+  - `python scripts\audit-draw-2023-for-2024-csv-source-parity.py` passed.
+  - `python -m py_compile scripts\audit-draw-2023-for-2024-csv-source-parity.py tests\utah\test_draw_2023_for_2024_csv_source_parity.py` passed.
+  - `python -m pytest tests\utah\test_draw_2023_for_2024_csv_source_parity.py tests\utah\test_draw_year_by_year_hardening_2026.py -q` passed: `8`.
+
 ## 2022 Draw Odds Source Parity For 2023 Modeling
 - Timestamp (UTC): 2026-05-27T05:16:00Z
 - Scope:
