@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-05-27T04:32:38+00:00",
+  "generated_at_utc": "2026-05-27T04:36:44+00:00",
   "audit_scope": "read_only_harvest_truth_year_by_year_hardening",
   "database_path": "pipeline\\RAW\\hunt_unit_database\\2026\\csv\\DATABASE.csv",
   "harvest_best_path": "data_truth\\harvest_results_truth\\normalized\\harvest_quality_features_all_years_by_hunt_code.csv",

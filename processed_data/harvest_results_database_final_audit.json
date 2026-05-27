@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-05-26T18:53:08.997585+00:00",
+  "generated_at_utc": "2026-05-27T04:37:07.142308+00:00",
   "harvest_database_row_count": 68657,
   "best_by_year_hunt_code_row_count": 5151,
   "source_audit_row_count": 218,
@@ -17,7 +17,7 @@
     "2025",
     "2026"
   ],
-  "exact_hunt_code_feature_matches": 1187,
+  "exact_hunt_code_feature_matches": 1242,
   "fallback_feature_matches": 206,
   "no_history_rows": 1,
   "audit_blocker_count": 0,
@@ -25,9 +25,9 @@
   "metric_issue_count": 15521,
   "success_rate_math_conflict_count": 12923,
   "key_integrity_issue_count": 0,
-  "feature_readiness_rows": 1394,
-  "harvest_quality_index_count": 1367,
-  "demand_pressure_signal_count": 1387,
+  "feature_readiness_rows": 1449,
+  "harvest_quality_index_count": 1421,
+  "demand_pressure_signal_count": 1442,
   "summary_source": {
     "source_candidates": 218,
     "normalized_long_rows": 68657,

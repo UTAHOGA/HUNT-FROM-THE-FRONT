@@ -1,5 +1,50 @@
 # WORK LOG
 
+## Harvest Year-By-Year Hardening Audit Against Current 2026 Universe
+- Timestamp (UTC): 2026-05-27T04:36:00Z
+- Scope:
+  - Re-ran the year-by-year harvest truth hardening audit against the current canonical `DATABASE.csv` hunt-code universe.
+  - Added a dedicated parity audit for the user-supplied `2021_for_2022` harvest CSV source set from the older `HUNTS` repo.
+  - Verified the external 2021 source files match the active `HUNT-BUILDER` harvest truth package at row/header level before treating the 2021 harvest year as anchored.
+  - Kept the pass read-only for truth data: no harvest rows, `DATABASE.csv` values, website feeds, draw predictions, or permit/allotment cells were modified.
+  - Confirmed reported harvest years remain `2021` through `2025`, with model target years `2022` through `2026`.
+  - Refreshed the existing final harvest audit outputs so their active-code feature-readiness counts align to the current `1449`-code active universe instead of the stale `1394`-code universe.
+- Outputs:
+  - `scripts/audit-harvest-2021-for-2022-source-parity.py`
+  - `tests/utah_quality/test_harvest_2021_for_2022_source_parity.py`
+  - `data_truth/harvest_results_truth/validation/harvest_2021_for_2022_source_parity.csv`
+  - `data_truth/harvest_results_truth/validation/harvest_2021_for_2022_source_parity_summary.json`
+  - `processed_data/harvest_2021_for_2022_source_parity.md`
+  - `data_truth/harvest_results_truth/validation/harvest_year_by_year_hardening_2026.csv`
+  - `data_truth/harvest_results_truth/validation/harvest_year_by_year_hardening_2026_missing_codes.csv`
+  - `data_truth/harvest_results_truth/validation/harvest_year_by_year_hardening_2026_historical_only_codes.csv`
+  - `data_truth/harvest_results_truth/validation/harvest_year_by_year_hardening_2026_summary.json`
+  - `processed_data/harvest_year_by_year_hardening_2026.md`
+  - refreshed `processed_data/harvest_results_database_final_audit.*`
+  - refreshed `processed_data/harvest_results_database_feature_readiness_audit.csv`
+  - refreshed `processed_data/harvest_results_database_hunt_code_alignment_audit.csv`
+- Key results:
+  - Current canonical hunt-code universe: `1449` rows / `1449` unique hunt codes.
+  - Harvest best rows: `5151`.
+  - Harvest long rows: `68657`.
+  - Current codes covered by at least one harvest year: `1242`.
+  - Current codes missing from all harvest years: `207`.
+  - Historical harvest codes not present in current `DATABASE.csv`: `182`.
+  - 2021-for-2022 source parity: `15 / 15` expected CSV files match row-level content between `HUNTS` and `HUNT-BUILDER`.
+  - 2021 normalized harvest rows: `974` rows / `974` unique hunt codes.
+  - 2025 reported harvest year coverage: `1122 / 1449` current codes (`77.43%`).
+  - Year-by-year current-code coverage:
+    - 2021: `836 / 1449`
+    - 2022: `824 / 1449`
+    - 2023: `1009 / 1449`
+    - 2024: `1003 / 1449`
+    - 2025: `1122 / 1449`
+- Validation:
+  - `python scripts\audit-harvest-2021-for-2022-source-parity.py` passed.
+  - `python scripts\audit-harvest-year-by-year-hardening-2026.py` passed.
+  - `python -m py_compile scripts\audit-harvest-2021-for-2022-source-parity.py scripts\audit-harvest-year-by-year-hardening-2026.py` passed.
+  - `python -m pytest tests\utah_quality\test_harvest_2021_for_2022_source_parity.py tests\utah_quality\test_harvest_year_by_year_hardening_2026.py tests\utah_quality\test_harvest_database_final_audit.py tests\utah\test_all_years_harvest_database.py -q` passed: `27`.
+
 ## Main Hunt Master Enriched Hunt-Class And Routing Promotion
 - Timestamp (UTC): 2026-05-27T03:53:00Z
 - Scope:
