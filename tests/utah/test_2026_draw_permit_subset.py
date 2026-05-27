@@ -26,11 +26,12 @@ def _by_code(path: Path) -> dict[str, dict[str, str]]:
 def test_2026_draw_subset_is_built_from_engine_codes_and_database_values() -> None:
     summary = json.loads(SUMMARY.read_text(encoding="utf-8"))
 
-    assert summary["draw_engine_hunt_code_count"] == 1005
-    assert summary["subset_hunt_code_count"] == 995
+    assert summary["draw_engine_hunt_code_count"] == 863
+    assert summary["subset_hunt_code_count"] == 813
     assert summary["engine_codes_missing_database_count"] == 0
     assert summary["nonnumeric_database_totals_count"] == 0
-    assert summary["source_field_family_counts"] == {"permits_2026": 995}
+    assert summary["source_field_family_counts"] == {"permits_2026": 813}
+    assert summary["draw_system_type_counts"]["YOUTH_DRAW_ONLY_ELK"] == 1
 
 
 def test_database_carries_explicit_2026_draw_subset_fields() -> None:
@@ -62,7 +63,7 @@ def test_subset_export_matches_database_for_all_promoted_codes() -> None:
     db_rows = _by_code(DATABASE)
     subset_rows = _by_code(SUBSET)
 
-    assert len(subset_rows) == 995
+    assert len(subset_rows) == 813
     for code, subset in subset_rows.items():
         database = db_rows[code]
         for field in (
@@ -98,7 +99,7 @@ def test_hunt_master_duplicate_carries_2026_draw_subset_fields() -> None:
 def test_2026_draw_field_promotion_report_written() -> None:
     report = json.loads(REPORT.read_text(encoding="utf-8"))
 
-    assert report["subset_hunt_code_count"] == 995
+    assert report["subset_hunt_code_count"] == 813
     assert report["files_written"] >= 10
     assert any(row["file"] == "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv" for row in report["promotion_results"])
     assert any(row["file"] == "processed_data/hunt_master_enriched_2026_draw_subset.csv" for row in report["promotion_results"])

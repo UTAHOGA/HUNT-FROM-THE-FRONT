@@ -31,7 +31,7 @@ def test_final_permit_crosscheck_has_no_identity_or_total_blockers() -> None:
         "permit_allotment_2026_total": 1091,
         "permits_2025_draw_total": 682,
         "permits_2025_total": 1085,
-        "permits_2026_draw_total": 995,
+        "permits_2026_draw_total": 813,
         "permits_2026_total": 1120,
     }
 

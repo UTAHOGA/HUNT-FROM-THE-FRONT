@@ -1,6 +1,6 @@
 # 2026 Draw Permit Subset
 
-- Generated UTC: `2026-05-27T03:32:21+00:00`
+- Generated UTC: `2026-05-27T03:41:26+00:00`
 - Draw-engine hunt codes: `863`
 - Promoted 2026 draw-permit subset codes: `813`
 - Engine codes missing DATABASE: `0`
@@ -37,13 +37,13 @@
 
 | File | Matched codes | Rows changed | Changed cells |
 | --- | ---: | ---: | ---: |
-| pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv | 813 | 185 | 737 |
-| processed_data/hunt_master_enriched_2026_draw_subset.csv | 813 | 6792 | 32512 |
-| processed_data/hunt_unit_reference_linked.csv | 813 | 372 | 1476 |
-| processed_data/point_ladder_view.csv | 813 | 11848 | 47552 |
-| processed_data/draw_reality_engine.csv | 813 | 3696 | 14444 |
+| pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv | 813 | 0 | 0 |
+| processed_data/hunt_master_enriched_2026_draw_subset.csv | 813 | 0 | 0 |
+| processed_data/hunt_unit_reference_linked.csv | 813 | 0 | 0 |
+| processed_data/point_ladder_view.csv | 813 | 0 | 0 |
+| processed_data/draw_reality_engine.csv | 813 | 0 | 0 |
 | processed_data/draw_reality_engine_predictive_v2.csv | 813 | 26294 | 124159 |
 | processed_data/ml_draw_predictions_v1.csv | 813 | 26294 | 124159 |
-| data/hunt-master-canonical-2026-database-candidate.csv | 813 | 185 | 737 |
-| data/hunt-master-canonical-2026-source-of-truth.csv | 813 | 185 | 737 |
-| processed_data/hunt-master-canonical-2026-source-of-truth.csv | 813 | 185 | 737 |
+| data/hunt-master-canonical-2026-database-candidate.csv | 813 | 0 | 0 |
+| data/hunt-master-canonical-2026-source-of-truth.csv | 813 | 0 | 0 |
+| processed_data/hunt-master-canonical-2026-source-of-truth.csv | 813 | 0 | 0 |

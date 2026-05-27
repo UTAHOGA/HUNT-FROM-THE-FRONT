@@ -1,19 +1,23 @@
 {
   "classification": "CURRENT_2026_HUNT_CODE_FAMILY_GAP_SCAN",
-  "timestamp_utc": "2026-05-27T03:33:23.973784+00:00",
+  "timestamp_utc": "2026-05-27T03:45:33.022771+00:00",
   "database_code_count": 1449,
-  "hunt_master_code_count": 1471,
-  "point_ladder_code_count": 1471,
-  "draw_reality_code_count": 1623,
+  "hunt_master_code_count": 1526,
+  "point_ladder_code_count": 1526,
+  "draw_reality_code_count": 1633,
   "predictive_v2_code_count": 923,
   "family_count": 21,
-  "resolved_family_count": 2,
+  "resolved_family_count": 6,
   "predictive_gap_family_count": 15,
-  "required_surface_blocker_family_count": 11,
+  "required_surface_blocker_family_count": 0,
   "total_missing_predictive_v2_current_database_codes": 586,
-  "total_required_surface_missing_current_database_codes": 120,
+  "total_required_surface_missing_current_database_codes": 0,
   "resolved_families": [
+    "BR",
     "GO",
+    "MA",
+    "MB",
+    "PB",
     "RE"
   ],
   "predictive_gap_families_ranked": [
@@ -739,84 +743,6 @@
       ]
     }
   ],
-  "required_surface_blocker_families": [
-    {
-      "code_prefix": "DB",
-      "label": "Buck Deer",
-      "missing_hunt_master_count": 14,
-      "missing_point_ladder_count": 14,
-      "missing_draw_reality_count": 4
-    },
-    {
-      "code_prefix": "EA",
-      "label": "Antlerless Elk",
-      "missing_hunt_master_count": 6,
-      "missing_point_ladder_count": 6,
-      "missing_draw_reality_count": 0
-    },
-    {
-      "code_prefix": "DA",
-      "label": "Antlerless Deer",
-      "missing_hunt_master_count": 1,
-      "missing_point_ladder_count": 1,
-      "missing_draw_reality_count": 0
-    },
-    {
-      "code_prefix": "PD",
-      "label": "Doe Pronghorn",
-      "missing_hunt_master_count": 7,
-      "missing_point_ladder_count": 7,
-      "missing_draw_reality_count": 3
-    },
-    {
-      "code_prefix": "EB",
-      "label": "Bull Elk",
-      "missing_hunt_master_count": 4,
-      "missing_point_ladder_count": 4,
-      "missing_draw_reality_count": 2
-    },
-    {
-      "code_prefix": "DS",
-      "label": "Desert Bighorn Sheep",
-      "missing_hunt_master_count": 1,
-      "missing_point_ladder_count": 1,
-      "missing_draw_reality_count": 0
-    },
-    {
-      "code_prefix": "BI",
-      "label": "Bison",
-      "missing_hunt_master_count": 1,
-      "missing_point_ladder_count": 1,
-      "missing_draw_reality_count": 0
-    },
-    {
-      "code_prefix": "BR",
-      "label": "Bear",
-      "missing_hunt_master_count": 4,
-      "missing_point_ladder_count": 4,
-      "missing_draw_reality_count": 0
-    },
-    {
-      "code_prefix": "MA",
-      "label": "Antlerless Moose",
-      "missing_hunt_master_count": 1,
-      "missing_point_ladder_count": 1,
-      "missing_draw_reality_count": 0
-    },
-    {
-      "code_prefix": "MB",
-      "label": "Bull Moose",
-      "missing_hunt_master_count": 14,
-      "missing_point_ladder_count": 14,
-      "missing_draw_reality_count": 1
-    },
-    {
-      "code_prefix": "PB",
-      "label": "Pronghorn Buck",
-      "missing_hunt_master_count": 2,
-      "missing_point_ladder_count": 2,
-      "missing_draw_reality_count": 0
-    }
-  ],
+  "required_surface_blocker_families": [],
   "guardrail": "Gap scan is read-only except for audit outputs; it does not promote rows or change prediction math."
 }

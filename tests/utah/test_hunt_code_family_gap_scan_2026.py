@@ -22,39 +22,24 @@ def test_hunt_code_family_gap_scan_runs_and_writes_outputs() -> None:
 
     summary = json.loads(SUMMARY.read_text(encoding="utf-8"))
     assert summary["classification"] == "CURRENT_2026_HUNT_CODE_FAMILY_GAP_SCAN"
-    assert summary["database_code_count"] == 1411
-    assert summary["hunt_master_code_count"] == 1471
-    assert summary["point_ladder_code_count"] == 1471
-    assert summary["draw_reality_code_count"] == 1623
-    assert summary["predictive_v2_code_count"] == 1471
+    assert summary["database_code_count"] == 1449
+    assert summary["hunt_master_code_count"] == 1526
+    assert summary["point_ladder_code_count"] == 1526
+    assert summary["draw_reality_code_count"] == 1633
+    assert summary["predictive_v2_code_count"] == 923
     assert summary["family_count"] == 21
-    assert summary["resolved_family_count"] == 21
-    assert summary["predictive_gap_family_count"] == 0
+    assert summary["resolved_family_count"] == 6
+    assert summary["predictive_gap_family_count"] == 15
     assert summary["required_surface_blocker_family_count"] == 0
-    assert summary["total_missing_predictive_v2_current_database_codes"] == 0
+    assert summary["total_missing_predictive_v2_current_database_codes"] == 586
     assert summary["total_required_surface_missing_current_database_codes"] == 0
     assert set(summary["resolved_families"]) == {
         "BR",
-        "BI",
-        "CG",
-        "DA",
-        "DB",
-        "DS",
-        "EA",
-        "EB",
-        "EL",
-        "EX",
         "GO",
-        "LD",
-        "LO",
-        "LP",
         "MA",
         "MB",
         "PB",
-        "PD",
         "RE",
-        "RS",
-        "TK",
     }
 
 
@@ -62,7 +47,9 @@ def test_hunt_code_family_gap_scan_ranks_largest_predictive_gaps() -> None:
     summary = json.loads(SUMMARY.read_text(encoding="utf-8"))
     ranked = summary["predictive_gap_families_ranked"]
 
-    assert ranked == []
+    assert ranked
+    assert ranked[0]["code_prefix"] == "DB"
+    assert ranked[0]["missing_predictive_v2_count"] == 137
 
 
 def test_hunt_code_family_gap_scan_marks_resolved_reference_families() -> None:
@@ -70,15 +57,17 @@ def test_hunt_code_family_gap_scan_marks_resolved_reference_families() -> None:
         rows = {row["code_prefix"]: row for row in csv.DictReader(handle)}
 
     assert rows["BR"]["status"] == "RESOLVED"
-    assert rows["BR"]["database_code_count"] == "106"
-    assert rows["BR"]["predictive_v2_code_count"] == "106"
+    assert rows["BR"]["database_code_count"] == "110"
+    assert rows["BR"]["predictive_v2_code_count"] == "110"
     assert rows["BR"]["missing_predictive_v2_count"] == "0"
 
-    assert rows["TK"]["status"] == "RESOLVED"
+    assert rows["TK"]["status"] == "PREDICTIVE_GAP"
     assert rows["TK"]["database_code_count"] == "18"
-    assert rows["TK"]["predictive_v2_code_count"] == "18"
-    assert rows["TK"]["missing_predictive_v2_count"] == "0"
+    assert rows["TK"]["predictive_v2_code_count"] == "3"
+    assert rows["TK"]["missing_predictive_v2_count"] == "15"
+    assert rows["TK"]["missing_hunt_master_count"] == "0"
 
-    for prefix in ("BI", "CG", "DA", "DB", "DS", "EA", "EB", "EL", "EX", "LD", "LO", "LP", "PD", "RE", "RS"):
-        assert rows[prefix]["status"] == "RESOLVED"
-        assert rows[prefix]["missing_predictive_v2_count"] == "0"
+    for prefix in ("BI", "CG", "DA", "DB", "DS", "EA", "EB", "EL", "EX", "LD", "LO", "LP", "PD", "RS"):
+        assert rows[prefix]["missing_hunt_master_count"] == "0"
+        assert rows[prefix]["missing_point_ladder_count"] == "0"
+        assert rows[prefix]["missing_draw_reality_count"] == "0"

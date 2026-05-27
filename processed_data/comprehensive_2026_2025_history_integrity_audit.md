@@ -1,6 +1,6 @@
 # Comprehensive 2026/2025 History Integrity Audit
 
-- Generated UTC: `2026-05-27T03:33:08+00:00`
+- Generated UTC: `2026-05-27T03:45:28+00:00`
 - DATABASE active rows: `1449`
 - DATABASE unique hunt codes: `1449`
 - Retired current-code ledger rows: `17`

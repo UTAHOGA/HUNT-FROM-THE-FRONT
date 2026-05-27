@@ -8,5 +8,5 @@
   "source_years": "2021-2025",
   "source_years_used_nonnull": 26507,
   "source": "data_model\\runtime_drafts\\predictive_bonus_engine_2026.materialized.csv",
-  "command_used": "python -m engine.utah_bonus_predictive.materialize --output-dir processed_data --forecast-year 2026 --history-years 2021,2022,2023,2024,2025 --skip-upstream"
+  "command_used": "python -m engine.utah_bonus_predictive.materialize --output-dir processed_data --forecast-year 2026 --history-years 2021,2022,2023,2024,2025"
 }

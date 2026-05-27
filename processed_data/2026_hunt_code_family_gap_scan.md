@@ -3,9 +3,9 @@
 - Current DATABASE code count: `1449`
 - Predictive v2 code count: `923`
 - Families scanned: `21`
-- Fully resolved families: `2`
+- Fully resolved families: `6`
 - Families with predictive v2 gaps: `15`
-- Required-surface blocker families: `11`
+- Required-surface blocker families: `0`
 - Current DATABASE codes missing predictive v2: `586`
 
 ## Largest Predictive Gaps
