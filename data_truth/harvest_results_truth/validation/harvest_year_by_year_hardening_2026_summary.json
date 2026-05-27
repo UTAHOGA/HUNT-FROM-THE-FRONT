@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-05-27T04:36:44+00:00",
+  "generated_at_utc": "2026-05-27T04:49:05+00:00",
   "audit_scope": "read_only_harvest_truth_year_by_year_hardening",
   "database_path": "pipeline\\RAW\\hunt_unit_database\\2026\\csv\\DATABASE.csv",
   "harvest_best_path": "data_truth\\harvest_results_truth\\normalized\\harvest_quality_features_all_years_by_hunt_code.csv",
@@ -19,17 +19,129 @@
   "current_database_codes_covered_any_harvest_year": 1242,
   "current_database_codes_missing_all_harvest_years": 207,
   "historical_only_harvest_codes_not_current_database": 182,
+  "harvest_hunt_code_growth_note": "2021 is the current baseline at 974 unique harvest hunt codes. The count should generally increase slightly in later reported hunt years, or the audit must explain the gap.",
+  "metric_publication_status": {
+    "hunt_unit_reference_linked_path": "processed_data\\hunt_unit_reference_linked.csv",
+    "hunt_master_enriched_path": "processed_data\\hunt_master_enriched.csv",
+    "field_rows": [
+      {
+        "metric": "permits",
+        "captured_in_harvest_truth": true,
+        "published_in_hunt_unit_reference_linked": false,
+        "published_in_hunt_master_enriched": false,
+        "published_reference_fields": [],
+        "published_master_fields": []
+      },
+      {
+        "metric": "hunters_afield",
+        "captured_in_harvest_truth": true,
+        "published_in_hunt_unit_reference_linked": true,
+        "published_in_hunt_master_enriched": true,
+        "published_reference_fields": [
+          "harvest_hunters_2025"
+        ],
+        "published_master_fields": [
+          "success_hunters"
+        ]
+      },
+      {
+        "metric": "harvest_total",
+        "captured_in_harvest_truth": true,
+        "published_in_hunt_unit_reference_linked": true,
+        "published_in_hunt_master_enriched": true,
+        "published_reference_fields": [
+          "harvest_2025"
+        ],
+        "published_master_fields": [
+          "success_harvest"
+        ]
+      },
+      {
+        "metric": "harvest_male",
+        "captured_in_harvest_truth": true,
+        "published_in_hunt_unit_reference_linked": false,
+        "published_in_hunt_master_enriched": false,
+        "published_reference_fields": [],
+        "published_master_fields": []
+      },
+      {
+        "metric": "harvest_female",
+        "captured_in_harvest_truth": true,
+        "published_in_hunt_unit_reference_linked": false,
+        "published_in_hunt_master_enriched": false,
+        "published_reference_fields": [],
+        "published_master_fields": []
+      },
+      {
+        "metric": "harvest_young",
+        "captured_in_harvest_truth": true,
+        "published_in_hunt_unit_reference_linked": false,
+        "published_in_hunt_master_enriched": false,
+        "published_reference_fields": [],
+        "published_master_fields": []
+      },
+      {
+        "metric": "percent_success",
+        "captured_in_harvest_truth": true,
+        "published_in_hunt_unit_reference_linked": true,
+        "published_in_hunt_master_enriched": true,
+        "published_reference_fields": [
+          "harvest_success_percent_2025"
+        ],
+        "published_master_fields": [
+          "success_percent"
+        ]
+      },
+      {
+        "metric": "average_days",
+        "captured_in_harvest_truth": true,
+        "published_in_hunt_unit_reference_linked": true,
+        "published_in_hunt_master_enriched": false,
+        "published_reference_fields": [
+          "harvest_average_days_2025"
+        ],
+        "published_master_fields": []
+      },
+      {
+        "metric": "hunter_satisfaction",
+        "captured_in_harvest_truth": true,
+        "published_in_hunt_unit_reference_linked": true,
+        "published_in_hunt_master_enriched": false,
+        "published_reference_fields": [
+          "harvest_satisfaction_2025"
+        ],
+        "published_master_fields": []
+      },
+      {
+        "metric": "average_age",
+        "captured_in_harvest_truth": true,
+        "published_in_hunt_unit_reference_linked": false,
+        "published_in_hunt_master_enriched": false,
+        "published_reference_fields": [],
+        "published_master_fields": []
+      },
+      {
+        "metric": "harvest_objective",
+        "captured_in_harvest_truth": true,
+        "published_in_hunt_unit_reference_linked": false,
+        "published_in_hunt_master_enriched": false,
+        "published_reference_fields": [],
+        "published_master_fields": []
+      }
+    ]
+  },
   "year_rows": [
     {
       "reported_hunt_year": "2021",
       "model_target_years": "2022",
       "best_rows": "974",
       "long_rows": "7944",
-      "unique_harvest_hunt_codes": "974",
+      "native_unique_harvest_hunt_codes": "974",
       "current_database_hunt_codes": "1449",
       "current_database_codes_covered": "836",
       "current_database_codes_missing": "613",
       "current_database_coverage_pct": "57.69",
+      "current_database_comparison_use": "CROSS_REFERENCE_ONLY_NOT_YEAR_COMPLETENESS",
       "historical_only_harvest_codes": "138",
       "guardrail_rows": "974",
       "metric_issue_rows": "1008",
@@ -54,11 +166,12 @@
       "model_target_years": "2023",
       "best_rows": "924",
       "long_rows": "7392",
-      "unique_harvest_hunt_codes": "924",
+      "native_unique_harvest_hunt_codes": "924",
       "current_database_hunt_codes": "1449",
       "current_database_codes_covered": "824",
       "current_database_codes_missing": "625",
       "current_database_coverage_pct": "56.87",
+      "current_database_comparison_use": "CROSS_REFERENCE_ONLY_NOT_YEAR_COMPLETENESS",
       "historical_only_harvest_codes": "100",
       "guardrail_rows": "924",
       "metric_issue_rows": "1320",
@@ -83,11 +196,12 @@
       "model_target_years": "2024",
       "best_rows": "1078",
       "long_rows": "7492",
-      "unique_harvest_hunt_codes": "1078",
+      "native_unique_harvest_hunt_codes": "1078",
       "current_database_hunt_codes": "1449",
       "current_database_codes_covered": "1009",
       "current_database_codes_missing": "440",
       "current_database_coverage_pct": "69.63",
+      "current_database_comparison_use": "CROSS_REFERENCE_ONLY_NOT_YEAR_COMPLETENESS",
       "historical_only_harvest_codes": "69",
       "guardrail_rows": "1078",
       "metric_issue_rows": "1250",
@@ -112,11 +226,12 @@
       "model_target_years": "2025",
       "best_rows": "1048",
       "long_rows": "35707",
-      "unique_harvest_hunt_codes": "1048",
+      "native_unique_harvest_hunt_codes": "1048",
       "current_database_hunt_codes": "1449",
       "current_database_codes_covered": "1003",
       "current_database_codes_missing": "446",
       "current_database_coverage_pct": "69.22",
+      "current_database_comparison_use": "CROSS_REFERENCE_ONLY_NOT_YEAR_COMPLETENESS",
       "historical_only_harvest_codes": "45",
       "guardrail_rows": "1048",
       "metric_issue_rows": "11931",
@@ -141,11 +256,12 @@
       "model_target_years": "2026",
       "best_rows": "1127",
       "long_rows": "10122",
-      "unique_harvest_hunt_codes": "1127",
+      "native_unique_harvest_hunt_codes": "1127",
       "current_database_hunt_codes": "1449",
       "current_database_codes_covered": "1122",
       "current_database_codes_missing": "327",
       "current_database_coverage_pct": "77.43",
+      "current_database_comparison_use": "CROSS_REFERENCE_ONLY_NOT_YEAR_COMPLETENESS",
       "historical_only_harvest_codes": "5",
       "guardrail_rows": "1127",
       "metric_issue_rows": "12",
@@ -171,7 +287,8 @@
   "guardrails": [
     "Read-only audit: no harvest truth rows, DATABASE.csv values, website feeds, or draw prediction files are modified.",
     "Harvest permit values remain harvest-report context only and must not be promoted to current-year draw allotments.",
-    "Reported hunt year remains the completed harvest year; model target year is reported_hunt_year + 1."
+    "Reported hunt year remains the completed harvest year; model target year is reported_hunt_year + 1.",
+    "Do not judge historical years against the 2026 active hunt-code count as a completeness score; the 2026 database comparison is cross-reference evidence only."
   ],
   "outputs": {
     "year_coverage_csv": "data_truth\\harvest_results_truth\\validation\\harvest_year_by_year_hardening_2026.csv",

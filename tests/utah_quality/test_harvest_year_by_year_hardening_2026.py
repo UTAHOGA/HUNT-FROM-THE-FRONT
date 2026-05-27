@@ -39,15 +39,18 @@ def test_harvest_hardening_uses_current_1449_code_universe() -> None:
     assert summary["harvest_best_rows"] == 5151
     assert summary["harvest_long_rows"] == 68657
     assert summary["blocker_count"] == 0
+    assert "2021 is the current baseline at 974 unique harvest hunt codes" in summary["harvest_hunt_code_growth_note"]
 
 
 def test_harvest_hardening_2025_coverage_is_current_best_year() -> None:
     year_rows = {row["reported_hunt_year"]: row for row in rows(YEAR_CSV)}
 
+    assert year_rows["2021"]["native_unique_harvest_hunt_codes"] == "974"
     assert year_rows["2025"]["current_database_hunt_codes"] == "1449"
     assert int(year_rows["2025"]["current_database_codes_covered"]) >= 1120
     assert int(year_rows["2025"]["current_database_codes_missing"]) <= 330
     assert year_rows["2025"]["model_target_years"] == "2026"
+    assert year_rows["2021"]["current_database_comparison_use"] == "CROSS_REFERENCE_ONLY_NOT_YEAR_COMPLETENESS"
 
 
 def test_harvest_hardening_missing_codes_are_review_targets_not_promotions() -> None:
@@ -67,3 +70,16 @@ def test_historical_only_harvest_codes_are_listed_for_crosswalk_review() -> None
     assert len(historical_rows) == summary["historical_only_harvest_codes_not_current_database"]
     assert len(historical_rows) >= 150
     assert all(row["review_status"] == "HISTORICAL_CODE_NOT_IN_CURRENT_DATABASE" for row in historical_rows)
+
+
+def test_harvest_metric_publication_status_is_explicit() -> None:
+    summary = json.loads(SUMMARY.read_text(encoding="utf-8"))
+    field_rows = {
+        row["metric"]: row
+        for row in summary["metric_publication_status"]["field_rows"]
+    }
+
+    assert field_rows["average_age"]["captured_in_harvest_truth"] is True
+    assert field_rows["hunter_satisfaction"]["captured_in_harvest_truth"] is True
+    assert field_rows["hunter_satisfaction"]["published_in_hunt_unit_reference_linked"] is True
+    assert field_rows["average_age"]["published_in_hunt_unit_reference_linked"] is False

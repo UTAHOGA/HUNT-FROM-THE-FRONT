@@ -10,16 +10,48 @@ Read-only audit of normalized harvest truth against the current 2026 canonical h
 - Current codes covered in at least one harvest year: 1242
 - Current codes missing from all harvest years: 207
 - Historical harvest codes not in current DATABASE: 182
+- 2021 unique harvest hunt-code baseline: 974
+- Expected trend: unique harvest hunt-code count should generally increase slightly year over year, or any drop should be explained by source coverage, discontinued codes, or true season structure changes.
 
 ## Year Coverage
 
-| Reported hunt year | Best rows | Current codes covered | Current codes missing | Coverage | Metric warnings |
-|---|---:|---:|---:|---:|---:|
-| 2021 | 974 | 836 | 613 | 57.69% | 1008 |
-| 2022 | 924 | 824 | 625 | 56.87% | 1320 |
-| 2023 | 1078 | 1009 | 440 | 69.63% | 1250 |
-| 2024 | 1048 | 1003 | 446 | 69.22% | 11931 |
-| 2025 | 1127 | 1122 | 327 | 77.43% | 12 |
+| Reported hunt year | Native unique harvest codes | Best rows | Metric warnings |
+|---|---:|---:|---:|
+| 2021 | 974 | 974 | 1008 |
+| 2022 | 924 | 924 | 1320 |
+| 2023 | 1078 | 1078 | 1250 |
+| 2024 | 1048 | 1048 | 11931 |
+| 2025 | 1127 | 1127 | 12 |
+
+## Current Reference Alignment
+
+The 2026 `DATABASE.csv` comparison is only for crosswalk/alignment work. It is not a completeness score for older harvest years.
+
+| Reported hunt year | Current 2026 codes cross-referenced | Current 2026 codes not cross-referenced |
+|---|---:|---:|
+| 2021 | 836 | 613 |
+| 2022 | 824 | 625 |
+| 2023 | 1009 | 440 |
+| 2024 | 1003 | 446 |
+| 2025 | 1122 | 327 |
+
+## Harvest Metric Publication Status
+
+| Metric | Captured in harvest truth | Published in hunt reference | Published in hunt master |
+|---|---:|---:|---:|
+| permits | yes | no | no |
+| hunters_afield | yes | yes | yes |
+| harvest_total | yes | yes | yes |
+| harvest_male | yes | no | no |
+| harvest_female | yes | no | no |
+| harvest_young | yes | no | no |
+| percent_success | yes | yes | yes |
+| average_days | yes | yes | no |
+| hunter_satisfaction | yes | yes | no |
+| average_age | yes | no | no |
+| harvest_objective | yes | no | no |
+
+Note: current hunt-reference publication is mostly 2025-facing. The all-year harvest truth file is richer than the current website-facing/reference fields.
 
 ## Guardrails
 

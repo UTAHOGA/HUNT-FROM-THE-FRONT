@@ -19,6 +19,8 @@ DATABASE = ROOT / "pipeline" / "RAW" / "hunt_unit_database" / "2026" / "csv" / "
 BEST = ROOT / "data_truth" / "harvest_results_truth" / "normalized" / "harvest_quality_features_all_years_by_hunt_code.csv"
 LONG = ROOT / "data_truth" / "harvest_results_truth" / "normalized" / "harvest_results_all_years_long.csv"
 METRIC_AUDIT = ROOT / "processed_data" / "harvest_results_database_metric_integrity_audit.csv"
+REFERENCE_LINKED = ROOT / "processed_data" / "hunt_unit_reference_linked.csv"
+MASTER_ENRICHED = ROOT / "processed_data" / "hunt_master_enriched.csv"
 VALIDATION_DIR = ROOT / "data_truth" / "harvest_results_truth" / "validation"
 SUMMARY_JSON = VALIDATION_DIR / "harvest_year_by_year_hardening_2026_summary.json"
 YEAR_CSV = VALIDATION_DIR / "harvest_year_by_year_hardening_2026.csv"
@@ -39,6 +41,29 @@ NUMERIC_FIELDS = [
     "average_age",
     "harvest_objective",
 ]
+
+TRUTH_METRIC_FIELDS = [
+    "permits",
+    "hunters_afield",
+    "harvest_total",
+    "harvest_male",
+    "harvest_female",
+    "harvest_young",
+    "percent_success",
+    "average_days",
+    "hunter_satisfaction",
+    "average_age",
+    "harvest_objective",
+]
+
+REFERENCE_METRIC_ALIASES = {
+    "hunters_afield": ["harvest_hunters_2025", "success_hunters"],
+    "harvest_total": ["harvest_2025", "success_harvest"],
+    "percent_success": ["harvest_success_percent_2025", "success_percent"],
+    "average_days": ["harvest_average_days_2025"],
+    "hunter_satisfaction": ["harvest_satisfaction_2025"],
+    "average_age": ["harvest_average_age_2025", "average_age", "average_harvest_age"],
+}
 
 
 def read_rows(path: Path) -> list[dict[str, str]]:
@@ -109,6 +134,37 @@ def metric_issue_counts() -> tuple[Counter[str], Counter[str]]:
     return issues_by_year, success_conflicts_by_year
 
 
+def csv_fields(path: Path) -> list[str]:
+    if not path.exists():
+        return []
+    with path.open(newline="", encoding="utf-8-sig") as handle:
+        return list(csv.DictReader(handle).fieldnames or [])
+
+
+def metric_publication_status() -> dict[str, object]:
+    truth_fields = set(csv_fields(BEST))
+    reference_fields = set(csv_fields(REFERENCE_LINKED))
+    master_fields = set(csv_fields(MASTER_ENRICHED))
+    field_rows = []
+    for metric in TRUTH_METRIC_FIELDS:
+        reference_aliases = REFERENCE_METRIC_ALIASES.get(metric, [])
+        field_rows.append(
+            {
+                "metric": metric,
+                "captured_in_harvest_truth": metric in truth_fields,
+                "published_in_hunt_unit_reference_linked": any(alias in reference_fields for alias in reference_aliases),
+                "published_in_hunt_master_enriched": any(alias in master_fields for alias in reference_aliases),
+                "published_reference_fields": [alias for alias in reference_aliases if alias in reference_fields],
+                "published_master_fields": [alias for alias in reference_aliases if alias in master_fields],
+            }
+        )
+    return {
+        "hunt_unit_reference_linked_path": str(REFERENCE_LINKED.relative_to(ROOT)),
+        "hunt_master_enriched_path": str(MASTER_ENRICHED.relative_to(ROOT)),
+        "field_rows": field_rows,
+    }
+
+
 def main() -> int:
     database_rows = read_rows(DATABASE)
     best_rows = read_rows(BEST)
@@ -158,11 +214,12 @@ def main() -> int:
                 "model_target_years": "|".join(model_target_years),
                 "best_rows": str(len(rows)),
                 "long_rows": str(long_by_year[year]),
-                "unique_harvest_hunt_codes": str(len(year_codes)),
+                "native_unique_harvest_hunt_codes": str(len(year_codes)),
                 "current_database_hunt_codes": str(len(current_codes)),
                 "current_database_codes_covered": str(len(current_covered)),
                 "current_database_codes_missing": str(len(current_missing)),
                 "current_database_coverage_pct": f"{(len(current_covered) / len(current_codes) * 100):.2f}",
+                "current_database_comparison_use": "CROSS_REFERENCE_ONLY_NOT_YEAR_COMPLETENESS",
                 "historical_only_harvest_codes": str(len(year_codes - current_codes)),
                 "guardrail_rows": str(guardrail_rows),
                 "metric_issue_rows": str(issues_by_year[year]),
@@ -223,6 +280,11 @@ def main() -> int:
         "current_database_codes_covered_any_harvest_year": len(current_codes_covered_any_year),
         "current_database_codes_missing_all_harvest_years": len(current_codes - current_codes_covered_any_year),
         "historical_only_harvest_codes_not_current_database": len(historical_only_codes),
+        "harvest_hunt_code_growth_note": (
+            "2021 is the current baseline at 974 unique harvest hunt codes. "
+            "The count should generally increase slightly in later reported hunt years, or the audit must explain the gap."
+        ),
+        "metric_publication_status": metric_publication_status(),
         "year_rows": year_rows,
         "missing_code_rows": len(missing_rows),
         "blocker_count": 0,
@@ -230,6 +292,7 @@ def main() -> int:
             "Read-only audit: no harvest truth rows, DATABASE.csv values, website feeds, or draw prediction files are modified.",
             "Harvest permit values remain harvest-report context only and must not be promoted to current-year draw allotments.",
             "Reported hunt year remains the completed harvest year; model target year is reported_hunt_year + 1.",
+            "Do not judge historical years against the 2026 active hunt-code count as a completeness score; the 2026 database comparison is cross-reference evidence only.",
         ],
         "outputs": {
             "year_coverage_csv": str(YEAR_CSV.relative_to(ROOT)),
@@ -281,6 +344,8 @@ def main() -> int:
 
 def build_markdown(summary: dict[str, object]) -> str:
     year_rows = summary["year_rows"]
+    publication = summary["metric_publication_status"]
+    publication_rows = publication["field_rows"]
     lines = [
         "# Harvest Year-By-Year Hardening Audit 2026",
         "",
@@ -294,25 +359,64 @@ def build_markdown(summary: dict[str, object]) -> str:
         f"- Current codes covered in at least one harvest year: {summary['current_database_codes_covered_any_harvest_year']}",
         f"- Current codes missing from all harvest years: {summary['current_database_codes_missing_all_harvest_years']}",
         f"- Historical harvest codes not in current DATABASE: {summary['historical_only_harvest_codes_not_current_database']}",
+        f"- 2021 unique harvest hunt-code baseline: 974",
+        "- Expected trend: unique harvest hunt-code count should generally increase slightly year over year, or any drop should be explained by source coverage, discontinued codes, or true season structure changes.",
         "",
         "## Year Coverage",
         "",
-        "| Reported hunt year | Best rows | Current codes covered | Current codes missing | Coverage | Metric warnings |",
-        "|---|---:|---:|---:|---:|---:|",
+        "| Reported hunt year | Native unique harvest codes | Best rows | Metric warnings |",
+        "|---|---:|---:|---:|",
     ]
     for row in year_rows:
         lines.append(
-            "| {year} | {best} | {covered} | {missing} | {pct}% | {warnings} |".format(
+            "| {year} | {codes} | {best} | {warnings} |".format(
                 year=row["reported_hunt_year"],
+                codes=row["native_unique_harvest_hunt_codes"],
                 best=row["best_rows"],
-                covered=row["current_database_codes_covered"],
-                missing=row["current_database_codes_missing"],
-                pct=row["current_database_coverage_pct"],
                 warnings=row["metric_issue_rows"],
             )
         )
     lines.extend(
         [
+            "",
+            "## Current Reference Alignment",
+            "",
+            "The 2026 `DATABASE.csv` comparison is only for crosswalk/alignment work. It is not a completeness score for older harvest years.",
+            "",
+            "| Reported hunt year | Current 2026 codes cross-referenced | Current 2026 codes not cross-referenced |",
+            "|---|---:|---:|",
+        ]
+    )
+    for row in year_rows:
+        lines.append(
+            "| {year} | {covered} | {missing} |".format(
+                year=row["reported_hunt_year"],
+                covered=row["current_database_codes_covered"],
+                missing=row["current_database_codes_missing"],
+            )
+        )
+    lines.extend(
+        [
+            "",
+            "## Harvest Metric Publication Status",
+            "",
+            "| Metric | Captured in harvest truth | Published in hunt reference | Published in hunt master |",
+            "|---|---:|---:|---:|",
+        ]
+    )
+    for row in publication_rows:
+        lines.append(
+            "| {metric} | {truth} | {reference} | {master} |".format(
+                metric=row["metric"],
+                truth="yes" if row["captured_in_harvest_truth"] else "no",
+                reference="yes" if row["published_in_hunt_unit_reference_linked"] else "no",
+                master="yes" if row["published_in_hunt_master_enriched"] else "no",
+            )
+        )
+    lines.extend(
+        [
+            "",
+            "Note: current hunt-reference publication is mostly 2025-facing. The all-year harvest truth file is richer than the current website-facing/reference fields.",
             "",
             "## Guardrails",
             "",
