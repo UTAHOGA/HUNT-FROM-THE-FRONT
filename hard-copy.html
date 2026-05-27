@@ -15,7 +15,6 @@
       --library-ink: #241208;
       --library-orange: #f07800;
       --library-brown: #241107;
-      --library-brown2: #422414;
       --library-line: rgba(255, 214, 160, .34);
       --library-shadow: 0 24px 58px rgba(0,0,0,.56);
     }
@@ -37,13 +36,13 @@
 
     .library-scene {
       position: relative;
-      min-height: 640px;
+      min-height: 700px;
       border: 1px solid rgba(255, 210, 145, .35);
       border-radius: 30px;
       overflow: hidden;
       box-shadow: var(--library-shadow);
       background:
-        linear-gradient(90deg, rgba(20, 9, 4, .70) 0%, rgba(21, 10, 5, .36) 52%, rgba(21, 10, 5, .18) 100%),
+        linear-gradient(90deg, rgba(20, 9, 4, .66) 0%, rgba(21, 10, 5, .22) 48%, rgba(21, 10, 5, .12) 100%),
         var(--library-wallpaper) center center / cover no-repeat;
     }
 
@@ -52,28 +51,31 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 62% 12%, rgba(255, 199, 120, .10), transparent 30%),
-        linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,.52));
+        radial-gradient(circle at 62% 12%, rgba(255, 199, 120, .08), transparent 30%),
+        linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,.46));
       pointer-events: none;
+      z-index: 1;
     }
 
     .library-hero-content {
       position: relative;
-      z-index: 2;
+      z-index: 4;
       display: grid;
       align-content: end;
-      min-height: 640px;
+      min-height: 700px;
       padding: clamp(24px, 4vw, 58px);
+      pointer-events: none;
     }
 
     .library-title-card {
-      width: min(760px, 100%);
+      width: min(650px, 100%);
       border: 1px solid rgba(255, 222, 170, .35);
       border-radius: 28px;
-      padding: clamp(18px, 3vw, 34px);
-      background: linear-gradient(180deg, rgba(32, 15, 7, .86), rgba(22, 10, 5, .92));
+      padding: clamp(16px, 2.6vw, 28px);
+      background: linear-gradient(180deg, rgba(32, 15, 7, .82), rgba(22, 10, 5, .90));
       box-shadow: 0 18px 38px rgba(0,0,0,.38);
       backdrop-filter: blur(10px);
+      pointer-events: auto;
     }
 
     .library-badge {
@@ -95,7 +97,7 @@
       margin: 16px 0 8px;
       color: #fff0d2;
       font-family: var(--font-display, Georgia, serif);
-      font-size: clamp(38px, 6vw, 86px);
+      font-size: clamp(34px, 5.4vw, 78px);
       line-height: .9;
       text-transform: uppercase;
       text-shadow: 0 5px 22px rgba(0,0,0,.58);
@@ -111,10 +113,10 @@
 
     .library-subtitle {
       margin: 0 0 18px;
-      max-width: 670px;
+      max-width: 640px;
       color: #e8c79a;
-      font-size: 16px;
-      line-height: 1.58;
+      font-size: 15px;
+      line-height: 1.55;
     }
 
     .library-search-wrap {
@@ -153,10 +155,80 @@
       cursor: pointer;
     }
 
+    .wall-folder-layer {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .wall-folder {
+      position: absolute;
+      left: var(--x);
+      top: var(--y);
+      width: clamp(126px, 11vw, 190px);
+      min-height: clamp(76px, 7vw, 112px);
+      display: grid;
+      align-content: center;
+      gap: 5px;
+      padding: 12px 11px;
+      border: 1px solid rgba(83, 45, 22, .72);
+      border-radius: 10px;
+      background:
+        linear-gradient(180deg, rgba(255, 247, 221, .96), rgba(220, 181, 121, .96));
+      color: #2c1608;
+      box-shadow: 0 13px 22px rgba(0,0,0,.34), inset 0 0 0 1px rgba(255,255,255,.55);
+      text-align: center;
+      transform: rotate(var(--r, -1deg));
+      cursor: pointer;
+      pointer-events: auto;
+      transition: transform .14s ease, box-shadow .14s ease, filter .14s ease;
+    }
+
+    .wall-folder::before {
+      content: "";
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      width: 38px;
+      height: 16px;
+      border-radius: 4px;
+      transform: translateX(-50%);
+      background: linear-gradient(180deg, #6e6e6e, #2d2d2d);
+      box-shadow: 0 4px 8px rgba(0,0,0,.30);
+    }
+
+    .wall-folder strong {
+      font-size: clamp(10px, .86vw, 13px);
+      line-height: 1.08;
+      font-weight: 1000;
+      letter-spacing: .035em;
+      text-transform: uppercase;
+    }
+
+    .wall-folder span {
+      color: #8b4216;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .wall-folder:hover,
+    .wall-folder.active {
+      transform: translateY(-5px) rotate(0deg) scale(1.04);
+      box-shadow: 0 20px 30px rgba(0,0,0,.42), 0 0 0 3px rgba(240,120,0,.28), inset 0 0 0 1px rgba(255,255,255,.72);
+      filter: saturate(1.08) brightness(1.03);
+    }
+
+    .wall-folder.active {
+      background: linear-gradient(180deg, rgba(255, 225, 164, .98), rgba(239, 142, 45, .97));
+    }
+
     .library-dashboard {
       position: relative;
-      z-index: 3;
-      margin-top: -68px;
+      z-index: 5;
+      margin-top: -38px;
       padding: 0 clamp(12px, 3vw, 34px);
     }
 
@@ -170,32 +242,21 @@
     .library-chip {
       display: grid;
       place-items: center;
-      min-height: 92px;
+      min-height: 86px;
       border: 1px solid rgba(80, 42, 21, .48);
-      border-radius: 20px;
+      border-radius: 18px;
       background: radial-gradient(circle at 50% 15%, rgba(255,255,255,.42), transparent 34%), linear-gradient(180deg, #f3dfbc, #c99456);
       color: #321708;
       text-align: center;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 1000;
       letter-spacing: .04em;
       text-transform: uppercase;
       box-shadow: 0 14px 26px rgba(0,0,0,.28);
       cursor: pointer;
     }
-    .library-chip::before {
-      content: attr(data-icon);
-      display: block;
-      font-size: 23px;
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-    .library-chip.active {
-      background: linear-gradient(180deg, #ff9b32, #d16410);
-      color: #fff1d5;
-      border-color: rgba(255, 215, 155, .65);
-      transform: translateY(-3px);
-    }
+    .library-chip::before { content: attr(data-icon); display: block; font-size: 22px; line-height: 1; margin-bottom: 5px; }
+    .library-chip.active { background: linear-gradient(180deg, #ff9b32, #d16410); color: #fff1d5; border-color: rgba(255, 215, 155, .65); transform: translateY(-3px); }
 
     .library-controls {
       display: grid;
@@ -211,36 +272,11 @@
     }
 
     .library-facets { display: flex; gap: 8px; flex-wrap: wrap; }
-    .library-facet {
-      min-height: 42px;
-      border: 1px solid rgba(232, 181, 116, .42);
-      border-radius: 12px;
-      padding: 9px 12px;
-      background: rgba(43, 22, 12, .92);
-      color: #ffe4bd;
-      font: inherit;
-    }
-
-    #libraryCount {
-      color: #f5d4a6;
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
+    .library-facet { min-height: 42px; border: 1px solid rgba(232, 181, 116, .42); border-radius: 12px; padding: 9px 12px; background: rgba(43, 22, 12, .92); color: #ffe4bd; font: inherit; }
+    #libraryCount { color: #f5d4a6; font-size: 12px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
 
     .active-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-    .active-filter-chip {
-      border: 1px solid rgba(255, 205, 143, .34);
-      border-radius: 999px;
-      background: rgba(54, 29, 15, .88);
-      color: #ffe3bb;
-      font-size: 12px;
-      font-weight: 900;
-      padding: 7px 10px;
-      cursor: pointer;
-    }
+    .active-filter-chip { border: 1px solid rgba(255, 205, 143, .34); border-radius: 999px; background: rgba(54, 29, 15, .88); color: #ffe3bb; font-size: 12px; font-weight: 900; padding: 7px 10px; cursor: pointer; }
     .active-filter-chip b { color: #ffb25e; }
 
     .library-board {
@@ -254,118 +290,44 @@
 
     .library-section { margin-top: 24px; }
     .library-section:first-child { margin-top: 0; }
-    .library-section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 14px;
-      margin-bottom: 12px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgba(255, 210, 150, .2);
-    }
+    .library-section-head { display: flex; justify-content: space-between; align-items: end; gap: 14px; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid rgba(255, 210, 150, .2); }
     .library-section h3 { margin: 0; color: #ffe0b4; font-size: 20px; letter-spacing: .08em; text-transform: uppercase; }
     .library-section-count { color: #cfa36e; font-size: 12px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
 
     .library-year-block { margin-top: 12px; border-radius: 18px; background: rgba(0,0,0,.12); }
-    .library-year-toggle {
-      list-style: none;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      padding: 12px 14px;
-      border: 1px solid rgba(255, 205, 143, .20);
-      border-radius: 18px;
-      background: rgba(58, 31, 15, .76);
-      color: #efc89a;
-      font-size: 12px;
-      font-weight: 1000;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
+    .library-year-toggle { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 10px; padding: 12px 14px; border: 1px solid rgba(255, 205, 143, .20); border-radius: 18px; background: rgba(58, 31, 15, .76); color: #efc89a; font-size: 12px; font-weight: 1000; letter-spacing: .08em; text-transform: uppercase; }
     .library-year-toggle::-webkit-details-marker { display: none; }
     .library-year-content { padding-top: 12px; }
 
     .hard-data-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(245px, 1fr)); gap: 16px; }
-    .hard-data-card {
-      position: relative;
-      display: block;
-      min-height: 162px;
-      padding: 18px 16px 16px;
-      text-decoration: none;
-      color: #32180a;
-      border-radius: 12px;
-      border: 1px solid rgba(75, 42, 19, .38);
-      background: linear-gradient(180deg, rgba(255,252,236,.98), rgba(234,208,166,.98));
-      box-shadow: 0 16px 28px rgba(0,0,0,.30), inset 0 0 0 1px rgba(255,255,255,.6);
-      transform: rotate(var(--tilt, -1deg));
-      transition: transform .16s ease, box-shadow .16s ease;
-    }
+    .hard-data-card { position: relative; display: block; min-height: 162px; padding: 18px 16px 16px; text-decoration: none; color: #32180a; border-radius: 12px; border: 1px solid rgba(75, 42, 19, .38); background: linear-gradient(180deg, rgba(255,252,236,.98), rgba(234,208,166,.98)); box-shadow: 0 16px 28px rgba(0,0,0,.30), inset 0 0 0 1px rgba(255,255,255,.6); transform: rotate(var(--tilt, -1deg)); transition: transform .16s ease, box-shadow .16s ease; }
     .hard-data-card:nth-child(3n+1) { --tilt: .8deg; }
     .hard-data-card:nth-child(3n+2) { --tilt: -1.1deg; }
     .hard-data-card:nth-child(3n+3) { --tilt: .35deg; }
-    .hard-data-card::before {
-      content: "";
-      position: absolute;
-      top: -9px;
-      left: 50%;
-      width: 44px;
-      height: 18px;
-      transform: translateX(-50%);
-      border-radius: 5px;
-      background: linear-gradient(180deg, #6b6b6b, #2d2d2d);
-      box-shadow: 0 4px 7px rgba(0,0,0,.28);
-    }
+    .hard-data-card::before { content: ""; position: absolute; top: -9px; left: 50%; width: 44px; height: 18px; transform: translateX(-50%); border-radius: 5px; background: linear-gradient(180deg, #6b6b6b, #2d2d2d); box-shadow: 0 4px 7px rgba(0,0,0,.28); }
     .hard-data-card:hover { transform: translateY(-5px) rotate(0deg); box-shadow: 0 24px 38px rgba(0,0,0,.38), inset 0 0 0 1px rgba(255,255,255,.78); }
-    .hard-data-ico {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 48px;
-      height: 28px;
-      padding: 0 8px;
-      border-radius: 999px;
-      background: #8f4214;
-      color: #ffe9c6;
-      font-size: 11px;
-      font-weight: 1000;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
+    .hard-data-ico { display: inline-flex; align-items: center; justify-content: center; min-width: 48px; height: 28px; padding: 0 8px; border-radius: 999px; background: #8f4214; color: #ffe9c6; font-size: 11px; font-weight: 1000; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 12px; }
     .hard-data-title { display: block; color: #2b1609; font-size: 15px; font-weight: 1000; line-height: 1.22; margin-bottom: 8px; }
     .hard-data-sub { display: block; color: #6f4728; font-size: 12px; line-height: 1.42; }
     .hard-data-meta { display: block; margin-top: 12px; color: #a35419; font-size: 11px; font-weight: 1000; letter-spacing: .06em; text-transform: uppercase; }
     .hard-data-meta .delivery { color: #2b1609; opacity: .72; }
 
-    .library-empty, .library-about {
-      border: 1px dashed rgba(255, 205, 143, .34);
-      border-radius: 16px;
-      padding: 14px;
-      background: rgba(31, 15, 7, .72);
-      color: #e7c396;
-    }
+    .library-empty, .library-about { border: 1px dashed rgba(255, 205, 143, .34); border-radius: 16px; padding: 14px; background: rgba(31, 15, 7, .72); color: #e7c396; }
     .library-about { margin: 14px 0 0; }
     .library-about summary { cursor: pointer; font-weight: 1000; letter-spacing: .08em; text-transform: uppercase; color: #ffd7a6; }
     .library-about-body { padding-top: 10px; line-height: 1.55; }
     .library-more-files { margin-top: 12px; }
-    .library-more-files > summary {
-      cursor: pointer;
-      width: fit-content;
-      border-radius: 999px;
-      padding: 8px 12px;
-      background: rgba(240, 120, 0, .18);
-      color: #ffd4a0;
-      font-size: 12px;
-      font-weight: 1000;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-    }
+    .library-more-files > summary { cursor: pointer; width: fit-content; border-radius: 999px; padding: 8px 12px; background: rgba(240, 120, 0, .18); color: #ffd4a0; font-size: 12px; font-weight: 1000; letter-spacing: .06em; text-transform: uppercase; }
 
-    @media (max-width: 1180px) { .library-rail { grid-template-columns: repeat(4, 1fr); } }
+    @media (max-width: 1180px) {
+      .library-rail { grid-template-columns: repeat(4, 1fr); }
+      .wall-folder { width: clamp(112px, 16vw, 150px); min-height: 72px; }
+    }
     @media (max-width: 820px) {
       body { background-attachment: scroll; }
-      .library-scene, .library-hero-content { min-height: 520px; }
+      .library-scene, .library-hero-content { min-height: 560px; }
+      .wall-folder-layer { display: none; }
+      .library-dashboard { margin-top: -28px; }
       .library-rail { grid-template-columns: repeat(2, 1fr); }
       .library-controls { grid-template-columns: 1fr; }
       .library-search-wrap { grid-template-columns: 1fr; }
@@ -392,11 +354,21 @@
 
   <main class="library-page">
     <section class="library-scene" aria-label="U.O.G.A. Hunt-Builder resource library">
+      <div class="wall-folder-layer" aria-label="Pinned wall folders">
+        <button class="wall-folder" type="button" data-directory="UTAH DWR RULES & REGULATIONS" style="--x:8%;--y:14%;--r:-2.2deg"><strong>Utah DWR Rules & Regulations</strong><span class="wall-folder-count">Loading</span></button>
+        <button class="wall-folder" type="button" data-directory="HARVEST DATA" style="--x:26%;--y:16%;--r:1.4deg"><strong>Harvest Data</strong><span class="wall-folder-count">Loading</span></button>
+        <button class="wall-folder" type="button" data-directory="DRAW RESULTS" style="--x:44%;--y:13%;--r:-.7deg"><strong>Draw Results</strong><span class="wall-folder-count">Loading</span></button>
+        <button class="wall-folder" type="button" data-directory="CONSERVATION PERMITS" style="--x:62%;--y:17%;--r:1.8deg"><strong>Conservation Permits</strong><span class="wall-folder-count">Loading</span></button>
+        <button class="wall-folder" type="button" data-directory="SIGNIFICANT DATES / CALENDAR" style="--x:13%;--y:35%;--r:1.5deg"><strong>Significant Dates / Calendar</strong><span class="wall-folder-count">Loading</span></button>
+        <button class="wall-folder" type="button" data-directory="2026" style="--x:34%;--y:36%;--r:-1.8deg"><strong>2026</strong><span class="wall-folder-count">Loading</span></button>
+        <button class="wall-folder" type="button" data-directory="2026 HUNT UNITS / PERMIT NUMBERS" style="--x:54%;--y:35%;--r:.9deg"><strong>2026 Hunt Units / Permit Numbers</strong><span class="wall-folder-count">Loading</span></button>
+        <button class="wall-folder" type="button" data-directory="OUTFITTERS" style="--x:76%;--y:35%;--r:-1.2deg"><strong>Outfitters</strong><span class="wall-folder-count">Loading</span></button>
+      </div>
       <div class="library-hero-content">
         <div class="library-title-card">
           <span class="library-badge">U.O.G.A. Hard Copy + Hard Data Library</span>
           <h1 class="library-title"><span>Utah Hunt-Builder</span>Resource Library</h1>
-          <p class="library-subtitle">Search the full working library of official DWR rules, harvest data, draw results, conservation permits, significant dates, 2026 hunt units, permit numbers, outfitters, and prediction-engine data used by Hunt Research.</p>
+          <p class="library-subtitle">Click a pinned folder on the wall to open its real file set. Search official DWR rules, harvest data, draw results, conservation permits, significant dates, 2026 hunt units, permit numbers, outfitters, and prediction-engine data used by Hunt Research.</p>
           <div class="library-search-wrap">
             <input id="librarySearch" class="library-search" type="search" placeholder="Search folders, hunt units, permit numbers, draw results, harvest data, regulations, outfitters..." aria-label="Search resource library">
             <button id="libraryClearFilters" class="library-clear" type="button">Clear</button>
@@ -453,31 +425,12 @@
       'OUTFITTERS': '★'
     };
 
-    function escapeHtml(value) {
-      return String(value ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-    }
-    function safeUrl(value) {
-      try {
-        const url = new URL(String(value), window.location.origin);
-        return ['http:', 'https:', 'mailto:', 'tel:'].includes(url.protocol) ? url.href : '#';
-      } catch { return '#'; }
-    }
-    function inferYear(item) {
-      const m = String(`${item.title || ''} ${item.subtitle || ''} ${item.href || ''}`).match(/\b(20\d{2})\b/);
-      return m ? m[1] : '';
-    }
-    function normalizeTitleKey(title) {
-      return String(title || '').toLowerCase().replace(/\((csv|json|xlsx|pdf)\)/gi, '').replace(/\s+/g, ' ').trim();
-    }
-    function rankDirectory(dir) {
-      const idx = PUBLIC_DIRECTORIES.indexOf(dir);
-      return idx === -1 ? 999 : idx;
-    }
-    function rankType(type) {
-      const order = ['pdf', 'xlsx', 'csv', 'json', 'sqlite'];
-      const idx = order.indexOf(String(type || '').toLowerCase());
-      return idx === -1 ? 999 : idx;
-    }
+    function escapeHtml(value) { return String(value ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+    function safeUrl(value) { try { const url = new URL(String(value), window.location.origin); return ['http:', 'https:', 'mailto:', 'tel:'].includes(url.protocol) ? url.href : '#'; } catch { return '#'; } }
+    function inferYear(item) { const m = String(`${item.title || ''} ${item.subtitle || ''} ${item.href || ''}`).match(/\b(20\d{2})\b/); return m ? m[1] : ''; }
+    function normalizeTitleKey(title) { return String(title || '').toLowerCase().replace(/\((csv|json|xlsx|pdf)\)/gi, '').replace(/\s+/g, ' ').trim(); }
+    function rankDirectory(dir) { const idx = PUBLIC_DIRECTORIES.indexOf(dir); return idx === -1 ? 999 : idx; }
+    function rankType(type) { const order = ['pdf', 'xlsx', 'csv', 'json', 'sqlite']; const idx = order.indexOf(String(type || '').toLowerCase()); return idx === -1 ? 999 : idx; }
     function directoryForItem(item) {
       const hay = [item.group, item.title, item.subtitle, item.href, item.source, item.scope, item.type].join(' ').toLowerCase();
       if (hay.includes('outfitter')) return 'OUTFITTERS';
@@ -501,14 +454,7 @@
       if (hay.includes('harvest')) return 'Harvest evidence / quality input';
       return item.subtitle || '';
     }
-
-    async function loadManifest(url) {
-      const response = await fetch(url, { cache: 'no-store' });
-      if (!response.ok) return [];
-      const data = await response.json();
-      return Array.isArray(data) ? data : [];
-    }
-
+    async function loadManifest(url) { const response = await fetch(url, { cache: 'no-store' }); if (!response.ok) return []; const data = await response.json(); return Array.isArray(data) ? data : []; }
     function normalizeItems(items) {
       const byKey = new Map();
       items.forEach((item) => {
@@ -542,6 +488,7 @@
       const countEl = document.getElementById('libraryCount');
       const clearFiltersEl = document.getElementById('libraryClearFilters');
       const activeFilterChipsEl = document.getElementById('activeFilterChips');
+      const wallButtons = Array.from(document.querySelectorAll('.wall-folder'));
       const displayItems = normalizeItems(items);
       let activeDirectory = 'all';
       let activeType = 'all';
@@ -552,6 +499,24 @@
       typeFilterEl.innerHTML = types.map((type) => `<option value="${escapeHtml(type)}">${escapeHtml(type === 'all' ? 'All file types' : type.toUpperCase())}</option>`).join('');
       yearFilterEl.innerHTML = years.map((year) => `<option value="${escapeHtml(year)}">${escapeHtml(year === 'all' ? 'All years' : year)}</option>`).join('');
 
+      function folderCount(dir) { return displayItems.filter((item) => item.directory === dir).length; }
+      function drawWallFolders() {
+        wallButtons.forEach((btn) => {
+          const dir = btn.dataset.directory || '';
+          const count = folderCount(dir);
+          btn.hidden = count === 0;
+          btn.classList.toggle('active', activeDirectory === dir);
+          const counter = btn.querySelector('.wall-folder-count');
+          if (counter) counter.textContent = `${count} files`;
+        });
+      }
+      function selectDirectory(dir, shouldScroll) {
+        activeDirectory = dir || 'all';
+        drawChips();
+        drawSections();
+        drawWallFolders();
+        if (shouldScroll) sectionsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
       function filterItems() {
         const q = String(searchEl.value || '').trim().toLowerCase();
         return displayItems.filter((item) => {
@@ -570,7 +535,8 @@
           const icon = dir === 'all' ? '⌂' : DIRECTORY_ICONS[dir] || '□';
           return `<button class="library-chip ${active}" type="button" data-directory="${escapeHtml(dir)}" data-icon="${escapeHtml(icon)}">${escapeHtml(label)}</button>`;
         }).join('');
-        chipsEl.querySelectorAll('button').forEach((btn) => btn.addEventListener('click', () => { activeDirectory = btn.dataset.directory || 'all'; drawChips(); drawSections(); }));
+        chipsEl.querySelectorAll('button').forEach((btn) => btn.addEventListener('click', () => selectDirectory(btn.dataset.directory || 'all', false)));
+        drawWallFolders();
       }
       function drawActiveFilters() {
         const query = String(searchEl.value || '').trim();
@@ -586,7 +552,7 @@
           if (key === 'type') { activeType = 'all'; typeFilterEl.value = 'all'; }
           if (key === 'year') { activeYear = 'all'; yearFilterEl.value = 'all'; }
           if (key === 'search') searchEl.value = '';
-          drawChips(); drawSections();
+          drawChips(); drawSections(); drawWallFolders();
         }));
       }
       function card(item) {
@@ -625,11 +591,13 @@
           return `<section class="library-section"><div class="library-section-head"><h3>${escapeHtml(dir)}</h3><span class="library-section-count">${list.length} files</span></div>${yearBlocks}</section>`;
         }).join('');
       }
+
+      wallButtons.forEach((btn) => btn.addEventListener('click', () => selectDirectory(btn.dataset.directory || 'all', true)));
       searchEl.addEventListener('input', drawSections);
-      typeFilterEl.addEventListener('change', () => { activeType = typeFilterEl.value || 'all'; drawSections(); });
-      yearFilterEl.addEventListener('change', () => { activeYear = yearFilterEl.value || 'all'; drawSections(); });
-      clearFiltersEl.addEventListener('click', () => { activeDirectory = 'all'; activeType = 'all'; activeYear = 'all'; searchEl.value = ''; typeFilterEl.value = 'all'; yearFilterEl.value = 'all'; drawChips(); drawSections(); });
-      drawChips(); drawSections();
+      typeFilterEl.addEventListener('change', () => { activeType = typeFilterEl.value || 'all'; drawSections(); drawWallFolders(); });
+      yearFilterEl.addEventListener('change', () => { activeYear = yearFilterEl.value || 'all'; drawSections(); drawWallFolders(); });
+      clearFiltersEl.addEventListener('click', () => { activeDirectory = 'all'; activeType = 'all'; activeYear = 'all'; searchEl.value = ''; typeFilterEl.value = 'all'; yearFilterEl.value = 'all'; drawChips(); drawSections(); drawWallFolders(); });
+      drawChips(); drawSections(); drawWallFolders();
     }
 
     Promise.all(MANIFEST_URLS.map(loadManifest))
