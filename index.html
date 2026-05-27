@@ -258,29 +258,29 @@
             <label for="searchInput">Search by hunt number</label>
             <input id="searchInput" class="hunt-input" type="text" placeholder="Search code, name, or unit..." />
           </div>
-          <div class="field">
+          <div class="field matrix-step matrix-step--species">
             <label for="speciesFilter">Species</label>
             <select id="speciesFilter" class="hunt-select"><option value="All Species">Loading...</option></select>
           </div>
-          <div class="field">
+          <div class="field matrix-step matrix-step--sex is-collapsed" aria-hidden="true">
             <label for="sexFilter">Sex</label>
-            <select id="sexFilter" class="hunt-select"><option value="All">All</option></select>
+            <select id="sexFilter" class="hunt-select" disabled><option value="All">All</option></select>
           </div>
-          <div class="field">
+          <div class="field matrix-step matrix-step--hunt-type is-collapsed" aria-hidden="true">
             <label for="huntTypeFilter">Hunt Type</label>
-            <select id="huntTypeFilter" class="hunt-select"><option value="All">All</option></select>
+            <select id="huntTypeFilter" class="hunt-select" disabled><option value="All">All</option></select>
           </div>
-          <div class="field">
+          <div class="field matrix-step matrix-step--weapon is-collapsed" aria-hidden="true">
             <label for="weaponFilter">Weapon Type</label>
-            <select id="weaponFilter" class="hunt-select"><option value="All">All</option></select>
+            <select id="weaponFilter" class="hunt-select" disabled><option value="All">All</option></select>
           </div>
-          <div class="field">
+          <div class="field matrix-step matrix-step--hunt-class is-collapsed" aria-hidden="true">
             <label for="huntCategoryFilter">Hunt Class</label>
-            <select id="huntCategoryFilter" class="hunt-select"><option value="All">All</option></select>
+            <select id="huntCategoryFilter" class="hunt-select" disabled><option value="All">All</option></select>
           </div>
-          <div class="field">
+          <div class="field matrix-step matrix-step--unit is-collapsed" aria-hidden="true">
             <label for="unitFilter">DWR Hunt Units</label>
-            <select id="unitFilter" class="hunt-select"><option value="">Loading...</option></select>
+            <select id="unitFilter" class="hunt-select" disabled><option value="">Loading...</option></select>
           </div>
           <div class="filter-actions" style="margin-top:8px;">
             <button id="applyFiltersBtn" type="button">Apply</button>

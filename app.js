@@ -351,6 +351,46 @@ function openHuntResearch(huntCode, residency = 'Resident', points = 12, drawPoo
   window.location.href = `./research.html?hunt_code=${encodeURIComponent(code)}&draw_pool=${encodeURIComponent(normalizedDrawPool)}`;
 }
 
+function buildBackpackHuntRecord(hunt, residency = 'Resident', points = 12) {
+  if (!hunt) return null;
+  const huntCode = getHuntCode(hunt);
+  if (!huntCode) return null;
+  return {
+    hunt_code: huntCode,
+    hunt_name: firstNonEmpty(hunt.hunt_name, getUnitName(hunt), getHuntTitle(hunt), huntCode),
+    unit: getUnitName(hunt),
+    species: getSpeciesDisplay(hunt),
+    weapon: getWeapon(hunt),
+    residency,
+    draw_pool: inferResearchDrawPool(hunt),
+    selected_points: points,
+    updated_at: Date.now()
+  };
+}
+
+function saveHuntToBackpack(hunt, residency = 'Resident', points = 12) {
+  const record = buildBackpackHuntRecord(hunt, residency, points);
+  if (!record) return null;
+  window.UOGA_UI?.recordRecentHunt?.(record);
+  if (window.UOGA_UI?.getBasket && window.UOGA_UI?.setBasket) {
+    const currentBasket = window.UOGA_UI.getBasket();
+    const nextBasket = [
+      record,
+      ...currentBasket.filter(item => safe(item?.hunt_code).trim().toUpperCase() !== safe(record.hunt_code).trim().toUpperCase())
+    ];
+    window.UOGA_UI.setBasket(nextBasket);
+  }
+  window.UOGA_UI?.setSelectedHuntCode?.(record.hunt_code);
+  return record;
+}
+
+function saveHuntAndOpenResearch(hunt, residency = 'Resident', points = 12) {
+  const record = saveHuntToBackpack(hunt, residency, points);
+  const huntCode = record?.hunt_code || getHuntCode(hunt);
+  if (!huntCode) return;
+  openHuntResearch(huntCode, residency, points, record?.draw_pool || inferResearchDrawPool(hunt));
+}
+
 // --- DATA NORMALIZATION ---
 function normalizeSpeciesLabel(value) {
   const text = safe(value).trim().toLowerCase();
@@ -1391,6 +1431,71 @@ function hasReadyUnitSelection() {
   return !!safe(unitFilter?.value).trim();
 }
 
+const PROGRESSIVE_MATRIX_SEQUENCE = [
+  'speciesFilter',
+  'sexFilter',
+  'huntTypeFilter',
+  'weaponFilter',
+  'huntCategoryFilter',
+  'unitFilter'
+];
+
+function getMatrixResetValue(controlId) {
+  if (controlId === 'speciesFilter') return 'All Species';
+  if (controlId === 'unitFilter') return '';
+  return 'All';
+}
+
+function resetMatrixControl(controlId) {
+  const el = document.getElementById(controlId);
+  if (!el) return;
+  el.value = getMatrixResetValue(controlId);
+}
+
+function resetDownstreamMatrixControls(changedId) {
+  const idx = PROGRESSIVE_MATRIX_SEQUENCE.indexOf(changedId);
+  if (idx < 0) return;
+  PROGRESSIVE_MATRIX_SEQUENCE.slice(idx + 1).forEach(resetMatrixControl);
+}
+
+function countSpecificOptions(selectEl, defaultValue) {
+  if (!selectEl) return 0;
+  return Array.from(selectEl.options || [])
+    .map(option => safe(option.value).trim())
+    .filter(value => value && value !== defaultValue)
+    .length;
+}
+
+function setMatrixStepVisibility(controlId, visible) {
+  const el = document.getElementById(controlId);
+  const step = el?.closest?.('.matrix-step');
+  if (!el || !step) return;
+  if (!visible) {
+    resetMatrixControl(controlId);
+  }
+  step.classList.toggle('is-collapsed', !visible);
+  step.setAttribute('aria-hidden', visible ? 'false' : 'true');
+  el.disabled = !visible;
+}
+
+function syncProgressiveSelectionMatrix() {
+  if (!speciesFilter || !sexFilter || !huntTypeFilter || !weaponFilter || !huntCategoryFilter || !unitFilter) return;
+  const speciesReady = safe(speciesFilter.value) !== 'All Species';
+  const sexReady = speciesReady && safe(sexFilter.value) !== 'All';
+  const huntTypeReady = sexReady && safe(huntTypeFilter.value) !== 'All';
+  const weaponReady = huntTypeReady && safe(weaponFilter.value) !== 'All';
+  const huntClassChoiceCount = countSpecificOptions(huntCategoryFilter, 'All');
+  const huntClassNeeded = weaponReady && huntClassChoiceCount > 1;
+  const huntClassReady = !huntClassNeeded || safe(huntCategoryFilter.value) !== 'All';
+
+  setMatrixStepVisibility('speciesFilter', true);
+  setMatrixStepVisibility('sexFilter', speciesReady);
+  setMatrixStepVisibility('huntTypeFilter', sexReady);
+  setMatrixStepVisibility('weaponFilter', huntTypeReady);
+  setMatrixStepVisibility('huntCategoryFilter', huntClassNeeded);
+  setMatrixStepVisibility('unitFilter', weaponReady && huntClassReady);
+}
+
 // --- FILTERING ENGINE ---
 function getFilteredHunts(excludeKey = '') {
   const search = safe(searchInput?.value).trim().toLowerCase();
@@ -1837,20 +1942,12 @@ function handleFilterChange(event) {
   closeSelectedHuntPopup();
   closeSelectedHuntFloat();
   closeSelectionInfoWindow();
+  const changedId = safe(event?.target?.id);
+  resetDownstreamMatrixControls(changedId);
   if (!googleBaselineMap) {
+    refreshSelectionMatrix();
     updateStatus('Google map is still loading. Filter selection saved; boundaries will appear when the map is ready.');
     return;
-  }
-  const changedId = safe(event?.target?.id);
-  if (changedId === 'speciesFilter') {
-    if (sexFilter) sexFilter.value = 'All';
-    if (huntTypeFilter) huntTypeFilter.value = 'All';
-    if (weaponFilter) weaponFilter.value = 'All';
-    if (huntCategoryFilter) huntCategoryFilter.value = 'All';
-    if (unitFilter) unitFilter.value = '';
-  }
-  if (['sexFilter', 'huntTypeFilter', 'weaponFilter', 'huntCategoryFilter'].includes(changedId)) {
-    if (unitFilter) unitFilter.value = '';
   }
   if (toggleDwrUnits && hasActiveMatrixSelections()) {
     toggleDwrUnits.checked = true;
@@ -1909,6 +2006,7 @@ function refreshSelectionMatrix() {
   const prevHuntCategory = huntCategoryFilter.value || 'All';
   huntCategoryFilter.innerHTML = categoryOptions.map(v => `<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`).join('');
   huntCategoryFilter.value = categoryOptions.includes(prevHuntCategory) ? prevHuntCategory : 'All';
+  syncProgressiveSelectionMatrix();
 
   const hasNonUnitSelections = [
     safe(searchInput?.value).trim(),
@@ -1929,6 +2027,7 @@ function refreshSelectionMatrix() {
   const prevUnit = unitFilter.value || '';
   unitFilter.innerHTML = `<option value="">All DWR Hunt Units</option>` + unitOptions.map(([v, l]) => `<option value="${escapeHtml(v)}">${escapeHtml(l)}</option>`).join('');
   unitFilter.value = unitOptions.some(([v]) => v === prevUnit) ? prevUnit : '';
+  syncProgressiveSelectionMatrix();
 }
 
 // --- CORE APP LOGIC ---
@@ -1998,6 +2097,9 @@ function buildMatchingHuntCard(h, selectedKey) {
       <div class="hunt-card-actions">
         <button type="button" class="secondary hunt-research-ring" data-hunt-select-key="${huntKey}">
           Select
+        </button>
+        <button type="button" class="secondary hunt-research-ring hunt-research-pill" data-hunt-research-key="${huntKey}">
+          Research This Hunt
         </button>
       </div>
     </div>`;
@@ -2170,8 +2272,8 @@ function openSelectedHuntFloat() {
           </div>
         </div>
         <div class="selected-unit-placard-actions">
-          <button type="button" class="secondary hunt-research-ring selected-unit-placard-primary-btn" data-inline-hunt-research>
-            Hunt Research
+          <button type="button" class="secondary hunt-research-ring hunt-research-pill selected-unit-placard-primary-btn" data-inline-hunt-research>
+            Research This Hunt
           </button>
           <button type="button" class="secondary hunt-research-ring selected-unit-placard-map-btn selected-unit-placard-primary-btn" data-inline-view-map>
             View Map
@@ -2187,7 +2289,7 @@ function openSelectedHuntFloat() {
   selectedHuntFloat.querySelector('[data-close-selected-hunt-float]')?.addEventListener('click', () => closeSelectedHuntFloat());
   selectedHuntFloat.querySelector('[data-inline-view-map]')?.addEventListener('click', () => closeSelectedHuntFloat(true));
   selectedHuntFloat.querySelector('[data-inline-hunt-research]')?.addEventListener('click', () => {
-    openHuntResearch(getHuntCode(selectedHunt), 'Resident', 12, inferResearchDrawPool(selectedHunt));
+    saveHuntAndOpenResearch(selectedHunt, 'Resident', 12);
   });
 }
 
@@ -2417,9 +2519,9 @@ function renderSelectedHunt() {
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
           <button
             type="button"
-            class="secondary hunt-research-ring"
+            class="secondary hunt-research-ring hunt-research-pill"
             id="selectedHuntResearchBtn">
-            Open Hunt Research
+            Research This Hunt
           </button>
         </div>
       </div>
@@ -2427,7 +2529,7 @@ function renderSelectedHunt() {
   `;
 
   document.getElementById('selectedHuntResearchBtn')?.addEventListener('click', () => {
-    openHuntResearch(getHuntCode(hunt), 'Resident', 12, inferResearchDrawPool(hunt));
+    saveHuntAndOpenResearch(hunt, 'Resident', 12);
   });
 
   if (safe(mapTypeSelect?.value).toLowerCase() === 'dwr') {
@@ -4739,6 +4841,15 @@ function bindControls() {
   syncApplyFiltersButtonLabel();
   window.addEventListener('resize', syncApplyFiltersButtonLabel);
   document.getElementById('matchingHunts')?.addEventListener('click', event => {
+    const researchBtn = event.target.closest('[data-hunt-research-key]');
+    if (researchBtn) {
+      event.stopPropagation();
+      event.preventDefault();
+      const key = researchBtn.getAttribute('data-hunt-research-key');
+      const hunt = key ? huntData.find(candidate => getHuntRecordKey(candidate) === key) : null;
+      if (hunt) saveHuntAndOpenResearch(hunt, 'Resident', 12);
+      return;
+    }
     const selectBtn = event.target.closest('[data-hunt-select-key]');
     if (selectBtn) {
       event.stopPropagation();
@@ -4753,6 +4864,14 @@ function bindControls() {
   });
   document.getElementById('matchingHunts')?.addEventListener('keydown', event => {
     if (event.key !== 'Enter' && event.key !== ' ') return;
+    const researchBtn = event.target.closest('[data-hunt-research-key]');
+    if (researchBtn) {
+      event.preventDefault();
+      const key = researchBtn.getAttribute('data-hunt-research-key');
+      const hunt = key ? huntData.find(candidate => getHuntRecordKey(candidate) === key) : null;
+      if (hunt) saveHuntAndOpenResearch(hunt, 'Resident', 12);
+      return;
+    }
     if (event.target.closest('[data-hunt-select-key]')) return;
     const card = event.target.closest('[data-hunt-key]');
     if (!card) return;
@@ -4948,13 +5067,24 @@ function isAdvancedMatrixSelection(controlId) {
   return value !== 'All';
 }
 
+function getNextVisibleMatrixControlId(sequence, idx) {
+  for (let i = idx + 1; i < sequence.length; i += 1) {
+    const el = document.getElementById(sequence[i]);
+    const step = el?.closest?.('.matrix-step');
+    if (el && !el.disabled && !step?.classList.contains('is-collapsed')) {
+      return sequence[i];
+    }
+  }
+  return 'applyFiltersBtn';
+}
+
 function maybeAutoAdvanceFilterMatrix(changedId) {
-  const sequence = ['speciesFilter', 'sexFilter', 'huntTypeFilter', 'weaponFilter', 'huntCategoryFilter', 'unitFilter'];
+  const sequence = PROGRESSIVE_MATRIX_SEQUENCE;
   const idx = sequence.indexOf(changedId);
   if (idx < 0) return;
   if (!isAdvancedMatrixSelection(changedId)) return;
   const currentEl = document.getElementById(changedId);
-  const nextId = sequence[idx + 1] || 'applyFiltersBtn';
+  const nextId = getNextVisibleMatrixControlId(sequence, idx);
   const nextEl = document.getElementById(nextId);
   if (!nextEl) return;
   window.setTimeout(() => {

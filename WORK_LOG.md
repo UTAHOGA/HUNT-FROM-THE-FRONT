@@ -5388,6 +5388,21 @@
   - `python scripts\build-database-publish-readiness-report.py` passed.
   - `python -m pytest tests\utah\test_hunt_class_selection_matrix_2026.py tests\utah\test_2026_draw_permit_subset.py tests\utah\test_final_permit_database_crosscheck_2026.py tests\utah\test_comprehensive_2026_2025_history_integrity_audit.py -q` passed: `16`.
 
+## Progressive Hunt Selection Matrix
+- Timestamp (UTC): 2026-05-27T02:21:51Z
+- Scope:
+  - Converted the Hunt Builder selection matrix into a progressive/regressive stack.
+  - On page entry, only hunt-number search and Species remain open.
+  - Sex, Hunt Type, Weapon, Hunt Class, and DWR Hunt Units now slide open only after the required upstream selection is made.
+  - Upstream changes reset and collapse downstream choices to prevent stale selections.
+  - Hunt Class remains skipped when it does not further diversify results after Weapon.
+  - Added a direct `Research This Hunt` button from matching hunt cards, the selected-hunt panel, and the selected-hunt float.
+  - The visible Hunt Research action carries the selected hunt through the existing Backpack/research workflow and routes to `research.html`.
+- Validation:
+  - `node --check app.js` passed.
+  - `node tests\selection-matrix-progressive.test.js` passed.
+  - `git diff --check` passed.
+
 ## 2025 Historical Source Label Repair
 - Timestamp (UTC): 2026-05-27T01:18:00Z
 - Scope:
