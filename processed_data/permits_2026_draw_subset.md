@@ -1,28 +1,26 @@
 # 2026 Draw Permit Subset
 
-- Generated UTC: `2026-05-27T02:06:15+00:00`
-- Draw-engine hunt codes: `1005`
-- Promoted 2026 draw-permit subset codes: `995`
+- Generated UTC: `2026-05-27T03:32:21+00:00`
+- Draw-engine hunt codes: `863`
+- Promoted 2026 draw-permit subset codes: `813`
 - Engine codes missing DATABASE: `0`
-- Engine codes without numeric 2026 total: `10`
+- Engine codes without numeric 2026 total: `50`
 
 ## Draw System Type Counts
 
 - `BEAR_DRAW`: `101`
 - `BONUS_ANTLERLESS_MOOSE`: `5`
 - `BONUS_CWMU_BIG_GAME`: `279`
+- `BONUS_EWE_BIGHORN`: `1`
 - `BONUS_LE_BIG_GAME`: `277`
 - `BONUS_OIL_BIG_GAME`: `78`
 - `BONUS_PLE_BIG_GAME`: `12`
-- `BONUS_TURKEY`: `7`
-- `PREFERENCE_ANTLERLESS_DEER`: `14`
-- `PREFERENCE_ANTLERLESS_ELK`: `83`
+- `BONUS_TURKEY`: `2`
 - `PREFERENCE_DEDICATED_HUNTER_DEER`: `23`
-- `PREFERENCE_DOE_PRONGHORN`: `8`
-- `PREFERENCE_GENERAL_SEASON_BUCK_DEER`: `75`
+- `PREFERENCE_GENERAL_SEASON_BUCK_DEER`: `2`
 - `PRIVATE_LANDS_ONLY_ANTLERLESS_ELK`: `27`
 - `SPORTSMAN_PERMIT`: `5`
-- `YOUTH_GENERAL_ANY_BULL_ELK`: `1`
+- `YOUTH_DRAW_ONLY_ELK`: `1`
 
 ## Spot Checks
 
@@ -39,13 +37,13 @@
 
 | File | Matched codes | Rows changed | Changed cells |
 | --- | ---: | ---: | ---: |
-| pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv | 995 | 0 | 0 |
-| processed_data/hunt_master_enriched_2026_draw_subset.csv | 995 | 0 | 0 |
-| processed_data/hunt_unit_reference_linked.csv | 995 | 0 | 0 |
-| processed_data/point_ladder_view.csv | 995 | 0 | 0 |
-| processed_data/draw_reality_engine.csv | 995 | 0 | 0 |
-| processed_data/draw_reality_engine_predictive_v2.csv | 995 | 0 | 0 |
-| processed_data/ml_draw_predictions_v1.csv | 995 | 0 | 0 |
-| data/hunt-master-canonical-2026-database-candidate.csv | 995 | 0 | 0 |
-| data/hunt-master-canonical-2026-source-of-truth.csv | 995 | 0 | 0 |
-| processed_data/hunt-master-canonical-2026-source-of-truth.csv | 995 | 0 | 0 |
+| pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv | 813 | 185 | 737 |
+| processed_data/hunt_master_enriched_2026_draw_subset.csv | 813 | 6792 | 32512 |
+| processed_data/hunt_unit_reference_linked.csv | 813 | 372 | 1476 |
+| processed_data/point_ladder_view.csv | 813 | 11848 | 47552 |
+| processed_data/draw_reality_engine.csv | 813 | 3696 | 14444 |
+| processed_data/draw_reality_engine_predictive_v2.csv | 813 | 26294 | 124159 |
+| processed_data/ml_draw_predictions_v1.csv | 813 | 26294 | 124159 |
+| data/hunt-master-canonical-2026-database-candidate.csv | 813 | 185 | 737 |
+| data/hunt-master-canonical-2026-source-of-truth.csv | 813 | 185 | 737 |
+| processed_data/hunt-master-canonical-2026-source-of-truth.csv | 813 | 185 | 737 |

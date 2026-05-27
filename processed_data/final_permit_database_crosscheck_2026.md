@@ -1,6 +1,6 @@
 # Final Permit Database Crosscheck 2026
 
-- Snapshot UTC: `2026-05-27T02:14:23+00:00`
+- Snapshot UTC: `2026-05-27T03:33:08+00:00`
 - DATABASE rows: `1449`
 - Unique hunt codes: `1449`
 - Duplicate hunt codes: `0`
@@ -12,7 +12,7 @@
 - `permit_allotment_2026_total`: `1091`
 - `permits_2025_draw_total`: `682`
 - `permits_2025_total`: `1085`
-- `permits_2026_draw_total`: `995`
+- `permits_2026_draw_total`: `813`
 - `permits_2026_total`: `1120`
 
 ## Live DWR Comparison Status Counts

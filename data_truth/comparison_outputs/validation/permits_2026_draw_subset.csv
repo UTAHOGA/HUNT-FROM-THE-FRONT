@@ -2,15 +2,12 @@ hunt_code,boundary_id,hunt_name,species,sex_type,weapon,hunt_type,season,permits
 BI6500,1,Antelope Island,Bison,Hunters Choice,Any Legal Weapon,Once-in-a-lifetime,Dec 07 2026 - Dec 09 2026,2,0,2,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
 DB1002,1,Antelope Island Premium,Deer,Buck,Any Legal Weapon,Premium Limited Entry,Nov 11 2026 - Nov 18 2026,1,0,1,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_PLE_BIG_GAME,permits_2026
 RS6700,1,Antelope Island,Rocky Mountain Bighorn Sheep,Ram,Any Legal Weapon,Once-in-a-lifetime,"Nov 09, 2026 - Nov 16, 2026",2,0,2,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
-DA1041,6,"Nine Mile, Green River Valley",Deer,Antlerless,Any Legal Weapon,General Season,Oct 03 2026 - Oct 25 2026,,,15,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_DEER,permits_2026
 BR1008,7,Book Cliffs,Black Bear,Either Sex,Pursuit Only,Restricted Pursuit - Summer,"July 5 - 16, 2026",26,2,28,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR1011,7,Book Cliffs,Black Bear,Either Sex,Pursuit Only,Restricted Pursuit - Late Summer,"July 18 - July 31, 2026",26,2,28,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR1015,7,Book Cliffs,Black Bear,Either Sex,Pursuit Only,Restricted Pursuit - Spring,"March 28 - May 25, 2026",0,2,2,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 DB1011,7,Book Cliffs,Deer,Buck,Archery,Limited Entry,Aug 15 2026 - Sept 11 2026,55,6,61,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 DB1025,7,Book Cliffs,Deer,Buck,Muzzleloader,Limited Entry,Sept 23 2026 - Oct 01 2026,55,6,61,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 DB1044,7,Book Cliffs,Deer,Buck,Multiseason,Limited Entry,"Archery: Aug 15-Sept 11, 2026 | Muzz: Sept 23-Oct 1, 2026 | ALW: Oct 17-25, 2026",8,1,9,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-DA1030,11,"Nine Mile, Price River Valley",Deer,Antlerless,Archery,General Season,Aug 15 2026 - Sept 11 2026,,,25,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_DEER,permits_2026
-DA1046,11,"Nine Mile, Price River Valley",Deer,Antlerless,"Archery, Muzzleloader, Shotgun",General Season,Sept 12 2026 - Oct 09 2026,,,25,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_DEER,permits_2026
 BR7102,12,Book Cliffs Little Creek Roadless,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Summer,"May 25 - June 28, 2026",5,0,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR7224,12,Book Cliffs Little Creek Roadless,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Spring,"March 28 - May 25, 2026",14,1,15,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR7225,12,Book Cliffs Little Creek Roadless,Black Bear,Either Sex,Any Legal Weapon,Spot and Stalk,"Sept. 1 - Nov. 8, 2026",5,0,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
@@ -25,25 +22,18 @@ PB5002,15,"Book Cliffs, South",Pronghorn,Buck,Archery,Limited Entry,Aug 15 2026 
 PB5027,15,"Book Cliffs, South",Pronghorn,Buck,Any Legal Weapon,Limited Entry,Sept 12 2026 - Sept 20 2026,34,4,38,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 RS6701,15,"Book Cliffs, South",Rocky Mountain Bighorn Sheep,Ram,Any Legal Weapon,Once-in-a-lifetime,Oct 31 2026 - Nov 30 2026,5,1,6,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
 EA2026,18,"Box Elder, Hansel Mtn",Elk,Antlerless,Any Legal Weapon,Private Lands Only,Aug 01 2026 - Jan 31 2027,,,200,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,permits_2026
+RE1000,20,"Box Elder, Newfoundland Mtn",Rocky Mountain Bighorn Sheep,Ewe,Any Legal Weapon,General Season,Sept 08 2026 - Sept 16 2026,4,1,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_EWE_BIGHORN,permits_2026
 RS6703,20,"Box Elder, Newfoundland Mtn",Rocky Mountain Bighorn Sheep,Ram,Any Legal Weapon,Once-in-a-lifetime,Oct 03 2026 - Oct 23 2026,4,0,4,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
 RS6704,20,"Box Elder, Newfoundland Mtn",Rocky Mountain Bighorn Sheep,Ram,Any Legal Weapon,Once-in-a-lifetime,Oct 24 2026 - Nov 13 2026,3,1,4,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
 RS6722,20,"Box Elder, Newfoundland Mtn",Rocky Mountain Bighorn Sheep,Ram,Archery,Once-in-a-lifetime,Nov 14 2026 - Dec 06 2026,2,0,2,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
-DA1031,21,"Oquirrh-Stansbury, Settlement Cyn",Deer,Antlerless,Archery,General Season,Aug 15 2026 - Sept 11 2026,,,20,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_DEER,permits_2026
-DA1033,23,"San Juan, Monticello",Deer,Antlerless,Archery,General Season,Aug 01 2026 - Sept 14 2026,,,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_DEER,permits_2026
-DA1042,23,"San Juan, Monticello",Deer,Antlerless,Archery,General Season,Nov 24 2026 - Dec 31 2026,,,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_DEER,permits_2026
 PB5003,24,"Box Elder, Promontory",Pronghorn,Buck,Archery,Limited Entry,Aug 15 2026 - Sept 11 2026,4,0,4,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 PB5028,24,"Box Elder, Promontory",Pronghorn,Buck,Any Legal Weapon,Limited Entry,Sept 12 2026 - Sept 20 2026,14,2,16,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-PD1012,24,"Box Elder, Promontory",Pronghorn,Doe,Any Legal Weapon,General Season,Oct 03 2026 - Oct 25 2026,22,3,25,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_DOE_PRONGHORN,permits_2026
 PB5004,25,"Box Elder, Puddle Valley",Pronghorn,Buck,Archery,Limited Entry,Aug 15 2026 - Sept 11 2026,3,1,4,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 PB5029,25,"Box Elder, Puddle Valley",Pronghorn,Buck,Any Legal Weapon,Limited Entry,Sept 12 2026 - Sept 20 2026,14,2,16,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 PB5005,27,"Box Elder, Snowville",Pronghorn,Buck,Archery,Limited Entry,Aug 15 2026 - Sept 11 2026,9,1,10,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 PB5030,27,"Box Elder, Snowville",Pronghorn,Buck,Any Legal Weapon,Limited Entry,Sept 12 2026 - Sept 20 2026,28,3,31,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 PB5080,27,"Box Elder, Snowville",Pronghorn,Buck,Muzzleloader,Limited Entry,Sept 23 2026 - Oct 01 2026,9,1,10,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-PD1000,27,"Box Elder, Snowville",Pronghorn,Doe,Any Legal Weapon,General Season,Nov 07 2026 - Dec 06 2026,72,8,80,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_DOE_PRONGHORN,permits_2026
-DA1001,28,"Box Elder, West Bear River",Deer,Antlerless,"Archery, Muzzleloader, Shotgun",General Season,Aug 18 2026 - Aug 30 2026,,,30,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_DEER,permits_2026
-DA1002,28,"Box Elder, West Bear River",Deer,Antlerless,"Archery, Muzzleloader, Shotgun",General Season,Nov 24 2026 - Nov 29 2026,,,30,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_DEER,permits_2026
 DB1078,29,Cache,Deer,Buck,Muzzleloader,Limited Entry,Oct 28 2026 - Nov 05 2026,11,1,12,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-DB1502,29,Cache,Deer,Buck,Archery,General Season,Aug 15 2026 - Sept 11 2026,,,1160,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
 DB1771,29,Cache,Deer,Buck,Dedicated Hunter,General Season,Archery: Aug 15 2026 - Sept 11 2026 | Restricted Muzz: Sept 23 2026 - Oct 01 2026 | Restricted Rifle: Oct 17 2026 - Oct 25 2026,,,588,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_DEDICATED_HUNTER_DEER,permits_2026
 EA2027,29,Cache,Elk,Antlerless,Any Legal Weapon,Private Lands Only,Aug 01 2026 - Jan 31 2027,,,300,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,permits_2026
 MB6000,29,Cache,Moose,Bull,Any Legal Weapon,Once-in-a-lifetime,Sept 12 2026 - Oct 31 2026,14,3,17,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
@@ -57,14 +47,9 @@ EB3168,33,"Cache, Meadowville",Elk,Bull,Late Archery,Limited Entry,Nov 28 2026 -
 EB3169,33,"Cache, Meadowville",Elk,Bull,Mid Any Legal Weapon,Limited Entry,Oct 03 2026 - Oct 15 2026,11,1,12,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 EB3132,36,"Cache, North",Elk,Bull,September Archery,Limited Entry,Sept 01 2026 - Sept 30 2026,22,2,24,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 EB3139,36,"Cache, North",Elk,Bull,HAMSS,Limited Entry,Nov 07 2026 - Nov 30 2026,22,2,24,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-EA1010,38,"Cache, Rich",Elk,Antlerless,Any Legal Weapon,General Season,Oct 03 2026 - Oct 25 2026,18,2,20,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1193,38,"Cache, Rich",Elk,Antlerless,Any Legal Weapon,General Season,Nov 14 2026 - Jan 15 2027,18,2,20,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 PB5073,38,"Cache, Rich",Pronghorn,Buck,Any Legal Weapon,Limited Entry,Sept 12 2026 - Sept 20 2026,6,0,6,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 PB5074,38,"Cache, Rich",Pronghorn,Buck,Archery,Limited Entry,Aug 15 2026 - Sept 11 2026,2,0,2,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 PB5075,38,"Cache, Rich",Pronghorn,Buck,Muzzleloader,Limited Entry,Sept 23 2026 - Oct 01 2026,2,0,2,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-EA1011,39,"Cache, Richards Hollow",Elk,Antlerless,Any Legal Weapon,General Season,Nov 14 2026 - Dec 31 2026,9,1,10,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1012,40,"Cache, Richmond Hyde Park",Elk,Antlerless,Any Legal Weapon,General Season,Aug 01 2025 - Dec 01 2025,4,1,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1206,40,"Cache, Richmond Hyde Park",Elk,Antlerless,Any Legal Weapon,General Season,Dec 02 2025 - Jan 15 2026,9,1,10,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 EB3005,41,"Cache, South",Elk,Bull,Archery,Limited Entry,Aug 15 2026 - Sept 15 2026,10,1,11,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 EB3036,41,"Cache, South",Elk,Bull,Early Any Legal Weapon,Limited Entry,Sept 16 2026 - Sept 20 2026,4,0,4,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 EB3037,41,"Cache, South",Elk,Bull,Late Any Legal Weapon,Limited Entry,Nov 07 2026 - Nov 15 2026,6,1,7,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
@@ -72,10 +57,6 @@ EB3083,41,"Cache, South",Elk,Bull,Muzzleloader,Limited Entry,Sept 21 2026 - Oct 
 EB3107,41,"Cache, South",Elk,Bull,Multiseason,Limited Entry,"Arch: Aug 15-Sept 15, 2026 | Muzz: Sept 21-Oct 2, 2026 | ALW: Sept 16-20, 2026 & Oct 3-15, 2026 & Nov 7-15, 2026",1,0,1,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 EB3170,41,"Cache, South",Elk,Bull,Late Archery,Limited Entry,Nov 28 2026 - Dec 13 2026,4,1,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 EB3171,41,"Cache, South",Elk,Bull,Mid Any Legal Weapon,Limited Entry,Oct 03 2026 - Oct 15 2026,11,1,12,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-EA1013,43,"Manti, Central",Elk,Antlerless,Any Legal Weapon,General Season,Oct 03 2026 - Oct 15 2026,63,7,70,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1015,45,"Manti, Ferron Canyon",Elk,Antlerless,Any Legal Weapon,General Season,Oct 03 2026 - Oct 15 2026,63,7,70,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1017,47,"Manti, Gordon Creek-Price Canyon",Elk,Antlerless,Any Legal Weapon,General Season,Nov 25 2026 - Jan 31 2027,90,10,100,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1018,49,"Manti, Horn Mtn",Elk,Antlerless,Any Legal Weapon,General Season,Nov 19 2026 - Dec 31 2026,54,6,60,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 EA2011,51,Manti,Elk,Antlerless,Any Legal Weapon,Private Lands Only,Aug 01 2026 - Jan 31 2027,,,300,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,permits_2026
 EB3006,51,Manti,Elk,Bull,Archery,Limited Entry,Aug 15 2026 - Sept 15 2026,148,17,165,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 EB3038,51,Manti,Elk,Bull,Early Any Legal Weapon,Limited Entry,Sept 16 2026 - Sept 20 2026,61,7,68,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
@@ -88,30 +69,21 @@ BR7003,52,Manti North,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Spr
 BR7104,52,Manti North,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Summer,"May 25 - June 28, 2026",17,1,18,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR7203,52,Manti North,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Fall,"Aug. 1 - Aug. 31, 2026 & Nov 2 - Nov. 8, 2026",10,1,11,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR7303,52,Manti North,Black Bear,Either Sex,Multiseason,Limited Entry - Multiseason,"Mar. 28 - May 25 & May 25 - June 28 & July 5 - 31 & Aug. 1 - Aug. 31 & Sept. 1 - Oct. 25 & Nov 2 - Nov. 8, 2026",13,1,14,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
-EA1020,55,"Manti, Mohrland-Stump Flat",Elk,Antlerless,Any Legal Weapon,General Season,Nov 25 2026 - Jan 31 2027,108,12,120,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1022,58,"Manti, North",Elk,Antlerless,Any Legal Weapon,General Season,Oct 03 2026 - Oct 15 2026,270,30,300,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 DB1100,69,Chalk Creek,Deer,Buck,Muzzleloader,Limited Entry,Oct 28 2026 - Nov 05 2026,10,1,11,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-EA1026,69,Chalk Creek,Elk,Antlerless,Any Legal Weapon,General Season,Nov 07 2026 - Jan 30 2027,315,35,350,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 EA2004,69,Chalk Creek,Elk,Antlerless,Any Legal Weapon,Private Lands Only,Aug 01 2026 - Jan 31 2027,,,600,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,permits_2026
 MB6001,69,Chalk Creek,Moose,Bull,Any Legal Weapon,Once-in-a-lifetime,Sept 12 2026 - Oct 31 2026,4,0,4,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
 RS6721,75,"Oquirrh-Stansbury, West",Rocky Mountain Bighorn Sheep,Ram,Any Legal Weapon,Once-in-a-lifetime,Oct 31 2026 - Nov 30 2026,3,0,3,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
-DA1027,77,"East Canyon, Davis-North Salt Lake",Deer,Antlerless,Any Legal Weapon,General Season,Aug 01 2026 - Sept 15 2026,,,30,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_DEER,permits_2026
 MB6003,79,"East Canyon, Morgan-Summit",Moose,Bull,Any Legal Weapon,Once-in-a-lifetime,Sept 12 2026 - Oct 31 2026,5,0,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
 PB5008,81,"Fillmore, Oak Creek South",Pronghorn,Buck,Archery,Limited Entry,Aug 15 2026 - Sept 11 2026,15,2,17,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 PB5033,81,"Fillmore, Oak Creek South",Pronghorn,Buck,Any Legal Weapon,Limited Entry,Sept 12 2026 - Sept 20 2026,46,5,51,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 PB5065,81,"Fillmore, Oak Creek South",Pronghorn,Buck,Muzzleloader,Limited Entry,Sept 23 2026 - Oct 01 2026,15,2,17,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-PD1034,81,"Fillmore, Oak Creek South",Pronghorn,Doe,Any Legal Weapon,General Season,Aug 01 2026 - Aug 13 2026,27,3,30,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_DOE_PRONGHORN,permits_2026
-PD1035,81,"Fillmore, Oak Creek South",Pronghorn,Doe,Any Legal Weapon,General Season,Oct 31 2026 - Nov 28 2026,27,3,30,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_DOE_PRONGHORN,permits_2026
 DB1012,85,"Fillmore, Oak Creek LE",Deer,Buck,Archery,Limited Entry,Aug 15 2026 - Sept 11 2026,12,1,13,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 DB1019,85,"Fillmore, Oak Creek LE",Deer,Buck,Any Legal Weapon,Limited Entry,Oct 17 2026 - Oct 25 2026,33,4,37,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 DB1029,85,"Fillmore, Oak Creek LE",Deer,Buck,Muzzleloader,Limited Entry,Sept 23 2026 - Oct 01 2026,12,1,13,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 DB1045,85,"Fillmore, Oak Creek LE",Deer,Buck,Multiseason,Limited Entry,"Archery: Aug 15-Sept 11, 2026 | Muzz: Sept 23-Oct 1, 2026 | ALW: Oct 17-Oct 25, 2026",2,0,2,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-EA1209,85,"Fillmore, Oak Creek LE",Elk,Antlerless,Any Legal Weapon,General Season,Nov 14 2026 - Jan 29 2027,45,5,50,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 BR7007,88,Fillmore Pahvant,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Spring,"March 28 - May 25, 2026",1,0,1,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR7124,88,Fillmore Pahvant,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Summer,"May 25 - June 28, 2026",2,0,2,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR7207,88,Fillmore Pahvant,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Fall,"Aug. 1 - Aug. 31, 2026 & Nov 2 - Nov. 8, 2026",1,0,1,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
-EA1030,88,"Fillmore, Pahvant",Elk,Antlerless,Any Legal Weapon,General Season,Nov 14 2026 - Dec 05 2026,45,5,50,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1031,88,"Fillmore, Pahvant",Elk,Antlerless,Any Legal Weapon,General Season,Dec 12 2026 - Jan 29 2027,45,5,50,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 EA2039,88,"Fillmore, Pahvant",Elk,Antlerless,Any Legal Weapon,Private Lands Only,Aug 01 2026 - Jan 31 2027,,,150,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,permits_2026
 EB3008,88,"Fillmore, Pahvant",Elk,Bull,Archery,Limited Entry,Aug 15 2026 - Sept 15 2026,19,2,21,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 EB3042,88,"Fillmore, Pahvant",Elk,Bull,Early Any Legal Weapon,Limited Entry,Sept 16 2026 - Sept 20 2026,8,1,9,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
@@ -137,43 +109,28 @@ DB1005,94,Henry Mtns Premium,Deer,Buck,Muzzleloader,Premium Limited Entry,Sept 2
 DB1007,94,Henry Mtns Premium,Deer,Buck,Multiseason,Premium Limited Entry,"Archery: Aug 15-Sept 11, 2026 | Muzz: Sept 23-Oct 1, 2026 | ALW: Oct 17-Oct 25, 2026",1,0,1,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_PLE_BIG_GAME,permits_2026
 DB1009,94,Henry Mtns Management,Deer,Buck,Any Legal Weapon,Premium Limited Entry,Oct 26 2026 - Oct 30 2026,10,1,11,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
 DS6600,94,Henry Mtns,Desert Bighorn Sheep,Male Only,Any Legal Weapon,Once-in-a-lifetime,Sept 12 2026 - Nov 10 2026,3,0,3,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
-EA1077,96,Boulder-Circle Cliffs,Elk,Antlerless,Any Legal Weapon,General Season,Oct 07 2026 - Jan 10 2027,27,3,30,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 PB5034,97,Kaiparowits,Pronghorn,Buck,Any Legal Weapon,Limited Entry,Sept 12 2026 - Sept 20 2026,2,0,2,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 DS6601,98,"Kaiparowits, East",Desert Bighorn Sheep,Male Only,Any Legal Weapon,Once-in-a-lifetime,Sept 12 2026 - Nov 10 2026,10,3,13,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
 DS6603,100,"Kaiparowits, West",Desert Bighorn Sheep,Male Only,Any Legal Weapon,Once-in-a-lifetime,Sept 12 2026 - Nov 10 2026,3,1,4,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
 GO6804,102,High Uintas Kamas,Mountain Goat,Either Sex,Any Legal Weapon,Once-in-a-lifetime,Sept 05 2026 - Oct 31 2026,1,0,1,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
-EA1035,104,"Kamas, Oakley",Elk,Antlerless,Any Legal Weapon,General Season,Nov 07 2026 - Dec 30 2026,112,13,125,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1207,107,"Nebo, Moroni Hills",Elk,Antlerless,Any Legal Weapon,General Season,Aug 01 2026 - Aug 19 2026,9,1,10,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1226,107,"Nebo, Moroni Hills",Elk,Antlerless,Any Legal Weapon,General Season,Sept 12 2026 - Oct 02 2026,9,1,10,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 BR7021,108,Dolores Triangle,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Spring,"March 28 - May 25, 2026",2,0,2,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR7126,108,Dolores Triangle,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Summer,"May 25 - June 28, 2026",6,0,6,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR7238,108,Dolores Triangle,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Fall,"Aug. 1 - Aug. 31, 2026 & Nov 2 - Nov. 8, 2026",2,0,2,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 DB1013,108,Dolores Triangle,Deer,Buck,Archery,Limited Entry,Oct 31 2026 - Nov 13 2026,5,0,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 DB1020,108,Dolores Triangle,Deer,Buck,Any Legal Weapon,Limited Entry,Nov 14 2026 - Nov 22 2026,13,2,15,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 DB1031,108,Dolores Triangle,Deer,Buck,Muzzleloader,Limited Entry,Nov 23 2026 - Dec 01 2026,5,0,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-EA1037,108,Dolores Triangle,Elk,Antlerless,Any Legal Weapon,General Season,Dec 12 2026 - Jan 31 2027,45,5,50,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 EB3044,108,Dolores Triangle,Elk,Bull,Late Any Legal Weapon,Limited Entry,Dec 05 2026 - Jan 31 2027,6,1,7,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-PD1033,110,"San Rafael, Poison Springs Bench",Pronghorn,Doe,Any Legal Weapon,General Season,Oct 03 2026 - Oct 25 2026,13,2,15,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_DOE_PRONGHORN,permits_2026
-DA1003,115,"Monroe/Plateau, Sevier Valley",Deer,Antlerless,"Archery, Muzzleloader, Shotgun",General Season,Sept 01 2026 - Sept 30 2026,,,15,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_DEER,permits_2026
-EA1231,116,"West Desert, Tintic Valley",Elk,Antlerless,Any Legal Weapon,General Season,Nov 07 2026 - Jan 31 2027,45,5,50,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 EA2019,116,"West Desert, Tintic Valley",Elk,Antlerless,Any Legal Weapon,Private Lands Only,Aug 01 2026 - Jan 31 2027,,,60,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,permits_2026
 DB1103,117,Morgan-South Rich,Deer,Buck,Muzzleloader,Limited Entry,Oct 28 2026 - Nov 05 2026,7,1,8,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-EA1228,117,Morgan-South Rich,Elk,Antlerless,Any Legal Weapon,General Season,Dec 01 2026 - Dec 21 2026,67,8,75,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1229,117,Morgan-South Rich,Elk,Antlerless,Any Legal Weapon,General Season,Dec 22 2026 - Jan 31 2027,144,16,160,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 EA2002,117,Morgan-South Rich,Elk,Antlerless,Any Legal Weapon,Private Lands Only,Aug 01 2026 - Jan 31 2027,,,600,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,permits_2026
 EB3208,117,Morgan-South Rich,Elk,Bull,Late Any Legal Weapon,Limited Entry,Dec 19 2026 - Dec 27 2026,9,1,10,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 MA1005,117,Morgan-South Rich,Moose,Antlerless,Any Legal Weapon,General Season,Sept 19 2026 - Oct 18 2026,6,1,7,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_ANTLERLESS_MOOSE,permits_2026
 MA1007,117,Morgan-South Rich,Moose,Antlerless,Archery,General Season,Aug 01 2026 - Sept 18 2026,3,0,3,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_ANTLERLESS_MOOSE,permits_2026
 MB6005,117,Morgan-South Rich,Moose,Bull,Any Legal Weapon,Once-in-a-lifetime,Sept 12 2026 - Oct 31 2026,6,0,6,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
-EA1044,122,"Morgan-South Rich, South Rich",Elk,Antlerless,Any Legal Weapon,General Season,Dec 01 2026 - Jan 31 2027,31,4,35,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 EA2008,129,"Nine Mile, Anthro-Myton Bench",Elk,Antlerless,Any Legal Weapon,Private Lands Only,Aug 01 2026 - Jan 31 2027,,,250,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,permits_2026
 PB5011,129,"Nine Mile, Anthro-Myton Bench",Pronghorn,Buck,Archery,Limited Entry,Aug 15 2026 - Sept 11 2026,30,3,33,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 PB5037,129,"Nine Mile, Anthro-Myton Bench",Pronghorn,Buck,Any Legal Weapon,Limited Entry,Sept 12 2026 - Sept 20 2026,89,10,99,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 PB5059,129,"Nine Mile, Anthro-Myton Bench",Pronghorn,Buck,Muzzleloader,Limited Entry,Sept 23 2026 - Oct 01 2026,30,3,33,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-EA1054,132,"Nine Mile, West Anthro",Elk,Antlerless,Any Legal Weapon,General Season,Dec 12 2026 - Dec 31 2026,45,5,50,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1056,134,"North Slope, Greendale",Elk,Antlerless,Any Legal Weapon,General Season,Nov 14 2026 - Nov 29 2026,4,1,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1058,135,"North Slope, Henrys Fork-Burnt Fork",Elk,Antlerless,Any Legal Weapon,General Season,Nov 07 2026 - Jan 30 2027,90,10,100,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1196,138,"North Slope, Summit",Elk,Antlerless,Any Legal Weapon,General Season,Oct 03 2026 - Oct 25 2026,67,8,75,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 MB6006,138,"North Slope, Summit",Moose,Bull,Any Legal Weapon,Once-in-a-lifetime,Sept 12 2026 - Oct 31 2026,20,3,23,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
 PB5039,138,"North Slope, Summit",Pronghorn,Buck,Any Legal Weapon,Limited Entry,Sept 12 2026 - Sept 20 2026,15,2,17,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 EB3013,140,"North Slope, Three Corners",Elk,Bull,Archery,Limited Entry,Aug 15 2026 - Sept 15 2026,6,1,7,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
@@ -182,9 +139,6 @@ EB3091,140,"North Slope, Three Corners",Elk,Bull,Muzzleloader,Limited Entry,Sept
 EB3115,140,"North Slope, Three Corners",Elk,Bull,Multiseason,Limited Entry,"Arch: Aug 15-Sept 15, 2026 | Muzz: Sept 21-Oct 2, 2026 | ALW: Sept 16-20, 2026 & Oct 3-15, 2026",1,0,1,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 EB3210,140,"North Slope, Three Corners",Elk,Bull,Early Any Legal Weapon,Limited Entry,Sept 16 2026 - Sept 20 2026,5,0,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 RS6708,140,"North Slope, Three Corners",Rocky Mountain Bighorn Sheep,Ram,Any Legal Weapon,Once-in-a-lifetime,Sept 14 2026 - Nov 30 2026,2,0,2,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
-EA1060,142,"North Slope, West Daggett",Elk,Antlerless,Muzzleloader,General Season,Oct 28 2026 - Nov 05 2026,18,2,20,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1061,142,"North Slope, West Daggett",Elk,Antlerless,Muzzleloader,General Season,Sept 23 2026 - Oct 01 2026,18,2,20,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1250,142,"North Slope, West Daggett",Elk,Antlerless,Any Legal Weapon,General Season,Oct 03 2026 - Oct 25 2026,27,3,30,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 EA2005,142,"North Slope, West Daggett",Elk,Antlerless,Any Legal Weapon,Private Lands Only,Aug 01 2026 - Jan 31 2027,,,100,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,permits_2026
 RS6709,143,"North Slope, Summit/West Daggett",Rocky Mountain Bighorn Sheep,Ram,Any Legal Weapon,Once-in-a-lifetime,Sept 14 2026 - Nov 30 2026,3,0,3,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
 GO6805,145,High Uintas Central,Mountain Goat,Either Sex,Any Legal Weapon,Once-in-a-lifetime,Sept 05 2026 - Oct 31 2026,5,0,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
@@ -204,9 +158,7 @@ DB1010,163,Paunsaugunt Management,Deer,Buck,Any Legal Weapon,Premium Limited Ent
 DB1058,163,Paunsaugunt Cactus,Deer,Buck,Any Legal Weapon,Premium Limited Entry,Nov 02 2026 - Nov 20 2026,18,2,20,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
 DB1073,163,Paunsaugunt Management,Deer,Buck,Archery,Premium Limited Entry,Aug 15 2026 - Sept 11 2026,10,1,11,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_PLE_BIG_GAME,permits_2026
 DB1074,163,Paunsaugunt Management,Deer,Buck,Muzzleloader,Premium Limited Entry,Sept 23 2026 - Oct 01 2026,10,1,11,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_PLE_BIG_GAME,permits_2026
-EA1073,163,Paunsaugunt,Elk,Antlerless,Any Legal Weapon,General Season,Nov 21 2026 - Dec 31 2026,18,2,20,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 EA2015,163,Paunsaugunt,Elk,Antlerless,Any Legal Weapon,Private Lands Only,Aug 01 2026 - Jan 31 2027,,,100,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,permits_2026
-DA1009,169,"Pine Valley, Enterprise",Deer,Antlerless,Any Legal Weapon,General Season,Aug 01 2026 - Aug 12 2026,,,25,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_DEER,permits_2026
 EB3145,172,Boulder,Elk,Bull,Archery,Limited Entry,Aug 15 2026 - Sept 15 2026,31,4,35,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 EB3148,172,Boulder,Elk,Bull,Early Any Legal Weapon,Limited Entry,Sept 16 2026 - Sept 20 2026,13,1,14,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 EB3151,172,Boulder,Elk,Bull,Late Any Legal Weapon,Limited Entry,Nov 07 2026 - Nov 15 2026,22,2,24,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
@@ -218,7 +170,6 @@ BR7013,175,Fishlake/Thousand Lakes,Black Bear,Either Sex,Any Legal Weapon,Limite
 BR7115,175,Fishlake/Thousand Lakes,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Summer,"May 25 - June 28, 2026",7,0,7,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR7216,175,Fishlake/Thousand Lakes,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Fall,"Aug. 1 - Aug. 31, 2026 & Nov 2 - Nov. 8, 2026",5,0,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR7311,175,Fishlake/Thousand Lakes,Black Bear,Either Sex,Multiseason,Limited Entry - Multiseason,"Mar. 28 - May 25 & May 25 - June 28 & Aug. 1 - Aug. 31 & Sept. 1 - Oct. 25 & Nov 2 - Nov. 8, 2026",3,0,3,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
-EA1078,175,Fishlake/Thousand Lakes,Elk,Antlerless,Any Legal Weapon,General Season,Oct 03 2026 - Oct 15 2026,243,27,270,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 EB3018,175,Fishlake/Thousand Lakes,Elk,Bull,Archery,Limited Entry,Aug 15 2026 - Sept 15 2026,84,9,93,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 EB3063,175,Fishlake/Thousand Lakes,Elk,Bull,Early Any Legal Weapon,Limited Entry,Sept 16 2026 - Sept 20 2026,34,4,38,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 EB3064,175,Fishlake/Thousand Lakes,Elk,Bull,Mid Any Legal Weapon,Limited Entry,Oct 03 2026 - Oct 15 2026,99,11,110,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
@@ -243,7 +194,6 @@ DS6607,190,"San Juan, South",Desert Bighorn Sheep,Male Only,Any Legal Weapon,Onc
 DS6608,193,"San Rafael, Dirty Devil",Desert Bighorn Sheep,Male Only,Any Legal Weapon,Once-in-a-lifetime,Sept 12 2026 - Nov 10 2026,3,1,4,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
 DS6624,193,"San Rafael, Dirty Devil",Desert Bighorn Sheep,Male Only,Archery,Once-in-a-lifetime,Nov 11 2026 - Dec 17 2026,2,0,2,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
 DS6609,194,"San Rafael, North",Desert Bighorn Sheep,Male Only,Any Legal Weapon,Once-in-a-lifetime,Sept 12 2026 - Nov 10 2026,8,0,8,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
-EA1084,194,"San Rafael, North",Elk,Antlerless,Any Legal Weapon,General Season,Nov 07 2026 - Jan 31 2027,4,1,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 PB5015,194,"San Rafael, North",Pronghorn,Buck,Archery,Limited Entry,Aug 15 2026 - Sept 11 2026,21,2,23,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 PB5046,194,"San Rafael, North",Pronghorn,Buck,Any Legal Weapon,Limited Entry,Sept 12 2026 - Sept 20 2026,62,7,69,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 PB5056,194,"San Rafael, North",Pronghorn,Buck,Muzzleloader,Limited Entry,Sept 23 2026 - Oct 01 2026,21,2,23,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
@@ -255,8 +205,6 @@ DB1015,206,Diamond Mtn,Deer,Buck,Archery,Limited Entry,Aug 15 2026 - Sept 11 202
 DB1023,206,Diamond Mtn,Deer,Buck,Any Legal Weapon,Limited Entry,Oct 17 2026 - Oct 25 2026,61,7,68,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 DB1038,206,Diamond Mtn,Deer,Buck,Muzzleloader,Limited Entry,Sept 23 2026 - Oct 01 2026,22,2,24,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 DB1047,206,Diamond Mtn,Deer,Buck,Multiseason,Limited Entry,"Archery: Aug 15-Sept 11, 2026 | Muzz: Sept 23-Oct 1, 2026 | ALW: Oct 17-Oct 25, 2026",4,0,4,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-EA1089,206,Diamond Mtn,Elk,Antlerless,Any Legal Weapon,General Season,Oct 31 2026 - Nov 08 2026,45,5,50,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1090,206,Diamond Mtn,Elk,Antlerless,Any Legal Weapon,General Season,Nov 14 2026 - Nov 22 2026,45,5,50,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 EA2030,206,Diamond Mtn,Elk,Antlerless,Any Legal Weapon,Private Lands Only,Aug 01 2026 - Jan 31 2027,,,200,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,permits_2026
 EB3020,206,Diamond Mtn,Elk,Bull,Archery,Limited Entry,Aug 15 2026 - Sept 15 2026,25,3,28,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 EB3068,206,Diamond Mtn,Elk,Bull,Early Any Legal Weapon,Limited Entry,Sept 16 2026 - Sept 20 2026,10,1,11,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
@@ -275,15 +223,10 @@ EB3100,222,Wasatch Mtns,Elk,Bull,Muzzleloader,Limited Entry,Sept 21 2026 - Oct 0
 EB3124,222,Wasatch Mtns,Elk,Bull,Multiseason,Limited Entry,"Arch: Aug 15-Sept 15, 2026 | Muzz: Sept 21-Oct 2, 2026 | ALW: Sept 16-20, 2026 & Oct 3-15, 2026 & Nov 7-15, 2026",15,2,17,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 EB3127,222,Wasatch Mtns,Elk,Bull,Mid Any Legal Weapon,Limited Entry,Oct 03 2026 - Oct 15 2026,155,17,172,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 EB3199,222,Wasatch Mtns,Elk,Bull,Late Archery,Limited Entry,Nov 28 2026 - Dec 13 2026,9,1,10,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-EA1217,224,"Wasatch Mtns, Avintaquin",Elk,Antlerless,Any Legal Weapon,General Season,Oct 03 2026 - Oct 15 2026,135,15,150,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 GO6818,225,"Wasatch Mtns, Box Elder Peak",Mountain Goat,Either Sex,Any Legal Weapon,Once-in-a-lifetime,Sept 05 2026 - Nov 25 2026,3,0,3,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
 EA2013,227,"Wasatch Mtns, Currant Creek",Elk,Antlerless,Any Legal Weapon,Private Lands Only,Aug 01 2026 - Jan 31 2027,,,2000,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,permits_2026
 GO6819,231,"Wasatch Mtns, Lone Peak",Mountain Goat,Either Sex,Any Legal Weapon,Once-in-a-lifetime,Sept 05 2026 - Nov 25 2026,1,0,1,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
 GO6813,233,"Wasatch Mtns, Provo Peak",Mountain Goat,Either Sex,Any Legal Weapon,Once-in-a-lifetime,Sept 05 2026 - Nov 25 2026,5,0,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
-EA1110,234,"Wasatch Mtns, Salt Lake",Elk,Antlerless,Any Legal Weapon,General Season,Nov 14 2026 - Jan 31 2027,40,5,45,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1111,238,"Wasatch Mtns, Wallsburg",Elk,Antlerless,Any Legal Weapon,General Season,Nov 14 2026 - Dec 13 2026,31,4,35,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1112,238,"Wasatch Mtns, Wallsburg",Elk,Antlerless,Any Legal Weapon,General Season,Dec 19 2026 - Jan 31 2027,49,6,55,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1113,240,"Wasatch Mtns, West Heber",Elk,Antlerless,Any Legal Weapon,General Season,Nov 14 2026 - Jan 31 2027,27,3,30,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 EB3137,241,"West Desert, Deep Creek",Elk,Bull,September Archery,Limited Entry,Sept 01 2026 - Sept 30 2026,13,2,15,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 EB3144,241,"West Desert, Deep Creek",Elk,Bull,HAMSS,Limited Entry,Nov 07 2026 - Nov 30 2026,13,2,15,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 PB5019,244,"West Desert, Riverbed",Pronghorn,Buck,Archery,Limited Entry,Aug 15 2026 - Sept 11 2026,18,2,20,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
@@ -299,12 +242,9 @@ DB1048,248,"West Desert, Vernon",Deer,Buck,Multiseason,Limited Entry,"Archery: A
 BR7018,251,Kamas/North Slope Summit,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Spring,"March 28 - May 25, 2026",5,0,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 DB1101,276,East Canyon,Deer,Buck,Muzzleloader,Limited Entry,Oct 28 2026 - Nov 05 2026,9,1,10,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 DB1105,276,HAMSS,Deer,Buck,East Canyon,Limited Entry,Nov 07 2026 - Nov 30 2026,6,1,7,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-EA1236,276,East Canyon,Elk,Antlerless,Any Legal Weapon,General Season,Dec 01 2026 - Jan 11 2027,135,15,150,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 EA2003,276,East Canyon,Elk,Antlerless,Any Legal Weapon,Private Lands Only,Aug 01 2026 - Jan 31 2027,,,500,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,permits_2026
 EB3205,276,East Canyon,Elk,Bull,HAMSS,Limited Entry,Dec 19 2026 - Dec 27 2026,7,1,8,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 MB6002,276,East Canyon,Moose,Bull,Any Legal Weapon,Once-in-a-lifetime,Sept 12 2026 - Oct 31 2026,5,0,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
-EA1239,277,"Nine Mile, Range Creek",Elk,Antlerless,Any Legal Weapon,General Season,Oct 03 2026 - Oct 25 2026,45,5,50,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1240,277,"Nine Mile, Range Creek",Elk,Antlerless,Any Legal Weapon,General Season,Nov 25 2026 - Jan 31 2027,135,15,150,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 EA2029,277,"Nine Mile, Range Creek",Elk,Antlerless,Any Legal Weapon,Private Lands Only,Aug 01 2026 - Jan 31 2027,,,150,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,permits_2026
 PB5038,277,"Nine Mile, Range Creek",Pronghorn,Buck,Any Legal Weapon,Limited Entry,Sept 12 2026 - Sept 20 2026,13,1,14,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 PB5053,277,"Nine Mile, Range Creek",Pronghorn,Buck,Archery,Limited Entry,Aug 15 2026 - Sept 11 2026,4,0,4,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
@@ -321,7 +261,6 @@ DS6620,306,"Pine Valley, Virgin River",Desert Bighorn Sheep,Male Only,Any Legal 
 DS6622,308,"San Juan, North",Desert Bighorn Sheep,Male Only,Any Legal Weapon,Once-in-a-lifetime,Sept 12 2026 - Nov 10 2026,3,0,3,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
 DS6623,309,"San Juan, San Juan River",Desert Bighorn Sheep,Male Only,Any Legal Weapon,Once-in-a-lifetime,Sept 12 2026 - Nov 10 2026,2,0,2,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
 DB1091,314,HAMSS,Deer,Buck,Kaiparowits HAMSS,Limited Entry,Nov 07 2026 - Nov 30 2026,4,1,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-EA1049,438,"Mt Dutton, Deep Creek",Elk,Antlerless,Any Legal Weapon,General Season,Nov 22 2025 - Dec 07 2025,67,8,75,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 PB5045,443,"San Rafael, Desert",Pronghorn,Buck,Any Legal Weapon,Limited Entry,Sept 12 2026 - Sept 20 2026,7,1,8,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 PB5055,443,"San Rafael, Desert",Pronghorn,Buck,Archery,Limited Entry,Aug 15 2026 - Sept 11 2026,2,0,2,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 BR7015,444,Diamond Mtn/Vernal/Bonanza,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Spring,"March 28 - May 25, 2026",7,0,7,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
@@ -331,13 +270,10 @@ BR7313,444,Diamond Mtn/Vernal/Bonanza,Black Bear,Either Sex,Multiseason,Limited 
 BR7120,448,Wasatch Mtns West-Central,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Summer,"May 25 - June 28, 2026",22,1,23,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR7221,448,Wasatch Mtns West-Central,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Fall,"Aug. 1 - Aug. 31, 2026 & Nov 2 - Nov. 8, 2026",18,2,20,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR7316,448,Wasatch Mtns West-Central,Black Bear,Either Sex,Multiseason,Limited Entry - Multiseason,"Mar. 28 - May 25 & May 25 - June 28 & July 5 - 31 & Aug. 1 - Aug. 31 & Sept. 1 - Oct. 25 & Nov 2 - Nov. 8, 2026",14,1,15,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
-EA1189,448,"Wasatch Mtns, West-Central",Elk,Antlerless,Muzzleloader,General Season,Oct 31 2026 - Nov 08 2026,382,43,425,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 BR7001,449,Book Cliffs Bitter Creek/South,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Spring,"March 28 - May 25, 2026",49,5,54,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR7101,449,Book Cliffs Bitter Creek/South,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Summer,"May 25 - June 28, 2026",14,1,15,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR7201,449,Book Cliffs Bitter Creek/South,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Fall,"Aug. 1 - Aug. 14, 2026 & Oct. 2 - Nov. 8, 2026",18,2,20,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR7300,449,Book Cliffs Bitter Creek/South,Black Bear,Either Sex,Multiseason,Limited Entry - Multiseason,"Mar. 28 - May 25 & May 25 - June 28 & Aug. 1 - Aug. 14 & Aug. 15 - Oct. 1 & Oct. 2 - Nov. 8, 2026",9,1,10,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
-EA1224,449,"Book Cliffs, Bitter Creek/South",Elk,Antlerless,Any Legal Weapon,General Season,Oct 03 2026 - Oct 15 2026,117,13,130,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1225,449,"Book Cliffs, Bitter Creek/South",Elk,Antlerless,Any Legal Weapon,General Season,Nov 16 2026 - Dec 13 2026,147,16,163,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 MB6009,452,Diamond Mtn/Vernal,Moose,Bull,Any Legal Weapon,Once-in-a-lifetime,Sept 12 2026 - Oct 31 2026,2,0,2,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
 PB5331,453,Mt Dutton/Paunsaugunt,Pronghorn,Buck,Any Legal Weapon,Limited Entry,Sept 12 2026 - Sept 20 2026,13,2,15,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 PB5332,453,Mt Dutton/Paunsaugunt,Pronghorn,Buck,Archery,Limited Entry,Aug 15 2026 - Sept 11 2026,4,1,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
@@ -346,7 +282,6 @@ BR7114,455,Boulder/Kaiparowits,Black Bear,Either Sex,Any Legal Weapon,Limited En
 BR7215,455,Boulder/Kaiparowits,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Fall,"Aug. 1 - Aug. 31, 2026 & Nov 2 - Nov. 8, 2026",9,1,10,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR7310,455,Boulder/Kaiparowits,Black Bear,Either Sex,Multiseason,Limited Entry - Multiseason,"Mar. 28 - May 25 & May 25 - June 28 & July 5 - 31 & Aug. 1 - Aug. 31 & Sept. 1 - Oct. 25 & Nov 2 - Nov. 8, 2026",10,1,11,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 DB1084,455,Boulder/Kaiparowits,Deer,Buck,Muzzleloader,Limited Entry,Oct 28 2026 - Nov 05 2026,12,1,13,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-DB1518,455,Boulder/Kaiparowits,Deer,Buck,Archery,General Season,Aug 15 2026 - Sept 11 2026,,,720,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
 DB1787,455,Boulder/Kaiparowits,Deer,Buck,Dedicated Hunter,General Season,Archery: Aug 15 2026 - Sept 11 2026 | Restricted Muzz: Sept 23 2026 - Oct 01 2026 | Restricted Rifle: Oct 17 2026 - Oct 25 2026,,,70,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_DEDICATED_HUNTER_DEER,permits_2026
 PB5016,461,Diamond Mtn/Bonanza,Pronghorn,Buck,Archery,Limited Entry,Aug 15 2026 - Sept 11 2026,17,2,19,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 PB5047,461,Diamond Mtn/Bonanza,Pronghorn,Buck,Any Legal Weapon,Limited Entry,Sept 12 2026 - Sept 20 2026,50,6,56,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
@@ -358,8 +293,6 @@ BR7309,462,Panguitch Lake/Zion,Black Bear,Either Sex,Multiseason,Limited Entry -
 BR7119,463,Wasatch Mtns Avintaquin/Currant Creek,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Summer,"May 25 - June 28, 2026",5,0,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR7220,463,Wasatch Mtns Avintaquin/Currant Creek,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Fall,"Aug. 1 - Aug. 31, 2026 & Nov 2 - Nov. 8, 2026",9,0,9,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR7315,463,Wasatch Mtns Avintaquin/Currant Creek,Black Bear,Either Sex,Multiseason,Limited Entry - Multiseason,"Mar. 28 - May 25 & May 25 - June 28 & Aug. 1 - Aug. 31 & Sept. 1 - Oct. 25 & Nov 2 - Nov. 8, 2026",3,0,3,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
-DA1045,474,"Fillmore, Oak City",Deer,Antlerless,Archery,General Season,Aug 01 2026 - Sept 04 2026,,,20,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_DEER,permits_2026
-EA1114,480,"Wasatch Mtns, West Timpanogos",Elk,Antlerless,Any Legal Weapon,General Season,Nov 14 2026 - Jan 31 2027,22,3,25,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 DB1258,484,Little Red Creek CWMU,Deer,Buck,Any Legal Weapon,CWMU,Contact Operator for 2026 season dates,,,1,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_CWMU_BIG_GAME,permits_2026
 EA1147,484,Little Red Creek CWMU,Elk,Antlerless,Any Legal Weapon,CWMU,Contact operator for 2025 season dates,,,15,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_CWMU_BIG_GAME,permits_2026
 EB3534,484,Little Red Creek CWMU,Elk,Bull,Any Legal Weapon,CWMU,Contact operator for 2026 season dates,,,2,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_CWMU_BIG_GAME,permits_2026
@@ -581,75 +514,39 @@ PB5305,603,Park Valley CWMU,Pronghorn,Buck,Any Legal Weapon,CWMU,Contact operato
 DB1212,604,Bluebell CWMU,Deer,Buck,Any Legal Weapon,CWMU,Contact Operator for 2026 season dates,,,1,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_CWMU_BIG_GAME,permits_2026
 DB1227,606,Deer Haven CWMU,Deer,Buck,Any Legal Weapon,CWMU,Contact Operator for 2026 season dates,,,2,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_CWMU_BIG_GAME,permits_2026
 DB1077,607,Box Elder,Deer,Buck,Muzzleloader,Limited Entry,Oct 28 2026 - Nov 05 2026,23,3,26,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-DB1501,607,Box Elder,Deer,Buck,Archery,General Season,Aug 15 2026 - Sept 11 2026,,,1040,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1531,607,Box Elder,Deer,Buck,Any Legal Weapon (Late),General Season,Oct 17 2026 - Oct 25 2026,,,2080,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1561,607,Box Elder,Deer,Buck,Muzzleloader,General Season,Sept 23 2026 - Oct 01 2026,,,1040,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
 DB1770,607,Box Elder,Deer,Buck,Dedicated Hunter,General Season,Archery: Aug 15 2026 - Sept 11 2026 | Muzz: Sept 23 2026 - Oct 01 2026 | Early ALW: Oct 07 2026 - Oct 11 2026 | ALW: Oct 17 2026 - Oct 25 2026,,,688,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_DEDICATED_HUNTER_DEER,permits_2026
 MB6012,607,Box Elder,Moose,Bull,Any Legal Weapon,Once-in-a-lifetime,Sept 12 2026 - Oct 31 2026,2,0,2,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
 DB1054,609,Ogden,Deer,Buck,Muzzleloader,Limited Entry,Oct 28 2026 - Nov 05 2026,13,1,14,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-DB1514,609,Ogden,Deer,Buck,Archery,General Season,Aug 15 2026 - Sept 11 2026,,,540,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1544,609,Ogden,Deer,Buck,Any Legal Weapon (Late),General Season,Oct 17 2026 - Oct 25 2026,,,1620,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1574,609,Ogden,Deer,Buck,Muzzleloader,General Season,Sept 23 2026 - Oct 01 2026,,,540,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
 DB1783,609,Ogden,Deer,Buck,Dedicated Hunter,General Season,Archery: Aug 15 2026 - Sept 11 2026 | Muzz: Sept 23 2026 - Oct 01 2026 | ALW: Oct 17 2026 - Oct 25 2026,,,297,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_DEDICATED_HUNTER_DEER,permits_2026
-EA1063,609,Ogden,Elk,Antlerless,Any Legal Weapon,General Season,Oct 03 2026 - Oct 25 2026,67,8,75,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1064,609,Ogden,Elk,Antlerless,Any Legal Weapon,General Season,Nov 07 2026 - Nov 29 2026,67,8,75,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 MB6008,609,Ogden,Moose,Bull,Any Legal Weapon,Once-in-a-lifetime,Sept 12 2026 - Oct 31 2026,7,0,7,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
 BR7325,610,Chalk Creek/East Canyon/Morgan-South Rich,Black Bear,Either Sex,Multiseason,Limited Entry - Multiseason,"Mar. 28 - May 25 & May 25 - June 28 & July 5 - 31 & Aug. 1 - Aug. 31 & Sept. 1 - Oct. 25 & Nov 2 - Nov. 8, 2026",1,0,1,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 DB1030,611,Kamas,Deer,Buck,Muzzleloader,Limited Entry,Oct 28 2026 - Nov 05 2026,4,1,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-DB1508,611,Kamas,Deer,Buck,Archery,General Season,Aug 15 2026 - Sept 11 2026,,,200,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1538,611,Kamas,Deer,Buck,Any Legal Weapon (Late),General Season,Oct 17 2026 - Oct 25 2026,,,400,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1568,611,Kamas,Deer,Buck,Muzzleloader,General Season,Sept 23 2026 - Oct 01 2026,,,200,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1592,611,Kamas,Deer,Buck,Any Legal Weapon (Early),General Season,Oct 07 2026 - Oct 11 2026,,,200,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
 DB1777,611,Kamas,Deer,Buck,Dedicated Hunter,General Season,Archery: Aug 15 2026 - Sept 11 2026 | Muzz: Sept 23 2026 - Oct 01 2026 | Early ALW: Oct 07 2026 - Oct 11 2026 | ALW: Oct 17 2026 - Oct 25 2026,,,55,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_DEDICATED_HUNTER_DEER,permits_2026
-EA1033,611,Kamas,Elk,Antlerless,Any Legal Weapon,General Season,Nov 07 2026 - Jan 17 2027,112,13,125,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 EA2040,611,Kamas,Elk,Antlerless,Any Legal Weapon,Private Lands Only,Aug 01 2026 - Jan 31 2027,,,150,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,permits_2026
 MB6004,611,Kamas,Moose,Bull,Any Legal Weapon,Once-in-a-lifetime,Sept 12 2026 - Oct 31 2026,6,0,6,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
 DB1065,612,North Slope,Deer,Buck,Muzzleloader,Limited Entry,Oct 28 2026 - Nov 05 2026,14,2,16,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-DB1513,612,North Slope,Deer,Buck,Archery,General Season,Aug 15 2026 - Sept 11 2026,,,620,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1543,612,North Slope,Deer,Buck,Any Legal Weapon (Late),General Season,Oct 17 2026 - Oct 25 2026,,,1240,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1573,612,North Slope,Deer,Buck,Muzzleloader,General Season,Sept 23 2026 - Oct 01 2026,,,620,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1598,612,North Slope,Deer,Buck,Any Legal Weapon (Early),General Season,Oct 07 2026 - Oct 11 2026,,,620,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
 DB1782,612,North Slope,Deer,Buck,Dedicated Hunter,General Season,Archery: Aug 15 2026 - Sept 11 2026 | Muzz: Sept 23 2026 - Oct 01 2026 | Early ALW: Oct 07 2026 - Oct 11 2026 | ALW: Oct 17 2026 - Oct 25 2026,,,340,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_DEDICATED_HUNTER_DEER,permits_2026
 BR7118,613,Yellowstone,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Summer,"May 25 - June 28, 2026",5,0,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR7219,613,Yellowstone,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Fall,"Aug. 1 - Aug. 31, 2026 & Nov 2 - Nov. 8, 2026",4,0,4,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR7314,613,Yellowstone,Black Bear,Either Sex,Multiseason,Limited Entry - Multiseason,"Mar. 28 - May 25 & May 25 - June 28 & Aug. 1 - Aug. 31 & Sept. 1 - Oct. 25 & Nov 2 - Nov. 8, 2026",3,0,3,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 DB1039,613,Yellowstone,Deer,Buck,Muzzleloader,Limited Entry,Oct 28 2026 - Nov 05 2026,6,1,7,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-DB1523,613,Yellowstone,Deer,Buck,Archery,General Season,Aug 15 2026 - Sept 11 2026,,,280,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1553,613,Yellowstone,Deer,Buck,Any Legal Weapon (Late),General Season,Oct 17 2026 - Oct 25 2026,,,840,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1583,613,Yellowstone,Deer,Buck,Muzzleloader,General Season,Sept 23 2026 - Oct 01 2026,,,280,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
 DB1792,613,Yellowstone,Deer,Buck,Dedicated Hunter,General Season,Archery: Aug 15 2026 - Sept 11 2026 | Muzz: Sept 23 2026 - Oct 01 2026 | ALW: Oct 17 2026 - Oct 25 2026,,,63,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_DEDICATED_HUNTER_DEER,permits_2026
-EA1244,613,Yellowstone,Elk,Antlerless,Any Legal Weapon,General Season,Oct 03 2026 - Oct 16 2026,90,10,100,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1245,613,Yellowstone,Elk,Antlerless,Muzzleloader,General Season,Oct 28 2026 - Nov 05 2026,45,5,50,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 EA2006,613,Yellowstone,Elk,Antlerless,Any Legal Weapon,Private Lands Only,Aug 01 2026 - Jan 31 2027,,,2000,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,permits_2026
 MB6010,613,Yellowstone,Moose,Bull,Any Legal Weapon,Once-in-a-lifetime,Sept 12 2026 - Oct 31 2026,6,0,6,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
 DB1086,614,Vernal/Bonanza,Deer,Buck,Muzzleloader,Limited Entry,Oct 28 2026 - Nov 05 2026,6,1,7,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-DB1522,614,Vernal/Bonanza,Deer,Buck,Archery,General Season,Aug 15 2026 - Sept 11 2026,,,420,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1552,614,Vernal/Bonanza,Deer,Buck,Any Legal Weapon (Late),General Season,Oct 17 2026 - Oct 25 2026,,,700,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1582,614,Vernal/Bonanza,Deer,Buck,Muzzleloader,General Season,Sept 23 2026 - Oct 01 2026,,,280,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
 DB1791,614,Vernal/Bonanza,Deer,Buck,Dedicated Hunter,General Season,Archery: Aug 15 2026 - Sept 11 2026 | Muzz: Sept 23 2026 - Oct 01 2026 | ALW: Oct 17 2026 - Oct 25 2026,,,45,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_DEDICATED_HUNTER_DEER,permits_2026
-EA1085,614,Vernal/Bonanza,Elk,Antlerless,Archery,General Season,Aug 15 2026 - Sept 16 2026,90,10,100,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1087,614,Vernal/Bonanza,Elk,Antlerless,Any Legal Weapon,General Season,Oct 03 2026 - Oct 16 2026,90,10,100,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 EA2028,614,Vernal/Bonanza,Elk,Antlerless,Any Legal Weapon,Private Lands Only,Aug 01 2026 - Jan 31 2027,,,450,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,permits_2026
 BR7110,615,Nine Mile,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Summer,"May 25 - June 28, 2026",18,2,20,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR7211,615,Nine Mile,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Fall,"Aug. 1 - Aug. 31, 2026 & Nov 2 - Nov. 8, 2026",26,3,29,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR7317,615,Nine Mile,Black Bear,Either Sex,Multiseason,Limited Entry - Multiseason,"Mar. 28 - May 25 & May 25 - June 28 & Aug. 1 - Aug. 31 & Sept. 1 - Oct. 25 & Nov 2 - Nov. 8, 2026",9,1,10,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 DB1033,615,Nine Mile,Deer,Buck,Muzzleloader,Limited Entry,Oct 28 2026 - Nov 05 2026,6,1,7,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-DB1512,615,Nine Mile,Deer,Buck,Archery,General Season,Aug 15 2026 - Sept 11 2026,,,280,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1542,615,Nine Mile,Deer,Buck,Any Legal Weapon (Late),General Season,Oct 17 2026 - Oct 25 2026,,,560,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1572,615,Nine Mile,Deer,Buck,Muzzleloader,General Season,Sept 23 2026 - Oct 01 2026,,,280,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1593,615,Nine Mile,Deer,Buck,Any Legal Weapon (Early),General Season,Oct 07 2026 - Oct 11 2026,,,280,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
 DB1781,615,Nine Mile,Deer,Buck,Dedicated Hunter,General Season,Archery: Aug 15 2026 - Sept 11 2026 | Muzz: Sept 23 2026 - Oct 01 2026 | Early ALW: Oct 07 2026 - Oct 11 2026 | ALW: Oct 17 2026 - Oct 25 2026,,,62,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_DEDICATED_HUNTER_DEER,permits_2026
 BR7005,616,Nebo,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Spring,"March 28 - May 25, 2026",7,0,7,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR7106,616,Nebo,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Summer,"May 25 - June 28, 2026",8,0,8,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR7205,616,Nebo,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Fall,"Aug. 1 - Aug. 31, 2026 & Nov 2 - Nov. 8, 2026",5,0,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR7305,616,Nebo,Black Bear,Either Sex,Multiseason,Limited Entry - Multiseason,"Mar. 28 - May 25 & May 25 - June 28 & July 5 - 31 & Aug. 1 - Aug. 31 & Sept. 1 - Oct. 25 & Nov 2 - Nov. 8, 2026",5,0,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 DB1080,616,Nebo,Deer,Buck,Muzzleloader,Limited Entry,Oct 28 2026 - Nov 05 2026,23,3,26,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-DB1504,616,Nebo,Deer,Buck,Archery,General Season,Aug 15 2026 - Sept 11 2026,,,1060,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1534,616,Nebo,Deer,Buck,Any Legal Weapon (Late),General Season,Oct 17 2026 - Oct 25 2026,,,3180,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1564,616,Nebo,Deer,Buck,Muzzleloader,General Season,Sept 23 2026 - Oct 01 2026,,,1060,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
 DB1773,616,Nebo,Deer,Buck,Dedicated Hunter,General Season,Archery: Aug 15 2026 - Sept 11 2026 | Muzz: Sept 23 2026 - Oct 01 2026 | ALW: Oct 17 2026 - Oct 25 2026,,,349,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_DEDICATED_HUNTER_DEER,permits_2026
-EA1021,616,Nebo,Elk,Antlerless,Any Legal Weapon,General Season,Oct 03 2026 - Oct 15 2026,207,23,230,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1208,616,Nebo,Elk,Antlerless,Any Legal Weapon,General Season,Nov 14 2026 - Jan 31 2027,247,28,275,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 EA2016,616,Nebo,Elk,Antlerless,Any Legal Weapon,Private Lands Only,Aug 01 2026 - Jan 31 2027,,,275,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,permits_2026
 GO6803,616,Nebo,Mountain Goat,Either Sex,Any Legal Weapon,Once-in-a-lifetime,Sept 26 2026 - Nov 25 2026,21,3,24,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
 GO6821,616,Nebo,Mountain Goat,Either Sex,Archery,Once-in-a-lifetime,Sept 16 2026 - Sept 25 2026,12,0,12,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
@@ -659,12 +556,7 @@ BR7127,617,La Sal Mtns,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Su
 BR7239,617,La Sal Mtns,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Fall,"Aug. 1 - Aug. 31, 2026 & Nov 2 - Nov. 8, 2026",6,0,6,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR7326,617,La Sal Mtns,Black Bear,Either Sex,Multiseason,Limited Entry - Multiseason,"Mar. 28 - May 25 & May 25 - June 28 & Aug. 1 - Aug. 31 & Sept. 1 - Oct. 25 & Nov 2 - Nov. 8, 2026",13,1,14,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 DB1081,617,La Sal Mtns,Deer,Buck,Muzzleloader,Limited Entry,Oct 28 2026 - Nov 05 2026,8,1,9,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-DB1509,617,La Sal Mtns,Deer,Buck,Archery,General Season,Aug 15 2026 - Sept 11 2026,,,360,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1539,617,La Sal Mtns,Deer,Buck,Any Legal Weapon (Late),General Season,Oct 17 2026 - Oct 25 2026,,,1080,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1569,617,La Sal Mtns,Deer,Buck,Muzzleloader,General Season,Sept 23 2026 - Oct 01 2026,,,360,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
 DB1778,617,La Sal Mtns,Deer,Buck,Dedicated Hunter,General Season,Archery: Aug 15 2026 - Sept 11 2026 | Muzz: Sept 23 2026 - Oct 01 2026 | ALW: Oct 17 2026 - Oct 25 2026,,,67,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_DEDICATED_HUNTER_DEER,permits_2026
-EA1038,617,La Sal Mtns,Elk,Antlerless,Any Legal Weapon,General Season,Oct 03 2026 - Oct 15 2026,180,20,200,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1039,617,La Sal Mtns,Elk,Antlerless,Any Legal Weapon,General Season,Nov 19 2026 - Dec 31 2026,135,15,150,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 EA2009,617,La Sal Mtns,Elk,Antlerless,Any Legal Weapon,Private Lands Only,Aug 01 2026 - Jan 31 2027,,,70,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,permits_2026
 EB3009,617,La Sal Mtns,Elk,Bull,Archery,Limited Entry,Aug 15 2026 - Sept 15 2026,36,4,40,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 EB3045,617,La Sal Mtns,Elk,Bull,Early Any Legal Weapon,Limited Entry,Sept 16 2026 - Sept 20 2026,14,2,16,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
@@ -675,33 +567,17 @@ EB3182,617,La Sal Mtns,Elk,Bull,Late Archery,Limited Entry,Nov 28 2026 - Dec 13 
 EB3183,617,La Sal Mtns,Elk,Bull,Mid Any Legal Weapon,Limited Entry,Oct 03 2026 - Oct 15 2026,42,5,47,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 GO6817,617,La Sal Mtns,Mountain Goat,Either Sex,Any Legal Weapon,Once-in-a-lifetime,Sept 05 2026 - Nov 25 2026,10,2,12,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
 DB1085,618,"San Juan, Abajo Mtns",Deer,Buck,Muzzleloader,Limited Entry,Oct 28 2026 - Nov 05 2026,13,1,14,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-DB1521,618,"San Juan, Abajo Mtns",Deer,Buck,Archery,General Season,Aug 15 2026 - Sept 11 2026,,,560,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1551,618,"San Juan, Abajo Mtns",Deer,Buck,Any Legal Weapon (Late),General Season,Oct 17 2026 - Oct 25 2026,,,1680,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1581,618,"San Juan, Abajo Mtns",Deer,Buck,Muzzleloader,General Season,Sept 23 2026 - Oct 01 2026,,,560,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
 DB1790,618,"San Juan, Abajo Mtns",Deer,Buck,Dedicated Hunter,General Season,Archery: Aug 15 2026 - Sept 11 2026 | Muzz: Sept 23 2026 - Oct 01 2026 | ALW: Oct 17 2026 - Oct 25 2026,,,261,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_DEDICATED_HUNTER_DEER,permits_2026
 DB1079,619,Manti/San Rafael,Deer,Buck,Muzzleloader,Limited Entry,Oct 28 2026 - Nov 05 2026,40,5,45,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-DB1503,619,Manti/San Rafael,Deer,Buck,Archery,General Season,Aug 15 2026 - Sept 11 2026,,,1800,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1533,619,Manti/San Rafael,Deer,Buck,Any Legal Weapon (Late),General Season,Oct 17 2026 - Oct 25 2026,,,5400,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1563,619,Manti/San Rafael,Deer,Buck,Muzzleloader,General Season,Sept 23 2026 - Oct 01 2026,,,1800,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
 DB1772,619,Manti/San Rafael,Deer,Buck,Dedicated Hunter,General Season,Archery: Aug 15 2026 - Sept 11 2026 | Muzz: Sept 23 2026 - Oct 01 2026 | ALW: Oct 17 2026 - Oct 25 2026,,,573,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_DEDICATED_HUNTER_DEER,permits_2026
 DB1087,620,"Wasatch Mtns, West",Deer,Buck,Muzzleloader,Limited Entry,Oct 28 2026 - Nov 05 2026,36,4,40,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-DB1526,620,"Wasatch Mtns, West",Deer,Buck,Archery,General Season,Aug 15 2026 - Sept 11 2026,,,1580,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1556,620,"Wasatch Mtns, West",Deer,Buck,Any Legal Weapon (Late),General Season,Oct 17 2026 - Oct 25 2026,,,4740,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1586,620,"Wasatch Mtns, West",Deer,Buck,Muzzleloader,General Season,Sept 23 2026 - Oct 01 2026,,,1580,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
 DB1795,620,"Wasatch Mtns, West",Deer,Buck,Dedicated Hunter,General Season,Archery: Aug 15 2026 - Sept 11 2026 | Muzz: Sept 23 2026 - Oct 01 2026 | ALW: Oct 17 2026 - Oct 25 2026,,,701,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_DEDICATED_HUNTER_DEER,permits_2026
 EA2012,620,"Wasatch Mtns, West-Central",Elk,Antlerless,Any Legal Weapon,Private Lands Only,Aug 01 2026 - Jan 31 2027,,,400,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,permits_2026
 RS6724,620,"Wasatch Mtns, West",Rocky Mountain Bighorn Sheep,Ram,Any Legal Weapon,Once-in-a-lifetime,Oct 31 2026 - Nov 30 2026,3,0,3,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
 DB1041,621,"Wasatch Mtns, East",Deer,Buck,Muzzleloader,Limited Entry,Oct 28 2026 - Nov 05 2026,30,3,33,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-DB1525,621,"Wasatch Mtns, East",Deer,Buck,Archery,General Season,Aug 15 2026 - Sept 11 2026,,,1300,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1555,621,"Wasatch Mtns, East",Deer,Buck,Any Legal Weapon (Late),General Season,Oct 17 2026 - Oct 25 2026,,,3900,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1585,621,"Wasatch Mtns, East",Deer,Buck,Muzzleloader,General Season,Sept 23 2026 - Oct 01 2026,,,1300,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
 DB1794,621,"Wasatch Mtns, East",Deer,Buck,Dedicated Hunter,General Season,Archery: Aug 15 2026 - Sept 11 2026 | Muzz: Sept 23 2026 - Oct 01 2026 | ALW: Oct 17 2026 - Oct 25 2026,,,271,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_DEDICATED_HUNTER_DEER,permits_2026
 DB1040,625,Southwest Desert,Deer,Buck,Muzzleloader,Limited Entry,Oct 28 2026 - Nov 05 2026,4,1,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-DB1524,625,Southwest Desert,Deer,Buck,Archery,General Season,Aug 15 2026 - Sept 11 2026,,,100,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1554,625,Southwest Desert,Deer,Buck,Any Legal Weapon (Late),General Season,Oct 17 2026 - Oct 25 2026,,,300,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1584,625,Southwest Desert,Deer,Buck,Muzzleloader,General Season,Sept 23 2026 - Oct 01 2026,,,100,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
 DB1793,625,Southwest Desert,Deer,Buck,Dedicated Hunter,General Season,Archery: Aug 15 2026 - Sept 11 2026 | Muzz: Sept 23 2026 - Oct 01 2026 | ALW: Oct 17 2026 - Oct 25 2026,,,46,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_DEDICATED_HUNTER_DEER,permits_2026
-EA1101,625,Southwest Desert,Elk,Antlerless,Any Legal Weapon,General Season,Nov 20 2026 - Jan 10 2027,90,10,100,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 PB5018,625,Southwest Desert,Pronghorn,Buck,Archery,Limited Entry,Aug 15 2026 - Sept 11 2026,31,4,35,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 PB5024,625,Southwest Desert,Pronghorn,Buck,Muzzleloader,Limited Entry,Sept 23 2026 - Oct 01 2026,31,4,35,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 PB5049,625,Southwest Desert,Pronghorn,Buck,Any Legal Weapon,Limited Entry,Sept 12 2026 - Sept 20 2026,94,11,105,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
@@ -718,9 +594,6 @@ BR7020,629,Monroe,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Spring,
 BR7125,629,Monroe,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Summer,"May 25 - June 28, 2026",1,0,1,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR7237,629,Monroe,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Fall,"Aug. 1 - Aug. 31, 2026 & Nov 2 - Nov. 8, 2026",1,0,1,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 DB1032,629,Monroe,Deer,Buck,Muzzleloader,Limited Entry,Oct 28 2026 - Nov 05 2026,5,1,6,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-DB1510,629,Monroe,Deer,Buck,Archery,General Season,Aug 15 2026 - Sept 11 2026,,,220,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1540,629,Monroe,Deer,Buck,Any Legal Weapon (Late),General Season,Oct 17 2026 - Oct 25 2026,,,660,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1570,629,Monroe,Deer,Buck,Muzzleloader,General Season,Sept 23 2026 - Oct 01 2026,,,220,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
 DB1779,629,Monroe,Deer,Buck,Dedicated Hunter,General Season,Archery: Aug 15 2026 - Sept 11 2026 | Muzz: Sept 23 2026 - Oct 01 2026 | ALW: Oct 17 2026 - Oct 25 2026,,,45,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_DEDICATED_HUNTER_DEER,permits_2026
 EB3010,629,Monroe,Elk,Bull,Archery,Limited Entry,Aug 15 2026 - Sept 15 2026,10,1,11,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 EB3047,629,Monroe,Elk,Bull,Early Any Legal Weapon,Limited Entry,Sept 16 2026 - Sept 20 2026,3,1,4,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
@@ -734,9 +607,6 @@ BR7109,630,Mt Dutton,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Summ
 BR7210,630,Mt Dutton,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Fall,"Aug. 1 - Aug. 31, 2026 & Nov 2 - Nov. 8, 2026",3,0,3,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR7322,630,Mt Dutton,Black Bear,Either Sex,Multiseason,Limited Entry - Multiseason,"Mar. 28 - May 25 & May 25 - June 28 & Aug. 1 - Aug. 31 & Sept. 1 - Oct. 25 & Nov 2 - Nov. 8, 2026",1,0,1,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 DB1053,630,Mt Dutton,Deer,Buck,Muzzleloader,Limited Entry,Oct 28 2026 - Nov 05 2026,4,1,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-DB1511,630,Mt Dutton,Deer,Buck,Archery,General Season,Aug 15 2026 - Sept 11 2026,,,80,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1541,630,Mt Dutton,Deer,Buck,Any Legal Weapon (Late),General Season,Oct 17 2026 - Oct 25 2026,,,240,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1571,630,Mt Dutton,Deer,Buck,Muzzleloader,General Season,Sept 23 2026 - Oct 01 2026,,,80,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
 DB1780,630,Mt Dutton,Deer,Buck,Dedicated Hunter,General Season,Archery: Aug 15 2026 - Sept 11 2026 | Muzz: Sept 23 2026 - Oct 01 2026 | ALW: Oct 17 2026 - Oct 25 2026,,,26,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_DEDICATED_HUNTER_DEER,permits_2026
 EA2017,630,Mt Dutton,Elk,Antlerless,Any Legal Weapon,Private Lands Only,Aug 01 2025 - Jan 31 2026,,,75,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,permits_2026
 EB3011,630,Mt Dutton,Elk,Bull,Archery,Limited Entry,Aug 15 2026 - Sept 15 2026,19,2,21,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
@@ -751,18 +621,9 @@ DB1106,632,Thousand Lakes,Deer,Buck,Restricted Archery,Limited Entry,Aug 15 2026
 DB1107,632,Thousand Lakes,Deer,Buck,Restricted Muzzleloader,Limited Entry,Sept 23 2026 - Oct 01 2026,20,2,22,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 DB1108,632,Thousand Lakes,Deer,Buck,Restricted Rifle,Limited Entry,Oct 17 2026 - Oct 25 2026,27,3,30,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 DB1055,633,Fishlake,Deer,Buck,Muzzleloader,Limited Entry,Oct 28 2026 - Nov 05 2026,6,1,7,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-DB1519,633,Fishlake,Deer,Buck,Archery,General Season,Aug 15 2026 - Sept 11 2026,,,260,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1549,633,Fishlake,Deer,Buck,Any Legal Weapon (Late),General Season,Oct 17 2026 - Oct 25 2026,,,520,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1579,633,Fishlake,Deer,Buck,Muzzleloader,General Season,Sept 23 2026 - Oct 01 2026,,,260,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1596,633,Fishlake,Deer,Buck,Any Legal Weapon (Early),General Season,Oct 07 2026 - Oct 11 2026,,,260,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
 DB1788,633,Fishlake,Deer,Buck,Dedicated Hunter,General Season,Archery: Aug 15 2026 - Sept 11 2026 | Muzz: Sept 23 2026 - Oct 01 2026 | Early ALW: Oct 07 2026 - Oct 11 2026 | ALW: Oct 17 2026 - Oct 25 2026,,,49,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_DEDICATED_HUNTER_DEER,permits_2026
 DB1083,634,Panguitch Lake,Deer,Buck,Muzzleloader,Limited Entry,Oct 28 2026 - Nov 05 2026,12,1,13,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-DB1516,634,Panguitch Lake,Deer,Buck,Archery,General Season,Aug 15 2026 - Sept 11 2026,,,500,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1546,634,Panguitch Lake,Deer,Buck,Any Legal Weapon (Late),General Season,Oct 17 2026 - Oct 25 2026,,,1000,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1576,634,Panguitch Lake,Deer,Buck,Muzzleloader,General Season,Sept 23 2026 - Oct 01 2026,,,500,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1594,634,Panguitch Lake,Deer,Buck,Any Legal Weapon (Early),General Season,Oct 07 2026 - Oct 11 2026,,,500,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
 DB1785,634,Panguitch Lake,Deer,Buck,Dedicated Hunter,General Season,Archery: Aug 15 2026 - Sept 11 2026 | Muzz: Sept 23 2026 - Oct 01 2026 | Early ALW: Oct 07 2026 - Oct 11 2026 | ALW: Oct 17 2026 - Oct 25 2026,,,112,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_DEDICATED_HUNTER_DEER,permits_2026
-EA1069,634,Panguitch Lake,Elk,Antlerless,Any Legal Weapon,General Season,Nov 21 2026 - Nov 29 2026,31,4,35,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 EA2018,634,Panguitch Lake,Elk,Antlerless,Any Legal Weapon,Private Lands Only,Aug 01 2026 - Jan 31 2027,,,75,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,permits_2026
 EB3015,634,Panguitch Lake,Elk,Bull,Archery,Limited Entry,Aug 15 2026 - Sept 15 2026,17,2,19,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 EB3056,634,Panguitch Lake,Elk,Bull,Early Any Legal Weapon,Limited Entry,Sept 16 2026 - Sept 20 2026,7,1,8,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
@@ -772,21 +633,11 @@ EB3117,634,Panguitch Lake,Elk,Bull,Multiseason,Limited Entry,"Arch: Aug 15-Sept 
 EB3188,634,Panguitch Lake,Elk,Bull,Late Archery,Limited Entry,Nov 28 2026 - Dec 13 2026,13,2,15,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 EB3189,634,Panguitch Lake,Elk,Bull,Mid Any Legal Weapon,Limited Entry,Oct 03 2026 - Oct 15 2026,20,2,22,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 DB1043,635,Zion,Deer,Buck,Muzzleloader,Limited Entry,Oct 28 2026 - Nov 05 2026,15,2,17,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-DB1529,635,Zion,Deer,Buck,Archery,General Season,Aug 15 2026 - Sept 11 2026,,,675,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1559,635,Zion,Deer,Buck,Any Legal Weapon (Late),General Season,Oct 17 2026 - Oct 25 2026,,,1350,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1589,635,Zion,Deer,Buck,Muzzleloader,General Season,Sept 23 2026 - Oct 01 2026,,,675,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1597,635,Zion,Deer,Buck,Any Legal Weapon (Early),General Season,Oct 07 2026 - Oct 11 2026,,,675,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
 DB1798,635,Zion,Deer,Buck,Dedicated Hunter,General Season,Archery: Aug 15 2026 - Sept 11 2026 | Muzz: Sept 23 2026 - Oct 01 2026 | Early ALW: Oct 07 2026 - Oct 11 2026 | ALW: Oct 17 2026 - Oct 25 2026,,,256,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_DEDICATED_HUNTER_DEER,permits_2026
 DS6611,635,Zion,Desert Bighorn Sheep,Male Only,Any Legal Weapon,Once-in-a-lifetime,Sept 12 2026 - Nov 10 2026,3,0,3,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
-EA1117,635,Zion,Elk,Antlerless,Any Legal Weapon,General Season,Nov 11 2026 - Jan 10 2027,198,22,220,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 EA2020,635,Zion,Elk,Antlerless,Any Legal Weapon,Private Lands Only,Aug 01 2026 - Jan 31 2027,,,320,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,permits_2026
 DB1034,636,Pine Valley,Deer,Buck,Muzzleloader,Limited Entry,Oct 28 2026 - Nov 05 2026,13,2,15,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-DB1517,636,Pine Valley,Deer,Buck,Archery,General Season,Aug 15 2026 - Sept 11 2026,,,600,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1547,636,Pine Valley,Deer,Buck,Any Legal Weapon (Late),General Season,Oct 17 2026 - Oct 25 2026,,,1200,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1577,636,Pine Valley,Deer,Buck,Muzzleloader,General Season,Sept 23 2026 - Oct 01 2026,,,600,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1595,636,Pine Valley,Deer,Buck,Any Legal Weapon (Early),General Season,Oct 07 2026 - Oct 11 2026,,,600,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
 DB1786,636,Pine Valley,Deer,Buck,Dedicated Hunter,General Season,Archery: Aug 15 2026 - Sept 11 2026 | Muzz: Sept 23 2026 - Oct 01 2026 | Early ALW: Oct 07 2026 - Oct 11 2026 | ALW: Oct 17 2026 - Oct 25 2026,,,228,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_DEDICATED_HUNTER_DEER,permits_2026
-EA1254,636,Pine Valley,Elk,Antlerless,Any Legal Weapon,General Season,Nov 11 2026 - Jan 11 2027,27,3,30,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 PB5013,636,Pine Valley,Pronghorn,Buck,Archery,Limited Entry,Aug 15 2026 - Sept 11 2026,7,1,8,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 PB5042,636,Pine Valley,Pronghorn,Buck,Any Legal Weapon,Limited Entry,Sept 12 2026 - Sept 20 2026,21,2,23,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 PB5062,636,Pine Valley,Pronghorn,Buck,Muzzleloader,Limited Entry,Sept 23 2026 - Oct 01 2026,7,1,8,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
@@ -802,8 +653,6 @@ RS6720,668,"Fillmore, Oak Creek",Rocky Mountain Bighorn Sheep,Ram,Any Legal Weap
 RS6726,668,"Fillmore, Oak Creek",Rocky Mountain Bighorn Sheep,Ram,Any Legal Weapon,Once-in-a-lifetime,Oct 24 2026 - Nov 13 2026,3,1,4,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
 RS6727,668,"Fillmore, Oak Creek",Rocky Mountain Bighorn Sheep,Ram,Archery,Once-in-a-lifetime,Nov 14 2026 - Dec 06 2026,2,0,2,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
 DB1111,672,"Beaver, West",Deer,Buck,Muzzleloader,Limited Entry,Oct 28 2026 - Nov 05 2026,4,1,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-EA1203,682,"Box Elder, Pilot Mtn",Elk,Antlerless,Any Legal Weapon,General Season,Aug 01 2026 - Aug 15 2026,4,1,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1204,682,"Box Elder, Pilot Mtn",Elk,Antlerless,Any Legal Weapon,General Season,Oct 10 2026 - Oct 31 2026,4,1,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 EB3031,682,"Box Elder, Pilot Mtn",Elk,Bull,Early Any Legal Weapon,Limited Entry,Sept 12 2026 - Oct 02 2026,6,1,7,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 EB3130,682,"Box Elder, Pilot Mtn",Elk,Bull,Archery,Limited Entry,Aug 15 2026 - Sept 06 2026,2,0,2,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 BR1009,684,La Sal,Black Bear,Either Sex,Pursuit Only,Restricted Pursuit - Summer,"July 5 - 16, 2026",14,1,15,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
@@ -811,8 +660,6 @@ BR1012,684,La Sal,Black Bear,Either Sex,Pursuit Only,Restricted Pursuit - Late S
 BR1017,684,La Sal,Black Bear,Either Sex,Pursuit Only,Restricted Pursuit - Spring,"March 28 - May 25, 2026",0,2,2,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR7307,684,La Sal,Black Bear,Either Sex,Multiseason,Multiseason - Conservation,"Mar. 28 - May 25 & May 25 - June 28 & Aug. 1 - Aug. 31 & Nov 2 - Nov. 8, 2026",,,4,Utah DWR 2025-2027 Conservation Permit Database,BEAR_DRAW,permits_2026
 DB1110,685,"Beaver, East",Deer,Buck,Muzzleloader,Limited Entry,Oct 28 2026 - Nov 05 2026,10,1,11,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-EA1222,685,"Beaver, East",Elk,Antlerless,Any Legal Weapon,General Season,Nov 21 2026 - Dec 11 2026,27,3,30,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1223,685,"Beaver, East",Elk,Antlerless,Any Legal Weapon,General Season,Dec 12 2026 - Dec 26 2026,27,3,30,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 EA2021,685,"Beaver, East",Elk,Antlerless,Any Legal Weapon,Private Lands Only,Aug 01 2026 - Jan 31 2027,,,30,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,permits_2026
 EB3000,685,"Beaver, East",Elk,Bull,Archery,Limited Entry,Aug 15 2026 - Sept 15 2026,22,3,25,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 EB3024,685,"Beaver, East",Elk,Bull,Early Any Legal Weapon,Limited Entry,Sept 16 2026 - Sept 20 2026,9,1,10,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
@@ -824,10 +671,6 @@ EB3159,685,"Beaver, East",Elk,Bull,Mid Any Legal Weapon,Limited Entry,Oct 03 202
 DS6604,688,"La Sal, Potash/South Cisco",Desert Bighorn Sheep,Male Only,Any Legal Weapon,Once-in-a-lifetime,Sept 12 2026 - Nov 10 2026,8,0,8,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
 PB5009,688,"La Sal, Potash/South Cisco",Pronghorn,Buck,Archery,Limited Entry,Aug 15 2026 - Sept 11 2026,6,0,6,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 PB5035,688,"La Sal, Potash/South Cisco",Pronghorn,Buck,Any Legal Weapon,Limited Entry,Sept 12 2026 - Sept 20 2026,22,2,24,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-EA1075,695,Boulder East,Elk,Antlerless,Any Legal Weapon,General Season,Nov 21 2026 - Dec 31 2026,45,5,50,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1076,697,Boulder West,Elk,Antlerless,Any Legal Weapon,General Season,Nov 21 2026 - Dec 31 2026,45,5,50,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1079,698,Fishlake/Thousand Lakes East,Elk,Antlerless,Any Legal Weapon,General Season,Nov 21 2026 - Dec 30 2026,58,7,65,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1080,699,Fishlake/Thousand Lakes West,Elk,Antlerless,Any Legal Weapon,General Season,Nov 21 2026 - Dec 30 2026,54,6,60,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 PB5076,703,Parker Mtn,Pronghorn,Buck,Any Legal Weapon,Limited Entry,Sept 12 2026 - Sept 20 2026,135,15,150,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 PB5077,703,Parker Mtn,Pronghorn,Buck,Archery,Limited Entry,Aug 15 2026 - Sept 11 2026,45,5,50,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 PB5078,703,Parker Mtn,Pronghorn,Buck,Muzzleloader,Limited Entry,Sept 23 2026 - Oct 01 2026,45,5,50,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
@@ -838,8 +681,6 @@ BR7014,710,San Juan,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Sprin
 BR7116,710,San Juan,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Summer,"May 25 - June 28, 2026",22,2,24,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR7217,710,San Juan,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Fall,"Aug. 1 - Aug. 31, 2026 & Nov 2 - Nov. 8, 2026",6,0,6,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 BR7312,710,San Juan,Black Bear,Either Sex,Multiseason,Limited Entry - Multiseason,"Mar. 28 - May 25 & May 25 - June 28 & Aug. 1 - Aug. 31 & Sept. 1 - Oct. 25 & Nov 2 - Nov. 8, 2026",11,1,12,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
-EA1081,710,San Juan,Elk,Antlerless,Any Legal Weapon,General Season,Oct 03 2026 - Oct 15 2026,112,13,125,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1082,710,San Juan,Elk,Antlerless,Any Legal Weapon,General Season,Nov 19 2026 - Dec 31 2026,112,13,125,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 EA2010,710,San Juan,Elk,Antlerless,Any Legal Weapon,Private Lands Only,Aug 01 2026 - Jan 31 2027,,,50,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,permits_2026
 DB1017,714,"Book Cliffs, North",Deer,Buck,Any Legal Weapon,Limited Entry,Oct 17 2026 - Oct 25 2026,137,15,152,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 PB5041,718,"Panguitch Lake/Zion, North",Pronghorn,Buck,Any Legal Weapon,Limited Entry,Sept 12 2026 - Sept 20 2026,21,2,23,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
@@ -869,12 +710,7 @@ BR7304,744,Manti South/San Rafael North,Black Bear,Either Sex,Multiseason,Limite
 PB5006,755,"Box Elder, West",Pronghorn,Buck,Archery,Limited Entry,Aug 15 2026 - Sept 11 2026,10,1,11,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 PB5031,755,"Box Elder, West",Pronghorn,Buck,Any Legal Weapon,Limited Entry,Sept 12 2026 - Sept 20 2026,30,3,33,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 PB5079,755,"Box Elder, West",Pronghorn,Buck,Muzzleloader,Limited Entry,Sept 23 2026 - Oct 01 2026,10,1,11,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-PD1017,755,"Box Elder, West",Pronghorn,Doe,Any Legal Weapon,General Season,Oct 03 2026 - Oct 25 2026,49,6,55,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_DOE_PRONGHORN,permits_2026
 DB1028,804,Fillmore,Deer,Buck,Muzzleloader,Limited Entry,Oct 28 2026 - Nov 05 2026,11,1,12,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
-DB1506,804,Fillmore,Deer,Buck,Archery,General Season,Aug 15 2026 - Sept 11 2026,,,460,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1536,804,Fillmore,Deer,Buck,Any Legal Weapon (Late),General Season,Oct 17 2026 - Oct 25 2026,,,920,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1566,804,Fillmore,Deer,Buck,Muzzleloader,General Season,Sept 23 2026 - Oct 01 2026,,,460,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
-DB1591,804,Fillmore,Deer,Buck,Any Legal Weapon (Early),General Season,Oct 07 2026 - Oct 11 2026,,,460,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_GENERAL_SEASON_BUCK_DEER,permits_2026
 DB1775,804,Fillmore,Deer,Buck,Dedicated Hunter,General Season,Archery: Aug 15 2026 - Sept 11 2026 | Muzz: Sept 23 2026 - Oct 01 2026 | Early ALW: Oct 07 2026 - Oct 11 2026 | ALW: Oct 17 2026 - Oct 25 2026,,,42,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_DEDICATED_HUNTER_DEER,permits_2026
 DB1309,805,West Willow Creek Ranch CWMU,Deer,Buck,Any Legal Weapon,CWMU,Contact Operator for 2026 season dates,,,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_CWMU_BIG_GAME,permits_2026
 EB3607,805,West Willow Creek Ranch CWMU,Elk,Bull,Any Legal Weapon,CWMU,Contact operator for 2026 season dates,,,1,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_CWMU_BIG_GAME,permits_2026
@@ -886,7 +722,6 @@ TK1021,807,East Zion CWMU,Turkey,Bearded,Any Legal Weapon,CWMU,Contact Operator 
 DB1208,808,Blackhawk CWMU,Deer,Buck,Any Legal Weapon,CWMU,Contact Operator for 2026 season dates,,,2,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_CWMU_BIG_GAME,permits_2026
 EA1261,808,Blackhawk CWMU,Elk,Antlerless,Any Legal Weapon,CWMU,Contact operator for 2025 season dates,,,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_CWMU_BIG_GAME,permits_2026
 EB3504,808,Blackhawk CWMU,Elk,Bull,Any Legal Weapon,CWMU,Contact operator for 2026 season dates,,,1,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_CWMU_BIG_GAME,permits_2026
-EA1094,814,"Vernal, Mosby Mtn",Elk,Antlerless,Any Legal Weapon,General Season,Nov 07 2026 - Jan 03 2027,90,10,100,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 EA2014,817,"Wasatch Mtns, Avintaquin-White River",Elk,Antlerless,Any Legal Weapon,Private Lands Only,Aug 01 2026 - Jan 31 2027,,,400,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PRIVATE_LANDS_ONLY_ANTLERLESS_ELK,permits_2026
 RS6713,820,"Nine Mile, Jack Creek",Rocky Mountain Bighorn Sheep,Ram,Any Legal Weapon,Once-in-a-lifetime,Oct 31 2026 - Nov 30 2026,4,0,4,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
 RS6712,821,"Nine Mile, Gray Canyon",Rocky Mountain Bighorn Sheep,Ram,Any Legal Weapon,Once-in-a-lifetime,Oct 31 2026 - Nov 30 2026,4,2,6,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
@@ -902,16 +737,11 @@ DB1323,827,Rock House CWMU,Deer,Buck,Any Legal Weapon,CWMU,Contact Operator for 
 EA1234,828,Royal Ivory Outfitters CWMU,Elk,Antlerless,Any Legal Weapon,CWMU,Contact operator for 2025 season dates,,,15,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_CWMU_BIG_GAME,permits_2026
 PB5329,829,Snowville Flat CWMU,Pronghorn,Buck,Any Legal Weapon,CWMU,Contact operator for 2026 season dates,,,2,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_CWMU_BIG_GAME,permits_2026
 PB5326,830,Cedar Springs CWMU,Pronghorn,Buck,Any Legal Weapon,CWMU,Contact operator for 2026 season dates,,,1,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_CWMU_BIG_GAME,permits_2026
-EA1187,838,"Paunsaugunt, Hatch Bench",Elk,Antlerless,Any Legal Weapon,General Season,Nov 22 2025 - Dec 30 2025,13,2,15,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-DA1018,840,"Pine Valley, New Harmony",Deer,Antlerless,"Archery, Muzzleloader, Shotgun",General Season,Aug 01 2026 - Aug 12 2026,,,20,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_DEER,permits_2026
 BR7016,845,Wasatch Mtns West-Central,Black Bear,Either Sex,Any Legal Weapon,Limited Entry - Spring,"March 28 - May 25, 2026",36,4,40,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BEAR_DRAW,permits_2026
 DB1326,856,Rosette CWMU,Deer,Buck,Any Legal Weapon,CWMU,Contact Operator for 2026 season dates,,,1,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_CWMU_BIG_GAME,permits_2026
 DB1327,858,Mountain Sky Ranch CWMU,Deer,Buck,Any Legal Weapon,CWMU,Contact Operator for 2026 season dates,,,1,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_CWMU_BIG_GAME,permits_2026
 EA1201,858,Mountain Sky Ranch CWMU,Elk,Antlerless,Any Legal Weapon,CWMU,Contact operator for 2025 season dates,,,10,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_CWMU_BIG_GAME,permits_2026
 EB3606,858,Mountain Sky Ranch CWMU,Elk,Bull,Any Legal Weapon,CWMU,Contact operator for 2026 season dates,,,1,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_CWMU_BIG_GAME,permits_2026
-EA1025,861,"Manti, West",Elk,Antlerless,Any Legal Weapon,General Season,Nov 19 2026 - Jan 31 2027,108,12,120,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1023,862,"Manti, South",Elk,Antlerless,Any Legal Weapon,General Season,Oct 03 2026 - Oct 15 2026,90,10,100,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1024,862,"Manti, South",Elk,Antlerless,Any Legal Weapon,General Season,Nov 19 2026 - Jan 31 2027,90,10,100,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
 EB3147,867,"Box Elder, Grouse Creek",Elk,Bull,Early Any Legal Weapon,Limited Entry,Sept 16 2026 - Sept 20 2026,6,1,7,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 EB3150,867,"Box Elder, Grouse Creek",Elk,Bull,Mid Any Legal Weapon,Limited Entry,Oct 03 2026 - Oct 15 2026,12,1,13,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 EB3153,867,"Box Elder, Grouse Creek",Elk,Bull,Muzzleloader,Limited Entry,Sept 21 2026 - Oct 02 2026,2,1,3,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
@@ -934,24 +764,12 @@ DB1331,875,Raft River CWMU,Deer,Buck,Any Legal Weapon,CWMU,Contact Operator for 
 DB1330,876,Iron Spring CWMU,Deer,Buck,Any Legal Weapon,CWMU,Contact Operator for 2026 season dates,,,1,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_CWMU_BIG_GAME,permits_2026
 PB5339,876,Iron Spring CWMU,Pronghorn,Buck,Any Legal Weapon,CWMU,Contact operator for 2026 season dates,,,1,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_CWMU_BIG_GAME,permits_2026
 DB1333,878,5S CWMU,Deer,Buck,Any Legal Weapon,CWMU,Contact Operator for 2026 season dates,,,2,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_CWMU_BIG_GAME,permits_2026
-EA1237,879,"La Sal Mtns, North",Elk,Antlerless,Any Legal Weapon,General Season,Nov 19 2026 - Dec 31 2026,157,18,175,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1242,880,"Vernal, Buckskin Hills-Jensen",Elk,Antlerless,Any Legal Weapon,General Season,Dec 01 2026 - Dec 31 2026,90,10,100,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-EA1243,880,"Vernal, Buckskin Hills-Jensen",Elk,Antlerless,Any Legal Weapon,General Season,Jan 01 2027 - Jan 31 2027,90,10,100,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-PD1043,882,"Nine Mile, Anthro-Pleasant Valley",Pronghorn,Doe,Any Legal Weapon,General Season,Aug 01 2026 - Aug 14 2026,9,1,10,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_DOE_PRONGHORN,permits_2026
-TK1006,884,Southeastern Area,Turkey,Bearded,Any Legal Weapon,Limited Entry,"April 11 - April 30, 2026 | Youth only : May 1-3, 2026",,,250,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_TURKEY,permits_2026
-TK1007,885,Southern Area,Turkey,Bearded,Any Legal Weapon,Limited Entry,"April 11 - April 30, 2026 | Youth only : May 1-3, 2026",,,542,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_TURKEY,permits_2026
-TK1004,886,Northeastern Area,Turkey,Bearded,Any Legal Weapon,Limited Entry,"April 11 - April 30, 2026 | Youth only : May 1-3, 2026",,,347,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_TURKEY,permits_2026
-TK1003,887,Central Area,Turkey,Bearded,Any Legal Weapon,Limited Entry,"April 11 - April 30, 2026 | Youth only : May 1-3, 2026",,,600,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_TURKEY,permits_2026
-TK1005,888,Northern Area,Turkey,Bearded,Any Legal Weapon,Limited Entry,"April 11 - April 30, 2026 | Youth only : May 1-3, 2026",,,500,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_TURKEY,permits_2026
 BI6528,889,"Book Cliffs, Little Creek/South",Bison,Hunters Choice,Archery,Once-in-a-lifetime,Aug 15 2026 - Sept 11 2026,6,0,6,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
 BI6529,889,"Book Cliffs, Little Creek/South",Bison,Female Only,Any Legal Weapon,Once-in-a-lifetime,Oct 17 2026 - Oct 27 2026,8,0,8,2026_RAC_CURRENT_YEAR_ALLOTMENT,BONUS_OIL_BIG_GAME,permits_2026
 BI6531,889,"Book Cliffs, Little Creek/South",Bison,Hunters Choice,Any Legal Weapon,Once-in-a-lifetime,Sept 21 2026 - Oct 02 2026,10,0,10,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
 BI6537,889,"Book Cliffs, Little Creek/South",Bison,Hunters Choice,Any Legal Weapon,Once-in-a-lifetime,Nov 07 2026 - Jan 31 2027,8,7,15,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026
 DB1336,890,First Light CWMU,Deer,Buck,Any Legal Weapon,CWMU,Contact Operator for 2026 season dates,,,1,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_CWMU_BIG_GAME,permits_2026
 DB1335,892,Big Piney Ranch CWMU,Deer,Buck,Any Legal Weapon,CWMU,Contact Operator for 2026 season dates,,,1,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_CWMU_BIG_GAME,permits_2026
-EA1251,893,"Southwest Desert, Burbank/Garrison",Elk,Antlerless,Any Legal Weapon,General Season,Aug 01 2026 - Aug 13 2026,13,2,15,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_ELK,permits_2026
-DA1047,895,Vernal-Ouray Valley,Deer,Antlerless,Any Legal Weapon,General Season,Sept 26 2026 - Dec 11 2026,,,25,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_ANTLERLESS_DEER,permits_2026
-PD1044,895,Vernal-Ouray Valley,Pronghorn,Doe,Any Legal Weapon,General Season,Oct 03 2026 - Oct 15 2026,9,1,10,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,PREFERENCE_DOE_PRONGHORN,permits_2026
 EB3160,899,"Book Cliffs, Bitter Creek/East",Elk,Bull,Archery,Limited Entry,Aug 15 2026 - Sept 15 2026,22,2,24,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 EB3161,899,"Book Cliffs, Bitter Creek/East",Elk,Bull,Late Archery,Limited Entry,Nov 28 2026 - Dec 13 2026,4,1,5,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
 EB3162,899,"Book Cliffs, Bitter Creek/East",Elk,Bull,Early Any Legal Weapon,Limited Entry,Sept 16 2026 - Sept 20 2026,9,1,10,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_LE_BIG_GAME,permits_2026
@@ -990,7 +808,7 @@ BR7321,5101,Kamas/North Slope Summit,Black Bear,Either Sex,Multiseason,Limited E
 DB0007,5108,Buck Deer - Statewide Permit,Deer,Buck,Any Legal Weapon,Statewide,"Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1, 2026 - Jan 15, 2027",,,1,,SPORTSMAN_PERMIT,permits_2026
 DS1000,5110,Desert Bighorn Sheep - Statewide Permit,Desert Bighorn Sheep,Male Only,Any Legal Weapon,Statewide,"Sept 1 - Dec 31, 2026",1,0,1,Utah DWR 2025-2027 Conservation Permit Database,SPORTSMAN_PERMIT,permits_2026
 EB1000,5119,Elk - Statewide Permit,Elk,Bull,Any Legal Weapon,Statewide,"Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1, 2026 - Jan 15, 2027",,,15,,SPORTSMAN_PERMIT,permits_2026
-EB1007,5125,Draw-only Youth Any Bull/Hunters Choice Elk,Elk,Bull,Any Legal Weapon,General Season - Any Bull,Sept 12 2026 - Sept 22 2026,,,750,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,YOUTH_GENERAL_ANY_BULL_ELK,permits_2026
+EB1007,5125,Draw-only Youth Any Bull/Hunters Choice Elk,Elk,Bull,Any Legal Weapon,General Season - Any Bull,Sept 12 2026 - Sept 22 2026,,,750,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,YOUTH_DRAW_ONLY_ELK,permits_2026
 GO1000,5131,Mountain Goat - Statewide Permit,Mountain Goat,Hunters Choice,Any Legal Weapon,Statewide,"Sept 1 - Dec 31, 2026",,,1,,SPORTSMAN_PERMIT,permits_2026
 RS0001,5135,Rocky Mountain Bighorn Sheep - Statewide Permit,Rocky Mountain Bighorn Sheep,Ram,Any Legal Weapon,Statewide,"Sept 1 - Dec 31, 2026",1,0,1,Utah DWR 2025-2027 Conservation Permit Database,SPORTSMAN_PERMIT,permits_2026
 DS6625,10003,Mineral Mtns,Desert Bighorn Sheep,Male Only,Any Legal Weapon,Once-in-a-lifetime,Sept 12 2026 - Nov 10 2026,4,0,4,2026_LIVE_DWR_HUNT_PLANNER_COMPREHENSIVE,BONUS_OIL_BIG_GAME,permits_2026

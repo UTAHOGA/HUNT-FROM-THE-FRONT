@@ -10,7 +10,7 @@
     "permit_allotment_2026_total": 1091,
     "permits_2025_draw_total": 682,
     "permits_2025_total": 1085,
-    "permits_2026_draw_total": 995,
+    "permits_2026_draw_total": 813,
     "permits_2026_total": 1120
   },
   "guardrail": "Read-only audit. No database, website, prediction, or materializer files are modified.",
@@ -84,7 +84,7 @@
     "RS": 20,
     "TK": 18
   },
-  "snapshot_utc": "2026-05-27T02:14:23+00:00",
+  "snapshot_utc": "2026-05-27T03:33:08+00:00",
   "species_counts": {
     "Bison": 20,
     "Black Bear": 110,
