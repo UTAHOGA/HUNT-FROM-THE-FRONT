@@ -6006,3 +6006,31 @@
   - `python scripts\audit-short-modeled-year-source-gaps.py` passed.
   - `python -m py_compile scripts\audit-short-modeled-year-source-gaps.py tests\utah\test_short_modeled_year_source_gap_audit.py` passed.
   - `python -m pytest tests\utah\test_short_modeled_year_source_gap_audit.py -q` passed: `5`.
+
+## Database Candidate Review Consolidation
+- Timestamp (UTC): 2026-05-27T09:27:49Z
+- Scope:
+  - Consolidated fragmented draw, harvest, prediction, point-ladder, coverage, crosswalk, and permit-candidate evidence into a single database comparison package.
+  - Compared all evidence rows against the current official `pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv`.
+  - Preserved provenance through a source inventory and source-path/source-file fields instead of deleting raw fragments.
+  - Did not modify `DATABASE.csv`, canonical permit cells, runtime engine files, website feed logic, or public library curation.
+- Outputs:
+  - `scripts/build-database-candidate-review-package.js`
+  - `tests/database-candidate-review.test.js`
+  - `data_truth/comparison_outputs/database_candidate_review/database_candidate_review_records.csv`
+  - `data_truth/comparison_outputs/database_candidate_review/database_candidate_review_by_current_code.csv`
+  - `data_truth/comparison_outputs/database_candidate_review/database_candidate_review_source_inventory.csv`
+  - `data_truth/comparison_outputs/database_candidate_review/database_candidate_review_summary.json`
+  - `processed_data/database_candidate_review.md`
+- Key results:
+  - Current `DATABASE.csv` hunt codes: `1,449`.
+  - Source files registered/present: `25 / 25`.
+  - Source rows scanned: `659,336`.
+  - Normalized evidence records: `55,093`.
+  - Current-code rollup rows: `1,775`.
+  - Possible database-fill evidence records: `5,222`.
+  - Missing-database/crosswalk-required evidence records: `3,319`.
+  - Evidence domains included: draw results, harvest, harvest truth, prediction, point ladder, coverage, crosswalk, permit candidates, and comparisons.
+- Validation:
+  - `node scripts\build-database-candidate-review-package.js` passed.
+  - `node tests\database-candidate-review.test.js` passed.
