@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-27T04:25:08.144Z",
+  "generated_at": "2026-05-27T04:51:41.832Z",
   "current_source_used": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
   "cloudflare_fallback_base": "https://json.uoga.workers.dev",
   "pages_file_limit_mb": 25,
@@ -132,8 +132,8 @@
       "role": "supporting input",
       "exists": "true",
       "row_count": "not_scanned",
-      "size_bytes": 2352288,
-      "size_mb": 2.24,
+      "size_bytes": 2355750,
+      "size_mb": 2.25,
       "delivery": "pages-local",
       "href": "./processed_data/hunt_unit_reference_linked.csv",
       "local_href": "./processed_data/hunt_unit_reference_linked.csv",
@@ -298,7 +298,7 @@
   ],
   "scanned_row_counts": {
     "processed_data/hunt_master_enriched.csv": 53225,
-    "processed_data/hunt_unit_reference_linked.csv": 2997,
+    "processed_data/hunt_unit_reference_linked.csv": 2953,
     "processed_data/draw_reality_engine_predictive_v2.csv": 26387,
     "processed_data/draw_reality_engine.csv": 36912,
     "processed_data/draw_reality_engine_v2.csv": 176753,
