@@ -1,10 +1,10 @@
 # 2025 Draw Permit Field Promotion Report
 
-Generated UTC: 2026-05-23T11:59:04.420486+00:00
+Generated UTC: 2026-05-27T01:11:40.418627+00:00
 Source hunt codes with explicit 2025 draw permits: 572
 Files written: 15
-Rows changed: 0
-Changed cells: 0
+Rows changed: 8
+Changed cells: 24
 
 ## DB1002 Spot Check
 
@@ -19,7 +19,7 @@ Changed cells: 0
 
 | File | Matched codes | Rows changed | Changed cells |
 | --- | ---: | ---: | ---: |
-| pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv | 572 | 0 | 0 |
+| pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv | 572 | 8 | 24 |
 | processed_data/hunt_master_enriched.csv | 572 | 0 | 0 |
 | processed_data/hunt_unit_reference_linked.csv | 572 | 0 | 0 |
 | processed_data/point_ladder_view.csv | 572 | 0 | 0 |

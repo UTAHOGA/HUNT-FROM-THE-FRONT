@@ -74,7 +74,7 @@ def load_source() -> dict[str, dict[str, str]]:
         values = {field: clean(row.get(field)) for field in PROMOTED_FIELDS}
         if not any(values[field] for field in ("permits_2025_draw_res", "permits_2025_draw_nr", "permits_2025_draw_total")):
             continue
-        values["permits_2025_draw_source"] = "canonical_2026_source_of_truth_draw_results"
+        values["permits_2025_draw_source"] = "2025_DRAW_RESULTS_TABLES"
         source[code] = values
     return source
 

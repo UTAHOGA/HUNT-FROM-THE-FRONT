@@ -56,10 +56,14 @@ def test_database_historical_permit_lineage_confirms_2025_source_coverage():
     draw_sources = summary["family_source_value_counts"]["permits_2025_draw"]
     assert permit_sources["2025_DRAW_RESULTS_TABLES"] == 965
     assert permit_sources["2024_DRAW_RESULTS_PDF_MODEL_TARGET_2025_SOURCE_ONLY_PROMOTION"] == 49
-    assert permit_sources["2025_OIL_DRAW_RESULTS_PDF_MODEL_TARGET_2026"] == 10
-    assert draw_sources["canonical_2026_source_of_truth_draw_results"] == 564
+    assert permit_sources["2025_OIL_DRAW_RESULTS_PDF_HUNT_YEAR_2025"] == 10
+    assert draw_sources["2025_DRAW_RESULTS_TABLES"] == 564
     assert draw_sources["2024_DRAW_RESULTS_PDF_MODEL_TARGET_2025_SOURCE_ONLY_PROMOTION"] == 49
-    assert draw_sources["2025_OIL_DRAW_RESULTS_PDF_MODEL_TARGET_2026"] == 10
+    assert draw_sources["2025_OIL_DRAW_RESULTS_PDF_HUNT_YEAR_2025"] == 10
+
+    prohibited_2025_source_tokens = ("2026_LIVE", "LIVE_DWR", "RAC_CURRENT_YEAR", "MODEL_TARGET_2026", "canonical_2026")
+    for source in [*permit_sources, *draw_sources]:
+        assert not any(token in source for token in prohibited_2025_source_tokens)
 
 
 def test_database_historical_permit_lineage_has_no_paired_family_strays():

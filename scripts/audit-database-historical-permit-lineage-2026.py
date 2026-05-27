@@ -37,7 +37,7 @@ HISTORICAL_FAMILIES = [
             "2024_DRAW_ODDS_PDF_VALUES_MODEL_TARGET_2025",
             "2024_BEAR_DRAW_RESULTS_PDF_MODEL_TARGET_2025",
             "2024_DRAW_RESULTS_PDF_MODEL_TARGET_2025_SOURCE_ONLY_PROMOTION",
-            "2025_OIL_DRAW_RESULTS_PDF_MODEL_TARGET_2026",
+            "2025_OIL_DRAW_RESULTS_PDF_HUNT_YEAR_2025",
         },
     },
     {
@@ -45,11 +45,11 @@ HISTORICAL_FAMILIES = [
         "historical_year": "2025",
         "source_field": "permits_2025_draw_source",
         "expected_sources": {
-            "canonical_2026_source_of_truth_draw_results",
+            "2025_DRAW_RESULTS_TABLES",
             "2024_DRAW_ODDS_PDF_VALUES_MODEL_TARGET_2025",
             "2024_BEAR_DRAW_RESULTS_PDF_MODEL_TARGET_2025",
             "2024_DRAW_RESULTS_PDF_MODEL_TARGET_2025_SOURCE_ONLY_PROMOTION",
-            "2025_OIL_DRAW_RESULTS_PDF_MODEL_TARGET_2026",
+            "2025_OIL_DRAW_RESULTS_PDF_HUNT_YEAR_2025",
         },
     },
 ]

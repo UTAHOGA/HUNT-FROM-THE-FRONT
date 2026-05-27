@@ -1,10 +1,10 @@
 {
-  "generated_at_utc": "2026-05-23T11:59:04.420486+00:00",
+  "generated_at_utc": "2026-05-27T01:11:40.418627+00:00",
   "source_file": "data/hunt-master-canonical-2026-source-of-truth.json",
   "source_hunt_codes_with_2025_draw_permits": 572,
   "files_written": 15,
-  "total_rows_changed": 0,
-  "total_changed_cells": 0,
+  "total_rows_changed": 8,
+  "total_changed_cells": 24,
   "status_counts": {
     "written": 15
   },
@@ -12,10 +12,10 @@
     {
       "file": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
       "kind": "csv",
-      "rows_checked": 1411,
+      "rows_checked": 1449,
       "matched_hunt_codes": 572,
-      "rows_changed": 0,
-      "changed_cells": 0,
+      "rows_changed": 8,
+      "changed_cells": 24,
       "status": "written"
     },
     {
@@ -57,7 +57,7 @@
     {
       "file": "processed_data/draw_reality_engine_predictive_v2.csv",
       "kind": "csv",
-      "rows_checked": 27940,
+      "rows_checked": 28346,
       "matched_hunt_codes": 572,
       "rows_changed": 0,
       "changed_cells": 0,

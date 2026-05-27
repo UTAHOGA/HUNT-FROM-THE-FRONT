@@ -20,16 +20,16 @@
       "2024_DRAW_ODDS_PDF_VALUES_MODEL_TARGET_2025": 55,
       "2024_DRAW_RESULTS_PDF_MODEL_TARGET_2025_SOURCE_ONLY_PROMOTION": 49,
       "2025_DRAW_RESULTS_TABLES": 965,
-      "2025_OIL_DRAW_RESULTS_PDF_MODEL_TARGET_2026": 10,
+      "2025_OIL_DRAW_RESULTS_PDF_HUNT_YEAR_2025": 10,
       "BLANK": 364
     },
     "permits_2025_draw": {
       "2024_BEAR_DRAW_RESULTS_PDF_MODEL_TARGET_2025": 4,
       "2024_DRAW_ODDS_PDF_VALUES_MODEL_TARGET_2025": 55,
       "2024_DRAW_RESULTS_PDF_MODEL_TARGET_2025_SOURCE_ONLY_PROMOTION": 49,
-      "2025_OIL_DRAW_RESULTS_PDF_MODEL_TARGET_2026": 10,
-      "BLANK": 767,
-      "canonical_2026_source_of_truth_draw_results": 564
+      "2025_DRAW_RESULTS_TABLES": 564,
+      "2025_OIL_DRAW_RESULTS_PDF_HUNT_YEAR_2025": 10,
+      "BLANK": 767
     }
   },
   "guardrail": "Passed hunt-year permit values are canonical source truth when populated with reviewed source lineage. They must not drift because a newer working file, RAC file, inferred value, or comparison output disagrees. Historical populated values without lineage are blocked for lineage repair. The permits_2025 family is the full 2025 historical permit universe in DATABASE.csv; permits_2025_draw is a narrower bonus-point draw-results subset and must not be described as the full 2025 draw/permit universe.",

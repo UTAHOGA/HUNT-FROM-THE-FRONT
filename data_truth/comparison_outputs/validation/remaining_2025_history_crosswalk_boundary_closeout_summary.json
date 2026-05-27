@@ -22,7 +22,7 @@
   "expo_hard_copy_missing_database_codes": [],
   "expo_hard_copy_missing_database_count": 0,
   "expo_hard_copy_promoted_count": 3,
-  "generated_at_utc": "2026-05-27T00:54:15+00:00",
+  "generated_at_utc": "2026-05-27T01:16:20+00:00",
   "guardrails": [
     "Closeout audit only; DATABASE.csv is not modified.",
     "Dropped/split historical codes are not force-mapped unless an exact active 2026 name/species/sex/weapon/boundary match exists.",

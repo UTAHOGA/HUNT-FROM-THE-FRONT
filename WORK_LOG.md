@@ -3744,7 +3744,7 @@
   - Historical years detected: `2025`.
   - Canonical historical source-truth rows: `1600`.
   - Full populated 2025 historical permit universe (`permits_2025`): `1028`, all sourced to `2025_DRAW_RESULTS_TABLES`.
-  - 2025 bonus-point draw-results subset (`permits_2025_draw`): `572`, all sourced to `canonical_2026_source_of_truth_draw_results`.
+  - 2025 bonus-point draw-results subset (`permits_2025_draw`): `572`, all sourced to `2025_DRAW_RESULTS_TABLES`.
   - 2025 non-bonus/general subset in the base historical permit universe: `456`.
   - Lineage blockers: `0`.
   - Paired-family comparison: `572` matches, `456` primary-only, `383` both blank, `0` mismatches.
@@ -5163,7 +5163,7 @@
   - Confirmed those 16 rows now crosswalk as `SAME_CODE_IN_2025_PDF_AND_CURRENT_ACTIVE`, not historical-only review rows.
   - Promoted reviewed 2025 O.I.L. PDF draw-results values for 8 Rocky Mountain bighorn sheep rows that had numeric differences against the PDF extraction.
   - Added reviewed CWMU bull moose rows `MB6225` and `MB6257` using existing CWMU boundary IDs, so the O.I.L. PDF and 2025 harvest sources no longer report those codes as missing from the database.
-  - Registered `2025_OIL_DRAW_RESULTS_PDF_MODEL_TARGET_2026` as accepted historical lineage for the 2025 permit and 2025 draw-permit field families.
+  - Registered `2025_OIL_DRAW_RESULTS_PDF_HUNT_YEAR_2025` as accepted historical lineage for the 2025 permit and 2025 draw-permit field families.
   - Updated crosswalk, O.I.L., LE deer, lineage, live-DWR, final crosscheck, publish-readiness, and comprehensive history-integrity outputs.
   - No website feeds, `public_client_engine.csv`, prediction math, materializer code, or populated 2026 live DWR permit/allotment numbers were changed.
 - Outputs:
@@ -5293,3 +5293,34 @@
   - `python scripts\validate-remaining-2025-history-crosswalk-boundaries.py` passed.
   - `python -m py_compile scripts\validate-remaining-2025-history-crosswalk-boundaries.py scripts\audit-2024-draw-odds-against-database-2025-permits.py scripts\audit-comprehensive-2026-2025-history-integrity.py scripts\final-permit-database-crosscheck-2026.py` passed.
   - `python -m pytest tests\utah\test_remaining_2025_history_crosswalk_boundary_closeout.py tests\utah\test_hunt_code_crosswalk_2024_pdf_to_2025_pdf.py tests\utah\test_database_historical_permit_lineage_2026.py tests\utah\test_final_permit_database_crosscheck_2026.py tests\utah\test_comprehensive_2026_2025_history_integrity_audit.py -q` passed: `13`.
+
+## 2025 Historical Source Label Repair
+- Timestamp (UTC): 2026-05-27T01:18:00Z
+- Scope:
+  - Repaired misleading 2025 historical lineage labels that made passed-year values look like current/live 2026 data.
+  - Replaced `canonical_2026_source_of_truth_draw_results` with `2025_DRAW_RESULTS_TABLES` in 2025 draw-source fields and dependent runtime/reference surfaces.
+  - Replaced `2025_OIL_DRAW_RESULTS_PDF_MODEL_TARGET_2026` with `2025_OIL_DRAW_RESULTS_PDF_HUNT_YEAR_2025` in 2025 permit lineage fields.
+  - Replaced the display type `2025 O.I.L. Draw Results PDF Model Target 2026` with `2025 O.I.L. Draw Results PDF Hunt Year 2025`.
+  - Added `scripts/repair-2025-historical-source-labels.py` and a lineage test guard to prevent 2026/live/RAC-current labels from appearing in populated 2025 historical source fields.
+  - No 2025 permit numbers, 2026 live DWR permit numbers, or 2026 allotment numbers were recalculated or overwritten.
+- Key results:
+  - `DATABASE.csv` rows: `1449`.
+  - Unique hunt codes: `1449`.
+  - Blank boundary IDs: `0`.
+  - Duplicate hunt codes: `0`.
+  - 2025 full historical permit rows: `1085`.
+  - 2025 bonus-point draw subset rows: `682`.
+  - 2026 permit/allotment mismatches: `0`.
+  - Publish readiness: `true`.
+- Validation:
+  - `python scripts\repair-2025-historical-source-labels.py` passed.
+  - `python scripts\extract-oil-2025-draw-results-permits.py` passed.
+  - `python scripts\extract-le-deer-2025-draw-results-permits.py` passed.
+  - `python scripts\audit-database-historical-permit-lineage-2026.py` passed.
+  - `python scripts\final-permit-database-crosscheck-2026.py` passed.
+  - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed.
+  - `python scripts\validate-remaining-2025-history-crosswalk-boundaries.py` passed.
+  - `python scripts\build-database-publish-readiness-report.py` passed.
+  - `node scripts\verify-boundary-id-render-map-2026.js` passed.
+  - `python -m py_compile scripts\repair-2025-historical-source-labels.py scripts\audit-database-historical-permit-lineage-2026.py scripts\promote-2025-draw-permits-to-runtime.py scripts\promote-oil-2025-draw-pdf-values-to-database.py` passed.
+  - `python -m pytest tests\utah\test_database_historical_permit_lineage_2026.py tests\utah\test_remaining_2025_history_crosswalk_boundary_closeout.py tests\utah\test_hunt_code_crosswalk_2024_pdf_to_2025_pdf.py tests\utah\test_le_deer_2025_draw_results_extraction.py tests\utah\test_oil_2025_draw_results_extraction.py tests\utah\test_final_permit_database_crosscheck_2026.py tests\utah\test_comprehensive_2026_2025_history_integrity_audit.py -q` passed: `20`.
