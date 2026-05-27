@@ -30,7 +30,7 @@ def test_general_season_youth_elk_routes_to_availability_not_youth_draw() -> Non
         "source_file": "DATABASE.csv",
     }
     draw_system_type = classify_draw_system_type(row)
-    assert draw_system_type == "OTC_OR_REMAINING_TARGET"
+    assert draw_system_type == "YOUTH_OTC_OR_AVAILABILITY"
     assert resolve_algorithm_status(row, draw_system_type) == "EXCLUDED_NOT_PREDICTIVE_DRAW"
 
 

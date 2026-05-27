@@ -26,7 +26,7 @@ def test_youth_rows_do_not_accidentally_classify_as_bonus_or_adult_preference() 
     }
     assert classify_draw_system_type(youth_deer) != "PREFERENCE_GENERAL_SEASON_BUCK_DEER"
     assert classify_draw_system_type(youth_elk) not in {"BONUS_OIL_BIG_GAME", "BONUS_LE_BIG_GAME", "BONUS_PLE_BIG_GAME"}
-    assert classify_draw_system_type(youth_elk) == "OTC_OR_REMAINING_TARGET"
+    assert classify_draw_system_type(youth_elk) == "YOUTH_OTC_OR_AVAILABILITY"
 
 
 def test_youth_artifact_rows_do_not_use_bonus_or_preference_fields() -> None:

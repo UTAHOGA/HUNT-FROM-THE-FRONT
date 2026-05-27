@@ -59,7 +59,12 @@ def test_target_scope_pending_rows_are_not_incorrectly_marked_out_of_scope() -> 
     rows = _read_csv(ML_PATH)
     assert not [
         row for row in rows
-        if row.get("draw_system_type") in {"YOUTH_GENERAL_DEER", "YOUTH_DRAW_ONLY_ELK"}
+        if row.get("draw_system_type") in {
+            "YOUTH_GENERAL_DEER_RESERVE",
+            "YOUTH_ANTLERLESS_OR_DOE_RESERVE",
+            "YOUTH_DRAW_ONLY_ELK",
+            "YOUTH_OTC_OR_AVAILABILITY",
+        }
         and row.get("algorithm_status") == "OUT_OF_SCOPE_NON_TARGET"
     ]
     assert not [

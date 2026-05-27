@@ -76,10 +76,14 @@ from .turkey import (
 )
 from .youth import (
     STRATEGY_SPECS as YOUTH_SPECS,
+    YOUTH_ANTLERLESS_OR_DOE_RESERVE_DRAW_SYSTEM_TYPE,
     YOUTH_DRAW_ONLY_ELK_DRAW_SYSTEM_TYPE,
-    YOUTH_GENERAL_DEER_DRAW_SYSTEM_TYPE,
+    YOUTH_GENERAL_DEER_RESERVE_DRAW_SYSTEM_TYPE,
+    YOUTH_OTC_OR_AVAILABILITY_DRAW_SYSTEM_TYPE,
+    is_youth_antlerless_or_doe_row,
     is_youth_draw_only_elk_row,
     is_youth_general_deer_row,
+    is_youth_otc_or_availability_row,
     resolve_youth_algorithm_status,
 )
 
@@ -156,8 +160,10 @@ TARGET_DRAW_SYSTEM_TYPES = {
     "BEAR_DRAW",
     "MOUNTAIN_LION_DRAW",
     "PRIVATE_LANDS_ONLY_ANTLERLESS_ELK",
-    "YOUTH_GENERAL_DEER",
+    "YOUTH_GENERAL_DEER_RESERVE",
+    "YOUTH_ANTLERLESS_OR_DOE_RESERVE",
     "YOUTH_DRAW_ONLY_ELK",
+    "YOUTH_OTC_OR_AVAILABILITY",
     "RANDOM_ONLY_TARGET",
     "OTC_OR_REMAINING_TARGET",
     "LANDOWNER_BIG_GAME",
@@ -239,8 +245,6 @@ def classify_draw_system_type(row: Mapping[str, object]) -> str:
     species = _clean_lower(row.get("species"))
     sex_type = _clean_lower(row.get("sex_type"))
     draw_pool = _clean_lower(row.get("draw_pool"))
-    hunt_code = _clean(row.get("hunt_code")).upper()
-
     if is_out_of_scope_non_target(row):
         return "OUT_OF_SCOPE_NON_TARGET"
 
@@ -256,10 +260,12 @@ def classify_draw_system_type(row: Mapping[str, object]) -> str:
         return "MOUNTAIN_LION_DRAW"
     if is_youth_draw_only_elk_row(row):
         return YOUTH_DRAW_ONLY_ELK_DRAW_SYSTEM_TYPE
-    if hunt_code == "EB1011" or ("youth general season bull elk" in text) or ("general season - youth" in text and "elk" in text):
-        return "OTC_OR_REMAINING_TARGET"
+    if is_youth_otc_or_availability_row(row):
+        return YOUTH_OTC_OR_AVAILABILITY_DRAW_SYSTEM_TYPE
     if is_youth_general_deer_row(row):
-        return YOUTH_GENERAL_DEER_DRAW_SYSTEM_TYPE
+        return YOUTH_GENERAL_DEER_RESERVE_DRAW_SYSTEM_TYPE
+    if is_youth_antlerless_or_doe_row(row):
+        return YOUTH_ANTLERLESS_OR_DOE_RESERVE_DRAW_SYSTEM_TYPE
 
     if "mitigation" in text or "depredation" in text:
         return "MITIGATION_OR_DEPREDATION_BIG_GAME"
@@ -338,7 +344,12 @@ def resolve_algorithm_status(row: Mapping[str, object], draw_system_type: str | 
         return ALGORITHM_STATUS_MODELED_AVAILABILITY if is_modeled_mountain_lion_row(row) else ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING
     if draw_system_type == SPORTSMAN_DRAW_SYSTEM_TYPE:
         return ALGORITHM_STATUS_MODELED_SPORTSMAN_DRAW if is_modeled_sportsman_row(row) else ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING
-    if draw_system_type in {YOUTH_GENERAL_DEER_DRAW_SYSTEM_TYPE, YOUTH_DRAW_ONLY_ELK_DRAW_SYSTEM_TYPE}:
+    if draw_system_type in {
+        YOUTH_GENERAL_DEER_RESERVE_DRAW_SYSTEM_TYPE,
+        YOUTH_ANTLERLESS_OR_DOE_RESERVE_DRAW_SYSTEM_TYPE,
+        YOUTH_DRAW_ONLY_ELK_DRAW_SYSTEM_TYPE,
+        YOUTH_OTC_OR_AVAILABILITY_DRAW_SYSTEM_TYPE,
+    }:
         return resolve_youth_algorithm_status(row, draw_system_type)
     if draw_system_type == TURKEY_DRAW_SYSTEM_TYPE:
         return ALGORITHM_STATUS_MODELED_BONUS if is_modeled_turkey_row(row) else ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING
@@ -401,10 +412,14 @@ def classification_reason(row: Mapping[str, object], draw_system_type: str | Non
             return "Bear remains in scope, but the subtype is ambiguous and stays pending until public draw support is proven."
     if draw_system_type == SPORTSMAN_DRAW_SYSTEM_TYPE and algorithm_status != ALGORITHM_STATUS_MODELED_SPORTSMAN_DRAW:
         return "Sportsman permits are tracked separately and stay pending until a usable official sportsman odds source exists."
-    if draw_system_type == YOUTH_GENERAL_DEER_DRAW_SYSTEM_TYPE:
-        return "Youth general deer stays separate from the adult general-season deer model and remains pending until the active-year youth pool is source-proven."
+    if draw_system_type == YOUTH_GENERAL_DEER_RESERVE_DRAW_SYSTEM_TYPE:
+        return "Youth general deer reserve rows stay separate from the adult general-season deer model and remain pending until the active-year youth pool is source-proven."
+    if draw_system_type == YOUTH_ANTLERLESS_OR_DOE_RESERVE_DRAW_SYSTEM_TYPE:
+        return "Youth antlerless/doe reserve rows stay separate from adult antlerless/doe preference models until youth reserve mechanics are source-proven."
     if draw_system_type == YOUTH_DRAW_ONLY_ELK_DRAW_SYSTEM_TYPE:
         return "Draw-only youth elk stays in scope but remains pending until current-year quota and mechanics are source-proven."
+    if draw_system_type == YOUTH_OTC_OR_AVAILABILITY_DRAW_SYSTEM_TYPE:
+        return "Youth OTC or availability rows are purchase/availability rows, not predictive draw-odds rows."
     spec = REGISTRY[draw_system_type]
     if modeled_by_engine(row, draw_system_type, algorithm_status):
         return f"Modeled by {spec.module_name}."
@@ -717,8 +732,11 @@ def build_draw_system_coverage_report(
         "is_cwmu_public_modeled": _distinct_count(rows, lambda row: row["draw_system_type"] == "BONUS_CWMU_BIG_GAME" and str(row["modeled_by_engine"]) == "True") > 0,
         "is_antlerless_moose_modeled": _distinct_count(rows, lambda row: row["draw_system_type"] == "BONUS_ANTLERLESS_MOOSE" and str(row["modeled_by_engine"]) == "True") > 0,
         "is_ewe_bighorn_modeled": _distinct_count(rows, lambda row: row["draw_system_type"] == "BONUS_EWE_BIGHORN" and str(row["modeled_by_engine"]) == "True") > 0,
-        "youth_general_deer_in_scope": True,
+        "youth_general_deer_reserve_in_scope": True,
+        "youth_antlerless_or_doe_reserve_in_scope": True,
         "youth_draw_only_elk_in_scope": True,
+        "youth_otc_or_availability_in_scope": True,
+        "youth_general_deer_in_scope": True,
         "youth_general_any_bull_elk_in_scope": True,
     }
 
@@ -979,11 +997,29 @@ def build_draw_system_coverage_report(
         ),
         "mountain_lion_cougar_still_pending": REGISTRY["MOUNTAIN_LION_DRAW"].algorithm_status == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING,
     }
-    predictive_youth_deer_rows = [row for row in predictive_rows if row["draw_system_type"] == YOUTH_GENERAL_DEER_DRAW_SYSTEM_TYPE]
+    predictive_youth_deer_rows = [row for row in predictive_rows if row["draw_system_type"] == YOUTH_GENERAL_DEER_RESERVE_DRAW_SYSTEM_TYPE]
+    predictive_youth_antlerless_or_doe_rows = [row for row in predictive_rows if row["draw_system_type"] == YOUTH_ANTLERLESS_OR_DOE_RESERVE_DRAW_SYSTEM_TYPE]
     predictive_youth_elk_rows = [row for row in predictive_rows if row["draw_system_type"] == YOUTH_DRAW_ONLY_ELK_DRAW_SYSTEM_TYPE]
-    observed_youth_deer_rows = [row for row in observed_rows if row["draw_system_type"] == YOUTH_GENERAL_DEER_DRAW_SYSTEM_TYPE]
+    predictive_youth_otc_rows = [row for row in predictive_rows if row["draw_system_type"] == YOUTH_OTC_OR_AVAILABILITY_DRAW_SYSTEM_TYPE]
+    observed_youth_deer_rows = [row for row in observed_rows if row["draw_system_type"] == YOUTH_GENERAL_DEER_RESERVE_DRAW_SYSTEM_TYPE]
+    observed_youth_antlerless_or_doe_rows = [row for row in observed_rows if row["draw_system_type"] == YOUTH_ANTLERLESS_OR_DOE_RESERVE_DRAW_SYSTEM_TYPE]
     observed_youth_elk_rows = [row for row in observed_rows if row["draw_system_type"] == YOUTH_DRAW_ONLY_ELK_DRAW_SYSTEM_TYPE]
+    observed_youth_otc_rows = [row for row in observed_rows if row["draw_system_type"] == YOUTH_OTC_OR_AVAILABILITY_DRAW_SYSTEM_TYPE]
     youth_summary = {
+        "youth_general_deer_reserve_in_scope": True,
+        "youth_general_deer_reserve_modeled": any(str(row["modeled_by_engine"]) == "True" for row in predictive_youth_deer_rows),
+        "youth_general_deer_reserve_still_pending": (
+            any(row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING for row in predictive_youth_deer_rows)
+            or len(predictive_youth_deer_rows) == 0
+        ),
+        "youth_general_deer_reserve_active_predictive_row_count": len(predictive_youth_deer_rows),
+        "youth_general_deer_reserve_active_predictive_hunt_code_count": _distinct_count(
+            predictive_rows,
+            lambda row: row["draw_system_type"] == YOUTH_GENERAL_DEER_RESERVE_DRAW_SYSTEM_TYPE,
+        ),
+        "youth_general_deer_reserve_modeled_row_count": sum(1 for row in predictive_youth_deer_rows if str(row["modeled_by_engine"]) == "True"),
+        "youth_general_deer_reserve_pending_row_count": sum(1 for row in predictive_youth_deer_rows if row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING),
+        "youth_general_deer_reserve_observed_history_row_count": len(observed_youth_deer_rows),
         "youth_general_deer_in_scope": True,
         "youth_general_deer_modeled": any(str(row["modeled_by_engine"]) == "True" for row in predictive_youth_deer_rows),
         "youth_general_deer_still_pending": (
@@ -993,11 +1029,19 @@ def build_draw_system_coverage_report(
         "youth_general_deer_active_predictive_row_count": len(predictive_youth_deer_rows),
         "youth_general_deer_active_predictive_hunt_code_count": _distinct_count(
             predictive_rows,
-            lambda row: row["draw_system_type"] == YOUTH_GENERAL_DEER_DRAW_SYSTEM_TYPE,
+            lambda row: row["draw_system_type"] == YOUTH_GENERAL_DEER_RESERVE_DRAW_SYSTEM_TYPE,
         ),
         "youth_general_deer_modeled_row_count": sum(1 for row in predictive_youth_deer_rows if str(row["modeled_by_engine"]) == "True"),
         "youth_general_deer_pending_row_count": sum(1 for row in predictive_youth_deer_rows if row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING),
         "youth_general_deer_observed_history_row_count": len(observed_youth_deer_rows),
+        "youth_antlerless_or_doe_reserve_in_scope": True,
+        "youth_antlerless_or_doe_reserve_modeled": any(str(row["modeled_by_engine"]) == "True" for row in predictive_youth_antlerless_or_doe_rows),
+        "youth_antlerless_or_doe_reserve_still_pending": (
+            any(row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING for row in predictive_youth_antlerless_or_doe_rows)
+            or len(predictive_youth_antlerless_or_doe_rows) == 0
+        ),
+        "youth_antlerless_or_doe_reserve_active_predictive_row_count": len(predictive_youth_antlerless_or_doe_rows),
+        "youth_antlerless_or_doe_reserve_observed_history_row_count": len(observed_youth_antlerless_or_doe_rows),
         "youth_draw_only_elk_in_scope": True,
         "youth_draw_only_elk_modeled": any(str(row["modeled_by_engine"]) == "True" for row in predictive_youth_elk_rows),
         "youth_draw_only_elk_still_pending": (
@@ -1026,24 +1070,27 @@ def build_draw_system_coverage_report(
         "youth_general_any_bull_elk_modeled_row_count": sum(1 for row in predictive_youth_elk_rows if str(row["modeled_by_engine"]) == "True"),
         "youth_general_any_bull_elk_pending_row_count": sum(1 for row in predictive_youth_elk_rows if row["algorithm_status"] == ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING),
         "youth_general_any_bull_elk_observed_history_row_count": len(observed_youth_elk_rows),
+        "youth_otc_or_availability_in_scope": True,
+        "youth_otc_or_availability_active_predictive_row_count": len(predictive_youth_otc_rows),
+        "youth_otc_or_availability_observed_history_row_count": len(observed_youth_otc_rows),
         "youth_rows_with_p_draw_non_null_count": sum(
             1
-            for row in predictive_youth_deer_rows + predictive_youth_elk_rows
+            for row in predictive_youth_deer_rows + predictive_youth_antlerless_or_doe_rows + predictive_youth_elk_rows + predictive_youth_otc_rows
             if str(row.get("p_draw", "")).strip()
         ),
         "youth_rows_with_p_bonus_pool_non_null_count": sum(
             1
-            for row in predictive_youth_deer_rows + predictive_youth_elk_rows
+            for row in predictive_youth_deer_rows + predictive_youth_antlerless_or_doe_rows + predictive_youth_elk_rows + predictive_youth_otc_rows
             if str(row.get("p_bonus_pool", "")).strip()
         ),
         "youth_rows_with_p_random_pool_non_null_count": sum(
             1
-            for row in predictive_youth_deer_rows + predictive_youth_elk_rows
+            for row in predictive_youth_deer_rows + predictive_youth_antlerless_or_doe_rows + predictive_youth_elk_rows + predictive_youth_otc_rows
             if str(row.get("p_random_pool", "")).strip()
         ),
         "youth_rows_with_p_preference_draw_non_null_count": sum(
             1
-            for row in predictive_youth_deer_rows + predictive_youth_elk_rows
+            for row in predictive_youth_deer_rows + predictive_youth_antlerless_or_doe_rows + predictive_youth_elk_rows + predictive_youth_otc_rows
             if str(row.get("p_preference_draw", "")).strip()
         ),
     }

@@ -30,5 +30,5 @@ def test_phase15_youth_coverage_fields_are_present() -> None:
     assert draw_only["draw_system_type"] == "YOUTH_DRAW_ONLY_ELK"
     assert draw_only["algorithm_status"] == "IN_SCOPE_MODEL_PENDING"
     assert draw_only["target_scope"] == "TARGET"
-    assert general_youth["draw_system_type"] == "OTC_OR_REMAINING_TARGET"
+    assert general_youth["draw_system_type"] == "YOUTH_OTC_OR_AVAILABILITY"
     assert general_youth["algorithm_status"] == "EXCLUDED_NOT_PREDICTIVE_DRAW"

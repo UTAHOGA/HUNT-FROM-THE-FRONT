@@ -63,7 +63,7 @@ elif species/sex is antlerless deer, antlerless elk, or doe pronghorn in the ant
 elif hunt_code is draw-only youth any bull/hunter's choice elk:
     draw_system_type = YOUTH_DRAW_ONLY_ELK
 elif hunt_code is general-season youth elk:
-    draw_system_type = OTC_OR_REMAINING_TARGET
+    draw_system_type = YOUTH_OTC_OR_AVAILABILITY
 elif row is private-lands-only antlerless elk:
     draw_system_type = PRIVATE_LANDS_ONLY_ANTLERLESS_ELK
 elif row is cougar/mountain lion availability:

@@ -5467,3 +5467,21 @@
   - `python -m py_compile engine\utah_draw_predictive\youth.py engine\utah_draw_predictive\classifier.py tests\utah_draw_predictive\test_youth_general_any_bull_elk_strategy.py tests\utah_draw_predictive\test_youth_not_bonus_or_adult_preference.py tests\utah_draw_predictive\test_out_of_scope_runtime_policy.py tests\utah_draw_predictive\test_youth_coverage.py tests\utah_draw_predictive\test_docs_current_state.py` passed.
   - `python -m pytest tests\utah_draw_predictive\test_youth_general_any_bull_elk_strategy.py tests\utah_draw_predictive\test_youth_not_bonus_or_adult_preference.py tests\utah_draw_predictive\test_youth_coverage.py tests\utah_draw_predictive\test_out_of_scope_runtime_policy.py tests\utah_draw_predictive\test_docs_current_state.py -q` passed: `11`.
   - `git diff --check` passed.
+
+## Youth Draw Family Split
+- Timestamp (UTC): 2026-05-27T17:18:00Z
+- Scope:
+  - Split youth routing into four explicit draw-system families: `YOUTH_DRAW_ONLY_ELK`, `YOUTH_GENERAL_DEER_RESERVE`, `YOUTH_ANTLERLESS_OR_DOE_RESERVE`, and `YOUTH_OTC_OR_AVAILABILITY`.
+  - Renamed the emitted youth general deer family from `YOUTH_GENERAL_DEER` to `YOUTH_GENERAL_DEER_RESERVE` while keeping a code alias for older imports.
+  - Added youth antlerless/doe reserve detection for youth antlerless deer, youth antlerless elk, and youth doe pronghorn rows.
+  - Routed `EB1011` to `YOUTH_OTC_OR_AVAILABILITY` instead of the generic `OTC_OR_REMAINING_TARGET` bucket.
+  - Updated classifier coverage summaries, docs, and focused regression tests.
+  - Left permit databases, website feeds, library/page-dist files, and broad generated artifacts unchanged.
+- Validation:
+  - Direct classifier check passed:
+    - `EB1007 -> YOUTH_DRAW_ONLY_ELK`
+    - `EB1011 -> YOUTH_OTC_OR_AVAILABILITY`
+    - youth general deer rows -> `YOUTH_GENERAL_DEER_RESERVE`
+    - youth antlerless elk and youth doe pronghorn rows -> `YOUTH_ANTLERLESS_OR_DOE_RESERVE`
+  - `python -m py_compile engine\utah_draw_predictive\youth.py engine\utah_draw_predictive\classifier.py tests\utah_draw_predictive\test_youth_general_deer_strategy.py tests\utah_draw_predictive\test_youth_general_any_bull_elk_strategy.py tests\utah_draw_predictive\test_youth_not_bonus_or_adult_preference.py tests\utah_draw_predictive\test_youth_coverage.py tests\utah_draw_predictive\test_out_of_scope_runtime_policy.py tests\utah_draw_predictive\test_docs_current_state.py` passed.
+  - `python -m pytest tests\utah_draw_predictive\test_youth_general_deer_strategy.py tests\utah_draw_predictive\test_youth_general_any_bull_elk_strategy.py tests\utah_draw_predictive\test_youth_not_bonus_or_adult_preference.py tests\utah_draw_predictive\test_youth_coverage.py tests\utah_draw_predictive\test_out_of_scope_runtime_policy.py tests\utah_draw_predictive\test_docs_current_state.py -q` passed: `13`.
