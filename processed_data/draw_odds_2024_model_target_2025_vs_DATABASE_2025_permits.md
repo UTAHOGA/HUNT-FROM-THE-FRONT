@@ -7,14 +7,14 @@
 
 ## permits_2025 Status Counts
 
-- `DIFFERS`: `448`
-- `MATCH`: `426`
+- `DIFFERS`: `456`
+- `MATCH`: `418`
 
 ## permits_2025_draw Status Counts
 
 - `DATABASE_BLANK`: `222`
-- `DIFFERS`: `277`
-- `MATCH`: `375`
+- `DIFFERS`: `285`
+- `MATCH`: `367`
 
 ## Guardrail
 

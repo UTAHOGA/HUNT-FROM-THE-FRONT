@@ -5250,3 +5250,46 @@
 - Validation:
   - `python scripts\resolve-harvest-only-2025-codes.py` passed.
   - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed.
+
+## Remaining 2025 History, Crosswalk, Expo/Conservation, And Boundary Closeout
+- Timestamp (UTC): 2026-05-27T00:52:00Z
+- Scope:
+  - Added a closeout audit for the remaining validation buckets: 2025 historical permit completeness from the 2024 draw-results PDFs, dropped/split historical hunt-code crosswalk rows, expo/conservation blank-live handling, and boundary ID proofing.
+  - Confirmed the broad `permits_2025` universe is complete against the `874`-row 2024 draw-results source: `0` source codes missing from `DATABASE.csv` and `0` safe blank candidates remaining.
+  - Preserved `permits_2025_draw` as the narrower draw subset: `222` source rows remain blank in that subset by design and are not treated as the full historical permit universe.
+  - Reviewed the final `13` dropped/split historical crosswalk rows and classified all `13` as `REVIEWED_HISTORICAL_ONLY_NO_DEFINITE_2026_ONE_TO_ONE_MATCH`; no bad current-code remaps were forced.
+  - Confirmed expo hard-copy rows promoted to `DATABASE.csv` are present: `3` checked, `0` missing database codes.
+  - Confirmed conservation lock rows are present: `8` checked, `0` missing database codes.
+  - Confirmed database boundary IDs against local official JSON/render evidence: `389` official-boundary code checks, `0` mismatches; render-map verification remains `promotion_safe=true`.
+  - No `DATABASE.csv` permit/allotment values, website feeds, `public_client_engine.csv`, prediction math, or materializer code were changed.
+- Outputs:
+  - `scripts/validate-remaining-2025-history-crosswalk-boundaries.py`
+  - `tests/utah/test_remaining_2025_history_crosswalk_boundary_closeout.py`
+  - `data_truth/comparison_outputs/validation/remaining_2025_history_crosswalk_boundary_closeout.csv`
+  - `data_truth/comparison_outputs/validation/remaining_2025_history_crosswalk_boundary_closeout_summary.json`
+  - `processed_data/remaining_2025_history_crosswalk_boundary_closeout.md`
+- Key results:
+  - Closeout blockers: `0`.
+  - DATABASE rows: `1449`.
+  - Unique hunt codes: `1449`.
+  - Broad 2025 draw-source rows checked: `874`.
+  - Broad 2025 source codes missing database: `0`.
+  - Broad 2025 safe blank candidates remaining: `0`.
+  - Dropped/split crosswalk rows reviewed: `13`.
+  - Dropped/split crosswalk blockers: `0`.
+  - Official boundary mismatches: `0`.
+  - Comprehensive history-integrity open issues: `0`.
+  - Publish readiness: `true`.
+- Validation:
+  - `python scripts\audit-2024-draw-odds-against-database-2025-permits.py` passed.
+  - `python scripts\report-br-rs-2024-draw-permit-differences.py` passed.
+  - `python scripts\build-2024-to-2025-pdf-hunt-code-crosswalk.py` passed.
+  - `python scripts\pull-live-dwr-permit-numbers-comprehensive-2026.py` passed.
+  - `python scripts\final-permit-database-crosscheck-2026.py` passed.
+  - `python scripts\audit-database-historical-permit-lineage-2026.py` passed.
+  - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed.
+  - `python scripts\build-database-publish-readiness-report.py` passed.
+  - `node scripts\verify-boundary-id-render-map-2026.js` passed.
+  - `python scripts\validate-remaining-2025-history-crosswalk-boundaries.py` passed.
+  - `python -m py_compile scripts\validate-remaining-2025-history-crosswalk-boundaries.py scripts\audit-2024-draw-odds-against-database-2025-permits.py scripts\audit-comprehensive-2026-2025-history-integrity.py scripts\final-permit-database-crosscheck-2026.py` passed.
+  - `python -m pytest tests\utah\test_remaining_2025_history_crosswalk_boundary_closeout.py tests\utah\test_hunt_code_crosswalk_2024_pdf_to_2025_pdf.py tests\utah\test_database_historical_permit_lineage_2026.py tests\utah\test_final_permit_database_crosscheck_2026.py tests\utah\test_comprehensive_2026_2025_history_integrity_audit.py -q` passed: `13`.
