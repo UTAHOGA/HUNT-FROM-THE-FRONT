@@ -5916,3 +5916,33 @@
   - `python -m py_compile scripts\audit-draw-2023-moose-pdf-sources.py tests\utah\test_draw_2023_moose_pdf_sources.py` passed.
   - `python -m pytest tests\utah\test_draw_2023_moose_pdf_sources.py -q` passed: `5`.
   - `git diff --check` passed.
+
+## 2023 Moose Harvest Source Anchor
+- Timestamp (UTC): 2026-05-27T06:31:00Z
+- Scope:
+  - Anchored the three active 2023 moose harvest CSV sources against their legacy `HUNTS` copies.
+  - Compared bull and antlerless moose harvest hunt-code coverage against the 2023 moose draw PDF audit.
+  - Recorded draw-only and harvest-only moose code gaps for 2024 modeling evidence.
+  - Left `DATABASE.csv`, normalized harvest truth, normalized draw truth, permit numbers, runtime files, and website feeds unchanged.
+- Outputs:
+  - `scripts/audit-harvest-2023-moose-sources.py`
+  - `data_truth/harvest_results_truth/validation/harvest_2023_moose_source_files.csv`
+  - `data_truth/harvest_results_truth/validation/harvest_2023_moose_code_reconciliation.csv`
+  - `data_truth/harvest_results_truth/validation/harvest_2023_moose_source_summary.json`
+  - `processed_data/harvest_2023_moose_source_audit.md`
+  - `tests/utah/test_harvest_2023_moose_sources.py`
+- Key results:
+  - Harvest CSV files checked: `3`.
+  - Byte-identical active copies: `3`.
+  - Bull moose harvest rows / codes: `36 / 36`.
+  - Bull moose harvest totals: `171` permits, `170` hunters afield, `162` harvested.
+  - Antlerless moose harvest rows / codes: `3 / 3`.
+  - Antlerless moose harvest totals: `9` permits, `9` hunters afield, `8` harvested.
+  - Bull moose draw-only code confirmed: `MB6252`.
+  - Bull moose harvest-only codes: `MB6200`, `MB6209`, `MB6216`, `MB6217`, `MB6220`, `MB6254`, `MB6258`.
+  - Antlerless moose draw/harvest mismatch count: `0`.
+- Validation:
+  - `python scripts\audit-harvest-2023-moose-sources.py` passed.
+  - `python -m py_compile scripts\audit-harvest-2023-moose-sources.py tests\utah\test_harvest_2023_moose_sources.py` passed.
+  - `python -m pytest tests\utah\test_harvest_2023_moose_sources.py -q` passed: `5`.
+  - `git diff --check` passed.
