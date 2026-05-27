@@ -102,6 +102,7 @@
     ladderSecondaryHeader: document.getElementById('ladderSecondaryHeader'),
     ladderRange: document.getElementById('ladderRange'),
     jumpToPointsBtn: document.getElementById('jumpToPointsBtn'),
+    pointLadderAccordion: document.getElementById('pointLadderAccordion'),
 
     sourceModal: document.getElementById('sourceModal'),
     sourceModalTitle: document.getElementById('sourceModalTitle'),
@@ -809,6 +810,65 @@
     }
   }
 
+  function getDrawPoolPositionLabel(meta, row) {
+    if (!row) return 'No modeled point row is loaded yet.';
+    if (isPreferenceAntlerless(meta)) {
+      const gap = num(row.gap);
+      if (gap !== null && gap <= 0) return 'Inside the preference line.';
+      return 'Below the preference line.';
+    }
+    const zone = String(row.point_pool_zone || '').trim();
+    if (zone === 'max_point_pool' || zone === 'max_pool_guaranteed') return 'In the max-point pool.';
+    if (zone === 'max_pool_cutoff_mixed') return 'On the max-point cutoff line; some applicants at this point level may spill into random.';
+    if (zone === 'random_pool') return 'In the random pool.';
+    if (isRandomOnlyBonusCase(meta, row)) return 'Random draw only.';
+    return 'Draw pool not classified yet.';
+  }
+
+  function getCatchTrainSummary(meta, row, filters) {
+    if (!row) return 'No row is modeled yet, so we cannot tell if this train is catchable.';
+    const selectedOdds = selectDrawOddsPercent(row);
+    const gap = num(row.gap);
+    const trend = String(row.trend || '').trim().toUpperCase();
+    if (selectedOdds.percent !== null && selectedOdds.percent >= 99.9) {
+      return `Yes. At ${formatInteger(filters.points)} points, this is effectively at the line now.`;
+    }
+    if (gap !== null && gap <= 0) {
+      return `Yes. You are ${Math.abs(gap)} point${Math.abs(gap) === 1 ? '' : 's'} above the modeled line.`;
+    }
+    if (row.draw_outlook === 'POINT CREEP DEFEAT' || trend === 'RED') {
+      return 'Not under the current trend. The line is moving faster than a normal one-point-per-year climb.';
+    }
+    if (row.draw_outlook === 'MAY DRAW IN 5-10 YEARS' || trend === 'YELLOW') {
+      return 'Maybe. You are still behind, but the line is close enough to watch instead of writing it off.';
+    }
+    if (isRandomOnlyBonusCase(meta, row)) {
+      return 'No guaranteed train to catch here. This one is about weighted random chance.';
+    }
+    return 'Possible, but the model needs more history before calling it a confident catch-up hunt.';
+  }
+
+  function getPlainFormulaText(meta, row) {
+    if (!row) return 'We need a modeled point row before the formula can be explained for this hunt.';
+    if (isPreferenceAntlerless(meta)) {
+      return 'Preference-style logic is mostly line math: compare your points to the last modeled draw line, then adjust for permit change and point creep.';
+    }
+    if (isRandomOnlyBonusCase(meta, row)) {
+      return 'Random-only logic uses the remaining random permits and the applicant stack at this point level. More points can help weight, but they do not create a guaranteed line.';
+    }
+    return 'Bonus-style logic separates the max-point pool from the random pool. First we test whether your points reach the guaranteed line; if not, your odds come from the random pool.';
+  }
+
+  function getPointCreepDisplay(row) {
+    if (!row) return 'Not available';
+    const parts = [];
+    if (hasMeaningfulValue(row.trend)) parts.push(`Trend: ${row.trend}`);
+    if (hasMeaningfulValue(row.gap)) parts.push(formatGapStatus(row.gap));
+    if (hasMeaningfulValue(row.delta_gap)) parts.push(`Gap change: ${row.delta_gap}`);
+    if (hasMeaningfulValue(row.draw_outlook)) parts.push(row.draw_outlook);
+    return parts.length ? parts.join(' | ') : 'Not available';
+  }
+
   function renderFilterReadout(filters) {
     const parts = filters.huntCode
       ? [filters.huntCode, filters.residency]
@@ -1125,12 +1185,61 @@
     `).join('');
   }
 
+  function getHarvestSnapshot(meta, referenceRow) {
+    const success = hasMeaningfulValue(referenceRow?.harvest_success_percent_2025)
+      ? `${referenceRow.harvest_success_percent_2025}% success`
+      : (hasMeaningfulValue(meta?.success_percent) ? `${meta.success_percent}% success` : '');
+    const harvestCount = hasMeaningfulValue(referenceRow?.harvest_2025) || hasMeaningfulValue(referenceRow?.harvest_hunters_2025)
+      ? `${referenceRow?.harvest_2025 || '0'} harvest / ${referenceRow?.harvest_hunters_2025 || '0'} hunters`
+      : (hasMeaningfulValue(meta?.success_harvest) || hasMeaningfulValue(meta?.success_hunters)
+        ? `${meta?.success_harvest || '0'} harvest / ${meta?.success_hunters || '0'} hunters`
+        : '');
+    const days = hasMeaningfulValue(referenceRow?.harvest_average_days_2025)
+      ? `${referenceRow.harvest_average_days_2025} avg days`
+      : '';
+    const satisfaction = hasMeaningfulValue(referenceRow?.harvest_satisfaction_2025)
+      ? `${referenceRow.harvest_satisfaction_2025} satisfaction`
+      : '';
+    const parts = [success, harvestCount, days, satisfaction].filter(Boolean);
+    return parts.length ? parts.join(' | ') : 'Harvest data is not mapped to this hunt row yet.';
+  }
+
+  function buildDecisionBoxes(meta, row, referenceRow, filters) {
+    const displayedOdds = getDisplayedOdds(row);
+    const maxPoolDisplay = getMaxPointPoolDisplay(row) || 'Not currently a max-pool row.';
+    const randomDisplay = getRandomDrawDisplay(row) || (isRandomOnlyBonusCase(meta, row) ? displayedOdds.value : 'Not currently a random-pool row.');
+    const boxes = [
+      ['Your Points Draw Odds', row ? displayedOdds.value : 'Not available'],
+      ['Your Draw Pool', getDrawPoolPositionLabel(meta, row)],
+      ['Can You Catch The Train?', getCatchTrainSummary(meta, row, filters)],
+      ['Point Creep Readout', getPointCreepDisplay(row)],
+      ['Max Point Pool', maxPoolDisplay],
+      ['Random Pool', randomDisplay],
+      ['Last Draw Result', formatHistoricalDrawResult(row) || 'Not available'],
+      ['Permit Context', `${referenceRow?.permits_2026_total || meta?.public_permits_2026 || 'Not loaded'} total public permits in 2026`],
+      ['Harvest Snapshot', getHarvestSnapshot(meta, referenceRow)],
+      ['Plain-English Formula', getPlainFormulaText(meta, row), 'is-wide'],
+      ['What I Would Do With This', getRecommendation(meta, row), 'is-wide'],
+    ];
+
+    return boxes.map(([label, value, className]) => `
+      <section class="source-box ${escapeHtml(className || '')}">
+        <span class="label">${escapeHtml(label)}</span>
+        <strong class="value">${escapeHtml(value)}</strong>
+      </section>
+    `).join('');
+  }
+
   function openSourceModal(meta, row, referenceRow, residency) {
     if (!els.sourceModal || !els.sourceModalGrid || !els.sourceModalTitle || !els.sourceModalSubtitle) return;
     const pointLabel = formatInteger(row?.points);
-    els.sourceModalTitle.textContent = 'DWR Source Snapshot';
+    const filters = state.selectedFilters || buildFilters();
+    els.sourceModalTitle.textContent = 'Hunt Data Snapshot';
     els.sourceModalSubtitle.textContent = `${meta?.hunt_code || ''} · ${meta?.hunt_name || ''} · ${residency || ''} · ${pointLabel} points`;
-    els.sourceModalGrid.innerHTML = buildSourceBoxes(meta, row, referenceRow);
+    els.sourceModalGrid.innerHTML = `
+      <p class="source-plain-note">This is the quick interpretation layer: where your points sit, whether you are in the max-point or random pool, what point creep is doing, and what the harvest row says when mapped.</p>
+      ${buildDecisionBoxes(meta, row, referenceRow, filters)}
+    `;
     els.sourceModal.hidden = false;
     document.body.classList.add('modal-open');
   }
@@ -1257,6 +1366,35 @@
     if (els.ladderTableWrap) els.ladderTableWrap.hidden = true;
     if (els.ladderTableEmpty) els.ladderTableEmpty.hidden = false;
     if (els.ladderTableBody) els.ladderTableBody.innerHTML = '';
+  }
+
+  function openPointLadder(reason = '') {
+    if (!els.pointLadderAccordion || els.pointLadderAccordion.open) return;
+    els.pointLadderAccordion.open = true;
+    if (reason) {
+      els.pointLadderAccordion.dataset.openedBy = reason;
+    }
+  }
+
+  function setupLadderAutoOpen() {
+    if (!els.pointLadderAccordion) return;
+
+    els.pointLadderAccordion.addEventListener('mouseenter', () => openPointLadder('mouse'));
+    els.pointLadderAccordion.addEventListener('focusin', () => openPointLadder('focus'));
+
+    if (!('IntersectionObserver' in window)) return;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.18) {
+          openPointLadder('scroll');
+          observer.disconnect();
+        }
+      });
+    }, {
+      root: null,
+      threshold: [0.18, 0.4],
+    });
+    observer.observe(els.pointLadderAccordion);
   }
 
   function renderDetail(filters) {
@@ -1563,6 +1701,7 @@
       renderBasket();
       bootstrapSelection();
       bindEvents();
+      setupLadderAutoOpen();
       const loadedSources = await loadData();
       const sourceType = (source) => (/^https?:\/\//i.test(source) ? 'Cloudflare backup' : 'local');
       els.filterReadout.textContent = `Production engine data loaded (${sourceType(loadedSources.engine)} engine, ${sourceType(loadedSources.ladder)} ladder).`;

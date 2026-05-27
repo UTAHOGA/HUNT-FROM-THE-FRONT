@@ -5589,3 +5589,33 @@
   - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed: fatal blockers `0`, open issues `0`.
   - `python -m py_compile scripts\remove-retired-and-extra-cougar-active-runtime-codes-2026.py scripts\scan-2026-hunt-code-family-gaps.py scripts\promote-hunt-class-routing-to-main-enriched-2026.py` passed.
   - `python -m pytest tests\utah\test_active_runtime_code_cleanup_2026.py tests\utah\test_hunt_master_enriched_hunt_class_routing_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py tests\utah\test_retired_current_hunt_codes_2026.py tests\utah\test_final_permit_database_crosscheck_2026.py tests\utah\test_2026_draw_permit_subset.py tests\utah\test_comprehensive_2026_2025_history_integrity_audit.py -q` passed: `22`.
+
+## Hunt Research Ladder/Data Panel Repair
+- Timestamp (UTC): 2026-05-27T04:31:00Z
+- Scope:
+  - Updated the Hunt Research point ladder so it opens automatically when scrolled into view and also opens on mouse/focus entry.
+  - Reframed the row popup from a source-heavy snapshot into a decision-focused `Hunt Data Snapshot`.
+  - Added plain-language pillow-box sections for current point odds, draw-pool position, catch-up/point-creep status, max-point vs random-pool interpretation, formula explanation, recommendation, permit context, and harvest snapshot.
+  - Removed the need for official source/page references in the popup; source digging remains a library task.
+  - Repaired `processed_data/hunt_unit_reference_linked.csv` so the research page reference layer matches the current 2026 `DATABASE.csv` hunt-code universe.
+  - Removed retired/current-invalid reference rows and backfilled the 55 missing current reference codes from `hunt_master_enriched.csv` plus 2025-for-2026 harvest feature rows where available.
+- Outputs:
+  - `scripts/repair-hunt-research-reference-linked-2026.py`
+  - `data_truth/comparison_outputs/validation/hunt_research_reference_linked_2026_summary.json`
+  - `processed_data/hunt_research_reference_linked_2026.md`
+  - `tests/hunt-research-ladder-data-panel.test.js`
+  - `tests/utah/test_hunt_research_reference_linked_2026.py`
+- Key results:
+  - `hunt_unit_reference_linked.csv`: `1449` unique current hunt codes after repair.
+  - Current cougar reference rows: only `CG9999`.
+  - Retired EA/PD reference codes remaining: `0`.
+  - Backfilled missing current reference rows: `110` rows across `55` hunt codes.
+  - Harvest-populated current hunt codes in research reference: `1113`.
+  - Repair blockers: `0`.
+- Validation:
+  - Local HTTP check for `research.html?hunt_code=EB3038` returned `200`.
+  - `node --check hunt-research.js` passed.
+  - `node tests\hunt-research-ladder-data-panel.test.js` passed.
+  - `python -m py_compile scripts\repair-hunt-research-reference-linked-2026.py` passed.
+  - `python -m pytest tests\utah\test_hunt_research_reference_linked_2026.py tests\utah\test_active_runtime_code_cleanup_2026.py tests\utah\test_final_permit_database_crosscheck_2026.py -q` passed: `5`.
+  - Browser automation note: local page served, but Playwright was not installed in the available Node runtime, so screenshot/browser automation was not completed in this session.
