@@ -5230,3 +5230,23 @@
   - `python scripts\final-permit-database-crosscheck-2026.py` passed.
   - `python -m py_compile scripts\resolve-harvest-only-2025-codes.py scripts\audit-comprehensive-2026-2025-history-integrity.py` passed.
   - `python -m pytest tests\utah\test_hunt_code_crosswalk_2024_pdf_to_2025_pdf.py tests\utah\test_le_deer_2025_draw_results_extraction.py tests\utah\test_oil_2025_draw_results_extraction.py tests\utah\test_database_historical_permit_lineage_2026.py tests\utah\test_final_permit_database_crosscheck_2026.py tests\utah\test_live_dwr_and_expo_permit_promotion_2026.py tests\utah\test_comprehensive_2026_2025_history_integrity_audit.py -q` passed: `26`.
+
+## Harvest-Only Remap Rule Tightening
+- Timestamp (UTC): 2026-05-27T00:36:00Z
+- Scope:
+  - Tightened the reviewed harvest-only code rule: if a 2025 code no longer exists in 2026 and does not have a definite hunt name, weapon, species, and sex-type match, classify it as discontinued.
+  - Reclassified `PB5343` as `DISCONTINUED_2026_NO_DEFINITE_ONE_TO_ONE_MATCH`; no current Prohibition Springs CWMU buck pronghorn row exists in `DATABASE.csv`.
+  - Reclassified `DB1774` as `DISCONTINUED_2026_NO_DEFINITE_ONE_TO_ONE_MATCH`; the old combined Dedicated Hunter deer harvest code has no one-to-one 2026 row and appears split across unit-specific current Dedicated Hunter rows.
+  - Preserved `PD1041 -> PD1052` because it is a definite Heist CWMU doe pronghorn, any-legal-weapon match.
+  - Preserved `BI0001 -> BI1000` as the sportsman/statewide bison equivalent from prior user review.
+  - No `DATABASE.csv` permit/allotment values, website feeds, `public_client_engine.csv`, prediction math, or materializer code were changed.
+- Key results:
+  - Harvest-only resolution ledger rows: `4`.
+  - Discontinued/no-current-code rows: `2` (`DB1774`, `PB5343`).
+  - Definite current recode rows: `1` (`PD1041 -> PD1052`).
+  - Sportsman/statewide equivalent rows: `1` (`BI0001 -> BI1000`).
+  - Comprehensive history-integrity open issues: `0`.
+  - Comprehensive history-integrity warning count: `0`.
+- Validation:
+  - `python scripts\resolve-harvest-only-2025-codes.py` passed.
+  - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed.

@@ -13,6 +13,7 @@ DASHBOARD = ROOT / "data_truth" / "comparison_outputs" / "validation" / "compreh
 OPEN_ISSUES = ROOT / "data_truth" / "comparison_outputs" / "validation" / "comprehensive_2026_2025_history_integrity_open_issues.csv"
 SUMMARY = ROOT / "data_truth" / "comparison_outputs" / "validation" / "comprehensive_2026_2025_history_integrity_summary.json"
 REPORT = ROOT / "processed_data" / "comprehensive_2026_2025_history_integrity_audit.md"
+HARVEST_RESOLUTIONS = ROOT / "data_truth" / "crosswalk_truth" / "normalized" / "harvest_only_2025_code_resolutions.csv"
 
 
 def read_rows(path: Path) -> list[dict[str, str]]:
@@ -71,3 +72,18 @@ def test_comprehensive_integrity_audit_does_not_hide_structural_failures() -> No
 
     open_issues = read_rows(OPEN_ISSUES)
     assert open_issues == []
+
+
+def test_harvest_only_codes_obey_definite_2026_remap_rule() -> None:
+    run_audit()
+
+    rows = {row["source_hunt_code"]: row for row in read_rows(HARVEST_RESOLUTIONS)}
+    assert rows["PB5343"]["resolution_status"] == "DISCONTINUED_2026_NO_DEFINITE_ONE_TO_ONE_MATCH"
+    assert rows["PB5343"]["maps_to_draw_odds_code"] == "NO_CURRENT_2026_DRAW_CODE"
+    assert rows["DB1774"]["resolution_status"] == "DISCONTINUED_2026_NO_DEFINITE_ONE_TO_ONE_MATCH"
+    assert rows["DB1774"]["maps_to_draw_odds_code"] == "NO_CURRENT_2026_DRAW_CODE"
+    assert rows["PD1041"]["mapped_hunt_code"] == "PD1052"
+    assert rows["PD1041"]["mapped_hunt_name"] == "Heist CWMU"
+    assert rows["PD1041"]["mapped_species"] == "Pronghorn"
+    assert rows["PD1041"]["mapped_sex_type"] == "Doe"
+    assert rows["PD1041"]["mapped_weapon"] == "Any Legal Weapon"
