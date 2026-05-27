@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-05-27T03:32:52.134Z",
+  "generated_at": "2026-05-27T03:55:20.980Z",
   "current_source_used": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
   "cloudflare_fallback_base": "https://json.uoga.workers.dev",
   "pages_file_limit_mb": 25,
   "counts": {
     "total_current_hunts": 1449,
-    "modeled_count": 1448,
+    "modeled_count": 1449,
     "excluded_non_predictive_count": 0,
-    "manual_review_count": 1,
-    "promotion_gate_pass_count": 1448,
-    "promotion_gate_block_count": 1,
-    "cloudflare_fallback_file_count": 3
+    "manual_review_count": 0,
+    "promotion_gate_pass_count": 1449,
+    "promotion_gate_block_count": 0,
+    "cloudflare_fallback_file_count": 6
   },
   "species_counts": {
     "Bison": 20,
@@ -52,15 +52,13 @@
     "Draw-only youth elk stays in scope but remains pending until current-year quota and mechanics are source-proven.": 1,
     "Youth OTC or availability rows are purchase/availability rows, not predictive draw-odds rows.": 1,
     "Bear remains in scope, but the subtype is ambiguous and stays pending until public draw support is proven.": 4,
-    "UNKNOWN": 1
+    "DATABASE_REFERENCE_ONLY_NO_DRAW_DETAIL": 1
   },
   "final_state_counts": {
-    "PREDICTION_ELIGIBLE_AND_MODELED": 1448,
-    "CLASSIFIED_NEEDS_MODEL_OR_EXCLUSION_REVIEW": 1
+    "PREDICTION_ELIGIBLE_AND_MODELED": 1449
   },
   "gate_status_counts": {
-    "PASS": 1448,
-    "BLOCK": 1
+    "PASS": 1449
   },
   "input_file_status": [
     {
@@ -95,8 +93,8 @@
       "role": "canonical current hunt source of truth",
       "exists": "true",
       "row_count": "not_scanned",
-      "size_bytes": 997525,
-      "size_mb": 0.95,
+      "size_bytes": 984204,
+      "size_mb": 0.94,
       "delivery": "pages-local",
       "href": "./processed_data/hunt-master-canonical-2026-source-of-truth.csv",
       "local_href": "./processed_data/hunt-master-canonical-2026-source-of-truth.csv",
@@ -121,8 +119,8 @@
       "role": "enriched hunt master",
       "exists": "true",
       "row_count": "not_scanned",
-      "size_bytes": 36688162,
-      "size_mb": 34.99,
+      "size_bytes": 47300493,
+      "size_mb": 45.11,
       "delivery": "cloudflare-fallback",
       "href": "https://json.uoga.workers.dev/processed_data/hunt_master_enriched.csv",
       "local_href": "./processed_data/hunt_master_enriched.csv",
@@ -147,8 +145,8 @@
       "role": "draw reality engine output",
       "exists": "true",
       "row_count": "not_scanned",
-      "size_bytes": 22604931,
-      "size_mb": 21.56,
+      "size_bytes": 22351842,
+      "size_mb": 21.32,
       "delivery": "pages-local",
       "href": "./processed_data/draw_reality_engine.csv",
       "local_href": "./processed_data/draw_reality_engine.csv",
@@ -173,10 +171,10 @@
       "role": "primary prediction output",
       "exists": "true",
       "row_count": "not_scanned",
-      "size_bytes": 24568749,
-      "size_mb": 23.43,
-      "delivery": "pages-local",
-      "href": "./processed_data/draw_reality_engine_predictive_v2.csv",
+      "size_bytes": 26252898,
+      "size_mb": 25.04,
+      "delivery": "cloudflare-fallback",
+      "href": "https://json.uoga.workers.dev/processed_data/draw_reality_engine_predictive_v2.csv",
       "local_href": "./processed_data/draw_reality_engine_predictive_v2.csv",
       "cloudflare_href": "https://json.uoga.workers.dev/processed_data/draw_reality_engine_predictive_v2.csv"
     },
@@ -186,10 +184,10 @@
       "role": "ML prediction output",
       "exists": "true",
       "row_count": "not_scanned",
-      "size_bytes": 25164150,
-      "size_mb": 24,
-      "delivery": "pages-local",
-      "href": "./processed_data/ml_draw_predictions_v1.csv",
+      "size_bytes": 26848299,
+      "size_mb": 25.6,
+      "delivery": "cloudflare-fallback",
+      "href": "https://json.uoga.workers.dev/processed_data/ml_draw_predictions_v1.csv",
       "local_href": "./processed_data/ml_draw_predictions_v1.csv",
       "cloudflare_href": "https://json.uoga.workers.dev/processed_data/ml_draw_predictions_v1.csv"
     },
@@ -199,10 +197,10 @@
       "role": "point ladder output",
       "exists": "true",
       "row_count": "not_scanned",
-      "size_bytes": 3582234,
-      "size_mb": 3.42,
-      "delivery": "pages-local",
-      "href": "./processed_data/point_ladder_view.csv",
+      "size_bytes": 134062847,
+      "size_mb": 127.85,
+      "delivery": "cloudflare-fallback",
+      "href": "https://json.uoga.workers.dev/processed_data/point_ladder_view.csv",
       "local_href": "./processed_data/point_ladder_view.csv",
       "cloudflare_href": "https://json.uoga.workers.dev/processed_data/point_ladder_view.csv"
     },
@@ -299,13 +297,13 @@
     }
   ],
   "scanned_row_counts": {
-    "processed_data/hunt_master_enriched.csv": 54357,
+    "processed_data/hunt_master_enriched.csv": 54467,
     "processed_data/hunt_unit_reference_linked.csv": 2997,
     "processed_data/draw_reality_engine_predictive_v2.csv": 26507,
-    "processed_data/draw_reality_engine.csv": 36892,
+    "processed_data/draw_reality_engine.csv": 36912,
     "processed_data/draw_reality_engine_v2.csv": 176753,
     "processed_data/ml_draw_predictions_v1.csv": 26507,
-    "processed_data/point_ladder_view.csv": 92844,
+    "processed_data/point_ladder_view.csv": 92954,
     "processed_data/draw_system_coverage_report.csv": 203260,
     "processed_data/predictive_coverage_report.csv": 1671,
     "processed_data/current_to_historical_hunt_code_crosswalk_2026.csv": 169,
@@ -313,5 +311,5 @@
     "processed_data/harvest_quality_features_all_years_by_hunt_code.csv": 5151,
     "pipeline/RAW/hunt_unit_database/2026/csv/harvest_quality_features_by_hunt_code_2025_for_2026.csv": 1120
   },
-  "recommendation": "REVIEW: hard-data library page package built, but blocked rows remain."
+  "recommendation": "PASS: hard-data library page package built with no blocked current hunt rows."
 }
