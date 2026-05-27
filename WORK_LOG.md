@@ -1,5 +1,35 @@
 # WORK LOG
 
+## Main Hunt Master Enriched Hunt-Class And Routing Promotion
+- Timestamp (UTC): 2026-05-27T03:53:00Z
+- Scope:
+  - Promoted the user-facing selection fields and internal draw-routing fields into the main `processed_data/hunt_master_enriched.csv`.
+  - Preserved the main enriched file as the full all-hunts reference; it was not replaced by the draw subset and no rows were dropped.
+  - Added `species`, `sex_type`, `hunt_class`, `draw_2026_system_type`, `draw_system_type`, `algorithm_status`, and `draw_routing_reason`.
+  - Populated selector fields from canonical `DATABASE.csv` by `hunt_code`.
+  - Populated routing fields using the active `engine.utah_draw_predictive.classifier` so youth draw-only elk and youth availability/OTC elk route separately.
+  - Protected all existing permit/projection numeric fields from overwrite.
+- Outputs:
+  - `scripts/promote-hunt-class-routing-to-main-enriched-2026.py`
+  - `data_truth/comparison_outputs/validation/hunt_master_enriched_hunt_class_routing_2026.csv`
+  - `data_truth/comparison_outputs/validation/hunt_master_enriched_hunt_class_routing_2026_summary.json`
+  - `processed_data/hunt_master_enriched_hunt_class_routing_2026.md`
+  - `tests/utah/test_hunt_master_enriched_hunt_class_routing_2026.py`
+  - updated `processed_data/hunt_master_enriched.csv`
+- Key results:
+  - Row count before/after: `54467` -> `54467`.
+  - Unique hunt codes before/after: `1526` -> `1526`.
+  - Protected numeric permit/projection cells changed: `0`.
+  - Added fields: `species`, `sex_type`, `hunt_class`, `draw_2026_system_type`, `draw_system_type`, `algorithm_status`, `draw_routing_reason`.
+  - `EB1007` now carries `hunt_class=Youth`, `draw_system_type=YOUTH_DRAW_ONLY_ELK`, and `algorithm_status=IN_SCOPE_MODEL_PENDING`.
+  - `EB1011` now carries `hunt_class=General Bull`, `draw_system_type=YOUTH_OTC_OR_AVAILABILITY`, and `algorithm_status=EXCLUDED_NOT_PREDICTIVE_DRAW`.
+- Validation:
+  - `python scripts\promote-hunt-class-routing-to-main-enriched-2026.py` passed.
+  - `python -m pytest tests\utah\test_hunt_master_enriched_hunt_class_routing_2026.py tests\utah\test_2026_draw_permit_subset.py tests\utah\test_final_permit_database_crosscheck_2026.py tests\utah_draw_predictive\test_youth_general_any_bull_elk_strategy.py tests\utah_draw_predictive\test_youth_coverage.py -q` passed: `15`.
+  - `python -m pytest tests\utah\test_hunt_master_enriched_hunt_class_routing_2026.py tests\utah\test_2026_draw_permit_subset.py tests\utah_draw_predictive\test_youth_general_any_bull_elk_strategy.py tests\utah_draw_predictive\test_youth_coverage.py -q` passed after diff cleanup: `13`.
+  - `python -m py_compile scripts\promote-hunt-class-routing-to-main-enriched-2026.py` passed.
+  - `python scripts\final-permit-database-crosscheck-2026.py` passed with `0` duplicate hunt codes, `0` blank boundary IDs, and `0` permit/allotment mismatches.
+
 ## 2026 Draw Subset Regeneration And Runtime Surface Coverage
 - Timestamp (UTC): 2026-05-27T03:45:00Z
 - Scope:
