@@ -101,7 +101,7 @@ def test_2025_prior_generation_reconciliation_confirms_17_new_blank_2025_hunts()
 
 def test_runtime_reference_surfaces_carry_db1002_2025_draw_fields():
     for rel_path in [
-        "processed_data/hunt_master_enriched.csv",
+        "processed_data/hunt_master_enriched_2026_draw_subset.csv",
         "processed_data/hunt_unit_reference_linked.csv",
         "processed_data/point_ladder_view.csv",
         "processed_data/draw_reality_engine.csv",
@@ -159,8 +159,8 @@ def test_database_has_no_blank_rows_or_missing_hunt_codes():
     assert rows
     assert all(any(str(value).strip() for value in row.values()) for row in rows)
     assert all(row.get("hunt_code", "").strip() for row in rows)
-    assert len(rows) == 1394
-    assert len({row["hunt_code"] for row in rows}) == 1394
+    assert len(rows) == 1449
+    assert len({row["hunt_code"] for row in rows}) == 1449
 
 
 def test_empty_database_column_removal_report_written():

@@ -62,6 +62,7 @@ def add_metric(bucket: dict[str, object], row: dict[str, object]) -> None:
     bucket["hunt_code_count"] = int(bucket.get("hunt_code_count", 0)) + 1
     for field in (
         "permits_2026_total",
+        "permits_2026_draw_total",
         "permit_allotment_2026_total",
         "permits_2025_total",
         "permits_2025_draw_total",
@@ -98,6 +99,7 @@ def main() -> int:
         live = live_rows.get(code, {})
         values = {
             "permits_2026_total": number(row.get("permits_2026_total", "")),
+            "permits_2026_draw_total": number(row.get("permits_2026_draw_total", "")),
             "permit_allotment_2026_total": number(row.get("permit_allotment_2026_total", "")),
             "permits_2025_total": number(row.get("permits_2025_total", "")),
             "permits_2025_draw_total": number(row.get("permits_2025_draw_total", "")),
@@ -159,6 +161,7 @@ def main() -> int:
             "hunt_type": row.get("hunt_type", ""),
             "season": row.get("season", ""),
             "permits_2026_total": permits_2026_total if permits_2026_total is not None else "",
+            "permits_2026_draw_total": values["permits_2026_draw_total"] if values["permits_2026_draw_total"] is not None else "",
             "permit_allotment_2026_total": allotment_2026_total if allotment_2026_total is not None else "",
             "permits_2025_total": permits_2025_total if permits_2025_total is not None else "",
             "permits_2025_draw_total": values["permits_2025_draw_total"] if values["permits_2025_draw_total"] is not None else "",
@@ -190,6 +193,7 @@ def main() -> int:
         "hunt_type",
         "season",
         "permits_2026_total",
+        "permits_2026_draw_total",
         "permit_allotment_2026_total",
         "permits_2025_total",
         "permits_2025_draw_total",
@@ -206,6 +210,8 @@ def main() -> int:
         "hunt_code_count",
         "permits_2026_total_row_count",
         "permits_2026_total_sum",
+        "permits_2026_draw_total_row_count",
+        "permits_2026_draw_total_sum",
         "permit_allotment_2026_total_row_count",
         "permit_allotment_2026_total_sum",
         "permits_2025_total_row_count",

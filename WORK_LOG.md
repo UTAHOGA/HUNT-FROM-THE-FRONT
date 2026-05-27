@@ -5294,6 +5294,42 @@
   - `python -m py_compile scripts\validate-remaining-2025-history-crosswalk-boundaries.py scripts\audit-2024-draw-odds-against-database-2025-permits.py scripts\audit-comprehensive-2026-2025-history-integrity.py scripts\final-permit-database-crosscheck-2026.py` passed.
   - `python -m pytest tests\utah\test_remaining_2025_history_crosswalk_boundary_closeout.py tests\utah\test_hunt_code_crosswalk_2024_pdf_to_2025_pdf.py tests\utah\test_database_historical_permit_lineage_2026.py tests\utah\test_final_permit_database_crosscheck_2026.py tests\utah\test_comprehensive_2026_2025_history_integrity_audit.py -q` passed: `13`.
 
+## 2026 Draw-Permit Subset Alignment
+- Timestamp (UTC): 2026-05-27T01:50:00Z
+- Scope:
+  - Created the explicit 2026 counterpart to the existing `permits_2025_draw_*` subset.
+  - Added `permits_2026_draw_res`, `permits_2026_draw_nr`, `permits_2026_draw_total`, `permits_2026_draw_source`, and `draw_2026_system_type`.
+  - Used `processed_data/ml_draw_predictions_v1.csv` only to identify which hunt codes feed the draw engine; permit numbers were copied from canonical `DATABASE.csv` 2026 permit/allotment truth fields.
+  - Promoted the new fields into `DATABASE.csv`, draw/runtime reference surfaces, canonical CSV candidates, and a full duplicate of the LFS-backed hunt master file at `processed_data/hunt_master_enriched_2026_draw_subset.csv`.
+  - Left the original `processed_data/hunt_master_enriched.csv` as an untouched Git LFS pointer so the replacement upload can remain clean.
+  - No 2025 historical permit values, 2026 permit values, 2026 allotment values, website materializers, or public website feeds were recalculated or overwritten.
+- Outputs:
+  - `scripts/promote-2026-draw-permit-subset.py`
+  - `data_truth/comparison_outputs/validation/permits_2026_draw_subset.csv`
+  - `data_truth/comparison_outputs/validation/permits_2026_draw_subset_summary.json`
+  - `processed_data/permits_2026_draw_subset.md`
+  - `processed_data/permits_2026_draw_field_promotion_report.json`
+  - `processed_data/permits_2026_draw_field_promotion_report.csv`
+  - `processed_data/hunt_master_enriched_2026_draw_subset.csv`
+  - `.gitattributes`
+  - `tests/utah/test_2026_draw_permit_subset.py`
+- Key results:
+  - Draw-engine hunt codes considered: `1005`.
+  - Explicit 2026 draw-permit subset rows promoted in `DATABASE.csv`: `995`.
+  - Draw-engine codes missing from `DATABASE.csv`: `0`.
+  - Non-numeric 2026 database totals in the subset: `0`.
+  - Engine/reference codes skipped for no numeric 2026 total: `10`.
+  - `hunt_master_enriched_2026_draw_subset.csv` rows checked: `54357`.
+  - `hunt_master_enriched_2026_draw_subset.csv` rows populated with 2026 draw subset fields: `49930`.
+- Validation:
+  - `python scripts\promote-2026-draw-permit-subset.py` passed.
+  - `python scripts\final-permit-database-crosscheck-2026.py` passed.
+  - `python scripts\audit-database-historical-permit-lineage-2026.py` passed.
+  - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed.
+  - `python scripts\build-database-publish-readiness-report.py` passed.
+  - `python -m py_compile scripts\promote-2026-draw-permit-subset.py scripts\final-permit-database-crosscheck-2026.py` passed.
+  - `python -m pytest tests\utah\test_2026_draw_permit_subset.py tests\utah\test_2025_draw_permit_field_promotion.py tests\utah\test_database_historical_permit_lineage_2026.py tests\utah\test_remaining_2025_history_crosswalk_boundary_closeout.py tests\utah\test_final_permit_database_crosscheck_2026.py tests\utah\test_comprehensive_2026_2025_history_integrity_audit.py -q` passed: `30`.
+
 ## 2025 Historical Source Label Repair
 - Timestamp (UTC): 2026-05-27T01:18:00Z
 - Scope:
