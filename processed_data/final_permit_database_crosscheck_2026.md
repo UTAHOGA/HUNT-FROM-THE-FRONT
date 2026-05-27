@@ -1,6 +1,6 @@
 # Final Permit Database Crosscheck 2026
 
-- Snapshot UTC: `2026-05-27T03:45:11+00:00`
+- Snapshot UTC: `2026-05-27T04:06:43+00:00`
 - DATABASE rows: `1449`
 - Unique hunt codes: `1449`
 - Duplicate hunt codes: `0`

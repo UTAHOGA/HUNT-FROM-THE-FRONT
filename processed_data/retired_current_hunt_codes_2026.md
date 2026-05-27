@@ -1,10 +1,10 @@
 # Retired Current Hunt Codes 2026
 
-- Retired at UTC: `2026-05-26T21:05:13+00:00`
+- Retired at UTC: `2026-05-27T04:08:39+00:00`
 - Effective year: `2026`
 - Reason: `USER_CONFIRMED_CEASES_TO_EXIST_ONLINE_EFFECTIVE_2026`
-- DATABASE rows before: `1394`
-- DATABASE rows after: `1394`
+- DATABASE rows before: `1449`
+- DATABASE rows after: `1449`
 - Newly retired rows: `0`
 - Total retired ledger rows: `17`
 - Remaining duplicate hunt codes: `0`

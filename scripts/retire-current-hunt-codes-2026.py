@@ -67,7 +67,7 @@ def write_csv(path: Path, rows: list[dict[str, str]], columns: list[str]) -> Non
 def main() -> int:
     timestamp = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
     rows, columns = read_database()
-    existing_ledger_rows, _ = read_optional_csv(LEDGER)
+    existing_ledger_rows, existing_ledger_columns = read_optional_csv(LEDGER)
     existing_retired_codes = {row.get("hunt_code", "") for row in existing_ledger_rows}
     retired_rows = [row for row in rows if row["hunt_code"] in RETIRED_CODES]
     remaining_rows = [row for row in rows if row["hunt_code"] not in RETIRED_CODES]
@@ -80,12 +80,14 @@ def main() -> int:
             f"{unresolved_requested_codes}"
         )
 
-    ledger_columns = [
+    ledger_columns = existing_ledger_columns or [
         "retired_at_utc",
         "retirement_reason",
         "effective_year",
         *columns,
     ]
+    if retired_rows:
+        ledger_columns = list(dict.fromkeys([*ledger_columns, "retired_at_utc", "retirement_reason", "effective_year", *columns]))
     new_ledger_rows = [
         {
             "retired_at_utc": timestamp,

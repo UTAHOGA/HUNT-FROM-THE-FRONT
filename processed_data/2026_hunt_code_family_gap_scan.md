@@ -1,7 +1,7 @@
 # 2026 Hunt-Code Family Gap Scan
 
 - Current DATABASE code count: `1449`
-- Predictive v2 code count: `923`
+- Predictive v2 code count: `863`
 - Families scanned: `21`
 - Fully resolved families: `6`
 - Families with predictive v2 gaps: `15`

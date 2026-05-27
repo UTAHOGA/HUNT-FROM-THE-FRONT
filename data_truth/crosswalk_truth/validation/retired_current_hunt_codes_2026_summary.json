@@ -2,8 +2,8 @@
   "artifact": "retired_current_hunt_codes_2026",
   "blocker_count": 0,
   "database_path": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
-  "database_row_count_after": 1394,
-  "database_row_count_before": 1394,
+  "database_row_count_after": 1449,
+  "database_row_count_before": 1449,
   "database_row_delta": 0,
   "effective_year": 2026,
   "ledger_path": "data_truth/crosswalk_truth/normalized/retired_current_hunt_codes_2026.csv",
@@ -31,7 +31,7 @@
     "EA1300",
     "PD1039"
   ],
-  "retired_at_utc": "2026-05-26T21:05:13+00:00",
+  "retired_at_utc": "2026-05-27T04:08:39+00:00",
   "retirement_reason": "USER_CONFIRMED_CEASES_TO_EXIST_ONLINE_EFFECTIVE_2026",
   "total_retired_codes": [
     "EA1007",

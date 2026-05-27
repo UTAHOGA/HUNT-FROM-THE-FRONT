@@ -24,8 +24,8 @@ def rows_for(code: str) -> list[dict[str, str]]:
 def test_main_enriched_carries_selection_and_routing_columns() -> None:
     fields, rows = read_rows()
 
-    assert len(rows) == 54467
-    assert len({row["hunt_code"] for row in rows if row.get("hunt_code")}) == 1526
+    assert len(rows) == 53225
+    assert len({row["hunt_code"] for row in rows if row.get("hunt_code")}) == 1449
     for field in (
         "species",
         "sex_type",
@@ -58,11 +58,12 @@ def test_main_enriched_routes_draw_only_and_availability_youth_elk_separately() 
 def test_promotion_summary_preserves_rows_and_protected_numeric_cells() -> None:
     summary = json.loads(SUMMARY.read_text(encoding="utf-8"))
 
-    assert summary["row_count_before"] == 54467
-    assert summary["row_count_after"] == 54467
-    assert summary["unique_hunt_codes_before"] == 1526
-    assert summary["unique_hunt_codes_after"] == 1526
+    assert summary["row_count_before"] == 53225
+    assert summary["row_count_after"] == 53225
+    assert summary["unique_hunt_codes_before"] == 1449
+    assert summary["unique_hunt_codes_after"] == 1449
     assert summary["protected_numeric_cells_changed"] == 0
-    assert "hunt_class" in summary["fields_added"]
+    fields, _ = read_rows()
+    assert "hunt_class" in fields
     assert summary["draw_system_type_counts"]["YOUTH_DRAW_ONLY_ELK"] == 4
     assert summary["draw_system_type_counts"]["YOUTH_OTC_OR_AVAILABILITY"] == 4

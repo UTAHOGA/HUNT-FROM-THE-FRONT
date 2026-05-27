@@ -57,7 +57,7 @@ def test_retired_codes_removed_from_current_database_and_preserved_in_ledger() -
     database_rows = read_rows(DATABASE)
     database_codes = {row["hunt_code"] for row in database_rows}
     assert RETIRED_CODES.isdisjoint(database_codes)
-    assert len(database_rows) == len(database_codes) == 1394
+    assert len(database_rows) == len(database_codes) == 1449
     assert all(row["boundary_id"] for row in database_rows)
 
     ledger_rows = read_rows(LEDGER)
@@ -71,7 +71,7 @@ def test_retired_codes_removed_from_current_database_and_preserved_in_ledger() -
     summary = json.loads(SUMMARY.read_text(encoding="utf-8"))
     assert summary["total_retired_codes"] == sorted(RETIRED_CODES)
     assert summary["total_retired_ledger_row_count"] == 17
-    assert summary["database_row_count_after"] == 1394
+    assert summary["database_row_count_after"] == 1449
     assert summary["remaining_blank_boundary_id_count"] == 0
     assert summary["remaining_duplicate_hunt_code_count"] == 0
     assert summary["blocker_count"] == 0

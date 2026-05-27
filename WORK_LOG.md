@@ -5557,3 +5557,35 @@
     - youth antlerless elk and youth doe pronghorn rows -> `YOUTH_ANTLERLESS_OR_DOE_RESERVE`
   - `python -m py_compile engine\utah_draw_predictive\youth.py engine\utah_draw_predictive\classifier.py tests\utah_draw_predictive\test_youth_general_deer_strategy.py tests\utah_draw_predictive\test_youth_general_any_bull_elk_strategy.py tests\utah_draw_predictive\test_youth_not_bonus_or_adult_preference.py tests\utah_draw_predictive\test_youth_coverage.py tests\utah_draw_predictive\test_out_of_scope_runtime_policy.py tests\utah_draw_predictive\test_docs_current_state.py` passed.
   - `python -m pytest tests\utah_draw_predictive\test_youth_general_deer_strategy.py tests\utah_draw_predictive\test_youth_general_any_bull_elk_strategy.py tests\utah_draw_predictive\test_youth_not_bonus_or_adult_preference.py tests\utah_draw_predictive\test_youth_coverage.py tests\utah_draw_predictive\test_out_of_scope_runtime_policy.py tests\utah_draw_predictive\test_docs_current_state.py -q` passed: `13`.
+
+## Active Runtime Cougar/Retired Code Cleanup
+- Timestamp (UTC): 2026-05-27T04:07:00Z
+- Scope:
+  - Enforced the current DWR `DATABASE.csv` hunt-code universe across active runtime/reference surfaces.
+  - Preserved `DATABASE.csv` unchanged as the canonical current truth source.
+  - Removed the 17 user-confirmed retired 2026 codes from active runtime/reference surfaces: `EA1007`, `EA1053`, `EA1287` through `EA1300`, and `PD1039`.
+  - Removed old/non-current cougar codes from active runtime/predictive surfaces, leaving only current statewide cougar code `CG9999` in the active enriched and point-ladder references.
+  - Preserved removed-code evidence in `data_truth/crosswalk_truth/normalized/active_runtime_codes_removed_2026.csv`.
+  - Left historical draw-reality evidence intact; it is not the current active hunt-code universe.
+- Outputs:
+  - `scripts/remove-retired-and-extra-cougar-active-runtime-codes-2026.py`
+  - `data_truth/crosswalk_truth/normalized/active_runtime_codes_removed_2026.csv`
+  - `data_truth/crosswalk_truth/validation/active_runtime_codes_removed_2026_summary.json`
+  - `processed_data/active_runtime_codes_removed_2026.md`
+  - `tests/utah/test_active_runtime_code_cleanup_2026.py`
+- Key results:
+  - `DATABASE.csv`: `1449` rows, `1449` unique hunt codes, one current cougar code: `CG9999`.
+  - `hunt_master_enriched.csv`: unique hunt codes corrected from `1526` to `1449`.
+  - `point_ladder_view.csv`: unique hunt codes corrected from `1526` to `1449`.
+  - `hunt_master_enriched_2026_draw_subset.csv`: unique hunt codes corrected from `1471` to `1394`.
+  - `ml_draw_predictions_v1.csv`: unique hunt codes corrected from `923` to `863` by removing old cougar prediction rows.
+  - `draw_reality_engine_predictive_v2.csv`: unique hunt codes corrected from `923` to `863` by removing old cougar prediction rows.
+  - Removed-code archive rows: `351`.
+  - Active runtime cleanup blockers: `0`.
+- Validation:
+  - `python scripts\remove-retired-and-extra-cougar-active-runtime-codes-2026.py` passed idempotently.
+  - `python scripts\final-permit-database-crosscheck-2026.py` passed: `1449` rows, `1449` unique hunt codes, `0` duplicate hunt codes, `0` blank boundary IDs, `0` 2026 permit/allotment mismatches.
+  - `python scripts\scan-2026-hunt-code-family-gaps.py` passed: hunt master and point ladder both `1449` current codes; required-surface blocker families `0`.
+  - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed: fatal blockers `0`, open issues `0`.
+  - `python -m py_compile scripts\remove-retired-and-extra-cougar-active-runtime-codes-2026.py scripts\scan-2026-hunt-code-family-gaps.py scripts\promote-hunt-class-routing-to-main-enriched-2026.py` passed.
+  - `python -m pytest tests\utah\test_active_runtime_code_cleanup_2026.py tests\utah\test_hunt_master_enriched_hunt_class_routing_2026.py tests\utah\test_hunt_code_family_gap_scan_2026.py tests\utah\test_retired_current_hunt_codes_2026.py tests\utah\test_final_permit_database_crosscheck_2026.py tests\utah\test_2026_draw_permit_subset.py tests\utah\test_comprehensive_2026_2025_history_integrity_audit.py -q` passed: `22`.
