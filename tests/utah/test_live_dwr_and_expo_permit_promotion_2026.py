@@ -219,10 +219,10 @@ def test_comprehensive_live_dwr_extraction_confirms_broad_database_coverage() ->
 
     assert summary["endpoint_count"] == 19
     assert summary["live_unique_hunt_code_count"] == 1389
-    assert summary["database_row_count"] == 1447
+    assert summary["database_row_count"] == 1449
     assert summary["live_only_count"] == 0
     assert summary["live_numeric_database_blank_count"] == 0
-    assert summary["database_only_count"] == 58
+    assert summary["database_only_count"] == 60
     assert {"DB1082", "EA1040", "PB5313"}.issubset(set(summary["database_only_codes"]))
     assert summary["numeric_mismatch_count"] == 0
     assert summary["numeric_mismatch_codes"] == []

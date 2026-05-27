@@ -4,21 +4,19 @@
     "blank_boundary_id_count": 0,
     "duplicate_hunt_code_count": 0,
     "path": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
-    "row_count": 1447,
-    "unique_hunt_code_count": 1447
+    "row_count": 1449,
+    "unique_hunt_code_count": 1449
   },
   "fatal_blocker_count": 0,
-  "generated_at_utc": "2026-05-26T23:35:41+00:00",
+  "generated_at_utc": "2026-05-27T00:09:02+00:00",
   "guardrails": [
     "No protected numeric DATABASE cells were changed by this audit.",
     "Website feeds and materializer outputs were not modified.",
     "Warning-class historical rows are review evidence, not promoted current truth."
   ],
-  "open_issue_count": 24,
+  "open_issue_count": 4,
   "open_issue_counts_by_type": {
-    "HARVEST_2025_CODE_NOT_IN_ACTIVE_DATABASE": 6,
-    "LE_DEER_2025_DRAW_TO_DATABASE_MISSING_DATABASE_ROW": 6,
-    "OIL_2025_DRAW_TO_DATABASE_MISSING_DATABASE_ROW": 12
+    "HARVEST_2025_CODE_NOT_IN_ACTIVE_DATABASE": 4
   },
   "outputs": {
     "dashboard_csv": "data_truth/comparison_outputs/validation/comprehensive_2026_2025_history_integrity_audit.csv",
@@ -51,13 +49,13 @@
     "path": "data_truth/crosswalk_truth/normalized/retired_current_hunt_codes_2026.csv",
     "retired_codes_still_active_count": 0
   },
-  "review_warning_count": 3,
+  "review_warning_count": 1,
   "severity_counts": {
-    "INFO": 14,
-    "WARNING": 3
+    "INFO": 16,
+    "WARNING": 1
   },
   "status_counts": {
-    "PASS": 14,
-    "WARN": 3
+    "PASS": 16,
+    "WARN": 1
   }
 }

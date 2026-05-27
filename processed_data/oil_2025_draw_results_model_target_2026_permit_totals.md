@@ -5,10 +5,10 @@
 - Model target year: `2026`
 - Hunt-code rows extracted: `101`
 - Total public draw permits in source: `502`
-- DATABASE matches: `89`
+- DATABASE matches: `101`
 - DATABASE differences requiring review: `0`
 - DATABASE blank draw fields: `0`
-- DATABASE missing codes: `12`
+- DATABASE missing codes: `0`
 
 This is historical draw-results evidence for model target year 2026. It must not be promoted into current 2026 permit availability fields.
 

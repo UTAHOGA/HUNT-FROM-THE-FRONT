@@ -1,9 +1,9 @@
 {
   "artifact": "live_dwr_permit_numbers_comprehensive_vs_DATABASE_2026",
-  "comparison_row_count": 1447,
+  "comparison_row_count": 1449,
   "comparison_status_counts": {
     "BOTH_BLANK": 274,
-    "DATABASE_ONLY": 58,
+    "DATABASE_ONLY": 60,
     "LIVE_NO_QUOTA_DATABASE_PRESERVED": 47,
     "MATCH": 1068
   },
@@ -54,8 +54,10 @@
     "MB6220",
     "MB6223",
     "MB6224",
+    "MB6225",
     "MB6240",
     "MB6254",
+    "MB6257",
     "MB6259",
     "MB6263",
     "MB6264",
@@ -69,8 +71,8 @@
     "PD1045",
     "PD1046"
   ],
-  "database_only_count": 58,
-  "database_row_count": 1447,
+  "database_only_count": 60,
+  "database_row_count": 1449,
   "endpoint_count": 19,
   "endpoint_row_counts": {
     "Bison|Hunters Choice": 14,
@@ -115,8 +117,8 @@
     "summary_json": "data_truth/crosswalk_truth/validation/live_dwr_permit_numbers_comprehensive_vs_DATABASE_2026_summary.json"
   },
   "presence_counts": {
-    "DATABASE_ONLY": 58,
+    "DATABASE_ONLY": 60,
     "LIVE_AND_DATABASE": 1389
   },
-  "snapshot_utc": "2026-05-26T23:35:41+00:00"
+  "snapshot_utc": "2026-05-27T00:04:04+00:00"
 }

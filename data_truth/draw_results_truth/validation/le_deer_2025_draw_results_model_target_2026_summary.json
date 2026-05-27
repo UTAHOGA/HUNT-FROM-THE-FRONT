@@ -1,6 +1,6 @@
 {
   "artifact": "le_deer_2025_draw_results_model_target_2026_permit_totals",
-  "generated_at_utc": "2026-05-26T20:58:15+00:00",
+  "generated_at_utc": "2026-05-27T00:08:28+00:00",
   "source_file": "pipeline/RAW/hunt_unit_database/2026/pdf/draw_odds/2025 LE Deer Draw Results.pdf",
   "source_sha256": "0f25dd31d99bfc4f38d14de504ea1e2ce7e71ae2a6cf3a68d31e9fd760d1dd5d",
   "reported_draw_year": 2025,
@@ -12,20 +12,12 @@
   "resident_total_draw_permits": 1560,
   "nonresident_total_draw_permits": 154,
   "database_status_counts": {
-    "MATCH_DATABASE_2025_DRAW_FIELDS": 189,
-    "MISSING_DATABASE_ROW": 6
+    "MATCH_DATABASE_2025_DRAW_FIELDS": 195
   },
-  "database_match_count": 189,
+  "database_match_count": 195,
   "database_difference_count": 0,
-  "missing_database_row_count": 6,
-  "missing_database_codes": [
-    "DB1320",
-    "DB1324",
-    "DB1343",
-    "DB1344",
-    "DB1345",
-    "DB1348"
-  ],
+  "missing_database_row_count": 0,
+  "missing_database_codes": [],
   "outputs": {
     "normalized": "data_truth/draw_results_truth/normalized/le_deer_2025_draw_results_model_target_2026_permit_totals.csv",
     "validation": "data_truth/draw_results_truth/validation/le_deer_2025_draw_results_model_target_2026_vs_DATABASE.csv",

@@ -5,15 +5,14 @@
     "NO_NEXT_YEAR_PDF_FAMILY_AVAILABLE": 588
   },
   "crosswalk_rows": 874,
-  "current_active_database_rows": 1394,
-  "database_rows": 1447,
-  "dropped_or_review_rows": 29,
+  "current_active_database_rows": 1412,
+  "database_rows": 1449,
+  "dropped_or_review_rows": 13,
   "dropped_status_counts": {
     "DROPPED_NO_CURRENT_ACTIVE_MATCH_NO_NEXT_YEAR_PDF_FAMILY": 7,
-    "DROPPED_NO_NEXT_YEAR_PDF_OR_CURRENT_ACTIVE_MATCH": 6,
-    "SAME_CODE_IN_2025_PDF_BUT_DATABASE_MARKED_HISTORICAL_ONLY_REVIEW": 16
+    "DROPPED_NO_NEXT_YEAR_PDF_OR_CURRENT_ACTIVE_MATCH": 6
   },
-  "generated_at_utc": "2026-05-26T23:46:29+00:00",
+  "generated_at_utc": "2026-05-27T00:07:59+00:00",
   "guardrail": "Read-only crosswalk. Dropped/replaced statuses are review evidence and do not modify DATABASE.csv or website feeds.",
   "next_year_pdf_model_target_2026_rows": 296,
   "outputs": {
@@ -28,7 +27,6 @@
     "DROPPED_NO_NEXT_YEAR_PDF_OR_CURRENT_ACTIVE_MATCH": 6,
     "REPLACED_BY_NEXT_YEAR_OR_CURRENT_CANDIDATE": 24,
     "SAME_CODE_CURRENT_ACTIVE_NO_NEXT_YEAR_PDF_MATCH": 564,
-    "SAME_CODE_IN_2025_PDF_AND_CURRENT_ACTIVE": 257,
-    "SAME_CODE_IN_2025_PDF_BUT_DATABASE_MARKED_HISTORICAL_ONLY_REVIEW": 16
+    "SAME_CODE_IN_2025_PDF_AND_CURRENT_ACTIVE": 273
   }
 }

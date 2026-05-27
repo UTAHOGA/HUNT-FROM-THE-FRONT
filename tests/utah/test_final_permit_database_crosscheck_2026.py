@@ -19,18 +19,18 @@ def _csv_by_key(path: Path, key: str) -> dict[str, dict[str, str]]:
 def test_final_permit_crosscheck_has_no_identity_or_total_blockers() -> None:
     summary = json.loads(SUMMARY.read_text(encoding="utf-8"))
 
-    assert summary["database_row_count"] == 1447
-    assert summary["unique_hunt_code_count"] == 1447
+    assert summary["database_row_count"] == 1449
+    assert summary["unique_hunt_code_count"] == 1449
     assert summary["duplicate_hunt_code_count"] == 0
     assert summary["blank_boundary_id_count"] == 0
     assert summary["permit_vs_allotment_total_mismatch_count"] == 0
     assert summary["live_comparison_status_counts"]["MATCH"] == 1068
-    assert summary["live_comparison_status_counts"]["DATABASE_ONLY"] == 58
+    assert summary["live_comparison_status_counts"]["DATABASE_ONLY"] == 60
     assert "TOTAL_MATCH_SPLIT_DIFFERS" not in summary["live_comparison_status_counts"]
     assert summary["field_populated_counts"] == {
         "permit_allotment_2026_total": 1091,
-        "permits_2025_draw_total": 680,
-        "permits_2025_total": 1083,
+        "permits_2025_draw_total": 682,
+        "permits_2025_total": 1085,
         "permits_2026_total": 1120,
     }
 
@@ -47,7 +47,7 @@ def test_final_permit_crosscheck_species_and_prefix_counts_are_stable() -> None:
         "Deer": 494,
         "Desert Bighorn Sheep": 26,
         "Elk": 568,
-        "Moose": 45,
+        "Moose": 47,
         "Mountain Goat": 18,
         "Pronghorn": 126,
         "Rocky Mountain Bighorn Sheep": 21,

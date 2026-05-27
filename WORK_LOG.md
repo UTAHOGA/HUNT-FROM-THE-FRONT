@@ -5155,3 +5155,49 @@
   - `python scripts\final-permit-database-crosscheck-2026.py` passed.
   - `python -m py_compile scripts\final-permit-database-crosscheck-2026.py` passed.
   - `python -m pytest tests\utah\test_final_permit_database_crosscheck_2026.py tests\utah\test_live_dwr_and_expo_permit_promotion_2026.py -q` passed: `10`.
+
+## Same-Code 2025 PDF Crosswalk And O.I.L. Draw Cleanup
+- Timestamp (UTC): 2026-05-27T00:10:00Z
+- Scope:
+  - Reclassified the 16 same-code rows that appeared in the 2025 PDF but were still marked historical-only in `DATABASE.csv`.
+  - Confirmed those 16 rows now crosswalk as `SAME_CODE_IN_2025_PDF_AND_CURRENT_ACTIVE`, not historical-only review rows.
+  - Promoted reviewed 2025 O.I.L. PDF draw-results values for 8 Rocky Mountain bighorn sheep rows that had numeric differences against the PDF extraction.
+  - Added reviewed CWMU bull moose rows `MB6225` and `MB6257` using existing CWMU boundary IDs, so the O.I.L. PDF and 2025 harvest sources no longer report those codes as missing from the database.
+  - Registered `2025_OIL_DRAW_RESULTS_PDF_MODEL_TARGET_2026` as accepted historical lineage for the 2025 permit and 2025 draw-permit field families.
+  - Updated crosswalk, O.I.L., LE deer, lineage, live-DWR, final crosscheck, publish-readiness, and comprehensive history-integrity outputs.
+  - No website feeds, `public_client_engine.csv`, prediction math, materializer code, or populated 2026 live DWR permit/allotment numbers were changed.
+- Outputs:
+  - `scripts/promote-same-code-2025-pdf-crosswalk-active.py`
+  - `scripts/promote-oil-2025-draw-pdf-values-to-database.py`
+  - `data_truth/crosswalk_truth/validation/same_code_2025_pdf_crosswalk_active_promotions.csv`
+  - `data_truth/crosswalk_truth/validation/same_code_2025_pdf_crosswalk_active_promotions_summary.json`
+  - `data_truth/draw_results_truth/validation/oil_2025_draw_pdf_values_promoted_to_DATABASE.csv`
+  - `data_truth/draw_results_truth/validation/oil_2025_draw_pdf_values_promoted_to_DATABASE_summary.json`
+  - `processed_data/same_code_2025_pdf_crosswalk_active_promotions.md`
+  - `processed_data/oil_2025_draw_pdf_values_promoted_to_DATABASE.md`
+- Key results:
+  - `DATABASE.csv` rows: `1449`.
+  - Unique hunt codes: `1449`.
+  - Duplicate hunt codes: `0`.
+  - Blank boundary IDs: `0`.
+  - Current-active database rows in the 2024-to-2025 PDF crosswalk: `1412`.
+  - Same-code historical-only review rows remaining in the crosswalk: `0`.
+  - O.I.L. 2025 PDF database matches: `101 / 101`.
+  - LE deer 2025 PDF database matches: `195 / 195`.
+  - 2026 permit/allotment total mismatches: `0`.
+  - Historical lineage blockers: `0`.
+  - Comprehensive history-integrity fatal blockers: `0`.
+  - Remaining comprehensive open issues: `4`, all warning-only 2025 harvest codes not in the active database.
+- Validation:
+  - `python scripts\promote-oil-2025-draw-pdf-values-to-database.py` passed.
+  - `python scripts\extract-oil-2025-draw-results-permits.py` passed.
+  - `python scripts\extract-le-deer-2025-draw-results-permits.py` passed.
+  - `python scripts\promote-same-code-2025-pdf-crosswalk-active.py` passed.
+  - `python scripts\build-2024-to-2025-pdf-hunt-code-crosswalk.py` passed.
+  - `python scripts\pull-live-dwr-permit-numbers-comprehensive-2026.py` passed.
+  - `python scripts\audit-database-historical-permit-lineage-2026.py` passed.
+  - `python scripts\final-permit-database-crosscheck-2026.py` passed.
+  - `python scripts\build-database-publish-readiness-report.py` passed.
+  - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed.
+  - `python -m py_compile scripts\promote-same-code-2025-pdf-crosswalk-active.py scripts\promote-oil-2025-draw-pdf-values-to-database.py scripts\audit-database-historical-permit-lineage-2026.py scripts\build-2024-to-2025-pdf-hunt-code-crosswalk.py scripts\extract-le-deer-2025-draw-results-permits.py scripts\extract-oil-2025-draw-results-permits.py scripts\final-permit-database-crosscheck-2026.py` passed.
+  - `python -m pytest tests\utah\test_hunt_code_crosswalk_2024_pdf_to_2025_pdf.py tests\utah\test_le_deer_2025_draw_results_extraction.py tests\utah\test_oil_2025_draw_results_extraction.py tests\utah\test_database_historical_permit_lineage_2026.py tests\utah\test_final_permit_database_crosscheck_2026.py tests\utah\test_live_dwr_and_expo_permit_promotion_2026.py -q` passed: `23`.

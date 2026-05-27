@@ -38,16 +38,15 @@ def test_crosswalk_counts_and_guardrail_are_stable() -> None:
 
     assert summary["source_2024_model_target_2025_rows"] == 874
     assert summary["next_year_pdf_model_target_2026_rows"] == 296
-    assert summary["database_rows"] == 1447
-    assert summary["current_active_database_rows"] == 1394
-    assert summary["dropped_or_review_rows"] == 29
+    assert summary["database_rows"] == 1449
+    assert summary["current_active_database_rows"] == 1412
+    assert summary["dropped_or_review_rows"] == 13
     assert summary["status_counts"] == {
         "DROPPED_NO_CURRENT_ACTIVE_MATCH_NO_NEXT_YEAR_PDF_FAMILY": 7,
         "DROPPED_NO_NEXT_YEAR_PDF_OR_CURRENT_ACTIVE_MATCH": 6,
         "REPLACED_BY_NEXT_YEAR_OR_CURRENT_CANDIDATE": 24,
         "SAME_CODE_CURRENT_ACTIVE_NO_NEXT_YEAR_PDF_MATCH": 564,
-        "SAME_CODE_IN_2025_PDF_AND_CURRENT_ACTIVE": 257,
-        "SAME_CODE_IN_2025_PDF_BUT_DATABASE_MARKED_HISTORICAL_ONLY_REVIEW": 16,
+        "SAME_CODE_IN_2025_PDF_AND_CURRENT_ACTIVE": 273,
     }
     assert "do not modify DATABASE.csv" in summary["guardrail"]
 
@@ -59,10 +58,10 @@ def test_crosswalk_identifies_dropped_replacements_and_same_code_reviews() -> No
 
     assert rows["DB1082"]["crosswalk_status"] == "REPLACED_BY_NEXT_YEAR_OR_CURRENT_CANDIDATE"
     assert rows["DB1082"]["mapped_hunt_code"] == "DB1113"
-    assert rows["DB1320"]["crosswalk_status"] == "SAME_CODE_IN_2025_PDF_BUT_DATABASE_MARKED_HISTORICAL_ONLY_REVIEW"
-    assert rows["MB6200"]["crosswalk_status"] == "SAME_CODE_IN_2025_PDF_BUT_DATABASE_MARKED_HISTORICAL_ONLY_REVIEW"
+    assert rows["DB1320"]["crosswalk_status"] == "SAME_CODE_IN_2025_PDF_AND_CURRENT_ACTIVE"
+    assert rows["MB6200"]["crosswalk_status"] == "SAME_CODE_IN_2025_PDF_AND_CURRENT_ACTIVE"
     assert rows["DB1089"]["crosswalk_status"] == "DROPPED_NO_NEXT_YEAR_PDF_OR_CURRENT_ACTIVE_MATCH"
     assert rows["PB5313"]["crosswalk_status"] == "DROPPED_NO_CURRENT_ACTIVE_MATCH_NO_NEXT_YEAR_PDF_FAMILY"
 
-    assert "DB1320" in dropped_rows
+    assert "DB1320" not in dropped_rows
     assert "DB1089" in dropped_rows

@@ -3,19 +3,19 @@
   "blank_boundary_id_codes": [],
   "blank_boundary_id_count": 0,
   "database_path": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
-  "database_row_count": 1447,
+  "database_row_count": 1449,
   "duplicate_hunt_code_count": 0,
   "duplicate_hunt_codes": [],
   "field_populated_counts": {
     "permit_allotment_2026_total": 1091,
-    "permits_2025_draw_total": 680,
-    "permits_2025_total": 1083,
+    "permits_2025_draw_total": 682,
+    "permits_2025_total": 1085,
     "permits_2026_total": 1120
   },
   "guardrail": "Read-only audit. No database, website, prediction, or materializer files are modified.",
   "hunt_type_counts": {
     "Antlerless Elk Control": 1,
-    "CWMU": 317,
+    "CWMU": 319,
     "Conservation": 26,
     "Extended Archery": 2,
     "Fall Management": 4,
@@ -47,7 +47,7 @@
   },
   "live_comparison_status_counts": {
     "BOTH_BLANK": 274,
-    "DATABASE_ONLY": 58,
+    "DATABASE_ONLY": 60,
     "LIVE_NO_QUOTA_DATABASE_PRESERVED": 47,
     "MATCH": 1068
   },
@@ -76,14 +76,14 @@
     "LO": 113,
     "LP": 6,
     "MA": 6,
-    "MB": 39,
+    "MB": 41,
     "PB": 90,
     "PD": 30,
     "RE": 1,
     "RS": 20,
     "TK": 18
   },
-  "snapshot_utc": "2026-05-26T23:35:58+00:00",
+  "snapshot_utc": "2026-05-27T00:04:35+00:00",
   "species_counts": {
     "Bison": 20,
     "Black Bear": 110,
@@ -91,7 +91,7 @@
     "Deer": 494,
     "Desert Bighorn Sheep": 26,
     "Elk": 568,
-    "Moose": 45,
+    "Moose": 47,
     "Mountain Goat": 18,
     "Pronghorn": 126,
     "Rocky Mountain Bighorn Sheep": 21,
@@ -100,15 +100,15 @@
   "total_status_counts": {
     "2026_PERMIT_TOTAL_MATCHES_ALLOTMENT_TOTAL": 1091,
     "2026_PERMIT_TOTAL_ONLY": 29,
-    "NO_2026_TOTAL": 327
+    "NO_2026_TOTAL": 329
   },
-  "unique_hunt_code_count": 1447,
+  "unique_hunt_code_count": 1449,
   "year_delta_status_counts": {
-    "2026_EQ_2025": 508,
-    "2026_GT_2025": 429,
-    "2026_LT_2025": 93,
+    "2026_EQ_2025": 509,
+    "2026_GT_2025": 431,
+    "2026_LT_2025": 90,
     "NO_2025_OR_2026_TOTAL": 274,
-    "ONLY_2025_TOTAL": 53,
+    "ONLY_2025_TOTAL": 55,
     "ONLY_2026_TOTAL": 90
   }
 }

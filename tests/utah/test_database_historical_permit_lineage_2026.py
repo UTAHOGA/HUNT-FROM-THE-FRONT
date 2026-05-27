@@ -29,13 +29,13 @@ def test_database_historical_permit_lineage_outputs_are_written():
     assert VALIDATION.exists()
 
     summary = json.loads(SUMMARY.read_text(encoding="utf-8"))
-    assert summary["database_row_count"] == 1447
-    assert summary["output_row_count"] == 2894
+    assert summary["database_row_count"] == 1449
+    assert summary["output_row_count"] == 2898
     assert summary["historical_years_detected"] == ["2025"]
     assert summary["lineage_blocker_count"] == 0
-    assert summary["canonical_historical_source_truth_rows"] == 1763
-    assert summary["historical_2025_full_permit_universe_rows"] == 1083
-    assert summary["historical_2025_bonus_point_draw_subset_rows"] == 680
+    assert summary["canonical_historical_source_truth_rows"] == 1767
+    assert summary["historical_2025_full_permit_universe_rows"] == 1085
+    assert summary["historical_2025_bonus_point_draw_subset_rows"] == 682
     assert summary["historical_2025_non_bonus_or_general_subset_rows"] == 403
     assert "narrower bonus-point draw-results subset" in summary["guardrail"]
     assert "must not drift" in summary["guardrail"]
@@ -47,17 +47,19 @@ def test_database_historical_permit_lineage_confirms_2025_source_coverage():
 
     permit_counts = summary["family_canonical_status_counts"]["permits_2025"]
     draw_counts = summary["family_canonical_status_counts"]["permits_2025_draw"]
-    assert permit_counts["CANONICAL_HISTORICAL_SOURCE_TRUTH"] == 1083
+    assert permit_counts["CANONICAL_HISTORICAL_SOURCE_TRUTH"] == 1085
     assert permit_counts["NO_HISTORICAL_VALUE"] == 364
-    assert draw_counts["CANONICAL_HISTORICAL_SOURCE_TRUTH"] == 680
+    assert draw_counts["CANONICAL_HISTORICAL_SOURCE_TRUTH"] == 682
     assert draw_counts["NO_HISTORICAL_VALUE"] == 767
 
     permit_sources = summary["family_source_value_counts"]["permits_2025"]
     draw_sources = summary["family_source_value_counts"]["permits_2025_draw"]
     assert permit_sources["2025_DRAW_RESULTS_TABLES"] == 965
     assert permit_sources["2024_DRAW_RESULTS_PDF_MODEL_TARGET_2025_SOURCE_ONLY_PROMOTION"] == 49
+    assert permit_sources["2025_OIL_DRAW_RESULTS_PDF_MODEL_TARGET_2026"] == 10
     assert draw_sources["canonical_2026_source_of_truth_draw_results"] == 564
     assert draw_sources["2024_DRAW_RESULTS_PDF_MODEL_TARGET_2025_SOURCE_ONLY_PROMOTION"] == 49
+    assert draw_sources["2025_OIL_DRAW_RESULTS_PDF_MODEL_TARGET_2026"] == 10
 
 
 def test_database_historical_permit_lineage_has_no_paired_family_strays():
@@ -65,7 +67,7 @@ def test_database_historical_permit_lineage_has_no_paired_family_strays():
     summary = json.loads(SUMMARY.read_text(encoding="utf-8"))
     assert summary["paired_family_compare_counts"] == {
         "BOTH_BLANK": 364,
-        "MATCH": 680,
+        "MATCH": 682,
         "PRIMARY_ONLY": 403,
     }
 

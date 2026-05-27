@@ -1,11 +1,11 @@
 # Comprehensive 2026/2025 History Integrity Audit
 
-- Generated UTC: `2026-05-26T23:35:41+00:00`
-- DATABASE active rows: `1447`
-- DATABASE unique hunt codes: `1447`
+- Generated UTC: `2026-05-27T00:09:02+00:00`
+- DATABASE active rows: `1449`
+- DATABASE unique hunt codes: `1449`
 - Retired current-code ledger rows: `17`
 - Fatal blockers: `0`
-- Review warnings: `3`
+- Review warnings: `1`
 
 ## Clean Core Checks
 
@@ -17,9 +17,7 @@
 
 ## Remaining Review Classes
 
-- `le_deer_2025_draw_to_database`: `6` issue rows. missing_database_rows=6 expected=6; numeric_diffs=0. Next: Treat missing rows as historical/CWMU review evidence unless user confirms they need active 2026 rows.
-- `oil_2025_draw_to_database`: `12` issue rows. missing_database_rows=12 expected=12; numeric_diffs=0. Next: Treat missing rows as historical/CWMU review evidence unless user confirms they need active 2026 rows.
-- `harvest_2025_for_2026_database_code_presence`: `6` issue rows. active_database_matches=1112; unmatched_active_database=6; retired_matches=0. Next: Resolve remaining unmatched harvest codes as historical-only, CWMU-retired, or current-code crosswalk candidates.
+- `harvest_2025_for_2026_database_code_presence`: `4` issue rows. active_database_matches=1114; unmatched_active_database=4; retired_matches=0. Next: Resolve remaining unmatched harvest codes as historical-only, CWMU-retired, or current-code crosswalk candidates.
 
 ## Output Files
 

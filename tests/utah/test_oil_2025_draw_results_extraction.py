@@ -72,7 +72,7 @@ def test_oil_2025_extraction_carries_mapping_law_columns() -> None:
     status_counts = {}
     for row in rows:
         status_counts[row["hunt_code_mapping_status"]] = status_counts.get(row["hunt_code_mapping_status"], 0) + 1
-    assert status_counts == {"REVIEWED_CURRENT_HUNT_CODE": 89, "SOURCE_CODE_NOT_IN_DATABASE": 12}
+    assert status_counts == {"REVIEWED_CURRENT_HUNT_CODE": 101}
 
 
 def test_oil_2025_database_comparison_uses_draw_result_fields() -> None:
@@ -81,25 +81,9 @@ def test_oil_2025_database_comparison_uses_draw_result_fields() -> None:
     summary = json.loads(SUMMARY.read_text(encoding="utf-8"))
 
     assert len(rows) == 101
-    assert summary["database_missing_codes"] == 12
-    assert summary["database_missing_hunt_codes"] == [
-        "MB6200",
-        "MB6207",
-        "MB6209",
-        "MB6217",
-        "MB6220",
-        "MB6223",
-        "MB6224",
-        "MB6225",
-        "MB6240",
-        "MB6254",
-        "MB6257",
-        "MB6259",
-    ]
+    assert summary["database_missing_codes"] == 0
+    assert summary["database_missing_hunt_codes"] == []
     assert summary["database_blank_count"] == 0
     assert summary["database_difference_count"] == 0
-    assert summary["database_match_count"] == 89
-    assert {row["database_comparison_status"] for row in rows} == {
-        "MATCH_DATABASE_2025_DRAW_PERMITS",
-        "MISSING_DATABASE_ROW",
-    }
+    assert summary["database_match_count"] == 101
+    assert {row["database_comparison_status"] for row in rows} == {"MATCH_DATABASE_2025_DRAW_PERMITS"}

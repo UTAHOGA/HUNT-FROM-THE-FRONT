@@ -58,10 +58,7 @@ def test_le_deer_draw_results_carry_mapping_law_columns() -> None:
         "candidate_boundary_id",
     ]:
         assert required in rows[0]
-    assert {row["hunt_code_mapping_status"] for row in rows} == {
-        "REVIEWED_CURRENT_HUNT_CODE",
-        "SOURCE_CODE_NOT_IN_DATABASE",
-    }
+    assert {row["hunt_code_mapping_status"] for row in rows} == {"REVIEWED_CURRENT_HUNT_CODE"}
 
 
 def test_le_deer_draw_results_match_database_or_flag_missing_rows_only() -> None:
@@ -69,11 +66,8 @@ def test_le_deer_draw_results_match_database_or_flag_missing_rows_only() -> None
     validation = read_csv(VALIDATION)
     summary = json.loads(SUMMARY.read_text(encoding="utf-8"))
 
-    assert summary["database_match_count"] == 189
+    assert summary["database_match_count"] == 195
     assert summary["database_difference_count"] == 0
-    assert summary["missing_database_row_count"] == 6
-    assert summary["missing_database_codes"] == ["DB1320", "DB1324", "DB1343", "DB1344", "DB1345", "DB1348"]
-    assert {row["database_comparison_status"] for row in validation} == {
-        "MATCH_DATABASE_2025_DRAW_FIELDS",
-        "MISSING_DATABASE_ROW",
-    }
+    assert summary["missing_database_row_count"] == 0
+    assert summary["missing_database_codes"] == []
+    assert {row["database_comparison_status"] for row in validation} == {"MATCH_DATABASE_2025_DRAW_FIELDS"}
