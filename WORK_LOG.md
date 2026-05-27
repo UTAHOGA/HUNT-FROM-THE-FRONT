@@ -5330,6 +5330,38 @@
   - `python -m py_compile scripts\promote-2026-draw-permit-subset.py scripts\final-permit-database-crosscheck-2026.py` passed.
   - `python -m pytest tests\utah\test_2026_draw_permit_subset.py tests\utah\test_2025_draw_permit_field_promotion.py tests\utah\test_database_historical_permit_lineage_2026.py tests\utah\test_remaining_2025_history_crosswalk_boundary_closeout.py tests\utah\test_final_permit_database_crosscheck_2026.py tests\utah\test_comprehensive_2026_2025_history_integrity_audit.py -q` passed: `30`.
 
+## 2026 Hunt-Class Selection Matrix Repair
+- Timestamp (UTC): 2026-05-27T02:10:00Z
+- Scope:
+  - Corrected the active selection matrix to `species -> sex_type -> hunt_type -> hunt_class -> weapon`.
+  - Backfilled `hunt_class` into `DATABASE.csv`, active draw/runtime reference CSVs, canonical CSV candidates, and the edited duplicate `processed_data/hunt_master_enriched_2026_draw_subset.csv`.
+  - Removed the duplicate `draw_2026_permit_family` field. `draw_2026_system_type` remains only as internal engine routing and is not a selection-matrix label.
+  - Used `data/utah/official_downloads_2026/hunt_master_canonical_2026.csv` as the hunt-class source.
+  - Preserved source permit numbers, historical 2025 fields, 2026 allotment totals, website feeds, and materializer logic.
+- Outputs:
+  - `scripts/promote-hunt-class-selection-matrix-2026.py`
+  - `data_truth/comparison_outputs/validation/hunt_class_selection_matrix_2026.csv`
+  - `data_truth/comparison_outputs/validation/hunt_class_selection_matrix_2026_summary.json`
+  - `processed_data/hunt_class_selection_matrix_2026.md`
+  - `tests/utah/test_hunt_class_selection_matrix_2026.py`
+- Key results:
+  - Source hunt-class codes: `1288`.
+  - DATABASE rows with `hunt_class`: `1288`.
+  - Duplicate selector field removed: `draw_2026_permit_family`.
+  - Example: `EB1007` is `hunt_type=General Season - Any Bull`, `hunt_class=Youth`.
+  - Example: `EB1003` is `hunt_type=General Season - Spike Bull`, `hunt_class=Spike Only`.
+  - Example: `EB3022` is `hunt_type=Limited Entry`, `hunt_class=Mature Bull`.
+  - Example: `EA2012` is `hunt_type=Private Lands Only`, `hunt_class=Antlerless`.
+- Validation:
+  - `python scripts\promote-2026-draw-permit-subset.py` passed.
+  - `python scripts\promote-hunt-class-selection-matrix-2026.py` passed.
+  - `python scripts\final-permit-database-crosscheck-2026.py` passed.
+  - `python scripts\audit-database-historical-permit-lineage-2026.py` passed.
+  - `python scripts\audit-comprehensive-2026-2025-history-integrity.py` passed.
+  - `python scripts\build-database-publish-readiness-report.py` passed.
+  - `python -m py_compile scripts\promote-2026-draw-permit-subset.py scripts\promote-hunt-class-selection-matrix-2026.py scripts\final-permit-database-crosscheck-2026.py` passed.
+  - `python -m pytest tests\utah\test_hunt_class_selection_matrix_2026.py tests\utah\test_2026_draw_permit_subset.py tests\utah\test_2025_draw_permit_field_promotion.py tests\utah\test_database_historical_permit_lineage_2026.py tests\utah\test_remaining_2025_history_crosswalk_boundary_closeout.py tests\utah\test_final_permit_database_crosscheck_2026.py tests\utah\test_comprehensive_2026_2025_history_integrity_audit.py -q` passed: `34`.
+
 ## 2025 Historical Source Label Repair
 - Timestamp (UTC): 2026-05-27T01:18:00Z
 - Scope:

@@ -23,7 +23,7 @@
   "engine_codes_missing_database": [],
   "engine_codes_missing_database_count": 0,
   "files_written": 10,
-  "generated_at_utc": "2026-05-27T01:47:19+00:00",
+  "generated_at_utc": "2026-05-27T02:06:15+00:00",
   "guardrail": "Subset membership comes from draw_system_type; permit values are copied from DATABASE.csv 2026 permit/allotment fields only.",
   "hunt_type_counts": {
     "CWMU": 283,
@@ -63,10 +63,10 @@
       "status": "written"
     },
     {
-      "changed_cells": 211309,
+      "changed_cells": 0,
       "file": "processed_data/hunt_master_enriched_2026_draw_subset.csv",
       "matched_hunt_codes": 995,
-      "rows_changed": 49930,
+      "rows_changed": 0,
       "rows_checked": 54357,
       "status": "written"
     },
@@ -220,6 +220,6 @@
     }
   ],
   "subset_hunt_code_count": 995,
-  "total_changed_cells": 211309,
-  "total_rows_changed": 49930
+  "total_changed_cells": 0,
+  "total_rows_changed": 0
 }

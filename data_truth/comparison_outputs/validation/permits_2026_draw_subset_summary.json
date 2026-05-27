@@ -22,7 +22,7 @@
   },
   "engine_codes_missing_database": [],
   "engine_codes_missing_database_count": 0,
-  "generated_at_utc": "2026-05-27T01:47:19+00:00",
+  "generated_at_utc": "2026-05-27T02:06:15+00:00",
   "guardrail": "Subset membership comes from draw_system_type; permit values are copied from DATABASE.csv 2026 permit/allotment fields only.",
   "hunt_type_counts": {
     "CWMU": 283,

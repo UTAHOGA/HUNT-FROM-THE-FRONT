@@ -38,6 +38,8 @@ DRAW_FIELDS = [
     "draw_2026_system_type",
 ]
 
+DEPRECATED_FIELDS = ["draw_2026_permit_family"]
+
 TARGETS = [
     DATABASE,
     ROOT / "processed_data" / "hunt_master_enriched_2026_draw_subset.csv",
@@ -96,7 +98,7 @@ def write_csv(path: Path, fields: list[str], rows: list[dict[str, Any]]) -> None
 
 
 def insert_fields(fields: list[str]) -> list[str]:
-    out = list(fields)
+    out = [field for field in fields if field not in DEPRECATED_FIELDS]
     anchor = None
     for candidate in ("permits_2026_source", "permit_allotment_2026_source", "permits_2026_total", "hunt_type"):
         if candidate in out:
@@ -346,7 +348,15 @@ def write_reports(
     ]
     for draw_type, count in summary["draw_system_type_counts"].items():
         lines.append(f"- `{draw_type}`: `{count}`")
-    lines.extend(["", "## Spot Checks", "", "| File | Hunt code | Res | NR | Total | Source | Draw type |", "| --- | --- | ---: | ---: | ---: | --- | --- |"])
+    lines.extend(
+        [
+            "",
+            "## Spot Checks",
+            "",
+            "| File | Hunt code | Res | NR | Total | Source | Draw type |",
+            "| --- | --- | ---: | ---: | ---: | --- | --- |",
+        ]
+    )
     for row in promotion_summary["spot_checks"]:
         lines.append(
             "| {file} | {hunt_code} | {res} | {nr} | {total} | {source} | {draw_type} |".format(

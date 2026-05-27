@@ -1,6 +1,6 @@
 # 2026 Draw Permit Subset
 
-- Generated UTC: `2026-05-27T01:47:19+00:00`
+- Generated UTC: `2026-05-27T02:06:15+00:00`
 - Draw-engine hunt codes: `1005`
 - Promoted 2026 draw-permit subset codes: `995`
 - Engine codes missing DATABASE: `0`
@@ -40,7 +40,7 @@
 | File | Matched codes | Rows changed | Changed cells |
 | --- | ---: | ---: | ---: |
 | pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv | 995 | 0 | 0 |
-| processed_data/hunt_master_enriched_2026_draw_subset.csv | 995 | 49930 | 211309 |
+| processed_data/hunt_master_enriched_2026_draw_subset.csv | 995 | 0 | 0 |
 | processed_data/hunt_unit_reference_linked.csv | 995 | 0 | 0 |
 | processed_data/point_ladder_view.csv | 995 | 0 | 0 |
 | processed_data/draw_reality_engine.csv | 995 | 0 | 0 |

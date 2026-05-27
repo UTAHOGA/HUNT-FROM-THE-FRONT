@@ -1,6 +1,6 @@
 file,status,rows_checked,matched_hunt_codes,rows_changed,changed_cells
 pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv,written,1449,995,0,0
-processed_data/hunt_master_enriched_2026_draw_subset.csv,written,54357,995,49930,211309
+processed_data/hunt_master_enriched_2026_draw_subset.csv,written,54357,995,0,0
 processed_data/hunt_unit_reference_linked.csv,written,2997,995,0,0
 processed_data/point_ladder_view.csv,written,92844,995,0,0
 processed_data/draw_reality_engine.csv,written,36892,995,0,0
