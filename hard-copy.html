@@ -25,17 +25,11 @@
   </section>
 
   <main class="public-library-shell" aria-label="U.O.G.A. Hunt-Builder public resource library">
-    <section class="public-library-controls">
-      <div class="public-library-search">
-        <input id="uogaLibrarySearch" type="search" placeholder="Search folders or files (rules, harvest, draw, permits, outfitters...)" aria-label="Search public hunt library" />
-        <button id="uogaLibraryClear" type="button">Clear</button>
-      </div>
-      <p class="public-library-note">Curated public library only. Internal runtime and model files stay in research and hard-data systems.</p>
+    <section class="library-wall-stage">
+      <div id="uogaFolderWall" class="public-library-folders" aria-label="Public hunt library folders"></div>
     </section>
 
-    <section id="uogaFolderWall" class="public-library-folders" aria-label="Public hunt library folders"></section>
-
-    <section id="uogaResultsPanel" class="public-library-results" aria-live="polite" aria-hidden="true">
+    <section id="uogaResultsPanel" class="public-library-results" aria-live="polite" aria-hidden="true" hidden>
       <header class="public-library-results-head">
         <h2 id="uogaResultsTitle">Filtered Results</h2>
         <span id="uogaLibraryCount">0 files</span>
