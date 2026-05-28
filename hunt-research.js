@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
   const ENGINE_MODE = (window.UOGA_CONFIG && window.UOGA_CONFIG.HUNT_RESEARCH_ENGINE_MODE)
     ? String(window.UOGA_CONFIG.HUNT_RESEARCH_ENGINE_MODE).trim().toLowerCase()
     : 'observed';
@@ -52,6 +52,7 @@
     masterByResidency: new Map(),
     masterByCode: new Map(),
     referenceByKey: new Map(),
+    referenceByCode: new Map(),
     engineHistoryByPoint: new Map(),
     engineMode: ENGINE_MODE,
   };
@@ -195,7 +196,7 @@
 
   function formatProbability(value) {
     const parsed = num(value);
-    if (parsed === null || parsed <= 0) return '—';
+    if (parsed === null || parsed <= 0) return 'â€”';
     if (parsed >= 99.95) return '100%';
     if (parsed >= 10) return `${parsed.toFixed(1)}%`;
     if (parsed >= 1) return `${parsed.toFixed(2)}%`;
@@ -281,7 +282,7 @@
 
   function formatEmpty(value) {
     const text = String(value ?? '').trim();
-    if (!text || text === '0.000%' || text.toLowerCase() === 'not available') return '—';
+    if (!text || text === '0.000%' || text.toLowerCase() === 'not available') return 'â€”';
     return text;
   }
 
@@ -338,8 +339,8 @@
     return toProbabilityUnit(firstAvailable(row, ['guaranteed_probability']));
   }
 
-  function isRandomOnlyBonusCase(meta, row) {
-    if (isPreferenceFamily(meta, row)) return false;
+  function isRandomOnlyBonusCase(meta, row, referenceRow) {
+    if (isPreferenceFamily(meta, row, referenceRow)) return false;
     const maxPointPermits = num(row?.max_point_permits_2026);
     const randomPermits = num(row?.random_permits_2026);
     return maxPointPermits !== null && maxPointPermits <= 0 && randomPermits !== null && randomPermits > 0;
@@ -482,6 +483,7 @@
     state.masterByResidency = new Map();
     state.masterByCode = new Map();
     state.referenceByKey = new Map();
+    state.referenceByCode = new Map();
     state.engineHistoryByPoint = new Map();
 
     engineRows.forEach((row) => {
@@ -570,8 +572,12 @@
     referenceRows.forEach((row) => {
       const residency = normalizeResidencyLabel(row.residency);
       const drawPool = normalizeDrawPool(row.draw_pool);
+      const huntCode = normalizeKey(row.hunt_code);
       const group = groupKey(row.hunt_code, residency, drawPool);
       state.referenceByKey.set(group, { ...row, residency, draw_pool: drawPool });
+      if (huntCode && !state.referenceByCode.has(huntCode)) {
+        state.referenceByCode.set(huntCode, { ...row, residency, draw_pool: drawPool });
+      }
     });
 
     state.engineGroups.forEach((rows) => rows.sort((a, b) => (b.points ?? 0) - (a.points ?? 0)));
@@ -603,7 +609,10 @@
   }
 
   function getReferenceRow(huntCode, residency, drawPool) {
-    return state.referenceByKey.get(groupKey(huntCode, residency, drawPool)) || null;
+    return state.referenceByKey.get(groupKey(huntCode, residency, drawPool))
+      || state.referenceByKey.get(groupKey(huntCode, residency, 'standard'))
+      || state.referenceByCode.get(normalizeKey(huntCode))
+      || null;
   }
 
   function getEngineRows(huntCode, residency, drawPool) {
@@ -729,11 +738,15 @@
     };
   }
 
-  function getDrawSystemType(meta, row) {
+  function getDrawSystemType(meta, row, referenceRow) {
     return String(
       row?.draw_system_type
       || row?.draw_2026_system_type
       || row?.draw_system
+      || referenceRow?.draw_system_type
+      || referenceRow?.draw_2026_system_type
+      || (String(row?.algorithm_status || '').trim().toUpperCase() === 'MODELED_PREFERENCE' ? 'PREFERENCE_INFERRED' : '')
+      || (String(row?.algorithm_status || '').trim().toUpperCase() === 'MODELED_BONUS' ? 'BONUS_INFERRED' : '')
       || meta?.draw_system_type
       || meta?.draw_2026_system_type
       || meta?.draw_model_class
@@ -741,25 +754,25 @@
     ).trim().toUpperCase();
   }
 
-  function isPreferenceFamily(meta, row) {
-    return getDrawSystemType(meta, row).startsWith('PREFERENCE_');
+  function isPreferenceFamily(meta, row, referenceRow) {
+    return getDrawSystemType(meta, row, referenceRow).startsWith('PREFERENCE_');
   }
 
-  function isBonusFamily(meta, row) {
-    return getDrawSystemType(meta, row).startsWith('BONUS_');
+  function isBonusFamily(meta, row, referenceRow) {
+    return getDrawSystemType(meta, row, referenceRow).startsWith('BONUS_');
   }
 
-  function isYouthReserveFamily(meta, row) {
+  function isYouthReserveFamily(meta, row, referenceRow) {
     return [
       'YOUTH_GENERAL_DEER_RESERVE',
       'YOUTH_ANTLERLESS_OR_DOE_RESERVE',
       'YOUTH_DRAW_ONLY_ELK',
       'YOUTH_OTC_OR_AVAILABILITY',
-    ].includes(getDrawSystemType(meta, row));
+    ].includes(getDrawSystemType(meta, row, referenceRow));
   }
 
-  function isAllocationAvailabilityFamily(meta, row) {
-    const drawSystemType = getDrawSystemType(meta, row);
+  function isAllocationAvailabilityFamily(meta, row, referenceRow) {
+    const drawSystemType = getDrawSystemType(meta, row, referenceRow);
     const status = String(row?.algorithm_status || '').trim().toUpperCase();
     return [
       'SPORTSMAN_PERMIT',
@@ -772,25 +785,43 @@
       || ['MODELED_AVAILABILITY', 'MODELED_ALLOCATION', 'MODELED_SPORTSMAN_DRAW'].includes(status);
   }
 
-  function detectLadderMode(meta, rows) {
+  function detectLadderMode(meta, rows, referenceRow) {
     const firstRow = (rows && rows.length) ? rows[0] : null;
-    if (isPreferenceFamily(meta, firstRow)) return DRAW_MODE.PREFERENCE;
-    if (isBonusFamily(meta, firstRow)) return DRAW_MODE.BONUS;
-    if (isYouthReserveFamily(meta, firstRow)) return DRAW_MODE.YOUTH_RESERVE;
-    if (isAllocationAvailabilityFamily(meta, firstRow)) return DRAW_MODE.ALLOCATION_AVAILABILITY;
+    if (isPreferenceFamily(meta, firstRow, referenceRow)) return DRAW_MODE.PREFERENCE;
+    if (isBonusFamily(meta, firstRow, referenceRow)) return DRAW_MODE.BONUS;
+    if (isYouthReserveFamily(meta, firstRow, referenceRow)) return DRAW_MODE.YOUTH_RESERVE;
+    if (isAllocationAvailabilityFamily(meta, firstRow, referenceRow)) return DRAW_MODE.ALLOCATION_AVAILABILITY;
+
+    // Fallback when ladder rows are sparse/legacy and draw_system_type is blank.
+    const refType = String(
+      referenceRow?.draw_system_type
+      || referenceRow?.draw_2026_system_type
+      || meta?.draw_system_type
+      || meta?.draw_2026_system_type
+      || '',
+    ).trim().toUpperCase();
+    if (refType.startsWith('PREFERENCE_')) return DRAW_MODE.PREFERENCE;
+    if (refType.startsWith('BONUS_')) return DRAW_MODE.BONUS;
+
+    const permitStatus = String(referenceRow?.permit_status || meta?.permit_status || '').trim().toUpperCase();
+    const huntType = String(referenceRow?.hunt_type || meta?.hunt_type || '').trim().toLowerCase();
+    const species = String(referenceRow?.species || meta?.species || '').trim().toLowerCase();
+    if (permitStatus === 'TOTAL_ONLY' && huntType.includes('general season') && species.includes('deer')) {
+      return DRAW_MODE.PREFERENCE;
+    }
     return DRAW_MODE.STATUS_ONLY;
   }
 
-  function getRecommendation(meta, row) {
+  function getRecommendation(meta, row, referenceRow) {
     if (!row) {
       return 'No modeled point-level row is available yet. Use Sources to verify historical draw pages and compare nearby point rows while this hunt is being rebuilt into the modeled ladder.';
     }
 
-    if (isRandomOnlyBonusCase(meta, row)) {
+    if (isRandomOnlyBonusCase(meta, row, referenceRow)) {
       return 'This hunt has no meaningful max-pool path at this residency. Your outcome depends on weighted random draw only.';
     }
 
-    if (isPreferenceFamily(meta, row)) {
+    if (isPreferenceFamily(meta, row, referenceRow)) {
       const selectedOdds = selectDrawOddsPercent(row);
       if ((selectedOdds.percent !== null && selectedOdds.percent >= 99.9) || num(row.gap) === 0) {
         return 'This hunt is currently inside the preference-point line at your selected point level.';
@@ -816,16 +847,16 @@
     }
   }
 
-  function getPrimaryOddsLabel(meta, row, displayedOdds) {
+  function getPrimaryOddsLabel(meta, row, displayedOdds, referenceRow) {
     if (displayedOdds.source === 'ml_hybrid') {
       const confidence = displayedOdds.confidence === null ? null : Number(displayedOdds.confidence);
       const confidenceLabel = Number.isFinite(confidence) ? ` (conf ${confidence.toFixed(2)})` : '';
       return `2026 ML Hybrid Draw: ${displayedOdds.value}${confidenceLabel}`;
     }
-    if (isPreferenceFamily(meta, row)) {
+    if (isPreferenceFamily(meta, row, referenceRow)) {
       return `2026 Preference Draw: ${displayedOdds.value}`;
     }
-    if (isRandomOnlyBonusCase(meta, row)) {
+    if (isRandomOnlyBonusCase(meta, row, referenceRow)) {
       return `2026 Random Draw: ${displayedOdds.value}`;
     }
     return `2026 Random Draw: ${displayedOdds.value}`;
@@ -901,9 +932,9 @@
     els.ladderHeaderCol5.textContent = headers[4];
   }
 
-  function getDrawPoolPositionLabel(meta, row) {
+  function getDrawPoolPositionLabel(meta, row, referenceRow) {
     if (!row) return 'No modeled point row is loaded yet.';
-    if (isPreferenceFamily(meta, row)) {
+    if (isPreferenceFamily(meta, row, referenceRow)) {
       const gap = num(row.gap);
       if (gap !== null && gap <= 0) return 'Inside the preference line.';
       return 'Below the preference line.';
@@ -912,11 +943,11 @@
     if (zone === 'max_point_pool' || zone === 'max_pool_guaranteed') return 'In the max-point pool.';
     if (zone === 'max_pool_cutoff_mixed') return 'On the max-point cutoff line; some applicants at this point level may spill into random.';
     if (zone === 'random_pool') return 'In the random pool.';
-    if (isRandomOnlyBonusCase(meta, row)) return 'Random draw only.';
+    if (isRandomOnlyBonusCase(meta, row, referenceRow)) return 'Random draw only.';
     return 'Draw pool not classified yet.';
   }
 
-  function getCatchTrainSummary(meta, row, filters) {
+  function getCatchTrainSummary(meta, row, filters, referenceRow) {
     if (!row) return 'No row is modeled yet, so we cannot tell if this train is catchable.';
     const selectedOdds = selectDrawOddsPercent(row);
     const gap = num(row.gap);
@@ -933,18 +964,18 @@
     if (row.draw_outlook === 'MAY DRAW IN 5-10 YEARS' || trend === 'YELLOW') {
       return 'Maybe. You are still behind, but the line is close enough to watch instead of writing it off.';
     }
-    if (isRandomOnlyBonusCase(meta, row)) {
+    if (isRandomOnlyBonusCase(meta, row, referenceRow)) {
       return 'No guaranteed train to catch here. This one is about weighted random chance.';
     }
     return 'Possible, but the model needs more history before calling it a confident catch-up hunt.';
   }
 
-  function getPlainFormulaText(meta, row) {
+  function getPlainFormulaText(meta, row, referenceRow) {
     if (!row) return 'We need a modeled point row before the formula can be explained for this hunt.';
-    if (isPreferenceFamily(meta, row)) {
+    if (isPreferenceFamily(meta, row, referenceRow)) {
       return 'Preference-style logic is mostly line math: compare your points to the last modeled draw line, then adjust for permit change and point creep.';
     }
-    if (isRandomOnlyBonusCase(meta, row)) {
+    if (isRandomOnlyBonusCase(meta, row, referenceRow)) {
       return 'Random-only logic uses the remaining random permits and the applicant stack at this point level. More points can help weight, but they do not create a guaranteed line.';
     }
     return 'Bonus-style logic separates the max-point pool from the random pool. First we test whether your points reach the guaranteed line; if not, your odds come from the random pool.';
@@ -967,14 +998,23 @@
     const poolLabel = getDrawPoolHandoffLabel(filters.drawPool);
     if (poolLabel) parts.push(poolLabel);
     parts.push(`${filters.points} point${filters.points === 1 ? '' : 's'}`);
-    els.filterReadout.textContent = `${parts.join(' · ')}.`;
+    els.filterReadout.textContent = `${parts.join(' Â· ')}.`;
 
     els.plannerReadout.textContent = state.selectedHuntCode
       ? `Planner handoff: ${state.selectedHuntCode}.`
       : 'Planner handoff ready.';
   }
 
-  function getHarvestSuccessDisplay(meta, referenceRow) {
+  function getHarvestSuccessDisplay(meta, referenceRow, row) {
+    const fromRow = firstAvailable(row, ['harvest_success_percent_2025', 'success_percent', 'percent_success', 'prior_year_success_rate']);
+    if (fromRow !== null) {
+      const pct = num(fromRow);
+      if (pct !== null) {
+        const normalized = pct <= 1 ? pct * 100 : pct;
+        return `${Number(normalized.toFixed(1)).toString()}%`;
+      }
+      return String(fromRow);
+    }
     if (referenceRow?.harvest_success_percent_2025 !== undefined && referenceRow?.harvest_success_percent_2025 !== null && String(referenceRow.harvest_success_percent_2025).trim() !== '') {
       return `${referenceRow.harvest_success_percent_2025}%`;
     }
@@ -985,24 +1025,32 @@
   }
 
   function getResidentPermitsDisplay(meta, referenceRow) {
+    const total = firstAvailable(referenceRow, ['permits_2026_total', 'permit_allotment_2026_total', 'public_permits_2026'])
+      || firstAvailable(meta, ['permits_2026_total', 'permit_allotment_2026_total', 'public_permits_2026']);
+    const permitStatus = String(referenceRow?.permit_status || meta?.permit_status || '').trim().toUpperCase();
+    if (permitStatus === 'TOTAL_ONLY' && total) {
+      return `${total} total (no split published)`;
+    }
     const resident = firstAvailable(referenceRow, ['permits_2026_res'])
       || firstAvailable(meta, ['public_resident_permits', 'permits_2026_res', 'permit_allotment_2026_res']);
     if (resident) return resident;
-    const total = firstAvailable(referenceRow, ['permits_2026_total', 'permit_allotment_2026_total', 'public_permits_2026'])
-      || firstAvailable(meta, ['permits_2026_total', 'permit_allotment_2026_total', 'public_permits_2026']);
     return total ? `${total} total` : 'Not loaded';
   }
 
   function getNonresidentPermitsDisplay(meta, referenceRow) {
+    const total = firstAvailable(referenceRow, ['permits_2026_total', 'permit_allotment_2026_total', 'public_permits_2026'])
+      || firstAvailable(meta, ['permits_2026_total', 'permit_allotment_2026_total', 'public_permits_2026']);
+    const permitStatus = String(referenceRow?.permit_status || meta?.permit_status || '').trim().toUpperCase();
+    if (permitStatus === 'TOTAL_ONLY' && total) {
+      return `${total} total (no split published)`;
+    }
     const nonresident = firstAvailable(referenceRow, ['permits_2026_nr'])
       || firstAvailable(meta, ['public_nonresident_permits', 'permits_2026_nr', 'permit_allotment_2026_nr']);
     if (nonresident) return nonresident;
-    const total = firstAvailable(referenceRow, ['permits_2026_total', 'permit_allotment_2026_total', 'public_permits_2026'])
-      || firstAvailable(meta, ['permits_2026_total', 'permit_allotment_2026_total', 'public_permits_2026']);
     return total ? `${total} total` : 'Not loaded';
   }
 
-  function getVerdictState(meta, row, filters, coverageMessage) {
+  function getVerdictState(meta, row, filters, coverageMessage, referenceRow) {
     if (!row) {
       return {
         badge: 'Not available',
@@ -1019,7 +1067,7 @@
       };
     }
 
-    if (isRandomOnlyBonusCase(meta, row)) {
+    if (isRandomOnlyBonusCase(meta, row, referenceRow)) {
       return {
         badge: 'Random Chance Only',
         message: 'This hunt does not currently offer a meaningful guaranteed path at this residency. Your outcome depends on the random draw only.',
@@ -1096,10 +1144,10 @@
     };
   }
 
-  function renderVerdict(meta, row, filters, coverageMessage) {
+  function renderVerdict(meta, row, filters, coverageMessage, referenceRow) {
     if (!els.verdictBadge || !els.verdictMessage) return;
 
-    const verdict = getVerdictState(meta, row, filters, coverageMessage);
+    const verdict = getVerdictState(meta, row, filters, coverageMessage, referenceRow);
     els.verdictBadge.className = `verdict-badge ${verdict.className}`;
     els.verdictBadge.textContent = verdict.badge;
     els.verdictMessage.textContent = verdict.message;
@@ -1107,15 +1155,16 @@
 
   function getGuaranteedLinePointForDisplay(meta, row, filters) {
     const ladderRows = getLadderRows(filters.huntCode, filters.residency, filters.drawPool);
-    const mode = detectLadderMode(meta, ladderRows);
+    const referenceRow = getReferenceRow(filters.huntCode, filters.residency, filters.drawPool);
+    const mode = detectLadderMode(meta, ladderRows, referenceRow);
     return getGuaranteedLinePoint(row, ladderRows, mode);
   }
 
-  function renderTopSummary(meta, row, filters, displayedOdds) {
+  function renderTopSummary(meta, row, filters, displayedOdds, referenceRow) {
     const guaranteedLinePoint = row ? getGuaranteedLinePointForDisplay(meta, row, filters) : null;
     if (els.summaryGuaranteedTop) {
       els.summaryGuaranteedTop.textContent = row
-        ? (isRandomOnlyBonusCase(meta, row) ? 'Not applicable' : (guaranteedLinePoint === null ? 'Not available pts' : `${formatInteger(guaranteedLinePoint)} pts`))
+        ? (isRandomOnlyBonusCase(meta, row, referenceRow) ? 'Not applicable' : (guaranteedLinePoint === null ? 'Not available pts' : `${formatInteger(guaranteedLinePoint)} pts`))
         : 'Not loaded';
     }
 
@@ -1135,8 +1184,8 @@
   function renderSummary(meta, row, filters, coverageMessage, referenceRow) {
     const displayedOdds = getDisplayedOdds(row);
 
-    renderVerdict(meta, row, filters, coverageMessage);
-    renderTopSummary(meta, row, filters, displayedOdds);
+    renderVerdict(meta, row, filters, coverageMessage, referenceRow);
+    renderTopSummary(meta, row, filters, displayedOdds, referenceRow);
 
     if (!row) {
       renderOutlookLight('red');
@@ -1155,7 +1204,7 @@
         els.selectedNonresidentPermits.textContent = getNonresidentPermitsDisplay(meta, referenceRow);
       }
       if (els.selectedHarvestSuccess) {
-        els.selectedHarvestSuccess.textContent = getHarvestSuccessDisplay(meta, referenceRow);
+        els.selectedHarvestSuccess.textContent = getHarvestSuccessDisplay(meta, referenceRow, row);
       }
       return;
     }
@@ -1179,7 +1228,7 @@
       }
 
       if (els.selectedHarvestSuccess) {
-        els.selectedHarvestSuccess.textContent = getHarvestSuccessDisplay(meta, referenceRow);
+        els.selectedHarvestSuccess.textContent = getHarvestSuccessDisplay(meta, referenceRow, row);
       }
       return;
     }
@@ -1188,7 +1237,7 @@
     const guaranteedLinePoint = getGuaranteedLinePointForDisplay(meta, row, filters);
 
     if (els.summaryGuaranteed) {
-      els.summaryGuaranteed.textContent = isRandomOnlyBonusCase(meta, row)
+      els.summaryGuaranteed.textContent = isRandomOnlyBonusCase(meta, row, referenceRow)
         ? 'Not applicable'
         : (guaranteedLinePoint === null ? 'Not available pts' : `${formatInteger(guaranteedLinePoint)} pts`);
     }
@@ -1198,19 +1247,19 @@
     }
 
     if (els.summaryStatus) {
-      els.summaryStatus.textContent = isRandomOnlyBonusCase(meta, row)
+      els.summaryStatus.textContent = isRandomOnlyBonusCase(meta, row, referenceRow)
         ? 'Random draw only'
         : formatGapStatus(row.gap);
     }
 
     if (els.summaryOdds) {
-      els.summaryOdds.textContent = getPrimaryOddsLabel(meta, row, displayedOdds);
+      els.summaryOdds.textContent = getPrimaryOddsLabel(meta, row, displayedOdds, referenceRow);
     }
 
     renderTrendLight(getTrendSignal(row));
 
     if (els.summaryTrendText) {
-      els.summaryTrendText.textContent = isRandomOnlyBonusCase(meta, row)
+      els.summaryTrendText.textContent = isRandomOnlyBonusCase(meta, row, referenceRow)
         ? 'Not applicable'
         : (row.trend || 'Not available');
     }
@@ -1228,7 +1277,7 @@
     }
 
     if (els.selectedHarvestSuccess) {
-      els.selectedHarvestSuccess.textContent = getHarvestSuccessDisplay(meta, referenceRow);
+      els.selectedHarvestSuccess.textContent = getHarvestSuccessDisplay(meta, referenceRow, row);
     }
   }
 
@@ -1312,18 +1361,18 @@
   function buildDecisionBoxes(meta, row, referenceRow, filters) {
     const displayedOdds = getDisplayedOdds(row);
     const maxPoolDisplay = getMaxPointPoolDisplay(row) || 'Not currently a max-pool row.';
-    const randomDisplay = getRandomDrawDisplay(row) || (isRandomOnlyBonusCase(meta, row) ? displayedOdds.value : 'Not currently a random-pool row.');
+    const randomDisplay = getRandomDrawDisplay(row) || (isRandomOnlyBonusCase(meta, row, referenceRow) ? displayedOdds.value : 'Not currently a random-pool row.');
     const boxes = [
       ['Your Points Draw Odds', row ? displayedOdds.value : 'Not available'],
-      ['Your Draw Pool', getDrawPoolPositionLabel(meta, row)],
-      ['Can You Catch The Train?', getCatchTrainSummary(meta, row, filters)],
+      ['Your Draw Pool', getDrawPoolPositionLabel(meta, row, referenceRow)],
+      ['Can You Catch The Train?', getCatchTrainSummary(meta, row, filters, referenceRow)],
       ['Point Creep Readout', getPointCreepDisplay(row)],
       ['Max Point Pool', maxPoolDisplay],
       ['Random Pool', randomDisplay],
       ['Last Draw Result', formatHistoricalDrawResult(row) || 'Not available'],
       ['Permit Context', `${referenceRow?.permits_2026_total || meta?.public_permits_2026 || 'Not loaded'} total public permits in 2026`],
       ['Harvest Snapshot', getHarvestSnapshot(meta, referenceRow)],
-      ['Plain-English Formula', getPlainFormulaText(meta, row), 'is-wide'],
+      ['Plain-English Formula', getPlainFormulaText(meta, row, referenceRow), 'is-wide'],
       ['What I Would Do With This', getRecommendation(meta, row), 'is-wide'],
     ];
 
@@ -1340,7 +1389,7 @@
     const pointLabel = formatInteger(row?.points);
     const filters = state.selectedFilters || buildFilters();
     els.sourceModalTitle.textContent = 'Hunt Data Snapshot';
-    els.sourceModalSubtitle.textContent = `${meta?.hunt_code || ''} · ${meta?.hunt_name || ''} · ${residency || ''} · ${pointLabel} points`;
+    els.sourceModalSubtitle.textContent = `${meta?.hunt_code || ''} Â· ${meta?.hunt_name || ''} Â· ${residency || ''} Â· ${pointLabel} points`;
     els.sourceModalGrid.innerHTML = `
       <p class="source-plain-note">This is the quick interpretation layer: where your points sit, whether you are in the max-point or random pool, what point creep is doing, and what the harvest row says when mapped.</p>
       ${buildDecisionBoxes(meta, row, referenceRow, filters)}
@@ -1413,7 +1462,8 @@
     if (!els.ladderTableWrap || !els.ladderTableEmpty || !els.ladderTableBody) return;
 
     const rows = getLadderRows(huntCode, residency, drawPool);
-    const mode = detectLadderMode(meta, rows);
+    const ladderReferenceRow = getReferenceRow(huntCode, residency, drawPool);
+    const mode = detectLadderMode(meta, rows, ladderReferenceRow);
     setLadderHeaders(mode);
     if (!rows.length) {
       els.ladderTableWrap.hidden = true;
@@ -1436,7 +1486,7 @@
     function getRowCells(row, markers, historicalPointRow) {
       const actual2025Display = formatHistoricalDrawResult(row)
         || formatHistoricalDrawResult(historicalPointRow)
-        || '—';
+        || 'â€”';
       const odds = (mode === DRAW_MODE.PREFERENCE || mode === DRAW_MODE.YOUTH_RESERVE)
         ? selectPreferenceOddsPercent(row)
         : selectDrawOddsPercent(row);
@@ -1452,49 +1502,49 @@
           actual2025Display,
           prefProjection,
           oddsDisplay,
-          notes || '—',
+          notes || 'â€”',
         ];
       }
 
       if (mode === DRAW_MODE.BONUS) {
         const bonusProjection = (isGuaranteedLineRow(row, rows, mode) || isAboveGuaranteedLineRow(row, rows, mode))
           ? MAX_POINT_POOL_GUARANTEED_DISPLAY
-          : (getMaxPointPoolDisplay(row) || '—');
-        const randomChance = isAboveGuaranteedLineRow(row, rows, mode) ? '—' : (getRandomDrawDisplay(row) || oddsDisplay);
+          : (getMaxPointPoolDisplay(row) || 'â€”');
+        const randomChance = isAboveGuaranteedLineRow(row, rows, mode) ? 'â€”' : (getRandomDrawDisplay(row) || oddsDisplay);
         return [
           formatInteger(row.points),
           actual2025Display,
           bonusProjection,
-          randomChance || '—',
-          markerHtml(markers) || '—',
+          randomChance || 'â€”',
+          markerHtml(markers) || 'â€”',
         ];
       }
 
       if (mode === DRAW_MODE.YOUTH_RESERVE) {
-        const reservePool = firstAvailable(row, ['quota_2026_youth_reserve']) || '—';
+        const reservePool = firstAvailable(row, ['quota_2026_youth_reserve']) || 'â€”';
         const youthOdds = formatOddsAsOneInOrPercent(toProbabilityPercent(firstAvailable(row, ['youth_reserve_probability', 'p_preference_draw'])));
         const rollover = formatOddsAsOneInOrPercent(toProbabilityPercent(firstAvailable(row, ['youth_rollover_main_draw_probability', 'p_random_pool'])));
-        const notes = String(row?.preference_model_note || '').trim() || String(row?.data_quality_flags || '').trim() || '—';
+        const notes = String(row?.preference_model_note || '').trim() || String(row?.data_quality_flags || '').trim() || 'â€”';
         return [
           formatInteger(row.points),
           String(reservePool),
           youthOdds || oddsDisplay,
-          rollover || '—',
-          notes || '—',
+          rollover || 'â€”',
+          notes || 'â€”',
         ];
       }
 
       if (mode === DRAW_MODE.ALLOCATION_AVAILABILITY) {
         const status = firstAvailable(row, ['availability_status', 'allocation_status', 'status', 'draw_outlook']) || 'Not available';
-        const availability = firstAvailable(row, ['availability_pct', 'p_availability', 'permits_remaining', 'permits_sold_or_used']) || '—';
-        const allocation = firstAvailable(row, ['permit_allotment_2026_total', 'public_permits_2026', 'permits_allotted']) || '—';
-        const ruleSource = firstAvailable(row, ['rule_status', 'permit_allotment_2026_source', 'reason']) || '—';
+        const availability = firstAvailable(row, ['availability_pct', 'p_availability', 'permits_remaining', 'permits_sold_or_used']) || 'â€”';
+        const allocation = firstAvailable(row, ['permit_allotment_2026_total', 'public_permits_2026', 'permits_allotted']) || 'â€”';
+        const ruleSource = firstAvailable(row, ['rule_status', 'permit_allotment_2026_source', 'reason']) || 'â€”';
         return [
           status,
           String(availability),
           String(allocation),
           String(ruleSource),
-          String(row?.data_quality_flags || '').trim() || '—',
+          String(row?.data_quality_flags || '').trim() || 'â€”',
         ];
       }
 
@@ -1504,14 +1554,14 @@
         actual2025Display,
         statusOnly,
         oddsDisplay,
-        String(row?.reason || '').trim() || '—',
+        String(row?.reason || '').trim() || 'â€”',
       ];
     }
 
     els.ladderTableBody.innerHTML = rows.map((row) => {
       const markers = [];
       const classes = [];
-      const referenceRow = getReferenceRow(huntCode, residency, drawPool);
+      const referenceRow = ladderReferenceRow;
       const historicalPointRow = state.engineHistoryByPoint.get(rowKey(huntCode, residency, row.points, drawPool)) || null;
       const userPoints = getCurrentPoints();
       const isUserRow = Number(row.points) === Number(userPoints);
@@ -1533,7 +1583,7 @@
       const markersBlock = markerHtml(markers);
       const notesText = String(cells[4] || '').trim();
       const notesBlock = [
-        notesText && notesText !== '—' ? `<div>${escapeHtml(notesText)}</div>` : '',
+        notesText && notesText !== 'â€”' ? `<div>${escapeHtml(notesText)}</div>` : '',
         markersBlock,
       ].filter(Boolean).join('');
       const tableCells = [
@@ -1541,7 +1591,7 @@
         `<td>${escapeHtml(String(cells[1] || ''))}</td>`,
         `<td>${escapeHtml(String(cells[2] || ''))}</td>`,
         `<td>${escapeHtml(String(cells[3] || ''))}</td>`,
-        `<td>${notesBlock || '—'}</td>`,
+        `<td>${notesBlock || 'â€”'}</td>`,
       ].join('');
 
       const rowClass = [isUserRow ? 'is-user-row' : '', ...classes.filter((name) => name !== 'is-user-row')]
@@ -1638,13 +1688,13 @@
     if (els.detailContent) els.detailContent.hidden = false;
 
     if (els.detailTitle) {
-      els.detailTitle.textContent = meta ? `${meta.hunt_code} · ${meta.hunt_name}` : filters.huntCode;
+      els.detailTitle.textContent = meta ? `${meta.hunt_code} Â· ${meta.hunt_name}` : filters.huntCode;
     }
 
     if (els.detailSubtitle) {
       els.detailSubtitle.textContent = meta
-        ? `${meta.species || 'Unknown'} · ${meta.weapon || 'Unknown weapon'} · ${filters.residency}`
-        : `${filters.residency} · ${formatInteger(filters.points)} points`;
+        ? `${meta.species || 'Unknown'} Â· ${meta.weapon || 'Unknown weapon'} Â· ${filters.residency}`
+        : `${filters.residency} Â· ${formatInteger(filters.points)} points`;
     }
 
     if (els.openPlannerLink) {
@@ -1720,7 +1770,7 @@
         <div class="backpack-card">
           <span class="label">${escapeHtml(item.hunt_code)}</span>
           <h4>${escapeHtml(item.hunt_name || item.hunt_code)}</h4>
-          <p>${escapeHtml(item.species || '')}${item.weapon ? ` · ${escapeHtml(item.weapon)}` : ''} · ${escapeHtml(item.residency || 'Resident')} · ${formatInteger(item.selected_points)} points</p>
+          <p>${escapeHtml(item.species || '')}${item.weapon ? ` Â· ${escapeHtml(item.weapon)}` : ''} Â· ${escapeHtml(item.residency || 'Resident')} Â· ${formatInteger(item.selected_points)} points</p>
           ${poolLabel ? `<p>${escapeHtml(poolLabel)}</p>` : ''}
           <p>${escapeHtml(item.draw_outlook || 'Saved for later review.')}</p>
           <div class="backpack-actions">
@@ -1921,3 +1971,4 @@
 
   init();
 })();
+
