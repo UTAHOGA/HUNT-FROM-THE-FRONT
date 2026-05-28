@@ -1,5 +1,41 @@
 # WORK LOG
 
+## Step 4B Public Library Calendar + Regulations Population
+- Timestamp (UTC): 2026-05-28T08:40:08Z
+- Scope:
+  - Populated public Rules/Regulations and Calendar folders for `hard-copy.html` curation layer only.
+  - Added manual public manifest file:
+    - `processed_data/hard_data_exports/library/public_library_manual_items.json`
+  - Added 6 regulation PDF public items sourced from:
+    - `pipeline/RAW/hunt_unit_database/2026/pdf/regulations`
+  - Added Utah DWR calendar as embedded item (`type=iframe`, `delivery=embedded`) for in-page calendar viewing.
+  - Updated `assets/js/hard-copy-public-library.js` to:
+    - load manual public items manifest
+    - map regulation/rules/guidebook/proclamation/application signals to Rules folder
+    - map calendar signals to Calendar folder
+    - open embedded items in-page via iframe panel (no navigation away)
+    - keep runtime denylist protection active for raw engine/internal files
+  - Updated `assets/css/hard-copy-public-library.css` with embedded panel styling and responsive iframe behavior.
+  - Updated `scripts/build-pages-dist.js` with narrow public copy rule:
+    - copy only `pipeline/RAW/hunt_unit_database/2026/pdf/regulations/*.pdf`
+    - to `pages-dist/public/hard-copy/regulations/2026/`
+    - no broad `pipeline/RAW` exposure.
+- Validation:
+  - `npm.cmd run build` passed.
+  - Build gate remained clean: `Gate BLOCK: 0`, `Manual review: 0`, crosswalk matched `169`.
+  - Verified output files in `pages-dist`:
+    - `hard-copy.html`
+    - `assets/css/hard-copy-public-library.css`
+    - `assets/js/hard-copy-public-library.js`
+    - `assets/backgrounds/library-wallpaper.jpg`
+  - Verified regulations PDF publish path exists and contains 6 PDFs:
+    - `pages-dist/public/hard-copy/regulations/2026/`
+  - Verified preview URL returned `200` and includes embedded panel markup.
+  - Manifest-level curation check:
+    - Rules folder count: `6`
+    - Calendar folder count: `1`
+    - `raw_runtime_exposed: 0`
+
 ## Step 4 Public Hunt Library Curation (hard-copy.html)
 - Timestamp (UTC): 2026-05-28T08:23:36Z
 - Scope:

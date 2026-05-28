@@ -268,6 +268,12 @@ body {
   background: rgba(26, 14, 8, 0.7);
 }
 
+.public-file-card--button {
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
 .public-file-card strong {
   display: block;
   font-size: 14px;
@@ -297,6 +303,47 @@ body {
   font-size: 13px;
 }
 
+.uoga-embed-panel {
+  margin-top: 16px;
+  border: 1px solid rgba(255, 205, 143, 0.35);
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(24, 12, 6, 0.88);
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.45);
+}
+
+.uoga-embed-panel[hidden] {
+  display: none !important;
+}
+
+.uoga-embed-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: rgba(43, 22, 12, 0.92);
+  color: #ffe4bd;
+}
+
+.uoga-embed-head button {
+  border: 0;
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: linear-gradient(180deg, #f89524, #d56610);
+  color: #2b1308;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.uoga-embed-panel iframe {
+  display: block;
+  width: 100%;
+  min-height: 620px;
+  border: 0;
+  background: #fff;
+}
+
 @media (max-width: 1080px) {
   .public-library-folders {
     grid-template-columns: repeat(2, minmax(200px, 1fr));
@@ -314,6 +361,10 @@ body {
 
   .public-library-folders {
     grid-template-columns: 1fr;
+  }
+
+  .uoga-embed-panel iframe {
+    min-height: 520px;
   }
 
   .utility-nav {

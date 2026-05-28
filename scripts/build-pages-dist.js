@@ -257,6 +257,23 @@ async function writeConfigLocalStub() {
   await fs.writeFile(target, body, 'utf8');
 }
 
+async function copyPublicRegulationPdfs(missing) {
+  const srcDir = path.join(repoRoot, 'pipeline', 'RAW', 'hunt_unit_database', '2026', 'pdf', 'regulations');
+  const destDir = path.join(outDir, 'public', 'hard-copy', 'regulations', '2026');
+  if (!(await exists(srcDir))) {
+    missing.push('pipeline/RAW/hunt_unit_database/2026/pdf/regulations');
+    return;
+  }
+
+  await fs.mkdir(destDir, { recursive: true });
+  const entries = await fs.readdir(srcDir, { withFileTypes: true });
+  for (const entry of entries) {
+    if (!entry.isFile()) continue;
+    if (!entry.name.toLowerCase().endsWith('.pdf')) continue;
+    await fs.copyFile(path.join(srcDir, entry.name), path.join(destDir, entry.name));
+  }
+}
+
 async function main() {
   await fs.rm(outDir, { recursive: true, force: true });
   await fs.mkdir(outDir, { recursive: true });
@@ -277,6 +294,8 @@ async function main() {
   for (const relPath of dirsToCopy) {
     await copyDirIfExists(relPath, missing);
   }
+
+  await copyPublicRegulationPdfs(missing);
 
   await writeConfigLocalStub();
 

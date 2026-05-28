@@ -1,0 +1,79 @@
+[
+  {
+    "group": "regulation",
+    "type": "pdf",
+    "year": "2025-26",
+    "title": "Utah DWR 2025-26 Upland Game Turkey Guidebook",
+    "subtitle": "2026-cycle Utah DWR rules/regulations PDF.",
+    "href": "./public/hard-copy/regulations/2026/2025-26 Upland Game Turkey.pdf",
+    "source": "pipeline/RAW/hunt_unit_database/2026/pdf/regulations",
+    "scope": "public",
+    "delivery": "pages-local"
+  },
+  {
+    "group": "regulation",
+    "type": "pdf",
+    "year": "2026",
+    "title": "Utah DWR 2026 Bear Cougar Furbearer Guidebook",
+    "subtitle": "2026 Utah DWR rules/regulations PDF.",
+    "href": "./public/hard-copy/regulations/2026/2026 Bear Cougar Furbearer Guidebook.pdf",
+    "source": "pipeline/RAW/hunt_unit_database/2026/pdf/regulations",
+    "scope": "public",
+    "delivery": "pages-local"
+  },
+  {
+    "group": "regulation",
+    "type": "pdf",
+    "year": "2026",
+    "title": "Utah DWR 2026 Big Game Application Guidebook",
+    "subtitle": "2026 Utah DWR rules/regulations PDF.",
+    "href": "./public/hard-copy/regulations/2026/2026 Big Game Application.pdf",
+    "source": "pipeline/RAW/hunt_unit_database/2026/pdf/regulations",
+    "scope": "public",
+    "delivery": "pages-local"
+  },
+  {
+    "group": "regulation",
+    "type": "pdf",
+    "year": "2026",
+    "title": "Utah DWR 2026 Fishing Guidebook",
+    "subtitle": "2026 Utah DWR rules/regulations PDF.",
+    "href": "./public/hard-copy/regulations/2026/2026 Fishing.pdf",
+    "source": "pipeline/RAW/hunt_unit_database/2026/pdf/regulations",
+    "scope": "public",
+    "delivery": "pages-local"
+  },
+  {
+    "group": "regulation",
+    "type": "pdf",
+    "year": "2026",
+    "title": "Utah DWR 2026 Turkey Guidebook",
+    "subtitle": "2026 Utah DWR rules/regulations PDF.",
+    "href": "./public/hard-copy/regulations/2026/2026 Turkey.pdf",
+    "source": "pipeline/RAW/hunt_unit_database/2026/pdf/regulations",
+    "scope": "public",
+    "delivery": "pages-local"
+  },
+  {
+    "group": "regulation",
+    "type": "pdf",
+    "year": "2026",
+    "title": "Utah DWR 2026 Waterfowl Guidebook",
+    "subtitle": "2026 Utah DWR rules/regulations PDF.",
+    "href": "./public/hard-copy/regulations/2026/2026 Waterfowl.pdf",
+    "source": "pipeline/RAW/hunt_unit_database/2026/pdf/regulations",
+    "scope": "public",
+    "delivery": "pages-local"
+  },
+  {
+    "group": "calendar",
+    "type": "iframe",
+    "year": "2026",
+    "title": "Utah DWR Calendar",
+    "subtitle": "Official Utah DWR calendar for application windows, deadlines, season dates, and public events.",
+    "href": "https://calendar.google.com/calendar/u/0/embed?height=600&wkst=1&bgcolor=%23FFFFFF&src=utah.gov_95qrjmfvfifbq6mkg1e41lnrno@group.calendar.google.com&color=%231B887A&src=utah.gov_l1ndc1a2r58v1t6g7ac3na96s8@group.calendar.google.com&color=%23856508&src=utah.gov_e55anhcr6q7nrgte2f30h2o2lo@group.calendar.google.com&color=%23B1440E&src=utah.gov_v0i790s35jhgef7nqbrthvgnf8@group.calendar.google.com&color=%23333333&src=utah.gov_a4abp8ma2mmcjuhd5jgftto3to@group.calendar.google.com&color=%23A32929&ctz=America/Denver&pli=1",
+    "source": "Utah DWR public Google Calendar",
+    "scope": "public",
+    "delivery": "embedded"
+  }
+]
