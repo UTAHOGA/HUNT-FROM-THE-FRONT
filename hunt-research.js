@@ -985,15 +985,21 @@
   }
 
   function getResidentPermitsDisplay(meta, referenceRow) {
-    return firstAvailable(referenceRow, ['permits_2026_res'])
-      || firstAvailable(meta, ['public_resident_permits'])
-      || 'Not loaded';
+    const resident = firstAvailable(referenceRow, ['permits_2026_res'])
+      || firstAvailable(meta, ['public_resident_permits', 'permits_2026_res', 'permit_allotment_2026_res']);
+    if (resident) return resident;
+    const total = firstAvailable(referenceRow, ['permits_2026_total', 'permit_allotment_2026_total', 'public_permits_2026'])
+      || firstAvailable(meta, ['permits_2026_total', 'permit_allotment_2026_total', 'public_permits_2026']);
+    return total ? `${total} total` : 'Not loaded';
   }
 
   function getNonresidentPermitsDisplay(meta, referenceRow) {
-    return firstAvailable(referenceRow, ['permits_2026_nr'])
-      || firstAvailable(meta, ['public_nonresident_permits'])
-      || 'Not loaded';
+    const nonresident = firstAvailable(referenceRow, ['permits_2026_nr'])
+      || firstAvailable(meta, ['public_nonresident_permits', 'permits_2026_nr', 'permit_allotment_2026_nr']);
+    if (nonresident) return nonresident;
+    const total = firstAvailable(referenceRow, ['permits_2026_total', 'permit_allotment_2026_total', 'public_permits_2026'])
+      || firstAvailable(meta, ['permits_2026_total', 'permit_allotment_2026_total', 'public_permits_2026']);
+    return total ? `${total} total` : 'Not loaded';
   }
 
   function getVerdictState(meta, row, filters, coverageMessage) {
@@ -1099,10 +1105,17 @@
     els.verdictMessage.textContent = verdict.message;
   }
 
+  function getGuaranteedLinePointForDisplay(meta, row, filters) {
+    const ladderRows = getLadderRows(filters.huntCode, filters.residency, filters.drawPool);
+    const mode = detectLadderMode(meta, ladderRows);
+    return getGuaranteedLinePoint(row, ladderRows, mode);
+  }
+
   function renderTopSummary(meta, row, filters, displayedOdds) {
+    const guaranteedLinePoint = row ? getGuaranteedLinePointForDisplay(meta, row, filters) : null;
     if (els.summaryGuaranteedTop) {
       els.summaryGuaranteedTop.textContent = row
-        ? (isRandomOnlyBonusCase(meta, row) ? 'Not applicable' : `${formatInteger(row.guaranteed_at_2026)} pts`)
+        ? (isRandomOnlyBonusCase(meta, row) ? 'Not applicable' : (guaranteedLinePoint === null ? 'Not available pts' : `${formatInteger(guaranteedLinePoint)} pts`))
         : 'Not loaded';
     }
 
@@ -1172,11 +1185,12 @@
     }
 
     renderOutlookLight(getOutlookSignal(meta, row));
+    const guaranteedLinePoint = getGuaranteedLinePointForDisplay(meta, row, filters);
 
     if (els.summaryGuaranteed) {
       els.summaryGuaranteed.textContent = isRandomOnlyBonusCase(meta, row)
         ? 'Not applicable'
-        : `${formatInteger(row.guaranteed_at_2026)} pts`;
+        : (guaranteedLinePoint === null ? 'Not available pts' : `${formatInteger(guaranteedLinePoint)} pts`);
     }
 
     if (els.summaryPoints) {
@@ -1351,16 +1365,35 @@
     }).join('')}</div>`;
   }
 
-  function getGuaranteedLinePoint(row) {
-    const summaryGuaranteedPoint = num(row?.guaranteed_at_2026);
-    if (summaryGuaranteedPoint !== null) return summaryGuaranteedPoint;
-    return num(row?.projected_2026_max_cutoff_point);
+  function deriveGuaranteedLinePoint(rows, mode) {
+    if (!Array.isArray(rows) || !rows.length) return null;
+    const guaranteedPoints = rows
+      .map((candidate) => {
+        const points = num(candidate?.points);
+        if (points === null) return null;
+        const odds = (mode === DRAW_MODE.PREFERENCE || mode === DRAW_MODE.YOUTH_RESERVE)
+          ? selectPreferenceOddsPercent(candidate)
+          : selectDrawOddsPercent(candidate);
+        if (odds.percent !== null && odds.percent >= 99.9) return points;
+        return null;
+      })
+      .filter((value) => value !== null);
+    if (!guaranteedPoints.length) return null;
+    return Math.min(...guaranteedPoints);
   }
 
-  function isGuaranteedLineRow(row) {
+  function getGuaranteedLinePoint(row, rows = [], mode = DRAW_MODE.STATUS_ONLY) {
+    const summaryGuaranteedPoint = num(row?.guaranteed_at_2026);
+    if (summaryGuaranteedPoint !== null) return summaryGuaranteedPoint;
+    const projected = num(row?.projected_2026_max_cutoff_point);
+    if (projected !== null) return projected;
+    return deriveGuaranteedLinePoint(rows, mode);
+  }
+
+  function isGuaranteedLineRow(row, rows = [], mode = DRAW_MODE.STATUS_ONLY) {
     if (!row) return false;
     const rowPoint = num(row.points);
-    const guaranteedLinePoint = getGuaranteedLinePoint(row);
+    const guaranteedLinePoint = getGuaranteedLinePoint(row, rows, mode);
     if (rowPoint !== null && guaranteedLinePoint !== null) {
       return Math.round(rowPoint) === Math.round(guaranteedLinePoint);
     }
@@ -1368,10 +1401,10 @@
     return false;
   }
 
-  function isAboveGuaranteedLineRow(row) {
+  function isAboveGuaranteedLineRow(row, rows = [], mode = DRAW_MODE.STATUS_ONLY) {
     if (!row) return false;
     const rowPoint = num(row.points);
-    const guaranteedLinePoint = getGuaranteedLinePoint(row);
+    const guaranteedLinePoint = getGuaranteedLinePoint(row, rows, mode);
     if (rowPoint === null || guaranteedLinePoint === null) return false;
     return rowPoint > guaranteedLinePoint;
   }
@@ -1424,10 +1457,10 @@
       }
 
       if (mode === DRAW_MODE.BONUS) {
-        const bonusProjection = (isGuaranteedLineRow(row) || isAboveGuaranteedLineRow(row))
+        const bonusProjection = (isGuaranteedLineRow(row, rows, mode) || isAboveGuaranteedLineRow(row, rows, mode))
           ? MAX_POINT_POOL_GUARANTEED_DISPLAY
           : (getMaxPointPoolDisplay(row) || '—');
-        const randomChance = isAboveGuaranteedLineRow(row) ? '—' : (getRandomDrawDisplay(row) || oddsDisplay);
+        const randomChance = isAboveGuaranteedLineRow(row, rows, mode) ? '—' : (getRandomDrawDisplay(row) || oddsDisplay);
         return [
           formatInteger(row.points),
           actual2025Display,
@@ -1488,12 +1521,12 @@
         classes.push('is-user-row');
       }
 
-      if (isGuaranteedLineRow(row)) {
+      if (isGuaranteedLineRow(row, rows, mode)) {
         markers.push({ kind: 'guaranteed', label: 'Guaranteed Draw' });
         classes.push('is-guaranteed-row');
       }
 
-      if ((isUserRow || isGuaranteedLineRow(row)) && hasSourceData(meta, row, referenceRow)) {
+      if ((isUserRow || isGuaranteedLineRow(row, rows, mode)) && hasSourceData(meta, row, referenceRow)) {
         markers.push({ kind: 'sources', label: 'Hunt Data', point: row.points });
       }
       const cells = getRowCells(row, markers, historicalPointRow);

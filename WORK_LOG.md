@@ -1,5 +1,23 @@
 # WORK LOG
 
+## Hunt Research DB1533 Permit + Guaranteed-Line Fallback Fix
+- Timestamp (UTC): 2026-05-28T11:40:00Z
+- Scope:
+  - Updated `hunt-research.js` permit display fallbacks so permit numbers render when only total permit fields are populated (for example `permits_2026_total`, `permit_allotment_2026_total`, `public_permits_2026`).
+  - Added derived guaranteed-line fallback logic:
+    - if explicit guaranteed/cutoff fields are missing, infer guaranteed point from ladder rows where modeled odds are effectively `>= 99.9%`.
+  - Wired guaranteed-line fallback into:
+    - summary top card (`Guaranteed To Draw Line`)
+    - summary status card
+    - ladder guaranteed marker detection.
+- Validation:
+  - `node --check hunt-research.js` passed.
+  - `npm.cmd run build` passed.
+  - Data confirmation for `DB1533`:
+    - 2026 total permits present (`5400`) in canonical/runtime files.
+    - modeled ladder rows exist in `point_ladder_view.csv` for resident/nonresident.
+    - derived guaranteed-point fallback resolves to `2` points for both resident and nonresident ladders based on `>=99.9%` rows.
+
 ## Adaptive Ladder Headers + Preference/Bonus Mode Split
 - Timestamp (UTC): 2026-05-28T11:05:00Z
 - Scope:
