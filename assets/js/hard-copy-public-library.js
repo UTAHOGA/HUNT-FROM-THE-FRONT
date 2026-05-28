@@ -102,9 +102,10 @@
 
   function toFolderId(item) {
     const hay = `${item.group || ""} ${item.source || ""} ${item.title || ""} ${item.subtitle || ""} ${item.href || ""}`.toLowerCase();
+    const hasWord = (term) => new RegExp(`\\b${term}\\b`, "i").test(hay);
     if (hay.includes("outfitter")) return "outfitters";
     if (hay.includes("calendar") || hay.includes("deadline") || hay.includes("season date") || hay.includes("application date")) return "calendar";
-    if (hay.includes("expo")) return "expo";
+    if (hasWord("expo")) return "expo";
     if (hay.includes("conservation")) return "conservation";
     if (hay.includes("harvest")) return "harvest";
     if (hay.includes("draw") || hay.includes("odds") || hay.includes("bonus point")) return "draw";
@@ -416,8 +417,9 @@
       const label = `${folder.title} (${count} files)`;
       return `
         <button class="public-folder ${active}" type="button" data-folder="${esc(folder.id)}" aria-label="${esc(label)}">
-          <span class="public-folder-hover">${esc(folder.title)} | ${count} files</span>
-          <span class="sr-only">${esc(folder.description)}</span>
+          <span class="public-folder-title">${esc(folder.title)}</span>
+          <span class="public-folder-description">${esc(folder.description)}</span>
+          <span class="public-folder-count">${count} file${count === 1 ? "" : "s"}</span>
         </button>
       `;
     }).join("");
@@ -562,17 +564,21 @@
       renderResults(items, state);
     };
 
-    search.addEventListener("input", () => {
-      state.query = search.value || "";
-      renderAll();
-    });
+    if (search) {
+      search.addEventListener("input", () => {
+        state.query = search.value || "";
+        renderAll();
+      });
+    }
 
-    clear.addEventListener("click", () => {
-      state.query = "";
-      state.activeFolder = "";
-      search.value = "";
-      renderAll();
-    });
+    if (clear) {
+      clear.addEventListener("click", () => {
+        state.query = "";
+        state.activeFolder = "";
+        if (search) search.value = "";
+        renderAll();
+      });
+    }
 
     renderAll();
   }
