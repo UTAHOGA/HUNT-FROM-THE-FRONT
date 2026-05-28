@@ -1,5 +1,31 @@
 # WORK LOG
 
+## Step 2 Database Fragment Manifest (Inventory + Classification Only)
+- Timestamp (UTC): 2026-05-28T07:58:59Z
+- Scope:
+  - Implemented a Step 2-specific inventory/classification generator: `scripts/build-database-fragment-manifest-step2.js`.
+  - Scanned the requested roots without moving or deleting files:
+    - `processed_data/`
+    - `pipeline/`
+    - `data/`
+    - `_exports/`
+    - `C:\\Users\\tyler\\Desktop\\GitHub\\HUNTS\\data_truth` (read-only inventory)
+  - Produced required outputs:
+    - `processed_data/audits/database_fragment_manifest.csv`
+    - `processed_data/audits/database_fragment_manifest.json`
+  - Applied explicit known-file classification rules for official source, runtime master, prediction runtime, model outputs, harvest evidence, historical crosswalk, and public export files.
+  - Added duplicate/stale family detection and external HUNTS truth candidate gap detection for review.
+- Validation:
+  - `node scripts\\build-database-fragment-manifest-step2.js` passed.
+  - Output files exist and are populated.
+  - Manifest summary:
+    - total rows: `5763`
+    - unknown_needs_review: `4101`
+    - obsolete_fragment: `92`
+    - public_export: `78`
+    - prediction_runtime: `8`
+    - likely needed from `HUNTS/data_truth` but not imported by filename match: `126`
+
 ## Step 1B Gate-Block Resolution Audit (PD1006 / PD1045 / PD1046)
 - Timestamp (UTC): 2026-05-28T07:44:58Z
 - Scope:
