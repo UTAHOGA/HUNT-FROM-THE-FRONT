@@ -1425,7 +1425,7 @@
     const pointLabel = formatInteger(row?.points);
     const filters = state.selectedFilters || buildFilters();
     els.sourceModalTitle.textContent = 'Hunt Data Snapshot';
-    els.sourceModalSubtitle.textContent = `${meta?.hunt_code || ''} Â· ${meta?.hunt_name || ''} Â· ${residency || ''} Â· ${pointLabel} points`;
+    els.sourceModalSubtitle.textContent = `${meta?.hunt_code || ''} | ${meta?.hunt_name || ''} | ${residency || ''} | ${pointLabel} points`;
     els.sourceModalGrid.innerHTML = `
       <p class="source-plain-note">This is the quick interpretation layer: where your points sit, whether you are in the max-point or random pool, what point creep is doing, and what the harvest row says when mapped.</p>
       ${buildDecisionBoxes(meta, row, referenceRow, filters)}
@@ -1726,13 +1726,13 @@
     if (els.detailContent) els.detailContent.hidden = false;
 
     if (els.detailTitle) {
-      els.detailTitle.textContent = meta ? `${meta.hunt_code} Â· ${meta.hunt_name}` : filters.huntCode;
+      els.detailTitle.textContent = meta ? `${meta.hunt_code} | ${meta.hunt_name}` : filters.huntCode;
     }
 
     if (els.detailSubtitle) {
       els.detailSubtitle.textContent = meta
-        ? `${meta.species || 'Unknown'} Â· ${meta.weapon || 'Unknown weapon'} Â· ${filters.residency}`
-        : `${filters.residency} Â· ${formatInteger(filters.points)} points`;
+        ? `${meta.species || 'Unknown'} | ${meta.weapon || 'Unknown weapon'} | ${filters.residency}`
+        : `${filters.residency} | ${formatInteger(filters.points)} points`;
     }
 
     if (els.openPlannerLink) {
@@ -1808,7 +1808,7 @@
         <div class="backpack-card">
           <span class="label">${escapeHtml(item.hunt_code)}</span>
           <h4>${escapeHtml(item.hunt_name || item.hunt_code)}</h4>
-          <p>${escapeHtml(item.species || '')}${item.weapon ? ` Â· ${escapeHtml(item.weapon)}` : ''} Â· ${escapeHtml(item.residency || 'Resident')} Â· ${formatInteger(item.selected_points)} points</p>
+          <p>${escapeHtml(item.species || '')}${item.weapon ? ` | ${escapeHtml(item.weapon)}` : ''} | ${escapeHtml(item.residency || 'Resident')} | ${formatInteger(item.selected_points)} points</p>
           ${poolLabel ? `<p>${escapeHtml(poolLabel)}</p>` : ''}
           <p>${escapeHtml(item.draw_outlook || 'Saved for later review.')}</p>
           <div class="backpack-actions">
