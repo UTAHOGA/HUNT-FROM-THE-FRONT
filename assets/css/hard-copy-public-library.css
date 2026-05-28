@@ -113,9 +113,9 @@ body {
 .public-library-controls {
   position: absolute;
   left: 50%;
-  top: clamp(96px, 13vh, 138px);
+  top: 34%;
   transform: translateX(-50%);
-  width: min(780px, 76vw);
+  width: min(820px, 68vw);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -160,7 +160,7 @@ body {
 .public-library-note {
   position: absolute;
   left: 50%;
-  top: clamp(154px, 20vh, 198px);
+  top: 40%;
   transform: translateX(-50%);
   margin: 0;
   width: min(840px, 80vw);
@@ -174,8 +174,12 @@ body {
 }
 
 .public-library-folders {
-  width: min(920px, 62vw);
-  margin: clamp(248px, 34vh, 352px) auto 0;
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translateX(-50%) !important;
+  width: min(920px, 62%) !important;
+  margin: 0 !important;
   display: grid;
   grid-template-columns: repeat(4, minmax(150px, 1fr));
   gap: 14px;
@@ -424,13 +428,13 @@ body {
 
 @media (max-width: 1100px) {
   .public-library-controls {
-    width: min(680px, 86vw);
-    top: 108px;
+    width: min(700px, 86vw);
+    top: 36%;
   }
 
   .public-library-note {
     width: min(720px, 90vw);
-    top: 168px;
+    top: 42%;
     font-size: 13px;
   }
 
@@ -446,7 +450,7 @@ body {
   .public-library-folders {
     width: min(760px, 84vw);
     grid-template-columns: repeat(2, minmax(180px, 1fr));
-    margin-top: 252px;
+    top: 54% !important;
   }
 }
 
