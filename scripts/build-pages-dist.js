@@ -274,6 +274,28 @@ async function copyPublicRegulationPdfs(missing) {
   }
 }
 
+async function ensureWallpaperAliases(missing) {
+  const sourceDir = path.join(repoRoot, 'assets', 'backgrounds');
+  const outBackgrounds = path.join(outDir, 'assets', 'backgrounds');
+  const sourceLower = path.join(sourceDir, 'library-wallpaper.jpg');
+  const sourceUpper = path.join(sourceDir, 'LIBRARY-WALLPAPER.jpg');
+  const outLower = path.join(outBackgrounds, 'library-wallpaper.jpg');
+  const outUpper = path.join(outBackgrounds, 'LIBRARY-WALLPAPER.jpg');
+
+  const hasLower = await exists(sourceLower);
+  const hasUpper = await exists(sourceUpper);
+  const source = hasLower ? sourceLower : (hasUpper ? sourceUpper : null);
+
+  if (!source) {
+    missing.push('assets/backgrounds/library-wallpaper.jpg');
+    return;
+  }
+
+  await fs.mkdir(outBackgrounds, { recursive: true });
+  await fs.copyFile(source, outLower);
+  await fs.copyFile(source, outUpper);
+}
+
 async function main() {
   await fs.rm(outDir, { recursive: true, force: true });
   await fs.mkdir(outDir, { recursive: true });
@@ -296,6 +318,7 @@ async function main() {
   }
 
   await copyPublicRegulationPdfs(missing);
+  await ensureWallpaperAliases(missing);
 
   await writeConfigLocalStub();
 
