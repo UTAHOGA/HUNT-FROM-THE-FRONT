@@ -441,7 +441,10 @@
       if (item.type === "pdf") {
         const href = safeUrl(item.href);
         const companionAction = item.companion
-          ? `<button class="public-file-action" type="button" data-action="companion" data-index="${idx}">View Corrections &amp; Updates</button>`
+          ? `<button class="public-file-action" type="button" data-action="companion" data-index="${idx}">View Updates / Corrections</button>`
+          : "";
+        const companionDownload = item.companion
+          ? `<a class="public-file-action" href="${esc(safeUrl(item.companion.href))}" target="_blank" rel="noopener noreferrer">Download Updates</a>`
           : "";
         const viewLabel = item.companion ? "View Guidebook" : "View Flipbook";
         const downloadLabel = item.companion ? "Download Guidebook" : "Download PDF";
@@ -452,6 +455,7 @@
               <button class="public-file-action" type="button" data-action="flip" data-index="${idx}">${viewLabel}</button>
               ${companionAction}
               <a class="public-file-action" href="${esc(href)}" target="_blank" rel="noopener noreferrer">${downloadLabel}</a>
+              ${companionDownload}
             </div>
           </div>
         `;
