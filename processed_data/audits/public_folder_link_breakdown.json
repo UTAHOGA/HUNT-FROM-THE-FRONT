@@ -1,0 +1,2772 @@
+{
+  "generated_at": "2026-05-28T16:54:17.989Z",
+  "total_items": 380,
+  "summary": [
+    {
+      "folder": "UTAH DWR RULES & REGULATIONS",
+      "count": 11,
+      "by_type": {
+        "pdf": 11
+      },
+      "by_year": {
+        "2025": 1,
+        "2026": 9,
+        "2025-26": 1
+      }
+    },
+    {
+      "folder": "HARVEST DATA",
+      "count": 207,
+      "by_type": {
+        "pdf": 205,
+        "csv": 2
+      },
+      "by_year": {
+        "2013": 10,
+        "2014": 20,
+        "2015": 15,
+        "2016": 15,
+        "2017": 11,
+        "2018": 15,
+        "2019": 13,
+        "2020": 23,
+        "2021": 28,
+        "2022": 19,
+        "2023": 29,
+        "2024": 3,
+        "2025": 3,
+        "2026": 3
+      }
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "count": 154,
+      "by_type": {
+        "pdf": 153,
+        "csv": 1
+      },
+      "by_year": {
+        "2020": 13,
+        "2021": 26,
+        "2022": 25,
+        "2023": 27,
+        "2024": 18,
+        "2025": 28,
+        "2026": 17
+      }
+    },
+    {
+      "folder": "CONSERVATION PERMITS",
+      "count": 2,
+      "by_type": {
+        "pdf": 1,
+        "csv": 1
+      },
+      "by_year": {
+        "2025": 2
+      }
+    },
+    {
+      "folder": "HUNT EXPO",
+      "count": 2,
+      "by_type": {
+        "pdf": 2
+      },
+      "by_year": {
+        "2026": 2
+      }
+    },
+    {
+      "folder": "SIGNIFICANT DATES / CALENDAR",
+      "count": 1,
+      "by_type": {
+        "iframe": 1
+      },
+      "by_year": {
+        "2026": 1
+      }
+    },
+    {
+      "folder": "2026 HUNT UNITS / PERMIT NUMBERS",
+      "count": 2,
+      "by_type": {
+        "csv": 2
+      },
+      "by_year": {
+        "2026": 2
+      }
+    },
+    {
+      "folder": "UTAH OUTFITTERS BY HUNT CODE/HUNT NAME",
+      "count": 1,
+      "by_type": {
+        "pdf": 1
+      },
+      "by_year": {
+        "2024": 1
+      }
+    }
+  ],
+  "details": [
+    {
+      "folder": "UTAH DWR RULES & REGULATIONS",
+      "title": "2026 Bear Cougar Furbearer Guidebook",
+      "type": "pdf",
+      "year": "2026",
+      "href": "./processed_data/hard_data_exports/source_pdfs/regulations/2026/2026-bear-cougar-furbearer-guidebook.pdf"
+    },
+    {
+      "folder": "UTAH DWR RULES & REGULATIONS",
+      "title": "2026 Big Game Application Guidebook",
+      "type": "pdf",
+      "year": "2026",
+      "href": "./processed_data/hard_data_exports/source_pdfs/regulations/2026/2026-big-game-application-guidebook.pdf"
+    },
+    {
+      "folder": "UTAH DWR RULES & REGULATIONS",
+      "title": "2026 Fishing Guidebook",
+      "type": "pdf",
+      "year": "2026",
+      "href": "./processed_data/hard_data_exports/source_pdfs/regulations/2026/2026-fishing-guidebook.pdf"
+    },
+    {
+      "folder": "UTAH DWR RULES & REGULATIONS",
+      "title": "2026 Turkey Guidebook",
+      "type": "pdf",
+      "year": "2026",
+      "href": "./processed_data/hard_data_exports/source_pdfs/regulations/2026/2026-turkey-guidebook.pdf"
+    },
+    {
+      "folder": "UTAH DWR RULES & REGULATIONS",
+      "title": "2026 Waterfowl Guidebook",
+      "type": "pdf",
+      "year": "2026",
+      "href": "./processed_data/hard_data_exports/source_pdfs/regulations/2026/2026-waterfowl-guidebook.pdf"
+    },
+    {
+      "folder": "UTAH DWR RULES & REGULATIONS",
+      "title": "Utah DWR 2026 Bear / Cougar Guidebook",
+      "type": "pdf",
+      "year": "2026",
+      "href": "./public/hard-copy/regulations/2026/2026.regs.cougar.bear.pdf"
+    },
+    {
+      "folder": "UTAH DWR RULES & REGULATIONS",
+      "title": "Utah DWR 2026 Big Game Application Guidebook",
+      "type": "pdf",
+      "year": "2026",
+      "href": "./public/hard-copy/regulations/2026/2026.biggame.app.pdf"
+    },
+    {
+      "folder": "UTAH DWR RULES & REGULATIONS",
+      "title": "Utah DWR 2026 Fishing Guidebook",
+      "type": "pdf",
+      "year": "2026",
+      "href": "./public/hard-copy/regulations/2026/2026.regs.fishing.pdf"
+    },
+    {
+      "folder": "UTAH DWR RULES & REGULATIONS",
+      "title": "Utah DWR 2026 Turkey Guidebook",
+      "type": "pdf",
+      "year": "2026",
+      "href": "./public/hard-copy/regulations/2026/2026.regs.turkey.pdf"
+    },
+    {
+      "folder": "UTAH DWR RULES & REGULATIONS",
+      "title": "Utah DWR 2025 Big Game Guidebook",
+      "type": "pdf",
+      "year": "2025-26",
+      "href": "./public/hard-copy/regulations/2026/2025.regs.biggame.pdf"
+    },
+    {
+      "folder": "UTAH DWR RULES & REGULATIONS",
+      "title": "2025-26 Upland Game Turkey Guidebook",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./processed_data/hard_data_exports/source_pdfs/regulations/2025-26/2025-26-upland-game-turkey-guidebook.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2026 03 06 2025 preliminary bg harvest",
+      "type": "pdf",
+      "year": "2026",
+      "href": "./pipeline/RAW/hunt_unit_database/2026/pdf/harvest_report/2026-03-06-2025-preliminary-bg-harvest.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "Harvest Master",
+      "type": "csv",
+      "year": "2026",
+      "href": "./processed_data/harvest_master.csv"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "Harvest Quality Features All Years By Hunt Code",
+      "type": "csv",
+      "year": "2026",
+      "href": "./processed_data/harvest_quality_features_all_years_by_hunt_code.csv"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2025 Preliminary Big Game Harvest Report",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./processed_data/hard_data_exports/source_pdfs/harvest_report/2025/2025-preliminary-big-game-harvest-report.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "24 bg report",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./pipeline/RAW/hunt_unit_database/2025/pdf/harvest_report/24_bg_report.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "24 black bear report",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./pipeline/RAW/hunt_unit_database/2025/pdf/harvest_report/24_black_bear_report.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "23 bg report",
+      "type": "pdf",
+      "year": "2024",
+      "href": "./pipeline/RAW/hunt_unit_database/2024/pdf/harvest_report/23_bg_report.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "23 black bear report",
+      "type": "pdf",
+      "year": "2024",
+      "href": "./pipeline/RAW/hunt_unit_database/2024/pdf/harvest_report/23_black_bear_report.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "23 black bear report",
+      "type": "pdf",
+      "year": "2024",
+      "href": "./pipeline/RAW/hunt_unit_database/2024/pdf/harvest_report/26229CDE__23_black_bear_report.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2023",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/harvest_report/1f8e73af__2023.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2023 ALL SPECIES HARVEST DATA",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/harvest_report/7DDF75D1__2023 ALL SPECIES HARVEST DATA.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2023 antelope island",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/harvest_report/EF4D3BAC__2023-antelope-island.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2023 antlerless hr",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/harvest_report/A96251BE__2023_antlerless_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2023 book cliffs south",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/harvest_report/8970342F__2023-book-cliffs-south.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2023 central mtns nebo",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/harvest_report/0A928B4F__2023-central-mtns-nebo.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2023 gs buck deer hr",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/harvest_report/9CC65639__2023_gs_buck_deer_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2023 harvest data",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/harvest_report/4E8E024C__2023-harvest-data.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2023 Hunt Success",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/harvest_report/2023 Hunt Success.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2023 kaiparowits escalante",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/harvest_report/569943FB__2023-kaiparowits-escalante.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2023 la sal potash",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/harvest_report/72C08FAD__2023-la-sal-potash.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2023 le oial all",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/harvest_report/62EF9E74__2023_le_oial_all.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2023 nine mile jack creek",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/harvest_report/B28B99E6__2023-nine-mile-jack-creek.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2023 san juan lockhart",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/harvest_report/28E0BDDD__2023-san-juan-lockhart.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2023 san juan north",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/harvest_report/B5780E69__2023-san-juan-north.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2023 san juan river",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/harvest_report/0148BAF7__2023-san-juan-river.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2023 san juan south",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/harvest_report/523038DA__2023-san-juan-south.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2023 wasatch mtns west",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/harvest_report/938F5CB7__2023-wasatch-mtns-west.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "22 bg report",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/harvest_report/22_bg_report.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "22 black bear report",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/harvest_report/22_black_bear_report.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "24 bg HARVEST report",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/harvest_report/24_bg_HARVEST_report.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "24 black bear report",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/harvest_report/24_black_bear_report.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "Antlerless big game",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/harvest_report/ca8a3d7c__Antlerless big game.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "bear 2023",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/harvest_report/295db9e8__bear_2023.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "BIGHORN SHEEP 2023 harvest data",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/harvest_report/61FC0758__BIGHORN SHEEP 2023-harvest-data.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "cougar 2023",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/harvest_report/dbd8a659__cougar_2023.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "General season buck deer",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/harvest_report/dc965eb4__General-season buck deer.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "Limited entry and once in a lifetime species",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/harvest_report/ba50f481__Limited-entry and once-in-a-lifetime species.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "mixed 2023 24",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/harvest_report/36a67499__mixed_2023-24.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2022",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/harvest_report/2173f802__2022.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2022 antlerless hr",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/harvest_report/FF6D4B3D__2022_antlerless_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2022 gs buck deer hr",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/harvest_report/CCDD6E10__2022_gs_buck_deer_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2022 harvest data",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/harvest_report/5E321DA5__2022-harvest-data.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2022 henry mountains",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/harvest_report/884746C2__2022-henry-mountains.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2022 le oial all",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/harvest_report/968EFF87__2022_le_oial_all.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2022 mineral mtns",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/harvest_report/C9789032__2022-mineral-mtns.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2022 nine mile gray canyon",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/harvest_report/D3E39E3F__2022-nine-mile-gray-canyon.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2022 oak creek",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/harvest_report/D09A33C9__2022-oak-creek.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2022 san rafael dirty devil",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/harvest_report/ECBBF5FB__2022-san-rafael-dirty-devil.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "21 bg report",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/harvest_report/21_bg_report.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "21 black bear report",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/harvest_report/21_black_bear_report.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "Antlerless big game",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/harvest_report/d6cae860__Antlerless big game.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "bear 2022",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/harvest_report/99d034bd__bear_2022.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "conflict 20260506181037",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/harvest_report/21_black_bear_report__conflict_20260506181037.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "cougar 2022",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/harvest_report/9cb7bd59__cougar_2022.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "General season buck deer",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/harvest_report/442a70d8__General-season buck deer.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "Limited entry and once in a lifetime species",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/harvest_report/19275c81__Limited-entry and once-in-a-lifetime species.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "mixed 2022 23",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/harvest_report/7406bf15__mixed_2022-23.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "20 bg harvest report",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/harvest_report/20_bg_harvest_report.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "20 bg report",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/harvest_report/20_bg_report.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "20 black bear report",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/harvest_report/20_black_bear_report.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2021",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/harvest_report/b03e968a__2021.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2021 antlerless hr",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/harvest_report/2A5894B9__2021_antlerless_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2021 antlerless hr",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/harvest_report/84EA3C5A__2021_antlerless_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2021 box elder newfoundland mtn",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/harvest_report/77105EC4__2021-box-elder-newfoundland-mtn.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2021 box elder pilot mtn",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/harvest_report/B7C6169F__2021-box-elder-pilot-mtn.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2021 gs buck deer hr",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/harvest_report/2795C467__2021_gs_buck_deer_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2021 harvest data",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/harvest_report/ABB95D60__2021-harvest-data.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2021 kaiparowits east west",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/harvest_report/9F8E4D0B__2021-kaiparowits-east-west.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2021 le oial all",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/harvest_report/6ACC2AEA__2021_le_oial_all.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2021 north slope bare top",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/harvest_report/043E31A3__2021-north-slope-bare-top.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2021 north slope goslin mtn",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/harvest_report/7AA56ADB__2021-north-slope-goslin-mtn.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2021 north slope red canyon",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/harvest_report/03E16E00__2021-north-slope-red-canyon.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2021 north slope sheep creek",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/harvest_report/670BA679__2021-north-slope-sheep-creek.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2021 san rafael north",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/harvest_report/1AAF42C7__2021-san-rafael-north.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2021 san rafael south",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/harvest_report/D014E894__2021-san-rafael-south.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2021 stansbury",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/harvest_report/86C2219B__2021-stansbury.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2021 zion",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/harvest_report/E8ECB6F8__2021-zion.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "22 bg harvest report",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/harvest_report/22_bg_harvest_report.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "22 black bear report",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/harvest_report/22_black_bear_report.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "Antlerless big game",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/harvest_report/e8ee2db2__Antlerless big game.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "bear 2021",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/harvest_report/62474ddf__bear_2021.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "cougar 2021",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/harvest_report/8817544e__cougar_2021.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "General season buck deer",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/harvest_report/5a118f11__General-season buck deer.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "Limited entry and once in a lifetime species",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/harvest_report/5a24be8c__Limited-entry and once-in-a-lifetime species.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "mixed 2021 22",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/harvest_report/a62a6cbd__mixed_2021-22.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2020",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/harvest_report/bd5fef65__2020.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2020 antlerless hr",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/harvest_report/0B112A6A__2020_antlerless_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2020 central mtns nebo",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/harvest_report/3D2221CC__2020-central-mtns-nebo.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2020 gs buck deer hr",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/harvest_report/8D421406__2020_gs_buck_deer_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2020 harvest data",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/harvest_report/4C032162__2020-harvest-data.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2020 kaiparowits escalante",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/harvest_report/AD0B9A6E__2020-kaiparowits-escalante.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2020 la sal potash",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/harvest_report/8EA9424D__2020-la-sal-potash.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2020 le oial all",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/harvest_report/0461C97A__2020_le_oial_all.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2020 north slope bare top",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/harvest_report/C939DB7B__2020-north-slope-bare-top.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2020 north slope goslin mtn",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/harvest_report/97AF213E__2020-north-slope-goslin-mtn.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2020 north slope red canyon",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/harvest_report/71A9E811__2020-north-slope-red-canyon.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2020 north slope sheep creek",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/harvest_report/F30B053D__2020-north-slope-sheep-creek.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2020 san juan lockhart",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/harvest_report/EC6B4470__2020-san-juan-lockhart.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2020 san juan north",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/harvest_report/ABA2F9C3__2020-san-juan-north.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2020 san juan river",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/harvest_report/DED44DA9__2020-san-juan-river.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2020 san juan south",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/harvest_report/D4C661D9__2020-san-juan-south.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2020 wasatch mtns west",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/harvest_report/AEF83DEF__2020-wasatch-mtns-west.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "Antlerless big game",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/harvest_report/4275246d__Antlerless big game.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "bear 2020",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/harvest_report/a34306f2__bear_2020.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "cougar 2020",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/harvest_report/a7d1d7ba__cougar_2020.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "General season buck deer",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/harvest_report/e38eeb18__General-season buck deer.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "Limited entry and once in a lifetime species",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/harvest_report/0b5ca51c__Limited-entry and once-in-a-lifetime species.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "mixed 2020 21",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/harvest_report/847a57a8__mixed_2020-21.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2019 antlerless hr",
+      "type": "pdf",
+      "year": "2019",
+      "href": "./pipeline/RAW/hunt_unit_database/2019/pdf/harvest_report/494E8D81__2019_antlerless_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2019 book cliffs rattlesnake",
+      "type": "pdf",
+      "year": "2019",
+      "href": "./pipeline/RAW/hunt_unit_database/2019/pdf/harvest_report/4B03444B__2019-book-cliffs-rattlesnake.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2019 box elder newfoundland",
+      "type": "pdf",
+      "year": "2019",
+      "href": "./pipeline/RAW/hunt_unit_database/2019/pdf/harvest_report/F4D5A08B__2019-box-elder-newfoundland.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2019 fillmore oak creek",
+      "type": "pdf",
+      "year": "2019",
+      "href": "./pipeline/RAW/hunt_unit_database/2019/pdf/harvest_report/F64065F0__2019-fillmore-oak-creek.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2019 gs deer hr",
+      "type": "pdf",
+      "year": "2019",
+      "href": "./pipeline/RAW/hunt_unit_database/2019/pdf/harvest_report/E3B82D73__2019_gs_deer_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2019 harvest data",
+      "type": "pdf",
+      "year": "2019",
+      "href": "./pipeline/RAW/hunt_unit_database/2019/pdf/harvest_report/D0579D88__2019-harvest-data.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2019 henry mountains",
+      "type": "pdf",
+      "year": "2019",
+      "href": "./pipeline/RAW/hunt_unit_database/2019/pdf/harvest_report/CB027DE6__2019-henry-mountains.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2019 le oial all",
+      "type": "pdf",
+      "year": "2019",
+      "href": "./pipeline/RAW/hunt_unit_database/2019/pdf/harvest_report/F9A1C29D__2019_le_oial_all.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2019 nine mile range creek",
+      "type": "pdf",
+      "year": "2019",
+      "href": "./pipeline/RAW/hunt_unit_database/2019/pdf/harvest_report/21F05C54__2019-nine-mile-range-creek.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2019 oquirrh stansbury",
+      "type": "pdf",
+      "year": "2019",
+      "href": "./pipeline/RAW/hunt_unit_database/2019/pdf/harvest_report/53131416__2019-oquirrh-stansbury.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2019 pine valley",
+      "type": "pdf",
+      "year": "2019",
+      "href": "./pipeline/RAW/hunt_unit_database/2019/pdf/harvest_report/FF6C99FD__2019-pine-valley.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2019 san juan north",
+      "type": "pdf",
+      "year": "2019",
+      "href": "./pipeline/RAW/hunt_unit_database/2019/pdf/harvest_report/9AB7DD4C__2019-san-juan-north.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2019 san rafael dirty devil",
+      "type": "pdf",
+      "year": "2019",
+      "href": "./pipeline/RAW/hunt_unit_database/2019/pdf/harvest_report/AF2F3783__2019-san-rafael-dirty-devil.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2018 antlerless hr",
+      "type": "pdf",
+      "year": "2018",
+      "href": "./pipeline/RAW/hunt_unit_database/2018/pdf/harvest_report/F5CE0D15__2018_antlerless_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2018 central mtns nebo",
+      "type": "pdf",
+      "year": "2018",
+      "href": "./pipeline/RAW/hunt_unit_database/2018/pdf/harvest_report/9AA76DD4__2018-central-mtns-nebo.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2018 gs deer hr",
+      "type": "pdf",
+      "year": "2018",
+      "href": "./pipeline/RAW/hunt_unit_database/2018/pdf/harvest_report/F3F82840__2018_gs_deer_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2018 harvest data",
+      "type": "pdf",
+      "year": "2018",
+      "href": "./pipeline/RAW/hunt_unit_database/2018/pdf/harvest_report/998F5948__2018-harvest-data.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2018 kaiparowits",
+      "type": "pdf",
+      "year": "2018",
+      "href": "./pipeline/RAW/hunt_unit_database/2018/pdf/harvest_report/11339B18__2018-kaiparowits.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2018 le oial hr",
+      "type": "pdf",
+      "year": "2018",
+      "href": "./pipeline/RAW/hunt_unit_database/2018/pdf/harvest_report/ECDA0F1D__2018_le_oial_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2018 north slope bare top",
+      "type": "pdf",
+      "year": "2018",
+      "href": "./pipeline/RAW/hunt_unit_database/2018/pdf/harvest_report/39C8D045__2018-north-slope-bare-top.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2018 north slope goslin",
+      "type": "pdf",
+      "year": "2018",
+      "href": "./pipeline/RAW/hunt_unit_database/2018/pdf/harvest_report/9F5340DF__2018-north-slope-goslin.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2018 north slope hoop lake",
+      "type": "pdf",
+      "year": "2018",
+      "href": "./pipeline/RAW/hunt_unit_database/2018/pdf/harvest_report/714AD5F1__2018-north-slope-hoop-lake.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2018 north slope red canyon",
+      "type": "pdf",
+      "year": "2018",
+      "href": "./pipeline/RAW/hunt_unit_database/2018/pdf/harvest_report/2BBB0C1A__2018-north-slope-red-canyon.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2018 north slope sheep creek",
+      "type": "pdf",
+      "year": "2018",
+      "href": "./pipeline/RAW/hunt_unit_database/2018/pdf/harvest_report/2DC08B69__2018-north-slope-sheep-creek.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2018 san rafael north",
+      "type": "pdf",
+      "year": "2018",
+      "href": "./pipeline/RAW/hunt_unit_database/2018/pdf/harvest_report/F157C927__2018-san-rafael-north.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2018 san rafael south",
+      "type": "pdf",
+      "year": "2018",
+      "href": "./pipeline/RAW/hunt_unit_database/2018/pdf/harvest_report/5362D4A1__2018-san-rafael-south.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2018 wasatch west",
+      "type": "pdf",
+      "year": "2018",
+      "href": "./pipeline/RAW/hunt_unit_database/2018/pdf/harvest_report/58B665E2__2018-wasatch-west.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2018 zion",
+      "type": "pdf",
+      "year": "2018",
+      "href": "./pipeline/RAW/hunt_unit_database/2018/pdf/harvest_report/17C7BBEA__2018-zion.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2017 antlerless hr",
+      "type": "pdf",
+      "year": "2017",
+      "href": "./pipeline/RAW/hunt_unit_database/2017/pdf/harvest_report/DA57FA0D__2017_antlerless_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2017 bighorn harvest",
+      "type": "pdf",
+      "year": "2017",
+      "href": "./pipeline/RAW/hunt_unit_database/2017/pdf/harvest_report/6AECF376__2017-bighorn_harvest.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2017 gs deer hr",
+      "type": "pdf",
+      "year": "2017",
+      "href": "./pipeline/RAW/hunt_unit_database/2017/pdf/harvest_report/0FE6BFCA__2017_gs_deer_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2017 KaiparowitsEscalante bighorn",
+      "type": "pdf",
+      "year": "2017",
+      "href": "./pipeline/RAW/hunt_unit_database/2017/pdf/harvest_report/B37EDE43__2017-KaiparowitsEscalante_bighorn.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2017 LaSalPotash bighorn",
+      "type": "pdf",
+      "year": "2017",
+      "href": "./pipeline/RAW/hunt_unit_database/2017/pdf/harvest_report/17E33C4D__2017-LaSalPotash_bighorn.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2017 le oial hr",
+      "type": "pdf",
+      "year": "2017",
+      "href": "./pipeline/RAW/hunt_unit_database/2017/pdf/harvest_report/043488DC__2017_le_oial_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2017 OakCreek bighorn",
+      "type": "pdf",
+      "year": "2017",
+      "href": "./pipeline/RAW/hunt_unit_database/2017/pdf/harvest_report/50D4A2A1__2017-OakCreek_bighorn.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2017 SanJuanLockhart bighorn",
+      "type": "pdf",
+      "year": "2017",
+      "href": "./pipeline/RAW/hunt_unit_database/2017/pdf/harvest_report/9C65D960__2017-SanJuanLockhart_bighorn.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2017 SanJuanNorth bighorn",
+      "type": "pdf",
+      "year": "2017",
+      "href": "./pipeline/RAW/hunt_unit_database/2017/pdf/harvest_report/E0B518C9__2017-SanJuanNorth_bighorn.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2017 SanJuanRiver bighorn",
+      "type": "pdf",
+      "year": "2017",
+      "href": "./pipeline/RAW/hunt_unit_database/2017/pdf/harvest_report/E6D3F0AB__2017-SanJuanRiver_bighorn.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2017 SanJuanSouth bighorn",
+      "type": "pdf",
+      "year": "2017",
+      "href": "./pipeline/RAW/hunt_unit_database/2017/pdf/harvest_report/E58C632D__2017-SanJuanSouth_bighorn.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2016 antlerless hr",
+      "type": "pdf",
+      "year": "2016",
+      "href": "./pipeline/RAW/hunt_unit_database/2016/pdf/harvest_report/F6DB57FB__2016_antlerless_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2016 bhs harvest data",
+      "type": "pdf",
+      "year": "2016",
+      "href": "./pipeline/RAW/hunt_unit_database/2016/pdf/harvest_report/B21D6549__2016_bhs_harvest_data.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2016 book cliffs rattlesnake bh",
+      "type": "pdf",
+      "year": "2016",
+      "href": "./pipeline/RAW/hunt_unit_database/2016/pdf/harvest_report/B564C9EC__2016_book_cliffs_rattlesnake_bh.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2016 box elder newfoundlands bh",
+      "type": "pdf",
+      "year": "2016",
+      "href": "./pipeline/RAW/hunt_unit_database/2016/pdf/harvest_report/25AAAC37__2016_box_elder_newfoundlands_bh.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2016 gs deer hr",
+      "type": "pdf",
+      "year": "2016",
+      "href": "./pipeline/RAW/hunt_unit_database/2016/pdf/harvest_report/82A75C66__2016_gs_deer_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2016 henrys little rockies rattlesnake bh",
+      "type": "pdf",
+      "year": "2016",
+      "href": "./pipeline/RAW/hunt_unit_database/2016/pdf/harvest_report/6B279CB4__2016_henrys_little_rockies_rattlesnake_bh.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2016 le oial hr",
+      "type": "pdf",
+      "year": "2016",
+      "href": "./pipeline/RAW/hunt_unit_database/2016/pdf/harvest_report/4B871A48__2016_le_oial_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2016 n slope three corners bh",
+      "type": "pdf",
+      "year": "2016",
+      "href": "./pipeline/RAW/hunt_unit_database/2016/pdf/harvest_report/942386DD__2016_n_slope_three_corners_bh.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2016 n slope three corners goslin bh",
+      "type": "pdf",
+      "year": "2016",
+      "href": "./pipeline/RAW/hunt_unit_database/2016/pdf/harvest_report/FD22B2D9__2016_n_slope_three_corners_goslin_bh.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2016 n slope w daggett red canyon bh",
+      "type": "pdf",
+      "year": "2016",
+      "href": "./pipeline/RAW/hunt_unit_database/2016/pdf/harvest_report/CA218DB8__2016_n_slope_w_daggett_red_canyon_bh.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2016 n slope w daggett sheep creek bh",
+      "type": "pdf",
+      "year": "2016",
+      "href": "./pipeline/RAW/hunt_unit_database/2016/pdf/harvest_report/11D93CAD__2016_n_slope_w_daggett_sheep_creek_bh.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2016 nine mile range creek bh",
+      "type": "pdf",
+      "year": "2016",
+      "href": "./pipeline/RAW/hunt_unit_database/2016/pdf/harvest_report/CBEBFE8C__2016_nine_mile_range_creek_bh.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2016 pine valley bighorn",
+      "type": "pdf",
+      "year": "2016",
+      "href": "./pipeline/RAW/hunt_unit_database/2016/pdf/harvest_report/2B13F427__2016_pine_valley_bighorn.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2016 san rafael dirty devil bg",
+      "type": "pdf",
+      "year": "2016",
+      "href": "./pipeline/RAW/hunt_unit_database/2016/pdf/harvest_report/1414A3B6__2016_san_rafael_dirty_devil_bg.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "Box Elder Newfoundland bighorn 2016",
+      "type": "pdf",
+      "year": "2016",
+      "href": "./pipeline/RAW/hunt_unit_database/2016/pdf/harvest_report/4B2B58E6__Box_Elder_Newfoundland_bighorn_2016.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2015 antlerless hr",
+      "type": "pdf",
+      "year": "2015",
+      "href": "./pipeline/RAW/hunt_unit_database/2015/pdf/harvest_report/23C2211D__2015_antlerless_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2015 BHS Data",
+      "type": "pdf",
+      "year": "2015",
+      "href": "./pipeline/RAW/hunt_unit_database/2015/pdf/harvest_report/2CB58436__2015_BHS_Data.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2015 gs deer hr",
+      "type": "pdf",
+      "year": "2015",
+      "href": "./pipeline/RAW/hunt_unit_database/2015/pdf/harvest_report/251794EF__2015_gs_deer_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2015 le oial hr",
+      "type": "pdf",
+      "year": "2015",
+      "href": "./pipeline/RAW/hunt_unit_database/2015/pdf/harvest_report/E8CF3BEA__2015_le_oial_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "CentralMtnsNebo bighorn 2015",
+      "type": "pdf",
+      "year": "2015",
+      "href": "./pipeline/RAW/hunt_unit_database/2015/pdf/harvest_report/94CBE76A__CentralMtnsNebo_bighorn_2015.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "KaiparowitsEastWest bighorn 2015",
+      "type": "pdf",
+      "year": "2015",
+      "href": "./pipeline/RAW/hunt_unit_database/2015/pdf/harvest_report/EA6B4005__KaiparowitsEastWest_bighorn_2015.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "NorthSanRafael bighorn 2015",
+      "type": "pdf",
+      "year": "2015",
+      "href": "./pipeline/RAW/hunt_unit_database/2015/pdf/harvest_report/6744AEA9__NorthSanRafael_bighorn_2015.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "NorthSlopeBaretop bighorn 2015",
+      "type": "pdf",
+      "year": "2015",
+      "href": "./pipeline/RAW/hunt_unit_database/2015/pdf/harvest_report/1592232F__NorthSlopeBaretop_bighorn_2015.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "NorthSlopeGoslinMtn bighorn 2015",
+      "type": "pdf",
+      "year": "2015",
+      "href": "./pipeline/RAW/hunt_unit_database/2015/pdf/harvest_report/9FB2707A__NorthSlopeGoslinMtn_bighorn_2015.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "NorthSlopeRedCanyon bighorn 2015",
+      "type": "pdf",
+      "year": "2015",
+      "href": "./pipeline/RAW/hunt_unit_database/2015/pdf/harvest_report/D8032F87__NorthSlopeRedCanyon_bighorn_2015.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "NorthSlopeSheepCreek bighorn 2015",
+      "type": "pdf",
+      "year": "2015",
+      "href": "./pipeline/RAW/hunt_unit_database/2015/pdf/harvest_report/60DAB81C__NorthSlopeSheepCreek_bighorn_2015.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "OquirrhStansburyBighorn 2015",
+      "type": "pdf",
+      "year": "2015",
+      "href": "./pipeline/RAW/hunt_unit_database/2015/pdf/harvest_report/4F8E24C8__OquirrhStansburyBighorn_2015.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "SouthSanRafael bighorn 2015",
+      "type": "pdf",
+      "year": "2015",
+      "href": "./pipeline/RAW/hunt_unit_database/2015/pdf/harvest_report/20569E3D__SouthSanRafael_bighorn_2015.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "WasatchMtnsWest bighorn 2015",
+      "type": "pdf",
+      "year": "2015",
+      "href": "./pipeline/RAW/hunt_unit_database/2015/pdf/harvest_report/8CD72257__WasatchMtnsWest_bighorn_2015.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "Zion bighorn 2015",
+      "type": "pdf",
+      "year": "2015",
+      "href": "./pipeline/RAW/hunt_unit_database/2015/pdf/harvest_report/9D3EBB50__Zion_bighorn_2015.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2014 all species hr",
+      "type": "pdf",
+      "year": "2014",
+      "href": "./pipeline/RAW/hunt_unit_database/2014/pdf/harvest_report/62B883FF__2014_all_species_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2014 antlerless hr",
+      "type": "pdf",
+      "year": "2014",
+      "href": "./pipeline/RAW/hunt_unit_database/2014/pdf/harvest_report/9DBED702__2014_antlerless_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2014 bhs data",
+      "type": "pdf",
+      "year": "2014",
+      "href": "./pipeline/RAW/hunt_unit_database/2014/pdf/harvest_report/D04E792F__2014_bhs_data.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2014 gs deer hr",
+      "type": "pdf",
+      "year": "2014",
+      "href": "./pipeline/RAW/hunt_unit_database/2014/pdf/harvest_report/3A23A26F__2014_gs_deer_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "avintaquin bighorn 2014",
+      "type": "pdf",
+      "year": "2014",
+      "href": "./pipeline/RAW/hunt_unit_database/2014/pdf/harvest_report/5E74FC14__avintaquin_bighorn_2014.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "baretop bighorn 2014",
+      "type": "pdf",
+      "year": "2014",
+      "href": "./pipeline/RAW/hunt_unit_database/2014/pdf/harvest_report/0B284939__baretop_bighorn_2014.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "dirtydevil bighorn 2014",
+      "type": "pdf",
+      "year": "2014",
+      "href": "./pipeline/RAW/hunt_unit_database/2014/pdf/harvest_report/20175C2A__dirtydevil_bighorn_2014.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "escalante bighorn 2014",
+      "type": "pdf",
+      "year": "2014",
+      "href": "./pipeline/RAW/hunt_unit_database/2014/pdf/harvest_report/0AD0E19F__escalante_bighorn_2014.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "goslinmtn bighorn 2014",
+      "type": "pdf",
+      "year": "2014",
+      "href": "./pipeline/RAW/hunt_unit_database/2014/pdf/harvest_report/DB693FA5__goslinmtn_bighorn_2014.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "henrys littlerockies bighorn 2014",
+      "type": "pdf",
+      "year": "2014",
+      "href": "./pipeline/RAW/hunt_unit_database/2014/pdf/harvest_report/B1FCCFD7__henrys_littlerockies_bighorn_2014.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "lasalpotash bighorn 2014",
+      "type": "pdf",
+      "year": "2014",
+      "href": "./pipeline/RAW/hunt_unit_database/2014/pdf/harvest_report/A5C79130__lasalpotash_bighorn_2014.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "lockhart bighorn 2014",
+      "type": "pdf",
+      "year": "2014",
+      "href": "./pipeline/RAW/hunt_unit_database/2014/pdf/harvest_report/A72F6F1C__lockhart_bighorn_2014.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "newfoundland bighorn 2014",
+      "type": "pdf",
+      "year": "2014",
+      "href": "./pipeline/RAW/hunt_unit_database/2014/pdf/harvest_report/B41D81A1__newfoundland_bighorn_2014.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "northsanjuan bighorn 2014",
+      "type": "pdf",
+      "year": "2014",
+      "href": "./pipeline/RAW/hunt_unit_database/2014/pdf/harvest_report/6A5A0322__northsanjuan_bighorn_2014.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "pilotmtn bighorn 2014",
+      "type": "pdf",
+      "year": "2014",
+      "href": "./pipeline/RAW/hunt_unit_database/2014/pdf/harvest_report/94140BEF__pilotmtn_bighorn_2014.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "pinevalley bighorn 2014",
+      "type": "pdf",
+      "year": "2014",
+      "href": "./pipeline/RAW/hunt_unit_database/2014/pdf/harvest_report/737D4E27__pinevalley_bighorn_2014.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "sanjuanriver bighorn 2014",
+      "type": "pdf",
+      "year": "2014",
+      "href": "./pipeline/RAW/hunt_unit_database/2014/pdf/harvest_report/6AE90682__sanjuanriver_bighorn_2014.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "sheepcreek bighorn 2014",
+      "type": "pdf",
+      "year": "2014",
+      "href": "./pipeline/RAW/hunt_unit_database/2014/pdf/harvest_report/586D15F7__sheepcreek_bighorn_2014.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "southsanjuan bighorn 2014",
+      "type": "pdf",
+      "year": "2014",
+      "href": "./pipeline/RAW/hunt_unit_database/2014/pdf/harvest_report/5DAFBD36__southsanjuan_bighorn_2014.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "westdaggett redcanyon bighorn 2014",
+      "type": "pdf",
+      "year": "2014",
+      "href": "./pipeline/RAW/hunt_unit_database/2014/pdf/harvest_report/5C01A46D__westdaggett_redcanyon_bighorn_2014.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2013 all species hr",
+      "type": "pdf",
+      "year": "2013",
+      "href": "./pipeline/RAW/hunt_unit_database/2013/pdf/harvest_report/04F508BD__2013_all_species_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2013 bison hr",
+      "type": "pdf",
+      "year": "2013",
+      "href": "./pipeline/RAW/hunt_unit_database/2013/pdf/harvest_report/8995B15E__2013_bison_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2013 dbs hr",
+      "type": "pdf",
+      "year": "2013",
+      "href": "./pipeline/RAW/hunt_unit_database/2013/pdf/harvest_report/FB91F4A9__2013_dbs_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2013 gs deer hr",
+      "type": "pdf",
+      "year": "2013",
+      "href": "./pipeline/RAW/hunt_unit_database/2013/pdf/harvest_report/58DF2D11__2013_gs_deer_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2013 le deer hr",
+      "type": "pdf",
+      "year": "2013",
+      "href": "./pipeline/RAW/hunt_unit_database/2013/pdf/harvest_report/FA55B0D7__2013_le_deer_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2013 le elk hr",
+      "type": "pdf",
+      "year": "2013",
+      "href": "./pipeline/RAW/hunt_unit_database/2013/pdf/harvest_report/8949AE45__2013_le_elk_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2013 le pronghorn hr",
+      "type": "pdf",
+      "year": "2013",
+      "href": "./pipeline/RAW/hunt_unit_database/2013/pdf/harvest_report/BA46974B__2013_le_pronghorn_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2013 mg hr",
+      "type": "pdf",
+      "year": "2013",
+      "href": "./pipeline/RAW/hunt_unit_database/2013/pdf/harvest_report/31B5012A__2013_mg_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2013 moose hr",
+      "type": "pdf",
+      "year": "2013",
+      "href": "./pipeline/RAW/hunt_unit_database/2013/pdf/harvest_report/1400385D__2013_moose_hr.pdf"
+    },
+    {
+      "folder": "HARVEST DATA",
+      "title": "2013 rmbs hr",
+      "type": "pdf",
+      "year": "2013",
+      "href": "./pipeline/RAW/hunt_unit_database/2013/pdf/harvest_report/3C5A3350__2013_rmbs_hr.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "2025 Lifetime general season deer draw results",
+      "type": "pdf",
+      "year": "2026",
+      "href": "./pipeline/RAW/hunt_unit_database/2026/pdf/draw_odds/2025_Lifetime general-season deer draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "25 antlerless drawing odds report",
+      "type": "pdf",
+      "year": "2026",
+      "href": "./pipeline/RAW/hunt_unit_database/2026/pdf/draw_odds/25_antlerless_drawing_odds_report.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "25 bg odds",
+      "type": "pdf",
+      "year": "2026",
+      "href": "./pipeline/RAW/hunt_unit_database/2026/pdf/draw_odds/25_bg-odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "25 lifetime deer (1)",
+      "type": "pdf",
+      "year": "2026",
+      "href": "./pipeline/RAW/hunt_unit_database/2026/pdf/draw_odds/EABAF1E2__25_lifetime_deer (1).pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "25 youth antlerless drawing odds report",
+      "type": "pdf",
+      "year": "2026",
+      "href": "./pipeline/RAW/hunt_unit_database/2026/pdf/draw_odds/25_youth_antlerless_drawing_odds_report.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "25 youth deer",
+      "type": "pdf",
+      "year": "2026",
+      "href": "./pipeline/RAW/hunt_unit_database/2026/pdf/draw_odds/60A861A3__25_youth_deer.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "25 youth elk",
+      "type": "pdf",
+      "year": "2026",
+      "href": "./pipeline/RAW/hunt_unit_database/2026/pdf/draw_odds/BEFCE572__25_youth_elk.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Big game and antlerless bonus and preference point purchase results",
+      "type": "pdf",
+      "year": "2026",
+      "href": "./pipeline/RAW/hunt_unit_database/2026/pdf/draw_odds/2025__Big game and antlerless bonus and preference point purchase results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "black bear 25 drawing odds",
+      "type": "pdf",
+      "year": "2026",
+      "href": "./pipeline/RAW/hunt_unit_database/2026/pdf/draw_odds/2025__black_bear_25_drawing_odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Dedicated Hunter deer draw results",
+      "type": "pdf",
+      "year": "2026",
+      "href": "./pipeline/RAW/hunt_unit_database/2026/pdf/draw_odds/2025__Dedicated Hunter deer draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Draw Reality Engine",
+      "type": "csv",
+      "year": "2026",
+      "href": "./processed_data/draw_reality_engine.csv"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "General season buck deer draw results",
+      "type": "pdf",
+      "year": "2026",
+      "href": "./pipeline/RAW/hunt_unit_database/2026/pdf/draw_odds/2025__General-season buck deer draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "turkey 2025 turkey bonus points draw results",
+      "type": "pdf",
+      "year": "2026",
+      "href": "./pipeline/RAW/hunt_unit_database/2026/pdf/draw_odds/turkey_2025_turkey_bonus_points_draw_results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "turkey 2025 youth turkey draw results",
+      "type": "pdf",
+      "year": "2026",
+      "href": "./pipeline/RAW/hunt_unit_database/2026/pdf/draw_odds/2025__turkey_2025_youth_turkey_draw_results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Youth Dedicated Hunter deer draw results",
+      "type": "pdf",
+      "year": "2026",
+      "href": "./pipeline/RAW/hunt_unit_database/2026/pdf/draw_odds/2025__Youth Dedicated Hunter deer draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Youth draw only elk draw results",
+      "type": "pdf",
+      "year": "2026",
+      "href": "./pipeline/RAW/hunt_unit_database/2026/pdf/draw_odds/2025__Youth draw-only elk draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Youth general season deer draw results",
+      "type": "pdf",
+      "year": "2026",
+      "href": "./pipeline/RAW/hunt_unit_database/2026/pdf/draw_odds/2025__Youth general-season deer draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "2025 Antlerless Draw Results",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./processed_data/hard_data_exports/source_pdfs/draw_odds/2025/2025-antlerless-draw-results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "2025 Big Game Draw Results",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./processed_data/hard_data_exports/source_pdfs/draw_odds/2025/2025-big-game-draw-results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "2025 Black Bear Draw Odds",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./processed_data/hard_data_exports/source_pdfs/draw_odds/2025/2025-black-bear-draw-odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "2025 Buck Deer General Season Draw Results",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./processed_data/hard_data_exports/source_pdfs/draw_odds/2025/2025-buck-deer-general-season-draw-results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "2025 Dedicated Hunter Draw Results",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./processed_data/hard_data_exports/source_pdfs/draw_odds/2025/2025-dedicated-hunter-draw-results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "2025 LE Deer Draw Results",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./processed_data/hard_data_exports/source_pdfs/draw_odds/2025/2025-le-deer-draw-results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "2025 LE Elk Draw Results",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./processed_data/hard_data_exports/source_pdfs/draw_odds/2025/2025-le-elk-draw-results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "2025 LE Pronghorn Draw Results",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./processed_data/hard_data_exports/source_pdfs/draw_odds/2025/2025-le-pronghorn-draw-results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "2025 O.I.L. Draw Results",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./processed_data/hard_data_exports/source_pdfs/draw_odds/2025/2025-oil-draw-results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "2025 Turkey Bonus Point Purchase Results",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./processed_data/hard_data_exports/source_pdfs/draw_odds/2025/2025-turkey-bonus-point-purchase-results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "2025 Turkey Draw Results",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./processed_data/hard_data_exports/source_pdfs/draw_odds/2025/2025-turkey-draw-results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "2025 Youth Antlerless Draw Results",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./processed_data/hard_data_exports/source_pdfs/draw_odds/2025/2025-youth-antlerless-draw-results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "2025 Youth Dedicated Hunter Draw Results",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./processed_data/hard_data_exports/source_pdfs/draw_odds/2025/2025-youth-dedicated-hunter-draw-results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "2025 Youth G.S. Deer Draw Results",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./processed_data/hard_data_exports/source_pdfs/draw_odds/2025/2025-youth-general-season-deer-draw-results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "2025 Youth G.S. Mature Bull Draw Results",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./processed_data/hard_data_exports/source_pdfs/draw_odds/2025/2025-youth-general-season-mature-bull-draw-results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "24 25 sportsman odds",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./pipeline/RAW/hunt_unit_database/2025/pdf/draw_odds/24-25_sportsman_odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "24 antlerless drawing odds report",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./pipeline/RAW/hunt_unit_database/2025/pdf/draw_odds/24_antlerless_drawing_odds_report.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "24 bg odds",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./pipeline/RAW/hunt_unit_database/2025/pdf/draw_odds/big file/24_bg-odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "24 deer odds",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./pipeline/RAW/hunt_unit_database/2025/pdf/draw_odds/24_deer_odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "24 dh odds",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./pipeline/RAW/hunt_unit_database/2025/pdf/draw_odds/24_dh_odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "24 drawing odds",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./pipeline/RAW/hunt_unit_database/2025/pdf/draw_odds/24_drawing_odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "24 le deer",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./pipeline/RAW/hunt_unit_database/2025/pdf/draw_odds/24_le_deer.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "24 lifetime deer",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./pipeline/RAW/hunt_unit_database/2025/pdf/draw_odds/24_lifetime_deer.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "24 point only purchases for big game and antlerless",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./pipeline/RAW/hunt_unit_database/2025/pdf/draw_odds/24_point-only_purchases_for_big_game_and_antlerless.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "24 youth antlerless drawing odds report",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./pipeline/RAW/hunt_unit_database/2025/pdf/draw_odds/24_youth_antlerless_drawing_odds_report.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "24 youth deer",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./pipeline/RAW/hunt_unit_database/2025/pdf/draw_odds/24_youth_deer.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "24 youth dh odds",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./pipeline/RAW/hunt_unit_database/2025/pdf/draw_odds/24_youth_dh_odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "24 youth elk",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./pipeline/RAW/hunt_unit_database/2025/pdf/draw_odds/24_youth_elk.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "2023 cougar odds report",
+      "type": "pdf",
+      "year": "2024",
+      "href": "./pipeline/RAW/hunt_unit_database/2024/pdf/draw_odds/2023_cougar_odds_report.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "2023 DEER ODDS",
+      "type": "pdf",
+      "year": "2024",
+      "href": "./pipeline/RAW/hunt_unit_database/2024/pdf/draw_odds/2023 DEER ODDS.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "2023 draw results General Season Deer Draw Odds",
+      "type": "pdf",
+      "year": "2024",
+      "href": "./pipeline/RAW/hunt_unit_database/2024/pdf/draw_odds/2023 draw results General Season Deer Draw Odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "2023 ELK + OTHER BIG GAME",
+      "type": "pdf",
+      "year": "2024",
+      "href": "./pipeline/RAW/hunt_unit_database/2024/pdf/draw_odds/2023 ELK + OTHER BIG GAME.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "2023 turkey bonus points draw results",
+      "type": "pdf",
+      "year": "2024",
+      "href": "./pipeline/RAW/hunt_unit_database/2024/pdf/draw_odds/2023_turkey_bonus_points_draw_results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "23 24 sportsman odds",
+      "type": "pdf",
+      "year": "2024",
+      "href": "./pipeline/RAW/hunt_unit_database/2024/pdf/draw_odds/23-24_sportsman_odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "23 antlerless drawing odds report",
+      "type": "pdf",
+      "year": "2024",
+      "href": "./pipeline/RAW/hunt_unit_database/2024/pdf/draw_odds/23_antlerless_drawing_odds_report.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "23 bg odds",
+      "type": "pdf",
+      "year": "2024",
+      "href": "./pipeline/RAW/hunt_unit_database/2024/pdf/draw_odds/23_bg-odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "23 deer odds",
+      "type": "pdf",
+      "year": "2024",
+      "href": "./pipeline/RAW/hunt_unit_database/2024/pdf/draw_odds/23_deer_odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "23 dh odds",
+      "type": "pdf",
+      "year": "2024",
+      "href": "./pipeline/RAW/hunt_unit_database/2024/pdf/draw_odds/23_dh_odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "23 drawing odds",
+      "type": "pdf",
+      "year": "2024",
+      "href": "./pipeline/RAW/hunt_unit_database/2024/pdf/draw_odds/23_drawing_odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "23 lifetime deer",
+      "type": "pdf",
+      "year": "2024",
+      "href": "./pipeline/RAW/hunt_unit_database/2024/pdf/draw_odds/23_lifetime_deer.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "23 point only purchases for big game and antlerless",
+      "type": "pdf",
+      "year": "2024",
+      "href": "./pipeline/RAW/hunt_unit_database/2024/pdf/draw_odds/23_point-only_purchases_for_big_game_and_antlerless.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "23 youth antlerless drawing odds report",
+      "type": "pdf",
+      "year": "2024",
+      "href": "./pipeline/RAW/hunt_unit_database/2024/pdf/draw_odds/23_youth_antlerless_drawing_odds_report.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "23 youth deer",
+      "type": "pdf",
+      "year": "2024",
+      "href": "./pipeline/RAW/hunt_unit_database/2024/pdf/draw_odds/23_youth_deer.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "23 youth dh odds",
+      "type": "pdf",
+      "year": "2024",
+      "href": "./pipeline/RAW/hunt_unit_database/2024/pdf/draw_odds/23_youth_dh_odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "23 youth elk",
+      "type": "pdf",
+      "year": "2024",
+      "href": "./pipeline/RAW/hunt_unit_database/2024/pdf/draw_odds/23_youth_elk.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "black bear 23 drawing odds",
+      "type": "pdf",
+      "year": "2024",
+      "href": "./pipeline/RAW/hunt_unit_database/2024/pdf/draw_odds/39b9ca33__black_bear_23_drawing_odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "22 23 sportsman odds",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/draw_odds/22-23_sportsman_odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "22 antlerless drawing odds report",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/draw_odds/22_antlerless_drawing_odds_report.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "22 bg odds",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/draw_odds/22_bg-odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "22 bg odds",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/draw_odds/60619D30__22_bg-odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "22 deer odds",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/draw_odds/22_deer_odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "22 dh odds",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/draw_odds/22_dh_odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "22 drawing odds",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/draw_odds/22_drawing_odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "22 lifetime deer",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/draw_odds/22_lifetime_deer.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "22 sheep population",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/draw_odds/22_sheep-population.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "22 youth antlerless drawing odds report",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/draw_odds/22_youth_antlerless_drawing_odds_report.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "22 youth bull elk",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/draw_odds/22_youth_bull_elk.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "22 youth deer",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/draw_odds/22_youth_deer.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "22 youth dh odds",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/draw_odds/22_youth_dh_odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Antlerless big game draw results",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/draw_odds/c451ae2a__Antlerless big game draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Big game and antlerless bonus and preference point purchase results",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/draw_odds/b7af20c9__Big game and antlerless bonus and preference point purchase results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Big game limited entry &amp; once in a lifetime draw results",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/draw_odds/6326e915__Big game limited-entry &amp; once-in-a-lifetime draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "cougar Drawing odds",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/draw_odds/41c98e7e__cougar_Drawing odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Dedicated Hunter deer draw results",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/draw_odds/d15e7b03__Dedicated Hunter deer draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "General season deer draw results",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/draw_odds/6a1df976__General-season deer draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Lifetime general season deer draw results",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/draw_odds/3c8168b4__Lifetime general-season deer draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Sportsman draw odds report",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/draw_odds/82e44204__Sportsman draw odds report.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "turkey 2023 turkey bonus points draw results",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/draw_odds/88bceb9e__turkey_2023_turkey_bonus_points_draw_results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "turkey 2023 youth turkey draw results",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/draw_odds/e91f282e__turkey_2023_youth_turkey_draw_results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Youth antlerless big game draw results",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/draw_odds/72649cd3__Youth antlerless big game draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Youth Dedicated Hunter deer draw results",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/draw_odds/685de6db__Youth Dedicated Hunter deer draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Youth draw only elk bonus point draw results",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/draw_odds/17ed709a__Youth draw-only elk bonus point draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Youth general season deer draw results",
+      "type": "pdf",
+      "year": "2023",
+      "href": "./pipeline/RAW/hunt_unit_database/2023/pdf/draw_odds/6dc7c678__Youth general-season deer draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "21 22 sportsman odds",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/draw_odds/21-22_sportsman_odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "21 antlerless drawing odds report",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/draw_odds/21_antlerless_drawing_odds_report.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "21 bg odds",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/draw_odds/21_bg-odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "21 deer odds",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/draw_odds/21_deer_odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "21 dh odds",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/draw_odds/21_dh_odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "21 drawing odds",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/draw_odds/21_drawing_odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "21 lifetime deer",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/draw_odds/21_lifetime_deer.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "21 youth antlerless drawing odds report",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/draw_odds/21_youth_antlerless_drawing_odds_report.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "21 youth bull elk",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/draw_odds/21_youth_bull_elk.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "21 youth deer",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/draw_odds/21_youth_deer.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "21 youth dh odds",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/draw_odds/21_youth_dh_odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Antlerless big game draw results",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/draw_odds/a0d8e70e__Antlerless big game draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Big game limited entry &amp; once in a lifetime draw results",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/draw_odds/15e1470a__Big game limited-entry &amp; once-in-a-lifetime draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "black bear 22 drawing odds",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/draw_odds/eff53094__black_bear_22_drawing_odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "cougar Drawing odds",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/draw_odds/7cfe81c3__cougar_Drawing odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Dedicated Hunter deer draw results",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/draw_odds/c9f1b779__Dedicated Hunter deer draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "General season buck deer draw results",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/draw_odds/705f30a5__General-season buck deer draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Lifetime general season deer draw results",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/draw_odds/449c6db8__Lifetime general-season deer draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Sportsman draw odds report",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/draw_odds/10e8e26a__Sportsman draw odds report.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "turkey 2022 turkey bonus points draw results",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/draw_odds/d534ae44__turkey_2022_turkey_bonus_points_draw_results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "turkey 2022 youth turkey draw results",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/draw_odds/85ebe309__turkey_2022_youth_turkey_draw_results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Youth antlerless big game draw results",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/draw_odds/96724720__Youth antlerless big game draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Youth Dedicated Hunter deer draw results",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/draw_odds/4d3103f2__Youth Dedicated Hunter deer draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Youth draw only elk bonus point draw results",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/draw_odds/b6af6d7d__Youth draw-only elk bonus point draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Youth general season deer draw results",
+      "type": "pdf",
+      "year": "2022",
+      "href": "./pipeline/RAW/hunt_unit_database/2022/pdf/draw_odds/91fa9658__Youth general-season deer draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "20 21 sportsman odds",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/draw_odds/20-21_sportsman_odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "20 antlerless drawing odds report",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/draw_odds/20_antlerless_drawing_odds_report.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "20 bg odds",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/draw_odds/20_bg-odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "20 deer odds",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/draw_odds/20_deer_odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "20 dh odds",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/draw_odds/20_dh_odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "20 drawing odds",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/draw_odds/20_drawing_odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "20 lifetime deer",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/draw_odds/20_lifetime_deer.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "20 youth antlerless drawing odds report",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/draw_odds/20_youth_antlerless_drawing_odds_report.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "20 youth bull elk",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/draw_odds/20_youth_bull_elk.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "20 youth deer",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/draw_odds/20_youth_deer.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "20 youth dh odds",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/draw_odds/20_youth_dh_odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Antlerless big game draw results",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/draw_odds/ea19f723__Antlerless big game draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Big game limited entry &amp; once in a lifetime draw results",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/draw_odds/615cbcd5__Big game limited-entry &amp; once-in-a-lifetime draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "black bear 20 drawing odds",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/draw_odds/97ffae94__black_bear_20_drawing_odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "black bear 21 drawing odds",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/draw_odds/b4710a7f__black_bear_21_drawing_odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "cougar Drawing odds",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/draw_odds/80165f60__cougar_Drawing odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Dedicated Hunter deer draw results",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/draw_odds/85bae871__Dedicated Hunter deer draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "General season buck deer draw results",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/draw_odds/c4618029__General-season buck deer draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Lifetime general season deer draw results",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/draw_odds/2a192910__Lifetime general-season deer draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Sportsman draw odds report",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/draw_odds/ffa5e57f__Sportsman draw odds report.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "turkey 2021 turkey bonus points draw results",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/draw_odds/baa2fb5d__turkey_2021_turkey_bonus_points_draw_results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "turkey 2021 youth turkey draw results",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/draw_odds/3deb930b__turkey_2021_youth_turkey_draw_results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Youth antlerless big game draw results",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/draw_odds/897696d1__Youth antlerless big game draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Youth Dedicated Hunter deer draw results",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/draw_odds/3b691218__Youth Dedicated Hunter deer draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Youth draw only elk bonus point draw results",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/draw_odds/9a7a35aa__Youth draw-only elk bonus point draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Youth general season deer draw results",
+      "type": "pdf",
+      "year": "2021",
+      "href": "./pipeline/RAW/hunt_unit_database/2021/pdf/draw_odds/98e761bc__Youth general-season deer draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Antlerless big game draw results",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/draw_odds/d30a80bb__Antlerless big game draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Big game limited entry &amp; once in a lifetime draw results",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/draw_odds/f4467d08__Big game limited-entry &amp; once-in-a-lifetime draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "cougar Drawing odds",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/draw_odds/dff7fc92__cougar_Drawing odds.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Dedicated Hunter deer draw results",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/draw_odds/a0ccd01f__Dedicated Hunter deer draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "General season buck deer draw results",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/draw_odds/fddbc9d7__General-season buck deer draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Lifetime general season deer draw results",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/draw_odds/24b2f6b3__Lifetime general-season deer draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Sportsman draw odds report",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/draw_odds/fd3c3903__Sportsman draw odds report.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "turkey 2020 turkey bonus points draw results",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/draw_odds/5213601e__turkey_2020_turkey_bonus_points_draw_results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "turkey 2020 youth turkey draw results",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/draw_odds/68991b97__turkey_2020_youth_turkey_draw_results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Youth antlerless big game draw results",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/draw_odds/c4a9d67b__Youth antlerless big game draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Youth Dedicated Hunter deer draw results",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/draw_odds/b6518e1c__Youth Dedicated Hunter deer draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Youth draw only elk bonus point draw results",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/draw_odds/3f05ae15__Youth draw-only elk bonus point draw results.pdf"
+    },
+    {
+      "folder": "DRAW RESULTS",
+      "title": "Youth general season deer draw results",
+      "type": "pdf",
+      "year": "2020",
+      "href": "./pipeline/RAW/hunt_unit_database/2020/pdf/draw_odds/e7b234c1__Youth general-season deer draw results.pdf"
+    },
+    {
+      "folder": "CONSERVATION PERMITS",
+      "title": "2025-27 Conservation Permits",
+      "type": "pdf",
+      "year": "2025",
+      "href": "./processed_data/hard_data_exports/source_pdfs/regulations/2025/2025-27-conservation-permits.pdf"
+    },
+    {
+      "folder": "CONSERVATION PERMITS",
+      "title": "Conservation Permit Hunt Table 2025-27 (CSV)",
+      "type": "csv",
+      "year": "2025",
+      "href": "./data/conservation-permit-hunt-table-2025-27.csv"
+    },
+    {
+      "folder": "HUNT EXPO",
+      "title": "2025 Hunt Expo Draw Permit Successful Applicants",
+      "type": "pdf",
+      "year": "2026",
+      "href": "./pipeline/RAW/hunt_unit_database/2026/pdf/draw_odds/2025_Hunt_Expo_Draw_Permit_Successful_Applicants.pdf"
+    },
+    {
+      "folder": "HUNT EXPO",
+      "title": "2025 Hunt Expo Draw Permit Successful Applicants short (2)",
+      "type": "pdf",
+      "year": "2026",
+      "href": "./pipeline/RAW/hunt_unit_database/2026/pdf/draw_odds/2025_Hunt_Expo_Draw_Permit_Successful_Applicants_short (2).pdf"
+    },
+    {
+      "folder": "SIGNIFICANT DATES / CALENDAR",
+      "title": "Utah DWR Calendar",
+      "type": "iframe",
+      "year": "2026",
+      "href": "https://calendar.google.com/calendar/u/0/embed?height=600&wkst=1&bgcolor=%23FFFFFF&src=utah.gov_95qrjmfvfifbq6mkg1e41lnrno@group.calendar.google.com&color=%231B887A&src=utah.gov_l1ndc1a2r58v1t6g7ac3na96s8@group.calendar.google.com&color=%23856508&src=utah.gov_e55anhcr6q7nrgte2f30h2o2lo@group.calendar.google.com&color=%23B1440E&src=utah.gov_v0i790s35jhgef7nqbrthvgnf8@group.calendar.google.com&color=%23333333&src=utah.gov_a4abp8ma2mmcjuhd5jgftto3to@group.calendar.google.com&color=%23A32929&ctz=America/Denver&pli=1"
+    },
+    {
+      "folder": "2026 HUNT UNITS / PERMIT NUMBERS",
+      "title": "2026 Hunt Units / Permit Numbers by Hunt Code and Hunt Name",
+      "type": "csv",
+      "year": "2026",
+      "href": "./processed_data/hard_data_exports/library/library_page_hunts.csv"
+    },
+    {
+      "folder": "2026 HUNT UNITS / PERMIT NUMBERS",
+      "title": "Hard Data Library Page Records CSV",
+      "type": "csv",
+      "year": "2026",
+      "href": "./processed_data/hard_data_exports/library/library_page_hunts.csv"
+    },
+    {
+      "folder": "UTAH OUTFITTERS BY HUNT CODE/HUNT NAME",
+      "title": "Hunting Guide and Outfitter Definition, Rules and Regulations.",
+      "type": "pdf",
+      "year": "2024",
+      "href": "./pipeline/RAW/hunt_unit_database/2024/pdf/regulation/76E828EE__Hunting Guide and Outfitter Definition, Rules and Regulations..pdf"
+    }
+  ]
+}
