@@ -401,16 +401,39 @@ body {
 }
 
 .uoga-pdf-flipbook {
-  min-height: 620px;
-  display: grid;
-  place-items: center;
+  min-height: 760px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 12px;
 }
 
+.uoga-pdf-spread {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  background: #3a2112;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+}
+
+.uoga-pdf-spread.cover,
+.uoga-pdf-spread.single {
+  grid-template-columns: 1fr;
+}
+
 .uoga-pdf-page {
-  background: #fff;
+  background: #f8eedc;
   border-radius: 4px;
   overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(80, 50, 25, 0.18);
+}
+
+.uoga-pdf-page canvas {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .uoga-embed-panel {
@@ -491,6 +514,11 @@ body {
 
   .uoga-pdf-flipbook {
     min-height: 480px;
+  }
+
+  .uoga-pdf-spread {
+    grid-template-columns: 1fr;
+    max-width: min(96vw, 420px);
   }
 
   .utility-nav {

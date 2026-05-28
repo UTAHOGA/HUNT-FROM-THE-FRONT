@@ -63,6 +63,8 @@
   let pageFlipLoadPromise = null;
   let pdfLibLoadPromise = null;
   let pageFlipInstance = null;
+  let activeSpreadMeta = [];
+  let activePdfPageCount = 0;
 
   function byId(id) {
     return document.getElementById(id);
@@ -150,10 +152,7 @@
     if (!passesFolderRules(folderId, { title, href, subtitle, year })) return null;
 
     const embedded = type === "iframe" || delivery === "embedded";
-    const companionHref = String(raw.companion_href || "").trim();
-    const companionType = String(raw.companion_type || "").trim().toLowerCase();
-    const companionTitle = String(raw.companion_title || "").trim();
-    const companionSubtitle = String(raw.companion_subtitle || "").trim();
+    const viewerHref = String(raw.viewer_href || "").trim();
     return {
       id: `${folderId}::${title.toLowerCase()}::${href.toLowerCase()}::${type}`,
       folderId,
@@ -171,15 +170,8 @@
       group,
       delivery,
       embedded,
-      companion: companionHref
-        ? {
-            href: companionHref,
-            type: companionType || "link",
-            title: companionTitle || "Companion Document",
-            subtitle: companionSubtitle || "",
-          }
-        : null,
-      searchText: `${title} ${subtitle} ${href} ${year} ${type} ${group} ${folderId} ${raw.source || ""} ${raw.scope || ""} ${companionTitle} ${companionSubtitle} ${companionHref}`.toLowerCase(),
+      viewerHref,
+      searchText: `${title} ${subtitle} ${href} ${year} ${type} ${group} ${folderId} ${raw.source || ""} ${raw.scope || ""} ${viewerHref}`.toLowerCase(),
     };
   }
 
@@ -258,6 +250,8 @@
       pageFlipInstance.destroy();
       pageFlipInstance = null;
     }
+    activeSpreadMeta = [];
+    activePdfPageCount = 0;
     book.innerHTML = "";
     panel.hidden = true;
     status.textContent = "Loading...";
@@ -280,10 +274,63 @@
 
       const pageWrap = document.createElement("div");
       pageWrap.className = "uoga-pdf-page";
+      pageWrap.dataset.pageNumber = String(i);
       pageWrap.appendChild(canvas);
       pages.push(pageWrap);
     }
     return { pages, pageCount };
+  }
+
+  function buildSpreads(pages, pageCount, isMobile) {
+    if (isMobile) {
+      const spreads = pages.map((page, index) => {
+        const spread = document.createElement("div");
+        spread.className = "uoga-pdf-spread single";
+        spread.appendChild(page);
+        spread.dataset.spreadIndex = String(index);
+        return spread;
+      });
+      const spreadMeta = pages.map((_, index) => ({ label: `Page ${index + 1} of ${pageCount}` }));
+      return { spreads, spreadMeta };
+    }
+
+    const spreads = [];
+    const spreadMeta = [];
+
+    const coverSpread = document.createElement("div");
+    coverSpread.className = "uoga-pdf-spread cover";
+    coverSpread.dataset.spreadIndex = "0";
+    coverSpread.appendChild(pages[0]);
+    spreads.push(coverSpread);
+    spreadMeta.push({ label: `Cover (Page 1 of ${pageCount})` });
+
+    for (let pageNum = 2; pageNum <= pageCount; pageNum += 2) {
+      const spread = document.createElement("div");
+      const rightPageNum = pageNum + 1;
+      const isSingle = rightPageNum > pageCount;
+      spread.className = `uoga-pdf-spread ${isSingle ? "single" : ""}`.trim();
+      spread.dataset.spreadIndex = String(spreads.length);
+      spread.appendChild(pages[pageNum - 1]);
+      if (!isSingle) spread.appendChild(pages[rightPageNum - 1]);
+      spreads.push(spread);
+      spreadMeta.push({
+        label: isSingle
+          ? `Page ${pageNum} of ${pageCount}`
+          : `Pages ${pageNum}-${rightPageNum} of ${pageCount}`,
+      });
+    }
+
+    return { spreads, spreadMeta };
+  }
+
+  function updateFlipStatus(spreadIndex) {
+    const status = byId("uogaPdfStatus");
+    const meta = activeSpreadMeta[spreadIndex];
+    if (!meta) {
+      status.textContent = activePdfPageCount ? `Page 1 of ${activePdfPageCount}` : "Loading...";
+      return;
+    }
+    status.textContent = meta.label;
   }
 
   async function openPdfFlipbook(item) {
@@ -293,17 +340,18 @@
     const status = byId("uogaPdfStatus");
     const book = byId("uogaPdfFlipbook");
     const download = byId("uogaPdfDownload");
+    const viewerHref = item.viewerHref || item.href;
 
     panel.hidden = false;
     title.textContent = item.title || "PDF Viewer";
-    download.href = safeUrl(item.href);
+    download.href = safeUrl(viewerHref);
     status.textContent = "Loading PDF...";
     book.innerHTML = "";
 
     try {
       await ensurePdfLibrary();
       await ensurePageFlipLibrary();
-      const pdf = await pdfjsLib.getDocument(safeUrl(item.href)).promise;
+      const pdf = await pdfjsLib.getDocument(safeUrl(viewerHref)).promise;
       const isMobile = window.innerWidth <= 760;
       const targetWidth = isMobile ? 300 : 430;
       const { pages, pageCount } = await renderPdfPages(pdf, targetWidth);
@@ -312,29 +360,35 @@
         return;
       }
 
-      const width = isMobile ? 320 : 460;
+      const width = isMobile ? 320 : 920;
       const firstCanvas = pages[0].querySelector("canvas");
-      const height = Math.max(420, Math.floor((firstCanvas.height / firstCanvas.width) * width));
+      const singlePageHeight = Math.floor((firstCanvas.height / firstCanvas.width) * (isMobile ? 320 : 430));
+      const height = Math.max(420, singlePageHeight + 24);
 
-      pages.forEach((p) => book.appendChild(p));
+      const { spreads, spreadMeta } = buildSpreads(pages, pageCount, isMobile);
+      activeSpreadMeta = spreadMeta;
+      activePdfPageCount = pageCount;
+      spreads.forEach((spread) => book.appendChild(spread));
+
       pageFlipInstance = new window.St.PageFlip(book, {
         width,
         height,
         size: "stretch",
         minWidth: 260,
-        maxWidth: 700,
+        maxWidth: 980,
         minHeight: 360,
-        maxHeight: 980,
-        showCover: false,
+        maxHeight: 1080,
+        showCover: !isMobile,
+        usePortrait: isMobile,
         drawShadow: true,
         mobileScrollSupport: false,
       });
 
-      pageFlipInstance.loadFromHTML(book.querySelectorAll(".uoga-pdf-page"));
-      status.textContent = `Page 1 of ${pageCount}${pdf.numPages > pageCount ? " (partial preview)" : ""}`;
+      pageFlipInstance.loadFromHTML(book.querySelectorAll(".uoga-pdf-spread"));
+      updateFlipStatus(0);
       pageFlipInstance.on("flip", (event) => {
-        const pageNum = (event.data || 0) + 1;
-        status.textContent = `Page ${pageNum} of ${pageCount}${pdf.numPages > pageCount ? " (partial preview)" : ""}`;
+        const spreadIndex = Number(event.data || 0);
+        updateFlipStatus(spreadIndex);
       });
       panel.scrollIntoView({ behavior: "smooth", block: "start" });
     } catch (error) {
@@ -439,23 +493,18 @@
       `;
 
       if (item.type === "pdf") {
-        const href = safeUrl(item.href);
-        const companionAction = item.companion
-          ? `<button class="public-file-action" type="button" data-action="companion" data-index="${idx}">View Updates / Corrections</button>`
+        const originalHref = safeUrl(item.href);
+        const viewerHref = item.viewerHref ? safeUrl(item.viewerHref) : "";
+        const viewerDownload = viewerHref
+          ? `<a class="public-file-action" href="${esc(viewerHref)}" target="_blank" rel="noopener noreferrer">Download Viewer PDF</a>`
           : "";
-        const companionDownload = item.companion
-          ? `<a class="public-file-action" href="${esc(safeUrl(item.companion.href))}" target="_blank" rel="noopener noreferrer">Download Updates</a>`
-          : "";
-        const viewLabel = item.companion ? "View Guidebook" : "View Flipbook";
-        const downloadLabel = item.companion ? "Download Guidebook" : "Download PDF";
         return `
           <div class="public-file-card">
             ${base}
             <div class="public-file-actions">
-              <button class="public-file-action" type="button" data-action="flip" data-index="${idx}">${viewLabel}</button>
-              ${companionAction}
-              <a class="public-file-action" href="${esc(href)}" target="_blank" rel="noopener noreferrer">${downloadLabel}</a>
-              ${companionDownload}
+              <button class="public-file-action" type="button" data-action="flip" data-index="${idx}">View Flipbook</button>
+              <a class="public-file-action" href="${esc(originalHref)}" target="_blank" rel="noopener noreferrer">Download Original</a>
+              ${viewerDownload}
             </div>
           </div>
         `;
@@ -497,21 +546,6 @@
       });
     });
 
-    grid.querySelectorAll("[data-action='companion']").forEach((button) => {
-      button.addEventListener("click", () => {
-        const idx = Number(button.getAttribute("data-index"));
-        if (!Number.isFinite(idx) || !filtered[idx] || !filtered[idx].companion) return;
-        const companion = filtered[idx].companion;
-        if (companion.type === "pdf") {
-          openPdfFlipbook({
-            title: companion.title || "Corrections & Updates",
-            href: companion.href,
-          });
-          return;
-        }
-        window.open(safeUrl(companion.href), "_blank", "noopener,noreferrer");
-      });
-    });
   }
 
   function start(items) {
