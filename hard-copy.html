@@ -7,21 +7,7 @@
   <title>U.O.G.A. Hunt-Builder Resource Library</title>
   <script src="./embed-mode.js?v=20260422-embed-1"></script>
   <link rel="stylesheet" href="./style.css?v=20260423-planner-header-refine-1" />
-  <link rel="stylesheet" href="./assets/css/hard-copy-public-library.css?v=20260527-wallpaper-force-1" />
-  <style>
-    html,body{margin:0!important;padding:0!important;width:100%!important;min-height:100%!important;overflow-x:hidden!important;background:#100804!important;}
-    body{min-height:100vh!important;background:url('./assets/backgrounds/library-wallpaper.jpg') center top/cover no-repeat fixed!important;color:#f6e0bb!important;}
-    .page-nav-strip{position:fixed!important;top:0!important;left:0!important;right:0!important;z-index:20!important;display:flex!important;justify-content:center!important;align-items:center!important;padding:10px 0!important;background:transparent!important;border:0!important;box-shadow:none!important;pointer-events:none!important;}
-    .page-nav-case{display:flex!important;justify-content:center!important;align-items:center!important;width:auto!important;max-width:none!important;margin:0 auto!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important;pointer-events:auto!important;}
-    .utility-nav{display:flex!important;justify-content:center!important;align-items:center!important;gap:8px!important;flex-wrap:nowrap!important;margin:0 auto!important;padding:6px!important;border:1px solid rgba(201,162,127,.85)!important;border-radius:999px!important;background:rgba(255,253,248,.72)!important;box-shadow:0 8px 22px rgba(58,37,18,.28)!important;backdrop-filter:blur(7px)!important;}
-    .utility-link{min-width:128px!important;height:34px!important;padding:0 18px!important;border-radius:999px!important;border:1px solid #c9a27f!important;background:linear-gradient(180deg,#4b2a17,#23130b)!important;color:#f07800!important;font-size:12px!important;font-weight:1000!important;letter-spacing:.14em!important;text-transform:uppercase!important;text-decoration:none!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 4px 10px rgba(0,0,0,.28)!important;}
-    .utility-link.active{border-color:#f0b46f!important;background:linear-gradient(180deg,#6f3b16,#c66a13)!important;color:#1e1007!important;box-shadow:0 0 0 2px rgba(255,231,188,.45),0 8px 18px rgba(0,0,0,.30)!important;}
-    .topbar{display:none!important;}
-    .uoga-library{width:100vw!important;max-width:none!important;min-height:100vh!important;margin:0!important;padding:0!important;background:transparent!important;}
-    .uoga-library-hero{width:100vw!important;min-height:100vh!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important;display:block!important;}
-    .uoga-library-hero-card,.uoga-library-dashboard{display:none!important;}
-    @media(max-width:760px){.utility-nav{max-width:calc(100vw - 12px)!important;overflow-x:auto!important;justify-content:flex-start!important}.utility-link{min-width:116px!important;font-size:11px!important}}
-  </style>
+  <link rel="stylesheet" href="./assets/css/hard-copy-public-library.css?v=20260528-step4-public-library-1" />
   <script src="https://js.sentry-cdn.com/26137c5576f01423efc85f47076f9548.min.js" crossorigin="anonymous"></script>
   <script src="./sentry-browser-init.js"></script>
 </head>
@@ -38,35 +24,27 @@
     </div>
   </section>
 
-  <main class="uoga-library">
-    <section class="uoga-library-hero" aria-label="U.O.G.A. Hunt-Builder public resource library">
-      <div class="uoga-library-hero-card">
-        <span class="uoga-library-badge">U.O.G.A. Hard Copy + Public Data Library</span>
-        <h1 class="uoga-library-title"><span>Utah Hunt-Builder</span>Resource Library</h1>
-        <p class="uoga-library-intro">Use the folders below to open public-facing files. Prediction-engine runtime data stays in the database and Cloudflare fallback layer unless it is needed as a public source file.</p>
-        <div class="uoga-library-search-wrap">
-          <input id="uogaLibrarySearch" type="search" placeholder="Search rules, harvest data, draw results, permit numbers, outfitters..." aria-label="Search resource library" />
-          <button id="uogaLibraryClear" type="button">Clear</button>
-        </div>
+  <main class="public-library-shell" aria-label="U.O.G.A. Hunt-Builder public resource library">
+    <section class="public-library-controls">
+      <div class="public-library-search">
+        <input id="uogaLibrarySearch" type="search" placeholder="Search folders or files (rules, harvest, draw, permits, outfitters...)" aria-label="Search public hunt library" />
+        <button id="uogaLibraryClear" type="button">Clear</button>
       </div>
+      <p class="public-library-note">Curated public library only. Internal runtime and model files stay in research and hard-data systems.</p>
     </section>
 
-    <section class="uoga-library-dashboard">
-      <div id="uogaFolderWall" class="uoga-folder-wall" aria-label="Public resource folders"></div>
-      <div class="uoga-filter-bar">
-        <div class="uoga-facets">
-          <select id="uogaLibraryType" aria-label="Filter by file type"><option value="all">All file types</option></select>
-          <select id="uogaLibraryYear" aria-label="Filter by year"><option value="all">All years</option></select>
-        </div>
-        <span id="uogaLibraryCount" class="uoga-count" aria-live="polite">Loading library...</span>
-      </div>
-      <div id="uogaActiveFilters" class="uoga-active-filters" aria-live="polite"></div>
-      <details class="uoga-about">
-        <summary>About this library</summary>
-        <div>This page is curated for public-facing resources. Raw prediction-engine database files are filtered off this wall and remain available through the hard-data system and Cloudflare fallback where appropriate.</div>
-      </details>
-      <section id="uogaLibrarySections" class="uoga-board"></section>
+    <section id="uogaFolderWall" class="public-library-folders" aria-label="Public hunt library folders"></section>
+
+    <section id="uogaResultsPanel" class="public-library-results" aria-live="polite" aria-hidden="true">
+      <header class="public-library-results-head">
+        <h2 id="uogaResultsTitle">Filtered Results</h2>
+        <span id="uogaLibraryCount">0 files</span>
+      </header>
+      <div id="uogaActiveFilters" class="public-library-active-filters"></div>
+      <div id="uogaLibrarySections" class="public-library-results-grid"></div>
     </section>
   </main>
+
+  <script src="./assets/js/hard-copy-public-library.js?v=20260528-step4-public-library-1"></script>
 </body>
 </html>
