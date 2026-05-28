@@ -95,57 +95,20 @@ body {
 }
 
 .public-library-controls {
-  max-width: 920px;
-  margin: 0 auto 22px;
-  display: grid;
-  gap: 8px;
+  display: none !important;
 }
 
 .public-library-search {
-  width: min(560px, 92vw);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 8px;
-  background: rgba(19, 11, 7, 0.75);
-  border: 1px solid rgba(232, 201, 150, 0.46);
-  border-radius: 14px;
-  padding: 8px;
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.36);
-}
-
-.public-library-search input {
-  height: 38px;
-  border-radius: 10px;
-  border: 1px solid #caa069;
-  background: rgba(252, 243, 226, 0.95);
-  color: #25140c;
-  padding: 0 12px;
-  font-size: 14px;
-}
-
-.public-library-search button {
-  height: 38px;
-  border: 1px solid #d7a35e;
-  border-radius: 10px;
-  background: linear-gradient(180deg, #5e3417, #28150a);
-  color: #f5d7a8;
-  font-weight: 700;
-  padding: 0 14px;
-  cursor: pointer;
+  display: none !important;
 }
 
 .public-library-note {
-  text-align: center;
-  margin: 0;
-  font-size: 12px;
-  color: #f1d9b3;
-  letter-spacing: 0.03em;
+  display: none !important;
 }
 
 .public-library-folders {
   max-width: 1140px;
-  margin: 4px auto 0;
+  margin: 82px auto 0;
   display: grid;
   grid-template-columns: repeat(4, minmax(180px, 1fr));
   gap: 20px 16px;
@@ -506,6 +469,7 @@ body {
 
   .public-library-folders {
     grid-template-columns: 1fr;
+    margin-top: 42px;
   }
 
   .uoga-embed-panel iframe {
