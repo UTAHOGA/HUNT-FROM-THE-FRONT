@@ -10,7 +10,7 @@
     2025
   ],
   "command_used": "python -m engine.utah_bonus_predictive.materialize --output-dir C:\\Users\\tyler\\Desktop\\GitHub\\HUNT-BUILDER\\processed_data --forecast-year 2026 --history-years 2021,2022,2023,2024,2025",
-  "generated_at": "2026-05-28T12:36:07.199869+00:00",
+  "generated_at": "2026-05-28T12:51:32.594287+00:00",
   "output_files": {
     "ml_draw_predictions_v1.csv": "processed_data\\ml_draw_predictions_v1.csv",
     "ml_draw_predictions_v1_report.json": "processed_data\\ml_draw_predictions_v1_report.json",
@@ -52,8 +52,8 @@
     "ml_draw_predictions_v1.csv": 0,
     "draw_reality_engine_predictive_v2.csv": 0
   },
-  "p_draw_non_null_count": 25713,
-  "p_draw_pct_non_null_count": 25713,
+  "p_draw_non_null_count": 25845,
+  "p_draw_pct_non_null_count": 25845,
   "calibration_metric_non_null_count": 10557,
   "EB3024_regression_result": {
     "pass": true,
@@ -119,11 +119,11 @@
     "prediction": {
       "p_draw_outside_0_1": 0,
       "p_draw_pct_outside_0_100": 0,
-      "p_draw_pct_null": 794,
-      "public_permits_gt_0_but_p_draw_null": 186,
-      "status_max_pool_and_p_draw_pct_100": 1243,
+      "p_draw_pct_null": 662,
+      "public_permits_gt_0_but_p_draw_null": 54,
+      "status_max_pool_and_p_draw_pct_100": 1252,
       "status_max_pool_and_p_draw_pct_lt_100": 0,
-      "random_permits_gt_0_and_p_random_pool_0": 11484,
+      "random_permits_gt_0_and_p_random_pool_0": 11555,
       "duplicate_key_count": 0
     },
     "backtest": {

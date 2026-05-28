@@ -56,6 +56,16 @@ def _to_float(value: object) -> float:
         return 0.0
 
 
+def _to_float_optional(value: object) -> float | None:
+    text = _clean(value)
+    if not text:
+        return None
+    try:
+        return float(text)
+    except Exception:
+        return None
+
+
 def _round_count(value: float) -> int:
     return max(0, int(round(value)))
 
@@ -95,10 +105,40 @@ def _looks_like_standard_pool(row: Mapping[str, object]) -> bool:
 
 
 def is_modeled_general_deer_row(row: Mapping[str, object]) -> bool:
-    return (
-        _clean_lower(row.get("model_strategy")) == MODEL_STRATEGY_NAME
-        and _clean_lower(row.get("preference_model_valid")) in {"1", "true", "yes", "y"}
+    strategy_ok = _clean_lower(row.get("model_strategy")) == MODEL_STRATEGY_NAME and _clean_lower(row.get("preference_model_valid")) in {
+        "1",
+        "true",
+        "yes",
+        "y",
+    }
+    if strategy_ok:
+        return True
+
+    # Phase bridge: some already-modeled preference rows are emitted from the
+    # mixed runtime path without the dedicated strategy tag. Promote those rows
+    # when a valid preference probability surface is present.
+    p_draw_mean = _to_float_optional(row.get("p_draw_mean"))
+    p_draw = _to_float_optional(row.get("p_draw"))
+    p_draw_pct = _to_float_optional(row.get("p_draw_pct"))
+    p_pref = _to_float_optional(row.get("p_preference_draw"))
+
+    has_valid_probability = any(
+        value is not None and 0.0 <= value <= 1.0
+        for value in (p_draw_mean, p_draw, p_pref)
+    ) or (p_draw_pct is not None and 0.0 <= p_draw_pct <= 100.0)
+    if not has_valid_probability:
+        return False
+
+    # Require predictive evidence context so placeholders do not promote.
+    source_years_used = _clean(row.get("source_years_used"))
+    reason_codes = _clean_lower(row.get("reason_codes"))
+    has_predictive_evidence = bool(source_years_used) and (
+        "appliant_stack_rolled_forward" in reason_codes
+        or "applicant_stack_rolled_forward" in reason_codes
+        or "bonus_rule_simulated" in reason_codes
+        or _clean_lower(row.get("source_dataset")) == "predictive"
     )
+    return has_predictive_evidence
 
 
 def _build_truth_ladders(

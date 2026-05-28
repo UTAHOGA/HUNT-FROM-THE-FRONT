@@ -4,10 +4,10 @@
   "output_dir": "processed_data\\model_outputs",
   "warnings": [],
   "counts": {
-    "allowed_hunt_codes": 1419,
-    "draw_prediction_rows": 92998,
-    "decision_rows": 92998,
-    "point_creep_rows": 92998
+    "allowed_hunt_codes": 1634,
+    "draw_prediction_rows": 96129,
+    "decision_rows": 96129,
+    "point_creep_rows": 96129
   },
   "validations": {
     "draw_codes_ok": true,

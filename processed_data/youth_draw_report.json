@@ -7,12 +7,14 @@
     2024,
     2025
   ],
-  "total_youth_rows_reviewed": 4924,
+  "total_youth_rows_reviewed": 11758,
+  "youth_antlerless_or_doe_rows_reviewed": 6834,
   "youth_general_deer_rows_reviewed": 4853,
   "youth_draw_only_elk_rows_reviewed": 71,
   "youth_general_any_bull_elk_rows_reviewed": 71,
   "active_predictive_youth_row_count": 2,
   "youth_general_deer_reserve_row_count": 0,
+  "youth_antlerless_or_doe_reserve_row_count": 0,
   "youth_general_deer_row_count": 0,
   "youth_draw_only_elk_row_count": 2,
   "youth_general_any_bull_elk_row_count": 2,
@@ -42,8 +44,11 @@
   "source_files_used": [
     "2021 Youth general-season deer draw results.pdf",
     "2022 Youth draw-only elk bonus point draw results.pdf",
+    "2022 _Youth antlerless big game draw results.pdf",
+    "2025 Youth Antlerless Draw.pdf",
     "2025 Youth G.S. Deer Draw Results.pdf",
     "2025 Youth G.S.. Mature Bull Draw.pdf",
+    "21_youth_antlerless_drawing_odds_report.pdf",
     "21_youth_bull_elk.pdf",
     "21_youth_deer.pdf",
     "22_youth_deer.pdf",
@@ -53,6 +58,7 @@
   "data_quality_flags_summary": {
     "YOUTH_DEER_ACTIVE_2026_SOURCE_MISSING_OR_SHARED_POOL_AMBIGUOUS": 1,
     "YOUTH_ELK_MECHANICS_NOT_CONFIRMED": 1,
-    "YOUTH_ELK_MODEL_PENDING": 1
+    "YOUTH_ELK_MODEL_PENDING": 1,
+    "YOUTH_RESERVE_MODEL_INPUTS_MISSING": 1
   }
 }

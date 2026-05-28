@@ -202,6 +202,9 @@ def materialize_engine(input_dir: Path, output_dir: Path) -> dict[str, object]:
             harvest_row=harvest_by_code.get(hunt_code),
             trend=trend,
             permit_stability_score=permit_stability,
+            species=str(merged.get("species") or ""),
+            hunt_class=str(merged.get("hunt_class") or merged.get("hunt_type") or ""),
+            draw_system_type=str(merged.get("draw_system_type") or merged.get("draw_2026_system_type") or ""),
         )
 
         guaranteed_at = to_int(merged.get("guaranteed_at_2026") or merged.get("guaranteed_at_2025"))
@@ -261,6 +264,15 @@ def materialize_engine(input_dir: Path, output_dir: Path) -> dict[str, object]:
                 "point_value_score": decision.point_value_score,
                 "demand_opportunity_score": decision.demand_opportunity_score,
                 "permit_stability_score": decision.permit_stability_score,
+                "success_rate_score": quality.success_rate_score,
+                "harvest_score": quality.harvest_score,
+                "hunters_afield_score": quality.hunters_afield_score,
+                "days_score": quality.days_score,
+                "trend_score": quality.trend_score,
+                "age_quality_score": quality.age_quality_score,
+                "average_age_harvested": quality.average_age_harvested,
+                "age_data_available": quality.age_data_available,
+                "age_quality_source_field": quality.age_quality_source_field,
             }
         )
 
@@ -318,6 +330,15 @@ def materialize_engine(input_dir: Path, output_dir: Path) -> dict[str, object]:
             "point_value_score",
             "demand_opportunity_score",
             "permit_stability_score",
+            "success_rate_score",
+            "harvest_score",
+            "hunters_afield_score",
+            "days_score",
+            "trend_score",
+            "age_quality_score",
+            "average_age_harvested",
+            "age_data_available",
+            "age_quality_source_field",
         ],
     )
     _write_csv(

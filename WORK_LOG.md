@@ -1,5 +1,47 @@
 # WORK LOG
 
+## Predictive Pending Resolution + Youth Reserve Modeling + Age Quality Scoring
+- Timestamp (UTC): 2026-05-28T09:55:00Z
+- Scope:
+  - Updated `engine/utah_draw_predictive/preference_general_deer.py` modeled-status gate so rows with valid modeled preference probability outputs are promoted to `MODELED_PREFERENCE` instead of remaining `IN_SCOPE_MODEL_PENDING`.
+  - Implemented explicit youth reserve mechanics in `engine/utah_draw_predictive/youth.py`:
+    - `YOUTH_GENERAL_DEER_RESERVE` and `YOUTH_ANTLERLESS_OR_DOE_RESERVE` now use a reserve model contract with:
+      - up to 20% youth reserve permit split (`quota_2026_youth_reserve`)
+      - rollover-to-main-draw probability composition
+      - modeled/pending gating via `youth_reserve_model_valid`.
+    - Kept `YOUTH_DRAW_ONLY_ELK` separate from adult preference and pending when source mechanics remain unresolved.
+    - Kept `YOUTH_OTC_OR_AVAILABILITY` excluded/non-draw.
+  - Added age-quality scoring support in `engine/utah/quality_score.py` and integrated it via `engine/utah/materialize_engine.py`:
+    - Added `age_quality_score`
+    - Added `average_age_harvested`
+    - Added `age_data_available`
+    - Added `age_quality_source_field`
+    - Implemented neutral fallback (`50.0`) when age data is missing.
+    - Applied class-aware weighting:
+      - stronger age weighting for LE/PLE/OIL/CWMU/trophy-oriented categories
+      - standard weighting for general/opportunity hunts.
+  - Exposed quality component fields in `processed_data/model_outputs/hunt_decision_scores_v1.csv`.
+- Validation:
+  - `python -m py_compile engine/utah_draw_predictive/preference_general_deer.py engine/utah_draw_predictive/youth.py engine/utah/quality_score.py engine/utah/materialize_engine.py` passed.
+  - `python scripts/materialize_predictive_outputs.py` passed.
+  - `python -m engine.utah.materialize_engine --input processed_data --output processed_data/model_outputs` passed.
+  - `npm.cmd run build` passed.
+  - Predictive status delta after rematerialization:
+    - `PREFERENCE_GENERAL_SEASON_BUCK_DEER` pending rows: `132 -> 0`
+    - total `IN_SCOPE_MODEL_PENDING`: `612 -> 480`
+    - remaining pending families:
+      - `BONUS_CWMU_BIG_GAME: 383`
+      - `BEAR_DRAW: 83`
+      - `BONUS_ANTLERLESS_MOOSE: 10`
+      - `YOUTH_DRAW_ONLY_ELK: 2`
+      - `BONUS_TURKEY: 2`
+  - Age-data audit across required files:
+    - `processed_data/harvest_master.csv`: no average-age columns
+    - `processed_data/harvest_quality_features_all_years_by_hunt_code.csv`: `average_age` exists but populated rows `0`
+    - `pipeline/RAW/hunt_unit_database/2026/csv/harvest_quality_features_by_hunt_code_2025_for_2026.csv`: no average-age columns
+    - `processed_data/hunt_master_enriched.csv`: no average-age columns
+    - Current codes with populated age: `0 / 1449` (age fallback neutral currently active for all rows)
+
 ## Step 4C Public Library PDF Flipbook + Download Actions
 - Timestamp (UTC): 2026-05-28T08:46:50Z
 - Scope:
