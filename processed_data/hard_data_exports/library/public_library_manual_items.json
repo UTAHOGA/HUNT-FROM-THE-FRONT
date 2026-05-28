@@ -46,10 +46,14 @@
     "year": "2026",
     "title": "Utah DWR 2026 Big Game Application Guidebook",
     "subtitle": "2026 Utah DWR rules/regulations PDF.",
-    "href": "./public/hard-copy/regulations/2026/2026 Big Game Application.pdf",
-    "source": "pipeline/RAW/hunt_unit_database/2026/pdf/regulations",
+    "href": "./public/hard-copy/regulations/2026/2026.biggame.app.pdf",
+    "source": "public/hard-copy/regulations/2026",
     "scope": "public",
-    "delivery": "pages-local"
+    "delivery": "pages-local",
+    "companion_title": "Important Updates and Corrections Made After the Guidebook Was Published",
+    "companion_href": "./public/hard-copy/regulations/2026/2026.biggame.app.corrections-updates.pdf",
+    "companion_type": "pdf",
+    "companion_subtitle": "Companion notice for 2026 Big Game Application Guidebook"
   },
   {
     "group": "regulation",
