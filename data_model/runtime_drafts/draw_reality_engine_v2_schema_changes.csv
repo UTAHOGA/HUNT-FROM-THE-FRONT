@@ -1,5 +1,4 @@
 column,change_type,current_runtime_has_column,v2_runtime_has_column,notes
-hunt_class,ADDED_IN_V2_DRAFT,NO,YES,Required by V3 draw truth draft schema
 hunt_type,ADDED_IN_V2_DRAFT,NO,YES,Required by V3 draw truth draft schema
 season,ADDED_IN_V2_DRAFT,NO,YES,Required by V3 draw truth draft schema
 sex_type,ADDED_IN_V2_DRAFT,NO,YES,Required by V3 draw truth draft schema
@@ -13,6 +12,10 @@ weapon,ADDED_IN_V2_DRAFT,NO,YES,Required by V3 draw truth draft schema
 availability_status,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
 data_quality_grade,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
 data_status,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
+draw_2025_bg_pdf_page,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
+draw_2025_bg_report_page,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
+draw_2025_type,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
+draw_2026_system_type,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
 draw_model_class,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
 hunt_category,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
 new_this_year,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
@@ -30,16 +33,25 @@ permit_overlay_source,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not r
 permit_source,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
 permit_source_authority,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
 permit_status,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
+permits_2025_draw_nr,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
+permits_2025_draw_res,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
+permits_2025_draw_source,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
+permits_2025_draw_total,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
+permits_2025_nr,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
+permits_2025_res,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
+permits_2025_source,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
+permits_2025_total,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
 permits_2026_conservation,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
+permits_2026_draw_nr,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
+permits_2026_draw_res,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
+permits_2026_draw_source,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
+permits_2026_draw_total,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
 permits_2026_expo,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
 permits_2026_nr,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
 permits_2026_res,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
 permits_2026_source,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
 permits_2026_sportsman,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
 permits_2026_total,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
-permits_year_nr,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
-permits_year_res,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
-permits_year_total,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
 probability_model,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
 public_permits_2026,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
 public_permits_2026_source,ONLY_IN_CURRENT_RUNTIME,YES,NO,Current runtime field not required in this draft feed
