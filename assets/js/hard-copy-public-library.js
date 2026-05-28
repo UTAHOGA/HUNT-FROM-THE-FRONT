@@ -1,9 +1,7 @@
 (() => {
   const CURRENT_YEAR = "2026";
   const MANIFEST_URLS = [
-    "./processed_data/hard_data_exports/hard_copy_pdf_manifest.web.json",
-    "./processed_data/hard_data_exports/hard_data_manifest.web.json",
-    "./processed_data/hard_data_exports/library/public_library_manual_items.json",
+    "./processed_data/hard_data_exports/library/public_library_allowlist.json",
   ];
 
   const PDFJS_CDN = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs";
@@ -43,21 +41,7 @@
     "processed_data/library/library_page_hunts.csv",
   ];
 
-  const FIXED_PUBLIC_ITEMS = [
-    {
-      id: "units2026::library-page-hunts",
-      folderId: "units2026",
-      title: "2026 Hunt Units / Permit Numbers by Hunt Code and Hunt Name",
-      subtitle: "Current 2026 hunt code, hunt name, hunt unit, and permit table.",
-      href: "./processed_data/hard_data_exports/library/library_page_hunts.csv",
-      type: "csv",
-      year: "2026",
-      group: "exports",
-      delivery: "pages-local",
-      searchText: "2026 hunt units permit numbers hunt code hunt name hunt unit permits library_page_hunts csv",
-      embedded: false,
-    },
-  ];
+  const FIXED_PUBLIC_ITEMS = [];
 
   let pdfjsLib = null;
   let pageFlipLoadPromise = null;
@@ -144,6 +128,7 @@
   }
 
   function toPublicItem(raw) {
+    const knownFolderIds = new Set(FOLDERS.map((folder) => folder.id));
     const title = String(raw.title || "").trim();
     const href = String(raw.href || "").trim();
     const type = String(raw.type || "").trim().toLowerCase();
@@ -151,11 +136,13 @@
     const group = String(raw.group || "").trim().toLowerCase();
     const delivery = String(raw.delivery || "").trim();
     const year = String(raw.year || inferYear(raw)).trim();
-    const folderId = toFolderId(raw);
+    const rawFolderId = String(raw.folderId || raw.folder_id || "").trim();
+    const folderId = (rawFolderId && knownFolderIds.has(rawFolderId)) ? rawFolderId : toFolderId(raw);
 
     if (!title || !href || !folderId) return null;
     if (type === "json") return null;
-    if (!["pdf", "csv", "xlsx", "iframe", "link"].includes(type)) return null;
+    if (!["pdf", "xlsx", "iframe", "link"].includes(type)) return null;
+    if (type === "csv") return null;
     if (isRuntimeDenied(raw) && !isExplicitAllow(raw)) return null;
     if (!passesFolderRules(folderId, { title, href, subtitle, year })) return null;
 
@@ -180,6 +167,7 @@
       embedded,
       viewerHref,
       searchText: `${title} ${subtitle} ${href} ${year} ${type} ${group} ${folderId} ${raw.source || ""} ${raw.scope || ""} ${viewerHref}`.toLowerCase(),
+      sortOrder: Number(raw.sort_order || raw.sortOrder || 0),
     };
   }
 
@@ -541,7 +529,11 @@
       ? (FOLDERS.find((f) => f.id === state.activeFolder) || {}).title || "Filtered Results"
       : "Search Results";
 
-    const filtered = filterItems(items, state).sort((a, b) => (b.year || "").localeCompare(a.year || "") || a.title.localeCompare(b.title));
+    const filtered = filterItems(items, state).sort((a, b) => {
+      const sortDelta = Number(a.sortOrder || 0) - Number(b.sortOrder || 0);
+      if (sortDelta !== 0) return sortDelta;
+      return (b.year || "").localeCompare(a.year || "") || a.title.localeCompare(b.title);
+    });
     panelCount.textContent = `${filtered.length} files`;
 
     const chipsList = [];
