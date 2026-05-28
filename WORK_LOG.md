@@ -1,5 +1,34 @@
 # WORK LOG
 
+## Step 3 Canonical Data Chain Lock Report
+- Timestamp (UTC): 2026-05-28T08:10:33Z
+- Scope:
+  - Implemented canonical-chain validator script: `scripts/build-canonical-data-chain-report-step3.js`.
+  - Generated required outputs:
+    - `processed_data/audits/canonical_data_chain_report.csv`
+    - `processed_data/audits/canonical_data_chain_report.json`
+  - Validated canonical chain roles for:
+    - official source (`DATABASE.csv`)
+    - runtime masters
+    - current-to-historical crosswalk
+    - draw/prediction runtime files
+    - harvest evidence files
+    - model outputs + model run report
+    - public Hunt Library exports
+  - Enforced file-size publishing rule:
+    - files over `25 MiB` marked `cloudflare_fallback_required=true` and `pages_dist_publishable=false`.
+  - Confirmed crosswalk uses `current_hunt_code` for current join and preserves `historical_hunt_code` as historical metadata.
+  - Kept task read/validate/report only for chain locking; no moves/deletes/renames/archives performed.
+- Validation:
+  - `node scripts\\build-canonical-data-chain-report-step3.js` passed.
+  - `npm.cmd run build` passed.
+  - Build gate remained clean:
+    - `Gate BLOCK: 0`
+    - `Manual review: 0`
+    - Crosswalk scan: `169` rows matched to current codes.
+  - Block query returned no rows:
+    - `Import-Csv processed_data\\library\\library_page_hunts.csv | Where-Object { manual_review_required=true or gate_status=BLOCK }`
+
 ## Step 2 Database Fragment Manifest (Inventory + Classification Only)
 - Timestamp (UTC): 2026-05-28T07:58:59Z
 - Scope:
