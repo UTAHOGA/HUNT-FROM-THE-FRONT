@@ -7,7 +7,7 @@
   <title>U.O.G.A. Hunt-Builder Resource Library</title>
   <script src="./embed-mode.js?v=20260422-embed-1"></script>
   <link rel="stylesheet" href="./style.css?v=20260423-planner-header-refine-1" />
-  <link rel="stylesheet" href="./assets/css/hard-copy-public-library.css?v=20260528-step4-public-library-6" />
+  <link rel="stylesheet" href="./assets/css/hard-copy-public-library.css?v=20260528-step4-public-library-9" />
   <script src="https://js.sentry-cdn.com/26137c5576f01423efc85f47076f9548.min.js" crossorigin="anonymous"></script>
   <script src="./sentry-browser-init.js"></script>
 </head>
@@ -47,20 +47,23 @@
       </header>
       <div id="uogaActiveFilters" class="public-library-active-filters"></div>
       <div id="uogaLibrarySections" class="public-library-results-grid"></div>
-      <div id="uogaPdfFlipPanel" class="uoga-pdf-flip-panel" hidden>
-        <div class="uoga-pdf-flip-head">
-          <strong id="uogaPdfFlipTitle">PDF Viewer</strong>
-          <div class="uoga-pdf-flip-actions">
-            <a id="uogaPdfDownload" href="#" target="_blank" rel="noopener noreferrer">Download PDF</a>
-            <button type="button" id="uogaPdfFlipClose">Close</button>
+      <div id="uogaPdfFlipPanel" class="uoga-pdf-flip-panel" hidden role="dialog" aria-modal="true" aria-labelledby="uogaPdfFlipTitle">
+        <div class="uoga-pdf-flip-backdrop" data-action="close-pdf"></div>
+        <div class="uoga-pdf-flip-modal">
+          <div class="uoga-pdf-flip-head">
+            <strong id="uogaPdfFlipTitle">PDF Viewer</strong>
+            <div class="uoga-pdf-flip-actions">
+              <a id="uogaPdfDownload" href="#" target="_blank" rel="noopener noreferrer">Download Original</a>
+              <button type="button" id="uogaPdfFlipClose">Close</button>
+            </div>
           </div>
+          <div class="uoga-pdf-flip-toolbar">
+            <button type="button" id="uogaPdfPrev">Previous</button>
+            <span id="uogaPdfStatus">Loading...</span>
+            <button type="button" id="uogaPdfNext">Next</button>
+          </div>
+          <div id="uogaPdfFlipbook" class="uoga-pdf-flipbook"></div>
         </div>
-        <div class="uoga-pdf-flip-toolbar">
-          <button type="button" id="uogaPdfPrev">Previous</button>
-          <span id="uogaPdfStatus">Loading...</span>
-          <button type="button" id="uogaPdfNext">Next</button>
-        </div>
-        <div id="uogaPdfFlipbook" class="uoga-pdf-flipbook"></div>
       </div>
       <div id="uogaEmbedPanel" class="uoga-embed-panel" hidden>
         <div class="uoga-embed-head">
@@ -72,6 +75,6 @@
     </section>
   </main>
 
-  <script src="./assets/js/hard-copy-public-library.js?v=20260528-step4-public-library-5"></script>
+  <script src="./assets/js/hard-copy-public-library.js?v=20260528-step4-public-library-9"></script>
 </body>
 </html>

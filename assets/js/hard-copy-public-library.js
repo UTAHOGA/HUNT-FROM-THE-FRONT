@@ -65,6 +65,8 @@
   let pageFlipInstance = null;
   let activeSpreadMeta = [];
   let activePdfPageCount = 0;
+  let activePdfSpreads = [];
+  let activeSpreadIndex = 0;
 
   function byId(id) {
     return document.getElementById(id);
@@ -129,7 +131,12 @@
     const hay = `${item.title || ""} ${item.subtitle || ""} ${item.href || ""}`.toLowerCase();
     const year = String(item.year || inferYear(item));
     if (folderId === "rules") return currentCycle(`${hay} ${year}`);
-    if (folderId === "conservation") return currentCycle(`${hay} ${year}`);
+    if (folderId === "conservation") {
+      const hasConservationPermit = /conservation[\s-]*permit/.test(hay);
+      const isExpo = /\bexpo\b/.test(hay);
+      const isDraw = /\bdraw\b|\bdraw result/.test(hay);
+      return currentCycle(`${hay} ${year}`) && hasConservationPermit && !isExpo && !isDraw;
+    }
     if (folderId === "expo") return year === CURRENT_YEAR || (currentCycle(`${hay} ${year}`) && hay.includes("permit"));
     if (folderId === "units2026") return year === CURRENT_YEAR || isExplicitAllow(item);
     if (folderId === "calendar") return true;
@@ -214,6 +221,26 @@
     await pageFlipLoadPromise;
   }
 
+  function enforceConservationSingleItem(items) {
+    const conservation = items.filter((item) => item.folderId === "conservation");
+    if (conservation.length <= 1) return items;
+
+    const scoreItem = (item) => {
+      const hay = `${item.title || ""} ${item.subtitle || ""} ${item.href || ""}`.toLowerCase();
+      let score = 0;
+      if (String(item.delivery || "").toLowerCase() === "pages-local") score += 200;
+      if (item.type === "pdf") score += 120;
+      if (/2026|2025[-/]27|2025[-/]2027/.test(`${item.year || ""} ${hay}`)) score += 90;
+      if (/public\/hard-copy|manual|web/.test(hay)) score += 40;
+      if (/\bexpo\b|\bdraw\b/.test(hay)) score -= 300;
+      if (item.type === "csv" || item.type === "xlsx") score -= 50;
+      return score;
+    };
+
+    const best = [...conservation].sort((a, b) => scoreItem(b) - scoreItem(a))[0];
+    return items.filter((item) => item.folderId !== "conservation").concat(best);
+  }
+
   async function ensurePdfLibrary() {
     if (!pdfLibLoadPromise) {
       pdfLibLoadPromise = import(PDFJS_CDN).then((module) => {
@@ -253,8 +280,11 @@
     }
     activeSpreadMeta = [];
     activePdfPageCount = 0;
+    activePdfSpreads = [];
+    activeSpreadIndex = 0;
     book.innerHTML = "";
     panel.hidden = true;
+    document.body.classList.remove("uoga-modal-open");
     status.textContent = "Loading...";
     download.href = "#";
   }
@@ -326,12 +356,41 @@
 
   function updateFlipStatus(spreadIndex) {
     const status = byId("uogaPdfStatus");
+    if (pageFlipInstance) {
+      const index = Math.max(0, Number(spreadIndex) || 0);
+      if (activePdfPageCount <= 0) {
+        status.textContent = "Loading...";
+        return;
+      }
+      if (index === 0) {
+        status.textContent = `Cover (Page 1 of ${activePdfPageCount})`;
+        return;
+      }
+      const leftPage = index + 1;
+      const rightPage = Math.min(leftPage + 1, activePdfPageCount);
+      status.textContent = leftPage === rightPage
+        ? `Page ${leftPage} of ${activePdfPageCount}`
+        : `Pages ${leftPage}-${rightPage} of ${activePdfPageCount}`;
+      return;
+    }
     const meta = activeSpreadMeta[spreadIndex];
     if (!meta) {
       status.textContent = activePdfPageCount ? `Page 1 of ${activePdfPageCount}` : "Loading...";
       return;
     }
     status.textContent = meta.label;
+  }
+
+  function showPdfSpread(index) {
+    const book = byId("uogaPdfFlipbook");
+    if (!activePdfSpreads.length) {
+      book.innerHTML = "";
+      return;
+    }
+    activeSpreadIndex = Math.max(0, Math.min(index, activePdfSpreads.length - 1));
+    book.innerHTML = "";
+    book.appendChild(activePdfSpreads[activeSpreadIndex]);
+    updateFlipStatus(activeSpreadIndex);
   }
 
   async function openPdfFlipbook(item) {
@@ -344,6 +403,7 @@
     const viewerHref = item.viewerHref || item.href;
 
     panel.hidden = false;
+    document.body.classList.add("uoga-modal-open");
     title.textContent = item.title || "PDF Viewer";
     download.href = safeUrl(viewerHref);
     status.textContent = "Loading PDF...";
@@ -354,45 +414,48 @@
       await ensurePageFlipLibrary();
       const pdf = await pdfjsLib.getDocument(safeUrl(viewerHref)).promise;
       const isMobile = window.innerWidth <= 760;
-      const targetWidth = isMobile ? 300 : 430;
+      const targetWidth = isMobile ? 320 : 640;
       const { pages, pageCount } = await renderPdfPages(pdf, targetWidth);
       if (!pages.length) {
         status.textContent = "No renderable pages.";
         return;
       }
 
-      const width = isMobile ? 320 : 920;
-      const firstCanvas = pages[0].querySelector("canvas");
-      const singlePageHeight = Math.floor((firstCanvas.height / firstCanvas.width) * (isMobile ? 320 : 430));
-      const height = Math.max(420, singlePageHeight + 24);
-
-      const { spreads, spreadMeta } = buildSpreads(pages, pageCount, isMobile);
-      activeSpreadMeta = spreadMeta;
       activePdfPageCount = pageCount;
-      spreads.forEach((spread) => book.appendChild(spread));
 
-      pageFlipInstance = new window.St.PageFlip(book, {
-        width,
-        height,
-        size: "stretch",
-        minWidth: 260,
-        maxWidth: 980,
-        minHeight: 360,
-        maxHeight: 1080,
-        showCover: !isMobile,
-        usePortrait: isMobile,
-        drawShadow: true,
-        mobileScrollSupport: false,
-      });
-
-      pageFlipInstance.loadFromHTML(book.querySelectorAll(".uoga-pdf-spread"));
-      updateFlipStatus(0);
-      pageFlipInstance.on("flip", (event) => {
-        const spreadIndex = Number(event.data || 0);
-        updateFlipStatus(spreadIndex);
-      });
-      panel.scrollIntoView({ behavior: "smooth", block: "start" });
+      try {
+        pageFlipInstance = new window.St.PageFlip(book, {
+          width: 620,
+          height: 800,
+          size: "stretch",
+          minWidth: 360,
+          maxWidth: 700,
+          minHeight: 520,
+          maxHeight: 900,
+          showCover: true,
+          usePortrait: isMobile,
+          drawShadow: true,
+          flippingTime: 700,
+          mobileScrollSupport: false,
+        });
+        pages.forEach((page) => book.appendChild(page));
+        pageFlipInstance.loadFromHTML(book.querySelectorAll(".uoga-pdf-page"));
+        updateFlipStatus(0);
+        pageFlipInstance.on("flip", (event) => {
+          updateFlipStatus(Number(event.data || 0));
+        });
+      } catch (flipError) {
+        if (pageFlipInstance) {
+          pageFlipInstance.destroy();
+          pageFlipInstance = null;
+        }
+        const { spreads, spreadMeta } = buildSpreads(pages, pageCount, isMobile);
+        activeSpreadMeta = spreadMeta;
+        activePdfSpreads = spreads;
+        showPdfSpread(0);
+      }
     } catch (error) {
+      document.body.classList.remove("uoga-modal-open");
       status.textContent = "Could not load flipbook. Use Download PDF.";
       book.innerHTML = `<div class="public-empty">${esc(error.message || "Flipbook failed to load")}</div>`;
     }
@@ -401,11 +464,23 @@
   function bindStaticControls() {
     byId("uogaEmbedClose").addEventListener("click", closeEmbed);
     byId("uogaPdfFlipClose").addEventListener("click", closePdfFlipbook);
+    byId("uogaPdfFlipPanel").querySelector(".uoga-pdf-flip-backdrop")?.addEventListener("click", closePdfFlipbook);
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closePdfFlipbook();
+    });
     byId("uogaPdfPrev").addEventListener("click", () => {
-      if (pageFlipInstance) pageFlipInstance.flipPrev();
+      if (pageFlipInstance) {
+        pageFlipInstance.flipPrev();
+      } else {
+        showPdfSpread(activeSpreadIndex - 1);
+      }
     });
     byId("uogaPdfNext").addEventListener("click", () => {
-      if (pageFlipInstance) pageFlipInstance.flipNext();
+      if (pageFlipInstance) {
+        pageFlipInstance.flipNext();
+      } else {
+        showPdfSpread(activeSpreadIndex + 1);
+      }
     });
   }
 
@@ -586,6 +661,7 @@
   Promise.all(MANIFEST_URLS.map(fetchManifest))
     .then((allSets) => allSets.flat().map(toPublicItem).filter(Boolean))
     .then((items) => dedupe([...items, ...FIXED_PUBLIC_ITEMS]))
+    .then((items) => enforceConservationSingleItem(items))
     .then(start)
     .catch((error) => {
       const panel = byId("uogaResultsPanel");
