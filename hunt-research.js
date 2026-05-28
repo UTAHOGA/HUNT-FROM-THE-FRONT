@@ -918,7 +918,7 @@
   function setLadderHeaders(mode) {
     if (!els.ladderHeaderCol1 || !els.ladderHeaderCol2 || !els.ladderHeaderCol3 || !els.ladderHeaderCol4 || !els.ladderHeaderCol5) return;
     const headersByMode = {
-      [DRAW_MODE.PREFERENCE]: ['Points', '2025 Preference Results', '2026 Preference Projection', 'Estimated Draw Odds', 'Cutoff / Notes'],
+      [DRAW_MODE.PREFERENCE]: ['Points', '2025 Draw Results', '2026 Draw Odds', 'Point Status', 'Cutoff / Notes'],
       [DRAW_MODE.BONUS]: ['Points', '2025 Draw Result', '2026 Bonus Projection', 'Random / Regular Chance', 'Notes'],
       [DRAW_MODE.YOUTH_RESERVE]: ['Youth Points', 'Youth Reserved Pool', 'Estimated Youth Odds', 'Rollover / Notes', 'Notes'],
       [DRAW_MODE.ALLOCATION_AVAILABILITY]: ['Status', 'Permit Availability', '2026 Allocation', 'Rule / Source', 'Notes'],
@@ -1029,7 +1029,7 @@
       || firstAvailable(meta, ['permits_2026_total', 'permit_allotment_2026_total', 'public_permits_2026']);
     const permitStatus = String(referenceRow?.permit_status || meta?.permit_status || '').trim().toUpperCase();
     if (permitStatus === 'TOTAL_ONLY' && total) {
-      return `${total} total (no split published)`;
+      return `${total} total`;
     }
     const resident = firstAvailable(referenceRow, ['permits_2026_res'])
       || firstAvailable(meta, ['public_resident_permits', 'permits_2026_res', 'permit_allotment_2026_res']);
@@ -1042,7 +1042,7 @@
       || firstAvailable(meta, ['permits_2026_total', 'permit_allotment_2026_total', 'public_permits_2026']);
     const permitStatus = String(referenceRow?.permit_status || meta?.permit_status || '').trim().toUpperCase();
     if (permitStatus === 'TOTAL_ONLY' && total) {
-      return `${total} total (no split published)`;
+      return `${total} total`;
     }
     const nonresident = firstAvailable(referenceRow, ['permits_2026_nr'])
       || firstAvailable(meta, ['public_nonresident_permits', 'permits_2026_nr', 'permit_allotment_2026_nr']);
@@ -1486,65 +1486,63 @@
     function getRowCells(row, markers, historicalPointRow) {
       const actual2025Display = formatHistoricalDrawResult(row)
         || formatHistoricalDrawResult(historicalPointRow)
-        || 'â€”';
+        || 'Not available';
       const odds = (mode === DRAW_MODE.PREFERENCE || mode === DRAW_MODE.YOUTH_RESERVE)
         ? selectPreferenceOddsPercent(row)
         : selectDrawOddsPercent(row);
       const oddsDisplay = formatOddsAsOneInOrPercent(odds.percent);
 
       if (mode === DRAW_MODE.PREFERENCE) {
-        const prefProjection = row.p_preference_draw
-          ? formatOddsAsOneInOrPercent(toProbabilityPercent(row.p_preference_draw))
-          : oddsDisplay;
-        const notes = [formatGapStatus(row.gap), String(row?.trend || '').trim()].filter(Boolean).join(' | ');
+        const pointStatus = formatGapStatus(row.gap);
+        const notes = [String(row?.trend || '').trim()].filter(Boolean).join(' | ');
         return [
           formatInteger(row.points),
           actual2025Display,
-          prefProjection,
           oddsDisplay,
-          notes || 'â€”',
+          pointStatus || 'Not available',
+          notes || 'Not available',
         ];
       }
 
       if (mode === DRAW_MODE.BONUS) {
         const bonusProjection = (isGuaranteedLineRow(row, rows, mode) || isAboveGuaranteedLineRow(row, rows, mode))
           ? MAX_POINT_POOL_GUARANTEED_DISPLAY
-          : (getMaxPointPoolDisplay(row) || 'â€”');
-        const randomChance = isAboveGuaranteedLineRow(row, rows, mode) ? 'â€”' : (getRandomDrawDisplay(row) || oddsDisplay);
+          : (getMaxPointPoolDisplay(row) || 'Not available');
+        const randomChance = isAboveGuaranteedLineRow(row, rows, mode) ? 'Not available' : (getRandomDrawDisplay(row) || oddsDisplay);
         return [
           formatInteger(row.points),
           actual2025Display,
           bonusProjection,
-          randomChance || 'â€”',
-          markerHtml(markers) || 'â€”',
+          randomChance || 'Not available',
+          markerHtml(markers) || 'Not available',
         ];
       }
 
       if (mode === DRAW_MODE.YOUTH_RESERVE) {
-        const reservePool = firstAvailable(row, ['quota_2026_youth_reserve']) || 'â€”';
+        const reservePool = firstAvailable(row, ['quota_2026_youth_reserve']) || 'Not available';
         const youthOdds = formatOddsAsOneInOrPercent(toProbabilityPercent(firstAvailable(row, ['youth_reserve_probability', 'p_preference_draw'])));
         const rollover = formatOddsAsOneInOrPercent(toProbabilityPercent(firstAvailable(row, ['youth_rollover_main_draw_probability', 'p_random_pool'])));
-        const notes = String(row?.preference_model_note || '').trim() || String(row?.data_quality_flags || '').trim() || 'â€”';
+        const notes = String(row?.preference_model_note || '').trim() || String(row?.data_quality_flags || '').trim() || 'Not available';
         return [
           formatInteger(row.points),
           String(reservePool),
           youthOdds || oddsDisplay,
-          rollover || 'â€”',
-          notes || 'â€”',
+          rollover || 'Not available',
+          notes || 'Not available',
         ];
       }
 
       if (mode === DRAW_MODE.ALLOCATION_AVAILABILITY) {
         const status = firstAvailable(row, ['availability_status', 'allocation_status', 'status', 'draw_outlook']) || 'Not available';
-        const availability = firstAvailable(row, ['availability_pct', 'p_availability', 'permits_remaining', 'permits_sold_or_used']) || 'â€”';
-        const allocation = firstAvailable(row, ['permit_allotment_2026_total', 'public_permits_2026', 'permits_allotted']) || 'â€”';
-        const ruleSource = firstAvailable(row, ['rule_status', 'permit_allotment_2026_source', 'reason']) || 'â€”';
+        const availability = firstAvailable(row, ['availability_pct', 'p_availability', 'permits_remaining', 'permits_sold_or_used']) || 'Not available';
+        const allocation = firstAvailable(row, ['permit_allotment_2026_total', 'public_permits_2026', 'permits_allotted']) || 'Not available';
+        const ruleSource = firstAvailable(row, ['rule_status', 'permit_allotment_2026_source', 'reason']) || 'Not available';
         return [
           status,
           String(availability),
           String(allocation),
           String(ruleSource),
-          String(row?.data_quality_flags || '').trim() || 'â€”',
+          String(row?.data_quality_flags || '').trim() || 'Not available',
         ];
       }
 
@@ -1554,7 +1552,7 @@
         actual2025Display,
         statusOnly,
         oddsDisplay,
-        String(row?.reason || '').trim() || 'â€”',
+        String(row?.reason || '').trim() || 'Not available',
       ];
     }
 
@@ -1583,15 +1581,15 @@
       const markersBlock = markerHtml(markers);
       const notesText = String(cells[4] || '').trim();
       const notesBlock = [
-        notesText && notesText !== 'â€”' ? `<div>${escapeHtml(notesText)}</div>` : '',
+        notesText && notesText !== 'Not available' ? `<div>${escapeHtml(notesText)}</div>` : '',
         markersBlock,
       ].filter(Boolean).join('');
       const tableCells = [
-        `<td>${escapeHtml(String(cells[0] || ''))}</td>`,
-        `<td>${escapeHtml(String(cells[1] || ''))}</td>`,
-        `<td>${escapeHtml(String(cells[2] || ''))}</td>`,
-        `<td>${escapeHtml(String(cells[3] || ''))}</td>`,
-        `<td>${notesBlock || 'â€”'}</td>`,
+        `<td>${escapeHtml(String(cells[0] || 'Not available'))}</td>`,
+        `<td>${escapeHtml(String(cells[1] || 'Not available'))}</td>`,
+        `<td>${escapeHtml(String(cells[2] || 'Not available'))}</td>`,
+        `<td>${escapeHtml(String(cells[3] || 'Not available'))}</td>`,
+        `<td>${notesBlock || 'Not available'}</td>`,
       ].join('');
 
       const rowClass = [isUserRow ? 'is-user-row' : '', ...classes.filter((name) => name !== 'is-user-row')]
