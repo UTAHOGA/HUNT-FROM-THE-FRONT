@@ -9,12 +9,13 @@
   - Confirmed `PD1006` is absent from predictive output files but present in `predictive_coverage_report.csv` with `in_current_database=True`, `in_forecast=False`, and `exclusion_reason=not_OIL_LE_PLE`, while still carried in runtime as `DATABASE_REFERENCE_ONLY_NO_DRAW_DETAIL`.
   - Confirmed all three are not present in the current-to-historical crosswalk, which remains expected because this bridge only includes selected current-code families (`169` total matched current codes) and does not govern general current-code inclusion.
   - Confirmed harvest evidence exists for all three via `harvest_master.csv` and/or `harvest_quality_features_all_years_by_hunt_code.csv`.
+  - Updated `scripts/build-library-page-data.js` so `exclusion_reason` is considered classification evidence and `DATABASE_REFERENCE_ONLY_NO_DRAW_DETAIL` rows no longer count as modeled predictions.
   - Rebuilt the library package and confirmed gate closure with zero manual-review and zero block rows.
 - Validation:
   - `npm.cmd run build` passed.
   - Build report summary:
     - `total_current_hunts: 1449`
-    - `modeled_count: 1449`
+    - `modeled_count: 1448`
     - `manual_review_count: 0`
     - `promotion_gate_pass_count: 1449`
     - `promotion_gate_block_count: 0`

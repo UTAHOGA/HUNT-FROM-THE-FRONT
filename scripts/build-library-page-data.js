@@ -141,7 +141,7 @@ function huntName(row) { return first(row, ['hunt_name', 'huntname', 'name', 'hu
 function unit(row) { return first(row, ['unit', 'unit_name', 'hunt_unit', 'management_unit', 'area', 'location', 'boundary_name', 'display_unit']); }
 function weapon(row) { return first(row, ['weapon', 'weapon_type', 'legal_weapon', 'method', 'season_type']); }
 function permits(row) { return first(row, ['permits', 'permit_count', 'permit_count_2026', 'permits_2026', 'total_permits', 'available', 'quota', 'allotment']); }
-function classification(row) { return first(row, ['classification', 'hunt_classification', 'draw_type', 'prediction_type', 'model_type', 'category', 'status', 'coverage_status', 'reason', 'reason_code', 'reason_codes']); }
+function classification(row) { return first(row, ['classification', 'hunt_classification', 'draw_type', 'prediction_type', 'model_type', 'category', 'status', 'coverage_status', 'reason', 'reason_code', 'reason_codes', 'exclusion_reason']); }
 function probability(row) { return first(row, ['display_odds_pct', 'p_draw_mean', 'p_draw_p50', 'draw_probability', 'odds', 'probability', 'p50']); }
 function modelVersion(row) { return first(row, ['model_version', 'model', 'version', 'rule_version']); }
 
@@ -193,7 +193,7 @@ function pickCurrentSource() { return [INPUTS.currentDatabase, INPUTS.currentCan
 function inputStatus(name, rel) { return { name, source_file: rel, role: roleFor(rel), exists: exists(rel) ? 'true' : 'false', row_count: exists(rel) ? 'not_scanned' : 0, size_bytes: sizeBytes(rel), size_mb: Number((sizeBytes(rel) / (1024 * 1024)).toFixed(2)), delivery: deliveryFor(rel), href: hrefFor(rel), local_href: localHref(rel), cloudflare_href: cloudflareHref(rel) }; }
 function classifyState({ hasPrediction, hasCoverage, classText }) {
   const upper = String(classText || '').toUpperCase();
-  const nonPredictiveTerms = ['HARVEST_OBJECTIVE', 'UNLIMITED', 'PRIVATE_LANDS', 'SPORTSMAN', 'CONSERVATION', 'EXPO', 'AVAILABILITY', 'ALLOCATION', 'NONPREDICTIVE', 'NON_PREDICTIVE', 'OUT_OF_SCOPE'];
+  const nonPredictiveTerms = ['HARVEST_OBJECTIVE', 'UNLIMITED', 'PRIVATE_LANDS', 'SPORTSMAN', 'CONSERVATION', 'EXPO', 'AVAILABILITY', 'ALLOCATION', 'NONPREDICTIVE', 'NON_PREDICTIVE', 'OUT_OF_SCOPE', 'NOT_OIL_LE_PLE'];
   if (hasPrediction) return 'PREDICTION_ELIGIBLE_AND_MODELED';
   if (nonPredictiveTerms.some((term) => upper.includes(term))) return 'EXCLUDED_WITH_DOCUMENTED_NON_PREDICTIVE_REASON';
   if (hasCoverage) return 'CLASSIFIED_NEEDS_MODEL_OR_EXCLUSION_REVIEW';
@@ -252,7 +252,9 @@ async function main() {
     const mlRow = ml.map.get(code) || {};
     const pointRow = point.map.get(code) || {};
     const cov = coverage.map.get(code) || {};
-    const hasPrediction = predictive.map.has(code) || reality.map.has(code) || ml.map.has(code);
+    const realClass = classification(real);
+    const hasReferenceOnlyReality = String(realClass || '').toUpperCase().includes('DATABASE_REFERENCE_ONLY_NO_DRAW_DETAIL');
+    const hasPrediction = predictive.map.has(code) || ml.map.has(code) || (reality.map.has(code) && !hasReferenceOnlyReality);
     const hasCoverage = coverage.map.has(code);
     const classText = classification(cov) || classification(enr) || classification(pred) || classification(real) || '';
     const finalState = classifyState({ hasPrediction, hasCoverage, classText });
