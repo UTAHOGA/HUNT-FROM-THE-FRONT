@@ -9,8 +9,8 @@
     2024,
     2025
   ],
-  "command_used": "python -m engine.utah_bonus_predictive.materialize --output-dir processed_data --forecast-year 2026 --history-years 2021,2022,2023,2024,2025 --skip-upstream",
-  "generated_at": "2026-05-27T03:30:56.432268+00:00",
+  "command_used": "python -m engine.utah_bonus_predictive.materialize --output-dir C:\\Users\\tyler\\Desktop\\GitHub\\HUNT-BUILDER\\processed_data --forecast-year 2026 --history-years 2021,2022,2023,2024,2025",
+  "generated_at": "2026-05-28T12:36:07.199869+00:00",
   "output_files": {
     "ml_draw_predictions_v1.csv": "processed_data\\ml_draw_predictions_v1.csv",
     "ml_draw_predictions_v1_report.json": "processed_data\\ml_draw_predictions_v1_report.json",
@@ -143,10 +143,10 @@
   },
   "source_files_used": {
     "data_truth\\draw_results_truth\\normalized\\draw_results_long.csv": "68b89136a5663683c1f779bb45573bc1d3ef15e91b73fabd4f1677a8f19383e1",
-    "pipeline\\RAW\\hunt_unit_database\\2026\\csv\\DATABASE.csv": "a7742f4c1106c5d5457dfb15ac61e6114a669801b9b5113f5e30141dceea3e37",
-    "processed_data\\draw_reality_engine_v2.csv": "8fb11adc4c4e8e9154de110090b927ce1ae6b3d0f7a840d7232469ceb7d3e07a",
-    "data_model\\runtime_drafts\\predictive_bonus_engine_2026.materialized.csv": "6b02917672411341fb1175c03442aab73e7686bbe727e13df4c708174f8bbe68",
-    "hunt-research.js": "258cb60998321f4f7b7c285479d6026889039094d0caeab52ae92a16322371fb",
+    "pipeline\\RAW\\hunt_unit_database\\2026\\csv\\DATABASE.csv": "f3df68d95c50a215cfffe3f4a5412a8b788635f9cd4df3d8fba4cbc32d8d258c",
+    "processed_data\\draw_reality_engine_v2.csv": "46da956d0ac8cd0f72c137c2bed0905e5c2c1609dc845c9d7284fb9a1d2d56f7",
+    "data_model\\runtime_drafts\\predictive_bonus_engine_2026.materialized.csv": "9a83ac3d8b6fba15c75aceb2d2683e319549d6b1ab8b010e15e0f3d1e56b7a32",
+    "hunt-research.js": "a52d07f6f1c134ea258ad315d02e6b856fd4519b323fb9080ed1652e259d1d20",
     "config.js": "74f21ac3b95bff3fd7bc6e4865530a94009629e921122c9af08e0ecda7b527c9"
   }
 }
