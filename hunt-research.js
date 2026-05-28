@@ -220,10 +220,11 @@
   }
 
   const MAX_POINT_POOL_GUARANTEED_DISPLAY = '~1 in 1 or 99%';
+  const DOCUMENTED_DRAW_RESULT_PREFIX = '=';
 
   function formatHistoricalDrawResult(row) {
     const display = String(row?.display_2025_draw_results || row?.dwr_result_display || '').trim();
-    if (display) return display;
+    if (display) return display.replace(/~/g, DOCUMENTED_DRAW_RESULT_PREFIX);
 
     const totalPermits = num(row?.total_permits);
     if (totalPermits === null || totalPermits <= 0) return '';
@@ -233,7 +234,7 @@
 
     const denominator = applicants / totalPermits;
     const percent = Math.min(100, 100 / denominator);
-    return `~1 in ${denominator.toFixed(1)} or ${percent.toFixed(1)}%`;
+    return `${DOCUMENTED_DRAW_RESULT_PREFIX}1 in ${denominator.toFixed(1)} or ${percent.toFixed(1)}%`;
   }
 
   function getMaxPointPoolDisplay(row) {
@@ -804,7 +805,7 @@
       els.ladderPrimaryHeader.textContent = '2026 Preference Draw';
       els.ladderSecondaryHeader.hidden = true;
     } else {
-      els.ladderPrimaryHeader.textContent = '2026 Max Point Pool';
+      els.ladderPrimaryHeader.textContent = '2026 MAX POINT DRAW';
       els.ladderSecondaryHeader.textContent = '2026 Random Draw';
       els.ladderSecondaryHeader.hidden = false;
     }
@@ -1277,6 +1278,14 @@
     return false;
   }
 
+  function isAboveGuaranteedLineRow(row) {
+    if (!row) return false;
+    const rowPoint = num(row.points);
+    const guaranteedLinePoint = getGuaranteedLinePoint(row);
+    if (rowPoint === null || guaranteedLinePoint === null) return false;
+    return rowPoint > guaranteedLinePoint;
+  }
+
   function renderLadder(meta, huntCode, residency, points, drawPool) {
     if (!els.ladderTableWrap || !els.ladderTableEmpty || !els.ladderTableBody) return;
     setLadderHeaders(meta);
@@ -1325,13 +1334,15 @@
       const rawPrimary = firstAvailable(row, ['odds_2026_projected', 'max_pool_projection_2026', 'random_draw_odds_2026']);
       const primaryValue = isPreferenceAntlerless(meta)
         ? (rawPrimary ? formatOddsAsOneInOrPercent(rawPrimary) : '')
-        : getMaxPointPoolDisplay(row);
+        : ((isGuaranteedLineRow(row) || isAboveGuaranteedLineRow(row))
+          ? MAX_POINT_POOL_GUARANTEED_DISPLAY
+          : getMaxPointPoolDisplay(row));
 
       const actual2025Display = formatHistoricalDrawResult(row)
         || formatHistoricalDrawResult(historicalPointRow)
         || '';
 
-      const secondaryValue = getRandomDrawDisplay(row);
+      const secondaryValue = isAboveGuaranteedLineRow(row) ? '' : getRandomDrawDisplay(row);
       const secondaryCell = isPreferenceAntlerless(meta)
         ? ''
         : `<td>${escapeHtml(secondaryValue)}</td>`;
