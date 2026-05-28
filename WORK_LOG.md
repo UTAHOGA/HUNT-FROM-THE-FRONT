@@ -1,5 +1,35 @@
 # WORK LOG
 
+## Step 4 Public Hunt Library Curation (hard-copy.html)
+- Timestamp (UTC): 2026-05-28T08:23:36Z
+- Scope:
+  - Reworked `hard-copy.html` into a clean public-library shell with external CSS/JS only (removed large inline force-hide baseline).
+  - Replaced `assets/css/hard-copy-public-library.css` with a wallpaper-first interactive layout:
+    - full-screen wallpaper
+    - centered top public nav
+    - compact search bar
+    - parchment-style 8-folder selector grid
+    - compact results drawer/panel
+  - Replaced `assets/js/hard-copy-public-library.js` with curated public behavior:
+    - hides results on initial load
+    - opens filtered results only after folder click or non-empty search
+    - clear button resets search + folder and hides results panel
+    - blocks raw runtime/internal files from public rendering via denylist
+    - keeps curated public manifest/pdf sources and explicit 2026 hunt-units public CSV link
+  - Kept hard-data/research runtime chain intact; no canonical database cleanup/deletion/move/rename/archive performed.
+- Validation:
+  - `npm.cmd run build` passed.
+  - Build gate remained clean:
+    - `Gate BLOCK: 0`
+    - `Manual review: 0`
+    - Crosswalk scan matched `169` current codes.
+  - `pages-dist` output checks passed:
+    - `pages-dist/hard-copy.html`
+    - `pages-dist/assets/css/hard-copy-public-library.css`
+    - `pages-dist/assets/js/hard-copy-public-library.js`
+    - `pages-dist/assets/backgrounds/library-wallpaper.jpg`
+  - Local preview probe returned HTTP `200` for `http://localhost:8091/hard-copy.html?v=step4-public-library`.
+
 ## Step 3 Canonical Data Chain Lock Report
 - Timestamp (UTC): 2026-05-28T08:10:33Z
 - Scope:
