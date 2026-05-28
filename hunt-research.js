@@ -98,8 +98,11 @@
     ladderTableEmpty: document.getElementById('ladderTableEmpty'),
     ladderTableWrap: document.getElementById('ladderTableWrap'),
     ladderTableBody: document.getElementById('ladderTableBody'),
-    ladderPrimaryHeader: document.getElementById('ladderPrimaryHeader'),
-    ladderSecondaryHeader: document.getElementById('ladderSecondaryHeader'),
+    ladderHeaderCol1: document.getElementById('ladderHeaderCol1'),
+    ladderHeaderCol2: document.getElementById('ladderHeaderCol2'),
+    ladderHeaderCol3: document.getElementById('ladderHeaderCol3'),
+    ladderHeaderCol4: document.getElementById('ladderHeaderCol4'),
+    ladderHeaderCol5: document.getElementById('ladderHeaderCol5'),
     ladderRange: document.getElementById('ladderRange'),
     jumpToPointsBtn: document.getElementById('jumpToPointsBtn'),
     pointLadderAccordion: document.getElementById('pointLadderAccordion'),
@@ -221,6 +224,13 @@
 
   const MAX_POINT_POOL_GUARANTEED_DISPLAY = '~1 in 1 or 99%';
   const DOCUMENTED_DRAW_RESULT_PREFIX = '=';
+  const DRAW_MODE = {
+    PREFERENCE: 'PREFERENCE',
+    BONUS: 'BONUS',
+    YOUTH_RESERVE: 'YOUTH_RESERVE',
+    ALLOCATION_AVAILABILITY: 'ALLOCATION_AVAILABILITY',
+    STATUS_ONLY: 'STATUS_ONLY',
+  };
 
   function formatHistoricalDrawResult(row) {
     const display = String(row?.display_2025_draw_results || row?.dwr_result_display || '').trim();
@@ -329,7 +339,7 @@
   }
 
   function isRandomOnlyBonusCase(meta, row) {
-    if (isPreferenceAntlerless(meta)) return false;
+    if (isPreferenceFamily(meta, row)) return false;
     const maxPointPermits = num(row?.max_point_permits_2026);
     const randomPermits = num(row?.random_permits_2026);
     return maxPointPermits !== null && maxPointPermits <= 0 && randomPermits !== null && randomPermits > 0;
@@ -664,6 +674,36 @@
     return { percent: null, source: 'unavailable' };
   }
 
+  function selectPreferenceOddsPercent(row) {
+    if (!row) return { percent: null, source: 'unavailable' };
+
+    const displayOddsPct = num(firstAvailable(row, ['display_odds_pct']));
+    if (displayOddsPct !== null) return { percent: clamp(displayOddsPct, 0, 100), source: 'display_odds_pct' };
+
+    const pDrawMean = num(firstAvailable(row, ['p_draw_mean']));
+    if (pDrawMean !== null) {
+      return { percent: clamp(toProbabilityPercent(pDrawMean) ?? 0, 0, 100), source: 'p_draw_mean' };
+    }
+
+    const oddsProjected = num(firstAvailable(row, ['odds_2026_projected']));
+    if (oddsProjected !== null) return { percent: clamp(oddsProjected, 0, 100), source: 'odds_2026_projected' };
+
+    const preferenceSpecific = num(firstAvailable(row, [
+      'preference_draw_odds_2026',
+      'preference_projection_2026',
+      'modeled_preference_probability',
+      'draw_probability',
+    ]));
+    if (preferenceSpecific !== null) {
+      return { percent: clamp(toProbabilityPercent(preferenceSpecific) ?? 0, 0, 100), source: 'preference_specific' };
+    }
+
+    const p50 = num(firstAvailable(row, ['p50']));
+    if (p50 !== null) return { percent: clamp(toProbabilityPercent(p50) ?? 0, 0, 100), source: 'p50' };
+
+    return { percent: null, source: 'unavailable' };
+  }
+
   function shouldUseMlHybridOdds(row) {
     if (!ML_OPTIONS?.enabled) return false;
     const mlOdds = getMlOddsCandidate(row);
@@ -689,11 +729,56 @@
     };
   }
 
-  function isPreferenceAntlerless(meta) {
-    const huntType = String(meta?.hunt_type || '').trim().toLowerCase();
-    const species = String(meta?.species || '').trim().toLowerCase();
-    if (!huntType.includes('antlerless')) return false;
-    return species.includes('deer') || species.includes('elk') || species.includes('pronghorn');
+  function getDrawSystemType(meta, row) {
+    return String(
+      row?.draw_system_type
+      || row?.draw_2026_system_type
+      || row?.draw_system
+      || meta?.draw_system_type
+      || meta?.draw_2026_system_type
+      || meta?.draw_model_class
+      || '',
+    ).trim().toUpperCase();
+  }
+
+  function isPreferenceFamily(meta, row) {
+    return getDrawSystemType(meta, row).startsWith('PREFERENCE_');
+  }
+
+  function isBonusFamily(meta, row) {
+    return getDrawSystemType(meta, row).startsWith('BONUS_');
+  }
+
+  function isYouthReserveFamily(meta, row) {
+    return [
+      'YOUTH_GENERAL_DEER_RESERVE',
+      'YOUTH_ANTLERLESS_OR_DOE_RESERVE',
+      'YOUTH_DRAW_ONLY_ELK',
+      'YOUTH_OTC_OR_AVAILABILITY',
+    ].includes(getDrawSystemType(meta, row));
+  }
+
+  function isAllocationAvailabilityFamily(meta, row) {
+    const drawSystemType = getDrawSystemType(meta, row);
+    const status = String(row?.algorithm_status || '').trim().toUpperCase();
+    return [
+      'SPORTSMAN_PERMIT',
+      'BEAR_DRAW',
+      'MOUNTAIN_LION_DRAW',
+      'PRIVATE_LANDS_ONLY_ANTLERLESS_ELK',
+      'OTC_OR_REMAINING_TARGET',
+      'RANDOM_ONLY_TARGET',
+    ].includes(drawSystemType)
+      || ['MODELED_AVAILABILITY', 'MODELED_ALLOCATION', 'MODELED_SPORTSMAN_DRAW'].includes(status);
+  }
+
+  function detectLadderMode(meta, rows) {
+    const firstRow = (rows && rows.length) ? rows[0] : null;
+    if (isPreferenceFamily(meta, firstRow)) return DRAW_MODE.PREFERENCE;
+    if (isBonusFamily(meta, firstRow)) return DRAW_MODE.BONUS;
+    if (isYouthReserveFamily(meta, firstRow)) return DRAW_MODE.YOUTH_RESERVE;
+    if (isAllocationAvailabilityFamily(meta, firstRow)) return DRAW_MODE.ALLOCATION_AVAILABILITY;
+    return DRAW_MODE.STATUS_ONLY;
   }
 
   function getRecommendation(meta, row) {
@@ -705,7 +790,7 @@
       return 'This hunt has no meaningful max-pool path at this residency. Your outcome depends on weighted random draw only.';
     }
 
-    if (isPreferenceAntlerless(meta)) {
+    if (isPreferenceFamily(meta, row)) {
       const selectedOdds = selectDrawOddsPercent(row);
       if ((selectedOdds.percent !== null && selectedOdds.percent >= 99.9) || num(row.gap) === 0) {
         return 'This hunt is currently inside the preference-point line at your selected point level.';
@@ -737,7 +822,7 @@
       const confidenceLabel = Number.isFinite(confidence) ? ` (conf ${confidence.toFixed(2)})` : '';
       return `2026 ML Hybrid Draw: ${displayedOdds.value}${confidenceLabel}`;
     }
-    if (isPreferenceAntlerless(meta)) {
+    if (isPreferenceFamily(meta, row)) {
       return `2026 Preference Draw: ${displayedOdds.value}`;
     }
     if (isRandomOnlyBonusCase(meta, row)) {
@@ -799,21 +884,26 @@
     els.summaryTrend.setAttribute('aria-label', `${active} trend`);
   }
 
-  function setLadderHeaders(meta) {
-    if (!els.ladderPrimaryHeader || !els.ladderSecondaryHeader) return;
-    if (isPreferenceAntlerless(meta)) {
-      els.ladderPrimaryHeader.textContent = '2026 Preference Draw';
-      els.ladderSecondaryHeader.hidden = true;
-    } else {
-      els.ladderPrimaryHeader.textContent = '2026 MAX POINT DRAW';
-      els.ladderSecondaryHeader.textContent = '2026 Random Draw';
-      els.ladderSecondaryHeader.hidden = false;
-    }
+  function setLadderHeaders(mode) {
+    if (!els.ladderHeaderCol1 || !els.ladderHeaderCol2 || !els.ladderHeaderCol3 || !els.ladderHeaderCol4 || !els.ladderHeaderCol5) return;
+    const headersByMode = {
+      [DRAW_MODE.PREFERENCE]: ['Points', '2025 Preference Results', '2026 Preference Projection', 'Estimated Draw Odds', 'Cutoff / Notes'],
+      [DRAW_MODE.BONUS]: ['Points', '2025 Draw Result', '2026 Bonus Projection', 'Random / Regular Chance', 'Notes'],
+      [DRAW_MODE.YOUTH_RESERVE]: ['Youth Points', 'Youth Reserved Pool', 'Estimated Youth Odds', 'Rollover / Notes', 'Notes'],
+      [DRAW_MODE.ALLOCATION_AVAILABILITY]: ['Status', 'Permit Availability', '2026 Allocation', 'Rule / Source', 'Notes'],
+      [DRAW_MODE.STATUS_ONLY]: ['Points', '2025 Result', '2026 Status', 'Estimated Odds', 'Notes'],
+    };
+    const headers = headersByMode[mode] || headersByMode[DRAW_MODE.STATUS_ONLY];
+    els.ladderHeaderCol1.textContent = headers[0];
+    els.ladderHeaderCol2.textContent = headers[1];
+    els.ladderHeaderCol3.textContent = headers[2];
+    els.ladderHeaderCol4.textContent = headers[3];
+    els.ladderHeaderCol5.textContent = headers[4];
   }
 
   function getDrawPoolPositionLabel(meta, row) {
     if (!row) return 'No modeled point row is loaded yet.';
-    if (isPreferenceAntlerless(meta)) {
+    if (isPreferenceFamily(meta, row)) {
       const gap = num(row.gap);
       if (gap !== null && gap <= 0) return 'Inside the preference line.';
       return 'Below the preference line.';
@@ -851,7 +941,7 @@
 
   function getPlainFormulaText(meta, row) {
     if (!row) return 'We need a modeled point row before the formula can be explained for this hunt.';
-    if (isPreferenceAntlerless(meta)) {
+    if (isPreferenceFamily(meta, row)) {
       return 'Preference-style logic is mostly line math: compare your points to the last modeled draw line, then adjust for permit change and point creep.';
     }
     if (isRandomOnlyBonusCase(meta, row)) {
@@ -1288,9 +1378,10 @@
 
   function renderLadder(meta, huntCode, residency, points, drawPool) {
     if (!els.ladderTableWrap || !els.ladderTableEmpty || !els.ladderTableBody) return;
-    setLadderHeaders(meta);
 
     const rows = getLadderRows(huntCode, residency, drawPool);
+    const mode = detectLadderMode(meta, rows);
+    setLadderHeaders(mode);
     if (!rows.length) {
       els.ladderTableWrap.hidden = true;
       els.ladderTableEmpty.hidden = false;
@@ -1307,6 +1398,81 @@
     const maxPoint = pointValues.length ? pointValues[pointValues.length - 1] : null;
     if (els.ladderRange) {
       els.ladderRange.textContent = `Rows: ${rows.length}${minPoint !== null && maxPoint !== null ? ` | Points ${minPoint}-${maxPoint}` : ''}`;
+    }
+
+    function getRowCells(row, markers, historicalPointRow) {
+      const actual2025Display = formatHistoricalDrawResult(row)
+        || formatHistoricalDrawResult(historicalPointRow)
+        || '—';
+      const odds = (mode === DRAW_MODE.PREFERENCE || mode === DRAW_MODE.YOUTH_RESERVE)
+        ? selectPreferenceOddsPercent(row)
+        : selectDrawOddsPercent(row);
+      const oddsDisplay = formatOddsAsOneInOrPercent(odds.percent);
+
+      if (mode === DRAW_MODE.PREFERENCE) {
+        const prefProjection = row.p_preference_draw
+          ? formatOddsAsOneInOrPercent(toProbabilityPercent(row.p_preference_draw))
+          : oddsDisplay;
+        const notes = [formatGapStatus(row.gap), String(row?.trend || '').trim()].filter(Boolean).join(' | ');
+        return [
+          formatInteger(row.points),
+          actual2025Display,
+          prefProjection,
+          oddsDisplay,
+          notes || '—',
+        ];
+      }
+
+      if (mode === DRAW_MODE.BONUS) {
+        const bonusProjection = (isGuaranteedLineRow(row) || isAboveGuaranteedLineRow(row))
+          ? MAX_POINT_POOL_GUARANTEED_DISPLAY
+          : (getMaxPointPoolDisplay(row) || '—');
+        const randomChance = isAboveGuaranteedLineRow(row) ? '—' : (getRandomDrawDisplay(row) || oddsDisplay);
+        return [
+          formatInteger(row.points),
+          actual2025Display,
+          bonusProjection,
+          randomChance || '—',
+          markerHtml(markers) || '—',
+        ];
+      }
+
+      if (mode === DRAW_MODE.YOUTH_RESERVE) {
+        const reservePool = firstAvailable(row, ['quota_2026_youth_reserve']) || '—';
+        const youthOdds = formatOddsAsOneInOrPercent(toProbabilityPercent(firstAvailable(row, ['youth_reserve_probability', 'p_preference_draw'])));
+        const rollover = formatOddsAsOneInOrPercent(toProbabilityPercent(firstAvailable(row, ['youth_rollover_main_draw_probability', 'p_random_pool'])));
+        const notes = String(row?.preference_model_note || '').trim() || String(row?.data_quality_flags || '').trim() || '—';
+        return [
+          formatInteger(row.points),
+          String(reservePool),
+          youthOdds || oddsDisplay,
+          rollover || '—',
+          notes || '—',
+        ];
+      }
+
+      if (mode === DRAW_MODE.ALLOCATION_AVAILABILITY) {
+        const status = firstAvailable(row, ['availability_status', 'allocation_status', 'status', 'draw_outlook']) || 'Not available';
+        const availability = firstAvailable(row, ['availability_pct', 'p_availability', 'permits_remaining', 'permits_sold_or_used']) || '—';
+        const allocation = firstAvailable(row, ['permit_allotment_2026_total', 'public_permits_2026', 'permits_allotted']) || '—';
+        const ruleSource = firstAvailable(row, ['rule_status', 'permit_allotment_2026_source', 'reason']) || '—';
+        return [
+          status,
+          String(availability),
+          String(allocation),
+          String(ruleSource),
+          String(row?.data_quality_flags || '').trim() || '—',
+        ];
+      }
+
+      const statusOnly = firstAvailable(row, ['status', 'draw_outlook', 'algorithm_status']) || 'Not available';
+      return [
+        formatInteger(row.points),
+        actual2025Display,
+        statusOnly,
+        oddsDisplay,
+        String(row?.reason || '').trim() || '—',
+      ];
     }
 
     els.ladderTableBody.innerHTML = rows.map((row) => {
@@ -1330,22 +1496,20 @@
       if ((isUserRow || isGuaranteedLineRow(row)) && hasSourceData(meta, row, referenceRow)) {
         markers.push({ kind: 'sources', label: 'Hunt Data', point: row.points });
       }
-
-      const rawPrimary = firstAvailable(row, ['odds_2026_projected', 'max_pool_projection_2026', 'random_draw_odds_2026']);
-      const primaryValue = isPreferenceAntlerless(meta)
-        ? (rawPrimary ? formatOddsAsOneInOrPercent(rawPrimary) : '')
-        : ((isGuaranteedLineRow(row) || isAboveGuaranteedLineRow(row))
-          ? MAX_POINT_POOL_GUARANTEED_DISPLAY
-          : getMaxPointPoolDisplay(row));
-
-      const actual2025Display = formatHistoricalDrawResult(row)
-        || formatHistoricalDrawResult(historicalPointRow)
-        || '';
-
-      const secondaryValue = isAboveGuaranteedLineRow(row) ? '' : getRandomDrawDisplay(row);
-      const secondaryCell = isPreferenceAntlerless(meta)
-        ? ''
-        : `<td>${escapeHtml(secondaryValue)}</td>`;
+      const cells = getRowCells(row, markers, historicalPointRow);
+      const markersBlock = markerHtml(markers);
+      const notesText = String(cells[4] || '').trim();
+      const notesBlock = [
+        notesText && notesText !== '—' ? `<div>${escapeHtml(notesText)}</div>` : '',
+        markersBlock,
+      ].filter(Boolean).join('');
+      const tableCells = [
+        `<td>${escapeHtml(String(cells[0] || ''))}</td>`,
+        `<td>${escapeHtml(String(cells[1] || ''))}</td>`,
+        `<td>${escapeHtml(String(cells[2] || ''))}</td>`,
+        `<td>${escapeHtml(String(cells[3] || ''))}</td>`,
+        `<td>${notesBlock || '—'}</td>`,
+      ].join('');
 
       const rowClass = [isUserRow ? 'is-user-row' : '', ...classes.filter((name) => name !== 'is-user-row')]
         .filter(Boolean)
@@ -1353,11 +1517,7 @@
 
       return `
         <tr class="${rowClass}" data-ladder-point="${escapeHtml(row.points)}">
-          <td>${formatInteger(row.points)}</td>
-          <td>${escapeHtml(actual2025Display)}</td>
-          <td>${escapeHtml(primaryValue)}</td>
-          ${secondaryCell}
-          <td>${markerHtml(markers)}</td>
+          ${tableCells}
         </tr>`;
     }).join('');
 

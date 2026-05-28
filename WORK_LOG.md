@@ -1,5 +1,35 @@
 # WORK LOG
 
+## Adaptive Ladder Headers + Preference/Bonus Mode Split
+- Timestamp (UTC): 2026-05-28T11:05:00Z
+- Scope:
+  - Updated `research.html` ladder header row to use dynamic header IDs for a single adaptive ladder component.
+  - Updated `hunt-research.js` to detect ladder display mode by draw family and status:
+    - `PREFERENCE`
+    - `BONUS`
+    - `YOUTH_RESERVE`
+    - `ALLOCATION_AVAILABILITY`
+    - `STATUS_ONLY`
+  - Added conditional header rendering with fixed five-column layouts per mode.
+  - Added preference-specific odds precedence for ladder rendering:
+    - `display_odds_pct`
+    - `p_draw_mean * 100`
+    - `odds_2026_projected`
+    - `preference_draw_odds_2026`
+    - `preference_projection_2026`
+    - `modeled_preference_probability`
+    - `draw_probability`
+    - `p50`
+  - Reworked ladder row rendering so preference families no longer use bonus-style max/random labels.
+  - Preserved one ladder component; no per-hunt-type page split was introduced.
+- Validation:
+  - `node --check hunt-research.js` passed.
+  - `npm.cmd run build` passed.
+  - Verified `pages-dist/hunt-research.js` includes adaptive header/mode logic and preference odds mapping tokens.
+  - Verified current runtime data examples:
+    - `PREFERENCE_GENERAL_SEASON_BUCK_DEER` modeled rows present (`132`) in predictive runtime.
+    - Youth rows present as `YOUTH_DRAW_ONLY_ELK` pending (`2`) and not force-modeled.
+
 ## Predictive Pending Resolution + Youth Reserve Modeling + Age Quality Scoring
 - Timestamp (UTC): 2026-05-28T09:55:00Z
 - Scope:
