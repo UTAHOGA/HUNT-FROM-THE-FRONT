@@ -42,6 +42,21 @@
       </header>
       <div id="uogaActiveFilters" class="public-library-active-filters"></div>
       <div id="uogaLibrarySections" class="public-library-results-grid"></div>
+      <div id="uogaPdfFlipPanel" class="uoga-pdf-flip-panel" hidden>
+        <div class="uoga-pdf-flip-head">
+          <strong id="uogaPdfFlipTitle">PDF Viewer</strong>
+          <div class="uoga-pdf-flip-actions">
+            <a id="uogaPdfDownload" href="#" target="_blank" rel="noopener noreferrer">Download PDF</a>
+            <button type="button" id="uogaPdfFlipClose">Close</button>
+          </div>
+        </div>
+        <div class="uoga-pdf-flip-toolbar">
+          <button type="button" id="uogaPdfPrev">Previous</button>
+          <span id="uogaPdfStatus">Loading...</span>
+          <button type="button" id="uogaPdfNext">Next</button>
+        </div>
+        <div id="uogaPdfFlipbook" class="uoga-pdf-flipbook"></div>
+      </div>
       <div id="uogaEmbedPanel" class="uoga-embed-panel" hidden>
         <div class="uoga-embed-head">
           <strong id="uogaEmbedTitle">Embedded Resource</strong>

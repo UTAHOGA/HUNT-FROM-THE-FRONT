@@ -6,6 +6,10 @@
     "./processed_data/hard_data_exports/library/public_library_manual_items.json",
   ];
 
+  const PDFJS_CDN = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs";
+  const PDFJS_WORKER_CDN = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.worker.min.mjs";
+  const PAGE_FLIP_CDN = "https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js";
+
   const FOLDERS = [
     { id: "rules", title: "UTAH DWR RULES & REGULATIONS", description: "Current-year/current-cycle public rules and regulation PDFs." },
     { id: "harvest", title: "HARVEST DATA", description: "Public harvest reports and data across years." },
@@ -54,6 +58,11 @@
       embedded: false,
     },
   ];
+
+  let pdfjsLib = null;
+  let pageFlipLoadPromise = null;
+  let pdfLibLoadPromise = null;
+  let pageFlipInstance = null;
 
   function byId(id) {
     return document.getElementById(id);
@@ -182,6 +191,157 @@
     return Array.from(seen.values());
   }
 
+  function loadScript(src) {
+    return new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = src;
+      script.async = true;
+      script.onload = () => resolve();
+      script.onerror = () => reject(new Error(`Failed to load script: ${src}`));
+      document.head.appendChild(script);
+    });
+  }
+
+  async function ensurePageFlipLibrary() {
+    if (!pageFlipLoadPromise) {
+      pageFlipLoadPromise = loadScript(PAGE_FLIP_CDN);
+    }
+    await pageFlipLoadPromise;
+  }
+
+  async function ensurePdfLibrary() {
+    if (!pdfLibLoadPromise) {
+      pdfLibLoadPromise = import(PDFJS_CDN).then((module) => {
+        pdfjsLib = module;
+        pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS_WORKER_CDN;
+      });
+    }
+    await pdfLibLoadPromise;
+  }
+
+  function closeEmbed() {
+    const panel = byId("uogaEmbedPanel");
+    const frame = byId("uogaEmbedFrame");
+    panel.hidden = true;
+    frame.src = "about:blank";
+  }
+
+  function openEmbed(item) {
+    closePdfFlipbook();
+    const panel = byId("uogaEmbedPanel");
+    const frame = byId("uogaEmbedFrame");
+    const title = byId("uogaEmbedTitle");
+    title.textContent = item.title || "Embedded Resource";
+    frame.src = item.href;
+    panel.hidden = false;
+    panel.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function closePdfFlipbook() {
+    const panel = byId("uogaPdfFlipPanel");
+    const book = byId("uogaPdfFlipbook");
+    const status = byId("uogaPdfStatus");
+    const download = byId("uogaPdfDownload");
+    if (pageFlipInstance) {
+      pageFlipInstance.destroy();
+      pageFlipInstance = null;
+    }
+    book.innerHTML = "";
+    panel.hidden = true;
+    status.textContent = "Loading...";
+    download.href = "#";
+  }
+
+  async function renderPdfPages(pdfDoc, targetWidth = 430) {
+    const pageCount = Math.min(pdfDoc.numPages, 60);
+    const pages = [];
+    for (let i = 1; i <= pageCount; i += 1) {
+      const page = await pdfDoc.getPage(i);
+      const initialViewport = page.getViewport({ scale: 1 });
+      const scale = targetWidth / initialViewport.width;
+      const viewport = page.getViewport({ scale });
+      const canvas = document.createElement("canvas");
+      canvas.width = Math.floor(viewport.width);
+      canvas.height = Math.floor(viewport.height);
+      const ctx = canvas.getContext("2d", { alpha: false });
+      await page.render({ canvasContext: ctx, viewport }).promise;
+
+      const pageWrap = document.createElement("div");
+      pageWrap.className = "uoga-pdf-page";
+      pageWrap.appendChild(canvas);
+      pages.push(pageWrap);
+    }
+    return { pages, pageCount };
+  }
+
+  async function openPdfFlipbook(item) {
+    closeEmbed();
+    const panel = byId("uogaPdfFlipPanel");
+    const title = byId("uogaPdfFlipTitle");
+    const status = byId("uogaPdfStatus");
+    const book = byId("uogaPdfFlipbook");
+    const download = byId("uogaPdfDownload");
+
+    panel.hidden = false;
+    title.textContent = item.title || "PDF Viewer";
+    download.href = safeUrl(item.href);
+    status.textContent = "Loading PDF...";
+    book.innerHTML = "";
+
+    try {
+      await ensurePdfLibrary();
+      await ensurePageFlipLibrary();
+      const pdf = await pdfjsLib.getDocument(safeUrl(item.href)).promise;
+      const isMobile = window.innerWidth <= 760;
+      const targetWidth = isMobile ? 300 : 430;
+      const { pages, pageCount } = await renderPdfPages(pdf, targetWidth);
+      if (!pages.length) {
+        status.textContent = "No renderable pages.";
+        return;
+      }
+
+      const width = isMobile ? 320 : 460;
+      const firstCanvas = pages[0].querySelector("canvas");
+      const height = Math.max(420, Math.floor((firstCanvas.height / firstCanvas.width) * width));
+
+      pages.forEach((p) => book.appendChild(p));
+      pageFlipInstance = new window.St.PageFlip(book, {
+        width,
+        height,
+        size: "stretch",
+        minWidth: 260,
+        maxWidth: 700,
+        minHeight: 360,
+        maxHeight: 980,
+        showCover: false,
+        drawShadow: true,
+        mobileScrollSupport: false,
+      });
+
+      pageFlipInstance.loadFromHTML(book.querySelectorAll(".uoga-pdf-page"));
+      status.textContent = `Page 1 of ${pageCount}${pdf.numPages > pageCount ? " (partial preview)" : ""}`;
+      pageFlipInstance.on("flip", (event) => {
+        const pageNum = (event.data || 0) + 1;
+        status.textContent = `Page ${pageNum} of ${pageCount}${pdf.numPages > pageCount ? " (partial preview)" : ""}`;
+      });
+      panel.scrollIntoView({ behavior: "smooth", block: "start" });
+    } catch (error) {
+      status.textContent = "Could not load flipbook. Use Download PDF.";
+      book.innerHTML = `<div class="public-empty">${esc(error.message || "Flipbook failed to load")}</div>`;
+    }
+  }
+
+  function bindStaticControls() {
+    byId("uogaEmbedClose").addEventListener("click", closeEmbed);
+    byId("uogaPdfFlipClose").addEventListener("click", closePdfFlipbook);
+    byId("uogaPdfPrev").addEventListener("click", () => {
+      if (pageFlipInstance) pageFlipInstance.flipPrev();
+    });
+    byId("uogaPdfNext").addEventListener("click", () => {
+      if (pageFlipInstance) pageFlipInstance.flipNext();
+    });
+  }
+
   function renderFolderButtons(items, state, onFolderClick) {
     const wall = byId("uogaFolderWall");
     wall.innerHTML = FOLDERS.map((folder) => {
@@ -195,7 +355,6 @@
         </button>
       `;
     }).join("");
-
     wall.querySelectorAll("button").forEach((button) => {
       button.addEventListener("click", () => onFolderClick(button.dataset.folder || ""));
     });
@@ -215,28 +374,6 @@
     return Boolean(state.activeFolder) || state.query.trim().length > 0;
   }
 
-  function closeEmbed() {
-    const panel = byId("uogaEmbedPanel");
-    const frame = byId("uogaEmbedFrame");
-    panel.hidden = true;
-    frame.src = "about:blank";
-  }
-
-  function openEmbed(item) {
-    const panel = byId("uogaEmbedPanel");
-    const frame = byId("uogaEmbedFrame");
-    const title = byId("uogaEmbedTitle");
-    title.textContent = item.title || "Embedded Resource";
-    frame.src = item.href;
-    panel.hidden = false;
-    panel.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-
-  function bindEmbedClose() {
-    const close = byId("uogaEmbedClose");
-    close.addEventListener("click", closeEmbed);
-  }
-
   function renderResults(items, state) {
     const panel = byId("uogaResultsPanel");
     const panelTitle = byId("uogaResultsTitle");
@@ -251,19 +388,17 @@
       grid.innerHTML = "";
       panelCount.textContent = "0 files";
       closeEmbed();
+      closePdfFlipbook();
       return;
     }
 
     panel.hidden = false;
     panel.setAttribute("aria-hidden", "false");
-
     panelTitle.textContent = state.activeFolder
       ? (FOLDERS.find((f) => f.id === state.activeFolder) || {}).title || "Filtered Results"
       : "Search Results";
 
-    const filtered = filterItems(items, state)
-      .sort((a, b) => (b.year || "").localeCompare(a.year || "") || a.title.localeCompare(b.title));
-
+    const filtered = filterItems(items, state).sort((a, b) => (b.year || "").localeCompare(a.year || "") || a.title.localeCompare(b.title));
     panelCount.textContent = `${filtered.length} files`;
 
     const chipsList = [];
@@ -278,34 +413,64 @@
     if (!filtered.length) {
       grid.innerHTML = `<div class="public-empty">No public files match this folder/search.</div>`;
       closeEmbed();
+      closePdfFlipbook();
       return;
     }
 
     grid.innerHTML = filtered.map((item, idx) => {
       const delivery = item.delivery ? ` | ${item.delivery}` : "";
       const meta = `${item.type.toUpperCase()}${item.year ? ` | ${item.year}` : ""}${delivery}`;
-      if (item.embedded) {
+      const base = `
+        <strong>${esc(item.title)}</strong>
+        <span>${esc(item.subtitle)}</span>
+        <em>${esc(meta)}</em>
+      `;
+
+      if (item.type === "pdf") {
+        const href = safeUrl(item.href);
         return `
-          <button class="public-file-card public-file-card--button" type="button" data-embed-index="${idx}">
-            <strong>${esc(item.title)}</strong>
-            <span>${esc(item.subtitle)}</span>
-            <em>${esc(meta)}</em>
-          </button>
+          <div class="public-file-card">
+            ${base}
+            <div class="public-file-actions">
+              <button class="public-file-action" type="button" data-action="flip" data-index="${idx}">View Flipbook</button>
+              <a class="public-file-action" href="${esc(href)}" target="_blank" rel="noopener noreferrer">Download PDF</a>
+            </div>
+          </div>
         `;
       }
+
+      if (item.embedded) {
+        return `
+          <div class="public-file-card">
+            ${base}
+            <div class="public-file-actions">
+              <button class="public-file-action" type="button" data-action="embed" data-index="${idx}">View Calendar</button>
+            </div>
+          </div>
+        `;
+      }
+
       const href = safeUrl(item.href);
       return `
-        <a class="public-file-card" href="${esc(href)}" target="_blank" rel="noopener noreferrer">
-          <strong>${esc(item.title)}</strong>
-          <span>${esc(item.subtitle)}</span>
-          <em>${esc(meta)}</em>
-        </a>
+        <div class="public-file-card">
+          ${base}
+          <div class="public-file-actions">
+            <a class="public-file-action" href="${esc(href)}" target="_blank" rel="noopener noreferrer">Open File</a>
+          </div>
+        </div>
       `;
     }).join("");
 
-    grid.querySelectorAll("[data-embed-index]").forEach((button) => {
+    grid.querySelectorAll("[data-action='flip']").forEach((button) => {
       button.addEventListener("click", () => {
-        const idx = Number(button.getAttribute("data-embed-index"));
+        const idx = Number(button.getAttribute("data-index"));
+        if (Number.isFinite(idx) && filtered[idx]) openPdfFlipbook(filtered[idx]);
+      });
+    });
+
+    grid.querySelectorAll("[data-action='embed']").forEach((button) => {
+      button.addEventListener("click", () => {
+        const idx = Number(button.getAttribute("data-index"));
         if (Number.isFinite(idx) && filtered[idx]) openEmbed(filtered[idx]);
       });
     });
@@ -315,7 +480,7 @@
     const state = { activeFolder: "", query: "" };
     const search = byId("uogaLibrarySearch");
     const clear = byId("uogaLibraryClear");
-    bindEmbedClose();
+    bindStaticControls();
 
     const renderAll = () => {
       renderFolderButtons(items, state, (folderId) => {

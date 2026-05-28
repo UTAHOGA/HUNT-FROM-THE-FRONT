@@ -274,6 +274,26 @@ body {
   cursor: pointer;
 }
 
+.public-file-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.public-file-action {
+  border: 1px solid rgba(241, 193, 119, 0.65);
+  border-radius: 999px;
+  background: linear-gradient(180deg, #6a3a17, #2a1509);
+  color: #f9ddad;
+  padding: 6px 11px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .public-file-card strong {
   display: block;
   font-size: 14px;
@@ -301,6 +321,77 @@ body {
   padding: 10px 11px;
   border: 1px dashed rgba(229, 193, 142, 0.5);
   font-size: 13px;
+}
+
+.uoga-pdf-flip-panel {
+  margin-top: 16px;
+  border: 1px solid rgba(255, 205, 143, 0.35);
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(14, 8, 5, 0.92);
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.52);
+}
+
+.uoga-pdf-flip-panel[hidden] {
+  display: none !important;
+}
+
+.uoga-pdf-flip-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: rgba(43, 22, 12, 0.95);
+  color: #ffe4bd;
+}
+
+.uoga-pdf-flip-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.uoga-pdf-flip-actions a,
+.uoga-pdf-flip-actions button,
+.uoga-pdf-flip-toolbar button {
+  border: 0;
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: linear-gradient(180deg, #f89524, #d56610);
+  color: #2b1308;
+  font-weight: 900;
+  font-size: 12px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.uoga-pdf-flip-toolbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: rgba(25, 13, 8, 0.92);
+  border-top: 1px solid rgba(244, 197, 124, 0.2);
+}
+
+.uoga-pdf-flip-toolbar span {
+  font-size: 12px;
+  color: #f7d5a0;
+}
+
+.uoga-pdf-flipbook {
+  min-height: 620px;
+  display: grid;
+  place-items: center;
+  padding: 12px;
+}
+
+.uoga-pdf-page {
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
 }
 
 .uoga-embed-panel {
@@ -365,6 +456,10 @@ body {
 
   .uoga-embed-panel iframe {
     min-height: 520px;
+  }
+
+  .uoga-pdf-flipbook {
+    min-height: 480px;
   }
 
   .utility-nav {

@@ -1,5 +1,42 @@
 # WORK LOG
 
+## Step 4C Public Library PDF Flipbook + Download Actions
+- Timestamp (UTC): 2026-05-28T08:46:50Z
+- Scope:
+  - Added in-page PDF flipbook viewer shell to `hard-copy.html` with:
+    - title
+    - download link
+    - previous/next controls
+    - close button
+  - Upgraded `assets/js/hard-copy-public-library.js` card behavior:
+    - PDF cards: `View Flipbook` + `Download PDF`
+    - Calendar embedded item: `View Calendar` in-page iframe
+    - Other files: `Open File` action
+  - Implemented lazy-load library strategy for PDF rendering:
+    - PDF.js (CDN module)
+    - page-flip / StPageFlip (CDN script)
+    - no pre-render on initial page load
+  - Added in-page flipbook open/close lifecycle and prev/next handlers.
+  - Preserved runtime denylist protections and curated folder behavior.
+  - Maintained Step 4B regulations public-copy path and manual manifest usage.
+- Validation:
+  - `npm.cmd run build` passed.
+  - Gate remained clean: `Gate BLOCK: 0`, `Manual review: 0`, crosswalk matched `169`.
+  - `pages-dist` artifacts verified:
+    - `hard-copy.html`
+    - `assets/css/hard-copy-public-library.css`
+    - `assets/js/hard-copy-public-library.js`
+    - `assets/backgrounds/library-wallpaper.jpg`
+  - Public regulations copy path verified:
+    - `pages-dist/public/hard-copy/regulations/2026/` contains 6 PDFs.
+  - Preview probe URL returned `200` and includes both:
+    - `uogaPdfFlipPanel`
+    - `uogaEmbedPanel`
+  - Manifest-level curation check remained:
+    - Rules `6`
+    - Calendar `1`
+    - `raw_runtime_exposed = 0`
+
 ## Step 4B Public Library Calendar + Regulations Population
 - Timestamp (UTC): 2026-05-28T08:40:08Z
 - Scope:
