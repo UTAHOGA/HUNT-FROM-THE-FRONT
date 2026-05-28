@@ -150,6 +150,10 @@
     if (!passesFolderRules(folderId, { title, href, subtitle, year })) return null;
 
     const embedded = type === "iframe" || delivery === "embedded";
+    const companionHref = String(raw.companion_href || "").trim();
+    const companionType = String(raw.companion_type || "").trim().toLowerCase();
+    const companionTitle = String(raw.companion_title || "").trim();
+    const companionSubtitle = String(raw.companion_subtitle || "").trim();
     return {
       id: `${folderId}::${title.toLowerCase()}::${href.toLowerCase()}::${type}`,
       folderId,
@@ -167,7 +171,15 @@
       group,
       delivery,
       embedded,
-      searchText: `${title} ${subtitle} ${href} ${year} ${type} ${group} ${folderId} ${raw.source || ""} ${raw.scope || ""}`.toLowerCase(),
+      companion: companionHref
+        ? {
+            href: companionHref,
+            type: companionType || "link",
+            title: companionTitle || "Companion Document",
+            subtitle: companionSubtitle || "",
+          }
+        : null,
+      searchText: `${title} ${subtitle} ${href} ${year} ${type} ${group} ${folderId} ${raw.source || ""} ${raw.scope || ""} ${companionTitle} ${companionSubtitle} ${companionHref}`.toLowerCase(),
     };
   }
 
@@ -347,11 +359,11 @@
     wall.innerHTML = FOLDERS.map((folder) => {
       const count = items.filter((item) => item.folderId === folder.id).length;
       const active = state.activeFolder === folder.id ? "active" : "";
+      const label = `${folder.title} (${count} files)`;
       return `
-        <button class="public-folder ${active}" type="button" data-folder="${esc(folder.id)}">
-          <h3>${esc(folder.title)}</h3>
-          <p>${esc(folder.description)}</p>
-          <span class="count">${count} files</span>
+        <button class="public-folder ${active}" type="button" data-folder="${esc(folder.id)}" aria-label="${esc(label)}">
+          <span class="public-folder-hover">${esc(folder.title)} | ${count} files</span>
+          <span class="sr-only">${esc(folder.description)}</span>
         </button>
       `;
     }).join("");
@@ -428,12 +440,18 @@
 
       if (item.type === "pdf") {
         const href = safeUrl(item.href);
+        const companionAction = item.companion
+          ? `<button class="public-file-action" type="button" data-action="companion" data-index="${idx}">View Corrections &amp; Updates</button>`
+          : "";
+        const viewLabel = item.companion ? "View Guidebook" : "View Flipbook";
+        const downloadLabel = item.companion ? "Download Guidebook" : "Download PDF";
         return `
           <div class="public-file-card">
             ${base}
             <div class="public-file-actions">
-              <button class="public-file-action" type="button" data-action="flip" data-index="${idx}">View Flipbook</button>
-              <a class="public-file-action" href="${esc(href)}" target="_blank" rel="noopener noreferrer">Download PDF</a>
+              <button class="public-file-action" type="button" data-action="flip" data-index="${idx}">${viewLabel}</button>
+              ${companionAction}
+              <a class="public-file-action" href="${esc(href)}" target="_blank" rel="noopener noreferrer">${downloadLabel}</a>
             </div>
           </div>
         `;
@@ -472,6 +490,22 @@
       button.addEventListener("click", () => {
         const idx = Number(button.getAttribute("data-index"));
         if (Number.isFinite(idx) && filtered[idx]) openEmbed(filtered[idx]);
+      });
+    });
+
+    grid.querySelectorAll("[data-action='companion']").forEach((button) => {
+      button.addEventListener("click", () => {
+        const idx = Number(button.getAttribute("data-index"));
+        if (!Number.isFinite(idx) || !filtered[idx] || !filtered[idx].companion) return;
+        const companion = filtered[idx].companion;
+        if (companion.type === "pdf") {
+          openPdfFlipbook({
+            title: companion.title || "Corrections & Updates",
+            href: companion.href,
+          });
+          return;
+        }
+        window.open(safeUrl(companion.href), "_blank", "noopener,noreferrer");
       });
     });
   }

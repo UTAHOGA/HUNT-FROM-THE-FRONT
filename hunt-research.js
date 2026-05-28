@@ -1256,7 +1256,7 @@
       if (marker.kind === 'sources') {
         return `<button type="button" class="marker-pill sources" data-source-pill="true" data-point="${escapeHtml(marker.point)}">${escapeHtml(marker.label)}</button>`;
       }
-      return `<span class="marker-pill ${marker.kind}">${escapeHtml(marker.label)}</span>`;
+      return `<span class="marker-line-label ${marker.kind}">${escapeHtml(marker.label)}</span>`;
     }).join('')}</div>`;
   }
 
@@ -1309,12 +1309,12 @@
       const isUserRow = Number(row.points) === Number(userPoints);
 
       if (isUserRow) {
-        markers.push({ kind: 'user', label: 'You' });
+        markers.push({ kind: 'user', label: 'Your Point Position' });
         classes.push('is-user-row');
       }
 
       if (isGuaranteedLineRow(row)) {
-        markers.push({ kind: 'guaranteed', label: 'Guaranteed Line' });
+        markers.push({ kind: 'guaranteed', label: 'Guaranteed Draw' });
         classes.push('is-guaranteed-row');
       }
 
