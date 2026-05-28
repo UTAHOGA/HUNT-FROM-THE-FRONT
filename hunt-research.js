@@ -196,7 +196,7 @@
 
   function formatProbability(value) {
     const parsed = num(value);
-    if (parsed === null || parsed <= 0) return 'â€”';
+    if (parsed === null || parsed <= 0) return 'Not available';
     if (parsed >= 99.95) return '100%';
     if (parsed >= 10) return `${parsed.toFixed(1)}%`;
     if (parsed >= 1) return `${parsed.toFixed(2)}%`;
@@ -282,7 +282,7 @@
 
   function formatEmpty(value) {
     const text = String(value ?? '').trim();
-    if (!text || text === '0.000%' || text.toLowerCase() === 'not available') return 'â€”';
+    if (!text || text === '0.000%' || text.toLowerCase() === 'not available') return 'Not available';
     return text;
   }
 
