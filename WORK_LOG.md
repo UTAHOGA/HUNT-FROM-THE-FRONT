@@ -1,5 +1,26 @@
 # WORK LOG
 
+## Step 1B Gate-Block Resolution Audit (PD1006 / PD1045 / PD1046)
+- Timestamp (UTC): 2026-05-28T07:44:58Z
+- Scope:
+  - Re-ran the Step 1B blocker investigation for `PD1006`, `PD1045`, and `PD1046` across the required current source, runtime, coverage, crosswalk, and harvest files.
+  - Confirmed all three hunt codes are present in `DATABASE.csv`, `hunt_master_enriched.csv`, `hunt_unit_reference_linked.csv`, `draw_reality_engine.csv`, and `point_ladder_view.csv`.
+  - Confirmed `PD1045` and `PD1046` are also present in `draw_reality_engine_predictive_v2.csv` and `ml_draw_predictions_v1.csv`.
+  - Confirmed `PD1006` is absent from predictive output files but present in `predictive_coverage_report.csv` with `in_current_database=True`, `in_forecast=False`, and `exclusion_reason=not_OIL_LE_PLE`, while still carried in runtime as `DATABASE_REFERENCE_ONLY_NO_DRAW_DETAIL`.
+  - Confirmed all three are not present in the current-to-historical crosswalk, which remains expected because this bridge only includes selected current-code families (`169` total matched current codes) and does not govern general current-code inclusion.
+  - Confirmed harvest evidence exists for all three via `harvest_master.csv` and/or `harvest_quality_features_all_years_by_hunt_code.csv`.
+  - Rebuilt the library package and confirmed gate closure with zero manual-review and zero block rows.
+- Validation:
+  - `npm.cmd run build` passed.
+  - Build report summary:
+    - `total_current_hunts: 1449`
+    - `modeled_count: 1449`
+    - `manual_review_count: 0`
+    - `promotion_gate_pass_count: 1449`
+    - `promotion_gate_block_count: 0`
+    - Crosswalk scan: `processed_data/current_to_historical_hunt_code_crosswalk_2026.csv: 169 rows, matched 169 current codes total`.
+  - `Import-Csv .\processed_data\library\library_page_hunts.csv | Where-Object { $_.manual_review_required -eq "true" -or $_.gate_status -eq "BLOCK" }` returned no rows.
+
 ## 2020 Hashed Draw PDF Source Parity For 2021 Modeling
 - Timestamp (UTC): 2026-05-27T05:48:00Z
 - Scope:
