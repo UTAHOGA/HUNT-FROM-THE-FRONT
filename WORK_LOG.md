@@ -6693,3 +6693,17 @@ o_table=0).
   - Duplicate hunt codes: 0.
   - Bad split totals: 0.
   - Missing source rows: 0.
+
+## Either-Sex Turkey 2026 Permit Truth Source Addition
+- Timestamp (UTC): 2026-05-29T10:45:00Z
+- Scope:
+  - Added `TURKEY_EITHER_SEX` to `scripts/build-reviewed-permit-truth-sources-2026.py`.
+  - Created `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 turkey either sex all reviewed total.csv` from the pasted-aligned `2026 TURKEY EITHER SEX DRAW.xlsx` workbook.
+  - Preserved Fall Management total-only permit handling and included boundary-id metadata from `DATABASE.csv` plus source workbook/source row lineage.
+  - Updated reviewed permit truth-source audit CSV/JSON.
+- Validation:
+  - TURKEY_EITHER_SEX rows: 4.
+  - Total-only rows: 4.
+  - Duplicate hunt codes: 0.
+  - Bad split totals: 0.
+  - Missing source rows: 0.

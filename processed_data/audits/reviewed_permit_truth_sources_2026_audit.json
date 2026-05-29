@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-05-29T10:43:48.585888+00:00",
+  "created_at": "2026-05-29T10:45:17.262586+00:00",
   "source": "pasted-aligned public hunt table workbooks",
   "families": {
     "BLACK_BEAR": {
@@ -235,6 +235,25 @@
         "2026 TURKEY BEARDED DRAW.xlsx": 14
       },
       "output": "C:\\Users\\tyler\\Desktop\\GitHub\\HUNT-BUILDER\\pipeline\\RAW\\hunt_unit_database\\2026\\csv\\2026 Permits\\2026 turkey bearded all reviewed total.csv"
+    },
+    "TURKEY_EITHER_SEX": {
+      "rows": 4,
+      "duplicate_hunt_codes": [],
+      "bad_split_totals": [],
+      "missing_source_rows": [],
+      "permit_status_counts": {
+        "TOTAL_ONLY": 4
+      },
+      "hunt_type_counts": {
+        "Fall Management": 4
+      },
+      "weapon_counts": {
+        "Any Legal Weapon": 4
+      },
+      "source_counts": {
+        "2026 TURKEY EITHER SEX DRAW.xlsx": 4
+      },
+      "output": "C:\\Users\\tyler\\Desktop\\GitHub\\HUNT-BUILDER\\pipeline\\RAW\\hunt_unit_database\\2026\\csv\\2026 Permits\\2026 turkey either sex all reviewed total.csv"
     }
   },
   "outputs": {

@@ -111,6 +111,14 @@ FAMILY_CONFIGS = [
         "species": ("Turkey",),
         "sex_type": ("Bearded",),
     },
+    {
+        "family": "TURKEY_EITHER_SEX",
+        "output": "2026 turkey either sex all reviewed total.csv",
+        "sources": ["2026 TURKEY EITHER SEX DRAW.xlsx"],
+        "code_prefixes": ("TK",),
+        "species": ("Turkey",),
+        "sex_type": ("Either Sex",),
+    },
 ]
 
 
