@@ -6581,3 +6581,22 @@ o_table=0).
   - Matched DWR popup rows: 1449.
   - Permit exact-match/backfilled cells: 2981.
   - EB CWMU check: 67 active EB CWMU rows carry Res, NonRes 0, and Total = Res + NonRes; the remaining EB CWMU row is historical-only 2025 and not active 2026.
+
+## Regenerate Public Hunt Table Display Files After Permit Split Corrections
+- Timestamp (UTC): 2026-05-29T09:18:00Z
+- Scope:
+  - Regenerated public hunt-table XLSX and PDF files so the online display files reflect corrected resident/nonresident/total permit values.
+  - Confirmed elk antlerless examples:
+    - EA1010: Res 18, NonRes 2, Total 20.
+    - EA1011: Res 9, NonRes 1, Total 10.
+    - EA1118 CWMU: Res 6, NonRes 0, Total 6.
+    - EA1147 CWMU: Res 15, NonRes 0, Total 15.
+    - EA2002 private lands only: Total 600 with resident/nonresident blank.
+  - Updated hard-copy PDF manifest links to the simplified public display filenames.
+- Validation:
+  - `py scripts/redraft-hunt-tables-2026-clean-display.py` passed.
+  - Clean XLSX files: 46.
+  - Clean PDF files: 46.
+  - `npm.cmd run build` passed.
+  - Gate PASS: 1449.
+  - Gate BLOCK: 0.
