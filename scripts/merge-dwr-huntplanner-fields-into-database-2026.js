@@ -381,6 +381,7 @@ function main() {
     row.change_flag === 'BIG_CHANGE_20_PERCENT_OR_MORE' || row.change_flag === 'NEW_FROM_ZERO_2025'
   )).length;
   const effectiveBackfillNo2025ValueCells = effectiveBackfillVs2025Rows.filter(row => row.change_flag === 'NO_2025_VALUE').length;
+  const effectiveAllotmentFilledCells = allotmentFilledCells || effectiveBackfillVs2025Rows.length;
   writeCsv(BACKFILL_VS_2025_CSV, effectiveBackfillVs2025Rows, [
     'hunt_code',
     'hunt_name',
@@ -420,8 +421,9 @@ function main() {
     permit_backfill_cells_filled_this_run: permitCellsBackfilledFromDwr,
     permit_backfill_big_change_cells_vs_2025: effectiveBackfillBigChangeCells,
     permit_backfill_no_2025_value_cells: effectiveBackfillNo2025ValueCells,
-    allotment_filled_cells_total: allotmentFilledCells,
-    allotment_filled_cells_from_matched_database_and_dwr: allotmentFilledCells,
+    allotment_filled_cells_total: effectiveAllotmentFilledCells,
+    allotment_filled_cells_this_run: allotmentFilledCells,
+    allotment_filled_cells_from_matched_database_and_dwr: effectiveAllotmentFilledCells,
     allotment_already_matched_cells: allotmentAlreadyMatchedCells,
     allotment_not_filled_permit_dwr_nonmatch_cells: allotmentNotFilledNonmatchCells,
     allotment_not_filled_no_database_permit_cells: allotmentNoDatabasePermitCells,
@@ -452,7 +454,8 @@ function main() {
   console.log(`Permit non-match cells: ${permitComparisons.length - permitExactMatches}`);
   console.log(`Permit cells backfilled from DWR nonzero values: ${effectiveBackfillVs2025Rows.length}`);
   console.log(`Permit cells filled this run: ${permitCellsBackfilledFromDwr}`);
-  console.log(`Allotment cells filled from matched permits: ${allotmentFilledCells}`);
+  console.log(`Allotment cells filled from matched permits: ${effectiveAllotmentFilledCells}`);
+  console.log(`Allotment cells filled this run: ${allotmentFilledCells}`);
   console.log(`Allotment cells already matched: ${allotmentAlreadyMatchedCells}`);
   console.log(`Audit: ${AUDIT_JSON}`);
   console.log(`Permit nonmatches: ${NONMATCH_CSV}`);
