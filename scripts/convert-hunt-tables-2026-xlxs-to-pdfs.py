@@ -187,8 +187,6 @@ def update_manifest() -> None:
 
 def main() -> None:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    for old in OUT_DIR.glob("*.pdf"):
-        old.unlink()
     files = sorted([p for p in SRC_DIR.glob("*.xlsx") if not p.name.startswith("~$")])
     if not files:
         raise SystemExit("No xlsx files found")

@@ -28,6 +28,7 @@ AUDIT_CSV = ROOT / "processed_data" / "audits" / "hunt_tables_2026_clean_redraft
 PDF_MANIFEST = ROOT / "processed_data" / "hard_data_exports" / "hard_copy_pdf_manifest.web.json"
 HARVEST_QUALITY = ROOT / "processed_data" / "harvest_quality_features_all_years_by_hunt_code.csv"
 HARVEST_MASTER = ROOT / "processed_data" / "harvest_master.csv"
+HARVEST_AGE_LATEST = ROOT / "processed_data" / "harvest_age_features_by_hunt_code_latest.csv"
 
 HEADERS = [
     "hunt_name",
@@ -139,6 +140,10 @@ def norm_key(value: Any) -> str:
     return re.sub(r"[^a-z0-9]+", "", clean_text(value).lower())
 
 
+def norm_code(value: Any) -> str:
+    return re.sub(r"[^A-Z0-9]+", "", clean_text(value).upper())
+
+
 def clean_stem(stem: str) -> str:
     if stem in SOURCE_NAME_OVERRIDES:
         return SOURCE_NAME_OVERRIDES[stem]
@@ -230,9 +235,10 @@ def get_value(row: list[Any], index: dict[str, int], aliases: list[str]) -> str:
 
 def load_harvest_lookup() -> dict[str, dict[str, str]]:
     lookup: dict[str, dict[str, str]] = {}
+    age_lookup: dict[str, dict[str, str]] = {}
 
     def keep(code: str, item: dict[str, str], year: int) -> None:
-        code = code.strip().upper()
+        code = norm_code(code)
         if not code:
             return
         prior_year = int(lookup.get(code, {}).get("_year", "0") or 0)
@@ -240,10 +246,29 @@ def load_harvest_lookup() -> dict[str, dict[str, str]]:
             item["_year"] = str(year)
             lookup[code] = item
 
+    def keep_age(code: str, age_value: str, year: int) -> None:
+        code = norm_code(code)
+        if not code:
+            return
+        try:
+            numeric_age = float(age_value)
+        except (TypeError, ValueError):
+            return
+        if numeric_age <= 0:
+            return
+        prior_year = int(age_lookup.get(code, {}).get("_year", "0") or 0)
+        if year >= prior_year:
+            display = f"{numeric_age:.1f}".rstrip("0").rstrip(".")
+            age_lookup[code] = {
+                "_year": str(year),
+                "Harvest Prior Year": str(year) if year else "",
+                "Average Age Harvested (previous hunting season)": display,
+            }
+
     if HARVEST_QUALITY.exists():
         with HARVEST_QUALITY.open(newline="", encoding="utf-8-sig") as fh:
             for row in csv.DictReader(fh):
-                code = clean_text(row.get("hunt_code")).upper()
+                code = norm_code(row.get("hunt_code"))
                 year_text = clean_text(row.get("reported_hunt_year"))
                 try:
                     year = int(float(year_text))
@@ -263,7 +288,7 @@ def load_harvest_lookup() -> dict[str, dict[str, str]]:
     if HARVEST_MASTER.exists():
         with HARVEST_MASTER.open(newline="", encoding="utf-8-sig") as fh:
             for row in csv.DictReader(fh):
-                code = clean_text(row.get("hunt_code")).upper()
+                code = norm_code(row.get("hunt_code"))
                 year_text = clean_text(row.get("year"))
                 try:
                     year = int(float(year_text))
@@ -284,6 +309,27 @@ def load_harvest_lookup() -> dict[str, dict[str, str]]:
                 }
                 if any(item.values()):
                     keep(code, item, year)
+
+    if HARVEST_AGE_LATEST.exists():
+        with HARVEST_AGE_LATEST.open(newline="", encoding="utf-8-sig") as fh:
+            for row in csv.DictReader(fh):
+                if clean_text(row.get("review_status")).upper() != "PASS":
+                    continue
+                code = norm_code(row.get("hunt_code"))
+                year_text = clean_text(row.get("reported_hunt_year"))
+                try:
+                    year = int(float(year_text))
+                except ValueError:
+                    year = 0
+                keep_age(code, clean_text(row.get("average_harvest_age")), year)
+
+    for code, age_item in age_lookup.items():
+        current = lookup.setdefault(code, {})
+        current["Average Age Harvested (previous hunting season)"] = age_item[
+            "Average Age Harvested (previous hunting season)"
+        ]
+        if not current.get("Harvest Prior Year"):
+            current["Harvest Prior Year"] = age_item.get("Harvest Prior Year", "")
 
     for item in lookup.values():
         item.pop("_year", None)
@@ -334,7 +380,7 @@ def extract_rows(path: Path, harvest_lookup: dict[str, dict[str, str]]) -> tuple
                 ["Avg Days Hunted (previous hunting season)", "Avg Days Hunted", "Average Days Hunted"],
             ),
         }
-        harvest = harvest_lookup.get(record["hunt_code"].upper(), {})
+        harvest = harvest_lookup.get(norm_code(record["hunt_code"]), {})
         for field in [
             "Harvest Prior Year",
             "Percent Harvest Success (previous hunting season)",
