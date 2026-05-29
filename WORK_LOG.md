@@ -7250,3 +7250,35 @@ o_table=0).
 - Data/source rules preserved:
   - Did not modify prediction math, source truth, `DATABASE.csv`, runtime feed values, outfitter records, or public library files.
   - No public files were deleted or hidden in this task; reports only document recommendations.
+
+## Website Close Inspection And Mobile Layout Fixes
+- Timestamp (UTC): 2026-05-29T19:16:53Z
+- Implementation commit: pending at log-write time; final commit hash recorded in Codex final report.
+- Files changed:
+  - `header-layout.js`
+  - `index.html`
+  - `research.html`
+  - `coverage.html`
+  - `hard-data.html`
+  - `verify.html`
+- Inspection scope:
+  - Reviewed Builder, Hunt Research, Verify/Outfitters, Coverage, Hard Data, and Research Library views on desktop and mobile-sized screens.
+  - Confirmed Hunt Research no longer exposes raw runtime source URL text on the page.
+  - Confirmed Research Library folder selections and PDF viewer render as fixed overlays on the primary screen instead of appearing below the fold.
+- Fixes made:
+  - Reworked the shared injected header layout on small screens so the sticky header, nav pills, map-mode control, instructions button, and backpack control stay inside the viewport.
+  - Added mobile overflow protection and one-column grid constraints to Hunt Research cards, summary grids, chips, dashboard panels, and ladder containers.
+  - Kept the point ladder horizontally scrollable while preventing the full page from widening beyond the phone viewport.
+  - Bumped `header-layout.js` cache tokens on pages that use the shared header so the mobile fixes load consistently.
+- Validation:
+  - `node --check header-layout.js` passed.
+  - `node --check assets/js/research-outlook-dashboard.js` passed.
+  - `node --check assets/js/hard-copy-public-library.js` passed.
+  - `node --check hunt-research.js` passed.
+  - `node --check app.js` passed.
+  - `npm.cmd run build` passed after stopping the local preview server that had locked `pages-dist`.
+  - Cross-page smoke audit confirmed desktop and mobile body widths match viewport widths for Builder, Hunt Research, Verify, Coverage, Hard Data, and Research Library.
+  - Mobile Hunt Research check confirmed `bodyWidth = viewport = 390`, raw source text hidden, and table content constrained to the card scroll area.
+- Cleanup:
+  - Build-generated library manifests and temporary UI inspection screenshots/reports were removed or restored so this change set stays UI-only.
+  - Did not modify `DATABASE.csv`, prediction formulas, runtime CSV data, draw truth, harvest truth, age truth, point-ladder math, or permit/allotment truth.

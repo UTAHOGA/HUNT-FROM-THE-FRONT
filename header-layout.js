@@ -657,32 +657,80 @@
         }
       }
       @media (max-width: 900px) {
+        html, body {
+          max-width:100vw !important;
+          overflow-x:hidden !important;
+        }
+        .topbar,
+        .topbar.topbar-planner {
+          display:grid !important;
+          grid-template-columns:minmax(0, 1fr) !important;
+          justify-items:center !important;
+          align-items:center !important;
+          width:100% !important;
+          max-width:100vw !important;
+          min-width:0 !important;
+          overflow:hidden !important;
+          padding:10px 12px !important;
+        }
         .topbar-left {
           display:flex !important;
           flex-wrap:wrap !important;
-          justify-content:flex-start !important;
+          justify-content:center !important;
           align-items:center !important;
           gap:10px !important;
+          width:100% !important;
+          max-width:100% !important;
+          min-width:0 !important;
+          flex:0 1 auto !important;
         }
         .instructions-control { margin:0 !important; order:0 !important; }
         .uoga-page-nav-control { display:none !important; }
-        .map-mode-control { width:auto !important; }
-        .uoga-page-nav-toggle, .map-mode-toggle { width:min(224px, 86vw) !important; }
+        .map-mode-control,
+        .control-group.map-mode-control {
+          width:min(224px, calc(100vw - 28px)) !important;
+          max-width:100% !important;
+          min-width:0 !important;
+        }
+        .instructions-tab {
+          width:min(166px, calc(100vw - 28px)) !important;
+          min-width:0 !important;
+          padding-left:14px !important;
+          padding-right:14px !important;
+        }
+        .uoga-page-nav-toggle, .map-mode-toggle {
+          width:100% !important;
+          max-width:100% !important;
+        }
         .uoga-primary-nav {
+          position:relative !important;
+          left:auto !important;
+          top:auto !important;
+          transform:none !important;
+          order:4 !important;
+          width:100% !important;
+          max-width:100% !important;
           min-height:42px !important;
           padding:0 8px !important;
           justify-content:flex-start !important;
+          overflow-x:auto !important;
+          overflow-y:hidden !important;
+          scrollbar-width:thin !important;
         }
         .uoga-primary-nav a {
+          flex:0 0 auto !important;
           min-height:40px !important;
           padding:0 10px !important;
           font-size:10px !important;
           letter-spacing:.16em !important;
         }
         .topbar-right {
-          width:auto !important;
+          width:100% !important;
+          max-width:100% !important;
+          min-width:0 !important;
           justify-content:center !important;
           margin-left:0 !important;
+          flex:0 1 auto !important;
         }
         .map-wrap .ownership-dock, .uoga-backpack-open .map-wrap .ownership-dock {
           left:10px !important;

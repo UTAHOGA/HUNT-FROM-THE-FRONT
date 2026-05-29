@@ -1494,6 +1494,36 @@
       overflow: visible;
     }
 
+    .research-page .research-shell,
+    .research-page .research-card,
+    .research-page .result-card,
+    .research-page .layout-grid,
+    .research-page .main-stack,
+    .research-page .hero-grid,
+    .research-page .card-body,
+    .research-page .control-grid,
+    .research-page .status-grid,
+    .research-page #detailContent,
+    .research-page .report-title,
+    .research-page .summary-grid,
+    .research-page .chip-grid,
+    .research-page .chip,
+    .research-page .summary-card,
+    .research-page .report-info-card,
+    .research-page #uogaApplicationOutlookDashboard,
+    .research-page .uoga-outlook-dashboard,
+    .research-page .uoga-outlook-hero,
+    .research-page .uoga-outlook-grid,
+    .research-page .uoga-outlook-panel,
+    .research-page #pointLadderAccordion,
+    .research-page .report-table-card,
+    .research-page .ladder-toolbar,
+    .research-page .quick-grid,
+    .research-page .proof-grid {
+      min-width: 0;
+      max-width: 100%;
+    }
+
     .research-page .report-table-wrap {
       max-height: calc(100vh - 190px);
       min-height: min(66vh, 690px);
@@ -1510,8 +1540,32 @@
     }
 
     @media (max-width: 768px) {
+      .research-page .hero-grid,
+      .research-page .layout-grid,
+      .research-page .control-grid,
+      .research-page .status-grid,
+      .research-page #detailContent,
+      .research-page .report-title,
+      .research-page .summary-grid,
+      .research-page .chip-grid,
+      .research-page .chip,
+      .research-page .summary-card,
+      .research-page .quick-grid,
+      .research-page .proof-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+        width: 100% !important;
+      }
+
+      .research-page .hero-card::after {
+        opacity: 0.08;
+        right: 12px;
+        width: min(220px, 72vw);
+      }
+
       .research-page .report-table-wrap {
         min-height: 52vh;
+        max-width: 100%;
+        overflow-x: auto;
       }
       .research-page .signal-inline {
         grid-template-columns: 1fr;
@@ -1787,6 +1841,6 @@
   <script src="./ui.js?v=20260524-backpack-hunt-data-1"></script>
   <script src="./hunt-research.js?v=20260529-research-snapshot-bridge-1"></script>
   <script src="./assets/js/research-outlook-dashboard.js?v=outlook-dashboard-readable-1"></script>
-  <script src="./header-layout.js?v=20260529-sticky-header-1"></script>
+  <script src="./header-layout.js?v=20260529-mobile-header-1"></script>
 </body>
 </html>
