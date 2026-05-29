@@ -7188,3 +7188,53 @@ o_table=0).
   - `git diff` confirmed no changes to protected database, predictive draw, or ladder feeds.
 - Data/source rules preserved:
   - Did not modify `DATABASE.csv`, raw/source truth, prediction formulas, point-ladder math, permit/allotment truth, p_draw values, or runtime source feeds.
+
+## Site Speed, Public Library, And Outfitter Data Readiness Audit
+- Timestamp (UTC): 2026-05-29T17:10:01Z
+- Implementation commit: pending at log-write time; final commit hash recorded in Codex final report.
+- Files created:
+  - `scripts/audit-site-performance-library-outfitters.js`
+  - `processed_data/audits/site_performance_asset_report.csv`
+  - `processed_data/audits/site_performance_asset_report.json`
+  - `processed_data/audits/public_library_curation_report.csv`
+  - `processed_data/audits/public_library_curation_report.json`
+  - `processed_data/audits/outfitter_data_readiness_report.json`
+  - `processed_data/audits/outfitter_data_readiness_report.md`
+  - `processed_data/audits/page_runtime_dependency_report.json`
+- Performance audit summary:
+  - Assets inventoried: 4,492.
+  - Large assets flagged: 38.
+  - Cloudflare/R2 candidates: 22.
+  - Files flagged as should-not-publish directly: 538.
+- Largest files observed:
+  - 84.0 MiB: `data/hunt_boundaries_arcgis.json`.
+  - 83.1 MiB: `data/utah/foundation_bundle_2026/utah_boundaries_canonical_2026.geojson`.
+  - 83.1 MiB: `data/utah/official_downloads_2026/statewide_composite_boundaries_2026_FINAL_LOCKED.geojson`.
+  - 70.0 MiB: `data/utah/foundation_bundle_2026/utah_hunt_foundation_2026.sqlite`.
+  - 21.5 MiB: `data/utah/foundation_bundle_2026/utah_boundaries_canonical_2026.kml`.
+  - 13.4 MiB: `processed_data/hard_data_exports/source_pdfs/2025/pdf/harvest_report/24_bg_HARVEST_report.pdf` and published copy.
+  - 12.1 MiB: 2025/2026 big-game draw-result PDFs and published copies.
+- Page dependency findings:
+  - `index.html` is the heavy path because it can depend on map/boundary data; composite/statewide boundary files should stay R2/Workers/lite/split, and outfitter marker geocoding should wait for hunt selection.
+  - `research.html` should continue Cloudflare-first runtime CSV loading; management objective/comparable hunt panels should remain lazy/secondary after core summary, and source details should stay collapsed.
+  - `hard-copy.html` already lazy-loads PDF.js/page-flip only when a PDF is opened; next improvement is splitting the library manifest by folder/category.
+  - `verify.html` should use public outfitter data only after records are public-ready and should lazy-load public cards/search after the shell renders.
+- Public library curation summary:
+  - Library rows audited: 1,127.
+  - Visible allowlist entries: 67.
+  - Status counts included `public_useful`: 808, `internal_only`: 326, `duplicate`: 335, `outdated`: 5, `broken_link`: 4, and `public_but_categorize_better`: 1.
+  - Cleanup recommendations: keep raw model/runtime/audit/intermediate files hidden; keep one canonical public entry for duplicates; mark older guidebooks/reports as historical; move oversized/public-heavy PDFs to R2 or provide smaller viewer/summary artifacts.
+- Outfitter readiness summary:
+  - `data/outfitters-public.json`: 0 rows.
+  - `data/outfitters.json`: 11 internal rows.
+  - Readiness status: 11 `HOLD_INTERNAL_ONLY`.
+  - Risk flags: 11 `not_in_public_feed`, 11 `normalization_only`, 11 `no_review_date`, and 1 `no_unit_coverage`.
+  - Next requirement before public launch: add `reviewed_at`, `source_evidence_count`, explicit `service_types`, public contact completeness, and hunt-code/boundary-reviewed unit coverage.
+- Validation:
+  - `node --check scripts/audit-site-performance-library-outfitters.js` passed.
+  - `node scripts/audit-site-performance-library-outfitters.js` passed and generated all requested outputs.
+  - `npm.cmd run build` passed. Existing optional build notices remain: `staging-audit.html`, `data/hunt_boundaries_finalized_2026.geojson`, and oversized `processed_data/composite_hunt_unit_mapping_2026.geojson` skipped for Pages.
+  - Build-generated library/pages-dist side-effect diffs were reverted and not included in the final change set.
+- Data/source rules preserved:
+  - Did not modify prediction math, source truth, `DATABASE.csv`, runtime feed values, outfitter records, or public library files.
+  - No public files were deleted or hidden in this task; reports only document recommendations.
