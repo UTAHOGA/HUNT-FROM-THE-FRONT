@@ -352,7 +352,7 @@
   function panel(title, body, extraClass = "") {
     return `
       <section class="uoga-outlook-panel ${extraClass}">
-        <h4>${escapeHtml(title)}</h4>
+        <h3>${escapeHtml(title)}</h3>
         ${body}
       </section>`;
   }
@@ -413,45 +413,85 @@
       || firstValue(meta, ["point_creep", "point_trend", "trend", "draw_trend"]);
   }
 
-  function decisionLabel(odds) {
-    const parsed = num(odds);
-    if (parsed === null) return "Needs source review";
-    const pct = parsed <= 1 && parsed > 0 ? parsed * 100 : parsed;
-    if (pct >= 90) return "Strong draw position";
-    if (pct >= 55) return "Competitive application";
-    if (pct >= 20) return "Long-shot but live";
-    return "Very long odds";
+  function isStatusOnlyContext(meta, reference, selectedRow) {
+    const text = [
+      meta?.hunt_type,
+      meta?.hunt_class,
+      meta?.permit_type,
+      reference?.hunt_type,
+      selectedRow?.hunt_type,
+      selectedRow?.hunt_class,
+      selectedRow?.status,
+    ].filter(Boolean).join(" ").toLowerCase();
+    return /statewide|conservation|expo|harvest objective|status only|availability|extended archery|pursuit/.test(text);
   }
 
-  function recommendationSentence(odds, permitTotal) {
+  function decisionLabel(odds, context = {}) {
+    if (context.statusOnly) return "STATUS / AVAILABILITY ONLY";
+    const parsed = num(odds);
+    if (parsed === null) return "INSUFFICIENT DATA";
+    const pct = parsed <= 1 && parsed > 0 ? parsed * 100 : parsed;
+    if (pct >= 60) return "STRONG APPLY";
+    if (pct >= 25) return "WITHIN REACH";
+    if (context.highQuality && pct < 25) return "QUALITY LONG SHOT";
+    return "LONG SHOT";
+  }
+
+  function recommendationSentence(odds, permitTotal, decision) {
+    if (decision === "STATUS / AVAILABILITY ONLY") {
+      return "This hunt is best read as a status or availability item, not a modeled draw-odds decision.";
+    }
+    if (decision === "INSUFFICIENT DATA") {
+      return "The loaded rows do not provide enough modeled odds data for a confident application read.";
+    }
     const parsed = num(odds);
     const permits = num(permitTotal);
     if (parsed === null) return "Draw outlook is waiting on a verified odds row for this selected point level.";
     const pct = parsed <= 1 && parsed > 0 ? parsed * 100 : parsed;
-    if (pct >= 90) return "This looks like a strong application position if the loaded ladder remains current.";
-    if (pct >= 55) return "This is a reasonable application candidate; compare quality and opportunity before committing.";
+    if (pct >= 60) return "Based on your points, this hunt appears within reach.";
     if (pct >= 20) return "This is a reach application; use comparable hunts to decide if the upside is worth it.";
     if (permits !== null && permits <= 5) return "Odds are thin and permit volume is very small, so treat this as a premium swing.";
     return "Odds are thin at this point level; consider comparable hunts with better opportunity.";
+  }
+
+  function badge(label, variant = "") {
+    return `<span class="uoga-badge ${variant ? `is-${escapeHtml(variant)}` : ""}">${escapeHtml(label)}</span>`;
+  }
+
+  function qualitySignal(row) {
+    const harvest = firstValue(row, ["success_percent", "harvest_success_percent_2025", "percent_harvest_success"]);
+    const age = row.average_harvest_age;
+    const harvestNum = num(harvest);
+    const ageNum = num(age);
+    if (ageNum !== null && ageNum > 0) return `${formatAge(age)} avg age`;
+    if (harvestNum !== null) return `${formatPercent(harvest)} harvest`;
+    return "Limited quality data";
+  }
+
+  function comparableStatus(row) {
+    const odds = firstValue(row, ["p_draw_pct", "random_draw_odds_2026", "odds_2026_projected", "success_ratio"]);
+    const status = firstValue(row, ["status", "draw_outlook", "point_status"]);
+    return hasValue(odds) ? formatPercent(odds) : formatValue(status, "Status not loaded");
   }
 
   function renderComparableCards(rows) {
     if (!rows.length) return `<p class="uoga-outlook-muted">No comparable rows loaded for this species/type/residency slice.</p>`;
     return `
       <div class="uoga-comparable-grid">
-        ${rows.slice(0, 5).map((row) => `
-          <article class="uoga-comparable-card">
-            <strong>${escapeHtml(row.hunt_code || "")}</strong>
-            <span>${escapeHtml(row.hunt_name || "Comparable hunt")}</span>
-            <div>
-              <b>${escapeHtml(formatInteger(firstValue(row, ["permits_2026_total", "public_permits_2026", "permit_allotment_2026_total"])))}</b>
-              <small>permits</small>
-            </div>
-            <div>
-              <b>${escapeHtml(formatAge(row.average_harvest_age))}</b>
-              <small>avg age</small>
-            </div>
-          </article>`).join("")}
+        <table class="uoga-comparable-table">
+          <thead>
+            <tr><th>Hunt</th><th>Odds / Status</th><th>Quality Signal</th><th>Why similar</th></tr>
+          </thead>
+          <tbody>
+            ${rows.slice(0, 3).map((row) => `
+              <tr>
+                <td><strong>${escapeHtml(row.hunt_code || "")}</strong><span>${escapeHtml(row.hunt_name || "Comparable hunt")}</span></td>
+                <td>${escapeHtml(comparableStatus(row))}</td>
+                <td>${escapeHtml(qualitySignal(row))}</td>
+                <td>Same species/type pool</td>
+              </tr>`).join("")}
+          </tbody>
+        </table>
       </div>`;
   }
 
@@ -461,37 +501,39 @@
       ? `${formatValue(row.management_objective_min)}${hasValue(row.management_objective_max) ? ` to ${formatValue(row.management_objective_max)}` : ""} ${formatValue(row.objective_unit, "")}`.trim()
       : "No objective row loaded";
     return panel("State Objective / Management Read", `
-      <div class="uoga-badge">Management Plan Context</div>
+      <div class="uoga-badge-row">${badge("Management Plan Context")}</div>
       ${listRows([
         metricRow("Objective type", formatValue(row.management_objective_type, "No objective row loaded")),
         metricRow("Objective range", objectiveRange),
         metricRow("Observed vs objective", formatValue(row.objective_status || row.observed_vs_objective_status || row.objective_status_rule)),
       ])}
-      <p class="uoga-outlook-note">${escapeHtml(formatValue(row.notes || row.objective_status_rule, "Benchmark only — does not change draw odds."))}</p>
-      <p class="uoga-outlook-muted">Benchmark only — does not change draw odds.</p>
+      <p class="uoga-outlook-note">${escapeHtml(formatValue(row.notes || row.objective_status_rule, "Benchmark only - does not change draw odds."))}</p>
+      <p class="uoga-outlook-muted">Benchmark only - does not change draw odds.</p>
     `);
   }
-
   function sourceDetails(selection, selectedRow, meta, sourceBits) {
     const sourceFile = firstValue(selectedRow, ["source_file", "truth_source_file", "average_harvest_age_source_file"])
       || firstValue(meta, ["truth_source_file", "average_harvest_age_source_file"]);
     const sourcePage = firstValue(selectedRow, ["page_number", "source_page", "truth_source_page"])
       || firstValue(meta, ["page_number", "source_page", "truth_source_page"]);
+    const tableTitle = firstValue(selectedRow, ["source_table_title", "table_title", "truth_source_table_title"])
+      || firstValue(meta, ["source_table_title", "table_title", "truth_source_table_title"]);
     return `
       <details class="uoga-source-details">
         <summary>Source / freshness / model details</summary>
         <div class="uoga-source-grid">
           ${metricRow("Engine mode", window.UOGA_CONFIG?.HUNT_RESEARCH_ENGINE_MODE || "observed")}
           ${metricRow("Data version", window.UOGA_CONFIG?.HUNT_RESEARCH_DATA_VERSION || "not configured")}
-          ${metricRow("Model/rule version", window.UOGA_CONFIG?.HUNT_RESEARCH_RULE_VERSION || window.UOGA_CONFIG?.HUNT_RESEARCH_MODEL_VERSION || "core Research rules")}
+          ${metricRow("Model version", window.UOGA_CONFIG?.HUNT_RESEARCH_MODEL_VERSION || "display-only dashboard")}
+          ${metricRow("Rule version", window.UOGA_CONFIG?.HUNT_RESEARCH_RULE_VERSION || "core Research rules")}
           ${metricRow("Selected hunt", `${selection.huntCode} / ${selection.residency} / ${selection.points} pts`)}
           ${metricRow("Source file", formatValue(sourceFile))}
           ${metricRow("Source page", formatValue(sourcePage))}
+          ${metricRow("Source table", formatValue(tableTitle))}
         </div>
         <p class="uoga-source-paths">${escapeHtml(sourceBits.join(" | "))}</p>
       </details>`;
   }
-
   function dashboardHtml(selection, context) {
     const { meta, reference, ladderRows, ladderPoint, engineRows, selectedRow, managementRows, comparable } = context;
     const title = meta?.hunt_name || selectedRow?.hunt_name || reference?.hunt_name || selection.huntCode || "Selected hunt";
@@ -506,8 +548,11 @@
     const pointStatus = firstValue(selectedRow, ["status", "draw_outlook", "point_status"])
       || firstValue(meta, ["status", "draw_outlook", "point_status"]);
     const percentFivePlus = getPercentFivePlus(meta, reference, selectedRow);
-    const decision = decisionLabel(odds);
-    const recommendation = recommendationSentence(odds, permitTotal);
+    const statusOnly = isStatusOnlyContext(meta, reference, selectedRow);
+    const highQuality = (num(harvestSuccess) ?? 0) >= 50 || (num(averageAge) ?? 0) >= 5;
+    const decision = decisionLabel(odds, { statusOnly, highQuality });
+    const recommendation = recommendationSentence(odds, permitTotal, decision);
+    const limitedData = !hasValue(odds) || !hasValue(harvestSuccess) || !hasValue(averageAge);
     const sourceBits = [
       `engine: ${state.sources.engine || "not loaded"}`,
       `ladder: ${state.sources.ladder || "not loaded"}`,
@@ -521,11 +566,17 @@
         <section class="uoga-outlook-hero">
           <div class="uoga-outlook-hero-title">
             <p>Hunt Application Outlook</p>
-            <h3>${escapeHtml(selection.huntCode || "No hunt selected")}: ${escapeHtml(title)}</h3>
-            <span>${escapeHtml(selection.residency)} · ${escapeHtml(String(selection.points))} points · ${escapeHtml(selection.drawPool)} draw pool</span>
+            <h2>${escapeHtml(selection.huntCode || "No hunt selected")} - ${escapeHtml(title)}</h2>
+            <span>${escapeHtml(selection.residency)} &middot; ${escapeHtml(String(selection.points))} points &middot; ${escapeHtml(selection.drawPool)} draw pool</span>
+            <div class="uoga-badge-row">
+              ${badge("Official DWR Source", "official")}
+              ${badge("U.O.G.A. Modeled Output", "modeled")}
+              ${limitedData ? badge("Review / Limited Data", "limited") : ""}
+              ${statusOnly ? badge("Status / Availability Only", "status") : ""}
+            </div>
           </div>
-          ${metricRow("Decision read", decision)}
-          ${metricRow("Estimated draw odds", formatPercent(odds))}
+          ${metricRow("Decision", decision)}
+          ${metricRow("Estimated odds", formatPercent(odds))}
           ${metricRow("2026 permits", formatInteger(permitTotal))}
           <p class="uoga-outlook-recommendation">${escapeHtml(recommendation)}</p>
         </section>
@@ -536,18 +587,18 @@
             metricRow("Guaranteed line", formatValue(guaranteedLine)),
             metricRow("Point creep / trend", formatValue(pointTrend)),
             metricRow("Permits", formatInteger(permitTotal)),
-          ]))}
+          ]), "is-modeled")}
           ${panel("Hunt Quality", listRows([
             metricRow("Harvest success", formatPercent(harvestSuccess)),
             metricRow("Average days hunted", formatValue(avgDays)),
             metricRow("Average harvest age", formatAge(averageAge)),
             metricRow("Current 3-year age avg", formatAge(currentAge)),
             metricRow("Percent 5+", formatPercent(percentFivePlus)),
-          ]))}
+          ]), "is-official")}
           ${renderManagementPanel(managementRows)}
         </div>
         <section class="uoga-outlook-panel is-compact uoga-outlook-wide">
-          <h4>Comparable Hunts</h4>
+          <h3>Comparable Hunts</h3>
           ${renderComparableCards(comparable)}
         </section>
         ${sourceDetails(selection, selectedRow, meta, sourceBits)}
@@ -564,6 +615,7 @@
         border: 1px solid rgba(124, 77, 38, 0.28);
         border-radius: 22px;
         overflow: hidden;
+        min-width: 0;
         background:
           radial-gradient(circle at top left, rgba(240, 120, 0, 0.14), transparent 32%),
           linear-gradient(180deg, rgba(255, 252, 246, 0.96), rgba(244, 233, 219, 0.96));
@@ -573,19 +625,26 @@
       .uoga-outlook-dashboard {
         display: grid;
         gap: 14px;
+        margin: 18px 0;
+        min-width: 0;
         padding: 14px;
       }
       .uoga-outlook-hero {
-        align-items: center;
+        align-items: stretch;
+        background: rgba(255,255,255,.06);
+        border: 1px solid rgba(170,124,84,.35);
+        border-radius: 18px;
         display: grid;
         gap: 12px;
-        grid-template-columns: minmax(260px, 1.25fr) repeat(3, minmax(150px, .6fr));
+        grid-template-columns: minmax(280px, 1.4fr) repeat(3, minmax(150px, .65fr));
+        min-width: 0;
+        padding: 16px;
       }
       .uoga-outlook-hero-title {
         min-width: 0;
       }
       .uoga-outlook-hero-title p,
-      .uoga-outlook-panel h4,
+      .uoga-outlook-panel h3,
       .uoga-source-details summary {
         color: #6e4323;
         font-size: 11px;
@@ -596,11 +655,13 @@
       .uoga-outlook-hero-title p {
         margin: 0 0 4px;
       }
+      .uoga-outlook-hero-title h2,
       .uoga-outlook-hero-title h3 {
         font-family: var(--font-display);
-        font-size: clamp(22px, 2.4vw, 32px);
-        line-height: .98;
+        font-size: clamp(28px, 2vw, 40px);
+        line-height: 1;
         margin: 0;
+        overflow-wrap: anywhere;
       }
       .uoga-outlook-hero-title span {
         color: var(--muted);
@@ -626,18 +687,21 @@
         display: grid;
         gap: 14px;
         grid-template-columns: 1fr 1fr 1fr;
+        min-width: 0;
       }
       .uoga-outlook-panel {
-        background: rgba(255,255,255,.50);
-        border: 1px solid rgba(124, 77, 38, 0.16);
-        border-radius: 18px;
+        background: rgba(255,255,255,.045);
+        border: 1px solid rgba(170,124,84,.28);
+        border-radius: 16px;
         min-height: auto;
-        padding: 13px;
+        min-width: 0;
+        padding: 14px;
       }
       .uoga-outlook-panel.is-compact {
         min-height: auto;
       }
-      .uoga-outlook-panel h4 {
+      .uoga-outlook-panel h3 {
+        font-family: var(--font-display);
         margin: 0 0 10px;
       }
       .uoga-outlook-wide { grid-column: 1 / -1; }
@@ -667,6 +731,7 @@
         color: #24170f;
         font-size: 16px;
         line-height: 1.12;
+        overflow-wrap: anywhere;
       }
       .uoga-outlook-metric small,
       .uoga-outlook-muted,
@@ -686,48 +751,70 @@
         padding: 6px 9px;
         text-transform: uppercase;
       }
+      .uoga-badge-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-top: 10px;
+      }
+      .uoga-badge.is-official {
+        background: rgba(33, 99, 132, .12);
+        border-color: rgba(33, 99, 132, .26);
+        color: #1f5d7c;
+      }
+      .uoga-badge.is-modeled {
+        background: rgba(124, 77, 38, .12);
+        border-color: rgba(124, 77, 38, .26);
+        color: #6e4323;
+      }
+      .uoga-badge.is-limited,
+      .uoga-badge.is-status {
+        background: rgba(196, 118, 0, .12);
+        border-color: rgba(196, 118, 0, .28);
+        color: #884f00;
+      }
       .uoga-outlook-note {
         margin: 10px 0 0;
       }
       .uoga-comparable-grid {
-        display: grid;
-        gap: 12px;
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-      }
-      .uoga-comparable-card {
-        background: rgba(255, 255, 255, .58);
-        border: 1px solid rgba(124, 77, 38, 0.14);
-        border-radius: 15px;
-        display: grid;
-        gap: 7px;
         min-width: 0;
-        padding: 11px;
+        overflow-x: auto;
       }
-      .uoga-comparable-card strong {
-        color: #24170f;
-        font-size: 16px;
+      .uoga-comparable-table {
+        border-collapse: collapse;
+        width: 100%;
       }
-      .uoga-comparable-card span {
+      .uoga-comparable-table th,
+      .uoga-comparable-table td {
+        border-bottom: 1px solid rgba(124, 77, 38, 0.13);
+        padding: 8px 9px;
+        text-align: left;
+        vertical-align: top;
+      }
+      .uoga-comparable-table th {
+        color: #6e4323;
+        font-size: 11px;
+        font-weight: 950;
+        letter-spacing: .05em;
+        text-transform: uppercase;
+      }
+      .uoga-comparable-table td {
+        color: #2b1c12;
+        font-weight: 800;
+      }
+      .uoga-comparable-table td span {
         color: var(--muted);
-        min-height: 34px;
-      }
-      .uoga-comparable-card div {
-        align-items: baseline;
-        display: flex;
-        gap: 6px;
-      }
-      .uoga-comparable-card b {
-        color: #24170f;
-      }
-      .uoga-comparable-card small {
-        color: var(--muted);
+        display: block;
+        font-weight: 700;
+        margin-top: 2px;
       }
       .uoga-source-details {
-        background: rgba(255, 255, 255, .38);
-        border: 1px solid rgba(124, 77, 38, 0.13);
-        border-radius: 16px;
+        background: rgba(255,255,255,.035);
+        border: 1px solid rgba(170,124,84,.25);
+        border-radius: 14px;
         margin-top: 4px;
-        padding: 10px 12px;
+        min-width: 0;
+        padding: 12px 14px;
       }
       .uoga-source-details summary {
         cursor: pointer;
@@ -759,18 +846,17 @@
         .uoga-source-grid {
           grid-template-columns: 1fr;
         }
-        .uoga-comparable-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
       }
       @media (max-width: 768px) {
         .uoga-outlook-dashboard,
         .uoga-outlook-hero,
         .uoga-outlook-grid,
-        .uoga-comparable-grid,
         .uoga-source-grid,
         .uoga-outlook-panel .uoga-outlook-metrics {
           grid-template-columns: 1fr;
+        }
+        .uoga-comparable-table {
+          min-width: 680px;
         }
       }
     `;
@@ -806,7 +892,7 @@
           <div class="uoga-outlook-hero-title">
             <p>Hunt Application Outlook</p>
             <h3>${escapeHtml(selection.huntCode || "Selected hunt")}</h3>
-            <span>${escapeHtml(selection.residency)} · ${escapeHtml(String(selection.points))} points</span>
+            <span>${escapeHtml(selection.residency)} &middot; ${escapeHtml(String(selection.points))} points</span>
           </div>
           <p class="uoga-outlook-recommendation">Loading Research rows for the dashboard display layer.</p>
         </section>
@@ -854,7 +940,7 @@
             <div class="uoga-outlook-hero-title">
               <p>Hunt Application Outlook</p>
               <h3>${escapeHtml(selection.huntCode)}</h3>
-              <span>${escapeHtml(selection.residency)} · ${escapeHtml(String(selection.points))} points</span>
+              <span>${escapeHtml(selection.residency)} &middot; ${escapeHtml(String(selection.points))} points</span>
             </div>
             <p class="uoga-outlook-recommendation">${escapeHtml(state.error)}</p>
           </section>
