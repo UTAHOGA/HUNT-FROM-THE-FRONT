@@ -7128,3 +7128,63 @@ o_table=0).
   - Build-generated library/pages-dist side-effect diffs were reverted and not included in the final change set.
 - Data/source rules preserved:
   - Did not modify `DATABASE.csv`, source truth files, runtime CSVs, engine materializers, prediction formulas, permit/allotment fields, or `p_draw`.
+
+## Management Plan Comparison Layer And Hunt Classification Engine
+- Timestamp (UTC): 2026-05-29T17:03:16Z
+- Implementation commit: pending at log-write time; final commit hash recorded in Codex final report.
+- Files created:
+  - `scripts/build-hunt-research-classification-layer.js`
+  - `processed_data/research_page/hunt_application_outlook.json`
+  - `processed_data/research_page/hunt_application_outlook.csv`
+  - `processed_data/research_page/hunt_classification_tags.csv`
+  - `processed_data/research_page/hunt_classification_tags.json`
+  - `processed_data/research_page/sleeper_hunts_report.csv`
+  - `processed_data/research_page/sleeper_hunts_report.json`
+  - `processed_data/research_page/new_hunts_report.csv`
+  - `processed_data/research_page/new_hunts_report.json`
+  - `processed_data/research_page/demographic_hunt_recommendations.json`
+  - `processed_data/audits/hunt_classification_layer_audit.json`
+- Output row counts:
+  - Hunt application outlook rows: 2,898.
+  - Hunt classification tag rows: 24,924.
+  - Sleeper hunt rows: 344.
+  - New hunt rows: 184.
+  - Demographic/persona groups: 10.
+- Tag counts summary:
+  - `TROPHY_DREAMER`: 2,460.
+  - `LONG_SHOT`: 2,175.
+  - `NO_VERIFIED_AGE_DATA`: 1,984.
+  - `FREEZER_FILLER`: 1,890.
+  - `POINT_SAVER`: 1,881.
+  - `HIGH_HARVEST_SUCCESS`: 1,586.
+  - `HIGH_PRESSURE_HUNT`: 1,410.
+  - `STATUS_OR_AVAILABILITY_ONLY`: 1,186.
+  - `VERIFIED_AGE_DATA`: 914.
+  - `WITHIN_REACH`: 209.
+  - `OBJECTIVE_KNOWN_NO_OBSERVED_DATA`: 6.
+  - `QUALITY_ABOVE_OBJECTIVE`: 4.
+- Demographic recommendation counts:
+  - `YOUTH_OPPORTUNITY`: 16.
+  - `BEGINNER_ANTLERLESS`: 484.
+  - `FREEZER_FILLER`: 1,890.
+  - `ELDER_FRIENDLY`: 1,164.
+  - `HARD_DRIVER`: 646.
+  - `TROPHY_DREAMER`: 2,460.
+  - `POINT_SAVER`: 1,881.
+  - `OPPORTUNIST`: 344.
+  - `GROUP_FRIENDLY`: 556.
+  - `EXTEND_THE_SEASON`: 292.
+- Management objective behavior:
+  - Elk plan objective rows compare verified observed/current age context to objective min/max where available.
+  - Mule deer plan objective rows stay `OBJECTIVE_KNOWN_NO_OBSERVED_DATA` unless verified buck:doe or percent age-5+ comparison data exists.
+  - Management objective context is display/benchmark only and does not change draw probability, p_draw, permits, quotas, or observed age fields.
+- Validation:
+  - `node --check scripts/build-hunt-research-classification-layer.js` passed.
+  - `node scripts/build-hunt-research-classification-layer.js` passed and regenerated all requested outputs.
+  - Output validation reported `output_average_harvest_age_zero_count = 0`.
+  - Output validation reported `average_days_hunted_mapped_as_age_suspect_count = 0`.
+  - Four rows have the same numeric days/verified-age value by coincidence; they are sourced from `harvest_age_features_by_hunt_code_latest.csv` and tracked separately as `average_days_hunted_same_as_verified_age_count = 4`.
+  - Protected file hashes remained unchanged for `DATABASE.csv`, `draw_reality_engine_predictive_v2.csv`, and `point_ladder_view.csv`.
+  - `git diff` confirmed no changes to protected database, predictive draw, or ladder feeds.
+- Data/source rules preserved:
+  - Did not modify `DATABASE.csv`, raw/source truth, prediction formulas, point-ladder math, permit/allotment truth, p_draw values, or runtime source feeds.

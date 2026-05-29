@@ -1,0 +1,85 @@
+{
+  "generated_at": "2026-05-29T17:02:39.714Z",
+  "inputs": {
+    "sync_matrix_rows": 10,
+    "readiness_engines": 10,
+    "management_context_rows": 6,
+    "elk_plan_present": true,
+    "mule_deer_plan_present": true,
+    "master_rows": 53225,
+    "ladder_rows": 91712,
+    "predictive_rows": 26507,
+    "harvest_rows": 5563,
+    "age_rows": 547,
+    "year_change_rows": 2562
+  },
+  "outputs": {
+    "outlook_rows": 2898,
+    "tag_rows": 24924,
+    "sleeper_hunt_rows": 344,
+    "new_hunt_rows": 184,
+    "demographic_groups": 10
+  },
+  "tag_counts": {
+    "STATUS_OR_AVAILABILITY_ONLY": 1186,
+    "LONG_SHOT": 2175,
+    "HIGH_HARVEST_SUCCESS": 1586,
+    "NO_VERIFIED_AGE_DATA": 1984,
+    "FREEZER_FILLER": 1890,
+    "HARD_DRIVER": 646,
+    "HIGH_PRESSURE_HUNT": 1410,
+    "TROPHY_DREAMER": 2460,
+    "POINT_SAVER": 1881,
+    "MAX_POINT_HUNT": 502,
+    "DELETED_OR_RENAMED_HISTORY": 2232,
+    "POINT_CREEP_WARNING": 171,
+    "PERMIT_REDUCTION_RISK": 88,
+    "PERMIT_INCREASE_WATCH": 450,
+    "INSUFFICIENT_DRAW_DATA": 514,
+    "LOW_HARVEST_SUCCESS": 138,
+    "DATA_LIMITED_DO_NOT_OVERSELL": 514,
+    "NEW_2026_HUNT": 184,
+    "EXTEND_THE_SEASON": 292,
+    "ELDER_FRIENDLY": 1164,
+    "GROUP_FRIENDLY": 556,
+    "SLEEPER_CANDIDATE": 344,
+    "OVERLOOKED_OPPORTUNITY": 344,
+    "OPPORTUNIST": 344,
+    "VERIFIED_AGE_DATA": 914,
+    "BEGINNER_ANTLERLESS": 484,
+    "WITHIN_REACH": 209,
+    "RANDOM_POOL_ONLY": 236,
+    "OBJECTIVE_KNOWN_NO_OBSERVED_DATA": 6,
+    "YOUTH_OPPORTUNITY": 16,
+    "QUALITY_ABOVE_OBJECTIVE": 4
+  },
+  "demographic_counts": {
+    "YOUTH_OPPORTUNITY": 16,
+    "BEGINNER_ANTLERLESS": 484,
+    "FREEZER_FILLER": 1890,
+    "ELDER_FRIENDLY": 1164,
+    "HARD_DRIVER": 646,
+    "TROPHY_DREAMER": 2460,
+    "POINT_SAVER": 1881,
+    "OPPORTUNIST": 344,
+    "GROUP_FRIENDLY": 556,
+    "EXTEND_THE_SEASON": 292
+  },
+  "validations": {
+    "output_average_harvest_age_zero_count": 0,
+    "average_days_hunted_mapped_as_age_suspect_count": 0,
+    "average_days_hunted_same_as_verified_age_count": 4,
+    "blocked_rows": 0
+  },
+  "protected_file_hashes_unchanged": {
+    "database": true,
+    "predictive": true,
+    "ladder": true
+  },
+  "guardrails": [
+    "No DATABASE.csv truth values modified.",
+    "No prediction formulas, point ladder math, p_draw, permits, or quotas modified.",
+    "Management objectives are benchmark/context only and never overwrite observed age or draw probability.",
+    "Mule deer percent_5plus is kept separate from average_harvest_age."
+  ]
+}
