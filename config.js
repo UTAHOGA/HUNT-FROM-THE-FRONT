@@ -71,15 +71,16 @@ window.UOGA_CONFIG = (() => {
   const HUNT_DATA_VERSION = '20260508-boundary-zero-unmapped-1';
   const OUTFITTERS_DATA_VERSION = '20260327-city-logo-refresh-1';
   const OUTFITTER_COVERAGE_VERSION = '20260327-federal-coverage-demo-1';
-  const HUNT_RESEARCH_DATA_VERSION = '20260521-predictive-runtime-sync-1';
+  const HUNT_RESEARCH_DATA_VERSION = '20260529-cloudflare-runtime-first-1';
 
   /*
     ============================================================================
     DATA SOURCE ORDERING RULE
     ----------------------------------------------------------------------------
     Current policy:
-    - local first
-    - Cloudflare fallback second
+    - Hunt Planner remains local-first for smaller canonical assets.
+    - Hunt Research large runtime CSVs are Cloudflare-first to avoid Git LFS
+      pointer files being served by static hosting.
 
     Keep this consistent unless you intentionally flip the whole site to prefer CDN.
     ============================================================================
@@ -213,17 +214,21 @@ window.UOGA_CONFIG = (() => {
   ];
 
   const HUNT_RESEARCH_OBSERVED_ENGINE_SOURCES = [
-    `./processed_data/draw_reality_engine_v2.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
     `${CLOUDFLARE_BASE}/processed_data/draw_reality_engine_v2.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
-    `./processed_data/draw_reality_engine.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
+    `${CLOUDFLARE_BASE}/draw_reality_engine_v2.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
+    `${CLOUDFLARE_BASE}/processed_data/draw_reality_engine.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
     `${CLOUDFLARE_BASE}/draw_reality_engine.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
+    `./processed_data/draw_reality_engine_v2.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
+    `./processed_data/draw_reality_engine.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
   ];
 
   const HUNT_RESEARCH_PREDICTIVE_ENGINE_SOURCES = [
-    `./processed_data/draw_reality_engine_predictive_v2.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
     `${CLOUDFLARE_BASE}/processed_data/draw_reality_engine_predictive_v2.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
-    `./processed_data/draw_reality_engine_v2.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
+    `${CLOUDFLARE_BASE}/draw_reality_engine_predictive_v2.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
     `${CLOUDFLARE_BASE}/processed_data/draw_reality_engine_v2.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
+    `${CLOUDFLARE_BASE}/draw_reality_engine_v2.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
+    `./processed_data/draw_reality_engine_predictive_v2.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
+    `./processed_data/draw_reality_engine_v2.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
   ];
 
   const HUNT_RESEARCH_ENGINE_MODE = USE_PREDICTIVE_DRAW_ENGINE ? 'predictive' : 'observed';
@@ -232,18 +237,21 @@ window.UOGA_CONFIG = (() => {
     : HUNT_RESEARCH_OBSERVED_ENGINE_SOURCES;
 
   const HUNT_RESEARCH_LADDER_SOURCES = [
-    `./processed_data/point_ladder_view.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
+    `${CLOUDFLARE_BASE}/processed_data/point_ladder_view.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
     `${CLOUDFLARE_BASE}/point_ladder_view.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
+    `./processed_data/point_ladder_view.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
   ];
 
   const HUNT_RESEARCH_MASTER_SOURCES = [
-    `./processed_data/hunt_master_enriched.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
+    `${CLOUDFLARE_BASE}/processed_data/hunt_master_enriched.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
     `${CLOUDFLARE_BASE}/hunt_master_enriched.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
+    `./processed_data/hunt_master_enriched.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
   ];
 
   const HUNT_RESEARCH_REFERENCE_SOURCES = [
-    `./processed_data/hunt_unit_reference_linked.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
+    `${CLOUDFLARE_BASE}/processed_data/hunt_unit_reference_linked.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
     `${CLOUDFLARE_BASE}/hunt_unit_reference_linked.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
+    `./processed_data/hunt_unit_reference_linked.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
   ];
 
   /*

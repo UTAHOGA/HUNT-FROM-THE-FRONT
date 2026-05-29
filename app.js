@@ -1849,7 +1849,7 @@ function getMapModeHash(value) {
   const mode = safe(value).trim().toLowerCase();
   if (mode === 'earth') return '#google-earth';
   if (mode === 'dwr') return '#dwr';
-  return '#google-maps';
+  return '';
 }
 
 function syncPlannerNavState() {
@@ -1879,7 +1879,8 @@ function syncMapModeFromHash() {
 function syncHashFromMapMode() {
   if (typeof window === 'undefined' || !mapTypeSelect) return;
   const nextHash = getMapModeHash(mapTypeSelect.value);
-  if (window.location.hash === nextHash) return;
+  if (nextHash && window.location.hash === nextHash) return;
+  if (!nextHash && !window.location.hash) return;
   history.replaceState(null, '', `${window.location.pathname}${window.location.search}${nextHash}`);
 }
 

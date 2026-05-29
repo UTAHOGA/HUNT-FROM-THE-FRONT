@@ -104,6 +104,7 @@ const dirsToCopy = [
   'processed_data/boundaries',
   'processed_data/hard_data_exports',
   'processed_data/library',
+  'processed_data/management_context',
   'processed_data/production',
   'public/hard-copy',
 ];

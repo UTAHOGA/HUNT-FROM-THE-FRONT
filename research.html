@@ -1093,6 +1093,77 @@
       }
     }
 
+    @media (min-width: 1221px) {
+      .research-shell {
+        width: min(1680px, calc(100vw - 64px));
+        max-width: 1680px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .layout-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        width: 100%;
+      }
+
+      .main-stack {
+        width: 100%;
+        max-width: none;
+      }
+
+      .controls-card,
+      .result-card,
+      .research-card {
+        width: 100%;
+        max-width: none;
+      }
+
+      .control-grid {
+        display: grid;
+        grid-template-columns: minmax(220px, 1fr) minmax(180px, .75fr) minmax(160px, .6fr) auto;
+        gap: 14px;
+        align-items: end;
+      }
+
+      .control-actions {
+        display: flex;
+        align-items: end;
+        justify-content: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .chip-grid,
+      .summary-grid,
+      .quick-grid,
+      .proof-grid {
+        width: 100%;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .report-grid {
+        grid-template-columns: minmax(0, 1fr);
+        width: 100%;
+      }
+
+      .report-table-card,
+      .report-info-card,
+      .report-table-wrap {
+        width: 100%;
+        max-width: none;
+      }
+
+      table.report-table {
+        width: 100%;
+        min-width: 960px;
+      }
+
+      #pointLadderAccordion {
+        width: 100%;
+      }
+    }
+
     @media (max-width: 1220px) {
       .hero-grid,
       .layout-grid,
@@ -1110,6 +1181,18 @@
     }
 
     @media (max-width: 768px) {
+      .control-grid,
+      .chip-grid,
+      .summary-grid,
+      .quick-grid,
+      .proof-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .summary-card.signal-card {
+        grid-column: auto;
+      }
+
       .research-shell {
         padding: 14px 14px 28px;
       }
@@ -1390,7 +1473,7 @@
     </div>
   </div>
 
-  <script src="./config.js?v=20260422-research-refresh-1"></script>
+  <script src="./config.js?v=20260529-cloudflare-runtime-first-1"></script>
   <script>
     (function () {
       var host = String(window.location && window.location.hostname || '').toLowerCase();
@@ -1412,8 +1495,8 @@
     })();
   </script>
   <script src="./ui.js?v=20260524-backpack-hunt-data-1"></script>
-  <script src="./hunt-research.js?v=20260524-guaranteed-line-2"></script>
-<script <script src="./assets/js/research-outlook-dashboard.js?v=outlook-dashboard-2"></script>
+  <script src="./hunt-research.js?v=20260529-research-snapshot-bridge-1"></script>
+  <script src="./assets/js/research-outlook-dashboard.js?v=outlook-dashboard-3"></script>
   <script src="./header-layout.js?v=20260524-bible-help-3"></script>
 </body>
 </html>

@@ -52,3 +52,27 @@ pages-dist/
 engine.zip
 processed_data/permit_allocation_2026_last_sync.json
 
+# /processed_data/point_ladder_view1
+
+# /processed_data/hunt_master_enriched1
+
+# /processed_data/draw_reality_engine1
+
+# /processed_data/draw_reality_engine_v21
+
+# /processed_data/hunt_master_enriched1
+
+# /processed_data/hunt_master_enriched_2026_draw_subset1
+
+# /processed_data/draw_system_coverage_report1
+
+
+
+
+point_ladder_view1.csv
+
+processed_data/point_ladder_view.csv
+
+processed_data/point_ladder_view1.csv
+
+processed_data/point_ladder_view*.csv
