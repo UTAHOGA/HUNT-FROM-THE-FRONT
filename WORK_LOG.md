@@ -6804,3 +6804,19 @@ o_table=0).
   - Bad split totals: 0.
   - Missing source rows: 0.
   - Spot checks passed for BI1000, BI6500, BI6503, BI6509, BI6527, BI6537, and BI6538.
+
+## Bison Cow Only 2026 Permit Truth Source Addition
+- Timestamp (UTC): 2026-05-29T11:49:00Z
+- Scope:
+  - Added `BISON_COW_ONLY` to `scripts/build-reviewed-permit-truth-sources-2026.py` from the user-pasted Utah DWR Hunt Planner BI cow-only rows.
+  - Created `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 bison cow only reviewed res-nr-total.csv` as a separate cow-only Bison family file from Hunters Choice.
+  - Preserved the pasted 2026/2027 season strings and resident/nonresident split counts.
+  - Included boundary-id metadata from `DATABASE.csv` and source lineage identifying the pasted DWR Hunt Planner source rows.
+  - Updated reviewed permit truth-source audit CSV/JSON.
+- Validation:
+  - BISON_COW_ONLY rows: 5.
+  - Full split rows: 5.
+  - Duplicate hunt codes: 0.
+  - Bad split totals: 0.
+  - Missing source rows: 0.
+  - Spot checks passed for BI6505, BI6506, BI6529, BI6536, and BI6539.

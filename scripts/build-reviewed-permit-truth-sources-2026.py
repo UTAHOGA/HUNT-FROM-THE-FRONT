@@ -83,6 +83,26 @@ Nine Mile, Private Lands Only	BI6538	Hunters Choice	Bison	Any Legal Weapon	Gener
         "sex_type": ("Hunters Choice",),
     },
     {
+        "family": "BISON_COW_ONLY",
+        "output": "2026 bison cow only reviewed res-nr-total.csv",
+        "source_label": "USER_PASTED_DWR_HUNT_PLANNER_BISON_COW_ONLY_BI_2026",
+        "inline_tsv": """
+Henry Mtns	BI6505	Cow Only	Bison	Any Legal Weapon	Once-in-a-lifetime	Dec 9 2026 - Dec 20 2026	Res: 8
+NonRes: 3
+Henry Mtns	BI6506	Cow Only	Bison	Any Legal Weapon	Once-in-a-lifetime	Dec 23, 2026 - Jan 3, 2027	Res: 11
+NonRes: 0
+Book Cliffs, Little Creek/South	BI6529	Cow Only	Bison	Any Legal Weapon	Once-in-a-lifetime	Oct 17 2026 - Oct 27 2026	Res: 8
+NonRes: 0
+Book Cliffs, Bitter Creek	BI6536	Cow Only	Bison	Any Legal Weapon	Once-in-a-lifetime	Nov 14 2026 - Nov 29 2026	Res: 15
+NonRes: 0
+Henry Mtns	BI6539	Cow Only	Bison	Any Legal Weapon	Once-in-a-lifetime	Jan 6 - 17, 2027	Res: 11
+NonRes: 0
+        """,
+        "code_prefixes": ("BI",),
+        "species": ("Bison",),
+        "sex_type": ("Cow Only",),
+    },
+    {
         "family": "BUCK_DEER",
         "output": "2026 buck deer all reviewed res-nr-total.csv",
         "sources": ["2026 DEER BUCK DRAW.xlsx"],

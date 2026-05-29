@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-05-29T11:46:34.867456+00:00",
+  "created_at": "2026-05-29T11:48:23.009169+00:00",
   "source": "pasted-aligned public hunt table workbooks plus reviewed inline pasted DWR Hunt Planner rows",
   "families": {
     "BLACK_BEAR": {
@@ -60,6 +60,25 @@
         "USER_PASTED_DWR_HUNT_PLANNER_BISON_BI_2026": 14
       },
       "output": "C:\\Users\\tyler\\Desktop\\GitHub\\HUNT-BUILDER\\pipeline\\RAW\\hunt_unit_database\\2026\\csv\\2026 Permits\\2026 bison reviewed res-nr-total.csv"
+    },
+    "BISON_COW_ONLY": {
+      "rows": 5,
+      "duplicate_hunt_codes": [],
+      "bad_split_totals": [],
+      "missing_source_rows": [],
+      "permit_status_counts": {
+        "FULL_SPLIT": 5
+      },
+      "hunt_type_counts": {
+        "Once-in-a-lifetime": 5
+      },
+      "weapon_counts": {
+        "Any Legal Weapon": 5
+      },
+      "source_counts": {
+        "USER_PASTED_DWR_HUNT_PLANNER_BISON_COW_ONLY_BI_2026": 5
+      },
+      "output": "C:\\Users\\tyler\\Desktop\\GitHub\\HUNT-BUILDER\\pipeline\\RAW\\hunt_unit_database\\2026\\csv\\2026 Permits\\2026 bison cow only reviewed res-nr-total.csv"
     },
     "BUCK_DEER": {
       "rows": 458,
