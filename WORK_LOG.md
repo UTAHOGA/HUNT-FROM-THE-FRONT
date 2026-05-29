@@ -6600,3 +6600,28 @@ o_table=0).
   - `npm.cmd run build` passed.
   - Gate PASS: 1449.
   - Gate BLOCK: 0.
+
+## Public Hunt Table Permit Split Refresh - Moose And Pronghorn
+- Timestamp (UTC): 2026-05-29T10:35:00Z
+- Scope:
+  - Updated public display hunt-table XLSX/PDF outputs for the pasted moose bull, pronghorn buck, and pronghorn doe source scopes.
+  - Kept DATABASE.csv as the controlling truth source for current permit values and seasons.
+  - Rebuilt the public moose bull O.I.L table to current-source scope only:
+    - 2026 MOOSE BULL O.I.L: 27 rows.
+  - Added public pronghorn buck display tables by hunt class:
+    - 2026 PRONGHORN BUCK L.E: 66 rows.
+    - 2026 PRONGHORN BUCK L.E PRIVATE LANDS ONLY: 6 rows.
+    - 2026 PRONGHORN BUCK CWMU: 21 rows.
+    - 2026 PRONGHORN BUCK STATEWIDE: 1 row.
+  - Added public pronghorn doe display tables by hunt class:
+    - 2026 PRONGHORN DOE GENERAL SEASON: 15 rows.
+    - 2026 PRONGHORN DOE CWMU: 8 rows.
+  - Held out historical-only/non-current rows from current public display tables, including PD1006, PD1016, PD1025, PD1026, PD1032, PD1045, PD1046, PB5313, and PB5341.
+  - Updated hard-copy PDF manifest links for the new public pronghorn table PDFs/XLSX companions.
+- Validation:
+  - Verified all target XLSX files exist and row counts match the selected current-source scopes.
+  - Verified matching PDFs exist locally and in pages-dist.
+  - Verified hard_copy_pdf_manifest.web.json contains all new public pronghorn table entries.
+  - `npm.cmd run build` passed.
+  - Gate PASS: 1449.
+  - Gate BLOCK: 0.

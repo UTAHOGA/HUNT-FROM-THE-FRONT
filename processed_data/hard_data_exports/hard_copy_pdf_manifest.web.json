@@ -3552,17 +3552,6 @@
     "group": "hunt_tables",
     "type": "pdf",
     "year": "2026",
-    "title": "2026 MOOSE BULL O.I.L",
-    "subtitle": "Clean public display hunt table PDF.",
-    "href": "./processed_data/hard_data_exports/hunt_tables/2026/PDF'S/2026 MOOSE BULL O.I.L.pdf",
-    "companion_type": "xlsx",
-    "companion_href": "./processed_data/hard_data_exports/hunt_tables/2026/XLXS/2026 MOOSE BULL O.I.L.xlsx",
-    "sort_order": 9040
-  },
-  {
-    "group": "hunt_tables",
-    "type": "pdf",
-    "year": "2026",
     "title": "2026 MOOSE COW O.I.L",
     "subtitle": "Clean public display hunt table PDF.",
     "href": "./processed_data/hard_data_exports/hunt_tables/2026/PDF'S/2026 MOOSE COW O.I.L.pdf",
@@ -3624,5 +3613,82 @@
     "companion_type": "xlsx",
     "companion_href": "./processed_data/hard_data_exports/hunt_tables/2026/XLXS/2026 TURKEY EITHER SEX DRAW.xlsx",
     "sort_order": 9046
+  },
+  {
+    "group": "hunt_tables",
+    "type": "pdf",
+    "year": "2026",
+    "title": "2026 MOOSE BULL O.I.L",
+    "subtitle": "Clean public display hunt table PDF.",
+    "href": "./processed_data/hard_data_exports/hunt_tables/2026/PDF'S/2026 MOOSE BULL O.I.L.pdf",
+    "companion_type": "xlsx",
+    "companion_href": "./processed_data/hard_data_exports/hunt_tables/2026/XLXS/2026 MOOSE BULL O.I.L.xlsx",
+    "sort_order": 9047
+  },
+  {
+    "group": "hunt_tables",
+    "type": "pdf",
+    "year": "2026",
+    "title": "2026 PRONGHORN BUCK L.E",
+    "subtitle": "Clean public display hunt table PDF.",
+    "href": "./processed_data/hard_data_exports/hunt_tables/2026/PDF'S/2026 PRONGHORN BUCK L.E.pdf",
+    "companion_type": "xlsx",
+    "companion_href": "./processed_data/hard_data_exports/hunt_tables/2026/XLXS/2026 PRONGHORN BUCK L.E.xlsx",
+    "sort_order": 9048
+  },
+  {
+    "group": "hunt_tables",
+    "type": "pdf",
+    "year": "2026",
+    "title": "2026 PRONGHORN BUCK L.E PRIVATE LANDS ONLY",
+    "subtitle": "Clean public display hunt table PDF.",
+    "href": "./processed_data/hard_data_exports/hunt_tables/2026/PDF'S/2026 PRONGHORN BUCK L.E PRIVATE LANDS ONLY.pdf",
+    "companion_type": "xlsx",
+    "companion_href": "./processed_data/hard_data_exports/hunt_tables/2026/XLXS/2026 PRONGHORN BUCK L.E PRIVATE LANDS ONLY.xlsx",
+    "sort_order": 9049
+  },
+  {
+    "group": "hunt_tables",
+    "type": "pdf",
+    "year": "2026",
+    "title": "2026 PRONGHORN BUCK CWMU",
+    "subtitle": "Clean public display hunt table PDF.",
+    "href": "./processed_data/hard_data_exports/hunt_tables/2026/PDF'S/2026 PRONGHORN BUCK CWMU.pdf",
+    "companion_type": "xlsx",
+    "companion_href": "./processed_data/hard_data_exports/hunt_tables/2026/XLXS/2026 PRONGHORN BUCK CWMU.xlsx",
+    "sort_order": 9050
+  },
+  {
+    "group": "hunt_tables",
+    "type": "pdf",
+    "year": "2026",
+    "title": "2026 PRONGHORN BUCK STATEWIDE",
+    "subtitle": "Clean public display hunt table PDF.",
+    "href": "./processed_data/hard_data_exports/hunt_tables/2026/PDF'S/2026 PRONGHORN BUCK STATEWIDE.pdf",
+    "companion_type": "xlsx",
+    "companion_href": "./processed_data/hard_data_exports/hunt_tables/2026/XLXS/2026 PRONGHORN BUCK STATEWIDE.xlsx",
+    "sort_order": 9051
+  },
+  {
+    "group": "hunt_tables",
+    "type": "pdf",
+    "year": "2026",
+    "title": "2026 PRONGHORN DOE GENERAL SEASON",
+    "subtitle": "Clean public display hunt table PDF.",
+    "href": "./processed_data/hard_data_exports/hunt_tables/2026/PDF'S/2026 PRONGHORN DOE GENERAL SEASON.pdf",
+    "companion_type": "xlsx",
+    "companion_href": "./processed_data/hard_data_exports/hunt_tables/2026/XLXS/2026 PRONGHORN DOE GENERAL SEASON.xlsx",
+    "sort_order": 9052
+  },
+  {
+    "group": "hunt_tables",
+    "type": "pdf",
+    "year": "2026",
+    "title": "2026 PRONGHORN DOE CWMU",
+    "subtitle": "Clean public display hunt table PDF.",
+    "href": "./processed_data/hard_data_exports/hunt_tables/2026/PDF'S/2026 PRONGHORN DOE CWMU.pdf",
+    "companion_type": "xlsx",
+    "companion_href": "./processed_data/hard_data_exports/hunt_tables/2026/XLXS/2026 PRONGHORN DOE CWMU.xlsx",
+    "sort_order": 9053
   }
 ]
