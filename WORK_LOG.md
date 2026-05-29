@@ -6820,3 +6820,24 @@ o_table=0).
   - Bad split totals: 0.
   - Missing source rows: 0.
   - Spot checks passed for BI6505, BI6506, BI6529, BI6536, and BI6539.
+
+## Deer Antlerless And Cougar 2026 Permit Truth Source Additions
+- Timestamp (UTC): 2026-05-29T11:52:00Z
+- Scope:
+  - Added `DEER_ANTLERLESS` to `scripts/build-reviewed-permit-truth-sources-2026.py` from the user-pasted Utah DWR Hunt Planner DA rows.
+  - Created `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 deer antlerless reviewed res-nr-total.csv`.
+  - Added `COUGAR_EITHER_SEX` from the user-pasted Utah DWR Hunt Planner CG9999 row.
+  - Created `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 cougar reviewed res-nr-total.csv`.
+  - Preserved `CG9999` as no-published-numeric because `unlimited permits.` is not a numeric permit count.
+  - Did not add DA1044 from `DATABASE.csv` because the user has not pasted that DWR source row; DA1044 remains the only current DA code not present in the reviewed pasted DA output.
+  - Updated reviewed permit truth-source audit CSV/JSON.
+- Validation:
+  - DEER_ANTLERLESS rows: 20.
+  - DEER_ANTLERLESS total-only rows: 16.
+  - DEER_ANTLERLESS full split rows: 4.
+  - COUGAR_EITHER_SEX rows: 1; blank/no published numeric permit rows: 1.
+  - Duplicate hunt codes: 0.
+  - Bad split totals: 0.
+  - Missing source rows: 0.
+  - DA reconciliation against `DATABASE.csv`: 21 DA database codes, 20 reviewed pasted DA codes, missing reviewed code `DA1044`.
+  - Spot checks passed for DA1001, DA1011, DA1041, DA1050, and CG9999.

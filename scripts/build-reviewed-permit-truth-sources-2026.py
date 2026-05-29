@@ -103,6 +103,51 @@ NonRes: 0
         "sex_type": ("Cow Only",),
     },
     {
+        "family": "DEER_ANTLERLESS",
+        "output": "2026 deer antlerless reviewed res-nr-total.csv",
+        "source_label": "USER_PASTED_DWR_HUNT_PLANNER_DEER_ANTLERLESS_DA_2026",
+        "inline_tsv": """
+Box Elder, West Bear River	DA1001	Antlerless	Deer	Archery, Muzzleloader, Shotgun	General Season	Aug 18 2025 - Aug 30 2025	Total: 30
+Box Elder, West Bear River	DA1002	Antlerless	Deer	Archery, Muzzleloader, Shotgun	General Season	Nov 24 2025 - Nov 29 2025	Total: 30
+Monroe/Plateau, Sevier Valley	DA1003	Antlerless	Deer	Archery, Muzzleloader, Shotgun	General Season	Sep 01 2025 - Sep 30 2025	Total: 15
+Pine Valley, Enterprise	DA1009	Antlerless	Deer	Any Legal Weapon	General Season	Aug 01 2025 - Aug 15 2025	Total: 25
+George Creek CWMU	DA1011	Antlerless	Deer	Any Legal Weapon	CWMU	Contact operator for 2025 season dates	Res: 5
+NonRes: 0
+Junction Valley CWMU	DA1012	Antlerless	Deer	Any Legal Weapon	CWMU	Contact operator for 2025 season dates	Res: 15
+NonRes: 0
+Mt Carmel CWMU	DA1013	Antlerless	Deer	Any Legal Weapon	CWMU	Contact operator for 2025 season dates	Res: 5
+NonRes: 0
+Pine Valley, New Harmony	DA1018	Antlerless	Deer	Archery, Muzzleloader, Shotgun	General Season	Aug 01 2025 - Aug 15 2025	Total: 20
+East Canyon, Davis-North Salt Lake	DA1027	Antlerless	Deer	Any Legal Weapon	General Season	Aug 01 2025 - Sep 15 2025	Total: 30
+Nine Mile, Price River Valley	DA1030	Antlerless	Deer	Archery	General Season	Aug 16 2025 - Sep 12 2025	Total: 25
+Oquirrh-Stansbury, Settlement Cyn	DA1031	Antlerless	Deer	Archery	General Season	Aug 16 2025 - Sep 12 2025	Total: 20
+San Juan, Monticello	DA1033	Antlerless	Deer	Archery	General Season	Aug 01 2025 - Sep 14 2025	Total: 5
+Nine Mile, Green River Valley	DA1041	Antlerless	Deer	Any Legal Weapon	General Season	Oct 04 2025 - Oct 26 2025	Total: 15
+San Juan, Monticello	DA1042	Antlerless	Deer	Archery	General Season	Nov 24 2025 - Dec 31 2025	Total: 5
+Fillmore, Oak City	DA1045	Antlerless	Deer	Archery	General Season	Aug 01 2025 - Sep 04 2025	Total: 20
+Nine Mile, Price River Valley	DA1046	Antlerless	Deer	Archery, Muzzleloader, Shotgun	General Season	Sep 13 2025 - Oct 12 2025	Total: 25
+Vernal-Ouray Valley	DA1047	Antlerless	Deer	Any Legal Weapon	General Season	Sep 27 2025 - Dec 12 2025	Total: 25
+Fillmore City	DA1048	Antlerless	Deer	Archery	General Season	Aug 01 2025 - Sep 04 2025	Total: 15
+Vernal, Ashley Valley	DA1049	Antlerless	Deer	Archery	General Season	Aug 16 2025 - Dec 12 2025	Total: 35
+The Rose of Snowville CWMU	DA1050	Antlerless	Deer	Any Legal Weapon	CWMU	Contact operator for 2025 season dates	Res: 8
+NonRes: 0
+        """,
+        "code_prefixes": ("DA",),
+        "species": ("Deer",),
+        "sex_type": ("Antlerless",),
+    },
+    {
+        "family": "COUGAR_EITHER_SEX",
+        "output": "2026 cougar reviewed res-nr-total.csv",
+        "source_label": "USER_PASTED_DWR_HUNT_PLANNER_COUGAR_CG_2026",
+        "inline_tsv": """
+Cougar - Statewide	CG9999	Either Sex	Cougar	Any Legal Weapon	Statewide	unlimited permits.
+        """,
+        "code_prefixes": ("CG",),
+        "species": ("Cougar",),
+        "sex_type": ("Either Sex",),
+    },
+    {
         "family": "BUCK_DEER",
         "output": "2026 buck deer all reviewed res-nr-total.csv",
         "sources": ["2026 DEER BUCK DRAW.xlsx"],

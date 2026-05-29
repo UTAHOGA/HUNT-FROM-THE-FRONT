@@ -1,0 +1,2 @@
+hunt_name,hunt_code,boundary_id,hunt_code_mapping_status,boundary_id_mapping_status,candidate_hunt_code,candidate_boundary_id,sex_type,species,weapon,hunt_type,season,permits_2026_res,permits_2026_nr,permits_2026_total,permit_count_status,source_file,source_row_number
+Cougar - Statewide,CG9999,5107,REVIEWED_CURRENT_HUNT_CODE,DATABASE_BOUNDARY_ID,CG9999,5107,Either Sex,Cougar,Any Legal Weapon,Statewide,unlimited permits.,,,,NO_PUBLISHED_NUMERIC_PERMIT,USER_PASTED_DWR_HUNT_PLANNER_COUGAR_CG_2026,1
