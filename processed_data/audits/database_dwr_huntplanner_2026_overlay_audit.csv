@@ -1067,10 +1067,10 @@ DS6610,"San Rafael, South",Desert Bighorn Sheep,permits_2026_total,MATCH,12,12,h
 GO6820,"Wasatch Mtns, Timpanogos",Mountain Goat,permits_2026_res,MATCH,8,8,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=GO6820
 GO6820,"Wasatch Mtns, Timpanogos",Mountain Goat,permits_2026_nr,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=GO6820
 GO6820,"Wasatch Mtns, Timpanogos",Mountain Goat,permits_2026_total,MATCH,10,10,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=GO6820
-PB5337,Heist CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5337
+PB5337,Heist CWMU,Pronghorn,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5337
 PB5337,Heist CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5337
 PB5337,Heist CWMU,Pronghorn,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5337
-PD1052,Heist CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1052
+PD1052,Heist CWMU,Pronghorn,permits_2026_res,MATCH,6,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1052
 PD1052,Heist CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1052
 PD1052,Heist CWMU,Pronghorn,permits_2026_total,NUMERIC_CONFLICT,6,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1052
 DB1015,Diamond Mtn,Deer,permits_2026_res,MATCH,22,22,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1015
@@ -1538,664 +1538,664 @@ DA1045,"Fillmore, Oak City",Deer,permits_2026_total,MATCH,20,20,https://dwrapps.
 EA1114,"Wasatch Mtns, West Timpanogos",Elk,permits_2026_res,MATCH,22,22,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1114
 EA1114,"Wasatch Mtns, West Timpanogos",Elk,permits_2026_nr,MATCH,3,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1114
 EA1114,"Wasatch Mtns, West Timpanogos",Elk,permits_2026_total,MATCH,25,25,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1114
-DB1258,Little Red Creek CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1258
+DB1258,Little Red Creek CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1258
 DB1258,Little Red Creek CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1258
 DB1258,Little Red Creek CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1258
-EA1147,Little Red Creek CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,15,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1147
+EA1147,Little Red Creek CWMU,Elk,permits_2026_res,MATCH,15,15,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1147
 EA1147,Little Red Creek CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1147
 EA1147,Little Red Creek CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,15,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1147
-EB3534,Little Red Creek CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3534
+EB3534,Little Red Creek CWMU,Elk,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3534
 EB3534,Little Red Creek CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3534
 EB3534,Little Red Creek CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3534
-DB1263,Moon Ranch CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1263
+DB1263,Moon Ranch CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1263
 DB1263,Moon Ranch CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1263
 DB1263,Moon Ranch CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1263
-EA1151,Moon Ranch CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1151
+EA1151,Moon Ranch CWMU,Elk,permits_2026_res,MATCH,6,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1151
 EA1151,Moon Ranch CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1151
 EA1151,Moon Ranch CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,6,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1151
-EB3538,Moon Ranch CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3538
+EB3538,Moon Ranch CWMU,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3538
 EB3538,Moon Ranch CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3538
 EB3538,Moon Ranch CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3538
-DB1310,White's Valley CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1310
+DB1310,White's Valley CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1310
 DB1310,White's Valley CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1310
 DB1310,White's Valley CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1310
-DB1244,Green Canyon CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1244
+DB1244,Green Canyon CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1244
 DB1244,Green Canyon CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1244
 DB1244,Green Canyon CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1244
-DB1289,Sharp Mountain CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1289
+DB1289,Sharp Mountain CWMU,Deer,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1289
 DB1289,Sharp Mountain CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1289
 DB1289,Sharp Mountain CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1289
-EA1235,Sharp Mountain CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,10,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1235
+EA1235,Sharp Mountain CWMU,Elk,permits_2026_res,MATCH,10,10,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1235
 EA1235,Sharp Mountain CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1235
 EA1235,Sharp Mountain CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,10,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1235
-EB3610,Sharp Mountain CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3610
+EB3610,Sharp Mountain CWMU,Elk,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3610
 EB3610,Sharp Mountain CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3610
 EB3610,Sharp Mountain CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3610
-DB1293,South Canyon CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1293
+DB1293,South Canyon CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1293
 DB1293,South Canyon CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1293
 DB1293,South Canyon CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1293
-EA1167,South Canyon CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,12,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1167
+EA1167,South Canyon CWMU,Elk,permits_2026_res,MATCH,12,12,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1167
 EA1167,South Canyon CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1167
 EA1167,South Canyon CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,12,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1167
-EB3554,South Canyon CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3554
+EB3554,South Canyon CWMU,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3554
 EB3554,South Canyon CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3554
 EB3554,South Canyon CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3554
-DB1303,North Peaks CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1303
+DB1303,North Peaks CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1303
 DB1303,North Peaks CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1303
 DB1303,North Peaks CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1303
-EB3565,North Peaks CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3565
+EB3565,North Peaks CWMU,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3565
 EB3565,North Peaks CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3565
 EB3565,North Peaks CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3565
-DB1252,Ingham Peak CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1252
+DB1252,Ingham Peak CWMU,Deer,permits_2026_res,MATCH,3,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1252
 DB1252,Ingham Peak CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1252
 DB1252,Ingham Peak CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,3,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1252
-EB3528,Ingham Peak CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3528
+EB3528,Ingham Peak CWMU,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3528
 EB3528,Ingham Peak CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3528
 EB3528,Ingham Peak CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3528
-DB1328,Clear Creek CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1328
+DB1328,Clear Creek CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1328
 DB1328,Clear Creek CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1328
 DB1328,Clear Creek CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1328
-DB1250,Indian Creek CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1250
+DB1250,Indian Creek CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1250
 DB1250,Indian Creek CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1250
 DB1250,Indian Creek CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1250
-DB1281,Rattlesnake Pass CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1281
+DB1281,Rattlesnake Pass CWMU,Deer,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1281
 DB1281,Rattlesnake Pass CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1281
 DB1281,Rattlesnake Pass CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1281
-DB1241,Golden Spike CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1241
+DB1241,Golden Spike CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1241
 DB1241,Golden Spike CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1241
 DB1241,Golden Spike CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1241
-DB1306,Washakie CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1306
+DB1306,Washakie CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1306
 DB1306,Washakie CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1306
 DB1306,Washakie CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1306
-DB1209,Blind Springs CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1209
+DB1209,Blind Springs CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1209
 DB1209,Blind Springs CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1209
 DB1209,Blind Springs CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1209
-DB1277,Pocatello Valley CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1277
+DB1277,Pocatello Valley CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1277
 DB1277,Pocatello Valley CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1277
 DB1277,Pocatello Valley CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1277
-DB1280,Promontory Point CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1280
+DB1280,Promontory Point CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1280
 DB1280,Promontory Point CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1280
 DB1280,Promontory Point CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1280
-DB1270,Nucor West CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1270
+DB1270,Nucor West CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1270
 DB1270,Nucor West CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1270
 DB1270,Nucor West CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1270
-DB1273,Park Valley Hereford CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1273
+DB1273,Park Valley Hereford CWMU,Deer,permits_2026_res,MATCH,6,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1273
 DB1273,Park Valley Hereford CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1273
 DB1273,Park Valley Hereford CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,6,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1273
-DB1222,Coldwater Ranch CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1222
+DB1222,Coldwater Ranch CWMU,Deer,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1222
 DB1222,Coldwater Ranch CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1222
 DB1222,Coldwater Ranch CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1222
-EA1125,Coldwater Ranch CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,25,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1125
+EA1125,Coldwater Ranch CWMU,Elk,permits_2026_res,MATCH,25,25,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1125
 EA1125,Coldwater Ranch CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1125
 EA1125,Coldwater Ranch CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,25,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1125
-EB3509,Coldwater Ranch CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3509
+EB3509,Coldwater Ranch CWMU,Elk,permits_2026_res,MATCH,3,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3509
 EB3509,Coldwater Ranch CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3509
 EB3509,Coldwater Ranch CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,3,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3509
-DA1050,The Rose of Snowville CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,8,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DA1050
+DA1050,The Rose of Snowville CWMU,Deer,permits_2026_res,MATCH,8,8,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DA1050
 DA1050,The Rose of Snowville CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DA1050
 DA1050,The Rose of Snowville CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,8,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DA1050
-DB1347,The Rose of Snowville CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1347
+DB1347,The Rose of Snowville CWMU,Deer,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1347
 DB1347,The Rose of Snowville CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1347
 DB1347,The Rose of Snowville CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1347
-PB5311,The Rose of Snowville CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5311
+PB5311,The Rose of Snowville CWMU,Pronghorn,permits_2026_res,MATCH,3,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5311
 PB5311,The Rose of Snowville CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5311
 PB5311,The Rose of Snowville CWMU,Pronghorn,permits_2026_total,NUMERIC_CONFLICT,3,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5311
-PD1048,The Rose of Snowville CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1048
+PD1048,The Rose of Snowville CWMU,Pronghorn,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1048
 PD1048,The Rose of Snowville CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1048
 PD1048,The Rose of Snowville CWMU,Pronghorn,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1048
-DB1211,Blue Spring Hills CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1211
+DB1211,Blue Spring Hills CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1211
 DB1211,Blue Spring Hills CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1211
 DB1211,Blue Spring Hills CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1211
-DB1308,West Hills CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1308
+DB1308,West Hills CWMU,Deer,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1308
 DB1308,West Hills CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1308
 DB1308,West Hills CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1308
-DB1231,Dove Creek CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1231
+DB1231,Dove Creek CWMU,Deer,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1231
 DB1231,Dove Creek CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1231
 DB1231,Dove Creek CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1231
-DB1269,North Promontory CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1269
+DB1269,North Promontory CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1269
 DB1269,North Promontory CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1269
 DB1269,North Promontory CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1269
-DB1239,Fort Ranch CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1239
+DB1239,Fort Ranch CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1239
 DB1239,Fort Ranch CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1239
 DB1239,Fort Ranch CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1239
-DB1325,Double Cone CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1325
+DB1325,Double Cone CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1325
 DB1325,Double Cone CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1325
 DB1325,Double Cone CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1325
-EA1130,Double Cone CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,7,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1130
+EA1130,Double Cone CWMU,Elk,permits_2026_res,MATCH,7,7,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1130
 EA1130,Double Cone CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1130
 EA1130,Double Cone CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,7,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1130
-EB3515,Double Cone CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3515
+EB3515,Double Cone CWMU,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3515
 EB3515,Double Cone CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3515
 EB3515,Double Cone CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3515
-EA1158,Cactus Ranch LLC CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,7,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1158
+EA1158,Cactus Ranch LLC CWMU,Elk,permits_2026_res,MATCH,7,7,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1158
 EA1158,Cactus Ranch LLC CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1158
 EA1158,Cactus Ranch LLC CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,7,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1158
-EB3545,Cactus Ranch LLC CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3545
+EB3545,Cactus Ranch LLC CWMU,Elk,permits_2026_res,MATCH,3,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3545
 EB3545,Cactus Ranch LLC CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3545
 EB3545,Cactus Ranch LLC CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,3,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3545
-DB1264,Mountain Meadow CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1264
+DB1264,Mountain Meadow CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1264
 DB1264,Mountain Meadow CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1264
 DB1264,Mountain Meadow CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1264
-DB1236,Engineer Springs CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1236
+DB1236,Engineer Springs CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1236
 DB1236,Engineer Springs CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1236
 DB1236,Engineer Springs CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1236
-DB1233,East Fork Chalk Creek CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1233
+DB1233,East Fork Chalk Creek CWMU,Deer,permits_2026_res,MATCH,4,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1233
 DB1233,East Fork Chalk Creek CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1233
 DB1233,East Fork Chalk Creek CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,4,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1233
-EA1132,East Fork Chalk Creek CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,30,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1132
+EA1132,East Fork Chalk Creek CWMU,Elk,permits_2026_res,MATCH,30,30,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1132
 EA1132,East Fork Chalk Creek CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1132
 EA1132,East Fork Chalk Creek CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,30,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1132
-EB3517,East Fork Chalk Creek CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3517
+EB3517,East Fork Chalk Creek CWMU,Elk,permits_2026_res,MATCH,3,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3517
 EB3517,East Fork Chalk Creek CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3517
 EB3517,East Fork Chalk Creek CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,3,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3517
-MB6208,East Fork Chalk Creek CWMU,Moose,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6208
+MB6208,East Fork Chalk Creek CWMU,Moose,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6208
 MB6208,East Fork Chalk Creek CWMU,Moose,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6208
 MB6208,East Fork Chalk Creek CWMU,Moose,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6208
-DB1304,Two Bear CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1304
+DB1304,Two Bear CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1304
 DB1304,Two Bear CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1304
 DB1304,Two Bear CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1304
-EA1174,Two Bear CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,60,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1174
+EA1174,Two Bear CWMU,Elk,permits_2026_res,MATCH,60,60,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1174
 EA1174,Two Bear CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1174
 EA1174,Two Bear CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,60,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1174
-DB1237,Ensign Ranches CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1237
+DB1237,Ensign Ranches CWMU,Deer,permits_2026_res,MATCH,3,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1237
 DB1237,Ensign Ranches CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1237
 DB1237,Ensign Ranches CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,3,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1237
-EA1134,Ensign Ranches CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,60,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1134
+EA1134,Ensign Ranches CWMU,Elk,permits_2026_res,MATCH,60,60,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1134
 EA1134,Ensign Ranches CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1134
 EA1134,Ensign Ranches CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,60,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1134
-EB3519,Ensign Ranches CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3519
+EB3519,Ensign Ranches CWMU,Elk,permits_2026_res,MATCH,6,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3519
 EB3519,Ensign Ranches CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3519
 EB3519,Ensign Ranches CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,6,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3519
-DB1349,Weber Florence Creek/Stillman Creek CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,9,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1349
+DB1349,Weber Florence Creek/Stillman Creek CWMU,Deer,permits_2026_res,MATCH,9,9,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1349
 DB1349,Weber Florence Creek/Stillman Creek CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1349
 DB1349,Weber Florence Creek/Stillman Creek CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,9,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1349
-EA1263,Weber Florence Creek/Stillman Creek CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,35,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1263
+EA1263,Weber Florence Creek/Stillman Creek CWMU,Elk,permits_2026_res,MATCH,35,35,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1263
 EA1263,Weber Florence Creek/Stillman Creek CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1263
 EA1263,Weber Florence Creek/Stillman Creek CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,35,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1263
-EB3619,Weber Florence Creek/Stillman Creek CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,10,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3619
+EB3619,Weber Florence Creek/Stillman Creek CWMU,Elk,permits_2026_res,MATCH,10,10,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3619
 EB3619,Weber Florence Creek/Stillman Creek CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3619
 EB3619,Weber Florence Creek/Stillman Creek CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,10,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3619
-MB6266,Weber Florence Creek/Stillman Creek CWMU,Moose,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6266
+MB6266,Weber Florence Creek/Stillman Creek CWMU,Moose,permits_2026_res,MATCH,3,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6266
 MB6266,Weber Florence Creek/Stillman Creek CWMU,Moose,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6266
 MB6266,Weber Florence Creek/Stillman Creek CWMU,Moose,permits_2026_total,NUMERIC_CONFLICT,3,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6266
-DB1242,Grass Valley/Clark Canyon CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,14,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1242
+DB1242,Grass Valley/Clark Canyon CWMU,Deer,permits_2026_res,MATCH,14,14,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1242
 DB1242,Grass Valley/Clark Canyon CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1242
 DB1242,Grass Valley/Clark Canyon CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,14,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1242
-EA1136,Grass Valley/Clark Canyon CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,50,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1136
+EA1136,Grass Valley/Clark Canyon CWMU,Elk,permits_2026_res,MATCH,50,50,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1136
 EA1136,Grass Valley/Clark Canyon CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1136
 EA1136,Grass Valley/Clark Canyon CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,50,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1136
-EB3521,Grass Valley/Clark Canyon CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,10,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3521
+EB3521,Grass Valley/Clark Canyon CWMU,Elk,permits_2026_res,MATCH,10,10,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3521
 EB3521,Grass Valley/Clark Canyon CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3521
 EB3521,Grass Valley/Clark Canyon CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,10,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3521
-MB6211,Grass Valley/Clark Canyon CWMU,Moose,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6211
+MB6211,Grass Valley/Clark Canyon CWMU,Moose,permits_2026_res,MATCH,4,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6211
 MB6211,Grass Valley/Clark Canyon CWMU,Moose,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6211
 MB6211,Grass Valley/Clark Canyon CWMU,Moose,permits_2026_total,NUMERIC_CONFLICT,4,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6211
-DB1200,Alton - Premium Buck CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1200
+DB1200,Alton - Premium Buck CWMU,Deer,permits_2026_res,MATCH,3,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1200
 DB1200,Alton - Premium Buck CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1200
 DB1200,Alton - Premium Buck CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,3,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1200
-DB1201,Alton - Management Buck CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1201
+DB1201,Alton - Management Buck CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1201
 DB1201,Alton - Management Buck CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1201
 DB1201,Alton - Management Buck CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1201
-DB1334,Alton - Cactus Buck CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1334
+DB1334,Alton - Cactus Buck CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1334
 DB1334,Alton - Cactus Buck CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1334
 DB1334,Alton - Cactus Buck CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1334
-EA1118,Alton CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1118
+EA1118,Alton CWMU,Elk,permits_2026_res,MATCH,6,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1118
 EA1118,Alton CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1118
 EA1118,Alton CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,6,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1118
-EB3500,Alton CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3500
+EB3500,Alton CWMU,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3500
 EB3500,Alton CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3500
 EB3500,Alton CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3500
-DB1205,Bar J Ranch CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1205
+DB1205,Bar J Ranch CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1205
 DB1205,Bar J Ranch CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1205
 DB1205,Bar J Ranch CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1205
-EA1119,Bar J Ranch CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,12,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1119
+EA1119,Bar J Ranch CWMU,Elk,permits_2026_res,MATCH,12,12,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1119
 EA1119,Bar J Ranch CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1119
 EA1119,Bar J Ranch CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,12,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1119
-EB3501,Bar J Ranch CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3501
+EB3501,Bar J Ranch CWMU,Elk,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3501
 EB3501,Bar J Ranch CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3501
 EB3501,Bar J Ranch CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3501
-DB1213,Boobe Hole CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1213
+DB1213,Boobe Hole CWMU,Deer,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1213
 DB1213,Boobe Hole CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1213
 DB1213,Boobe Hole CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1213
-EA1121,Boobe Hole CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,10,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1121
+EA1121,Boobe Hole CWMU,Elk,permits_2026_res,MATCH,10,10,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1121
 EA1121,Boobe Hole CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1121
 EA1121,Boobe Hole CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,10,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1121
-EB3505,Boobe Hole CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3505
+EB3505,Boobe Hole CWMU,Elk,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3505
 EB3505,Boobe Hole CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3505
 EB3505,Boobe Hole CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3505
-DB1243,Grazing Pasture CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1243
+DB1243,Grazing Pasture CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1243
 DB1243,Grazing Pasture CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1243
 DB1243,Grazing Pasture CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1243
-EA1137,Grazing Pasture CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,9,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1137
+EA1137,Grazing Pasture CWMU,Elk,permits_2026_res,MATCH,9,9,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1137
 EA1137,Grazing Pasture CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1137
 EA1137,Grazing Pasture CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,9,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1137
-EB3522,Grazing Pasture CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3522
+EB3522,Grazing Pasture CWMU,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3522
 EB3522,Grazing Pasture CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3522
 EB3522,Grazing Pasture CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3522
-DB1255,Johnson Mountain Ranch CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1255
+DB1255,Johnson Mountain Ranch CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1255
 DB1255,Johnson Mountain Ranch CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1255
 DB1255,Johnson Mountain Ranch CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1255
-EA1145,Johnson Mountain Ranch CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,20,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1145
+EA1145,Johnson Mountain Ranch CWMU,Elk,permits_2026_res,MATCH,20,20,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1145
 EA1145,Johnson Mountain Ranch CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1145
 EA1145,Johnson Mountain Ranch CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,20,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1145
-EB3531,Johnson Mountain Ranch CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3531
+EB3531,Johnson Mountain Ranch CWMU,Elk,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3531
 EB3531,Johnson Mountain Ranch CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3531
 EB3531,Johnson Mountain Ranch CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3531
-DA1013,Mt Carmel CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DA1013
+DA1013,Mt Carmel CWMU,Deer,permits_2026_res,MATCH,5,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DA1013
 DA1013,Mt Carmel CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DA1013
 DA1013,Mt Carmel CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,5,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DA1013
-DB1266,Mt Carmel CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1266
+DB1266,Mt Carmel CWMU,Deer,permits_2026_res,MATCH,3,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1266
 DB1266,Mt Carmel CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1266
 DB1266,Mt Carmel CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,3,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1266
-DB1271,Oak Ranch CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1271
+DB1271,Oak Ranch CWMU,Deer,permits_2026_res,MATCH,3,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1271
 DB1271,Oak Ranch CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1271
 DB1271,Oak Ranch CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,3,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1271
-DB1272,Old Woman Plateau CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1272
+DB1272,Old Woman Plateau CWMU,Deer,permits_2026_res,MATCH,3,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1272
 DB1272,Old Woman Plateau CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1272
 DB1272,Old Woman Plateau CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,3,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1272
-EA1153,Old Woman Plateau CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1153
+EA1153,Old Woman Plateau CWMU,Elk,permits_2026_res,MATCH,4,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1153
 EA1153,Old Woman Plateau CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1153
 EA1153,Old Woman Plateau CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,4,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1153
-EB3540,Old Woman Plateau CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3540
+EB3540,Old Woman Plateau CWMU,Elk,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3540
 EB3540,Old Woman Plateau CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3540
 EB3540,Old Woman Plateau CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3540
-PB5315,Zane CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5315
+PB5315,Zane CWMU,Pronghorn,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5315
 PB5315,Zane CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5315
 PB5315,Zane CWMU,Pronghorn,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5315
-PD1049,Zane CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1049
+PD1049,Zane CWMU,Pronghorn,permits_2026_res,MATCH,6,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1049
 PD1049,Zane CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1049
 PD1049,Zane CWMU,Pronghorn,permits_2026_total,NUMERIC_CONFLICT,6,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1049
-DB1287,Scofield Canyons CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1287
+DB1287,Scofield Canyons CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1287
 DB1287,Scofield Canyons CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1287
 DB1287,Scofield Canyons CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1287
-EA1161,Scofield Canyons CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,9,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1161
+EA1161,Scofield Canyons CWMU,Elk,permits_2026_res,MATCH,9,9,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1161
 EA1161,Scofield Canyons CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1161
 EA1161,Scofield Canyons CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,9,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1161
-EB3548,Scofield Canyons CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3548
+EB3548,Scofield Canyons CWMU,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3548
 EB3548,Scofield Canyons CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3548
 EB3548,Scofield Canyons CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3548
-EA1162,Scofield East CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,14,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1162
+EA1162,Scofield East CWMU,Elk,permits_2026_res,MATCH,14,14,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1162
 EA1162,Scofield East CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1162
 EA1162,Scofield East CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,14,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1162
-EB3549,Scofield East CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3549
+EB3549,Scofield East CWMU,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3549
 EB3549,Scofield East CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3549
 EB3549,Scofield East CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3549
-DB1288,Scofield West CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1288
+DB1288,Scofield West CWMU,Deer,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1288
 DB1288,Scofield West CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1288
 DB1288,Scofield West CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1288
-EA1163,Scofield West CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,19,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1163
+EA1163,Scofield West CWMU,Elk,permits_2026_res,MATCH,19,19,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1163
 EA1163,Scofield West CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1163
 EA1163,Scofield West CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,19,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1163
-EB3550,Scofield West CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3550
+EB3550,Scofield West CWMU,Elk,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3550
 EB3550,Scofield West CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3550
 EB3550,Scofield West CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3550
-DB1279,Preston Nutter Ranch CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1279
+DB1279,Preston Nutter Ranch CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1279
 DB1279,Preston Nutter Ranch CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1279
 DB1279,Preston Nutter Ranch CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1279
-EA1156,Preston Nutter Ranch CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,21,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1156
+EA1156,Preston Nutter Ranch CWMU,Elk,permits_2026_res,MATCH,21,21,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1156
 EA1156,Preston Nutter Ranch CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1156
 EA1156,Preston Nutter Ranch CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,21,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1156
-EB3543,Preston Nutter Ranch CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3543
+EB3543,Preston Nutter Ranch CWMU,Elk,permits_2026_res,MATCH,3,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3543
 EB3543,Preston Nutter Ranch CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3543
 EB3543,Preston Nutter Ranch CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,3,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3543
-DB1283,Roan Cliffs CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1283
+DB1283,Roan Cliffs CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1283
 DB1283,Roan Cliffs CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1283
 DB1283,Roan Cliffs CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1283
-EA1159,Roan Cliffs CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1159
+EA1159,Roan Cliffs CWMU,Elk,permits_2026_res,MATCH,6,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1159
 EA1159,Roan Cliffs CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1159
 EA1159,Roan Cliffs CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,6,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1159
-EB3546,Roan Cliffs CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3546
+EB3546,Roan Cliffs CWMU,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3546
 EB3546,Roan Cliffs CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3546
 EB3546,Roan Cliffs CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3546
-DB1216,Castle Valley Outdoors CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1216
+DB1216,Castle Valley Outdoors CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1216
 DB1216,Castle Valley Outdoors CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1216
 DB1216,Castle Valley Outdoors CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1216
-PB5338,Castle Valley Outdoors CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5338
+PB5338,Castle Valley Outdoors CWMU,Pronghorn,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5338
 PB5338,Castle Valley Outdoors CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5338
 PB5338,Castle Valley Outdoors CWMU,Pronghorn,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5338
-DB1295,Spring Creek/Dodge CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1295
+DB1295,Spring Creek/Dodge CWMU,Deer,permits_2026_res,MATCH,6,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1295
 DB1295,Spring Creek/Dodge CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1295
 DB1295,Spring Creek/Dodge CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,6,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1295
-EA1168,Spring Creek/Dodge CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,15,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1168
+EA1168,Spring Creek/Dodge CWMU,Elk,permits_2026_res,MATCH,15,15,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1168
 EA1168,Spring Creek/Dodge CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1168
 EA1168,Spring Creek/Dodge CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,15,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1168
-EB3555,Spring Creek/Dodge CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3555
+EB3555,Spring Creek/Dodge CWMU,Elk,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3555
 EB3555,Spring Creek/Dodge CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3555
 EB3555,Spring Creek/Dodge CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3555
-DB1299,Summit Point CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1299
+DB1299,Summit Point CWMU,Deer,permits_2026_res,MATCH,3,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1299
 DB1299,Summit Point CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1299
 DB1299,Summit Point CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,3,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1299
-EA1171,Summit Point CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1171
+EA1171,Summit Point CWMU,Elk,permits_2026_res,MATCH,5,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1171
 EA1171,Summit Point CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1171
 EA1171,Summit Point CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,5,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1171
-EB3558,Summit Point CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3558
+EB3558,Summit Point CWMU,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3558
 EB3558,Summit Point CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3558
 EB3558,Summit Point CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3558
-DB1282,Redd Ranches CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1282
+DB1282,Redd Ranches CWMU,Deer,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1282
 DB1282,Redd Ranches CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1282
 DB1282,Redd Ranches CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1282
-EA1157,Redd Ranches CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,35,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1157
+EA1157,Redd Ranches CWMU,Elk,permits_2026_res,MATCH,35,35,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1157
 EA1157,Redd Ranches CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1157
 EA1157,Redd Ranches CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,35,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1157
-EB3544,Redd Ranches CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3544
+EB3544,Redd Ranches CWMU,Elk,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3544
 EB3544,Redd Ranches CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3544
 EB3544,Redd Ranches CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3544
-DB1253,Circle E Ranch CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1253
+DB1253,Circle E Ranch CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1253
 DB1253,Circle E Ranch CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1253
 DB1253,Circle E Ranch CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1253
-EA1143,Circle E Ranch CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,21,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1143
+EA1143,Circle E Ranch CWMU,Elk,permits_2026_res,MATCH,21,21,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1143
 EA1143,Circle E Ranch CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1143
 EA1143,Circle E Ranch CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,21,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1143
-EB3529,Circle E Ranch CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3529
+EB3529,Circle E Ranch CWMU,Elk,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3529
 EB3529,Circle E Ranch CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3529
 EB3529,Circle E Ranch CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3529
-DB1249,Hiawatha CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1249
+DB1249,Hiawatha CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1249
 DB1249,Hiawatha CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1249
 DB1249,Hiawatha CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1249
-EA1141,Hiawatha CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,12,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1141
+EA1141,Hiawatha CWMU,Elk,permits_2026_res,MATCH,12,12,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1141
 EA1141,Hiawatha CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1141
 EA1141,Hiawatha CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,12,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1141
-EB3526,Hiawatha CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3526
+EB3526,Hiawatha CWMU,Elk,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3526
 EB3526,Hiawatha CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3526
 EB3526,Hiawatha CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3526
-DB1261,Minnie Maud Ridge CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1261
+DB1261,Minnie Maud Ridge CWMU,Deer,permits_2026_res,MATCH,5,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1261
 DB1261,Minnie Maud Ridge CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1261
 DB1261,Minnie Maud Ridge CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,5,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1261
-EA1149,Minnie Maud Ridge CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,15,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1149
+EA1149,Minnie Maud Ridge CWMU,Elk,permits_2026_res,MATCH,15,15,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1149
 EA1149,Minnie Maud Ridge CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1149
 EA1149,Minnie Maud Ridge CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,15,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1149
-EB3536,Minnie Maud Ridge CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3536
+EB3536,Minnie Maud Ridge CWMU,Elk,permits_2026_res,MATCH,5,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3536
 EB3536,Minnie Maud Ridge CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3536
 EB3536,Minnie Maud Ridge CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,5,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3536
-DB1292,Soldier Summit CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1292
+DB1292,Soldier Summit CWMU,Deer,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1292
 DB1292,Soldier Summit CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1292
 DB1292,Soldier Summit CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1292
-EA1166,Soldier Summit CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,16,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1166
+EA1166,Soldier Summit CWMU,Elk,permits_2026_res,MATCH,16,16,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1166
 EA1166,Soldier Summit CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1166
 EA1166,Soldier Summit CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,16,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1166
-EB3553,Soldier Summit CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3553
+EB3553,Soldier Summit CWMU,Elk,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3553
 EB3553,Soldier Summit CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3553
 EB3553,Soldier Summit CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3553
-DB1301,Three C CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1301
+DB1301,Three C CWMU,Deer,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1301
 DB1301,Three C CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1301
 DB1301,Three C CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1301
-EA1172,Three C CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,9,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1172
+EA1172,Three C CWMU,Elk,permits_2026_res,MATCH,9,9,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1172
 EA1172,Three C CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1172
 EA1172,Three C CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,9,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1172
-EB3559,Three C CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3559
+EB3559,Three C CWMU,Elk,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3559
 EB3559,Three C CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3559
 EB3559,Three C CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3559
-DB1230,Double R Ranch CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1230
+DB1230,Double R Ranch CWMU,Deer,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1230
 DB1230,Double R Ranch CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1230
 DB1230,Double R Ranch CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1230
-EA1200,Double R Ranch CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,10,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1200
+EA1200,Double R Ranch CWMU,Elk,permits_2026_res,MATCH,10,10,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1200
 EA1200,Double R Ranch CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1200
 EA1200,Double R Ranch CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,10,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1200
-EB3604,Double R Ranch CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3604
+EB3604,Double R Ranch CWMU,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3604
 EB3604,Double R Ranch CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3604
 EB3604,Double R Ranch CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3604
-DB1248,Heaston East CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1248
+DB1248,Heaston East CWMU,Deer,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1248
 DB1248,Heaston East CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1248
 DB1248,Heaston East CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1248
-EA1140,Heaston East CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,24,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1140
+EA1140,Heaston East CWMU,Elk,permits_2026_res,MATCH,24,24,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1140
 EA1140,Heaston East CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1140
 EA1140,Heaston East CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,24,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1140
-EB3525,Heaston East CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3525
+EB3525,Heaston East CWMU,Elk,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3525
 EB3525,Heaston East CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3525
 EB3525,Heaston East CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3525
-DB1337,Little Pole Canyon CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1337
+DB1337,Little Pole Canyon CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1337
 DB1337,Little Pole Canyon CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1337
 DB1337,Little Pole Canyon CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1337
-EA1256,Little Pole Canyon CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,9,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1256
+EA1256,Little Pole Canyon CWMU,Elk,permits_2026_res,MATCH,9,9,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1256
 EA1256,Little Pole Canyon CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1256
 EA1256,Little Pole Canyon CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,9,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1256
-EB3613,Little Pole Canyon CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3613
+EB3613,Little Pole Canyon CWMU,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3613
 EB3613,Little Pole Canyon CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3613
 EB3613,Little Pole Canyon CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3613
-MB6265,Little Pole Canyon CWMU,Moose,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6265
+MB6265,Little Pole Canyon CWMU,Moose,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6265
 MB6265,Little Pole Canyon CWMU,Moose,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6265
 MB6265,Little Pole Canyon CWMU,Moose,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6265
-PB5325,Allen Ranch CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5325
+PB5325,Allen Ranch CWMU,Pronghorn,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5325
 PB5325,Allen Ranch CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5325
 PB5325,Allen Ranch CWMU,Pronghorn,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5325
-PB5314,Westlake CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5314
+PB5314,Westlake CWMU,Pronghorn,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5314
 PB5314,Westlake CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5314
 PB5314,Westlake CWMU,Pronghorn,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5314
-PD1031,Westlake CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,9,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1031
+PD1031,Westlake CWMU,Pronghorn,permits_2026_res,MATCH,9,9,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1031
 PD1031,Westlake CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1031
 PD1031,Westlake CWMU,Pronghorn,permits_2026_total,NUMERIC_CONFLICT,9,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1031
-DB1204,Bally Watts CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1204
+DB1204,Bally Watts CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1204
 DB1204,Bally Watts CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1204
 DB1204,Bally Watts CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1204
-DB1217,Causey Spring CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1217
+DB1217,Causey Spring CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1217
 DB1217,Causey Spring CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1217
 DB1217,Causey Spring CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1217
-EA1122,Causey Spring CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1122
+EA1122,Causey Spring CWMU,Elk,permits_2026_res,MATCH,5,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1122
 EA1122,Causey Spring CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1122
 EA1122,Causey Spring CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,5,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1122
-EB3506,Causey Spring CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3506
+EB3506,Causey Spring CWMU,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3506
 EB3506,Causey Spring CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3506
 EB3506,Causey Spring CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3506
-MA1009,Causey Spring CWMU,Moose,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MA1009
+MA1009,Causey Spring CWMU,Moose,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MA1009
 MA1009,Causey Spring CWMU,Moose,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MA1009
 MA1009,Causey Spring CWMU,Moose,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MA1009
-MB6202,Causey Spring CWMU,Moose,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6202
+MB6202,Causey Spring CWMU,Moose,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6202
 MB6202,Causey Spring CWMU,Moose,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6202
 MB6202,Causey Spring CWMU,Moose,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6202
-MB6201,Beaver Hollow CWMU,Moose,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6201
+MB6201,Beaver Hollow CWMU,Moose,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6201
 MB6201,Beaver Hollow CWMU,Moose,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6201
 MB6201,Beaver Hollow CWMU,Moose,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6201
-DB1298,Strawberry Ridge CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1298
+DB1298,Strawberry Ridge CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1298
 DB1298,Strawberry Ridge CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1298
 DB1298,Strawberry Ridge CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1298
-EA1170,Strawberry Ridge CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,10,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1170
+EA1170,Strawberry Ridge CWMU,Elk,permits_2026_res,MATCH,10,10,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1170
 EA1170,Strawberry Ridge CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1170
 EA1170,Strawberry Ridge CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,10,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1170
-EB3557,Strawberry Ridge CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3557
+EB3557,Strawberry Ridge CWMU,Elk,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3557
 EB3557,Strawberry Ridge CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3557
 EB3557,Strawberry Ridge CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3557
-MB6222,Strawberry Ridge CWMU,Moose,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6222
+MB6222,Strawberry Ridge CWMU,Moose,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6222
 MB6222,Strawberry Ridge CWMU,Moose,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6222
 MB6222,Strawberry Ridge CWMU,Moose,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6222
-DB1260,Middle Ridge CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1260
+DB1260,Middle Ridge CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1260
 DB1260,Middle Ridge CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1260
 DB1260,Middle Ridge CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1260
-DB1232,Durst Mountain CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1232
+DB1232,Durst Mountain CWMU,Deer,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1232
 DB1232,Durst Mountain CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1232
 DB1232,Durst Mountain CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1232
-EA1131,Durst Mountain CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,30,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1131
+EA1131,Durst Mountain CWMU,Elk,permits_2026_res,MATCH,30,30,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1131
 EA1131,Durst Mountain CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1131
 EA1131,Durst Mountain CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,30,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1131
-EB3516,Durst Mountain CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3516
+EB3516,Durst Mountain CWMU,Elk,permits_2026_res,MATCH,3,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3516
 EB3516,Durst Mountain CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3516
 EB3516,Durst Mountain CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,3,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3516
-DB1228,Deseret CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,13,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1228
+DB1228,Deseret CWMU,Deer,permits_2026_res,MATCH,13,13,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1228
 DB1228,Deseret CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1228
 DB1228,Deseret CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,13,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1228
-EA1129,Deseret CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,425,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1129
+EA1129,Deseret CWMU,Elk,permits_2026_res,MATCH,425,425,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1129
 EA1129,Deseret CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1129
 EA1129,Deseret CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,425,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1129
-EB3514,Deseret CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,19,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3514
+EB3514,Deseret CWMU,Elk,permits_2026_res,MATCH,19,19,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3514
 EB3514,Deseret CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3514
 EB3514,Deseret CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,19,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3514
-MA1010,Deseret CWMU,Moose,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MA1010
+MA1010,Deseret CWMU,Moose,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MA1010
 MA1010,Deseret CWMU,Moose,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MA1010
 MA1010,Deseret CWMU,Moose,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MA1010
-MB6206,Deseret CWMU,Moose,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6206
+MB6206,Deseret CWMU,Moose,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6206
 MB6206,Deseret CWMU,Moose,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6206
 MB6206,Deseret CWMU,Moose,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6206
-PB5302,Deseret CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,29,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5302
+PB5302,Deseret CWMU,Pronghorn,permits_2026_res,MATCH,29,29,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5302
 PB5302,Deseret CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5302
 PB5302,Deseret CWMU,Pronghorn,permits_2026_total,NUMERIC_CONFLICT,29,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5302
-DB1259,Tunnel Hollow CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1259
+DB1259,Tunnel Hollow CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1259
 DB1259,Tunnel Hollow CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1259
 DB1259,Tunnel Hollow CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1259
-EA1257,Tunnel Hollow CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1257
+EA1257,Tunnel Hollow CWMU,Elk,permits_2026_res,MATCH,5,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1257
 EA1257,Tunnel Hollow CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1257
 EA1257,Tunnel Hollow CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,5,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1257
-EB3614,Tunnel Hollow CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3614
+EB3614,Tunnel Hollow CWMU,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3614
 EB3614,Tunnel Hollow CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3614
 EB3614,Tunnel Hollow CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3614
-DB1312,Woodruff Creek South CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1312
+DB1312,Woodruff Creek South CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1312
 DB1312,Woodruff Creek South CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1312
 DB1312,Woodruff Creek South CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1312
-EA1177,Woodruff Creek South CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,8,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1177
+EA1177,Woodruff Creek South CWMU,Elk,permits_2026_res,MATCH,8,8,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1177
 EA1177,Woodruff Creek South CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1177
 EA1177,Woodruff Creek South CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,8,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1177
-EB3564,Woodruff Creek South CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3564
+EB3564,Woodruff Creek South CWMU,Elk,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3564
 EB3564,Woodruff Creek South CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3564
 EB3564,Woodruff Creek South CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3564
-MB6256,Woodruff Creek South CWMU,Moose,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6256
+MB6256,Woodruff Creek South CWMU,Moose,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6256
 MB6256,Woodruff Creek South CWMU,Moose,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6256
 MB6256,Woodruff Creek South CWMU,Moose,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6256
-DB1265,Mountain Top CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1265
+DB1265,Mountain Top CWMU,Deer,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1265
 DB1265,Mountain Top CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1265
 DB1265,Mountain Top CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1265
-DB1245,Guildersleeve CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1245
+DB1245,Guildersleeve CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1245
 DB1245,Guildersleeve CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1245
 DB1245,Guildersleeve CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1245
-EA1138,Guildersleeve CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,20,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1138
+EA1138,Guildersleeve CWMU,Elk,permits_2026_res,MATCH,20,20,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1138
 EA1138,Guildersleeve CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1138
 EA1138,Guildersleeve CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,20,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1138
-EB3523,Guildersleeve CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3523
+EB3523,Guildersleeve CWMU,Elk,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3523
 EB3523,Guildersleeve CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3523
 EB3523,Guildersleeve CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3523
-DB1286,Pisgah Mountain CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1286
+DB1286,Pisgah Mountain CWMU,Deer,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1286
 DB1286,Pisgah Mountain CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1286
 DB1286,Pisgah Mountain CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1286
-DB1207,Bear Springs CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1207
+DB1207,Bear Springs CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1207
 DB1207,Bear Springs CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1207
 DB1207,Bear Springs CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1207
-EA1198,Bear Springs CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1198
+EA1198,Bear Springs CWMU,Elk,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1198
 EA1198,Bear Springs CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1198
 EA1198,Bear Springs CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1198
-EB3503,Bear Springs CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3503
+EB3503,Bear Springs CWMU,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3503
 EB3503,Bear Springs CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3503
 EB3503,Bear Springs CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3503
-EA1164,SJ Ranch CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1164
+EA1164,SJ Ranch CWMU,Elk,permits_2026_res,MATCH,6,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1164
 EA1164,SJ Ranch CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1164
 EA1164,SJ Ranch CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,6,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1164
-EB3551,SJ Ranch CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3551
+EB3551,SJ Ranch CWMU,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3551
 EB3551,SJ Ranch CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3551
 EB3551,SJ Ranch CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3551
-DB1246,Hardscrabble CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1246
+DB1246,Hardscrabble CWMU,Deer,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1246
 DB1246,Hardscrabble CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1246
 DB1246,Hardscrabble CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1246
-EA1139,Hardscrabble CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,10,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1139
+EA1139,Hardscrabble CWMU,Elk,permits_2026_res,MATCH,10,10,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1139
 EA1139,Hardscrabble CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1139
 EA1139,Hardscrabble CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,10,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1139
-EB3524,Hardscrabble CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3524
+EB3524,Hardscrabble CWMU,Elk,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3524
 EB3524,Hardscrabble CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3524
 EB3524,Hardscrabble CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3524
-MB6251,Hardscrabble CWMU,Moose,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6251
+MB6251,Hardscrabble CWMU,Moose,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6251
 MB6251,Hardscrabble CWMU,Moose,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6251
 MB6251,Hardscrabble CWMU,Moose,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6251
-DB1290,Skull Crack CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1290
+DB1290,Skull Crack CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1290
 DB1290,Skull Crack CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1290
 DB1290,Skull Crack CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1290
-EA1165,Skull Crack CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,15,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1165
+EA1165,Skull Crack CWMU,Elk,permits_2026_res,MATCH,15,15,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1165
 EA1165,Skull Crack CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1165
 EA1165,Skull Crack CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,15,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1165
-EB3552,Skull Crack CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3552
+EB3552,Skull Crack CWMU,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3552
 EB3552,Skull Crack CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3552
 EB3552,Skull Crack CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3552
-MB6219,Skull Crack CWMU,Moose,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6219
+MB6219,Skull Crack CWMU,Moose,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6219
 MB6219,Skull Crack CWMU,Moose,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6219
 MB6219,Skull Crack CWMU,Moose,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6219
-DB1238,Folley Ridge CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1238
+DB1238,Folley Ridge CWMU,Deer,permits_2026_res,MATCH,3,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1238
 DB1238,Folley Ridge CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1238
 DB1238,Folley Ridge CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,3,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1238
-EA1135,Folley Ridge CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,20,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1135
+EA1135,Folley Ridge CWMU,Elk,permits_2026_res,MATCH,20,20,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1135
 EA1135,Folley Ridge CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1135
 EA1135,Folley Ridge CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,20,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1135
-EB3520,Folley Ridge CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3520
+EB3520,Folley Ridge CWMU,Elk,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3520
 EB3520,Folley Ridge CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3520
 EB3520,Folley Ridge CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3520
-DB1317,Jacob's Creek CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1317
+DB1317,Jacob's Creek CWMU,Deer,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1317
 DB1317,Jacob's Creek CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1317
 DB1317,Jacob's Creek CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1317
-EB3530,Jacob's Creek CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3530
+EB3530,Jacob's Creek CWMU,Elk,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3530
 EB3530,Jacob's Creek CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3530
 EB3530,Jacob's Creek CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3530
-MB6258,Jacob's Creek CWMU,Moose,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6258
+MB6258,Jacob's Creek CWMU,Moose,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6258
 MB6258,Jacob's Creek CWMU,Moose,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6258
 MB6258,Jacob's Creek CWMU,Moose,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6258
-DB1202,Antelope Creek CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1202
+DB1202,Antelope Creek CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1202
 DB1202,Antelope Creek CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1202
 DB1202,Antelope Creek CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1202
-PB5300,Antelope Creek CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5300
+PB5300,Antelope Creek CWMU,Pronghorn,permits_2026_res,MATCH,4,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5300
 PB5300,Antelope Creek CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5300
 PB5300,Antelope Creek CWMU,Pronghorn,permits_2026_total,NUMERIC_CONFLICT,4,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5300
-PD1047,Antelope Creek CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1047
+PD1047,Antelope Creek CWMU,Pronghorn,permits_2026_res,MATCH,6,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1047
 PD1047,Antelope Creek CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1047
 PD1047,Antelope Creek CWMU,Pronghorn,permits_2026_total,NUMERIC_CONFLICT,6,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1047
-DB1206,Bear Mountain CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1206
+DB1206,Bear Mountain CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1206
 DB1206,Bear Mountain CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1206
 DB1206,Bear Mountain CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1206
-EA1120,Bear Mountain CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,20,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1120
+EA1120,Bear Mountain CWMU,Elk,permits_2026_res,MATCH,20,20,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1120
 EA1120,Bear Mountain CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1120
 EA1120,Bear Mountain CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,20,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1120
-EB3502,Bear Mountain CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3502
+EB3502,Bear Mountain CWMU,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3502
 EB3502,Bear Mountain CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3502
 EB3502,Bear Mountain CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3502
-DB1291,Skull Valley South CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1291
+DB1291,Skull Valley South CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1291
 DB1291,Skull Valley South CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1291
 DB1291,Skull Valley South CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1291
-PB5309,Skull Valley South CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5309
+PB5309,Skull Valley South CWMU,Pronghorn,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5309
 PB5309,Skull Valley South CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5309
 PB5309,Skull Valley South CWMU,Pronghorn,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5309
-DB1305,Wallsburg CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1305
+DB1305,Wallsburg CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1305
 DB1305,Wallsburg CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1305
 DB1305,Wallsburg CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1305
-EA1175,Wallsburg CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,10,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1175
+EA1175,Wallsburg CWMU,Elk,permits_2026_res,MATCH,10,10,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1175
 EA1175,Wallsburg CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1175
 EA1175,Wallsburg CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,10,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1175
-EB3562,Wallsburg CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3562
+EB3562,Wallsburg CWMU,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3562
 EB3562,Wallsburg CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3562
 EB3562,Wallsburg CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3562
-DA1012,Junction Valley CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,15,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DA1012
+DA1012,Junction Valley CWMU,Deer,permits_2026_res,MATCH,15,15,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DA1012
 DA1012,Junction Valley CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DA1012
 DA1012,Junction Valley CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,15,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DA1012
-DB1256,Junction Valley CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1256
+DB1256,Junction Valley CWMU,Deer,permits_2026_res,MATCH,5,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1256
 DB1256,Junction Valley CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1256
 DB1256,Junction Valley CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,5,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1256
-EB3533,Junction Valley CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3533
+EB3533,Junction Valley CWMU,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3533
 EB3533,Junction Valley CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3533
 EB3533,Junction Valley CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3533
-MB6262,Junction Valley CWMU,Moose,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6262
+MB6262,Junction Valley CWMU,Moose,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6262
 MB6262,Junction Valley CWMU,Moose,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6262
 MB6262,Junction Valley CWMU,Moose,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6262
-PB5346,Junction Valley CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5346
+PB5346,Junction Valley CWMU,Pronghorn,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5346
 PB5346,Junction Valley CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5346
 PB5346,Junction Valley CWMU,Pronghorn,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5346
-PB5306,Rabbit Creek CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5306
+PB5306,Rabbit Creek CWMU,Pronghorn,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5306
 PB5306,Rabbit Creek CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5306
 PB5306,Rabbit Creek CWMU,Pronghorn,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5306
-DB1275,Pine Canyon CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1275
+DB1275,Pine Canyon CWMU,Deer,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1275
 DB1275,Pine Canyon CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1275
 DB1275,Pine Canyon CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1275
-DB1215,Buckhorn Ranch CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1215
+DB1215,Buckhorn Ranch CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1215
 DB1215,Buckhorn Ranch CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1215
 DB1215,Buckhorn Ranch CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1215
-DB1203,Avintaquin Canyon CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1203
+DB1203,Avintaquin Canyon CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1203
 DB1203,Avintaquin Canyon CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1203
 DB1203,Avintaquin Canyon CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1203
-EA1233,Avintaquin Canyon CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1233
+EA1233,Avintaquin Canyon CWMU,Elk,permits_2026_res,MATCH,4,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1233
 EA1233,Avintaquin Canyon CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1233
 EA1233,Avintaquin Canyon CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,4,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1233
-EB3608,Avintaquin Canyon CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3608
+EB3608,Avintaquin Canyon CWMU,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3608
 EB3608,Avintaquin Canyon CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3608
 EB3608,Avintaquin Canyon CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3608
-DB1300,Thatcher Mountain CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1300
+DB1300,Thatcher Mountain CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1300
 DB1300,Thatcher Mountain CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1300
 DB1300,Thatcher Mountain CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1300
-PB5305,Park Valley CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5305
+PB5305,Park Valley CWMU,Pronghorn,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5305
 PB5305,Park Valley CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5305
 PB5305,Park Valley CWMU,Pronghorn,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5305
-DB1212,Bluebell CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1212
+DB1212,Bluebell CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1212
 DB1212,Bluebell CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1212
 DB1212,Bluebell CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1212
-DB1227,Deer Haven CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1227
+DB1227,Deer Haven CWMU,Deer,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1227
 DB1227,Deer Haven CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1227
 DB1227,Deer Haven CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1227
 DB1077,Box Elder,Deer,permits_2026_res,MATCH,23,23,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1077
@@ -3146,10 +3146,10 @@ PB5042,Pine Valley,Pronghorn,permits_2026_total,MATCH,23,23,https://dwrapps.utah
 PB5062,Pine Valley,Pronghorn,permits_2026_res,MATCH,7,7,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5062
 PB5062,Pine Valley,Pronghorn,permits_2026_nr,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5062
 PB5062,Pine Valley,Pronghorn,permits_2026_total,MATCH,8,8,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5062
-DB1224,Cotton Thomas CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1224
+DB1224,Cotton Thomas CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1224
 DB1224,Cotton Thomas CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1224
 DB1224,Cotton Thomas CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1224
-EB3511,Cotton Thomas CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3511
+EB3511,Cotton Thomas CWMU,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3511
 EB3511,Cotton Thomas CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3511
 EB3511,Cotton Thomas CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3511
 BI6532,"Book Cliffs, Bitter Creek",Bison,permits_2026_res,MATCH,6,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BI6532
@@ -3386,52 +3386,52 @@ PB5054,"Panguitch Lake/Zion, North",Pronghorn,permits_2026_total,MATCH,8,8,https
 PB5061,"Panguitch Lake/Zion, North",Pronghorn,permits_2026_res,MATCH,7,7,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5061
 PB5061,"Panguitch Lake/Zion, North",Pronghorn,permits_2026_nr,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5061
 PB5061,"Panguitch Lake/Zion, North",Pronghorn,permits_2026_total,MATCH,8,8,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5061
-PB5312,TL Bar Ranch CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5312
+PB5312,TL Bar Ranch CWMU,Pronghorn,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5312
 PB5312,TL Bar Ranch CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5312
 PB5312,TL Bar Ranch CWMU,Pronghorn,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5312
-DB1219,Chimney Rock CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1219
+DB1219,Chimney Rock CWMU,Deer,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1219
 DB1219,Chimney Rock CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1219
 DB1219,Chimney Rock CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1219
-EA1124,Chimney Rock CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,12,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1124
+EA1124,Chimney Rock CWMU,Elk,permits_2026_res,MATCH,12,12,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1124
 EA1124,Chimney Rock CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1124
 EA1124,Chimney Rock CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,12,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1124
-EB3508,Chimney Rock CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3508
+EB3508,Chimney Rock CWMU,Elk,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3508
 EB3508,Chimney Rock CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3508
 EB3508,Chimney Rock CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3508
-DB1229,Dilly Ranch CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1229
+DB1229,Dilly Ranch CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1229
 DB1229,Dilly Ranch CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1229
 DB1229,Dilly Ranch CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1229
-EA1146,Jump Creek CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,9,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1146
+EA1146,Jump Creek CWMU,Elk,permits_2026_res,MATCH,9,9,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1146
 EA1146,Jump Creek CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1146
 EA1146,Jump Creek CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,9,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1146
-EB3532,Jump Creek CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3532
+EB3532,Jump Creek CWMU,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3532
 EB3532,Jump Creek CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3532
 EB3532,Jump Creek CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3532
-DB1251,Indian Head CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1251
+DB1251,Indian Head CWMU,Deer,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1251
 DB1251,Indian Head CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1251
 DB1251,Indian Head CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1251
-EA1142,Indian Head CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,12,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1142
+EA1142,Indian Head CWMU,Elk,permits_2026_res,MATCH,12,12,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1142
 EA1142,Indian Head CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1142
 EA1142,Indian Head CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,12,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1142
-EB3527,Indian Head CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3527
+EB3527,Indian Head CWMU,Elk,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3527
 EB3527,Indian Head CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3527
 EB3527,Indian Head CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3527
-DB1274,Patmos Ridge CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1274
+DB1274,Patmos Ridge CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1274
 DB1274,Patmos Ridge CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1274
 DB1274,Patmos Ridge CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1274
-EB3541,Patmos Ridge CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3541
+EB3541,Patmos Ridge CWMU,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3541
 EB3541,Patmos Ridge CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3541
 EB3541,Patmos Ridge CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3541
-DB1285,Sand Creek CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1285
+DB1285,Sand Creek CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1285
 DB1285,Sand Creek CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1285
 DB1285,Sand Creek CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1285
-EA1160,Sand Creek CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1160
+EA1160,Sand Creek CWMU,Elk,permits_2026_res,MATCH,5,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1160
 EA1160,Sand Creek CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1160
 EA1160,Sand Creek CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,5,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1160
-EB3547,Sand Creek CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3547
+EB3547,Sand Creek CWMU,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3547
 EB3547,Sand Creek CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3547
 EB3547,Sand Creek CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3547
-DB1294,Spring Creek Acres CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1294
+DB1294,Spring Creek Acres CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1294
 DB1294,Spring Creek Acres CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1294
 DB1294,Spring Creek Acres CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1294
 MB6011,Wasatch Mtns/Central Mtns,Moose,permits_2026_res,MATCH,19,19,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6011
@@ -3494,34 +3494,34 @@ LO1566,Fillmore,Deer,permits_2026_total,DATABASE_BLANK_DWR_ZERO,,0,https://dwrap
 LO1591,Fillmore,Deer,permits_2026_res,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=LO1591
 LO1591,Fillmore,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=LO1591
 LO1591,Fillmore,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=LO1591
-DB1309,West Willow Creek Ranch CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1309
+DB1309,West Willow Creek Ranch CWMU,Deer,permits_2026_res,MATCH,5,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1309
 DB1309,West Willow Creek Ranch CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1309
 DB1309,West Willow Creek Ranch CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,5,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1309
-EB3607,West Willow Creek Ranch CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3607
+EB3607,West Willow Creek Ranch CWMU,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3607
 EB3607,West Willow Creek Ranch CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3607
 EB3607,West Willow Creek Ranch CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3607
-DA1011,George Creek CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DA1011
+DA1011,George Creek CWMU,Deer,permits_2026_res,MATCH,5,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DA1011
 DA1011,George Creek CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DA1011
 DA1011,George Creek CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,5,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DA1011
-DB1240,George Creek CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1240
+DB1240,George Creek CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1240
 DB1240,George Creek CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1240
 DB1240,George Creek CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1240
-PB5330,George Creek CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5330
+PB5330,George Creek CWMU,Pronghorn,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5330
 PB5330,George Creek CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5330
 PB5330,George Creek CWMU,Pronghorn,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5330
-DB1234,East Zion CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1234
+DB1234,East Zion CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1234
 DB1234,East Zion CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1234
 DB1234,East Zion CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1234
 TK1021,East Zion CWMU,Turkey,permits_2026_res,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=TK1021
 TK1021,East Zion CWMU,Turkey,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=TK1021
 TK1021,East Zion CWMU,Turkey,permits_2026_total,MATCH,4,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=TK1021
-DB1208,Blackhawk CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1208
+DB1208,Blackhawk CWMU,Deer,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1208
 DB1208,Blackhawk CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1208
 DB1208,Blackhawk CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1208
-EA1261,Blackhawk CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1261
+EA1261,Blackhawk CWMU,Elk,permits_2026_res,MATCH,5,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1261
 EA1261,Blackhawk CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1261
 EA1261,Blackhawk CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,5,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1261
-EB3504,Blackhawk CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3504
+EB3504,Blackhawk CWMU,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3504
 EB3504,Blackhawk CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3504
 EB3504,Blackhawk CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3504
 EA1094,"Vernal, Mosby Mtn",Elk,permits_2026_res,MATCH,90,90,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1094
@@ -3539,40 +3539,40 @@ RS1006,"Nine Mile, Gray Canyon",Rocky Mountain Bighorn Sheep,permits_2026_total,
 RS6712,"Nine Mile, Gray Canyon",Rocky Mountain Bighorn Sheep,permits_2026_res,MATCH,4,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=RS6712
 RS6712,"Nine Mile, Gray Canyon",Rocky Mountain Bighorn Sheep,permits_2026_nr,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=RS6712
 RS6712,"Nine Mile, Gray Canyon",Rocky Mountain Bighorn Sheep,permits_2026_total,MATCH,6,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=RS6712
-PB5327,Cottonwood Ridge CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5327
+PB5327,Cottonwood Ridge CWMU,Pronghorn,permits_2026_res,MATCH,4,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5327
 PB5327,Cottonwood Ridge CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5327
 PB5327,Cottonwood Ridge CWMU,Pronghorn,permits_2026_total,NUMERIC_CONFLICT,4,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5327
-PD1050,Cottonwood Ridge CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1050
+PD1050,Cottonwood Ridge CWMU,Pronghorn,permits_2026_res,MATCH,6,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1050
 PD1050,Cottonwood Ridge CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1050
 PD1050,Cottonwood Ridge CWMU,Pronghorn,permits_2026_total,NUMERIC_CONFLICT,6,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1050
-DB1322,Pahvant Ensign CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1322
+DB1322,Pahvant Ensign CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1322
 DB1322,Pahvant Ensign CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1322
 DB1322,Pahvant Ensign CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1322
-EA1192,Pahvant Ensign CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1192
+EA1192,Pahvant Ensign CWMU,Elk,permits_2026_res,MATCH,6,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1192
 EA1192,Pahvant Ensign CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1192
 EA1192,Pahvant Ensign CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,6,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1192
-EB3603,Pahvant Ensign CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3603
+EB3603,Pahvant Ensign CWMU,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3603
 EB3603,Pahvant Ensign CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3603
 EB3603,Pahvant Ensign CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3603
-PB5328,Pahvant Ensign CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5328
+PB5328,Pahvant Ensign CWMU,Pronghorn,permits_2026_res,MATCH,3,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5328
 PB5328,Pahvant Ensign CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5328
 PB5328,Pahvant Ensign CWMU,Pronghorn,permits_2026_total,NUMERIC_CONFLICT,3,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5328
-PD1051,Pahvant Ensign CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1051
+PD1051,Pahvant Ensign CWMU,Pronghorn,permits_2026_res,MATCH,6,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1051
 PD1051,Pahvant Ensign CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1051
 PD1051,Pahvant Ensign CWMU,Pronghorn,permits_2026_total,NUMERIC_CONFLICT,6,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1051
 TK1018,Pahvant Ensign CWMU,Turkey,permits_2026_res,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=TK1018
 TK1018,Pahvant Ensign CWMU,Turkey,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=TK1018
 TK1018,Pahvant Ensign CWMU,Turkey,permits_2026_total,MATCH,6,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=TK1018
-DB1323,Rock House CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1323
+DB1323,Rock House CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1323
 DB1323,Rock House CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1323
 DB1323,Rock House CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1323
-EA1234,Royal Ivory Outfitters CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,15,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1234
+EA1234,Royal Ivory Outfitters CWMU,Elk,permits_2026_res,MATCH,15,15,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1234
 EA1234,Royal Ivory Outfitters CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1234
 EA1234,Royal Ivory Outfitters CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,15,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1234
-PB5329,Snowville Flat CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5329
+PB5329,Snowville Flat CWMU,Pronghorn,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5329
 PB5329,Snowville Flat CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5329
 PB5329,Snowville Flat CWMU,Pronghorn,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5329
-PB5326,Cedar Springs CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5326
+PB5326,Cedar Springs CWMU,Pronghorn,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5326
 PB5326,Cedar Springs CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5326
 PB5326,Cedar Springs CWMU,Pronghorn,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5326
 EA1187,"Paunsaugunt, Hatch Bench",Elk,permits_2026_res,MATCH,13,13,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1187
@@ -3584,16 +3584,16 @@ DA1018,"Pine Valley, New Harmony",Deer,permits_2026_total,MATCH,20,20,https://dw
 BR7016,Wasatch Mtns West-Central,Black Bear,permits_2026_res,MATCH,36,36,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BR7016
 BR7016,Wasatch Mtns West-Central,Black Bear,permits_2026_nr,MATCH,4,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BR7016
 BR7016,Wasatch Mtns West-Central,Black Bear,permits_2026_total,MATCH,40,40,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BR7016
-DB1326,Rosette CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1326
+DB1326,Rosette CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1326
 DB1326,Rosette CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1326
 DB1326,Rosette CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1326
-DB1327,Mountain Sky Ranch CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1327
+DB1327,Mountain Sky Ranch CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1327
 DB1327,Mountain Sky Ranch CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1327
 DB1327,Mountain Sky Ranch CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1327
-EA1201,Mountain Sky Ranch CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,10,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1201
+EA1201,Mountain Sky Ranch CWMU,Elk,permits_2026_res,MATCH,10,10,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1201
 EA1201,Mountain Sky Ranch CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1201
 EA1201,Mountain Sky Ranch CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,10,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1201
-EB3606,Mountain Sky Ranch CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3606
+EB3606,Mountain Sky Ranch CWMU,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3606
 EB3606,Mountain Sky Ranch CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3606
 EB3606,Mountain Sky Ranch CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3606
 EA1025,"Manti, West",Elk,permits_2026_res,MATCH,108,108,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1025
@@ -3728,25 +3728,25 @@ PD1057,"Parker Mtn, Highlands",Pronghorn,permits_2026_total,MATCH,35,35,https://
 PD1058,"Parker Mtn, Highlands",Pronghorn,permits_2026_res,MATCH,36,36,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1058
 PD1058,"Parker Mtn, Highlands",Pronghorn,permits_2026_nr,MATCH,4,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1058
 PD1058,"Parker Mtn, Highlands",Pronghorn,permits_2026_total,MATCH,40,40,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1058
-DB1332,West Ridge CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1332
+DB1332,West Ridge CWMU,Deer,permits_2026_res,MATCH,5,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1332
 DB1332,West Ridge CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1332
 DB1332,West Ridge CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,5,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1332
-EA1260,West Ridge CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1260
+EA1260,West Ridge CWMU,Elk,permits_2026_res,MATCH,5,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1260
 EA1260,West Ridge CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1260
 EA1260,West Ridge CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,5,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1260
-EB3611,West Ridge CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3611
+EB3611,West Ridge CWMU,Elk,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3611
 EB3611,West Ridge CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3611
 EB3611,West Ridge CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3611
-DB1331,Raft River CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1331
+DB1331,Raft River CWMU,Deer,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1331
 DB1331,Raft River CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1331
 DB1331,Raft River CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1331
-DB1330,Iron Spring CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1330
+DB1330,Iron Spring CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1330
 DB1330,Iron Spring CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1330
 DB1330,Iron Spring CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1330
-PB5339,Iron Spring CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5339
+PB5339,Iron Spring CWMU,Pronghorn,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5339
 PB5339,Iron Spring CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5339
 PB5339,Iron Spring CWMU,Pronghorn,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5339
-DB1333,5S CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1333
+DB1333,5S CWMU,Deer,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1333
 DB1333,5S CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1333
 DB1333,5S CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1333
 EA1237,"La Sal Mtns, North",Elk,permits_2026_res,MATCH,157,157,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1237
@@ -3806,10 +3806,10 @@ BI6531,"Book Cliffs, Little Creek/South",Bison,permits_2026_total,MATCH,10,10,ht
 BI6537,"Book Cliffs, Little Creek/South",Bison,permits_2026_res,MATCH,8,8,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BI6537
 BI6537,"Book Cliffs, Little Creek/South",Bison,permits_2026_nr,MATCH,7,7,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BI6537
 BI6537,"Book Cliffs, Little Creek/South",Bison,permits_2026_total,MATCH,15,15,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BI6537
-DB1336,First Light CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1336
+DB1336,First Light CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1336
 DB1336,First Light CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1336
 DB1336,First Light CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1336
-DB1335,Big Piney Ranch CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1335
+DB1335,Big Piney Ranch CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1335
 DB1335,Big Piney Ranch CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1335
 DB1335,Big Piney Ranch CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1335
 EA1251,"Southwest Desert, Burbank/Garrison",Elk,permits_2026_res,MATCH,13,13,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1251
@@ -3902,13 +3902,13 @@ EL3177,Nebo/San Pitch Mtns,Elk,permits_2026_total,DATABASE_BLANK_DWR_ZERO,,0,htt
 EL3179,Nebo/San Pitch Mtns,Elk,permits_2026_res,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EL3179
 EL3179,Nebo/San Pitch Mtns,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EL3179
 EL3179,Nebo/San Pitch Mtns,Elk,permits_2026_total,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EL3179
-DB1342,Faust Valley CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1342
+DB1342,Faust Valley CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1342
 DB1342,Faust Valley CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1342
 DB1342,Faust Valley CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1342
-PB5342,Salt Wells CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5342
+PB5342,Salt Wells CWMU,Pronghorn,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5342
 PB5342,Salt Wells CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5342
 PB5342,Salt Wells CWMU,Pronghorn,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5342
-DB1341,Dry Creek CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1341
+DB1341,Dry Creek CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1341
 DB1341,Dry Creek CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1341
 DB1341,Dry Creek CWMU,Deer,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1341
 DA1049,"Vernal, Ashley Valley",Deer,permits_2026_res,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DA1049
@@ -3917,10 +3917,10 @@ DA1049,"Vernal, Ashley Valley",Deer,permits_2026_total,MATCH,35,35,https://dwrap
 DA1048,Fillmore City,Deer,permits_2026_res,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DA1048
 DA1048,Fillmore City,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DA1048
 DA1048,Fillmore City,Deer,permits_2026_total,MATCH,15,15,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DA1048
-PB5345,Green River Flat CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5345
+PB5345,Green River Flat CWMU,Pronghorn,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5345
 PB5345,Green River Flat CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5345
 PB5345,Green River Flat CWMU,Pronghorn,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5345
-PD1053,Green River Flat CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1053
+PD1053,Green River Flat CWMU,Pronghorn,permits_2026_res,MATCH,6,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1053
 PD1053,Green River Flat CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1053
 PD1053,Green River Flat CWMU,Pronghorn,permits_2026_total,NUMERIC_CONFLICT,6,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1053
 EA1265,"Wasatch Mtns, Tabby Mtn",Elk,permits_2026_res,MATCH,90,90,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1265
@@ -3929,13 +3929,13 @@ EA1265,"Wasatch Mtns, Tabby Mtn",Elk,permits_2026_total,MATCH,100,100,https://dw
 EA1264,"Wasatch Mtns, Rabbit Gulch",Elk,permits_2026_res,MATCH,45,45,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1264
 EA1264,"Wasatch Mtns, Rabbit Gulch",Elk,permits_2026_nr,MATCH,5,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1264
 EA1264,"Wasatch Mtns, Rabbit Gulch",Elk,permits_2026_total,MATCH,50,50,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1264
-DB1351,The Dirty Dozen,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1351
+DB1351,The Dirty Dozen,Deer,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1351
 DB1351,The Dirty Dozen,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1351
 DB1351,The Dirty Dozen,Deer,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1351
-EA1259,Diamond Mountain CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1259
+EA1259,Diamond Mountain CWMU,Elk,permits_2026_res,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1259
 EA1259,Diamond Mountain CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1259
 EA1259,Diamond Mountain CWMU,Elk,permits_2026_total,NUMERIC_CONFLICT,2,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1259
-EB3620,The Dirty Dozen,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3620
+EB3620,The Dirty Dozen,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3620
 EB3620,The Dirty Dozen,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3620
 EB3620,The Dirty Dozen,Elk,permits_2026_total,NUMERIC_CONFLICT,1,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3620
 EA1269,Ogden (excludes Hyrum),Elk,permits_2026_res,MATCH,180,180,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1269
@@ -4181,130 +4181,130 @@ EA1221,Fishlake/Thousand Lake (Expo),Elk,permits_2026_total,NUMERIC_CONFLICT,1,0
 DS6625,Mineral Mtns,Desert Bighorn Sheep,permits_2026_res,MATCH,4,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DS6625
 DS6625,Mineral Mtns,Desert Bighorn Sheep,permits_2026_nr,MATCH,0,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DS6625
 DS6625,Mineral Mtns,Desert Bighorn Sheep,permits_2026_total,MATCH,4,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DS6625
-BR7008,La Sal,Black Bear,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,49,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BR7008
-BR7008,La Sal,Black Bear,permits_2026_nr,DATABASE_BLANK_DWR_VALUE,,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BR7008
-BR7008,La Sal,Black Bear,permits_2026_total,DATABASE_BLANK_DWR_VALUE,,54,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BR7008
+BR7008,La Sal,Black Bear,permits_2026_res,MATCH,49,49,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BR7008
+BR7008,La Sal,Black Bear,permits_2026_nr,MATCH,5,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BR7008
+BR7008,La Sal,Black Bear,permits_2026_total,MATCH,54,54,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BR7008
 BR7019,Chalk Creek/East Canyon/Morgan-South Rich,Black Bear,permits_2026_res,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BR7019
 BR7019,Chalk Creek/East Canyon/Morgan-South Rich,Black Bear,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BR7019
 BR7019,Chalk Creek/East Canyon/Morgan-South Rich,Black Bear,permits_2026_total,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BR7019
-BR7108,La Sal,Black Bear,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,25,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BR7108
-BR7108,La Sal,Black Bear,permits_2026_nr,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BR7108
-BR7108,La Sal,Black Bear,permits_2026_total,DATABASE_BLANK_DWR_VALUE,,27,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BR7108
-BR7208,La Sal,Black Bear,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BR7208
+BR7108,La Sal,Black Bear,permits_2026_res,MATCH,25,25,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BR7108
+BR7108,La Sal,Black Bear,permits_2026_nr,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BR7108
+BR7108,La Sal,Black Bear,permits_2026_total,MATCH,27,27,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BR7108
+BR7208,La Sal,Black Bear,permits_2026_res,MATCH,6,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BR7208
 BR7208,La Sal,Black Bear,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BR7208
-BR7208,La Sal,Black Bear,permits_2026_total,DATABASE_BLANK_DWR_VALUE,,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BR7208
-BI6530,"Book Cliffs, Little Creek/South",Bison,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BI6530
-BI6530,"Book Cliffs, Little Creek/South",Bison,permits_2026_nr,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BI6530
-BI6530,"Book Cliffs, Little Creek/South",Bison,permits_2026_total,DATABASE_BLANK_DWR_VALUE,,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BI6530
+BR7208,La Sal,Black Bear,permits_2026_total,MATCH,6,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BR7208
+BI6530,"Book Cliffs, Little Creek/South",Bison,permits_2026_res,MATCH,3,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BI6530
+BI6530,"Book Cliffs, Little Creek/South",Bison,permits_2026_nr,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BI6530
+BI6530,"Book Cliffs, Little Creek/South",Bison,permits_2026_total,MATCH,4,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=BI6530
 DA1044,Myton,Deer,permits_2026_res,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DA1044
 DA1044,Myton,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DA1044
-DA1044,Myton,Deer,permits_2026_total,DATABASE_BLANK_DWR_VALUE,,50,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DA1044
-DB1036,Thousand Lakes,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1036
-DB1036,Thousand Lakes,Deer,permits_2026_nr,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1036
-DB1036,Thousand Lakes,Deer,permits_2026_total,DATABASE_BLANK_DWR_VALUE,,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1036
-DB1059,Beaver,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,7,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1059
-DB1059,Beaver,Deer,permits_2026_nr,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1059
-DB1059,Beaver,Deer,permits_2026_total,DATABASE_BLANK_DWR_VALUE,,8,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1059
-DB1082,Oquirrh-Stansbury,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,12,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1082
-DB1082,Oquirrh-Stansbury,Deer,permits_2026_nr,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1082
-DB1082,Oquirrh-Stansbury,Deer,permits_2026_total,DATABASE_BLANK_DWR_VALUE,,13,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1082
-DB1088,"West Desert, Tintic",Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1088
-DB1088,"West Desert, Tintic",Deer,permits_2026_nr,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1088
-DB1088,"West Desert, Tintic",Deer,permits_2026_total,DATABASE_BLANK_DWR_VALUE,,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1088
-DB1089,"West Desert, West",Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1089
-DB1089,"West Desert, West",Deer,permits_2026_nr,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1089
-DB1089,"West Desert, West",Deer,permits_2026_total,DATABASE_BLANK_DWR_VALUE,,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1089
-DB1094,Myton,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,20,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1094
+DA1044,Myton,Deer,permits_2026_total,MATCH,50,50,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DA1044
+DB1036,Thousand Lakes,Deer,permits_2026_res,MATCH,4,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1036
+DB1036,Thousand Lakes,Deer,permits_2026_nr,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1036
+DB1036,Thousand Lakes,Deer,permits_2026_total,MATCH,5,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1036
+DB1059,Beaver,Deer,permits_2026_res,MATCH,7,7,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1059
+DB1059,Beaver,Deer,permits_2026_nr,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1059
+DB1059,Beaver,Deer,permits_2026_total,MATCH,8,8,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1059
+DB1082,Oquirrh-Stansbury,Deer,permits_2026_res,MATCH,12,12,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1082
+DB1082,Oquirrh-Stansbury,Deer,permits_2026_nr,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1082
+DB1082,Oquirrh-Stansbury,Deer,permits_2026_total,MATCH,13,13,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1082
+DB1088,"West Desert, Tintic",Deer,permits_2026_res,MATCH,4,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1088
+DB1088,"West Desert, Tintic",Deer,permits_2026_nr,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1088
+DB1088,"West Desert, Tintic",Deer,permits_2026_total,MATCH,5,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1088
+DB1089,"West Desert, West",Deer,permits_2026_res,MATCH,4,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1089
+DB1089,"West Desert, West",Deer,permits_2026_nr,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1089
+DB1089,"West Desert, West",Deer,permits_2026_total,MATCH,5,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1089
+DB1094,Myton,Deer,permits_2026_res,MATCH,20,20,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1094
 DB1094,Myton,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1094
-DB1094,Myton,Deer,permits_2026_total,DATABASE_BLANK_DWR_VALUE,,20,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1094
+DB1094,Myton,Deer,permits_2026_total,MATCH,20,20,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1094
 DB1276,Plymouth Peak CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1276
 DB1276,Plymouth Peak CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1276
-DB1276,Plymouth Peak CWMU,Deer,permits_2026_total,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1276
-DB1320,Deer Creek CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1320
+DB1276,Plymouth Peak CWMU,Deer,permits_2026_total,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1276
+DB1320,Deer Creek CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1320
 DB1320,Deer Creek CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1320
 DB1320,Deer Creek CWMU,Deer,permits_2026_total,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1320
-DB1324,Royal Ivory Outfitters CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1324
+DB1324,Royal Ivory Outfitters CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1324
 DB1324,Royal Ivory Outfitters CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1324
 DB1324,Royal Ivory Outfitters CWMU,Deer,permits_2026_total,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1324
 DB1338,Sweetwater CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1338
 DB1338,Sweetwater CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1338
-DB1338,Sweetwater CWMU,Deer,permits_2026_total,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1338
-DB1343,Red Iron CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1343
+DB1338,Sweetwater CWMU,Deer,permits_2026_total,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1338
+DB1343,Red Iron CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1343
 DB1343,Red Iron CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1343
 DB1343,Red Iron CWMU,Deer,permits_2026_total,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1343
-DB1344,Salt Wells CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1344
+DB1344,Salt Wells CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1344
 DB1344,Salt Wells CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1344
 DB1344,Salt Wells CWMU,Deer,permits_2026_total,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1344
-DB1345,Diamond Mountain CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1345
+DB1345,Diamond Mountain CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1345
 DB1345,Diamond Mountain CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1345
 DB1345,Diamond Mountain CWMU,Deer,permits_2026_total,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1345
-DB1348,Kimberly CWMU,Deer,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1348
+DB1348,Kimberly CWMU,Deer,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1348
 DB1348,Kimberly CWMU,Deer,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1348
 DB1348,Kimberly CWMU,Deer,permits_2026_total,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DB1348
-DS6602,"Kaiparowits, Escalante",Desert Bighorn Sheep,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,7,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DS6602
-DS6602,"Kaiparowits, Escalante",Desert Bighorn Sheep,permits_2026_nr,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DS6602
-DS6602,"Kaiparowits, Escalante",Desert Bighorn Sheep,permits_2026_total,DATABASE_BLANK_DWR_VALUE,,8,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DS6602
-EA1040,"Monroe, Koosharem Valley",Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,7,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1040
-EA1040,"Monroe, Koosharem Valley",Elk,permits_2026_nr,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1040
-EA1040,"Monroe, Koosharem Valley",Elk,permits_2026_total,DATABASE_BLANK_DWR_VALUE,,8,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1040
-EA1074,Pine Valley,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1074
-EA1074,Pine Valley,Elk,permits_2026_nr,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1074
-EA1074,Pine Valley,Elk,permits_2026_total,DATABASE_BLANK_DWR_VALUE,,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1074
-EA1116,Zion,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,18,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1116
-EA1116,Zion,Elk,permits_2026_nr,DATABASE_BLANK_DWR_VALUE,,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1116
-EA1116,Zion,Elk,permits_2026_total,DATABASE_BLANK_DWR_VALUE,,20,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1116
-EA1126,Cotton Thomas CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1126
+DS6602,"Kaiparowits, Escalante",Desert Bighorn Sheep,permits_2026_res,MATCH,7,7,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DS6602
+DS6602,"Kaiparowits, Escalante",Desert Bighorn Sheep,permits_2026_nr,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DS6602
+DS6602,"Kaiparowits, Escalante",Desert Bighorn Sheep,permits_2026_total,MATCH,8,8,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=DS6602
+EA1040,"Monroe, Koosharem Valley",Elk,permits_2026_res,MATCH,7,7,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1040
+EA1040,"Monroe, Koosharem Valley",Elk,permits_2026_nr,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1040
+EA1040,"Monroe, Koosharem Valley",Elk,permits_2026_total,MATCH,8,8,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1040
+EA1074,Pine Valley,Elk,permits_2026_res,MATCH,4,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1074
+EA1074,Pine Valley,Elk,permits_2026_nr,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1074
+EA1074,Pine Valley,Elk,permits_2026_total,MATCH,5,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1074
+EA1116,Zion,Elk,permits_2026_res,MATCH,18,18,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1116
+EA1116,Zion,Elk,permits_2026_nr,MATCH,2,2,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1116
+EA1116,Zion,Elk,permits_2026_total,MATCH,20,20,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1116
+EA1126,Cotton Thomas CWMU,Elk,permits_2026_res,MATCH,5,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1126
 EA1126,Cotton Thomas CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1126
-EA1126,Cotton Thomas CWMU,Elk,permits_2026_total,DATABASE_BLANK_DWR_VALUE,,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1126
-EA1176,Weber Florence Creek CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,65,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1176
+EA1126,Cotton Thomas CWMU,Elk,permits_2026_total,MATCH,5,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1126
+EA1176,Weber Florence Creek CWMU,Elk,permits_2026_res,MATCH,65,65,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1176
 EA1176,Weber Florence Creek CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1176
-EA1176,Weber Florence Creek CWMU,Elk,permits_2026_total,DATABASE_BLANK_DWR_VALUE,,65,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1176
-EA1252,"Southwest Desert, Burbank/Garrison",Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1252
-EA1252,"Southwest Desert, Burbank/Garrison",Elk,permits_2026_nr,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1252
-EA1252,"Southwest Desert, Burbank/Garrison",Elk,permits_2026_total,DATABASE_BLANK_DWR_VALUE,,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1252
-EB3561,Two Bear CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3561
+EA1176,Weber Florence Creek CWMU,Elk,permits_2026_total,MATCH,65,65,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1176
+EA1252,"Southwest Desert, Burbank/Garrison",Elk,permits_2026_res,MATCH,4,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1252
+EA1252,"Southwest Desert, Burbank/Garrison",Elk,permits_2026_nr,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1252
+EA1252,"Southwest Desert, Burbank/Garrison",Elk,permits_2026_total,MATCH,5,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EA1252
+EB3561,Two Bear CWMU,Elk,permits_2026_res,MATCH,5,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3561
 EB3561,Two Bear CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3561
 EB3561,Two Bear CWMU,Elk,permits_2026_total,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3561
-EB3609,Royal Ivory Outfitters CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3609
+EB3609,Royal Ivory Outfitters CWMU,Elk,permits_2026_res,MATCH,3,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3609
 EB3609,Royal Ivory Outfitters CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3609
 EB3609,Royal Ivory Outfitters CWMU,Elk,permits_2026_total,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3609
 EB3616,Sweetwater CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3616
 EB3616,Sweetwater CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3616
-EB3616,Sweetwater CWMU,Elk,permits_2026_total,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3616
-EB3617,Diamond Mountain CWMU,Elk,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3617
+EB3616,Sweetwater CWMU,Elk,permits_2026_total,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3616
+EB3617,Diamond Mountain CWMU,Elk,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3617
 EB3617,Diamond Mountain CWMU,Elk,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3617
 EB3617,Diamond Mountain CWMU,Elk,permits_2026_total,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=EB3617
-MA1006,"Wasatch Mtns, West",Moose,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MA1006
-MA1006,"Wasatch Mtns, West",Moose,permits_2026_nr,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MA1006
-MA1006,"Wasatch Mtns, West",Moose,permits_2026_total,DATABASE_BLANK_DWR_VALUE,,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MA1006
-MB6200,Bear Springs CWMU,Moose,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6200
+MA1006,"Wasatch Mtns, West",Moose,permits_2026_res,MATCH,4,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MA1006
+MA1006,"Wasatch Mtns, West",Moose,permits_2026_nr,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MA1006
+MA1006,"Wasatch Mtns, West",Moose,permits_2026_total,MATCH,5,5,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MA1006
+MB6200,Bear Springs CWMU,Moose,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6200
 MB6200,Bear Springs CWMU,Moose,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6200
 MB6200,Bear Springs CWMU,Moose,permits_2026_total,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6200
-MB6207,Durst Mountain CWMU,Moose,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6207
+MB6207,Durst Mountain CWMU,Moose,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6207
 MB6207,Durst Mountain CWMU,Moose,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6207
 MB6207,Durst Mountain CWMU,Moose,permits_2026_total,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6207
-MB6209,Ensign Ranches CWMU,Moose,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6209
+MB6209,Ensign Ranches CWMU,Moose,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6209
 MB6209,Ensign Ranches CWMU,Moose,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6209
 MB6209,Ensign Ranches CWMU,Moose,permits_2026_total,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6209
-MB6217,Sharp Mountain CWMU,Moose,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6217
+MB6217,Sharp Mountain CWMU,Moose,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6217
 MB6217,Sharp Mountain CWMU,Moose,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6217
 MB6217,Sharp Mountain CWMU,Moose,permits_2026_total,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6217
-MB6220,South Canyon CWMU,Moose,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6220
+MB6220,South Canyon CWMU,Moose,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6220
 MB6220,South Canyon CWMU,Moose,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6220
 MB6220,South Canyon CWMU,Moose,permits_2026_total,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6220
-MB6223,Three C CWMU,Moose,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6223
+MB6223,Three C CWMU,Moose,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6223
 MB6223,Three C CWMU,Moose,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6223
 MB6223,Three C CWMU,Moose,permits_2026_total,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6223
-MB6224,Two Bear CWMU,Moose,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6224
+MB6224,Two Bear CWMU,Moose,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6224
 MB6224,Two Bear CWMU,Moose,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6224
 MB6224,Two Bear CWMU,Moose,permits_2026_total,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6224
-MB6240,Chimney Rock CWMU,Moose,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6240
+MB6240,Chimney Rock CWMU,Moose,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6240
 MB6240,Chimney Rock CWMU,Moose,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6240
 MB6240,Chimney Rock CWMU,Moose,permits_2026_total,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6240
-MB6254,SJ Ranch CWMU,Moose,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6254
+MB6254,SJ Ranch CWMU,Moose,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6254
 MB6254,SJ Ranch CWMU,Moose,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6254
 MB6254,SJ Ranch CWMU,Moose,permits_2026_total,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6254
-MB6259,Royal Ivory Outfitters CWMU,Moose,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6259
+MB6259,Royal Ivory Outfitters CWMU,Moose,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6259
 MB6259,Royal Ivory Outfitters CWMU,Moose,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6259
 MB6259,Royal Ivory Outfitters CWMU,Moose,permits_2026_total,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6259
 MB6263,Moon Ranch CWMU,Moose,permits_2026_res,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6263
@@ -4315,34 +4315,34 @@ MB6264,Sand Creek CWMU,Moose,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://
 MB6264,Sand Creek CWMU,Moose,permits_2026_total,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6264
 PB5313,West Willow Creek Ranch CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5313
 PB5313,West Willow Creek Ranch CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5313
-PB5313,West Willow Creek Ranch CWMU,Pronghorn,permits_2026_total,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5313
+PB5313,West Willow Creek Ranch CWMU,Pronghorn,permits_2026_total,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5313
 PB5341,Sweetwater CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5341
 PB5341,Sweetwater CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5341
-PB5341,Sweetwater CWMU,Pronghorn,permits_2026_total,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5341
-PD1006,Parker Mtn,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,22,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1006
-PD1006,Parker Mtn,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_VALUE,,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1006
-PD1006,Parker Mtn,Pronghorn,permits_2026_total,DATABASE_BLANK_DWR_VALUE,,25,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1006
-PD1016,Zane CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1016
+PB5341,Sweetwater CWMU,Pronghorn,permits_2026_total,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PB5341
+PD1006,Parker Mtn,Pronghorn,permits_2026_res,MATCH,22,22,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1006
+PD1006,Parker Mtn,Pronghorn,permits_2026_nr,MATCH,3,3,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1006
+PD1006,Parker Mtn,Pronghorn,permits_2026_total,MATCH,25,25,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1006
+PD1016,Zane CWMU,Pronghorn,permits_2026_res,MATCH,4,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1016
 PD1016,Zane CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1016
 PD1016,Zane CWMU,Pronghorn,permits_2026_total,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1016
-PD1025,Cottonwood Ridge CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1025
+PD1025,Cottonwood Ridge CWMU,Pronghorn,permits_2026_res,MATCH,4,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1025
 PD1025,Cottonwood Ridge CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1025
 PD1025,Cottonwood Ridge CWMU,Pronghorn,permits_2026_total,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1025
-PD1026,Pahvant Ensign CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1026
+PD1026,Pahvant Ensign CWMU,Pronghorn,permits_2026_res,MATCH,4,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1026
 PD1026,Pahvant Ensign CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1026
 PD1026,Pahvant Ensign CWMU,Pronghorn,permits_2026_total,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1026
-PD1032,Antelope Creek CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1032
+PD1032,Antelope Creek CWMU,Pronghorn,permits_2026_res,MATCH,6,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1032
 PD1032,Antelope Creek CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1032
-PD1032,Antelope Creek CWMU,Pronghorn,permits_2026_total,DATABASE_BLANK_DWR_VALUE,,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1032
-PD1045,The Rose of Snowville CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1045
+PD1032,Antelope Creek CWMU,Pronghorn,permits_2026_total,MATCH,6,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1032
+PD1045,The Rose of Snowville CWMU,Pronghorn,permits_2026_res,MATCH,4,4,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1045
 PD1045,The Rose of Snowville CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1045
 PD1045,The Rose of Snowville CWMU,Pronghorn,permits_2026_total,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1045
-PD1046,Green River Flat CWMU,Pronghorn,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1046
+PD1046,Green River Flat CWMU,Pronghorn,permits_2026_res,MATCH,6,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1046
 PD1046,Green River Flat CWMU,Pronghorn,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1046
-PD1046,Green River Flat CWMU,Pronghorn,permits_2026_total,DATABASE_BLANK_DWR_VALUE,,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1046
-MB6225,Wallsburg CWMU,Moose,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6225
+PD1046,Green River Flat CWMU,Pronghorn,permits_2026_total,MATCH,6,6,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=PD1046
+MB6225,Wallsburg CWMU,Moose,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6225
 MB6225,Wallsburg CWMU,Moose,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6225
 MB6225,Wallsburg CWMU,Moose,permits_2026_total,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6225
-MB6257,Ingham Peak CWMU,Moose,permits_2026_res,DATABASE_BLANK_DWR_VALUE,,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6257
+MB6257,Ingham Peak CWMU,Moose,permits_2026_res,MATCH,1,1,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6257
 MB6257,Ingham Peak CWMU,Moose,permits_2026_nr,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6257
 MB6257,Ingham Peak CWMU,Moose,permits_2026_total,DATABASE_BLANK_DWR_ZERO,,0,https://dwrapps.utah.gov/huntboundary/HaNumber?roles=&hn=MB6257

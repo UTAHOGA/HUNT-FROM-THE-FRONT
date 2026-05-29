@@ -10,6 +10,7 @@ const AUDIT_JSON = path.join(ROOT, 'processed_data', 'audits', 'database_dwr_hun
 const AUDIT_CSV = path.join(ROOT, 'processed_data', 'audits', 'database_dwr_huntplanner_2026_overlay_audit.csv');
 const NONMATCH_CSV = path.join(ROOT, 'processed_data', 'audits', 'database_dwr_huntplanner_2026_permit_nonmatches.csv');
 const ALLOTMENT_AUDIT_CSV = path.join(ROOT, 'processed_data', 'audits', 'database_dwr_huntplanner_2026_allotment_fill_audit.csv');
+const BACKFILL_VS_2025_CSV = path.join(ROOT, 'processed_data', 'audits', 'database_dwr_huntplanner_2026_backfilled_permits_vs_2025.csv');
 
 const REMOVED_DWR_OVERLAY_COLUMNS = [
   'dwr_huntplanner_source_url',
@@ -107,6 +108,11 @@ function num(value) {
   return Number.isFinite(n) ? n : null;
 }
 
+function hasNonZeroNumeric(value) {
+  const n = num(value);
+  return n != null && n !== 0;
+}
+
 function sameNumeric(a, b) {
   const na = num(a);
   const nb = num(b);
@@ -133,6 +139,40 @@ function differenceType(databaseValue, dwrValue) {
   if (db && !dwr) return 'DATABASE_VALUE_DWR_BLANK';
   if (dbn != null && dwrn != null && dbn !== dwrn) return 'NUMERIC_CONFLICT';
   return 'OTHER_DIFFERENCE';
+}
+
+function compareBackfillTo2025(row, databaseField, dwrValue, sourceUrl) {
+  const field2025 = databaseField.replace('permits_2026_', 'permits_2025_');
+  const value2025 = row[field2025] || '';
+  const n2026 = num(dwrValue);
+  const n2025 = num(value2025);
+  let absoluteChange = '';
+  let percentChange = '';
+  let changeFlag = 'NO_2025_VALUE';
+
+  if (n2026 != null && n2025 != null) {
+    absoluteChange = n2026 - n2025;
+    if (n2025 === 0) {
+      changeFlag = n2026 === 0 ? 'NO_CHANGE' : 'NEW_FROM_ZERO_2025';
+    } else {
+      percentChange = (absoluteChange / n2025) * 100;
+      changeFlag = Math.abs(percentChange) >= 20 ? 'BIG_CHANGE_20_PERCENT_OR_MORE' : 'WITHIN_20_PERCENT';
+    }
+  }
+
+  return {
+    hunt_code: row.hunt_code,
+    hunt_name: row.hunt_name,
+    species: row.species,
+    field_2026: databaseField,
+    field_2025: field2025,
+    value_2026_backfilled_from_dwr: dwrValue || '',
+    value_2025: value2025,
+    absolute_change: absoluteChange,
+    percent_change: percentChange === '' ? '' : percentChange.toFixed(2),
+    change_flag: changeFlag,
+    dwr_source_url: sourceUrl || ''
+  };
 }
 
 function main() {
@@ -168,6 +208,10 @@ function main() {
   let allotmentNotFilledNonmatchCells = 0;
   let allotmentNoDatabasePermitCells = 0;
   let allotmentConflictCells = 0;
+  const backfillVs2025Rows = [];
+  let permitCellsBackfilledFromDwr = 0;
+  let permitBackfillBigChangeCells = 0;
+  let permitBackfillNo2025ValueCells = 0;
 
   for (const row of database.records) {
     for (const column of REMOVED_DWR_OVERLAY_COLUMNS) {
@@ -192,16 +236,35 @@ function main() {
     if (row.current_age_3yr_average) currentAgeRows += 1;
 
     let rowAllotmentFilled = false;
+    let rowPermitBackfilled = false;
     for (const [databaseField, dwrField, allotmentField] of [
       ['permits_2026_res', 'permits_2026_res', 'permit_allotment_2026_res'],
       ['permits_2026_nr', 'permits_2026_nr', 'permit_allotment_2026_nr'],
       ['permits_2026_total', 'permits_2026_total', 'permit_allotment_2026_total']
     ]) {
-      const comparisonStatus = sameNumeric(row[databaseField], dwr[dwrField])
+      let backfilledPermitFromDwr = false;
+      if (!String(row[databaseField] ?? '').trim() && !String(row[allotmentField] ?? '').trim() && hasNonZeroNumeric(dwr[dwrField])) {
+        row[databaseField] = dwr[dwrField];
+        row[allotmentField] = dwr[dwrField];
+        backfilledPermitFromDwr = true;
+        rowPermitBackfilled = true;
+        rowAllotmentFilled = true;
+        permitCellsBackfilledFromDwr += 1;
+        const backfillRow = compareBackfillTo2025(row, databaseField, dwr[dwrField], dwr.source_url || '');
+        if (backfillRow.change_flag === 'BIG_CHANGE_20_PERCENT_OR_MORE' || backfillRow.change_flag === 'NEW_FROM_ZERO_2025') {
+          permitBackfillBigChangeCells += 1;
+        }
+        if (backfillRow.change_flag === 'NO_2025_VALUE') permitBackfillNo2025ValueCells += 1;
+        backfillVs2025Rows.push(backfillRow);
+      }
+
+      const comparisonStatus = backfilledPermitFromDwr
+        ? 'BACKFILLED_FROM_DWR_NONZERO'
+        : sameNumeric(row[databaseField], dwr[dwrField])
         ? 'MATCH'
         : differenceType(row[databaseField], dwr[dwrField]);
 
-      if (comparisonStatus === 'MATCH') permitExactMatches += 1;
+      if (comparisonStatus === 'MATCH' || comparisonStatus === 'BACKFILLED_FROM_DWR_NONZERO') permitExactMatches += 1;
       else if (comparisonStatus === 'DATABASE_BLANK_DWR_ZERO') permitBlankDwrZero += 1;
       else if (comparisonStatus === 'DATABASE_BLANK_DWR_VALUE') permitBlankDwrValue += 1;
       else if (comparisonStatus === 'NUMERIC_CONFLICT') permitNumericConflicts += 1;
@@ -219,7 +282,10 @@ function main() {
       });
 
       let allotmentAction = '';
-      if (!String(row[databaseField] ?? '').trim()) {
+      if (backfilledPermitFromDwr) {
+        allotmentFilledCells += 1;
+        allotmentAction = 'FILLED_PERMIT_AND_ALLOTMENT_FROM_DWR_NONZERO';
+      } else if (!String(row[databaseField] ?? '').trim()) {
         allotmentNoDatabasePermitCells += 1;
         allotmentAction = 'NOT_FILLED_NO_DATABASE_PERMIT_VALUE';
       } else if (comparisonStatus !== 'MATCH') {
@@ -259,6 +325,12 @@ function main() {
       if (!row.permit_allotment_2026_source_file) row.permit_allotment_2026_source_file = dwr.source_url || '';
       if (!row.permit_allotment_2026_status) row.permit_allotment_2026_status = 'DWR_HUNTPLANNER_CONFIRMED_MATCH';
     }
+    if (rowPermitBackfilled) {
+      if (!row.permits_2026_source) row.permits_2026_source = 'DWR_HUNT_PLANNER_HaNumber_NONZERO_BACKFILL';
+      if (!row.permit_allotment_2026_source) row.permit_allotment_2026_source = 'DWR_HUNT_PLANNER_HaNumber_NONZERO_BACKFILL';
+      if (!row.permit_allotment_2026_source_file) row.permit_allotment_2026_source_file = dwr.source_url || '';
+      if (!row.permit_allotment_2026_status) row.permit_allotment_2026_status = 'DWR_HUNTPLANNER_NONZERO_BACKFILLED';
+    }
   }
 
   fs.mkdirSync(path.dirname(AUDIT_JSON), { recursive: true });
@@ -273,7 +345,7 @@ function main() {
     'dwr_huntplanner_value',
     'source_url'
   ]);
-  writeCsv(NONMATCH_CSV, permitComparisons.filter(row => row.comparison_status !== 'MATCH'), [
+  writeCsv(NONMATCH_CSV, permitComparisons.filter(row => !['MATCH', 'BACKFILLED_FROM_DWR_NONZERO'].includes(row.comparison_status)), [
     'hunt_code',
     'hunt_name',
     'species',
@@ -297,11 +369,31 @@ function main() {
     'dwr_huntplanner_value',
     'source_url'
   ]);
-
   const comparisonStatusCounts = permitComparisons.reduce((acc, row) => {
     acc[row.comparison_status] = (acc[row.comparison_status] || 0) + 1;
     return acc;
   }, {});
+  let effectiveBackfillVs2025Rows = backfillVs2025Rows;
+  if (!effectiveBackfillVs2025Rows.length && fs.existsSync(BACKFILL_VS_2025_CSV)) {
+    effectiveBackfillVs2025Rows = parseCsv(fs.readFileSync(BACKFILL_VS_2025_CSV, 'utf8')).records;
+  }
+  const effectiveBackfillBigChangeCells = effectiveBackfillVs2025Rows.filter(row => (
+    row.change_flag === 'BIG_CHANGE_20_PERCENT_OR_MORE' || row.change_flag === 'NEW_FROM_ZERO_2025'
+  )).length;
+  const effectiveBackfillNo2025ValueCells = effectiveBackfillVs2025Rows.filter(row => row.change_flag === 'NO_2025_VALUE').length;
+  writeCsv(BACKFILL_VS_2025_CSV, effectiveBackfillVs2025Rows, [
+    'hunt_code',
+    'hunt_name',
+    'species',
+    'field_2026',
+    'field_2025',
+    'value_2026_backfilled_from_dwr',
+    'value_2025',
+    'absolute_change',
+    'percent_change',
+    'change_flag',
+    'dwr_source_url'
+  ]);
 
   const audit = {
     created_at: new Date().toISOString(),
@@ -324,6 +416,11 @@ function main() {
     permit_blank_dwr_value_cells: permitBlankDwrValue,
     permit_numeric_conflict_cells: permitNumericConflicts,
     permit_other_difference_cells: permitOtherDifferences,
+    permit_cells_backfilled_from_dwr_nonzero: effectiveBackfillVs2025Rows.length,
+    permit_backfill_cells_filled_this_run: permitCellsBackfilledFromDwr,
+    permit_backfill_big_change_cells_vs_2025: effectiveBackfillBigChangeCells,
+    permit_backfill_no_2025_value_cells: effectiveBackfillNo2025ValueCells,
+    allotment_filled_cells_total: allotmentFilledCells,
     allotment_filled_cells_from_matched_database_and_dwr: allotmentFilledCells,
     allotment_already_matched_cells: allotmentAlreadyMatchedCells,
     allotment_not_filled_permit_dwr_nonmatch_cells: allotmentNotFilledNonmatchCells,
@@ -332,9 +429,11 @@ function main() {
     audit_csv: path.relative(ROOT, AUDIT_CSV).replace(/\\/g, '/'),
     permit_nonmatch_csv: path.relative(ROOT, NONMATCH_CSV).replace(/\\/g, '/'),
     allotment_audit_csv: path.relative(ROOT, ALLOTMENT_AUDIT_CSV).replace(/\\/g, '/'),
+    backfill_vs_2025_csv: path.relative(ROOT, BACKFILL_VS_2025_CSV).replace(/\\/g, '/'),
     notes: [
       'DATABASE.csv uses the existing permits_2026_res, permits_2026_nr, and permits_2026_total columns; duplicate DWR-prefixed permit columns are not kept.',
       'permit_allotment_2026_res, permit_allotment_2026_nr, and permit_allotment_2026_total are filled only when DATABASE permits_2026_* and DWR Hunt Planner popup values match exactly.',
+      'If both DATABASE permits_2026_* and permit_allotment_2026_* are blank while the DWR Hunt Planner popup has a nonzero value, both DATABASE fields are backfilled from DWR and compared to the matching 2025 permit field.',
       'percent_harvest_success_previous_hunting_season is populated from the DWR Hunt Planner popup by hunt code.',
       'current_age_3yr_average is DWR Hunt Planner current age context, not prior-year average harvest age.',
       'dwr_huntplanner_age_objective, dwr_huntplanner_population_objective, and dwr_huntplanner_current_population_estimate are retained as DWR Hunt Planner management-context fields.',
@@ -351,11 +450,14 @@ function main() {
   console.log(`Current age 3-year average rows: ${currentAgeRows}`);
   console.log(`Permit exact-match cells: ${permitExactMatches}`);
   console.log(`Permit non-match cells: ${permitComparisons.length - permitExactMatches}`);
+  console.log(`Permit cells backfilled from DWR nonzero values: ${effectiveBackfillVs2025Rows.length}`);
+  console.log(`Permit cells filled this run: ${permitCellsBackfilledFromDwr}`);
   console.log(`Allotment cells filled from matched permits: ${allotmentFilledCells}`);
   console.log(`Allotment cells already matched: ${allotmentAlreadyMatchedCells}`);
   console.log(`Audit: ${AUDIT_JSON}`);
   console.log(`Permit nonmatches: ${NONMATCH_CSV}`);
   console.log(`Allotment audit: ${ALLOTMENT_AUDIT_CSV}`);
+  console.log(`Backfill vs 2025 audit: ${BACKFILL_VS_2025_CSV}`);
 }
 
 main();
