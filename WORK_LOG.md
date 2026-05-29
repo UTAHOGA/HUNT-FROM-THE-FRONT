@@ -6394,3 +6394,33 @@
   - py scripts/reformat-hunt-tables-2026-xlsx-online.py passed.
   - Result: 	otal=48, ok=48, skip=0, error=0.
   - Verified table refs now span full header/data widths including added harvest columns.
+
+## Regenerate 2026 Hunt Table PDFs From Reformatted XLXS Set
+- Timestamp (UTC): 2026-05-29T02:37:40Z
+- Scope:
+  - Regenerated public display PDFs from:
+    - processed_data/hard_data_exports/hunt_tables/2026/XLXS
+  - Output folder:
+    - processed_data/hard_data_exports/hunt_tables/2026/PDF'S
+  - Added converter utility:
+    - scripts/convert-hunt-tables-2026-xlxs-to-pdfs.py
+- Validation:
+  - Source workbooks counted: 48
+  - Output PDFs counted: 48
+  - Missing PDF count after pass:  
+  - Confirmed naming coverage includes mixed-case and space-suffixed variants present in the XLXS set.
+
+## Hunt Table Formatting Correction Follow-up (Black Bear Table Object)
+- Timestamp (UTC): 2026-05-29T03:08:04Z
+- Scope:
+  - Investigated reported formatting miss in:
+    - processed_data/hard_data_exports/hunt_tables/2026/XLXS/2026_BLACK_BEAR.xlsx
+  - Found missing Excel table object on that workbook, which prevented reliable table-style propagation.
+  - Reapplied full table object and style range:
+    - A3:N109
+  - Re-rendered corresponding PDF:
+    - processed_data/hard_data_exports/hunt_tables/2026/PDF'S/2026_BLACK_BEAR.pdf
+- Validation:
+  - Verified all 48 XLXS files now contain table objects (
+o_table=0).
+  - Verified XLSX=48, PDF=48 parity.
