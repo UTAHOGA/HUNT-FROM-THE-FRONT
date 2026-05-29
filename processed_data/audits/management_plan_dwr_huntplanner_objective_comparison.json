@@ -1,0 +1,61 @@
+{
+  "created_at": "2026-05-29T07:57:55.462Z",
+  "database_csv": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+  "elk_plan_csv": "processed_data/audits/elk_plan_foundational_reference.csv",
+  "deer_plan_csv": "processed_data/audits/mule_deer_plan_foundational_reference.csv",
+  "comparison_rows": [
+    {
+      "species": "Elk",
+      "metric": "Statewide population objective",
+      "plan_value": 78990,
+      "dwr_huntplanner_dedup_boundary_sum": 73340,
+      "difference": -5650,
+      "percent_difference": "-7.15",
+      "dwr_unique_boundary_count": 88,
+      "comparison_status": "NOT_EXACT_MATCH",
+      "interpretation": "Management-plan statewide values and DWR Hunt Planner unit/boundary popup values are related context but should not be treated as identical truth without unit-scope reconciliation.",
+      "plan_source": "elk_plan.pdf"
+    },
+    {
+      "species": "Elk",
+      "metric": "Current statewide population estimate",
+      "plan_value": 84390,
+      "dwr_huntplanner_dedup_boundary_sum": 112240,
+      "difference": 27850,
+      "percent_difference": "33.00",
+      "dwr_unique_boundary_count": 88,
+      "comparison_status": "NOT_EXACT_MATCH",
+      "interpretation": "Management-plan statewide values and DWR Hunt Planner unit/boundary popup values are related context but should not be treated as identical truth without unit-scope reconciliation.",
+      "plan_source": "elk_plan.pdf"
+    },
+    {
+      "species": "Deer",
+      "metric": "Statewide population objective",
+      "plan_value": 404900,
+      "dwr_huntplanner_dedup_boundary_sum": 359600,
+      "difference": -45300,
+      "percent_difference": "-11.19",
+      "dwr_unique_boundary_count": 54,
+      "comparison_status": "NOT_EXACT_MATCH",
+      "interpretation": "Management-plan statewide values and DWR Hunt Planner unit/boundary popup values are related context but should not be treated as identical truth without unit-scope reconciliation.",
+      "plan_source": "mule_deer_plan.pdf"
+    },
+    {
+      "species": "Deer",
+      "metric": "2023 postseason population estimate",
+      "plan_value": 279000,
+      "dwr_huntplanner_dedup_boundary_sum": 257780,
+      "difference": -21220,
+      "percent_difference": "-7.61",
+      "dwr_unique_boundary_count": 54,
+      "comparison_status": "NOT_EXACT_MATCH",
+      "interpretation": "Management-plan statewide values and DWR Hunt Planner unit/boundary popup values are related context but should not be treated as identical truth without unit-scope reconciliation.",
+      "plan_source": "mule_deer_plan.pdf"
+    }
+  ],
+  "notes": [
+    "DWR Hunt Planner values are deduped by species + boundary_id before summing.",
+    "The comparison is scope/context validation only; it does not overwrite plan or DATABASE values.",
+    "Observed nonmatches indicate the Hunt Planner popup fields should be retained as unit/hunt context, not assumed to equal statewide plan totals."
+  ]
+}

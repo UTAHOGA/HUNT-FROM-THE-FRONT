@@ -1,3 +1,13 @@
+## 2026-05-29T07:59:06Z - Clean DATABASE DWR Management Objective Fields
+
+- Removed duplicate DWR-prefixed permit/source overlay fields from `DATABASE.csv`; existing `permits_2026_res`, `permits_2026_nr`, and `permits_2026_total` remain the permit columns.
+- Kept `percent_harvest_success_previous_hunting_season` and `current_age_3yr_average` as clean source fields from the DWR Hunt Planner popup.
+- Added back only the non-duplicate DWR management-context fields: `dwr_huntplanner_age_objective`, `dwr_huntplanner_population_objective`, and `dwr_huntplanner_current_population_estimate`.
+- Added a permit comparison audit plus nonmatch-only CSV so matching values are visible and nonmatching values are reported instead of silently overwritten.
+- Added a management-plan comparison audit against the elk and mule deer foundational reference extracts. DWR Hunt Planner boundary-deduped sums do not exactly match statewide plan totals, so these fields remain unit/hunt context rather than direct plan rollups.
+- Validation: 1,449 DATABASE rows; 960 previous-season harvest-success values; 220 current age 3-year average values; 220 age objective values; 618 population objective values; 611 current population estimate values.
+- Ran `npm.cmd run build`: PASS. Total current hunts 1,449; modeled 1,448; manual review 0; Gate PASS 1,449; Gate BLOCK 0; crosswalk matched current codes 169.
+
 ## 2026-05-29T07:46:30Z - DATABASE DWR Hunt Planner Source Overlay
 
 - Appended reviewed DWR Hunt Planner source-evidence columns to canonical 2026 `DATABASE.csv` without overwriting existing permit truth columns.
