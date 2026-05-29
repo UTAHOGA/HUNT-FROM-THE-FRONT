@@ -6841,3 +6841,20 @@ o_table=0).
   - Missing source rows: 0.
   - DA reconciliation against `DATABASE.csv`: 21 DA database codes, 20 reviewed pasted DA codes, missing reviewed code `DA1044`.
   - Spot checks passed for DA1001, DA1011, DA1041, DA1050, and CG9999.
+
+## Elk Extended Archery 2026 Permit Truth Source Addition
+- Timestamp (UTC): 2026-05-29T11:54:00Z
+- Scope:
+  - Added `ELK_EXTENDED_ARCHERY` to `scripts/build-reviewed-permit-truth-sources-2026.py` from the user-pasted Utah DWR Hunt Planner EX1000 row.
+  - Created `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 elk extended archery reviewed res-nr-total.csv`.
+  - Preserved EX1000 as no-published-numeric because the pasted DWR row did not publish a numeric permit count.
+  - Included boundary-id metadata from `DATABASE.csv` and source lineage identifying the pasted DWR Hunt Planner source row.
+  - Updated reviewed permit truth-source audit CSV/JSON.
+- Validation:
+  - ELK_EXTENDED_ARCHERY rows: 1.
+  - Blank/no published numeric permit rows: 1.
+  - Duplicate hunt codes: 0.
+  - Bad split totals: 0.
+  - Missing source rows: 0.
+  - Prefix reconciliation against `DATABASE.csv`: all current database hunt-code prefixes are now represented in reviewed permit files.
+  - Known row-level open item remains DA1044 because the corresponding DWR row has not been pasted/reviewed.

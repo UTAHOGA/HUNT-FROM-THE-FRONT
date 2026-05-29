@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-05-29T11:51:07.670367+00:00",
+  "created_at": "2026-05-29T11:53:04.862832+00:00",
   "source": "pasted-aligned public hunt table workbooks plus reviewed inline pasted DWR Hunt Planner rows",
   "families": {
     "BLACK_BEAR": {
@@ -121,6 +121,25 @@
         "USER_PASTED_DWR_HUNT_PLANNER_COUGAR_CG_2026": 1
       },
       "output": "C:\\Users\\tyler\\Desktop\\GitHub\\HUNT-BUILDER\\pipeline\\RAW\\hunt_unit_database\\2026\\csv\\2026 Permits\\2026 cougar reviewed res-nr-total.csv"
+    },
+    "ELK_EXTENDED_ARCHERY": {
+      "rows": 1,
+      "duplicate_hunt_codes": [],
+      "bad_split_totals": [],
+      "missing_source_rows": [],
+      "permit_status_counts": {
+        "NO_PUBLISHED_NUMERIC_PERMIT": 1
+      },
+      "hunt_type_counts": {
+        "Extended Archery": 1
+      },
+      "weapon_counts": {
+        "Archery": 1
+      },
+      "source_counts": {
+        "USER_PASTED_DWR_HUNT_PLANNER_ELK_EXTENDED_ARCHERY_EX_2026": 1
+      },
+      "output": "C:\\Users\\tyler\\Desktop\\GitHub\\HUNT-BUILDER\\pipeline\\RAW\\hunt_unit_database\\2026\\csv\\2026 Permits\\2026 elk extended archery reviewed res-nr-total.csv"
     },
     "BUCK_DEER": {
       "rows": 458,

@@ -148,6 +148,17 @@ Cougar - Statewide	CG9999	Either Sex	Cougar	Any Legal Weapon	Statewide	unlimited
         "sex_type": ("Either Sex",),
     },
     {
+        "family": "ELK_EXTENDED_ARCHERY",
+        "output": "2026 elk extended archery reviewed res-nr-total.csv",
+        "source_label": "USER_PASTED_DWR_HUNT_PLANNER_ELK_EXTENDED_ARCHERY_EX_2026",
+        "inline_tsv": """
+Elk Extended Archery	EX1000	Hunters Choice	Elk	Archery	Extended Archery	Aug 16 - Dec 15, 2025
+        """,
+        "code_prefixes": ("EX",),
+        "species": ("Elk",),
+        "sex_type": ("Hunters Choice",),
+    },
+    {
         "family": "BUCK_DEER",
         "output": "2026 buck deer all reviewed res-nr-total.csv",
         "sources": ["2026 DEER BUCK DRAW.xlsx"],
