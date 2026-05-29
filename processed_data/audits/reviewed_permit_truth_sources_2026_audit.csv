@@ -1,5 +1,6 @@
 family,output,rows,full_split,total_only,blank_no_published_numeric,partial,duplicate_hunt_codes,bad_split_totals,missing_source_rows,source_counts
 BLACK_BEAR,C:\Users\tyler\Desktop\GitHub\HUNT-BUILDER\pipeline\RAW\hunt_unit_database\2026\csv\2026 Permits\2026 black bear permits reviewed res-nr-total.csv,106,100,1,5,0,0,0,0,"{""2026 BLACK BEAR DRAW.xlsx"": 106}"
+BISON_HUNTERS_CHOICE,C:\Users\tyler\Desktop\GitHub\HUNT-BUILDER\pipeline\RAW\hunt_unit_database\2026\csv\2026 Permits\2026 bison reviewed res-nr-total.csv,14,11,1,2,0,0,0,0,"{""USER_PASTED_DWR_HUNT_PLANNER_BISON_BI_2026"": 14}"
 BUCK_DEER,C:\Users\tyler\Desktop\GitHub\HUNT-BUILDER\pipeline\RAW\hunt_unit_database\2026\csv\2026 Permits\2026 buck deer all reviewed res-nr-total.csv,458,192,137,129,0,0,0,0,"{""2026 DEER BUCK DRAW.xlsx"": 458}"
 ELK_ANTLERLESS,C:\Users\tyler\Desktop\GitHub\HUNT-BUILDER\pipeline\RAW\hunt_unit_database\2026\csv\2026 Permits\2026 elk antlerless all reviewed res-nr-total.csv,204,167,27,10,0,0,0,0,"{""2026 ELK ANTLERLESS DRAW.xlsx"": 204}"
 ELK_BULL,C:\Users\tyler\Desktop\GitHub\HUNT-BUILDER\pipeline\RAW\hunt_unit_database\2026\csv\2026 Permits\2026 elk bull all reviewed res-nr-total.csv,353,209,3,141,0,0,0,0,"{""2026 ELK BULL ALL HUNTS.xlsx"": 353}"

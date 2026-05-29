@@ -6785,3 +6785,22 @@ o_table=0).
   - Bad split totals: 0.
   - Missing source rows: 0.
   - Spot checks passed for MA1005, MA1007, MA1008, MA1009, and MA1010.
+
+## Bison 2026 Permit Truth Source Addition
+- Timestamp (UTC): 2026-05-29T11:47:00Z
+- Scope:
+  - Added `BISON_HUNTERS_CHOICE` to `scripts/build-reviewed-permit-truth-sources-2026.py` from the user-pasted Utah DWR Hunt Planner BI rows.
+  - Created `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 bison reviewed res-nr-total.csv` as the reviewed BI family file.
+  - Applied the statewide permit rule so `BI1000` is total-only with `permits_2026_total = 1`.
+  - Preserved BI6527 and BI6538 as no-published-numeric permit rows because the pasted DWR source rows did not publish permit counts.
+  - Included boundary-id metadata from `DATABASE.csv` and source lineage identifying the pasted DWR Hunt Planner source rows.
+  - Updated reviewed permit truth-source audit CSV/JSON.
+- Validation:
+  - BISON_HUNTERS_CHOICE rows: 14.
+  - Full split rows: 11.
+  - Total-only rows: 1.
+  - Blank/no published numeric permit rows: 2.
+  - Duplicate hunt codes: 0.
+  - Bad split totals: 0.
+  - Missing source rows: 0.
+  - Spot checks passed for BI1000, BI6500, BI6503, BI6509, BI6527, BI6537, and BI6538.

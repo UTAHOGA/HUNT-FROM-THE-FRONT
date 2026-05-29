@@ -48,6 +48,41 @@ FAMILY_CONFIGS = [
         "species": ("Black Bear",),
     },
     {
+        "family": "BISON_HUNTERS_CHOICE",
+        "output": "2026 bison reviewed res-nr-total.csv",
+        "source_label": "USER_PASTED_DWR_HUNT_PLANNER_BISON_BI_2026",
+        "inline_tsv": """
+Bison - Statewide Permit	BI1000	Hunters Choice	Bison	Any Legal Weapon	Statewide	Aug 1, 2026 - Jan 31, 2027
+Antelope Island	BI6500	Hunters Choice	Bison	Any Legal Weapon	Once-in-a-lifetime	Dec 07 2026 - Dec 09 2026	Res: 2
+NonRes: 0
+Henry Mtns	BI6503	Hunters Choice	Bison	Any Legal Weapon	Once-in-a-lifetime	Oct 28 2026 - Nov 8 2026	Res: 4
+NonRes: 2
+Henry Mtns	BI6504	Hunters Choice	Bison	Any Legal Weapon	Once-in-a-lifetime	Nov 11 2026 - Nov 22 2026	Res: 5
+NonRes: 2
+Henry Mtns	BI6509	Hunters Choice	Bison	Archery	Once-in-a-lifetime	Jan 18 - 31, 2027	Res: 5
+NonRes: 0
+Henry Mtns	BI6516	Hunters Choice	Bison	Any Legal Weapon	Once-in-a-lifetime	Nov 25 2026 - Dec 6 2026	Res: 6
+NonRes: 0
+Nine Mile	BI6527	Hunters Choice	Bison	Any Legal Weapon	General Season	Aug 1, 2025 - Jan 31, 2026
+Book Cliffs, Little Creek/South	BI6528	Hunters Choice	Bison	Archery	Once-in-a-lifetime	Aug 15 2026 - Sept 11 2026	Res: 6
+NonRes: 0
+Book Cliffs, Little Creek/South	BI6531	Hunters Choice	Bison	Any Legal Weapon	Once-in-a-lifetime	Sept 21 2026 - Oct 02 2026	Res: 10
+NonRes: 0
+Book Cliffs, Bitter Creek	BI6532	Hunters Choice	Bison	Archery	Once-in-a-lifetime	Aug 15 2026 - Sept 11 2026	Res: 6
+NonRes: 0
+Book Cliffs, Bitter Creek	BI6534	Hunters Choice	Bison	Any Legal Weapon	Once-in-a-lifetime	Sept 12 2026 - Sept 20 2026	Res: 10
+NonRes: 0
+Book Cliffs, Bitter Creek	BI6535	Hunters Choice	Bison	Any Legal Weapon	Once-in-a-lifetime	Oct 03 2026 - Oct 15 2026	Res: 8
+NonRes: 0
+Book Cliffs, Little Creek/South	BI6537	Hunters Choice	Bison	Any Legal Weapon	Once-in-a-lifetime	Nov 07 2026 - Jan 31 2027	Res: 8
+NonRes: 7
+Nine Mile, Private Lands Only	BI6538	Hunters Choice	Bison	Any Legal Weapon	General Season	Aug 1, 2025 - Jan 31, 2026 | Harvest survey due by Feb 15, 2026 Visit: http://wildlife.utah.gov/harvest to submit your survey
+        """,
+        "code_prefixes": ("BI",),
+        "species": ("Bison",),
+        "sex_type": ("Hunters Choice",),
+    },
+    {
         "family": "BUCK_DEER",
         "output": "2026 buck deer all reviewed res-nr-total.csv",
         "sources": ["2026 DEER BUCK DRAW.xlsx"],
