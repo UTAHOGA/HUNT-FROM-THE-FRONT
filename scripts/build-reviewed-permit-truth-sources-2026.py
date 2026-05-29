@@ -15,6 +15,8 @@ DATABASE_CSV = ROOT / "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv"
 PERMIT_DIR = ROOT / "pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits"
 PUBLIC_XLSX_DIR = ROOT / "processed_data/hard_data_exports/hunt_tables/2026/XLXS"
 AUDIT_DIR = ROOT / "processed_data/audits"
+MASTER_REVIEWED_PERMIT_CSV = PERMIT_DIR / "2026 reviewed permit truth master.csv"
+SUPERSEDED_FRAGMENT_MANIFEST = PERMIT_DIR / "2026 superseded permit fragments manifest.csv"
 
 
 CANONICAL_COLUMNS = [
@@ -36,6 +38,20 @@ CANONICAL_COLUMNS = [
     "permit_count_status",
     "source_file",
     "source_row_number",
+]
+
+MASTER_COLUMNS = ["reviewed_family"] + CANONICAL_COLUMNS
+
+
+SUPERSEDED_FRAGMENT_FILES = [
+    "2026 black bear permits.csv",
+    "black bear.csv",
+    "2026 l.e. elk.csv",
+    "2026 rocky mountain bighorn user verified.csv",
+    "elk antlerless private lands only EA.csv",
+    "elk antlerless private lands.csv",
+    "2026 buck deer limited entry reviewed res-nr-total.csv",
+    "2026 buck deer private land reviewed res-nr-total.csv",
 ]
 
 
@@ -885,6 +901,41 @@ def write_truth_csv(path: Path, rows: list[dict[str, str]]) -> None:
             writer.writerow({column: row.get(column, "") for column in CANONICAL_COLUMNS})
 
 
+def write_master_csv(path: Path, rows: list[dict[str, str]]) -> None:
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=MASTER_COLUMNS)
+        writer.writeheader()
+        for row in rows:
+            writer.writerow({column: row.get(column, "") for column in MASTER_COLUMNS})
+
+
+def catalog_superseded_fragments() -> list[dict[str, str]]:
+    manifest: list[dict[str, str]] = []
+    for file_name in SUPERSEDED_FRAGMENT_FILES:
+        active_path = PERMIT_DIR / file_name
+        status = "ACTIVE_SUPERSEDED_FRAGMENT" if active_path.exists() else "MISSING"
+        if active_path.exists():
+            status = "ACTIVE_SUPERSEDED_FRAGMENT_DO_NOT_USE_FOR_CANONICAL_PERMITS"
+
+        manifest.append(
+            {
+                "file_name": file_name,
+                "active_path": str(active_path),
+                "status": status,
+                "reason": "Superseded by canonical reviewed family outputs and 2026 reviewed permit truth master.csv",
+            }
+        )
+    return manifest
+
+
+def write_fragment_manifest(rows: list[dict[str, str]]) -> None:
+    fieldnames = ["file_name", "active_path", "status", "reason"]
+    with SUPERSEDED_FRAGMENT_MANIFEST.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+
+
 def validate_family(rows: list[dict[str, str]]) -> dict[str, object]:
     codes = [row["hunt_code"] for row in rows]
     duplicates = sorted(code for code, count in Counter(codes).items() if count > 1)
@@ -937,6 +988,7 @@ def main() -> None:
     database = read_database_map()
 
     audit_rows = []
+    master_rows: list[dict[str, str]] = []
     audit_json = {
         "created_at": datetime.now(timezone.utc).isoformat(),
         "source": "pasted-aligned public hunt table workbooks plus reviewed inline pasted DWR Hunt Planner rows",
@@ -971,6 +1023,10 @@ def main() -> None:
         all_rows.sort(key=sort_key)
         output_path = PERMIT_DIR / str(config["output"])
         write_truth_csv(output_path, all_rows)
+        for row in all_rows:
+            master_rows.append(
+                {"reviewed_family": family, **{column: row.get(column, "") for column in CANONICAL_COLUMNS}}
+            )
 
         validation = validate_family(all_rows)
         validation["output"] = str(output_path)
@@ -992,6 +1048,11 @@ def main() -> None:
                 "source_counts": json.dumps(validation["source_counts"], sort_keys=True),
             }
         )
+
+    master_rows.sort(key=lambda row: (row["reviewed_family"], *sort_key(row)))
+    write_master_csv(MASTER_REVIEWED_PERMIT_CSV, master_rows)
+    fragment_manifest_rows = catalog_superseded_fragments()
+    write_fragment_manifest(fragment_manifest_rows)
 
     reviewed_codes = {
         code(row.get("hunt_code"))
@@ -1017,6 +1078,13 @@ def main() -> None:
         "unresolved_database_hunt_codes_excluding_reviewed_exclusions": sorted(
             database_codes - reviewed_codes - excluded_codes
         ),
+    }
+    audit_json["canonical_outputs"] = {
+        "master_reviewed_permit_csv": str(MASTER_REVIEWED_PERMIT_CSV),
+        "master_rows": len(master_rows),
+        "superseded_fragment_manifest": str(SUPERSEDED_FRAGMENT_MANIFEST),
+        "superseded_fragment_status_counts": dict(Counter(row["status"] for row in fragment_manifest_rows)),
+        "cleanup_mode": "NON_DESTRUCTIVE_MANIFEST_ONLY",
     }
 
     audit_csv_path = AUDIT_DIR / "reviewed_permit_truth_sources_2026_audit.csv"

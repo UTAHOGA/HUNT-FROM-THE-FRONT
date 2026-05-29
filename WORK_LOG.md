@@ -6872,3 +6872,21 @@ o_table=0).
   - Current `DATABASE.csv` hunt-code count in audit: 1449.
   - Remaining database-only hunt codes excluding DA1044: 55; these are review evidence only and were not promoted.
   - Builder syntax validation passed with `py -m py_compile scripts/build-reviewed-permit-truth-sources-2026.py`.
+
+## Reviewed 2026 Permit Truth Master And Fragment Manifest
+- Timestamp (UTC): 2026-05-29T12:03:00Z
+- Scope:
+  - Updated `scripts/build-reviewed-permit-truth-sources-2026.py` to write a canonical master file: `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 reviewed permit truth master.csv`.
+  - Updated the builder to write `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 superseded permit fragments manifest.csv`.
+  - The fragment cleanup is non-destructive: old fragment CSVs are not deleted, moved, or overwritten; the manifest marks them `ACTIVE_SUPERSEDED_FRAGMENT_DO_NOT_USE_FOR_CANONICAL_PERMITS`.
+  - No `hard-copy`, research-library, hunt-research, public display, runtime engine, prediction, or `DATABASE.csv` files were modified.
+  - Updated reviewed permit truth-source audit JSON with canonical output metadata and non-destructive cleanup mode.
+- Validation:
+  - Master rows: 1393.
+  - Missing source_file rows: 0.
+  - Missing source_row_number rows: 0.
+  - Partial permit status rows: 0.
+  - Bad resident/nonresident split totals: 0.
+  - Exact duplicate canonical keys: 0.
+  - Superseded fragment manifest rows: 8.
+  - Fragment cleanup mode: `NON_DESTRUCTIVE_MANIFEST_ONLY`.
