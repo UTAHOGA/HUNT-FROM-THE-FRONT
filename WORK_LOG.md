@@ -1,3 +1,12 @@
+## 2026-05-29T07:46:30Z - DATABASE DWR Hunt Planner Source Overlay
+
+- Appended reviewed DWR Hunt Planner source-evidence columns to canonical 2026 `DATABASE.csv` without overwriting existing permit truth columns.
+- Added source columns for DWR popup URL/retrieval metadata, season text, DWR permit evidence, previous-season percent harvest success, current age 3-year average, age objective, population objective, and current population estimate.
+- Created a repeatable merge script and permit comparison audit for DATABASE vs DWR Hunt Planner popup values.
+- Validation: 1,449 DATABASE rows, 1,449 matched DWR popup hunt codes, 0 missing popup rows, 960 previous-season harvest-success values populated, 220 current age 3-year average values populated.
+- Permit comparison audit classified 2,347 difference cells: 1,635 DATABASE blank vs DWR zero, 369 DATABASE blank vs DWR value, 342 numeric conflicts, and 1 other difference. Existing canonical permit columns were not overwritten.
+- Ran `npm.cmd run build`: PASS. Total current hunts 1,449; modeled 1,448; manual review 0; Gate PASS 1,449; Gate BLOCK 0; crosswalk matched current codes 169.
+
 ## 2026-05-29T07:36:06Z - DWR Hunt Planner Popup Data Extract
 
 - Created a DWR Hunt Planner HaNumber JSON extractor for the 2026 current hunt-code universe.

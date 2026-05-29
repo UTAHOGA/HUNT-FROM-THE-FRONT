@@ -1,0 +1,41 @@
+{
+  "created_at": "2026-05-29T07:44:32.737Z",
+  "database_csv": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
+  "dwr_popup_csv": "processed_data/dwr_huntplanner_hanumber_2026.csv",
+  "database_rows": 1449,
+  "dwr_popup_rows": 1449,
+  "matched_hunt_code_rows": 1449,
+  "missing_dwr_popup_rows": 0,
+  "columns_added_or_confirmed": [
+    "dwr_huntplanner_source_url",
+    "dwr_huntplanner_source_retrieved_at",
+    "dwr_huntplanner_management_stats_available",
+    "dwr_huntplanner_season_date_text",
+    "dwr_huntplanner_permits_2026_res",
+    "dwr_huntplanner_permits_2026_nr",
+    "dwr_huntplanner_permits_2026_total",
+    "dwr_huntplanner_percent_harvest_success_previous_hunting_season",
+    "dwr_huntplanner_current_age_3yr_average",
+    "dwr_huntplanner_age_objective",
+    "dwr_huntplanner_population_objective",
+    "dwr_huntplanner_current_population_estimate"
+  ],
+  "rows_with_percent_harvest_success_previous_hunting_season": 960,
+  "rows_with_current_age_3yr_average": 220,
+  "rows_with_age_objective": 220,
+  "rows_with_population_objective": 618,
+  "permit_mismatch_cells": 2347,
+  "permit_mismatch_hunt_codes": 851,
+  "permit_difference_type_counts": {
+    "DATABASE_BLANK_DWR_ZERO": 1635,
+    "NUMERIC_CONFLICT": 342,
+    "DATABASE_BLANK_DWR_VALUE": 369,
+    "OTHER_DIFFERENCE": 1
+  },
+  "audit_csv": "processed_data/audits/database_dwr_huntplanner_2026_overlay_audit.csv",
+  "notes": [
+    "DWR Hunt Planner fields were appended as source evidence columns; canonical permit columns were not overwritten.",
+    "dwr_huntplanner_current_age_3yr_average is current age context from the Hunt Planner popup, not prior-year average harvest age.",
+    "dwr_huntplanner_percent_harvest_success_previous_hunting_season is the previous hunting season value reported by the DWR Hunt Planner popup for the hunt code."
+  ]
+}
