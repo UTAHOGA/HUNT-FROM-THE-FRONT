@@ -24,16 +24,42 @@ STAGE_XLSX_DIR = OUT_BASE / "CLEAN_XLXS_STAGED"
 AUDIT_CSV = ROOT / "processed_data" / "audits" / "hunt_tables_2026_clean_xlsx_regeneration_audit.csv"
 YEAR = "2026"
 
-# Do not add modeled/inferred age values. AVERAGE HARVEST AGE is populated
-# only when an actual average_harvest_age value already exists in source data.
+# Public display headers. NOTES intentionally moved to the final column.
 HEADERS = [
-    "HUNT CODE",
-    "HUNT NAME",
-    "SPECIES",
-    "SEX TYPE",
-    "HUNT_CLASS",
-    "AVERAGE HARVEST AGE",
+    "hunt_name",
+    "hunt_code",
+    "sex_type",
+    "species",
+    "weapon",
+    "hunt_type",
+    "season",
+    "2026 permits RES",
+    "2026 permits NR",
+    "2026 permits TOTAL",
+    "Harvest Prior Year",
+    "Harvest Success %",
+    "Avg Harvest Age",
+    "Avg Days Hunted",
+    "NOTES",
 ]
+
+COLUMN_WIDTHS = {
+    "hunt_name": 24,
+    "hunt_code": 10,
+    "sex_type": 10,
+    "species": 12,
+    "weapon": 16,
+    "hunt_type": 18,
+    "season": 22,
+    "2026 permits RES": 10,
+    "2026 permits NR": 10,
+    "2026 permits TOTAL": 11,
+    "Harvest Prior Year": 11,
+    "Harvest Success %": 12,
+    "Avg Harvest Age": 12,
+    "Avg Days Hunted": 12,
+    "NOTES": 22,
+}
 
 HUNT_CLASS_ABBREVIATIONS = {
     "once in a lifetime": "O.I.L",
@@ -78,19 +104,26 @@ def norm(value: object) -> str:
     return re.sub(r"\s+", " ", str(value or "").strip())
 
 
-def clean_number(value: object) -> str:
+def clean_number(value: object, *, allow_zero: bool = False) -> str:
     text = norm(value)
     if not text:
         return ""
     try:
-        n = float(text.replace(",", ""))
+        n = float(text.replace(",", "").replace("%", ""))
     except ValueError:
         return text
-    if n == 0:
+    if n == 0 and not allow_zero:
         return ""
     if n.is_integer():
         return str(int(n))
     return f"{n:.2f}".rstrip("0").rstrip(".")
+
+
+def first_value(record: dict, keys: Iterable[str]) -> object:
+    for key in keys:
+        if key in record and norm(record.get(key)):
+            return record.get(key)
+    return ""
 
 
 def clean_filename_part(value: object) -> str:
@@ -148,14 +181,40 @@ def average_harvest_age(record: dict, age_latest: Dict[str, str]) -> str:
     return age_latest.get(code, "")
 
 
+def permit_value(record: dict, keys: Iterable[str]) -> str:
+    return clean_number(first_value(record, keys), allow_zero=False)
+
+
+def notes_value(record: dict) -> str:
+    for key in ("notes", "note", "permit_status", "data_status"):
+        val = norm(record.get(key))
+        if val:
+            return val.replace("SOURCE_CONFIRMED_", "").replace("NO_QUOTA_PUBLISHED", "No quota published")[:90]
+    return ""
+
+
 def row_from_record(record: dict, age_latest: Dict[str, str]) -> dict:
+    permits_res = permit_value(record, ("permits_2026_res", "permits_res", "resident_permits", "permits_resident", "res_permits"))
+    permits_nr = permit_value(record, ("permits_2026_nr", "permits_nr", "nonresident_permits", "non_resident_permits", "nonres_permits", "nr_permits"))
+    permits_total = permit_value(record, ("permits_2026_total", "permits_total", "recommended_permits", "total_permits", "permits"))
+
+    # Do not derive RES/NR from TOTAL. If only total exists, RES and NR stay blank.
     return {
-        "HUNT CODE": norm(record.get("hunt_code")).upper(),
-        "HUNT NAME": norm(record.get("hunt_name") or record.get("dwr_unit_name") or record.get("unit_name")),
-        "SPECIES": norm(record.get("species")),
-        "SEX TYPE": norm(record.get("sex_type")),
-        "HUNT_CLASS": existing_hunt_class(record),
-        "AVERAGE HARVEST AGE": average_harvest_age(record, age_latest),
+        "hunt_name": norm(record.get("hunt_name") or record.get("dwr_unit_name") or record.get("unit_name")),
+        "hunt_code": norm(record.get("hunt_code")).upper(),
+        "sex_type": norm(record.get("sex_type")),
+        "species": norm(record.get("species")),
+        "weapon": norm(record.get("weapon")),
+        "hunt_type": norm(record.get("hunt_type") or existing_hunt_class(record)),
+        "season": norm(record.get("season") or record.get("season_dates") or record.get("dates") or record.get("season_date")),
+        "2026 permits RES": permits_res,
+        "2026 permits NR": permits_nr,
+        "2026 permits TOTAL": permits_total,
+        "Harvest Prior Year": clean_number(first_value(record, ("harvest_prior_year", "prior_year_harvest", "previous_harvest", "harvest")), allow_zero=False),
+        "Harvest Success %": clean_number(first_value(record, ("percent_harvest_success", "percent_success", "success_percent", "previous_percent_success")), allow_zero=True),
+        "Avg Harvest Age": average_harvest_age(record, age_latest),
+        "Avg Days Hunted": clean_number(first_value(record, ("avg_days_hunted", "average_days_hunted", "avg_days", "days_hunted")), allow_zero=False),
+        "NOTES": notes_value(record),
     }
 
 
@@ -171,9 +230,9 @@ def load_rows() -> List[dict]:
             print(f"WARN skipped unreadable JSON {path.name}: {exc}")
             continue
         row = row_from_record(record, age_latest)
-        if row["HUNT CODE"]:
+        if row["hunt_code"]:
             rows.append(row)
-    rows.sort(key=lambda r: (r["SPECIES"], r["SEX TYPE"], r["HUNT_CLASS"], r["HUNT CODE"], r["HUNT NAME"]))
+    rows.sort(key=lambda r: (r["species"], r["sex_type"], r["hunt_type"], r["hunt_code"], r["hunt_name"]))
     return rows
 
 
@@ -188,9 +247,9 @@ def class_sort_key(hunt_class: str) -> Tuple[int, str]:
 def group_rows(rows: Iterable[dict]) -> Dict[Tuple[str, str, str], List[dict]]:
     groups: Dict[Tuple[str, str, str], List[dict]] = defaultdict(list)
     for row in rows:
-        species = clean_filename_part(row["SPECIES"])
-        sex_type = clean_filename_part(row["SEX TYPE"] or "ALL")
-        hunt_class = clean_filename_part(row["HUNT_CLASS"] or "UNCLASSIFIED")
+        species = clean_filename_part(row["species"])
+        sex_type = clean_filename_part(row["sex_type"] or "ALL")
+        hunt_class = clean_filename_part(row["hunt_type"] or "UNCLASSIFIED")
         groups[(species, sex_type, hunt_class)].append(row)
     return groups
 
@@ -199,70 +258,60 @@ def output_stem(species: str, sex_type: str, hunt_class: str) -> str:
     return re.sub(r"\s+", " ", f"{YEAR} {species} {sex_type} {hunt_class}").strip(" .")
 
 
-def write_xlsx(path: Path, rows: List[dict]) -> None:
-    wb = Workbook()
-    ws = wb.active
-    ws.title = "Hunt Table"
+def style_workbook(ws, row_count: int) -> None:
+    header_fill = PatternFill(fill_type="solid", fgColor="5B301B")
+    odd_fill = PatternFill(fill_type="solid", fgColor="F7F1E8")
+    even_fill = PatternFill(fill_type="solid", fgColor="EFE5D7")
+    side = Side(style="thin", color="C58F61")
+    border = Border(left=side, right=side, top=side, bottom=side)
 
-    for col_idx, header in enumerate(HEADERS, start=1):
-        ws.cell(row=1, column=col_idx, value=header)
-    for row_idx, row in enumerate(rows, start=2):
-        for col_idx, header in enumerate(HEADERS, start=1):
-            ws.cell(row=row_idx, column=col_idx, value=row.get(header, ""))
-
-    header_fill = PatternFill(fill_type="solid", fgColor="4F2D1D")
-    odd_fill = PatternFill(fill_type="solid", fgColor="FBF6EF")
-    even_fill = PatternFill(fill_type="solid", fgColor="F3E8DA")
-    side = Side(style="thin", color="C7B59F")
-    grid = Border(left=side, right=side, top=side, bottom=side)
-
-    for cell in ws[1]:
-        cell.font = Font(name="Calibri", bold=True, color="FFFFFF", size=11)
+    for col, header in enumerate(HEADERS, start=1):
+        cell = ws.cell(row=1, column=col)
+        cell.value = header
         cell.fill = header_fill
-        cell.border = grid
+        cell.font = Font(name="Calibri", size=11, bold=True, color="FFFFFF")
         cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
-    ws.row_dimensions[1].height = 24
+        cell.border = border
+        ws.column_dimensions[get_column_letter(col)].width = COLUMN_WIDTHS[header]
 
-    for row_idx in range(2, ws.max_row + 1):
-        fill = odd_fill if row_idx % 2 == 0 else even_fill
-        for col_idx in range(1, ws.max_column + 1):
-            cell = ws.cell(row=row_idx, column=col_idx)
-            cell.font = Font(name="Calibri", size=10)
+    for row in range(2, row_count + 2):
+        fill = odd_fill if row % 2 == 0 else even_fill
+        for col in range(1, len(HEADERS) + 1):
+            cell = ws.cell(row=row, column=col)
             cell.fill = fill
-            cell.border = grid
-            if HEADERS[col_idx - 1] == "AVERAGE HARVEST AGE":
-                cell.alignment = Alignment(horizontal="right", vertical="center", wrap_text=False)
-            else:
-                cell.alignment = Alignment(horizontal="left", vertical="center", wrap_text=False)
+            cell.border = border
+            cell.font = Font(name="Calibri", size=11, color="000000")
+            cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        ws.row_dimensions[row].height = 42
 
-    widths = {
-        "HUNT CODE": 13,
-        "HUNT NAME": 42,
-        "SPECIES": 20,
-        "SEX TYPE": 14,
-        "HUNT_CLASS": 28,
-        "AVERAGE HARVEST AGE": 21,
-    }
-    for col_idx, header in enumerate(HEADERS, start=1):
-        ws.column_dimensions[get_column_letter(col_idx)].width = widths[header]
-
-    table_ref = f"A1:{get_column_letter(len(HEADERS))}{max(ws.max_row, 2)}"
+    ws.row_dimensions[1].height = 45
+    ws.freeze_panes = "A2"
+    last_row = max(2, row_count + 1)
+    table_ref = f"A1:{get_column_letter(len(HEADERS))}{last_row}"
+    ws.auto_filter.ref = table_ref
     table = Table(displayName="HUNT_TABLE", ref=table_ref)
     table.tableStyleInfo = TableStyleInfo(name="TableStyleMedium2", showFirstColumn=False, showLastColumn=False, showRowStripes=True, showColumnStripes=False)
     ws.add_table(table)
-    ws.freeze_panes = "A2"
-    ws.auto_filter.ref = table_ref
 
     ws.page_setup.orientation = "landscape"
-    ws.page_setup.paperSize = ws.PAPERSIZE_LETTER
-    ws.page_setup.fitToWidth = 1
-    ws.page_setup.fitToHeight = 1
+    ws.page_setup.paperSize = ws.PAPERSIZE_LEGAL
     ws.sheet_properties.pageSetUpPr.fitToPage = True
-    ws.page_margins = PageMargins(left=0.2, right=0.2, top=0.25, bottom=0.25, header=0.15, footer=0.15)
+    ws.page_setup.fitToWidth = 1
+    ws.page_setup.fitToHeight = 0
+    ws.page_margins = PageMargins(left=0.15, right=0.15, top=0.25, bottom=0.25, header=0.1, footer=0.1)
     ws.print_options.horizontalCentered = True
     ws.print_options.verticalCentered = False
     ws.print_title_rows = "$1:$1"
 
+
+def write_xlsx(path: Path, rows: List[dict]) -> None:
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "Hunt Table"
+    ws.append(HEADERS)
+    for row in rows:
+        ws.append([row.get(header, "") for header in HEADERS])
+    style_workbook(ws, len(rows))
     wb.save(path)
     wb.close()
 
@@ -284,7 +333,19 @@ def publish_staged() -> None:
 
 def write_audit(audit_rows: List[dict]) -> None:
     with AUDIT_CSV.open("w", encoding="utf-8", newline="") as fh:
-        writer = csv.DictWriter(fh, fieldnames=["file", "rows", "average_harvest_age_rows", "status"])
+        writer = csv.DictWriter(
+            fh,
+            fieldnames=[
+                "file",
+                "rows",
+                "res_permit_rows",
+                "nr_permit_rows",
+                "total_permit_rows",
+                "average_harvest_age_rows",
+                "notes_rows",
+                "status",
+            ],
+        )
         writer.writeheader()
         writer.writerows(audit_rows)
 
@@ -301,13 +362,28 @@ def main() -> None:
 
     for key in sorted(groups.keys(), key=lambda k: (k[0], k[1], class_sort_key(k[2]))):
         species, sex_type, hunt_class = key
-        group = sorted(groups[key], key=lambda r: (r["HUNT CODE"], r["HUNT NAME"]))
+        group = sorted(groups[key], key=lambda r: (r["hunt_code"], r["hunt_name"]))
         stem = output_stem(species, sex_type, hunt_class)
         xlsx = STAGE_XLSX_DIR / f"{stem}.xlsx"
         write_xlsx(xlsx, group)
-        age_count = sum(1 for row in group if norm(row.get("AVERAGE HARVEST AGE")))
-        audit_rows.append({"file": xlsx.name, "rows": len(group), "average_harvest_age_rows": age_count, "status": "OK"})
-        print(f"OK {xlsx.name} rows={len(group)} average_harvest_age_rows={age_count}")
+        audit_rows.append(
+            {
+                "file": xlsx.name,
+                "rows": len(group),
+                "res_permit_rows": sum(1 for row in group if norm(row.get("2026 permits RES"))),
+                "nr_permit_rows": sum(1 for row in group if norm(row.get("2026 permits NR"))),
+                "total_permit_rows": sum(1 for row in group if norm(row.get("2026 permits TOTAL"))),
+                "average_harvest_age_rows": sum(1 for row in group if norm(row.get("Avg Harvest Age"))),
+                "notes_rows": sum(1 for row in group if norm(row.get("NOTES"))),
+                "status": "OK",
+            }
+        )
+        print(
+            f"OK {xlsx.name} rows={len(group)} "
+            f"res={audit_rows[-1]['res_permit_rows']} nr={audit_rows[-1]['nr_permit_rows']} "
+            f"total={audit_rows[-1]['total_permit_rows']} avg_age={audit_rows[-1]['average_harvest_age_rows']} "
+            f"notes={audit_rows[-1]['notes_rows']}"
+        )
 
     write_audit(audit_rows)
     if args.publish:
