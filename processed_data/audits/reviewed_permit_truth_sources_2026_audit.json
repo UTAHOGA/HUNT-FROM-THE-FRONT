@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-05-29T10:48:34.584605+00:00",
+  "created_at": "2026-05-29T10:51:13.077741+00:00",
   "source": "pasted-aligned public hunt table workbooks plus reviewed inline pasted DWR Hunt Planner rows",
   "families": {
     "BLACK_BEAR": {
@@ -277,6 +277,48 @@
         "USER_PASTED_DWR_HUNT_PLANNER_ROCKY_MOUNTAIN_BIGHORN_RS_2026": 20
       },
       "output": "C:\\Users\\tyler\\Desktop\\GitHub\\HUNT-BUILDER\\pipeline\\RAW\\hunt_unit_database\\2026\\csv\\2026 Permits\\2026 rocky mountain bighorn reviewed res-nr-total.csv"
+    },
+    "ROCKY_MOUNTAIN_BIGHORN_EWE": {
+      "rows": 1,
+      "duplicate_hunt_codes": [],
+      "bad_split_totals": [],
+      "missing_source_rows": [],
+      "permit_status_counts": {
+        "FULL_SPLIT": 1
+      },
+      "hunt_type_counts": {
+        "General Season": 1
+      },
+      "weapon_counts": {
+        "Any Legal Weapon": 1
+      },
+      "source_counts": {
+        "2026 ROCKY MOUNTAIN BIGHORN SHEEP EWE O.I.L.xlsx": 1
+      },
+      "output": "C:\\Users\\tyler\\Desktop\\GitHub\\HUNT-BUILDER\\pipeline\\RAW\\hunt_unit_database\\2026\\csv\\2026 Permits\\2026 rocky mountain bighorn ewe reviewed res-nr-total.csv"
+    },
+    "DESERT_BIGHORN_RAM": {
+      "rows": 25,
+      "duplicate_hunt_codes": [],
+      "bad_split_totals": [],
+      "missing_source_rows": [],
+      "permit_status_counts": {
+        "NO_PUBLISHED_NUMERIC_PERMIT": 7,
+        "FULL_SPLIT": 18
+      },
+      "hunt_type_counts": {
+        "Statewide": 1,
+        "Conservation": 6,
+        "Once-in-a-lifetime": 18
+      },
+      "weapon_counts": {
+        "Any Legal Weapon": 24,
+        "Archery": 1
+      },
+      "source_counts": {
+        "2026 DESERT BIGHORN SHEEP RAM O.I.L.xlsx": 25
+      },
+      "output": "C:\\Users\\tyler\\Desktop\\GitHub\\HUNT-BUILDER\\pipeline\\RAW\\hunt_unit_database\\2026\\csv\\2026 Permits\\2026 desert bighorn reviewed res-nr-total.csv"
     }
   },
   "outputs": {

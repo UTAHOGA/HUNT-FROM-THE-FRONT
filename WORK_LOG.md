@@ -6724,3 +6724,16 @@ o_table=0).
   - Duplicate hunt codes: 0.
   - Bad split totals: 0.
   - Missing source rows: 0.
+
+## Desert Bighorn Ram And Rocky Mountain Bighorn Ewe Permit Truth Sources
+- Timestamp (UTC): 2026-05-29T10:52:00Z
+- Scope:
+  - Added `ROCKY_MOUNTAIN_BIGHORN_EWE` to `scripts/build-reviewed-permit-truth-sources-2026.py` from `2026 ROCKY MOUNTAIN BIGHORN SHEEP EWE O.I.L.xlsx`.
+  - Created `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 rocky mountain bighorn ewe reviewed res-nr-total.csv` for RE1000 as a separate ewe family file.
+  - Added `DESERT_BIGHORN_RAM` to the reviewed builder from `2026 DESERT BIGHORN SHEEP RAM O.I.L.xlsx`.
+  - Rebuilt `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 desert bighorn reviewed res-nr-total.csv` to include the full pasted DS family, not only the split-permit hunt rows.
+  - Preserved blank numeric permit fields for DS1000, DS1002, DS1003, DS1004, DS1006, DS1007, and DS6605 because the pasted DWR rows did not publish numeric permit values for those rows.
+  - Updated reviewed permit truth-source audit CSV/JSON.
+- Validation:
+  - ROCKY_MOUNTAIN_BIGHORN_EWE rows: 1; full split rows: 1; duplicate hunt codes: 0; bad split totals: 0; missing source rows: 0.
+  - DESERT_BIGHORN_RAM rows: 25; full split rows: 18; blank/no published numeric permit rows: 7; duplicate hunt codes: 0; bad split totals: 0; missing source rows: 0.

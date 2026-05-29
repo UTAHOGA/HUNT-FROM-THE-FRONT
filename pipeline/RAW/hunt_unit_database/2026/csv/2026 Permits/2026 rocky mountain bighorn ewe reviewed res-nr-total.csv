@@ -1,0 +1,2 @@
+hunt_name,hunt_code,boundary_id,hunt_code_mapping_status,boundary_id_mapping_status,candidate_hunt_code,candidate_boundary_id,sex_type,species,weapon,hunt_type,season,permits_2026_res,permits_2026_nr,permits_2026_total,permit_count_status,source_file,source_row_number
+"Box Elder, Newfoundland Mtn",RE1000,20,REVIEWED_CURRENT_HUNT_CODE,DATABASE_BOUNDARY_ID,RE1000,20,Ewe,Rocky Mountain Bighorn Sheep,Any Legal Weapon,General Season,Sep 08 2025 - Sep 16 2025,4,1,5,FULL_SPLIT,2026 ROCKY MOUNTAIN BIGHORN SHEEP EWE O.I.L.xlsx,2

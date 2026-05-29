@@ -336,6 +336,23 @@ FAMILY_CONFIGS = [
             },
         ],
     },
+    {
+        "family": "ROCKY_MOUNTAIN_BIGHORN_EWE",
+        "output": "2026 rocky mountain bighorn ewe reviewed res-nr-total.csv",
+        "sources": ["2026 ROCKY MOUNTAIN BIGHORN SHEEP EWE O.I.L.xlsx"],
+        "code_prefixes": ("RE",),
+        "species": ("Rocky Mountain Bighorn Sheep",),
+        "sex_type": ("Ewe",),
+    },
+    {
+        "family": "DESERT_BIGHORN_RAM",
+        "output": "2026 desert bighorn reviewed res-nr-total.csv",
+        "sources": ["2026 DESERT BIGHORN SHEEP RAM O.I.L.xlsx"],
+        "code_prefixes": ("DS",),
+        "species": ("Desert Bighorn Sheep",),
+        "sex_type": ("Male Only",),
+        "blank_permit_codes": ("DS1000", "DS1002", "DS1003", "DS1004", "DS1006", "DS1007", "DS6605"),
+    },
 ]
 
 
@@ -497,6 +514,16 @@ def validate_family(rows: list[dict[str, str]]) -> dict[str, object]:
     }
 
 
+def apply_config_overrides(row: dict[str, str], config: dict[str, object]) -> dict[str, str]:
+    blank_codes = {code(value) for value in config.get("blank_permit_codes", ())}
+    if row["hunt_code"] in blank_codes:
+        row["permits_2026_res"] = ""
+        row["permits_2026_nr"] = ""
+        row["permits_2026_total"] = ""
+        row["permit_count_status"] = permit_status("", "", "")
+    return row
+
+
 def main() -> None:
     PERMIT_DIR.mkdir(parents=True, exist_ok=True)
     AUDIT_DIR.mkdir(parents=True, exist_ok=True)
@@ -517,7 +544,7 @@ def main() -> None:
             for index, row in enumerate(config["inline_rows"], start=1):
                 if not row_allowed(row, config):
                     continue
-                all_rows.append(canonicalize_row(row, source, index, database))
+                all_rows.append(apply_config_overrides(canonicalize_row(row, source, index, database), config))
 
         for source in config.get("sources", []):
             source_path = PUBLIC_XLSX_DIR / source
@@ -525,7 +552,7 @@ def main() -> None:
             for index, row in enumerate(rows, start=2):
                 if not row_allowed(row, config):
                     continue
-                all_rows.append(canonicalize_row(row, source, index, database))
+                all_rows.append(apply_config_overrides(canonicalize_row(row, source, index, database), config))
 
         all_rows.sort(key=sort_key)
         output_path = PERMIT_DIR / str(config["output"])
