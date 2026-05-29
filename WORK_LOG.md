@@ -6707,3 +6707,20 @@ o_table=0).
   - Duplicate hunt codes: 0.
   - Bad split totals: 0.
   - Missing source rows: 0.
+
+## Rocky Mountain Bighorn 2026 Permit Truth Source Correction
+- Timestamp (UTC): 2026-05-29T10:49:00Z
+- Scope:
+  - Added `ROCKY_MOUNTAIN_BIGHORN_RAM` to `scripts/build-reviewed-permit-truth-sources-2026.py` using reviewed inline pasted DWR Hunt Planner RS rows because the public workbook currently named for Rocky Mountain bighorn ram contains desert bighorn DS rows.
+  - Rebuilt `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 rocky mountain bighorn reviewed res-nr-total.csv` from the user-pasted RS truth source.
+  - Removed the prior RE1000 ewe row from the Rocky Mountain bighorn ram reviewed file.
+  - Blank-preserved RS0001, RS1000, RS1001, RS1003, and RS1006 where the pasted DWR rows did not publish numeric permit counts.
+  - Added source lineage fields identifying the reviewed pasted DWR source row for every RS row.
+  - Updated reviewed permit truth-source audit CSV/JSON.
+- Validation:
+  - ROCKY_MOUNTAIN_BIGHORN_RAM rows: 20.
+  - Full split rows: 15.
+  - Blank/no published numeric permit rows: 5.
+  - Duplicate hunt codes: 0.
+  - Bad split totals: 0.
+  - Missing source rows: 0.

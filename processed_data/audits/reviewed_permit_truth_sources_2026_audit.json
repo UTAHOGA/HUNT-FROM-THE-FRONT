@@ -1,6 +1,6 @@
 {
-  "created_at": "2026-05-29T10:45:17.262586+00:00",
-  "source": "pasted-aligned public hunt table workbooks",
+  "created_at": "2026-05-29T10:48:34.584605+00:00",
+  "source": "pasted-aligned public hunt table workbooks plus reviewed inline pasted DWR Hunt Planner rows",
   "families": {
     "BLACK_BEAR": {
       "rows": 106,
@@ -254,6 +254,29 @@
         "2026 TURKEY EITHER SEX DRAW.xlsx": 4
       },
       "output": "C:\\Users\\tyler\\Desktop\\GitHub\\HUNT-BUILDER\\pipeline\\RAW\\hunt_unit_database\\2026\\csv\\2026 Permits\\2026 turkey either sex all reviewed total.csv"
+    },
+    "ROCKY_MOUNTAIN_BIGHORN_RAM": {
+      "rows": 20,
+      "duplicate_hunt_codes": [],
+      "bad_split_totals": [],
+      "missing_source_rows": [],
+      "permit_status_counts": {
+        "NO_PUBLISHED_NUMERIC_PERMIT": 5,
+        "FULL_SPLIT": 15
+      },
+      "hunt_type_counts": {
+        "Statewide": 1,
+        "Once-in-a-lifetime": 16,
+        "Conservation": 3
+      },
+      "weapon_counts": {
+        "Any Legal Weapon": 18,
+        "Archery": 2
+      },
+      "source_counts": {
+        "USER_PASTED_DWR_HUNT_PLANNER_ROCKY_MOUNTAIN_BIGHORN_RS_2026": 20
+      },
+      "output": "C:\\Users\\tyler\\Desktop\\GitHub\\HUNT-BUILDER\\pipeline\\RAW\\hunt_unit_database\\2026\\csv\\2026 Permits\\2026 rocky mountain bighorn reviewed res-nr-total.csv"
     }
   },
   "outputs": {
