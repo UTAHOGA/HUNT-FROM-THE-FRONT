@@ -7003,3 +7003,35 @@ o_table=0).
   - Built-local desktop browser check at 1920x1080 passed for `research.html?hunt_code=EB3024&draw_pool=standard&residency=resident&points=30&v=dashboardgrid1`: controls/result cards 1632px wide, existing summary grid six columns, dashboard 1598px wide, dashboard grid three columns, hero strip four columns, comparable hunts five columns, source details collapsed by default, dashboard above ladder, ladder/table full-width below, and no Git LFS pointer errors.
   - Built-local mobile browser check at 390px passed: dashboard grid, hero, comparable cards, and summary grid stack to one column; ladder remains horizontally scrollable.
   - The only 404 observed during the local browser check was the pre-existing decorative image path `assets/logos/logos/White-Topo-2-1920.png`; no Research data, dashboard script, ladder, or runtime file failed.
+## Hunt Research Compact Decision Dashboard Refinement
+- Timestamp (UTC): 2026-05-29T16:18:00Z
+- Implementation commit: 5b9277db
+- Files changed:
+  - `assets/js/research-outlook-dashboard.js`
+  - `research.html`
+- Layout summary:
+  - Refined the Hunt Application Outlook add-on into a compact decision dashboard with a full-width hero strip, explicit decision label, estimated odds, permit count, and recommendation sentence.
+  - Kept the dashboard inserted immediately before `#pointLadderAccordion`, after the existing Research summary/recommendation area.
+  - Kept the point ladder full-width below the dashboard.
+  - Converted comparable hunts to a compact 3-row table with Hunt, Odds / Status, Quality Signal, and Why similar columns.
+  - Kept source/freshness/model details collapsed by default inside `.uoga-source-details`.
+- Dashboard sections implemented:
+  - Hero strip: hunt code/name, residency, points, draw pool, decision label, estimated odds, permits, recommendation.
+  - Application Read: odds, point status, guaranteed line, trend, permits.
+  - Hunt Quality: harvest success, average days hunted, average harvest age, current 3-year age average, percent 5+ if available.
+  - State Objective / Management Read: objective type/range/status, Management Plan Context badge, benchmark-only note.
+  - Source / freshness / model details: engine mode, data version, model version, rule version, selected hunt, source file/page/table, and loaded source paths.
+- Data/source rules preserved:
+  - Did not modify `DATABASE.csv`, engine files, model formulas, draw/harvest/age truth files, point-ladder math, permit/allotment truth, runtime CSVs, or Cloudflare source config.
+  - Decision labels are display-only and are not written back to data files.
+  - Missing or zero `average_harvest_age` renders as `No verified age data`; average days hunted remains separate.
+- Validation:
+  - `node --check assets/js/research-outlook-dashboard.js` passed.
+  - `node --check hunt-research.js` passed.
+  - `npm.cmd run build` passed. Existing optional build notices remain: `staging-audit.html`, `data/hunt_boundaries_finalized_2026.geojson`, and oversized `processed_data/composite_hunt_unit_mapping_2026.geojson` skipped for Pages.
+  - Verified `pages-dist/research.html` includes `research-outlook-dashboard` with cache token `outlook-dashboard-grid-2`.
+  - Verified `pages-dist/assets/js/research-outlook-dashboard.js` exists.
+  - Built-local browser check for `research.html?hunt_code=EB3024&draw_pool=standard&residency=resident&points=30&v=dashboardgrid2` passed: hero uses four desktop columns, dashboard body uses three desktop columns, comparable table has 3 rows, source details are collapsed, dashboard appears above the ladder, and no Git LFS pointer errors were logged.
+  - Built-local mobile check at 390px passed: dashboard width stays within viewport, hero/body stack to one column, comparable table scrolls inside its own wrapper, and ladder remains horizontally scrollable.
+- Known remaining issue:
+  - Local browser check still reports the pre-existing decorative image 404 at `assets/logos/logos/White-Topo-2-1920.png`; no Research data, dashboard script, ladder, or runtime file failed.
