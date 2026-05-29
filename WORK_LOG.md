@@ -1,3 +1,11 @@
+## 2026-05-29T06:58:53Z - BR1000 Black Bear Statewide Season Display Correction
+
+- Updated the 2026 hunt-table generator with a deterministic BR1000 season display override.
+- Regenerated and published the BR1000 2026 hunt table XLSX/PDF display files through the hunt-table pipeline.
+- Verified BR1000 in the live XLSX and pages-dist XLSX contains the corrected season text.
+- Verified the generated BR1000 PDF text contains the corrected season text.
+- Ran npm.cmd run build: PASS. Library gate remains Gate BLOCK 0 and Manual review 0; crosswalk matched current codes remains 169.
+
 # WORK LOG
 
 ## Regenerate 2026 Hunt Table XLSX/PDF Display Files With Season Enrichment

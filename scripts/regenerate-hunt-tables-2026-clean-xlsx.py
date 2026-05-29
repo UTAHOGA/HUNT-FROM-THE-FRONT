@@ -24,6 +24,12 @@ LIVE_XLSX_DIR = OUT_BASE / "XLXS"
 STAGE_XLSX_DIR = OUT_BASE / "CLEAN_XLXS_STAGED"
 AUDIT_CSV = ROOT / "processed_data" / "audits" / "hunt_tables_2026_clean_xlsx_regeneration_audit.csv"
 YEAR = "2026"
+SEASON_DISPLAY_OVERRIDES = {
+    "BR1000": (
+        "Includes all limited-entry season hunt dates. Any open season on any open bear unit during the 2026 season. "
+        "See 2026 Black Bear Guidebook for season dates and take methods."
+    ),
+}
 
 # Public display headers. NOTES intentionally moved to the final column.
 HEADERS = [
@@ -295,13 +301,14 @@ def row_from_record(record: dict, age_latest: Dict[str, str], database_lookup: t
     hunt_type = norm(record.get("hunt_type")) or norm(database_row.get("hunt_type")) or hunt_class
 
     # Do not derive RES/NR from TOTAL. If only total exists, RES and NR stay blank.
-    season = norm(first_record_or_database(record, database_row, ("season", "season_dates", "dates", "season_date")))
+    code = normalize_code(first_record_or_database(record, database_row, ("hunt_code",)))
+    season = SEASON_DISPLAY_OVERRIDES.get(code, "") or norm(first_record_or_database(record, database_row, ("season", "season_dates", "dates", "season_date")))
     if not season:
         season = season_from_note(database_row)
 
     return {
         "hunt_name": norm(first_record_or_database(record, database_row, ("hunt_name", "dwr_unit_name", "unit_name"))),
-        "hunt_code": normalize_code(first_record_or_database(record, database_row, ("hunt_code",))),
+        "hunt_code": code,
         "sex_type": norm(first_record_or_database(record, database_row, ("sex_type",))),
         "species": norm(first_record_or_database(record, database_row, ("species",))),
         "weapon": norm(first_record_or_database(record, database_row, ("weapon",))),
