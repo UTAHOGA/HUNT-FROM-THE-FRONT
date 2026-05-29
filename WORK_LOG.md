@@ -6677,3 +6677,19 @@ o_table=0).
   - PRONGHORN_BUCK: 94 rows; 87 full split; 0 total-only; 7 blank/no published numeric; duplicates 0; bad totals 0; missing source rows 0.
   - PRONGHORN_DOE: 23 rows; 23 full split; 0 total-only; 0 blank/no published numeric; duplicates 0; bad totals 0; missing source rows 0.
   - Re-ran `py scripts/build-reviewed-permit-truth-sources-2026.py` after correcting the builder so DATABASE contributes boundary metadata only, avoiding HAMSS deer field-shift contamination.
+
+## Bearded Turkey 2026 Permit Truth Source Addition
+- Timestamp (UTC): 2026-05-29T10:44:00Z
+- Scope:
+  - Added `TURKEY_BEARDED` to `scripts/build-reviewed-permit-truth-sources-2026.py`.
+  - Created `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 turkey bearded all reviewed total.csv` from the pasted-aligned `2026 TURKEY BEARDED DRAW.xlsx` workbook.
+  - Preserved total-only permit handling for limited-entry and CWMU rows and kept statewide/general/conservation rows blank where no numeric permit count was published.
+  - Included boundary-id metadata from `DATABASE.csv` and source workbook/source row lineage on every row.
+  - Updated reviewed permit truth-source audit CSV/JSON.
+- Validation:
+  - TURKEY_BEARDED rows: 14.
+  - Total-only rows: 7.
+  - Blank/no published numeric permit rows: 7.
+  - Duplicate hunt codes: 0.
+  - Bad split totals: 0.
+  - Missing source rows: 0.

@@ -103,6 +103,14 @@ FAMILY_CONFIGS = [
         "species": ("Pronghorn",),
         "sex_type": ("Doe",),
     },
+    {
+        "family": "TURKEY_BEARDED",
+        "output": "2026 turkey bearded all reviewed total.csv",
+        "sources": ["2026 TURKEY BEARDED DRAW.xlsx"],
+        "code_prefixes": ("TK",),
+        "species": ("Turkey",),
+        "sex_type": ("Bearded",),
+    },
 ]
 
 
