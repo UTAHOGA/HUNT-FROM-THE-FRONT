@@ -8,9 +8,8 @@
 </script>
 <script>
   // 1. Force the app to recognize the maps route if no hash is present
-  if (!window.location.hash || window.location.hash === '#/') {
-    window.location.hash = '#google-maps';
-  }
+  // Do not force #google-maps on initial page load.
+// The default map mode should be handled internally without changing the visible URL.
 
   // 2. Wait for the app to finish loading, then mask the URL bar cleanly
   window.addEventListener('DOMContentLoaded', () => {
