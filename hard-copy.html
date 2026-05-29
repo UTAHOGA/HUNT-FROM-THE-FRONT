@@ -6,8 +6,8 @@
   <link rel="icon" type="image/png" href="./assets/logos/favicon.ico.png" />
   <title>U.O.G.A. Hunt-Builder Resource Library</title>
   <script src="./embed-mode.js?v=20260422-embed-1"></script>
-  <link rel="stylesheet" href="./style.css?v=20260423-planner-header-refine-1" />
-  <link rel="stylesheet" href="./assets/css/hard-copy-public-library.css?v=20260528-step4-public-library-10" />
+  <link rel="stylesheet" href="./style.css?v=20260529-fixed-nav-readability-1" />
+  <link rel="stylesheet" href="./assets/css/hard-copy-public-library.css?v=20260529-library-overlay-1" />
   <script src="https://js.sentry-cdn.com/26137c5576f01423efc85f47076f9548.min.js" crossorigin="anonymous"></script>
   <script src="./sentry-browser-init.js"></script>
 </head>
@@ -42,8 +42,11 @@
 
     <section id="uogaResultsPanel" class="public-library-results" aria-live="polite" aria-hidden="true" hidden>
       <header class="public-library-results-head">
-        <h2 id="uogaResultsTitle">Filtered Results</h2>
-        <span id="uogaLibraryCount">0 files</span>
+        <div>
+          <h2 id="uogaResultsTitle">Filtered Results</h2>
+          <span id="uogaLibraryCount">0 files</span>
+        </div>
+        <button id="uogaResultsClose" class="public-library-results-close" type="button" aria-label="Close folder results">Close</button>
       </header>
       <div id="uogaActiveFilters" class="public-library-active-filters"></div>
       <div id="uogaLibrarySections" class="public-library-results-grid"></div>
@@ -75,6 +78,6 @@
     </section>
   </main>
 
-  <script src="./assets/js/hard-copy-public-library.js?v=20260528-step4-public-library-10"></script>
+  <script src="./assets/js/hard-copy-public-library.js?v=20260529-library-overlay-1"></script>
 </body>
 </html>

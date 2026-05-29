@@ -1,3 +1,15 @@
+## 2026-05-29T17:36:34Z - Research Readability And Library Overlay Polish
+
+- Removed the visible Hunt Research runtime source URL paragraph from the dashboard source/freshness details while keeping compact source metadata fields available.
+- Made the shared page navigation/header stay at the top by fixing the static nav strip and making the rebuilt `header-layout.js` topbar sticky; refreshed cache-bust tokens in the pages that load those assets.
+- Improved Hunt Research readability: darker labels, stronger summary values, clearer hunt subtitle/readout text, unclipped signal legend, larger signal text, and a taller point-ladder viewing area.
+- Converted Hunting Bible folder results into a centered overlay panel with a close button; file cards and actions now use higher-contrast parchment styling.
+- Changed embedded library resources to open in a fixed primary-screen overlay instead of scrolling the visitor down-page; PDF flipbook remains modal and opens over the primary screen.
+- Validation: `node --check header-layout.js`, `node --check assets/js/research-outlook-dashboard.js`, `node --check assets/js/hard-copy-public-library.js`, `node --check hunt-research.js`, `node --check app.js`, and `npm.cmd run build` all passed.
+- Local browser smoke test: Research source URL text count `0`, rebuilt header computed `position: sticky`, point-ladder viewport height approximately `890px`, Hunting Bible results panel computed `position: fixed`, and folder overlay opened visibly.
+- Build note: the build regenerated library data/manifests as a side effect; those generated data changes were restored because this pass was UI-only.
+- Commit: recorded in final closeout report for this UI pass.
+
 ## 2026-05-29T08:35:12Z - Backfill Blank 2026 Permit Cells From DWR Popup Nonzero Values
 
 - Backfilled 369 blank `permits_2026_*` cells and matching `permit_allotment_2026_*` cells from nonzero DWR Hunt Planner popup values where both DATABASE permit and allotment cells were blank.

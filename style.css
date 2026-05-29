@@ -136,6 +136,24 @@
     /* --- CONTROLS --- */
     .controls { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
     .controls > * { flex: 0 0 auto; }
+    .page-nav-strip {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 12000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 12px;
+      pointer-events: none;
+    }
+    .page-nav-case {
+      pointer-events: auto;
+    }
+    body > .page-nav-strip + .topbar {
+      margin-top: 62px;
+    }
     .utility-nav { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
     .utility-link {
       display:inline-flex;

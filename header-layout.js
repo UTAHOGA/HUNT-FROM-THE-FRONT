@@ -261,7 +261,9 @@
         border-bottom:1px solid #c9a27f !important;
         box-shadow:0 8px 22px rgba(58,37,18,.14) !important;
         color:#2b1c12 !important;
-        position:relative !important;
+        position:sticky !important;
+        top:0 !important;
+        z-index:12000 !important;
         display:flex !important;
         align-items:center !important;
         justify-content:space-between !important;

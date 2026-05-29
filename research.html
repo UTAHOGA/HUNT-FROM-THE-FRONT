@@ -6,7 +6,7 @@
   <link rel="icon" type="image/png" href="./assets/logos/favicon.ico.png" />
   <title>U.O.G.A. Hunt Research</title>
   <script src="./embed-mode.js?v=20260422-embed-1"></script>
-  <link rel="stylesheet" href="./style.css?v=20260423-planner-header-refine-1" />
+  <link rel="stylesheet" href="./style.css?v=20260529-fixed-nav-readability-1" />
   <style>
     :root {
       /* Light theme alignment (single theme site-wide). */
@@ -1424,6 +1424,99 @@
         display: none;
       }
     }
+
+    /* Screenshot QA polish: keep the premium parchment look, but make the
+       decision text readable at desktop distance. */
+    .research-page .report-title p,
+    .research-page .summary-card .label,
+    .research-page .chip .label,
+    .research-page .quick-card .label,
+    .research-page .control-field label {
+      color: #5c2f10 !important;
+      opacity: 1 !important;
+      font-size: 12px;
+      font-weight: 950;
+    }
+
+    .research-page .report-title h2,
+    .research-page .report-title h3,
+    .research-page .summary-card .value,
+    .research-page .chip .value,
+    .research-page .quick-card .value,
+    .research-page .signal-status-label {
+      color: #2b1c12 !important;
+      opacity: 1 !important;
+    }
+
+    .research-page .report-title .report-copy,
+    .research-page .chip .subvalue,
+    .research-page .proof-note {
+      color: #5f4936 !important;
+      opacity: 1 !important;
+      font-size: 15px;
+    }
+
+    .research-page .summary-card,
+    .research-page .chip,
+    .research-page .quick-card {
+      background: rgba(255, 253, 248, 0.76);
+      border-color: rgba(122, 76, 38, 0.22);
+    }
+
+    .research-page .summary-card .value {
+      font-size: 17px !important;
+      font-weight: 900;
+    }
+
+    .research-page .signal-card {
+      overflow: visible;
+    }
+
+    .research-page .signal-inline {
+      grid-template-columns: minmax(150px, 180px) minmax(220px, 1fr);
+      align-items: center;
+    }
+
+    .research-page .signal-legend,
+    .research-page .signal-legend .signal-list {
+      max-width: none;
+      overflow: visible;
+    }
+
+    .research-page .signal-legend .signal-list {
+      color: #4a3524;
+      font-size: 14px;
+      font-weight: 750;
+    }
+
+    .research-page .result-card,
+    .research-page .result-card .card-body {
+      overflow: visible;
+    }
+
+    .research-page .report-table-wrap {
+      max-height: calc(100vh - 190px);
+      min-height: min(66vh, 690px);
+    }
+
+    .research-page .uoga-source-paths {
+      display: none !important;
+    }
+
+    @media (min-width: 1221px) {
+      .research-page .summary-card.signal-card {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .research-page .report-table-wrap {
+        min-height: 52vh;
+      }
+      .research-page .signal-inline {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
   <script src="https://js.sentry-cdn.com/26137c5576f01423efc85f47076f9548.min.js" crossorigin="anonymous"></script>
   <script src="./sentry-browser-init.js"></script></head>
@@ -1693,7 +1786,7 @@
   </script>
   <script src="./ui.js?v=20260524-backpack-hunt-data-1"></script>
   <script src="./hunt-research.js?v=20260529-research-snapshot-bridge-1"></script>
-  <script src="./assets/js/research-outlook-dashboard.js?v=outlook-dashboard-grid-2"></script>
-  <script src="./header-layout.js?v=20260524-bible-help-3"></script>
+  <script src="./assets/js/research-outlook-dashboard.js?v=outlook-dashboard-readable-1"></script>
+  <script src="./header-layout.js?v=20260529-sticky-header-1"></script>
 </body>
 </html>

@@ -244,6 +244,7 @@
     const frame = byId("uogaEmbedFrame");
     panel.hidden = true;
     frame.src = "about:blank";
+    document.body.classList.remove("uoga-modal-open");
   }
 
   function openEmbed(item) {
@@ -254,7 +255,9 @@
     title.textContent = item.title || "Embedded Resource";
     frame.src = item.href;
     panel.hidden = false;
-    panel.scrollIntoView({ behavior: "smooth", block: "start" });
+    panel.setAttribute("tabindex", "-1");
+    document.body.classList.add("uoga-modal-open");
+    panel.focus?.({ preventScroll: true });
   }
 
   function closePdfFlipbook() {
@@ -454,7 +457,10 @@
     byId("uogaPdfFlipClose").addEventListener("click", closePdfFlipbook);
     byId("uogaPdfFlipPanel").querySelector(".uoga-pdf-flip-backdrop")?.addEventListener("click", closePdfFlipbook);
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") closePdfFlipbook();
+      if (event.key === "Escape") {
+        closeEmbed();
+        closePdfFlipbook();
+      }
     });
     byId("uogaPdfPrev").addEventListener("click", () => {
       if (pageFlipInstance) {
@@ -525,6 +531,7 @@
 
     panel.hidden = false;
     panel.setAttribute("aria-hidden", "false");
+    panel.setAttribute("tabindex", "-1");
     panelTitle.textContent = state.activeFolder
       ? (FOLDERS.find((f) => f.id === state.activeFolder) || {}).title || "Filtered Results"
       : "Search Results";
@@ -549,6 +556,7 @@
       grid.innerHTML = `<div class="public-empty">No public files match this folder/search.</div>`;
       closeEmbed();
       closePdfFlipbook();
+      panel.focus({ preventScroll: true });
       return;
     }
 
@@ -615,6 +623,7 @@
       });
     });
 
+    panel.focus({ preventScroll: true });
   }
 
   function start(items) {
@@ -643,6 +652,18 @@
         state.query = "";
         state.activeFolder = "";
         if (search) search.value = "";
+        renderAll();
+      });
+    }
+
+    const resultsClose = byId("uogaResultsClose");
+    if (resultsClose) {
+      resultsClose.addEventListener("click", () => {
+        state.query = "";
+        state.activeFolder = "";
+        if (search) search.value = "";
+        closeEmbed();
+        closePdfFlipbook();
         renderAll();
       });
     }

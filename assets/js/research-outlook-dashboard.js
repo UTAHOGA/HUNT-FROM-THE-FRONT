@@ -511,7 +511,7 @@
       <p class="uoga-outlook-muted">Benchmark only - does not change draw odds.</p>
     `);
   }
-  function sourceDetails(selection, selectedRow, meta, sourceBits) {
+  function sourceDetails(selection, selectedRow, meta) {
     const sourceFile = firstValue(selectedRow, ["source_file", "truth_source_file", "average_harvest_age_source_file"])
       || firstValue(meta, ["truth_source_file", "average_harvest_age_source_file"]);
     const sourcePage = firstValue(selectedRow, ["page_number", "source_page", "truth_source_page"])
@@ -531,7 +531,6 @@
           ${metricRow("Source page", formatValue(sourcePage))}
           ${metricRow("Source table", formatValue(tableTitle))}
         </div>
-        <p class="uoga-source-paths">${escapeHtml(sourceBits.join(" | "))}</p>
       </details>`;
   }
   function dashboardHtml(selection, context) {
@@ -553,14 +552,6 @@
     const decision = decisionLabel(odds, { statusOnly, highQuality });
     const recommendation = recommendationSentence(odds, permitTotal, decision);
     const limitedData = !hasValue(odds) || !hasValue(harvestSuccess) || !hasValue(averageAge);
-    const sourceBits = [
-      `engine: ${state.sources.engine || "not loaded"}`,
-      `ladder: ${state.sources.ladder || "not loaded"}`,
-      `master: ${state.sources.master || "not loaded"}`,
-      `reference: ${state.sources.reference || "not loaded"}`,
-      state.sources.management ? `management: ${state.sources.management}` : "",
-    ].filter(Boolean);
-
     return `
       <div class="uoga-outlook-dashboard">
         <section class="uoga-outlook-hero">
@@ -601,7 +592,7 @@
           <h3>Comparable Hunts</h3>
           ${renderComparableCards(comparable)}
         </section>
-        ${sourceDetails(selection, selectedRow, meta, sourceBits)}
+        ${sourceDetails(selection, selectedRow, meta)}
       </div>`;
   }
 
@@ -832,10 +823,7 @@
         margin-top: 10px;
       }
       .uoga-source-paths {
-        color: var(--muted);
-        font-size: 12px;
-        line-height: 1.5;
-        overflow-wrap: anywhere;
+        display: none !important;
       }
       @media (max-width: 1220px) {
         .uoga-outlook-hero {
