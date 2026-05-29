@@ -6858,3 +6858,17 @@ o_table=0).
   - Missing source rows: 0.
   - Prefix reconciliation against `DATABASE.csv`: all current database hunt-code prefixes are now represented in reviewed permit files.
   - Known row-level open item remains DA1044 because the corresponding DWR row has not been pasted/reviewed.
+
+## DA1044 Historical Hold And Permit Database Reconciliation Audit
+- Timestamp (UTC): 2026-05-29T11:56:00Z
+- Scope:
+  - Recorded `DA1044` / Myton antlerless deer as a reviewed database exclusion in `scripts/build-reviewed-permit-truth-sources-2026.py`.
+  - Reason: user reviewed Utah DWR Hunt Planner, found no current DA1044 result, and found no same/similar current hunt name to crosswalk.
+  - Rebuilt `processed_data/audits/reviewed_permit_truth_sources_2026_audit.json` with a `database_reconciliation` section that preserves reviewed exclusions and lists remaining database-only hunt codes as review evidence.
+  - Did not create or promote a DA1044 reviewed permit row.
+- Validation:
+  - Reviewed exclusion recorded for DA1044 with status `HOLD_HISTORICAL_NO_CURRENT_DWR_ROW`.
+  - Reviewed permit hunt-code count in audit: 1393.
+  - Current `DATABASE.csv` hunt-code count in audit: 1449.
+  - Remaining database-only hunt codes excluding DA1044: 55; these are review evidence only and were not promoted.
+  - Builder syntax validation passed with `py -m py_compile scripts/build-reviewed-permit-truth-sources-2026.py`.

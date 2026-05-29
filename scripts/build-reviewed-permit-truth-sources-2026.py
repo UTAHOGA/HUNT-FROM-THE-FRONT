@@ -39,6 +39,21 @@ CANONICAL_COLUMNS = [
 ]
 
 
+REVIEWED_DATABASE_EXCLUSIONS = [
+    {
+        "hunt_code": "DA1044",
+        "hunt_name": "Myton",
+        "species": "Deer",
+        "sex_type": "Antlerless",
+        "review_status": "HOLD_HISTORICAL_NO_CURRENT_DWR_ROW",
+        "reason": (
+            "User reviewed Utah DWR Hunt Planner and found no current DA1044 result and no same/similar "
+            "current hunt name to crosswalk; do not promote without a current pasted DWR source row."
+        ),
+    },
+]
+
+
 FAMILY_CONFIGS = [
     {
         "family": "BLACK_BEAR",
@@ -977,6 +992,32 @@ def main() -> None:
                 "source_counts": json.dumps(validation["source_counts"], sort_keys=True),
             }
         )
+
+    reviewed_codes = {
+        code(row.get("hunt_code"))
+        for config in FAMILY_CONFIGS
+        for row in (
+            parse_inline_tsv_rows(str(config["inline_tsv"]))
+            if config.get("inline_tsv")
+            else config.get("inline_rows", [])
+        )
+        if code(row.get("hunt_code"))
+    }
+    for output in audit_json["families"].values():
+        output_path = Path(str(output["output"]))
+        if output_path.exists():
+            reviewed_codes.update(code(row.get("hunt_code")) for row in read_csv_rows(output_path))
+
+    excluded_codes = {code(item["hunt_code"]) for item in REVIEWED_DATABASE_EXCLUSIONS}
+    database_codes = set(database)
+    audit_json["database_reconciliation"] = {
+        "database_hunt_code_count": len(database_codes),
+        "reviewed_permit_hunt_code_count": len(reviewed_codes),
+        "reviewed_database_exclusions": REVIEWED_DATABASE_EXCLUSIONS,
+        "unresolved_database_hunt_codes_excluding_reviewed_exclusions": sorted(
+            database_codes - reviewed_codes - excluded_codes
+        ),
+    }
 
     audit_csv_path = AUDIT_DIR / "reviewed_permit_truth_sources_2026_audit.csv"
     with audit_csv_path.open("w", encoding="utf-8", newline="") as handle:
