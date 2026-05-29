@@ -1,0 +1,220 @@
+{
+  "created_at": "2026-05-29T10:41:53.151836+00:00",
+  "source": "pasted-aligned public hunt table workbooks",
+  "families": {
+    "BLACK_BEAR": {
+      "rows": 106,
+      "duplicate_hunt_codes": [],
+      "bad_split_totals": [],
+      "missing_source_rows": [],
+      "permit_status_counts": {
+        "NO_PUBLISHED_NUMERIC_PERMIT": 6,
+        "FULL_SPLIT": 100
+      },
+      "hunt_type_counts": {
+        "Statewide": 1,
+        "Harvest Objective": 1,
+        "Pursuit": 2,
+        "Restricted Pursuit - Summer": 3,
+        "Restricted Pursuit - Late Summer": 3,
+        "Restricted Pursuit - Spring": 3,
+        "Limited Entry - Spring": 20,
+        "Limited Entry - Summer": 25,
+        "Limited Entry - Fall": 23,
+        "Spot and Stalk": 1,
+        "Limited Entry - Multiseason": 22,
+        "Multiseason - Conservation": 1,
+        "Conservation": 1
+      },
+      "weapon_counts": {
+        "Any Legal Weapon": 71,
+        "Pursuit Only": 11,
+        "Multiseason": 24
+      },
+      "source_counts": {
+        "2026 BLACK BEAR DRAW.xlsx": 106
+      },
+      "output": "C:\\Users\\tyler\\Desktop\\GitHub\\HUNT-BUILDER\\pipeline\\RAW\\hunt_unit_database\\2026\\csv\\2026 Permits\\2026 black bear permits reviewed res-nr-total.csv"
+    },
+    "BUCK_DEER": {
+      "rows": 458,
+      "duplicate_hunt_codes": [],
+      "bad_split_totals": [],
+      "missing_source_rows": [],
+      "permit_status_counts": {
+        "NO_PUBLISHED_NUMERIC_PERMIT": 130,
+        "FULL_SPLIT": 192,
+        "TOTAL_ONLY": 136
+      },
+      "hunt_type_counts": {
+        "Tribal": 10,
+        "Statewide": 1,
+        "Premium Limited Entry": 10,
+        "Management Buck Deer": 5,
+        "Limited Entry": 67,
+        "Conservation": 4,
+        "Cactus Buck": 1,
+        "CWMU": 110,
+        "General Season": 136,
+        "Limited Entry - Private Land Only": 9,
+        "General Season - Private Land Only": 105
+      },
+      "weapon_counts": {
+        "Any Legal Weapon": 138,
+        "Archery": 77,
+        "Muzzleloader": 103,
+        "Multiseason": 8,
+        "HAMSS (Handgun, Archery, Muzzleloader, Shotgun or Straight-walled rifle)": 4,
+        "Restricted Archery": 1,
+        "Restricted Muzzleloader": 7,
+        "Restricted Rifle": 8,
+        "Restricted Multiseason": 1,
+        "Any Legal Weapon (Late)": 56,
+        "Any Legal Weapon (Early)": 24,
+        "Dedicated Hunter": 31
+      },
+      "source_counts": {
+        "2026 DEER BUCK DRAW.xlsx": 458
+      },
+      "output": "C:\\Users\\tyler\\Desktop\\GitHub\\HUNT-BUILDER\\pipeline\\RAW\\hunt_unit_database\\2026\\csv\\2026 Permits\\2026 buck deer all reviewed res-nr-total.csv"
+    },
+    "ELK_ANTLERLESS": {
+      "rows": 204,
+      "duplicate_hunt_codes": [],
+      "bad_split_totals": [],
+      "missing_source_rows": [],
+      "permit_status_counts": {
+        "FULL_SPLIT": 167,
+        "NO_PUBLISHED_NUMERIC_PERMIT": 10,
+        "TOTAL_ONLY": 27
+      },
+      "hunt_type_counts": {
+        "General Season": 112,
+        "CWMU": 59,
+        "Conservation": 5,
+        "Antlerless Elk Control": 1,
+        "Private Lands Only": 27
+      },
+      "weapon_counts": {
+        "Any Legal Weapon": 190,
+        "Muzzleloader": 5,
+        "Archery": 9
+      },
+      "source_counts": {
+        "2026 ELK ANTLERLESS DRAW.xlsx": 204
+      },
+      "output": "C:\\Users\\tyler\\Desktop\\GitHub\\HUNT-BUILDER\\pipeline\\RAW\\hunt_unit_database\\2026\\csv\\2026 Permits\\2026 elk antlerless all reviewed res-nr-total.csv"
+    },
+    "ELK_BULL": {
+      "rows": 353,
+      "duplicate_hunt_codes": [],
+      "bad_split_totals": [],
+      "missing_source_rows": [],
+      "permit_status_counts": {
+        "NO_PUBLISHED_NUMERIC_PERMIT": 142,
+        "TOTAL_ONLY": 2,
+        "FULL_SPLIT": 209
+      },
+      "hunt_type_counts": {
+        "Statewide": 1,
+        "General Season - Any Bull": 5,
+        "General Season - Spike Bull": 3,
+        "General Season - Archery": 1,
+        "General Season - Youth": 1,
+        "Limited Entry": 145,
+        "Conservation": 2,
+        "CWMU": 64,
+        "Limited Entry - Private Land Only": 131
+      },
+      "weapon_counts": {
+        "Any Legal Weapon": 193,
+        "Muzzleloader": 43,
+        "Archery": 84,
+        "Multiseason": 22,
+        "HAMSS (Handgun, Archery, Muzzleloader, Shotgun or Straight-walled rifle)": 10,
+        "Any Legal Weapon (Late)": 1
+      },
+      "source_counts": {
+        "2026 ELK BULL ALL HUNTS.xlsx": 353
+      },
+      "output": "C:\\Users\\tyler\\Desktop\\GitHub\\HUNT-BUILDER\\pipeline\\RAW\\hunt_unit_database\\2026\\csv\\2026 Permits\\2026 elk bull all reviewed res-nr-total.csv"
+    },
+    "MOOSE_BULL": {
+      "rows": 27,
+      "duplicate_hunt_codes": [],
+      "bad_split_totals": [],
+      "missing_source_rows": [],
+      "permit_status_counts": {
+        "NO_PUBLISHED_NUMERIC_PERMIT": 1,
+        "FULL_SPLIT": 26
+      },
+      "hunt_type_counts": {
+        "Statewide": 1,
+        "Once-in-a-lifetime": 13,
+        "CWMU": 13
+      },
+      "weapon_counts": {
+        "Any Legal Weapon": 27
+      },
+      "source_counts": {
+        "2026 MOOSE BULL O.I.L.xlsx": 27
+      },
+      "output": "C:\\Users\\tyler\\Desktop\\GitHub\\HUNT-BUILDER\\pipeline\\RAW\\hunt_unit_database\\2026\\csv\\2026 Permits\\2026 moose bull all reviewed res-nr-total.csv"
+    },
+    "PRONGHORN_BUCK": {
+      "rows": 94,
+      "duplicate_hunt_codes": [],
+      "bad_split_totals": [],
+      "missing_source_rows": [],
+      "permit_status_counts": {
+        "NO_PUBLISHED_NUMERIC_PERMIT": 7,
+        "FULL_SPLIT": 87
+      },
+      "hunt_type_counts": {
+        "Limited Entry - Private Land Only": 6,
+        "Statewide": 1,
+        "Limited Entry": 66,
+        "CWMU": 21
+      },
+      "weapon_counts": {
+        "Any Legal Weapon": 56,
+        "Archery": 25,
+        "Muzzleloader": 13
+      },
+      "source_counts": {
+        "2026 PRONGHORN BUCK L.E PRIVATE LANDS ONLY.xlsx": 6,
+        "2026 PRONGHORN BUCK STATEWIDE.xlsx": 1,
+        "2026 PRONGHORN BUCK L.E.xlsx": 66,
+        "2026 PRONGHORN BUCK CWMU.xlsx": 21
+      },
+      "output": "C:\\Users\\tyler\\Desktop\\GitHub\\HUNT-BUILDER\\pipeline\\RAW\\hunt_unit_database\\2026\\csv\\2026 Permits\\2026 pronghorn buck all reviewed res-nr-total.csv"
+    },
+    "PRONGHORN_DOE": {
+      "rows": 23,
+      "duplicate_hunt_codes": [],
+      "bad_split_totals": [],
+      "missing_source_rows": [],
+      "permit_status_counts": {
+        "FULL_SPLIT": 23
+      },
+      "hunt_type_counts": {
+        "General Season": 15,
+        "CWMU": 8
+      },
+      "weapon_counts": {
+        "Any Legal Weapon": 21,
+        "Archery": 1,
+        "Muzzleloader": 1
+      },
+      "source_counts": {
+        "2026 PRONGHORN DOE GENERAL SEASON.xlsx": 15,
+        "2026 PRONGHORN DOE CWMU.xlsx": 8
+      },
+      "output": "C:\\Users\\tyler\\Desktop\\GitHub\\HUNT-BUILDER\\pipeline\\RAW\\hunt_unit_database\\2026\\csv\\2026 Permits\\2026 pronghorn doe all reviewed res-nr-total.csv"
+    }
+  },
+  "outputs": {
+    "audit_csv": "C:\\Users\\tyler\\Desktop\\GitHub\\HUNT-BUILDER\\processed_data\\audits\\reviewed_permit_truth_sources_2026_audit.csv",
+    "audit_json": "C:\\Users\\tyler\\Desktop\\GitHub\\HUNT-BUILDER\\processed_data\\audits\\reviewed_permit_truth_sources_2026_audit.json"
+  }
+}

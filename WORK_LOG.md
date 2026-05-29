@@ -6657,3 +6657,23 @@ o_table=0).
   - Partial permit rows: 0.
   - Duplicate hunt codes: 0.
   - Bad Res + NonRes totals: 0.
+
+## Reviewed 2026 Permit Truth Source Family Builder
+- Timestamp (UTC): 2026-05-29T10:42:00Z
+- Scope:
+  - Created `scripts/build-reviewed-permit-truth-sources-2026.py` to rebuild reviewed permit truth-source CSVs from the pasted-aligned public hunt table workbooks.
+  - Wrote reviewed family source files under `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits` for black bear, buck deer, elk antlerless, elk bull, moose bull, pronghorn buck, and pronghorn doe.
+  - Added boundary-id mapping metadata from `DATABASE.csv` while preserving hunt name, weapon, hunt type, season, sex type, species, and permit values from the pasted-aligned workbook rows.
+  - Added source workbook and source row number to every reviewed row for traceability.
+  - Wrote audit outputs:
+    - `processed_data/audits/reviewed_permit_truth_sources_2026_audit.csv`
+    - `processed_data/audits/reviewed_permit_truth_sources_2026_audit.json`
+- Validation:
+  - BLACK_BEAR: 106 rows; 100 full split; 0 total-only; 6 blank/no published numeric; duplicates 0; bad totals 0; missing source rows 0.
+  - BUCK_DEER: 458 rows; 192 full split; 136 total-only; 130 blank/no published numeric; duplicates 0; bad totals 0; missing source rows 0.
+  - ELK_ANTLERLESS: 204 rows; 167 full split; 27 total-only; 10 blank/no published numeric; duplicates 0; bad totals 0; missing source rows 0.
+  - ELK_BULL: 353 rows; 209 full split; 2 total-only; 142 blank/no published numeric; duplicates 0; bad totals 0; missing source rows 0.
+  - MOOSE_BULL: 27 rows; 26 full split; 0 total-only; 1 blank/no published numeric; duplicates 0; bad totals 0; missing source rows 0.
+  - PRONGHORN_BUCK: 94 rows; 87 full split; 0 total-only; 7 blank/no published numeric; duplicates 0; bad totals 0; missing source rows 0.
+  - PRONGHORN_DOE: 23 rows; 23 full split; 0 total-only; 0 blank/no published numeric; duplicates 0; bad totals 0; missing source rows 0.
+  - Re-ran `py scripts/build-reviewed-permit-truth-sources-2026.py` after correcting the builder so DATABASE contributes boundary metadata only, avoiding HAMSS deer field-shift contamination.
