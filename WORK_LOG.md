@@ -6737,3 +6737,17 @@ o_table=0).
 - Validation:
   - ROCKY_MOUNTAIN_BIGHORN_EWE rows: 1; full split rows: 1; duplicate hunt codes: 0; bad split totals: 0; missing source rows: 0.
   - DESERT_BIGHORN_RAM rows: 25; full split rows: 18; blank/no published numeric permit rows: 7; duplicate hunt codes: 0; bad split totals: 0; missing source rows: 0.
+
+## Statewide Permit Rule, Mountain Goat, And Pronghorn Doe Corrections
+- Timestamp (UTC): 2026-05-29T11:33:00Z
+- Scope:
+  - Updated `scripts/build-reviewed-permit-truth-sources-2026.py` so `*Statewide Permit` rows are total-only permit rows with `permits_2026_total = 1` and resident/nonresident blank.
+  - Confirmed conservation permits remain on their own separate hunt codes and are not combined into statewide permit rows.
+  - Added `MOUNTAIN_GOAT_HUNTERS_CHOICE` from `2026 MOUNTAIN GOAT HUNTER CHOICE O.I.L.xlsx`.
+  - Created `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 mountain goat reviewed res-nr-total.csv`.
+  - Rebuilt `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 pronghorn doe all reviewed res-nr-total.csv` from the user-pasted DWR Hunt Planner PD rows to preserve the pasted 2025 season dates and source lineage.
+  - Updated reviewed permit truth-source audit CSV/JSON.
+- Validation:
+  - Statewide permit rows checked across reviewed families: BR1000, DB0007, DS1000, EB1000, MB1000, GO1000, PB1000, RS0001, and TK0001 all carry total-only `1`.
+  - MOUNTAIN_GOAT_HUNTERS_CHOICE rows: 18; full split rows: 17; total-only rows: 1; duplicate hunt codes: 0; bad split totals: 0; missing source rows: 0.
+  - PRONGHORN_DOE rows: 23; full split rows: 23; duplicate hunt codes: 0; bad split totals: 0; missing source rows: 0.

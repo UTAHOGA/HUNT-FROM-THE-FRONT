@@ -1,5 +1,5 @@
 hunt_name,hunt_code,boundary_id,hunt_code_mapping_status,boundary_id_mapping_status,candidate_hunt_code,candidate_boundary_id,sex_type,species,weapon,hunt_type,season,permits_2026_res,permits_2026_nr,permits_2026_total,permit_count_status,source_file,source_row_number
-Moose - Statewide Permit,MB1000,5133,REVIEWED_CURRENT_HUNT_CODE,DATABASE_BOUNDARY_ID,MB1000,5133,Bull,Moose,Any Legal Weapon,Statewide,"Sept 1 - Nov 15, 2026",,,,NO_PUBLISHED_NUMERIC_PERMIT,2026 MOOSE BULL O.I.L.xlsx,2
+Moose - Statewide Permit,MB1000,5133,REVIEWED_CURRENT_HUNT_CODE,DATABASE_BOUNDARY_ID,MB1000,5133,Bull,Moose,Any Legal Weapon,Statewide,"Sept 1 - Nov 15, 2026",,,1,TOTAL_ONLY,2026 MOOSE BULL O.I.L.xlsx,2
 Cache,MB6000,29,REVIEWED_CURRENT_HUNT_CODE,DATABASE_BOUNDARY_ID,MB6000,29,Bull,Moose,Any Legal Weapon,Once-in-a-lifetime,Sept 12 2026 - Oct 31 2026,14,3,17,FULL_SPLIT,2026 MOOSE BULL O.I.L.xlsx,3
 Chalk Creek,MB6001,69,REVIEWED_CURRENT_HUNT_CODE,DATABASE_BOUNDARY_ID,MB6001,69,Bull,Moose,Any Legal Weapon,Once-in-a-lifetime,Sept 12 2026 - Oct 31 2026,4,0,4,FULL_SPLIT,2026 MOOSE BULL O.I.L.xlsx,4
 East Canyon,MB6002,276,REVIEWED_CURRENT_HUNT_CODE,DATABASE_BOUNDARY_ID,MB6002,276,Bull,Moose,Any Legal Weapon,Once-in-a-lifetime,Sept 12 2026 - Oct 31 2026,5,0,5,FULL_SPLIT,2026 MOOSE BULL O.I.L.xlsx,5

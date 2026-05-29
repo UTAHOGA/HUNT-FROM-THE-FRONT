@@ -80,6 +80,14 @@ FAMILY_CONFIGS = [
         "sex_type": ("Bull",),
     },
     {
+        "family": "MOUNTAIN_GOAT_HUNTERS_CHOICE",
+        "output": "2026 mountain goat reviewed res-nr-total.csv",
+        "sources": ["2026 MOUNTAIN GOAT HUNTER CHOICE O.I.L.xlsx"],
+        "code_prefixes": ("GO",),
+        "species": ("Mountain Goat",),
+        "sex_type": ("Hunters Choice",),
+    },
+    {
         "family": "PRONGHORN_BUCK",
         "output": "2026 pronghorn buck all reviewed res-nr-total.csv",
         "sources": [
@@ -95,9 +103,31 @@ FAMILY_CONFIGS = [
     {
         "family": "PRONGHORN_DOE",
         "output": "2026 pronghorn doe all reviewed res-nr-total.csv",
-        "sources": [
-            "2026 PRONGHORN DOE GENERAL SEASON.xlsx",
-            "2026 PRONGHORN DOE CWMU.xlsx",
+        "source_label": "USER_PASTED_DWR_HUNT_PLANNER_PRONGHORN_DOE_PD_2026",
+        "inline_rows": [
+            {"hunt_name": "Box Elder, Snowville", "hunt_code": "PD1000", "sex_type": "Doe", "species": "Pronghorn", "weapon": "Any Legal Weapon", "hunt_type": "General Season", "season": "Nov 08 2025 - Dec 07 2025", "permits_2026_res": "72", "permits_2026_nr": "8"},
+            {"hunt_name": "Box Elder, Promontory", "hunt_code": "PD1012", "sex_type": "Doe", "species": "Pronghorn", "weapon": "Any Legal Weapon", "hunt_type": "General Season", "season": "Oct 04 2025 - Oct 26 2025", "permits_2026_res": "22", "permits_2026_nr": "3"},
+            {"hunt_name": "Box Elder, West", "hunt_code": "PD1017", "sex_type": "Doe", "species": "Pronghorn", "weapon": "Any Legal Weapon", "hunt_type": "General Season", "season": "Oct 04 2025 - Oct 26 2025", "permits_2026_res": "49", "permits_2026_nr": "6"},
+            {"hunt_name": "Westlake CWMU", "hunt_code": "PD1031", "sex_type": "Doe", "species": "Pronghorn", "weapon": "Any Legal Weapon", "hunt_type": "CWMU", "season": "Contact operator for 2025 season dates", "permits_2026_res": "9", "permits_2026_nr": "0"},
+            {"hunt_name": "San Rafael, Poison Springs Bench", "hunt_code": "PD1033", "sex_type": "Doe", "species": "Pronghorn", "weapon": "Any Legal Weapon", "hunt_type": "General Season", "season": "Oct 04 2025 - Oct 26 2025", "permits_2026_res": "13", "permits_2026_nr": "2"},
+            {"hunt_name": "Fillmore, Oak Creek South", "hunt_code": "PD1034", "sex_type": "Doe", "species": "Pronghorn", "weapon": "Any Legal Weapon", "hunt_type": "General Season", "season": "Aug 01 2025 - Aug 13 2025", "permits_2026_res": "27", "permits_2026_nr": "3"},
+            {"hunt_name": "Fillmore, Oak Creek South", "hunt_code": "PD1035", "sex_type": "Doe", "species": "Pronghorn", "weapon": "Any Legal Weapon", "hunt_type": "General Season", "season": "Nov 01 2025 - Nov 29 2025", "permits_2026_res": "27", "permits_2026_nr": "3"},
+            {"hunt_name": "Nine Mile, Anthro-Pleasant Valley", "hunt_code": "PD1043", "sex_type": "Doe", "species": "Pronghorn", "weapon": "Any Legal Weapon", "hunt_type": "General Season", "season": "Aug 01 2025 - Aug 16 2025", "permits_2026_res": "9", "permits_2026_nr": "1"},
+            {"hunt_name": "Vernal-Ouray Valley", "hunt_code": "PD1044", "sex_type": "Doe", "species": "Pronghorn", "weapon": "Any Legal Weapon", "hunt_type": "General Season", "season": "Oct 04 2025 - Oct 16 2025", "permits_2026_res": "9", "permits_2026_nr": "1"},
+            {"hunt_name": "Antelope Creek CWMU", "hunt_code": "PD1047", "sex_type": "Doe", "species": "Pronghorn", "weapon": "Any Legal Weapon", "hunt_type": "CWMU", "season": "Contact operator for 2025 season dates", "permits_2026_res": "6", "permits_2026_nr": "0"},
+            {"hunt_name": "The Rose of Snowville CWMU", "hunt_code": "PD1048", "sex_type": "Doe", "species": "Pronghorn", "weapon": "Any Legal Weapon", "hunt_type": "CWMU", "season": "Contact operator for 2025 season dates", "permits_2026_res": "2", "permits_2026_nr": "0"},
+            {"hunt_name": "Zane CWMU", "hunt_code": "PD1049", "sex_type": "Doe", "species": "Pronghorn", "weapon": "Any Legal Weapon", "hunt_type": "CWMU", "season": "Contact operator for 2025 season dates", "permits_2026_res": "6", "permits_2026_nr": "0"},
+            {"hunt_name": "Cottonwood Ridge CWMU", "hunt_code": "PD1050", "sex_type": "Doe", "species": "Pronghorn", "weapon": "Any Legal Weapon", "hunt_type": "CWMU", "season": "Contact operator for 2025 season dates", "permits_2026_res": "6", "permits_2026_nr": "0"},
+            {"hunt_name": "Pahvant Ensign CWMU", "hunt_code": "PD1051", "sex_type": "Doe", "species": "Pronghorn", "weapon": "Any Legal Weapon", "hunt_type": "CWMU", "season": "Contact operator for 2025 season dates", "permits_2026_res": "6", "permits_2026_nr": "0"},
+            {"hunt_name": "Heist CWMU", "hunt_code": "PD1052", "sex_type": "Doe", "species": "Pronghorn", "weapon": "Any Legal Weapon", "hunt_type": "CWMU", "season": "Contact operator for 2025 season dates", "permits_2026_res": "6", "permits_2026_nr": "0"},
+            {"hunt_name": "Green River Flat CWMU", "hunt_code": "PD1053", "sex_type": "Doe", "species": "Pronghorn", "weapon": "Any Legal Weapon", "hunt_type": "CWMU", "season": "Contact operator for 2025 season dates", "permits_2026_res": "6", "permits_2026_nr": "0"},
+            {"hunt_name": "Parker Mtn", "hunt_code": "PD1054", "sex_type": "Doe", "species": "Pronghorn", "weapon": "Archery", "hunt_type": "General Season", "season": "Aug 30 2025 - Sep 12 2025", "permits_2026_res": "27", "permits_2026_nr": "3"},
+            {"hunt_name": "Parker Mtn", "hunt_code": "PD1055", "sex_type": "Doe", "species": "Pronghorn", "weapon": "Muzzleloader", "hunt_type": "General Season", "season": "Oct 29 2025 - Nov 08 2025", "permits_2026_res": "31", "permits_2026_nr": "4"},
+            {"hunt_name": "Parker Mtn", "hunt_code": "PD1056", "sex_type": "Doe", "species": "Pronghorn", "weapon": "Any Legal Weapon", "hunt_type": "General Season", "season": "Dec 13 2025 - Dec 21 2025", "permits_2026_res": "36", "permits_2026_nr": "4"},
+            {"hunt_name": "Parker Mtn, Highlands", "hunt_code": "PD1057", "sex_type": "Doe", "species": "Pronghorn", "weapon": "Any Legal Weapon", "hunt_type": "General Season", "season": "Oct 08 2025 - Oct 16 2025", "permits_2026_res": "31", "permits_2026_nr": "4"},
+            {"hunt_name": "Parker Mtn, Highlands", "hunt_code": "PD1058", "sex_type": "Doe", "species": "Pronghorn", "weapon": "Any Legal Weapon", "hunt_type": "General Season", "season": "Nov 22 2025 - Nov 30 2025", "permits_2026_res": "36", "permits_2026_nr": "4"},
+            {"hunt_name": "Parker Mtn, Plains", "hunt_code": "PD1059", "sex_type": "Doe", "species": "Pronghorn", "weapon": "Any Legal Weapon", "hunt_type": "General Season", "season": "Oct 08 2025 - Oct 16 2025", "permits_2026_res": "27", "permits_2026_nr": "3"},
+            {"hunt_name": "Parker Mtn, Plains", "hunt_code": "PD1060", "sex_type": "Doe", "species": "Pronghorn", "weapon": "Any Legal Weapon", "hunt_type": "General Season", "season": "Nov 22 2025 - Nov 30 2025", "permits_2026_res": "36", "permits_2026_nr": "4"},
         ],
         "code_prefixes": ("PD",),
         "species": ("Pronghorn",),
@@ -521,6 +551,12 @@ def apply_config_overrides(row: dict[str, str], config: dict[str, object]) -> di
         row["permits_2026_nr"] = ""
         row["permits_2026_total"] = ""
         row["permit_count_status"] = permit_status("", "", "")
+
+    if "statewide permit" in norm(row.get("hunt_name")):
+        row["permits_2026_res"] = ""
+        row["permits_2026_nr"] = ""
+        row["permits_2026_total"] = "1"
+        row["permit_count_status"] = permit_status("", "", "1")
     return row
 
 

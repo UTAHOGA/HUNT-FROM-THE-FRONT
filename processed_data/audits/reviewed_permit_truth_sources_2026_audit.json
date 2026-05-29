@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-05-29T10:51:13.077741+00:00",
+  "created_at": "2026-05-29T11:32:42.259467+00:00",
   "source": "pasted-aligned public hunt table workbooks plus reviewed inline pasted DWR Hunt Planner rows",
   "families": {
     "BLACK_BEAR": {
@@ -8,7 +8,8 @@
       "bad_split_totals": [],
       "missing_source_rows": [],
       "permit_status_counts": {
-        "NO_PUBLISHED_NUMERIC_PERMIT": 6,
+        "TOTAL_ONLY": 1,
+        "NO_PUBLISHED_NUMERIC_PERMIT": 5,
         "FULL_SPLIT": 100
       },
       "hunt_type_counts": {
@@ -42,9 +43,9 @@
       "bad_split_totals": [],
       "missing_source_rows": [],
       "permit_status_counts": {
-        "NO_PUBLISHED_NUMERIC_PERMIT": 130,
-        "FULL_SPLIT": 192,
-        "TOTAL_ONLY": 136
+        "NO_PUBLISHED_NUMERIC_PERMIT": 129,
+        "TOTAL_ONLY": 137,
+        "FULL_SPLIT": 192
       },
       "hunt_type_counts": {
         "Tribal": 10,
@@ -111,8 +112,8 @@
       "bad_split_totals": [],
       "missing_source_rows": [],
       "permit_status_counts": {
-        "NO_PUBLISHED_NUMERIC_PERMIT": 142,
-        "TOTAL_ONLY": 2,
+        "TOTAL_ONLY": 3,
+        "NO_PUBLISHED_NUMERIC_PERMIT": 141,
         "FULL_SPLIT": 209
       },
       "hunt_type_counts": {
@@ -145,7 +146,7 @@
       "bad_split_totals": [],
       "missing_source_rows": [],
       "permit_status_counts": {
-        "NO_PUBLISHED_NUMERIC_PERMIT": 1,
+        "TOTAL_ONLY": 1,
         "FULL_SPLIT": 26
       },
       "hunt_type_counts": {
@@ -161,13 +162,36 @@
       },
       "output": "C:\\Users\\tyler\\Desktop\\GitHub\\HUNT-BUILDER\\pipeline\\RAW\\hunt_unit_database\\2026\\csv\\2026 Permits\\2026 moose bull all reviewed res-nr-total.csv"
     },
+    "MOUNTAIN_GOAT_HUNTERS_CHOICE": {
+      "rows": 18,
+      "duplicate_hunt_codes": [],
+      "bad_split_totals": [],
+      "missing_source_rows": [],
+      "permit_status_counts": {
+        "TOTAL_ONLY": 1,
+        "FULL_SPLIT": 17
+      },
+      "hunt_type_counts": {
+        "Statewide": 1,
+        "Once-in-a-lifetime": 17
+      },
+      "weapon_counts": {
+        "Any Legal Weapon": 16,
+        "Archery": 2
+      },
+      "source_counts": {
+        "2026 MOUNTAIN GOAT HUNTER CHOICE O.I.L.xlsx": 18
+      },
+      "output": "C:\\Users\\tyler\\Desktop\\GitHub\\HUNT-BUILDER\\pipeline\\RAW\\hunt_unit_database\\2026\\csv\\2026 Permits\\2026 mountain goat reviewed res-nr-total.csv"
+    },
     "PRONGHORN_BUCK": {
       "rows": 94,
       "duplicate_hunt_codes": [],
       "bad_split_totals": [],
       "missing_source_rows": [],
       "permit_status_counts": {
-        "NO_PUBLISHED_NUMERIC_PERMIT": 7,
+        "NO_PUBLISHED_NUMERIC_PERMIT": 6,
+        "TOTAL_ONLY": 1,
         "FULL_SPLIT": 87
       },
       "hunt_type_counts": {
@@ -207,8 +231,7 @@
         "Muzzleloader": 1
       },
       "source_counts": {
-        "2026 PRONGHORN DOE GENERAL SEASON.xlsx": 15,
-        "2026 PRONGHORN DOE CWMU.xlsx": 8
+        "USER_PASTED_DWR_HUNT_PLANNER_PRONGHORN_DOE_PD_2026": 23
       },
       "output": "C:\\Users\\tyler\\Desktop\\GitHub\\HUNT-BUILDER\\pipeline\\RAW\\hunt_unit_database\\2026\\csv\\2026 Permits\\2026 pronghorn doe all reviewed res-nr-total.csv"
     },
@@ -218,8 +241,8 @@
       "bad_split_totals": [],
       "missing_source_rows": [],
       "permit_status_counts": {
-        "NO_PUBLISHED_NUMERIC_PERMIT": 7,
-        "TOTAL_ONLY": 7
+        "TOTAL_ONLY": 8,
+        "NO_PUBLISHED_NUMERIC_PERMIT": 6
       },
       "hunt_type_counts": {
         "Statewide": 1,
@@ -261,7 +284,8 @@
       "bad_split_totals": [],
       "missing_source_rows": [],
       "permit_status_counts": {
-        "NO_PUBLISHED_NUMERIC_PERMIT": 5,
+        "TOTAL_ONLY": 1,
+        "NO_PUBLISHED_NUMERIC_PERMIT": 4,
         "FULL_SPLIT": 15
       },
       "hunt_type_counts": {
@@ -303,7 +327,8 @@
       "bad_split_totals": [],
       "missing_source_rows": [],
       "permit_status_counts": {
-        "NO_PUBLISHED_NUMERIC_PERMIT": 7,
+        "TOTAL_ONLY": 1,
+        "NO_PUBLISHED_NUMERIC_PERMIT": 6,
         "FULL_SPLIT": 18
       },
       "hunt_type_counts": {
