@@ -15,6 +15,53 @@
     return isEmbedded();
   }
 
+  function cloudflareFirst(values) {
+    if (!Array.isArray(values)) return values;
+    const seen = new Set();
+    const clean = values.filter(Boolean).filter((value) => {
+      const key = String(value);
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+    return [
+      ...clean.filter((value) => /https:\/\/json\.uoga\.workers\.dev/i.test(String(value))),
+      ...clean.filter((value) => !/https:\/\/json\.uoga\.workers\.dev/i.test(String(value))),
+    ];
+  }
+
+  function normalizeResearchSources(config) {
+    if (!config || typeof config !== 'object') return config;
+    config.HUNT_RESEARCH_ENGINE_SOURCES = cloudflareFirst(config.HUNT_RESEARCH_ENGINE_SOURCES);
+    config.HUNT_RESEARCH_OBSERVED_ENGINE_SOURCES = cloudflareFirst(config.HUNT_RESEARCH_OBSERVED_ENGINE_SOURCES);
+    config.HUNT_RESEARCH_PREDICTIVE_ENGINE_SOURCES = cloudflareFirst(config.HUNT_RESEARCH_PREDICTIVE_ENGINE_SOURCES);
+    config.HUNT_RESEARCH_LADDER_SOURCES = cloudflareFirst(config.HUNT_RESEARCH_LADDER_SOURCES);
+    config.HUNT_RESEARCH_MASTER_SOURCES = cloudflareFirst(config.HUNT_RESEARCH_MASTER_SOURCES);
+    config.HUNT_RESEARCH_REFERENCE_SOURCES = cloudflareFirst(config.HUNT_RESEARCH_REFERENCE_SOURCES);
+    return config;
+  }
+
+  function installConfigNormalizer() {
+    const existing = window.UOGA_CONFIG;
+    let stored = normalizeResearchSources(existing);
+    try {
+      Object.defineProperty(window, 'UOGA_CONFIG', {
+        configurable: true,
+        enumerable: true,
+        get() {
+          return stored;
+        },
+        set(value) {
+          stored = normalizeResearchSources(value);
+        },
+      });
+    } catch {
+      if (existing) window.UOGA_CONFIG = normalizeResearchSources(existing);
+    }
+  }
+
+  installConfigNormalizer();
+
   if (resolveEmbedMode()) {
     document.documentElement.classList.add('embed');
     if (document.body) document.body.classList.add('embed');
