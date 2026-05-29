@@ -6751,3 +6751,21 @@ o_table=0).
   - Statewide permit rows checked across reviewed families: BR1000, DB0007, DS1000, EB1000, MB1000, GO1000, PB1000, RS0001, and TK0001 all carry total-only `1`.
   - MOUNTAIN_GOAT_HUNTERS_CHOICE rows: 18; full split rows: 17; total-only rows: 1; duplicate hunt codes: 0; bad split totals: 0; missing source rows: 0.
   - PRONGHORN_DOE rows: 23; full split rows: 23; duplicate hunt codes: 0; bad split totals: 0; missing source rows: 0.
+
+## Pronghorn Buck 2026 Permit Truth Source Correction
+- Timestamp (UTC): 2026-05-29T11:38:00Z
+- Scope:
+  - Rebuilt `PRONGHORN_BUCK` in `scripts/build-reviewed-permit-truth-sources-2026.py` from the user-pasted Utah DWR Hunt Planner LP/PB rows instead of the generated workbook split.
+  - Added reviewed inline TSV parsing for pasted permit families so `Res:`, `NonRes:`, and `Total:` lines are normalized into canonical permit columns without hand-entering large dictionary blocks.
+  - Rebuilt `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 pronghorn buck all reviewed res-nr-total.csv` with DWR pasted source lineage on every row.
+  - Preserved the six LP private-land rows as no-published-numeric permit rows and kept `PB1000` as the separate statewide total-only permit row with `permits_2026_total = 1`.
+  - Updated reviewed permit truth-source audit CSV/JSON.
+- Validation:
+  - PRONGHORN_BUCK rows: 94.
+  - Full split rows: 87.
+  - Total-only rows: 1.
+  - Blank/no published numeric permit rows: 6.
+  - Duplicate hunt codes: 0.
+  - Bad split totals: 0.
+  - Missing source rows: 0.
+  - Spot checks passed for LP5025, LP5051, PB1000, PB5000, PB5049, PB5076, PB5302, and PB5346.

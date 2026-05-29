@@ -90,12 +90,190 @@ FAMILY_CONFIGS = [
     {
         "family": "PRONGHORN_BUCK",
         "output": "2026 pronghorn buck all reviewed res-nr-total.csv",
-        "sources": [
-            "2026 PRONGHORN BUCK STATEWIDE.xlsx",
-            "2026 PRONGHORN BUCK L.E.xlsx",
-            "2026 PRONGHORN BUCK L.E PRIVATE LANDS ONLY.xlsx",
-            "2026 PRONGHORN BUCK CWMU.xlsx",
-        ],
+        "source_label": "USER_PASTED_DWR_HUNT_PLANNER_PRONGHORN_BUCK_PB_LP_2026",
+        "inline_tsv": """
+Beaver - Private Land Only	LP5025	Buck	Pronghorn	Any Legal Weapon	Limited Entry - Private Land Only	Sept 13 2025 - Sept 21 2025 - Private Land Only
+Box Elder, West - Private Land Only	LP5031	Buck	Pronghorn	Any Legal Weapon	Limited Entry - Private Land Only	Sept 13 2025 - Sept 21 2025 - Private Land Only
+Fillmore, Oak Creek South - Private Land Only	LP5033	Buck	Pronghorn	Any Legal Weapon	Limited Entry - Private Land Only	Sept 13 2025 - Sept 21 2025 - Private Land Only
+San Rafael, North - Private Land Only	LP5046	Buck	Pronghorn	Any Legal Weapon	Limited Entry - Private Land Only	Sept 13 2025 - Sept 21 2025 - Private Land Only
+Southwest Desert - Private Land Only	LP5049	Buck	Pronghorn	Any Legal Weapon	Limited Entry - Private Land Only	Sept 13 2025 - Sept 21 2025 - Private Land Only
+West Desert, Rush Valley - Private Land Only	LP5051	Buck	Pronghorn	Any Legal Weapon	Limited Entry - Private Land Only	Sept 13 2025 - Sept 21 2025 - Private Land Only
+Pronghorn - Statewide Permit	PB1000	Buck	Pronghorn	Any Legal Weapon	Statewide	Archery: Aug 15 - Aug 31, 2026 | ALW: Sept 1 - Nov 15, 2026
+Beaver	PB5000	Buck	Pronghorn	Archery	Limited Entry	Aug 15 2026 - Sept 11 2026	Res: 11
+NonRes: 1
+Book Cliffs, Bitter Creek	PB5001	Buck	Pronghorn	Archery	Limited Entry	Aug 15 2026 - Sept 11 2026	Res: 13
+NonRes: 1
+Book Cliffs, South	PB5002	Buck	Pronghorn	Archery	Limited Entry	Aug 15 2026 - Sept 11 2026	Res: 8
+NonRes: 1
+Box Elder, Promontory	PB5003	Buck	Pronghorn	Archery	Limited Entry	Aug 15 2026 - Sept 11 2026	Res: 4
+NonRes: 0
+Box Elder, Puddle Valley	PB5004	Buck	Pronghorn	Archery	Limited Entry	Aug 15 2026 - Sept 11 2026	Res: 3
+NonRes: 1
+Box Elder, Snowville	PB5005	Buck	Pronghorn	Archery	Limited Entry	Aug 15 2026 - Sept 11 2026	Res: 9
+NonRes: 1
+Box Elder, West	PB5006	Buck	Pronghorn	Archery	Limited Entry	Aug 15 2026 - Sept 11 2026	Res: 10
+NonRes: 1
+Fillmore, Oak Creek South	PB5008	Buck	Pronghorn	Archery	Limited Entry	Aug 15 2026 - Sept 11 2026	Res: 15
+NonRes: 2
+La Sal, Potash/South Cisco	PB5009	Buck	Pronghorn	Archery	Limited Entry	Aug 15 2026 - Sept 11 2026	Res: 6
+NonRes: 0
+Nine Mile, Anthro-Myton Bench	PB5011	Buck	Pronghorn	Archery	Limited Entry	Aug 15 2026 - Sept 11 2026	Res: 30
+NonRes: 3
+North Slope, Three Corners/West Daggett	PB5012	Buck	Pronghorn	Archery	Limited Entry	Aug 15 2026 - Sept 11 2026	Res: 10
+NonRes: 1
+Pine Valley	PB5013	Buck	Pronghorn	Archery	Limited Entry	Aug 15 2026 - Sept 11 2026	Res: 7
+NonRes: 1
+San Rafael, North	PB5015	Buck	Pronghorn	Archery	Limited Entry	Aug 15 2026 - Sept 11 2026	Res: 21
+NonRes: 2
+Diamond Mtn/Bonanza	PB5016	Buck	Pronghorn	Archery	Limited Entry	Aug 15 2026 - Sept 11 2026	Res: 17
+NonRes: 2
+Vernal	PB5017	Buck	Pronghorn	Archery	Limited Entry	Aug 15 2026 - Sept 11 2026	Res: 18
+NonRes: 2
+Southwest Desert	PB5018	Buck	Pronghorn	Archery	Limited Entry	Aug 15 2026 - Sept 11 2026	Res: 31
+NonRes: 4
+West Desert, Riverbed	PB5019	Buck	Pronghorn	Archery	Limited Entry	Aug 15 2026 - Sept 11 2026	Res: 18
+NonRes: 2
+West Desert, Rush Valley	PB5020	Buck	Pronghorn	Archery	Limited Entry	Aug 15 2026 - Sept 11 2026	Res: 8
+NonRes: 1
+West Desert, Snake Valley	PB5021	Buck	Pronghorn	Archery	Limited Entry	Aug 15 2026 - Sept 11 2026	Res: 23
+NonRes: 3
+Southwest Desert	PB5024	Buck	Pronghorn	Muzzleloader	Limited Entry	Sept 23 2026 - Oct 01 2026	Res: 31
+NonRes: 4
+Beaver	PB5025	Buck	Pronghorn	Any Legal Weapon	Limited Entry	Sept 12 2026 - Sept 20 2026	Res: 43
+NonRes: 5
+Book Cliffs, Bitter Creek	PB5026	Buck	Pronghorn	Any Legal Weapon	Limited Entry	Sept 12 2026 - Sept 20 2026	Res: 50
+NonRes: 6
+Book Cliffs, South	PB5027	Buck	Pronghorn	Any Legal Weapon	Limited Entry	Sept 12 2026 - Sept 20 2026	Res: 34
+NonRes: 4
+Box Elder, Promontory	PB5028	Buck	Pronghorn	Any Legal Weapon	Limited Entry	Sept 12 2026 - Sept 20 2026	Res: 14
+NonRes: 2
+Box Elder, Puddle Valley	PB5029	Buck	Pronghorn	Any Legal Weapon	Limited Entry	Sept 12 2026 - Sept 20 2026	Res: 14
+NonRes: 2
+Box Elder, Snowville	PB5030	Buck	Pronghorn	Any Legal Weapon	Limited Entry	Sept 12 2026 - Sept 20 2026	Res: 28
+NonRes: 3
+Box Elder, West	PB5031	Buck	Pronghorn	Any Legal Weapon	Limited Entry	Sept 12 2026 - Sept 20 2026	Res: 30
+NonRes: 3
+Fillmore, Oak Creek South	PB5033	Buck	Pronghorn	Any Legal Weapon	Limited Entry	Sept 12 2026 - Sept 20 2026	Res: 46
+NonRes: 5
+Kaiparowits	PB5034	Buck	Pronghorn	Any Legal Weapon	Limited Entry	Sept 12 2026 - Sept 20 2026	Res: 2
+NonRes: 0
+La Sal, Potash/South Cisco	PB5035	Buck	Pronghorn	Any Legal Weapon	Limited Entry	Sept 12 2026 - Sept 20 2026	Res: 22
+NonRes: 2
+Nine Mile, Anthro-Myton Bench	PB5037	Buck	Pronghorn	Any Legal Weapon	Limited Entry	Sept 12 2026 - Sept 20 2026	Res: 89
+NonRes: 10
+Nine Mile, Range Creek	PB5038	Buck	Pronghorn	Any Legal Weapon	Limited Entry	Sept 12 2026 - Sept 20 2026	Res: 13
+NonRes: 1
+North Slope, Summit	PB5039	Buck	Pronghorn	Any Legal Weapon	Limited Entry	Sept 12 2026 - Sept 20 2026	Res: 15
+NonRes: 2
+North Slope, Three Corners/West Daggett	PB5040	Buck	Pronghorn	Any Legal Weapon	Limited Entry	Sept 12 2026 - Sept 20 2026	Res: 29
+NonRes: 3
+Panguitch Lake/Zion, North	PB5041	Buck	Pronghorn	Any Legal Weapon	Limited Entry	Sept 12 2026 - Sept 20 2026	Res: 21
+NonRes: 2
+Pine Valley	PB5042	Buck	Pronghorn	Any Legal Weapon	Limited Entry	Sept 12 2026 - Sept 20 2026	Res: 21
+NonRes: 2
+San Juan, Hatch Point	PB5044	Buck	Pronghorn	Any Legal Weapon	Limited Entry	Sept 12 2026 - Sept 20 2026	Res: 3
+NonRes: 0
+San Rafael, Desert	PB5045	Buck	Pronghorn	Any Legal Weapon	Limited Entry	Sept 12 2026 - Sept 20 2026	Res: 7
+NonRes: 1
+San Rafael, North	PB5046	Buck	Pronghorn	Any Legal Weapon	Limited Entry	Sept 12 2026 - Sept 20 2026	Res: 62
+NonRes: 7
+Diamond Mtn/Bonanza	PB5047	Buck	Pronghorn	Any Legal Weapon	Limited Entry	Sept 12 2026 - Sept 20 2026	Res: 50
+NonRes: 6
+Vernal	PB5048	Buck	Pronghorn	Any Legal Weapon	Limited Entry	Sept 12 2026 - Sept 20 2026	Res: 54
+NonRes: 6
+Southwest Desert	PB5049	Buck	Pronghorn	Any Legal Weapon	Limited Entry	Sept 12 2026 - Sept 20 2026	Res: 94
+NonRes: 11
+West Desert, Riverbed	PB5050	Buck	Pronghorn	Any Legal Weapon	Limited Entry	Sept 12 2026 - Sept 20 2026	Res: 73
+NonRes: 8
+West Desert, Rush Valley	PB5051	Buck	Pronghorn	Any Legal Weapon	Limited Entry	Sept 12 2026 - Sept 20 2026	Res: 32
+NonRes: 4
+West Desert, Snake Valley	PB5052	Buck	Pronghorn	Any Legal Weapon	Limited Entry	Sept 12 2026 - Sept 20 2026	Res: 95
+NonRes: 11
+Nine Mile, Range Creek	PB5053	Buck	Pronghorn	Archery	Limited Entry	Aug 15 2026 - Sept 11 2026	Res: 4
+NonRes: 0
+Panguitch Lake/Zion, North	PB5054	Buck	Pronghorn	Archery	Limited Entry	Aug 15 2026 - Sept 11 2026	Res: 7
+NonRes: 1
+San Rafael, Desert	PB5055	Buck	Pronghorn	Archery	Limited Entry	Aug 15 2026 - Sept 11 2026	Res: 2
+NonRes: 0
+San Rafael, North	PB5056	Buck	Pronghorn	Muzzleloader	Limited Entry	Sept 23 2026 - Oct 01 2026	Res: 21
+NonRes: 2
+Nine Mile, Anthro-Myton Bench	PB5059	Buck	Pronghorn	Muzzleloader	Limited Entry	Sept 23 2026 - Oct 01 2026	Res: 30
+NonRes: 3
+Diamond Mtn/Bonanza	PB5060	Buck	Pronghorn	Muzzleloader	Limited Entry	Sept 23 2026 - Oct 01 2026	Res: 17
+NonRes: 2
+Panguitch Lake/Zion, North	PB5061	Buck	Pronghorn	Muzzleloader	Limited Entry	Sept 23 2026 - Oct 01 2026	Res: 7
+NonRes: 1
+Pine Valley	PB5062	Buck	Pronghorn	Muzzleloader	Limited Entry	Sept 23 2026 - Oct 01 2026	Res: 7
+NonRes: 1
+Fillmore, Oak Creek South	PB5065	Buck	Pronghorn	Muzzleloader	Limited Entry	Sept 23 2026 - Oct 01 2026	Res: 15
+NonRes: 2
+North Slope, Three Corners/West Daggett	PB5066	Buck	Pronghorn	Muzzleloader	Limited Entry	Sept 23 2026 - Oct 01 2026	Res: 10
+NonRes: 1
+Vernal	PB5072	Buck	Pronghorn	Muzzleloader	Limited Entry	Sept 23 2026 - Oct 01 2026	Res: 18
+NonRes: 2
+Cache, Rich	PB5073	Buck	Pronghorn	Any Legal Weapon	Limited Entry	Sept 12 2026 - Sept 20 2026	Res: 6
+NonRes: 0
+Cache, Rich	PB5074	Buck	Pronghorn	Archery	Limited Entry	Aug 15 2026 - Sept 11 2026	Res: 2
+NonRes: 0
+Cache, Rich	PB5075	Buck	Pronghorn	Muzzleloader	Limited Entry	Sept 23 2026 - Oct 01 2026	Res: 2
+NonRes: 0
+Parker Mtn	PB5076	Buck	Pronghorn	Any Legal Weapon	Limited Entry	Sept 12 2026 - Sept 20 2026	Res: 135
+NonRes: 15
+Parker Mtn	PB5077	Buck	Pronghorn	Archery	Limited Entry	Aug 15 2026 - Sept 11 2026	Res: 45
+NonRes: 5
+Parker Mtn	PB5078	Buck	Pronghorn	Muzzleloader	Limited Entry	Sept 23 2026 - Oct 01 2026	Res: 45
+NonRes: 5
+Box Elder, West	PB5079	Buck	Pronghorn	Muzzleloader	Limited Entry	Sept 23 2026 - Oct 01 2026	Res: 10
+NonRes: 1
+Box Elder, Snowville	PB5080	Buck	Pronghorn	Muzzleloader	Limited Entry	Sept 23 2026 - Oct 01 2026	Res: 9
+NonRes: 1
+Antelope Creek CWMU	PB5300	Buck	Pronghorn	Any Legal Weapon	CWMU	Contact operator for 2026 season dates	Res: 4
+NonRes: 0
+Deseret CWMU	PB5302	Buck	Pronghorn	Any Legal Weapon	CWMU	Contact operator for 2026 season dates	Res: 29
+NonRes: 0
+Park Valley CWMU	PB5305	Buck	Pronghorn	Any Legal Weapon	CWMU	Contact operator for 2026 season dates	Res: 1
+NonRes: 0
+Rabbit Creek CWMU	PB5306	Buck	Pronghorn	Any Legal Weapon	CWMU	Contact operator for 2026 season dates	Res: 1
+NonRes: 0
+Skull Valley South CWMU	PB5309	Buck	Pronghorn	Any Legal Weapon	CWMU	Contact operator for 2026 season dates	Res: 2
+NonRes: 0
+The Rose of Snowville CWMU	PB5311	Buck	Pronghorn	Any Legal Weapon	CWMU	Contact operator for 2026 season dates	Res: 3
+NonRes: 0
+TL Bar Ranch CWMU	PB5312	Buck	Pronghorn	Any Legal Weapon	CWMU	Contact operator for 2026 season dates	Res: 1
+NonRes: 0
+Westlake CWMU	PB5314	Buck	Pronghorn	Any Legal Weapon	CWMU	Contact operator for 2026 season dates	Res: 2
+NonRes: 0
+Zane CWMU	PB5315	Buck	Pronghorn	Any Legal Weapon	CWMU	Contact operator for 2026 season dates	Res: 2
+NonRes: 0
+Allen Ranch CWMU	PB5325	Buck	Pronghorn	Any Legal Weapon	CWMU	Contact operator for 2026 season dates	Res: 2
+NonRes: 0
+Cedar Springs CWMU	PB5326	Buck	Pronghorn	Any Legal Weapon	CWMU	Contact operator for 2026 season dates	Res: 1
+NonRes: 0
+Cottonwood Ridge CWMU	PB5327	Buck	Pronghorn	Any Legal Weapon	CWMU	Contact operator for 2026 season dates	Res: 4
+NonRes: 0
+Pahvant Ensign CWMU	PB5328	Buck	Pronghorn	Any Legal Weapon	CWMU	Contact operator for 2026 season dates	Res: 3
+NonRes: 0
+Snowville Flat CWMU	PB5329	Buck	Pronghorn	Any Legal Weapon	CWMU	Contact operator for 2026 season dates	Res: 2
+NonRes: 0
+George Creek CWMU	PB5330	Buck	Pronghorn	Any Legal Weapon	CWMU	Contact operator for 2026 season dates	Res: 1
+NonRes: 0
+Mt Dutton/Paunsaugunt	PB5331	Buck	Pronghorn	Any Legal Weapon	Limited Entry	Sept 12 2026 - Sept 20 2026	Res: 13
+NonRes: 2
+Mt Dutton/Paunsaugunt	PB5332	Buck	Pronghorn	Archery	Limited Entry	Aug 15 2026 - Sept 11 2026	Res: 4
+NonRes: 1
+Heist CWMU	PB5337	Buck	Pronghorn	Any Legal Weapon	CWMU	Contact operator for 2026 season dates	Res: 2
+NonRes: 0
+Castle Valley Outdoors CWMU	PB5338	Buck	Pronghorn	Any Legal Weapon	CWMU	Contact operator for 2026 season dates	Res: 1
+NonRes: 0
+Iron Spring CWMU	PB5339	Buck	Pronghorn	Any Legal Weapon	CWMU	Contact operator for 2026 season dates	Res: 1
+NonRes: 0
+Salt Wells CWMU	PB5342	Buck	Pronghorn	Any Legal Weapon	CWMU	Contact operator for 2026 season dates	Res: 1
+NonRes: 0
+Green River Flat CWMU	PB5345	Buck	Pronghorn	Any Legal Weapon	CWMU	Contact operator for 2026 season dates	Res: 2
+NonRes: 0
+Junction Valley CWMU	PB5346	Buck	Pronghorn	Any Legal Weapon	CWMU	Contact operator for 2026 season dates	Res: 1
+NonRes: 0
+        """,
         "code_prefixes": ("PB", "LP"),
         "species": ("Pronghorn",),
         "sex_type": ("Buck",),
@@ -434,6 +612,53 @@ def read_xlsx_rows(path: Path) -> list[dict[str, object]]:
     return output
 
 
+def parse_permit_value(value: str) -> tuple[str, str] | None:
+    match = re.match(r"^(Res|NonRes|Total):\s*(\d+)\s*$", value.strip(), flags=re.I)
+    if not match:
+        return None
+    key = match.group(1).lower()
+    if key == "nonres":
+        return "permits_2026_nr", match.group(2)
+    if key == "res":
+        return "permits_2026_res", match.group(2)
+    return "permits_2026_total", match.group(2)
+
+
+def parse_inline_tsv_rows(raw: str) -> list[dict[str, str]]:
+    rows: list[dict[str, str]] = []
+    for line in raw.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+
+        single_value = parse_permit_value(line)
+        if single_value and rows:
+            field, value = single_value
+            rows[-1][field] = value
+            continue
+
+        parts = [part.strip() for part in line.split("\t")]
+        if len(parts) < 7:
+            raise ValueError(f"Inline permit row has fewer than 7 fields: {line}")
+
+        row = {
+            "hunt_name": parts[0],
+            "hunt_code": parts[1],
+            "sex_type": parts[2],
+            "species": parts[3],
+            "weapon": parts[4],
+            "hunt_type": parts[5],
+            "season": parts[6],
+        }
+        for value in parts[7:]:
+            parsed = parse_permit_value(value)
+            if parsed:
+                field, amount = parsed
+                row[field] = amount
+        rows.append(row)
+    return rows
+
+
 def permit_status(res: str, nr: str, total: str) -> str:
     if res and nr and total:
         return "FULL_SPLIT"
@@ -578,6 +803,13 @@ def main() -> None:
         if config.get("inline_rows"):
             source = str(config.get("source_label", "INLINE_REVIEWED_SOURCE_ROWS"))
             for index, row in enumerate(config["inline_rows"], start=1):
+                if not row_allowed(row, config):
+                    continue
+                all_rows.append(apply_config_overrides(canonicalize_row(row, source, index, database), config))
+
+        if config.get("inline_tsv"):
+            source = str(config.get("source_label", "INLINE_REVIEWED_SOURCE_ROWS"))
+            for index, row in enumerate(parse_inline_tsv_rows(str(config["inline_tsv"])), start=1):
                 if not row_allowed(row, config):
                     continue
                 all_rows.append(apply_config_overrides(canonicalize_row(row, source, index, database), config))

@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-05-29T11:32:42.259467+00:00",
+  "created_at": "2026-05-29T11:37:52.333523+00:00",
   "source": "pasted-aligned public hunt table workbooks plus reviewed inline pasted DWR Hunt Planner rows",
   "families": {
     "BLACK_BEAR": {
@@ -206,10 +206,7 @@
         "Muzzleloader": 13
       },
       "source_counts": {
-        "2026 PRONGHORN BUCK L.E PRIVATE LANDS ONLY.xlsx": 6,
-        "2026 PRONGHORN BUCK STATEWIDE.xlsx": 1,
-        "2026 PRONGHORN BUCK L.E.xlsx": 66,
-        "2026 PRONGHORN BUCK CWMU.xlsx": 21
+        "USER_PASTED_DWR_HUNT_PLANNER_PRONGHORN_BUCK_PB_LP_2026": 94
       },
       "output": "C:\\Users\\tyler\\Desktop\\GitHub\\HUNT-BUILDER\\pipeline\\RAW\\hunt_unit_database\\2026\\csv\\2026 Permits\\2026 pronghorn buck all reviewed res-nr-total.csv"
     },
