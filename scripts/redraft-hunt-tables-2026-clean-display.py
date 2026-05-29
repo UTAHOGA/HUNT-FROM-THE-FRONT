@@ -21,10 +21,13 @@ from reportlab.pdfgen import canvas
 
 
 ROOT = Path(r"C:\Users\tyler\Desktop\GitHub\HUNT-BUILDER")
+SOURCE_DIR = ROOT / "pipeline" / "RAW" / "hunt_unit_database" / "2026" / "formatted_xlsx"
 XLSX_DIR = ROOT / "processed_data" / "hard_data_exports" / "hunt_tables" / "2026" / "XLXS"
 PDF_DIR = ROOT / "processed_data" / "hard_data_exports" / "hunt_tables" / "2026" / "PDF'S"
 AUDIT_CSV = ROOT / "processed_data" / "audits" / "hunt_tables_2026_clean_redraft_audit.csv"
 PDF_MANIFEST = ROOT / "processed_data" / "hard_data_exports" / "hard_copy_pdf_manifest.web.json"
+HARVEST_QUALITY = ROOT / "processed_data" / "harvest_quality_features_all_years_by_hunt_code.csv"
+HARVEST_MASTER = ROOT / "processed_data" / "harvest_master.csv"
 
 HEADERS = [
     "hunt_name",
@@ -62,10 +65,61 @@ COLUMN_WIDTHS = {
     "Avg Days Hunted (previous hunting season)": 16,
 }
 
-OUTPUT_NAME_OVERRIDES = {
-    "2026 BLACK BEAR": "2026 BLACK BEAR DRAW",
-    "2026 COUGAR": "2026 COUGAR DRAW SUMMARY",
-    "2026 DEER ANTLERLESS": "2026 DEER ANTLERLESS DRAW PERMIT SUMMARY",
+SKIP_SOURCE_FILES = {
+    "DATABASE.xlsx",
+    "hunt_master_canonical_2026_built.xlsx",
+    "2026_utah_dwr_hunt_matrix.xlsx",
+    # This workbook is two table blocks pasted side by side; the clean class files below cover the same scope.
+    "2026_elk_bull_all 2.xlsx",
+}
+
+SOURCE_NAME_OVERRIDES = {
+    "2026_ANTLERLESS_DEER_formatted": "2026 DEER ANTLERLESS DRAW",
+    "2026_antlerless_elk_general_season": "2026 ELK ANTLERLESS GENERAL SEASON",
+    "2026_bison_cow": "2026 BISON COW O.I.L",
+    "2026_bison_hunter_choice": "2026 BISON HUNTER CHOICE O.I.L",
+    "2026_black_bear": "2026 BLACK BEAR DRAW",
+    "2026_cougar": "2026 COUGAR DRAW",
+    "2026_deer_antlerless": "2026 DEER ANTLERLESS DRAW SUMMARY",
+    "2026_deer_antlerless_cwmu": "2026 DEER ANTLERLESS CWMU",
+    "2026_deer_archery_extended": "2026 DEER BUCK EXTENDED ARCHERY",
+    "2026_deer_buck": "2026 DEER BUCK DRAW",
+    "2026_deer_buck_cactus": "2026 DEER BUCK CACTUS BUCK",
+    "2026_deer_buck_conservation": "2026 DEER BUCK CONSERVATION PERMIT",
+    "2026_deer_buck_cwmu": "2026 DEER BUCK CWMU",
+    "2026_deer_buck_limited_entry": "2026 DEER BUCK L.E",
+    "2026_deer_buck_limited_entry_management_buck": "2026 DEER BUCK L.E MANAGEMENT BUCK",
+    "2026_deer_buck_limited_entry_private_lands_only": "2026 DEER BUCK L.E PRIVATE LANDS ONLY",
+    "2026_deer_buck_premium_limited_entry": "2026 DEER BUCK P.L.E",
+    "2026_deer_buck_statewide": "2026 DEER BUCK STATEWIDE",
+    "2026_deer_general_season": "2026 DEER BUCK GENERAL SEASON",
+    "2026_deer_general_season_private_lands": "2026 DEER BUCK GENERAL SEASON PRIVATE LANDS",
+    "2026_deer_hunter_choice": "2026 DEER HUNTER CHOICE",
+    "2026_desert_bighorn_ram": "2026 DESERT BIGHORN SHEEP RAM O.I.L",
+    "2026_elk_antlerless": "2026 ELK ANTLERLESS DRAW",
+    "2026_elk_antlerless_conservation": "2026 ELK ANTLERLESS CONSERVATION PERMIT",
+    "2026_elk_antlerless_CWMU": "2026 ELK ANTLERLESS CWMU",
+    "2026_elk_antlerless_privatelandsonly": "2026 ELK ANTLERLESS PRIVATE LANDS ONLY",
+    "2026_elk_archery_extended": "2026 ELK BULL EXTENDED ARCHERY",
+    "2026_elk_bull_all": "2026 ELK BULL ALL HUNTS",
+    "2026_elk_bull_conservation_permit": "2026 ELK BULL CONSERVATION PERMIT",
+    "2026_elk_bull_cwmu": "2026 ELK BULL CWMU",
+    "2026_elk_bull_general_anybull": "2026 ELK BULL GENERAL ANY BULL",
+    "2026_elk_bull_limited_entry": "2026 ELK BULL L.E",
+    "2026_elk_general_anybull_youth": "2026 ELK BULL YOUTH GENERAL ANY BULL",
+    "2026_elk_general_archery": "2026 ELK BULL GENERAL ARCHERY",
+    "2026_elk_general_spikeonly": "2026 ELK BULL GENERAL SPIKE ONLY",
+    "2026_elk_limitedentry_maturebull": "2026 ELK BULL L.E MATURE BULL",
+    "2026_elk_limitedentry_maturebull_privatelands": "2026 ELK BULL L.E MATURE BULL PRIVATE LANDS",
+    "2026_elk_limitedentry_statewide": "2026 ELK BULL STATEWIDE",
+    "2026_goat_hunter_choice ": "2026 MOUNTAIN GOAT HUNTER CHOICE O.I.L",
+    "2026_moose_bull": "2026 MOOSE BULL O.I.L",
+    "2026_moose_cow": "2026 MOOSE COW O.I.L",
+    "2026_sheep_desert_ram": "2026 DESERT BIGHORN SHEEP RAM O.I.L SUMMARY",
+    "2026_sheep_rocky_mountain_ewe": "2026 ROCKY MOUNTAIN BIGHORN SHEEP EWE O.I.L",
+    "2026_sheep_rocky_mountain_ram": "2026 ROCKY MOUNTAIN BIGHORN SHEEP RAM O.I.L",
+    "2026_turkey_bearded": "2026 TURKEY BEARDED DRAW",
+    "2026_turkey_either_sex": "2026 TURKEY EITHER SEX DRAW",
 }
 
 PREFERRED_COLLISIONS = {
@@ -86,9 +140,11 @@ def norm_key(value: Any) -> str:
 
 
 def clean_stem(stem: str) -> str:
+    if stem in SOURCE_NAME_OVERRIDES:
+        return SOURCE_NAME_OVERRIDES[stem]
     text = re.sub(r"\s+", " ", stem.replace("_", " ")).strip()
     text = re.sub(r"\s+\.", "", text).strip()
-    return OUTPUT_NAME_OVERRIDES.get(text, text)
+    return text.upper()
 
 
 def find_header_row(ws) -> int:
@@ -112,12 +168,41 @@ def find_header_row(ws) -> int:
     return best_row
 
 
+def find_header_row_values(values: list[list[Any]]) -> int:
+    best_row = 0
+    best_score = -1
+    for row_i, row in enumerate(values[:12]):
+        joined = " ".join(clean_text(v).lower() for v in row if clean_text(v))
+        score = sum(1 for v in row if clean_text(v))
+        if "hunt code" in joined or "hunt_code" in joined:
+            score += 20
+        if "hunt name" in joined or "hunt_name" in joined:
+            score += 20
+        if "species" in joined:
+            score += 6
+        if "season" in joined:
+            score += 4
+        if score > best_score:
+            best_score = score
+            best_row = row_i
+    return best_row
+
+
 def header_index(ws, header_row: int) -> dict[str, int]:
     index: dict[str, int] = {}
     for col in range(1, ws.max_column + 1):
         key = norm_key(ws.cell(row=header_row, column=col).value)
         if key and key not in index:
             index[key] = col
+    return index
+
+
+def header_index_values(row: list[Any]) -> dict[str, int]:
+    index: dict[str, int] = {}
+    for col_i, value in enumerate(row):
+        key = norm_key(value)
+        if key and key not in index:
+            index[key] = col_i
     return index
 
 
@@ -132,36 +217,109 @@ def get_by_alias(ws, row: int, index: dict[str, int], aliases: list[str]) -> str
     return ""
 
 
-def extract_rows(path: Path) -> tuple[str, list[list[str]], int]:
+def get_value(row: list[Any], index: dict[str, int], aliases: list[str]) -> str:
+    for alias in aliases:
+        col = index.get(norm_key(alias))
+        if col is None or col >= len(row):
+            continue
+        value = clean_text(row[col])
+        if value:
+            return value
+    return ""
+
+
+def load_harvest_lookup() -> dict[str, dict[str, str]]:
+    lookup: dict[str, dict[str, str]] = {}
+
+    def keep(code: str, item: dict[str, str], year: int) -> None:
+        code = code.strip().upper()
+        if not code:
+            return
+        prior_year = int(lookup.get(code, {}).get("_year", "0") or 0)
+        if year >= prior_year:
+            item["_year"] = str(year)
+            lookup[code] = item
+
+    if HARVEST_QUALITY.exists():
+        with HARVEST_QUALITY.open(newline="", encoding="utf-8-sig") as fh:
+            for row in csv.DictReader(fh):
+                code = clean_text(row.get("hunt_code")).upper()
+                year_text = clean_text(row.get("reported_hunt_year"))
+                try:
+                    year = int(float(year_text))
+                except ValueError:
+                    year = 0
+                if year < 2025:
+                    continue
+                item = {
+                    "Harvest Prior Year": str(year) if year else "",
+                    "Percent Harvest Success (previous hunting season)": clean_text(row.get("percent_success")),
+                    "Average Age Harvested (previous hunting season)": clean_text(row.get("average_age")),
+                    "Avg Days Hunted (previous hunting season)": clean_text(row.get("average_days")),
+                }
+                if any(item.values()):
+                    keep(code, item, year)
+
+    if HARVEST_MASTER.exists():
+        with HARVEST_MASTER.open(newline="", encoding="utf-8-sig") as fh:
+            for row in csv.DictReader(fh):
+                code = clean_text(row.get("hunt_code")).upper()
+                year_text = clean_text(row.get("year"))
+                try:
+                    year = int(float(year_text))
+                except ValueError:
+                    year = 0
+                if year < 2025:
+                    continue
+                current = lookup.get(code, {})
+                item = {
+                    "Harvest Prior Year": str(year) if year else current.get("Harvest Prior Year", ""),
+                    "Percent Harvest Success (previous hunting season)": clean_text(row.get("percent_success"))
+                    or current.get("Percent Harvest Success (previous hunting season)", ""),
+                    "Average Age Harvested (previous hunting season)": current.get(
+                        "Average Age Harvested (previous hunting season)", ""
+                    ),
+                    "Avg Days Hunted (previous hunting season)": clean_text(row.get("avg_days"))
+                    or current.get("Avg Days Hunted (previous hunting season)", ""),
+                }
+                if any(item.values()):
+                    keep(code, item, year)
+
+    for item in lookup.values():
+        item.pop("_year", None)
+    return lookup
+
+
+def extract_rows(path: Path, harvest_lookup: dict[str, dict[str, str]]) -> tuple[str, list[list[str]], int]:
     wb = load_workbook(path, data_only=True, read_only=True)
     ws = wb[wb.sheetnames[0]]
-    header_row = find_header_row(ws)
-    index = header_index(ws, header_row)
+    values = [list(row) for row in ws.iter_rows(values_only=True)]
+    header_i = find_header_row_values(values)
+    header_row = header_i + 1
+    index = header_index_values(values[header_i] if values else [])
     rows: list[list[str]] = []
 
-    for row in range(header_row + 1, ws.max_row + 1):
+    for source_row in values[header_i + 1 :]:
         record = {
-            "hunt_name": get_by_alias(ws, row, index, ["hunt_name", "Hunt Name", "boundary_name", "Boundary Name"]),
-            "hunt_code": get_by_alias(ws, row, index, ["hunt_code", "Hunt Code"]),
-            "sex_type": get_by_alias(ws, row, index, ["sex_type", "Sex", "Sex Type"]),
-            "species": get_by_alias(ws, row, index, ["species", "Species"]),
-            "weapon": get_by_alias(ws, row, index, ["weapon", "Weapon"]),
-            "hunt_type": get_by_alias(ws, row, index, ["hunt_type", "Hunt Type"]),
-            "season": get_by_alias(ws, row, index, ["season", "Season"]),
-            "permits_2026_res": get_by_alias(ws, row, index, ["permits_2026_res", "Res", "Resident"]),
-            "permits_2026_nr": get_by_alias(ws, row, index, ["permits_2026_nr", "Non-Res", "Nonresident", "NR"]),
-            "permits_2026_total": get_by_alias(ws, row, index, ["permits_2026_total", "Total"]),
-            "NOTES": get_by_alias(ws, row, index, ["NOTES", "Notes", "description", "Description"]),
-            "Harvest Prior Year": get_by_alias(ws, row, index, ["Harvest Prior Year"]),
-            "Percent Harvest Success (previous hunting season)": get_by_alias(
-                ws,
-                row,
+            "hunt_name": get_value(source_row, index, ["hunt_name", "Hunt Name", "boundary_name", "Boundary Name"]),
+            "hunt_code": get_value(source_row, index, ["hunt_code", "Hunt Code"]),
+            "sex_type": get_value(source_row, index, ["sex_type", "Sex", "Sex Type"]),
+            "species": get_value(source_row, index, ["species", "Species"]),
+            "weapon": get_value(source_row, index, ["weapon", "Weapon"]),
+            "hunt_type": get_value(source_row, index, ["hunt_type", "Hunt Type"]),
+            "season": get_value(source_row, index, ["season", "Season"]),
+            "permits_2026_res": get_value(source_row, index, ["permits_2026_res", "Res", "Resident"]),
+            "permits_2026_nr": get_value(source_row, index, ["permits_2026_nr", "Non-Res", "Nonresident", "NR"]),
+            "permits_2026_total": get_value(source_row, index, ["permits_2026_total", "Total"]),
+            "NOTES": get_value(source_row, index, ["NOTES", "Notes", "description", "Description"]),
+            "Harvest Prior Year": get_value(source_row, index, ["Harvest Prior Year"]),
+            "Percent Harvest Success (previous hunting season)": get_value(
+                source_row,
                 index,
                 ["Percent Harvest Success (previous hunting season)", "Percent Harvest Success"],
             ),
-            "Average Age Harvested (previous hunting season)": get_by_alias(
-                ws,
-                row,
+            "Average Age Harvested (previous hunting season)": get_value(
+                source_row,
                 index,
                 [
                     "Average Age Harvested (previous hunting season)",
@@ -170,13 +328,21 @@ def extract_rows(path: Path) -> tuple[str, list[list[str]], int]:
                     "Avg Age Harvested",
                 ],
             ),
-            "Avg Days Hunted (previous hunting season)": get_by_alias(
-                ws,
-                row,
+            "Avg Days Hunted (previous hunting season)": get_value(
+                source_row,
                 index,
                 ["Avg Days Hunted (previous hunting season)", "Avg Days Hunted", "Average Days Hunted"],
             ),
         }
+        harvest = harvest_lookup.get(record["hunt_code"].upper(), {})
+        for field in [
+            "Harvest Prior Year",
+            "Percent Harvest Success (previous hunting season)",
+            "Average Age Harvested (previous hunting season)",
+            "Avg Days Hunted (previous hunting season)",
+        ]:
+            if not record[field] and harvest.get(field):
+                record[field] = harvest[field]
         out = [record[header] for header in HEADERS]
         if any(out):
             rows.append(out)
@@ -341,7 +507,7 @@ def draw_pdf(path: Path, title: str, rows: list[list[str]]) -> None:
 def update_manifest(outputs: list[dict[str, Any]]) -> None:
     if not PDF_MANIFEST.exists():
         return
-    items = json.loads(PDF_MANIFEST.read_text(encoding="utf-8"))
+    items = json.loads(PDF_MANIFEST.read_text(encoding="utf-8-sig"))
     if not isinstance(items, list):
         return
 
@@ -375,16 +541,23 @@ def update_manifest(outputs: list[dict[str, Any]]) -> None:
 
 
 def main() -> None:
-    if not XLSX_DIR.exists():
-        raise SystemExit(f"Missing source folder: {XLSX_DIR}")
-    source_files = sorted([p for p in XLSX_DIR.glob("*.xlsx") if not p.name.startswith("~$")])
+    if not SOURCE_DIR.exists():
+        raise SystemExit(f"Missing source folder: {SOURCE_DIR}")
+    source_files = sorted(
+        [
+            p
+            for p in SOURCE_DIR.glob("*.xlsx")
+            if not p.name.startswith("~$") and p.name not in SKIP_SOURCE_FILES
+        ]
+    )
     if not source_files:
         raise SystemExit("No source XLSX files found")
 
+    harvest_lookup = load_harvest_lookup()
     records: list[dict[str, Any]] = []
     used_names: set[str] = set()
     for path in source_files:
-        name, rows, header_row = extract_rows(path)
+        name, rows, header_row = extract_rows(path, harvest_lookup)
         if name in used_names:
             if name in PREFERRED_COLLISIONS:
                 name = f"{name} SUMMARY"
@@ -439,6 +612,7 @@ def main() -> None:
     print(f"source_files={len(source_files)}")
     print(f"clean_xlsx={len(list(XLSX_DIR.glob('*.xlsx')))}")
     print(f"clean_pdf={len(list(PDF_DIR.glob('*.pdf')))}")
+    print(f"harvest_lookup_codes={len(harvest_lookup)}")
     print(f"audit={AUDIT_CSV}")
 
 
