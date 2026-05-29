@@ -1,5 +1,25 @@
 # WORK LOG
 
+## Elk Plan Codex Instruction Integration
+- Timestamp (UTC): 2026-05-29T00:56:00Z
+- Scope:
+  - Added elk statewide management-plan instructions to `AGENTS.MD` so Codex treats the elk plan as policy / quality-context reference, not raw harvest truth, permit truth, or draw-odds truth.
+  - Added guardrails requiring Codex to distinguish observed annual-report `average_harvest_age` from elk management-plan age objectives such as `6.5-7.0`, `6.0-6.5`, and `5.5-6.0`.
+  - Added explicit prohibition against using `average_days_hunted`, `mean_days_hunted`, hunter days, or pursuit days as animal age.
+  - Added rules preventing elk plan values from directly modifying `DATABASE.csv`, permit/allotment values, `p_draw`, point-ladder probabilities, or website-facing runtime files.
+  - Added allowed elk-plan context outputs such as `elk_plan_quality_rules.json`, `elk_plan_context_features.csv`, and `elk_age_objective_context_by_unit.csv`.
+- Files updated:
+  - `AGENTS.MD`
+  - `WORK_LOG.md`
+- Supporting files to copy into repo if not already present:
+  - `elk_statewide_plan_foundational_reference_codex_expanded.md`
+  - `CODEX_TASK_elk_plan_context_integration.txt`
+- Validation target:
+  - Confirm `AGENTS.MD` contains `Elk Statewide Plan Reference And Age-Quality Guardrails`.
+  - Confirm `WORK_LOG.md` contains this closeout entry.
+  - Confirm no runtime engine files, `DATABASE.csv`, prediction outputs, or website feeds were changed by this documentation-only integration.
+
+
 ## Hunt Research DB1533 Permit + Guaranteed-Line Fallback Fix
 - Timestamp (UTC): 2026-05-28T11:40:00Z
 - Scope:
@@ -6349,3 +6369,28 @@
   - `npm.cmd run build` passed.
   - `node tests\database-candidate-review.test.js` passed.
   - `git diff --check` passed with line-ending warnings only.
+
+## Reformat 2026 Hunt Table XLSX Files For Online Display (Table Color Extension)
+- Timestamp (UTC): 2026-05-29T01:54:41Z
+- Scope:
+  - Reformatted every workbook in:
+    - processed_data/hard_data_exports/hunt_tables/2026/XLXS
+  - Added bulk reformatter script:
+    - scripts/reformat-hunt-tables-2026-xlsx-online.py
+  - Rebuilt table ranges so styling extends across added harvest-quality columns.
+  - Removed/recreated table objects per workbook to eliminate partial table-range coloring.
+  - Applied consistent presentation settings:
+    - styled table (TableStyleMedium2 with row striping)
+    - standardized header formatting
+    - freeze panes below header
+    - full-range filters
+    - tuned column widths
+  - Added header sanitation (string/unique header names) to prevent Excel table-read warnings.
+- Outputs:
+  - Updated 48 XLSX files in processed_data/hard_data_exports/hunt_tables/2026/XLXS
+  - Audit report:
+    - processed_data/audits/hunt_tables_2026_xlsx_reformat_audit.csv
+- Validation:
+  - py scripts/reformat-hunt-tables-2026-xlsx-online.py passed.
+  - Result: 	otal=48, ok=48, skip=0, error=0.
+  - Verified table refs now span full header/data widths including added harvest columns.
