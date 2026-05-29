@@ -1,3 +1,12 @@
+## 2026-05-29T07:36:06Z - DWR Hunt Planner Popup Data Extract
+
+- Created a DWR Hunt Planner HaNumber JSON extractor for the 2026 current hunt-code universe.
+- Extracted popup-backed source evidence for 1,449 current hunt codes from the public DWR Hunt Planner endpoint.
+- Captured permit counts, season text, surrender/survey dates, percent harvest success, population fields, age objective, current age 3-year average, boundaries, and biologist notes where DWR exposes them.
+- Wrote normalized CSV/JSON outputs plus audit CSV/JSON under processed_data.
+- Validation: 1,449 rows fetched, 1,449 OK, 0 fetch errors, 970 rows with management stats, 960 with percent harvest success, 220 with current age 3-year average, 1,449 PASS review rows.
+- Important guardrail: current_age_3yr_average is DWR Hunt Planner current-age context, not prior-year average harvest age; this extract does not modify DATABASE.csv or prediction outputs.
+
 ## 2026-05-29T06:58:53Z - BR1000 Black Bear Statewide Season Display Correction
 
 - Updated the 2026 hunt-table generator with a deterministic BR1000 season display override.
