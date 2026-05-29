@@ -13,12 +13,14 @@
     loadPromise: null,
     coreReady: false,
     error: "",
+    coreWaitAttempts: 0,
     rows: {
       engine: [],
       ladder: [],
       master: [],
       reference: [],
       management: [],
+      outlook: [],
     },
     sources: {},
   };
@@ -90,6 +92,13 @@
     if (pct >= 99.95) return "100%";
     if (pct >= 10) return `${pct.toFixed(1)}%`;
     return `${pct.toFixed(2)}%`;
+  }
+
+  function pipeList(value) {
+    return String(value || "")
+      .split("|")
+      .map((item) => item.trim())
+      .filter(Boolean);
   }
 
   function readParams() {
@@ -215,13 +224,19 @@
   }
 
   async function fetchText(url) {
-    const response = await fetch(url, { cache: "no-store" });
-    if (!response.ok) throw new Error(`Request failed for ${url}`);
-    const text = await response.text();
-    if (text.startsWith("version https://git-lfs.github.com/spec/v1")) {
-      throw new Error(`Git LFS pointer served instead of data for ${url}`);
+    const controller = new AbortController();
+    const timer = window.setTimeout(() => controller.abort(), 2200);
+    try {
+      const response = await fetch(url, { cache: "no-store", signal: controller.signal });
+      if (!response.ok) throw new Error(`Request failed for ${url}`);
+      const text = await response.text();
+      if (text.startsWith("version https://git-lfs.github.com/spec/v1")) {
+        throw new Error(`Git LFS pointer served instead of data for ${url}`);
+      }
+      return text;
+    } finally {
+      window.clearTimeout(timer);
     }
-    return text;
   }
 
   async function loadFirst(sources) {
@@ -247,11 +262,31 @@
     ];
   }
 
+  function getOutlookSources() {
+    const version = window.UOGA_CONFIG?.HUNT_RESEARCH_DATA_VERSION || "research-outlook-dashboard-2";
+    const cloudflare = "https://json.uoga.workers.dev";
+    return [
+      `${cloudflare}/processed_data/research_page/hunt_application_outlook.json?v=${version}`,
+      `${cloudflare}/research_page/hunt_application_outlook.json?v=${version}`,
+      `./processed_data/research_page/hunt_application_outlook.json?v=${version}`,
+    ];
+  }
+
   async function loadData() {
     if (state.loaded) return;
     if (state.loadPromise) return state.loadPromise;
     state.loading = true;
     state.loadPromise = (async () => {
+      try {
+        const outlook = await loadFirst(getOutlookSources());
+        state.rows.outlook = JSON.parse(outlook.text);
+        state.sources.outlook = outlook.source;
+      } catch (error) {
+        state.rows.outlook = [];
+        state.sources.outlook = "";
+        console.info("No Hunt Application Outlook contract loaded for dashboard.", error);
+      }
+
       try {
         const management = await loadFirst(getManagementSources());
         state.rows.management = JSON.parse(management.text);
@@ -317,22 +352,29 @@
     const managementRows = Array.isArray(state.rows.management)
       ? state.rows.management.filter((row) => normalizeCode(row.hunt_code) === selection.huntCode)
       : [];
-    const comparable = buildComparableRows(selection, meta, selectedRow);
-    return { meta, reference, ladderRows, ladderPoint, engineRows, enginePoint, selectedRow, managementRows, comparable };
+    const outlookRows = Array.isArray(state.rows.outlook) ? state.rows.outlook : [];
+    const outlookRow = outlookRows.find((row) => normalizeCode(row.hunt_code) === selection.huntCode && normalizeResidency(row.residency) === selection.residency)
+      || outlookRows.find((row) => normalizeCode(row.hunt_code) === selection.huntCode)
+      || null;
+    const comparable = buildComparableRows(selection, meta, selectedRow, outlookRow);
+    return { meta, reference, ladderRows, ladderPoint, engineRows, enginePoint, selectedRow, managementRows, outlookRow, comparable };
   }
 
-  function buildComparableRows(selection, meta, selectedRow) {
-    const species = String(meta?.species || selectedRow?.species || "").trim().toLowerCase();
-    const huntType = String(meta?.hunt_type || selectedRow?.hunt_type || "").trim().toLowerCase();
+  function buildComparableRows(selection, meta, selectedRow, outlookRow = null) {
+    const species = String(outlookRow?.species || meta?.species || selectedRow?.species || "").trim().toLowerCase();
+    const huntClass = String(outlookRow?.hunt_class || meta?.hunt_class || selectedRow?.hunt_class || "").trim().toLowerCase();
+    const huntType = String(outlookRow?.hunt_type || meta?.hunt_type || selectedRow?.hunt_type || "").trim().toLowerCase();
     const seen = new Set([selection.huntCode]);
     const rows = [];
-    for (const row of state.rows.master) {
+    const sourceRows = state.rows.outlook.length ? state.rows.outlook : state.rows.master;
+    for (const row of sourceRows) {
       const code = normalizeCode(row.hunt_code);
       if (!code || seen.has(code)) continue;
       if (normalizeResidency(row.residency) !== selection.residency) continue;
-      if (normalizeDrawPool(row.draw_pool) !== selection.drawPool) continue;
+      if (hasValue(row.draw_pool) && normalizeDrawPool(row.draw_pool) !== selection.drawPool) continue;
       if (species && String(row.species || "").trim().toLowerCase() !== species) continue;
-      if (huntType && String(row.hunt_type || "").trim().toLowerCase() !== huntType) continue;
+      if (huntClass && String(row.hunt_class || "").trim().toLowerCase() !== huntClass) continue;
+      if (!huntClass && huntType && String(row.hunt_type || "").trim().toLowerCase() !== huntType) continue;
       seen.add(code);
       rows.push(row);
       if (rows.length >= 5) break;
@@ -363,13 +405,13 @@
   }
 
   function getHarvestSuccess(meta, reference, selectedRow) {
-    return firstValue(meta, ["success_percent", "harvest_success_percent_2025", "percent_harvest_success", "success_harvest"])
+    return firstValue(meta, ["harvest_success_pct", "success_percent", "harvest_success_percent_2025", "percent_harvest_success", "success_harvest"])
       || firstValue(reference, ["harvest_success_percent_2025", "success_percent", "percent_harvest_success"])
       || firstValue(selectedRow, ["success_ratio"]);
   }
 
   function getAverageDays(meta, reference) {
-    return firstValue(meta, ["harvest_average_days_2025", "average_days_hunted", "avg_days_hunted"])
+    return firstValue(meta, ["average_days_hunted", "harvest_average_days_2025", "avg_days_hunted"])
       || firstValue(reference, ["harvest_average_days_2025", "average_days_hunted", "avg_days_hunted"]);
   }
 
@@ -459,7 +501,7 @@
   }
 
   function qualitySignal(row) {
-    const harvest = firstValue(row, ["success_percent", "harvest_success_percent_2025", "percent_harvest_success"]);
+    const harvest = firstValue(row, ["harvest_success_pct", "success_percent", "harvest_success_percent_2025", "percent_harvest_success"]);
     const age = row.average_harvest_age;
     const harvestNum = num(harvest);
     const ageNum = num(age);
@@ -469,7 +511,7 @@
   }
 
   function comparableStatus(row) {
-    const odds = firstValue(row, ["p_draw_pct", "random_draw_odds_2026", "odds_2026_projected", "success_ratio"]);
+    const odds = firstValue(row, ["modeled_draw_probability", "p_draw_pct", "random_draw_odds_2026", "odds_2026_projected", "success_ratio"]);
     const status = firstValue(row, ["status", "draw_outlook", "point_status"]);
     return hasValue(odds) ? formatPercent(odds) : formatValue(status, "Status not loaded");
   }
@@ -497,7 +539,9 @@
 
   function renderManagementPanel(rows) {
     const row = rows[0] || {};
-    const objectiveRange = hasValue(row.management_objective_min)
+    const objectiveRange = hasValue(row.management_objective_range)
+      ? formatValue(row.management_objective_range)
+      : hasValue(row.management_objective_min)
       ? `${formatValue(row.management_objective_min)}${hasValue(row.management_objective_max) ? ` to ${formatValue(row.management_objective_max)}` : ""} ${formatValue(row.objective_unit, "")}`.trim()
       : "No objective row loaded";
     return panel("State Objective / Management Read", `
@@ -513,19 +557,19 @@
   }
   function sourceDetails(selection, selectedRow, meta) {
     const sourceFile = firstValue(selectedRow, ["source_file", "truth_source_file", "average_harvest_age_source_file"])
-      || firstValue(meta, ["truth_source_file", "average_harvest_age_source_file"]);
+      || firstValue(meta, ["truth_source_file", "average_harvest_age_source_file", "harvest_source_file", "age_source_file"]);
     const sourcePage = firstValue(selectedRow, ["page_number", "source_page", "truth_source_page"])
-      || firstValue(meta, ["page_number", "source_page", "truth_source_page"]);
+      || firstValue(meta, ["page_number", "source_page", "truth_source_page", "harvest_source_page", "age_source_page"]);
     const tableTitle = firstValue(selectedRow, ["source_table_title", "table_title", "truth_source_table_title"])
-      || firstValue(meta, ["source_table_title", "table_title", "truth_source_table_title"]);
+      || firstValue(meta, ["source_table_title", "table_title", "truth_source_table_title", "age_source_table_title"]);
     return `
       <details class="uoga-source-details">
         <summary>Source / freshness / model details</summary>
         <div class="uoga-source-grid">
           ${metricRow("Engine mode", window.UOGA_CONFIG?.HUNT_RESEARCH_ENGINE_MODE || "observed")}
           ${metricRow("Data version", window.UOGA_CONFIG?.HUNT_RESEARCH_DATA_VERSION || "not configured")}
-          ${metricRow("Model version", window.UOGA_CONFIG?.HUNT_RESEARCH_MODEL_VERSION || "display-only dashboard")}
-          ${metricRow("Rule version", window.UOGA_CONFIG?.HUNT_RESEARCH_RULE_VERSION || "core Research rules")}
+          ${metricRow("Model version", firstValue(meta, ["model_version"]) || window.UOGA_CONFIG?.HUNT_RESEARCH_MODEL_VERSION || "display-only dashboard")}
+          ${metricRow("Rule version", firstValue(meta, ["rule_version"]) || window.UOGA_CONFIG?.HUNT_RESEARCH_RULE_VERSION || "core Research rules")}
           ${metricRow("Selected hunt", `${selection.huntCode} / ${selection.residency} / ${selection.points} pts`)}
           ${metricRow("Source file", formatValue(sourceFile))}
           ${metricRow("Source page", formatValue(sourcePage))}
@@ -534,24 +578,38 @@
       </details>`;
   }
   function dashboardHtml(selection, context) {
-    const { meta, reference, ladderRows, ladderPoint, engineRows, selectedRow, managementRows, comparable } = context;
-    const title = meta?.hunt_name || selectedRow?.hunt_name || reference?.hunt_name || selection.huntCode || "Selected hunt";
-    const odds = getSelectedOdds(selectedRow, ladderPoint, meta);
-    const averageAge = getAge(meta, reference, selectedRow);
-    const currentAge = getCurrentAge(meta, reference, selectedRow);
-    const harvestSuccess = getHarvestSuccess(meta, reference, selectedRow);
-    const avgDays = getAverageDays(meta, reference);
-    const permitTotal = getPermitTotal(meta, reference, selectedRow);
-    const guaranteedLine = getGuaranteedLine(selectedRow, meta);
-    const pointTrend = getPointTrend(selectedRow, meta);
+    const { meta, reference, ladderPoint, selectedRow, managementRows, outlookRow, comparable } = context;
+    const contract = outlookRow || {};
+    const title = contract.hunt_name || meta?.hunt_name || selectedRow?.hunt_name || reference?.hunt_name || selection.huntCode || "Selected hunt";
+    const odds = getSelectedOdds(selectedRow, ladderPoint, meta) || firstValue(contract, ["modeled_draw_probability"]);
+    const averageAge = firstValue(contract, ["average_harvest_age"]) || getAge(meta, reference, selectedRow);
+    const currentAge = firstValue(contract, ["current_age_3yr_average"]) || getCurrentAge(meta, reference, selectedRow);
+    const harvestSuccess = firstValue(contract, ["harvest_success_pct"]) || getHarvestSuccess(meta, reference, selectedRow);
+    const avgDays = firstValue(contract, ["average_days_hunted"]) || getAverageDays(meta, reference);
+    const permitTotal = firstValue(contract, ["permits_2026_total"]) || getPermitTotal(meta, reference, selectedRow);
+    const guaranteedLine = firstValue(contract, ["guaranteed_line_points"]) || getGuaranteedLine(selectedRow, meta);
+    const pointTrend = firstValue(contract, ["point_creep_1yr"]) || getPointTrend(selectedRow, meta);
     const pointStatus = firstValue(selectedRow, ["status", "draw_outlook", "point_status"])
       || firstValue(meta, ["status", "draw_outlook", "point_status"]);
-    const percentFivePlus = getPercentFivePlus(meta, reference, selectedRow);
-    const statusOnly = isStatusOnlyContext(meta, reference, selectedRow);
+    const percentFivePlus = firstValue(contract, ["percent_5plus"]) || getPercentFivePlus(meta, reference, selectedRow);
+    const statusOnly = pipeList(contract.source_badges).some((item) => item.toLowerCase().includes("status"))
+      || isStatusOnlyContext(meta, reference, selectedRow);
     const highQuality = (num(harvestSuccess) ?? 0) >= 50 || (num(averageAge) ?? 0) >= 5;
-    const decision = decisionLabel(odds, { statusOnly, highQuality });
-    const recommendation = recommendationSentence(odds, permitTotal, decision);
+    const decision = firstValue(contract, ["decision_label"]) || decisionLabel(odds, { statusOnly, highQuality });
+    const recommendation = firstValue(contract, ["recommended_action"]) || recommendationSentence(odds, permitTotal, decision);
     const limitedData = !hasValue(odds) || !hasValue(harvestSuccess) || !hasValue(averageAge);
+    const sourceBadges = pipeList(contract.source_badges);
+    const managementRow = {
+      management_objective_type: contract.management_objective_type,
+      management_objective_min: "",
+      management_objective_max: "",
+      objective_unit: contract.management_objective_range,
+      objective_status: contract.management_objective_status,
+      notes: contract.management_objective_note,
+    };
+    const effectiveManagementRows = hasValue(contract.management_objective_type) || hasValue(contract.management_objective_status)
+      ? [managementRow]
+      : managementRows;
     return `
       <div class="uoga-outlook-dashboard">
         <section class="uoga-outlook-hero">
@@ -560,10 +618,16 @@
             <h2>${escapeHtml(selection.huntCode || "No hunt selected")} - ${escapeHtml(title)}</h2>
             <span>${escapeHtml(selection.residency)} &middot; ${escapeHtml(String(selection.points))} points &middot; ${escapeHtml(selection.drawPool)} draw pool</span>
             <div class="uoga-badge-row">
-              ${badge("Official DWR Source", "official")}
-              ${badge("U.O.G.A. Modeled Output", "modeled")}
-              ${limitedData ? badge("Review / Limited Data", "limited") : ""}
-              ${statusOnly ? badge("Status / Availability Only", "status") : ""}
+              ${(sourceBadges.length ? sourceBadges : ["Official DWR Source", "U.O.G.A. Modeled Output"]).map((label) => {
+                const lower = label.toLowerCase();
+                const variant = lower.includes("official") ? "official"
+                  : lower.includes("modeled") ? "modeled"
+                    : lower.includes("status") ? "status"
+                      : lower.includes("management") ? "management"
+                        : "limited";
+                return badge(label, variant);
+              }).join("")}
+              ${limitedData && !sourceBadges.some((item) => item.toLowerCase().includes("limited")) ? badge("Review / Limited Data", "limited") : ""}
             </div>
           </div>
           ${metricRow("Decision", decision)}
@@ -586,13 +650,13 @@
             metricRow("Current 3-year age avg", formatAge(currentAge)),
             metricRow("Percent 5+", formatPercent(percentFivePlus)),
           ]), "is-official")}
-          ${renderManagementPanel(managementRows)}
+          ${renderManagementPanel(effectiveManagementRows)}
         </div>
         <section class="uoga-outlook-panel is-compact uoga-outlook-wide">
           <h3>Comparable Hunts</h3>
           ${renderComparableCards(comparable)}
         </section>
-        ${sourceDetails(selection, selectedRow, meta)}
+        ${sourceDetails(selection, selectedRow, { ...(meta || {}), ...contract })}
       </div>`;
   }
 
@@ -767,6 +831,11 @@
         border-color: rgba(196, 118, 0, .28);
         color: #884f00;
       }
+      .uoga-badge.is-management {
+        background: rgba(0, 128, 72, .12);
+        border-color: rgba(0, 128, 72, .28);
+        color: #006c3b;
+      }
       .uoga-outlook-note {
         margin: 10px 0 0;
       }
@@ -917,8 +986,13 @@
 
     if (!state.coreReady) {
       renderLoading(panel, selection);
+      if (state.coreWaitAttempts < 120) {
+        state.coreWaitAttempts += 1;
+        window.setTimeout(render, 500);
+      }
       return;
     }
+    state.coreWaitAttempts = 0;
     try {
       await loadData();
       const context = findContext(selection);
@@ -940,6 +1014,15 @@
   }
 
   function bindRefreshEvents() {
+    const snapshotTimer = window.setInterval(() => {
+      if (!state.coreReady && window.UOGA_HUNT_RESEARCH_SNAPSHOT) {
+        applyCoreSnapshot(window.UOGA_HUNT_RESEARCH_SNAPSHOT);
+        render();
+      }
+      if (state.coreReady) window.clearInterval(snapshotTimer);
+    }, 500);
+    window.setTimeout(() => window.clearInterval(snapshotTimer), 90000);
+
     window.addEventListener("uoga:hunt-research-rendered", (event) => {
       applyCoreSnapshot(event.detail);
       window.setTimeout(render, 0);
@@ -958,7 +1041,7 @@
     const detail = document.getElementById("detailContent");
     if (detail && window.MutationObserver) {
       const observer = new MutationObserver(() => window.setTimeout(render, 0));
-      observer.observe(detail, { attributes: true, attributeFilter: ["hidden"] });
+      observer.observe(detail, { attributes: true, attributeFilter: ["hidden"], childList: true, subtree: true });
     }
   }
 

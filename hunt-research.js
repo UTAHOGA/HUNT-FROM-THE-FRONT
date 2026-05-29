@@ -447,7 +447,7 @@
         });
         return mapped;
       });
-  }  
+  }
   function isGitLfsPointerText(text) {
     return String(text || '').startsWith('version https://git-lfs.github.com/spec/v1');
   }
@@ -975,8 +975,8 @@
       [DRAW_MODE.BONUS]: [
         'Points',
         '2025 Draw Results',
-        { label: '2026 Max Point Draw', sublabel: '50% of tags' },
-        { label: '2026 Random Draw', sublabel: '50% of tags' },
+        { label: '2026 Max Point Draw', sublabel: '50% of Tags' },
+        { label: '2026 Random Draw', sublabel: '50% of Tags' },
         'Notes',
       ],
       [DRAW_MODE.YOUTH_RESERVE]: ['Youth Points', 'Youth Reserved Pool', 'Estimated Youth Odds', 'Rollover / Notes', 'Notes'],

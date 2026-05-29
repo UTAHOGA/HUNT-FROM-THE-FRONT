@@ -106,6 +106,7 @@ const dirsToCopy = [
   'processed_data/library',
   'processed_data/management_context',
   'processed_data/production',
+  'processed_data/research_page',
   'public/hard-copy',
 ];
 

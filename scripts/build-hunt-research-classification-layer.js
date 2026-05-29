@@ -531,12 +531,18 @@ async function build() {
     const h = harvestByCode.get(row.hunt_code) || {};
     if (h.harvest_success_pct != null) row.harvest_success_pct = round(h.harvest_success_pct);
     if (h.average_days_hunted != null) row.average_days_hunted = round(h.average_days_hunted);
+    if (hasValue(h.source_file)) row.harvest_source_file = h.source_file;
+    if (hasValue(h.source_page)) row.harvest_source_page = h.source_page;
     const a = ageByCode.get(row.hunt_code) || {};
     if (a.average_harvest_age != null) {
       row.average_harvest_age = round(a.average_harvest_age);
       row._ageSource = paths.age;
     }
     if (a.percent_5plus != null) row.percent_5plus = round(a.percent_5plus);
+    if (hasValue(a.source_file)) row.age_source_file = a.source_file;
+    if (hasValue(a.source_page)) row.age_source_page = a.source_page;
+    if (hasValue(a.source_table_title)) row.age_source_table_title = a.source_table_title;
+    if (hasValue(a.review_status)) row.age_review_status = a.review_status;
     row.average_harvest_age = num(row.average_harvest_age) > 0 ? round(num(row.average_harvest_age)) : '';
     row.current_age_3yr_average = num(row.current_age_3yr_average) > 0 ? round(num(row.current_age_3yr_average)) : '';
     row.percent_5plus = num(row.percent_5plus) > 0 ? round(num(row.percent_5plus)) : '';
@@ -605,6 +611,7 @@ async function build() {
       row.management_objective_range = min || max ? `${min}${max ? `-${max}` : ''} ${text(mgmt.objective_unit)}`.trim() : text(mgmt.objective_unit);
       const status = managementStatus(row, mgmt);
       row.management_objective_status = status.status;
+      row.management_objective_note = status.reason;
       addTag(tagRows, row, status.status, 'QUALITY_OBJECTIVE', status.reason);
     }
 
@@ -699,12 +706,15 @@ async function build() {
 
   const outlookColumns = [
     'hunt_code', 'hunt_name', 'species', 'residency', 'draw_family', 'hunt_class', 'weapon',
-    'unit_name', 'current_points_context_available', 'modeled_draw_probability',
+    'hunt_type', 'draw_pool', 'unit_name', 'boundary_id', 'current_points_context_available', 'modeled_draw_probability',
     'guaranteed_line_points', 'point_creep_1yr', 'harvest_success_pct',
     'average_days_hunted', 'average_harvest_age', 'current_age_3yr_average', 'percent_5plus',
     'management_objective_type', 'management_objective_range', 'management_objective_status',
+    'management_objective_note', 'permits_2026_res', 'permits_2026_nr', 'permits_2026_total',
     'decision_label', 'persona_tags', 'sleeper_score', 'sleeper_reasons',
-    'recommended_action', 'data_confidence', 'source_badges',
+    'recommended_action', 'data_confidence', 'source_badges', 'model_version', 'rule_version',
+    'availability_status', 'harvest_source_file', 'harvest_source_page', 'age_source_file',
+    'age_source_page', 'age_source_table_title', 'age_review_status',
   ];
   const cleanRows = rows.map((row) => Object.fromEntries(outlookColumns.map((col) => [col, row[col] ?? ''])));
 

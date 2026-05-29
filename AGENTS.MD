@@ -12,12 +12,12 @@
 
 ###### **Finish the assigned step completely before moving to another step.**
 
-No guessing.  
-No drifting.  
-No abstract scaffolding.  
-No starting over unless explicitly instructed.  
-No publishing broken outputs.  
-No modifying website feeds before truth-source databases are validated.  
+No guessing.
+No drifting.
+No abstract scaffolding.
+No starting over unless explicitly instructed.
+No publishing broken outputs.
+No modifying website feeds before truth-source databases are validated.
 No treating management-plan policy context as raw harvest, draw, permit, or prediction truth.
 ---
 
@@ -27,9 +27,9 @@ No treating management-plan policy context as raw harvest, draw, permit, or pred
 
 ###### This repo is being rebuilt around verified truth-source databases first.
 
-The current priority is not the website.  
-The current priority is not a black-box prediction model.  
-The current priority is not patching the old materializer.  
+The current priority is not the website.
+The current priority is not a black-box prediction model.
+The current priority is not patching the old materializer.
 The current priority is not creating a pretty output file that is secretly built on weak data.
 ---
 
@@ -1137,7 +1137,27 @@ git diff --check
 
 ###### \---
 
-###### 21\. Final Report Format
+###### 21\. Mandatory Mobile QA Final Pass
+
+###### Every website, UI, public-output, or page-build task must finish with a mobile-first QA pass before closeout.
+
+###### This is a standing final task, not an optional polish step.
+
+###### Codex must validate, where relevant:
+
+* ###### no horizontal page overflow at common mobile widths
+* ###### primary navigation remains usable and visible
+* ###### sticky headers do not cover critical controls
+* ###### text has readable size and contrast on mobile
+* ###### buttons and icons have usable tap targets
+* ###### tables, ladders, maps, PDF viewers, and overlays remain accessible without hidden below-the-fold surprises
+* ###### desktop layout is not broken by the mobile fix
+
+###### For website tasks, Codex must include the mobile QA result in `WORK_LOG.md` and the final report.
+
+###### \---
+
+###### 22\. Final Report Format
 
 ###### When Codex finishes, it must report:
 
@@ -1150,4 +1170,3 @@ git diff --check
 * ###### stop condition satisfied
 
 ###### Codex must not continue to another task after reporting completion.
-
