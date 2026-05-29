@@ -136,6 +136,10 @@ def clean_filename_part(value: object) -> str:
     return text or "UNKNOWN"
 
 
+def norm_compare(value: object) -> str:
+    return re.sub(r"[^a-z0-9]+", "", norm(value).lower())
+
+
 def canonical_class(value: object) -> str:
     raw = norm(value)
     if not raw:
@@ -149,7 +153,7 @@ def canonical_class(value: object) -> str:
 
 
 def existing_hunt_class(record: dict) -> str:
-    for key in ("hunt_class", "hunt_type", "permit_allocation_type", "allocation_type"):
+    for key in ("hunt_class", "permit_allocation_type", "allocation_type"):
         val = canonical_class(record.get(key))
         if val:
             return val
@@ -197,6 +201,8 @@ def row_from_record(record: dict, age_latest: Dict[str, str]) -> dict:
     permits_res = permit_value(record, ("permits_2026_res", "permits_res", "resident_permits", "permits_resident", "res_permits"))
     permits_nr = permit_value(record, ("permits_2026_nr", "permits_nr", "nonresident_permits", "non_resident_permits", "nonres_permits", "nr_permits"))
     permits_total = permit_value(record, ("permits_2026_total", "permits_total", "recommended_permits", "total_permits", "permits"))
+    hunt_class = existing_hunt_class(record)
+    hunt_type = norm(record.get("hunt_type")) or hunt_class
 
     # Do not derive RES/NR from TOTAL. If only total exists, RES and NR stay blank.
     return {
@@ -205,7 +211,7 @@ def row_from_record(record: dict, age_latest: Dict[str, str]) -> dict:
         "sex_type": norm(record.get("sex_type")),
         "species": norm(record.get("species")),
         "weapon": norm(record.get("weapon")),
-        "hunt_type": norm(record.get("hunt_type") or existing_hunt_class(record)),
+        "hunt_type": hunt_type,
         "season": norm(record.get("season") or record.get("season_dates") or record.get("dates") or record.get("season_date")),
         "2026 permits RES": permits_res,
         "2026 permits NR": permits_nr,
@@ -215,6 +221,7 @@ def row_from_record(record: dict, age_latest: Dict[str, str]) -> dict:
         "Avg Harvest Age": average_harvest_age(record, age_latest),
         "Avg Days Hunted": clean_number(first_value(record, ("avg_days_hunted", "average_days_hunted", "avg_days", "days_hunted")), allow_zero=False),
         "NOTES": notes_value(record),
+        "_hunt_class": hunt_class,
     }
 
 
@@ -232,7 +239,7 @@ def load_rows() -> List[dict]:
         row = row_from_record(record, age_latest)
         if row["hunt_code"]:
             rows.append(row)
-    rows.sort(key=lambda r: (r["species"], r["sex_type"], r["hunt_type"], r["hunt_code"], r["hunt_name"]))
+    rows.sort(key=lambda r: (r["species"], r["sex_type"], r["hunt_type"], r["weapon"], r.get("_hunt_class", ""), r["hunt_code"], r["hunt_name"]))
     return rows
 
 
@@ -244,18 +251,45 @@ def class_sort_key(hunt_class: str) -> Tuple[int, str]:
     return len(CLASS_SORT), c
 
 
-def group_rows(rows: Iterable[dict]) -> Dict[Tuple[str, str, str], List[dict]]:
-    groups: Dict[Tuple[str, str, str], List[dict]] = defaultdict(list)
+def base_group_key(row: dict) -> Tuple[str, str, str, str]:
+    return (
+        clean_filename_part(row["species"]),
+        clean_filename_part(row["sex_type"] or "ALL"),
+        clean_filename_part(row["hunt_type"] or "UNCLASSIFIED"),
+        clean_filename_part(row["weapon"] or "ANY WEAPON"),
+    )
+
+
+def hunt_class_divider_needed(rows: List[dict]) -> bool:
+    classes = {clean_filename_part(row.get("_hunt_class") or "") for row in rows if norm(row.get("_hunt_class"))}
+    if len(classes) <= 1:
+        return False
+    # If the class is already present in the hunt_type text, do not duplicate it in the file split.
+    base_type = clean_filename_part(rows[0].get("hunt_type") or "")
+    return any(norm_compare(c) and norm_compare(c) not in norm_compare(base_type) for c in classes)
+
+
+def group_rows(rows: Iterable[dict]) -> Dict[Tuple[str, str, str, str, str], List[dict]]:
+    base_groups: Dict[Tuple[str, str, str, str], List[dict]] = defaultdict(list)
     for row in rows:
-        species = clean_filename_part(row["species"])
-        sex_type = clean_filename_part(row["sex_type"] or "ALL")
-        hunt_class = clean_filename_part(row["hunt_type"] or "UNCLASSIFIED")
-        groups[(species, sex_type, hunt_class)].append(row)
-    return groups
+        base_groups[base_group_key(row)].append(row)
+
+    final_groups: Dict[Tuple[str, str, str, str, str], List[dict]] = defaultdict(list)
+    for base_key, base_rows in base_groups.items():
+        if hunt_class_divider_needed(base_rows):
+            for row in base_rows:
+                class_part = clean_filename_part(row.get("_hunt_class") or "UNCLASSIFIED")
+                final_groups[(*base_key, class_part)].append(row)
+        else:
+            final_groups[(*base_key, "")].extend(base_rows)
+    return final_groups
 
 
-def output_stem(species: str, sex_type: str, hunt_class: str) -> str:
-    return re.sub(r"\s+", " ", f"{YEAR} {species} {sex_type} {hunt_class}").strip(" .")
+def output_stem(species: str, sex_type: str, hunt_type: str, weapon: str, hunt_class: str = "") -> str:
+    parts = [YEAR, species, sex_type, hunt_type, weapon]
+    if hunt_class and norm_compare(hunt_class) not in norm_compare(" ".join(parts)):
+        parts.append(hunt_class)
+    return re.sub(r"\s+", " ", " ".join(p for p in parts if p)).strip(" .")
 
 
 def style_workbook(ws, row_count: int) -> None:
@@ -338,6 +372,11 @@ def write_audit(audit_rows: List[dict]) -> None:
             fieldnames=[
                 "file",
                 "rows",
+                "species",
+                "sex_type",
+                "hunt_type",
+                "weapon",
+                "hunt_class_split",
                 "res_permit_rows",
                 "nr_permit_rows",
                 "total_permit_rows",
@@ -360,16 +399,21 @@ def main() -> None:
     groups = group_rows(rows)
     audit_rows: List[dict] = []
 
-    for key in sorted(groups.keys(), key=lambda k: (k[0], k[1], class_sort_key(k[2]))):
-        species, sex_type, hunt_class = key
+    for key in sorted(groups.keys(), key=lambda k: (k[0], k[1], class_sort_key(k[2]), k[3], class_sort_key(k[4]))):
+        species, sex_type, hunt_type, weapon, hunt_class = key
         group = sorted(groups[key], key=lambda r: (r["hunt_code"], r["hunt_name"]))
-        stem = output_stem(species, sex_type, hunt_class)
+        stem = output_stem(species, sex_type, hunt_type, weapon, hunt_class)
         xlsx = STAGE_XLSX_DIR / f"{stem}.xlsx"
         write_xlsx(xlsx, group)
         audit_rows.append(
             {
                 "file": xlsx.name,
                 "rows": len(group),
+                "species": species,
+                "sex_type": sex_type,
+                "hunt_type": hunt_type,
+                "weapon": weapon,
+                "hunt_class_split": hunt_class,
                 "res_permit_rows": sum(1 for row in group if norm(row.get("2026 permits RES"))),
                 "nr_permit_rows": sum(1 for row in group if norm(row.get("2026 permits NR"))),
                 "total_permit_rows": sum(1 for row in group if norm(row.get("2026 permits TOTAL"))),
