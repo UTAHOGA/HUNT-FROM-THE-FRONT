@@ -1,0 +1,187 @@
+{
+  "generated_at": "2026-05-29T16:52:28.194Z",
+  "summary_counts": {
+    "inventory_files": 7641,
+    "sync_edges": 10,
+    "data_holes": 120,
+    "year_to_year_flags": 2562,
+    "runtime_sources_tested": 15,
+    "runtime_sources_ok": 10,
+    "engines_ready": 8,
+    "engines_partial": 0,
+    "engines_blocked": 1,
+    "engines_placeholder_only": 0,
+    "engines_needs_source_sync": 1
+  },
+  "engines": [
+    {
+      "engine_name": "Hunt Builder selection/filter/map",
+      "status": "READY",
+      "required_inputs": [
+        "DATABASE.csv",
+        "hunt reference",
+        "boundary files"
+      ],
+      "available_inputs": [
+        "reference codes 1449"
+      ],
+      "missing_inputs": [],
+      "critical_holes": [],
+      "can_populate_results": true,
+      "confidence": "HIGH",
+      "recommended_next_fix": "Keep DATABASE/reference/boundary IDs aligned."
+    },
+    {
+      "engine_name": "Hunt Research core summary",
+      "status": "READY",
+      "required_inputs": [
+        "reference",
+        "engine",
+        "ladder",
+        "Cloudflare runtime"
+      ],
+      "available_inputs": [
+        "reference codes 1449",
+        "runtime ok 10"
+      ],
+      "missing_inputs": [],
+      "critical_holes": [],
+      "can_populate_results": true,
+      "confidence": "HIGH",
+      "recommended_next_fix": "Maintain Cloudflare-first runtime CSV delivery."
+    },
+    {
+      "engine_name": "Point ladder",
+      "status": "READY",
+      "required_inputs": [
+        "point_ladder_view.csv"
+      ],
+      "available_inputs": [
+        "ladder codes 1449",
+        "ladder rows 91712"
+      ],
+      "missing_inputs": [],
+      "critical_holes": [],
+      "can_populate_results": true,
+      "confidence": "HIGH",
+      "recommended_next_fix": "Review current hunts missing ladder/status rows."
+    },
+    {
+      "engine_name": "Predictive draw odds",
+      "status": "READY",
+      "required_inputs": [
+        "draw_reality_engine_predictive_v2.csv",
+        "p_draw_mean"
+      ],
+      "available_inputs": [
+        "predictive codes 923",
+        "predictive rows 26507"
+      ],
+      "missing_inputs": [],
+      "critical_holes": [],
+      "can_populate_results": true,
+      "confidence": "MEDIUM",
+      "recommended_next_fix": "Resolve pending families after source sync; do not change formulas in audit task."
+    },
+    {
+      "engine_name": "Comparable hunts",
+      "status": "READY",
+      "required_inputs": [
+        "hunt_master_enriched.csv"
+      ],
+      "available_inputs": [
+        "master rows 53225"
+      ],
+      "missing_inputs": [],
+      "critical_holes": [],
+      "can_populate_results": true,
+      "confidence": "MEDIUM",
+      "recommended_next_fix": "Improve comparable scoring after field consistency audit."
+    },
+    {
+      "engine_name": "Harvest quality",
+      "status": "READY",
+      "required_inputs": [
+        "harvest_master.csv",
+        "harvest_quality_features_all_years_by_hunt_code.csv"
+      ],
+      "available_inputs": [
+        "harvest codes 1561"
+      ],
+      "missing_inputs": [],
+      "critical_holes": [],
+      "can_populate_results": true,
+      "confidence": "MEDIUM",
+      "recommended_next_fix": "Continue annual harvest crosswalk lineage repair."
+    },
+    {
+      "engine_name": "Age quality",
+      "status": "READY",
+      "required_inputs": [
+        "harvest_age_features_by_hunt_code_latest.csv"
+      ],
+      "available_inputs": [
+        "age codes 414"
+      ],
+      "missing_inputs": [],
+      "critical_holes": [],
+      "can_populate_results": true,
+      "confidence": "MEDIUM",
+      "recommended_next_fix": "Keep observed average_harvest_age separate from days and 3-year current age."
+    },
+    {
+      "engine_name": "State management objective",
+      "status": "NEEDS_SOURCE_SYNC",
+      "required_inputs": [
+        "hunt_management_objective_context.json"
+      ],
+      "available_inputs": [
+        "management codes 6"
+      ],
+      "missing_inputs": [],
+      "critical_holes": [
+        "EB3024",
+        "EB3025",
+        "DB1000",
+        "DB1001",
+        "DB1500"
+      ],
+      "can_populate_results": true,
+      "confidence": "MEDIUM",
+      "recommended_next_fix": "Render benchmark-only unless observed comparison exists."
+    },
+    {
+      "engine_name": "Outfitter matching",
+      "status": "BLOCKED",
+      "required_inputs": [
+        "outfitters-public.json"
+      ],
+      "available_inputs": [
+        "outfitter rows 0"
+      ],
+      "missing_inputs": [
+        "outfitter public data"
+      ],
+      "critical_holes": [],
+      "can_populate_results": false,
+      "confidence": "MEDIUM",
+      "recommended_next_fix": "Add reviewed coverage/boundary links."
+    },
+    {
+      "engine_name": "Public library",
+      "status": "READY",
+      "required_inputs": [
+        "processed_data/library",
+        "hard_data_exports"
+      ],
+      "available_inputs": [
+        "reference codes 1449"
+      ],
+      "missing_inputs": [],
+      "critical_holes": [],
+      "can_populate_results": true,
+      "confidence": "MEDIUM",
+      "recommended_next_fix": "Keep library mapping statuses explicit and audit moved PDFs."
+    }
+  ]
+}

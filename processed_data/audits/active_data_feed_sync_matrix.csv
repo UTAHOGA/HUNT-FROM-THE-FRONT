@@ -1,0 +1,11 @@
+source_file,target_file_or_page,join_keys,required_columns,missing_required_columns,row_count,matched_hunt_code_count,unmatched_hunt_code_count,sync_status,recommended_fix
+pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv,Hunt Builder page,hunt_code|boundary_id,hunt_code|hunt_name|species,,1449,1449,0,SYNC_CHECKED,Keep DATABASE aligned to reference/boundary rows.
+processed_data/hunt_unit_reference_linked.csv,Hunt Research page,hunt_code|residency,hunt_code|species,,2953,1449,0,SYNC_CHECKED,Reference should align to current DATABASE hunt-code universe.
+processed_data/point_ladder_view.csv,Point ladder,hunt_code|residency|points,hunt_code|residency|points,,91712,1449,0,SYNC_CHECKED,Generate ladder/status rows for missing current hunts.
+processed_data/draw_reality_engine_predictive_v2.csv,Predictive draw probability,hunt_code|residency|points,hunt_code|residency|points|p_draw_mean,,26507,863,60,PARTIAL_MATCH,Keep p_draw fields keyed by hunt/residency/points.
+processed_data/harvest_quality_features_all_years_by_hunt_code.csv,Harvest quality,hunt_code|reported_hunt_year,hunt_code,,5563,1242,319,PARTIAL_MATCH,Crosswalk annual harvest rows with lineage.
+processed_data/harvest_age_features_by_hunt_code_latest.csv,Age quality,hunt_code|reported_hunt_year,hunt_code|average_harvest_age,,547,407,7,PARTIAL_MATCH,Only promote reviewed numeric age rows.
+processed_data/management_context/hunt_management_objective_context.json,State management objective comparison,hunt_code|boundary_id,hunt_code,,6,5,1,PARTIAL_MATCH,Render benchmark-only unless observed values are mapped.
+processed_data/hunt_master_enriched.csv,Comparable hunts,species|hunt_type|residency|hunt_code,hunt_code|species,,53225,1449,0,SYNC_CHECKED,Comparable hunts require consistent species/type/residency fields.
+processed_data/hard_data_exports + processed_data/library,Public hard-copy/library page,hunt_code|boundary_id,hunt_code|hunt_name|species,,2953,1449,0,SYNC_CHECKED,Keep library mapping status explicit.
+data/outfitters-public.json,Outfitter verification/matching page,boundary_id|hunt_code|species,,,0,0,0,SYNC_CHECKED,Add reviewed coverage links where possible.

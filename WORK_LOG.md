@@ -7078,3 +7078,53 @@ o_table=0).
 - Data/source rules preserved:
   - Did not modify `DATABASE.csv`, engine files, model formulas, draw/harvest/age truth files, permit/allotment truth, point-ladder math, Cloudflare/R2 runtime files, or source data files.
   - Build-generated library/data side-effect diffs were reverted and not included in the final change set.
+
+## Active Data Feed Audit, Sync Map, And Engine Readiness Report
+- Timestamp (UTC): 2026-05-29T16:53:23Z
+- Implementation commit: pending at log-write time; final commit hash recorded in Codex final report.
+- Files created:
+  - `scripts/audit-active-data-feeds.js`
+  - `processed_data/audits/active_data_feed_inventory.csv`
+  - `processed_data/audits/active_data_feed_inventory.json`
+  - `processed_data/audits/active_data_feed_sync_matrix.csv`
+  - `processed_data/audits/active_data_feed_sync_matrix.json`
+  - `processed_data/audits/engine_readiness_report.json`
+  - `processed_data/audits/engine_readiness_report.md`
+  - `processed_data/audits/data_holes_and_inconsistencies.csv`
+  - `processed_data/audits/year_to_year_hunt_change_report.csv`
+  - `processed_data/audits/year_to_year_hunt_change_report.json`
+  - `processed_data/audits/runtime_public_delivery_report.json`
+- Audit row counts:
+  - Inventory files: 7,641.
+  - Sync edges: 10.
+  - Data holes/inconsistency flags: 120.
+  - Year-to-year hunt-change flags: 2,562.
+  - Runtime source entries tested: 15 total; 10 browser-ready Cloudflare HTTP sources passed.
+- Major data holes:
+  - 103 current-feed hunt-code/name conflicts for review/crosswalk cleanup.
+  - 11 large public runtime files that need Cloudflare/R2 preference or Pages exclusion.
+  - 6 management objective rows lack observed comparison values and should remain benchmark-only until mapped.
+- Critical feed blockers:
+  - `data/outfitters-public.json` currently has 0 public rows, so outfitter verification/matching is blocked.
+  - State management objective context is present but sparse: 6 rows, 5 matching current hunt codes, 1 unmatched; observed comparison values are missing on several rows.
+  - Predictive, harvest, age, and management feeds are usable but show partial current-hunt coverage in the sync matrix.
+- Engines ready/partial/blocked:
+  - READY: Hunt Builder selection/filter/map, Hunt Research core summary, Point ladder, Predictive draw odds, Comparable hunts, Harvest quality, Age quality, Public library.
+  - NEEDS_SOURCE_SYNC: State management objective.
+  - BLOCKED: Outfitter matching.
+  - PARTIAL/PLACEHOLDER_ONLY: none.
+- Runtime/public delivery findings:
+  - Hunt Research source groups are Cloudflare-first in `config.js`.
+  - Cloudflare/R2 runtime CSVs returned HTTP 200, non-LFS CSV/JSON-like content for engine, ladder, master, and reference feeds.
+  - Local relative fallback entries are recorded as local/non-HTTP sources in the audit and were not treated as Cloudflare delivery failures.
+- Recommended next phase:
+  - Reconcile the 103 hunt-code/name conflicts and review the 60 predictive-only hunt codes that do not match the current reference universe.
+  - Expand management objective mapping with observed comparison fields before treating it as more than benchmark context.
+  - Add reviewed outfitter coverage/boundary links before enabling outfitter matching.
+- Validation:
+  - `node --check scripts/audit-active-data-feeds.js` passed.
+  - `node scripts/audit-active-data-feeds.js` passed and regenerated all requested audit outputs.
+  - `npm.cmd run build` passed. Existing optional build notices remain: `staging-audit.html`, `data/hunt_boundaries_finalized_2026.geojson`, and oversized `processed_data/composite_hunt_unit_mapping_2026.geojson` skipped for Pages.
+  - Build-generated library/pages-dist side-effect diffs were reverted and not included in the final change set.
+- Data/source rules preserved:
+  - Did not modify `DATABASE.csv`, source truth files, runtime CSVs, engine materializers, prediction formulas, permit/allotment fields, or `p_draw`.
