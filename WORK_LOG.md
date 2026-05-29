@@ -6769,3 +6769,19 @@ o_table=0).
   - Bad split totals: 0.
   - Missing source rows: 0.
   - Spot checks passed for LP5025, LP5051, PB1000, PB5000, PB5049, PB5076, PB5302, and PB5346.
+
+## Moose Antlerless 2026 Permit Truth Source Addition
+- Timestamp (UTC): 2026-05-29T11:40:00Z
+- Scope:
+  - Added `MOOSE_ANTLERLESS` to `scripts/build-reviewed-permit-truth-sources-2026.py` from the user-pasted Utah DWR Hunt Planner MA rows.
+  - Created `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 moose antlerless reviewed res-nr-total.csv` as a separate antlerless moose family file from Moose Bull.
+  - Preserved 2025 season dates and CWMU operator-date text exactly from the pasted source rows.
+  - Included boundary-id metadata from `DATABASE.csv` and source lineage identifying the pasted DWR Hunt Planner source row.
+  - Updated reviewed permit truth-source audit CSV/JSON.
+- Validation:
+  - MOOSE_ANTLERLESS rows: 5.
+  - Full split rows: 5.
+  - Duplicate hunt codes: 0.
+  - Bad split totals: 0.
+  - Missing source rows: 0.
+  - Spot checks passed for MA1005, MA1007, MA1008, MA1009, and MA1010.

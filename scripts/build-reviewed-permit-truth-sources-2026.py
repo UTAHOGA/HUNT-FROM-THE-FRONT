@@ -80,6 +80,26 @@ FAMILY_CONFIGS = [
         "sex_type": ("Bull",),
     },
     {
+        "family": "MOOSE_ANTLERLESS",
+        "output": "2026 moose antlerless reviewed res-nr-total.csv",
+        "source_label": "USER_PASTED_DWR_HUNT_PLANNER_MOOSE_ANTLERLESS_MA_2026",
+        "inline_tsv": """
+Morgan-South Rich	MA1005	Antlerless	Moose	Any Legal Weapon	Limited Entry	Sep 20 2025 - Oct 19 2025	Res: 6
+NonRes: 1
+Morgan-South Rich	MA1007	Antlerless	Moose	Archery	Limited Entry	Aug 01 2025 - Sep 19 2025	Res: 3
+NonRes: 0
+Wasatch Mtns, Salt Lake-Timpanogos	MA1008	Antlerless	Moose	Any Legal Weapon	Limited Entry	Sep 20 2025 - Oct 19 2025	Res: 4
+NonRes: 1
+Causey Spring CWMU	MA1009	Antlerless	Moose	Any Legal Weapon	CWMU	Contact Operator for 2025 season dates	Res: 1
+NonRes: 0
+Deseret CWMU	MA1010	Antlerless	Moose	Any Legal Weapon	CWMU	Contact Operator for 2025 season dates	Res: 2
+NonRes: 0
+        """,
+        "code_prefixes": ("MA",),
+        "species": ("Moose",),
+        "sex_type": ("Antlerless",),
+    },
+    {
         "family": "MOUNTAIN_GOAT_HUNTERS_CHOICE",
         "output": "2026 mountain goat reviewed res-nr-total.csv",
         "sources": ["2026 MOUNTAIN GOAT HUNTER CHOICE O.I.L.xlsx"],

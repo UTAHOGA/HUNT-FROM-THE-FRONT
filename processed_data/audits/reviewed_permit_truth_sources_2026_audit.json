@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-05-29T11:37:52.333523+00:00",
+  "created_at": "2026-05-29T11:39:36.691255+00:00",
   "source": "pasted-aligned public hunt table workbooks plus reviewed inline pasted DWR Hunt Planner rows",
   "families": {
     "BLACK_BEAR": {
@@ -161,6 +161,27 @@
         "2026 MOOSE BULL O.I.L.xlsx": 27
       },
       "output": "C:\\Users\\tyler\\Desktop\\GitHub\\HUNT-BUILDER\\pipeline\\RAW\\hunt_unit_database\\2026\\csv\\2026 Permits\\2026 moose bull all reviewed res-nr-total.csv"
+    },
+    "MOOSE_ANTLERLESS": {
+      "rows": 5,
+      "duplicate_hunt_codes": [],
+      "bad_split_totals": [],
+      "missing_source_rows": [],
+      "permit_status_counts": {
+        "FULL_SPLIT": 5
+      },
+      "hunt_type_counts": {
+        "Limited Entry": 3,
+        "CWMU": 2
+      },
+      "weapon_counts": {
+        "Any Legal Weapon": 4,
+        "Archery": 1
+      },
+      "source_counts": {
+        "USER_PASTED_DWR_HUNT_PLANNER_MOOSE_ANTLERLESS_MA_2026": 5
+      },
+      "output": "C:\\Users\\tyler\\Desktop\\GitHub\\HUNT-BUILDER\\pipeline\\RAW\\hunt_unit_database\\2026\\csv\\2026 Permits\\2026 moose antlerless reviewed res-nr-total.csv"
     },
     "MOUNTAIN_GOAT_HUNTERS_CHOICE": {
       "rows": 18,
