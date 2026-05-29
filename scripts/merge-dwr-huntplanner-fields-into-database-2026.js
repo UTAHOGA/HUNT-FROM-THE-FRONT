@@ -9,6 +9,7 @@ const DWR_POPUP_CSV = path.join(ROOT, 'processed_data', 'dwr_huntplanner_hanumbe
 const AUDIT_JSON = path.join(ROOT, 'processed_data', 'audits', 'database_dwr_huntplanner_2026_overlay_audit.json');
 const AUDIT_CSV = path.join(ROOT, 'processed_data', 'audits', 'database_dwr_huntplanner_2026_overlay_audit.csv');
 const NONMATCH_CSV = path.join(ROOT, 'processed_data', 'audits', 'database_dwr_huntplanner_2026_permit_nonmatches.csv');
+const ALLOTMENT_AUDIT_CSV = path.join(ROOT, 'processed_data', 'audits', 'database_dwr_huntplanner_2026_allotment_fill_audit.csv');
 
 const REMOVED_DWR_OVERLAY_COLUMNS = [
   'dwr_huntplanner_source_url',
@@ -114,6 +115,14 @@ function sameNumeric(a, b) {
   return na === nb;
 }
 
+function sameDisplayValue(a, b) {
+  const sa = String(a ?? '').trim();
+  const sb = String(b ?? '').trim();
+  if (!sa && !sb) return true;
+  if (sameNumeric(sa, sb)) return true;
+  return sa.toLowerCase() === sb.toLowerCase();
+}
+
 function differenceType(databaseValue, dwrValue) {
   const db = String(databaseValue ?? '').trim();
   const dwr = String(dwrValue ?? '').trim();
@@ -153,6 +162,12 @@ function main() {
   let permitBlankDwrValue = 0;
   let permitNumericConflicts = 0;
   let permitOtherDifferences = 0;
+  const allotmentAuditRows = [];
+  let allotmentFilledCells = 0;
+  let allotmentAlreadyMatchedCells = 0;
+  let allotmentNotFilledNonmatchCells = 0;
+  let allotmentNoDatabasePermitCells = 0;
+  let allotmentConflictCells = 0;
 
   for (const row of database.records) {
     for (const column of REMOVED_DWR_OVERLAY_COLUMNS) {
@@ -176,10 +191,11 @@ function main() {
     if (row.percent_harvest_success_previous_hunting_season) percentHarvestRows += 1;
     if (row.current_age_3yr_average) currentAgeRows += 1;
 
-    for (const [databaseField, dwrField] of [
-      ['permits_2026_res', 'permits_2026_res'],
-      ['permits_2026_nr', 'permits_2026_nr'],
-      ['permits_2026_total', 'permits_2026_total']
+    let rowAllotmentFilled = false;
+    for (const [databaseField, dwrField, allotmentField] of [
+      ['permits_2026_res', 'permits_2026_res', 'permit_allotment_2026_res'],
+      ['permits_2026_nr', 'permits_2026_nr', 'permit_allotment_2026_nr'],
+      ['permits_2026_total', 'permits_2026_total', 'permit_allotment_2026_total']
     ]) {
       const comparisonStatus = sameNumeric(row[databaseField], dwr[dwrField])
         ? 'MATCH'
@@ -201,6 +217,47 @@ function main() {
         dwr_huntplanner_value: dwr[dwrField] || '',
         source_url: dwr.source_url || ''
       });
+
+      let allotmentAction = '';
+      if (!String(row[databaseField] ?? '').trim()) {
+        allotmentNoDatabasePermitCells += 1;
+        allotmentAction = 'NOT_FILLED_NO_DATABASE_PERMIT_VALUE';
+      } else if (comparisonStatus !== 'MATCH') {
+        allotmentNotFilledNonmatchCells += 1;
+        allotmentAction = 'NOT_FILLED_PERMIT_DWR_NONMATCH';
+      } else if (!String(row[allotmentField] ?? '').trim()) {
+        row[allotmentField] = row[databaseField];
+        allotmentFilledCells += 1;
+        rowAllotmentFilled = true;
+        allotmentAction = 'FILLED_FROM_MATCHED_DATABASE_AND_DWR_PERMIT';
+      } else if (sameDisplayValue(row[allotmentField], row[databaseField])) {
+        allotmentAlreadyMatchedCells += 1;
+        allotmentAction = 'ALREADY_MATCHED_DATABASE_AND_DWR_PERMIT';
+      } else {
+        allotmentConflictCells += 1;
+        allotmentAction = 'ALLOTMENT_CONFLICT_NOT_OVERWRITTEN';
+      }
+
+      allotmentAuditRows.push({
+        hunt_code: row.hunt_code,
+        hunt_name: row.hunt_name,
+        species: row.species,
+        permit_field: databaseField,
+        allotment_field: allotmentField,
+        dwr_field: dwrField,
+        permit_dwr_comparison_status: comparisonStatus,
+        allotment_action: allotmentAction,
+        database_permit_value: row[databaseField] || '',
+        allotment_value_after: row[allotmentField] || '',
+        dwr_huntplanner_value: dwr[dwrField] || '',
+        source_url: dwr.source_url || ''
+      });
+    }
+
+    if (rowAllotmentFilled) {
+      if (!row.permit_allotment_2026_source) row.permit_allotment_2026_source = 'DWR_HUNT_PLANNER_HaNumber_MATCHED_PERMITS_2026';
+      if (!row.permit_allotment_2026_source_file) row.permit_allotment_2026_source_file = dwr.source_url || '';
+      if (!row.permit_allotment_2026_status) row.permit_allotment_2026_status = 'DWR_HUNTPLANNER_CONFIRMED_MATCH';
     }
   }
 
@@ -223,6 +280,20 @@ function main() {
     'field',
     'comparison_status',
     'database_value',
+    'dwr_huntplanner_value',
+    'source_url'
+  ]);
+  writeCsv(ALLOTMENT_AUDIT_CSV, allotmentAuditRows, [
+    'hunt_code',
+    'hunt_name',
+    'species',
+    'permit_field',
+    'allotment_field',
+    'dwr_field',
+    'permit_dwr_comparison_status',
+    'allotment_action',
+    'database_permit_value',
+    'allotment_value_after',
     'dwr_huntplanner_value',
     'source_url'
   ]);
@@ -253,10 +324,17 @@ function main() {
     permit_blank_dwr_value_cells: permitBlankDwrValue,
     permit_numeric_conflict_cells: permitNumericConflicts,
     permit_other_difference_cells: permitOtherDifferences,
+    allotment_filled_cells_from_matched_database_and_dwr: allotmentFilledCells,
+    allotment_already_matched_cells: allotmentAlreadyMatchedCells,
+    allotment_not_filled_permit_dwr_nonmatch_cells: allotmentNotFilledNonmatchCells,
+    allotment_not_filled_no_database_permit_cells: allotmentNoDatabasePermitCells,
+    allotment_conflict_not_overwritten_cells: allotmentConflictCells,
     audit_csv: path.relative(ROOT, AUDIT_CSV).replace(/\\/g, '/'),
     permit_nonmatch_csv: path.relative(ROOT, NONMATCH_CSV).replace(/\\/g, '/'),
+    allotment_audit_csv: path.relative(ROOT, ALLOTMENT_AUDIT_CSV).replace(/\\/g, '/'),
     notes: [
       'DATABASE.csv uses the existing permits_2026_res, permits_2026_nr, and permits_2026_total columns; duplicate DWR-prefixed permit columns are not kept.',
+      'permit_allotment_2026_res, permit_allotment_2026_nr, and permit_allotment_2026_total are filled only when DATABASE permits_2026_* and DWR Hunt Planner popup values match exactly.',
       'percent_harvest_success_previous_hunting_season is populated from the DWR Hunt Planner popup by hunt code.',
       'current_age_3yr_average is DWR Hunt Planner current age context, not prior-year average harvest age.',
       'dwr_huntplanner_age_objective, dwr_huntplanner_population_objective, and dwr_huntplanner_current_population_estimate are retained as DWR Hunt Planner management-context fields.',
@@ -273,8 +351,11 @@ function main() {
   console.log(`Current age 3-year average rows: ${currentAgeRows}`);
   console.log(`Permit exact-match cells: ${permitExactMatches}`);
   console.log(`Permit non-match cells: ${permitComparisons.length - permitExactMatches}`);
+  console.log(`Allotment cells filled from matched permits: ${allotmentFilledCells}`);
+  console.log(`Allotment cells already matched: ${allotmentAlreadyMatchedCells}`);
   console.log(`Audit: ${AUDIT_JSON}`);
   console.log(`Permit nonmatches: ${NONMATCH_CSV}`);
+  console.log(`Allotment audit: ${ALLOTMENT_AUDIT_CSV}`);
 }
 
 main();

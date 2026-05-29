@@ -1,3 +1,11 @@
+## 2026-05-29T08:10:05Z - Confirm 2026 Permit Allotment Columns Against DWR Popup
+
+- Updated the DWR Hunt Planner database merge script to check and fill `permit_allotment_2026_res`, `permit_allotment_2026_nr`, and `permit_allotment_2026_total` only when the canonical `permits_2026_*` value exactly matches the DWR Hunt Planner popup value.
+- Added an allotment-fill audit showing whether each permit/allotment cell was already matched, filled, or not filled because DATABASE and DWR did not match.
+- Result: 2,000 allotment cells already matched DATABASE and DWR; 0 new allotment cells were filled; 343 cells were not filled because DATABASE and DWR permit values did not match; 2,004 cells had no DATABASE permit value to promote.
+- Existing `permit_allotment_2026_*` columns remain the display/allocation columns; no duplicate DWR permit columns were added.
+- Ran `npm.cmd run build`: PASS. Total current hunts 1,449; modeled 1,448; manual review 0; Gate PASS 1,449; Gate BLOCK 0; crosswalk matched current codes 169.
+
 ## 2026-05-29T07:59:06Z - Clean DATABASE DWR Management Objective Fields
 
 - Removed duplicate DWR-prefixed permit/source overlay fields from `DATABASE.csv`; existing `permits_2026_res`, `permits_2026_nr`, and `permits_2026_total` remain the permit columns.
