@@ -1,0 +1,34 @@
+{
+  "source_pdf": "pipeline/RAW/hunt_unit_database/2025/pdf/draw_odds/24_bg-odds.pdf",
+  "combined_pdf": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/draw_odds_results/24_bg_master_species_pages/24_BG_MASTER_SPECIES_TOTALS_ELK_PRONGHORN_MOOSE_ROCKY_MTN_SHEEP.pdf",
+  "rows": [
+    {
+      "species": "LIMITED ENTRY ELK",
+      "species_short": "ELK",
+      "page_number": 188,
+      "species_line": "Species: LIMITED ENTRY ELK - All Applicants",
+      "output_pdf": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/draw_odds_results/24_bg_master_species_pages/24_BG_MASTER_ELK_PAGE_188.pdf"
+    },
+    {
+      "species": "LIMITED ENTRY PRONGHORN",
+      "species_short": "PRONGHORN",
+      "page_number": 398,
+      "species_line": "Species: LIMITED ENTRY PRONGHORN - All Applicants",
+      "output_pdf": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/draw_odds_results/24_bg_master_species_pages/24_BG_MASTER_PRONGHORN_PAGE_398.pdf"
+    },
+    {
+      "species": "BULL MOOSE",
+      "species_short": "MOOSE",
+      "page_number": 537,
+      "species_line": "Species: BULL MOOSE - All Applicants",
+      "output_pdf": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/draw_odds_results/24_bg_master_species_pages/24_BG_MASTER_MOOSE_PAGE_537.pdf"
+    },
+    {
+      "species": "ROCKY MTN SHEEP",
+      "species_short": "ROCKY_MTN_SHEEP",
+      "page_number": 573,
+      "species_line": "Species: ROCKY MTN SHEEP - All Applicants",
+      "output_pdf": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/draw_odds_results/24_bg_master_species_pages/24_BG_MASTER_ROCKY_MTN_SHEEP_PAGE_573.pdf"
+    }
+  ]
+}

@@ -1,0 +1,3362 @@
+[
+  {
+    "row_number": 1,
+    "species": "Antlerless Elk",
+    "area": "Cache",
+    "condition": "Any Legal Weapon",
+    "average_value": 800.0,
+    "source_row": 1,
+    "organization": "RMEF",
+    "hunt_class": "RMEF"
+  },
+  {
+    "row_number": 2,
+    "species": "Antlerless Elk",
+    "area": "Cache",
+    "condition": "Any Legal Weapon",
+    "average_value": 800.0,
+    "source_row": 2,
+    "organization": "WCF",
+    "hunt_class": "WCF"
+  },
+  {
+    "row_number": 3,
+    "species": "Antlerless Elk",
+    "area": "Cache",
+    "condition": "Any Legal Weapon",
+    "average_value": 800.0,
+    "source_row": 3,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 4,
+    "species": "Antlerless Elk",
+    "area": "Cache",
+    "condition": "Any Legal Weapon",
+    "average_value": 800.0,
+    "source_row": 4,
+    "organization": "RMEF",
+    "hunt_class": "RMEF"
+  },
+  {
+    "row_number": 5,
+    "species": "Antlerless Elk",
+    "area": "Fishlake",
+    "condition": "Any Legal Weapon",
+    "average_value": 2279.17,
+    "source_row": 5,
+    "organization": "SCI",
+    "hunt_class": "SCI"
+  },
+  {
+    "row_number": 6,
+    "species": "Antlerless Elk",
+    "area": "Fishlake",
+    "condition": "Any Legal Weapon",
+    "average_value": 2279.17,
+    "source_row": 6,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 7,
+    "species": "Antlerless Elk",
+    "area": "Fishlake",
+    "condition": "Any Legal Weapon",
+    "average_value": 2279.17,
+    "source_row": 7,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 8,
+    "species": "Antlerless Elk",
+    "area": "Fishlake",
+    "condition": "Any Legal Weapon",
+    "average_value": 2279.17,
+    "source_row": 8,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 9,
+    "species": "Antlerless Elk",
+    "area": "La Sal",
+    "condition": "Any Legal Weapon",
+    "average_value": 800.0,
+    "source_row": 9,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 10,
+    "species": "Antlerless Elk",
+    "area": "La Sal",
+    "condition": "Any Legal Weapon",
+    "average_value": 800.0,
+    "source_row": 10,
+    "organization": "UAA",
+    "hunt_class": "UAA"
+  },
+  {
+    "row_number": 11,
+    "species": "Antlerless Elk",
+    "area": "La Sal",
+    "condition": "Any Legal Weapon",
+    "average_value": 800.0,
+    "source_row": 11,
+    "organization": "WCF",
+    "hunt_class": "WCF"
+  },
+  {
+    "row_number": 12,
+    "species": "Antlerless Elk",
+    "area": "La Sal",
+    "condition": "Any Legal Weapon",
+    "average_value": 800.0,
+    "source_row": 12,
+    "organization": "WCF",
+    "hunt_class": "WCF"
+  },
+  {
+    "row_number": 13,
+    "species": "Antlerless Elk",
+    "area": "Manti",
+    "condition": "Any Legal Weapon",
+    "average_value": 2108.33,
+    "source_row": 13,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 14,
+    "species": "Antlerless Elk",
+    "area": "Manti",
+    "condition": "Any Legal Weapon",
+    "average_value": 2108.33,
+    "source_row": 14,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 15,
+    "species": "Antlerless Elk",
+    "area": "Manti",
+    "condition": "Any Legal Weapon",
+    "average_value": 2108.33,
+    "source_row": 15,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 16,
+    "species": "Antlerless Elk",
+    "area": "Manti",
+    "condition": "Any Legal Weapon",
+    "average_value": 2108.33,
+    "source_row": 16,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 17,
+    "species": "Antlerless Elk",
+    "area": "Wasatch Mtns",
+    "condition": "Any Legal Weapon",
+    "average_value": 2237.5,
+    "source_row": 17,
+    "organization": "RMEF",
+    "hunt_class": "RMEF"
+  },
+  {
+    "row_number": 18,
+    "species": "Antlerless Elk",
+    "area": "Wasatch Mtns",
+    "condition": "Any Legal Weapon",
+    "average_value": 2237.5,
+    "source_row": 18,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 19,
+    "species": "Antlerless Elk",
+    "area": "Wasatch Mtns",
+    "condition": "Any Legal Weapon",
+    "average_value": 2237.5,
+    "source_row": 19,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 20,
+    "species": "Antlerless Elk",
+    "area": "Wasatch Mtns",
+    "condition": "Any Legal Weapon",
+    "average_value": 2237.5,
+    "source_row": 20,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 21,
+    "species": "Bear",
+    "area": "Beaver",
+    "condition": "Multiseason",
+    "average_value": 9500.0,
+    "source_row": 21,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 22,
+    "species": "Bear",
+    "area": "Book Cliffs, Bitter Creek/South",
+    "condition": "Multiseason",
+    "average_value": 5283.33,
+    "source_row": 22,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 23,
+    "species": "Bear",
+    "area": "Book Cliffs, Bitter Creek/South",
+    "condition": "Multiseason",
+    "average_value": 5283.33,
+    "source_row": 23,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 24,
+    "species": "Bear",
+    "area": "Book Cliffs, Bitter Creek/South",
+    "condition": "Multiseason",
+    "average_value": 5283.33,
+    "source_row": 24,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 25,
+    "species": "Bear",
+    "area": "Book Cliffs, Bitter Creek/South",
+    "condition": "Multiseason",
+    "average_value": 5283.33,
+    "source_row": 25,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 26,
+    "species": "Bear",
+    "area": "Book Cliffs, Little Creek Roadless",
+    "condition": "Multiseason",
+    "average_value": 3333.33,
+    "source_row": 26,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 27,
+    "species": "Bear",
+    "area": "Boulder/Kaiparowits",
+    "condition": "Multiseason",
+    "average_value": 3983.33,
+    "source_row": 27,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 28,
+    "species": "Bear",
+    "area": "Boulder/Kaiparowits",
+    "condition": "Multiseason",
+    "average_value": 3983.33,
+    "source_row": 28,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 29,
+    "species": "Bear",
+    "area": "Boulder/Kaiparowits",
+    "condition": "Multiseason",
+    "average_value": 3983.33,
+    "source_row": 29,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 30,
+    "species": "Bear",
+    "area": "Boulder/Kaiparowits",
+    "condition": "Multiseason",
+    "average_value": 3983.33,
+    "source_row": 30,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 31,
+    "species": "Bear",
+    "area": "Chalk Creek/East Canyon/Morgan-South Rich",
+    "condition": "Multiseason",
+    "average_value": 2850.0,
+    "source_row": 31,
+    "organization": "DSC",
+    "hunt_class": "DSC"
+  },
+  {
+    "row_number": 32,
+    "species": "Bear",
+    "area": "Diamond Mtn/Vernal/Bonanza",
+    "condition": "Multiseason",
+    "average_value": 4875.0,
+    "source_row": 32,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 33,
+    "species": "Bear",
+    "area": "Diamond Mtn/Vernal/Bonanza",
+    "condition": "Multiseason",
+    "average_value": 4875.0,
+    "source_row": 33,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 34,
+    "species": "Bear",
+    "area": "Fishlake/Thousand Lakes",
+    "condition": "Multiseason",
+    "average_value": 13833.33,
+    "source_row": 34,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 35,
+    "species": "Bear",
+    "area": "Kamas/North Slope, Summit",
+    "condition": "Multiseason",
+    "average_value": 4750.0,
+    "source_row": 35,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 36,
+    "species": "Bear",
+    "area": "La Sal",
+    "condition": "Multiseason",
+    "average_value": 8370.83,
+    "source_row": 36,
+    "organization": "UHA",
+    "hunt_class": "UHA"
+  },
+  {
+    "row_number": 37,
+    "species": "Bear",
+    "area": "La Sal",
+    "condition": "Multiseason",
+    "average_value": 8370.83,
+    "source_row": 37,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 38,
+    "species": "Bear",
+    "area": "La Sal",
+    "condition": "Multiseason",
+    "average_value": 8370.83,
+    "source_row": 38,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 39,
+    "species": "Bear",
+    "area": "La Sal",
+    "condition": "Multiseason",
+    "average_value": 8370.83,
+    "source_row": 39,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 40,
+    "species": "Bear",
+    "area": "Manti-North",
+    "condition": "Multiseason",
+    "average_value": 5133.33,
+    "source_row": 40,
+    "organization": "UHA",
+    "hunt_class": "UHA"
+  },
+  {
+    "row_number": 41,
+    "species": "Bear",
+    "area": "Manti-North",
+    "condition": "Multiseason",
+    "average_value": 5133.33,
+    "source_row": 41,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 42,
+    "species": "Bear",
+    "area": "Manti-North",
+    "condition": "Multiseason",
+    "average_value": 5133.33,
+    "source_row": 42,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 43,
+    "species": "Bear",
+    "area": "Manti-South/San Rafael, North",
+    "condition": "Multiseason",
+    "average_value": 9611.11,
+    "source_row": 43,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 44,
+    "species": "Bear",
+    "area": "Manti-South/San Rafael, North",
+    "condition": "Multiseason",
+    "average_value": 9611.11,
+    "source_row": 44,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 45,
+    "species": "Bear",
+    "area": "Manti-South/San Rafael, North",
+    "condition": "Multiseason",
+    "average_value": 9611.11,
+    "source_row": 45,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 46,
+    "species": "Bear",
+    "area": "Nebo",
+    "condition": "Multiseason",
+    "average_value": 5266.67,
+    "source_row": 46,
+    "organization": "UHA",
+    "hunt_class": "UHA"
+  },
+  {
+    "row_number": 47,
+    "species": "Bear",
+    "area": "Nine Mile",
+    "condition": "Multiseason",
+    "average_value": 2255.56,
+    "source_row": 47,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 48,
+    "species": "Bear",
+    "area": "Nine Mile",
+    "condition": "Multiseason",
+    "average_value": 2255.56,
+    "source_row": 48,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 49,
+    "species": "Bear",
+    "area": "Nine Mile",
+    "condition": "Multiseason",
+    "average_value": 2255.56,
+    "source_row": 49,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 50,
+    "species": "Bear",
+    "area": "Nine Mile",
+    "condition": "Multiseason",
+    "average_value": 2255.56,
+    "source_row": 50,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 51,
+    "species": "Bear",
+    "area": "Panguitch Lake/Zion",
+    "condition": "Multiseason",
+    "average_value": 6166.67,
+    "source_row": 51,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 52,
+    "species": "Bear",
+    "area": "Paunsaugunt",
+    "condition": "Multiseason",
+    "average_value": 4000.0,
+    "source_row": 52,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 53,
+    "species": "Bear",
+    "area": "San Juan",
+    "condition": "Multiseason",
+    "average_value": 5320.83,
+    "source_row": 53,
+    "organization": "UHA",
+    "hunt_class": "UHA"
+  },
+  {
+    "row_number": 54,
+    "species": "Bear",
+    "area": "San Juan",
+    "condition": "Multiseason",
+    "average_value": 5320.83,
+    "source_row": 54,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 55,
+    "species": "Bear",
+    "area": "San Juan",
+    "condition": "Multiseason",
+    "average_value": 5320.83,
+    "source_row": 55,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 56,
+    "species": "Bear",
+    "area": "San Juan",
+    "condition": "Multiseason",
+    "average_value": 5320.83,
+    "source_row": 56,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 57,
+    "species": "Bear",
+    "area": "Wasatch Mtns, Avintaquin/Currant Creek",
+    "condition": "Multiseason",
+    "average_value": 4333.33,
+    "source_row": 57,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 58,
+    "species": "Bear",
+    "area": "Wasatch Mtns, Avintaquin/Currant Creek",
+    "condition": "Multiseason",
+    "average_value": 4333.33,
+    "source_row": 58,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 59,
+    "species": "Bear",
+    "area": "Wasatch Mtns, West-Central",
+    "condition": "Multiseason",
+    "average_value": 4716.67,
+    "source_row": 59,
+    "organization": "UAA",
+    "hunt_class": "UAA"
+  },
+  {
+    "row_number": 60,
+    "species": "Bear",
+    "area": "Wasatch Mtns, West-Central",
+    "condition": "Multiseason",
+    "average_value": 4716.67,
+    "source_row": 60,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 61,
+    "species": "Bear",
+    "area": "Wasatch Mtns, West-Central",
+    "condition": "Multiseason",
+    "average_value": 4716.67,
+    "source_row": 61,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 62,
+    "species": "Bear",
+    "area": "Wasatch Mtns, West-Central",
+    "condition": "Multiseason",
+    "average_value": 4716.67,
+    "source_row": 62,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 63,
+    "species": "Bear",
+    "area": "Yellowstone",
+    "condition": "Multiseason",
+    "average_value": 3500.0,
+    "source_row": 63,
+    "organization": "WCF",
+    "hunt_class": "WCF"
+  },
+  {
+    "row_number": 64,
+    "species": "Bear",
+    "area": "Statewide",
+    "condition": "Multiseason",
+    "average_value": 15666.67,
+    "source_row": 64,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 65,
+    "species": "Bison",
+    "area": "Book Cliffs, Bitter Creek, Hunter's Choice",
+    "condition": "Any Legal Weapon",
+    "average_value": 35000.0,
+    "source_row": 65,
+    "organization": "UWSF",
+    "hunt_class": "UWSF"
+  },
+  {
+    "row_number": 66,
+    "species": "Bison",
+    "area": "Book Cliffs, Little Creek/South, Hunter's Choice",
+    "condition": "Any Legal Weapon",
+    "average_value": 35000.0,
+    "source_row": 66,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 67,
+    "species": "Bison",
+    "area": "Henry Mtns, Hunter's Choice (early)",
+    "condition": "Any Legal Weapon",
+    "average_value": 68333.33,
+    "source_row": 67,
+    "organization": "RMEF",
+    "hunt_class": "RMEF"
+  },
+  {
+    "row_number": 68,
+    "species": "Bison",
+    "area": "Henry Mtns, Cow Only (late)",
+    "condition": "Any Legal Weapon",
+    "average_value": 9166.67,
+    "source_row": 68,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 69,
+    "species": "Bison",
+    "area": "Henry Mtns, Hunter's Choice (late)",
+    "condition": "Any Legal Weapon",
+    "average_value": 40333.33,
+    "source_row": 69,
+    "organization": "SCI",
+    "hunt_class": "SCI"
+  },
+  {
+    "row_number": 70,
+    "species": "Bison",
+    "area": "Statewide",
+    "condition": "Any Legal Weapon",
+    "average_value": 121666.67,
+    "source_row": 70,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 71,
+    "species": "Desert Bighorn Sheep",
+    "area": "Kaiparowits, East",
+    "condition": "Any Legal Weapon",
+    "average_value": 88333.33,
+    "source_row": 71,
+    "organization": "UWSF",
+    "hunt_class": "UWSF"
+  },
+  {
+    "row_number": 72,
+    "species": "Desert Bighorn Sheep",
+    "area": "Kaiparowits, Escalante",
+    "condition": "Any Legal Weapon",
+    "average_value": 71666.67,
+    "source_row": 72,
+    "organization": "UWSF",
+    "hunt_class": "UWSF"
+  },
+  {
+    "row_number": 73,
+    "species": "Desert Bighorn Sheep",
+    "area": "Kaiparowits, West",
+    "condition": "Any Legal Weapon",
+    "average_value": 77500.0,
+    "source_row": 73,
+    "organization": "UWSF",
+    "hunt_class": "UWSF"
+  },
+  {
+    "row_number": 74,
+    "species": "Desert Bighorn Sheep",
+    "area": "La Sal, Potash/South Cisco",
+    "condition": "Any Legal Weapon",
+    "average_value": 60833.33,
+    "source_row": 74,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 75,
+    "species": "Desert Bighorn Sheep",
+    "area": "Pine Valley, Beaver Dam",
+    "condition": "Any Legal Weapon",
+    "average_value": 73214.29,
+    "source_row": 75,
+    "organization": "UWSF",
+    "hunt_class": "UWSF"
+  },
+  {
+    "row_number": 76,
+    "species": "Desert Bighorn Sheep",
+    "area": "San Rafael, Dirty Devil",
+    "condition": "Any Legal Weapon",
+    "average_value": 73333.33,
+    "source_row": 76,
+    "organization": "SCI",
+    "hunt_class": "SCI"
+  },
+  {
+    "row_number": 77,
+    "species": "Desert Bighorn Sheep",
+    "area": "San Rafael, South",
+    "condition": "Any Legal Weapon",
+    "average_value": 60833.33,
+    "source_row": 77,
+    "organization": "UWSF",
+    "hunt_class": "UWSF"
+  },
+  {
+    "row_number": 78,
+    "species": "Desert Bighorn Sheep",
+    "area": "Statewide",
+    "condition": "Any Legal Weapon",
+    "average_value": 140000.0,
+    "source_row": 78,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 79,
+    "species": "Deer",
+    "area": "Henry Mtns",
+    "condition": "Hunter's Choice",
+    "average_value": 104166.67,
+    "source_row": 79,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 80,
+    "species": "Deer",
+    "area": "Henry Mtns",
+    "condition": "Multiseason",
+    "average_value": 114500.0,
+    "source_row": 80,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 81,
+    "species": "Deer",
+    "area": "Paunsaugunt",
+    "condition": "Archery",
+    "average_value": 68333.33,
+    "source_row": 81,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 82,
+    "species": "Deer",
+    "area": "Paunsaugunt",
+    "condition": "Hunter's Choice",
+    "average_value": 74666.67,
+    "source_row": 82,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 83,
+    "species": "Deer",
+    "area": "Paunsaugunt",
+    "condition": "Hunter's Choice",
+    "average_value": 74666.67,
+    "source_row": 83,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 84,
+    "species": "Deer",
+    "area": "Paunsaugunt",
+    "condition": "Multiseason",
+    "average_value": 82000.0,
+    "source_row": 84,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 85,
+    "species": "Deer",
+    "area": "Paunsaugunt",
+    "condition": "Multiseason",
+    "average_value": 82000.0,
+    "source_row": 85,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 86,
+    "species": "Deer",
+    "area": "Paunsaugunt",
+    "condition": "Muzzleloader",
+    "average_value": 40000.0,
+    "source_row": 86,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 87,
+    "species": "Deer",
+    "area": "Paunsaugunt",
+    "condition": "Muzzleloader",
+    "average_value": 40000.0,
+    "source_row": 87,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 88,
+    "species": "Deer",
+    "area": "Book Cliffs",
+    "condition": "Archery",
+    "average_value": 8750.0,
+    "source_row": 88,
+    "organization": "WCF",
+    "hunt_class": "WCF"
+  },
+  {
+    "row_number": 89,
+    "species": "Deer",
+    "area": "Book Cliffs",
+    "condition": "Archery",
+    "average_value": 8750.0,
+    "source_row": 89,
+    "organization": "UAA",
+    "hunt_class": "UAA"
+  },
+  {
+    "row_number": 90,
+    "species": "Deer",
+    "area": "Book Cliffs",
+    "condition": "Hunter's Choice",
+    "average_value": 20875.0,
+    "source_row": 90,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 91,
+    "species": "Deer",
+    "area": "Book Cliffs",
+    "condition": "Hunter's Choice",
+    "average_value": 20875.0,
+    "source_row": 91,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 92,
+    "species": "Deer",
+    "area": "Book Cliffs",
+    "condition": "Multiseason",
+    "average_value": 23000.0,
+    "source_row": 92,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 93,
+    "species": "Deer",
+    "area": "Book Cliffs",
+    "condition": "Multiseason",
+    "average_value": 23000.0,
+    "source_row": 93,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 94,
+    "species": "Deer",
+    "area": "Book Cliffs",
+    "condition": "Muzzleloader",
+    "average_value": 7375.0,
+    "source_row": 94,
+    "organization": "UHA",
+    "hunt_class": "UHA"
+  },
+  {
+    "row_number": 95,
+    "species": "Deer",
+    "area": "Book Cliffs",
+    "condition": "Muzzleloader",
+    "average_value": 7375.0,
+    "source_row": 95,
+    "organization": "WCF",
+    "hunt_class": "WCF"
+  },
+  {
+    "row_number": 96,
+    "species": "Deer",
+    "area": "Diamond Mtn",
+    "condition": "Archery",
+    "average_value": 11500.0,
+    "source_row": 96,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 97,
+    "species": "Deer",
+    "area": "Diamond Mtn",
+    "condition": "Hunter's Choice",
+    "average_value": 12666.67,
+    "source_row": 97,
+    "organization": "RMEF",
+    "hunt_class": "RMEF"
+  },
+  {
+    "row_number": 98,
+    "species": "Deer",
+    "area": "Diamond Mtn",
+    "condition": "Hunter's Choice",
+    "average_value": 12666.67,
+    "source_row": 98,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 99,
+    "species": "Deer",
+    "area": "Diamond Mtn",
+    "condition": "Multiseason",
+    "average_value": 14000.0,
+    "source_row": 99,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 100,
+    "species": "Deer",
+    "area": "Diamond Mtn",
+    "condition": "Multiseason",
+    "average_value": 14000.0,
+    "source_row": 100,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 101,
+    "species": "Deer",
+    "area": "Diamond Mtn",
+    "condition": "Muzzleloader",
+    "average_value": 9666.67,
+    "source_row": 101,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 102,
+    "species": "Deer",
+    "area": "Fillmore, Oak Creek LE",
+    "condition": "Hunter's Choice",
+    "average_value": 71250.0,
+    "source_row": 102,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 103,
+    "species": "Deer",
+    "area": "Fillmore, Oak Creek LE",
+    "condition": "Multiseason",
+    "average_value": 78000.0,
+    "source_row": 103,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 104,
+    "species": "Deer",
+    "area": "La Sal, Dolores Triangle",
+    "condition": "Multiseason",
+    "average_value": 30000.0,
+    "source_row": 104,
+    "organization": "SCI",
+    "hunt_class": "SCI"
+  },
+  {
+    "row_number": 105,
+    "species": "Deer",
+    "area": "San Juan, Elk Ridge",
+    "condition": "Archery",
+    "average_value": 42000.0,
+    "source_row": 105,
+    "organization": "UAA",
+    "hunt_class": "UAA"
+  },
+  {
+    "row_number": 106,
+    "species": "Deer",
+    "area": "San Juan, Elk Ridge",
+    "condition": "Hunter's Choice",
+    "average_value": 60666.67,
+    "source_row": 106,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 107,
+    "species": "Deer",
+    "area": "San Juan, Elk Ridge",
+    "condition": "Multiseason",
+    "average_value": 67000.0,
+    "source_row": 107,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 108,
+    "species": "Deer",
+    "area": "San Juan, Elk Ridge",
+    "condition": "Muzzleloader",
+    "average_value": 42000.0,
+    "source_row": 108,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 109,
+    "species": "Deer",
+    "area": "West Desert, Vernon",
+    "condition": "Archery",
+    "average_value": 14350.0,
+    "source_row": 109,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 110,
+    "species": "Deer",
+    "area": "West Desert, Vernon",
+    "condition": "Archery",
+    "average_value": 14350.0,
+    "source_row": 110,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 111,
+    "species": "Deer",
+    "area": "West Desert, Vernon",
+    "condition": "Hunter's Choice",
+    "average_value": 15416.67,
+    "source_row": 111,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 112,
+    "species": "Deer",
+    "area": "West Desert, Vernon",
+    "condition": "Hunter's Choice",
+    "average_value": 15416.67,
+    "source_row": 112,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 113,
+    "species": "Deer",
+    "area": "West Desert, Vernon",
+    "condition": "Multiseason",
+    "average_value": 17000.0,
+    "source_row": 113,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 114,
+    "species": "Deer",
+    "area": "West Desert, Vernon",
+    "condition": "Multiseason",
+    "average_value": 17000.0,
+    "source_row": 114,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 115,
+    "species": "Deer",
+    "area": "West Desert, Vernon",
+    "condition": "Muzzleloader",
+    "average_value": 14083.33,
+    "source_row": 115,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 116,
+    "species": "Deer",
+    "area": "West Desert, Vernon",
+    "condition": "Muzzleloader",
+    "average_value": 14083.33,
+    "source_row": 116,
+    "organization": "DSC",
+    "hunt_class": "DSC"
+  },
+  {
+    "row_number": 117,
+    "species": "Deer",
+    "area": "Statewide",
+    "condition": "",
+    "average_value": 288333.33,
+    "source_row": 117,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 118,
+    "species": "Elk",
+    "area": "Beaver, East",
+    "condition": "Any Legal Weapon, late",
+    "average_value": 99000.0,
+    "source_row": 118,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 119,
+    "species": "Elk",
+    "area": "Beaver, East",
+    "condition": "Archery",
+    "average_value": 74000.0,
+    "source_row": 119,
+    "organization": "UAA",
+    "hunt_class": "UAA"
+  },
+  {
+    "row_number": 120,
+    "species": "Elk",
+    "area": "Beaver, East",
+    "condition": "Hunter's Choice",
+    "average_value": 123333.33,
+    "source_row": 120,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 121,
+    "species": "Elk",
+    "area": "Beaver, East",
+    "condition": "Multiseason",
+    "average_value": 184166.67,
+    "source_row": 121,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 122,
+    "species": "Elk",
+    "area": "Book Cliffs, Bitter Creek/East",
+    "condition": "Any Legal Weapon, late",
+    "average_value": 11500.0,
+    "source_row": 122,
+    "organization": "RMEF",
+    "hunt_class": "RMEF"
+  },
+  {
+    "row_number": 123,
+    "species": "Elk",
+    "area": "Book Cliffs, Bitter Creek/East",
+    "condition": "Archery",
+    "average_value": 15200.0,
+    "source_row": 123,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 124,
+    "species": "Elk",
+    "area": "Book Cliffs, Bitter Creek/East",
+    "condition": "Hunter's Choice",
+    "average_value": 14250.0,
+    "source_row": 124,
+    "organization": "DSC",
+    "hunt_class": "DSC"
+  },
+  {
+    "row_number": 125,
+    "species": "Elk",
+    "area": "Book Cliffs, Bitter Creek/East",
+    "condition": "Multiseason",
+    "average_value": 17666.67,
+    "source_row": 125,
+    "organization": "WCF",
+    "hunt_class": "WCF"
+  },
+  {
+    "row_number": 126,
+    "species": "Elk",
+    "area": "Boulder",
+    "condition": "Any Legal Weapon, late",
+    "average_value": 53500.0,
+    "source_row": 126,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 127,
+    "species": "Elk",
+    "area": "Boulder",
+    "condition": "Any Legal Weapon, mid",
+    "average_value": 46500.0,
+    "source_row": 127,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 128,
+    "species": "Elk",
+    "area": "Boulder",
+    "condition": "Archery",
+    "average_value": 46000.0,
+    "source_row": 128,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 129,
+    "species": "Elk",
+    "area": "Boulder",
+    "condition": "Hunter's Choice",
+    "average_value": 66666.67,
+    "source_row": 129,
+    "organization": "SCI",
+    "hunt_class": "SCI"
+  },
+  {
+    "row_number": 130,
+    "species": "Elk",
+    "area": "Boulder",
+    "condition": "Multiseason",
+    "average_value": 71666.67,
+    "source_row": 130,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 131,
+    "species": "Elk",
+    "area": "Boulder",
+    "condition": "Muzzleloader",
+    "average_value": 46000.0,
+    "source_row": 131,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 132,
+    "species": "Elk",
+    "area": "Box Elder, Grouse Creek",
+    "condition": "Multiseason",
+    "average_value": 13000.0,
+    "source_row": 132,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 133,
+    "species": "Elk",
+    "area": "Box Elder, Pilot Mtn",
+    "condition": "Multiseason",
+    "average_value": 13000.0,
+    "source_row": 133,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 134,
+    "species": "Elk",
+    "area": "Cache, Meadowville",
+    "condition": "Any Legal Weapon, late",
+    "average_value": 6500.0,
+    "source_row": 134,
+    "organization": "RMEF",
+    "hunt_class": "RMEF"
+  },
+  {
+    "row_number": 135,
+    "species": "Elk",
+    "area": "Cache, Meadowville",
+    "condition": "Hunter's Choice",
+    "average_value": 8383.33,
+    "source_row": 135,
+    "organization": "SCI",
+    "hunt_class": "SCI"
+  },
+  {
+    "row_number": 136,
+    "species": "Elk",
+    "area": "Cache, Meadowville",
+    "condition": "Multiseason",
+    "average_value": 6000.0,
+    "source_row": 136,
+    "organization": "RMEF",
+    "hunt_class": "RMEF"
+  },
+  {
+    "row_number": 137,
+    "species": "Elk",
+    "area": "Cache, South",
+    "condition": "Hunter's Choice",
+    "average_value": 27000.0,
+    "source_row": 137,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 138,
+    "species": "Elk",
+    "area": "Cache, South",
+    "condition": "Multiseason",
+    "average_value": 23000.0,
+    "source_row": 138,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 139,
+    "species": "Elk",
+    "area": "Diamond Mtn",
+    "condition": "Any Legal Weapon, late",
+    "average_value": 17000.0,
+    "source_row": 139,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 140,
+    "species": "Elk",
+    "area": "Diamond Mtn",
+    "condition": "Any Legal Weapon, mid",
+    "average_value": 15000.0,
+    "source_row": 140,
+    "organization": "RMEF",
+    "hunt_class": "RMEF"
+  },
+  {
+    "row_number": 141,
+    "species": "Elk",
+    "area": "Diamond Mtn",
+    "condition": "Archery",
+    "average_value": 13000.0,
+    "source_row": 141,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 142,
+    "species": "Elk",
+    "area": "Diamond Mtn",
+    "condition": "Hunter's Choice",
+    "average_value": 21166.67,
+    "source_row": 142,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 143,
+    "species": "Elk",
+    "area": "Diamond Mtn",
+    "condition": "Multiseason",
+    "average_value": 24500.0,
+    "source_row": 143,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 144,
+    "species": "Elk",
+    "area": "Fillmore, Pahvant",
+    "condition": "Any Legal Weapon, late",
+    "average_value": 29000.0,
+    "source_row": 144,
+    "organization": "RMEF",
+    "hunt_class": "RMEF"
+  },
+  {
+    "row_number": 145,
+    "species": "Elk",
+    "area": "Fillmore, Pahvant",
+    "condition": "Archery",
+    "average_value": 22000.0,
+    "source_row": 145,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 146,
+    "species": "Elk",
+    "area": "Fillmore, Pahvant",
+    "condition": "Hunter's Choice",
+    "average_value": 36416.67,
+    "source_row": 146,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 147,
+    "species": "Elk",
+    "area": "Fillmore, Pahvant",
+    "condition": "Multiseason",
+    "average_value": 45666.67,
+    "source_row": 147,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 148,
+    "species": "Elk",
+    "area": "Fishlake/Thousand Lakes",
+    "condition": "Any Legal Weapon, late",
+    "average_value": 21500.0,
+    "source_row": 148,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 149,
+    "species": "Elk",
+    "area": "Fishlake/Thousand Lakes",
+    "condition": "Any Legal Weapon, mid",
+    "average_value": 18500.0,
+    "source_row": 149,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 150,
+    "species": "Elk",
+    "area": "Fishlake/Thousand Lakes",
+    "condition": "Archery",
+    "average_value": 15500.0,
+    "source_row": 150,
+    "organization": "UAA",
+    "hunt_class": "UAA"
+  },
+  {
+    "row_number": 151,
+    "species": "Elk",
+    "area": "Fishlake/Thousand Lakes",
+    "condition": "Hunter's Choice",
+    "average_value": 26625.0,
+    "source_row": 151,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 152,
+    "species": "Elk",
+    "area": "Fishlake/Thousand Lakes",
+    "condition": "Hunter's Choice",
+    "average_value": 26625.0,
+    "source_row": 152,
+    "organization": "RMEF",
+    "hunt_class": "RMEF"
+  },
+  {
+    "row_number": 153,
+    "species": "Elk",
+    "area": "Fishlake/Thousand Lakes",
+    "condition": "Multiseason",
+    "average_value": 34750.0,
+    "source_row": 153,
+    "organization": "SCI",
+    "hunt_class": "SCI"
+  },
+  {
+    "row_number": 154,
+    "species": "Elk",
+    "area": "Fishlake/Thousand Lakes",
+    "condition": "Multiseason",
+    "average_value": 34750.0,
+    "source_row": 154,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 155,
+    "species": "Elk",
+    "area": "Fishlake/Thousand Lakes",
+    "condition": "Muzzleloader",
+    "average_value": 18666.67,
+    "source_row": 155,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 156,
+    "species": "Elk",
+    "area": "La Sal, La Sal Mtns",
+    "condition": "Any Legal Weapon, late",
+    "average_value": 15000.0,
+    "source_row": 156,
+    "organization": "RMEF",
+    "hunt_class": "RMEF"
+  },
+  {
+    "row_number": 157,
+    "species": "Elk",
+    "area": "La Sal, La Sal Mtns",
+    "condition": "Any Legal Weapon, mid",
+    "average_value": 13500.0,
+    "source_row": 157,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 158,
+    "species": "Elk",
+    "area": "La Sal, La Sal Mtns",
+    "condition": "Archery",
+    "average_value": 15266.67,
+    "source_row": 158,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 159,
+    "species": "Elk",
+    "area": "La Sal, La Sal Mtns",
+    "condition": "Hunter's Choice",
+    "average_value": 19000.0,
+    "source_row": 159,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 160,
+    "species": "Elk",
+    "area": "La Sal, La Sal Mtns",
+    "condition": "Hunter's Choice",
+    "average_value": 19000.0,
+    "source_row": 160,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 161,
+    "species": "Elk",
+    "area": "La Sal, La Sal Mtns",
+    "condition": "Multiseason",
+    "average_value": 20833.33,
+    "source_row": 161,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 162,
+    "species": "Elk",
+    "area": "La Sal, La Sal Mtns",
+    "condition": "Multiseason",
+    "average_value": 20833.33,
+    "source_row": 162,
+    "organization": "RMEF",
+    "hunt_class": "RMEF"
+  },
+  {
+    "row_number": 163,
+    "species": "Elk",
+    "area": "La Sal, La Sal Mtns",
+    "condition": "Muzzleloader",
+    "average_value": 16000.0,
+    "source_row": 163,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 164,
+    "species": "Elk",
+    "area": "Manti",
+    "condition": "Any Legal Weapon, late",
+    "average_value": 28000.0,
+    "source_row": 164,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 165,
+    "species": "Elk",
+    "area": "Manti",
+    "condition": "Any Legal Weapon, mid",
+    "average_value": 24500.0,
+    "source_row": 165,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 166,
+    "species": "Elk",
+    "area": "Manti",
+    "condition": "Archery",
+    "average_value": 21033.33,
+    "source_row": 166,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 167,
+    "species": "Elk",
+    "area": "Manti",
+    "condition": "Hunter's Choice",
+    "average_value": 34875.0,
+    "source_row": 167,
+    "organization": "UWSF",
+    "hunt_class": "UWSF"
+  },
+  {
+    "row_number": 168,
+    "species": "Elk",
+    "area": "Manti",
+    "condition": "Hunter's Choice",
+    "average_value": 34875.0,
+    "source_row": 168,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 169,
+    "species": "Elk",
+    "area": "Manti",
+    "condition": "Multiseason",
+    "average_value": 45000.0,
+    "source_row": 169,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 170,
+    "species": "Elk",
+    "area": "Manti",
+    "condition": "Multiseason",
+    "average_value": 45000.0,
+    "source_row": 170,
+    "organization": "RMEF",
+    "hunt_class": "RMEF"
+  },
+  {
+    "row_number": 171,
+    "species": "Elk",
+    "area": "Manti",
+    "condition": "Muzzleloader",
+    "average_value": 22000.0,
+    "source_row": 171,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 172,
+    "species": "Elk",
+    "area": "Monroe",
+    "condition": "Any Legal Weapon, late",
+    "average_value": 52000.0,
+    "source_row": 172,
+    "organization": "SCI",
+    "hunt_class": "SCI"
+  },
+  {
+    "row_number": 173,
+    "species": "Elk",
+    "area": "Monroe",
+    "condition": "Archery",
+    "average_value": 39000.0,
+    "source_row": 173,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 174,
+    "species": "Elk",
+    "area": "Monroe",
+    "condition": "Hunter's Choice",
+    "average_value": 65000.0,
+    "source_row": 174,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 175,
+    "species": "Elk",
+    "area": "Monroe",
+    "condition": "Multiseason",
+    "average_value": 70333.33,
+    "source_row": 175,
+    "organization": "RMEF",
+    "hunt_class": "RMEF"
+  },
+  {
+    "row_number": 176,
+    "species": "Elk",
+    "area": "Mt Dutton",
+    "condition": "Any Legal Weapon, late",
+    "average_value": 38500.0,
+    "source_row": 176,
+    "organization": "RMEF",
+    "hunt_class": "RMEF"
+  },
+  {
+    "row_number": 177,
+    "species": "Elk",
+    "area": "Mt Dutton",
+    "condition": "Archery",
+    "average_value": 29000.0,
+    "source_row": 177,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 178,
+    "species": "Elk",
+    "area": "Mt Dutton",
+    "condition": "Hunter's Choice",
+    "average_value": 48250.0,
+    "source_row": 178,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 179,
+    "species": "Elk",
+    "area": "Mt Dutton",
+    "condition": "Multiseason",
+    "average_value": 62500.0,
+    "source_row": 179,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 180,
+    "species": "Elk",
+    "area": "Nebo/San Pitch Mtns",
+    "condition": "Any Legal Weapon, late",
+    "average_value": 28500.0,
+    "source_row": 180,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 181,
+    "species": "Elk",
+    "area": "Nebo/San Pitch Mtns",
+    "condition": "Archery",
+    "average_value": 21500.0,
+    "source_row": 181,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 182,
+    "species": "Elk",
+    "area": "Nebo/San Pitch Mtns",
+    "condition": "Hunter's Choice",
+    "average_value": 35500.0,
+    "source_row": 182,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 183,
+    "species": "Elk",
+    "area": "Nebo/San Pitch Mtns",
+    "condition": "Multiseason",
+    "average_value": 41666.67,
+    "source_row": 183,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 184,
+    "species": "Elk",
+    "area": "North Slope, Three Corners",
+    "condition": "Multiseason",
+    "average_value": 17666.67,
+    "source_row": 184,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 185,
+    "species": "Elk",
+    "area": "Panguitch Lake",
+    "condition": "Any Legal Weapon, late",
+    "average_value": 48500.0,
+    "source_row": 185,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 186,
+    "species": "Elk",
+    "area": "Panguitch Lake",
+    "condition": "Hunter's Choice",
+    "average_value": 60833.33,
+    "source_row": 186,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 187,
+    "species": "Elk",
+    "area": "Panguitch Lake",
+    "condition": "Multiseason",
+    "average_value": 80666.67,
+    "source_row": 187,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 188,
+    "species": "Elk",
+    "area": "San Juan Bull Elk",
+    "condition": "Any Legal Weapon, late",
+    "average_value": 53000.0,
+    "source_row": 188,
+    "organization": "RMEF",
+    "hunt_class": "RMEF"
+  },
+  {
+    "row_number": 189,
+    "species": "Elk",
+    "area": "San Juan Bull Elk",
+    "condition": "Any Legal Weapon, mid",
+    "average_value": 46500.0,
+    "source_row": 189,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 190,
+    "species": "Elk",
+    "area": "San Juan Bull Elk",
+    "condition": "Archery",
+    "average_value": 40166.67,
+    "source_row": 190,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 191,
+    "species": "Elk",
+    "area": "San Juan Bull Elk",
+    "condition": "Hunter's Choice",
+    "average_value": 66250.0,
+    "source_row": 191,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 192,
+    "species": "Elk",
+    "area": "San Juan Bull Elk",
+    "condition": "Multiseason",
+    "average_value": 64000.0,
+    "source_row": 192,
+    "organization": "RMEF",
+    "hunt_class": "RMEF"
+  },
+  {
+    "row_number": 193,
+    "species": "Elk",
+    "area": "Southwest Desert, South",
+    "condition": "Any Legal Weapon, late",
+    "average_value": 22500.0,
+    "source_row": 193,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 194,
+    "species": "Elk",
+    "area": "Southwest Desert, South",
+    "condition": "Any Legal Weapon, mid",
+    "average_value": 20000.0,
+    "source_row": 194,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 195,
+    "species": "Elk",
+    "area": "Southwest Desert, South",
+    "condition": "Archery",
+    "average_value": 20166.67,
+    "source_row": 195,
+    "organization": "UAA",
+    "hunt_class": "UAA"
+  },
+  {
+    "row_number": 196,
+    "species": "Elk",
+    "area": "Southwest Desert, South",
+    "condition": "Hunter's Choice",
+    "average_value": 28333.33,
+    "source_row": 196,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 197,
+    "species": "Elk",
+    "area": "Southwest Desert, South",
+    "condition": "Multiseason",
+    "average_value": 38583.33,
+    "source_row": 197,
+    "organization": "RMEF",
+    "hunt_class": "RMEF"
+  },
+  {
+    "row_number": 198,
+    "species": "Elk",
+    "area": "Southwest Desert, South",
+    "condition": "Multiseason",
+    "average_value": 38583.33,
+    "source_row": 198,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 199,
+    "species": "Elk",
+    "area": "Southwest Desert, South",
+    "condition": "Muzzleloader",
+    "average_value": 23983.33,
+    "source_row": 199,
+    "organization": "RMEF",
+    "hunt_class": "RMEF"
+  },
+  {
+    "row_number": 200,
+    "species": "Elk",
+    "area": "Wasatch Mtns",
+    "condition": "Any Legal Weapon, late",
+    "average_value": 22500.0,
+    "source_row": 200,
+    "organization": "RMEF",
+    "hunt_class": "RMEF"
+  },
+  {
+    "row_number": 201,
+    "species": "Elk",
+    "area": "Wasatch Mtns",
+    "condition": "Any Legal Weapon, mid",
+    "average_value": 20000.0,
+    "source_row": 201,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 202,
+    "species": "Elk",
+    "area": "Wasatch Mtns",
+    "condition": "Archery",
+    "average_value": 8416.67,
+    "source_row": 202,
+    "organization": "WCF",
+    "hunt_class": "WCF"
+  },
+  {
+    "row_number": 203,
+    "species": "Elk",
+    "area": "Wasatch Mtns",
+    "condition": "Hunter's Choice",
+    "average_value": 28291.67,
+    "source_row": 203,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 204,
+    "species": "Elk",
+    "area": "Wasatch Mtns",
+    "condition": "Hunter's Choice",
+    "average_value": 28291.67,
+    "source_row": 204,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 205,
+    "species": "Elk",
+    "area": "Wasatch Mtns",
+    "condition": "Multiseason",
+    "average_value": 33583.33,
+    "source_row": 205,
+    "organization": "RMEF",
+    "hunt_class": "RMEF"
+  },
+  {
+    "row_number": 206,
+    "species": "Elk",
+    "area": "Wasatch Mtns",
+    "condition": "Multiseason",
+    "average_value": 33583.33,
+    "source_row": 206,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 207,
+    "species": "Elk",
+    "area": "Wasatch Mtns",
+    "condition": "Muzzleloader",
+    "average_value": 20166.67,
+    "source_row": 207,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 208,
+    "species": "Elk",
+    "area": "Statewide",
+    "condition": "",
+    "average_value": 195000.0,
+    "source_row": 208,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 209,
+    "species": "Moose",
+    "area": "Cache",
+    "condition": "Any Legal Weapon",
+    "average_value": 44666.67,
+    "source_row": 209,
+    "organization": "UCWF",
+    "hunt_class": "UCWF"
+  },
+  {
+    "row_number": 210,
+    "species": "Moose",
+    "area": "North Slope, Summit",
+    "condition": "Any Legal Weapon",
+    "average_value": 32666.67,
+    "source_row": 210,
+    "organization": "SCI",
+    "hunt_class": "SCI"
+  },
+  {
+    "row_number": 211,
+    "species": "Moose",
+    "area": "North Slope, Summit",
+    "condition": "Any Legal Weapon",
+    "average_value": 32666.67,
+    "source_row": 211,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 212,
+    "species": "Moose",
+    "area": "Wasatch Mtns/Central Mtns",
+    "condition": "Any Legal Weapon",
+    "average_value": 35541.67,
+    "source_row": 212,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 213,
+    "species": "Moose",
+    "area": "Statewide",
+    "condition": "",
+    "average_value": 64000.0,
+    "source_row": 213,
+    "organization": "RMEF",
+    "hunt_class": "RMEF"
+  },
+  {
+    "row_number": 214,
+    "species": "Mountain Goat",
+    "area": "Beaver (early)",
+    "condition": "Any Legal Weapon, early",
+    "average_value": 32000.0,
+    "source_row": 214,
+    "organization": "UWSF",
+    "hunt_class": "UWSF"
+  },
+  {
+    "row_number": 215,
+    "species": "Mountain Goat",
+    "area": "High Uintas West",
+    "condition": "Any Legal Weapon",
+    "average_value": 31000.0,
+    "source_row": 215,
+    "organization": "RMEF",
+    "hunt_class": "RMEF"
+  },
+  {
+    "row_number": 216,
+    "species": "Mountain Goat",
+    "area": "La Sal, La Sal Mtns",
+    "condition": "Any Legal Weapon",
+    "average_value": 22666.67,
+    "source_row": 216,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 217,
+    "species": "Mountain Goat",
+    "area": "Nebo",
+    "condition": "Any Legal Weapon",
+    "average_value": 22666.67,
+    "source_row": 217,
+    "organization": "UWSF",
+    "hunt_class": "UWSF"
+  },
+  {
+    "row_number": 218,
+    "species": "Mountain Goat",
+    "area": "Nebo",
+    "condition": "Archery",
+    "average_value": 16000.0,
+    "source_row": 218,
+    "organization": "UAA",
+    "hunt_class": "UAA"
+  },
+  {
+    "row_number": 219,
+    "species": "Mountain Goat",
+    "area": "Wasatch Mtns, Timpanogos",
+    "condition": "Any Legal Weapon",
+    "average_value": 21666.67,
+    "source_row": 219,
+    "organization": "SCI",
+    "hunt_class": "SCI"
+  },
+  {
+    "row_number": 220,
+    "species": "Mountain Goat",
+    "area": "Statewide",
+    "condition": "",
+    "average_value": 59166.67,
+    "source_row": 220,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 221,
+    "species": "Pronghorn",
+    "area": "Beaver",
+    "condition": "Hunter's Choice",
+    "average_value": 5641.67,
+    "source_row": 221,
+    "organization": "UAA",
+    "hunt_class": "UAA"
+  },
+  {
+    "row_number": 222,
+    "species": "Pronghorn",
+    "area": "Beaver",
+    "condition": "Hunter's Choice",
+    "average_value": 5641.67,
+    "source_row": 222,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 223,
+    "species": "Pronghorn",
+    "area": "Book Cliffs, Bitter Creek",
+    "condition": "Any Legal Weapon",
+    "average_value": 3275.0,
+    "source_row": 223,
+    "organization": "DSC",
+    "hunt_class": "DSC"
+  },
+  {
+    "row_number": 224,
+    "species": "Pronghorn",
+    "area": "Book Cliffs, Bitter Creek",
+    "condition": "Any Legal Weapon",
+    "average_value": 3275.0,
+    "source_row": 224,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 225,
+    "species": "Pronghorn",
+    "area": "Book Cliffs, Bitter Creek",
+    "condition": "Any Legal Weapon",
+    "average_value": 3275.0,
+    "source_row": 225,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 226,
+    "species": "Pronghorn",
+    "area": "Book Cliffs, South",
+    "condition": "Any Legal Weapon",
+    "average_value": 4833.33,
+    "source_row": 226,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 227,
+    "species": "Pronghorn",
+    "area": "Book Cliffs, South",
+    "condition": "Any Legal Weapon",
+    "average_value": 4833.33,
+    "source_row": 227,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 228,
+    "species": "Pronghorn",
+    "area": "Box Elder, Promontory",
+    "condition": "Any Legal Weapon",
+    "average_value": 3833.33,
+    "source_row": 228,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 229,
+    "species": "Pronghorn",
+    "area": "Box Elder, Puddle Valley",
+    "condition": "Any Legal Weapon",
+    "average_value": 4916.67,
+    "source_row": 229,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 230,
+    "species": "Pronghorn",
+    "area": "Box Elder, Snowville",
+    "condition": "Any Legal Weapon",
+    "average_value": 2858.33,
+    "source_row": 230,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 231,
+    "species": "Pronghorn",
+    "area": "Box Elder, Snowville",
+    "condition": "Any Legal Weapon",
+    "average_value": 2858.33,
+    "source_row": 231,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 232,
+    "species": "Pronghorn",
+    "area": "Box Elder, West",
+    "condition": "Any Legal Weapon",
+    "average_value": 2758.33,
+    "source_row": 232,
+    "organization": "UHA",
+    "hunt_class": "UHA"
+  },
+  {
+    "row_number": 233,
+    "species": "Pronghorn",
+    "area": "Box Elder, West",
+    "condition": "Any Legal Weapon",
+    "average_value": 2758.33,
+    "source_row": 233,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 234,
+    "species": "Pronghorn",
+    "area": "Fillmore, Oak Creek South",
+    "condition": "Any Legal Weapon",
+    "average_value": 10833.33,
+    "source_row": 234,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 235,
+    "species": "Pronghorn",
+    "area": "Fillmore, Oak Creek South",
+    "condition": "Any Legal Weapon",
+    "average_value": 10833.33,
+    "source_row": 235,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 236,
+    "species": "Pronghorn",
+    "area": "Fillmore, Oak Creek South",
+    "condition": "Any Legal Weapon",
+    "average_value": 10833.33,
+    "source_row": 236,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 237,
+    "species": "Pronghorn",
+    "area": "La Sal, Potash/South Cisco",
+    "condition": "Any Legal Weapon",
+    "average_value": 2750.0,
+    "source_row": 237,
+    "organization": "UHA",
+    "hunt_class": "UHA"
+  },
+  {
+    "row_number": 238,
+    "species": "Pronghorn",
+    "area": "Mt Dutton/Paunsaugunt",
+    "condition": "Any Legal Weapon",
+    "average_value": 3491.67,
+    "source_row": 238,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 239,
+    "species": "Pronghorn",
+    "area": "Mt Dutton/Paunsaugunt",
+    "condition": "Any Legal Weapon",
+    "average_value": 3491.67,
+    "source_row": 239,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 240,
+    "species": "Pronghorn",
+    "area": "Nine Mile, Anthro-Myton Bench",
+    "condition": "Any Legal Weapon",
+    "average_value": 4133.33,
+    "source_row": 240,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 241,
+    "species": "Pronghorn",
+    "area": "Nine Mile, Anthro-Myton Bench",
+    "condition": "Any Legal Weapon",
+    "average_value": 4133.33,
+    "source_row": 241,
+    "organization": "WCF",
+    "hunt_class": "WCF"
+  },
+  {
+    "row_number": 242,
+    "species": "Pronghorn",
+    "area": "Nine Mile, Anthro-Myton Bench",
+    "condition": "Any Legal Weapon",
+    "average_value": 4133.33,
+    "source_row": 242,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 243,
+    "species": "Pronghorn",
+    "area": "Nine Mile, Anthro-Myton Bench",
+    "condition": "Any Legal Weapon",
+    "average_value": 4133.33,
+    "source_row": 243,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 244,
+    "species": "Pronghorn",
+    "area": "Nine Mile, Anthro-Myton Bench",
+    "condition": "Any Legal Weapon",
+    "average_value": 4133.33,
+    "source_row": 244,
+    "organization": "WCF",
+    "hunt_class": "WCF"
+  },
+  {
+    "row_number": 245,
+    "species": "Pronghorn",
+    "area": "Nine Mile, Anthro-Myton Bench",
+    "condition": "Any Legal Weapon",
+    "average_value": 4133.33,
+    "source_row": 245,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 246,
+    "species": "Pronghorn",
+    "area": "Nine Mile, Anthro-Myton Bench",
+    "condition": "Any Legal Weapon",
+    "average_value": 4133.33,
+    "source_row": 246,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 247,
+    "species": "Pronghorn",
+    "area": "Nine Mile, Range Creek",
+    "condition": "Any Legal Weapon",
+    "average_value": 7416.67,
+    "source_row": 247,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 248,
+    "species": "Pronghorn",
+    "area": "North Slope, Summit",
+    "condition": "Any Legal Weapon",
+    "average_value": 5000.0,
+    "source_row": 248,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 249,
+    "species": "Pronghorn",
+    "area": "North Slope, Three Corners/West Daggett",
+    "condition": "Any Legal Weapon",
+    "average_value": 4791.67,
+    "source_row": 249,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 250,
+    "species": "Pronghorn",
+    "area": "North Slope, Three Corners/West Daggett",
+    "condition": "Any Legal Weapon",
+    "average_value": 4791.67,
+    "source_row": 250,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 251,
+    "species": "Pronghorn",
+    "area": "North Slope, Three Corners/West Daggett",
+    "condition": "Any Legal Weapon",
+    "average_value": 4791.67,
+    "source_row": 251,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 252,
+    "species": "Pronghorn",
+    "area": "Panguitch Lake/Zion, North",
+    "condition": "Any Legal Weapon",
+    "average_value": 3583.33,
+    "source_row": 252,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 253,
+    "species": "Pronghorn",
+    "area": "Panguitch Lake/Zion, North",
+    "condition": "Any Legal Weapon",
+    "average_value": 3583.33,
+    "source_row": 253,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 254,
+    "species": "Pronghorn",
+    "area": "Parker Mtn",
+    "condition": "Any Legal Weapon",
+    "average_value": 5000.0,
+    "source_row": 254,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 255,
+    "species": "Pronghorn",
+    "area": "Parker Mtn",
+    "condition": "Any Legal Weapon",
+    "average_value": 5000.0,
+    "source_row": 255,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 256,
+    "species": "Pronghorn",
+    "area": "Parker Mtn",
+    "condition": "Any Legal Weapon",
+    "average_value": 5000.0,
+    "source_row": 256,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 257,
+    "species": "Pronghorn",
+    "area": "Parker Mtn",
+    "condition": "Any Legal Weapon",
+    "average_value": 5000.0,
+    "source_row": 257,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 258,
+    "species": "Pronghorn",
+    "area": "Pine Valley",
+    "condition": "Any Legal Weapon",
+    "average_value": 4416.67,
+    "source_row": 258,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 259,
+    "species": "Pronghorn",
+    "area": "Pine Valley",
+    "condition": "Any Legal Weapon",
+    "average_value": 4416.67,
+    "source_row": 259,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 260,
+    "species": "Pronghorn",
+    "area": "San Rafael, North",
+    "condition": "Any Legal Weapon",
+    "average_value": 10002.78,
+    "source_row": 260,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 261,
+    "species": "Pronghorn",
+    "area": "San Rafael, North",
+    "condition": "Any Legal Weapon",
+    "average_value": 10002.78,
+    "source_row": 261,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 262,
+    "species": "Pronghorn",
+    "area": "San Rafael, North",
+    "condition": "Any Legal Weapon",
+    "average_value": 10002.78,
+    "source_row": 262,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 263,
+    "species": "Pronghorn",
+    "area": "San Rafael, North",
+    "condition": "Any Legal Weapon",
+    "average_value": 10002.78,
+    "source_row": 263,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 264,
+    "species": "Pronghorn",
+    "area": "San Rafael, North",
+    "condition": "Any Legal Weapon",
+    "average_value": 10002.78,
+    "source_row": 264,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 265,
+    "species": "Pronghorn",
+    "area": "Southwest Desert",
+    "condition": "Any Legal Weapon",
+    "average_value": 5777.08,
+    "source_row": 265,
+    "organization": "DSC",
+    "hunt_class": "DSC"
+  },
+  {
+    "row_number": 266,
+    "species": "Pronghorn",
+    "area": "Southwest Desert",
+    "condition": "Any Legal Weapon",
+    "average_value": 5777.08,
+    "source_row": 266,
+    "organization": "UAA",
+    "hunt_class": "UAA"
+  },
+  {
+    "row_number": 267,
+    "species": "Pronghorn",
+    "area": "Southwest Desert",
+    "condition": "Any Legal Weapon",
+    "average_value": 5777.08,
+    "source_row": 267,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 268,
+    "species": "Pronghorn",
+    "area": "Southwest Desert",
+    "condition": "Any Legal Weapon",
+    "average_value": 5777.08,
+    "source_row": 268,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 269,
+    "species": "Pronghorn",
+    "area": "Southwest Desert",
+    "condition": "Any Legal Weapon",
+    "average_value": 5777.08,
+    "source_row": 269,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 270,
+    "species": "Pronghorn",
+    "area": "Southwest Desert",
+    "condition": "Any Legal Weapon",
+    "average_value": 5777.08,
+    "source_row": 270,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 271,
+    "species": "Pronghorn",
+    "area": "Southwest Desert",
+    "condition": "Any Legal Weapon",
+    "average_value": 5777.08,
+    "source_row": 271,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 272,
+    "species": "Pronghorn",
+    "area": "Southwest Desert",
+    "condition": "Any Legal Weapon",
+    "average_value": 5777.08,
+    "source_row": 272,
+    "organization": "RMEF",
+    "hunt_class": "RMEF"
+  },
+  {
+    "row_number": 273,
+    "species": "Pronghorn",
+    "area": "Vernal",
+    "condition": "Any Legal Weapon",
+    "average_value": 5388.89,
+    "source_row": 273,
+    "organization": "WCF",
+    "hunt_class": "WCF"
+  },
+  {
+    "row_number": 274,
+    "species": "Pronghorn",
+    "area": "Vernal",
+    "condition": "Any Legal Weapon",
+    "average_value": 5388.89,
+    "source_row": 274,
+    "organization": "WCF",
+    "hunt_class": "WCF"
+  },
+  {
+    "row_number": 275,
+    "species": "Pronghorn",
+    "area": "Vernal",
+    "condition": "Any Legal Weapon",
+    "average_value": 5388.89,
+    "source_row": 275,
+    "organization": "SCI",
+    "hunt_class": "SCI"
+  },
+  {
+    "row_number": 276,
+    "species": "Pronghorn",
+    "area": "Vernal",
+    "condition": "Any Legal Weapon",
+    "average_value": 5388.89,
+    "source_row": 276,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 277,
+    "species": "Pronghorn",
+    "area": "Vernal",
+    "condition": "Any Legal Weapon",
+    "average_value": 5388.89,
+    "source_row": 277,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 278,
+    "species": "Pronghorn",
+    "area": "West Desert, Riverbed",
+    "condition": "Any Legal Weapon",
+    "average_value": 7458.33,
+    "source_row": 278,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 279,
+    "species": "Pronghorn",
+    "area": "West Desert, Riverbed",
+    "condition": "Any Legal Weapon",
+    "average_value": 7458.33,
+    "source_row": 279,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 280,
+    "species": "Pronghorn",
+    "area": "West Desert, Riverbed",
+    "condition": "Any Legal Weapon",
+    "average_value": 7458.33,
+    "source_row": 280,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 281,
+    "species": "Pronghorn",
+    "area": "West Desert, Riverbed",
+    "condition": "Any Legal Weapon",
+    "average_value": 7458.33,
+    "source_row": 281,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 282,
+    "species": "Pronghorn",
+    "area": "West Desert, Rush Valley",
+    "condition": "Any Legal Weapon",
+    "average_value": 4666.67,
+    "source_row": 282,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 283,
+    "species": "Pronghorn",
+    "area": "West Desert, Rush Valley",
+    "condition": "Any Legal Weapon",
+    "average_value": 4666.67,
+    "source_row": 283,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 284,
+    "species": "Pronghorn",
+    "area": "West Desert, Snake Valley",
+    "condition": "Any Legal Weapon",
+    "average_value": 5755.56,
+    "source_row": 284,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 285,
+    "species": "Pronghorn",
+    "area": "West Desert, Snake Valley",
+    "condition": "Any Legal Weapon",
+    "average_value": 5755.56,
+    "source_row": 285,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 286,
+    "species": "Pronghorn",
+    "area": "West Desert, Snake Valley",
+    "condition": "Any Legal Weapon",
+    "average_value": 5755.56,
+    "source_row": 286,
+    "organization": "RMEF",
+    "hunt_class": "RMEF"
+  },
+  {
+    "row_number": 287,
+    "species": "Pronghorn",
+    "area": "West Desert, Snake Valley",
+    "condition": "Any Legal Weapon",
+    "average_value": 5755.56,
+    "source_row": 287,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 288,
+    "species": "Pronghorn",
+    "area": "West Desert, Snake Valley",
+    "condition": "Any Legal Weapon",
+    "average_value": 5755.56,
+    "source_row": 288,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 289,
+    "species": "Pronghorn",
+    "area": "Statewide",
+    "condition": "",
+    "average_value": 33666.67,
+    "source_row": 289,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 290,
+    "species": "Rocky Mountain Bighorn Sheep",
+    "area": "Book Cliffs, South",
+    "condition": "Any Legal Weapon",
+    "average_value": 208333.33,
+    "source_row": 290,
+    "organization": "UWSF",
+    "hunt_class": "UWSF"
+  },
+  {
+    "row_number": 291,
+    "species": "Rocky Mountain Bighorn Sheep",
+    "area": "Box Elder, Newfoundland Mtns (early)",
+    "condition": "Any Legal Weapon",
+    "average_value": 133333.33,
+    "source_row": 291,
+    "organization": "UWSF",
+    "hunt_class": "UWSF"
+  },
+  {
+    "row_number": 292,
+    "species": "Rocky Mountain Bighorn Sheep",
+    "area": "Box Elder, Newfoundland Mtns (late)",
+    "condition": "Any Legal Weapon",
+    "average_value": 117000.0,
+    "source_row": 292,
+    "organization": "UWSF",
+    "hunt_class": "UWSF"
+  },
+  {
+    "row_number": 293,
+    "species": "Rocky Mountain Bighorn Sheep",
+    "area": "Fillmore, Oak Creek (late)",
+    "condition": "Any Legal Weapon",
+    "average_value": 105000.0,
+    "source_row": 293,
+    "organization": "UWSF",
+    "hunt_class": "UWSF"
+  },
+  {
+    "row_number": 294,
+    "species": "Rocky Mountain Bighorn Sheep",
+    "area": "Nine Mile, Gray Canyon",
+    "condition": "Any Legal Weapon",
+    "average_value": 225000.0,
+    "source_row": 294,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 295,
+    "species": "Rocky Mountain Bighorn Sheep",
+    "area": "Statewide",
+    "condition": "",
+    "average_value": 230000.0,
+    "source_row": 295,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 296,
+    "species": "Turkey",
+    "area": "Central Area",
+    "condition": "Multiseason",
+    "average_value": 795.83,
+    "source_row": 296,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 297,
+    "species": "Turkey",
+    "area": "Central Area",
+    "condition": "Multiseason",
+    "average_value": 795.83,
+    "source_row": 297,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 298,
+    "species": "Turkey",
+    "area": "Central Area",
+    "condition": "Multiseason",
+    "average_value": 795.83,
+    "source_row": 298,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 299,
+    "species": "Turkey",
+    "area": "Central Area",
+    "condition": "Multiseason",
+    "average_value": 795.83,
+    "source_row": 299,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 300,
+    "species": "Turkey",
+    "area": "Central Area",
+    "condition": "Multiseason",
+    "average_value": 795.83,
+    "source_row": 300,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 301,
+    "species": "Turkey",
+    "area": "Central Area",
+    "condition": "Multiseason",
+    "average_value": 795.83,
+    "source_row": 301,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 302,
+    "species": "Turkey",
+    "area": "Central Area",
+    "condition": "Multiseason",
+    "average_value": 795.83,
+    "source_row": 302,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 303,
+    "species": "Turkey",
+    "area": "Central Area",
+    "condition": "Multiseason",
+    "average_value": 795.83,
+    "source_row": 303,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 304,
+    "species": "Turkey",
+    "area": "Northeastern Area",
+    "condition": "Multiseason",
+    "average_value": 1038.54,
+    "source_row": 304,
+    "organization": "WCF",
+    "hunt_class": "WCF"
+  },
+  {
+    "row_number": 305,
+    "species": "Turkey",
+    "area": "Northeastern Area",
+    "condition": "Multiseason",
+    "average_value": 1038.54,
+    "source_row": 305,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 306,
+    "species": "Turkey",
+    "area": "Northeastern Area",
+    "condition": "Multiseason",
+    "average_value": 1038.54,
+    "source_row": 306,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 307,
+    "species": "Turkey",
+    "area": "Northeastern Area",
+    "condition": "Multiseason",
+    "average_value": 1038.54,
+    "source_row": 307,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 308,
+    "species": "Turkey",
+    "area": "Northeastern Area",
+    "condition": "Multiseason",
+    "average_value": 1038.54,
+    "source_row": 308,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 309,
+    "species": "Turkey",
+    "area": "Northeastern Area",
+    "condition": "Multiseason",
+    "average_value": 1038.54,
+    "source_row": 309,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 310,
+    "species": "Turkey",
+    "area": "Northeastern Area",
+    "condition": "Multiseason",
+    "average_value": 1038.54,
+    "source_row": 310,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 311,
+    "species": "Turkey",
+    "area": "Northeastern Area",
+    "condition": "Multiseason",
+    "average_value": 1038.54,
+    "source_row": 311,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 312,
+    "species": "Turkey",
+    "area": "Northern Area",
+    "condition": "Multiseason",
+    "average_value": 519.79,
+    "source_row": 312,
+    "organization": "DSC",
+    "hunt_class": "DSC"
+  },
+  {
+    "row_number": 313,
+    "species": "Turkey",
+    "area": "Northern Area",
+    "condition": "Multiseason",
+    "average_value": 519.79,
+    "source_row": 313,
+    "organization": "UHA",
+    "hunt_class": "UHA"
+  },
+  {
+    "row_number": 314,
+    "species": "Turkey",
+    "area": "Northern Area",
+    "condition": "Multiseason",
+    "average_value": 519.79,
+    "source_row": 314,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 315,
+    "species": "Turkey",
+    "area": "Northern Area",
+    "condition": "Multiseason",
+    "average_value": 519.79,
+    "source_row": 315,
+    "organization": "WCF",
+    "hunt_class": "WCF"
+  },
+  {
+    "row_number": 316,
+    "species": "Turkey",
+    "area": "Northern Area",
+    "condition": "Multiseason",
+    "average_value": 519.79,
+    "source_row": 316,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 317,
+    "species": "Turkey",
+    "area": "Northern Area",
+    "condition": "Multiseason",
+    "average_value": 519.79,
+    "source_row": 317,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 318,
+    "species": "Turkey",
+    "area": "Northern Area",
+    "condition": "Multiseason",
+    "average_value": 519.79,
+    "source_row": 318,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 319,
+    "species": "Turkey",
+    "area": "Northern Area",
+    "condition": "Multiseason",
+    "average_value": 519.79,
+    "source_row": 319,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 320,
+    "species": "Turkey",
+    "area": "Southeastern Area",
+    "condition": "Multiseason",
+    "average_value": 1037.5,
+    "source_row": 320,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 321,
+    "species": "Turkey",
+    "area": "Southeastern Area",
+    "condition": "Multiseason",
+    "average_value": 1037.5,
+    "source_row": 321,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 322,
+    "species": "Turkey",
+    "area": "Southeastern Area",
+    "condition": "Multiseason",
+    "average_value": 1037.5,
+    "source_row": 322,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 323,
+    "species": "Turkey",
+    "area": "Southeastern Area",
+    "condition": "Multiseason",
+    "average_value": 1037.5,
+    "source_row": 323,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 324,
+    "species": "Turkey",
+    "area": "Southeastern Area",
+    "condition": "Multiseason",
+    "average_value": 1037.5,
+    "source_row": 324,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 325,
+    "species": "Turkey",
+    "area": "Southeastern Area",
+    "condition": "Multiseason",
+    "average_value": 1037.5,
+    "source_row": 325,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 326,
+    "species": "Turkey",
+    "area": "Southeastern Area",
+    "condition": "Multiseason",
+    "average_value": 1037.5,
+    "source_row": 326,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 327,
+    "species": "Turkey",
+    "area": "Southeastern Area",
+    "condition": "Multiseason",
+    "average_value": 1037.5,
+    "source_row": 327,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 328,
+    "species": "Turkey",
+    "area": "Southern Area",
+    "condition": "Multiseason",
+    "average_value": 597.92,
+    "source_row": 328,
+    "organization": "UHA",
+    "hunt_class": "UHA"
+  },
+  {
+    "row_number": 329,
+    "species": "Turkey",
+    "area": "Southern Area",
+    "condition": "Multiseason",
+    "average_value": 597.92,
+    "source_row": 329,
+    "organization": "MDF",
+    "hunt_class": "MDF"
+  },
+  {
+    "row_number": 330,
+    "species": "Turkey",
+    "area": "Southern Area",
+    "condition": "Multiseason",
+    "average_value": 597.92,
+    "source_row": 330,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 331,
+    "species": "Turkey",
+    "area": "Southern Area",
+    "condition": "Multiseason",
+    "average_value": 597.92,
+    "source_row": 331,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 332,
+    "species": "Turkey",
+    "area": "Southern Area",
+    "condition": "Multiseason",
+    "average_value": 597.92,
+    "source_row": 332,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 333,
+    "species": "Turkey",
+    "area": "Southern Area",
+    "condition": "Multiseason",
+    "average_value": 597.92,
+    "source_row": 333,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 334,
+    "species": "Turkey",
+    "area": "Southern Area",
+    "condition": "Multiseason",
+    "average_value": 597.92,
+    "source_row": 334,
+    "organization": "NWTF",
+    "hunt_class": "NWTF"
+  },
+  {
+    "row_number": 335,
+    "species": "Turkey",
+    "area": "Southern Area",
+    "condition": "Multiseason",
+    "average_value": 597.92,
+    "source_row": 335,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  },
+  {
+    "row_number": 336,
+    "species": "Turkey",
+    "area": "Statewide",
+    "condition": "",
+    "average_value": 2450.0,
+    "source_row": 336,
+    "organization": "SFW",
+    "hunt_class": "SFW"
+  }
+]

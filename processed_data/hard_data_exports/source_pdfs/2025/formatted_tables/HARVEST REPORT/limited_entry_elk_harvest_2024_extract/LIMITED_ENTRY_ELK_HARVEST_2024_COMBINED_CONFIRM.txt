@@ -1,0 +1,12 @@
+LIMITED ENTRY ELK HARVEST 2024 COMBINED CONFIRM
+==============================================
+main_source: C:\Users\tyler\Desktop\GitHub\HUNTS\pipeline\RAW\hunt_unit_database\2025\formatted_tables\limited_entry_elk_harvest_2024_extract\LIMITED_ENTRY_ELK_HARVEST_2024_STANDARDIZED_UPDATED.csv
+supplement_source: C:\Users\tyler\Desktop\GitHub\HUNTS\pipeline\RAW\hunt_unit_database\2025\formatted_tables\limited_entry_elk_supplemental_2024_extract\LIMITED_ENTRY_ELK_HARVEST_2024_STANDARDIZED.csv
+rows_main: 123
+rows_supplement: 41
+rows_combined_unique: 164
+season_blank_rows: 0
+boundary_blank_rows: 0
+combined_csv: C:\Users\tyler\Desktop\GitHub\HUNTS\pipeline\RAW\hunt_unit_database\2025\formatted_tables\limited_entry_elk_harvest_2024_extract\LIMITED_ENTRY_ELK_HARVEST_2024_COMBINED_STANDARDIZED.csv
+combined_xlsx: C:\Users\tyler\Desktop\GitHub\HUNTS\pipeline\RAW\hunt_unit_database\2025\formatted_tables\limited_entry_elk_harvest_2024_extract\LIMITED_ENTRY_ELK_HARVEST_2024_COMBINED_STANDARDIZED.xlsx
+promoted_to_primary_standardized: False

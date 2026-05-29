@@ -1,0 +1,97 @@
+{
+  "source_file": "C:\\UOGA HUNTS\\HUNT-PLANNER\\raw_data_2026\\2025-27_conservation_permits (2).xlsx",
+  "extracted_at": "2026-04-21T06:34:08",
+  "row_count": 336,
+  "species_counts": [
+    {
+      "species": "Antlerless Elk",
+      "count": 20
+    },
+    {
+      "species": "Bear",
+      "count": 44
+    },
+    {
+      "species": "Bison",
+      "count": 6
+    },
+    {
+      "species": "Deer",
+      "count": 39
+    },
+    {
+      "species": "Desert Bighorn Sheep",
+      "count": 8
+    },
+    {
+      "species": "Elk",
+      "count": 91
+    },
+    {
+      "species": "Moose",
+      "count": 5
+    },
+    {
+      "species": "Mountain Goat",
+      "count": 7
+    },
+    {
+      "species": "Pronghorn",
+      "count": 69
+    },
+    {
+      "species": "Rocky Mountain Bighorn Sheep",
+      "count": 6
+    },
+    {
+      "species": "Turkey",
+      "count": 41
+    }
+  ],
+  "organization_counts": [
+    {
+      "organization": "DSC",
+      "count": 6
+    },
+    {
+      "organization": "MDF",
+      "count": 80
+    },
+    {
+      "organization": "NWTF",
+      "count": 32
+    },
+    {
+      "organization": "RMEF",
+      "count": 26
+    },
+    {
+      "organization": "SCI",
+      "count": 11
+    },
+    {
+      "organization": "SFW",
+      "count": 134
+    },
+    {
+      "organization": "UAA",
+      "count": 10
+    },
+    {
+      "organization": "UCWF",
+      "count": 1
+    },
+    {
+      "organization": "UHA",
+      "count": 9
+    },
+    {
+      "organization": "UWSF",
+      "count": 13
+    },
+    {
+      "organization": "WCF",
+      "count": 14
+    }
+  ]
+}

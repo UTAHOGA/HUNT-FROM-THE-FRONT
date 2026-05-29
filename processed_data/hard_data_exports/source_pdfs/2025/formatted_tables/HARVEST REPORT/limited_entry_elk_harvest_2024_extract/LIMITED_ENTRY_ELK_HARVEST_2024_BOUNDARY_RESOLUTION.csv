@@ -1,0 +1,165 @@
+﻿hunt_number,hunt_name,old_boundary,new_boundary,status,reason,candidate_boundaries
+EB3000,"Beaver, East",685,685,kept_existing,already had boundary,685
+EB3160,"Book Cliffs, Bitter Creek/East",899,899,kept_existing,already had boundary,899
+EB3001,"Book Cliffs, Bitter Creek/South",,449,auto_filled_exact_or_alias,single canonical boundary candidate,449
+EB3002,"Book Cliffs, Little Creek Roadless",12,12,kept_existing,already had boundary,12
+EB3145,Boulder,172,172,kept_existing,already had boundary,172
+EB3130,"Box Elder, Pilot Mtn",682,682,kept_existing,already had boundary,5129;682
+EB3003,"Cache, Meadowville",33,33,kept_existing,already had boundary,33
+EB3005,"Cache, South",41,41,kept_existing,already had boundary,41
+EB3020,Diamond Mtn,206,206,kept_existing,already had boundary,206
+EB3008,"Fillmore, Pahvant",88,88,kept_existing,already had boundary,88
+EB3018,Fishlake/Thousand Lakes,175,175,kept_existing,already had boundary,175
+EB3009,"La Sal, La Sal Mtns",617,617,kept_existing,already had boundary,617
+EB3006,Manti,51,51,kept_existing,already had boundary,51
+EB3010,Monroe,629,629,kept_existing,already had boundary,629
+EB3011,Mt Dutton,630,630,kept_existing,already had boundary,630
+EB3173,Nebo/San Pitch Mtns,901,901,kept_existing,already had boundary,901
+EB3013,"North Slope, Three Corners",140,140,kept_existing,already had boundary,140
+EB3015,Panguitch Lake,634,634,kept_existing,already had boundary,634
+EB3019,San Juan Bull Elk,183,183,kept_existing,already had boundary,183
+EB3146,"Southwest Desert, South",872,872,kept_existing,already had boundary,872
+EB3022,Wasatch Mtns,222,222,kept_existing,already had boundary,222
+EB3135,Barney Top/Kaiparowits,869,869,kept_existing,already had boundary,869
+EB3132,"Cache, North",36,36,kept_existing,already had boundary,36
+EB3136,"Southwest Desert, North",871,871,kept_existing,already had boundary,871
+EB3137,"West Desert, Deep Creek",241,241,kept_existing,already had boundary,241
+EB3158,"Beaver, East",685,685,kept_existing,already had boundary,685
+EB3161,"Book Cliffs, Bitter Creek/East",899,899,kept_existing,already had boundary,899
+EB3190,Boulder,172,172,kept_existing,already had boundary,172
+EB3168,"Cache, Meadowville",33,33,kept_existing,already had boundary,33
+EB3170,"Cache, South",41,41,kept_existing,already had boundary,41
+EB3195,Diamond Mtn,206,206,kept_existing,already had boundary,206
+EB3180,"Fillmore, Pahvant",88,88,kept_existing,already had boundary,88
+EB3192,Fishlake/Thousand Lakes,175,175,kept_existing,already had boundary,175
+EB3182,"La Sal, La Sal Mtns",617,617,kept_existing,already had boundary,617
+EB3172,Manti,51,51,kept_existing,already had boundary,51
+EB3184,Monroe,629,629,kept_existing,already had boundary,629
+EB3186,Mt Dutton,630,630,kept_existing,already had boundary,630
+EB3174,Nebo/San Pitch Mtns,901,901,kept_existing,already had boundary,901
+EB3188,Panguitch Lake,634,634,kept_existing,already had boundary,634
+EB3193,San Juan Bull Elk,183,183,kept_existing,already had boundary,183
+EB3197,"Southwest Desert, South",872,872,kept_existing,already had boundary,872
+EB3199,Wasatch Mtns,222,222,kept_existing,already had boundary,222
+EB3024,"Beaver, East",685,685,kept_existing,already had boundary,685
+EB3162,"Book Cliffs, Bitter Creek/East",899,899,kept_existing,already had boundary,899
+EB3026,"Book Cliffs, Bitter Creek/South",,449,auto_filled_exact_or_alias,single canonical boundary candidate,449
+EB3028,"Book Cliffs, Little Creek Roadless",12,12,kept_existing,already had boundary,12
+EB3148,Boulder,172,172,kept_existing,already had boundary,172
+EB3147,"Box Elder, Grouse Creek",867,867,kept_existing,already had boundary,867
+EB3031,"Box Elder, Pilot Mtn",682,682,kept_existing,already had boundary,5129;682
+EB3032,"Cache, Meadowville",33,33,kept_existing,already had boundary,33
+EB3036,"Cache, South",41,41,kept_existing,already had boundary,41
+EB3068,Diamond Mtn,206,206,kept_existing,already had boundary,206
+EB3042,"Fillmore, Pahvant",88,88,kept_existing,already had boundary,88
+EB3063,Fishlake/Thousand Lakes,175,175,kept_existing,already had boundary,175
+EB3045,"La Sal, La Sal Mtns",617,617,kept_existing,already had boundary,617
+EB3038,Manti,51,51,kept_existing,already had boundary,51
+EB3047,Monroe,629,629,kept_existing,already had boundary,629
+EB3049,Mt Dutton,630,630,kept_existing,already had boundary,630
+EB3040,Nebo,,616,auto_filled_exact_or_alias,single canonical boundary candidate,616
+EB3175,Nebo/San Pitch Mtns,901,901,kept_existing,already had boundary,901
+EB3056,Panguitch Lake,634,634,kept_existing,already had boundary,634
+EB3066,San Juan Bull Elk,183,183,kept_existing,already had boundary,183
+EB3149,"Southwest Desert, South",872,872,kept_existing,already had boundary,872
+EB3072,Wasatch Mtns,222,222,kept_existing,already had boundary,222
+EB3159,"Beaver, East",685,685,kept_existing,already had boundary,685
+EB3164,"Book Cliffs, Bitter Creek/East",899,899,kept_existing,already had boundary,899
+EB3167,"Book Cliffs, Little Creek Roadless",12,12,kept_existing,already had boundary,12
+EB3191,Boulder,172,172,kept_existing,already had boundary,172
+EB3150,"Box Elder, Grouse Creek",867,867,kept_existing,already had boundary,867
+EB3169,"Cache, Meadowville",33,33,kept_existing,already had boundary,33
+EB3171,"Cache, South",41,41,kept_existing,already had boundary,41
+EB3069,Diamond Mtn,206,206,kept_existing,already had boundary,206
+EB3181,"Fillmore, Pahvant",88,88,kept_existing,already had boundary,88
+EB3064,Fishlake/Thousand Lakes,175,175,kept_existing,already had boundary,175
+EB3183,"La Sal, La Sal Mtns",617,617,kept_existing,already had boundary,617
+EB3126,Manti,51,51,kept_existing,already had boundary,51
+EB3185,Monroe,629,629,kept_existing,already had boundary,629
+EB3187,Mt Dutton,630,630,kept_existing,already had boundary,630
+EB3177,Nebo/San Pitch Mtns,901,901,kept_existing,already had boundary,901
+EB3053,"North Slope, Three Corners",140,140,kept_existing,already had boundary,140
+EB3189,Panguitch Lake,634,634,kept_existing,already had boundary,634
+EB3194,San Juan Bull Elk,183,183,kept_existing,already had boundary,183
+EB3198,"Southwest Desert, South",872,872,kept_existing,already had boundary,872
+EB3127,Wasatch Mtns,222,222,kept_existing,already had boundary,222
+EB3025,"Beaver, East",685,685,kept_existing,already had boundary,685
+EB3163,"Book Cliffs, Bitter Creek/East",899,899,kept_existing,already had boundary,899
+EB3151,Boulder,172,172,kept_existing,already had boundary,172
+EB3033,"Cache, Meadowville",33,33,kept_existing,already had boundary,33
+EB3037,"Cache, South",41,41,kept_existing,already had boundary,41
+EB3196,Diamond Mtn,206,206,kept_existing,already had boundary,206
+EB3043,"Fillmore, Pahvant",88,88,kept_existing,already had boundary,88
+EB3065,Fishlake/Thousand Lakes,175,175,kept_existing,already had boundary,175
+EB3044,"La Sal, Dolores Triangle",108,108,kept_existing,already had boundary,108
+EB3046,"La Sal, La Sal Mtns",617,617,kept_existing,already had boundary,617
+EB3039,Manti,51,51,kept_existing,already had boundary,51
+EB3048,Monroe,629,629,kept_existing,already had boundary,629
+EB3050,Mt Dutton,630,630,kept_existing,already had boundary,630
+EB3176,Nebo/San Pitch Mtns,901,901,kept_existing,already had boundary,901
+EB3057,Panguitch Lake,634,634,kept_existing,already had boundary,634
+EB3067,San Juan Bull Elk,183,183,kept_existing,already had boundary,183
+EB3152,"Southwest Desert, South",872,872,kept_existing,already had boundary,872
+EB3073,Wasatch Mtns,222,222,kept_existing,already had boundary,222
+EB3077,"Beaver, East",685,685,kept_existing,already had boundary,685
+EB3166,"Book Cliffs, Bitter Creek/East",899,899,kept_existing,already had boundary,899
+EB3078,"Book Cliffs, Bitter Creek/South",,449,auto_filled_exact_or_alias,single canonical boundary candidate,449
+EB3079,"Book Cliffs, Little Creek Roadless",12,12,kept_existing,already had boundary,12
+EB3154,Boulder,172,172,kept_existing,already had boundary,172
+EB3153,"Box Elder, Grouse Creek",867,867,kept_existing,already had boundary,867
+EB3081,"Cache, Meadowville",33,33,kept_existing,already had boundary,33
+EB3083,"Cache, South",41,41,kept_existing,already had boundary,41
+EB3098,Diamond Mtn,206,206,kept_existing,already had boundary,206
+EB3086,"Fillmore, Pahvant",88,88,kept_existing,already had boundary,88
+EB3096,Fishlake/Thousand Lakes,175,175,kept_existing,already had boundary,175
+EB3087,"La Sal, La Sal Mtns",617,617,kept_existing,already had boundary,617
+EB3084,Manti,51,51,kept_existing,already had boundary,51
+EB3088,Monroe,629,629,kept_existing,already had boundary,629
+EB3089,Mt Dutton,630,630,kept_existing,already had boundary,630
+EB3179,Nebo/San Pitch Mtns,901,901,kept_existing,already had boundary,901
+EB3091,"North Slope, Three Corners",140,140,kept_existing,already had boundary,140
+EB3093,Panguitch Lake,634,634,kept_existing,already had boundary,634
+EB3097,San Juan Bull Elk,183,183,kept_existing,already had boundary,183
+EB3155,"Southwest Desert, South",872,872,kept_existing,already had boundary,872
+EB3100,Wasatch Mtns,222,222,kept_existing,already had boundary,222
+EB3142,Barney Top/Kaiparowits,869,869,kept_existing,already had boundary,869
+EB3139,"Cache, North",36,36,kept_existing,already had boundary,36
+EB3143,"Southwest Desert, North",871,871,kept_existing,already had boundary,871
+EB3144,"West Desert, Deep Creek",241,241,kept_existing,already had boundary,241
+LE0015,Book Cliffs,,,ambiguous,multiple candidates,12;449;899
+LE0001,"La Sal, La Sal Mtns",,617,auto_filled_exact_or_alias,single canonical boundary candidate,617
+LE0013,Southwest Desert,,625,auto_filled_exact_or_alias,single canonical boundary candidate,625
+LE0014,Beaver,,685,auto_filled_exact_or_alias,single canonical boundary candidate,685
+LE0016,Cache,,29,auto_filled_exact_or_alias,single canonical boundary candidate,29
+LE0029,Cache,,29,auto_filled_exact_or_alias,single canonical boundary candidate,29
+LE0018,"La Sal, La Sal Mtns",,617,auto_filled_exact_or_alias,single canonical boundary candidate,617
+LE0002,Manti,,51,auto_filled_exact_or_alias,single canonical boundary candidate,51
+LE0003,Manti,,51,auto_filled_exact_or_alias,single canonical boundary candidate,51
+LE0004,Manti,,51,auto_filled_exact_or_alias,single canonical boundary candidate,51
+LE0005,Manti,,51,auto_filled_exact_or_alias,single canonical boundary candidate,51
+LE0017,Nebo,,616,auto_filled_exact_or_alias,single canonical boundary candidate,616
+LE0006,San Juan,,710,auto_filled_exact_or_alias,single canonical boundary candidate,710
+LE0007,San Juan,,710,auto_filled_exact_or_alias,single canonical boundary candidate,710
+LE0008,Wasatch Mtns,,222,auto_filled_exact_or_alias,single canonical boundary candidate,222
+LE0009,Wasatch Mtns,,222,auto_filled_exact_or_alias,single canonical boundary candidate,222
+LE0011,Manti,,51,auto_filled_exact_or_alias,single canonical boundary candidate,51
+EB3102,"Beaver, East",685,685,kept_existing,already had boundary,685
+EB3165,"Book Cliffs, Bitter Creek/East",899,899,kept_existing,already had boundary,899
+EB3104,"Book Cliffs, Little Creek Roadless",12,12,kept_existing,already had boundary,12
+EB3156,Boulder,172,172,kept_existing,already had boundary,172
+EB3105,"Cache, Meadowville",33,33,kept_existing,already had boundary,33
+EB3107,"Cache, South",41,41,kept_existing,already had boundary,41
+EB3122,Diamond Mtn,206,206,kept_existing,already had boundary,206
+EB3110,"Fillmore, Pahvant",88,88,kept_existing,already had boundary,88
+EB3120,Fishlake/Thousand Lakes,175,175,kept_existing,already had boundary,175
+EB3111,"La Sal, La Sal Mtns",617,617,kept_existing,already had boundary,617
+EB3108,Manti,51,51,kept_existing,already had boundary,51
+EB3112,Monroe,629,629,kept_existing,already had boundary,629
+EB3113,Mt Dutton,630,630,kept_existing,already had boundary,630
+EB3109,Nebo,,616,auto_filled_exact_or_alias,single canonical boundary candidate,616
+EB3178,Nebo/San Pitch Mtns,901,901,kept_existing,already had boundary,901
+EB3115,"North Slope, Three Corners",140,140,kept_existing,already had boundary,140
+EB3117,Panguitch Lake,634,634,kept_existing,already had boundary,634
+EB3121,San Juan Bull Elk,183,183,kept_existing,already had boundary,183
+EB3157,"Southwest Desert, South",872,872,kept_existing,already had boundary,872
+EB3124,Wasatch Mtns,222,222,kept_existing,already had boundary,222

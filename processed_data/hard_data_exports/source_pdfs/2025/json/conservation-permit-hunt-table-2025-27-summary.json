@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-04-21T07:38:50",
+  "totalRows": 271,
+  "matchedPermitRegisterRows": 271,
+  "unmatchedPermitRegisterRows": 0,
+  "matchedCanonicalHuntRows": 271,
+  "unmatchedCanonicalHuntRows": 0,
+  "rowsWithSourceHuntCodes": 271,
+  "correctionsApplied": {
+    "sourceHuntCodesRebuiltFromPublicCatalog": 271,
+    "sourceHuntCodesLinkedFromCanonicalBoundaryMatches": 63
+  }
+}

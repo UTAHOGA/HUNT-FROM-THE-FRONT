@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-05-10T05:36:04",
+  "stem": "ELK_YOUTH_ANY_BULL_HUNTERS_CHOICE_2024",
+  "rows": 61,
+  "columns": [
+    "Section",
+    "Unit",
+    "Unit name",
+    "Bull harvest",
+    "Cow harvest",
+    "Calf harvest",
+    "Total harvest",
+    "Hunters afield",
+    "Mean days hunted",
+    "Success rate (%)",
+    "source_page"
+  ],
+  "csv": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/elk_youth_any_bull_hunters_choice_2024_extract/ELK_YOUTH_ANY_BULL_HUNTERS_CHOICE_2024.csv",
+  "xlsx": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/elk_youth_any_bull_hunters_choice_2024_extract/ELK_YOUTH_ANY_BULL_HUNTERS_CHOICE_2024.xlsx"
+}

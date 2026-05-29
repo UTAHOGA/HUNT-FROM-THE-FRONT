@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-05-10T05:36:04",
+  "stem": "ELK_LIMITED_ANTLERLESS_HARVEST_2024",
+  "rows": 184,
+  "columns": [
+    "Section",
+    "Unit",
+    "Hunt number",
+    "Hunt name",
+    "Cow harvest",
+    "Calf harvest",
+    "Total harvest",
+    "Permits",
+    "Hunters afield",
+    "Mean days hunted",
+    "Success rate (%)",
+    "source_page"
+  ],
+  "csv": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/elk_limited_antlerless_2024_extract/ELK_LIMITED_ANTLERLESS_HARVEST_2024.csv",
+  "xlsx": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/elk_limited_antlerless_2024_extract/ELK_LIMITED_ANTLERLESS_HARVEST_2024.xlsx"
+}

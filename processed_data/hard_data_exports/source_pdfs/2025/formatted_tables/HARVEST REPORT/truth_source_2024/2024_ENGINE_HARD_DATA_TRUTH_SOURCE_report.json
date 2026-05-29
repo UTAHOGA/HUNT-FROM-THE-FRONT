@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-05-10T06:28:54",
+  "inputs": {
+    "draw": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/draw_odds_results/comprehensive_2024/2024_DRAW_RESULTS_COMPREHENSIVE_PERMITS_FIXED_WITH_OTC.csv",
+    "harvest": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/comprehensive_harvest_2024/2024_HARVEST_RESULTS_COMPREHENSIVE.csv"
+  },
+  "outputs": {
+    "draw_truth_source": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/truth_source_2024/2024_DRAW_RESULTS_TRUTH_SOURCE.csv",
+    "harvest_truth_source": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/truth_source_2024/2024_HARVEST_RESULTS_TRUTH_SOURCE.csv",
+    "engine_hard_data_truth_source": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/truth_source_2024/2024_ENGINE_HARD_DATA_TRUTH_SOURCE.csv"
+  },
+  "counts": {
+    "draw_rows_kept": 995,
+    "draw_unique_hunt_codes": 880,
+    "harvest_rows_kept": 744,
+    "harvest_unique_hunt_codes": 421,
+    "coverage_unique_hunt_codes": 929,
+    "coverage_draw_and_harvest": 372,
+    "coverage_draw_only": 508,
+    "coverage_harvest_only": 49
+  },
+  "harvest_species_counts": {
+    "Elk": 744
+  }
+}

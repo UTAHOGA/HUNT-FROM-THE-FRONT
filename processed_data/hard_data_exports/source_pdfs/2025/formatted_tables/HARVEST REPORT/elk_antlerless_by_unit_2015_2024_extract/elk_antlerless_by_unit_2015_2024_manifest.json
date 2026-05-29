@@ -1,0 +1,44 @@
+{
+  "title": "Total antlerless elk harvest by management unit, Utah 2015-2024",
+  "source_pdf": "pipeline/RAW/hunt_unit_database/2025/pdf/harvest_report/ELK/2024 ELK ANTLERLESS BY UNIT 2015-2024.pdf",
+  "outputs": [
+    {
+      "file": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/elk_antlerless_by_unit_2015_2024_extract/ELK_ANTLERLESS_BY_UNIT_2015_2024.csv",
+      "rows": 37,
+      "columns": [
+        "Unit",
+        "Unit name",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ]
+    },
+    {
+      "file": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/elk_antlerless_by_unit_2015_2024_extract/ELK_ANTLERLESS_BY_UNIT_2015_2024.xlsx",
+      "rows": 37,
+      "columns": [
+        "Unit",
+        "Unit name",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ]
+    }
+  ],
+  "footnote": "*Data includes mitigation harvest.",
+  "generated_at": "2026-05-10T02:59:09"
+}

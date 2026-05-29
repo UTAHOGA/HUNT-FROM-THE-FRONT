@@ -1,0 +1,526 @@
+{
+  "audit": {
+    "created_at": "2026-05-28T22:54:01.028Z",
+    "target": "https://dwrapps.utah.gov/huntboundary/",
+    "captured_url_count": 239,
+    "keyword_matched_url_count": 220,
+    "captured_response_count": 287,
+    "captured_age_response_hits": 2,
+    "captured_harvest_response_hits": 46,
+    "arcgis_service_count": 16,
+    "arcgis_layer_or_table_count": 40,
+    "arcgis_layer_field_count": 28,
+    "arcgis_field_or_sample_hit_count": 22,
+    "true_age_field_hit_count": 0,
+    "likely_animal_age_hit_count": 0,
+    "false_positive_average_days_hit_count": 0,
+    "interaction_targets_attempted": [
+      "Find a hunt",
+      "Hunts as table view",
+      "Add map data layers",
+      "CWMU areas",
+      "Species Habitat Layers",
+      "Wildlife management areas",
+      "Walk-in access areas",
+      "Land ownership",
+      "Administrative boundaries",
+      "Draw odds",
+      "Harvest",
+      "Boundaries",
+      "About"
+    ],
+    "interaction_click_results": [
+      {
+        "label": "Find a hunt",
+        "clicked": "true"
+      },
+      {
+        "label": "Hunts as table view",
+        "clicked": "true"
+      },
+      {
+        "label": "Add map data layers",
+        "clicked": "true"
+      },
+      {
+        "label": "CWMU areas",
+        "clicked": "true"
+      },
+      {
+        "label": "Species Habitat Layers",
+        "clicked": "true"
+      },
+      {
+        "label": "Wildlife management areas",
+        "clicked": "true"
+      },
+      {
+        "label": "Walk-in access areas",
+        "clicked": "true"
+      },
+      {
+        "label": "Land ownership",
+        "clicked": "true"
+      },
+      {
+        "label": "Administrative boundaries",
+        "clicked": "false"
+      },
+      {
+        "label": "Draw odds",
+        "clicked": "false"
+      },
+      {
+        "label": "Harvest",
+        "clicked": "false"
+      },
+      {
+        "label": "Boundaries",
+        "clicked": "false"
+      },
+      {
+        "label": "About",
+        "clicked": "true"
+      }
+    ],
+    "interaction_click_success_count": 9,
+    "clickable_text_before_sample": [
+      "Search Utah.gov",
+      "Services",
+      "Agencies",
+      "Zoom to",
+      "+\nZoom In",
+      "−\nZoom Out",
+      "Close",
+      "OK"
+    ],
+    "clickable_text_after_sample": [
+      "Search Utah.gov",
+      "Services",
+      "Agencies",
+      "Zoom to",
+      "+\nZoom In",
+      "−\nZoom Out",
+      "Close",
+      "OK",
+      "Close",
+      "OK"
+    ],
+    "conclusion": "No likely public average-harvest-age field was found in captured Hunt Planner network calls or sampled ArcGIS layer fields.",
+    "outputs": {
+      "audit_json": "huntplanner_network_age_audit.json",
+      "audit_csv": "huntplanner_network_age_audit.csv",
+      "arcgis_services_csv": "huntplanner_arcgis_services.csv",
+      "arcgis_layers_csv": "huntplanner_arcgis_layers.csv",
+      "arcgis_layer_fields_csv": "huntplanner_arcgis_layer_fields.csv",
+      "age_field_hits_csv": "huntplanner_age_field_hits.csv",
+      "network_urls_txt": "huntplanner_network_urls.txt"
+    }
+  },
+  "age_response_hits": [
+    {
+      "url": "https://js.arcgis.com/3.36/init.js",
+      "content_type": "application/javascript",
+      "age_term_hits": "tooth",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "success|boundary",
+      "body_sample": "// All material copyright ESRI, All Rights Reserved, unless otherwise specified. // See https://js.arcgis.com/3.36/esri/copyright.txt for details. /* Copyright (c) 2004-2016, The JS Foundation All Rights Reserved. Available via Academic Free License >= 2.1 OR the modified BSD license. see: http://dojotoolkit.org/license for details */ //>>built (function(b,A){var q,x=function(){return\"undefined\"!==typeof u&&\"function\"!==typeof u?u:\"undefined\"!==typeof window?window:\"undefined\"!==typeof self?self:this}(),r=function(){},m=function(g){for(var G in g)return 0;return 1},p={}.toString,t=function(g){return\"[object Function]\"==p.call(g)},h=function(g){return\"[object String]\"==p.call(g)},c=function(g){return\"[object Array]\"==p.call(g)},a=function(g,G){if(g)for(var N=0;N<g.length;)G(g[N++])},f=function(g,G){for(var N in G)g[N]=G[N];return g},e=function(g, G){return f(Error(g),{src:\"dojoLoader\",info:G})},l=1,k=function(){return\"_\"+l++},d=function(g,G,N){return sa(g,G,N,0,d)},u=x,y=u.d"
+    },
+    {
+      "url": "https://dwrapps.utah.gov/huntboundary/HaSetup",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "tooth",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "harvest|hunters|boundary|species",
+      "body_sample": "{\"speciesList\":[\"Bison\",\"Black Bear\",\"Cougar\",\"Coyote\",\"Deer\",\"Desert Bighorn Sheep\",\"Elk\",\"Goose, Dark\",\"Goose, Light\",\"Goose, White-fronted\",\"Greater Sage-Grouse\",\"Moose\",\"Mountain Goat\",\"Pronghorn\",\"Rocky Mountain Bighorn Sheep\",\"Sandhill Crane\",\"Sharp-tailed Grouse\",\"Tribal\",\"Tundra Swan\",\"Turkey\",\"Waterfowl\"],\"genderList\":[\"Antlerless\",\"Bearded\",\"Buck\",\"Bull\",\"Cow Only\",\"Doe\",\"Either Sex\",\"Ewe\",\"Hunters Choice\",\"Male Only\",\"NA\"],\"huntNumberList\":[\"BI1000\",\"BI6500\",\"BI6503\",\"BI6504\",\"BI6505\",\"BI6506\",\"BI6509\",\"BI6516\",\"BI6527\",\"BI6528\",\"BI6529\",\"BI6531\",\"BI6532\",\"BI6534\",\"BI6535\",\"BI6536\",\"BI6537\",\"BI6538\",\"BI6539\",\"BR1000\",\"BR1001\",\"BR1007\",\"BR1008\",\"BR1009\",\"BR1010\",\"BR1011\",\"BR1012\",\"BR1013\",\"BR1015\",\"BR1016\",\"BR1017\",\"BR1018\",\"BR7000\",\"BR7001\",\"BR7003\",\"BR7004\",\"BR7005\",\"BR7007\",\"BR7009\",\"BR7010\",\"BR7011\",\"BR7012\",\"BR7013\",\"BR7014\",\"BR7015\",\"BR7016\",\"BR7017\",\"BR7018\",\"BR7020\",\"BR7021\",\"BR7022\",\"BR7100\",\"BR7101\",\"BR7102\",\"BR7104\",\"BR7105\",\"BR7106\",\"BR7109\",\"BR7110\",\"BR7111\",\"BR7"
+    }
+  ],
+  "harvest_response_hits": [
+    {
+      "url": "https://js.arcgis.com/3.36/esri/css/esri.css",
+      "content_type": "text/css",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "success",
+      "body_sample": ".map {overflow: hidden;}.map .esriMapContainer {position: relative; border: none; padding: 0px; margin: 0px; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; text-align: left;}.map .esriMapContainer .esriMapLayers {position: relative; left: 0px; top: 0px; width: 100%; height: 100%; z-index: 0;}.map .esriMapContainer .esriMapLayers .layerTile,.map .esriMapContainer .esriMapLayers .esri-display-object {position: absolute; border: none; margin: 0px; padding: 0px;}.map .esriMapContainer .esriMapLayers > div {pointer-events: none;}.map .esriMapContainer .esriMapLayers canvas {pointer-events: auto;}.map .esriMapContainer .esriMapLayers > div[data-reference=\"true\"] {z-index: 1;}.map .esriMapContainer .esriMapLayers > div[data-reference=\"true\"] canvas,.map .esriMapContainer .esriMapLayers > div[data-vectortiles=\"true\"] canvas {pointer-events: none;}.map .esriMapContainer .esriMapLayers svg g text {white-space: pre;}.map .esriMapContainer .esriMapContainer {-webkit-tap-highligh"
+    },
+    {
+      "url": "https://js.arcgis.com/3.36/init.js",
+      "content_type": "application/javascript",
+      "age_term_hits": "tooth",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "success|boundary",
+      "body_sample": "// All material copyright ESRI, All Rights Reserved, unless otherwise specified. // See https://js.arcgis.com/3.36/esri/copyright.txt for details. /* Copyright (c) 2004-2016, The JS Foundation All Rights Reserved. Available via Academic Free License >= 2.1 OR the modified BSD license. see: http://dojotoolkit.org/license for details */ //>>built (function(b,A){var q,x=function(){return\"undefined\"!==typeof u&&\"function\"!==typeof u?u:\"undefined\"!==typeof window?window:\"undefined\"!==typeof self?self:this}(),r=function(){},m=function(g){for(var G in g)return 0;return 1},p={}.toString,t=function(g){return\"[object Function]\"==p.call(g)},h=function(g){return\"[object String]\"==p.call(g)},c=function(g){return\"[object Array]\"==p.call(g)},a=function(g,G){if(g)for(var N=0;N<g.length;)G(g[N++])},f=function(g,G){for(var N in G)g[N]=G[N];return g},e=function(g, G){return f(Error(g),{src:\"dojoLoader\",info:G})},l=1,k=function(){return\"_\"+l++},d=function(g,G,N){return sa(g,G,N,0,d)},u=x,y=u.d"
+    },
+    {
+      "url": "https://dwrapps.utah.gov/huntboundary/",
+      "content_type": "text/html;charset=ISO-8859-1",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "harvest|success|hunters|satisfaction|permits|quota|hunt number|boundary|unit name|species",
+      "body_sample": " <!DOCTYPE html> <html> <head> <meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\"/> <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\" /> <meta name=\"apple-mobile-web-app-capable\" content=\"yes\"> <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black\" /> <title>Utah Hunt Planner -- Utah Division of Wildlife Resources</title> <meta name=\"description\" content=\"The Utah Division of Wildlife Resources' Utah Hunt Planner is an interactive map designed to help hunters research hunting units. The Utah Hunt Planner also provides the legal hunting boundaries approved by the Utah Wildlife Board. Research hunts and units before you apply in the big game drawing, and any of Utah's other hunt drawings. Search for a hunt by wildlife species -- including buck deer, bull elk, bison, mountain goat, bull moose, pronghorn, desert bighorn sheep, Rocky "
+    },
+    {
+      "url": "https://dwrapps.utah.gov/huntboundary/css/hbR.css",
+      "content_type": "text/css",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "hunt number|boundary|species",
+      "body_sample": "@CHARSET \"ISO-8859-1\"; html { font-size:16px; font-family: \"Times New Roman\", Times, serif; } html, body, #mapDiv { width:100%; height:100%; padding:0; margin:0; } body { background-color: #FFF; overflow: hidden; } .imageLayout { width: 650px; max-width: 90vw; } /* Theme for the dialog */ .no-close .ui-dialog-titlebar-close { display: none; } .ui-dialog, .ui-widget.ui-widget-content { border:3px solid #C75D34; } .ui-dialog-titlebar { border:1px solid #C75D34; font-size:1.3rem; } .ui-dialog-content { border:1px solid #C75D34; } #dwrlogo { display: block; width:423px; heigt:48px; position: absolute; /* left: 50px; */ /* top: 10px; */ z-Index: 256; overflow: hidden; border-radius:5px; } #dwrlogoMobile { display: block; width:237px; heigt:46px; position: absolute; /* left: 50px; */ /* top: 10px; */ z-Index: 249; overflow: hidden; "
+    },
+    {
+      "url": "https://dwrapps.utah.gov/huntboundary/jquery/jquery-1.11.3.min.js",
+      "content_type": "text/javascript",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "success",
+      "body_sample": "/*! jQuery v1.11.3 | (c) 2005, 2015 jQuery Foundation, Inc. | jquery.org/license */ !function(a,b){\"object\"==typeof module&&\"object\"==typeof module.exports?module.exports=a.document?b(a,!0):function(a){if(!a.document)throw new Error(\"jQuery requires a window with a document\");return b(a)}:b(a)}(\"undefined\"!=typeof window?window:this,function(a,b){var c=[],d=c.slice,e=c.concat,f=c.push,g=c.indexOf,h={},i=h.toString,j=h.hasOwnProperty,k={},l=\"1.11.3\",m=function(a,b){return new m.fn.init(a,b)},n=/^[\\s\\uFEFF\\xA0]+|[\\s\\uFEFF\\xA0]+$/g,o=/^-ms-/,p=/-([\\da-z])/gi,q=function(a,b){return b.toUpperCase()};m.fn=m.prototype={jquery:l,constructor:m,selector:\"\",length:0,toArray:function(){return d.call(this)},get:function(a){return null!=a?0>a?this[a+this.length]:this[a]:d.call(this)},pushStack:function(a){var b=m.merge(this.constructor(),a);return b.prevObject=this,b.context=this.context,b},each:function(a,b){return m.each(this,a,b)},map:function(a){return this.pushStack(m.map(this,function(b,c){re"
+    },
+    {
+      "url": "https://js.arcgis.com/3.36/esri/nls/jsapi_en-us.js",
+      "content_type": "application/javascript",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "success|boundary|species",
+      "body_sample": "// All material copyright ESRI, All Rights Reserved, unless otherwise specified. // See https://js.arcgis.com/3.36/esri/copyright.txt for details. //>>built define(\"esri/nls/jsapi_en-us\",{\"dijit/nls/loading\":{loadingState:\"Loading...\",errorState:\"Sorry, an error occurred\",_localized:{}},\"esri/nls/jsapi\":{io:{proxyNotSet:\"esri.config.defaults.io.proxyUrl is not set. If making a request to a CORS enabled server, please push the domain into esri.config.defaults.io.corsEnabledServers.\"},map:{deprecateReorderLayerString:\"Map.reorderLayer(/*String*/ id, /*Number*/ index) deprecated. Use Map.reorderLayer(/*Layer*/ layer, /*Number*/ index).\",deprecateShiftDblClickZoom:\"Map.(enable/disable)ShiftDoubleClickZoom deprecated. Shift-Double-Click zoom behavior will not be supported.\"}, basemaps:{streets:\"Streets\",satellite:\"Imagery\",hybrid:\"Imagery with Labels\",terrain:\"Terrain with Labels\",topo:\"Topographic\",gray:\"Light Gray Canvas\",\"dark-gray\":\"Dark Gray Canvas\",oceans:\"Oceans\",\"national-geograph"
+    },
+    {
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-11Y80DXQRJ",
+      "content_type": "application/javascript; charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "success",
+      "body_sample": " // Copyright 2012 Google Inc. All rights reserved. (function(){ var data = { \"resource\": { \"version\":\"1\", \"macros\":[{\"function\":\"__e\"},{\"function\":\"__c\",\"vtp_value\":\"\"},{\"function\":\"__c\",\"vtp_value\":0}], \"tags\":[{\"function\":\"__ogt_1p_data_v2\",\"priority\":12,\"vtp_isAutoEnabled\":true,\"vtp_autoPhoneEnabled\":true,\"vtp_autoCollectExclusionSelectors\":[\"list\",[\"map\",\"exclusionSelector\",\"\"]],\"vtp_isEnabled\":true,\"vtp_autoAddressEnabled\":true,\"vtp_autoEmailEnabled\":true,\"vtp_isAutoCollectPiiEnabledFlag\":true,\"tag_id\":4},{\"function\":\"__ccd_ga_first\",\"priority\":11,\"vtp_instanceDestinationId\":\"G-11Y80DXQRJ\",\"tag_id\":17},{\"function\":\"__set_product_settings\",\"priority\":10,\"vtp_instanceDestinationId\":\"G-11Y80DXQRJ\",\"vtp_foreignTldMacroResult\":[\"macro\",1],\"vtp_isChinaVipRegionMacroResult\":[\"macro\",2],\"tag_id\":16},{\"function\":\"__ccd_ga_regscope\",\"priority\":9,\"vtp_settingsTable\":[\"list\",[\"map\",\"redactFieldGroup\",\"DEVICE_AND_GEO\",\"disallowAllRegions\",false,\"disallowedRegions\",\"\"],[\"map\",\"reda"
+    },
+    {
+      "url": "https://dwrapps.utah.gov/huntboundary/HuntMapData",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "hunters|permits|boundary|species",
+      "body_sample": "[{\"keyName\":\"ABOUT1\",\"keyType\":\"Data\",\"serviceURL\":\"\\u003cp style\\u003d\\\"font-size:1.5rem;\\\"\\u003e\\u003cb\\u003eWelcome to the Utah Hunt Planner\\u003c/b\\u003e\\u003c/p\\u003e\",\"hoverFieldName\":\"\",\"clickFieldName\":\"\",\"description\":\"\"},{\"keyName\":\"ABOUT2\",\"keyType\":\"Data\",\"hoverFieldName\":\"\",\"clickFieldName\":\"\",\"description\":\"\"},{\"keyName\":\"ABOUT3\",\"keyType\":\"Data\",\"serviceURL\":\"\\u003cp\\u003eThe \\u003cb\\u003eUtah Hunt Planner\\u003c/b\\u003e is an interactive mapping tool that gives you in-depth, hunter-focused information about all of Utah\\u0027s hunting units. This tool will help you decide which hunts you\\u0027d like to apply for or to better prepare you for your next hunt by providing biologist recommendations and updates, land ownership and accessibility details, hunt boundaries, ATV trails and more.\\u003c/p\\u003e\\r\\n\\u003cp\\u003eTo get started, click the \\\"Find a hunt\\\" button on a desktop or tablet or the magnifying glass icon on a mobile device. Once you have chosen an animal species "
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/HuntBoundary/HUNT_BOUNDARY_PROD/FeatureServer/0?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "boundary",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":0,\"name\":\"UDWR.DWRADMIN.DWR_Hunt_Boundaries_combined\",\"type\":\"Feature Layer\",\"parentLayer\":null,\"defaultVisibility\":true,\"minScale\":0,\"maxScale\":0,\"canScaleSymbols\":false,\"geometryType\":\"esriGeometryPolygon\",\"description\":\"DWR_Combined_Hunt_Boundaries - Holds each unique hunt boundary.DWR_Hunt_Boundary_Info - Many hunts can occur on each boundary (hunt_number is the key)DWR_Hunt_Boundary_Season - Many date ranges can occur for each hunt (hunt_number is the key)\",\"copyrightText\":\"UDWR\",\"editFieldsInfo\":null,\"ownershipBasedAccessControlForFeatures\":null,\"syncCanReturnChanges\":false,\"relationships\":[],\"isDataVersioned\":false,\"isDataArchived\":false,\"isCoGoEnabled\":false,\"modelName\":\"GP_544631932\",\"supportsRollbackOnFailureParameter\":true,\"archivingInfo\":{\"supportsQueryWithHistoricMoment\":false,\"startArchivingMoment\":-1},\"supportsStatistics\":true,\"supportsAdvancedQueries\":true,\"supportsValidateSQL\":true,\"supportsCoordinatesQuantization\":true,\"supportsCalculate\":"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/HuntBoundary/HUNT_BOUNDARY_PROD/MapServer/0?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "boundary",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":0,\"name\":\"UDWR.DWRADMIN.DWR_Hunt_Boundaries_combined\",\"type\":\"Feature Layer\",\"description\":\"DWR_Combined_Hunt_Boundaries - Holds each unique hunt boundary.DWR_Hunt_Boundary_Info - Many hunts can occur on each boundary (hunt_number is the key)DWR_Hunt_Boundary_Season - Many date ranges can occur for each hunt (hunt_number is the key)\",\"geometryType\":\"esriGeometryPolygon\",\"sourceSpatialReference\":{\"wkid\":26912,\"latestWkid\":26912},\"copyrightText\":\"UDWR\",\"parentLayer\":null,\"subLayers\":[],\"minScale\":0,\"maxScale\":0,\"drawingInfo\":{\"renderer\":{\"type\":\"simple\",\"symbol\":{\"type\":\"esriSFS\",\"style\":\"esriSFSSolid\",\"color\":[205,233,247,255],\"outline\":{\"type\":\"esriSLS\",\"style\":\"esriSLSSolid\",\"color\":[110,110,110,255],\"width\":0.4}},\"label\":\"\",\"description\":\"\"},\"transparency\":0,\"labelingInfo\":null},\"defaultVisibility\":true,\"extent\":{\"xmin\":228201.66000000015,\"ymin\":4094591,\"xmax\":675405.3399999999,\"ymax\":4653679.210000001,\"spatialReference\":{\"wkid\":26912,\"latestWkid\":26912}}"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/arcgis/rest/services/ram/ram_WMA_PROD_v2/MapServer/1?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "boundary",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":1,\"name\":\"UDWR.DWRADMIN.WMA_Properties_Pub\",\"type\":\"Feature Layer\",\"description\":\"\",\"geometryType\":\"esriGeometryPolygon\",\"sourceSpatialReference\":{\"wkid\":26912,\"latestWkid\":26912},\"copyrightText\":\"\",\"parentLayer\":null,\"subLayers\":[],\"minScale\":0,\"maxScale\":0,\"drawingInfo\":{\"renderer\":{\"type\":\"simple\",\"symbol\":{\"type\":\"esriSFS\",\"style\":\"esriSFSSolid\",\"color\":[203,220,245,255],\"outline\":{\"type\":\"esriSLS\",\"style\":\"esriSLSSolid\",\"color\":[110,110,110,255],\"width\":0.4}},\"label\":\"\",\"description\":\"\"},\"transparency\":0,\"labelingInfo\":null},\"defaultVisibility\":true,\"extent\":{\"xmin\":241921.30080000032,\"ymin\":4178297.5997,\"xmax\":664678.8002000004,\"ymax\":4649927.6995,\"spatialReference\":{\"wkid\":26912,\"latestWkid\":26912}},\"hasAttachments\":false,\"htmlPopupType\":\"esriServerHTMLPopupTypeAsHTMLText\",\"displayField\":\"UDWR.DWRADMIN.WMA_Properties_Pub.Name\",\"typeIdField\":null,\"subtypeFieldName\":null,\"subtypeField\":null,\"defaultSubtypeCode\":null,\"fields\":[{\"name\":\"UDWR.DWRADMIN.WMA"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/arcgis/rest/services/ram/ram_WIA_PROD_v2/MapServer/1?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "boundary",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":1,\"name\":\"UDWR.DWRADMIN.WIA_Properties\",\"type\":\"Feature Layer\",\"description\":\"\",\"geometryType\":\"esriGeometryPolygon\",\"sourceSpatialReference\":{\"wkid\":26912,\"latestWkid\":26912},\"copyrightText\":\"Leslie McFarlane\",\"parentLayer\":null,\"subLayers\":[],\"minScale\":0,\"maxScale\":0,\"drawingInfo\":{\"renderer\":{\"type\":\"simple\",\"symbol\":{\"type\":\"esriSFS\",\"style\":\"esriSFSSolid\",\"color\":[201,242,208,255],\"outline\":{\"type\":\"esriSLS\",\"style\":\"esriSLSSolid\",\"color\":[110,110,110,255],\"width\":0.4}},\"label\":\"\",\"description\":\"\"},\"transparency\":0,\"labelingInfo\":null},\"defaultVisibility\":true,\"extent\":{\"xmin\":269643.6699999999,\"ymin\":4098033.435900001,\"xmax\":664040.8120999997,\"ymax\":4650454.966499999,\"spatialReference\":{\"wkid\":26912,\"latestWkid\":26912}},\"hasAttachments\":false,\"htmlPopupType\":\"esriServerHTMLPopupTypeAsHTMLText\",\"displayField\":\"UDWR.DWRADMIN.WIA_Properties.Name\",\"typeIdField\":null,\"subtypeFieldName\":null,\"subtypeField\":null,\"defaultSubtypeCode\":null,\"fields\":[{\"name\":\""
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/arcgis/rest/services/ram/ram_WIA_PROD_v2/MapServer/0?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "boundary",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":0,\"name\":\"UDWR.DWRADMIN.WIA_Properties_Points\",\"type\":\"Feature Layer\",\"description\":\"\",\"geometryType\":\"esriGeometryPoint\",\"sourceSpatialReference\":{\"wkid\":26912,\"latestWkid\":26912},\"copyrightText\":\"\",\"parentLayer\":null,\"subLayers\":[],\"minScale\":0,\"maxScale\":0,\"drawingInfo\":{\"renderer\":{\"type\":\"simple\",\"symbol\":{\"type\":\"esriSMS\",\"style\":\"esriSMSCircle\",\"color\":[104,0,133,255],\"size\":4,\"angle\":0,\"xoffset\":0,\"yoffset\":0,\"outline\":{\"color\":[0,0,0,255],\"width\":1}},\"label\":\"\",\"description\":\"\"},\"transparency\":0,\"labelingInfo\":null},\"defaultVisibility\":true,\"extent\":{\"xmin\":-5120900,\"ymin\":-9998100,\"xmax\":663251.6403999999,\"ymax\":4648289.880899999,\"spatialReference\":{\"wkid\":26912,\"latestWkid\":26912}},\"hasAttachments\":false,\"htmlPopupType\":\"esriServerHTMLPopupTypeAsHTMLText\",\"displayField\":\"UDWR.DWRADMIN.WIA_Properties_Points.DisplayName\",\"typeIdField\":null,\"subtypeFieldName\":null,\"subtypeField\":null,\"defaultSubtypeCode\":null,\"fields\":[{\"name\":\"UDWR.DWRADMIN.WIA_Pro"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/hunt/CWMU_Tradelands_ver3/FeatureServer/0?f=json",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "boundary",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":0,\"name\":\"UDWR.DWRADMIN.DWR_CWMU_Tradelands\",\"type\":\"Feature Layer\",\"parentLayer\":null,\"defaultVisibility\":true,\"minScale\":0,\"maxScale\":0,\"canScaleSymbols\":false,\"geometryType\":\"esriGeometryPolygon\",\"description\":\"\",\"copyrightText\":\"\",\"editFieldsInfo\":null,\"ownershipBasedAccessControlForFeatures\":null,\"syncCanReturnChanges\":false,\"relationships\":[],\"isDataVersioned\":false,\"isDataArchived\":false,\"isCoGoEnabled\":false,\"supportsRollbackOnFailureParameter\":true,\"archivingInfo\":{\"supportsQueryWithHistoricMoment\":false,\"startArchivingMoment\":-1},\"supportsStatistics\":true,\"supportsAdvancedQueries\":true,\"supportsValidateSQL\":true,\"supportsCoordinatesQuantization\":true,\"supportsCalculate\":true,\"supportsDatumTransformation\":true,\"advancedQueryCapabilities\":{\"supportsPagination\":true,\"supportsTrueCurve\":true,\"supportsQueryWithDistance\":true,\"supportsReturningQueryExtent\":true,\"supportsStatistics\":true,\"supportsHavingClause\":true,\"supportsOrderBy\":true,\"supportsDistinc"
+    },
+    {
+      "url": "https://dwrapps.utah.gov/huntboundary/json/RoadsLabelsReliefForHunt.json?f=json",
+      "content_type": "application/json",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "boundary",
+      "body_sample": "{\"layers\":[{\"layout\":{\"visibility\":\"none\"},\"paint\":{\"fill-opacity\":{\"base\":1,\"stops\":[[0,0.03],[8,0.14],[14,0.25],[15,0.53],[17,0.73]]},\"fill-color\":{\"stops\":[[0,\"#e1e3d0\"],[8,\"#e1e3d0\"],[14,\"#E1E3D0\"],[15,\"#ecede3\"],[17,\"#f1f2ea\"]]}},\"filter\":[\"==\",\"_symbol\",0],\"source\":\"esri\",\"source-layer\":\"Land\",\"type\":\"fill\",\"id\":\"Land/Not ice\"},{\"layout\":{\"visibility\":\"none\"},\"paint\":{\"fill-color\":\"#FFFFFF\",\"fill-opacity\":0.8},\"filter\":[\"==\",\"_symbol\",1],\"source\":\"esri\",\"source-layer\":\"Land\",\"type\":\"fill\",\"id\":\"Land/Ice\"},{\"layout\":{},\"paint\":{\"fill-color\":\"#eeefe8\"},\"source\":\"esri\",\"minzoom\":17,\"source-layer\":\"Parcel\",\"type\":\"fill\",\"id\":\"Parcel/fill\"},{\"layout\":{},\"paint\":{\"fill-color\":{\"stops\":[[5,\"#B3AB80\"],[10,\"#D9D1BA\"],[12,\"#EBE6D8\"]]},\"fill-opacity\":0.2},\"source\":\"esri\",\"minzoom\":5,\"source-layer\":\"Urban area\",\"maxzoom\":15,\"type\":\"fill\",\"id\":\"Urban area\"},{\"layout\":{},\"paint\":{\"fill-opacity\":{\"base\":1,\"stops\":[[0,0.32],[5,0.28],[7,0.2],[10,0.1]]},\"fill-color\":\"#c2e699\"},\"filter\":[\"==\",\"_sym"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/HuntBoundary/Restricted_Areas_V2/FeatureServer/0?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "boundary",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":0,\"name\":\"UDWR.DWRADMIN.DWR_Hunt_Restricted_Areas\",\"type\":\"Feature Layer\",\"parentLayer\":null,\"defaultVisibility\":true,\"minScale\":0,\"maxScale\":0,\"canScaleSymbols\":false,\"geometryType\":\"esriGeometryPolygon\",\"description\":\"DWR_Combined_Hunt_Boundaries - Holds each unique hunt boundary.DWR_Hunt_Boundary_Info - Many hunts can occur on each boundary (hunt_number is the key)DWR_Hunt_Boundary_Season - Many date ranges can occur for each hunt (hunt_number is the key)\",\"copyrightText\":\"UDWR\",\"editFieldsInfo\":null,\"ownershipBasedAccessControlForFeatures\":null,\"syncCanReturnChanges\":false,\"relationships\":[],\"isDataVersioned\":false,\"isDataArchived\":false,\"isCoGoEnabled\":false,\"modelName\":\"GP_304695101\",\"supportsRollbackOnFailureParameter\":true,\"archivingInfo\":{\"supportsQueryWithHistoricMoment\":false,\"startArchivingMoment\":-1},\"supportsStatistics\":true,\"supportsAdvancedQueries\":true,\"supportsValidateSQL\":true,\"supportsCoordinatesQuantization\":true,\"supportsCalculate\":tru"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/arcgis/rest/services/HuntBoundary/CWD_positive_ver1/FeatureServer/0?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "boundary",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":0,\"name\":\"UDWR.DWRADMIN.CWDPositiveUnits\",\"type\":\"Feature Layer\",\"parentLayer\":null,\"defaultVisibility\":true,\"minScale\":0,\"maxScale\":0,\"canScaleSymbols\":false,\"geometryType\":\"esriGeometryPolygon\",\"description\":\"DWR_Combined_Hunt_Boundaries - Holds each unique hunt boundary.DWR_Hunt_Boundary_Info - Many hunts can occur on each boundary (hunt_number is the key)DWR_Hunt_Boundary_Season - Many date ranges can occur for each hunt (hunt_number is the key)\",\"copyrightText\":\"UDWR\",\"editFieldsInfo\":null,\"ownershipBasedAccessControlForFeatures\":null,\"syncCanReturnChanges\":false,\"relationships\":[],\"isDataVersioned\":false,\"isDataArchived\":false,\"isCoGoEnabled\":false,\"supportsRollbackOnFailureParameter\":true,\"archivingInfo\":{\"supportsQueryWithHistoricMoment\":false,\"startArchivingMoment\":-1},\"supportsStatistics\":true,\"supportsAdvancedQueries\":true,\"supportsValidateSQL\":true,\"supportsCoordinatesQuantization\":true,\"supportsCalculate\":true,\"supportsDatumTransformation\":true"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/HuntBoundary/HUNT_BOUNDARY_PROD/FeatureServer/0?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "boundary",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":0,\"name\":\"UDWR.DWRADMIN.DWR_Hunt_Boundaries_combined\",\"type\":\"Feature Layer\",\"parentLayer\":null,\"defaultVisibility\":true,\"minScale\":0,\"maxScale\":0,\"canScaleSymbols\":false,\"geometryType\":\"esriGeometryPolygon\",\"description\":\"DWR_Combined_Hunt_Boundaries - Holds each unique hunt boundary.DWR_Hunt_Boundary_Info - Many hunts can occur on each boundary (hunt_number is the key)DWR_Hunt_Boundary_Season - Many date ranges can occur for each hunt (hunt_number is the key)\",\"copyrightText\":\"UDWR\",\"editFieldsInfo\":null,\"ownershipBasedAccessControlForFeatures\":null,\"syncCanReturnChanges\":false,\"relationships\":[],\"isDataVersioned\":false,\"isDataArchived\":false,\"isCoGoEnabled\":false,\"modelName\":\"GP_544631932\",\"supportsRollbackOnFailureParameter\":true,\"archivingInfo\":{\"supportsQueryWithHistoricMoment\":false,\"startArchivingMoment\":-1},\"supportsStatistics\":true,\"supportsAdvancedQueries\":true,\"supportsValidateSQL\":true,\"supportsCoordinatesQuantization\":true,\"supportsCalculate\":"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/HuntBoundary/HUNT_BOUNDARY_PROD/MapServer/0?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "boundary",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":0,\"name\":\"UDWR.DWRADMIN.DWR_Hunt_Boundaries_combined\",\"type\":\"Feature Layer\",\"description\":\"DWR_Combined_Hunt_Boundaries - Holds each unique hunt boundary.DWR_Hunt_Boundary_Info - Many hunts can occur on each boundary (hunt_number is the key)DWR_Hunt_Boundary_Season - Many date ranges can occur for each hunt (hunt_number is the key)\",\"geometryType\":\"esriGeometryPolygon\",\"sourceSpatialReference\":{\"wkid\":26912,\"latestWkid\":26912},\"copyrightText\":\"UDWR\",\"parentLayer\":null,\"subLayers\":[],\"minScale\":0,\"maxScale\":0,\"drawingInfo\":{\"renderer\":{\"type\":\"simple\",\"symbol\":{\"type\":\"esriSFS\",\"style\":\"esriSFSSolid\",\"color\":[205,233,247,255],\"outline\":{\"type\":\"esriSLS\",\"style\":\"esriSLSSolid\",\"color\":[110,110,110,255],\"width\":0.4}},\"label\":\"\",\"description\":\"\"},\"transparency\":0,\"labelingInfo\":null},\"defaultVisibility\":true,\"extent\":{\"xmin\":228201.66000000015,\"ymin\":4094591,\"xmax\":675405.3399999999,\"ymax\":4653679.210000001,\"spatialReference\":{\"wkid\":26912,\"latestWkid\":26912}}"
+    },
+    {
+      "url": "https://dwrapps.utah.gov/huntboundary/HaSetup",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "tooth",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "harvest|hunters|boundary|species",
+      "body_sample": "{\"speciesList\":[\"Bison\",\"Black Bear\",\"Cougar\",\"Coyote\",\"Deer\",\"Desert Bighorn Sheep\",\"Elk\",\"Goose, Dark\",\"Goose, Light\",\"Goose, White-fronted\",\"Greater Sage-Grouse\",\"Moose\",\"Mountain Goat\",\"Pronghorn\",\"Rocky Mountain Bighorn Sheep\",\"Sandhill Crane\",\"Sharp-tailed Grouse\",\"Tribal\",\"Tundra Swan\",\"Turkey\",\"Waterfowl\"],\"genderList\":[\"Antlerless\",\"Bearded\",\"Buck\",\"Bull\",\"Cow Only\",\"Doe\",\"Either Sex\",\"Ewe\",\"Hunters Choice\",\"Male Only\",\"NA\"],\"huntNumberList\":[\"BI1000\",\"BI6500\",\"BI6503\",\"BI6504\",\"BI6505\",\"BI6506\",\"BI6509\",\"BI6516\",\"BI6527\",\"BI6528\",\"BI6529\",\"BI6531\",\"BI6532\",\"BI6534\",\"BI6535\",\"BI6536\",\"BI6537\",\"BI6538\",\"BI6539\",\"BR1000\",\"BR1001\",\"BR1007\",\"BR1008\",\"BR1009\",\"BR1010\",\"BR1011\",\"BR1012\",\"BR1013\",\"BR1015\",\"BR1016\",\"BR1017\",\"BR1018\",\"BR7000\",\"BR7001\",\"BR7003\",\"BR7004\",\"BR7005\",\"BR7007\",\"BR7009\",\"BR7010\",\"BR7011\",\"BR7012\",\"BR7013\",\"BR7014\",\"BR7015\",\"BR7016\",\"BR7017\",\"BR7018\",\"BR7020\",\"BR7021\",\"BR7022\",\"BR7100\",\"BR7101\",\"BR7102\",\"BR7104\",\"BR7105\",\"BR7106\",\"BR7109\",\"BR7110\",\"BR7111\",\"BR7"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/HuntBoundary/HUNT_BOUNDARY_PROD/FeatureServer/0/query?token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK&f=json&where=BoundaryID%20in%20(%27201%27%2C%27484%27%2C%27485%27%2C%27488%27%2C%27489%27%2C%27490%27%2C%27491%27%2C%27492%27%2C%27493%27%2C%27494%27%2C%27495%27%2C%27496%27%2C%27497%27%2C%27499%27%2C%27500%27%2C%27501%27%2C%27502%27%2C%27503%27%2C%27504%27%2C%27505%27%2C%27509%27%2C%27510%27%2C%27511%27%2C%27512%27%2C%27513%27%2C%27514%27%2C%27516%27%2C%27517%27%2C%27518%27%2C%27519%27%2C%27520%27%2C%27521%27%2C%27522%27%2C%27524%27%2C%27525%27%2C%27526%27%2C%27527%27%2C%27529%27%2C%27530%27%2C%27531%27%2C%27533%27%2C%27534%27%2C%27535%27%2C%27537%27%2C%27539%27%2C%27540%27%2C%27541%27%2C%27542%27%2C%27543%27%2C%27545%27%2C%27546%27%2C%27547%27%2C%27548%27%2C%27549%27%2C%27550%27%2C%27551%27%2C%27552%27%2C%27553%27%2C%27554%27%2C%27555%27%2C%27556%27%2C%27557%27%2C%27558%27%2C%27559%27%2C%27560%27%2C%27561%27%2C%27562%27%2C%27565%27%2C%27567%27%2C%27568%27%2C%27569%27%2C%27571%27%2C%27572%27%2C%27573%27%2C%27574%27%2C%27575%27%2C%27576%27%2C%27577%27%2C%27578%27%2C%27579%27%2C%27580%27%2C%27581%27%2C%27582%27%2C%27585%27%2C%27586%27%2C%27589%27%2C%27590%27%2C%27592%27%2C%27598%27%2C%27599%27%2C%27602%27%2C%27603%27%2C%27604%27%2C%27606%27%2C%27640%27%2C%27721%27%2C%27732%27%2C%27733%27%2C%27734%27%2C%27735%27%2C%27736%27%2C%27740%27%2C%27741%27%2C%27805%27%2C%27806%27%2C%27807%27%2C%27808%27%2C%27824%27%2C%27826%27%2C%27827%27%2C%27828%27%2C%27829%27%2C%27830%27%2C%27856%27%2C%27858%27%2C%27874%27%2C%27875%27%2C%27876%27%2C%27878%27%2C%27890%27%2C%27892%27%2C%27905%27%2C%27906%27%2C%27908%27%2C%27918%27%2C%27923%27)&returnGeometry=true&spatialRel=esriSpatialRelIntersects&outFields=Boundary_Name%2COBJECTID&outSR=102100&resultOffset=0&resultRecordCount=1000",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "boundary",
+      "body_sample": "{\"objectIdFieldName\":\"OBJECTID\",\"globalIdFieldName\":\"GlobalID\",\"geometryType\":\"esriGeometryPolygon\",\"spatialReference\":{\"wkid\":102100,\"latestWkid\":3857},\"fields\":[{\"name\":\"Boundary_Name\",\"alias\":\"Boundary_Name\",\"type\":\"esriFieldTypeString\",\"length\":120},{\"name\":\"OBJECTID\",\"alias\":\"OBJECTID\",\"type\":\"esriFieldTypeOID\"}],\"features\":[{\"attributes\":{\"Boundary_Name\":\"Causey Spring\",\"OBJECTID\":137},\"geometry\":{\"rings\":[[[-12421447.117312219,5058012.7549527511],[-12421486.668388834,5057981.2109897314],[-12421528.272755444,5057924.7305369843],[-12421546.398510339,5057887.0841255821],[-12421547.342869671,5057885.1287989384],[-12421587.769452747,5057752.381670393],[-12421606.165300408,5057713.4525110973],[-12421652.082815286,5057659.9072732646],[-12421700.784516711,5057611.1220165547],[-12421721.784958195,5057562.1508421237],[-12421737.766635079,5057461.0217872011],[-12421762.971540604,5057442.1097985515],[-12421813.503104746,5057424.3740493702],[-12421819.917077644,5057387.5427101245],[-12421794"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/DNRDWR/Habitat_Layers_V10/FeatureServer/layers?token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK&f=pjson",
+      "content_type": "text/plain;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "species",
+      "body_sample": "{ \"layers\": [ { \"currentVersion\": 10.81, \"id\": 0, \"name\": \"Band-tailed pigeon\", \"type\": \"Feature Layer\", \"parentLayer\": null, \"defaultVisibility\": true, \"minScale\": 0, \"maxScale\": 0, \"canScaleSymbols\": false, \"geometryType\": \"esriGeometryPolygon\", \"description\": \"band-tailed pigeon distribution, season of habitat use, and habitat values are determined by local wildlife biologist relying on observations, surveys, and predictive habitat models. For use in large-scale planning and reporting.\", \"copyrightText\": \"Utah Division of Wildlife Resources\", \"editFieldsInfo\": null, \"ownershipBasedAccessControlForFeatures\": null, \"syncCanReturnChanges\": false, \"relationships\": [], \"isDataVersioned\": true, \"isDataArchived\": false, \"isCoGoEnabled\": false, \"supportsRollbackOnFailureParameter\": false, \"archivingInfo\": { \"supportsQueryWithHistoricMoment\": false, \"startArchivingMoment\": -1 }, \"supportsStatistics\": true, \"s"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/DNRDWR/Habitat_Layers_V10/FeatureServer/0?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "species",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":0,\"name\":\"Band-tailed pigeon\",\"type\":\"Feature Layer\",\"parentLayer\":null,\"defaultVisibility\":true,\"minScale\":0,\"maxScale\":0,\"canScaleSymbols\":false,\"geometryType\":\"esriGeometryPolygon\",\"description\":\"band-tailed pigeon distribution, season of habitat use, and habitat values are determined by local wildlife biologist relying on observations, surveys, and predictive habitat models. For use in large-scale planning and reporting.\",\"copyrightText\":\"Utah Division of Wildlife Resources\",\"editFieldsInfo\":null,\"ownershipBasedAccessControlForFeatures\":null,\"syncCanReturnChanges\":false,\"relationships\":[],\"isDataVersioned\":true,\"isDataArchived\":false,\"isCoGoEnabled\":false,\"supportsRollbackOnFailureParameter\":false,\"archivingInfo\":{\"supportsQueryWithHistoricMoment\":false,\"startArchivingMoment\":-1},\"supportsStatistics\":true,\"supportsAdvancedQueries\":true,\"supportsValidateSQL\":true,\"supportsCoordinatesQuantization\":true,\"supportsCalculate\":false,\"supportsDatumTransformati"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/DNRDWR/Habitat_Layers_V10/FeatureServer/1?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "species",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":1,\"name\":\"Bison\",\"type\":\"Feature Layer\",\"parentLayer\":null,\"defaultVisibility\":true,\"minScale\":0,\"maxScale\":0,\"canScaleSymbols\":false,\"geometryType\":\"esriGeometryPolygon\",\"description\":\"Bison distribution, season of habitat use, and habitat values are determined by local wildlife biologist relying on observations, surveys, and radio/satellite data. For use in large-scale planning and reporting.\",\"copyrightText\":\"Utah Division of Wildlife Resources\",\"editFieldsInfo\":null,\"ownershipBasedAccessControlForFeatures\":null,\"syncCanReturnChanges\":false,\"relationships\":[],\"isDataVersioned\":true,\"isDataArchived\":false,\"isCoGoEnabled\":false,\"supportsRollbackOnFailureParameter\":false,\"archivingInfo\":{\"supportsQueryWithHistoricMoment\":false,\"startArchivingMoment\":-1},\"supportsStatistics\":true,\"supportsAdvancedQueries\":true,\"supportsValidateSQL\":true,\"supportsCoordinatesQuantization\":true,\"supportsCalculate\":false,\"supportsDatumTransformation\":true,\"advancedQueryCapabilit"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/DNRDWR/Habitat_Layers_V10/FeatureServer/2?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "species",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":2,\"name\":\"Black bear\",\"type\":\"Feature Layer\",\"parentLayer\":null,\"defaultVisibility\":true,\"minScale\":0,\"maxScale\":0,\"canScaleSymbols\":false,\"geometryType\":\"esriGeometryPolygon\",\"description\":\"black bear distribution, season of habitat use, and habitat values are determined by local wildlife biologist relying on observations, surveys, and radio/satellite data. For use in large-scale planning and reporting.\",\"copyrightText\":\"Utah Division of Wildlife Resources\",\"editFieldsInfo\":null,\"ownershipBasedAccessControlForFeatures\":null,\"syncCanReturnChanges\":false,\"relationships\":[],\"isDataVersioned\":true,\"isDataArchived\":false,\"isCoGoEnabled\":false,\"supportsRollbackOnFailureParameter\":false,\"archivingInfo\":{\"supportsQueryWithHistoricMoment\":false,\"startArchivingMoment\":-1},\"supportsStatistics\":true,\"supportsAdvancedQueries\":true,\"supportsValidateSQL\":true,\"supportsCoordinatesQuantization\":true,\"supportsCalculate\":false,\"supportsDatumTransformation\":true,\"advancedQuer"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/DNRDWR/Habitat_Layers_V10/FeatureServer/3?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "species",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":3,\"name\":\"California bighorn sheep\",\"type\":\"Feature Layer\",\"parentLayer\":null,\"defaultVisibility\":true,\"minScale\":0,\"maxScale\":0,\"canScaleSymbols\":false,\"geometryType\":\"esriGeometryPolygon\",\"description\":\"California bighorn sheep distribution, season of habitat use, and habitat values are determined by local wildlife biologist relying on observations, surveys, and radio/satellite data. For use in large-scale planning and reporting.\",\"copyrightText\":\"Utah Division of Wildlife Resources\",\"editFieldsInfo\":null,\"ownershipBasedAccessControlForFeatures\":null,\"syncCanReturnChanges\":false,\"relationships\":[],\"isDataVersioned\":true,\"isDataArchived\":false,\"isCoGoEnabled\":false,\"supportsRollbackOnFailureParameter\":false,\"archivingInfo\":{\"supportsQueryWithHistoricMoment\":false,\"startArchivingMoment\":-1},\"supportsStatistics\":true,\"supportsAdvancedQueries\":true,\"supportsValidateSQL\":true,\"supportsCoordinatesQuantization\":true,\"supportsCalculate\":false,\"supportsDatumTransf"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/DNRDWR/Habitat_Layers_V10/FeatureServer/4?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "species",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":4,\"name\":\"California quail\",\"type\":\"Feature Layer\",\"parentLayer\":null,\"defaultVisibility\":false,\"minScale\":0,\"maxScale\":0,\"canScaleSymbols\":false,\"geometryType\":\"esriGeometryPolygon\",\"description\":\"California quail distribution, season of habitat use, and habitat values are determined by local wildlife biologist relying on observations, surveys, and transplant locations. For use in large-scale planning and reporting.\",\"copyrightText\":\"Utah Division of Wildlife Resources\",\"editFieldsInfo\":null,\"ownershipBasedAccessControlForFeatures\":null,\"syncCanReturnChanges\":false,\"relationships\":[],\"isDataVersioned\":true,\"isDataArchived\":false,\"isCoGoEnabled\":false,\"supportsRollbackOnFailureParameter\":false,\"archivingInfo\":{\"supportsQueryWithHistoricMoment\":false,\"startArchivingMoment\":-1},\"supportsStatistics\":true,\"supportsAdvancedQueries\":true,\"supportsValidateSQL\":true,\"supportsCoordinatesQuantization\":true,\"supportsCalculate\":false,\"supportsDatumTransformation\":true,"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/DNRDWR/Habitat_Layers_V10/FeatureServer/5?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "species",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":5,\"name\":\"Chukar\",\"type\":\"Feature Layer\",\"parentLayer\":null,\"defaultVisibility\":true,\"minScale\":0,\"maxScale\":0,\"canScaleSymbols\":false,\"geometryType\":\"esriGeometryPolygon\",\"description\":\"chukar distribution, season of habitat use, and habitat values are determined by local wildlife biologist relying on observations, surveys, and translpant locations. For use in large-scale planning and reporting.\",\"copyrightText\":\"Utah Division of Wildlife Resources\",\"editFieldsInfo\":null,\"ownershipBasedAccessControlForFeatures\":null,\"syncCanReturnChanges\":false,\"relationships\":[],\"isDataVersioned\":true,\"isDataArchived\":false,\"isCoGoEnabled\":false,\"supportsRollbackOnFailureParameter\":false,\"archivingInfo\":{\"supportsQueryWithHistoricMoment\":false,\"startArchivingMoment\":-1},\"supportsStatistics\":true,\"supportsAdvancedQueries\":true,\"supportsValidateSQL\":true,\"supportsCoordinatesQuantization\":true,\"supportsCalculate\":false,\"supportsDatumTransformation\":true,\"advancedQueryCapabi"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/DNRDWR/Habitat_Layers_V10/FeatureServer/6?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "species",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":6,\"name\":\"Columbian sharp-tailed grouse\",\"type\":\"Feature Layer\",\"parentLayer\":null,\"defaultVisibility\":true,\"minScale\":0,\"maxScale\":0,\"canScaleSymbols\":false,\"geometryType\":\"esriGeometryPolygon\",\"description\":\"sharp-tailed grouse distribution, season of habitat use, and habitat values are determined by local wildlife biologist relying on observations and surveys. For use in large-scale planning and reporting.\",\"copyrightText\":\"Utah Division of Wildlife Resources\",\"editFieldsInfo\":null,\"ownershipBasedAccessControlForFeatures\":null,\"syncCanReturnChanges\":false,\"relationships\":[],\"isDataVersioned\":true,\"isDataArchived\":false,\"isCoGoEnabled\":false,\"supportsRollbackOnFailureParameter\":false,\"archivingInfo\":{\"supportsQueryWithHistoricMoment\":false,\"startArchivingMoment\":-1},\"supportsStatistics\":true,\"supportsAdvancedQueries\":true,\"supportsValidateSQL\":true,\"supportsCoordinatesQuantization\":true,\"supportsCalculate\":false,\"supportsDatumTransformation\":true,\"advanc"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/DNRDWR/Habitat_Layers_V10/FeatureServer/7?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "species",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":7,\"name\":\"Crow\",\"type\":\"Feature Layer\",\"parentLayer\":null,\"defaultVisibility\":true,\"minScale\":0,\"maxScale\":0,\"canScaleSymbols\":false,\"geometryType\":\"esriGeometryPolygon\",\"description\":\"Crow distribution, season of habitat use, and habitat values are determined by local wildlife biologist relying on observations. For use in large-scale planning and reporting.\",\"copyrightText\":\"Utah Division of Wildlife Resources\",\"editFieldsInfo\":null,\"ownershipBasedAccessControlForFeatures\":null,\"syncCanReturnChanges\":false,\"relationships\":[],\"isDataVersioned\":true,\"isDataArchived\":false,\"isCoGoEnabled\":false,\"supportsRollbackOnFailureParameter\":false,\"archivingInfo\":{\"supportsQueryWithHistoricMoment\":false,\"startArchivingMoment\":-1},\"supportsStatistics\":true,\"supportsAdvancedQueries\":true,\"supportsValidateSQL\":true,\"supportsCoordinatesQuantization\":true,\"supportsCalculate\":false,\"supportsDatumTransformation\":true,\"advancedQueryCapabilities\":{\"supportsPagination\":true,\"supp"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/DNRDWR/Habitat_Layers_V10/FeatureServer/8?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "species",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":8,\"name\":\"Desert bighorn sheep\",\"type\":\"Feature Layer\",\"parentLayer\":null,\"defaultVisibility\":true,\"minScale\":0,\"maxScale\":0,\"canScaleSymbols\":false,\"geometryType\":\"esriGeometryPolygon\",\"description\":\"desert bighorn sheep distribution, season of habitat use, and habitat values are determined by local wildlife biologist relying on observations, surveys, and radio/satellite data. For use in large-scale planning and reporting.\",\"copyrightText\":\"Utah Division of Wildlife Resources\",\"editFieldsInfo\":null,\"ownershipBasedAccessControlForFeatures\":null,\"syncCanReturnChanges\":false,\"relationships\":[],\"isDataVersioned\":true,\"isDataArchived\":false,\"isCoGoEnabled\":false,\"supportsRollbackOnFailureParameter\":false,\"archivingInfo\":{\"supportsQueryWithHistoricMoment\":false,\"startArchivingMoment\":-1},\"supportsStatistics\":true,\"supportsAdvancedQueries\":true,\"supportsValidateSQL\":true,\"supportsCoordinatesQuantization\":true,\"supportsCalculate\":false,\"supportsDatumTransformation"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/DNRDWR/Habitat_Layers_V10/FeatureServer/9?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "species",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":9,\"name\":\"Dusky grouse\",\"type\":\"Feature Layer\",\"parentLayer\":null,\"defaultVisibility\":true,\"minScale\":0,\"maxScale\":0,\"canScaleSymbols\":false,\"geometryType\":\"esriGeometryPolygon\",\"description\":\"dusky grouse distribution, season of habitat use, and habitat values are determined by local wildlife biologist relying on observations, surveys, and predictive habitat modeling. For use in large-scale planning and reporting.\",\"copyrightText\":\"Utah Division of Wildlife Resources\",\"editFieldsInfo\":null,\"ownershipBasedAccessControlForFeatures\":null,\"syncCanReturnChanges\":false,\"relationships\":[],\"isDataVersioned\":true,\"isDataArchived\":false,\"isCoGoEnabled\":false,\"supportsRollbackOnFailureParameter\":false,\"archivingInfo\":{\"supportsQueryWithHistoricMoment\":false,\"startArchivingMoment\":-1},\"supportsStatistics\":true,\"supportsAdvancedQueries\":true,\"supportsValidateSQL\":true,\"supportsCoordinatesQuantization\":true,\"supportsCalculate\":false,\"supportsDatumTransformation\":true,\"a"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/DNRDWR/Habitat_Layers_V10/FeatureServer/10?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "species",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":10,\"name\":\"Elk\",\"type\":\"Feature Layer\",\"parentLayer\":null,\"defaultVisibility\":true,\"minScale\":0,\"maxScale\":0,\"canScaleSymbols\":false,\"geometryType\":\"esriGeometryPolygon\",\"description\":\"Rocky Mountain elk distribution, season of habitat use, and habitat values are determined by local wildlife biologist relying on observations, surveys, and radio/satellite data. For use in large-scale planning and reporting.\",\"copyrightText\":\"Utah Division of Wildlife Resources\",\"editFieldsInfo\":null,\"ownershipBasedAccessControlForFeatures\":null,\"syncCanReturnChanges\":false,\"relationships\":[],\"isDataVersioned\":true,\"isDataArchived\":false,\"isCoGoEnabled\":false,\"supportsRollbackOnFailureParameter\":false,\"archivingInfo\":{\"supportsQueryWithHistoricMoment\":false,\"startArchivingMoment\":-1},\"supportsStatistics\":true,\"supportsAdvancedQueries\":true,\"supportsValidateSQL\":true,\"supportsCoordinatesQuantization\":true,\"supportsCalculate\":false,\"supportsDatumTransformation\":true,\"advancedQu"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/DNRDWR/Habitat_Layers_V10/FeatureServer/11?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "species",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":11,\"name\":\"Gambel's quail\",\"type\":\"Feature Layer\",\"parentLayer\":null,\"defaultVisibility\":true,\"minScale\":0,\"maxScale\":0,\"canScaleSymbols\":false,\"geometryType\":\"esriGeometryPolygon\",\"description\":\"Gambels quail distribution, season of habitat use, and habitat values are determined by local wildlife biologist relying on observations, surveys, and transplant locations. For use in large-scale planning and reporting.\",\"copyrightText\":\"Utah Division of Wildlife Resources\",\"editFieldsInfo\":null,\"ownershipBasedAccessControlForFeatures\":null,\"syncCanReturnChanges\":false,\"relationships\":[],\"isDataVersioned\":true,\"isDataArchived\":false,\"isCoGoEnabled\":false,\"supportsRollbackOnFailureParameter\":false,\"archivingInfo\":{\"supportsQueryWithHistoricMoment\":false,\"startArchivingMoment\":-1},\"supportsStatistics\":true,\"supportsAdvancedQueries\":true,\"supportsValidateSQL\":true,\"supportsCoordinatesQuantization\":true,\"supportsCalculate\":false,\"supportsDatumTransformation\":true,\"adva"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/DNRDWR/Habitat_Layers_V10/FeatureServer/12?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "species",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":12,\"name\":\"Hungarian partridge\",\"type\":\"Feature Layer\",\"parentLayer\":null,\"defaultVisibility\":true,\"minScale\":0,\"maxScale\":0,\"canScaleSymbols\":false,\"geometryType\":\"esriGeometryPolygon\",\"description\":\"Hungarian partridge distribution, season of habitat use, and habitat values are determined by local wildlife biologist relying on observations, surveys, and transplant locations. For use in large-scale planning and reporting.\",\"copyrightText\":\"Utah Division of Wildlife Resources\",\"editFieldsInfo\":null,\"ownershipBasedAccessControlForFeatures\":null,\"syncCanReturnChanges\":false,\"relationships\":[],\"isDataVersioned\":true,\"isDataArchived\":false,\"isCoGoEnabled\":false,\"supportsRollbackOnFailureParameter\":false,\"archivingInfo\":{\"supportsQueryWithHistoricMoment\":false,\"startArchivingMoment\":-1},\"supportsStatistics\":true,\"supportsAdvancedQueries\":true,\"supportsValidateSQL\":true,\"supportsCoordinatesQuantization\":true,\"supportsCalculate\":false,\"supportsDatumTransformation\""
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/DNRDWR/Habitat_Layers_V10/FeatureServer/13?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "species",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":13,\"name\":\"Moose\",\"type\":\"Feature Layer\",\"parentLayer\":null,\"defaultVisibility\":true,\"minScale\":0,\"maxScale\":0,\"canScaleSymbols\":false,\"geometryType\":\"esriGeometryPolygon\",\"description\":\"moose distribution, season of habitat use, and habitat values are determined by local wildlife biologist relying on observations, surveys, and radio/satellite data. For use in large-scale planning and reporting.\",\"copyrightText\":\"Utah Division of Wildlife Resources\",\"editFieldsInfo\":null,\"ownershipBasedAccessControlForFeatures\":null,\"syncCanReturnChanges\":false,\"relationships\":[],\"isDataVersioned\":true,\"isDataArchived\":false,\"isCoGoEnabled\":false,\"supportsRollbackOnFailureParameter\":false,\"archivingInfo\":{\"supportsQueryWithHistoricMoment\":false,\"startArchivingMoment\":-1},\"supportsStatistics\":true,\"supportsAdvancedQueries\":true,\"supportsValidateSQL\":true,\"supportsCoordinatesQuantization\":true,\"supportsCalculate\":false,\"supportsDatumTransformation\":true,\"advancedQueryCapabili"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/DNRDWR/Habitat_Layers_V10/FeatureServer/14?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "species",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":14,\"name\":\"Mountain Goat\",\"type\":\"Feature Layer\",\"parentLayer\":null,\"defaultVisibility\":true,\"minScale\":0,\"maxScale\":0,\"canScaleSymbols\":false,\"geometryType\":\"esriGeometryPolygon\",\"description\":\"mountain goat distribution, season of habitat use, and habitat values are determined by local wildlife biologist relying on observations, surveys, and radio/satellite data. For use in large-scale planning and reporting.\",\"copyrightText\":\"Utah Division of Wildlife Resources\",\"editFieldsInfo\":null,\"ownershipBasedAccessControlForFeatures\":null,\"syncCanReturnChanges\":false,\"relationships\":[],\"isDataVersioned\":true,\"isDataArchived\":false,\"isCoGoEnabled\":false,\"supportsRollbackOnFailureParameter\":false,\"archivingInfo\":{\"supportsQueryWithHistoricMoment\":false,\"startArchivingMoment\":-1},\"supportsStatistics\":true,\"supportsAdvancedQueries\":true,\"supportsValidateSQL\":true,\"supportsCoordinatesQuantization\":true,\"supportsCalculate\":false,\"supportsDatumTransformation\":true,\"advan"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/DNRDWR/Habitat_Layers_V10/FeatureServer/15?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "species",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":15,\"name\":\"Mule deer\",\"type\":\"Feature Layer\",\"parentLayer\":null,\"defaultVisibility\":true,\"minScale\":0,\"maxScale\":0,\"canScaleSymbols\":false,\"geometryType\":\"esriGeometryPolygon\",\"description\":\"mule deer distribution, season of habitat use, and habitat values are determined by local wildlife biologist relying on observations, surveys, and radio/satellite data. For use in large-scale planning and reporting.\",\"copyrightText\":\"Utah Division of Wildlife Resources\",\"editFieldsInfo\":null,\"ownershipBasedAccessControlForFeatures\":null,\"syncCanReturnChanges\":false,\"relationships\":[],\"isDataVersioned\":false,\"isDataArchived\":false,\"isCoGoEnabled\":false,\"supportsRollbackOnFailureParameter\":true,\"archivingInfo\":{\"supportsQueryWithHistoricMoment\":false,\"startArchivingMoment\":-1},\"supportsStatistics\":true,\"supportsAdvancedQueries\":true,\"supportsValidateSQL\":true,\"supportsCoordinatesQuantization\":true,\"supportsCalculate\":true,\"supportsDatumTransformation\":true,\"advancedQueryC"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/DNRDWR/Habitat_Layers_V10/FeatureServer/16?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "species",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":16,\"name\":\"Pronghorn\",\"type\":\"Feature Layer\",\"parentLayer\":null,\"defaultVisibility\":true,\"minScale\":0,\"maxScale\":0,\"canScaleSymbols\":false,\"geometryType\":\"esriGeometryPolygon\",\"description\":\"pronghorn distribution, season of habitat use, and habitat values are determined by local wildlife biologist relying on observations, surveys, and radio/satellite data. For use in large-scale planning and reporting.\",\"copyrightText\":\"Utah Division of Wildlife Resources\",\"editFieldsInfo\":null,\"ownershipBasedAccessControlForFeatures\":null,\"syncCanReturnChanges\":false,\"relationships\":[],\"isDataVersioned\":true,\"isDataArchived\":false,\"isCoGoEnabled\":false,\"supportsRollbackOnFailureParameter\":false,\"archivingInfo\":{\"supportsQueryWithHistoricMoment\":false,\"startArchivingMoment\":-1},\"supportsStatistics\":true,\"supportsAdvancedQueries\":true,\"supportsValidateSQL\":true,\"supportsCoordinatesQuantization\":true,\"supportsCalculate\":false,\"supportsDatumTransformation\":true,\"advancedQuery"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/DNRDWR/Habitat_Layers_V10/FeatureServer/17?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "species",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":17,\"name\":\"Ring-necked pheasant\",\"type\":\"Feature Layer\",\"parentLayer\":null,\"defaultVisibility\":true,\"minScale\":0,\"maxScale\":0,\"canScaleSymbols\":false,\"geometryType\":\"esriGeometryPolygon\",\"description\":\"ring-necked pheasant distribution, season of habitat use, and habitat values are determined by local wildlife biologist relying on observations, surveys, and transplant locations. For use in large-scale planning and reporting.\",\"copyrightText\":\"Utah Division of Wildlife Resources\",\"editFieldsInfo\":null,\"ownershipBasedAccessControlForFeatures\":null,\"syncCanReturnChanges\":false,\"relationships\":[],\"isDataVersioned\":true,\"isDataArchived\":false,\"isCoGoEnabled\":false,\"supportsRollbackOnFailureParameter\":false,\"archivingInfo\":{\"supportsQueryWithHistoricMoment\":false,\"startArchivingMoment\":-1},\"supportsStatistics\":true,\"supportsAdvancedQueries\":true,\"supportsValidateSQL\":true,\"supportsCoordinatesQuantization\":true,\"supportsCalculate\":false,\"supportsDatumTransformatio"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/DNRDWR/Habitat_Layers_V10/FeatureServer/18?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "species",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":18,\"name\":\"Rocky mountain bighorn sheep\",\"type\":\"Feature Layer\",\"parentLayer\":null,\"defaultVisibility\":true,\"minScale\":0,\"maxScale\":0,\"canScaleSymbols\":false,\"geometryType\":\"esriGeometryPolygon\",\"description\":\"Rocky Mountain bighorn sheep distribution, season of habitat use, and habitat values are determined by local wildlife biologist relying on observations, surveys, and radio/satellite data. For use in large-scale planning and reporting.\",\"copyrightText\":\"Utah Division of Wildlife Resources\",\"editFieldsInfo\":null,\"ownershipBasedAccessControlForFeatures\":null,\"syncCanReturnChanges\":false,\"relationships\":[],\"isDataVersioned\":true,\"isDataArchived\":false,\"isCoGoEnabled\":false,\"supportsRollbackOnFailureParameter\":false,\"archivingInfo\":{\"supportsQueryWithHistoricMoment\":false,\"startArchivingMoment\":-1},\"supportsStatistics\":true,\"supportsAdvancedQueries\":true,\"supportsValidateSQL\":true,\"supportsCoordinatesQuantization\":true,\"supportsCalculate\":false,\"supportsDa"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/DNRDWR/Habitat_Layers_V10/FeatureServer/19?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "species",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":19,\"name\":\"Ruffed grouse\",\"type\":\"Feature Layer\",\"parentLayer\":null,\"defaultVisibility\":true,\"minScale\":0,\"maxScale\":0,\"canScaleSymbols\":false,\"geometryType\":\"esriGeometryPolygon\",\"description\":\"ruffed grouse distribution, season of habitat use, and habitat values are determined by local wildlife biologist relying on observations, surveys, and predictive habitat modeling. For use in large-scale planning and reporting.\",\"copyrightText\":\"Utah Division of Wildlife Resources\",\"editFieldsInfo\":null,\"ownershipBasedAccessControlForFeatures\":null,\"syncCanReturnChanges\":false,\"relationships\":[],\"isDataVersioned\":true,\"isDataArchived\":false,\"isCoGoEnabled\":false,\"supportsRollbackOnFailureParameter\":false,\"archivingInfo\":{\"supportsQueryWithHistoricMoment\":false,\"startArchivingMoment\":-1},\"supportsStatistics\":true,\"supportsAdvancedQueries\":true,\"supportsValidateSQL\":true,\"supportsCoordinatesQuantization\":true,\"supportsCalculate\":false,\"supportsDatumTransformation\":tru"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/DNRDWR/Habitat_Layers_V10/FeatureServer/20?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "species",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":20,\"name\":\"Snowshoe hare\",\"type\":\"Feature Layer\",\"parentLayer\":null,\"defaultVisibility\":true,\"minScale\":0,\"maxScale\":0,\"canScaleSymbols\":false,\"geometryType\":\"esriGeometryPolygon\",\"description\":\"snowshoe hare distribution, season of habitat use, and habitat values are determined by local wildlife biologist relying on observations, surveys, and predictive habitat modeling. For use in large-scale planning and reporting.\",\"copyrightText\":\"Utah Division of Wildlife Resources\",\"editFieldsInfo\":null,\"ownershipBasedAccessControlForFeatures\":null,\"syncCanReturnChanges\":false,\"relationships\":[],\"isDataVersioned\":true,\"isDataArchived\":false,\"isCoGoEnabled\":false,\"supportsRollbackOnFailureParameter\":false,\"archivingInfo\":{\"supportsQueryWithHistoricMoment\":false,\"startArchivingMoment\":-1},\"supportsStatistics\":true,\"supportsAdvancedQueries\":true,\"supportsValidateSQL\":true,\"supportsCoordinatesQuantization\":true,\"supportsCalculate\":false,\"supportsDatumTransformation\":true"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/DNRDWR/Habitat_Layers_V10/FeatureServer/21?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "species",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":21,\"name\":\"Turkey\",\"type\":\"Feature Layer\",\"parentLayer\":null,\"defaultVisibility\":true,\"minScale\":0,\"maxScale\":0,\"canScaleSymbols\":false,\"geometryType\":\"esriGeometryPolygon\",\"description\":\"turkey distribution, season of habitat use, and habitat values are determined by local wildlife biologist relying on observations, surveys, transplant locations, and radio/satellite data. For use in large-scale planning and reporting.\",\"copyrightText\":\"Utah Division of Wildlife Resources\",\"editFieldsInfo\":null,\"ownershipBasedAccessControlForFeatures\":null,\"syncCanReturnChanges\":false,\"relationships\":[],\"isDataVersioned\":true,\"isDataArchived\":false,\"isCoGoEnabled\":false,\"supportsRollbackOnFailureParameter\":false,\"archivingInfo\":{\"supportsQueryWithHistoricMoment\":false,\"startArchivingMoment\":-1},\"supportsStatistics\":true,\"supportsAdvancedQueries\":true,\"supportsValidateSQL\":true,\"supportsCoordinatesQuantization\":true,\"supportsCalculate\":false,\"supportsDatumTransformation\":tru"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/DNRDWR/Habitat_Layers_V10/FeatureServer/22?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "species",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":22,\"name\":\"White-tailed ptarmigan\",\"type\":\"Feature Layer\",\"parentLayer\":null,\"defaultVisibility\":true,\"minScale\":0,\"maxScale\":0,\"canScaleSymbols\":false,\"geometryType\":\"esriGeometryPolygon\",\"description\":\"white-tailed ptarmigan distribution, season of habitat use, and habitat values are determined by local wildlife biologist relying on observations, surveys, and radio/satellite data. For use in large-scale planning and reporting.\",\"copyrightText\":\"Utah Division of Wildlife Resources\",\"editFieldsInfo\":null,\"ownershipBasedAccessControlForFeatures\":null,\"syncCanReturnChanges\":false,\"relationships\":[],\"isDataVersioned\":true,\"isDataArchived\":false,\"isCoGoEnabled\":false,\"supportsRollbackOnFailureParameter\":false,\"archivingInfo\":{\"supportsQueryWithHistoricMoment\":false,\"startArchivingMoment\":-1},\"supportsStatistics\":true,\"supportsAdvancedQueries\":true,\"supportsValidateSQL\":true,\"supportsCoordinatesQuantization\":true,\"supportsCalculate\":false,\"supportsDatumTransform"
+    },
+    {
+      "url": "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/DNRDWR/Habitat_Layers_V10/FeatureServer/23?f=json&token=A96-XBZ1kTXj05onAQX2KVu81jeZCuXATMvPG97TuPJ_RUQna6h7VVraaWKJsCmK",
+      "content_type": "application/json;charset=UTF-8",
+      "age_term_hits": "",
+      "false_positive_age_hits": "",
+      "harvest_term_hits": "species",
+      "body_sample": "{\"currentVersion\":10.81,\"id\":23,\"name\":\"White-winged dove\",\"type\":\"Feature Layer\",\"parentLayer\":null,\"defaultVisibility\":true,\"minScale\":0,\"maxScale\":0,\"canScaleSymbols\":false,\"geometryType\":\"esriGeometryPolygon\",\"description\":\"white-winged dove distribution, season of habitat use, and habitat values are determined by local wildlife biologist relying on observations and surveys. For use in large-scale planning and reporting.\",\"copyrightText\":\"Utah Division of Wildlife Resources\",\"editFieldsInfo\":null,\"ownershipBasedAccessControlForFeatures\":null,\"syncCanReturnChanges\":false,\"relationships\":[],\"isDataVersioned\":true,\"isDataArchived\":false,\"isCoGoEnabled\":false,\"supportsRollbackOnFailureParameter\":false,\"archivingInfo\":{\"supportsQueryWithHistoricMoment\":false,\"startArchivingMoment\":-1},\"supportsStatistics\":true,\"supportsAdvancedQueries\":true,\"supportsValidateSQL\":true,\"supportsCoordinatesQuantization\":true,\"supportsCalculate\":false,\"supportsDatumTransformation\":true,\"advancedQueryCapabil"
+    }
+  ],
+  "service_roots": [
+    "https://dwrmapserv.utah.gov/arcgis/rest/services/HuntBoundary/CWD_positive_ver1/FeatureServer",
+    "https://dwrmapserv.utah.gov/arcgis/rest/services/Local_File_GDBs/AGRC_Landownership_opensgid/FeatureServer",
+    "https://dwrmapserv.utah.gov/arcgis/rest/services/TileCaches/AGRC_Landownership_Tiles_Ver5_opensgid/MapServer",
+    "https://dwrmapserv.utah.gov/arcgis/rest/services/ram/ram_WIA_PROD_v2/MapServer",
+    "https://dwrmapserv.utah.gov/arcgis/rest/services/ram/ram_WMA_PROD_v2/MapServer",
+    "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/DNRDWR/Habitat_Layers_V10/FeatureServer",
+    "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/HuntBoundary/HUNT_BOUNDARY_PROD/FeatureServer",
+    "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/HuntBoundary/HUNT_BOUNDARY_PROD/MapServer",
+    "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/HuntBoundary/NPS_UTAH_V1/MapServer",
+    "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/HuntBoundary/Restricted_Areas_V2/FeatureServer",
+    "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/Local_File_GDBs/Counties/FeatureServer",
+    "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/Local_File_GDBs/HealthCareFacilities/FeatureServer",
+    "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/USFS/USFS_Prescribed_Burns/FeatureServer",
+    "https://dwrmapserv.utah.gov/dwrarcgis/rest/services/hunt/CWMU_Tradelands_ver3/FeatureServer",
+    "https://server.arcgisonline.com/arcgis/rest/services/Elevation/World_Hillshade/MapServer",
+    "https://services.arcgisonline.com/arcgis/rest/services/Elevation/World_Hillshade/MapServer"
+  ]
+}

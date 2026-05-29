@@ -1,0 +1,22 @@
+{
+  "generatedAt": "2026-04-21T07:38:50",
+  "notes": [
+    "Rebuilt sourceHuntCodes from hunt-master-canonical using species-aware boundary matches.",
+    "Excluded all Private Land and Private Land Only hunt rows from conservation links.",
+    "Turkey conservation rows were linked by species and boundary because canonical turkey rows do not store a bearded sex split.",
+    "Desert and Rocky Mountain bighorn statewide rows were restricted to DS and RS code families respectively."
+  ],
+  "counts": {
+    "generatedAt": "2026-04-21T07:38:50",
+    "totalRows": 271,
+    "matchedPermitRegisterRows": 271,
+    "unmatchedPermitRegisterRows": 0,
+    "matchedCanonicalHuntRows": 271,
+    "unmatchedCanonicalHuntRows": 0,
+    "rowsWithSourceHuntCodes": 271,
+    "correctionsApplied": {
+      "sourceHuntCodesRebuiltFromPublicCatalog": 271,
+      "sourceHuntCodesLinkedFromCanonicalBoundaryMatches": 63
+    }
+  }
+}

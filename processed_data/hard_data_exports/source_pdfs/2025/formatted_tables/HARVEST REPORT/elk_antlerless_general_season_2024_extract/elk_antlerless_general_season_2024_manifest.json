@@ -1,0 +1,21 @@
+{
+  "source_pdf": "pipeline/RAW/hunt_unit_database/2025/pdf/harvest_report/ELK/2024 ELK ANTLERLESS GENERAL SEASON.pdf",
+  "output_csv": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/elk_antlerless_general_season_2024_extract/ELK_ANTLERLESS_GENERAL_SEASON_2024.csv",
+  "output_xlsx": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/elk_antlerless_general_season_2024_extract/ELK_ANTLERLESS_GENERAL_SEASON_2024.xlsx",
+  "rows_extracted": 88,
+  "unique_hunt_codes": 88,
+  "page_row_counts": [
+    {
+      "source_page": 1,
+      "rows": 41
+    },
+    {
+      "source_page": 2,
+      "rows": 42
+    },
+    {
+      "source_page": 3,
+      "rows": 5
+    }
+  ]
+}

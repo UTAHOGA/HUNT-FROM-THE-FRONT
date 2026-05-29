@@ -1,0 +1,106 @@
+{
+  "generated_at": "2026-05-10T05:36:12",
+  "master_reference_pdf": "pipeline/RAW/hunt_unit_database/2025/pdf/harvest_report/ELK/24_elk_bg_report.pdf",
+  "files_checked": 11,
+  "rows": [
+    {
+      "file": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/elk_by_unit_historical_2015_2024_extract/ELK_BULL_BY_UNIT_2015_2024.csv",
+      "rows": 37,
+      "unit_col": "Unit name",
+      "unit_rows_checked": 37,
+      "unit_name_matches_in_master": 37,
+      "unit_name_match_rate": 100.0,
+      "note": ""
+    },
+    {
+      "file": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/elk_bull_by_unit_2024_extract/ELK_TOTAL_HARVEST_BY_UNIT_2024.csv",
+      "rows": 38,
+      "unit_col": "Unit name",
+      "unit_rows_checked": 38,
+      "unit_name_matches_in_master": 38,
+      "unit_name_match_rate": 100.0,
+      "note": ""
+    },
+    {
+      "file": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/elk_bull_by_unit_2024_extract/ELK_GENERAL_SEASON_ARCHERY_HARVEST_BY_UNIT_2024.csv",
+      "rows": 35,
+      "unit_col": "Unit name",
+      "unit_rows_checked": 35,
+      "unit_name_matches_in_master": 35,
+      "unit_name_match_rate": 100.0,
+      "note": ""
+    },
+    {
+      "file": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/elk_cwmu_bull_harvest_2024_extract/ELK_CWMU_BULL_HARVEST_2024.csv",
+      "rows": 68,
+      "unit_col": "CWMU name",
+      "unit_rows_checked": 68,
+      "unit_name_matches_in_master": 68,
+      "unit_name_match_rate": 100.0,
+      "note": ""
+    },
+    {
+      "file": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/elk_general_extended_archery_2024_extract/ELK_GENERAL_EXTENDED_ARCHERY_HARVEST_2024.csv",
+      "rows": 6,
+      "unit_col": "Unit name",
+      "unit_rows_checked": 6,
+      "unit_name_matches_in_master": 6,
+      "unit_name_match_rate": 100.0,
+      "note": ""
+    },
+    {
+      "file": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/elk_limited_antlerless_2024_extract/ELK_LIMITED_ANTLERLESS_HARVEST_2024.csv",
+      "rows": 184,
+      "unit_col": "",
+      "unit_rows_checked": 0,
+      "unit_name_matches_in_master": 0,
+      "unit_name_match_rate": "",
+      "note": "no_unit_name_column"
+    },
+    {
+      "file": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/elk_youth_any_bull_hunters_choice_2024_extract/ELK_YOUTH_ANY_BULL_HUNTERS_CHOICE_2024.csv",
+      "rows": 61,
+      "unit_col": "Unit name",
+      "unit_rows_checked": 61,
+      "unit_name_matches_in_master": 61,
+      "unit_name_match_rate": 100.0,
+      "note": ""
+    },
+    {
+      "file": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/elk_statewide_stats_1931_2024_extract/ELK_STATEWIDE_HARVEST_STATS_1931_2024.csv",
+      "rows": 94,
+      "unit_col": "",
+      "unit_rows_checked": 0,
+      "unit_name_matches_in_master": 0,
+      "unit_name_match_rate": "",
+      "note": "no_unit_name_column"
+    },
+    {
+      "file": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/elk_winter_population_2020_2024_extract/ELK_WINTER_POPULATION_ESTIMATES_2020_2024.csv",
+      "rows": 39,
+      "unit_col": "Unit name",
+      "unit_rows_checked": 39,
+      "unit_name_matches_in_master": 39,
+      "unit_name_match_rate": 100.0,
+      "note": ""
+    },
+    {
+      "file": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/elk_preseason_calf_per_100_cows_2015_2024_extract/ELK_PRESEASON_CALF_PER_100_COWS_2015_2024.csv",
+      "rows": 30,
+      "unit_col": "Unit name",
+      "unit_rows_checked": 30,
+      "unit_name_matches_in_master": 30,
+      "unit_name_match_rate": 100.0,
+      "note": ""
+    },
+    {
+      "file": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/elk_winter_trend_2015_2024_extract/ELK_WINTER_TREND_2015_2024.csv",
+      "rows": 357,
+      "unit_col": "Unit name",
+      "unit_rows_checked": 357,
+      "unit_name_matches_in_master": 357,
+      "unit_name_match_rate": 100.0,
+      "note": ""
+    }
+  ]
+}

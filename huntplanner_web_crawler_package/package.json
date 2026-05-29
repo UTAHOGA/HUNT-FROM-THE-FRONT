@@ -1,0 +1,12 @@
+{
+  "name": "huntplanner-age-crawler",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "audit:huntplanner-age": "node scripts/audit-huntplanner-network-age-data.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.52.0"
+  }
+}

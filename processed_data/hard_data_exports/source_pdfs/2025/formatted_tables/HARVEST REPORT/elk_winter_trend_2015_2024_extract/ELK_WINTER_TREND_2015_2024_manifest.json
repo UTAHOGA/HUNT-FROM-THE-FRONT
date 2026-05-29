@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-05-10T05:36:07",
+  "stem": "ELK_WINTER_TREND_2015_2024",
+  "rows": 357,
+  "columns": [
+    "Unit name",
+    "Year",
+    "n",
+    "Calves per 100 cows",
+    "Bulls per 100 cows",
+    "Mature bulls per 100 cows",
+    "source_page"
+  ],
+  "csv": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/elk_winter_trend_2015_2024_extract/ELK_WINTER_TREND_2015_2024.csv",
+  "xlsx": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/elk_winter_trend_2015_2024_extract/ELK_WINTER_TREND_2015_2024.xlsx"
+}

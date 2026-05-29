@@ -37,6 +37,7 @@
         "pdf-lib": "^1.17.1",
         "pdf-parse": "^1.1.4",
         "pdfkit": "^0.17.2",
+        "playwright": "^1.60.0",
         "wrangler": "^4.88.0",
         "xlsx": "^0.18.5"
     }

@@ -1,0 +1,12 @@
+{
+  "rows_total": 164,
+  "rows_updated": 21,
+  "remaining_blank_boundaries": 1,
+  "status_counts": {
+    "ambiguous": 1,
+    "auto_filled_exact_or_alias": 21,
+    "kept_existing": 142
+  },
+  "out_csv": "C:\\Users\\tyler\\Desktop\\GitHub\\HUNTS\\pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\limited_entry_elk_harvest_2024_extract\\LIMITED_ENTRY_ELK_HARVEST_2024_STANDARDIZED_UPDATED2.csv",
+  "out_xlsx": "C:\\Users\\tyler\\Desktop\\GitHub\\HUNTS\\pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\limited_entry_elk_harvest_2024_extract\\LIMITED_ENTRY_ELK_HARVEST_2024_STANDARDIZED_UPDATED2.xlsx"
+}

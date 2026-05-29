@@ -1,0 +1,930 @@
+﻿data_year,hunt_code,has_draw_results,has_harvest_results,draw_rows,draw_permit_rows,draw_otc_rows,harvest_rows,draw_hunt_name_example,harvest_hunt_name_example,species_example,res_total_permits_example,nr_total_permits_example,total_permits_example,total_harvest_example,hunters_afield_example,success_rate_percent_example,engine_join_status
+2024,BI6500,1,0,1,1,0,0,Bison (hunter’s Choice) - Antelope Island - Any Legal Weapon Page 1,,,2,0,2,,,,DRAW_ONLY
+2024,BI6503,1,0,1,1,0,0,Bison (hunter’s Choice) - Henry Mtns - Any Legal Weapon Page 2,,,9,1,10,,,,DRAW_ONLY
+2024,BI6504,1,0,1,1,0,0,Bison (hunter’s Choice) - Henry Mtns - Any Legal Weapon Page 3,,,9,1,10,,,,DRAW_ONLY
+2024,BI6505,1,0,1,1,0,0,Bison (cow Only) - Henry Mtns - Any Legal Weapon Page 4,,,4,1,5,,,,DRAW_ONLY
+2024,BI6506,1,0,1,1,0,0,Bison (cow Only) - Henry Mtns - Any Legal Weapon Page 5,,,6,1,7,,,,DRAW_ONLY
+2024,BI6509,1,0,1,1,0,0,Bison Archery (hunter’s Choice) - Henry Mtns - Archery Page 6,,,4,1,5,,,,DRAW_ONLY
+2024,BI6516,1,0,1,1,0,0,Bison (hunter’s Choice) - Henry Mtns - Any Legal Weapon Page 7,,,6,1,7,,,,DRAW_ONLY
+2024,BI6528,1,0,1,1,0,0,"Bison Archery (hunter’s Choice) - Book Cliffs, Little Creek/south - Archery Page 8",,,4,1,5,,,,DRAW_ONLY
+2024,BI6529,1,0,1,1,0,0,"Bison (cow Only) - Book Cliffs, Little Creek/south - Any Legal Weapon Page 9",,,4,1,5,,,,DRAW_ONLY
+2024,BI6530,1,0,1,1,0,0,"Bison (hunter’s Choice) - Book Cliffs, Little Creek/south - Any Legal Weapon Page 10",,,3,1,4,,,,DRAW_ONLY
+2024,BI6531,1,0,1,1,0,0,"Bison (hunter’s Choice) - Book Cliffs, Little Creek/south - Any Legal Weapon Page 11",,,4,1,5,,,,DRAW_ONLY
+2024,BI6532,1,0,1,1,0,0,"Bison Archery (hunter’s Choice) - Book Cliffs, Bitter Creek - Archery Page 12",,,4,1,5,,,,DRAW_ONLY
+2024,BI6534,1,0,1,1,0,0,"Bison (hunter’s Choice) - Book Cliffs, Bitter Creek - Any Legal Weapon Page 13",,,4,1,5,,,,DRAW_ONLY
+2024,BI6535,1,0,1,1,0,0,"Bison (hunter’s Choice) - Book Cliffs, Bitter Creek - Any Legal Weapon Page 14",,,4,1,5,,,,DRAW_ONLY
+2024,BI6536,1,0,1,1,0,0,"Bison (cow Only) - Book Cliffs, Bitter Creek - Any Legal Weapon Page 15",,,1,1,2,,,,DRAW_ONLY
+2024,BI6537,1,0,1,1,0,0,"Bison (hunter’s Choice) - Book Cliffs, Little Creek/south - Any Legal Weapon Page 16",,,9,1,10,,,,DRAW_ONLY
+2024,BR1008,1,0,1,1,0,0,Book Cliffs - Pursuit,,Black Bear,26,2,28,,,,DRAW_ONLY
+2024,BR1009,1,0,1,1,0,0,La Sal - Pursuit,,Black Bear,14,1,15,,,,DRAW_ONLY
+2024,BR1010,1,0,1,1,0,0,San Juan - Pursuit,,Black Bear,14,1,15,,,,DRAW_ONLY
+2024,BR1011,1,0,1,1,0,0,Book Cliffs - Pursuit,,Black Bear,26,0,26,,,,DRAW_ONLY
+2024,BR1012,1,0,1,1,0,0,La Sal - Pursuit,,Black Bear,14,1,15,,,,DRAW_ONLY
+2024,BR1013,1,0,1,1,0,0,San Juan - Pursuit,,Black Bear,14,1,15,,,,DRAW_ONLY
+2024,BR1015,1,0,1,1,0,0,Book Cliffs - Pursuit,,Black Bear,0,2,2,,,,DRAW_ONLY
+2024,BR1016,1,0,1,1,0,0,San Juan - Pursuit,,Black Bear,0,2,2,,,,DRAW_ONLY
+2024,BR1017,1,0,1,1,0,0,La Sal - Pursuit,,Black Bear,0,2,2,,,,DRAW_ONLY
+2024,BR7000,1,0,1,1,0,0,Beaver - Any Legal Weapon,,Black Bear,9,1,10,,,,DRAW_ONLY
+2024,BR7001,1,0,1,1,0,0,"Book Cliffs, Bitter Creek/south - Any Legal Weapon",,Black Bear,39,4,43,,,,DRAW_ONLY
+2024,BR7003,1,0,1,1,0,0,Manti North - Any Legal Weapon,,Black Bear,17,1,18,,,,DRAW_ONLY
+2024,BR7004,1,0,1,1,0,0,Manti South/san Rafael North - Any Legal Weapon,,Black Bear,8,0,8,,,,DRAW_ONLY
+2024,BR7005,1,0,1,1,0,0,Nebo - Any Legal Weapon,,Black Bear,8,0,8,,,,DRAW_ONLY
+2024,BR7007,1,0,1,1,0,0,"Fillmore, Pahvant - Any Legal Weapon",,Black Bear,1,0,1,,,,DRAW_ONLY
+2024,BR7008,1,0,1,1,0,0,La Sal - Any Legal Weapon,,Black Bear,40,3,43,,,,DRAW_ONLY
+2024,BR7009,1,0,1,1,0,0,Mt Dutton - Any Legal Weapon,,Black Bear,3,0,3,,,,DRAW_ONLY
+2024,BR7010,1,0,1,1,0,0,Panguitch Lake/zion - Any Legal Weapon,,Black Bear,9,0,9,,,,DRAW_ONLY
+2024,BR7011,1,0,1,1,0,0,Paunsaugunt - Any Legal Weapon,,Black Bear,4,0,4,,,,DRAW_ONLY
+2024,BR7012,1,0,1,1,0,0,Boulder/kaiparowits - Any Legal Weapon,,Black Bear,27,2,29,,,,DRAW_ONLY
+2024,BR7013,1,0,1,1,0,0,Fishlake/thousand Lakes - Any Legal Weapon,,Black Bear,7,0,7,,,,DRAW_ONLY
+2024,BR7014,1,0,1,1,0,0,San Juan - Any Legal Weapon,,Black Bear,40,3,43,,,,DRAW_ONLY
+2024,BR7015,1,0,1,1,0,0,Diamond Mtn/vernal/bonanza - Any Legal Weapon,,Black Bear,11,1,12,,,,DRAW_ONLY
+2024,BR7016,1,0,1,1,0,0,"Wasatch Mtns, West-central - Any Legal Weapon",,Black Bear,40,4,44,,,,DRAW_ONLY
+2024,BR7017,1,0,1,1,0,0,Cache/ogden - Any Legal Weapon,,Black Bear,2,0,2,,,,DRAW_ONLY
+2024,BR7018,1,0,1,1,0,0,"Kamas/north Slope, Summit - Any Legal Weapon",,Black Bear,5,0,5,,,,DRAW_ONLY
+2024,BR7019,1,0,1,1,0,0,Chalk Creek/east Canyon/morgan-south Rich - Any Legal Weapon,,Black Bear,5,0,5,,,,DRAW_ONLY
+2024,BR7020,1,0,1,1,0,0,Monroe - Any Legal Weapon,,Black Bear,1,0,1,,,,DRAW_ONLY
+2024,BR7100,1,0,1,1,0,0,Beaver - Any Legal Weapon,,Black Bear,9,1,10,,,,DRAW_ONLY
+2024,BR7101,1,0,1,1,0,0,"Book Cliffs, Bitter Creek/south - Any Legal Weapon",,Black Bear,9,1,10,,,,DRAW_ONLY
+2024,BR7102,1,0,1,1,0,0,"Book Cliffs, Little Creek Roadless - Any Legal Weapon",,Black Bear,4,0,4,,,,DRAW_ONLY
+2024,BR7104,1,0,1,1,0,0,Manti North - Any Legal Weapon,,Black Bear,12,1,13,,,,DRAW_ONLY
+2024,BR7105,1,0,1,1,0,0,Manti South/san Rafael North - Any Legal Weapon,,Black Bear,16,1,17,,,,DRAW_ONLY
+2024,BR7106,1,0,1,1,0,0,Nebo - Any Legal Weapon,,Black Bear,9,0,9,,,,DRAW_ONLY
+2024,BR7108,1,0,1,1,0,0,La Sal - Any Legal Weapon,,Black Bear,25,2,27,,,,DRAW_ONLY
+2024,BR7109,1,0,1,1,0,0,Mt Dutton - Any Legal Weapon,,Black Bear,3,0,3,,,,DRAW_ONLY
+2024,BR7110,1,0,1,1,0,0,Nine Mile - Any Legal Weapon,,Black Bear,15,1,16,,,,DRAW_ONLY
+2024,BR7111,1,0,1,1,0,0,"North Slope, Three Corners/west Daggett - Any Legal Weapon",,Black Bear,1,0,1,,,,DRAW_ONLY
+2024,BR7112,1,0,1,1,0,0,Panguitch Lake/zion - Any Legal Weapon,,Black Bear,4,0,4,,,,DRAW_ONLY
+2024,BR7113,1,0,1,1,0,0,Paunsaugunt - Any Legal Weapon,,Black Bear,3,0,3,,,,DRAW_ONLY
+2024,BR7114,1,0,1,1,0,0,Boulder/kaiparowits - Any Legal Weapon,,Black Bear,20,2,22,,,,DRAW_ONLY
+2024,BR7115,1,0,1,1,0,0,Fishlake/thousand Lakes - Any Legal Weapon,,Black Bear,6,0,6,,,,DRAW_ONLY
+2024,BR7116,1,0,1,1,0,0,San Juan - Any Legal Weapon,,Black Bear,25,2,27,,,,DRAW_ONLY
+2024,BR7117,1,0,1,1,0,0,Diamond Mtn/vernal/bonanza - Any Legal Weapon,,Black Bear,9,0,9,,,,DRAW_ONLY
+2024,BR7118,1,0,1,1,0,0,Yellowstone - Any Legal Weapon,,Black Bear,5,0,5,,,,DRAW_ONLY
+2024,BR7119,1,0,1,1,0,0,"Wasatch Mtns, Avintaquin/currant Creek - Any Legal Weapon",,Black Bear,7,0,7,,,,DRAW_ONLY
+2024,BR7120,1,0,1,1,0,0,"Wasatch Mtns, West-central - Any Legal Weapon",,Black Bear,23,1,24,,,,DRAW_ONLY
+2024,BR7121,1,0,1,1,0,0,Cache/ogden - Any Legal Weapon,,Black Bear,2,0,2,,,,DRAW_ONLY
+2024,BR7122,1,0,1,1,0,0,Chalk Creek/east Canyon/morgan-south Rich - Any Legal Weapon,,Black Bear,6,0,6,,,,DRAW_ONLY
+2024,BR7123,1,0,1,1,0,0,"Kamas/north Slope, Summit - Any Legal Weapon",,Black Bear,6,0,6,,,,DRAW_ONLY
+2024,BR7124,1,0,1,1,0,0,"Fillmore, Pahvant - Any Legal Weapon",,Black Bear,1,0,1,,,,DRAW_ONLY
+2024,BR7125,1,0,1,1,0,0,Monroe - Any Legal Weapon,,Black Bear,1,0,1,,,,DRAW_ONLY
+2024,BR7200,1,0,1,1,0,0,Beaver - Any Legal Weapon,,Black Bear,8,0,8,,,,DRAW_ONLY
+2024,BR7201,1,0,1,1,0,0,"Book Cliffs, Bitter Creek/south - Any Legal Weapon",,Black Bear,18,2,20,,,,DRAW_ONLY
+2024,BR7203,1,0,1,1,0,0,Manti North - Any Legal Weapon,,Black Bear,10,1,11,,,,DRAW_ONLY
+2024,BR7204,1,0,1,1,0,0,Manti South/san Rafael North - Any Legal Weapon,,Black Bear,16,1,17,,,,DRAW_ONLY
+2024,BR7205,1,0,1,1,0,0,Nebo - Any Legal Weapon,,Black Bear,6,0,6,,,,DRAW_ONLY
+2024,BR7207,1,0,1,1,0,0,"Fillmore, Pahvant - Any Legal Weapon",,Black Bear,1,0,1,,,,DRAW_ONLY
+2024,BR7208,1,0,1,1,0,0,La Sal - Any Legal Weapon,,Black Bear,6,0,6,,,,DRAW_ONLY
+2024,BR7210,1,0,1,1,0,0,Mt Dutton - Any Legal Weapon,,Black Bear,3,0,3,,,,DRAW_ONLY
+2024,BR7211,1,0,1,1,0,0,Nine Mile - Any Legal Weapon,,Black Bear,22,0,22,,,,DRAW_ONLY
+2024,BR7212,1,0,1,1,0,0,"North Slope, Three Corners/west Daggett - Any Legal Weapon",,Black Bear,2,0,2,,,,DRAW_ONLY
+2024,BR7213,1,0,1,1,0,0,Panguitch Lake/zion - Any Legal Weapon,,Black Bear,8,0,8,,,,DRAW_ONLY
+2024,BR7214,1,0,1,1,0,0,Paunsaugunt - Any Legal Weapon,,Black Bear,3,0,3,,,,DRAW_ONLY
+2024,BR7215,1,0,1,1,0,0,Boulder/kaiparowits - Any Legal Weapon,,Black Bear,10,1,11,,,,DRAW_ONLY
+2024,BR7216,1,0,1,1,0,0,Fishlake/thousand Lakes - Any Legal Weapon,,Black Bear,4,0,4,,,,DRAW_ONLY
+2024,BR7217,1,0,1,1,0,0,San Juan - Any Legal Weapon,,Black Bear,6,0,6,,,,DRAW_ONLY
+2024,BR7218,1,0,1,1,0,0,Diamond Mtn/vernal/bonanza - Any Legal Weapon,,Black Bear,7,0,7,,,,DRAW_ONLY
+2024,BR7219,1,0,1,1,0,0,Yellowstone - Any Legal Weapon,,Black Bear,4,0,4,,,,DRAW_ONLY
+2024,BR7220,1,0,1,1,0,0,"Wasatch Mtns, Avintaquin/currant Creek - Any Legal Weapon",,Black Bear,9,0,9,,,,DRAW_ONLY
+2024,BR7221,1,0,1,1,0,0,"Wasatch Mtns, West-central - Any Legal Weapon",,Black Bear,11,1,12,,,,DRAW_ONLY
+2024,BR7224,1,0,1,1,0,0,"Book Cliffs, Little Creek Roadless - Any Legal Weapon",,Black Bear,9,1,10,,,,DRAW_ONLY
+2024,BR7225,1,0,1,1,0,0,"Book Cliffs, Little Creek Roadless - Any Legal Weapon",,Black Bear,7,0,7,,,,DRAW_ONLY
+2024,BR7228,1,0,1,1,0,0,Cache/ogden - Any Legal Weapon,,Black Bear,1,0,1,,,,DRAW_ONLY
+2024,BR7229,1,0,1,1,0,0,"Kamas/north Slope, Summit - Any Legal Weapon",,Black Bear,4,0,4,,,,DRAW_ONLY
+2024,BR7300,1,0,1,1,0,0,"Book Cliffs, Bitter Creek/south - Any Legal Weapon",,Black Bear,3,0,3,,,,DRAW_ONLY
+2024,BR7301,1,0,1,1,0,0,"Book Cliffs, Little Creek Roadless - Any Legal Weapon",,Black Bear,2,0,2,,,,DRAW_ONLY
+2024,BR7303,1,0,1,1,0,0,Manti North - Any Legal Weapon,,Black Bear,10,1,11,,,,DRAW_ONLY
+2024,BR7304,1,0,1,1,0,0,Manti South/san Rafael North - Any Legal Weapon,,Black Bear,12,1,13,,,,DRAW_ONLY
+2024,BR7305,1,0,1,1,0,0,Nebo - Any Legal Weapon,,Black Bear,3,0,3,,,,DRAW_ONLY
+2024,BR7307,1,0,1,1,0,0,La Sal - Any Legal Weapon,,Black Bear,9,1,10,,,,DRAW_ONLY
+2024,BR7308,1,0,1,1,0,0,"North Slope, Three Corners/west Daggett - Any Legal Weapon",,Black Bear,1,0,1,,,,DRAW_ONLY
+2024,BR7309,1,0,1,1,0,0,Panguitch Lake/zion - Any Legal Weapon,,Black Bear,4,0,4,,,,DRAW_ONLY
+2024,BR7310,1,0,1,1,0,0,Boulder/kaiparowits - Any Legal Weapon,,Black Bear,9,1,10,,,,DRAW_ONLY
+2024,BR7311,1,0,1,1,0,0,Fishlake/thousand Lakes - Any Legal Weapon,,Black Bear,2,0,2,,,,DRAW_ONLY
+2024,BR7312,1,0,1,1,0,0,San Juan - Any Legal Weapon,,Black Bear,9,1,10,,,,DRAW_ONLY
+2024,BR7313,1,0,1,1,0,0,Diamond Mtn/vernal/bonanza - Any Legal Weapon,,Black Bear,7,0,7,,,,DRAW_ONLY
+2024,BR7314,1,0,1,1,0,0,Yellowstone - Any Legal Weapon,,Black Bear,2,0,2,,,,DRAW_ONLY
+2024,BR7315,1,0,1,1,0,0,"Wasatch Mtns, Avintaquin/currant Creek - Any Legal Weapon",,Black Bear,5,0,5,,,,DRAW_ONLY
+2024,BR7316,1,0,1,1,0,0,"Wasatch Mtns, West-central - Any Legal Weapon",,Black Bear,13,1,14,,,,DRAW_ONLY
+2024,BR7317,1,0,1,1,0,0,Nine Mile - Any Legal Weapon,,Black Bear,7,0,7,,,,DRAW_ONLY
+2024,BR7318,1,0,1,1,0,0,Beaver - Any Legal Weapon,,Black Bear,2,0,2,,,,DRAW_ONLY
+2024,BR7320,1,0,1,1,0,0,Cache/ogden - Any Legal Weapon,,Black Bear,1,0,1,,,,DRAW_ONLY
+2024,BR7321,1,0,1,1,0,0,"Kamas/north Slope, Summit - Any Legal Weapon",,Black Bear,4,0,4,,,,DRAW_ONLY
+2024,BR7322,1,0,1,1,0,0,Mt Dutton - Any Legal Weapon,,Black Bear,1,0,1,,,,DRAW_ONLY
+2024,BR7323,1,0,1,1,0,0,Paunsaugunt - Any Legal Weapon,,Black Bear,1,0,1,,,,DRAW_ONLY
+2024,DA1001,1,0,1,1,0,0,"Antlerless Deer - Box Elder, West Bear River - Archery, Mzldr, Shotgn Only",,Antlerless Deer,24,0,24,,,,DRAW_ONLY
+2024,DA1002,1,0,1,1,0,0,"Antlerless Deer - Box Elder, West Bear River - Archery, Mzldr, Shotgn Only",,Antlerless Deer,24,0,24,,,,DRAW_ONLY
+2024,DA1003,1,0,1,1,0,0,"Antlerless Deer - Monroe/plateau, Sevier Valley - Archery, Mzldr, Shotgn Only",,Antlerless Deer,11,1,12,,,,DRAW_ONLY
+2024,DA1009,1,0,1,1,0,0,"Antlerless Deer - Pine Valley, Enterprise - Any Legal Weapon",,Antlerless Deer,18,2,20,,,,DRAW_ONLY
+2024,DA1011,1,0,1,1,0,0,Cwmu Antlerless Deer - George Creek - Any Legal Weapon,,Antlerless Deer,4,0,4,,,,DRAW_ONLY
+2024,DA1012,1,0,1,1,0,0,Cwmu Two Doe Antlerless Deer - Junction Valley - Any Legal Weapon,,Antlerless Deer,12,0,12,,,,DRAW_ONLY
+2024,DA1013,1,0,1,1,0,0,Cwmu Antlerless Deer - Mt Carmel - Any Legal Weapon,,Antlerless Deer,4,0,4,,,,DRAW_ONLY
+2024,DA1018,1,0,1,1,0,0,"Two Doe Antlerless Deer - Pine Valley, New Harmony - Archery, Mzldr, Shotgn Only",,Antlerless Deer,14,2,16,,,,DRAW_ONLY
+2024,DA1027,1,0,1,1,0,0,"Antlerless Deer - East Canyon, Davis-north Salt Lake - Any Legal Weapon",,Antlerless Deer,24,0,24,,,,DRAW_ONLY
+2024,DA1030,1,0,1,1,0,0,"Antlerless Deer - Nine Mile, Price River Valley - Archery",,Antlerless Deer,23,0,23,,,,DRAW_ONLY
+2024,DA1031,1,0,1,1,0,0,"Antlerless Deer - Oquirrh-stansbury, Settlement Cyn - Archery",,Antlerless Deer,15,1,16,,,,DRAW_ONLY
+2024,DA1033,1,0,1,1,0,0,"Antlerless Deer - San Juan, Monticello - Archery",,Antlerless Deer,4,0,4,,,,DRAW_ONLY
+2024,DA1041,1,0,1,1,0,0,"Antlerless Deer - Nine Mile, Green River Valley - Any Legal Weapon",,Antlerless Deer,11,1,12,,,,DRAW_ONLY
+2024,DA1042,1,0,1,1,0,0,"Antlerless Deer - San Juan, Monticello - Archery",,Antlerless Deer,4,0,4,,,,DRAW_ONLY
+2024,DA1044,1,0,1,1,0,0,Two Doe Antlerless Deer - Myton - Any Legal Weapon,,Antlerless Deer,39,1,40,,,,DRAW_ONLY
+2024,DA1045,1,0,1,1,0,0,"Antlerless Deer - Fillmore, Oak City - Archery",,Antlerless Deer,12,0,12,,,,DRAW_ONLY
+2024,DA1046,1,0,1,1,0,0,"Antlerless Deer - Nine Mile, Price River Valley - Archery, Mzldr, Shotgn Only",,Antlerless Deer,20,0,20,,,,DRAW_ONLY
+2024,DA1047,1,0,1,1,0,0,Two Doe Antlerless Deer - Vernal-ouray Valley - Any Legal Weapon,,Antlerless Deer,39,1,40,,,,DRAW_ONLY
+2024,DA1048,1,0,1,1,0,0,Antlerless Deer - Fillmore City - Archery,,Antlerless Deer,11,1,12,,,,DRAW_ONLY
+2024,DA1049,1,0,1,1,0,0,Antlerless Deer - Ashley Valley - Archery,,Antlerless Deer,64,2,66,,,,DRAW_ONLY
+2024,DA1050,1,0,1,1,0,0,Cwmu Antlerless Deer - The Rose Of Snowville - Any Legal Weapon,,Antlerless Deer,7,0,7,,,,DRAW_ONLY
+2024,DB1000,1,0,1,1,0,0,Premium Le Archery Buck Deer - Henry Mtns - Archery Page 17,,,9,1,10,,,,DRAW_ONLY
+2024,DB1001,1,0,1,1,0,0,Premium Le Archery Buck Deer - Paunsaugunt - Archery Page 18,,,23,3,26,,,,DRAW_ONLY
+2024,DB1002,1,0,1,1,0,0,Premium Le Alw (rifle) Buck Deer - Antelope Island - Any Legal Weapon Page 19,,,1,0,1,,,,DRAW_ONLY
+2024,DB1003,1,0,1,1,0,0,Premium Le Alw (rifle) Buck Deer - Henry Mtns - Any Legal Weapon Page 20,,,24,3,27,,,,DRAW_ONLY
+2024,DB1004,1,0,1,1,0,0,Premium Le Alw (rifle) Buck Deer - Paunsaugunt - Any Legal Weapon Page 21,,,67,7,74,,,,DRAW_ONLY
+2024,DB1005,1,0,1,1,0,0,Premium Le Muzzleloader Buck Deer - Henry Mtns - Muzzleloader Page 22,,,9,1,10,,,,DRAW_ONLY
+2024,DB1006,1,0,1,1,0,0,Premium Le Muzzleloader Buck Deer - Paunsaugunt - Muzzleloader Page 23,,,23,3,26,,,,DRAW_ONLY
+2024,DB1007,1,0,1,1,0,0,Multi-season Premium Limited-entry Buck Deer - Henry Mtns - Any Legal Weapon Page 24,,,1,0,1,,,,DRAW_ONLY
+2024,DB1008,1,0,1,1,0,0,Multi-season Premium Limited-entry Buck Deer - Paunsaugunt - Any Legal Weapon Page 25,,,4,0,4,,,,DRAW_ONLY
+2024,DB1010,1,0,1,1,0,0,Management Alw (rifle) Buck Deer - Paunsaugunt - Any Legal Weapon Page 26,,,17,2,19,,,,DRAW_ONLY
+2024,DB1011,1,0,1,1,0,0,Limited-entry Archery Buck Deer - Book Cliffs - Archery Page 27,,,39,3,42,,,,DRAW_ONLY
+2024,DB1012,1,0,1,1,0,0,"Limited-entry Archery Buck Deer - Fillmore, Oak Creek Le - Archery Page 28",,,9,1,10,,,,DRAW_ONLY
+2024,DB1013,1,0,1,1,0,0,"Limited-entry Archery Buck Deer - La Sal, Dolores Triangle - Archery Page 29",,,4,0,4,,,,DRAW_ONLY
+2024,DB1014,1,0,1,1,0,0,"Limited-entry Archery Buck Deer - San Juan, Elk Ridge - Archery Page 30",,,13,2,15,,,,DRAW_ONLY
+2024,DB1015,1,0,1,1,0,0,Limited-entry Archery Buck Deer - Diamond Mtn - Archery Page 31,,,21,2,23,,,,DRAW_ONLY
+2024,DB1016,1,0,1,1,0,0,"Limited-entry Archery Buck Deer - West Desert, Vernon - Archery Page 32",,,36,3,39,,,,DRAW_ONLY
+2024,DB1017,1,0,1,1,0,0,"Limited-entry Alw (rifle) Buck Deer - Book Cliffs, North - Any Legal Weapon Page 33",,,86,9,95,,,,DRAW_ONLY
+2024,DB1018,1,0,1,1,0,0,"Limited-entry Alw (rifle) Buck Deer - Book Cliffs, South - Any Legal Weapon Page 34",,,21,2,23,,,,DRAW_ONLY
+2024,DB1019,1,0,1,1,0,0,"Limited-entry Alw (rifle) Buck Deer - Fillmore, Oak Creek Le - Any Legal Weapon Page 35",,,23,3,26,,,,DRAW_ONLY
+2024,DB1020,1,0,1,1,0,0,"Limited-entry Alw (rifle) Buck Deer - La Sal, Dolores Triangle - Any Legal Weapon Page 36",,,11,1,12,,,,DRAW_ONLY
+2024,DB1022,1,0,1,1,0,0,"Limited-entry Alw (rifle) Buck Deer - San Juan, Elk Ridge - Any Legal Weapon Page 37",,,37,3,40,,,,DRAW_ONLY
+2024,DB1023,1,0,1,1,0,0,Limited-entry Alw (rifle) Buck Deer - Diamond Mtn - Any Legal Weapon Page 38,,,57,6,63,,,,DRAW_ONLY
+2024,DB1024,1,0,1,1,0,0,"Limited-entry Alw (rifle) Buck Deer - West Desert, Vernon - Any Legal Weapon Page 39",,,104,11,115,,,,DRAW_ONLY
+2024,DB1025,1,0,1,1,0,0,Limited-entry Muzzleloader Buck Deer - Book Cliffs - Muzzleloader Page 40,,,38,3,41,,,,DRAW_ONLY
+2024,DB1026,1,0,1,1,0,0,"Limited-entry Muzzleloader Buck Deer - Cache, Crawford Mtn - Muzzleloader Page 41",,,6,1,7,,,,DRAW_ONLY
+2024,DB1028,1,0,1,1,0,0,Limited-entry Muzzleloader Buck Deer - Fillmore - Muzzleloader Page 42,,,10,1,11,,,,DRAW_ONLY
+2024,DB1029,1,0,1,1,0,0,"Limited-entry Muzzleloader Buck Deer - Fillmore, Oak Creek Le - Muzzleloader Page 43",,,9,1,10,,,,DRAW_ONLY
+2024,DB1030,1,0,1,1,0,0,Limited-entry Muzzleloader Buck Deer - Kamas - Muzzleloader Page 44,,,5,1,6,,,,DRAW_ONLY
+2024,DB1031,1,0,1,1,0,0,"Limited-entry Muzzleloader Buck Deer - La Sal, Dolores Triangle - Muzzleloader Page 45",,,4,0,4,,,,DRAW_ONLY
+2024,DB1032,1,0,1,1,0,0,Limited-entry Muzzleloader Buck Deer - Monroe - Muzzleloader Page 46,,,4,1,5,,,,DRAW_ONLY
+2024,DB1033,1,0,1,1,0,0,Limited-entry Muzzleloader Buck Deer - Nine Mile - Muzzleloader Page 47,,,6,1,7,,,,DRAW_ONLY
+2024,DB1034,1,0,1,1,0,0,Limited-entry Muzzleloader Buck Deer - Pine Valley - Muzzleloader Page 48,,,14,2,16,,,,DRAW_ONLY
+2024,DB1036,1,0,1,1,0,0,Limited-entry Muzzleloader Buck Deer - Thousand Lakes - Muzzleloader Page 49,,,4,1,5,,,,DRAW_ONLY
+2024,DB1037,1,0,1,1,0,0,"Limited-entry Muzzleloader Buck Deer - San Juan, Elk Ridge - Muzzleloader Page 50",,,13,2,15,,,,DRAW_ONLY
+2024,DB1038,1,0,1,1,0,0,Limited-entry Muzzleloader Buck Deer - Diamond Mtn - Muzzleloader Page 51,,,21,2,23,,,,DRAW_ONLY
+2024,DB1039,1,0,1,1,0,0,Limited-entry Muzzleloader Buck Deer - Yellowstone - Muzzleloader Page 52,,,5,1,6,,,,DRAW_ONLY
+2024,DB1040,1,0,1,1,0,0,Limited-entry Muzzleloader Buck Deer - Southwest Desert - Muzzleloader Page 53,,,4,1,5,,,,DRAW_ONLY
+2024,DB1041,1,0,1,1,0,0,"Limited-entry Muzzleloader Buck Deer - Wasatch Mtns, East - Muzzleloader Page 54",,,21,3,24,,,,DRAW_ONLY
+2024,DB1042,1,0,1,1,0,0,"Limited-entry Muzzleloader Buck Deer - West Desert, Vernon - Muzzleloader Page 55",,,37,3,40,,,,DRAW_ONLY
+2024,DB1043,1,0,1,1,0,0,Limited-entry Muzzleloader Buck Deer - Zion - Muzzleloader Page 56,,,14,2,16,,,,DRAW_ONLY
+2024,DB1044,1,0,1,1,0,0,Multi-season Limited-entry Buck Deer - Book Cliffs - Any Legal Weapon Page 57,,,6,1,7,,,,DRAW_ONLY
+2024,DB1045,1,0,1,1,0,0,"Multi-season Limited-entry Buck Deer - Fillmore, Oak Creek Le - Any Legal Weapon Page 58",,,1,0,1,,,,DRAW_ONLY
+2024,DB1046,1,0,1,1,0,0,"Multi-season Limited-entry Buck Deer - San Juan, Elk Ridge - Any Legal Weapon Page 59",,,2,0,2,,,,DRAW_ONLY
+2024,DB1047,1,0,1,1,0,0,Multi-season Limited-entry Buck Deer - Diamond Mtn - Any Legal Weapon Page 60,,,4,0,4,,,,DRAW_ONLY
+2024,DB1048,1,0,1,1,0,0,"Multi-season Limited-entry Buck Deer - West Desert, Vernon - Any Legal Weapon Page 61",,,5,1,6,,,,DRAW_ONLY
+2024,DB1053,1,0,1,1,0,0,Limited-entry Muzzleloader Buck Deer - Mt Dutton - Muzzleloader Page 62,,,4,1,5,,,,DRAW_ONLY
+2024,DB1054,1,0,1,1,0,0,Limited-entry Muzzleloader Buck Deer - Ogden - Muzzleloader Page 63,,,8,1,9,,,,DRAW_ONLY
+2024,DB1055,1,0,1,1,0,0,Limited-entry Muzzleloader Buck Deer - Fishlake - Muzzleloader Page 64,,,5,1,6,,,,DRAW_ONLY
+2024,DB1058,1,0,1,1,0,0,Alw (rifle) Cactus Buck Deer - Paunsaugunt - Any Legal Weapon Page 65,,,27,3,30,,,,DRAW_ONLY
+2024,DB1059,1,0,1,1,0,0,Limited-entry Muzzleloader Buck Deer - Beaver - Muzzleloader Page 66,,,7,1,8,,,,DRAW_ONLY
+2024,DB1065,1,0,1,1,0,0,Limited-entry Muzzleloader Buck Deer - North Slope - Muzzleloader Page 67,,,11,1,12,,,,DRAW_ONLY
+2024,DB1073,1,0,1,1,0,0,Management Archery Buck Deer - Paunsaugunt - Archery Page 68,,,4,0,4,,,,DRAW_ONLY
+2024,DB1074,1,0,1,1,0,0,Management Muzzleloader Buck Deer - Paunsaugunt - Muzzleloader Page 69,,,4,0,4,,,,DRAW_ONLY
+2024,DB1077,1,0,1,1,0,0,Limited-entry Muzzleloader Buck Deer - Box Elder - Muzzleloader Page 70,,,21,2,23,,,,DRAW_ONLY
+2024,DB1078,1,0,1,1,0,0,Limited-entry Muzzleloader Buck Deer - Cache - Muzzleloader Page 71,,,5,1,6,,,,DRAW_ONLY
+2024,DB1079,1,0,1,1,0,0,Limited-entry Muzzleloader Buck Deer - Manti/san Rafael - Muzzleloader Page 72,,,35,4,39,,,,DRAW_ONLY
+2024,DB1080,1,0,1,1,0,0,Limited-entry Muzzleloader Buck Deer - Nebo - Muzzleloader Page 73,,,21,2,23,,,,DRAW_ONLY
+2024,DB1081,1,0,1,1,0,0,"Limited-entry Muzzleloader Buck Deer - La Sal, La Sal Mtns - Muzzleloader Page 74",,,6,1,7,,,,DRAW_ONLY
+2024,DB1082,1,0,1,1,0,0,Limited-entry Muzzleloader Buck Deer - Oquirrh-stansbury - Muzzleloader Page 75,,,12,1,13,,,,DRAW_ONLY
+2024,DB1083,1,0,1,1,0,0,Limited-entry Muzzleloader Buck Deer - Panguitch Lake - Muzzleloader Page 76,,,7,1,8,,,,DRAW_ONLY
+2024,DB1084,1,0,1,1,0,0,Limited-entry Muzzleloader Buck Deer - Boulder/kaiparowits - Muzzleloader Page 77,,,9,1,10,,,,DRAW_ONLY
+2024,DB1085,1,0,1,1,0,0,"Limited-entry Muzzleloader Buck Deer - San Juan, Abajo Mtns - Muzzleloader Page 78",,,10,1,11,,,,DRAW_ONLY
+2024,DB1086,1,0,1,1,0,0,Limited-entry Muzzleloader Buck Deer - Vernal/bonanza - Muzzleloader Page 79,,,4,1,5,,,,DRAW_ONLY
+2024,DB1087,1,0,1,1,0,0,"Limited-entry Muzzleloader Buck Deer - Wasatch Mtns, West - Muzzleloader Page 80",,,27,3,30,,,,DRAW_ONLY
+2024,DB1088,1,0,1,1,0,0,"Limited-entry Muzzleloader Buck Deer - West Desert, Tintic - Muzzleloader Page 81",,,4,1,5,,,,DRAW_ONLY
+2024,DB1089,1,0,1,1,0,0,"Limited-entry Muzzleloader Buck Deer - West Desert, West - Muzzleloader Page 82",,,4,1,5,,,,DRAW_ONLY
+2024,DB1090,1,0,1,1,0,0,"Limited-entry Hamss Buck Deer - Book Cliffs, Floy Canyon - H.a.m.s.s. Page 83",,,4,1,5,,,,DRAW_ONLY
+2024,DB1091,1,0,1,1,0,0,Limited-entry Hamss Buck Deer - Kaiparowits Hamss - H.a.m.s.s. Page 84,,,4,1,5,,,,DRAW_ONLY
+2024,DB1094,1,0,1,1,0,0,Limited-entry Muzzleloader Buck Deer - Myton - Muzzleloader Page 85,,,5,0,5,,,,DRAW_ONLY
+2024,DB1100,1,0,1,1,0,0,Limited-entry Muzzleloader Buck Deer - Chalk Creek - Muzzleloader Page 86,,,9,1,10,,,,DRAW_ONLY
+2024,DB1101,1,0,1,1,0,0,Limited-entry Muzzleloader Buck Deer - East Canyon - Muzzleloader Page 87,,,7,1,8,,,,DRAW_ONLY
+2024,DB1103,1,0,1,1,0,0,Limited-entry Muzzleloader Buck Deer - Morgan-south Rich - Muzzleloader Page 88,,,6,1,7,,,,DRAW_ONLY
+2024,DB1105,1,0,1,1,0,0,Limited-entry Hamss Buck Deer - East Canyon - H.a.m.s.s. Page 89,,,4,1,5,,,,DRAW_ONLY
+2024,DB1200,1,0,1,1,0,0,Premium Cwmu Buck Deer - Alton - Any Legal Weapon Page 90,,,3,0,3,,,,DRAW_ONLY
+2024,DB1201,1,0,1,1,0,0,Cwmu Management Buck Deer - Alton - Any Legal Weapon Page 91,,,1,0,1,,,,DRAW_ONLY
+2024,DB1202,1,0,1,1,0,0,Cwmu Buck Deer - Antelope Creek - Any Legal Weapon Page 92,,,1,0,1,,,,DRAW_ONLY
+2024,DB1203,1,0,1,1,0,0,Cwmu Buck Deer - Avintaquin Canyon - Any Legal Weapon Page 93,,,1,0,1,,,,DRAW_ONLY
+2024,DB1204,1,0,1,1,0,0,Cwmu Buck Deer - Bally Watts - Any Legal Weapon Page 94,,,1,0,1,,,,DRAW_ONLY
+2024,DB1205,1,0,1,1,0,0,Cwmu Buck Deer - Bar J Ranch - Any Legal Weapon Page 95,,,1,0,1,,,,DRAW_ONLY
+2024,DB1206,1,0,1,1,0,0,Cwmu Buck Deer - Bear Mountain - Any Legal Weapon Page 96,,,1,0,1,,,,DRAW_ONLY
+2024,DB1207,1,0,1,1,0,0,Cwmu Buck Deer - Bear Springs - Any Legal Weapon Page 97,,,1,0,1,,,,DRAW_ONLY
+2024,DB1208,1,0,1,1,0,0,Cwmu Buck Deer - Blackhawk - Any Legal Weapon Page 98,,,1,0,1,,,,DRAW_ONLY
+2024,DB1209,1,0,1,1,0,0,Cwmu Buck Deer - Blind Springs - Any Legal Weapon Page 99,,,1,0,1,,,,DRAW_ONLY
+2024,DB1211,1,0,1,1,0,0,Cwmu Buck Deer - Blue Spring Hills - Any Legal Weapon Page 100,,,1,0,1,,,,DRAW_ONLY
+2024,DB1212,1,0,1,1,0,0,Cwmu Buck Deer - Bluebell - Any Legal Weapon Page 101,,,1,0,1,,,,DRAW_ONLY
+2024,DB1213,1,0,1,1,0,0,Cwmu Buck Deer - Boobe Hole - Any Legal Weapon Page 102,,,2,0,2,,,,DRAW_ONLY
+2024,DB1215,1,0,1,1,0,0,Cwmu Buck Deer - Buckhorn Ranch - Any Legal Weapon Page 103,,,1,0,1,,,,DRAW_ONLY
+2024,DB1217,1,0,1,1,0,0,Cwmu Buck Deer - Causey Spring - Any Legal Weapon Page 104,,,1,0,1,,,,DRAW_ONLY
+2024,DB1219,1,0,1,1,0,0,Cwmu Buck Deer - Chimney Rock - Any Legal Weapon Page 105,,,2,0,2,,,,DRAW_ONLY
+2024,DB1222,1,0,1,1,0,0,Cwmu Buck Deer - Coldwater Ranch - Any Legal Weapon Page 106,,,2,0,2,,,,DRAW_ONLY
+2024,DB1224,1,0,1,1,0,0,Cwmu Buck Deer - Cotton Thomas - Any Legal Weapon Page 107,,,1,0,1,,,,DRAW_ONLY
+2024,DB1227,1,0,1,1,0,0,Cwmu Buck Deer - Deer Haven - Any Legal Weapon Page 108,,,2,0,2,,,,DRAW_ONLY
+2024,DB1228,1,0,1,1,0,0,Cwmu Buck Deer - Deseret - Any Legal Weapon Page 109,,,14,0,14,,,,DRAW_ONLY
+2024,DB1229,1,0,1,1,0,0,Cwmu Buck Deer - Dilly Ranch - Any Legal Weapon Page 110,,,1,0,1,,,,DRAW_ONLY
+2024,DB1230,1,0,1,1,0,0,Cwmu Buck Deer - Double R Ranch - Any Legal Weapon Page 111,,,2,0,2,,,,DRAW_ONLY
+2024,DB1231,1,0,1,1,0,0,Cwmu Buck Deer - Dove Creek - Any Legal Weapon Page 112,,,2,0,2,,,,DRAW_ONLY
+2024,DB1232,1,0,1,1,0,0,Cwmu Buck Deer - Durst Mountain - Any Legal Weapon Page 113,,,2,0,2,,,,DRAW_ONLY
+2024,DB1233,1,0,1,1,0,0,Cwmu Buck Deer - East Fork Chalk Creek - Any Legal Weapon Page 114,,,4,0,4,,,,DRAW_ONLY
+2024,DB1234,1,0,1,1,0,0,Cwmu Buck Deer - East Zion - Any Legal Weapon Page 115,,,1,0,1,,,,DRAW_ONLY
+2024,DB1236,1,0,1,1,0,0,Cwmu Buck Deer - Engineer Springs - Any Legal Weapon Page 116,,,1,0,1,,,,DRAW_ONLY
+2024,DB1237,1,0,1,1,0,0,Cwmu Buck Deer - Ensign Ranches - Any Legal Weapon Page 117,,,3,0,3,,,,DRAW_ONLY
+2024,DB1238,1,0,1,1,0,0,Cwmu Buck Deer - Folley Ridge - Any Legal Weapon Page 118,,,3,0,3,,,,DRAW_ONLY
+2024,DB1239,1,0,1,1,0,0,Cwmu Buck Deer - Fort Ranch - Any Legal Weapon Page 119,,,1,0,1,,,,DRAW_ONLY
+2024,DB1240,1,0,1,1,0,0,Cwmu Buck Deer - George Creek - Any Legal Weapon Page 120,,,1,0,1,,,,DRAW_ONLY
+2024,DB1241,1,0,1,1,0,0,Cwmu Buck Deer - Golden Spike - Any Legal Weapon Page 121,,,1,0,1,,,,DRAW_ONLY
+2024,DB1242,1,0,1,1,0,0,Cwmu Buck Deer - Grass Valley/clark Canyon - Any Legal Weapon Page 122,,,14,0,14,,,,DRAW_ONLY
+2024,DB1243,1,0,1,1,0,0,Cwmu Buck Deer - Grazing Pasture - Any Legal Weapon Page 123,,,1,0,1,,,,DRAW_ONLY
+2024,DB1244,1,0,1,1,0,0,Cwmu Buck Deer - Green Canyon - Any Legal Weapon Page 124,,,2,0,2,,,,DRAW_ONLY
+2024,DB1245,1,0,1,1,0,0,Cwmu Buck Deer - Guildersleeve - Any Legal Weapon Page 125,,,1,0,1,,,,DRAW_ONLY
+2024,DB1246,1,0,1,1,0,0,Cwmu Buck Deer - Hardscrabble - Any Legal Weapon Page 126,,,2,0,2,,,,DRAW_ONLY
+2024,DB1248,1,0,1,1,0,0,Cwmu Buck Deer - Heaston East - Any Legal Weapon Page 127,,,2,0,2,,,,DRAW_ONLY
+2024,DB1249,1,0,1,1,0,0,Cwmu Buck Deer - Hiawatha - Any Legal Weapon Page 128,,,1,0,1,,,,DRAW_ONLY
+2024,DB1250,1,0,1,1,0,0,Cwmu Buck Deer - Indian Creek - Any Legal Weapon Page 129,,,1,0,1,,,,DRAW_ONLY
+2024,DB1251,1,0,1,1,0,0,Cwmu Buck Deer - Indian Head - Any Legal Weapon Page 130,,,2,0,2,,,,DRAW_ONLY
+2024,DB1252,1,0,1,1,0,0,Cwmu Buck Deer - Ingham Peak - Any Legal Weapon Page 131,,,3,0,3,,,,DRAW_ONLY
+2024,DB1253,1,0,1,1,0,0,Cwmu Buck Deer - J.b. Ranch - Any Legal Weapon Page 132,,,2,0,2,,,,DRAW_ONLY
+2024,DB1255,1,0,1,1,0,0,Cwmu Buck Deer - Johnson Mountain Ranch - Any Legal Weapon Page 133,,,1,0,1,,,,DRAW_ONLY
+2024,DB1256,1,0,1,1,0,0,Cwmu Buck Deer - Junction Valley - Any Legal Weapon Page 134,,,5,0,5,,,,DRAW_ONLY
+2024,DB1259,1,0,1,1,0,0,Cwmu Buck Deer - Tunnel Hollow - Any Legal Weapon Page 135,,,1,0,1,,,,DRAW_ONLY
+2024,DB1260,1,0,1,1,0,0,Cwmu Buck Deer - Middle Ridge - Any Legal Weapon Page 136,,,2,0,2,,,,DRAW_ONLY
+2024,DB1261,1,0,1,1,0,0,Cwmu Buck Deer - Minnie Maud Ridge - Any Legal Weapon Page 137,,,5,0,5,,,,DRAW_ONLY
+2024,DB1263,1,0,1,1,0,0,Cwmu Buck Deer - Moon Ranch - Any Legal Weapon Page 138,,,1,0,1,,,,DRAW_ONLY
+2024,DB1264,1,0,1,1,0,0,Cwmu Buck Deer - Mountain Meadow - Any Legal Weapon Page 139,,,1,0,1,,,,DRAW_ONLY
+2024,DB1265,1,0,1,1,0,0,Cwmu Buck Deer - Mountain Top - Any Legal Weapon Page 140,,,2,0,2,,,,DRAW_ONLY
+2024,DB1266,1,0,1,1,0,0,Cwmu Buck Deer - Mt Carmel - Any Legal Weapon Page 141,,,3,0,3,,,,DRAW_ONLY
+2024,DB1269,1,0,1,1,0,0,Cwmu Buck Deer - North Promontory - Any Legal Weapon Page 142,,,1,0,1,,,,DRAW_ONLY
+2024,DB1270,1,0,1,1,0,0,Cwmu Buck Deer - Nucor West - Any Legal Weapon Page 143,,,1,0,1,,,,DRAW_ONLY
+2024,DB1271,1,0,1,1,0,0,Cwmu Buck Deer - Oak Ranch - Any Legal Weapon Page 144,,,3,0,3,,,,DRAW_ONLY
+2024,DB1272,1,0,1,1,0,0,Cwmu Buck Deer - Old Woman Plateau - Any Legal Weapon Page 145,,,3,0,3,,,,DRAW_ONLY
+2024,DB1273,1,0,1,1,0,0,Cwmu Buck Deer - Park Valley Hereford - Any Legal Weapon Page 146,,,5,0,5,,,,DRAW_ONLY
+2024,DB1274,1,0,1,1,0,0,Cwmu Buck Deer - Patmos Ridge - Any Legal Weapon Page 147,,,1,0,1,,,,DRAW_ONLY
+2024,DB1275,1,0,1,1,0,0,Cwmu Buck Deer - Pine Canyon - Any Legal Weapon Page 148,,,2,0,2,,,,DRAW_ONLY
+2024,DB1276,1,0,1,1,0,0,Cwmu Buck Deer - Plymouth Peak - Any Legal Weapon Page 149,,,1,0,1,,,,DRAW_ONLY
+2024,DB1277,1,0,1,1,0,0,Cwmu Buck Deer - Pocatello Valley - Any Legal Weapon Page 150,,,1,0,1,,,,DRAW_ONLY
+2024,DB1279,1,0,1,1,0,0,Cwmu Buck Deer - Preston Nutter Ranch - Any Legal Weapon Page 151,,,1,0,1,,,,DRAW_ONLY
+2024,DB1280,1,0,1,1,0,0,Cwmu Buck Deer - Promontory Point - Any Legal Weapon Page 152,,,1,0,1,,,,DRAW_ONLY
+2024,DB1281,1,0,1,1,0,0,Cwmu Buck Deer - Rattlesnake Pass - Any Legal Weapon Page 153,,,3,0,3,,,,DRAW_ONLY
+2024,DB1282,1,0,1,1,0,0,Cwmu Buck Deer - Redd Ranches - Any Legal Weapon Page 154,,,2,0,2,,,,DRAW_ONLY
+2024,DB1283,1,0,1,1,0,0,Cwmu Buck Deer - Roan Cliffs - Any Legal Weapon Page 155,,,1,0,1,,,,DRAW_ONLY
+2024,DB1285,1,0,1,1,0,0,Cwmu Buck Deer - Sand Creek - Any Legal Weapon Page 156,,,1,0,1,,,,DRAW_ONLY
+2024,DB1286,1,0,1,1,0,0,Cwmu Buck Deer - Pisgah Mountain - Any Legal Weapon Page 157,,,2,0,2,,,,DRAW_ONLY
+2024,DB1287,1,0,1,1,0,0,Cwmu Buck Deer - Scofield Canyons - Any Legal Weapon Page 158,,,1,0,1,,,,DRAW_ONLY
+2024,DB1288,1,0,1,1,0,0,Cwmu Buck Deer - Scofield West - Any Legal Weapon Page 159,,,2,0,2,,,,DRAW_ONLY
+2024,DB1289,1,0,1,1,0,0,Cwmu Buck Deer - Sharp Mountain - Any Legal Weapon Page 160,,,2,0,2,,,,DRAW_ONLY
+2024,DB1290,1,0,1,1,0,0,Cwmu Buck Deer - Skull Crack - Any Legal Weapon Page 161,,,1,0,1,,,,DRAW_ONLY
+2024,DB1291,1,0,1,1,0,0,Cwmu Buck Deer - Skull Valley South - Any Legal Weapon Page 162,,,1,0,1,,,,DRAW_ONLY
+2024,DB1292,1,0,1,1,0,0,Cwmu Buck Deer - Soldier Summit - Any Legal Weapon Page 163,,,2,0,2,,,,DRAW_ONLY
+2024,DB1293,1,0,1,1,0,0,Cwmu Buck Deer - South Canyon - Any Legal Weapon Page 164,,,2,0,2,,,,DRAW_ONLY
+2024,DB1294,1,0,1,1,0,0,Cwmu Buck Deer - Spring Creek Acres - Any Legal Weapon Page 165,,,1,0,1,,,,DRAW_ONLY
+2024,DB1295,1,0,1,1,0,0,Cwmu Buck Deer - Spring Creek/dodge - Any Legal Weapon Page 166,,,6,0,6,,,,DRAW_ONLY
+2024,DB1298,1,0,1,1,0,0,Cwmu Buck Deer - Strawberry Ridge - Any Legal Weapon Page 167,,,1,0,1,,,,DRAW_ONLY
+2024,DB1299,1,0,1,1,0,0,Cwmu Buck Deer - Summit Point - Any Legal Weapon Page 168,,,3,0,3,,,,DRAW_ONLY
+2024,DB1300,1,0,1,1,0,0,Cwmu Buck Deer - Thatcher Mountain - Any Legal Weapon Page 169,,,1,0,1,,,,DRAW_ONLY
+2024,DB1301,1,0,1,1,0,0,Cwmu Buck Deer - Three C - Any Legal Weapon Page 170,,,2,0,2,,,,DRAW_ONLY
+2024,DB1303,1,0,1,1,0,0,Cwmu Buck Deer - North Peaks - Any Legal Weapon Page 171,,,1,0,1,,,,DRAW_ONLY
+2024,DB1304,1,0,1,1,0,0,Cwmu Buck Deer - Two Bear - Any Legal Weapon Page 172,,,1,0,1,,,,DRAW_ONLY
+2024,DB1305,1,0,1,1,0,0,Cwmu Buck Deer - Wallsburg - Any Legal Weapon Page 173,,,1,0,1,,,,DRAW_ONLY
+2024,DB1306,1,0,1,1,0,0,Cwmu Buck Deer - Washakie - Any Legal Weapon Page 174,,,1,0,1,,,,DRAW_ONLY
+2024,DB1308,1,0,1,1,0,0,Cwmu Buck Deer - West Hills - Any Legal Weapon Page 175,,,3,0,3,,,,DRAW_ONLY
+2024,DB1309,1,0,1,1,0,0,Cwmu Buck Deer - West Willow Creek Ranch - Any Legal Weapon Page 176,,,4,0,4,,,,DRAW_ONLY
+2024,DB1310,1,0,1,1,0,0,Cwmu Buck Deer - White's Valley - Any Legal Weapon Page 177,,,1,0,1,,,,DRAW_ONLY
+2024,DB1312,1,0,1,1,0,0,Cwmu Buck Deer - Woodruff Creek South - Any Legal Weapon Page 178,,,1,0,1,,,,DRAW_ONLY
+2024,DB1317,1,0,1,1,0,0,Cwmu Buck Deer - Jacob's Creek - Any Legal Weapon Page 179,,,1,0,1,,,,DRAW_ONLY
+2024,DB1320,1,0,1,1,0,0,Cwmu Buck Deer - Deer Creek - Any Legal Weapon Page 180,,,1,0,1,,,,DRAW_ONLY
+2024,DB1322,1,0,1,1,0,0,Cwmu Buck Deer - Pahvant Ensign - Any Legal Weapon Page 181,,,1,0,1,,,,DRAW_ONLY
+2024,DB1324,1,0,1,1,0,0,Cwmu Buck Deer - Royal Ivory Outfitters - Any Legal Weapon Page 182,,,1,0,1,,,,DRAW_ONLY
+2024,DB1325,1,0,1,1,0,0,Cwmu Buck Deer - Double Cone - Any Legal Weapon Page 183,,,1,0,1,,,,DRAW_ONLY
+2024,DB1326,1,0,1,1,0,0,Cwmu Buck Deer - Rosette - Any Legal Weapon Page 184,,,1,0,1,,,,DRAW_ONLY
+2024,DB1327,1,0,1,1,0,0,Cwmu Buck Deer - Mountain Sky Ranch - Any Legal Weapon Page 185,,,1,0,1,,,,DRAW_ONLY
+2024,DB1328,1,0,1,1,0,0,Cwmu Buck Deer - Clear Creek - Any Legal Weapon Page 186,,,1,0,1,,,,DRAW_ONLY
+2024,DB1330,1,0,1,1,0,0,Cwmu Buck Deer - Iron Spring - Any Legal Weapon Page 187,,,1,0,1,,,,DRAW_ONLY
+2024,DB1331,1,0,1,1,0,0,Cwmu Buck Deer - Raft River - Any Legal Weapon Page 188,,,3,0,3,,,,DRAW_ONLY
+2024,DB1332,1,0,1,1,0,0,Cwmu Buck Deer - West Ridge - Any Legal Weapon Page 189,,,5,0,5,,,,DRAW_ONLY
+2024,DB1333,1,0,1,1,0,0,Cwmu Buck Deer - 5s - Any Legal Weapon Page 190,,,2,0,2,,,,DRAW_ONLY
+2024,DB1334,1,0,1,1,0,0,Cwmu Cactus Buck Deer - Alton - Any Legal Weapon Page 191,,,1,0,1,,,,DRAW_ONLY
+2024,DB1335,1,0,1,1,0,0,Cwmu Buck Deer - Big Piney Ranch - Any Legal Weapon Page 192,,,1,0,1,,,,DRAW_ONLY
+2024,DB1336,1,0,1,1,0,0,Cwmu Buck Deer - First Light - Any Legal Weapon Page 193,,,1,0,1,,,,DRAW_ONLY
+2024,DB1337,1,0,1,1,0,0,Cwmu Buck Deer - Little Pole Canyon - Any Legal Weapon Page 194,,,1,0,1,,,,DRAW_ONLY
+2024,DB1338,1,0,1,1,0,0,Cwmu Buck Deer - Sweetwater - Any Legal Weapon Page 195,,,1,0,1,,,,DRAW_ONLY
+2024,DB1341,1,0,1,1,0,0,Cwmu Buck Deer - Dry Creek - Any Legal Weapon Page 196,,,1,0,1,,,,DRAW_ONLY
+2024,DB1342,1,0,1,1,0,0,Cwmu Buck Deer - Faust Valley - Any Legal Weapon Page 197,,,1,0,1,,,,DRAW_ONLY
+2024,DB1343,1,0,1,1,0,0,Cwmu Buck Deer - Red Iron - Any Legal Weapon Page 198,,,1,0,1,,,,DRAW_ONLY
+2024,DB1344,1,0,1,1,0,0,Cwmu Buck Deer - Salt Wells - Any Legal Weapon Page 199,,,1,0,1,,,,DRAW_ONLY
+2024,DB1345,1,0,1,1,0,0,Cwmu Buck Deer - Diamond Mountain - Any Legal Weapon Page 200,,,1,0,1,,,,DRAW_ONLY
+2024,DB1347,1,0,1,1,0,0,Cwmu Buck Deer - The Rose Of Snowville - Any Legal Weapon Page 201,,,2,0,2,,,,DRAW_ONLY
+2024,DB1348,1,0,1,1,0,0,Cwmu Buck Deer - Kimberly - Any Legal Weapon Page 202,,,1,0,1,,,,DRAW_ONLY
+2024,DB1349,1,0,1,1,0,0,Cwmu Buck Deer - Weber Florence Creek/stillman Creek - Any Legal Weapon Page 203,,,9,0,9,,,,DRAW_ONLY
+2024,DS6600,1,0,1,1,0,0,Desert Bighorn Sheep - Henry Mtns - Any Legal Weapon Page 204,,,2,0,2,,,,DRAW_ONLY
+2024,DS6601,1,0,1,1,0,0,"Desert Bighorn Sheep - Kaiparowits, East - Any Legal Weapon Page 205",,,7,1,8,,,,DRAW_ONLY
+2024,DS6602,1,0,1,1,0,0,"Desert Bighorn Sheep - Kaiparowits, Escalante - Any Legal Weapon Page 206",,,7,1,8,,,,DRAW_ONLY
+2024,DS6603,1,0,1,1,0,0,"Desert Bighorn Sheep - Kaiparowits, West - Any Legal Weapon Page 207",,,5,1,6,,,,DRAW_ONLY
+2024,DS6604,1,0,1,1,0,0,"Desert Bighorn Sheep - La Sal, Potash/south Cisco - Any Legal Weapon Page 208",,,6,0,6,,,,DRAW_ONLY
+2024,DS6606,1,0,1,1,0,0,"Desert Bighorn Sheep - San Juan, Lockhart - Any Legal Weapon Page 209",,,2,0,2,,,,DRAW_ONLY
+2024,DS6607,1,0,1,1,0,0,"Desert Bighorn Sheep - San Juan, South - Any Legal Weapon Page 210",,,2,0,2,,,,DRAW_ONLY
+2024,DS6608,1,0,1,1,0,0,"Desert Bighorn Sheep - San Rafael, Dirty Devil - Any Legal Weapon Page 211",,,6,1,7,,,,DRAW_ONLY
+2024,DS6609,1,0,1,1,0,0,"Desert Bighorn Sheep - San Rafael, North - Any Legal Weapon Page 212",,,3,0,3,,,,DRAW_ONLY
+2024,DS6610,1,0,1,1,0,0,"Desert Bighorn Sheep - San Rafael, South - Any Legal Weapon Page 213",,,11,1,12,,,,DRAW_ONLY
+2024,DS6611,1,0,1,1,0,0,Desert Bighorn Sheep - Zion - Any Legal Weapon Page 214,,,2,0,2,,,,DRAW_ONLY
+2024,DS6620,1,0,1,1,0,0,"Desert Bighorn Sheep - Pine Valley, Virgin River - Any Legal Weapon Page 215",,,2,0,2,,,,DRAW_ONLY
+2024,DS6621,1,0,1,1,0,0,"Desert Bighorn Sheep - Pine Valley, Beaver Dam - Any Legal Weapon Page 216",,,6,0,6,,,,DRAW_ONLY
+2024,DS6622,1,0,1,1,0,0,"Desert Bighorn Sheep - San Juan, North - Any Legal Weapon Page 217",,,3,0,3,,,,DRAW_ONLY
+2024,DS6623,1,0,1,1,0,0,"Desert Bighorn Sheep - San Juan, San Juan River - Any Legal Weapon Page 218",,,1,0,1,,,,DRAW_ONLY
+2024,DS6624,1,0,1,1,0,0,"Desert Bighorn Sheep Archery - San Rafael, Dirty Devil - Archery Page 219",,,2,0,2,,,,DRAW_ONLY
+2024,DS6625,1,0,1,1,0,0,Desert Bighorn Sheep - Mineral Mtns - Any Legal Weapon Page 220,,,2,0,2,,,,DRAW_ONLY
+2024,EA1010,1,1,1,1,0,2,"Antlerless Elk - Cache, Rich - Any Legal Weapon","Cache, Rich",Antlerless Elk,15,2,17,3,18,14.3,DRAW_AND_HARVEST
+2024,EA1011,1,1,1,1,0,2,"Antlerless Elk - Cache, Richards Hollow - Any Legal Weapon","Cache, Richards Hollow",Antlerless Elk,15,2,17,13,19,68.4,DRAW_AND_HARVEST
+2024,EA1012,1,1,1,1,0,2,"Antlerless Elk - Cache, Richmond Hyde Park - Any Legal Weapon","Cache, Richmond Hyde Park",Antlerless Elk,8,1,9,1,5,20,DRAW_AND_HARVEST
+2024,EA1013,1,1,1,1,0,2,Antlerless Elk - Central Manti - Any Legal Weapon,"Manti, Central",Antlerless Elk,44,5,49,25,59,43.1,DRAW_AND_HARVEST
+2024,EA1015,1,1,1,1,0,2,Antlerless Elk - Ferron Canyon - Any Legal Weapon,"Manti, Ferron Canyon",Antlerless Elk,44,5,49,20,56,35.2,DRAW_AND_HARVEST
+2024,EA1017,1,1,1,1,0,1,Antlerless Elk - Gordon Creek-price Canyon - Any Legal Weapon,"Manti, Gordon Creek-Price",Antlerless Elk,51,6,57,27,64,42.3,DRAW_AND_HARVEST
+2024,EA1018,1,1,1,1,0,2,Antlerless Elk - Horn Mtn - Any Legal Weapon,"Manti, Horn Mtn",Antlerless Elk,36,4,40,30,48,61.7,DRAW_AND_HARVEST
+2024,EA1020,1,1,1,1,0,2,Antlerless Elk - Mohrland-stump Flat - Any Legal Weapon,"Manti, Mohrland-Stump Flat",Antlerless Elk,65,8,73,53,78,68.9,DRAW_AND_HARVEST
+2024,EA1021,1,1,1,1,0,2,Antlerless Elk - Nebo - Any Legal Weapon,Nebo,Antlerless Elk,144,16,160,68,185,37.1,DRAW_AND_HARVEST
+2024,EA1022,1,1,1,1,0,2,Antlerless Elk - North Manti - Any Legal Weapon,"Manti, North",Antlerless Elk,202,23,225,71,258,27.4,DRAW_AND_HARVEST
+2024,EA1023,1,1,1,1,0,2,Antlerless Elk - South Manti - Any Legal Weapon,"Manti, South",Antlerless Elk,72,8,80,34,90,38.1,DRAW_AND_HARVEST
+2024,EA1024,1,1,1,1,0,2,Antlerless Elk - South Manti - Any Legal Weapon,"Manti, South",Antlerless Elk,72,8,80,68,94,72.9,DRAW_AND_HARVEST
+2024,EA1025,1,1,1,1,0,2,Antlerless Elk - West Manti - Any Legal Weapon,"Manti, West",Antlerless Elk,80,9,89,42,87,48.6,DRAW_AND_HARVEST
+2024,EA1026,1,1,1,1,0,2,Antlerless Elk - Chalk Creek - Any Legal Weapon,Chalk Creek,Antlerless Elk,277,10,287,71,245,28.8,DRAW_AND_HARVEST
+2024,EA1030,1,1,1,1,0,2,"Antlerless Elk - Fillmore, Pahvant - Any Legal Weapon","Fillmore, Pahvant",Antlerless Elk,36,4,40,15,45,33.3,DRAW_AND_HARVEST
+2024,EA1031,1,1,1,1,0,2,"Antlerless Elk - Fillmore, Pahvant - Any Legal Weapon","Fillmore, Pahvant",Antlerless Elk,36,4,40,20,41,48.4,DRAW_AND_HARVEST
+2024,EA1033,1,1,1,1,0,2,Antlerless Elk - Kamas - Any Legal Weapon,Kamas,Antlerless Elk,90,11,101,25,107,23.8,DRAW_AND_HARVEST
+2024,EA1035,1,1,1,1,0,2,"Antlerless Elk - Kamas, Oakley - Any Legal Weapon","Kamas, Oakley",Antlerless Elk,101,7,108,17,102,16.3,DRAW_AND_HARVEST
+2024,EA1037,1,1,1,1,0,2,"Antlerless Elk - La Sal, Dolores Triangle - Any Legal Weapon","La Sal, Dolores Triangle",Antlerless Elk,36,4,40,18,40,45.5,DRAW_AND_HARVEST
+2024,EA1038,1,1,1,1,0,2,"Antlerless Elk - La Sal, La Sal Mtns - Any Legal Weapon","La Sal, La Sal Mtns",Antlerless Elk,239,28,267,54,270,20,DRAW_AND_HARVEST
+2024,EA1039,1,1,1,1,0,2,"Antlerless Elk - La Sal, La Sal Mtns - Any Legal Weapon","La Sal, La Sal Mtns",Antlerless Elk,180,23,203,25,201,12.5,DRAW_AND_HARVEST
+2024,EA1040,1,1,1,1,0,2,"Antlerless Elk - Monroe, Koosharem Valley - Any Legal Weapon","Monroe, Koosharem Valley",Antlerless Elk,6,1,7,1,4,25,DRAW_AND_HARVEST
+2024,EA1044,1,1,1,1,0,2,"Antlerless Elk - Morgan-south Rich, South Rich - Any Legal Weapon","Morgan-South Rich, South Rich",Antlerless Elk,25,4,29,11,24,47.1,DRAW_AND_HARVEST
+2024,EA1049,1,1,1,1,0,2,"Antlerless Elk - Mt Dutton, Deep Creek - Any Legal Weapon","Mt Dutton, Deep Creek",Antlerless Elk,54,7,61,17,60,28.1,DRAW_AND_HARVEST
+2024,EA1054,1,1,1,1,0,2,"Antlerless Elk - Nine Mile, West Anthro - Any Legal Weapon","Nine Mile, West Anthro",Antlerless Elk,39,1,40,23,44,52.9,DRAW_AND_HARVEST
+2024,EA1056,1,1,1,1,0,2,"Antlerless Elk - North Slope, Greendale - Any Legal Weapon","North Slope, Greendale",Antlerless Elk,5,0,5,0,5,0,DRAW_AND_HARVEST
+2024,EA1058,1,1,1,1,0,2,"Antlerless Elk - North Slope, Henry's Fork-burnt Fork - Any Legal Weapon","North Slope, Henry's Fork-Burnt Fork",Antlerless Elk,116,15,131,37,120,30.5,DRAW_AND_HARVEST
+2024,EA1060,1,1,1,1,0,1,"Antlerless Elk - North Slope, West Daggett - Muzzleloader","North Slope, West Daggett",Antlerless Elk,16,1,17,1,15,6.7,DRAW_AND_HARVEST
+2024,EA1061,1,1,1,1,0,1,"Antlerless Elk - North Slope, West Daggett - Muzzleloader","North Slope, West Daggett",Antlerless Elk,15,2,17,3,18,16.7,DRAW_AND_HARVEST
+2024,EA1063,1,1,1,1,0,2,Antlerless Elk - Ogden - Any Legal Weapon,Ogden,Antlerless Elk,61,8,69,10,62,16.4,DRAW_AND_HARVEST
+2024,EA1064,1,1,1,1,0,2,Antlerless Elk - Ogden - Any Legal Weapon,Ogden,Antlerless Elk,44,1,45,9,40,23.5,DRAW_AND_HARVEST
+2024,EA1069,1,1,1,1,0,2,Antlerless Elk - Panguitch Lake - Any Legal Weapon,Panguitch Lake,Antlerless Elk,18,3,21,9,20,44.4,DRAW_AND_HARVEST
+2024,EA1073,1,1,1,1,0,2,Antlerless Elk - Paunsaugunt - Any Legal Weapon,Paunsaugunt,Antlerless Elk,15,2,17,3,11,30,DRAW_AND_HARVEST
+2024,EA1074,1,1,1,1,0,2,Antlerless Elk - Pine Valley - Any Legal Weapon,Pine Valley,Antlerless Elk,4,1,5,0,3,0,DRAW_AND_HARVEST
+2024,EA1075,1,1,1,1,0,2,Antlerless Elk - Boulder East - Any Legal Weapon,Boulder East,Antlerless Elk,11,2,13,9,12,75,DRAW_AND_HARVEST
+2024,EA1076,1,1,1,1,0,2,Antlerless Elk - Boulder West - Any Legal Weapon,Boulder West,Antlerless Elk,15,2,17,10,17,60,DRAW_AND_HARVEST
+2024,EA1077,1,1,1,1,0,2,Antlerless Elk - Boulder-circle Cliffs - Any Legal Weapon,Boulder-Circle Cliffs,Antlerless Elk,15,2,17,14,19,76.5,DRAW_AND_HARVEST
+2024,EA1078,1,1,1,1,0,2,Antlerless Elk - Fishlake/thousand Lakes - Any Legal Weapon,Fishlake/Thousand Lakes,Antlerless Elk,101,12,113,46,129,35.5,DRAW_AND_HARVEST
+2024,EA1079,1,1,1,1,0,2,Antlerless Elk - Fishlake/thousand Lakes East - Any Legal Weapon,Fishlake/Thousand Lakes East,Antlerless Elk,36,4,40,29,46,63,DRAW_AND_HARVEST
+2024,EA1080,1,1,1,1,0,2,Antlerless Elk - Fishlake/thousand Lakes West - Any Legal Weapon,Fishlake/Thousand Lakes West,Antlerless Elk,22,3,25,23,27,84.6,DRAW_AND_HARVEST
+2024,EA1081,1,1,1,1,0,2,Antlerless Elk - San Juan - Any Legal Weapon,San Juan,Antlerless Elk,90,11,101,30,112,27.1,DRAW_AND_HARVEST
+2024,EA1082,1,1,1,1,0,2,Antlerless Elk - San Juan - Any Legal Weapon,San Juan,Antlerless Elk,90,11,101,46,106,43,DRAW_AND_HARVEST
+2024,EA1084,1,1,1,1,0,2,"Antlerless Elk - San Rafael, North - Any Legal Weapon","San Rafael, North",Antlerless Elk,4,0,4,0,2,0,DRAW_AND_HARVEST
+2024,EA1085,1,1,1,1,0,1,Antlerless Elk - Vernal/bonanza - Archery,Vernal/Bonanza,Antlerless Elk,68,4,72,12,89,13.6,DRAW_AND_HARVEST
+2024,EA1087,1,1,1,1,0,2,Antlerless Elk - Vernal/bonanza - Any Legal Weapon,Vernal/Bonanza,Antlerless Elk,72,8,80,27,91,29.5,DRAW_AND_HARVEST
+2024,EA1089,1,1,1,1,0,2,Antlerless Elk - Diamond Mtn - Any Legal Weapon,Diamond Mtn,Antlerless Elk,36,4,40,11,43,26.8,DRAW_AND_HARVEST
+2024,EA1090,1,1,1,1,0,2,Antlerless Elk - Diamond Mtn - Any Legal Weapon,Diamond Mtn,Antlerless Elk,36,4,40,14,46,31.1,DRAW_AND_HARVEST
+2024,EA1094,1,1,1,1,0,2,Antlerless Elk - Mosby Mtn - Any Legal Weapon,"Vernal, Mosby Mtn",Antlerless Elk,72,8,80,32,87,36.6,DRAW_AND_HARVEST
+2024,EA1101,1,1,1,1,0,2,Antlerless Elk - Southwest Desert - Any Legal Weapon,Southwest Desert,Antlerless Elk,61,8,69,52,80,64.9,DRAW_AND_HARVEST
+2024,EA1106,1,1,1,1,0,2,"Antlerless Elk - Wasatch Mtns, Avintaquin - Any Legal Weapon","Wasatch Mtns, Avintaquin",Antlerless Elk,149,19,168,34,157,21.4,DRAW_AND_HARVEST
+2024,EA1110,1,1,1,1,0,2,"Antlerless Elk - Wasatch Mtns, Salt Lake - Any Legal Weapon","Wasatch Mtns, Salt Lake",Antlerless Elk,32,3,35,15,35,42.4,DRAW_AND_HARVEST
+2024,EA1111,1,1,1,1,0,2,"Antlerless Elk - Wasatch Mtns, Wallsburg - Any Legal Weapon","Wasatch Mtns, Wallsburg",Antlerless Elk,25,3,28,7,27,28,DRAW_AND_HARVEST
+2024,EA1112,1,1,1,1,0,2,"Antlerless Elk - Wasatch Mtns, Wallsburg - Any Legal Weapon","Wasatch Mtns, Wallsburg",Antlerless Elk,40,5,45,8,44,17.9,DRAW_AND_HARVEST
+2024,EA1113,1,1,1,1,0,2,"Antlerless Elk - Wasatch Mtns, West Heber - Any Legal Weapon","Wasatch Mtns, West Heber",Antlerless Elk,22,3,25,9,23,38.9,DRAW_AND_HARVEST
+2024,EA1114,1,1,1,1,0,2,"Antlerless Elk - Wasatch Mtns, West Timpanogos - Any Legal Weapon","Wasatch Mtns, West Timpanogos",Antlerless Elk,25,4,29,17,29,57.7,DRAW_AND_HARVEST
+2024,EA1116,1,1,1,1,0,2,Antlerless Elk - Zion - Any Legal Weapon,Zion,Antlerless Elk,15,2,17,0,15,0,DRAW_AND_HARVEST
+2024,EA1117,1,1,1,1,0,2,Antlerless Elk - Zion - Any Legal Weapon,Zion,Antlerless Elk,130,15,145,20,136,14.5,DRAW_AND_HARVEST
+2024,EA1118,1,1,1,1,0,1,Cwmu Antlerless Elk - Alton - Any Legal Weapon,Alton,Antlerless Elk,5,0,5,1,3,50,DRAW_AND_HARVEST
+2024,EA1119,1,1,1,1,0,1,Cwmu Antlerless Elk - Bar J Ranch - Any Legal Weapon,Bar J Ranch,Antlerless Elk,10,0,10,12,19,62.5,DRAW_AND_HARVEST
+2024,EA1120,1,1,1,1,0,1,Cwmu Antlerless Elk - Bear Mountain - Any Legal Weapon,Bear Mountain,Antlerless Elk,16,0,16,4,17,21.4,DRAW_AND_HARVEST
+2024,EA1121,1,1,1,1,0,1,Cwmu Antlerless Elk - Boobe Hole - Any Legal Weapon,Boobe Hole,Antlerless Elk,8,0,8,6,10,60,DRAW_AND_HARVEST
+2024,EA1122,1,1,1,1,0,1,Cwmu Antlerless Elk - Causey Spring - Any Legal Weapon,Causey Spring,Antlerless Elk,4,0,4,2,5,40,DRAW_AND_HARVEST
+2024,EA1124,1,1,1,1,0,1,Cwmu Antlerless Elk - Chimney Rock - Any Legal Weapon,Chimney Rock,Antlerless Elk,10,0,10,3,12,25,DRAW_AND_HARVEST
+2024,EA1125,1,1,1,1,0,1,Cwmu Antlerless Elk - Coldwater Ranch - Any Legal Weapon,Coldwater Ranch,Antlerless Elk,16,0,16,14,19,72.2,DRAW_AND_HARVEST
+2024,EA1126,1,1,1,1,0,1,Cwmu Antlerless Elk - Cotton Thomas - Any Legal Weapon,Cotton Thomas,Antlerless Elk,4,0,4,0,3,0,DRAW_AND_HARVEST
+2024,EA1129,1,1,1,1,0,1,Cwmu Antlerless Elk - Deseret - Any Legal Weapon,Deseret,Antlerless Elk,248,0,248,373,541,69,DRAW_AND_HARVEST
+2024,EA1130,1,1,1,1,0,1,Cwmu Antlerless Elk - Double Cone - Any Legal Weapon,Double Cone,Antlerless Elk,6,0,6,1,6,20,DRAW_AND_HARVEST
+2024,EA1131,1,1,1,1,0,1,Cwmu Antlerless Elk - Durst Mountain - Any Legal Weapon,Durst Mountain,Antlerless Elk,24,0,24,22,29,75,DRAW_AND_HARVEST
+2024,EA1132,1,1,1,1,0,1,Cwmu Antlerless Elk - East Fork Chalk Creek - Any Legal Weapon,East Fork Chalk Creek,Antlerless Elk,24,0,24,24,59,40,DRAW_AND_HARVEST
+2024,EA1134,1,1,1,1,0,1,Cwmu Antlerless Elk - Ensign Ranches - Any Legal Weapon,Ensign Ranches,Antlerless Elk,48,0,48,55,100,55.1,DRAW_AND_HARVEST
+2024,EA1135,1,1,1,1,0,1,Cwmu Antlerless Elk - Folley Ridge - Any Legal Weapon,Folley Ridge,Antlerless Elk,16,0,16,11,18,60,DRAW_AND_HARVEST
+2024,EA1136,1,1,1,1,0,1,Cwmu Antlerless Elk - Grass Valley/clark Canyon - Any Legal Weapon,Grass Valley/Clark Canyon,Antlerless Elk,40,0,40,66,90,74,DRAW_AND_HARVEST
+2024,EA1137,1,1,1,1,0,1,Cwmu Antlerless Elk - Grazing Pasture - Any Legal Weapon,Grazing Pasture,Antlerless Elk,8,0,8,14,14,100,DRAW_AND_HARVEST
+2024,EA1138,1,1,1,1,0,1,Cwmu Antlerless Elk - Guildersleeve - Any Legal Weapon,Guildersleeve,Antlerless Elk,16,0,16,11,20,52.6,DRAW_AND_HARVEST
+2024,EA1139,1,1,1,1,0,1,Cwmu Antlerless Elk - Hardscrabble - Any Legal Weapon,Hardscrabble,Antlerless Elk,8,0,8,4,9,44.4,DRAW_AND_HARVEST
+2024,EA1140,1,1,1,1,0,1,Cwmu Antlerless Elk - Heaston East - Any Legal Weapon,Heaston East,Antlerless Elk,20,0,20,24,24,100,DRAW_AND_HARVEST
+2024,EA1141,1,1,1,1,0,1,Cwmu Antlerless Elk - Hiawatha - Any Legal Weapon,Hiawatha,Antlerless Elk,8,0,8,9,13,71.4,DRAW_AND_HARVEST
+2024,EA1142,1,1,1,1,0,1,Cwmu Antlerless Elk - Indian Head - Any Legal Weapon,Indian Head,Antlerless Elk,10,0,10,4,11,40,DRAW_AND_HARVEST
+2024,EA1143,1,1,1,1,0,1,Cwmu Antlerless Elk - J.b. Ranch - Any Legal Weapon,J. B. Ranch,Antlerless Elk,17,0,17,31,34,90.6,DRAW_AND_HARVEST
+2024,EA1145,1,1,1,1,0,1,Cwmu Antlerless Elk - Johnson Mountain Ranch - Any Legal Weapon,Johnson Mountain Ranch,Antlerless Elk,16,0,16,17,19,89.5,DRAW_AND_HARVEST
+2024,EA1146,1,1,1,1,0,1,Cwmu Antlerless Elk - Jump Creek - Any Legal Weapon,Jump Creek,Antlerless Elk,8,0,8,4,12,33.3,DRAW_AND_HARVEST
+2024,EA1147,1,1,1,1,0,1,Cwmu Antlerless Elk - Little Red Creek - Any Legal Weapon,Little Red Creek,Antlerless Elk,12,0,12,12,14,84.6,DRAW_AND_HARVEST
+2024,EA1149,1,1,1,1,0,1,Cwmu Antlerless Elk - Minnie Maud Ridge - Any Legal Weapon,Minnie Maud Ridge,Antlerless Elk,7,0,7,0,8,0,DRAW_AND_HARVEST
+2024,EA1151,1,1,1,1,0,1,Cwmu Antlerless Elk - Moon Ranch - Any Legal Weapon,Moon Ranch,Antlerless Elk,5,0,5,0,5,0,DRAW_AND_HARVEST
+2024,EA1153,1,1,1,1,0,1,Cwmu Antlerless Elk - Old Woman Plateau - Any Legal Weapon,Old Woman Plateau,Antlerless Elk,4,0,4,1,4,33.3,DRAW_AND_HARVEST
+2024,EA1156,1,1,1,1,0,1,Cwmu Antlerless Elk - Preston Nutter Ranch - Any Legal Weapon,Preston Nutter Ranch,Antlerless Elk,7,0,7,5,6,80,DRAW_AND_HARVEST
+2024,EA1157,1,1,1,1,0,1,Cwmu Antlerless Elk - Redd Ranches - Any Legal Weapon,Redd Ranches,Antlerless Elk,28,0,28,21,32,66.7,DRAW_AND_HARVEST
+2024,EA1158,1,1,1,1,0,1,Cwmu Antlerless Elk - Riverview Ranch Llc - Any Legal Weapon,Riverview Ranch LLC,Antlerless Elk,6,0,6,8,9,87.5,DRAW_AND_HARVEST
+2024,EA1159,1,1,1,1,0,1,Cwmu Antlerless Elk - Roan Cliffs - Any Legal Weapon,Roan Cliffs,Antlerless Elk,5,0,5,1,5,25,DRAW_AND_HARVEST
+2024,EA1160,1,1,1,1,0,1,Cwmu Antlerless Elk - Sand Creek - Any Legal Weapon,Sand Creek,Antlerless Elk,4,0,4,5,5,100,DRAW_AND_HARVEST
+2024,EA1161,1,1,1,1,0,1,Cwmu Antlerless Elk - Scofield Canyons - Any Legal Weapon,Scofield Canyons,Antlerless Elk,8,0,8,7,9,75,DRAW_AND_HARVEST
+2024,EA1162,1,1,1,1,0,1,Cwmu Antlerless Elk - Scofield East - Any Legal Weapon,Scofield East,Antlerless Elk,12,0,12,12,14,84.6,DRAW_AND_HARVEST
+2024,EA1163,1,1,1,1,0,1,Cwmu Antlerless Elk - Scofield West - Any Legal Weapon,Scofield West,Antlerless Elk,16,0,16,13,22,57.9,DRAW_AND_HARVEST
+2024,EA1164,1,1,1,1,0,1,Cwmu Antlerless Elk - Sj Ranch - Any Legal Weapon,SJ Ranch,Antlerless Elk,5,0,5,2,6,33.3,DRAW_AND_HARVEST
+2024,EA1165,1,1,1,1,0,1,Cwmu Antlerless Elk - Skull Crack - Any Legal Weapon,Skull Crack,Antlerless Elk,12,0,12,8,11,71.4,DRAW_AND_HARVEST
+2024,EA1166,1,1,1,1,0,1,Cwmu Antlerless Elk - Soldier Summit - Any Legal Weapon,Soldier Summit,Antlerless Elk,13,0,13,5,15,30.8,DRAW_AND_HARVEST
+2024,EA1167,1,1,1,1,0,1,Cwmu Antlerless Elk - South Canyon - Any Legal Weapon,South Canyon,Antlerless Elk,8,0,8,8,10,80,DRAW_AND_HARVEST
+2024,EA1168,1,1,1,1,0,1,Cwmu Antlerless Elk - Spring Creek/dodge - Any Legal Weapon,Spring Creek/Dodge,Antlerless Elk,12,0,12,13,17,80,DRAW_AND_HARVEST
+2024,EA1170,1,1,1,1,0,1,Cwmu Antlerless Elk - Strawberry Ridge - Any Legal Weapon,Strawberry Ridge,Antlerless Elk,8,0,8,10,10,100,DRAW_AND_HARVEST
+2024,EA1171,1,1,1,1,0,1,Cwmu Antlerless Elk - Summit Point - Any Legal Weapon,Summit Point,Antlerless Elk,5,0,5,8,10,75,DRAW_AND_HARVEST
+2024,EA1172,1,1,1,1,0,1,Cwmu Antlerless Elk - Three C - Any Legal Weapon,Three C,Antlerless Elk,10,0,10,16,17,93.3,DRAW_AND_HARVEST
+2024,EA1174,1,1,1,1,0,1,Cwmu Antlerless Elk - Two Bear - Any Legal Weapon,Two Bear,Antlerless Elk,48,0,48,40,53,76.5,DRAW_AND_HARVEST
+2024,EA1175,1,1,1,1,0,1,Cwmu Antlerless Elk - Wallsburg - Any Legal Weapon,Wallsburg,Antlerless Elk,8,0,8,0,9,0,DRAW_AND_HARVEST
+2024,EA1176,1,1,1,1,0,1,Cwmu Antlerless Elk - Weber Florence Creek/stillman Creek - Any Legal Weapon,Weber Florence Creek,Antlerless Elk,52,0,52,21,90,23.8,DRAW_AND_HARVEST
+2024,EA1177,1,1,1,1,0,1,Cwmu Antlerless Elk - Woodruff Creek South - Any Legal Weapon,Woodruff Creek South,Antlerless Elk,7,0,7,4,8,50,DRAW_AND_HARVEST
+2024,EA1187,1,1,1,1,0,2,"Antlerless Elk - Paunsaugunt, Hatch Bench - Any Legal Weapon","Paunsaugunt, Hatch Bench",Antlerless Elk,11,0,11,1,12,8.3,DRAW_AND_HARVEST
+2024,EA1189,1,1,1,1,0,1,"Antlerless Elk - Wasatch Mtns, West-central - Muzzleloader","Wasatch Mtns, West-Central",Antlerless Elk,348,16,364,43,345,12.6,DRAW_AND_HARVEST
+2024,EA1192,1,1,1,1,0,1,Cwmu Antlerless Elk - Pahvant Ensign - Any Legal Weapon,Pahvant Ensign,Antlerless Elk,5,0,5,2,6,33.3,DRAW_AND_HARVEST
+2024,EA1193,1,1,1,1,0,2,"Antlerless Elk - Cache, Rich - Any Legal Weapon","Cache, Rich",Antlerless Elk,15,2,17,6,14,46.2,DRAW_AND_HARVEST
+2024,EA1196,1,1,1,1,0,2,"Antlerless Elk - North Slope, Summit - Any Legal Weapon","North Slope, Summit",Antlerless Elk,54,7,61,9,70,12.5,DRAW_AND_HARVEST
+2024,EA1198,1,1,1,1,0,1,Cwmu Antlerless Elk - Bear Springs - Any Legal Weapon,Bear Springs,Antlerless Elk,2,0,2,0,2,0,DRAW_AND_HARVEST
+2024,EA1200,1,1,1,1,0,1,Cwmu Antlerless Elk - Double R Ranch - Any Legal Weapon,Double R Ranch,Antlerless Elk,8,0,8,6,8,75,DRAW_AND_HARVEST
+2024,EA1201,1,1,1,1,0,1,Cwmu Antlerless Elk - Mountain Sky Ranch - Any Legal Weapon,Mountain Sky Ranch,Antlerless Elk,8,0,8,5,10,50,DRAW_AND_HARVEST
+2024,EA1203,1,1,1,1,0,2,"Antlerless Elk - Box Elder, Pilot Mtn - Any Legal Weapon","Box Elder, Pilot Mtn",Antlerless Elk,4,1,5,3,5,50,DRAW_AND_HARVEST
+2024,EA1204,1,1,1,1,0,2,"Antlerless Elk - Box Elder, Pilot Mtn - Any Legal Weapon","Box Elder, Pilot Mtn",Antlerless Elk,4,1,5,0,5,0,DRAW_AND_HARVEST
+2024,EA1206,1,1,1,1,0,2,"Antlerless Elk - Cache, Richmond Hyde Park - Any Legal Weapon","Cache, Richmond Hyde Park",Antlerless Elk,8,0,8,4,9,50,DRAW_AND_HARVEST
+2024,EA1207,1,1,1,1,0,2,Antlerless Elk - Moroni Hills - Any Legal Weapon,"Nebo, Moroni Hills",Antlerless Elk,8,0,8,2,8,25,DRAW_AND_HARVEST
+2024,EA1208,1,1,1,1,0,2,Antlerless Elk - Nebo - Any Legal Weapon,Nebo,Antlerless Elk,159,18,177,96,199,48.4,DRAW_AND_HARVEST
+2024,EA1209,1,1,1,1,0,2,"Antlerless Elk - Fillmore, Oak Creek Le - Any Legal Weapon","Fillmore, Oak Creek LE",Antlerless Elk,36,4,40,15,44,34.3,DRAW_AND_HARVEST
+2024,EA1217,1,1,1,1,0,2,"Antlerless Elk - Wasatch Mtns, Avintaquin - Any Legal Weapon","Wasatch Mtns, Avintaquin",Antlerless Elk,118,7,125,26,129,20.5,DRAW_AND_HARVEST
+2024,EA1222,1,1,1,1,0,2,"Antlerless Elk - Beaver, East - Any Legal Weapon","Beaver, East",Antlerless Elk,22,3,25,12,26,45.8,DRAW_AND_HARVEST
+2024,EA1223,1,1,1,1,0,2,"Antlerless Elk - Beaver, East - Any Legal Weapon","Beaver, East",Antlerless Elk,22,3,25,15,24,60.9,DRAW_AND_HARVEST
+2024,EA1224,1,1,1,1,0,2,"Antlerless Elk - Book Cliffs, Bitter Creek/south - Any Legal Weapon","Book Cliffs, Bitter Creek/South",Antlerless Elk,94,11,105,59,121,48.7,DRAW_AND_HARVEST
+2024,EA1225,1,1,1,1,0,1,"Antlerless Elk - Book Cliffs, Bitter Creek/south - Any Legal Weapon","Book Cliffs, Bitter Creek/South",Antlerless Elk,118,13,131,104,138,75.2,DRAW_AND_HARVEST
+2024,EA1226,1,1,1,1,0,2,Antlerless Elk - Moroni Hills - Any Legal Weapon,"Nebo, Moroni Hills",Antlerless Elk,8,0,8,1,8,12.5,DRAW_AND_HARVEST
+2024,EA1228,1,1,1,1,0,2,Antlerless Elk - Morgan-south Rich - Any Legal Weapon,Morgan-South Rich,Antlerless Elk,85,5,90,12,78,14.7,DRAW_AND_HARVEST
+2024,EA1229,1,1,1,1,0,2,Antlerless Elk - Morgan-south Rich - Any Legal Weapon,Morgan-South Rich,Antlerless Elk,128,14,142,85,159,53.6,DRAW_AND_HARVEST
+2024,EA1231,1,1,1,1,0,2,"Antlerless Elk - West Desert, Tintic Valley - Any Legal Weapon","West Desert, Tintic Valley",Antlerless Elk,72,8,80,39,90,43.2,DRAW_AND_HARVEST
+2024,EA1233,1,1,1,1,0,1,Cwmu Antlerless Elk - Avintaquin Canyon - Any Legal Weapon,Avintaquin Canyon,Antlerless Elk,4,0,4,0,3,0,DRAW_AND_HARVEST
+2024,EA1234,1,1,1,1,0,1,Cwmu Antlerless Elk - Royal Ivory Outfitters - Any Legal Weapon,Royal Ivory Outfitters,Antlerless Elk,12,0,12,6,14,41.7,DRAW_AND_HARVEST
+2024,EA1235,1,1,1,1,0,1,Cwmu Antlerless Elk - Sharp Mountain - Any Legal Weapon,Sharp Mountain,Antlerless Elk,8,0,8,5,7,71.4,DRAW_AND_HARVEST
+2024,EA1236,1,1,1,1,0,2,Antlerless Elk - East Canyon - Any Legal Weapon,East Canyon,Antlerless Elk,234,9,243,85,250,34.1,DRAW_AND_HARVEST
+2024,EA1237,1,1,1,1,0,2,"Antlerless Elk - La Sal, La Sal Mtns-north - Any Legal Weapon","La Sal, La Sal Mtns, North",Antlerless Elk,61,15,76,35,120,29,DRAW_AND_HARVEST
+2024,EA1239,1,1,1,1,0,2,"Antlerless Elk - Nine Mile, Range Creek - Any Legal Weapon","Nine Mile, Range Creek",Antlerless Elk,22,3,25,10,23,42.9,DRAW_AND_HARVEST
+2024,EA1240,1,1,1,1,0,2,"Antlerless Elk - Nine Mile, Range Creek - Any Legal Weapon","Nine Mile, Range Creek",Antlerless Elk,87,10,97,38,100,38.3,DRAW_AND_HARVEST
+2024,EA1242,1,1,1,1,0,2,Antlerless Elk - Buckskin Hills-jensen - Any Legal Weapon,"Vernal, Buckskin Hills-Jensen",Antlerless Elk,72,6,78,22,89,25,DRAW_AND_HARVEST
+2024,EA1243,1,1,1,1,0,2,Antlerless Elk - Buckskin Hills-jensen - Any Legal Weapon,"Vernal, Buckskin Hills-Jensen",Antlerless Elk,72,10,82,32,83,39.1,DRAW_AND_HARVEST
+2024,EA1244,1,1,1,1,0,2,Antlerless Elk - Yellowstone - Any Legal Weapon,Yellowstone,Antlerless Elk,72,8,80,12,81,14.7,DRAW_AND_HARVEST
+2024,EA1245,1,1,1,1,0,1,Antlerless Elk - Yellowstone - Muzzleloader,Yellowstone,Antlerless Elk,44,1,45,5,39,13.5,DRAW_AND_HARVEST
+2024,EA1250,1,1,1,1,0,2,"Antlerless Elk - North Slope, West Daggett - Any Legal Weapon","North Slope, West Daggett",Antlerless Elk,22,3,25,7,29,25,DRAW_AND_HARVEST
+2024,EA1251,1,1,1,1,0,2,"Antlerless Elk - Southwest Desert, Burbank/garrison - Any Legal Weapon","Southwest Desert, Burbank/Garrison",Antlerless Elk,11,2,13,6,13,50,DRAW_AND_HARVEST
+2024,EA1252,1,1,1,1,0,2,"Antlerless Elk - Southwest Desert, Burbank/garrison - Any Legal Weapon","Southwest Desert, Burbank/Garrison",Antlerless Elk,4,1,5,1,4,25,DRAW_AND_HARVEST
+2024,EA1254,1,1,1,1,0,2,Antlerless Elk - Pine Valley - Any Legal Weapon,Pine Valley,Antlerless Elk,15,2,17,3,14,25,DRAW_AND_HARVEST
+2024,EA1256,1,1,1,1,0,1,Cwmu Antlerless Elk - Little Pole Canyon - Any Legal Weapon,Little Pole Canyon,Antlerless Elk,10,0,10,4,11,36.4,DRAW_AND_HARVEST
+2024,EA1259,1,1,1,1,0,1,Cwmu Antlerless Elk - Diamond Mountain - Any Legal Weapon,Diamond Mountain CWMU,Antlerless Elk,2,0,2,3,3,100,DRAW_AND_HARVEST
+2024,EA1260,1,1,1,1,0,1,Cwmu Antlerless Elk - West Ridge - Any Legal Weapon,Blackhawk,Antlerless Elk,5,0,5,3,5,60,DRAW_AND_HARVEST
+2024,EA1261,1,1,1,1,0,1,Cwmu Antlerless Elk - Blackhawk - Any Legal Weapon,West Ridge,Antlerless Elk,4,0,4,4,5,80,DRAW_AND_HARVEST
+2024,EA1264,1,1,1,1,0,2,"Antlerless Elk - Wasatch Mtns, Rabbit Gulch - Any Legal Weapon","Wasatch Mtns, Rabbit Gulch",Antlerless Elk,77,1,78,33,92,36.3,DRAW_AND_HARVEST
+2024,EA1265,1,1,1,1,0,2,"Antlerless Elk - Wasatch Mtns, Tabby Mtn - Any Legal Weapon","Wasatch Mtns, Tabby Mtn",Antlerless Elk,76,3,79,47,86,54.4,DRAW_AND_HARVEST
+2024,EA1266,1,1,1,1,0,2,"Antlerless Elk - Box Elder, Hansel Mtn - Any Legal Weapon","Box Elder, Hansel Mtn",Antlerless Elk,15,2,17,3,18,18.8,DRAW_AND_HARVEST
+2024,EA1267,1,1,1,1,0,2,Antlerless Elk - Cache - Any Legal Weapon,Cache,Antlerless Elk,87,10,97,19,112,17.3,DRAW_AND_HARVEST
+2024,EA1268,1,1,1,1,0,1,"Antlerless Elk - North Slope, Summit - Archery","North Slope, Summit",Antlerless Elk,83,4,87,9,151,6,DRAW_AND_HARVEST
+2024,EA1269,1,1,1,1,0,2,Antlerless Elk - Ogden (excludes Hyrum) - Any Legal Weapon,Ogden (excludes Hyrum),Antlerless Elk,136,4,140,59,145,40.5,DRAW_AND_HARVEST
+2024,EA2002,0,1,0,0,0,1,,Morgan-South Rich,Elk,,,,64,186,34.4,HARVEST_ONLY
+2024,EA2003,0,1,0,0,0,1,,East Canyon,Elk,,,,97,255,38.1,HARVEST_ONLY
+2024,EA2004,0,1,0,0,0,1,,Chalk Creek,Elk,,,,187,407,46,HARVEST_ONLY
+2024,EA2005,0,1,0,0,0,1,,"North Slope, West Daggett",Elk,,,,40,62,64.7,HARVEST_ONLY
+2024,EA2006,0,1,0,0,0,1,,Yellowstone,Elk,,,,168,356,47.2,HARVEST_ONLY
+2024,EA2008,0,1,0,0,0,1,,"Nine Mile, Anthro-Myton Bench",Elk,,,,4,29,12.5,HARVEST_ONLY
+2024,EA2009,0,1,0,0,0,1,,"La Sal, La Sal Mtns",Elk,,,,13,62,21.6,HARVEST_ONLY
+2024,EA2010,0,1,0,0,0,1,,San Juan,Elk,,,,18,45,40,HARVEST_ONLY
+2024,EA2011,0,1,0,0,0,1,,Manti,Elk,,,,106,205,51.6,HARVEST_ONLY
+2024,EA2012,0,1,0,0,0,1,,"Wasatch Mtns, West",Elk,,,,81,193,41.9,HARVEST_ONLY
+2024,EA2013,0,1,0,0,0,1,,"Wasatch Mtns, Currant Creek",Elk,,,,50,121,41.2,HARVEST_ONLY
+2024,EA2014,0,1,0,0,0,1,,"Wasatch Mtns, Avintaquin-White River",Elk,,,,8,37,21.7,HARVEST_ONLY
+2024,EA2015,0,1,0,0,0,1,,Paunsaugunt,Elk,,,,14,76,17.9,HARVEST_ONLY
+2024,EA2016,0,1,0,0,0,1,,Nebo,Elk,,,,60,203,29.4,HARVEST_ONLY
+2024,EA2017,0,1,0,0,0,1,,Mt Dutton,Elk,,,,20,41,50,HARVEST_ONLY
+2024,EA2018,0,1,0,0,0,1,,Panguitch Lake,Elk,,,,24,43,54.5,HARVEST_ONLY
+2024,EA2019,0,1,0,0,0,1,,"West Desert, Tintic Valley",Elk,,,,27,70,38,HARVEST_ONLY
+2024,EA2020,0,1,0,0,0,1,,Zion,Elk,,,,64,229,28,HARVEST_ONLY
+2024,EA2021,0,1,0,0,0,1,,"Beaver, East",Elk,,,,6,19,33.3,HARVEST_ONLY
+2024,EA2026,0,1,0,0,0,1,,"Box Elder, Hansel Mtn",Elk,,,,11,64,16.7,HARVEST_ONLY
+2024,EA2027,0,1,0,0,0,1,,Cache,Elk,,,,74,240,31.1,HARVEST_ONLY
+2024,EA2028,0,1,0,0,0,1,,Vernal/Bonanza,Elk,,,,85,211,40.4,HARVEST_ONLY
+2024,EA2029,0,1,0,0,0,1,,"Nine Mile, Range Creek",Elk,,,,31,99,31.6,HARVEST_ONLY
+2024,EA2030,0,1,0,0,0,1,,Diamond Mtn,Elk,,,,96,214,45,HARVEST_ONLY
+2024,EA2033,1,1,1,1,0,2,Antlerless Elk - Kamas - Archery,Kamas,Antlerless Elk,41,3,44,1,64,1.9,DRAW_AND_HARVEST
+2024,EA2034,1,1,1,1,0,1,"Antlerless Elk - Nine Mile, Anthro - Archery","Nine Mile, Anthro",Antlerless Elk,12,4,16,1,24,4.3,DRAW_AND_HARVEST
+2024,EA2036,1,1,1,1,0,2,"Antlerless Elk - Oquirrh-stansbury, East - Any Legal Weapon","Oquirrh-Stansbury, East",Antlerless Elk,29,4,33,36,39,91.9,DRAW_AND_HARVEST
+2024,EA2037,1,1,1,1,0,1,Antlerless Elk - Yellowstone - Archery,Yellowstone,Antlerless Elk,50,15,65,21,151,13.9,DRAW_AND_HARVEST
+2024,EA2038,1,1,1,1,0,1,Antlerless Elk - Wasatch Mtns - Archery,Wasatch Mtns,Antlerless Elk,425,39,464,79,728,10.9,DRAW_AND_HARVEST
+2024,EA2039,0,1,0,0,0,1,,"Fillmore, Pahvant",Elk,,,,36,108,33.8,HARVEST_ONLY
+2024,EA2040,0,1,0,0,0,1,,Kamas,Elk,,,,34,77,44.2,HARVEST_ONLY
+2024,EB1001,1,1,26,0,26,52,Statewide totals,Statewide totals,Elk,,,,,10580,12.1,DRAW_AND_HARVEST
+2024,EB1002,1,1,26,0,26,52,Statewide totals,Statewide totals,Elk,,,,,1708,13,DRAW_AND_HARVEST
+2024,EB1003,1,1,21,0,21,42,STATEWIDE TOTALS,STATEWIDE TOTALS,Elk,,,,,8867,11.5,DRAW_AND_HARVEST
+2024,EB1004,1,1,21,0,21,42,Statewide totals,Statewide totals,Elk,,,,,640,14.6,DRAW_AND_HARVEST
+2024,EB1010,1,1,26,0,26,52,Statewide totals,Statewide totals,Elk,,,,,3344,9.7,DRAW_AND_HARVEST
+2024,EB1012,1,0,1,0,1,0,Uinta Basin Any Bull Elk,,Elk,,,,,,,DRAW_ONLY
+2024,EB3000,1,1,1,1,0,1,"Limited-entry Archery Bull Elk - Beaver, East - Archery Page 222","Beaver, East",Elk,18,2,20,,21,70,DRAW_AND_HARVEST
+2024,EB3001,0,1,0,0,0,1,,"Book Cliffs, Bitter Creek/South",Elk,,,,,2,50,HARVEST_ONLY
+2024,EB3002,1,1,1,1,0,1,"Limited-entry Archery Bull Elk - Book Cliffs, Little Creek Roadless - Archery Page 223","Book Cliffs, Little Creek Roadless",Elk,2,0,2,,1,100,DRAW_AND_HARVEST
+2024,EB3003,1,1,1,1,0,1,"Limited-entry Archery Bull Elk - Cache, Meadowville - Archery Page 224","Cache, Meadowville",Elk,12,1,13,,9,33.3,DRAW_AND_HARVEST
+2024,EB3005,1,1,1,1,0,1,"Limited-entry Archery Bull Elk - Cache, South - Archery Page 225","Cache, South",Elk,7,1,8,,9,33.3,DRAW_AND_HARVEST
+2024,EB3006,1,1,1,1,0,1,Limited-entry Archery Bull Elk - Manti - Archery Page 226,Manti,Elk,149,16,165,,168,27.2,DRAW_AND_HARVEST
+2024,EB3008,1,1,1,1,0,1,"Limited-entry Archery Bull Elk - Fillmore, Pahvant - Archery Page 227","Fillmore, Pahvant",Elk,16,2,18,,19,47.1,DRAW_AND_HARVEST
+2024,EB3009,1,1,1,1,0,1,"Limited-entry Archery Bull Elk - La Sal, La Sal Mtns - Archery Page 228","La Sal, La Sal Mtns",Elk,35,4,39,,38,28.6,DRAW_AND_HARVEST
+2024,EB3010,1,1,1,1,0,1,Limited-entry Archery Bull Elk - Monroe - Archery Page 229,Monroe,Elk,17,2,19,,19,57.9,DRAW_AND_HARVEST
+2024,EB3011,1,1,1,1,0,1,Limited-entry Archery Bull Elk - Mt Dutton - Archery Page 230,Mt Dutton,Elk,15,2,17,,18,47.1,DRAW_AND_HARVEST
+2024,EB3013,1,1,1,1,0,1,"Limited-entry Archery Bull Elk - North Slope, Three Corners - Archery Page 231","North Slope, Three Corners",Elk,6,1,7,,7,50,DRAW_AND_HARVEST
+2024,EB3015,1,1,1,1,0,1,Limited-entry Archery Bull Elk - Panguitch Lake - Archery Page 232,Panguitch Lake,Elk,12,2,14,,18,50,DRAW_AND_HARVEST
+2024,EB3018,1,1,1,1,0,1,Limited-entry Archery Bull Elk - Fishlake/thousand Lakes - Archery Page 233,Fishlake/Thousand Lakes,Elk,76,8,84,,86,32.1,DRAW_AND_HARVEST
+2024,EB3019,1,1,1,1,0,1,Limited-entry Archery Bull Elk - San Juan Bull Elk - Archery Page 234,San Juan Bull Elk,Elk,22,3,25,,26,48,DRAW_AND_HARVEST
+2024,EB3020,1,1,1,1,0,1,Limited-entry Archery Bull Elk - Diamond Mtn - Archery Page 235,Diamond Mtn,Elk,21,2,23,,24,35,DRAW_AND_HARVEST
+2024,EB3022,1,1,1,1,0,1,Limited-entry Archery Bull Elk - Wasatch Mtns - Archery Page 236,Wasatch Mtns,Elk,181,19,200,,199,18.6,DRAW_AND_HARVEST
+2024,EB3024,1,1,1,1,0,1,"Limited-entry Alw (rifle) Bull Elk - Early - Beaver, East - Any Legal Weapon Page 237","Beaver, East",Elk,7,1,8,,11,100,DRAW_AND_HARVEST
+2024,EB3025,1,1,1,1,0,1,"Limited-entry Alw (rifle) Bull Elk - Late - Beaver, East - Any Legal Weapon Page 238","Beaver, East",Elk,13,2,15,,15,93.3,DRAW_AND_HARVEST
+2024,EB3026,0,1,0,0,0,1,,"Book Cliffs, Bitter Creek/South",Elk,,,,,2,100,HARVEST_ONLY
+2024,EB3028,1,1,1,1,0,1,"Limited-entry Alw (rifle) Bull Elk - Early - Book Cliffs, Little Creek Roadless - Any Legal Weapon Page 239","Book Cliffs, Little Creek Roadless",Elk,2,0,2,,2,100,DRAW_AND_HARVEST
+2024,EB3031,1,1,1,1,0,1,"Limited-entry Alw (rifle) Bull Elk - Early - Box Elder, Pilot Mtn - Any Legal Weapon Page 240","Box Elder, Pilot Mtn",Elk,9,1,10,,11,60,DRAW_AND_HARVEST
+2024,EB3032,1,1,1,1,0,1,"Limited-entry Alw (rifle) Bull Elk - Early - Cache, Meadowville - Any Legal Weapon Page 241","Cache, Meadowville",Elk,4,1,5,,8,57.1,DRAW_AND_HARVEST
+2024,EB3033,1,1,1,1,0,1,"Limited-entry Alw (rifle) Bull Elk - Late - Cache, Meadowville - Any Legal Weapon Page 242","Cache, Meadowville",Elk,8,1,9,,7,50,DRAW_AND_HARVEST
+2024,EB3036,1,1,1,1,0,1,"Limited-entry Alw (rifle) Bull Elk - Early - Cache, South - Any Legal Weapon Page 243","Cache, South",Elk,2,1,3,,4,0,DRAW_AND_HARVEST
+2024,EB3037,1,1,1,1,0,1,"Limited-entry Alw (rifle) Bull Elk - Late - Cache, South - Any Legal Weapon Page 244","Cache, South",Elk,5,1,6,,7,57.1,DRAW_AND_HARVEST
+2024,EB3038,1,1,1,1,0,1,Limited-entry Alw (rifle) Bull Elk - Early - Manti - Any Legal Weapon Page 245,Manti,Elk,62,6,68,,77,72.4,DRAW_AND_HARVEST
+2024,EB3039,1,1,1,1,0,1,Limited-entry Alw (rifle) Bull Elk - Late - Manti - Any Legal Weapon Page 246,Manti,Elk,102,11,113,,115,79.1,DRAW_AND_HARVEST
+2024,EB3040,0,1,0,0,0,1,,Nebo,Elk,,,,,2,100,HARVEST_ONLY
+2024,EB3042,1,1,1,1,0,1,"Limited-entry Alw (rifle) Bull Elk - Early - Fillmore, Pahvant - Any Legal Weapon Page 247","Fillmore, Pahvant",Elk,7,1,8,,12,81.8,DRAW_AND_HARVEST
+2024,EB3043,1,1,1,1,0,1,"Limited-entry Alw (rifle) Bull Elk - Late - Fillmore, Pahvant - Any Legal Weapon Page 248","Fillmore, Pahvant",Elk,11,1,12,,14,76.9,DRAW_AND_HARVEST
+2024,EB3044,1,1,1,1,0,1,"Limited-entry Alw (rifle) Bull Elk - Late - La Sal, Dolores Triangle - Any Legal Weapon Page 249","La Sal, Dolores Triangle",Elk,6,1,7,,7,83.3,DRAW_AND_HARVEST
+2024,EB3045,1,1,1,1,0,1,"Limited-entry Alw (rifle) Bull Elk - Early - La Sal, La Sal Mtns - Any Legal Weapon Page 250","La Sal, La Sal Mtns",Elk,13,1,14,,19,78.9,DRAW_AND_HARVEST
+2024,EB3046,1,1,1,1,0,1,"Limited-entry Alw (rifle) Bull Elk - Late - La Sal, La Sal Mtns - Any Legal Weapon Page 251","La Sal, La Sal Mtns",Elk,24,2,26,,26,57.7,DRAW_AND_HARVEST
+2024,EB3047,1,1,1,1,0,1,Limited-entry Alw (rifle) Bull Elk - Early - Monroe - Any Legal Weapon Page 252,Monroe,Elk,7,1,8,,12,100,DRAW_AND_HARVEST
+2024,EB3048,1,1,1,1,0,1,Limited-entry Alw (rifle) Bull Elk - Late - Monroe - Any Legal Weapon Page 253,Monroe,Elk,12,1,13,,12,66.7,DRAW_AND_HARVEST
+2024,EB3049,1,1,1,1,0,1,Limited-entry Alw (rifle) Bull Elk - Early - Mt Dutton - Any Legal Weapon Page 254,Mt Dutton,Elk,6,1,7,,7,100,DRAW_AND_HARVEST
+2024,EB3050,1,1,1,1,0,1,Limited-entry Alw (rifle) Bull Elk - Late - Mt Dutton - Any Legal Weapon Page 255,Mt Dutton,Elk,10,1,11,,13,84.6,DRAW_AND_HARVEST
+2024,EB3053,1,1,1,1,0,1,"Limited-entry Alw (rifle) Bull Elk - Mid - North Slope, Three Corners - Any Legal Weapon Page 256","North Slope, Three Corners",Elk,13,2,15,,14,85.7,DRAW_AND_HARVEST
+2024,EB3056,1,1,1,1,0,1,Limited-entry Alw (rifle) Bull Elk - Early - Panguitch Lake - Any Legal Weapon Page 257,Panguitch Lake,Elk,5,0,5,,9,66.7,DRAW_AND_HARVEST
+2024,EB3057,1,1,1,1,0,1,Limited-entry Alw (rifle) Bull Elk - Late - Panguitch Lake - Any Legal Weapon Page 258,Panguitch Lake,Elk,9,1,10,,10,100,DRAW_AND_HARVEST
+2024,EB3063,1,1,1,1,0,1,Limited-entry Alw (rifle) Bull Elk - Early - Fishlake/thousand Lakes - Any Legal Weapon Page 259,Fishlake/Thousand Lakes,Elk,30,3,33,,37,63.9,DRAW_AND_HARVEST
+2024,EB3064,1,1,1,1,0,1,Limited-entry Alw (rifle) Bull Elk - Mid - Fishlake/thousand Lakes - Any Legal Weapon Page 260,Fishlake/Thousand Lakes,Elk,90,9,99,,101,63.8,DRAW_AND_HARVEST
+2024,EB3065,1,1,1,1,0,1,Limited-entry Alw (rifle) Bull Elk - Late - Fishlake/thousand Lakes - Any Legal Weapon Page 261,Fishlake/Thousand Lakes,Elk,51,5,56,,61,73.2,DRAW_AND_HARVEST
+2024,EB3066,1,1,1,1,0,1,Limited-entry Alw (rifle) Bull Elk - Early - San Juan Bull Elk - Any Legal Weapon Page 262,San Juan Bull Elk,Elk,9,1,10,,20,78.9,DRAW_AND_HARVEST
+2024,EB3067,1,1,1,1,0,1,Limited-entry Alw (rifle) Bull Elk - Late - San Juan Bull Elk - Any Legal Weapon Page 263,San Juan Bull Elk,Elk,16,2,18,,17,70.6,DRAW_AND_HARVEST
+2024,EB3068,1,1,1,1,0,1,Limited-entry Alw (rifle) Bull Elk - Early - Diamond Mtn - Any Legal Weapon Page 264,Diamond Mtn,Elk,7,1,8,,25,82.6,DRAW_AND_HARVEST
+2024,EB3069,1,1,1,1,0,1,Limited-entry Alw (rifle) Bull Elk - Mid - Diamond Mtn - Any Legal Weapon Page 265,Diamond Mtn,Elk,24,3,27,,36,88.6,DRAW_AND_HARVEST
+2024,EB3072,1,1,1,1,0,1,Limited-entry Alw (rifle) Bull Elk - Early - Wasatch Mtns - Any Legal Weapon Page 266,Wasatch Mtns,Elk,72,7,79,,88,65,DRAW_AND_HARVEST
+2024,EB3073,1,1,1,1,0,1,Limited-entry Alw (rifle) Bull Elk - Late - Wasatch Mtns - Any Legal Weapon Page 267,Wasatch Mtns,Elk,124,13,137,,139,66.9,DRAW_AND_HARVEST
+2024,EB3077,1,1,1,1,0,1,"Limited-entry Muzzleloader Bull Elk - Beaver, East - Muzzleloader Page 268","Beaver, East",Elk,12,1,13,,13,76.9,DRAW_AND_HARVEST
+2024,EB3078,0,1,0,0,0,1,,"Book Cliffs, Bitter Creek/South",Elk,,,,,1,100,HARVEST_ONLY
+2024,EB3079,1,1,1,1,0,1,"Limited-entry Muzzleloader Bull Elk - Book Cliffs, Little Creek Roadless - Muzzleloader Page 269","Book Cliffs, Little Creek Roadless",Elk,1,0,1,,1,100,DRAW_AND_HARVEST
+2024,EB3081,1,1,1,1,0,1,"Limited-entry Muzzleloader Bull Elk - Cache, Meadowville - Muzzleloader Page 270","Cache, Meadowville",Elk,7,1,8,,8,50,DRAW_AND_HARVEST
+2024,EB3083,1,1,1,1,0,1,"Limited-entry Muzzleloader Bull Elk - Cache, South - Muzzleloader Page 271","Cache, South",Elk,4,1,5,,5,80,DRAW_AND_HARVEST
+2024,EB3084,1,1,1,1,0,1,Limited-entry Muzzleloader Bull Elk - Manti - Muzzleloader Page 272,Manti,Elk,90,9,99,,103,66.3,DRAW_AND_HARVEST
+2024,EB3086,1,1,1,1,0,1,"Limited-entry Muzzleloader Bull Elk - Fillmore, Pahvant - Muzzleloader Page 273","Fillmore, Pahvant",Elk,10,1,11,,12,66.7,DRAW_AND_HARVEST
+2024,EB3087,1,1,1,1,0,1,"Limited-entry Muzzleloader Bull Elk - La Sal, La Sal Mtns - Muzzleloader Page 274","La Sal, La Sal Mtns",Elk,22,2,24,,24,70.8,DRAW_AND_HARVEST
+2024,EB3088,1,1,1,1,0,1,Limited-entry Muzzleloader Bull Elk - Monroe - Muzzleloader Page 275,Monroe,Elk,10,1,11,,11,81.8,DRAW_AND_HARVEST
+2024,EB3089,1,1,1,1,0,1,Limited-entry Muzzleloader Bull Elk - Mt Dutton - Muzzleloader Page 276,Mt Dutton,Elk,10,1,11,,11,72.7,DRAW_AND_HARVEST
+2024,EB3091,1,1,1,1,0,1,"Limited-entry Muzzleloader Bull Elk - North Slope, Three Corners - Muzzleloader Page 277","North Slope, Three Corners",Elk,4,0,4,,4,75,DRAW_AND_HARVEST
+2024,EB3093,1,1,1,1,0,1,Limited-entry Muzzleloader Bull Elk - Panguitch Lake - Muzzleloader Page 278,Panguitch Lake,Elk,8,1,9,,10,90,DRAW_AND_HARVEST
+2024,EB3096,1,1,1,1,0,1,Limited-entry Muzzleloader Bull Elk - Fishlake/thousand Lakes - Muzzleloader Page 279,Fishlake/Thousand Lakes,Elk,45,5,50,,52,70,DRAW_AND_HARVEST
+2024,EB3097,1,1,1,1,0,1,Limited-entry Muzzleloader Bull Elk - San Juan Bull Elk - Muzzleloader Page 280,San Juan Bull Elk,Elk,14,2,16,,17,68.8,DRAW_AND_HARVEST
+2024,EB3098,1,1,1,1,0,1,Limited-entry Muzzleloader Bull Elk - Diamond Mtn - Muzzleloader Page 281,Diamond Mtn,Elk,13,1,14,,21,80,DRAW_AND_HARVEST
+2024,EB3100,1,1,1,1,0,1,Limited-entry Muzzleloader Bull Elk - Wasatch Mtns - Muzzleloader Page 282,Wasatch Mtns,Elk,109,10,119,,122,67.5,DRAW_AND_HARVEST
+2024,EB3102,1,1,1,1,0,1,"Limited-entry Multi-season Bull Elk - Beaver, East - Any Legal Weapon Page 283","Beaver, East",Elk,3,0,3,,4,100,DRAW_AND_HARVEST
+2024,EB3104,1,1,1,1,0,1,"Limited-entry Multi-season Bull Elk - Book Cliffs, Little Creek Roadless - Any Legal Weapon Page 284","Book Cliffs, Little Creek Roadless",Elk,1,0,1,,1,100,DRAW_AND_HARVEST
+2024,EB3105,1,1,1,1,0,1,"Limited-entry Multi-season Bull Elk - Cache, Meadowville - Any Legal Weapon Page 285","Cache, Meadowville",Elk,2,0,2,,3,66.7,DRAW_AND_HARVEST
+2024,EB3107,1,1,1,1,0,1,"Limited-entry Multi-season Bull Elk - Cache, South - Any Legal Weapon Page 286","Cache, South",Elk,1,0,1,,2,100,DRAW_AND_HARVEST
+2024,EB3108,1,1,1,1,0,1,Limited-entry Multi-season Bull Elk - Manti - Any Legal Weapon Page 287,Manti,Elk,18,2,20,,22,85.7,DRAW_AND_HARVEST
+2024,EB3109,0,1,0,0,0,1,,Nebo,Elk,,,,,1,100,HARVEST_ONLY
+2024,EB3110,1,1,1,1,0,1,"Limited-entry Multi-season Bull Elk - Fillmore, Pahvant - Any Legal Weapon Page 288","Fillmore, Pahvant",Elk,2,0,2,,3,33.3,DRAW_AND_HARVEST
+2024,EB3111,1,1,1,1,0,1,"Limited-entry Multi-season Bull Elk - La Sal, La Sal Mtns - Any Legal Weapon Page 289","La Sal, La Sal Mtns",Elk,5,0,5,,7,57.1,DRAW_AND_HARVEST
+2024,EB3112,1,1,1,1,0,1,Limited-entry Multi-season Bull Elk - Monroe - Any Legal Weapon Page 290,Monroe,Elk,2,0,2,,3,100,DRAW_AND_HARVEST
+2024,EB3113,1,1,1,1,0,1,Limited-entry Multi-season Bull Elk - Mt Dutton - Any Legal Weapon Page 291,Mt Dutton,Elk,2,0,2,,3,100,DRAW_AND_HARVEST
+2024,EB3115,1,1,1,1,0,1,"Limited-entry Multi-season Bull Elk - North Slope, Three Corners - Any Legal Weapon Page 292","North Slope, Three Corners",Elk,1,0,1,,2,100,DRAW_AND_HARVEST
+2024,EB3117,1,1,1,1,0,1,Limited-entry Multi-season Bull Elk - Panguitch Lake - Any Legal Weapon Page 293,Panguitch Lake,Elk,2,0,2,,3,50,DRAW_AND_HARVEST
+2024,EB3120,1,1,1,1,0,1,Limited-entry Multi-season Bull Elk - Fishlake/thousand Lakes - Any Legal Weapon Page 294,Fishlake/Thousand Lakes,Elk,9,1,10,,12,90.9,DRAW_AND_HARVEST
+2024,EB3121,1,1,1,1,0,1,Limited-entry Multi-season Bull Elk - San Juan Bull Elk - Any Legal Weapon Page 295,San Juan Bull Elk,Elk,3,0,3,,4,100,DRAW_AND_HARVEST
+2024,EB3122,1,1,1,1,0,1,Limited-entry Multi-season Bull Elk - Diamond Mtn - Any Legal Weapon Page 296,Diamond Mtn,Elk,3,0,3,,4,25,DRAW_AND_HARVEST
+2024,EB3124,1,1,1,1,0,1,Limited-entry Multi-season Bull Elk - Wasatch Mtns - Any Legal Weapon Page 297,Wasatch Mtns,Elk,21,3,24,,27,76.9,DRAW_AND_HARVEST
+2024,EB3126,1,1,1,1,0,1,Limited-entry Alw (rifle) Bull Elk - Mid - Manti - Any Legal Weapon Page 298,Manti,Elk,178,18,196,,195,63.4,DRAW_AND_HARVEST
+2024,EB3127,1,1,1,1,0,1,Limited-entry Alw (rifle) Bull Elk - Mid - Wasatch Mtns - Any Legal Weapon Page 299,Wasatch Mtns,Elk,217,24,241,,239,53.9,DRAW_AND_HARVEST
+2024,EB3130,1,1,1,1,0,1,"Limited-entry Archery Bull Elk - Box Elder, Pilot Mtn - Archery Page 300","Box Elder, Pilot Mtn",Elk,3,0,3,,4,0,DRAW_AND_HARVEST
+2024,EB3132,1,1,1,1,0,1,"Limited-entry September Archery Bull Elk - Cache, North - Archery Page 301","Cache, North",Elk,25,3,28,,28,25.9,DRAW_AND_HARVEST
+2024,EB3135,1,1,1,1,0,1,Limited-entry September Archery Bull Elk - Barney Top/kaiparowits - Archery Page 302,Barney Top/Kaiparowits,Elk,9,1,10,,9,33.3,DRAW_AND_HARVEST
+2024,EB3136,1,1,1,1,0,1,"Limited-entry September Archery Bull Elk - Southwest Desert, North - Archery Page 303","Southwest Desert, North",Elk,12,1,13,,11,81.8,DRAW_AND_HARVEST
+2024,EB3137,1,1,1,1,0,1,"Limited-entry September Archery Bull Elk - West Desert, Deep Creek - Archery Page 304","West Desert, Deep Creek",Elk,12,1,13,,13,58.3,DRAW_AND_HARVEST
+2024,EB3139,1,1,1,1,0,1,"Limited-entry Hamss Bull Elk - Cache, North - H.a.m.s.s. Page 305","Cache, North",Elk,25,3,28,,28,34.6,DRAW_AND_HARVEST
+2024,EB3142,1,1,1,1,0,1,Limited-entry Hamss Bull Elk - Barney Top/kaiparowits - H.a.m.s.s. Page 306,Barney Top/Kaiparowits,Elk,9,1,10,,10,44.4,DRAW_AND_HARVEST
+2024,EB3143,1,1,1,1,0,1,"Limited-entry Hamss Bull Elk - Southwest Desert, North - H.a.m.s.s. Page 307","Southwest Desert, North",Elk,12,1,13,,13,75,DRAW_AND_HARVEST
+2024,EB3144,1,1,1,1,0,1,"Limited-entry Hamss Bull Elk - West Desert, Deep Creek - H.a.m.s.s. Page 308","West Desert, Deep Creek",Elk,12,1,13,,13,75,DRAW_AND_HARVEST
+2024,EB3145,1,1,1,1,0,1,Limited-entry Archery Bull Elk - Boulder - Archery Page 309,Boulder,Elk,28,2,30,,32,64.3,DRAW_AND_HARVEST
+2024,EB3146,1,1,1,1,0,1,"Limited-entry Archery Bull Elk - Southwest Desert, South - Archery Page 310","Southwest Desert, South",Elk,31,4,35,,36,47.1,DRAW_AND_HARVEST
+2024,EB3147,1,1,1,1,0,1,"Limited-entry Alw (rifle) Bull Elk - Early - Box Elder, Grouse Creek - Any Legal Weapon Page 311","Box Elder, Grouse Creek",Elk,7,1,8,,8,62.5,DRAW_AND_HARVEST
+2024,EB3148,1,1,1,1,0,1,Limited-entry Alw (rifle) Bull Elk - Early - Boulder - Any Legal Weapon Page 312,Boulder,Elk,11,1,12,,15,86.7,DRAW_AND_HARVEST
+2024,EB3149,1,1,1,1,0,1,"Limited-entry Alw (rifle) Bull Elk - Early - Southwest Desert, South - Any Legal Weapon Page 313","Southwest Desert, South",Elk,12,1,13,,19,77.8,DRAW_AND_HARVEST
+2024,EB3150,1,1,1,1,0,1,"Limited-entry Alw (rifle) Bull Elk - Mid - Box Elder, Grouse Creek - Any Legal Weapon Page 314","Box Elder, Grouse Creek",Elk,13,1,14,,14,50,DRAW_AND_HARVEST
+2024,EB3151,1,1,1,1,0,1,Limited-entry Alw (rifle) Bull Elk - Late - Boulder - Any Legal Weapon Page 315,Boulder,Elk,19,2,21,,21,85,DRAW_AND_HARVEST
+2024,EB3152,1,1,1,1,0,1,"Limited-entry Alw (rifle) Bull Elk - Late - Southwest Desert, South - Any Legal Weapon Page 316","Southwest Desert, South",Elk,21,1,22,,24,65.2,DRAW_AND_HARVEST
+2024,EB3153,1,1,1,1,0,1,"Limited-entry Muzzleloader Bull Elk - Box Elder, Grouse Creek - Muzzleloader Page 317","Box Elder, Grouse Creek",Elk,3,1,4,,4,25,DRAW_AND_HARVEST
+2024,EB3154,1,1,1,1,0,1,Limited-entry Muzzleloader Bull Elk - Boulder - Muzzleloader Page 318,Boulder,Elk,17,2,19,,19,78.9,DRAW_AND_HARVEST
+2024,EB3155,1,1,1,1,0,1,"Limited-entry Muzzleloader Bull Elk - Southwest Desert, South - Muzzleloader Page 319","Southwest Desert, South",Elk,19,2,21,,23,61.9,DRAW_AND_HARVEST
+2024,EB3156,1,1,1,1,0,1,Limited-entry Multi-season Bull Elk - Boulder - Any Legal Weapon Page 320,Boulder,Elk,4,0,4,,5,100,DRAW_AND_HARVEST
+2024,EB3157,1,1,1,1,0,1,"Limited-entry Multi-season Bull Elk - Southwest Desert, South - Any Legal Weapon Page 321","Southwest Desert, South",Elk,4,0,4,,6,50,DRAW_AND_HARVEST
+2024,EB3158,1,1,1,1,0,1,"Limited-entry Archery Bull Elk - Late - Beaver, East - Archery Page 322","Beaver, East",Elk,9,1,10,,10,50,DRAW_AND_HARVEST
+2024,EB3159,1,1,1,1,0,1,"Limited-entry Alw (rifle) Bull Elk - Mid - Beaver, East - Any Legal Weapon Page 323","Beaver, East",Elk,22,2,24,,26,80,DRAW_AND_HARVEST
+2024,EB3160,1,1,1,1,0,1,"Limited-entry Archery Bull Elk - Book Cliffs, Bitter Creek/east - Archery Page 324","Book Cliffs, Bitter Creek/East",Elk,19,2,21,,21,40,DRAW_AND_HARVEST
+2024,EB3161,1,1,1,1,0,1,"Limited-entry Archery Bull Elk - Late - Book Cliffs, Bitter Creek/east - Archery Page 325","Book Cliffs, Bitter Creek/East",Elk,4,0,4,,4,100,DRAW_AND_HARVEST
+2024,EB3162,1,1,1,1,0,1,"Limited-entry Alw (rifle) Bull Elk - Early - Book Cliffs, Bitter Creek/east - Any Legal Weapon Page 326","Book Cliffs, Bitter Creek/East",Elk,7,1,8,,9,100,DRAW_AND_HARVEST
+2024,EB3163,1,1,1,1,0,1,"Limited-entry Alw (rifle) Bull Elk - Late - Book Cliffs, Bitter Creek/east - Any Legal Weapon Page 327","Book Cliffs, Bitter Creek/East",Elk,12,2,14,,14,64.3,DRAW_AND_HARVEST
+2024,EB3164,1,1,1,1,0,1,"Limited-entry Alw (rifle) Bull Elk - Mid - Book Cliffs, Bitter Creek/east - Any Legal Weapon Page 328","Book Cliffs, Bitter Creek/East",Elk,22,2,24,,26,56,DRAW_AND_HARVEST
+2024,EB3165,1,1,1,1,0,1,"Limited-entry Multi-season Bull Elk - Book Cliffs, Bitter Creek/east - Any Legal Weapon Page 329","Book Cliffs, Bitter Creek/East",Elk,3,0,3,,3,100,DRAW_AND_HARVEST
+2024,EB3166,1,1,1,1,0,1,"Limited-entry Muzzleloader Bull Elk - Book Cliffs, Bitter Creek/east - Muzzleloader Page 330","Book Cliffs, Bitter Creek/East",Elk,12,1,13,,13,69.2,DRAW_AND_HARVEST
+2024,EB3167,1,1,1,1,0,1,"Limited-entry Alw (rifle) Bull Elk - Mid - Book Cliffs, Little Creek Roadless - Any Legal Weapon Page 331","Book Cliffs, Little Creek Roadless",Elk,2,1,3,,1,100,DRAW_AND_HARVEST
+2024,EB3168,1,1,1,1,0,1,"Limited-entry Archery Bull Elk - Late - Cache, Meadowville - Archery Page 332","Cache, Meadowville",Elk,2,1,3,,1,0,DRAW_AND_HARVEST
+2024,EB3169,1,1,1,1,0,1,"Limited-entry Alw (rifle) Bull Elk - Mid - Cache, Meadowville - Any Legal Weapon Page 333","Cache, Meadowville",Elk,14,2,16,,13,25,DRAW_AND_HARVEST
+2024,EB3170,1,1,1,1,0,1,"Limited-entry Archery Bull Elk - Late - Cache, South - Archery Page 334","Cache, South",Elk,4,1,5,,4,25,DRAW_AND_HARVEST
+2024,EB3171,1,1,1,1,0,1,"Limited-entry Alw (rifle) Bull Elk - Mid - Cache, South - Any Legal Weapon Page 335","Cache, South",Elk,10,1,11,,11,30,DRAW_AND_HARVEST
+2024,EB3172,1,1,1,1,0,1,Limited-entry Archery Bull Elk - Late - Manti - Archery Page 336,Manti,Elk,6,1,7,,7,0,DRAW_AND_HARVEST
+2024,EB3173,1,1,1,1,0,1,Limited-entry Archery Bull Elk - Nebo/san Pitch Mtns - Archery Page 337,Nebo/San Pitch Mtns,Elk,17,2,19,,19,27.8,DRAW_AND_HARVEST
+2024,EB3174,1,1,1,1,0,1,Limited-entry Archery Bull Elk - Late - Nebo/san Pitch Mtns - Archery Page 338,Nebo/San Pitch Mtns,Elk,4,1,5,,4,25,DRAW_AND_HARVEST
+2024,EB3175,1,1,1,1,0,1,Limited-entry Alw (rifle) Bull Elk - Early - Nebo/san Pitch Mtns - Any Legal Weapon Page 339,Nebo/San Pitch Mtns,Elk,6,1,7,,9,88.9,DRAW_AND_HARVEST
+2024,EB3176,1,1,1,1,0,1,Limited-entry Alw (rifle) Bull Elk - Late - Nebo/san Pitch Mtns - Any Legal Weapon Page 340,Nebo/San Pitch Mtns,Elk,13,1,14,,14,64.3,DRAW_AND_HARVEST
+2024,EB3177,1,1,1,1,0,1,Limited-entry Alw (rifle) Bull Elk - Mid - Nebo/san Pitch Mtns - Any Legal Weapon Page 341,Nebo/San Pitch Mtns,Elk,21,2,23,,24,78.3,DRAW_AND_HARVEST
+2024,EB3178,1,1,1,1,0,1,Limited-entry Multi-season Bull Elk - Nebo/san Pitch Mtns - Any Legal Weapon Page 342,Nebo/San Pitch Mtns,Elk,2,0,2,,2,100,DRAW_AND_HARVEST
+2024,EB3179,1,1,1,1,0,1,Limited-entry Muzzleloader Bull Elk - Nebo/san Pitch Mtns - Muzzleloader Page 343,Nebo/San Pitch Mtns,Elk,11,1,12,,12,72.7,DRAW_AND_HARVEST
+2024,EB3180,1,1,1,1,0,1,"Limited-entry Archery Bull Elk - Late - Fillmore, Pahvant - Archery Page 344","Fillmore, Pahvant",Elk,9,1,10,,10,10,DRAW_AND_HARVEST
+2024,EB3181,1,1,1,1,0,1,"Limited-entry Alw (rifle) Bull Elk - Mid - Fillmore, Pahvant - Any Legal Weapon Page 345","Fillmore, Pahvant",Elk,20,2,22,,22,57.1,DRAW_AND_HARVEST
+2024,EB3182,1,1,1,1,0,1,"Limited-entry Archery Bull Elk - Late - La Sal, La Sal Mtns - Archery Page 346","La Sal, La Sal Mtns",Elk,4,1,5,,1,0,DRAW_AND_HARVEST
+2024,EB3183,1,1,1,1,0,1,"Limited-entry Alw (rifle) Bull Elk - Mid - La Sal, La Sal Mtns - Any Legal Weapon Page 347","La Sal, La Sal Mtns",Elk,41,5,46,,47,56.1,DRAW_AND_HARVEST
+2024,EB3184,1,1,1,1,0,1,Limited-entry Archery Bull Elk - Late - Monroe - Archery Page 348,Monroe,Elk,4,1,5,,5,25,DRAW_AND_HARVEST
+2024,EB3185,1,1,1,1,0,1,Limited-entry Alw (rifle) Bull Elk - Mid - Monroe - Any Legal Weapon Page 349,Monroe,Elk,20,2,22,,21,73.7,DRAW_AND_HARVEST
+2024,EB3186,1,1,1,1,0,1,Limited-entry Archery Bull Elk - Late - Mt Dutton - Archery Page 350,Mt Dutton,Elk,7,1,8,,7,0,DRAW_AND_HARVEST
+2024,EB3187,1,1,1,1,0,1,Limited-entry Alw (rifle) Bull Elk - Mid - Mt Dutton - Any Legal Weapon Page 351,Mt Dutton,Elk,18,2,20,,22,95.2,DRAW_AND_HARVEST
+2024,EB3188,1,1,1,1,0,1,Limited-entry Archery Bull Elk - Late - Panguitch Lake - Archery Page 352,Panguitch Lake,Elk,4,1,5,,5,20,DRAW_AND_HARVEST
+2024,EB3189,1,1,1,1,0,1,Limited-entry Alw (rifle) Bull Elk - Mid - Panguitch Lake - Any Legal Weapon Page 353,Panguitch Lake,Elk,15,2,17,,19,52.6,DRAW_AND_HARVEST
+2024,EB3190,1,1,1,1,0,1,Limited-entry Archery Bull Elk - Late - Boulder - Archery Page 354,Boulder,Elk,4,1,5,,3,0,DRAW_AND_HARVEST
+2024,EB3191,1,1,1,1,0,1,Limited-entry Alw (rifle) Bull Elk - Mid - Boulder - Any Legal Weapon Page 355,Boulder,Elk,33,4,37,,36,71.4,DRAW_AND_HARVEST
+2024,EB3192,1,1,1,1,0,1,Limited-entry Archery Bull Elk - Late - Fishlake/thousand Lakes - Archery Page 356,Fishlake/Thousand Lakes,Elk,4,1,5,,5,20,DRAW_AND_HARVEST
+2024,EB3193,1,1,1,1,0,1,Limited-entry Archery Bull Elk - Late - San Juan Bull Elk - Archery Page 357,San Juan Bull Elk,Elk,4,1,5,,4,0,DRAW_AND_HARVEST
+2024,EB3194,1,1,1,1,0,1,Limited-entry Alw (rifle) Bull Elk - Mid - San Juan Bull Elk - Any Legal Weapon Page 358,San Juan Bull Elk,Elk,28,3,31,,32,62.1,DRAW_AND_HARVEST
+2024,EB3195,1,1,1,1,0,1,Limited-entry Archery Bull Elk - Late - Diamond Mtn - Archery Page 359,Diamond Mtn,Elk,4,1,5,,4,25,DRAW_AND_HARVEST
+2024,EB3196,1,1,1,1,0,1,Limited-entry Alw (rifle) Bull Elk - Late - Diamond Mtn - Any Legal Weapon Page 360,Diamond Mtn,Elk,14,2,16,,17,47.1,DRAW_AND_HARVEST
+2024,EB3197,1,1,1,1,0,1,"Limited-entry Archery Bull Elk - Late - Southwest Desert, South - Archery Page 361","Southwest Desert, South",Elk,4,1,5,,4,0,DRAW_AND_HARVEST
+2024,EB3198,1,1,1,1,0,1,"Limited-entry Alw (rifle) Bull Elk - Mid - Southwest Desert, South - Any Legal Weapon Page 362","Southwest Desert, South",Elk,38,4,42,,43,70.7,DRAW_AND_HARVEST
+2024,EB3199,1,1,1,1,0,1,Limited-entry Archery Bull Elk - Late - Wasatch Mtns - Archery Page 363,Wasatch Mtns,Elk,9,1,10,,6,20,DRAW_AND_HARVEST
+2024,EB3500,1,1,1,1,0,1,Cwmu Bull Elk - Alton - Any Legal Weapon Page 364,,Elk,1,0,1,,5,80,DRAW_AND_HARVEST
+2024,EB3501,1,1,1,1,0,1,Cwmu Bull Elk - Bar J Ranch - Any Legal Weapon Page 365,,Elk,2,0,2,,11,100,DRAW_AND_HARVEST
+2024,EB3502,1,1,1,1,0,1,Cwmu Bull Elk - Bear Mountain - Any Legal Weapon Page 366,,Elk,1,0,1,,7,42.9,DRAW_AND_HARVEST
+2024,EB3503,1,1,1,1,0,1,Cwmu Bull Elk - Bear Springs - Any Legal Weapon Page 367,,Elk,1,0,1,,8,57.1,DRAW_AND_HARVEST
+2024,EB3504,1,1,1,1,0,1,Cwmu Bull Elk - Blackhawk - Any Legal Weapon Page 368,,Elk,1,0,1,,10,100,DRAW_AND_HARVEST
+2024,EB3505,1,1,1,1,0,1,Cwmu Bull Elk - Boobe Hole - Any Legal Weapon Page 369,,Elk,2,0,2,,16,100,DRAW_AND_HARVEST
+2024,EB3506,1,1,1,1,0,1,Cwmu Bull Elk - Causey Spring - Any Legal Weapon Page 370,,Elk,1,0,1,,11,70,DRAW_AND_HARVEST
+2024,EB3508,1,1,1,1,0,1,Cwmu Bull Elk - Chimney Rock - Any Legal Weapon Page 371,,Elk,2,0,2,,20,82.4,DRAW_AND_HARVEST
+2024,EB3509,1,1,1,1,0,1,Cwmu Bull Elk - Coldwater Ranch - Any Legal Weapon Page 372,,Elk,2,0,2,,18,100,DRAW_AND_HARVEST
+2024,EB3511,1,1,1,1,0,1,Cwmu Bull Elk - Cotton Thomas - Any Legal Weapon Page 373,,Elk,1,0,1,,3,100,DRAW_AND_HARVEST
+2024,EB3514,1,1,1,1,0,1,Cwmu Bull Elk - Deseret - Any Legal Weapon Page 374,,Elk,18,0,18,,112,93.3,DRAW_AND_HARVEST
+2024,EB3515,1,1,1,1,0,1,Cwmu Bull Elk - Double Cone - Any Legal Weapon Page 375,,Elk,1,0,1,,7,100,DRAW_AND_HARVEST
+2024,EB3516,1,1,1,1,0,1,Cwmu Bull Elk - Durst Mountain - Any Legal Weapon Page 376,,Elk,3,0,3,,20,72.7,DRAW_AND_HARVEST
+2024,EB3517,1,1,1,1,0,1,Cwmu Bull Elk - East Fork Chalk Creek - Any Legal Weapon Page 377,,Elk,3,0,3,,30,75.9,DRAW_AND_HARVEST
+2024,EB3519,1,1,1,1,0,1,Cwmu Bull Elk - Ensign Ranches - Any Legal Weapon Page 378,,Elk,4,0,4,,26,90.9,DRAW_AND_HARVEST
+2024,EB3520,1,1,1,1,0,1,Cwmu Bull Elk - Folley Ridge - Any Legal Weapon Page 379,,Elk,2,0,2,,17,85.7,DRAW_AND_HARVEST
+2024,EB3521,1,1,1,1,0,1,Cwmu Bull Elk - Grass Valley/clark Canyon - Any Legal Weapon Page 380,,Elk,10,0,10,,94,61.6,DRAW_AND_HARVEST
+2024,EB3522,1,1,1,1,0,1,Cwmu Bull Elk - Grazing Pasture - Any Legal Weapon Page 381,,Elk,1,0,1,,5,100,DRAW_AND_HARVEST
+2024,EB3523,1,1,1,1,0,1,Cwmu Bull Elk - Guildersleeve - Any Legal Weapon Page 382,,Elk,2,0,2,,19,87.5,DRAW_AND_HARVEST
+2024,EB3524,1,1,1,1,0,1,Cwmu Bull Elk - Hardscrabble - Any Legal Weapon Page 383,,Elk,2,0,2,,12,80,DRAW_AND_HARVEST
+2024,EB3525,1,1,1,1,0,1,Cwmu Bull Elk - Heaston East - Any Legal Weapon Page 384,,Elk,2,0,2,,20,94.1,DRAW_AND_HARVEST
+2024,EB3526,1,1,1,1,0,1,Cwmu Bull Elk - Hiawatha - Any Legal Weapon Page 385,,Elk,2,0,2,,10,87.5,DRAW_AND_HARVEST
+2024,EB3527,1,1,1,1,0,1,Cwmu Bull Elk - Indian Head - Any Legal Weapon Page 386,,Elk,1,0,1,,10,100,DRAW_AND_HARVEST
+2024,EB3528,1,1,1,1,0,1,Cwmu Bull Elk - Ingham Peak - Any Legal Weapon Page 387,,Elk,1,0,1,,6,60,DRAW_AND_HARVEST
+2024,EB3529,1,1,1,1,0,1,Cwmu Bull Elk - J.b. Ranch - Any Legal Weapon Page 388,,Elk,2,0,2,,9,100,DRAW_AND_HARVEST
+2024,EB3530,1,1,1,1,0,1,Cwmu Bull Elk - Jacob's Creek - Any Legal Weapon Page 389,,Elk,1,0,1,,10,55.6,DRAW_AND_HARVEST
+2024,EB3531,1,1,1,1,0,1,Cwmu Bull Elk - Johnson Mountain Ranch - Any Legal Weapon Page 390,,Elk,2,0,2,,18,100,DRAW_AND_HARVEST
+2024,EB3532,1,1,1,1,0,1,Cwmu Bull Elk - Jump Creek - Any Legal Weapon Page 391,,Elk,1,0,1,,5,80,DRAW_AND_HARVEST
+2024,EB3533,1,1,1,1,0,1,Cwmu Bull Elk - Junction Valley - Any Legal Weapon Page 392,,Elk,1,0,1,,5,33.3,DRAW_AND_HARVEST
+2024,EB3534,1,1,1,1,0,1,Cwmu Bull Elk - Little Red Creek - Any Legal Weapon Page 393,,Elk,2,0,2,,14,83.3,DRAW_AND_HARVEST
+2024,EB3536,1,1,1,1,0,1,Cwmu Bull Elk - Minnie Maud Ridge - Any Legal Weapon Page 394,,Elk,5,0,5,,44,85.4,DRAW_AND_HARVEST
+2024,EB3538,1,1,1,1,0,1,Cwmu Bull Elk - Moon Ranch - Any Legal Weapon Page 395,,Elk,1,0,1,,7,50,DRAW_AND_HARVEST
+2024,EB3540,1,1,1,1,0,1,Cwmu Bull Elk - Old Woman Plateau - Any Legal Weapon Page 396,,Elk,2,0,2,,10,100,DRAW_AND_HARVEST
+2024,EB3541,1,1,1,1,0,1,Cwmu Bull Elk - Patmos Ridge - Any Legal Weapon Page 397,,Elk,1,0,1,,5,75,DRAW_AND_HARVEST
+2024,EB3543,1,1,1,1,0,1,Cwmu Bull Elk - Preston Nutter Ranch - Any Legal Weapon Page 398,,Elk,2,0,2,,19,38.9,DRAW_AND_HARVEST
+2024,EB3544,1,1,1,1,0,1,Cwmu Bull Elk - Redd Ranches - Any Legal Weapon Page 399,,Elk,2,0,2,,19,88.9,DRAW_AND_HARVEST
+2024,EB3545,1,1,1,1,0,1,Cwmu Bull Elk - Riverview Ranch Llc - Any Legal Weapon Page 400,,Elk,2,0,2,,7,100,DRAW_AND_HARVEST
+2024,EB3546,1,1,1,1,0,1,Cwmu Bull Elk - Roan Cliffs - Any Legal Weapon Page 401,,Elk,1,0,1,,10,87.5,DRAW_AND_HARVEST
+2024,EB3547,1,1,1,1,0,1,Cwmu Bull Elk - Sand Creek - Any Legal Weapon Page 402,,Elk,1,0,1,,5,50,DRAW_AND_HARVEST
+2024,EB3548,1,1,1,1,0,1,Cwmu Bull Elk - Scofield Canyons - Any Legal Weapon Page 403,,Elk,1,0,1,,8,87.5,DRAW_AND_HARVEST
+2024,EB3549,1,1,1,1,0,1,Cwmu Bull Elk - Scofield East - Any Legal Weapon Page 404,,Elk,1,0,1,,8,87.5,DRAW_AND_HARVEST
+2024,EB3550,1,1,1,1,0,1,Cwmu Bull Elk - Scofield West - Any Legal Weapon Page 405,,Elk,2,0,2,,10,77.8,DRAW_AND_HARVEST
+2024,EB3551,1,1,1,1,0,1,Cwmu Bull Elk - Sj Ranch - Any Legal Weapon Page 406,,Elk,1,0,1,,8,75,DRAW_AND_HARVEST
+2024,EB3552,1,1,1,1,0,1,Cwmu Bull Elk - Skull Crack - Any Legal Weapon Page 407,,Elk,1,0,1,,8,87.5,DRAW_AND_HARVEST
+2024,EB3553,1,1,1,1,0,1,Cwmu Bull Elk - Soldier Summit - Any Legal Weapon Page 408,,Elk,2,0,2,,16,87.5,DRAW_AND_HARVEST
+2024,EB3554,1,1,1,1,0,1,Cwmu Bull Elk - South Canyon - Any Legal Weapon Page 409,,Elk,2,0,2,,12,72.7,DRAW_AND_HARVEST
+2024,EB3555,1,1,1,1,0,1,Cwmu Bull Elk - Spring Creek/dodge - Any Legal Weapon Page 410,,Elk,2,0,2,,13,90.9,DRAW_AND_HARVEST
+2024,EB3557,1,1,1,1,0,1,Cwmu Bull Elk - Strawberry Ridge - Any Legal Weapon Page 411,,Elk,2,0,2,,20,95,DRAW_AND_HARVEST
+2024,EB3558,1,1,1,1,0,1,Cwmu Bull Elk - Summit Point - Any Legal Weapon Page 412,,Elk,1,0,1,,4,100,DRAW_AND_HARVEST
+2024,EB3559,1,1,1,1,0,1,Cwmu Bull Elk - Three C - Any Legal Weapon Page 413,,Elk,2,0,2,,10,100,DRAW_AND_HARVEST
+2024,EB3561,1,1,1,1,0,1,Cwmu Bull Elk - Two Bear - Any Legal Weapon Page 414,,Elk,5,0,5,,50,86.8,DRAW_AND_HARVEST
+2024,EB3562,1,1,1,1,0,1,Cwmu Bull Elk - Wallsburg - Any Legal Weapon Page 415,,Elk,1,0,1,,10,70,DRAW_AND_HARVEST
+2024,EB3563,0,1,0,0,0,1,,,Elk,,,,,89,79,HARVEST_ONLY
+2024,EB3564,1,1,1,1,0,1,Cwmu Bull Elk - Woodruff Creek South - Any Legal Weapon Page 416,,Elk,2,0,2,,18,75,DRAW_AND_HARVEST
+2024,EB3565,1,1,1,1,0,1,Cwmu Bull Elk - North Peaks - Any Legal Weapon Page 417,,Elk,1,0,1,,7,50,DRAW_AND_HARVEST
+2024,EB3603,1,1,1,1,0,1,Cwmu Bull Elk - Pahvant Ensign - Any Legal Weapon Page 418,,Elk,1,0,1,,7,100,DRAW_AND_HARVEST
+2024,EB3604,1,1,1,1,0,1,Cwmu Bull Elk - Double R Ranch - Any Legal Weapon Page 419,,Elk,1,0,1,,9,87.5,DRAW_AND_HARVEST
+2024,EB3606,1,1,1,1,0,1,Cwmu Bull Elk - Mountain Sky Ranch - Any Legal Weapon Page 420,,Elk,1,0,1,,2,100,DRAW_AND_HARVEST
+2024,EB3607,1,1,1,1,0,1,Cwmu Bull Elk - West Willow Creek Ranch - Any Legal Weapon Page 421,,Elk,1,0,1,,3,100,DRAW_AND_HARVEST
+2024,EB3608,1,1,1,1,0,1,Cwmu Bull Elk - Avintaquin Canyon - Any Legal Weapon Page 422,,Elk,1,0,1,,4,66.7,DRAW_AND_HARVEST
+2024,EB3609,1,1,1,1,0,1,Cwmu Bull Elk - Royal Ivory Outfitters - Any Legal Weapon Page 423,,Elk,3,0,3,,19,94.4,DRAW_AND_HARVEST
+2024,EB3610,1,1,1,1,0,1,Cwmu Bull Elk - Sharp Mountain - Any Legal Weapon Page 424,,Elk,2,0,2,,18,83.3,DRAW_AND_HARVEST
+2024,EB3611,1,1,1,1,0,1,Cwmu Bull Elk - West Ridge - Any Legal Weapon Page 425,,Elk,2,0,2,,18,50,DRAW_AND_HARVEST
+2024,EB3613,1,1,1,1,0,1,Cwmu Bull Elk - Little Pole Canyon - Any Legal Weapon Page 426,,Elk,1,0,1,,3,66.7,DRAW_AND_HARVEST
+2024,EB3614,1,1,1,1,0,1,Cwmu Bull Elk - Tunnel Hollow - Any Legal Weapon Page 427,,Elk,1,0,1,,7,83.3,DRAW_AND_HARVEST
+2024,EB3616,1,1,1,1,0,1,Cwmu Bull Elk - Sweetwater - Any Legal Weapon Page 428,,Elk,1,0,1,,3,100,DRAW_AND_HARVEST
+2024,EB3617,1,1,1,1,0,1,Cwmu Bull Elk - Diamond Mountain - Any Legal Weapon Page 429,,Elk,1,0,1,,5,100,DRAW_AND_HARVEST
+2024,EB3619,1,1,1,1,0,1,Cwmu Bull Elk - Weber Florence Creek/stillman Creek - Any Legal Weapon Page 430,,Elk,10,0,10,,10,70,DRAW_AND_HARVEST
+2024,GO6800,1,0,1,1,0,0,Mountain Goat - Beaver - Any Legal Weapon Page 431,,,7,1,8,,,,DRAW_ONLY
+2024,GO6801,1,0,1,1,0,0,Mountain Goat - Beaver - Any Legal Weapon Page 432,,,9,0,9,,,,DRAW_ONLY
+2024,GO6803,1,0,1,1,0,0,Mountain Goat - Nebo - Any Legal Weapon Page 433,,,12,1,13,,,,DRAW_ONLY
+2024,GO6804,1,0,1,1,0,0,Mountain Goat - High Uintas Kamas - Any Legal Weapon Page 434,,,1,0,1,,,,DRAW_ONLY
+2024,GO6805,1,0,1,1,0,0,Mountain Goat - High Uintas Central - Any Legal Weapon Page 435,,,3,1,4,,,,DRAW_ONLY
+2024,GO6806,1,0,1,1,0,0,Mountain Goat - High Uintas East - Any Legal Weapon Page 436,,,1,1,2,,,,DRAW_ONLY
+2024,GO6807,1,0,1,1,0,0,Mountain Goat - High Uintas Leidy Peak - Any Legal Weapon Page 437,,,1,0,1,,,,DRAW_ONLY
+2024,GO6808,1,0,1,1,0,0,Mountain Goat - High Uintas West - Any Legal Weapon Page 438,,,8,1,9,,,,DRAW_ONLY
+2024,GO6810,1,0,1,1,0,0,"Mountain Goat - Ogden, Willard Peak - Any Legal Weapon Page 439",,,1,0,1,,,,DRAW_ONLY
+2024,GO6813,1,0,1,1,0,0,"Mountain Goat - Wasatch Mtns, Provo Peak - Any Legal Weapon Page 440",,,5,0,5,,,,DRAW_ONLY
+2024,GO6814,1,0,1,1,0,0,Mountain Goat - Mt Dutton - Any Legal Weapon Page 441,,,2,0,2,,,,DRAW_ONLY
+2024,GO6817,1,0,1,1,0,0,"Mountain Goat - La Sal, La Sal Mtns - Any Legal Weapon Page 442",,,10,1,11,,,,DRAW_ONLY
+2024,GO6818,1,0,1,1,0,0,"Mountain Goat - Wasatch Mtns, Box Elder Peak - Any Legal Weapon Page 443",,,3,0,3,,,,DRAW_ONLY
+2024,GO6819,1,0,1,1,0,0,"Mountain Goat - Wasatch Mtns, Lone Peak - Any Legal Weapon Page 444",,,2,0,2,,,,DRAW_ONLY
+2024,GO6820,1,0,1,1,0,0,"Mountain Goat - Wasatch Mtns, Timpanogos - Any Legal Weapon Page 445",,,10,0,10,,,,DRAW_ONLY
+2024,GO6821,1,0,1,1,0,0,Mountain Goat Archery - Nebo - Archery Page 446,,,9,1,10,,,,DRAW_ONLY
+2024,GO6822,1,0,1,1,0,0,Mountain Goat Archery - Beaver - Archery Page 447,,,2,0,2,,,,DRAW_ONLY
+2024,LE0001,0,1,0,0,0,1,,"La Sal, La Sal Mtns",Elk,,,,,1,100,HARVEST_ONLY
+2024,LE0002,0,1,0,0,0,1,,Manti,Elk,,,,,1,100,HARVEST_ONLY
+2024,LE0003,0,1,0,0,0,1,,Manti,Elk,,,,,1,100,HARVEST_ONLY
+2024,LE0004,0,1,0,0,0,1,,Manti,Elk,,,,,1,0,HARVEST_ONLY
+2024,LE0005,0,1,0,0,0,1,,Manti,Elk,,,,,1,100,HARVEST_ONLY
+2024,LE0006,0,1,0,0,0,1,,San Juan,Elk,,,,,1,0,HARVEST_ONLY
+2024,LE0007,0,1,0,0,0,1,,San Juan,Elk,,,,,1,0,HARVEST_ONLY
+2024,LE0008,0,1,0,0,0,1,,Wasatch Mtns,Elk,,,,,1,100,HARVEST_ONLY
+2024,LE0009,0,1,0,0,0,1,,Wasatch Mtns,Elk,,,,,1,0,HARVEST_ONLY
+2024,LE0011,0,1,0,0,0,1,,Manti,Elk,,,,,1,100,HARVEST_ONLY
+2024,LE0013,0,1,0,0,0,1,,Southwest Desert,Elk,,,,,1,100,HARVEST_ONLY
+2024,LE0014,0,1,0,0,0,1,,Beaver,Elk,,,,,1,100,HARVEST_ONLY
+2024,LE0015,0,1,0,0,0,1,,Book Cliffs,Elk,,,,,1,0,HARVEST_ONLY
+2024,LE0016,0,1,0,0,0,1,,Cache,Elk,,,,,1,0,HARVEST_ONLY
+2024,LE0017,0,1,0,0,0,1,,Nebo,Elk,,,,,1,100,HARVEST_ONLY
+2024,LE0018,0,1,0,0,0,1,,"La Sal, La Sal Mtns",Elk,,,,,1,100,HARVEST_ONLY
+2024,LE0029,0,1,0,0,0,1,,Cache,Elk,,,,,1,100,HARVEST_ONLY
+2024,MA1005,1,0,1,1,0,0,Antlerless Moose - Morgan-south Rich - Any Legal Weapon,,Antlerless Moose,6,1,7,,,,DRAW_ONLY
+2024,MA1006,1,0,1,1,0,0,"Antlerless Moose - Wasatch Mtns, West - Any Legal Weapon",,Antlerless Moose,4,1,5,,,,DRAW_ONLY
+2024,MB6000,1,0,1,1,0,0,Bull Moose - Cache - Any Legal Weapon Page 448,,,13,2,15,,,,DRAW_ONLY
+2024,MB6001,1,0,1,1,0,0,Bull Moose - Chalk Creek - Any Legal Weapon Page 449,,,3,0,3,,,,DRAW_ONLY
+2024,MB6002,1,0,1,1,0,0,Bull Moose - East Canyon - Any Legal Weapon Page 450,,,4,0,4,,,,DRAW_ONLY
+2024,MB6003,1,0,1,1,0,0,"Bull Moose - East Canyon, Morgan-summit - Any Legal Weapon Page 451",,,3,0,3,,,,DRAW_ONLY
+2024,MB6004,1,0,1,1,0,0,Bull Moose - Kamas - Any Legal Weapon Page 452,,,4,0,4,,,,DRAW_ONLY
+2024,MB6005,1,0,1,1,0,0,Bull Moose - Morgan-south Rich - Any Legal Weapon Page 453,,,4,1,5,,,,DRAW_ONLY
+2024,MB6006,1,0,1,1,0,0,"Bull Moose - North Slope, Summit - Any Legal Weapon Page 454",,,22,3,25,,,,DRAW_ONLY
+2024,MB6007,1,0,1,1,0,0,"Bull Moose - North Slope, Three Corners/west Daggett - Any Legal Weapon Page 455",,,8,1,9,,,,DRAW_ONLY
+2024,MB6008,1,0,1,1,0,0,Bull Moose - Ogden - Any Legal Weapon Page 456,,,7,1,8,,,,DRAW_ONLY
+2024,MB6009,1,0,1,1,0,0,Bull Moose - Diamond Mtn/vernal - Any Legal Weapon Page 457,,,2,0,2,,,,DRAW_ONLY
+2024,MB6010,1,0,1,1,0,0,Bull Moose - Yellowstone - Any Legal Weapon Page 458,,,4,0,4,,,,DRAW_ONLY
+2024,MB6011,1,0,1,1,0,0,Bull Moose - Wasatch Mtns/central Mtns - Any Legal Weapon Page 459,,,19,1,20,,,,DRAW_ONLY
+2024,MB6200,1,0,1,1,0,0,Cwmu Bull Moose - Bear Springs - Any Legal Weapon Page 460,,,1,0,1,,,,DRAW_ONLY
+2024,MB6202,1,0,1,1,0,0,Cwmu Bull Moose - Causey Spring - Any Legal Weapon Page 461,,,1,0,1,,,,DRAW_ONLY
+2024,MB6206,1,0,1,1,0,0,Cwmu Bull Moose - Deseret - Any Legal Weapon Page 462,,,2,0,2,,,,DRAW_ONLY
+2024,MB6207,1,0,1,1,0,0,Cwmu Bull Moose - Durst Mountain - Any Legal Weapon Page 463,,,1,0,1,,,,DRAW_ONLY
+2024,MB6208,1,0,1,1,0,0,Cwmu Bull Moose - East Fork Chalk Creek - Any Legal Weapon Page 464,,,2,0,2,,,,DRAW_ONLY
+2024,MB6209,1,0,1,1,0,0,Cwmu Bull Moose - Ensign Ranches - Any Legal Weapon Page 465,,,1,0,1,,,,DRAW_ONLY
+2024,MB6211,1,0,1,1,0,0,Cwmu Bull Moose - Grass Valley/clark Canyon - Any Legal Weapon Page 466,,,3,0,3,,,,DRAW_ONLY
+2024,MB6217,1,0,1,1,0,0,Cwmu Bull Moose - Sharp Mountain - Any Legal Weapon Page 467,,,1,0,1,,,,DRAW_ONLY
+2024,MB6219,1,0,1,1,0,0,Cwmu Bull Moose - Skull Crack - Any Legal Weapon Page 468,,,2,0,2,,,,DRAW_ONLY
+2024,MB6220,1,0,1,1,0,0,Cwmu Bull Moose - South Canyon - Any Legal Weapon Page 469,,,1,0,1,,,,DRAW_ONLY
+2024,MB6222,1,0,1,1,0,0,Cwmu Bull Moose - Strawberry Ridge - Any Legal Weapon Page 470,,,1,0,1,,,,DRAW_ONLY
+2024,MB6223,1,0,1,1,0,0,Cwmu Bull Moose - Three C - Any Legal Weapon Page 471,,,1,0,1,,,,DRAW_ONLY
+2024,MB6224,1,0,1,1,0,0,Cwmu Bull Moose - Two Bear - Any Legal Weapon Page 472,,,1,0,1,,,,DRAW_ONLY
+2024,MB6240,1,0,1,1,0,0,Cwmu Bull Moose - Chimney Rock - Any Legal Weapon Page 473,,,1,0,1,,,,DRAW_ONLY
+2024,MB6251,1,0,1,1,0,0,Cwmu Bull Moose - Hardscrabble - Any Legal Weapon Page 474,,,1,0,1,,,,DRAW_ONLY
+2024,MB6254,1,0,1,1,0,0,Cwmu Bull Moose - Sj Ranch - Any Legal Weapon Page 475,,,1,0,1,,,,DRAW_ONLY
+2024,MB6256,1,0,1,1,0,0,Cwmu Bull Moose - Woodruff Creek South - Any Legal Weapon Page 476,,,1,0,1,,,,DRAW_ONLY
+2024,MB6258,1,0,1,1,0,0,Cwmu Bull Moose - Jacob's Creek - Any Legal Weapon Page 477,,,1,0,1,,,,DRAW_ONLY
+2024,MB6259,1,0,1,1,0,0,Cwmu Bull Moose - Royal Ivory Outfitters - Any Legal Weapon Page 478,,,1,0,1,,,,DRAW_ONLY
+2024,MB6263,1,0,1,1,0,0,Cwmu Bull Moose - Moon Ranch - Any Legal Weapon Page 479,,,1,0,1,,,,DRAW_ONLY
+2024,MB6264,1,0,1,1,0,0,Cwmu Bull Moose - Sand Creek - Any Legal Weapon Page 480,,,1,0,1,,,,DRAW_ONLY
+2024,MB6265,1,0,1,1,0,0,Cwmu Bull Moose - Little Pole Canyon - Any Legal Weapon Page 481,,,1,0,1,,,,DRAW_ONLY
+2024,MB6266,1,0,1,1,0,0,Cwmu Bull Moose - Weber Florence Creek/stillman Creek - Any Legal Weapon Page 482,,,4,0,4,,,,DRAW_ONLY
+2024,PB5000,1,0,1,1,0,0,Limited-entry Archery Buck Pronghorn - Beaver - Archery Page 483,,,9,1,10,,,,DRAW_ONLY
+2024,PB5001,1,0,1,1,0,0,"Limited-entry Archery Buck Pronghorn - Book Cliffs, Bitter Creek - Archery Page 484",,,12,1,13,,,,DRAW_ONLY
+2024,PB5002,1,0,1,1,0,0,"Limited-entry Archery Buck Pronghorn - Book Cliffs, South - Archery Page 485",,,7,1,8,,,,DRAW_ONLY
+2024,PB5003,1,0,1,1,0,0,"Limited-entry Archery Buck Pronghorn - Box Elder, Promontory - Archery Page 486",,,4,0,4,,,,DRAW_ONLY
+2024,PB5004,1,0,1,1,0,0,"Limited-entry Archery Buck Pronghorn - Box Elder, Puddle Valley - Archery Page 487",,,3,1,4,,,,DRAW_ONLY
+2024,PB5005,1,0,1,1,0,0,"Limited-entry Archery Buck Pronghorn - Box Elder, Snowville - Archery Page 488",,,8,1,9,,,,DRAW_ONLY
+2024,PB5006,1,0,1,1,0,0,"Limited-entry Archery Buck Pronghorn - Box Elder, West - Archery Page 489",,,9,1,10,,,,DRAW_ONLY
+2024,PB5008,1,0,1,1,0,0,"Limited-entry Archery Buck Pronghorn - Fillmore, Oak Creek South - Archery Page 490",,,11,1,12,,,,DRAW_ONLY
+2024,PB5009,1,0,1,1,0,0,"Limited-entry Archery Buck Pronghorn - La Sal, Potash/south Cisco - Archery Page 491",,,5,0,5,,,,DRAW_ONLY
+2024,PB5011,1,0,1,1,0,0,"Limited-entry Archery Buck Pronghorn - Nine Mile, Anthro-myton Bench - Archery Page 492",,,26,3,29,,,,DRAW_ONLY
+2024,PB5012,1,0,1,1,0,0,"Limited-entry Archery Buck Pronghorn - North Slope, Three Corners/west Daggett - Archery Page 493",,,11,1,12,,,,DRAW_ONLY
+2024,PB5013,1,0,1,1,0,0,Limited-entry Archery Buck Pronghorn - Pine Valley - Archery Page 494,,,6,1,7,,,,DRAW_ONLY
+2024,PB5015,1,0,1,1,0,0,"Limited-entry Archery Buck Pronghorn - San Rafael, North - Archery Page 495",,,18,2,20,,,,DRAW_ONLY
+2024,PB5016,1,0,1,1,0,0,Limited-entry Archery Buck Pronghorn - Diamond Mtn/bonanza - Archery Page 496,,,17,2,19,,,,DRAW_ONLY
+2024,PB5017,1,0,1,1,0,0,Limited-entry Archery Buck Pronghorn - Vernal - Archery Page 497,,,18,2,20,,,,DRAW_ONLY
+2024,PB5018,1,0,1,1,0,0,Limited-entry Archery Buck Pronghorn - Southwest Desert - Archery Page 498,,,28,3,31,,,,DRAW_ONLY
+2024,PB5019,1,0,1,1,0,0,"Limited-entry Archery Buck Pronghorn - West Desert, Riverbed - Archery Page 499",,,15,2,17,,,,DRAW_ONLY
+2024,PB5020,1,0,1,1,0,0,"Limited-entry Archery Buck Pronghorn - West Desert, Rush Valley - Archery Page 500",,,7,1,8,,,,DRAW_ONLY
+2024,PB5021,1,0,1,1,0,0,"Limited-entry Archery Buck Pronghorn - West Desert, Snake Valley - Archery Page 501",,,18,2,20,,,,DRAW_ONLY
+2024,PB5024,1,0,1,1,0,0,Limited-entry Muzzle Buck Pronghorn - Southwest Desert - Muzzleloader Page 502,,,28,3,31,,,,DRAW_ONLY
+2024,PB5025,1,0,1,1,0,0,Limited-entry Alw (rifle) Buck Pronghorn - Beaver - Any Legal Weapon Page 503,,,35,4,39,,,,DRAW_ONLY
+2024,PB5026,1,0,1,1,0,0,"Limited-entry Alw (rifle) Buck Pronghorn - Book Cliffs, Bitter Creek - Any Legal Weapon Page 504",,,46,5,51,,,,DRAW_ONLY
+2024,PB5027,1,0,1,1,0,0,"Limited-entry Alw (rifle) Buck Pronghorn - Book Cliffs, South - Any Legal Weapon Page 505",,,27,3,30,,,,DRAW_ONLY
+2024,PB5028,1,0,1,1,0,0,"Limited-entry Alw (rifle) Buck Pronghorn - Box Elder, Promontory - Any Legal Weapon Page 506",,,14,2,16,,,,DRAW_ONLY
+2024,PB5029,1,0,1,1,0,0,"Limited-entry Alw (rifle) Buck Pronghorn - Box Elder, Puddle Valley - Any Legal Weapon Page 507",,,14,2,16,,,,DRAW_ONLY
+2024,PB5030,1,0,1,1,0,0,"Limited-entry Alw (rifle) Buck Pronghorn - Box Elder, Snowville - Any Legal Weapon Page 508",,,33,4,37,,,,DRAW_ONLY
+2024,PB5031,1,0,1,1,0,0,"Limited-entry Alw (rifle) Buck Pronghorn - Box Elder, West - Any Legal Weapon Page 509",,,35,4,39,,,,DRAW_ONLY
+2024,PB5033,1,0,1,1,0,0,"Limited-entry Alw (rifle) Buck Pronghorn - Fillmore, Oak Creek South - Any Legal Weapon Page 510",,,33,4,37,,,,DRAW_ONLY
+2024,PB5034,1,0,1,1,0,0,Limited-entry Alw (rifle) Buck Pronghorn - Kaiparowits - Any Legal Weapon Page 511,,,2,0,2,,,,DRAW_ONLY
+2024,PB5035,1,0,1,1,0,0,"Limited-entry Alw (rifle) Buck Pronghorn - La Sal, Potash/south Cisco - Any Legal Weapon Page 512",,,19,2,21,,,,DRAW_ONLY
+2024,PB5037,1,0,1,1,0,0,"Limited-entry Alw (rifle) Buck Pronghorn - Nine Mile, Anthro-myton Bench - Any Legal Weapon Page 513",,,75,9,84,,,,DRAW_ONLY
+2024,PB5038,1,0,1,1,0,0,"Limited-entry Alw (rifle) Buck Pronghorn - Nine Mile, Range Creek - Any Legal Weapon Page 514",,,9,1,10,,,,DRAW_ONLY
+2024,PB5039,1,0,1,1,0,0,"Limited-entry Alw (rifle) Buck Pronghorn - North Slope, Summit - Any Legal Weapon Page 515",,,13,2,15,,,,DRAW_ONLY
+2024,PB5040,1,0,1,1,0,0,"Limited-entry Alw (rifle) Buck Pronghorn - North Slope, Three Corners/west Daggett - Any Legal Weapon Page 516",,,31,4,35,,,,DRAW_ONLY
+2024,PB5041,1,0,1,1,0,0,"Limited-entry Alw (rifle) Buck Pronghorn - Panguitch Lake/zion, North - Any Legal Weapon Page 517",,,21,2,23,,,,DRAW_ONLY
+2024,PB5042,1,0,1,1,0,0,Limited-entry Alw (rifle) Buck Pronghorn - Pine Valley - Any Legal Weapon Page 518,,,19,2,21,,,,DRAW_ONLY
+2024,PB5044,1,0,1,1,0,0,"Limited-entry Alw (rifle) Buck Pronghorn - San Juan, Hatch Point - Any Legal Weapon Page 519",,,6,0,6,,,,DRAW_ONLY
+2024,PB5045,1,0,1,1,0,0,"Limited-entry Alw (rifle) Buck Pronghorn - San Rafael, Desert - Any Legal Weapon Page 520",,,4,1,5,,,,DRAW_ONLY
+2024,PB5046,1,0,1,1,0,0,"Limited-entry Alw (rifle) Buck Pronghorn - San Rafael, North - Any Legal Weapon Page 521",,,53,5,58,,,,DRAW_ONLY
+2024,PB5047,1,0,1,1,0,0,Limited-entry Alw (rifle) Buck Pronghorn - Diamond Mtn/bonanza - Any Legal Weapon Page 522,,,50,6,56,,,,DRAW_ONLY
+2024,PB5048,1,0,1,1,0,0,Limited-entry Alw (rifle) Buck Pronghorn - Vernal - Any Legal Weapon Page 523,,,54,6,60,,,,DRAW_ONLY
+2024,PB5049,1,0,1,1,0,0,Limited-entry Alw (rifle) Buck Pronghorn - Southwest Desert - Any Legal Weapon Page 524,,,83,9,92,,,,DRAW_ONLY
+2024,PB5050,1,0,1,1,0,0,"Limited-entry Alw (rifle) Buck Pronghorn - West Desert, Riverbed - Any Legal Weapon Page 525",,,59,7,66,,,,DRAW_ONLY
+2024,PB5051,1,0,1,1,0,0,"Limited-entry Alw (rifle) Buck Pronghorn - West Desert, Rush Valley - Any Legal Weapon Page 526",,,30,3,33,,,,DRAW_ONLY
+2024,PB5052,1,0,1,1,0,0,"Limited-entry Alw (rifle) Buck Pronghorn - West Desert, Snake Valley - Any Legal Weapon Page 527",,,73,8,81,,,,DRAW_ONLY
+2024,PB5053,1,0,1,1,0,0,"Limited-entry Archery Buck Pronghorn - Nine Mile, Range Creek - Archery Page 528",,,3,0,3,,,,DRAW_ONLY
+2024,PB5054,1,0,1,1,0,0,"Limited-entry Archery Buck Pronghorn - Panguitch Lake/zion, North - Archery Page 529",,,7,1,8,,,,DRAW_ONLY
+2024,PB5055,1,0,1,1,0,0,"Limited-entry Archery Buck Pronghorn - San Rafael, Desert - Archery Page 530",,,1,0,1,,,,DRAW_ONLY
+2024,PB5056,1,0,1,1,0,0,"Limited-entry Muzzle Buck Pronghorn - San Rafael, North - Muzzleloader Page 531",,,18,2,20,,,,DRAW_ONLY
+2024,PB5059,1,0,1,1,0,0,"Limited-entry Muzzle Buck Pronghorn - Nine Mile, Anthro-myton Bench - Muzzleloader Page 532",,,26,3,29,,,,DRAW_ONLY
+2024,PB5060,1,0,1,1,0,0,Limited-entry Muzzle Buck Pronghorn - Diamond Mtn/bonanza - Muzzleloader Page 533,,,17,2,19,,,,DRAW_ONLY
+2024,PB5061,1,0,1,1,0,0,"Limited-entry Muzzle Buck Pronghorn - Panguitch Lake/zion, North - Muzzleloader Page 534",,,7,1,8,,,,DRAW_ONLY
+2024,PB5062,1,0,1,1,0,0,Limited-entry Muzzle Buck Pronghorn - Pine Valley - Muzzleloader Page 535,,,6,1,7,,,,DRAW_ONLY
+2024,PB5065,1,0,1,1,0,0,"Limited-entry Muzzle Buck Pronghorn - Fillmore, Oak Creek South - Muzzleloader Page 536",,,12,1,13,,,,DRAW_ONLY
+2024,PB5066,1,0,1,1,0,0,"Limited-entry Muzzle Buck Pronghorn - North Slope, Three Corners/west Daggett - Muzzleloader Page 537",,,11,1,12,,,,DRAW_ONLY
+2024,PB5072,1,0,1,1,0,0,Limited-entry Muzzle Buck Pronghorn - Vernal - Muzzleloader Page 538,,,13,2,15,,,,DRAW_ONLY
+2024,PB5073,1,0,1,1,0,0,"Limited-entry Alw (rifle) Buck Pronghorn - Cache, Rich - Any Legal Weapon Page 539",,,1,1,2,,,,DRAW_ONLY
+2024,PB5074,1,0,1,1,0,0,"Limited-entry Archery Buck Pronghorn - Cache, Rich - Archery Page 540",,,1,1,2,,,,DRAW_ONLY
+2024,PB5075,1,0,1,1,0,0,"Limited-entry Muzzle Buck Pronghorn - Cache, Rich - Muzzleloader Page 541",,,1,1,2,,,,DRAW_ONLY
+2024,PB5076,1,0,1,1,0,0,Limited-entry Alw (rifle) Buck Pronghorn - Parker Mtn - Any Legal Weapon Page 542,,,40,5,45,,,,DRAW_ONLY
+2024,PB5077,1,0,1,1,0,0,Limited-entry Archery Buck Pronghorn - Parker Mtn - Archery Page 543,,,13,2,15,,,,DRAW_ONLY
+2024,PB5078,1,0,1,1,0,0,Limited-entry Muzzle Buck Pronghorn - Parker Mtn - Muzzleloader Page 544,,,13,2,15,,,,DRAW_ONLY
+2024,PB5300,1,0,1,1,0,0,Cwmu Buck Pronghorn - Antelope Creek - Any Legal Weapon Page 545,,,4,0,4,,,,DRAW_ONLY
+2024,PB5302,1,0,1,1,0,0,Cwmu Buck Pronghorn - Deseret - Any Legal Weapon Page 546,,,16,0,16,,,,DRAW_ONLY
+2024,PB5305,1,0,1,1,0,0,Cwmu Buck Pronghorn - Park Valley - Any Legal Weapon Page 547,,,2,0,2,,,,DRAW_ONLY
+2024,PB5306,1,0,1,1,0,0,Cwmu Buck Pronghorn - Rabbit Creek - Any Legal Weapon Page 548,,,1,0,1,,,,DRAW_ONLY
+2024,PB5309,1,0,1,1,0,0,Cwmu Buck Pronghorn - Skull Valley South - Any Legal Weapon Page 549,,,2,0,2,,,,DRAW_ONLY
+2024,PB5311,1,0,1,1,0,0,Cwmu Buck Pronghorn - The Rose Of Snowville - Any Legal Weapon Page 550,,,4,0,4,,,,DRAW_ONLY
+2024,PB5312,1,0,1,1,0,0,Cwmu Buck Pronghorn - Tl Bar Ranch - Any Legal Weapon Page 551,,,1,0,1,,,,DRAW_ONLY
+2024,PB5313,1,0,1,1,0,0,Cwmu Buck Pronghorn - West Willow Creek Ranch - Any Legal Weapon Page 552,,,1,0,1,,,,DRAW_ONLY
+2024,PB5314,1,0,1,1,0,0,Cwmu Buck Pronghorn - Westlake - Any Legal Weapon Page 553,,,3,0,3,,,,DRAW_ONLY
+2024,PB5315,1,0,1,1,0,0,Cwmu Buck Pronghorn - Zane - Any Legal Weapon Page 554,,,2,0,2,,,,DRAW_ONLY
+2024,PB5325,1,0,1,1,0,0,Cwmu Buck Pronghorn - Allen Ranch - Any Legal Weapon Page 555,,,1,0,1,,,,DRAW_ONLY
+2024,PB5326,1,0,1,1,0,0,Cwmu Buck Pronghorn - Cedar Springs - Any Legal Weapon Page 556,,,1,0,1,,,,DRAW_ONLY
+2024,PB5327,1,0,1,1,0,0,Cwmu Buck Pronghorn - Cottonwood Ridge - Any Legal Weapon Page 557,,,4,0,4,,,,DRAW_ONLY
+2024,PB5328,1,0,1,1,0,0,Cwmu Buck Pronghorn - Pahvant Ensign - Any Legal Weapon Page 558,,,3,0,3,,,,DRAW_ONLY
+2024,PB5329,1,0,1,1,0,0,Cwmu Buck Pronghorn - Snowville Flat - Any Legal Weapon Page 559,,,1,0,1,,,,DRAW_ONLY
+2024,PB5330,1,0,1,1,0,0,Cwmu Buck Pronghorn - George Creek - Any Legal Weapon Page 560,,,1,0,1,,,,DRAW_ONLY
+2024,PB5331,1,0,1,1,0,0,Limited-entry Alw (rifle) Buck Pronghorn - Mt Dutton/paunsaugunt - Any Legal Weapon Page 561,,,28,3,31,,,,DRAW_ONLY
+2024,PB5332,1,0,1,1,0,0,Limited-entry Archery Buck Pronghorn - Mt Dutton/paunsaugunt - Archery Page 562,,,7,1,8,,,,DRAW_ONLY
+2024,PB5337,1,0,1,1,0,0,Cwmu Buck Pronghorn - Heist - Any Legal Weapon Page 563,,,2,0,2,,,,DRAW_ONLY
+2024,PB5339,1,0,1,1,0,0,Cwmu Buck Pronghorn - Iron Spring - Any Legal Weapon Page 564,,,1,0,1,,,,DRAW_ONLY
+2024,PB5341,1,0,1,1,0,0,Cwmu Buck Pronghorn - Sweetwater - Any Legal Weapon Page 565,,,1,0,1,,,,DRAW_ONLY
+2024,PB5342,1,0,1,1,0,0,Cwmu Buck Pronghorn - Salt Wells - Any Legal Weapon Page 566,,,2,0,2,,,,DRAW_ONLY
+2024,PB5345,1,0,1,1,0,0,Cwmu Buck Pronghorn - Green River Flat - Any Legal Weapon Page 567,,,2,0,2,,,,DRAW_ONLY
+2024,PD1000,1,0,1,1,0,0,"Doe Pronghorn - Box Elder, Snowville - Any Legal Weapon",,Doe Pronghorn,29,4,33,,,,DRAW_ONLY
+2024,PD1006,1,0,1,1,0,0,Doe Pronghorn - Parker Mtn - Any Legal Weapon,,Doe Pronghorn,18,3,21,,,,DRAW_ONLY
+2024,PD1012,1,0,1,1,0,0,"Doe Pronghorn - Box Elder, Promontory - Any Legal Weapon",,Doe Pronghorn,8,1,9,,,,DRAW_ONLY
+2024,PD1016,1,0,1,1,0,0,Cwmu Doe Pronghorn - Zane - Any Legal Weapon,,Doe Pronghorn,5,0,5,,,,DRAW_ONLY
+2024,PD1017,1,0,1,1,0,0,"Doe Pronghorn - Box Elder, West - Any Legal Weapon",,Doe Pronghorn,25,4,29,,,,DRAW_ONLY
+2024,PD1025,1,0,1,1,0,0,Cwmu Doe Pronghorn - Cottonwood Ridge - Any Legal Weapon,,Doe Pronghorn,5,0,5,,,,DRAW_ONLY
+2024,PD1026,1,0,1,1,0,0,Cwmu Doe Pronghorn - Pahvant Ensign - Any Legal Weapon,,Doe Pronghorn,5,0,5,,,,DRAW_ONLY
+2024,PD1031,1,0,1,1,0,0,Cwmu Two Doe Pronghorn - Westlake - Any Legal Weapon,,Doe Pronghorn,5,0,5,,,,DRAW_ONLY
+2024,PD1032,1,0,1,1,0,0,Cwmu Doe Pronghorn - Antelope Creek - Any Legal Weapon,,Doe Pronghorn,5,0,5,,,,DRAW_ONLY
+2024,PD1033,1,0,1,1,0,0,Doe Pronghorn - Poison Springs Bench - Any Legal Weapon,,Doe Pronghorn,11,2,13,,,,DRAW_ONLY
+2024,PD1034,1,0,1,1,0,0,"Doe Pronghorn - Fillmore, Oak Creek South - Any Legal Weapon",,Doe Pronghorn,18,3,21,,,,DRAW_ONLY
+2024,PD1035,1,0,1,1,0,0,"Doe Pronghorn - Fillmore, Oak Creek South - Any Legal Weapon",,Doe Pronghorn,18,3,21,,,,DRAW_ONLY
+2024,PD1043,1,0,1,1,0,0,"Doe Pronghorn - Nine Mile, Anthro-pleasant Valley - Any Legal Weapon",,Doe Pronghorn,8,1,9,,,,DRAW_ONLY
+2024,PD1044,1,0,1,1,0,0,Doe Pronghorn - Vernal-ouray Valley - Any Legal Weapon,,Doe Pronghorn,18,3,21,,,,DRAW_ONLY
+2024,PD1045,1,0,1,1,0,0,Cwmu Doe Pronghorn - The Rose Of Snowville - Any Legal Weapon,,Doe Pronghorn,2,0,2,,,,DRAW_ONLY
+2024,PD1046,1,0,1,1,0,0,Cwmu Doe Pronghorn - Green River Flat - Any Legal Weapon,,Doe Pronghorn,5,0,5,,,,DRAW_ONLY
+2024,RE1000,1,0,1,1,0,0,"Rocky Mountain Bighorn Sheep Ewe - Box Elder, Newfoundland Mtns - Any Legal Weapon",,Ewe Bighorn,4,1,5,,,,DRAW_ONLY
+2024,RS6701,1,0,1,1,0,0,"Rocky Mountain Bighorn Sheep - Book Cliffs, South - Any Legal Weapon Page 568",,,5,1,6,,,,DRAW_ONLY
+2024,RS6703,1,0,1,1,0,0,"Rocky Mountain Bighorn Sheep - Box Elder, Newfoundland Mtn - Any Legal Weapon Page 569",,,4,1,5,,,,DRAW_ONLY
+2024,RS6704,1,0,1,1,0,0,"Rocky Mountain Bighorn Sheep - Box Elder, Newfoundland Mtn - Any Legal Weapon Page 570",,,5,1,6,,,,DRAW_ONLY
+2024,RS6708,1,0,1,1,0,0,"Rocky Mountain Bighorn Sheep - North Slope, Three Corners - Any Legal Weapon Page 571",,,2,0,2,,,,DRAW_ONLY
+2024,RS6709,1,0,1,1,0,0,"Rocky Mountain Bighorn Sheep - North Slope, Summit/west Daggett - Any Legal Weapon Page 572",,,3,0,3,,,,DRAW_ONLY
+2024,RS6712,1,0,1,1,0,0,"Rocky Mountain Bighorn Sheep - Nine Mile, Gray Canyon - Any Legal Weapon Page 573",,,6,0,6,,,,DRAW_ONLY
+2024,RS6713,1,0,1,1,0,0,"Rocky Mountain Bighorn Sheep - Nine Mile, Jack Creek - Any Legal Weapon Page 574",,,4,0,4,,,,DRAW_ONLY
+2024,RS6720,1,0,1,1,0,0,"Rocky Mountain Bighorn Sheep - Fillmore, Oak Creek - Any Legal Weapon Page 575",,,3,0,3,,,,DRAW_ONLY
+2024,RS6721,1,0,1,1,0,0,"Rocky Mountain Bighorn Sheep - Oquirrh-stansbury, West - Any Legal Weapon Page 576",,,4,0,4,,,,DRAW_ONLY
+2024,RS6722,1,0,1,1,0,0,"Rocky Mountain Bighorn Sheep Archery - Box Elder, Newfoundland Mtn - Archery Page 577",,,3,0,3,,,,DRAW_ONLY
+2024,RS6724,1,0,1,1,0,0,"Rocky Mountain Bighorn Sheep - Wasatch Mtns, West - Any Legal Weapon Page 578",,,4,0,4,,,,DRAW_ONLY
+2024,RS6725,1,0,1,1,0,0,Rocky Mountain Bighorn Sheep - Nebo - Any Legal Weapon Page 579,,,2,0,2,,,,DRAW_ONLY
+2024,RS6726,1,0,1,1,0,0,"Rocky Mountain Bighorn Sheep - Fillmore, Oak Creek - Any Legal Weapon Page 580",,,4,1,5,,,,DRAW_ONLY
+2024,RS6727,1,0,1,1,0,0,"Rocky Mountain Bighorn Sheep Archery - Fillmore, Oak Creek - Archery Page 581",,,2,0,2,,,,DRAW_ONLY

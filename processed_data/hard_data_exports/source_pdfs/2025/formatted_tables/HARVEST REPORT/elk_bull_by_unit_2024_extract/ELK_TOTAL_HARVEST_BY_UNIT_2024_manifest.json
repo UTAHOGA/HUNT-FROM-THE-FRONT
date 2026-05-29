@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-05-10T05:36:03",
+  "stem": "ELK_TOTAL_HARVEST_BY_UNIT_2024",
+  "rows": 38,
+  "columns": [
+    "Unit",
+    "Unit name",
+    "Bull harvest",
+    "Antlerless harvest",
+    "Total harvest",
+    "Hunters afield",
+    "Mean days hunted",
+    "Success rate (%)"
+  ],
+  "csv": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/elk_bull_by_unit_2024_extract/ELK_TOTAL_HARVEST_BY_UNIT_2024.csv",
+  "xlsx": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/elk_bull_by_unit_2024_extract/ELK_TOTAL_HARVEST_BY_UNIT_2024.xlsx"
+}

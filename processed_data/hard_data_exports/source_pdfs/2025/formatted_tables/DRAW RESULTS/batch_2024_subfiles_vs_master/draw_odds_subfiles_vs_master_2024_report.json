@@ -1,0 +1,268 @@
+{
+  "master_file": "24_bg-odds.pdf",
+  "excluded_master_pages": [
+    188,
+    398,
+    537,
+    573
+  ],
+  "subfiles_processed": [
+    "2024 _Sportsman draw odds report.pdf",
+    "2024 antlerless draw results.pdf",
+    "2024 Deer Master Draw Results.pdf",
+    "2024 master antlerless LIMITED ENTRY ROCKY MTN SHEEP.pdf",
+    "2024 master antlerless pronghorn.pdf",
+    "2024 master buck deer  draw results.pdf",
+    "2024 master elk antlerless draw results.pdf",
+    "2024 moose master draw results.pdf",
+    "24 bear draw odds complete.pdf",
+    "24_deer_odds.pdf",
+    "24_dh_odds.pdf",
+    "24_le_bull_elk.pdf",
+    "24_le_deer.pdf",
+    "24_le_pronghorn.pdf",
+    "24_lifetime_deer.pdf",
+    "24_OIL_ALL.pdf",
+    "24_point-only_purchases_for_big_game_and_antlerless.pdf",
+    "24_youth_antlerless_drawing_odds_report.pdf",
+    "24_youth_deer.pdf",
+    "24_youth_dh_odds.pdf",
+    "24_youth_elk.pdf",
+    "Bear/2024 Bear Draw Results.pdf",
+    "Bear/Bear Bonus Point Purchase.pdf"
+  ],
+  "file_stats": [
+    {
+      "file": "2024 _Sportsman draw odds report.pdf",
+      "pages": 1,
+      "rows_extracted": 0,
+      "pages_with_hunt": 0,
+      "pages_with_totals": 0,
+      "pages_no_text": 0,
+      "pages_excluded": 0
+    },
+    {
+      "file": "2024 antlerless draw results.pdf",
+      "pages": 198,
+      "rows_extracted": 198,
+      "pages_with_hunt": 198,
+      "pages_with_totals": 198,
+      "pages_no_text": 0,
+      "pages_excluded": 0
+    },
+    {
+      "file": "2024 Deer Master Draw Results.pdf",
+      "pages": 1,
+      "rows_extracted": 0,
+      "pages_with_hunt": 0,
+      "pages_with_totals": 1,
+      "pages_no_text": 0,
+      "pages_excluded": 0
+    },
+    {
+      "file": "2024 master antlerless LIMITED ENTRY ROCKY MTN SHEEP.pdf",
+      "pages": 1,
+      "rows_extracted": 0,
+      "pages_with_hunt": 0,
+      "pages_with_totals": 1,
+      "pages_no_text": 0,
+      "pages_excluded": 0
+    },
+    {
+      "file": "2024 master antlerless pronghorn.pdf",
+      "pages": 1,
+      "rows_extracted": 0,
+      "pages_with_hunt": 0,
+      "pages_with_totals": 1,
+      "pages_no_text": 0,
+      "pages_excluded": 0
+    },
+    {
+      "file": "2024 master buck deer  draw results.pdf",
+      "pages": 1,
+      "rows_extracted": 0,
+      "pages_with_hunt": 0,
+      "pages_with_totals": 1,
+      "pages_no_text": 0,
+      "pages_excluded": 0
+    },
+    {
+      "file": "2024 master elk antlerless draw results.pdf",
+      "pages": 1,
+      "rows_extracted": 0,
+      "pages_with_hunt": 0,
+      "pages_with_totals": 1,
+      "pages_no_text": 0,
+      "pages_excluded": 0
+    },
+    {
+      "file": "2024 moose master draw results.pdf",
+      "pages": 1,
+      "rows_extracted": 0,
+      "pages_with_hunt": 0,
+      "pages_with_totals": 1,
+      "pages_no_text": 0,
+      "pages_excluded": 0
+    },
+    {
+      "file": "24 bear draw odds complete.pdf",
+      "pages": 100,
+      "rows_extracted": 96,
+      "pages_with_hunt": 96,
+      "pages_with_totals": 100,
+      "pages_no_text": 0,
+      "pages_excluded": 0
+    },
+    {
+      "file": "24_deer_odds.pdf",
+      "pages": 105,
+      "rows_extracted": 104,
+      "pages_with_hunt": 104,
+      "pages_with_totals": 105,
+      "pages_no_text": 0,
+      "pages_excluded": 0
+    },
+    {
+      "file": "24_dh_odds.pdf",
+      "pages": 32,
+      "rows_extracted": 31,
+      "pages_with_hunt": 31,
+      "pages_with_totals": 32,
+      "pages_no_text": 0,
+      "pages_excluded": 0
+    },
+    {
+      "file": "24_le_bull_elk.pdf",
+      "pages": 210,
+      "rows_extracted": 209,
+      "pages_with_hunt": 209,
+      "pages_with_totals": 210,
+      "pages_no_text": 0,
+      "pages_excluded": 0
+    },
+    {
+      "file": "24_le_deer.pdf",
+      "pages": 188,
+      "rows_extracted": 187,
+      "pages_with_hunt": 187,
+      "pages_with_totals": 188,
+      "pages_no_text": 0,
+      "pages_excluded": 0
+    },
+    {
+      "file": "24_le_pronghorn.pdf",
+      "pages": 86,
+      "rows_extracted": 85,
+      "pages_with_hunt": 85,
+      "pages_with_totals": 86,
+      "pages_no_text": 0,
+      "pages_excluded": 0
+    },
+    {
+      "file": "24_lifetime_deer.pdf",
+      "pages": 105,
+      "rows_extracted": 104,
+      "pages_with_hunt": 104,
+      "pages_with_totals": 105,
+      "pages_no_text": 0,
+      "pages_excluded": 0
+    },
+    {
+      "file": "24_OIL_ALL.pdf",
+      "pages": 104,
+      "rows_extracted": 99,
+      "pages_with_hunt": 99,
+      "pages_with_totals": 104,
+      "pages_no_text": 0,
+      "pages_excluded": 0
+    },
+    {
+      "file": "24_point-only_purchases_for_big_game_and_antlerless.pdf",
+      "pages": 15,
+      "rows_extracted": 0,
+      "pages_with_hunt": 0,
+      "pages_with_totals": 15,
+      "pages_no_text": 0,
+      "pages_excluded": 0
+    },
+    {
+      "file": "24_youth_antlerless_drawing_odds_report.pdf",
+      "pages": 187,
+      "rows_extracted": 184,
+      "pages_with_hunt": 184,
+      "pages_with_totals": 187,
+      "pages_no_text": 0,
+      "pages_excluded": 0
+    },
+    {
+      "file": "24_youth_deer.pdf",
+      "pages": 104,
+      "rows_extracted": 103,
+      "pages_with_hunt": 103,
+      "pages_with_totals": 104,
+      "pages_no_text": 0,
+      "pages_excluded": 0
+    },
+    {
+      "file": "24_youth_dh_odds.pdf",
+      "pages": 26,
+      "rows_extracted": 25,
+      "pages_with_hunt": 25,
+      "pages_with_totals": 26,
+      "pages_no_text": 0,
+      "pages_excluded": 0
+    },
+    {
+      "file": "24_youth_elk.pdf",
+      "pages": 1,
+      "rows_extracted": 1,
+      "pages_with_hunt": 1,
+      "pages_with_totals": 1,
+      "pages_no_text": 0,
+      "pages_excluded": 0
+    },
+    {
+      "file": "Bear/2024 Bear Draw Results.pdf",
+      "pages": 96,
+      "rows_extracted": 96,
+      "pages_with_hunt": 96,
+      "pages_with_totals": 96,
+      "pages_no_text": 0,
+      "pages_excluded": 0
+    },
+    {
+      "file": "Bear/Bear Bonus Point Purchase.pdf",
+      "pages": 4,
+      "rows_extracted": 0,
+      "pages_with_hunt": 0,
+      "pages_with_totals": 4,
+      "pages_no_text": 0,
+      "pages_excluded": 0
+    },
+    {
+      "file": "24_bg-odds.pdf",
+      "pages": 587,
+      "rows_extracted": 580,
+      "pages_with_hunt": 580,
+      "pages_with_totals": 583,
+      "pages_no_text": 0,
+      "pages_excluded": 4
+    }
+  ],
+  "subfile_rows_extracted": 1522,
+  "subfile_unique_hunt_codes": 1010,
+  "master_rows_extracted": 580,
+  "master_unique_hunt_codes": 580,
+  "comparison_status_counts": {
+    "missing_in_master": 942,
+    "permit_match": 580
+  },
+  "written_files": {
+    "sub_csv": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/draw_odds_results/batch_2024_subfiles_vs_master/draw_odds_subfiles_hunt_rows_2024.csv",
+    "sub_xlsx": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/draw_odds_results/batch_2024_subfiles_vs_master/draw_odds_subfiles_hunt_rows_2024.xlsx",
+    "master_csv": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/draw_odds_results/batch_2024_subfiles_vs_master/draw_odds_master_hunt_rows_2024.csv",
+    "master_xlsx": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/draw_odds_results/batch_2024_subfiles_vs_master/draw_odds_master_hunt_rows_2024.xlsx",
+    "compare_csv": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/draw_odds_results/batch_2024_subfiles_vs_master/draw_odds_subfiles_vs_master_2024_20260510_050314.csv",
+    "compare_xlsx": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/draw_odds_results/batch_2024_subfiles_vs_master/draw_odds_subfiles_vs_master_2024.xlsx"
+  }
+}

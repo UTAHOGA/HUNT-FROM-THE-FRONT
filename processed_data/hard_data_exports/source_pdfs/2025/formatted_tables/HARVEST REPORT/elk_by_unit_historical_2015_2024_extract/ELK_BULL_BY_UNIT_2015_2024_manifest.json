@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-05-10T05:36:02",
+  "stem": "ELK_BULL_BY_UNIT_2015_2024",
+  "rows": 37,
+  "columns": [
+    "Unit",
+    "Unit name",
+    "2015",
+    "2016",
+    "2017",
+    "2018",
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "source_page"
+  ],
+  "csv": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/elk_by_unit_historical_2015_2024_extract/ELK_BULL_BY_UNIT_2015_2024.csv",
+  "xlsx": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/elk_by_unit_historical_2015_2024_extract/ELK_BULL_BY_UNIT_2015_2024.xlsx"
+}

@@ -1,0 +1,79 @@
+{
+  "generated_at": "2026-05-10T05:36:12",
+  "summary": [
+    {
+      "pdf": "2024 ELK BY UNIT HISTORICAL 2015\u20132024.pdf",
+      "rows": 37,
+      "csv": "pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\elk_by_unit_historical_2015_2024_extract\\ELK_BULL_BY_UNIT_2015_2024.csv",
+      "xlsx": "pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\elk_by_unit_historical_2015_2024_extract\\ELK_BULL_BY_UNIT_2015_2024.xlsx",
+      "manifest": "pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\elk_by_unit_historical_2015_2024_extract\\ELK_BULL_BY_UNIT_2015_2024_manifest.json"
+    },
+    {
+      "pdf": "2024 ELK BULL BY UNIT.pdf",
+      "rows_total_table": 38,
+      "rows_archery_table": 35,
+      "csv_total": "pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\elk_bull_by_unit_2024_extract\\ELK_TOTAL_HARVEST_BY_UNIT_2024.csv",
+      "csv_archery": "pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\elk_bull_by_unit_2024_extract\\ELK_GENERAL_SEASON_ARCHERY_HARVEST_BY_UNIT_2024.csv",
+      "xlsx_total": "pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\elk_bull_by_unit_2024_extract\\ELK_TOTAL_HARVEST_BY_UNIT_2024.xlsx",
+      "xlsx_archery": "pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\elk_bull_by_unit_2024_extract\\ELK_GENERAL_SEASON_ARCHERY_HARVEST_BY_UNIT_2024.xlsx"
+    },
+    {
+      "pdf": "2024 ELK CWMU bull elk harvest.pdf",
+      "rows": 68,
+      "csv": "pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\elk_cwmu_bull_harvest_2024_extract\\ELK_CWMU_BULL_HARVEST_2024.csv",
+      "xlsx": "pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\elk_cwmu_bull_harvest_2024_extract\\ELK_CWMU_BULL_HARVEST_2024.xlsx",
+      "manifest": "pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\elk_cwmu_bull_harvest_2024_extract\\ELK_CWMU_BULL_HARVEST_2024_manifest.json"
+    },
+    {
+      "pdf": "2024 ELK GENERAL EXTENDED ARCHERY HARVEST.pdf",
+      "rows": 6,
+      "csv": "pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\elk_general_extended_archery_2024_extract\\ELK_GENERAL_EXTENDED_ARCHERY_HARVEST_2024.csv",
+      "xlsx": "pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\elk_general_extended_archery_2024_extract\\ELK_GENERAL_EXTENDED_ARCHERY_HARVEST_2024.xlsx",
+      "manifest": "pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\elk_general_extended_archery_2024_extract\\ELK_GENERAL_EXTENDED_ARCHERY_HARVEST_2024_manifest.json"
+    },
+    {
+      "pdf": "2024 ELK LIMITED ANTLERLESS.pdf",
+      "rows": 184,
+      "csv": "pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\elk_limited_antlerless_2024_extract\\ELK_LIMITED_ANTLERLESS_HARVEST_2024.csv",
+      "xlsx": "pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\elk_limited_antlerless_2024_extract\\ELK_LIMITED_ANTLERLESS_HARVEST_2024.xlsx",
+      "manifest": "pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\elk_limited_antlerless_2024_extract\\ELK_LIMITED_ANTLERLESS_HARVEST_2024_manifest.json"
+    },
+    {
+      "pdf": "2024 ELK LIMITED ENTRY youth any bull hunters choice elk harvest.pdf",
+      "rows": 61,
+      "csv": "pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\elk_youth_any_bull_hunters_choice_2024_extract\\ELK_YOUTH_ANY_BULL_HUNTERS_CHOICE_2024.csv",
+      "xlsx": "pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\elk_youth_any_bull_hunters_choice_2024_extract\\ELK_YOUTH_ANY_BULL_HUNTERS_CHOICE_2024.xlsx",
+      "manifest": "pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\elk_youth_any_bull_hunters_choice_2024_extract\\ELK_YOUTH_ANY_BULL_HUNTERS_CHOICE_2024_manifest.json"
+    },
+    {
+      "pdf": "2024 ELK STATEWIDE STATS.pdf",
+      "rows": 94,
+      "csv": "pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\elk_statewide_stats_1931_2024_extract\\ELK_STATEWIDE_HARVEST_STATS_1931_2024.csv",
+      "xlsx": "pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\elk_statewide_stats_1931_2024_extract\\ELK_STATEWIDE_HARVEST_STATS_1931_2024.xlsx",
+      "manifest": "pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\elk_statewide_stats_1931_2024_extract\\ELK_STATEWIDE_HARVEST_STATS_1931_2024_manifest.json"
+    },
+    {
+      "pdf": "ELK 2024 WINTER POPULATION.pdf",
+      "rows": 39,
+      "csv": "pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\elk_winter_population_2020_2024_extract\\ELK_WINTER_POPULATION_ESTIMATES_2020_2024.csv",
+      "xlsx": "pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\elk_winter_population_2020_2024_extract\\ELK_WINTER_POPULATION_ESTIMATES_2020_2024.xlsx",
+      "manifest": "pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\elk_winter_population_2020_2024_extract\\ELK_WINTER_POPULATION_ESTIMATES_2020_2024_manifest.json"
+    },
+    {
+      "pdf": "PRESEASON CALF ELK PER 100 COWS 2015\u20132024.pdf",
+      "rows": 30,
+      "csv": "pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\elk_preseason_calf_per_100_cows_2015_2024_extract\\ELK_PRESEASON_CALF_PER_100_COWS_2015_2024.csv",
+      "xlsx": "pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\elk_preseason_calf_per_100_cows_2015_2024_extract\\ELK_PRESEASON_CALF_PER_100_COWS_2015_2024.xlsx",
+      "manifest": "pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\elk_preseason_calf_per_100_cows_2015_2024_extract\\ELK_PRESEASON_CALF_PER_100_COWS_2015_2024_manifest.json"
+    },
+    {
+      "pdf": "2024 ELK WINTER TREND.pdf",
+      "rows": 357,
+      "csv": "pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\elk_winter_trend_2015_2024_extract\\ELK_WINTER_TREND_2015_2024.csv",
+      "xlsx": "pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\elk_winter_trend_2015_2024_extract\\ELK_WINTER_TREND_2015_2024.xlsx",
+      "manifest": "pipeline\\RAW\\hunt_unit_database\\2025\\formatted_tables\\elk_winter_trend_2015_2024_extract\\ELK_WINTER_TREND_2015_2024_manifest.json"
+    }
+  ],
+  "crosscheck_csv": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/elk_2024_crosscheck_vs_master.csv",
+  "crosscheck_json": "pipeline/RAW/hunt_unit_database/2025/formatted_tables/elk_2024_crosscheck_vs_master.json"
+}

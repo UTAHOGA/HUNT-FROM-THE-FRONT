@@ -5,9 +5,11 @@ from pathlib import Path
 from typing import Optional, Tuple
 
 from openpyxl import load_workbook
-from openpyxl.styles import Alignment, Font, PatternFill
+from openpyxl.styles import Alignment, Font, PatternFill, Border, Side
 from openpyxl.worksheet.table import Table, TableStyleInfo
 from openpyxl.utils import get_column_letter
+from openpyxl.worksheet.page import PageMargins
+from openpyxl.worksheet.properties import PageSetupProperties
 
 ROOT = Path(r"C:\Users\tyler\Desktop\GitHub\HUNT-BUILDER")
 TARGET_DIR = ROOT / "processed_data" / "hard_data_exports" / "hunt_tables" / "2026" / "XLXS"
@@ -91,21 +93,59 @@ def sanitize_header_row(ws, header_row: int, first_col: int, last_col: int) -> N
 
 
 def apply_visual_polish(ws, header_row: int, first_col: int, last_col: int, last_row: int) -> None:
-    header_fill = PatternFill(fill_type="solid", fgColor="4F2D1D")
+    # Use explicit fixed colors and borders so styling is identical across workbooks
+    # regardless of workbook theme/template differences.
+    title_fill = PatternFill(fill_type="solid", fgColor="EDE3D3")
+    subtitle_fill = PatternFill(fill_type="solid", fgColor="F5EFE4")
+    header_fill = PatternFill(fill_type="solid", fgColor="5B301B")
+    odd_row_fill = PatternFill(fill_type="solid", fgColor="F7F1E8")
+    even_row_fill = PatternFill(fill_type="solid", fgColor="EFE5D7")
+
+    border_side = Side(style="thin", color="C58F61")
+    grid_border = Border(left=border_side, right=border_side, top=border_side, bottom=border_side)
+
+    title_font = Font(name="Calibri", size=14, bold=True, color="2F1B0F")
+    subtitle_font = Font(name="Calibri", size=10, italic=True, color="5B3A25")
     header_font = Font(name="Calibri", size=11, bold=True, color="FFFFFF")
-    data_font = Font(name="Calibri", size=10)
+    data_font = Font(name="Calibri", size=10, color="000000")
+
+    if header_row > 1:
+        title = ws.cell(row=1, column=first_col)
+        if title.value is not None:
+            title.font = title_font
+            title.fill = title_fill
+            title.alignment = Alignment(horizontal="center", vertical="center")
+        ws.row_dimensions[1].height = 28
+
+    if header_row > 2:
+        subtitle = ws.cell(row=2, column=first_col)
+        if subtitle.value is not None:
+            subtitle.font = subtitle_font
+            subtitle.fill = subtitle_fill
+            subtitle.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+        ws.row_dimensions[2].height = 40
 
     for c in range(first_col, last_col + 1):
         cell = ws.cell(row=header_row, column=c)
         cell.fill = header_fill
         cell.font = header_font
         cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        cell.border = grid_border
 
     for r in range(header_row + 1, last_row + 1):
+        row_fill = odd_row_fill if ((r - header_row) % 2 == 1) else even_row_fill
         for c in range(first_col, last_col + 1):
             cell = ws.cell(row=r, column=c)
             cell.font = data_font
-            cell.alignment = Alignment(vertical="center", wrap_text=False)
+            cell.fill = row_fill
+            cell.border = grid_border
+
+            # right-align obvious numeric columns; left-align text columns
+            header_text = str(ws.cell(row=header_row, column=c).value or "").lower()
+            if any(k in header_text for k in ["res", "non-res", "total", "percent", "avg", "age", "days"]):
+                cell.alignment = Alignment(horizontal="right", vertical="center", wrap_text=False)
+            else:
+                cell.alignment = Alignment(horizontal="left", vertical="center", wrap_text=False)
 
     for c in range(first_col, last_col + 1):
         col_letter = get_column_letter(c)
@@ -116,17 +156,31 @@ def apply_visual_polish(ws, header_row: int, first_col: int, last_col: int, last
                 continue
             max_len = max(max_len, len(str(v)))
         if max_len <= 10:
-            width = 14
+            width = 10
         elif max_len <= 20:
-            width = 20
+            width = 14
         elif max_len <= 35:
-            width = 28
+            width = 20
         else:
-            width = 36
+            width = 24
         ws.column_dimensions[col_letter].width = width
 
     ws.freeze_panes = ws.cell(row=header_row + 1, column=first_col)
     ws.auto_filter.ref = f"{get_column_letter(first_col)}{header_row}:{get_column_letter(last_col)}{last_row}"
+
+    # Print layout: landscape, narrow margins, centered, fit-to-page width.
+    ws.page_setup.orientation = "landscape"
+    ws.page_setup.paperSize = ws.PAPERSIZE_LETTER
+    if ws.sheet_properties.pageSetUpPr is None:
+        ws.sheet_properties.pageSetUpPr = PageSetupProperties(fitToPage=True, autoPageBreaks=False)
+    else:
+        ws.sheet_properties.pageSetUpPr.fitToPage = True
+    ws.page_setup.fitToWidth = 1
+    ws.page_setup.fitToHeight = 1
+    ws.page_margins = PageMargins(left=0.25, right=0.25, top=0.35, bottom=0.35, header=0.2, footer=0.2)
+    ws.print_options.horizontalCentered = True
+    ws.print_options.verticalCentered = False
+    ws.print_title_rows = f"${header_row}:${header_row}"
 
 
 def process_file(path: Path, idx: int) -> dict:
@@ -212,7 +266,7 @@ def main() -> None:
     if not TARGET_DIR.exists():
         raise SystemExit(f"Missing target folder: {TARGET_DIR}")
 
-    files = sorted(TARGET_DIR.glob("*.xlsx"))
+    files = sorted([p for p in TARGET_DIR.glob("*.xlsx") if not p.name.startswith("~$")])
     if not files:
         raise SystemExit("No .xlsx files found")
 

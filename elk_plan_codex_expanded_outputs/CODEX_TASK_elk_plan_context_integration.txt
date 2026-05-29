@@ -1,0 +1,79 @@
+CODEX TASK — INTEGRATE ELK MANAGEMENT PLAN REFERENCE SAFELY
+
+Repo:
+C:\Users\tyler\Desktop\GitHub\HUNT-BUILDER
+
+Purpose:
+Update the elk statewide plan foundational reference so Codex and the engine treat it as management-policy and harvest-context data, not raw hunt-code harvest truth.
+
+Source files:
+- elk_statewide_plan_foundational_reference.md
+- elk_plan_foundational_reference.csv
+
+Use the expanded version provided by ChatGPT:
+elk_statewide_plan_foundational_reference_codex_expanded.md
+
+Instructions:
+1. Replace or merge the expanded MD content into the existing elk statewide plan foundational reference file used by Codex.
+2. Preserve all original Key IDs.
+3. Add the Codex Operating Rules, Recommended Engine Placement, Data-Class Definitions, Data-Use Classification Table, and Row-Level Deep-Read Notes.
+4. Do not alter DATABASE.csv.
+5. Do not update p_draw logic.
+6. Do not update permit quotas.
+7. Do not treat LE age objective categories as actual harvested age.
+8. Create a normalized CSV companion:
+   processed_data/elk_plan_context_normalized.csv
+
+Required normalized columns:
+key_id
+topic
+data_class
+metric
+display_value
+numeric_value
+min_value
+max_value
+unit
+scope
+year
+model_use
+prohibited_use
+source_document
+source_page
+evidence_excerpt
+
+Normalization rules:
+- Split ranges like 6.5-7.0 into min/max.
+- Split percentage allocations like 25/15/60 into named fields in JSON if necessary.
+- Keep odds such as 1:19.8 resident as demand-pressure display, not modeled probability.
+- Keep age objective categories as target bands, not observed age.
+- Mark policy values as p_draw_override_allowed=false and permit_quota_override_allowed=false.
+
+Create:
+processed_data/elk_plan_quality_rules.json
+
+It should include:
+- le_age_objective_categories: 6.5-7.0, 6.0-6.5, 5.5-6.0
+- le_permit_increase_gate: any-legal-weapon 3-year average success >75% and unit meeting/exceeding age objective
+- weapon_allocation_standard: 25/15/60
+- any_weapon_split: early 10, mid 30, late 17, multi-season 3
+- primitive_weapon_split: 50/50
+- adaptive_opportunity_rule: 1% of combined LE permits or minimum 5
+- all rules marked validation_only=true
+
+Create audit:
+processed_data/elk_plan_context_integration_audit.json
+
+Audit must state:
+- no DATABASE.csv changes
+- no p_draw changes
+- no permit quota changes
+- number of Key IDs preserved
+- number of normalized rows written
+- any rows needing manual review
+
+Run:
+node scripts/build-elk-plan-context-normalized.js
+
+Stop after generating MD/CSV/JSON/audit outputs.
+Do not commit unless instructed.
