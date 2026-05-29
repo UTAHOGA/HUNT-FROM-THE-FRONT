@@ -6625,3 +6625,19 @@ o_table=0).
   - `npm.cmd run build` passed.
   - Gate PASS: 1449.
   - Gate BLOCK: 0.
+
+## Black Bear Permit Truth-Source Correction
+- Timestamp (UTC): 2026-05-29T11:25:00Z
+- Scope:
+  - Treated the user-pasted Utah DWR Hunt Planner black bear rows as the controlling truth source for this correction pass.
+  - Corrected `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 black bear permits reviewed res-nr-total.csv` so BR7307 no longer carries an unsupported numeric total.
+  - Normalized local helper black bear CSVs so orphan `NonRes:` continuation rows were folded into the matching row and totals were recomputed from resident plus nonresident values.
+  - Confirmed BR7004 remains DWR truth as Res 18, NonRes 0, Total 18.
+- Validation:
+  - Reviewed black bear rows: 106.
+  - Full split rows: 100.
+  - Blank/no published numeric permit rows: 6.
+  - Partial permit rows: 0.
+  - Duplicate hunt codes: 0.
+  - Bad Res + NonRes totals: 0.
+  - Orphan NonRes rows: 0.
