@@ -6641,3 +6641,19 @@ o_table=0).
   - Duplicate hunt codes: 0.
   - Bad Res + NonRes totals: 0.
   - Orphan NonRes rows: 0.
+
+## Antlerless Elk Permit Truth-Source Correction
+- Timestamp (UTC): 2026-05-29T11:45:00Z
+- Scope:
+  - Treated the user-pasted Utah DWR Hunt Planner antlerless elk EA rows as the controlling truth source for this correction pass.
+  - Created `pipeline/RAW/hunt_unit_database/2026/csv/2026 Permits/2026 elk antlerless all reviewed res-nr-total.csv` from the pasted-row-aligned 2026 elk antlerless draw table, with boundary-id metadata joined from DATABASE.csv only for mapping context.
+  - Normalized `elk antlerless private lands only EA.csv` to use numeric total-only permit values instead of `Total: N` text.
+  - Confirmed expo/conservation/control/pending rows remain blank when the DWR-pasted row did not publish a numeric permit value, including EA1220, EA1221, EA1258, and EA1286.
+- Validation:
+  - Reviewed EA rows: 204.
+  - Full split rows: 167.
+  - Total-only rows: 27.
+  - Blank/no published numeric permit rows: 10.
+  - Partial permit rows: 0.
+  - Duplicate hunt codes: 0.
+  - Bad Res + NonRes totals: 0.
