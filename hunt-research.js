@@ -55,6 +55,7 @@
     referenceByCode: new Map(),
     engineHistoryByPoint: new Map(),
     engineMode: ENGINE_MODE,
+    loadedSources: null,
   };
 
   const els = {
@@ -1754,6 +1755,22 @@
     state.selectedMeta = meta;
     state.selectedFilters = filters;
 
+    window.UOGA_HUNT_RESEARCH_SNAPSHOT = {
+      filters,
+      meta,
+      summaryRow,
+      referenceRow,
+      ladderRows,
+      engineRows,
+      masterRows: state.masterRows,
+      referenceRows: state.referenceRows,
+      loadedSources: state.loadedSources,
+      engineMode: state.engineMode,
+    };
+    window.dispatchEvent(new CustomEvent('uoga:hunt-research-rendered', {
+      detail: window.UOGA_HUNT_RESEARCH_SNAPSHOT,
+    }));
+
     if (meta) {
       upsertBasketItem(meta, filters, summaryRow);
     }
@@ -1851,13 +1868,15 @@
       parseCsv(reference.text)
     );
 
-    return {
+    state.loadedSources = {
       engineMode: ENGINE_MODE,
       engine: engine.source,
       ladder: ladder.source,
       master: master.source,
       reference: reference.source,
     };
+
+    return state.loadedSources;
   }
 
   function bootstrapSelection() {
@@ -2009,4 +2028,3 @@
 
   init();
 })();
-

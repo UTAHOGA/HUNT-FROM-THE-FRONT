@@ -1,0 +1,238 @@
+{
+  "created_at": "2026-05-29T13:47:21.087264+00:00",
+  "age_source": "processed_data\\harvest_age_features_by_hunt_code_latest.csv",
+  "database_source": "pipeline\\RAW\\hunt_unit_database\\2026\\csv\\DATABASE.csv",
+  "pass_numeric_age_codes": 326,
+  "pass_numeric_age_codes_in_database": 319,
+  "pass_numeric_age_codes_not_in_database": 7,
+  "age_codes_not_in_database": [
+    "EB3133",
+    "EB3134",
+    "EB3140",
+    "EB3141",
+    "GO6809",
+    "MA1000",
+    "PB5058"
+  ],
+  "target_files": [
+    {
+      "file": "pipeline\\RAW\\hunt_unit_database\\2026\\csv\\DATABASE.csv",
+      "rows": 1449,
+      "rows_with_hunt_code": 1449,
+      "gzipped_csv_storage": false,
+      "columns_added": [
+        "average_harvest_age",
+        "average_harvest_age_reported_hunt_year",
+        "average_harvest_age_source_file",
+        "average_harvest_age_review_status"
+      ],
+      "counts": {
+        "average_harvest_age_filled_blank": 319,
+        "average_harvest_age_reported_hunt_year_filled_blank": 319,
+        "average_harvest_age_source_file_filled_blank": 319,
+        "average_harvest_age_review_status_filled_blank": 319
+      },
+      "boundary_conflict_samples": []
+    },
+    {
+      "file": "processed_data\\point_ladder_view.csv",
+      "rows": 91712,
+      "rows_with_hunt_code": 91712,
+      "gzipped_csv_storage": true,
+      "columns_added": [
+        "current_age_3yr_average",
+        "average_harvest_age",
+        "average_harvest_age_reported_hunt_year",
+        "average_harvest_age_source_file",
+        "average_harvest_age_review_status"
+      ],
+      "counts": {
+        "boundary_id_filled_blank": 90598,
+        "average_harvest_age_filled_blank": 20670,
+        "average_harvest_age_reported_hunt_year_filled_blank": 20670,
+        "average_harvest_age_source_file_filled_blank": 20670,
+        "average_harvest_age_review_status_filled_blank": 20670,
+        "current_age_3yr_average_filled_blank": 14454
+      },
+      "boundary_conflict_samples": []
+    },
+    {
+      "file": "processed_data\\hunt_master_enriched.csv",
+      "rows": 53225,
+      "rows_with_hunt_code": 53225,
+      "gzipped_csv_storage": true,
+      "columns_added": [
+        "current_age_3yr_average",
+        "average_harvest_age",
+        "average_harvest_age_reported_hunt_year",
+        "average_harvest_age_source_file",
+        "average_harvest_age_review_status"
+      ],
+      "counts": {
+        "average_harvest_age_filled_blank": 11902,
+        "average_harvest_age_reported_hunt_year_filled_blank": 11902,
+        "average_harvest_age_source_file_filled_blank": 11902,
+        "average_harvest_age_review_status_filled_blank": 11902,
+        "current_age_3yr_average_filled_blank": 14390
+      },
+      "boundary_conflict_samples": []
+    },
+    {
+      "file": "processed_data\\hunt_unit_reference_linked.csv",
+      "rows": 2953,
+      "rows_with_hunt_code": 2953,
+      "gzipped_csv_storage": false,
+      "columns_added": [
+        "current_age_3yr_average",
+        "average_harvest_age",
+        "average_harvest_age_reported_hunt_year",
+        "average_harvest_age_source_file",
+        "average_harvest_age_review_status"
+      ],
+      "counts": {
+        "boundary_id_filled_blank": 2210,
+        "average_harvest_age_filled_blank": 638,
+        "average_harvest_age_reported_hunt_year_filled_blank": 638,
+        "average_harvest_age_source_file_filled_blank": 638,
+        "average_harvest_age_review_status_filled_blank": 638,
+        "current_age_3yr_average_filled_blank": 438
+      },
+      "boundary_conflict_samples": []
+    },
+    {
+      "file": "processed_data\\draw_reality_engine_v2.csv",
+      "rows": 176753,
+      "rows_with_hunt_code": 176753,
+      "gzipped_csv_storage": true,
+      "columns_added": [
+        "current_age_3yr_average",
+        "average_harvest_age",
+        "average_harvest_age_reported_hunt_year",
+        "average_harvest_age_source_file",
+        "average_harvest_age_review_status"
+      ],
+      "counts": {
+        "hunt_code_not_in_database": 7205,
+        "average_harvest_age_filled_blank": 32662,
+        "average_harvest_age_reported_hunt_year_filled_blank": 32662,
+        "average_harvest_age_source_file_filled_blank": 32662,
+        "average_harvest_age_review_status_filled_blank": 32662,
+        "boundary_id_overwritten_to_database": 10,
+        "current_age_3yr_average_filled_blank": 46945
+      },
+      "boundary_conflict_samples": [
+        {
+          "file": "processed_data\\draw_reality_engine_v2.csv",
+          "hunt_code": "EA1180",
+          "old_boundary_id": "5111",
+          "database_boundary_id": "684"
+        },
+        {
+          "file": "processed_data\\draw_reality_engine_v2.csv",
+          "hunt_code": "EA1180",
+          "old_boundary_id": "5111",
+          "database_boundary_id": "684"
+        },
+        {
+          "file": "processed_data\\draw_reality_engine_v2.csv",
+          "hunt_code": "EA1270",
+          "old_boundary_id": "5114",
+          "database_boundary_id": "175"
+        },
+        {
+          "file": "processed_data\\draw_reality_engine_v2.csv",
+          "hunt_code": "EA1270",
+          "old_boundary_id": "5114",
+          "database_boundary_id": "175"
+        },
+        {
+          "file": "processed_data\\draw_reality_engine_v2.csv",
+          "hunt_code": "EA1271",
+          "old_boundary_id": "5115",
+          "database_boundary_id": "51"
+        },
+        {
+          "file": "processed_data\\draw_reality_engine_v2.csv",
+          "hunt_code": "EA1271",
+          "old_boundary_id": "5115",
+          "database_boundary_id": "51"
+        },
+        {
+          "file": "processed_data\\draw_reality_engine_v2.csv",
+          "hunt_code": "EA2041",
+          "old_boundary_id": "5117",
+          "database_boundary_id": "29"
+        },
+        {
+          "file": "processed_data\\draw_reality_engine_v2.csv",
+          "hunt_code": "EA2041",
+          "old_boundary_id": "5117",
+          "database_boundary_id": "29"
+        },
+        {
+          "file": "processed_data\\draw_reality_engine_v2.csv",
+          "hunt_code": "EB3209",
+          "old_boundary_id": "5129",
+          "database_boundary_id": "683"
+        },
+        {
+          "file": "processed_data\\draw_reality_engine_v2.csv",
+          "hunt_code": "EB3209",
+          "old_boundary_id": "5129",
+          "database_boundary_id": "683"
+        }
+      ]
+    },
+    {
+      "file": "processed_data\\draw_reality_engine.csv",
+      "rows": 36912,
+      "rows_with_hunt_code": 36912,
+      "gzipped_csv_storage": true,
+      "columns_added": [
+        "current_age_3yr_average",
+        "average_harvest_age",
+        "average_harvest_age_reported_hunt_year",
+        "average_harvest_age_source_file",
+        "average_harvest_age_review_status"
+      ],
+      "counts": {
+        "boundary_id_filled_blank": 32701,
+        "hunt_code_not_in_database": 4161,
+        "average_harvest_age_filled_blank": 7185,
+        "average_harvest_age_reported_hunt_year_filled_blank": 7185,
+        "average_harvest_age_source_file_filled_blank": 7185,
+        "average_harvest_age_review_status_filled_blank": 7185,
+        "current_age_3yr_average_filled_blank": 10207
+      },
+      "boundary_conflict_samples": []
+    },
+    {
+      "file": "processed_data\\draw_reality_engine_predictive_v2.csv",
+      "rows": 26507,
+      "rows_with_hunt_code": 26507,
+      "gzipped_csv_storage": true,
+      "columns_added": [
+        "boundary_id",
+        "current_age_3yr_average",
+        "average_harvest_age",
+        "average_harvest_age_reported_hunt_year",
+        "average_harvest_age_source_file",
+        "average_harvest_age_review_status"
+      ],
+      "counts": {
+        "boundary_id_filled_blank": 26387,
+        "average_harvest_age_filled_blank": 6109,
+        "average_harvest_age_reported_hunt_year_filled_blank": 6109,
+        "average_harvest_age_source_file_filled_blank": 6109,
+        "average_harvest_age_review_status_filled_blank": 6109,
+        "hunt_code_not_in_database": 120,
+        "current_age_3yr_average_filled_blank": 13113
+      },
+      "boundary_conflict_samples": []
+    }
+  ],
+  "outputs": {
+    "audit_json": "processed_data\\audits\\reviewed_age_boundary_promotion_2026_audit.json",
+    "audit_csv": "processed_data\\audits\\reviewed_age_boundary_promotion_2026_audit.csv"
+  }
+}

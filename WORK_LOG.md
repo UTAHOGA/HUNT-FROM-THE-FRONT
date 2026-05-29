@@ -6890,3 +6890,91 @@ o_table=0).
   - Exact duplicate canonical keys: 0.
   - Superseded fragment manifest rows: 8.
   - Fragment cleanup mode: `NON_DESTRUCTIVE_MANIFEST_ONLY`.
+
+## 2026 Hunt Table PDF Average Harvest Age Render
+- Timestamp (UTC): 2026-05-29T12:52:00Z
+- Scope:
+  - Updated only the public-display PDF hunt tables in `processed_data/hard_data_exports/hunt_tables/2026/PDF'S`.
+  - Rendered `Average Age Harvested (previous hunting season)` into PDFs from `processed_data/harvest_age_features_by_hunt_code_latest.csv` using only `PASS` rows with numeric animal age greater than zero.
+  - Left cells blank when no PASS numeric hard-data age existed; did not use average-days, percent mature, age objectives, proxy-only rows, or low-confidence REVIEW rows as age.
+  - Added PDF-only renderer `scripts/render-hunt-table-pdfs-2026-average-age.py` so XLSX files are read but not saved.
+  - Changed `scripts/audit-hunt-table-average-age-2026.py` to audit only and not fill/save XLSX workbooks.
+  - No `XLXS` files, hard-copy page work, research-library files, hunt-research page files, runtime engine files, prediction outputs, or `DATABASE.csv` were modified.
+- Validation:
+  - PDF files present/written: 52.
+  - Rows audited: 2391.
+  - PASS numeric hard-age codes available: 326.
+  - PDF age cells rendered from PASS hard data: 518.
+  - Blank cells with no PASS numeric hard data: 1873.
+  - Blank-but-fillable rows: 0 by PDF render audit design; every hard-data match was rendered in memory.
+  - XLSX folder diff: none.
+  - Spot PDF text extraction confirmed updated PDF content and average-age headers/values render in sample PDFs.
+  - Audit outputs: `processed_data/audits/hunt_tables_2026_pdf_average_age_audit.csv` and `processed_data/audits/hunt_tables_2026_pdf_average_age_audit.json`.
+
+## Reviewed Harvest Age And Boundary Promotion To Feeders
+- Timestamp (UTC): 2026-05-29T13:58:00Z
+- Scope:
+  - Promoted reviewed PASS numeric `average_harvest_age` values from `processed_data/harvest_age_features_by_hunt_code_latest.csv` into canonical `DATABASE.csv` and feeder/reference files.
+  - Preserved `current_age_3yr_average` as a distinct DWR Hunt Planner 3-year-age field; no existing `DATABASE.csv` columns or values were changed.
+  - Added `average_harvest_age`, `average_harvest_age_reported_hunt_year`, `average_harvest_age_source_file`, and `average_harvest_age_review_status` lineage fields where needed.
+  - Reconciled and populated `boundary_id` from canonical `DATABASE.csv` into feeder/reference files where blank, and overwrote audited downstream conflicts to the database value.
+  - Added all 52 generated 2026 public hunt-table PDFs to `processed_data/hard_data_exports/library/public_library_allowlist.json` for the hard-copy online display.
+  - Did not restore or stage user-moved/deleted local files, including `public/hard-copy/regulations/2026/2025.regs.biggame.viewer.pdf` and `processed_data/point_ladder_veiw_compressed.csv`.
+- Validation:
+  - PASS numeric age codes available: 326.
+  - PASS numeric age codes found in current `DATABASE.csv`: 319.
+  - PASS numeric age codes not found in current `DATABASE.csv`: 7 (`EB3133`, `EB3134`, `EB3140`, `EB3141`, `GO6809`, `MA1000`, `PB5058`).
+  - `DATABASE.csv`: 1,449 rows; existing-column changes: 0; `current_age_3yr_average` filled rows: 220; `average_harvest_age` filled rows: 319.
+  - `point_ladder_view.csv`: 91,712 rows; `boundary_id` filled rows: 91,712; `average_harvest_age` filled rows: 20,670; `current_age_3yr_average` filled rows: 14,454.
+  - `hunt_master_enriched.csv`: 53,225 rows; `boundary_id` filled rows: 53,225; `average_harvest_age` filled rows: 11,902; `current_age_3yr_average` filled rows: 14,390.
+  - `hunt_unit_reference_linked.csv`: 2,953 rows; `boundary_id` filled rows: 2,953; `average_harvest_age` filled rows: 638; `current_age_3yr_average` filled rows: 438.
+  - `draw_reality_engine_v2.csv`: 176,753 rows; `boundary_id` filled rows: 169,548; `average_harvest_age` filled rows: 32,662; `current_age_3yr_average` filled rows: 46,945; boundary conflicts overwritten to database: 10.
+  - `draw_reality_engine.csv`: 36,912 rows; `boundary_id` filled rows: 32,753; `average_harvest_age` filled rows: 7,185; `current_age_3yr_average` filled rows: 10,207.
+  - `draw_reality_engine_predictive_v2.csv`: 26,507 rows; `boundary_id` filled rows: 26,387; `average_harvest_age` filled rows: 6,109; `current_age_3yr_average` filled rows: 13,113.
+  - Public library allowlist: 52 hunt-table PDF items added; final allowlist count: 67.
+  - Remaining allowlist validation issues are pre-existing/moved source-document paths: 4 missing source PDF hrefs and 1 missing moved viewer PDF href.
+  - Audit outputs: `processed_data/audits/reviewed_age_boundary_promotion_2026_audit.json`, `processed_data/audits/reviewed_age_boundary_promotion_2026_audit.csv`, and `processed_data/audits/public_library_hunt_table_pdf_allowlist_2026_audit.json`.
+
+## Hunt Research Cloudflare Runtime And Outlook Dashboard
+- Timestamp (UTC): 2026-05-29T14:24:00Z
+- Scope:
+  - Updated `config.js` so Hunt Research large runtime CSV arrays are explicitly Cloudflare-first, with local GitHub Pages/LFS paths as fallback only.
+  - Bumped `HUNT_RESEARCH_DATA_VERSION` to `20260529-cloudflare-runtime-first-1`.
+  - Added `scripts/audit-research-runtime-sources.js` and wrote CSV/JSON runtime source audits for Cloudflare/R2 CSV delivery.
+  - Replaced the proof-only dashboard with a full display-only dashboard in `assets/js/research-outlook-dashboard.js` and render it above the point ladder.
+  - Added a read-only `uoga:hunt-research-rendered` snapshot event in `hunt-research.js` so the dashboard uses the already-loaded Research rows and does not duplicate giant runtime CSV downloads or alter any ladder/prediction math.
+  - Fixed the malformed dashboard script tag in `research.html` and cache-bumped `hunt-research.js`/dashboard includes.
+  - Updated `scripts/build-pages-dist.js` so `processed_data/management_context` is copied to `pages-dist` for management objective context.
+  - Did not modify `DATABASE.csv`, materializers, draw/harvest/age truth files, prediction formulas, point-ladder math, permit/allotment truth, or engine scoring.
+- Validation:
+  - `node --check config.js` passed.
+  - `node --check embed-mode.js` passed.
+  - `node --check hunt-research.js` passed.
+  - `node --check assets/js/research-outlook-dashboard.js` passed.
+  - `node --check scripts/audit-research-runtime-sources.js` passed.
+  - `node scripts/audit-research-runtime-sources.js` passed: 10/10 Cloudflare URLs OK, 0 LFS pointer responses, all three critical files OK (`point_ladder_view.csv`, `hunt_master_enriched.csv`, `hunt_unit_reference_linked.csv`).
+  - `npm.cmd run build` passed. Build still reports existing optional/missing/oversized notices: `staging-audit.html`, `data/hunt_boundaries_finalized_2026.geojson`, and oversized `processed_data/composite_hunt_unit_mapping_2026.geojson` skipped for Pages.
+  - Verified `research.html` and `pages-dist/research.html` include `research-outlook-dashboard` and the snapshot bridge cache token.
+  - Verified `pages-dist/assets/js/research-outlook-dashboard.js` exists.
+  - Verified `pages-dist/processed_data/management_context/hunt_management_objective_context.json` exists.
+  - Built-local browser check at `http://127.0.0.1:4180/research.html?hunt_code=DB1019&residency=resident&points=12&v=cloudflarefirst2` passed: dashboard rendered above point ladder, ladder rows loaded, critical CSV resources loaded from `https://json.uoga.workers.dev/processed_data/...`, and no Git LFS pointer errors.
+  - Live browser check at `https://hunt-builder.uoga.org/research.html?hunt_code=DB1019&residency=resident&points=12&v=cloudflarefirst2` passed for core data/no LFS pointer errors, but it still shows the old proof panel until this commit is deployed.
+  - Audit outputs: `processed_data/audits/research_runtime_source_audit.json` and `processed_data/audits/research_runtime_source_audit.csv`.
+
+## Hunt Research Desktop Width And Entry Hash Cleanup
+- Timestamp (UTC): 2026-05-29T14:52:00Z
+- Scope:
+  - Added desktop Research CSS overrides so `.research-shell` is centered at `min(1680px, calc(100vw - 64px))` and the main layout/cards use the available width.
+  - Expanded desktop control, chip, summary, report, and ladder/table layout widths without changing data loading, prediction formulas, point-ladder math, or runtime source arrays.
+  - Kept mobile behavior stacked below 768px and ensured signal summary cards no longer force a two-column mobile grid.
+  - Tightened the Outlook dashboard insertion fallback to prefer `insertBefore(pointLadderAccordion)`, then `detailContent.insertAdjacentElement("afterend")`, then parent append.
+  - Updated default Google Maps mode hash behavior so the entry page no longer leaves or rewrites `#google-maps` in the visible URL; Earth/DWR hash routes remain available.
+  - Did not modify `DATABASE.csv`, engine files, runtime CSVs, truth files, formulas, or source arrays.
+- Validation:
+  - `node --check assets/js/research-outlook-dashboard.js` passed.
+  - `node --check hunt-research.js` passed.
+  - `node --check app.js` passed.
+  - `npm.cmd run build` passed. Existing optional build notices remain: `staging-audit.html`, `data/hunt_boundaries_finalized_2026.geojson`, and oversized `processed_data/composite_hunt_unit_mapping_2026.geojson` skipped for Pages.
+  - Built-local desktop browser check at 1920x1080 passed: Research shell width 1680px, controls/result cards 1632px, ladder 1594px, table 1568px, dashboard above ladder, and no Git LFS pointer errors.
+  - Built-local mobile browser check at 390px passed: control/chip/summary grids one-column, signal cards auto-column, table overflow remains horizontal scroll.
+  - Built-local entry URL check from `/#google-maps` rewrote to `/` with empty hash.

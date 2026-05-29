@@ -259,8 +259,13 @@ def scan_workbooks(age_lookup: dict[str, dict[str, str]]) -> tuple[list[dict[str
 
 def main() -> None:
     age_lookup = load_pass_age_lookup()
-    fill_summary = fill_workbooks(age_lookup)
     rows, summary = scan_workbooks(age_lookup)
+    fill_summary = {
+        "files_with_cells_filled": 0,
+        "cells_filled_this_run": 0,
+        "filled_by_file": {},
+        "mode": "AUDIT_ONLY_NO_XLSX_EDITS",
+    }
     summary["fill_summary"] = fill_summary
 
     AUDIT_CSV.parent.mkdir(parents=True, exist_ok=True)
