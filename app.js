@@ -336,34 +336,90 @@ function inferResearchDrawPool(hunt) {
   ));
 }
 
-function openHuntResearch(huntCode, residency = 'Resident', points = 12, drawPool = 'standard') {
-  const code = String(huntCode || '').trim().toUpperCase();
-  const normalizedResidency = String(residency || '').trim().toLowerCase().replace(/[\s_-]+/g, '') === 'nonresident'
+function normalizeResearchResidency(value) {
+  return String(value || '').trim().toLowerCase().replace(/[\s_-]+/g, '') === 'nonresident'
     ? 'Nonresident'
     : 'Resident';
+}
+
+function normalizeResearchPoints(value) {
+  const parsed = Number(value);
+  return Number.isFinite(parsed) && parsed >= 0 ? Math.round(parsed) : 12;
+}
+
+function persistResearchSelectionContext(record) {
+  if (!record?.hunt_code) return;
+  const payload = {
+    ...record,
+    huntCode: record.hunt_code,
+    source: record.source || 'hunt-builder',
+    updated_at: Number(record.updated_at) || Date.now()
+  };
+  try {
+    sessionStorage.setItem('selectedHuntForResearch', JSON.stringify(payload));
+  } catch (_) {}
+  try {
+    localStorage.setItem('selectedHuntForResearch', JSON.stringify(payload));
+    localStorage.setItem('selected_hunt_code', payload.hunt_code);
+    localStorage.setItem('selected_hunt_research_residency', payload.residency || 'Resident');
+    localStorage.setItem('selected_hunt_research_draw_pool', payload.draw_pool || 'standard');
+    localStorage.setItem('selected_hunt_research_points', String(payload.selected_points ?? payload.points ?? 12));
+  } catch (_) {}
+}
+
+function openHuntResearch(huntCode, residency = 'Resident', points = 12, drawPool = 'standard', context = {}) {
+  const code = String(huntCode || '').trim().toUpperCase();
+  if (!code) return;
+  const normalizedResidency = normalizeResearchResidency(residency);
+  const normalizedPoints = normalizeResearchPoints(points);
   const normalizedDrawPool = normalizeResearchDrawPool(drawPool);
+  const selectedContext = {
+    ...context,
+    hunt_code: code,
+    huntCode: code,
+    residency: normalizedResidency,
+    selected_points: normalizedPoints,
+    points: normalizedPoints,
+    draw_pool: normalizedDrawPool,
+    updated_at: Date.now(),
+    source: 'hunt-builder'
+  };
 
-  localStorage.setItem('selected_hunt_code', code);
-  localStorage.setItem('selected_hunt_research_residency', normalizedResidency);
-  localStorage.setItem('selected_hunt_research_draw_pool', normalizedDrawPool);
-  localStorage.setItem('selected_hunt_research_points', String(points));
+  persistResearchSelectionContext(selectedContext);
 
-  window.location.href = `./research.html?hunt_code=${encodeURIComponent(code)}&draw_pool=${encodeURIComponent(normalizedDrawPool)}`;
+  const params = new URLSearchParams({
+    hunt_code: code,
+    residency: normalizedResidency,
+    points: String(normalizedPoints),
+    draw_pool: normalizedDrawPool
+  });
+  window.location.href = `./research.html?${params.toString()}`;
 }
 
 function buildBackpackHuntRecord(hunt, residency = 'Resident', points = 12) {
   if (!hunt) return null;
   const huntCode = getHuntCode(hunt);
   if (!huntCode) return null;
+  const normalizedResidency = normalizeResearchResidency(residency);
+  const normalizedPoints = normalizeResearchPoints(points);
   return {
     hunt_code: huntCode,
+    huntCode,
     hunt_name: firstNonEmpty(hunt.hunt_name, getUnitName(hunt), getHuntTitle(hunt), huntCode),
     unit: getUnitName(hunt),
+    unit_code: getUnitCode(hunt),
     species: getSpeciesDisplay(hunt),
+    sex: getNormalizedSex(hunt),
     weapon: getWeapon(hunt),
-    residency,
+    hunt_type: getHuntType(hunt),
+    hunt_class: getHuntCategory(hunt),
+    residency: normalizedResidency,
     draw_pool: inferResearchDrawPool(hunt),
-    selected_points: points,
+    selected_points: normalizedPoints,
+    points: normalizedPoints,
+    boundary_id: getBoundaryId(hunt),
+    season_dates: getDates(hunt),
+    source: 'hunt-builder',
     updated_at: Date.now()
   };
 }
@@ -388,7 +444,7 @@ function saveHuntAndOpenResearch(hunt, residency = 'Resident', points = 12) {
   const record = saveHuntToBackpack(hunt, residency, points);
   const huntCode = record?.hunt_code || getHuntCode(hunt);
   if (!huntCode) return;
-  openHuntResearch(huntCode, residency, points, record?.draw_pool || inferResearchDrawPool(hunt));
+  openHuntResearch(huntCode, record?.residency || residency, record?.selected_points ?? points, record?.draw_pool || inferResearchDrawPool(hunt), record || {});
 }
 
 // --- DATA NORMALIZATION ---

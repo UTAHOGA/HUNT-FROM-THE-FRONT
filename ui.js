@@ -122,13 +122,22 @@ window.UOGA_UI = (() => {
     if (!huntCode) return null;
     return {
       hunt_code: huntCode,
+      huntCode,
       hunt_name: safeText(record?.hunt_name || record?.huntName || record?.title || huntCode).trim() || huntCode,
       unit: safeText(record?.unit || record?.unit_name || record?.unitName || record?.dwr_unit_name || '').trim(),
+      unit_code: safeText(record?.unit_code || record?.unitCode || '').trim(),
       species: safeText(record?.species || '').trim(),
+      sex: safeText(record?.sex || record?.sex_type || '').trim(),
       weapon: safeText(record?.weapon || '').trim(),
+      hunt_type: safeText(record?.hunt_type || record?.huntType || '').trim(),
+      hunt_class: safeText(record?.hunt_class || record?.huntClass || '').trim(),
       residency: safeText(record?.residency || '').trim(),
       draw_pool: normalizeDrawPool(record?.draw_pool || record?.drawPool),
       selected_points: record?.selected_points ?? record?.points ?? null,
+      points: record?.selected_points ?? record?.points ?? null,
+      boundary_id: safeText(record?.boundary_id || record?.boundaryId || '').trim(),
+      season_dates: safeText(record?.season_dates || record?.seasonDates || record?.dates || '').trim(),
+      source: safeText(record?.source || 'hunt-builder').trim(),
       projected_total_probability_pct: record?.projected_total_probability_pct ?? null,
       updated_at: Number(record?.updated_at) || Date.now()
     };
@@ -190,6 +199,51 @@ window.UOGA_UI = (() => {
     return `./hard-copy.html?hunt_code=${encodeURIComponent(item.hunt_code)}`;
   }
 
+  function normalizeResidency(value) {
+    return safeText(value).trim().toLowerCase().replace(/[\s_-]+/g, '') === 'nonresident'
+      ? 'Nonresident'
+      : 'Resident';
+  }
+
+  function normalizePoints(value) {
+    const parsed = Number(value);
+    return Number.isFinite(parsed) && parsed >= 0 ? Math.round(parsed) : 12;
+  }
+
+  function researchHref(item) {
+    const params = new URLSearchParams({
+      hunt_code: item.hunt_code,
+      residency: normalizeResidency(item.residency),
+      points: String(normalizePoints(item.selected_points)),
+      draw_pool: normalizeDrawPool(item.draw_pool)
+    });
+    return `./research.html?${params.toString()}`;
+  }
+
+  function persistResearchContext(item) {
+    if (!item?.hunt_code) return;
+    const payload = {
+      ...item,
+      huntCode: item.hunt_code,
+      residency: normalizeResidency(item.residency),
+      selected_points: normalizePoints(item.selected_points),
+      points: normalizePoints(item.selected_points),
+      draw_pool: normalizeDrawPool(item.draw_pool),
+      source: item.source || 'hunt-backpack',
+      updated_at: Date.now()
+    };
+    try {
+      sessionStorage.setItem('selectedHuntForResearch', JSON.stringify(payload));
+    } catch (_) {}
+    try {
+      localStorage.setItem('selectedHuntForResearch', JSON.stringify(payload));
+      localStorage.setItem(SELECTED_HUNT_KEY, payload.hunt_code);
+      localStorage.setItem('selected_hunt_research_residency', payload.residency);
+      localStorage.setItem('selected_hunt_research_points', String(payload.selected_points));
+      localStorage.setItem('selected_hunt_research_draw_pool', payload.draw_pool);
+    } catch (_) {}
+  }
+
   function createTrayMarkup(title, items, sectionType) {
     if (!items.length) {
       const emptyTitle = sectionType === 'saved' ? 'No saved hunts yet' : 'No recent hunts yet';
@@ -211,7 +265,7 @@ window.UOGA_UI = (() => {
       </div>
       <div class="uoga-backpack-list">
         ${items.map((item) => {
-          const researchHref = `./research.html?hunt_code=${encodeURIComponent(item.hunt_code)}&draw_pool=${encodeURIComponent(normalizeDrawPool(item.draw_pool))}`;
+          const itemResearchHref = researchHref(item);
           const dataHref = huntDataHref(item);
           return `
           <article class="uoga-backpack-item" data-hunt-code="${escapeHtml(item.hunt_code)}">
@@ -220,13 +274,13 @@ window.UOGA_UI = (() => {
                 <p class="uoga-backpack-kicker">${sectionType === 'saved' ? 'Saved shortlist' : 'Recently opened'}</p>
                 <h4>${escapeHtml(item.hunt_code)}</h4>
               </div>
-              <a class="uoga-backpack-chip" href="${researchHref}" data-backpack-link="research" data-hunt-code="${escapeHtml(item.hunt_code)}" data-draw-pool="${escapeHtml(normalizeDrawPool(item.draw_pool))}">Resume</a>
+              <a class="uoga-backpack-chip" href="${itemResearchHref}" data-backpack-link="research" data-hunt-code="${escapeHtml(item.hunt_code)}" data-draw-pool="${escapeHtml(normalizeDrawPool(item.draw_pool))}">Resume</a>
             </div>
             <div class="uoga-backpack-name">${escapeHtml(item.hunt_name || item.hunt_code)}</div>
             <div class="uoga-backpack-meta">${escapeHtml(itemMeta(item) || 'Hunt details will fill in as more research is saved.')}</div>
             <div class="uoga-backpack-subvalue">${escapeHtml(itemSubvalue(item))}</div>
             <div class="uoga-backpack-actions">
-              <a href="${researchHref}" data-backpack-link="research" data-hunt-code="${escapeHtml(item.hunt_code)}" data-draw-pool="${escapeHtml(normalizeDrawPool(item.draw_pool))}">Research</a>
+              <a href="${itemResearchHref}" data-backpack-link="research" data-hunt-code="${escapeHtml(item.hunt_code)}" data-draw-pool="${escapeHtml(normalizeDrawPool(item.draw_pool))}">Research</a>
               <a href="${dataHref}" data-backpack-link="hunt-data" data-hunt-code="${escapeHtml(item.hunt_code)}">Hunt Data</a>
               <a href="./index.html?hunt_code=${encodeURIComponent(item.hunt_code)}" data-backpack-link="planner" data-hunt-code="${escapeHtml(item.hunt_code)}">Planner</a>
               ${sectionType === 'saved'
@@ -423,6 +477,8 @@ window.UOGA_UI = (() => {
       link.addEventListener('click', () => {
         const huntCode = link.getAttribute('data-hunt-code');
         if (huntCode) setSelectedHuntCode(huntCode);
+        const item = [...basket, ...freshRecent].find((candidate) => normalizeKey(candidate.hunt_code) === normalizeKey(huntCode));
+        if (item && link.getAttribute('data-backpack-link') === 'research') persistResearchContext(item);
         if (link.hasAttribute('data-draw-pool')) {
           const drawPool = normalizeDrawPool(link.getAttribute('data-draw-pool'));
           localStorage.setItem('selected_hunt_research_draw_pool', drawPool);

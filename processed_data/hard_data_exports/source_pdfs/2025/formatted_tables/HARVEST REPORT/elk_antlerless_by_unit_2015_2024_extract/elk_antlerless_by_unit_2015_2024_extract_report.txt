@@ -1,9 +1,0 @@
-ELK antlerless by unit extract report
-Source PDF: pipeline/RAW/hunt_unit_database/2025/pdf/harvest_report/ELK/2024 ELK ANTLERLESS BY UNIT 2015-2024.pdf
-Pages scanned: 2
-Rows extracted: 37
-Skipped lines: 0
-Footnote: *Data includes mitigation harvest.
-
-Columns:
-Unit, Unit name, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024

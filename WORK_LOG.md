@@ -7282,3 +7282,143 @@ o_table=0).
 - Cleanup:
   - Build-generated library manifests and temporary UI inspection screenshots/reports were removed or restored so this change set stays UI-only.
   - Did not modify `DATABASE.csv`, prediction formulas, runtime CSV data, draw truth, harvest truth, age truth, point-ladder math, or permit/allotment truth.
+
+## Research Contract, Ladder Polish, And Mobile QA Guardrail
+- Timestamp (UTC): 2026-05-29T19:52:08Z
+- Implementation commit observed during task: `d55689e58fd3a7b9dce1b76405b30c69931362b4`.
+- Cleanup/documentation commit: pending at log-write time; final commit hash recorded in Codex final report.
+- Files changed:
+  - `AGENTS.md`
+  - `assets/js/research-outlook-dashboard.js`
+  - `hunt-research.js`
+  - `scripts/build-hunt-research-classification-layer.js`
+  - `scripts/build-pages-dist.js`
+  - `style.css`
+  - `index.html`
+  - `research.html`
+  - `coverage.html`
+  - `hard-copy.html`
+  - `hard-data.html`
+  - `verify.html`
+  - `processed_data/research_page/hunt_application_outlook.json`
+  - `processed_data/research_page/hunt_application_outlook.csv`
+  - `processed_data/research_page/demographic_hunt_recommendations.json`
+  - `processed_data/audits/hunt_classification_layer_audit.json`
+- AGENTS.md update:
+  - Added a standing mandatory mobile QA final pass for every website/UI/public-output/page-build task.
+  - Mobile QA now requires no horizontal overflow, usable sticky/fixed navigation, readable contrast, tappable controls, accessible tables/maps/PDF overlays, and desktop regression checks.
+- Research contract:
+  - Regenerated `hunt_application_outlook.json` and CSV as the clean display contract.
+  - Added display-safe fields including draw pool, hunt type, boundary ID, resident/nonresident/total permits, management note, model/rule version, availability status, and harvest/age source fields.
+  - Output counts: 2,898 outlook rows, 24,924 tag rows, 344 sleeper rows, 184 new-hunt rows.
+  - Validation counts: `output_average_harvest_age_zero_count = 0`, `average_days_hunted_mapped_as_age_suspect_count = 0`, `blocked_rows = 0`.
+- Research dashboard:
+  - Dashboard now loads `processed_data/research_page/hunt_application_outlook.json` Cloudflare-first, with local fallback.
+  - Added a short runtime fetch timeout so missing R2 copies do not leave the dashboard stuck on loading.
+  - Added a resilient snapshot retry so the dashboard renders after core Research rows are ready even when the core event arrives late.
+  - Dashboard still uses selected point-row odds where available, while using the contract for decision label, recommendation, permits, quality, badges, and management context.
+  - Source/freshness/model details remain collapsed by default and raw runtime source URLs remain hidden.
+- Ladder polish:
+  - Bonus ladder headers now show `2026 Max Point Draw` and `2026 Random Draw` with `50% of Tags`.
+  - Irrelevant/low-value cells remain blank instead of repeating `Not available`.
+  - Existing `Your Point Position` and `Guaranteed Draw` markers remain visible.
+- Site-wide mobile optimization:
+  - Added shared mobile guardrails in `style.css` for viewport containment, horizontal nav scrolling, readable/tappable controls, and no hidden overflow.
+  - Bumped `style.css`, `hunt-research.js`, and dashboard script cache tokens on public pages.
+  - `scripts/build-pages-dist.js` now publishes `processed_data/research_page` so the Research contract is available in built output.
+- Validation:
+  - `node --check assets/js/research-outlook-dashboard.js` passed.
+  - `node --check hunt-research.js` passed.
+  - `node --check scripts/build-hunt-research-classification-layer.js` passed.
+  - `node --check scripts/build-pages-dist.js` passed.
+  - `node scripts/build-hunt-research-classification-layer.js` passed.
+  - `npm.cmd run build` passed. Existing optional build notices remain: `staging-audit.html`, `data/hunt_boundaries_finalized_2026.geojson`, and oversized `processed_data/composite_hunt_unit_mapping_2026.geojson` skipped for Pages.
+  - `git diff --check` passed.
+  - Protected file diff check confirmed no changes to `DATABASE.csv`, `processed_data/point_ladder_view.csv`, or `processed_data/draw_reality_engine_predictive_v2.csv`.
+- Browser/mobile QA:
+  - Research desktop and mobile confirmed: dashboard above ladder, contract recommendation visible, raw source URLs hidden, source details collapsed, ladder headers correct, no repeated `Not available` ladder cells, user rung marker present.
+  - Cross-page desktop/mobile smoke test confirmed no horizontal overflow for Builder, Hunt Research, Research Library, Verify, Coverage, and Hard Data at 390px and 1280px widths.
+  - Header/nav position remained sticky or fixed across tested pages.
+- Cleanup:
+  - A generated commit named `g` included unrelated library/pages-dist build churn and a temporary `.codex-ui-smoke-server.pid` file.
+  - A follow-up cleanup commit restores unrelated generated library artifacts to the prior baseline and removes the temporary pid file, without rewriting history.
+  - Did not modify prediction formulas, `DATABASE.csv`, draw truth, harvest truth, age truth, permit/allotment truth, p_draw, or point-ladder math.
+
+## Hunt Tables 2026 MASTER XLSX Contract Refactor
+- Timestamp (UTC): 2026-05-29T22:11:00Z
+- Scope:
+  - Refactored the single-workbook generator:
+    - `scripts/regenerate-hunt-tables-2026-clean-xlsx.py`
+  - Regenerated:
+    - `processed_data/hard_data_exports/hunt_tables/2026/CLEAN_XLXS_STAGED/MASTER.xlsx`
+  - Added validation artifact:
+    - `processed_data/audits/hunt_tables_2026_master_xlsx_validation.json`
+- Output contract implemented:
+  - Exact 15-column order:
+    - `HUNT TYPE`
+    - `SPECIES`
+    - `SEX TYPE`
+    - `WEAPON`
+    - `HUNT CLASS`
+    - `SEASON`
+    - `HUNT NAME`
+    - `HUNT CODE`
+    - `2026 PERMITS RES`
+    - `2026 PERMITS NR`
+    - `2026 PERMITS TOTAL`
+    - `HARVEST YEAR`
+    - `2026 HARVEST SUCCESS`
+    - `2026 HARVEST AGE`
+    - `2026 HARVEST DAYS`
+  - Header styling enforced:
+    - all caps
+    - Arial 10
+    - wrap text enabled
+    - centered
+    - enlarged header row for multiline text
+- Source/data rules implemented:
+  - Workbook now builds directly from `pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv`.
+  - Harvest fields now join from `processed_data/harvest_quality_features_all_years_by_hunt_code.csv` filtered to `model_target_year = 2026`.
+  - Permit values are sourced only from published permit columns in priority order:
+    - `permits_2026_draw_*`
+    - `permits_2026_*`
+    - `permit_allotment_2026_*`
+  - No permit calculations or inferred splits were added.
+  - If only total permit data exists, resident/nonresident cells remain blank.
+  - `NOTES` was removed entirely from the output.
+  - File splitting was intentionally not implemented; only the single `MASTER.xlsx` was regenerated.
+- Classification results:
+  - Hunt type counts:
+    - `GENERAL`: 311
+    - `HARVEST OBJECTIVE`: 1
+    - `L.E.`: 729
+    - `O.I.L.`: 82
+    - `OTC`: 290
+    - `P.L.E.`: 15
+    - `PURSUIT`: 11
+    - `SPORTSMAN`: 10
+  - Hunt class counts:
+    - `CONSERVATION`: 28
+    - `CWMU`: 319
+    - `EXPO`: 4
+    - `GENERAL BULL`: 5
+    - `PRIVATE`: 281
+    - `SPIKE`: 3
+    - `YOUTH`: 7
+- Source nuance resolved:
+  - `DATABASE.csv` had blank `season` cells for `BR1000` and `BR1001`.
+  - The generator filled those two season values from local reviewed note files:
+    - `pipeline/RAW/hunt_unit_database/2026/notes/DATABASE/BR1000-notes.md`
+    - `pipeline/RAW/hunt_unit_database/2026/notes/DATABASE/BR1001-notes.md`
+  - Validation then confirmed zero blank season rows in the generated workbook.
+- Validation:
+  - `python -m py_compile scripts/regenerate-hunt-tables-2026-clean-xlsx.py` passed.
+  - `python scripts/regenerate-hunt-tables-2026-clean-xlsx.py` passed.
+  - Workbook validation confirmed:
+    - exact header order match
+    - duplicate hunt code count `0`
+    - row count `1449`
+    - missing season count `0`
+    - harvest-joined rows `1122`
+    - permit total-only rows `235`
+    - permit split rows `938`

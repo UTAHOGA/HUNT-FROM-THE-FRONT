@@ -10,6 +10,7 @@ const rootFiles = [
   'research.html',
   'hunt-research.html',
   'verify.html',
+  'verify.htmlm',
   'hard-copy.html',
   'hard-data.html',
   'coverage.html',
@@ -106,6 +107,7 @@ const dirsToCopy = [
   'processed_data/library',
   'processed_data/management_context',
   'processed_data/production',
+  'processed_data/public_contracts',
   'processed_data/research_page',
   'public/hard-copy',
 ];
