@@ -6978,3 +6978,28 @@ o_table=0).
   - Built-local desktop browser check at 1920x1080 passed: Research shell width 1680px, controls/result cards 1632px, ladder 1594px, table 1568px, dashboard above ladder, and no Git LFS pointer errors.
   - Built-local mobile browser check at 390px passed: control/chip/summary grids one-column, signal cards auto-column, table overflow remains horizontal scroll.
   - Built-local entry URL check from `/#google-maps` rewrote to `/` with empty hash.
+
+## Hunt Research Desktop Dashboard Grid Rework
+- Timestamp (UTC): 2026-05-29T15:42:00Z
+- Implementation commit: b90c8428
+- Files changed:
+  - `research.html`
+  - `assets/js/research-outlook-dashboard.js`
+- Scope:
+  - Reworked the Hunt Application Outlook add-on from stacked report panels into a compact desktop dashboard using a full-width hero strip, three-column dashboard grid, compact comparable hunt cards, and collapsed source/freshness/model details.
+  - Kept dashboard insertion immediately before `#pointLadderAccordion`, so the dashboard renders above the point ladder and the ladder remains full-width below.
+  - Tightened the desktop Research layout so the Hunter Inputs card, existing summary chips, and prediction summary use horizontal space more effectively; the summary grid now uses six columns on wide desktop screens.
+  - Kept source paths inside a collapsed `<details class="uoga-source-details">` block instead of always-visible technical text.
+  - Preserved management objective language as context only with a `Management Plan Context` badge and benchmark-only note.
+  - Enforced age display rules in the dashboard: zero or missing average harvest age renders as `No verified age data`; average days hunted is displayed only as days hunted, not as age.
+  - Did not modify `DATABASE.csv`, engine files, prediction formulas, draw/harvest/age truth files, point-ladder math, permit/allotment truth, runtime CSVs, or Cloudflare/R2 source arrays.
+- Validation:
+  - `node --check assets/js/research-outlook-dashboard.js` passed.
+  - `node --check hunt-research.js` passed.
+  - `npm.cmd run build` passed. Existing optional build notices remain: `staging-audit.html`, `data/hunt_boundaries_finalized_2026.geojson`, and oversized `processed_data/composite_hunt_unit_mapping_2026.geojson` skipped for Pages.
+  - Verified `research.html` includes `research-outlook-dashboard` with cache token `outlook-dashboard-grid-1`.
+  - Verified `pages-dist/research.html` includes `research-outlook-dashboard`.
+  - Verified `pages-dist/assets/js/research-outlook-dashboard.js` exists.
+  - Built-local desktop browser check at 1920x1080 passed for `research.html?hunt_code=EB3024&draw_pool=standard&residency=resident&points=30&v=dashboardgrid1`: controls/result cards 1632px wide, existing summary grid six columns, dashboard 1598px wide, dashboard grid three columns, hero strip four columns, comparable hunts five columns, source details collapsed by default, dashboard above ladder, ladder/table full-width below, and no Git LFS pointer errors.
+  - Built-local mobile browser check at 390px passed: dashboard grid, hero, comparable cards, and summary grid stack to one column; ladder remains horizontally scrollable.
+  - The only 404 observed during the local browser check was the pre-existing decorative image path `assets/logos/logos/White-Topo-2-1920.png`; no Research data, dashboard script, ladder, or runtime file failed.
