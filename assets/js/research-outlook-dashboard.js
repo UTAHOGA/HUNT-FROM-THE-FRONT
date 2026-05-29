@@ -631,9 +631,11 @@
       }
       .uoga-outlook-hero {
         align-items: stretch;
-        background: rgba(255,255,255,.06);
-        border: 1px solid rgba(170,124,84,.35);
+        background:
+          linear-gradient(180deg, rgba(255,250,242,.96), rgba(246,235,219,.96));
+        border: 1px solid rgba(122,76,38,.28);
         border-radius: 18px;
+        box-shadow: 0 12px 28px rgba(58,37,18,.10);
         display: grid;
         gap: 12px;
         grid-template-columns: minmax(280px, 1.4fr) repeat(3, minmax(150px, .65fr));
@@ -646,7 +648,7 @@
       .uoga-outlook-hero-title p,
       .uoga-outlook-panel h3,
       .uoga-source-details summary {
-        color: #6e4323;
+        color: #5c2f10;
         font-size: 11px;
         font-weight: 950;
         letter-spacing: .06em;
@@ -664,7 +666,7 @@
         overflow-wrap: anywhere;
       }
       .uoga-outlook-hero-title span {
-        color: var(--muted);
+        color: #5f4936;
         display: block;
         font-weight: 850;
         margin-top: 6px;
@@ -690,9 +692,10 @@
         min-width: 0;
       }
       .uoga-outlook-panel {
-        background: rgba(255,255,255,.045);
-        border: 1px solid rgba(170,124,84,.28);
+        background: rgba(255,253,248,.82);
+        border: 1px solid rgba(122,76,38,.22);
         border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(58,37,18,.08);
         min-height: auto;
         min-width: 0;
         padding: 14px;
@@ -713,15 +716,15 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
       .uoga-outlook-metric {
-        background: rgba(255, 255, 255, .56);
-        border: 1px solid rgba(124, 77, 38, 0.13);
+        background: rgba(255, 248, 238, .72);
+        border: 1px solid rgba(124, 77, 38, 0.18);
         border-radius: 13px;
         display: grid;
         gap: 2px;
         padding: 8px 9px;
       }
       .uoga-outlook-metric span {
-        color: #7b5a39;
+        color: #7a3f0c;
         font-size: 11px;
         font-weight: 900;
         letter-spacing: .04em;
@@ -736,7 +739,7 @@
       .uoga-outlook-metric small,
       .uoga-outlook-muted,
       .uoga-outlook-note {
-        color: var(--muted);
+        color: #5f4936;
         line-height: 1.45;
       }
       .uoga-badge {
@@ -765,7 +768,7 @@
       .uoga-badge.is-modeled {
         background: rgba(124, 77, 38, .12);
         border-color: rgba(124, 77, 38, .26);
-        color: #6e4323;
+        color: #5c2f10;
       }
       .uoga-badge.is-limited,
       .uoga-badge.is-status {
@@ -792,7 +795,7 @@
         vertical-align: top;
       }
       .uoga-comparable-table th {
-        color: #6e4323;
+        color: #5c2f10;
         font-size: 11px;
         font-weight: 950;
         letter-spacing: .05em;
@@ -803,14 +806,14 @@
         font-weight: 800;
       }
       .uoga-comparable-table td span {
-        color: var(--muted);
+        color: #5f4936;
         display: block;
         font-weight: 700;
         margin-top: 2px;
       }
       .uoga-source-details {
-        background: rgba(255,255,255,.035);
-        border: 1px solid rgba(170,124,84,.25);
+        background: rgba(255,253,248,.72);
+        border: 1px solid rgba(122,76,38,.22);
         border-radius: 14px;
         margin-top: 4px;
         min-width: 0;

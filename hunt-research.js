@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
   const ENGINE_MODE = (window.UOGA_CONFIG && window.UOGA_CONFIG.HUNT_RESEARCH_ENGINE_MODE)
     ? String(window.UOGA_CONFIG.HUNT_RESEARCH_ENGINE_MODE).trim().toLowerCase()
     : 'observed';
@@ -93,6 +93,7 @@
     summaryPoints: document.getElementById('summaryPoints'),
     summaryStatus: document.getElementById('summaryStatus'),
     summaryOdds: document.getElementById('summaryOdds'),
+    selectedOutlookText: document.getElementById('selectedOutlookText'),
     summaryTrend: document.getElementById('summaryTrend'),
     summaryTrendText: document.getElementById('summaryTrendText'),
     summaryRecommendation: document.getElementById('summaryRecommendation'),
@@ -281,10 +282,19 @@
     return randomDraw ? formatOddsAsOneInOrPercent(randomDraw) : '';
   }
 
-  function formatEmpty(value) {
+  function cleanDisplayValue(value) {
     const text = String(value ?? '').trim();
-    if (!text || text === '0.000%' || text.toLowerCase() === 'not available') return 'Not available';
+    const lower = text.toLowerCase();
+    if (!text || text === '0.000%' || ['not available', 'not applicable', 'n/a', 'null', 'undefined'].includes(lower)) return '';
     return text;
+  }
+
+  function renderLadderCell(value) {
+    const text = cleanDisplayValue(value);
+    if (!text) {
+      return '<td class="is-empty-cell" aria-label="No useful data"></td>';
+    }
+    return `<td>${escapeHtml(text || 'Not available')}</td>`;
   }
 
   function formatGapStatus(gap) {
@@ -926,12 +936,18 @@
   function renderOutlookLight(signal) {
     if (!els.selectedOutlook) return;
     const active = signal || 'red';
+    const labels = {
+      red: 'Long shot / low chance',
+      yellow: 'On the line / watch closely',
+      green: 'In reach / strong position',
+    };
     els.selectedOutlook.innerHTML = `
-      <span class="outlook-light red${active === 'red' ? ' is-active' : ''}"></span>
-      <span class="outlook-light yellow${active === 'yellow' ? ' is-active' : ''}"></span>
-      <span class="outlook-light green${active === 'green' ? ' is-active' : ''}"></span>
+      <span class="outlook-light red${active === 'red' ? ' is-active' : ''}" aria-hidden="true"></span>
+      <span class="outlook-light yellow${active === 'yellow' ? ' is-active' : ''}" aria-hidden="true"></span>
+      <span class="outlook-light green${active === 'green' ? ' is-active' : ''}" aria-hidden="true"></span>
     `;
-    els.selectedOutlook.setAttribute('aria-label', `${active} outlook`);
+    els.selectedOutlook.setAttribute('aria-label', `${labels[active] || labels.red} draw outlook`);
+    if (els.selectedOutlookText) els.selectedOutlookText.textContent = labels[active] || labels.red;
   }
 
   function getTrendSignal(row) {
@@ -945,9 +961,9 @@
     if (!els.summaryTrend) return;
     const active = signal || 'red';
     els.summaryTrend.innerHTML = `
-      <span class="outlook-light red${active === 'red' ? ' is-active' : ''}"></span>
-      <span class="outlook-light yellow${active === 'yellow' ? ' is-active' : ''}"></span>
-      <span class="outlook-light green${active === 'green' ? ' is-active' : ''}"></span>
+      <span class="outlook-light red${active === 'red' ? ' is-active' : ''}" aria-hidden="true"></span>
+      <span class="outlook-light yellow${active === 'yellow' ? ' is-active' : ''}" aria-hidden="true"></span>
+      <span class="outlook-light green${active === 'green' ? ' is-active' : ''}" aria-hidden="true"></span>
     `;
     els.summaryTrend.setAttribute('aria-label', `${active} trend`);
   }
@@ -956,17 +972,35 @@
     if (!els.ladderHeaderCol1 || !els.ladderHeaderCol2 || !els.ladderHeaderCol3 || !els.ladderHeaderCol4 || !els.ladderHeaderCol5) return;
     const headersByMode = {
       [DRAW_MODE.PREFERENCE]: ['Points', '2025 Draw Results', '2026 Draw Odds', 'Point Status', 'Cutoff / Notes'],
-      [DRAW_MODE.BONUS]: ['Points', '2025 Draw Result', '2026 Bonus Projection', 'Random / Regular Chance', 'Notes'],
+      [DRAW_MODE.BONUS]: [
+        'Points',
+        '2025 Draw Results',
+        { label: '2026 Max Point Draw', sublabel: '50% of tags' },
+        { label: '2026 Random Draw', sublabel: '50% of tags' },
+        'Notes',
+      ],
       [DRAW_MODE.YOUTH_RESERVE]: ['Youth Points', 'Youth Reserved Pool', 'Estimated Youth Odds', 'Rollover / Notes', 'Notes'],
       [DRAW_MODE.ALLOCATION_AVAILABILITY]: ['Status', 'Permit Availability', '2026 Allocation', 'Rule / Source', 'Notes'],
       [DRAW_MODE.STATUS_ONLY]: ['Points', '2025 Result', '2026 Status', 'Estimated Odds', 'Notes'],
     };
     const headers = headersByMode[mode] || headersByMode[DRAW_MODE.STATUS_ONLY];
-    els.ladderHeaderCol1.textContent = headers[0];
-    els.ladderHeaderCol2.textContent = headers[1];
-    els.ladderHeaderCol3.textContent = headers[2];
-    els.ladderHeaderCol4.textContent = headers[3];
-    els.ladderHeaderCol5.textContent = headers[4];
+    [
+      els.ladderHeaderCol1,
+      els.ladderHeaderCol2,
+      els.ladderHeaderCol3,
+      els.ladderHeaderCol4,
+      els.ladderHeaderCol5,
+    ].forEach((cell, index) => {
+      const header = headers[index];
+      if (typeof header === 'string') {
+        cell.textContent = header;
+        return;
+      }
+      cell.innerHTML = `
+        <span class="ladder-header-main">${escapeHtml(header.label)}</span>
+        <span class="ladder-header-subline">${escapeHtml(header.sublabel)}</span>
+      `;
+    });
   }
 
   function getDrawPoolPositionLabel(meta, row, referenceRow) {
@@ -1441,11 +1475,129 @@
     document.body.classList.remove('modal-open');
   }
 
+  function strictNum(value) {
+    const text = String(value ?? '').trim();
+    if (!text || !/[0-9]/.test(text)) return null;
+    const parsed = Number(text.replace(/[^0-9.-]/g, ''));
+    return Number.isFinite(parsed) ? parsed : null;
+  }
+
+  function firstNumericValue(sources, keys) {
+    for (const source of sources) {
+      for (const key of keys) {
+        const parsed = strictNum(source?.[key]);
+        if (parsed !== null) return parsed;
+      }
+    }
+    return null;
+  }
+
+  function formatCompactNumber(value) {
+    const parsed = strictNum(value);
+    if (parsed === null) return '';
+    if (Number.isInteger(parsed)) return parsed.toLocaleString();
+    return Number(parsed.toFixed(1)).toString();
+  }
+
+  function formatMetricPercent(value) {
+    const parsed = strictNum(value);
+    if (parsed === null) return '';
+    const normalized = parsed <= 1 ? parsed * 100 : parsed;
+    return `${Number(normalized.toFixed(1)).toString()}%`;
+  }
+
+  function getPermitSummaryLine(row, referenceRow, meta) {
+    const sources = [row, referenceRow, meta];
+    const resident = firstNumericValue(sources, ['permits_2026_res', 'permit_allotment_2026_res', 'public_resident_permits']);
+    const nonresident = firstNumericValue(sources, ['permits_2026_nr', 'permit_allotment_2026_nr', 'public_nonresident_permits']);
+    const publishedTotal = firstNumericValue(sources, ['permits_2026_total', 'permit_allotment_2026_total', 'public_permits_2026']);
+    const computedTotal = resident !== null || nonresident !== null ? (resident || 0) + (nonresident || 0) : null;
+    const total = publishedTotal !== null ? publishedTotal : computedTotal;
+    if (resident === null && nonresident === null && total === null) return '';
+    const parts = [];
+    if (resident !== null) parts.push(`Res ${resident.toLocaleString()}`);
+    if (nonresident !== null) parts.push(`NonRes ${nonresident.toLocaleString()}`);
+    if (total !== null) parts.push(`Total ${total.toLocaleString()}`);
+    return `2026 Permits: ${parts.join(' | ')}`;
+  }
+
+  function getLadderHarvestSnapshotLine(row, referenceRow, meta) {
+    const sources = [row, referenceRow, meta];
+    const success = firstAvailable(row, ['harvest_success_percent_2025', 'success_percent', 'percent_success', 'prior_year_success_rate'])
+      || firstAvailable(referenceRow, ['harvest_success_percent_2025', 'success_percent', 'percent_success', 'prior_year_success_rate'])
+      || firstAvailable(meta, ['harvest_success_percent_2025', 'success_percent', 'percent_success', 'prior_year_success_rate']);
+    const days = firstNumericValue(sources, ['harvest_average_days_2025', 'average_days_hunted', 'avg_days_hunted', 'average_days_hunted_2025']);
+    const averageAge = firstNumericValue(sources, ['average_harvest_age']);
+    const currentAge = firstNumericValue(sources, ['current_age_3yr_average']);
+    const parts = [];
+    const successText = formatMetricPercent(success);
+    if (successText) parts.push(`${successText} success`);
+    if (days !== null && days > 0) parts.push(`${formatCompactNumber(days)} avg days`);
+    if (averageAge !== null && averageAge > 0) {
+      parts.push(`${formatCompactNumber(averageAge)} avg age`);
+    } else if (currentAge !== null && currentAge > 0) {
+      parts.push(`${formatCompactNumber(currentAge)} 3-yr age`);
+    }
+    return parts.length ? `Harvest Snapshot: ${parts.join(' | ')}` : '';
+  }
+
+  function getCatchTrainLine(row, rows, mode, userPoints) {
+    const rowPoint = strictNum(row?.points);
+    const guaranteedLinePoint = getGuaranteedLinePoint(row, rows, mode);
+    const gap = strictNum(row?.gap);
+    const trend = String(row?.trend || '').trim().toUpperCase();
+    const zone = String(row?.point_pool_zone || '').trim();
+    if (rowPoint !== null && guaranteedLinePoint !== null) {
+      const shortBy = Math.max(0, Math.round(guaranteedLinePoint - rowPoint));
+      if (shortBy <= 0) return 'Catch the Train: You are at or above the modeled draw line.';
+      if (shortBy === 1) return 'Catch the Train: One point below the line; watch point creep closely.';
+      return `Catch the Train: ${shortBy} points below the line; this is a patience or swing-for-it rung.`;
+    }
+    if (gap !== null && gap > 0) return `Catch the Train: ${gap} points short of the current line.`;
+    if (zone === 'random_pool') return 'Catch the Train: Random-pool rung; points help weight the draw but do not guarantee it.';
+    if (trend === 'GREEN') return 'Catch the Train: Demand trend is favorable for this rung.';
+    if (trend === 'YELLOW') return 'Catch the Train: Trend is watchable; keep an eye on permit movement.';
+    if (trend === 'RED') return 'Catch the Train: Trend is tough; treat this as a long-shot rung.';
+    return userPoints !== null ? 'Catch the Train: Use this rung as your application benchmark.' : '';
+  }
+
+  function isLowValueLadderNote(value) {
+    const text = String(value ?? '').trim().toUpperCase();
+    return !text || ['GREEN', 'YELLOW', 'RED', 'NOT AVAILABLE', 'N/A'].includes(text);
+  }
+
+  function buildLadderNoteLines({ meta, row, referenceRow, rows, mode, isUserRow, isGuaranteedLine, cells, userPoints }) {
+    const lines = [];
+    if (isUserRow) {
+      [
+        getLadderHarvestSnapshotLine(row, referenceRow, meta),
+        getCatchTrainLine(row, rows, mode, userPoints),
+        getPermitSummaryLine(row, referenceRow, meta),
+      ].filter(Boolean).forEach((line) => lines.push(line));
+    } else if (isGuaranteedLine && mode === DRAW_MODE.BONUS) {
+      lines.push('Draw Line: Max-point pool begins here.');
+    }
+
+    const rawNote = String(cells?.[4] || '').trim();
+    if (!isLowValueLadderNote(rawNote) && (isUserRow || isGuaranteedLine)) {
+      lines.push(rawNote);
+    }
+    return [...new Set(lines)];
+  }
+
+  function renderLadderNotes(lines) {
+    if (!Array.isArray(lines) || !lines.length) return '';
+    return `<div class="ladder-note-list">${lines.map((line) => `<div>${escapeHtml(line)}</div>`).join('')}</div>`;
+  }
+
   function markerHtml(markers) {
     if (!markers.length) return '';
     return `<div class="marker-stack">${markers.map((marker) => {
       if (marker.kind === 'sources') {
         return `<button type="button" class="marker-pill sources" data-source-pill="true" data-point="${escapeHtml(marker.point)}">${escapeHtml(marker.label)}</button>`;
+      }
+      if (marker.kind === 'user') {
+        return `<span class="ladder-rung-signal" aria-label="Visitor point rung"><span class="ladder-rung-light"></span><span>${escapeHtml(marker.label)}</span></span>`;
       }
       return `<span class="marker-line-label ${marker.kind}">${escapeHtml(marker.label)}</span>`;
     }).join('')}</div>`;
@@ -1545,7 +1697,7 @@
         const bonusProjection = (isGuaranteedLineRow(row, rows, mode) || isAboveGuaranteedLineRow(row, rows, mode))
           ? MAX_POINT_POOL_GUARANTEED_DISPLAY
           : (getMaxPointPoolDisplay(row) || 'Not available');
-        const randomChance = isAboveGuaranteedLineRow(row, rows, mode) ? 'Not available' : (getRandomDrawDisplay(row) || oddsDisplay);
+        const randomChance = isAboveGuaranteedLineRow(row, rows, mode) ? '' : (getRandomDrawDisplay(row) || oddsDisplay);
         const notes = [
           String(row?.trend || '').trim(),
           String(row?.data_quality_flags || '').trim(),
@@ -1604,33 +1756,50 @@
       const historicalPointRow = state.engineHistoryByPoint.get(rowKey(huntCode, residency, row.points, drawPool)) || null;
       const userPoints = getCurrentPoints();
       const isUserRow = Number(row.points) === Number(userPoints);
+      const isGuaranteedLine = isGuaranteedLineRow(row, rows, mode);
 
       if (isUserRow) {
         markers.push({ kind: 'user', label: 'Your Point Position' });
         classes.push('is-user-row');
       }
 
-      if (isGuaranteedLineRow(row, rows, mode)) {
+      if (isGuaranteedLine) {
         markers.push({ kind: 'guaranteed', label: 'Guaranteed Draw' });
         classes.push('is-guaranteed-row');
       }
 
-      if ((isUserRow || isGuaranteedLineRow(row, rows, mode)) && hasSourceData(meta, row, referenceRow)) {
+      if ((isUserRow || isGuaranteedLine) && hasSourceData(meta, row, referenceRow)) {
         markers.push({ kind: 'sources', label: 'Hunt Data', point: row.points });
       }
       const cells = getRowCells(row, markers, historicalPointRow);
+      const zone = String(row?.point_pool_zone || '').trim();
+      const blankMaxCell = mode === DRAW_MODE.BONUS && zone === 'random_pool';
+      const blankRandomCell = mode === DRAW_MODE.BONUS && (
+        ['max_point_pool', 'max_pool_guaranteed'].includes(zone)
+        || isAboveGuaranteedLineRow(row, rows, mode)
+      );
       const markersBlock = markerHtml(markers);
-      const notesText = String(cells[4] || '').trim();
+      const noteLines = buildLadderNoteLines({
+        meta,
+        row,
+        referenceRow,
+        rows,
+        mode,
+        isUserRow,
+        isGuaranteedLine,
+        cells,
+        userPoints,
+      });
       const notesBlock = [
-        notesText && notesText !== 'Not available' ? `<div>${escapeHtml(notesText)}</div>` : '',
+        renderLadderNotes(noteLines),
         markersBlock,
       ].filter(Boolean).join('');
       const tableCells = [
-        `<td>${escapeHtml(String(cells[0] || 'Not available'))}</td>`,
-        `<td>${escapeHtml(String(cells[1] || 'Not available'))}</td>`,
-        `<td>${escapeHtml(String(cells[2] || 'Not available'))}</td>`,
-        `<td>${escapeHtml(String(cells[3] || 'Not available'))}</td>`,
-        `<td>${notesBlock || 'Not available'}</td>`,
+        renderLadderCell(cells[0]),
+        renderLadderCell(cells[1]),
+        renderLadderCell(blankMaxCell ? '' : cells[2]),
+        renderLadderCell(blankRandomCell ? '' : cells[3]),
+        notesBlock ? `<td class="ladder-notes-cell">${notesBlock}</td>` : '<td class="is-empty-cell ladder-notes-cell" aria-label="No highlighted notes"></td>',
       ].join('');
 
       const rowClass = [isUserRow ? 'is-user-row' : '', ...classes.filter((name) => name !== 'is-user-row')]
@@ -1882,11 +2051,13 @@
   function bootstrapSelection() {
     const params = new URLSearchParams(window.location.search);
     const queryHunt = normalizeKey(params.get('hunt_code'));
+    const queryResidency = params.has('residency') ? normalizeResidencyLabel(params.get('residency')) : '';
     const queryDrawPool = params.has('draw_pool') ? normalizeDrawPool(params.get('draw_pool')) : '';
+    const queryPoints = params.has('points') ? params.get('points') : '';
     const storedHunt = normalizeKey(localStorage.getItem(SELECTED_HUNT_KEY));
-    const storedResidency = normalizeResidencyLabel(localStorage.getItem(SELECTED_RESIDENCY_KEY));
+    const storedResidency = queryResidency || normalizeResidencyLabel(localStorage.getItem(SELECTED_RESIDENCY_KEY));
     const storedDrawPool = queryDrawPool || normalizeDrawPool(localStorage.getItem(SELECTED_DRAW_POOL_KEY));
-    const storedPoints = localStorage.getItem(SELECTED_POINTS_KEY);
+    const storedPoints = queryPoints !== '' ? queryPoints : localStorage.getItem(SELECTED_POINTS_KEY);
     const bootstrapHunt = queryHunt || storedHunt;
 
     if (bootstrapHunt) {
@@ -1907,6 +2078,14 @@
 
     if (queryDrawPool) {
       localStorage.setItem(SELECTED_DRAW_POOL_KEY, queryDrawPool);
+    }
+
+    if (queryResidency) {
+      localStorage.setItem(SELECTED_RESIDENCY_KEY, queryResidency);
+    }
+
+    if (queryPoints !== '') {
+      localStorage.setItem(SELECTED_POINTS_KEY, queryPoints);
     }
   }
 

@@ -7035,3 +7035,46 @@ o_table=0).
   - Built-local mobile check at 390px passed: dashboard width stays within viewport, hero/body stack to one column, comparable table scrolls inside its own wrapper, and ladder remains horizontally scrollable.
 - Known remaining issue:
   - Local browser check still reports the pre-existing decorative image 404 at `assets/logos/logos/White-Topo-2-1920.png`; no Research data, dashboard script, ladder, or runtime file failed.
+
+## Hunt Research Premium Ladder And Readability Polish
+- Timestamp (UTC): 2026-05-29T16:21:16Z
+- Implementation commit: pending at log-write time; final commit hash recorded in Codex handoff.
+- Files changed:
+  - `research.html`
+  - `hunt-research.js`
+  - `assets/js/research-outlook-dashboard.js`
+  - `style.css`
+- Visual/layout improvements:
+  - Replaced the broken decorative topo background with the local `assets/backgrounds/White Topo 20.jpg` texture plus subtle outdoor-toned gradients.
+  - Added a restrained CSS mountain/tree accent to the Research hero area.
+  - Increased label contrast from pale tan/orange to darker brown/orange values for readability on cream cards.
+  - Swapped the display font variable to a cleaner sans display stack to remove the curly/decorative feel and keep text aligned in normal lines.
+  - Refined Outlook dashboard cards to use parchment/cream backgrounds, stronger brown labels, and subtle professional shadows.
+- Ladder header/display changes:
+  - Opened the point ladder by default and expanded the ladder scroll area from a small 360px window to `min(72vh, 760px)` so hunters see more ladder rows before inner scrolling.
+  - Bonus-style ladder headers now read `2025 Draw Results`, `2026 Max Point Draw`, `2026 Random Draw`, and `Notes`; max/random headers show `50% of tags` subtext.
+  - Ladder cells with no useful display value now render blank instead of repeating `Not available`, including above-line random cells and below-line max-point cells.
+  - Kept these as display-only changes; no point ladder math or prediction formulas were changed.
+- Notes column changes:
+  - Replaced repeated low-value `GREEN`/`YELLOW`/`RED` notes with targeted notes only for the selected user row, draw line, and meaningful special conditions.
+  - Selected row notes now prioritize hunter-useful context such as `Harvest Snapshot`, `Catch the Train`, and `2026 Permits: Res / NonRes / Total` when those fields are available.
+  - Empty notes rows now stay visually quiet instead of printing filler text.
+- Signal light improvements:
+  - Upgraded draw/trend signal lights with larger glossy indicators, active-state glow, and accessible text labels.
+  - Added `Long shot / low chance`, `On the line / watch closely`, and `In reach / strong position` labels next to the draw-light strip.
+  - Added a distinct `Your Point Position` rung marker with a glowing blue dot/chip and kept draw-line marking separate in orange/brown.
+- Query-selection fix:
+  - The Research page now lets URL `residency` and `points` parameters win over stored defaults so the visitor's rung marker lands on the requested point level, e.g. `points=30`.
+  - This is input/display plumbing only; draw routing and model math were not changed.
+- Validation:
+  - `node --check assets/js/research-outlook-dashboard.js` passed.
+  - `node --check hunt-research.js` passed.
+  - `node --check app.js` passed.
+  - `npm.cmd run build` passed. Existing optional build notices remain: `staging-audit.html`, `data/hunt_boundaries_finalized_2026.geojson`, and oversized `processed_data/composite_hunt_unit_mapping_2026.geojson` skipped for Pages.
+  - Verified `pages-dist/research.html` includes `research-outlook-dashboard`.
+  - Verified `pages-dist/assets/js/research-outlook-dashboard.js` exists.
+  - Local HTTP check for `research.html?hunt_code=EB3024&draw_pool=standard&residency=resident&points=30&v=ladderpolish1` returned HTTP 200 and confirmed dashboard script, selected outlook label, and open ladder markup are present.
+  - Headless Chrome DOM check confirmed: one user row, user row points = 30, `Your Point Position` marker rendered, dashboard inserted before ladder, zero exact `Not available` ladder table cells, bonus header `50% of tags` subtext present, and source details collapsed by default.
+- Data/source rules preserved:
+  - Did not modify `DATABASE.csv`, engine files, model formulas, draw/harvest/age truth files, permit/allotment truth, point-ladder math, Cloudflare/R2 runtime files, or source data files.
+  - Build-generated library/data side-effect diffs were reverted and not included in the final change set.
