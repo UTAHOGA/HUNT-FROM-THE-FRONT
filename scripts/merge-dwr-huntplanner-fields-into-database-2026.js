@@ -113,6 +113,40 @@ function hasNonZeroNumeric(value) {
   return n != null && n !== 0;
 }
 
+function isCwmuRow(row, dwr) {
+  return [
+    row.hunt_type,
+    row.hunt_class,
+    row.hunt_name,
+    dwr.hunt_type,
+    dwr.hunt_name
+  ].some(value => /cwmu/i.test(String(value || '')));
+}
+
+function effectiveDwrPermitValue(row, dwr, databaseField, dwrField) {
+  const dwrRes = num(dwr.permits_2026_res);
+  const dwrNr = num(dwr.permits_2026_nr);
+  const dwrTotal = num(dwr.permits_2026_total);
+
+  // DWR CWMU rows publish resident/nonresident public-permit values, but
+  // the Hunt Planner JSON often leaves the total slot as 0. Derive total
+  // from the split rather than treating the resident slot as a total-only value.
+  if (isCwmuSplitWithDerivedTotal(row, dwr)) {
+    if (databaseField === 'permits_2026_res') return String(dwrRes);
+    if (databaseField === 'permits_2026_nr') return String(dwrNr);
+    if (databaseField === 'permits_2026_total') return String(dwrRes + dwrNr);
+  }
+
+  return dwr[dwrField] || '';
+}
+
+function isCwmuSplitWithDerivedTotal(row, dwr) {
+  const dwrRes = num(dwr.permits_2026_res);
+  const dwrNr = num(dwr.permits_2026_nr);
+  const dwrTotal = num(dwr.permits_2026_total);
+  return isCwmuRow(row, dwr) && dwrRes != null && dwrRes > 0 && dwrNr != null && dwrTotal === 0;
+}
+
 function sameNumeric(a, b) {
   const na = num(a);
   const nb = num(b);
@@ -237,20 +271,32 @@ function main() {
 
     let rowAllotmentFilled = false;
     let rowPermitBackfilled = false;
+    let rowCwmuSplitDerived = false;
     for (const [databaseField, dwrField, allotmentField] of [
       ['permits_2026_res', 'permits_2026_res', 'permit_allotment_2026_res'],
       ['permits_2026_nr', 'permits_2026_nr', 'permit_allotment_2026_nr'],
       ['permits_2026_total', 'permits_2026_total', 'permit_allotment_2026_total']
     ]) {
+      const effectiveDwrValue = effectiveDwrPermitValue(row, dwr, databaseField, dwrField);
+      const cwmuSplitWithDerivedTotal = isCwmuSplitWithDerivedTotal(row, dwr);
+      const cwmuDerivedValue = cwmuSplitWithDerivedTotal && effectiveDwrValue !== (dwr[dwrField] || '');
+      if (cwmuSplitWithDerivedTotal) rowCwmuSplitDerived = true;
+
       let backfilledPermitFromDwr = false;
-      if (!String(row[databaseField] ?? '').trim() && !String(row[allotmentField] ?? '').trim() && hasNonZeroNumeric(dwr[dwrField])) {
-        row[databaseField] = dwr[dwrField];
-        row[allotmentField] = dwr[dwrField];
+      const shouldBackfillDwrValue = hasNonZeroNumeric(effectiveDwrValue) || (
+        cwmuSplitWithDerivedTotal &&
+        databaseField === 'permits_2026_nr' &&
+        num(effectiveDwrValue) === 0 &&
+        hasNonZeroNumeric(dwr.permits_2026_res)
+      );
+      if (!String(row[databaseField] ?? '').trim() && !String(row[allotmentField] ?? '').trim() && shouldBackfillDwrValue) {
+        row[databaseField] = effectiveDwrValue;
+        row[allotmentField] = effectiveDwrValue;
         backfilledPermitFromDwr = true;
         rowPermitBackfilled = true;
         rowAllotmentFilled = true;
         permitCellsBackfilledFromDwr += 1;
-        const backfillRow = compareBackfillTo2025(row, databaseField, dwr[dwrField], dwr.source_url || '');
+        const backfillRow = compareBackfillTo2025(row, databaseField, effectiveDwrValue, dwr.source_url || '');
         if (backfillRow.change_flag === 'BIG_CHANGE_20_PERCENT_OR_MORE' || backfillRow.change_flag === 'NEW_FROM_ZERO_2025') {
           permitBackfillBigChangeCells += 1;
         }
@@ -259,12 +305,12 @@ function main() {
       }
 
       const comparisonStatus = backfilledPermitFromDwr
-        ? 'BACKFILLED_FROM_DWR_NONZERO'
-        : sameNumeric(row[databaseField], dwr[dwrField])
+        ? 'BACKFILLED_FROM_DWR_VALUE'
+        : sameNumeric(row[databaseField], effectiveDwrValue)
         ? 'MATCH'
-        : differenceType(row[databaseField], dwr[dwrField]);
+        : differenceType(row[databaseField], effectiveDwrValue);
 
-      if (comparisonStatus === 'MATCH' || comparisonStatus === 'BACKFILLED_FROM_DWR_NONZERO') permitExactMatches += 1;
+      if (comparisonStatus === 'MATCH' || comparisonStatus === 'BACKFILLED_FROM_DWR_VALUE') permitExactMatches += 1;
       else if (comparisonStatus === 'DATABASE_BLANK_DWR_ZERO') permitBlankDwrZero += 1;
       else if (comparisonStatus === 'DATABASE_BLANK_DWR_VALUE') permitBlankDwrValue += 1;
       else if (comparisonStatus === 'NUMERIC_CONFLICT') permitNumericConflicts += 1;
@@ -277,7 +323,7 @@ function main() {
         field: databaseField,
         comparison_status: comparisonStatus,
         database_value: row[databaseField] || '',
-        dwr_huntplanner_value: dwr[dwrField] || '',
+        dwr_huntplanner_value: effectiveDwrValue || '',
         source_url: dwr.source_url || ''
       });
 
@@ -315,7 +361,7 @@ function main() {
         allotment_action: allotmentAction,
         database_permit_value: row[databaseField] || '',
         allotment_value_after: row[allotmentField] || '',
-        dwr_huntplanner_value: dwr[dwrField] || '',
+        dwr_huntplanner_value: effectiveDwrValue || '',
         source_url: dwr.source_url || ''
       });
     }
@@ -331,6 +377,17 @@ function main() {
       if (!row.permit_allotment_2026_source_file) row.permit_allotment_2026_source_file = dwr.source_url || '';
       if (!row.permit_allotment_2026_status) row.permit_allotment_2026_status = 'DWR_HUNTPLANNER_NONZERO_BACKFILLED';
     }
+    if (rowCwmuSplitDerived) {
+      if (!row.permit_allotment_2026_source) row.permit_allotment_2026_source = 'DWR_HUNT_PLANNER_HaNumber_CWMU_RES_NR_TOTAL_DERIVED';
+      if (!row.permit_allotment_2026_source_file) row.permit_allotment_2026_source_file = dwr.source_url || '';
+      if (!row.permits_2026_source) row.permits_2026_source = 'DWR_HUNT_PLANNER_HaNumber_CWMU_RES_NR_TOTAL_DERIVED';
+      if (
+        !row.permit_allotment_2026_status ||
+        row.permit_allotment_2026_status === 'LIVE_DWR_CWMU_TOTAL_ONLY_FROM_QUOTA_RES'
+      ) {
+        row.permit_allotment_2026_status = 'DWR_HUNTPLANNER_CWMU_RES_NR_TOTAL_DERIVED';
+      }
+    }
   }
 
   fs.mkdirSync(path.dirname(AUDIT_JSON), { recursive: true });
@@ -345,7 +402,7 @@ function main() {
     'dwr_huntplanner_value',
     'source_url'
   ]);
-  writeCsv(NONMATCH_CSV, permitComparisons.filter(row => !['MATCH', 'BACKFILLED_FROM_DWR_NONZERO'].includes(row.comparison_status)), [
+  writeCsv(NONMATCH_CSV, permitComparisons.filter(row => !['MATCH', 'BACKFILLED_FROM_DWR_VALUE'].includes(row.comparison_status)), [
     'hunt_code',
     'hunt_name',
     'species',
@@ -417,7 +474,8 @@ function main() {
     permit_blank_dwr_value_cells: permitBlankDwrValue,
     permit_numeric_conflict_cells: permitNumericConflicts,
     permit_other_difference_cells: permitOtherDifferences,
-    permit_cells_backfilled_from_dwr_nonzero: effectiveBackfillVs2025Rows.length,
+    permit_cells_backfilled_from_dwr_values: effectiveBackfillVs2025Rows.length,
+    permit_cells_backfilled_from_dwr_nonzero: effectiveBackfillVs2025Rows.filter(row => hasNonZeroNumeric(row.value_2026_backfilled_from_dwr)).length,
     permit_backfill_cells_filled_this_run: permitCellsBackfilledFromDwr,
     permit_backfill_big_change_cells_vs_2025: effectiveBackfillBigChangeCells,
     permit_backfill_no_2025_value_cells: effectiveBackfillNo2025ValueCells,
@@ -435,7 +493,8 @@ function main() {
     notes: [
       'DATABASE.csv uses the existing permits_2026_res, permits_2026_nr, and permits_2026_total columns; duplicate DWR-prefixed permit columns are not kept.',
       'permit_allotment_2026_res, permit_allotment_2026_nr, and permit_allotment_2026_total are filled only when DATABASE permits_2026_* and DWR Hunt Planner popup values match exactly.',
-      'If both DATABASE permits_2026_* and permit_allotment_2026_* are blank while the DWR Hunt Planner popup has a nonzero value, both DATABASE fields are backfilled from DWR and compared to the matching 2025 permit field.',
+      'For CWMU rows where DWR publishes resident/nonresident permit values but leaves the total slot as 0, total is derived as resident plus nonresident and marked DWR_HUNTPLANNER_CWMU_RES_NR_TOTAL_DERIVED.',
+      'If both DATABASE permits_2026_* and permit_allotment_2026_* are blank while DWR Hunt Planner has a current permit value, both DATABASE fields are backfilled from DWR and compared to the matching 2025 permit field.',
       'percent_harvest_success_previous_hunting_season is populated from the DWR Hunt Planner popup by hunt code.',
       'current_age_3yr_average is DWR Hunt Planner current age context, not prior-year average harvest age.',
       'dwr_huntplanner_age_objective, dwr_huntplanner_population_objective, and dwr_huntplanner_current_population_estimate are retained as DWR Hunt Planner management-context fields.',
@@ -452,7 +511,7 @@ function main() {
   console.log(`Current age 3-year average rows: ${currentAgeRows}`);
   console.log(`Permit exact-match cells: ${permitExactMatches}`);
   console.log(`Permit non-match cells: ${permitComparisons.length - permitExactMatches}`);
-  console.log(`Permit cells backfilled from DWR nonzero values: ${effectiveBackfillVs2025Rows.length}`);
+  console.log(`Permit cells backfilled from DWR values: ${effectiveBackfillVs2025Rows.length}`);
   console.log(`Permit cells filled this run: ${permitCellsBackfilledFromDwr}`);
   console.log(`Allotment cells filled from matched permits: ${effectiveAllotmentFilledCells}`);
   console.log(`Allotment cells filled this run: ${allotmentFilledCells}`);

@@ -1,3 +1,12 @@
+## 2026-05-29T08:35:12Z - Backfill Blank 2026 Permit Cells From DWR Popup Nonzero Values
+
+- Backfilled 369 blank `permits_2026_*` cells and matching `permit_allotment_2026_*` cells from nonzero DWR Hunt Planner popup values where both DATABASE permit and allotment cells were blank.
+- Added `database_dwr_huntplanner_2026_backfilled_permits_vs_2025.csv` to compare every DWR backfilled 2026 cell against the matching 2025 permit field.
+- Backfill breakdown: 327 resident cells, 15 nonresident cells, and 27 total cells.
+- 2025 comparison: 324 backfilled cells were within 20% of 2025, 42 were flagged as 20%+ big changes, and 3 had no 2025 value.
+- Remaining nonmatches after backfill: 1,635 blank-vs-DWR-zero cells, 342 numeric conflicts, and 1 other difference; these were not overwritten.
+- Ran `npm.cmd run build`: PASS. Total current hunts 1,449; modeled 1,448; manual review 0; Gate PASS 1,449; Gate BLOCK 0; crosswalk matched current codes 169.
+
 ## 2026-05-29T08:10:05Z - Confirm 2026 Permit Allotment Columns Against DWR Popup
 
 - Updated the DWR Hunt Planner database merge script to check and fill `permit_allotment_2026_res`, `permit_allotment_2026_nr`, and `permit_allotment_2026_total` only when the canonical `permits_2026_*` value exactly matches the DWR Hunt Planner popup value.
@@ -6558,3 +6567,17 @@ o_table=0).
   - Verified XLSX/PDF stem parity: 46 XLSX, 46 PDF, missing pairs: 0.
   - Removed leftover Excel lock file from the display XLSX folder.
   - npm.cmd run build passed.
+
+## DWR Hunt Planner CWMU Permit Split Correction
+- Timestamp (UTC): 2026-05-29T08:55:00Z
+- Scope:
+  - Corrected DWR Hunt Planner permit merge behavior for CWMU rows where the source publishes resident/nonresident public-permit values but leaves the raw total field at 0.
+  - Derived CWMU total as resident plus nonresident instead of treating the resident field as a total-only quota.
+  - Backfilled explicit CWMU nonresident 0 values where DWR publishes `NonRes: 0`.
+  - Replaced stale `LIVE_DWR_CWMU_TOTAL_ONLY_FROM_QUOTA_RES` status labels with `DWR_HUNTPLANNER_CWMU_RES_NR_TOTAL_DERIVED` for current CWMU split rows.
+- Validation:
+  - `node scripts/merge-dwr-huntplanner-fields-into-database-2026.js` passed.
+  - DATABASE rows: 1449.
+  - Matched DWR popup rows: 1449.
+  - Permit exact-match/backfilled cells: 2981.
+  - EB CWMU check: 67 active EB CWMU rows carry Res, NonRes 0, and Total = Res + NonRes; the remaining EB CWMU row is historical-only 2025 and not active 2026.
