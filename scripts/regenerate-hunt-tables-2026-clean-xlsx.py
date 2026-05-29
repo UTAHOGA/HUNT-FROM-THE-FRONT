@@ -18,6 +18,7 @@ from openpyxl.worksheet.table import Table, TableStyleInfo
 ROOT = Path(__file__).resolve().parents[1]
 HUNTS_DIR = ROOT / "processed_data" / "hunt_research_2026_split" / "hunts"
 AGE_LATEST_CSV = ROOT / "processed_data" / "harvest_age_features_by_hunt_code_latest.csv"
+DATABASE_CSV = ROOT / "pipeline" / "RAW" / "hunt_unit_database" / "2026" / "csv" / "DATABASE.csv"
 OUT_BASE = ROOT / "processed_data" / "hard_data_exports" / "hunt_tables" / "2026"
 LIVE_XLSX_DIR = OUT_BASE / "XLXS"
 STAGE_XLSX_DIR = OUT_BASE / "CLEAN_XLXS_STAGED"
@@ -33,14 +34,14 @@ HEADERS = [
     "weapon",
     "hunt_type",
     "season",
-    "2026 permits RES",
-    "2026 permits NR",
-    "2026 permits TOTAL",
-    "Harvest Prior Year",
-    "Harvest Success %",
-    "Avg Harvest Age",
-    "Avg Days Hunted",
+    "permits_2026_res",
+    "permits_2026_nr",
+    "permits_2026_total",
     "NOTES",
+    "Harvest Prior Year",
+    "Percent Harvest Success (previous hunting season)",
+    "Average Age Harvested (previous hunting season)",
+    "Avg Days Hunted (previous hunting season)",
 ]
 
 COLUMN_WIDTHS = {
@@ -51,14 +52,14 @@ COLUMN_WIDTHS = {
     "weapon": 16,
     "hunt_type": 18,
     "season": 22,
-    "2026 permits RES": 10,
-    "2026 permits NR": 10,
-    "2026 permits TOTAL": 11,
-    "Harvest Prior Year": 11,
-    "Harvest Success %": 12,
-    "Avg Harvest Age": 12,
-    "Avg Days Hunted": 12,
+    "permits_2026_res": 10,
+    "permits_2026_nr": 10,
+    "permits_2026_total": 11,
     "NOTES": 22,
+    "Harvest Prior Year": 11,
+    "Percent Harvest Success (previous hunting season)": 14,
+    "Average Age Harvested (previous hunting season)": 14,
+    "Avg Days Hunted (previous hunting season)": 14,
 }
 
 HUNT_CLASS_ABBREVIATIONS = {
@@ -102,6 +103,14 @@ CLASS_SORT = [
 
 def norm(value: object) -> str:
     return re.sub(r"\s+", " ", str(value or "").strip())
+
+
+def normalize_code(value: object) -> str:
+    return re.sub(r"[^A-Z0-9]", "", str(value or "").upper())
+
+
+def norm_name(value: object) -> str:
+    return re.sub(r"\s+", " ", str(value or "").strip().lower())
 
 
 def clean_number(value: object, *, allow_zero: bool = False) -> str:
@@ -176,6 +185,82 @@ def load_age_latest() -> Dict[str, str]:
     return out
 
 
+def load_database_lookup() -> tuple[Dict[str, dict], Dict[tuple[str, str], dict]]:
+    by_code: Dict[str, dict] = {}
+    by_name: Dict[tuple[str, str], dict] = {}
+    if not DATABASE_CSV.exists():
+        print(f"WARN missing DATABASE.csv season/permit enrichment source: {DATABASE_CSV}")
+        return by_code, by_name
+
+    with DATABASE_CSV.open("r", encoding="utf-8-sig", newline="") as fh:
+        reader = csv.DictReader(fh)
+        for row in reader:
+            clean_row = {key: norm(value) for key, value in row.items()}
+            code = normalize_code(clean_row.get("hunt_code"))
+            if code:
+                by_code[code] = clean_row
+            name_key = (norm_name(clean_row.get("species")), norm_name(clean_row.get("hunt_name")))
+            if all(name_key):
+                by_name.setdefault(name_key, clean_row)
+
+    print(f"Loaded DATABASE.csv enrichment rows: code={len(by_code)} name={len(by_name)}")
+    return by_code, by_name
+
+
+def database_row_for(record: dict, database_lookup: tuple[Dict[str, dict], Dict[tuple[str, str], dict]]) -> dict:
+    by_code, by_name = database_lookup
+    code = normalize_code(record.get("hunt_code"))
+    if code and code in by_code:
+        return by_code[code]
+    name_key = (norm_name(record.get("species")), norm_name(record.get("hunt_name")))
+    if all(name_key):
+        return by_name.get(name_key, {})
+    return {}
+
+
+def first_record_or_database(record: dict, database_row: dict, keys: Iterable[str]) -> object:
+    for key in keys:
+        value = record.get(key)
+        if norm(value):
+            return value
+    for key in keys:
+        value = database_row.get(key)
+        if norm(value):
+            return value
+    return ""
+
+
+def note_path_from_database(database_row: dict) -> Path | None:
+    note_ref = norm(database_row.get("NOTES") or database_row.get("notes"))
+    if not note_ref or not note_ref.lower().endswith(".md"):
+        return None
+    candidates = [
+        ROOT / "pipeline" / "RAW" / "hunt_unit_database" / "2026" / note_ref.replace("../", ""),
+        ROOT / "pipeline" / "RAW" / "hunt_unit_database" / "2026" / "notes" / "DATABASE" / Path(note_ref).name,
+        ROOT / note_ref,
+    ]
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
+    return None
+
+
+def season_from_note(database_row: dict) -> str:
+    note_path = note_path_from_database(database_row)
+    if not note_path:
+        return ""
+    text = note_path.read_text(encoding="utf-8-sig", errors="ignore")
+    for line in text.splitlines():
+        clean = norm(line.lstrip("-# "))
+        if "season" not in clean.lower():
+            continue
+        # Keep the visitor-facing sentence, not the whole notes document.
+        sentence = re.split(r"(?<=[.!?])\s+", clean)[0]
+        if sentence:
+            return sentence[:180]
+    return ""
+
+
 def average_harvest_age(record: dict, age_latest: Dict[str, str]) -> str:
     for key in ("average_harvest_age", "avg_harvest_age", "harvest_average_age"):
         age = clean_number(record.get(key))
@@ -185,43 +270,53 @@ def average_harvest_age(record: dict, age_latest: Dict[str, str]) -> str:
     return age_latest.get(code, "")
 
 
-def permit_value(record: dict, keys: Iterable[str]) -> str:
-    return clean_number(first_value(record, keys), allow_zero=False)
+def permit_value(record: dict, database_row: dict, keys: Iterable[str]) -> str:
+    return clean_number(first_record_or_database(record, database_row, keys), allow_zero=False)
 
 
-def notes_value(record: dict) -> str:
+def notes_value(record: dict, database_row: dict) -> str:
     for key in ("notes", "note", "permit_status", "data_status"):
         val = norm(record.get(key))
+        if val:
+            return val.replace("SOURCE_CONFIRMED_", "").replace("NO_QUOTA_PUBLISHED", "No quota published")[:90]
+    for key in ("NOTES", "notes", "note", "permit_status", "data_status"):
+        val = norm(database_row.get(key))
         if val:
             return val.replace("SOURCE_CONFIRMED_", "").replace("NO_QUOTA_PUBLISHED", "No quota published")[:90]
     return ""
 
 
-def row_from_record(record: dict, age_latest: Dict[str, str]) -> dict:
-    permits_res = permit_value(record, ("permits_2026_res", "permits_res", "resident_permits", "permits_resident", "res_permits"))
-    permits_nr = permit_value(record, ("permits_2026_nr", "permits_nr", "nonresident_permits", "non_resident_permits", "nonres_permits", "nr_permits"))
-    permits_total = permit_value(record, ("permits_2026_total", "permits_total", "recommended_permits", "total_permits", "permits"))
-    hunt_class = existing_hunt_class(record)
-    hunt_type = norm(record.get("hunt_type")) or hunt_class
+def row_from_record(record: dict, age_latest: Dict[str, str], database_lookup: tuple[Dict[str, dict], Dict[tuple[str, str], dict]]) -> dict:
+    database_row = database_row_for(record, database_lookup)
+    permits_res = permit_value(record, database_row, ("permits_2026_res", "permits_res", "resident_permits", "permits_resident", "res_permits"))
+    permits_nr = permit_value(record, database_row, ("permits_2026_nr", "permits_nr", "nonresident_permits", "non_resident_permits", "nonres_permits", "nr_permits"))
+    permits_total = permit_value(record, database_row, ("permits_2026_total", "permits_total", "recommended_permits", "total_permits", "permits"))
+    hunt_class = existing_hunt_class(record) or canonical_class(database_row.get("hunt_class"))
+    hunt_type = norm(record.get("hunt_type")) or norm(database_row.get("hunt_type")) or hunt_class
 
     # Do not derive RES/NR from TOTAL. If only total exists, RES and NR stay blank.
+    season = norm(first_record_or_database(record, database_row, ("season", "season_dates", "dates", "season_date")))
+    if not season:
+        season = season_from_note(database_row)
+
     return {
-        "hunt_name": norm(record.get("hunt_name") or record.get("dwr_unit_name") or record.get("unit_name")),
-        "hunt_code": norm(record.get("hunt_code")).upper(),
-        "sex_type": norm(record.get("sex_type")),
-        "species": norm(record.get("species")),
-        "weapon": norm(record.get("weapon")),
+        "hunt_name": norm(first_record_or_database(record, database_row, ("hunt_name", "dwr_unit_name", "unit_name"))),
+        "hunt_code": normalize_code(first_record_or_database(record, database_row, ("hunt_code",))),
+        "sex_type": norm(first_record_or_database(record, database_row, ("sex_type",))),
+        "species": norm(first_record_or_database(record, database_row, ("species",))),
+        "weapon": norm(first_record_or_database(record, database_row, ("weapon",))),
         "hunt_type": hunt_type,
-        "season": norm(record.get("season") or record.get("season_dates") or record.get("dates") or record.get("season_date")),
-        "2026 permits RES": permits_res,
-        "2026 permits NR": permits_nr,
-        "2026 permits TOTAL": permits_total,
+        "season": season,
+        "permits_2026_res": permits_res,
+        "permits_2026_nr": permits_nr,
+        "permits_2026_total": permits_total,
+        "NOTES": notes_value(record, database_row),
         "Harvest Prior Year": clean_number(first_value(record, ("harvest_prior_year", "prior_year_harvest", "previous_harvest", "harvest")), allow_zero=False),
-        "Harvest Success %": clean_number(first_value(record, ("percent_harvest_success", "percent_success", "success_percent", "previous_percent_success")), allow_zero=True),
-        "Avg Harvest Age": average_harvest_age(record, age_latest),
-        "Avg Days Hunted": clean_number(first_value(record, ("avg_days_hunted", "average_days_hunted", "avg_days", "days_hunted")), allow_zero=False),
-        "NOTES": notes_value(record),
+        "Percent Harvest Success (previous hunting season)": clean_number(first_value(record, ("percent_harvest_success", "percent_success", "success_percent", "previous_percent_success")), allow_zero=True),
+        "Average Age Harvested (previous hunting season)": average_harvest_age(record, age_latest),
+        "Avg Days Hunted (previous hunting season)": clean_number(first_value(record, ("avg_days_hunted", "average_days_hunted", "avg_days", "days_hunted")), allow_zero=False),
         "_hunt_class": hunt_class,
+        "_database_join": "code" if database_row and normalize_code(record.get("hunt_code")) in database_lookup[0] else ("name" if database_row else "missing"),
     }
 
 
@@ -229,6 +324,7 @@ def load_rows() -> List[dict]:
     if not HUNTS_DIR.exists():
         raise SystemExit(f"Missing canonical split hunt directory: {HUNTS_DIR}")
     age_latest = load_age_latest()
+    database_lookup = load_database_lookup()
     rows: List[dict] = []
     for path in sorted(HUNTS_DIR.glob("*.json")):
         try:
@@ -236,7 +332,7 @@ def load_rows() -> List[dict]:
         except Exception as exc:
             print(f"WARN skipped unreadable JSON {path.name}: {exc}")
             continue
-        row = row_from_record(record, age_latest)
+        row = row_from_record(record, age_latest, database_lookup)
         if row["hunt_code"]:
             rows.append(row)
     rows.sort(key=lambda r: (r["species"], r["sex_type"], r["hunt_type"], r["weapon"], r.get("_hunt_class", ""), r["hunt_code"], r["hunt_name"]))
@@ -380,8 +476,12 @@ def write_audit(audit_rows: List[dict]) -> None:
                 "res_permit_rows",
                 "nr_permit_rows",
                 "total_permit_rows",
+                "season_rows",
                 "average_harvest_age_rows",
                 "notes_rows",
+                "database_code_join_rows",
+                "database_name_join_rows",
+                "database_missing_join_rows",
                 "status",
             ],
         )
@@ -414,18 +514,23 @@ def main() -> None:
                 "hunt_type": hunt_type,
                 "weapon": weapon,
                 "hunt_class_split": hunt_class,
-                "res_permit_rows": sum(1 for row in group if norm(row.get("2026 permits RES"))),
-                "nr_permit_rows": sum(1 for row in group if norm(row.get("2026 permits NR"))),
-                "total_permit_rows": sum(1 for row in group if norm(row.get("2026 permits TOTAL"))),
-                "average_harvest_age_rows": sum(1 for row in group if norm(row.get("Avg Harvest Age"))),
+                "res_permit_rows": sum(1 for row in group if norm(row.get("permits_2026_res"))),
+                "nr_permit_rows": sum(1 for row in group if norm(row.get("permits_2026_nr"))),
+                "total_permit_rows": sum(1 for row in group if norm(row.get("permits_2026_total"))),
+                "season_rows": sum(1 for row in group if norm(row.get("season"))),
+                "average_harvest_age_rows": sum(1 for row in group if norm(row.get("Average Age Harvested (previous hunting season)"))),
                 "notes_rows": sum(1 for row in group if norm(row.get("NOTES"))),
+                "database_code_join_rows": sum(1 for row in group if row.get("_database_join") == "code"),
+                "database_name_join_rows": sum(1 for row in group if row.get("_database_join") == "name"),
+                "database_missing_join_rows": sum(1 for row in group if row.get("_database_join") == "missing"),
                 "status": "OK",
             }
         )
         print(
             f"OK {xlsx.name} rows={len(group)} "
             f"res={audit_rows[-1]['res_permit_rows']} nr={audit_rows[-1]['nr_permit_rows']} "
-            f"total={audit_rows[-1]['total_permit_rows']} avg_age={audit_rows[-1]['average_harvest_age_rows']} "
+            f"total={audit_rows[-1]['total_permit_rows']} season={audit_rows[-1]['season_rows']} "
+            f"avg_age={audit_rows[-1]['average_harvest_age_rows']} "
             f"notes={audit_rows[-1]['notes_rows']}"
         )
 

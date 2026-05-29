@@ -1,13 +1,14 @@
 ﻿from __future__ import annotations
 
 from datetime import datetime, timezone
+import json
 from pathlib import Path
 import re
 from typing import List, Tuple
 
 from openpyxl import load_workbook
 from reportlab.lib import colors
-from reportlab.lib.pagesizes import landscape, letter
+from reportlab.lib.pagesizes import landscape, legal
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import inch
 from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
@@ -15,6 +16,7 @@ from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer, Table, Tabl
 ROOT = Path(r"C:\Users\tyler\Desktop\GitHub\HUNT-BUILDER")
 SRC_DIR = ROOT / "processed_data" / "hard_data_exports" / "hunt_tables" / "2026" / "XLXS"
 OUT_DIR = ROOT / "processed_data" / "hard_data_exports" / "hunt_tables" / "2026" / "PDF'S"
+PDF_MANIFEST = ROOT / "processed_data" / "hard_data_exports" / "hard_copy_pdf_manifest.web.json"
 
 
 def norm(v) -> str:
@@ -45,12 +47,10 @@ def find_header_row(ws) -> int:
     return best_r
 
 
-def extract(ws) -> Tuple[str, str, List[str], List[List[str]]]:
+def extract(ws, source_name: str) -> Tuple[str, str, List[str], List[List[str]]]:
     hr = find_header_row(ws)
-    title = norm(ws.cell(row=1, column=1).value) or ws.title
-    subtitle = ""
-    if hr > 1:
-        subtitle = norm(ws.cell(row=2, column=1).value)
+    title = source_name
+    subtitle = "2026 Utah hunt table with public permit and harvest-quality display fields."
 
     # bounds from header row
     first_col = None
@@ -104,12 +104,12 @@ def fit_widths(headers: List[str], rows: List[List[str]], avail_w: float) -> Lis
 def render_pdf(xlsx: Path, pdf: Path) -> Tuple[int, int]:
     wb = load_workbook(xlsx, read_only=True, data_only=True)
     ws = wb[wb.sheetnames[0]]
-    title, subtitle, headers, rows = extract(ws)
+    title, subtitle, headers, rows = extract(ws, xlsx.stem)
     wb.close()
 
     doc = SimpleDocTemplate(
         str(pdf),
-        pagesize=landscape(letter),
+        pagesize=landscape(legal),
         leftMargin=0.22 * inch,
         rightMargin=0.22 * inch,
         topMargin=0.28 * inch,
@@ -119,8 +119,10 @@ def render_pdf(xlsx: Path, pdf: Path) -> Tuple[int, int]:
     styles = getSampleStyleSheet()
     st_title = ParagraphStyle("t", parent=styles["Heading2"], fontName="Helvetica-Bold", fontSize=13, textColor=colors.HexColor("#2f1b0f"), spaceAfter=4)
     st_sub = ParagraphStyle("s", parent=styles["Normal"], fontName="Helvetica-Oblique", fontSize=8.5, textColor=colors.HexColor("#5b3a25"), spaceAfter=6)
-    data = [headers]
-    data.extend(rows)
+    st_head = ParagraphStyle("head", parent=styles["Normal"], fontName="Helvetica-Bold", fontSize=6.9, leading=7.6, textColor=colors.white, alignment=1)
+    st_cell = ParagraphStyle("cell", parent=styles["Normal"], fontName="Helvetica", fontSize=6.2, leading=7.1, textColor=colors.black)
+    data = [[Paragraph(h, st_head) for h in headers]]
+    data.extend([[Paragraph(v, st_cell) for v in row] for row in rows])
 
     widths = fit_widths(headers, rows, doc.width)
     tbl = Table(data, repeatRows=1, colWidths=widths, hAlign="CENTER")
@@ -155,8 +157,38 @@ def render_pdf(xlsx: Path, pdf: Path) -> Tuple[int, int]:
     return len(headers), len(rows)
 
 
+def update_manifest() -> None:
+    if not PDF_MANIFEST.exists():
+        return
+    items = json.loads(PDF_MANIFEST.read_text(encoding="utf-8-sig"))
+    cleaned = [
+        item for item in items
+        if "hunt_tables/2026" not in str(item.get("href", ""))
+        and "hunt_tables/2026" not in str(item.get("companion_href", ""))
+    ]
+    for idx, pdf in enumerate(sorted(OUT_DIR.glob("*.pdf")), start=1):
+        title = pdf.stem
+        xlsx = SRC_DIR / f"{title}.xlsx"
+        cleaned.append(
+            {
+                "group": "hunt_tables",
+                "type": "pdf",
+                "year": "2026",
+                "title": title,
+                "subtitle": "Clean public display hunt table PDF.",
+                "href": f"./processed_data/hard_data_exports/hunt_tables/2026/PDF'S/{pdf.name}",
+                "companion_type": "xlsx",
+                "companion_href": f"./processed_data/hard_data_exports/hunt_tables/2026/XLXS/{xlsx.name}",
+                "sort_order": 9000 + idx,
+            }
+        )
+    PDF_MANIFEST.write_text(json.dumps(cleaned, indent=2) + "\n", encoding="utf-8")
+
+
 def main() -> None:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
+    for old in OUT_DIR.glob("*.pdf"):
+        old.unlink()
     files = sorted([p for p in SRC_DIR.glob("*.xlsx") if not p.name.startswith("~$")])
     if not files:
         raise SystemExit("No xlsx files found")
@@ -171,7 +203,9 @@ def main() -> None:
         except Exception as e:
             print(f"ERR {x.name}: {e}")
 
+    update_manifest()
     print(f"DONE total={len(files)} ok={ok} out={OUT_DIR}")
+    print(f"MANIFEST {PDF_MANIFEST}")
 
 if __name__ == '__main__':
     main()

@@ -1,5 +1,57 @@
 # WORK LOG
 
+## Regenerate 2026 Hunt Table XLSX/PDF Display Files With Season Enrichment
+- Timestamp (UTC): 2026-05-29T05:54:27Z
+- Scope:
+  - Regenerated the full 2026 hunt-table display set from `processed_data/hunt_research_2026_split/hunts`.
+  - Patched the XLSX generator to enrich display rows from canonical `pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv` by normalized `hunt_code`, with conservative `species + hunt_name` fallback available.
+  - Fixed the season-column issue by loading `season` from `DATABASE.csv`; for the one statewide black bear row where `DATABASE.csv` and the source workbook had a blank season, used the reviewed note sentence that explicitly describes the season.
+  - Preserved public display formatting: row-1 headers, dark brown/white header row, parchment banded rows, table filters, wrapped text, legal landscape print setup, narrow margins, fit-to-width, and centered print layout.
+  - Updated PDF conversion to clear stale PDFs before rendering, use legal landscape page size, and rewrite the hard-copy PDF manifest from the regenerated PDF/XLSX pairs.
+- Files updated:
+  - `.gitattributes`
+  - `scripts/regenerate-hunt-tables-2026-clean-xlsx.py`
+  - `scripts/convert-hunt-tables-2026-xlxs-to-pdfs.py`
+  - `processed_data/hard_data_exports/hard_copy_pdf_manifest.web.json`
+  - `processed_data/audits/hunt_tables_2026_clean_xlsx_regeneration_audit.csv`
+  - `processed_data/hard_data_exports/hunt_tables/2026/XLXS/*`
+  - `processed_data/hard_data_exports/hunt_tables/2026/PDF'S/*`
+  - `pages-dist/processed_data/hard_data_exports/hunt_tables/2026/XLXS/*`
+  - `pages-dist/processed_data/hard_data_exports/hunt_tables/2026/PDF'S/*`
+- Outputs created / regenerated:
+  - 119 clean XLSX files
+  - 119 matching PDF files
+  - 119 staged clean XLSX files
+  - 119 hard-copy PDF manifest entries with valid XLSX companions
+- Key results:
+  - Live XLSX files: 119
+  - Live PDF files: 119
+  - `pages-dist` XLSX files: 119
+  - `pages-dist` PDF files: 119
+  - Total hunt rows rendered: 1288
+  - Bad workbook header/table/merge issues: 0
+  - Blank season rows: 0
+  - Database code join rows: 1288
+  - Database name fallback rows: 0
+  - Missing database join rows: 0
+  - Manifest hunt-table entries: 119
+  - Manifest missing links: 0
+- Validation commands run:
+  - `python -m py_compile scripts/regenerate-hunt-tables-2026-clean-xlsx.py scripts/convert-hunt-tables-2026-xlxs-to-pdfs.py`
+  - `npm.cmd run hunt-tables:2026:clean-all`
+  - workbook validation for headers, merged cells, table count, row count, and blank seasons
+  - manifest link validation for regenerated PDF/XLSX hrefs
+  - `npm.cmd run build`
+- Build result:
+  - Total current hunts: 1449
+  - Modeled: 1448
+  - Manual review: 0
+  - Gate PASS: 1449
+  - Gate BLOCK: 0
+  - Crosswalk matched current codes: 169
+- Commit:
+  - This entry is included in the hunt-table regeneration commit.
+
 ## Elk Plan Codex Instruction Integration
 - Timestamp (UTC): 2026-05-29T00:56:00Z
 - Scope:
@@ -6424,3 +6476,41 @@
   - Verified all 48 XLXS files now contain table objects (
 o_table=0).
   - Verified XLSX=48, PDF=48 parity.
+## Regenerate 2026 Hunt Table XLSX/PDF Display Files From Clean Source Rows
+- Timestamp (UTC): 2026-05-29T05:34:00Z
+- Scope:
+  - Rebuilt the public 2026 hunt table display workbooks from:
+    - pipeline/RAW/hunt_unit_database/2026/formatted_xlsx
+  - Replaced inherited/partially formatted workbook artifacts with clean files containing only the approved public columns:
+    - hunt_name
+    - hunt_code
+    - sex_type
+    - species
+    - weapon
+    - hunt_type
+    - season
+    - permits_2026_res
+    - permits_2026_nr
+    - permits_2026_total
+    - NOTES
+    - Harvest Prior Year
+    - Percent Harvest Success (previous hunting season)
+    - Average Age Harvested (previous hunting season)
+    - Avg Days Hunted (previous hunting season)
+  - Joined latest available harvest metrics from processed_data harvest feature files by hunt_code.
+  - Regenerated matching public PDFs from the clean rows.
+  - Standardized display filenames to uppercase visitor-facing names.
+- Outputs:
+  - Clean XLSX files: 46
+  - Clean PDF files: 46
+  - Audit:
+    - processed_data/audits/hunt_tables_2026_clean_redraft_audit.csv
+  - Script:
+    - scripts/redraft-hunt-tables-2026-clean-display.py
+- Validation:
+  - Verified all 46 clean XLSX files have the exact 15-column header set.
+  - Verified no merged cells remain in the clean XLSX outputs.
+  - Verified each clean XLSX contains exactly one table object.
+  - Verified XLSX/PDF stem parity: 46 XLSX, 46 PDF, missing pairs: 0.
+  - Removed leftover Excel lock file from the display XLSX folder.
+  - npm.cmd run build passed.
