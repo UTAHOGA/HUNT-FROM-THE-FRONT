@@ -1,3 +1,27 @@
+## 2026-05-30T07:24:06Z - Drop Duplicate permits_2026 Triplet, Keep permit_allotment_2026 Triplet
+
+- Assigned action:
+  - Keep `permit_allotment_2026_res`, `permit_allotment_2026_nr`, `permit_allotment_2026_total`.
+  - Delete duplicate columns `permits_2026_res`, `permits_2026_nr`, `permits_2026_total`.
+- File modified:
+  - `pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv`
+- Backup created:
+  - `processed_data/backups/DATABASE_before_drop_permits_2026_columns_20260530_072345.csv`
+- Validation:
+  - Row count after change: `1449`
+  - Column count after change: `42` (from `45`)
+  - Presence check:
+    - `permits_2026_res`: removed
+    - `permits_2026_nr`: removed
+    - `permits_2026_total`: removed
+    - `permit_allotment_2026_res`: present
+    - `permit_allotment_2026_nr`: present
+    - `permit_allotment_2026_total`: present
+  - Nonblank coverage retained for kept columns:
+    - `permit_allotment_2026_res`: `938`
+    - `permit_allotment_2026_nr`: `932`
+    - `permit_allotment_2026_total`: `1173`
+
 ## 2026-05-30T05:28:43Z - Expo/Conservation Reconcile Script + All-Species Permit Reconcile Script
 
 - Added reusable Expo/Conservation reconciliation script:
