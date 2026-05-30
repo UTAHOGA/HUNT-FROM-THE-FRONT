@@ -1,3 +1,38 @@
+## 2026-05-30T10:50:08Z - Public Data Contract Layer Build + Runtime Fallback Hardening
+
+- Assigned action:
+  - Continue step sequence with the public data contract layer and complete generation of website-facing contract artifacts.
+- Files modified:
+  - `scripts/build-public-data-contracts.js`
+- Files generated:
+  - `processed_data/public_contracts/hunt_units.geojson`
+  - `processed_data/public_contracts/hunt_odds_history.csv`
+  - `processed_data/public_contracts/hunt_odds_history.json`
+  - `processed_data/public_contracts/hunt_predictions.json`
+  - `processed_data/public_contracts/hunt_application_outlook.json`
+  - `processed_data/public_contracts/outfitters-public.json`
+  - `processed_data/public_contracts/source_snapshots.json`
+  - `processed_data/public_contracts/public_contract_summary.json`
+- Contract builder hardening:
+  - Added input resolution and fallback candidates so missing runtime CSVs no longer crash contract generation.
+  - Added safe fallback synthesis from `processed_data/research_page/hunt_application_outlook.json` when runtime prediction/odds CSVs are unavailable or too sparse.
+  - Added outfitter fallback behavior: if `data/outfitters-public.json` is empty, contract output uses reviewed records from `data/outfitters.json`.
+  - Preserved guardrail: contract builder creates website-facing outputs only and does not modify `DATABASE.csv` or draw math.
+- Output summary:
+  - `hunt_predictions_rows`: `2898`
+  - `hunt_odds_history_rows`: `2898`
+  - `hunt_application_outlook_rows`: `2898`
+  - `outfitters_public_rows`: `11`
+  - `hunt_units_features`: `683`
+  - `unique_prediction_hunts`: `1449`
+  - `prediction_source_mode`: `outlook_fallback`
+  - `odds_history_source_mode`: `outlook_fallback`
+  - `outfitters_source_mode`: `outfitters_json_fallback`
+- Validation:
+  - `node --check scripts/build-public-data-contracts.js` PASS
+  - `node scripts/build-public-data-contracts.js` PASS
+  - `npm.cmd run build` PASS
+
 ## 2026-05-30T07:40:36Z - Ingest 2026 Conservation Permit PDF Into DATABASE.csv
 
 - Assigned action:

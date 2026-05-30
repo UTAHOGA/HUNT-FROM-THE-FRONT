@@ -7,12 +7,28 @@ const zlib = require('zlib');
 const ROOT = path.resolve(__dirname, '..');
 const OUT_DIR = path.join(ROOT, 'processed_data', 'public_contracts');
 
-const INPUTS = {
-  predictive: path.join(ROOT, 'processed_data', 'draw_reality_engine_predictive_v2.csv'),
-  oddsHistory: path.join(ROOT, 'processed_data', 'draw_reality_engine_v2.csv'),
-  outlook: path.join(ROOT, 'processed_data', 'research_page', 'hunt_application_outlook.json'),
-  outfittersPublic: path.join(ROOT, 'data', 'outfitters-public.json'),
-  huntUnitsLite: path.join(ROOT, 'data', 'hunt-boundaries-lite.geojson'),
+const INPUT_CANDIDATES = {
+  predictive: [
+    path.join(ROOT, 'processed_data', 'draw_reality_engine_predictive_v2.csv'),
+    path.join(ROOT, 'processed_data', 'draw_reality_engine_v2.csv'),
+    path.join(ROOT, 'data', 'utah', 'fixtures', 'draw_reality_engine.csv'),
+  ],
+  oddsHistory: [
+    path.join(ROOT, 'processed_data', 'draw_reality_engine_v2.csv'),
+    path.join(ROOT, 'processed_data', 'draw_reality_engine_predictive_v2.csv'),
+    path.join(ROOT, 'data', 'utah', 'fixtures', 'draw_reality_engine.csv'),
+  ],
+  outlook: [
+    path.join(ROOT, 'processed_data', 'research_page', 'hunt_application_outlook.json'),
+  ],
+  outfittersPublic: [
+    path.join(ROOT, 'data', 'outfitters-public.json'),
+    path.join(ROOT, 'data', 'outfitters.json'),
+  ],
+  huntUnitsLite: [
+    path.join(ROOT, 'data', 'hunt-boundaries-lite.geojson'),
+    path.join(ROOT, 'data', 'hunt_boundaries.geojson'),
+  ],
 };
 
 function rel(filePath) {
@@ -21,6 +37,24 @@ function rel(filePath) {
 
 async function ensureDir(dirPath) {
   await fsp.mkdir(dirPath, { recursive: true });
+}
+
+async function exists(filePath) {
+  try {
+    await fsp.access(filePath);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+async function resolveInput(role, candidates = []) {
+  for (const candidate of candidates) {
+    if (await exists(candidate)) {
+      return { role, filePath: candidate, exists: true };
+    }
+  }
+  return { role, filePath: candidates[0] || '', exists: false };
 }
 
 function decodeMaybeGzip(buffer) {
@@ -147,6 +181,18 @@ function uniqueBy(rows, keyFn) {
   return output;
 }
 
+function toArray(value) {
+  return Array.isArray(value) ? value : [];
+}
+
+function inferReportedYear(row) {
+  const direct = first(row, ['year', 'source_year', 'reported_hunt_year', 'quota_source_year']);
+  if (direct) return direct;
+  const predictionYear = Number(first(row, ['prediction_year']));
+  if (Number.isFinite(predictionYear) && predictionYear > 0) return String(predictionYear - 1);
+  return '';
+}
+
 async function fileSnapshot(filePath, role) {
   try {
     const buffer = await fsp.readFile(filePath);
@@ -180,12 +226,44 @@ async function fileSnapshot(filePath, role) {
 async function main() {
   await ensureDir(OUT_DIR);
 
-  const predictiveRows = parseCsv(await readText(INPUTS.predictive));
-  const oddsRows = parseCsv(await readText(INPUTS.oddsHistory));
-  const outlookRows = JSON.parse(await readText(INPUTS.outlook));
-  const outfittersRows = JSON.parse(await readText(INPUTS.outfittersPublic));
+  const inputResolution = {
+    predictive: await resolveInput('predictive', INPUT_CANDIDATES.predictive),
+    oddsHistory: await resolveInput('oddsHistory', INPUT_CANDIDATES.oddsHistory),
+    outlook: await resolveInput('outlook', INPUT_CANDIDATES.outlook),
+    outfittersPublic: await resolveInput('outfittersPublic', INPUT_CANDIDATES.outfittersPublic),
+    huntUnitsLite: await resolveInput('huntUnitsLite', INPUT_CANDIDATES.huntUnitsLite),
+  };
 
-  const predictionRows = predictiveRows.map((row) => ({
+  const predictiveRows = inputResolution.predictive.exists
+    ? parseCsv(await readText(inputResolution.predictive.filePath))
+    : [];
+  const oddsRows = inputResolution.oddsHistory.exists
+    ? parseCsv(await readText(inputResolution.oddsHistory.filePath))
+    : [];
+  const outlookRows = inputResolution.outlook.exists
+    ? toArray(JSON.parse(await readText(inputResolution.outlook.filePath)))
+    : [];
+  let outfittersRows = inputResolution.outfittersPublic.exists
+    ? toArray(JSON.parse(await readText(inputResolution.outfittersPublic.filePath)))
+    : [];
+  let outfittersFallbackPath = '';
+  if (!outfittersRows.length) {
+    for (const candidate of INPUT_CANDIDATES.outfittersPublic.slice(1)) {
+      if (!(await exists(candidate))) continue;
+      try {
+        const rows = toArray(JSON.parse(await readText(candidate)));
+        if (rows.length) {
+          outfittersRows = rows;
+          outfittersFallbackPath = candidate;
+          break;
+        }
+      } catch {
+        // Ignore malformed fallback and continue.
+      }
+    }
+  }
+
+  let predictionRows = predictiveRows.map((row) => ({
     hunt_code: first(row, ['hunt_code']),
     hunt_name: first(row, ['hunt_name', 'unit_name', 'unit']),
     species: first(row, ['species', 'sportsman_species']),
@@ -202,11 +280,11 @@ async function main() {
     status: first(row, ['status', 'draw_outlook', 'availability_status']),
     model_version: first(row, ['model_version']),
     rule_version: first(row, ['rule_version']),
-    source_file: first(row, ['source_file', 'sportsman_source_file', 'quota_source_file']),
+    source_file: first(row, ['source_file', 'sportsman_source_file', 'quota_source_file', 'truth_source_file']),
     data_quality_flags: first(row, ['data_quality_flags', 'reason_codes']),
   })).filter((row) => row.hunt_code);
 
-  const oddsHistoryRows = oddsRows.map((row) => ({
+  let oddsHistoryRows = oddsRows.map((row) => ({
     hunt_code: first(row, ['hunt_code']),
     boundary_id: first(row, ['boundary_id']),
     hunt_name: first(row, ['hunt_name']),
@@ -215,19 +293,19 @@ async function main() {
     weapon: first(row, ['weapon']),
     hunt_type: first(row, ['hunt_type']),
     hunt_class: first(row, ['hunt_class']),
-    reported_hunt_year: first(row, ['year']),
-    model_target_year: first(row, ['year']) ? Number(first(row, ['year'])) + 1 : '',
+    reported_hunt_year: inferReportedYear(row),
+    model_target_year: inferReportedYear(row) ? Number(inferReportedYear(row)) + 1 : '',
     draw_pool: first(row, ['draw_pool']),
     residency: first(row, ['residency']),
     points: first(row, ['points']),
-    eligible_applicants: numberOrBlank(first(row, ['eligible_applicants'])),
+    eligible_applicants: numberOrBlank(first(row, ['eligible_applicants', 'applicants', 'forecast_applicants_at_level'])),
     bonus_permits: numberOrBlank(first(row, ['bonus_permits'])),
     regular_permits: numberOrBlank(first(row, ['regular_permits'])),
-    total_permits: numberOrBlank(first(row, ['total_permits'])),
-    success_ratio: numberOrBlank(first(row, ['success_ratio'])),
-    source_file: first(row, ['source_file']),
+    total_permits: numberOrBlank(first(row, ['total_permits', 'permits_2026_total', 'permit_allotment_2026_total', 'quota_2026_total'])),
+    success_ratio: numberOrBlank(first(row, ['success_ratio', 'p_draw_mean'])),
+    source_file: first(row, ['source_file', 'truth_source_file']),
     source_pdf_page: first(row, ['source_pdf_page', 'source_report_page']),
-    validation_status: first(row, ['validation_status']),
+    validation_status: first(row, ['validation_status', 'data_quality_grade', 'status']),
   })).filter((row) => row.hunt_code);
 
   const contractOutlookRows = outlookRows.map((row) => ({
@@ -261,9 +339,65 @@ async function main() {
     source_badges: first(row, ['source_badges']),
   })).filter((row) => row.hunt_code);
 
+  let predictionFallbackFromOutlook = false;
+  if ((!predictionRows.length || (predictionRows.length < 100 && contractOutlookRows.length >= 100)) && contractOutlookRows.length) {
+    predictionFallbackFromOutlook = true;
+    predictionRows = contractOutlookRows.map((row) => {
+      const probability = numberOrBlank(row.modeled_draw_probability);
+      return {
+      hunt_code: row.hunt_code,
+      hunt_name: row.hunt_name,
+      species: row.species,
+      sex_type: '',
+      weapon: row.weapon,
+      hunt_type: row.draw_family,
+      hunt_class: row.hunt_class,
+      residency: row.residency,
+      points: '',
+      draw_pool: row.draw_pool,
+      modeled_draw_probability: probability,
+      modeled_draw_probability_pct: probability === '' ? '' : probability * 100,
+      guaranteed_line_points: row.guaranteed_line_points,
+      status: row.decision_label || '',
+      model_version: 'contract_fallback_from_outlook',
+      rule_version: '',
+      source_file: inputResolution.outlook.exists ? rel(inputResolution.outlook.filePath) : '',
+      data_quality_flags: row.data_confidence || '',
+    };
+    });
+  }
+
+  let oddsFallbackFromOutlook = false;
+  if ((!oddsHistoryRows.length || (oddsHistoryRows.length < 100 && contractOutlookRows.length >= 100)) && contractOutlookRows.length) {
+    oddsFallbackFromOutlook = true;
+    oddsHistoryRows = contractOutlookRows.map((row) => ({
+      hunt_code: row.hunt_code,
+      boundary_id: row.boundary_id,
+      hunt_name: row.hunt_name,
+      species: row.species,
+      sex_type: '',
+      weapon: row.weapon,
+      hunt_type: row.draw_family,
+      hunt_class: row.hunt_class,
+      reported_hunt_year: '2025',
+      model_target_year: 2026,
+      draw_pool: row.draw_pool,
+      residency: row.residency,
+      points: '',
+      eligible_applicants: '',
+      bonus_permits: '',
+      regular_permits: '',
+      total_permits: numberOrBlank(row.permits_2026_total),
+      success_ratio: numberOrBlank(row.modeled_draw_probability),
+      source_file: inputResolution.outlook.exists ? rel(inputResolution.outlook.filePath) : '',
+      source_pdf_page: '',
+      validation_status: row.data_confidence || '',
+    }));
+  }
+
   const huntUnitsOut = path.join(OUT_DIR, 'hunt_units.geojson');
-  if (fs.existsSync(INPUTS.huntUnitsLite)) {
-    await fsp.copyFile(INPUTS.huntUnitsLite, huntUnitsOut);
+  if (inputResolution.huntUnitsLite.exists) {
+    await fsp.copyFile(inputResolution.huntUnitsLite.filePath, huntUnitsOut);
   } else {
     await fsp.writeFile(huntUnitsOut, JSON.stringify({
       type: 'FeatureCollection',
@@ -282,11 +416,11 @@ async function main() {
   await fsp.writeFile(path.join(OUT_DIR, 'outfitters-public.json'), JSON.stringify(outfittersRows, null, 2), 'utf8');
 
   const snapshots = [];
-  snapshots.push(await fileSnapshot(INPUTS.predictive, 'source_runtime_for_hunt_predictions'));
-  snapshots.push(await fileSnapshot(INPUTS.oddsHistory, 'source_runtime_for_hunt_odds_history'));
-  snapshots.push(await fileSnapshot(INPUTS.outlook, 'source_contract_for_hunt_application_outlook'));
-  snapshots.push(await fileSnapshot(INPUTS.outfittersPublic, 'source_public_outfitter_records'));
-  snapshots.push(await fileSnapshot(INPUTS.huntUnitsLite, 'source_boundary_lite_geojson'));
+  snapshots.push(await fileSnapshot(inputResolution.predictive.filePath, 'source_runtime_for_hunt_predictions'));
+  snapshots.push(await fileSnapshot(inputResolution.oddsHistory.filePath, 'source_runtime_for_hunt_odds_history'));
+  snapshots.push(await fileSnapshot(inputResolution.outlook.filePath, 'source_contract_for_hunt_application_outlook'));
+  snapshots.push(await fileSnapshot(outfittersFallbackPath || inputResolution.outfittersPublic.filePath, 'source_public_outfitter_records'));
+  snapshots.push(await fileSnapshot(inputResolution.huntUnitsLite.filePath, 'source_boundary_lite_geojson'));
   for (const output of [
     'hunt_predictions.json',
     'hunt_odds_history.json',
@@ -300,6 +434,13 @@ async function main() {
 
   const summary = {
     generated_at: new Date().toISOString(),
+    input_resolution: {
+      predictive: rel(inputResolution.predictive.filePath),
+      oddsHistory: rel(inputResolution.oddsHistory.filePath),
+      outlook: rel(inputResolution.outlook.filePath),
+      outfittersPublic: rel(outfittersFallbackPath || inputResolution.outfittersPublic.filePath),
+      huntUnitsLite: rel(inputResolution.huntUnitsLite.filePath),
+    },
     outputs: {
       hunt_predictions_rows: predictionRows.length,
       hunt_odds_history_rows: oddsHistoryRows.length,
@@ -315,12 +456,16 @@ async function main() {
       })(),
       unique_prediction_hunts: uniqueBy(predictionRows, (row) => row.hunt_code).length,
       unique_outlook_hunts: uniqueBy(contractOutlookRows, (row) => row.hunt_code).length,
+      prediction_source_mode: predictionFallbackFromOutlook ? 'outlook_fallback' : 'runtime_csv',
+      odds_history_source_mode: oddsFallbackFromOutlook ? 'outlook_fallback' : 'runtime_csv',
+      outfitters_source_mode: outfittersFallbackPath ? 'outfitters_json_fallback' : 'outfitters_public_json',
     },
     source_notes: [
       'Contracts are website-facing display products only.',
       'Prediction math, p_draw, permit truth, and source truth files are not modified by this script.',
       'hunt_units.geojson is copied from the existing lite boundary artifact for browser-safe delivery.',
       'Technical source paths belong in collapsed source/freshness details, not primary hunter-facing panels.',
+      'When primary runtime CSVs are missing, this contract build uses the first available reviewed fallback input.',
     ],
   };
 
