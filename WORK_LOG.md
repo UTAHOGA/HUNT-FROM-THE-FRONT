@@ -7786,7 +7786,11 @@ o_table=0).
   - `assets/js/hard-copy-public-library.js`
   - `assets/css/hard-copy-public-library.css`
   - `hard-copy.html`
+  - `public/hard-copy/data/documents.json`
 - Step 6 curation cleanup:
+  - Added curated data manifest:
+    - `public/hard-copy/data/documents.json`
+  - Library now checks this curated JSON feed first before manifest fallbacks.
   - Added resilient manifest source fallbacks and support for object-style manifest payloads (`input_file_status` lists).
   - Added curated fixed public document entries under `public/hard-copy/DISPLAY DATA/*` so the library can render trusted references even when allowlist files are absent.
   - Added local file availability filtering via `HEAD`/fallback `GET` checks to suppress broken local links before rendering cards.
