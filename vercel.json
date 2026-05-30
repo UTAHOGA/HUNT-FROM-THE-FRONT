@@ -1,9 +1,16 @@
 {
-  "routes": [
-    { "src": "/index.html", "dest": "/index.html" },
-    { "src": "/(.*\\.js)", "dest": "/$1" },
-    { "src": "/(.*\\.css)", "dest": "/$1" },
-    { "src": "/(.*\\.json)", "dest": "/$1" },
-    { "src": "/(.*)", "dest": "/index.html" }
+  "builds": [
+    {
+      "src": "*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.js",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.css",
+      "use": "@vercel/static"
+    }
   ]
 }
