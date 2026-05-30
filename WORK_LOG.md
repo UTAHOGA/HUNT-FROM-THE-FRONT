@@ -1,3 +1,30 @@
+## 2026-05-30T16:34:02Z - Hard-Copy Render Recovery (Pages-Dist Refresh)
+
+- Assigned action:
+  - Restore hard-copy page rendering in active built output.
+- Root cause found:
+  - Source fix existed in root files, but `pages-dist` was stale and still serving older output.
+- Actions performed:
+  - Ran full build pipeline to refresh pages-dist assets:
+    - `npm.cmd run build`
+  - Verified deployed-path render target directly:
+    - `https://127.0.0.1:4173/pages-dist/hard-copy.html`
+  - Confirmed runtime state:
+    - `folders = 8`
+    - `results panel hidden = false`
+    - `result cards visible on load = 3`
+    - `title = UTAH DWR RULES & REGULATIONS`
+- Files refreshed by build:
+  - `pages-dist/processed_data/hard_data_exports/library/hard_data_manifest.json`
+  - `pages-dist/processed_data/hard_data_exports/library/library_page_summary.json`
+  - `pages-dist/processed_data/library/hard_data_library_manifest.json`
+  - `pages-dist/processed_data/library/library_page_summary.json`
+  - `pages-dist/processed_data/production/library_page_summary.json`
+  - `pages-dist/public/hard-copy/data/library_page_summary.json`
+  - `pages-dist/public/hard-copy/manifests/hard_data_manifest.json`
+  - `public/hard-copy/data/library_page_summary.json`
+  - `public/hard-copy/manifests/hard_data_manifest.json`
+
 ## 2026-05-30T15:23:32Z - Hard-Copy Library Default Visible Results
 
 - Assigned action:
