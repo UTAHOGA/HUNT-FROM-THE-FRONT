@@ -5293,6 +5293,7 @@ function bootstrapPendingHuntSelection() {
 
 // --- BOOTSTRAP ---
 document.addEventListener('DOMContentLoaded', async () => {
+  if (maybeRedirectLocalIpToLocalhost()) return;
   initOwnershipControlInHeader();
   installGoogleAuthErrorMonitor();
   initDevDebugPanel();
@@ -5360,6 +5361,24 @@ function getCurrentOrigin() {
   if (typeof window === 'undefined') return '';
   const origin = String(window.location?.origin || '').trim();
   return origin || `${window.location.protocol}//${window.location.host}`;
+}
+
+function maybeRedirectLocalIpToLocalhost() {
+  if (typeof window === 'undefined') return false;
+  const protocol = String(window.location?.protocol || '');
+  const hostname = String(window.location?.hostname || '').toLowerCase();
+  if ((protocol !== 'http:' && protocol !== 'https:') || hostname !== '127.0.0.1') return false;
+  const port = window.location?.port ? `:${window.location.port}` : '';
+  const target = `${protocol}//localhost${port}${window.location.pathname || '/'}${window.location.search || ''}${window.location.hash || ''}`;
+  try {
+    const guardKey = 'uoga_localhost_redirect_done_v1';
+    if (sessionStorage.getItem(guardKey) === '1') return false;
+    sessionStorage.setItem(guardKey, '1');
+  } catch {
+    // ignore sessionStorage failures and still attempt redirect
+  }
+  window.location.replace(target);
+  return true;
 }
 
 function buildGoogleReferrerHint() {

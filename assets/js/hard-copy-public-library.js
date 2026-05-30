@@ -275,6 +275,7 @@
   function closeEmbed() {
     const panel = byId("uogaEmbedPanel");
     const frame = byId("uogaEmbedFrame");
+    if (!panel || !frame) return;
     panel.hidden = true;
     frame.src = "about:blank";
     document.body.classList.remove("uoga-modal-open");
@@ -285,6 +286,7 @@
     const panel = byId("uogaEmbedPanel");
     const frame = byId("uogaEmbedFrame");
     const title = byId("uogaEmbedTitle");
+    if (!panel || !frame || !title) return;
     title.textContent = item.title || "Embedded Resource";
     frame.src = item.href;
     panel.hidden = false;
@@ -298,6 +300,7 @@
     const book = byId("uogaPdfFlipbook");
     const status = byId("uogaPdfStatus");
     const download = byId("uogaPdfDownload");
+    if (!panel || !book || !status || !download) return;
     book.innerHTML = "";
     panel.hidden = true;
     document.body.classList.remove("uoga-modal-open");
@@ -312,6 +315,7 @@
     const status = byId("uogaPdfStatus");
     const book = byId("uogaPdfFlipbook");
     const download = byId("uogaPdfDownload");
+    if (!panel || !title || !status || !book || !download) return;
     const viewerHref = item.viewerHref || item.href;
 
     panel.hidden = false;
@@ -319,8 +323,10 @@
     title.textContent = item.title || "PDF Viewer";
     download.href = safeUrl(viewerHref);
     status.textContent = "In-browser PDF preview";
-    byId("uogaPdfPrev").disabled = true;
-    byId("uogaPdfNext").disabled = true;
+    const prev = byId("uogaPdfPrev");
+    const next = byId("uogaPdfNext");
+    if (prev) prev.disabled = true;
+    if (next) next.disabled = true;
     book.innerHTML = "";
 
     try {
@@ -339,11 +345,16 @@
   }
 
   function bindStaticControls() {
-    byId("uogaPdfPrev").disabled = true;
-    byId("uogaPdfNext").disabled = true;
-    byId("uogaEmbedClose").addEventListener("click", closeEmbed);
-    byId("uogaPdfFlipClose").addEventListener("click", closePdfFlipbook);
-    byId("uogaPdfFlipPanel").querySelector(".uoga-pdf-flip-backdrop")?.addEventListener("click", closePdfFlipbook);
+    const prev = byId("uogaPdfPrev");
+    const next = byId("uogaPdfNext");
+    const embedClose = byId("uogaEmbedClose");
+    const pdfClose = byId("uogaPdfFlipClose");
+    const pdfPanel = byId("uogaPdfFlipPanel");
+    if (prev) prev.disabled = true;
+    if (next) next.disabled = true;
+    embedClose?.addEventListener("click", closeEmbed);
+    pdfClose?.addEventListener("click", closePdfFlipbook);
+    pdfPanel?.querySelector(".uoga-pdf-flip-backdrop")?.addEventListener("click", closePdfFlipbook);
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") {
         closeEmbed();
@@ -354,6 +365,7 @@
 
   function renderFolderButtons(items, state, onFolderClick) {
     const wall = byId("uogaFolderWall");
+    if (!wall) return;
     wall.innerHTML = FOLDERS.map((folder) => {
       const count = items.filter((item) => item.folderId === folder.id).length;
       const active = state.activeFolder === folder.id ? "active" : "";
@@ -391,6 +403,7 @@
     const panelCount = byId("uogaLibraryCount");
     const chips = byId("uogaActiveFilters");
     const grid = byId("uogaLibrarySections");
+    if (!panel || !panelTitle || !panelCount || !chips || !grid) return;
 
     if (!shouldShowResults(state)) {
       panel.hidden = true;
@@ -553,8 +566,15 @@
     .catch((error) => {
       const panel = byId("uogaResultsPanel");
       const grid = byId("uogaLibrarySections");
-      panel.hidden = false;
-      panel.setAttribute("aria-hidden", "false");
-      grid.innerHTML = `<div class="public-empty">Could not load public library manifests: ${esc(error.message)}</div>`;
+      if (panel && grid) {
+        panel.hidden = false;
+        panel.setAttribute("aria-hidden", "false");
+        grid.innerHTML = `<div class="public-empty">Could not load public library manifests: ${esc(error.message)}</div>`;
+        return;
+      }
+      const wall = byId("uogaFolderWall");
+      if (wall) {
+        wall.innerHTML = `<div class="public-empty">Library failed to initialize: ${esc(error.message)}</div>`;
+      }
     });
 })();
