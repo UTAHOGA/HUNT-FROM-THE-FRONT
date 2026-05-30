@@ -1,3 +1,37 @@
+## 2026-05-30T07:40:36Z - Ingest 2026 Conservation Permit PDF Into DATABASE.csv
+
+- Assigned action:
+  - Ingest conservation permit data from desktop PDF:
+    - `C:/Users/tyler/Desktop/species truth data/2026 CONSERVATION  PERMITS.pdf`
+  - Permit rule used: one permit row = one permit count.
+- File modified:
+  - `pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv`
+- Backup created:
+  - `processed_data/backups/DATABASE_before_conservation_pdf_ingest_20260530_074022.csv`
+- New columns added to `DATABASE.csv`:
+  - `conservation_permits_2026_total`
+  - `conservation_permits_2026_source`
+- Ingest logic:
+  - Extracted PDF rows by regex `No. + HUNT CODE` and aggregated counts by `hunt_code`.
+  - Wrote aggregated counts into the new conservation columns for matched hunt codes.
+  - Conservative backfill guardrail: only filled `permit_allotment_2026_total` when a row is conservation-context and that allotment total was blank.
+  - Existing nonblank allotment totals were not overwritten by this pass.
+- Audit output:
+  - `processed_data/audits/conservation_pdf_ingest_2026_20260530_074022.json`
+- Key results:
+  - PDF unique row/code pairs extracted: `332`
+  - Unique hunt codes extracted: `120`
+  - Source codes missing from database: `0`
+  - Database rows matched and updated with conservation columns: `120`
+  - Conservation-row blank allotment backfills applied: `15`
+  - Matched non-conservation rows touched in conservation-only columns: `93`
+- Validation:
+  - `DATABASE.csv` rows after ingest: `1449`
+  - `DATABASE.csv` columns after ingest: `37`
+  - New column nonblank counts:
+    - `conservation_permits_2026_total`: `120`
+    - `conservation_permits_2026_source`: `120`
+
 ## 2026-05-30T07:37:13Z - Drop permits_2025_draw_* Family From DATABASE 2026
 
 - Assigned action:
