@@ -4,6 +4,7 @@ const path = require('path');
 const repoRoot = path.resolve(__dirname, '..');
 const outDir = path.join(repoRoot, 'pages-dist');
 const MAX_PAGES_FILE_BYTES = 25 * 1024 * 1024;
+const IS_VERCEL_BUILD = process.env.VERCEL === '1';
 
 const rootFiles = [
   'index.html',
@@ -42,6 +43,13 @@ const rootFiles = [
 const dataFiles = [
   'data/hunt-master-canonical-2026-foundation.json',
   'data/hunt-master-canonical-2026-source-of-truth.json',
+  'data/hunt_predictions.json',
+  'data/hunt_application_outlook.json',
+  'data/hunt_odds_history.json',
+  'data/hunt_odds_history.csv',
+  'data/hunt_units.geojson',
+  'data/source_snapshots.json',
+  'data/public_contract_summary.json',
   'data/elk_hunt_table_official.json',
   'data/elk_antlerless_hunt_table_official.json',
   'data/pronghorn_hunt_table_official.json',
@@ -64,6 +72,8 @@ const dataFiles = [
 
 const processedFiles = [
   'processed_data/composite_hunt_unit_mapping_2026.geojson',
+  'processed_data/statewide_composite_boundaries_2026_FINAL_LOCKED.geojson',
+  'processed_data/statewide_composite_boundaries_2026.geojson',
   'processed_data/draw_reality_engine.csv',
   'processed_data/draw_reality_engine_v2.csv',
   'processed_data/draw_reality_engine_predictive_v2.csv',
@@ -233,7 +243,7 @@ async function copyFileIfExists(relPath, missing, tooLarge) {
     return;
   }
   const stat = await fs.stat(src);
-  if (stat.size > MAX_PAGES_FILE_BYTES) {
+  if (!IS_VERCEL_BUILD && stat.size > MAX_PAGES_FILE_BYTES) {
     tooLarge.push(`${relPath} (${(stat.size / (1024 * 1024)).toFixed(1)} MiB)`);
     return;
   }

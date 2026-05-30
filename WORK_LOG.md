@@ -1,3 +1,37 @@
+## 2026-05-30T11:47:24-06:00 - Runtime 404 Restore From Desktop Public Contracts + Boundary Fallback Paths
+
+- Assigned action:
+  - Restore files currently requested by browser runtime/F12 from `C:\Users\tyler\Desktop\public_contracts`.
+- Source files restored from desktop package:
+  - `hunt_odds_history.csv`
+  - `hunt_odds_history.json`
+  - `hunt_predictions.json`
+  - `hunt_application_outlook.json`
+  - `hunt_units.geojson`
+  - `outfitters-public.json`
+  - `public_contract_summary.json`
+  - `source_snapshots.json`
+- Restored target paths:
+  - `data/*` copies for runtime fallbacks
+  - `processed_data/public_contracts/*` copies for contract feed paths
+  - `processed_data/composite_hunt_unit_mapping_2026.geojson`
+  - `processed_data/statewide_composite_boundaries_2026_FINAL_LOCKED.geojson`
+  - `processed_data/statewide_composite_boundaries_2026.geojson`
+  - `processed_data/display-boundary-index-2026.json`
+  - `processed_data/display-boundary-index-2026.csv`
+  - `processed_data/hunt-master-canonical-2026-source-of-truth.json`
+- Build packaging fix:
+  - `scripts/build-pages-dist.js`
+  - Added missing `/data` public-contract files to `dataFiles` copy list.
+  - Added missing processed boundary files to `processedFiles` copy list.
+  - Updated size-limit behavior so Vercel builds (`VERCEL=1`) include oversized restored files that were previously skipped.
+- Validation:
+  - `npm run build` PASS
+  - `VERCEL=1 npm run build` PASS
+  - Verified generated `pages-dist` now includes previously missing runtime files:
+    - contract data JSON/CSV in `pages-dist/data`
+    - processed boundary/index files in `pages-dist/processed_data`
+
 ## 2026-05-30T17:23:31Z - Production 404 Root-Cause (Vercel Config) + Deploy Output Fix
 
 - Assigned action:
