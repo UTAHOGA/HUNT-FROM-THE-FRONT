@@ -188,11 +188,58 @@ def write_display(rows):
 # -------------------------
 # MAIN
 # -------------------------
-def main():
+
+def write_display(rows):
+    from openpyxl import Workbook
+    from openpyxl.styles import Font, Alignment
+
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "DISPLAY"
+
+    headers = [
+        "HUNT NAME","HUNT CODE","SEX","SPECIES","TYPE","WEAPON","SEASON",
+        "PERMITS / HARVEST","2025 PERFORMANCE","SAT"
+    ]
+
+    ws.append(headers)
+
+    for r in rows:
+        permits = r.get("2026 PERMITS TOTAL") or "0"
+        harvest = r.get("2026 HARVEST SUCCESS") or "0"
+
+        success = r.get("2026 HARVEST SUCCESS") or "0"
+        age = r.get("2026 HARVEST AGE") or "—"
+        days = r.get("2026 HARVEST DAYS") or "—"
+
+        ws.append([
+            r.get("HUNT NAME"),
+            r.get("HUNT CODE"),
+            r.get("SEX TYPE"),
+            r.get("SPECIES"),
+            r.get("HUNT TYPE"),
+            r.get("WEAPON"),
+            r.get("SEASON"),
+            f"{permits} / {harvest}",
+            f"{success}% | {age}yr | {days}d",
+            "—"
+        ])
+
+    for cell in ws[1]:
+        cell.font = Font(bold=True)
+        cell.alignment = Alignment(horizontal="center")
+
+    output_path = OUTPUT_DIR / "DISPLAY_READY.xlsx"
+    wb.save(output_path)
+def main() -> None:
     rows, audit = build_rows()
 
-    write_master(rows)
+    write_workbook(rows)
+
+    # 🔥 THIS IS THE ONLY NEW THING
     write_display(rows)
+
+    validate_workbook(rows, audit)
 
     print("MASTER + DISPLAY GENERATED")
     print(DISPLAY_OUTPUT)
