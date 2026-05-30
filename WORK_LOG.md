@@ -1,3 +1,16 @@
+## 2026-05-30T14:00:33Z - Compare Hunts Action Opens Backpack Tray
+
+- Assigned action:
+  - Continue Builder workflow polish so compare flow is immediate.
+- File modified:
+  - `app.js`
+- Change:
+  - Updated `openCompareHunts(...)` to auto-open the Hunt Backpack tray when it is closed, then scroll/focus compare surfaces.
+  - This removes an extra manual step after clicking `Compare Hunts`.
+- Validation:
+  - `node --check app.js` PASS
+  - `npm.cmd run build` PASS
+
 ## 2026-05-30T13:59:40Z - Hunt Builder Action Unification (View Research / Compare / Save / Find Outfitters)
 
 - Assigned action:

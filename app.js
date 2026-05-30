@@ -450,6 +450,11 @@ function saveHuntAndOpenResearch(hunt, residency = 'Resident', points = 12) {
 function openCompareHunts(hunt, residency = 'Resident', points = 12) {
   const record = saveHuntToBackpack(hunt, residency, points);
   if (!record) return;
+  const trayShell = document.querySelector('.uoga-backpack-shell');
+  const trayToggle = document.querySelector('.uoga-backpack-toggle');
+  if (trayToggle && (!trayShell || !trayShell.classList.contains('is-open'))) {
+    trayToggle.click();
+  }
   const basketPanel = document.getElementById('huntBasket');
   const compareTarget = basketPanel || document.querySelector('.uoga-backpack-toggle');
   compareTarget?.scrollIntoView?.({ behavior: 'smooth', block: 'center' });
