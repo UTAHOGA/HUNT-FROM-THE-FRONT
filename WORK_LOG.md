@@ -1,3 +1,21 @@
+## 2026-05-30T16:43:17Z - Hard-Copy Render Hardening + Google Map Auth Fallback
+
+- Assigned action:
+  - Fix reported hard-copy non-render state and Google Earth/Google Maps non-render in local runtime.
+- Files modified:
+  - `app.js`
+- Hard-copy verification:
+  - Confirmed current `hard-copy.html` + library script path renders with folders/results visible on both root and pages-dist routes in local runtime.
+- Map fixes:
+  - Added local-dev redirect from `127.0.0.1` to `localhost` to reduce referrer mismatch risk.
+  - Added Google auth failure fallback behavior: when Google map authentication/referrer check fails, app now auto-switches to DWR map mode instead of leaving a broken Google map overlay.
+- Validation:
+  - `node --check assets/js/hard-copy-public-library.js` PASS
+  - `node --check app.js` PASS
+  - Runtime check (root): `https://localhost:4173/hard-copy.html` => `folders=8`, `cards=3`, `results visible`
+  - Runtime check (pages-dist): `https://localhost:4173/pages-dist/hard-copy.html` => `folders=8`, `cards=3`, `results visible`
+  - Runtime check (root/pages-dist map): Google auth blocked in local runtime now falls back to DWR mode (`mapTypeSelect=dwr`, `dwrMapFrame visible`).
+
 ## 2026-05-30T16:34:02Z - Hard-Copy Render Recovery (Pages-Dist Refresh)
 
 - Assigned action:

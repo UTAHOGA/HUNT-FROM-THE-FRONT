@@ -4560,10 +4560,17 @@ function handleGoogleMapUnavailable(reason = 'Google map unavailable.') {
   if (googleEarth3dMap) {
     googleEarth3dMap.hidden = true;
   }
-  if (mapTypeSelect) {
-    mapTypeSelect.value = 'google';
+  const mapEl = document.getElementById('map');
+  if (mapEl) {
+    mapEl.hidden = true;
   }
-  updateStatus(reason);
+  if (mapTypeSelect) {
+    mapTypeSelect.value = 'dwr';
+    applyMapMode();
+    updateStatus(`${reason} Switched to Utah DWR map.`);
+  } else {
+    updateStatus(reason);
+  }
   renderDevDebugPanel();
 }
 
