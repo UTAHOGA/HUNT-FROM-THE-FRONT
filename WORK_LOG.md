@@ -1,3 +1,44 @@
+## 2026-05-30T05:28:43Z - Expo/Conservation Reconcile Script + All-Species Permit Reconcile Script
+
+- Added reusable Expo/Conservation reconciliation script:
+  - `scripts/reconcile-expo-conservation-rows.py`
+- Script behavior:
+  - confirms conservation/expo rows using `DATABASE.csv`, conservation-match table, and row text cues
+  - fills missing `hunt_code` by normalized `hunt_name + weapon` match to DATABASE when confident
+  - applies draw-class outputs:
+    - conservation -> `hunt_type=conservation` and organization list in `hunt_class` when available
+    - expo -> `hunt_type=L.E.` and `hunt_class=expo`
+  - conservation precedence over expo when both are present
+- Added reusable all-species permit reconciliation script:
+  - `scripts/reconcile-all-species-permits-2026.py`
+- Script behavior:
+  - normalizes permit text labels (`Res:`, `NonRes:`, `Total:`) into numeric permit columns
+  - moves/deletes blank non-res continuation rows when detected
+  - computes total when resident + nonresident are present and total is blank
+  - reconciles permit columns against DATABASE 2026 truth (`permits_2026_*`, fallback `permit_allotment_2026_*`)
+  - default excludes Expo/Conservation rows for “all other species permits”
+  - uses similarity gate (default 0.80): overwrite mismatches only when target-vs-truth similarity is high, otherwise fill blanks only
+- Validation:
+  - `python -m py_compile scripts/reconcile-expo-conservation-rows.py` PASS
+  - `python -m py_compile scripts/reconcile-all-species-permits-2026.py` PASS
+  - `python scripts/reconcile-expo-conservation-rows.py --target-csv "C:/Users/tyler/Desktop/species truth data/2026 deer buck db.csv"` PASS
+    - rows checked: `458`
+    - changes: `0`
+    - conservation rows touched (already aligned): `5`
+  - `python scripts/reconcile-all-species-permits-2026.py --target-csv "C:/Users/tyler/Desktop/species truth data/2026 deer doe.csv"` PASS
+    - rows checked after continuation-row cleanup: `20`
+    - moved non-res rows: `4`
+    - deleted continuation rows: `4`
+    - normalized cells: `24`
+    - permit-database changes: `0`
+  - `python scripts/reconcile-all-species-permits-2026.py --target-csv "C:/Users/tyler/Desktop/species truth data/2026 deer buck db.csv"` PASS
+    - rows checked: `458`
+    - blank permit cells eligible to fill from truth: `20`
+    - special rows excluded (expo/conservation): `5`
+- Data protection:
+  - no changes to `DATABASE.csv`
+  - no runtime/prediction/public-page files changed
+
 ## 2026-05-30T03:17:26Z - Research Outlook Contract Fallback + Dashboard Contract Validation
 
 - Implemented a fallback seed path in `scripts/build-hunt-research-classification-layer.js` so `hunt_application_outlook` can still be generated when `processed_data/hunt_master_enriched.csv` is unavailable by seeding from `processed_data/point_ladder_view.csv`.
@@ -7473,3 +7514,48 @@ o_table=0).
     - `headers_match = true`
     - `duplicate_hunt_code_count = 0`
     - `missing_season_count = 0`
+
+## DATABASE 2026 Truth Sync To Permit Allotment Columns
+- Timestamp (UTC): 2026-05-30T03:55:04Z
+- Assigned step:
+  - Treat populated `permits_2026_*` values as truth and fill/update `permit_allotment_2026_*` where blank or different.
+- File modified:
+  - `pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv`
+- Backup created:
+  - `processed_data/backups/DATABASE_before_allotment_truth_sync_20260530_035504.csv`
+- Audit report:
+  - `processed_data/audits/database_2026_allotment_truth_sync_report.json`
+- Applied updates:
+  - Synced from truth fields:
+    - `permits_2026_res -> permit_allotment_2026_res`
+    - `permits_2026_nr -> permit_allotment_2026_nr`
+    - `permits_2026_total -> permit_allotment_2026_total`
+  - Rows changed: `29`
+  - Cell changes: `29`
+- Validation:
+  - Post-sync mismatch counts:
+    - `permits_2026_res` vs `permit_allotment_2026_res`: `0`
+    - `permits_2026_nr` vs `permit_allotment_2026_nr`: `0`
+    - `permits_2026_total` vs `permit_allotment_2026_total`: `0`
+
+## Deer Buck Draw-Class Automation Script + Expo/Conservation Pass
+- Timestamp (UTC): 2026-05-30T04:45:25Z
+- Added reusable script:
+  - `scripts/apply-deer-buck-drawclass-rules.py`
+- Script rules and precedence:
+  - `sportsman` -> `hunt_type=L.E.`, `hunt_class=sportsmens`, `2026 permits total=1`
+  - `conservation` -> `hunt_type=conservation`
+  - `expo` -> `hunt_class=expo` and `hunt_type=L.E.` unless conservation rule applies
+  - `private` -> `hunt_type=L.E.`, `hunt_class=private only`
+  - Precedence: `sportsman > conservation > expo > private`
+- Validation:
+  - `python -m py_compile scripts/apply-deer-buck-drawclass-rules.py` passed.
+  - Dry run:
+    - `python scripts/apply-deer-buck-drawclass-rules.py --csv "C:/Users/tyler/Desktop/species truth data/2026 deer buck db.csv"`
+    - `rows_changed: 1` (DB0009 expo class fill)
+  - Write run:
+    - `python scripts/apply-deer-buck-drawclass-rules.py --csv "C:/Users/tyler/Desktop/species truth data/2026 deer buck db.csv" --write`
+    - `rows_changed: 1`
+    - backup: `C:/Users/tyler/Desktop/species truth data/2026 deer buck db.backup_drawclass_rules_20260530_044525.csv`
+- Outcome:
+  - `DB0009` now carries `hunt_type=conservation` and `hunt_class=expo` per requested behavior.
