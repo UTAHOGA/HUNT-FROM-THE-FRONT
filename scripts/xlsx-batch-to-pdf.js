@@ -89,16 +89,9 @@ function generateHTML(data, title) {
   </html>
   `;
 }
-  return `
-  <html>
-  <head>
-    <style>
-      body {
-        font-family: Arial;
-        font-size: 10px;
-        margin: 0;
-        padding: 10px;
-      }
+ function generateHTML(data, title) {
+  return `...`;
+}
 
       h1 {
         text-align: center;
