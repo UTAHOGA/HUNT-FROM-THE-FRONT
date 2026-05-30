@@ -761,6 +761,7 @@
       if (!statusEl || !gridEl) return;
 
       const sources = [
+        './processed_data/public_contracts/outfitters-public.json?v=20260530-verify-directory-2',
         './data/outfitters-public.json?v=20260530-verify-directory-1',
         './data/outfitters.json?v=20260530-verify-directory-1'
       ];
@@ -836,9 +837,11 @@
           gridEl.innerHTML = '<div class="outfitter-public-card"><p>No reviewed outfitter records are published yet.</p></div>';
           return;
         }
-        statusEl.textContent = dataClass === 'public'
-          ? `Showing ${items.length} public outfitter record${items.length === 1 ? '' : 's'}.`
-          : `Showing ${items.length} reviewed records (fallback source).`;
+        statusEl.textContent = dataClass === 'contract'
+          ? `Showing ${items.length} public outfitter record${items.length === 1 ? '' : 's'} (public contract feed).`
+          : dataClass === 'public'
+            ? `Showing ${items.length} public outfitter record${items.length === 1 ? '' : 's'}.`
+            : `Showing ${items.length} reviewed records (fallback source).`;
         gridEl.innerHTML = items.map((item) => {
           const serviceBadges = item.services.map((tag) => `<span class="outfitter-badge">${escapeHtml(tag)}</span>`).join('');
           const speciesText = item.species.length ? item.species.slice(0, 4).join(', ') : 'Species not published';
@@ -878,19 +881,31 @@
       (async function initDirectory() {
         try {
           let records = [];
-          let mode = 'public';
+          let mode = 'contract';
           try {
-            const published = await loadJson(sources[0]);
-            if (Array.isArray(published) && published.length) {
-              records = published;
-              mode = 'public';
+            const contractFeed = await loadJson(sources[0]);
+            if (Array.isArray(contractFeed) && contractFeed.length) {
+              records = contractFeed;
+              mode = 'contract';
             }
           } catch (error) {
-            console.warn('Public outfitter feed not available:', error);
+            console.warn('Contract outfitter feed not available:', error);
           }
 
           if (!records.length) {
-            const fallback = await loadJson(sources[1]);
+            try {
+              const published = await loadJson(sources[1]);
+              if (Array.isArray(published) && published.length) {
+                records = published;
+                mode = 'public';
+              }
+            } catch (error) {
+              console.warn('Public outfitter feed not available:', error);
+            }
+          }
+
+          if (!records.length) {
+            const fallback = await loadJson(sources[2]);
             records = Array.isArray(fallback)
               ? fallback.filter((row) => {
                 const status = safe(row.verificationStatus).toLowerCase();

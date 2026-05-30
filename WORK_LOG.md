@@ -1,3 +1,18 @@
+## 2026-05-30T12:06:50Z - Verify Page Outfitter Feed Priority Aligned To Public Contracts
+
+- Assigned action:
+  - Keep moving and align Outfitter Verification runtime reads with the public contract output.
+- File modified:
+  - `verify.html`
+- Change:
+  - Updated the verified-directory source order to:
+    1. `processed_data/public_contracts/outfitters-public.json`
+    2. `data/outfitters-public.json`
+    3. `data/outfitters.json` vetted fallback filter
+  - Added status messaging so page explicitly identifies when records come from contract feed vs fallback.
+- Validation:
+  - `npm.cmd run build` PASS
+
 ## 2026-05-30T12:05:32Z - Research Dashboard Contract Source Priority Alignment
 
 - Assigned action:
