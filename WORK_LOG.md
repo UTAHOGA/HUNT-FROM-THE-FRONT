@@ -1,3 +1,30 @@
+## 2026-05-30T17:23:31Z - Production 404 Root-Cause (Vercel Config) + Deploy Output Fix
+
+- Assigned action:
+  - Diagnose production domain-wide 404s and restore correct static asset/data serving.
+- Root cause identified:
+  - `huntbuilder.uoga.org` DNS currently points to Vercel (`cname.vercel-dns.com`), not Cloudflare Pages.
+  - Existing `vercel.json` only published root `*.html`, `*.js`, `*.css`, excluding directories such as:
+    - `assets/*`
+    - `data/*`
+    - `processed_data/*`
+  - This matched live 404s for logos, hard-copy JS/CSS, contract JSON, and canonical data files.
+- Files modified:
+  - `vercel.json`
+- Changes:
+  - Replaced restrictive static-glob config with build/output config:
+    - `buildCommand: npm run build`
+    - `outputDirectory: pages-dist`
+  - This aligns Vercel production deploy with the same curated artifact package used by local validation.
+- Validation:
+  - `npm.cmd run build` PASS
+  - Confirmed required production files exist in `pages-dist`:
+    - hard-copy assets
+    - research dashboard JS
+    - outfitter/public contract feeds
+    - conservation permit feeds
+    - canonical hunt master foundation JSON
+
 ## 2026-05-30T16:49:03Z - Cloudflare Pages Dist Deploy Command Hardening
 
 - Assigned action:
