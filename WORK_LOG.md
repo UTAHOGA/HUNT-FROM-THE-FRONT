@@ -1,3 +1,22 @@
+## 2026-05-30T12:27:25Z - Hunt Research Speed Pass (Lazy Runtime Load On Demand)
+
+- Assigned action:
+  - Keep moving with speed optimization and reduce first-load cost on Hunt Research.
+- Files modified:
+  - `hunt-research.js`
+  - `research.html`
+- Speed optimization changes:
+  - Converted Hunt Research runtime load flow to lazy/on-demand:
+    - no heavyweight engine/ladder/master/reference CSV load on initial page paint when no hunt is selected
+    - runtime data now loads when a hunt code is present and report execution is requested
+  - Added load-promise guard in `loadData()` so repeated rapid UI events reuse one in-flight load instead of stacking duplicate fetch/parse work.
+  - Preserved builder-handoff behavior:
+    - if a hunt is already selected from handoff/storage, report still auto-runs.
+  - Updated `research.html` cache-bust token for `hunt-research.js`.
+- Validation:
+  - `node --check hunt-research.js` PASS
+  - `npm.cmd run build` PASS
+
 ## 2026-05-30T12:08:22Z - Research Runtime Source Fallback Expansion In Config
 
 - Assigned action:

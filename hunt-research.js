@@ -38,6 +38,7 @@
 
   const state = {
     loaded: false,
+    loadingPromise: null,
     selectedHuntCode: '',
     selectedFilters: null,
     selectedMeta: null,
@@ -2037,29 +2038,38 @@
   }
 
   async function loadData() {
-    const [engine, ladder, master, reference] = await Promise.all([
-      loadFirstAvailable(ENGINE_SOURCES),
-      loadFirstAvailable(LADDER_SOURCES),
-      loadFirstAvailable(MASTER_SOURCES),
-      loadFirstAvailable(REFERENCE_SOURCES),
-    ]);
+    if (state.loaded && state.loadedSources) return state.loadedSources;
+    if (state.loadingPromise) return state.loadingPromise;
 
-    indexData(
-      parseCsv(engine.text),
-      parseCsv(ladder.text),
-      parseCsv(master.text),
-      parseCsv(reference.text)
-    );
+    state.loadingPromise = (async () => {
+      const [engine, ladder, master, reference] = await Promise.all([
+        loadFirstAvailable(ENGINE_SOURCES),
+        loadFirstAvailable(LADDER_SOURCES),
+        loadFirstAvailable(MASTER_SOURCES),
+        loadFirstAvailable(REFERENCE_SOURCES),
+      ]);
 
-    state.loadedSources = {
-      engineMode: ENGINE_MODE,
-      engine: engine.source,
-      ladder: ladder.source,
-      master: master.source,
-      reference: reference.source,
-    };
+      indexData(
+        parseCsv(engine.text),
+        parseCsv(ladder.text),
+        parseCsv(master.text),
+        parseCsv(reference.text)
+      );
 
-    return state.loadedSources;
+      state.loadedSources = {
+        engineMode: ENGINE_MODE,
+        engine: engine.source,
+        ladder: ladder.source,
+        master: master.source,
+        reference: reference.source,
+      };
+      state.loaded = true;
+      return state.loadedSources;
+    })().finally(() => {
+      state.loadingPromise = null;
+    });
+
+    return state.loadingPromise;
   }
 
   function bootstrapSelection() {
@@ -2103,7 +2113,7 @@
     }
   }
 
-  function runResearch() {
+  async function runResearch() {
     const filters = buildFilters();
     state.selectedHuntCode = filters.huntCode;
 
@@ -2118,6 +2128,27 @@
     }
 
     renderFilterReadout(filters);
+
+    if (!filters.huntCode) {
+      renderEmpty(filters, 'Select a hunt in Hunt Builder or enter a hunt code to load the report.');
+      return;
+    }
+
+    if (!state.loaded) {
+      els.filterReadout.textContent = `${filters.huntCode} | ${filters.residency} | ${filters.points} points. Loading runtime rows...`;
+      try {
+        await loadData();
+      } catch (error) {
+        console.error(error);
+        els.filterReadout.textContent = (error && error.message)
+          ? `${error.message} (checked local + Cloudflare backup sources).`
+          : 'Hunt Research data failed to load (checked local + Cloudflare backup sources).';
+        els.plannerReadout.textContent = 'Page loaded. Production data did not.';
+        renderEmpty(filters, 'Runtime rows could not be loaded yet.');
+        return;
+      }
+    }
+
     renderDetail(filters);
   }
 
@@ -2164,11 +2195,11 @@
     });
 
     [els.residencySelect, els.drawPoolSelect].forEach((el) => {
-      el?.addEventListener('change', runResearch);
+      el?.addEventListener('change', () => { runResearch(); });
     });
 
     [els.huntCodeInput, els.pointsInput].forEach((el) => {
-      el?.addEventListener('input', runResearch);
+      el?.addEventListener('input', () => { runResearch(); });
     });
 
     els.ladderTableBody?.addEventListener('click', (event) => {
@@ -2206,10 +2237,11 @@
       bootstrapSelection();
       bindEvents();
       setupLadderAutoOpen();
-      const loadedSources = await loadData();
-      const sourceType = (source) => (/^https?:\/\//i.test(source) ? 'Cloudflare backup' : 'local');
-      els.filterReadout.textContent = `Production engine data loaded (${sourceType(loadedSources.engine)} engine, ${sourceType(loadedSources.ladder)} ladder).`;
-      runResearch();
+      if (state.selectedHuntCode) {
+        await runResearch();
+      } else {
+        els.filterReadout.textContent = 'Select a hunt in Hunt Builder, then run Hunt Research.';
+      }
     } catch (error) {
       console.error(error);
       els.filterReadout.textContent = (error && error.message)
