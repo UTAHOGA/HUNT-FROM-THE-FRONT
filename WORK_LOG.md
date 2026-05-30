@@ -1,3 +1,21 @@
+## 2026-05-30T15:23:32Z - Hard-Copy Library Default Visible Results
+
+- Assigned action:
+  - Resolve "library not rendering" perception by showing file cards immediately on page load.
+- Files modified:
+  - `assets/js/hard-copy-public-library.js`
+  - `hard-copy.html`
+- Changes:
+  - Library now auto-selects the first folder that has available items and opens the results panel by default.
+  - Initial render now shows document cards without requiring the first folder click.
+  - Bumped hard-copy script cache token.
+- Validation:
+  - `node --check assets/js/hard-copy-public-library.js` PASS
+  - Playwright runtime check PASS:
+    - `resultsPanel hidden = false`
+    - `title = UTAH DWR RULES & REGULATIONS`
+    - `cards = 3`
+
 ## 2026-05-30T15:08:24Z - Hard-Copy Library Render Resilience Fix
 
 - Assigned action:

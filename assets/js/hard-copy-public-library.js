@@ -496,7 +496,8 @@
   }
 
   function start(items) {
-    const state = { activeFolder: "", query: "" };
+    const initialFolder = FOLDERS.find((folder) => items.some((item) => item.folderId === folder.id))?.id || "";
+    const state = { activeFolder: initialFolder, query: "" };
     const search = byId("uogaLibrarySearch");
     const clear = byId("uogaLibraryClear");
     bindStaticControls();
