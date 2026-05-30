@@ -1,3 +1,29 @@
+## 2026-05-30T07:37:13Z - Drop permits_2025_draw_* Family From DATABASE 2026
+
+- Assigned action:
+  - Delete 2025 draw-subset permit columns from `DATABASE.csv`:
+    - `permits_2025_draw_res`
+    - `permits_2025_draw_nr`
+    - `permits_2025_draw_total`
+    - `permits_2025_draw_source`
+- File modified:
+  - `pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv`
+- Backup created:
+  - `processed_data/backups/DATABASE_before_drop_permits_2025_draw_family_20260530_073655.csv`
+- Validation:
+  - Row count after change: `1449`
+  - Column count after change: `35`
+  - Removed columns are absent
+  - Canonical 2025 permit truth columns remain present:
+    - `permits_2025_res`
+    - `permits_2025_nr`
+    - `permits_2025_total`
+    - `permits_2025_source`
+  - Draw page/type metadata columns remain present:
+    - `draw_2025_bg_pdf_page`
+    - `draw_2025_bg_report_page`
+    - `draw_2025_type`
+
 ## 2026-05-30T07:31:48Z - Drop permits_2026_draw_* Family From DATABASE 2026
 
 - Assigned action:
