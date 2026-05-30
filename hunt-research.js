@@ -1522,11 +1522,10 @@
     const computedTotal = resident !== null || nonresident !== null ? (resident || 0) + (nonresident || 0) : null;
     const total = publishedTotal !== null ? publishedTotal : computedTotal;
     if (resident === null && nonresident === null && total === null) return '';
-    const parts = [];
-    if (resident !== null) parts.push(`Res ${resident.toLocaleString()}`);
-    if (nonresident !== null) parts.push(`NonRes ${nonresident.toLocaleString()}`);
-    if (total !== null) parts.push(`Total ${total.toLocaleString()}`);
-    return `2026 Permits: ${parts.join(' | ')}`;
+    if (resident !== null || nonresident !== null) {
+      return `Permits: ${(resident ?? 0).toLocaleString()} R / ${(nonresident ?? 0).toLocaleString()} NR / ${(total ?? ((resident ?? 0) + (nonresident ?? 0))).toLocaleString()} Total`;
+    }
+    return total !== null ? `Permits: ${total.toLocaleString()} Total` : '';
   }
 
   function getLadderHarvestSnapshotLine(row, referenceRow, meta) {
@@ -1537,36 +1536,33 @@
     const days = firstNumericValue(sources, ['harvest_average_days_2025', 'average_days_hunted', 'avg_days_hunted', 'average_days_hunted_2025']);
     const averageAge = firstNumericValue(sources, ['average_harvest_age']);
     const currentAge = firstNumericValue(sources, ['current_age_3yr_average']);
-    const parts = [];
     const successText = formatMetricPercent(success);
-    if (successText) parts.push(`${successText} success`);
-    if (days !== null && days > 0) parts.push(`${formatCompactNumber(days)} avg days`);
-    if (averageAge !== null && averageAge > 0) {
-      parts.push(`${formatCompactNumber(averageAge)} avg age`);
-    } else if (currentAge !== null && currentAge > 0) {
-      parts.push(`${formatCompactNumber(currentAge)} 3-yr age`);
+    if (!successText && (days === null || days <= 0) && (averageAge === null || averageAge <= 0) && (currentAge === null || currentAge <= 0)) {
+      return '';
     }
-    return parts.length ? `Harvest Snapshot: ${parts.join(' | ')}` : '';
+    const summaryParts = [];
+    if (successText) summaryParts.push(`${successText} success`);
+    if (days !== null && days > 0) summaryParts.push(`${formatCompactNumber(days)} avg days`);
+    if (averageAge !== null && averageAge > 0) {
+      summaryParts.push(`${formatCompactNumber(averageAge)} avg age`);
+    } else if (currentAge !== null && currentAge > 0) {
+      summaryParts.push(`${formatCompactNumber(currentAge)} 3-yr age`);
+    }
+    return summaryParts.length ? `Harvest: ${summaryParts.join(' / ')}` : '';
   }
 
-  function getCatchTrainLine(row, rows, mode, userPoints) {
-    const rowPoint = strictNum(row?.points);
-    const guaranteedLinePoint = getGuaranteedLinePoint(row, rows, mode);
-    const gap = strictNum(row?.gap);
+  function getPointCreepRiskLine(row) {
     const trend = String(row?.trend || '').trim().toUpperCase();
+    const outlook = String(row?.draw_outlook || '').trim().toUpperCase();
+    if (outlook.includes('POINT CREEP') || trend === 'RED' || trend === 'YELLOW') return 'Point Creep Risk';
+    return '';
+  }
+
+  function getPoolMarkerLine(row) {
     const zone = String(row?.point_pool_zone || '').trim();
-    if (rowPoint !== null && guaranteedLinePoint !== null) {
-      const shortBy = Math.max(0, Math.round(guaranteedLinePoint - rowPoint));
-      if (shortBy <= 0) return 'Catch the Train: You are at or above the modeled draw line.';
-      if (shortBy === 1) return 'Catch the Train: One point below the line; watch point creep closely.';
-      return `Catch the Train: ${shortBy} points below the line; this is a patience or swing-for-it rung.`;
-    }
-    if (gap !== null && gap > 0) return `Catch the Train: ${gap} points short of the current line.`;
-    if (zone === 'random_pool') return 'Catch the Train: Random-pool rung; points help weight the draw but do not guarantee it.';
-    if (trend === 'GREEN') return 'Catch the Train: Demand trend is favorable for this rung.';
-    if (trend === 'YELLOW') return 'Catch the Train: Trend is watchable; keep an eye on permit movement.';
-    if (trend === 'RED') return 'Catch the Train: Trend is tough; treat this as a long-shot rung.';
-    return userPoints !== null ? 'Catch the Train: Use this rung as your application benchmark.' : '';
+    if (zone === 'random_pool') return 'Random Pool';
+    if (['max_point_pool', 'max_pool_guaranteed', 'max_pool_cutoff_mixed'].includes(zone)) return 'Max Pool';
+    return '';
   }
 
   function isLowValueLadderNote(value) {
@@ -1578,6 +1574,8 @@
     const lines = [];
     const rowPoint = strictNum(row?.points);
     const guaranteedLinePoint = getGuaranteedLinePoint(row, rows, mode);
+    const poolMarker = getPoolMarkerLine(row);
+    const pointCreepRisk = getPointCreepRiskLine(row);
 
     if (isGuaranteedLine) {
       lines.push('Draw Line');
@@ -1587,19 +1585,22 @@
 
     if (isUserRow) {
       lines.push('Your Rung');
-      [
-        getLadderHarvestSnapshotLine(row, referenceRow, meta),
-        getCatchTrainLine(row, rows, mode, userPoints),
-        getPermitSummaryLine(row, referenceRow, meta),
-      ].filter(Boolean).forEach((line) => lines.push(line));
-    } else if (isGuaranteedLine && mode === DRAW_MODE.BONUS) {
-      lines.push('Max Pool line starts here.');
     }
 
-    const rawNote = String(cells?.[4] || '').trim();
-    if (!isLowValueLadderNote(rawNote) && (isUserRow || isGuaranteedLine)) {
-      lines.push(rawNote);
+    if (poolMarker) {
+      lines.push(poolMarker);
     }
+
+    if (pointCreepRisk) {
+      lines.push(pointCreepRisk);
+    }
+
+    if (isUserRow || isGuaranteedLine) {
+      [getPermitSummaryLine(row, referenceRow, meta), getLadderHarvestSnapshotLine(row, referenceRow, meta)]
+        .filter(Boolean)
+        .forEach((line) => lines.push(line));
+    }
+
     return [...new Set(lines)];
   }
 
@@ -1693,77 +1694,72 @@
     function getRowCells(row, markers, historicalPointRow) {
       const actual2025Display = formatHistoricalDrawResult(row)
         || formatHistoricalDrawResult(historicalPointRow)
-        || 'Not available';
+        || '';
       const odds = (mode === DRAW_MODE.PREFERENCE || mode === DRAW_MODE.YOUTH_RESERVE)
         ? selectPreferenceOddsPercent(row)
         : selectDrawOddsPercent(row);
       const oddsDisplay = formatOddsAsOneInOrPercent(odds.percent);
 
       if (mode === DRAW_MODE.PREFERENCE) {
-        const pointStatus = formatGapStatus(row.gap);
-        const notes = [String(row?.trend || '').trim()].filter(Boolean).join(' | ');
+        const pointStatus = hasMeaningfulValue(row?.gap) ? formatGapStatus(row.gap) : '';
         return [
           formatInteger(row.points),
           actual2025Display,
           oddsDisplay,
-          pointStatus || 'Not available',
-          notes || 'Not available',
+          pointStatus,
+          '',
         ];
       }
 
       if (mode === DRAW_MODE.BONUS) {
         const bonusProjection = (isGuaranteedLineRow(row, rows, mode) || isAboveGuaranteedLineRow(row, rows, mode))
           ? MAX_POINT_POOL_GUARANTEED_DISPLAY
-          : (getMaxPointPoolDisplay(row) || 'Not available');
+          : (getMaxPointPoolDisplay(row) || '');
         const randomChance = isAboveGuaranteedLineRow(row, rows, mode) ? '' : (getRandomDrawDisplay(row) || oddsDisplay);
-        const notes = [
-          String(row?.trend || '').trim(),
-          String(row?.data_quality_flags || '').trim(),
-        ].filter(Boolean).join(' | ');
         return [
           formatInteger(row.points),
           actual2025Display,
           bonusProjection,
-          randomChance || 'Not available',
-          notes || 'Not available',
+          randomChance || '',
+          '',
         ];
       }
 
       if (mode === DRAW_MODE.YOUTH_RESERVE) {
-        const reservePool = firstAvailable(row, ['quota_2026_youth_reserve']) || 'Not available';
+        const reservePool = firstAvailable(row, ['quota_2026_youth_reserve']) || '';
         const youthOdds = formatOddsAsOneInOrPercent(toProbabilityPercent(firstAvailable(row, ['youth_reserve_probability', 'p_preference_draw'])));
         const rollover = formatOddsAsOneInOrPercent(toProbabilityPercent(firstAvailable(row, ['youth_rollover_main_draw_probability', 'p_random_pool'])));
-        const notes = String(row?.preference_model_note || '').trim() || String(row?.data_quality_flags || '').trim() || 'Not available';
+        const notes = String(row?.preference_model_note || '').trim() || String(row?.data_quality_flags || '').trim() || '';
         return [
           formatInteger(row.points),
           String(reservePool),
           youthOdds || oddsDisplay,
-          rollover || 'Not available',
-          notes || 'Not available',
+          rollover || '',
+          notes,
         ];
       }
 
       if (mode === DRAW_MODE.ALLOCATION_AVAILABILITY) {
-        const status = firstAvailable(row, ['availability_status', 'allocation_status', 'status', 'draw_outlook']) || 'Not available';
-        const availability = firstAvailable(row, ['availability_pct', 'p_availability', 'permits_remaining', 'permits_sold_or_used']) || 'Not available';
-        const allocation = firstAvailable(row, ['permit_allotment_2026_total', 'public_permits_2026', 'permits_allotted']) || 'Not available';
-        const ruleSource = firstAvailable(row, ['rule_status', 'permit_allotment_2026_source', 'reason']) || 'Not available';
+        const status = firstAvailable(row, ['availability_status', 'allocation_status', 'status', 'draw_outlook']) || '';
+        const availability = firstAvailable(row, ['availability_pct', 'p_availability', 'permits_remaining', 'permits_sold_or_used']) || '';
+        const allocation = firstAvailable(row, ['permit_allotment_2026_total', 'public_permits_2026', 'permits_allotted']) || '';
+        const ruleSource = firstAvailable(row, ['rule_status', 'permit_allotment_2026_source', 'reason']) || '';
         return [
           status,
           String(availability),
           String(allocation),
           String(ruleSource),
-          String(row?.data_quality_flags || '').trim() || 'Not available',
+          String(row?.data_quality_flags || '').trim() || '',
         ];
       }
 
-      const statusOnly = firstAvailable(row, ['status', 'draw_outlook', 'algorithm_status']) || 'Not available';
+      const statusOnly = firstAvailable(row, ['status', 'draw_outlook', 'algorithm_status']) || '';
       return [
         formatInteger(row.points),
         actual2025Display,
         statusOnly,
         oddsDisplay,
-        String(row?.reason || '').trim() || 'Not available',
+        String(row?.reason || '').trim() || '',
       ];
     }
 

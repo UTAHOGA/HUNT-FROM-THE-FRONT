@@ -1,3 +1,25 @@
+## 2026-05-30T12:04:38Z - Hunt Research Ladder Polish (Blank Non-Applicable Cells + High-Signal Notes)
+
+- Assigned action:
+  - Continue forward with Hunt Research decision-table polish.
+- File modified:
+  - `hunt-research.js`
+- Ladder polish changes:
+  - Kept existing point-ladder header structure and premium R/Y/G wording.
+  - Removed ladder-cell fallback clutter so non-applicable values render as blank cells instead of repeated `Not available`.
+  - Tightened Notes content to only high-signal labels:
+    - `Your Rung`
+    - `Draw Line`
+    - `Above Line` / `Below Line`
+    - `Permits: X R / Y NR / Z Total`
+    - `Harvest: ...`
+    - `Point Creep Risk`
+    - `Random Pool` / `Max Pool`
+  - Removed verbose ladder-note narratives so Notes reads as a compact hunter-facing marker column.
+- Validation:
+  - `node --check hunt-research.js` PASS
+  - `npm.cmd run build` PASS
+
 ## 2026-05-30T11:30:22Z - Merge/Upgrade Public Contracts Using Stronger Runtime Sources
 
 - Assigned action:
