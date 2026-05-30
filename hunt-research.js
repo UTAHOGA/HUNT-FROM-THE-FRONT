@@ -39,6 +39,7 @@
   const state = {
     loaded: false,
     loadingPromise: null,
+    inputRunTimer: null,
     selectedHuntCode: '',
     selectedFilters: null,
     selectedMeta: null,
@@ -2199,7 +2200,12 @@
     });
 
     [els.huntCodeInput, els.pointsInput].forEach((el) => {
-      el?.addEventListener('input', () => { runResearch(); });
+      el?.addEventListener('input', () => {
+        if (state.inputRunTimer) window.clearTimeout(state.inputRunTimer);
+        state.inputRunTimer = window.setTimeout(() => {
+          runResearch();
+        }, 180);
+      });
     });
 
     els.ladderTableBody?.addEventListener('click', (event) => {

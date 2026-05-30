@@ -1,3 +1,16 @@
+## 2026-05-30T12:28:13Z - Hunt Research Input Debounce For Live Typing
+
+- Assigned action:
+  - Continue speed polish and reduce unnecessary rerenders during hunt-code typing.
+- File modified:
+  - `hunt-research.js`
+- Change:
+  - Added a small `180ms` debounce on input-triggered `runResearch()` calls for `huntCodeInput` and `pointsInput`.
+  - Keeps immediate feedback while preventing one render cycle per keystroke.
+- Validation:
+  - `node --check hunt-research.js` PASS
+  - `npm.cmd run build` PASS
+
 ## 2026-05-30T12:27:25Z - Hunt Research Speed Pass (Lazy Runtime Load On Demand)
 
 - Assigned action:
