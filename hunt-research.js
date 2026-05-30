@@ -294,7 +294,7 @@
     if (!text) {
       return '<td class="is-empty-cell" aria-label="No useful data"></td>';
     }
-    return `<td>${escapeHtml(text || 'Not available')}</td>`;
+    return `<td>${escapeHtml(text)}</td>`;
   }
 
   function formatGapStatus(gap) {
@@ -937,9 +937,9 @@
     if (!els.selectedOutlook) return;
     const active = signal || 'red';
     const labels = {
-      red: 'Long shot / low chance',
-      yellow: 'On the line / watch closely',
-      green: 'In reach / strong position',
+      red: 'Long Shot / Not Catchable',
+      yellow: 'On the Line / Watch Closely',
+      green: 'In Reach / Strong',
     };
     els.selectedOutlook.innerHTML = `
       <span class="outlook-light red${active === 'red' ? ' is-active' : ''}" aria-hidden="true"></span>
@@ -968,10 +968,18 @@
     els.summaryTrend.setAttribute('aria-label', `${active} trend`);
   }
 
+  function getTrendLabelText(trendValue) {
+    const trend = String(trendValue || '').trim().toUpperCase();
+    if (trend === 'GREEN') return 'In Reach / Strong';
+    if (trend === 'YELLOW') return 'On the Line / Watch Closely';
+    if (trend === 'RED') return 'Long Shot / Not Catchable';
+    return 'Not available';
+  }
+
   function setLadderHeaders(mode) {
     if (!els.ladderHeaderCol1 || !els.ladderHeaderCol2 || !els.ladderHeaderCol3 || !els.ladderHeaderCol4 || !els.ladderHeaderCol5) return;
     const headersByMode = {
-      [DRAW_MODE.PREFERENCE]: ['Points', '2025 Draw Results', '2026 Draw Odds', 'Point Status', 'Cutoff / Notes'],
+      [DRAW_MODE.PREFERENCE]: ['Points', '2025 Draw Results', '2026 Draw Odds', 'Point Status', 'Notes'],
       [DRAW_MODE.BONUS]: [
         'Points',
         '2025 Draw Results',
@@ -979,7 +987,7 @@
         { label: '2026 Random Draw', sublabel: '50% of Tags' },
         'Notes',
       ],
-      [DRAW_MODE.YOUTH_RESERVE]: ['Youth Points', 'Youth Reserved Pool', 'Estimated Youth Odds', 'Rollover / Notes', 'Notes'],
+      [DRAW_MODE.YOUTH_RESERVE]: ['Points', '2025 Draw Results', '2026 Youth Reserve', '2026 Rollover', 'Notes'],
       [DRAW_MODE.ALLOCATION_AVAILABILITY]: ['Status', 'Permit Availability', '2026 Allocation', 'Rule / Source', 'Notes'],
       [DRAW_MODE.STATUS_ONLY]: ['Points', '2025 Result', '2026 Status', 'Estimated Odds', 'Notes'],
     };
@@ -1332,7 +1340,7 @@
     if (els.summaryTrendText) {
       els.summaryTrendText.textContent = isRandomOnlyBonusCase(meta, row, referenceRow)
         ? 'Not applicable'
-        : (row.trend || 'Not available');
+        : getTrendLabelText(row.trend);
     }
 
     if (els.summaryRecommendation) {
@@ -1568,14 +1576,24 @@
 
   function buildLadderNoteLines({ meta, row, referenceRow, rows, mode, isUserRow, isGuaranteedLine, cells, userPoints }) {
     const lines = [];
+    const rowPoint = strictNum(row?.points);
+    const guaranteedLinePoint = getGuaranteedLinePoint(row, rows, mode);
+
+    if (isGuaranteedLine) {
+      lines.push('Draw Line');
+    } else if (rowPoint !== null && guaranteedLinePoint !== null) {
+      lines.push(rowPoint > guaranteedLinePoint ? 'Above Line' : 'Below Line');
+    }
+
     if (isUserRow) {
+      lines.push('Your Rung');
       [
         getLadderHarvestSnapshotLine(row, referenceRow, meta),
         getCatchTrainLine(row, rows, mode, userPoints),
         getPermitSummaryLine(row, referenceRow, meta),
       ].filter(Boolean).forEach((line) => lines.push(line));
     } else if (isGuaranteedLine && mode === DRAW_MODE.BONUS) {
-      lines.push('Draw Line: Max-point pool begins here.');
+      lines.push('Max Pool line starts here.');
     }
 
     const rawNote = String(cells?.[4] || '').trim();
@@ -1759,12 +1777,12 @@
       const isGuaranteedLine = isGuaranteedLineRow(row, rows, mode);
 
       if (isUserRow) {
-        markers.push({ kind: 'user', label: 'Your Point Position' });
+        markers.push({ kind: 'user', label: 'YOUR RUNG' });
         classes.push('is-user-row');
       }
 
       if (isGuaranteedLine) {
-        markers.push({ kind: 'guaranteed', label: 'Guaranteed Draw' });
+        markers.push({ kind: 'guaranteed', label: 'DRAW LINE' });
         classes.push('is-guaranteed-row');
       }
 

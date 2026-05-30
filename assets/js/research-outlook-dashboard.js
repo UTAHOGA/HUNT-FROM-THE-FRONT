@@ -544,16 +544,29 @@
       : hasValue(row.management_objective_min)
       ? `${formatValue(row.management_objective_min)}${hasValue(row.management_objective_max) ? ` to ${formatValue(row.management_objective_max)}` : ""} ${formatValue(row.objective_unit, "")}`.trim()
       : "No objective row loaded";
-    return panel("State Objective / Management Read", `
+    const managementDirection = hasValue(row.objective_status)
+      ? formatValue(row.objective_status)
+      : "Objective known, observed evidence is limited.";
+    return panel("Management Benchmark", `
       <div class="uoga-badge-row">${badge("Management Plan Context")}</div>
       ${listRows([
-        metricRow("Objective type", formatValue(row.management_objective_type, "No objective row loaded")),
-        metricRow("Objective range", objectiveRange),
-        metricRow("Observed vs objective", formatValue(row.objective_status || row.observed_vs_objective_status || row.objective_status_rule)),
+        metricRow("State objective", `${formatValue(row.management_objective_type, "Objective type pending")} / ${objectiveRange}`),
+        metricRow("Observed evidence", formatValue(row.notes || row.objective_status_rule, "Observed comparison details are limited.")),
+        metricRow("Management direction", managementDirection),
+        metricRow("Permit direction watch", formatValue(row.permit_direction_watch, "Use as context only; does not change draw odds.")),
       ])}
-      <p class="uoga-outlook-note">${escapeHtml(formatValue(row.notes || row.objective_status_rule, "Benchmark only - does not change draw odds."))}</p>
-      <p class="uoga-outlook-muted">Benchmark only - does not change draw odds.</p>
+      <p class="uoga-outlook-muted">Benchmark only. This is context and does not change modeled draw probability.</p>
     `);
+  }
+
+  function getFreshnessLabel(contract, meta, selectedRow) {
+    const explicit = firstValue(contract, ["data_updated_label", "data_freshness_label"]);
+    if (hasValue(explicit)) return explicit;
+    const predictionYear = firstValue(contract, ["prediction_year"])
+      || firstValue(meta, ["prediction_year", "source_year"])
+      || firstValue(selectedRow, ["prediction_year", "source_year"]);
+    if (hasValue(predictionYear)) return `Data Updated ${predictionYear}`;
+    return "Data Updated 2026";
   }
   function sourceDetails(selection, selectedRow, meta) {
     const sourceFile = firstValue(selectedRow, ["source_file", "truth_source_file", "average_harvest_age_source_file"])
@@ -568,6 +581,7 @@
         <div class="uoga-source-grid">
           ${metricRow("Engine mode", window.UOGA_CONFIG?.HUNT_RESEARCH_ENGINE_MODE || "observed")}
           ${metricRow("Data version", window.UOGA_CONFIG?.HUNT_RESEARCH_DATA_VERSION || "not configured")}
+          ${metricRow("Data freshness", getFreshnessLabel(meta, meta, selectedRow))}
           ${metricRow("Model version", firstValue(meta, ["model_version"]) || window.UOGA_CONFIG?.HUNT_RESEARCH_MODEL_VERSION || "display-only dashboard")}
           ${metricRow("Rule version", firstValue(meta, ["rule_version"]) || window.UOGA_CONFIG?.HUNT_RESEARCH_RULE_VERSION || "core Research rules")}
           ${metricRow("Selected hunt", `${selection.huntCode} / ${selection.residency} / ${selection.points} pts`)}
@@ -627,6 +641,8 @@
                         : "limited";
                 return badge(label, variant);
               }).join("")}
+              ${badge(getFreshnessLabel(contract, meta, selectedRow), "official")}
+              ${badge(`Model ${formatValue(firstValue(contract, ["model_version"]) || firstValue(meta, ["model_version"]) || "v1")}`, "modeled")}
               ${limitedData && !sourceBadges.some((item) => item.toLowerCase().includes("limited")) ? badge("Review / Limited Data", "limited") : ""}
             </div>
           </div>
@@ -636,14 +652,14 @@
           <p class="uoga-outlook-recommendation">${escapeHtml(recommendation)}</p>
         </section>
         <div class="uoga-outlook-grid">
-          ${panel("Application Read", listRows([
+          ${panel("Model-Generated Draw Outlook", listRows([
             metricRow("Estimated draw odds", formatPercent(odds)),
             metricRow("Point status", formatValue(pointStatus)),
             metricRow("Guaranteed line", formatValue(guaranteedLine)),
             metricRow("Point creep / trend", formatValue(pointTrend)),
             metricRow("Permits", formatInteger(permitTotal)),
           ]), "is-modeled")}
-          ${panel("Hunt Quality", listRows([
+          ${panel("Official DWR Field Evidence", listRows([
             metricRow("Harvest success", formatPercent(harvestSuccess)),
             metricRow("Average days hunted", formatValue(avgDays)),
             metricRow("Average harvest age", formatAge(averageAge)),
@@ -978,7 +994,7 @@
               <h3>No hunt selected yet</h3>
               <span>Dashboard add-on loaded.</span>
             </div>
-            <p class="uoga-outlook-recommendation">Choose a hunt in Hunt Builder or pass a hunt_code in the URL.</p>
+            <p class="uoga-outlook-recommendation">Select a hunt in Hunt Builder, then open Hunt Research to view this decision dashboard.</p>
           </section>
         </div>`;
       return;
