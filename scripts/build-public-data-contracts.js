@@ -10,11 +10,15 @@ const OUT_DIR = path.join(ROOT, 'processed_data', 'public_contracts');
 const INPUT_CANDIDATES = {
   predictive: [
     path.join(ROOT, 'processed_data', 'draw_reality_engine_predictive_v2.csv'),
+    path.join(ROOT, 'data_model', 'harvest_quality', 'draw_reality_engine_predictive_with_harvest_features.csv'),
+    path.join(ROOT, 'data_model', 'runtime_drafts', 'draw_reality_engine_v2.csv'),
     path.join(ROOT, 'processed_data', 'draw_reality_engine_v2.csv'),
     path.join(ROOT, 'data', 'utah', 'fixtures', 'draw_reality_engine.csv'),
   ],
   oddsHistory: [
     path.join(ROOT, 'processed_data', 'draw_reality_engine_v2.csv'),
+    path.join(ROOT, 'data_model', 'runtime_drafts', 'draw_reality_engine_v2.csv'),
+    path.join(ROOT, 'data_model', 'harvest_quality', 'draw_reality_engine_predictive_with_harvest_features.csv'),
     path.join(ROOT, 'processed_data', 'draw_reality_engine_predictive_v2.csv'),
     path.join(ROOT, 'data', 'utah', 'fixtures', 'draw_reality_engine.csv'),
   ],
@@ -26,8 +30,8 @@ const INPUT_CANDIDATES = {
     path.join(ROOT, 'data', 'outfitters.json'),
   ],
   huntUnitsLite: [
-    path.join(ROOT, 'data', 'hunt-boundaries-lite.geojson'),
     path.join(ROOT, 'data', 'hunt_boundaries.geojson'),
+    path.join(ROOT, 'data', 'hunt-boundaries-lite.geojson'),
   ],
 };
 
@@ -92,7 +96,8 @@ function parseCsvLine(line) {
   return cells;
 }
 
-function parseCsv(text) {
+function parseCsv(text, options = {}) {
+  const { onlyColumns = null } = options;
   const rows = [];
   let line = '';
   let quoted = false;
@@ -119,10 +124,15 @@ function parseCsv(text) {
   const nonEmpty = lines.filter((entry) => entry.trim());
   if (!nonEmpty.length) return rows;
   const headers = parseCsvLine(nonEmpty[0]).map((header) => header.trim());
+  const selectedHeaders = Array.isArray(onlyColumns) && onlyColumns.length
+    ? headers.filter((header) => onlyColumns.includes(header))
+    : headers;
+  const selectedIndexes = selectedHeaders.map((header) => headers.indexOf(header));
   for (const rawLine of nonEmpty.slice(1)) {
     const cells = parseCsvLine(rawLine);
     const row = {};
-    headers.forEach((header, index) => {
+    selectedHeaders.forEach((header, selectedIndex) => {
+      const index = selectedIndexes[selectedIndex];
       row[header] = cells[index] ?? '';
     });
     rows.push(row);
@@ -226,6 +236,29 @@ async function fileSnapshot(filePath, role) {
 async function main() {
   await ensureDir(OUT_DIR);
 
+  const predictiveColumns = [
+    'hunt_code', 'hunt_name', 'unit_name', 'unit', 'species', 'sportsman_species', 'sex_type',
+    'weapon', 'hunt_type', 'hunt_class', 'residency', 'points', 'draw_pool',
+    'p_draw_mean', 'p_draw', 'p_availability', 'p_draw_pct', 'availability_pct',
+    'guaranteed_at_2026', 'projected_2026_max_cutoff_point',
+    'status', 'draw_outlook', 'availability_status',
+    'model_version', 'rule_version',
+    'source_file', 'sportsman_source_file', 'quota_source_file', 'truth_source_file',
+    'data_quality_flags', 'reason_codes',
+  ];
+
+  const oddsColumns = [
+    'hunt_code', 'boundary_id', 'hunt_name', 'species', 'sex_type', 'weapon', 'hunt_type', 'hunt_class',
+    'year', 'source_year', 'reported_hunt_year', 'quota_source_year',
+    'draw_pool', 'residency', 'points',
+    'eligible_applicants', 'applicants', 'forecast_applicants_at_level',
+    'bonus_permits', 'regular_permits', 'total_permits', 'permits_2026_total', 'permit_allotment_2026_total', 'quota_2026_total',
+    'success_ratio', 'p_draw_mean',
+    'source_file', 'truth_source_file',
+    'source_pdf_page', 'source_report_page',
+    'validation_status', 'data_quality_grade', 'status',
+  ];
+
   const inputResolution = {
     predictive: await resolveInput('predictive', INPUT_CANDIDATES.predictive),
     oddsHistory: await resolveInput('oddsHistory', INPUT_CANDIDATES.oddsHistory),
@@ -235,10 +268,10 @@ async function main() {
   };
 
   const predictiveRows = inputResolution.predictive.exists
-    ? parseCsv(await readText(inputResolution.predictive.filePath))
+    ? parseCsv(await readText(inputResolution.predictive.filePath), { onlyColumns: predictiveColumns })
     : [];
   const oddsRows = inputResolution.oddsHistory.exists
-    ? parseCsv(await readText(inputResolution.oddsHistory.filePath))
+    ? parseCsv(await readText(inputResolution.oddsHistory.filePath), { onlyColumns: oddsColumns })
     : [];
   const outlookRows = inputResolution.outlook.exists
     ? toArray(JSON.parse(await readText(inputResolution.outlook.filePath)))

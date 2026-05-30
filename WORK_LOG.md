@@ -1,3 +1,33 @@
+## 2026-05-30T11:30:22Z - Merge/Upgrade Public Contracts Using Stronger Runtime Sources
+
+- Assigned action:
+  - Continue to next step and merge the previously attached public contract package with the current repo contract workflow.
+- Files modified:
+  - `scripts/build-public-data-contracts.js`
+- Merge/upgrade behavior implemented:
+  - Promoted stronger runtime candidates for contract generation:
+    - predictive: `data_model/harvest_quality/draw_reality_engine_predictive_with_harvest_features.csv`
+    - odds history: `data_model/runtime_drafts/draw_reality_engine_v2.csv`
+    - hunt units: prefer `data/hunt_boundaries.geojson`
+  - Kept fallback safety chain for missing runtime files.
+  - Added selected-column CSV parsing to reduce memory footprint on large runtime CSVs and prevent heap failures.
+  - Preserved non-overwrite rule: this step only builds website-facing contract outputs; no permit truth/prediction source truth files were modified.
+- Generated/merged contract results:
+  - `hunt_predictions_rows`: `27940`
+  - `hunt_odds_history_rows`: `176753`
+  - `hunt_application_outlook_rows`: `2898`
+  - `outfitters_public_rows`: `11`
+  - `hunt_units_features`: `683`
+  - `prediction_source_mode`: `runtime_csv`
+  - `odds_history_source_mode`: `runtime_csv`
+  - `outfitters_source_mode`: `outfitters_json_fallback`
+- External sync performed:
+  - Synced updated outputs from `processed_data/public_contracts/*` to `C:/Users/tyler/Desktop/public_contracts/*` so the attached package is now merged-upgraded in place.
+- Validation:
+  - `node --check scripts/build-public-data-contracts.js` PASS
+  - `node scripts/build-public-data-contracts.js` PASS
+  - `npm.cmd run build` PASS
+
 ## 2026-05-30T10:50:08Z - Public Data Contract Layer Build + Runtime Fallback Hardening
 
 - Assigned action:
