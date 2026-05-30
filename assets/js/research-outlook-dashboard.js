@@ -992,9 +992,9 @@
             <div class="uoga-outlook-hero-title">
               <p>Hunt Application Outlook</p>
               <h3>No hunt selected yet</h3>
-              <span>Dashboard add-on loaded.</span>
+              <span>Start in Hunt Builder, then return here for decision analysis.</span>
             </div>
-            <p class="uoga-outlook-recommendation">Select a hunt in Hunt Builder, then open Hunt Research to view this decision dashboard.</p>
+            <p class="uoga-outlook-recommendation">Select a hunt in Hunt Builder first. This page is the decision dashboard for that selected hunt.</p>
           </section>
         </div>`;
       return;

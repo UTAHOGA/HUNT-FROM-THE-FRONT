@@ -1080,8 +1080,8 @@
     els.filterReadout.textContent = `${parts.join(' | ')}.`;
 
     els.plannerReadout.textContent = state.selectedHuntCode
-      ? `Planner handoff: ${state.selectedHuntCode}.`
-      : 'Planner handoff ready.';
+      ? `Hunt Builder handoff active: ${state.selectedHuntCode}.`
+      : 'Hunt Builder handoff ready.';
   }
 
   function getHarvestSuccessDisplay(meta, referenceRow, row) {

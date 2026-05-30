@@ -25,6 +25,51 @@ const paths = {
   database: 'pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv',
 };
 
+const pathCandidates = {
+  syncMatrix: [
+    paths.syncMatrix,
+  ],
+  readiness: [
+    paths.readiness,
+  ],
+  management: [
+    paths.management,
+    'processed_data/management_context/hunt_management_context.json',
+  ],
+  master: [
+    paths.master,
+    'pipeline/RAW/hunt_unit_database/2026/csv/hunt_master_canonical_2026_built.csv',
+    'hunt_master_canonical_2026_built.csv',
+    paths.database,
+  ],
+  ladder: [
+    paths.ladder,
+    'point_ladder_view.csv',
+  ],
+  predictive: [
+    paths.predictive,
+    'processed_data/draw_reality_engine_v2.csv',
+    'draw_reality_engine_v2.csv',
+    'draw_reality_engine.csv',
+  ],
+  harvest: [
+    paths.harvest,
+    'data_truth/harvest_results_truth/normalized/harvest_quality_features_all_years_by_hunt_code.csv',
+    'data_model/harvest_quality/harvest_quality_features_all_years_by_hunt_code.csv',
+    'pipeline/RAW/hunt_unit_database/2026/csv/harvest_quality_features_by_hunt_code_2025_for_2026.csv',
+  ],
+  age: [
+    paths.age,
+    'data_model/harvest_quality/harvest_average_age_global_merge_database.csv',
+  ],
+  yearChange: [
+    paths.yearChange,
+  ],
+  database: [
+    paths.database,
+  ],
+};
+
 const outputFiles = {
   outlookJson: 'processed_data/research_page/hunt_application_outlook.json',
   outlookCsv: 'processed_data/research_page/hunt_application_outlook.csv',
@@ -117,6 +162,47 @@ function num(value) {
   if (!raw || !/[0-9]/.test(raw)) return null;
   const parsed = Number(raw.replace(/[^0-9.-]/g, ''));
   return Number.isFinite(parsed) ? parsed : null;
+}
+
+function firstText(...values) {
+  for (const value of values) {
+    if (hasValue(value)) return text(value);
+  }
+  return '';
+}
+
+function firstNum(...values) {
+  for (const value of values) {
+    const n = num(value);
+    if (n != null) return n;
+  }
+  return null;
+}
+
+function resolveRuntimePath(key) {
+  const candidates = pathCandidates[key] || [];
+  for (const candidate of candidates) {
+    if (candidate && fs.existsSync(path.join(root, candidate))) return candidate;
+  }
+  return candidates[0] || '';
+}
+
+function resolveRuntimePaths() {
+  return {
+    syncMatrix: resolveRuntimePath('syncMatrix'),
+    readiness: resolveRuntimePath('readiness'),
+    management: resolveRuntimePath('management'),
+    master: resolveRuntimePath('master'),
+    ladder: resolveRuntimePath('ladder'),
+    predictive: resolveRuntimePath('predictive'),
+    harvest: resolveRuntimePath('harvest'),
+    age: resolveRuntimePath('age'),
+    yearChange: resolveRuntimePath('yearChange'),
+    database: resolveRuntimePath('database'),
+    elkPlan: paths.elkPlan,
+    deerPlanExpanded: paths.deerPlanExpanded,
+    deerPlan: paths.deerPlan,
+  };
 }
 
 function pct(value) {
@@ -355,28 +441,40 @@ function confidence(row) {
 }
 
 async function build() {
+  const resolved = resolveRuntimePaths();
   const protectedBefore = {
-    database: await sha256(paths.database),
-    predictive: await sha256(paths.predictive),
-    ladder: await sha256(paths.ladder),
+    database: await sha256(resolved.database),
+    predictive: await sha256(resolved.predictive),
+    ladder: await sha256(resolved.ladder),
   };
 
-  const syncMatrix = await readJson(paths.syncMatrix);
-  const readiness = await readJson(paths.readiness);
-  const managementRows = await readJson(paths.management);
-  const hasElkPlan = fs.existsSync(path.join(root, paths.elkPlan));
-  const hasDeerPlan = fs.existsSync(path.join(root, paths.deerPlanExpanded)) || fs.existsSync(path.join(root, paths.deerPlan));
+  const syncMatrix = await readJson(resolved.syncMatrix);
+  const readiness = await readJson(resolved.readiness);
+  const managementRows = await readJson(resolved.management);
+  const hasElkPlan = fs.existsSync(path.join(root, resolved.elkPlan));
+  const hasDeerPlan = fs.existsSync(path.join(root, resolved.deerPlanExpanded)) || fs.existsSync(path.join(root, resolved.deerPlan));
 
-  const [master, ladder, predictive, harvest, age, yearChanges] = await Promise.all([
-    readCsv(paths.master, masterColumns),
-    readCsv(paths.ladder, ladderColumns),
-    readCsv(paths.predictive, predictiveColumns),
-    readCsv(paths.harvest, harvestColumns),
-    readCsv(paths.age, ageColumns),
-    readCsv(paths.yearChange),
+  const [master, ladder, predictive, harvest, age, yearChanges, database] = await Promise.all([
+    readCsv(resolved.master, masterColumns),
+    readCsv(resolved.ladder, ladderColumns),
+    readCsv(resolved.predictive, predictiveColumns),
+    readCsv(resolved.harvest, harvestColumns),
+    readCsv(resolved.age, ageColumns),
+    readCsv(resolved.yearChange),
+    readCsv(resolved.database),
   ]);
 
   const managementByCode = new Map(managementRows.map((row) => [upper(row.hunt_code), row]));
+  const masterByCode = new Map();
+  master.forEach((row) => {
+    const c = code(row);
+    if (c && !masterByCode.has(c)) masterByCode.set(c, row);
+  });
+  const databaseByCode = new Map();
+  database.forEach((row) => {
+    const c = code(row);
+    if (c && !databaseByCode.has(c)) databaseByCode.set(c, row);
+  });
   const yearFlags = new Map();
   yearChanges.forEach((row) => {
     const c = upper(row.hunt_code);
@@ -388,9 +486,8 @@ async function build() {
     yearFlags.set(c, entry);
   });
 
-  const masterSeedRows = master.length
-    ? master
-    : ladder.map((row) => ({
+  const masterSeedRows = ladder.length
+    ? ladder.map((row) => ({
       hunt_code: row.hunt_code,
       boundary_id: row.boundary_id,
       hunt_name: row.hunt_name,
@@ -412,12 +509,15 @@ async function build() {
       current_age_3yr_average: row.current_age_3yr_average,
       average_harvest_age: row.average_harvest_age,
       new_this_year: row.new_this_year,
-    }));
+    }))
+    : master;
 
   const base = new Map();
   masterSeedRows.forEach((row) => {
     const c = code(row);
     if (!c) return;
+    const masterRow = masterByCode.get(c) || {};
+    const dbRow = databaseByCode.get(c) || {};
     const key = keyFor(c, row.residency);
     const item = base.get(key) || {
       hunt_code: c,
@@ -432,31 +532,31 @@ async function build() {
       _maxPointPermits: [],
       _randomPermits: [],
     };
-    chooseText(item, 'hunt_name', row.hunt_name);
-    chooseText(item, 'species', row.species);
-    chooseText(item, 'sex_type', row.sex_type);
-    chooseText(item, 'weapon', row.weapon);
-    chooseText(item, 'hunt_class', row.hunt_class);
-    chooseText(item, 'hunt_type', row.hunt_type);
-    chooseText(item, 'access_type', row.access_type);
-    chooseText(item, 'unit_name', row.unit_name || row.hunt_name);
-    chooseText(item, 'boundary_id', row.boundary_id);
-    chooseText(item, 'draw_family', row.draw_2026_system_type || row.draw_system_type || row.draw_pool);
-    chooseText(item, 'draw_pool', row.draw_pool);
-    chooseText(item, 'availability_status', row.availability_status || row.permit_status || row.data_status);
-    chooseText(item, 'model_version', row.model_version);
-    chooseText(item, 'rule_version', row.rule_version);
-    chooseNum(item, 'permits_2026_res', row.permits_2026_res || row.permit_allotment_2026_res);
-    chooseNum(item, 'permits_2026_nr', row.permits_2026_nr || row.permit_allotment_2026_nr);
-    chooseNum(item, 'permits_2026_total', row.permits_2026_total || row.permit_allotment_2026_total || row.public_permits_2026);
-    const currentAge = num(row.current_age_3yr_average);
+    chooseText(item, 'hunt_name', firstText(row.hunt_name, masterRow.hunt_name, dbRow.hunt_name));
+    chooseText(item, 'species', firstText(row.species, masterRow.species, dbRow.species));
+    chooseText(item, 'sex_type', firstText(row.sex_type, masterRow.sex_type, dbRow.sex_type));
+    chooseText(item, 'weapon', firstText(row.weapon, masterRow.weapon, dbRow.weapon));
+    chooseText(item, 'hunt_class', firstText(row.hunt_class, masterRow.hunt_class, dbRow.hunt_class));
+    chooseText(item, 'hunt_type', firstText(row.hunt_type, masterRow.hunt_type, dbRow.hunt_type));
+    chooseText(item, 'access_type', firstText(row.access_type, masterRow.access_type, dbRow.access_type));
+    chooseText(item, 'unit_name', firstText(row.unit_name, row.hunt_name, masterRow.unit_name, masterRow.hunt_name, dbRow.hunt_name));
+    chooseText(item, 'boundary_id', firstText(row.boundary_id, masterRow.boundary_id, dbRow.boundary_id));
+    chooseText(item, 'draw_family', firstText(row.draw_2026_system_type, row.draw_system_type, masterRow.draw_2026_system_type, masterRow.draw_system_type, dbRow.draw_2026_system_type, dbRow.draw_system_type, row.draw_pool));
+    chooseText(item, 'draw_pool', firstText(row.draw_pool, masterRow.draw_pool));
+    chooseText(item, 'availability_status', firstText(row.availability_status, row.permit_status, row.data_status, masterRow.availability_status, masterRow.permit_status, masterRow.data_status));
+    chooseText(item, 'model_version', firstText(row.model_version, masterRow.model_version));
+    chooseText(item, 'rule_version', firstText(row.rule_version, masterRow.rule_version));
+    chooseNum(item, 'permits_2026_res', firstNum(row.permits_2026_res, row.permit_allotment_2026_res, masterRow.permits_2026_res, masterRow.permit_allotment_2026_res, dbRow.permit_allotment_2026_res, dbRow.permits_2026_res));
+    chooseNum(item, 'permits_2026_nr', firstNum(row.permits_2026_nr, row.permit_allotment_2026_nr, masterRow.permits_2026_nr, masterRow.permit_allotment_2026_nr, dbRow.permit_allotment_2026_nr, dbRow.permits_2026_nr));
+    chooseNum(item, 'permits_2026_total', firstNum(row.permits_2026_total, row.permit_allotment_2026_total, row.public_permits_2026, masterRow.permits_2026_total, masterRow.permit_allotment_2026_total, masterRow.public_permits_2026, dbRow.permit_allotment_2026_total, dbRow.permits_2026_total));
+    const currentAge = firstNum(row.current_age_3yr_average, masterRow.current_age_3yr_average, dbRow.current_age_3yr_average);
     if (currentAge != null && currentAge > 0 && item.current_age_3yr_average == null) item.current_age_3yr_average = currentAge;
-    const ageValue = num(row.average_harvest_age);
+    const ageValue = firstNum(row.average_harvest_age, masterRow.average_harvest_age, dbRow.average_harvest_age);
     if (ageValue != null && ageValue > 0 && item.average_harvest_age == null) {
       item.average_harvest_age = ageValue;
-      item._ageSource = paths.master;
+      item._ageSource = resolved.master;
     }
-    if (yes(row.new_this_year)) item.new_this_year = true;
+    if (yes(row.new_this_year) || yes(masterRow.new_this_year) || yes(dbRow.new_this_year)) item.new_this_year = true;
     base.set(key, item);
   });
 
@@ -557,12 +657,16 @@ async function build() {
     const h = harvestByCode.get(row.hunt_code) || {};
     if (h.harvest_success_pct != null) row.harvest_success_pct = round(h.harvest_success_pct);
     if (h.average_days_hunted != null) row.average_days_hunted = round(h.average_days_hunted);
+    if ((row.average_harvest_age == null || row.average_harvest_age === '') && h.harvest_average_age != null && h.harvest_average_age > 0) {
+      row.average_harvest_age = round(h.harvest_average_age);
+      row._ageSource = resolved.harvest;
+    }
     if (hasValue(h.source_file)) row.harvest_source_file = h.source_file;
     if (hasValue(h.source_page)) row.harvest_source_page = h.source_page;
     const a = ageByCode.get(row.hunt_code) || {};
     if (a.average_harvest_age != null) {
       row.average_harvest_age = round(a.average_harvest_age);
-      row._ageSource = paths.age;
+      row._ageSource = resolved.age;
     }
     if (a.percent_5plus != null) row.percent_5plus = round(a.percent_5plus);
     if (hasValue(a.source_file)) row.age_source_file = a.source_file;
@@ -775,14 +879,14 @@ async function build() {
   }, {});
   const validation = {
     output_average_harvest_age_zero_count: cleanRows.filter((row) => num(row.average_harvest_age) === 0).length,
-    average_days_hunted_mapped_as_age_suspect_count: rows.filter((row) => row.average_harvest_age !== '' && row.average_days_hunted !== '' && text(row.average_harvest_age) === text(row.average_days_hunted) && row._ageSource !== paths.age).length,
-    average_days_hunted_same_as_verified_age_count: rows.filter((row) => row.average_harvest_age !== '' && row.average_days_hunted !== '' && text(row.average_harvest_age) === text(row.average_days_hunted) && row._ageSource === paths.age).length,
+    average_days_hunted_mapped_as_age_suspect_count: rows.filter((row) => row.average_harvest_age !== '' && row.average_days_hunted !== '' && text(row.average_harvest_age) === text(row.average_days_hunted) && row._ageSource !== resolved.age).length,
+    average_days_hunted_same_as_verified_age_count: rows.filter((row) => row.average_harvest_age !== '' && row.average_days_hunted !== '' && text(row.average_harvest_age) === text(row.average_days_hunted) && row._ageSource === resolved.age).length,
     blocked_rows: cleanRows.filter((row) => row.data_confidence === 'BLOCKED').length,
   };
   const protectedAfter = {
-    database: await sha256(paths.database),
-    predictive: await sha256(paths.predictive),
-    ladder: await sha256(paths.ladder),
+    database: await sha256(resolved.database),
+    predictive: await sha256(resolved.predictive),
+    ladder: await sha256(resolved.ladder),
   };
 
   await writeJson(outputFiles.outlookJson, cleanRows);
@@ -811,7 +915,20 @@ async function build() {
       predictive_rows: predictive.length,
       harvest_rows: harvest.length,
       age_rows: age.length,
+      database_rows: database.length,
       year_change_rows: yearChanges.length,
+      source_paths: {
+        sync_matrix: resolved.syncMatrix,
+        readiness: resolved.readiness,
+        management: resolved.management,
+        master: resolved.master,
+        ladder: resolved.ladder,
+        predictive: resolved.predictive,
+        harvest: resolved.harvest,
+        age: resolved.age,
+        year_change: resolved.yearChange,
+        database: resolved.database,
+      },
     },
     outputs: {
       outlook_rows: cleanRows.length,

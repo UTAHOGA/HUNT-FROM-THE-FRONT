@@ -7681,3 +7681,46 @@ o_table=0).
     - backup: `C:/Users/tyler/Desktop/species truth data/2026 deer buck db.backup_drawclass_rules_20260530_044525.csv`
 - Outcome:
   - `DB0009` now carries `hunt_type=conservation` and `hunt_class=expo` per requested behavior.
+
+## Research Step 1 Runtime Contract Audit + Step 2 Dashboard/Ladder Polish
+- Timestamp (UTC): 2026-05-30T09:42:37Z
+- Assigned sequence:
+  - `1) Data feed audit / runtime contract`
+  - `2) Research page dashboard + ladder polish`
+- Files changed:
+  - `scripts/build-hunt-research-classification-layer.js`
+  - `processed_data/research_page/hunt_application_outlook.json` (regenerated)
+  - `processed_data/research_page/hunt_application_outlook.csv` (regenerated)
+  - `processed_data/audits/hunt_classification_layer_audit.json` (regenerated)
+  - `assets/js/research-outlook-dashboard.js`
+  - `hunt-research.js`
+  - `research.html`
+- Step 1 contract fixes:
+  - Added resilient source-path resolution in the contract builder so it now auto-uses available local truth-source files when preferred processed_data paths are missing.
+  - Added `DATABASE.csv` enrichment overlay by `hunt_code` to backfill canonical hunt/species/weapon/hunt_type/hunt_class/boundary fields into output rows.
+  - Preserved residency row structure by seeding from ladder rows first, then enriching from canonical master/database rows.
+  - Added harvest/age fallback handling from available truth packages while preserving age guardrails.
+  - Added audit `source_paths` output so every run records exactly which input files were used.
+- Step 1 output/validation:
+  - Contract build run: `node scripts/build-hunt-research-classification-layer.js`
+  - Result:
+    - `outlook_rows: 2898`
+    - `tag_rows: 21426`
+    - `sleeper_hunt_rows: 330`
+    - `blocked_rows: 0`
+    - `output_average_harvest_age_zero_count: 0`
+  - Protected hashes unchanged:
+    - `DATABASE.csv`: unchanged
+    - ladder file: unchanged
+    - predictive file hash: unchanged
+- Step 2 UX polish:
+  - Updated Research handoff wording so the page reads as Hunt Builder -> Research flow instead of a separate standalone start-over form.
+  - Refined empty-state dashboard text to direct users to Hunt Builder first without debug-style language.
+  - Updated ladder header casing to the cleaned display form (`2026 Max Point Draw`).
+  - Bumped Research script cache tokens in `research.html`.
+- Validation:
+  - `node --check scripts/build-hunt-research-classification-layer.js` passed.
+  - `node --check hunt-research.js` passed.
+  - `node --check assets/js/research-outlook-dashboard.js` passed.
+  - `npm.cmd run build` passed.
+  - Build produced existing optional-missing notices for runtime artifacts not currently present locally; no protected truth files were modified.
