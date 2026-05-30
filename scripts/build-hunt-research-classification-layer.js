@@ -388,8 +388,34 @@ async function build() {
     yearFlags.set(c, entry);
   });
 
+  const masterSeedRows = master.length
+    ? master
+    : ladder.map((row) => ({
+      hunt_code: row.hunt_code,
+      boundary_id: row.boundary_id,
+      hunt_name: row.hunt_name,
+      species: row.species,
+      sex_type: row.sex_type,
+      weapon: row.weapon,
+      hunt_class: row.hunt_class,
+      hunt_type: row.hunt_type,
+      residency: row.residency,
+      draw_pool: row.draw_pool,
+      draw_2026_system_type: row.draw_2026_system_type,
+      draw_system_type: row.draw_system_type,
+      availability_status: row.availability_status,
+      model_version: row.model_version,
+      rule_version: row.rule_version,
+      permits_2026_res: row.permits_2026_res || row.permit_allotment_2026_res,
+      permits_2026_nr: row.permits_2026_nr || row.permit_allotment_2026_nr,
+      permits_2026_total: row.permits_2026_total || row.permit_allotment_2026_total || row.public_permits_2026,
+      current_age_3yr_average: row.current_age_3yr_average,
+      average_harvest_age: row.average_harvest_age,
+      new_this_year: row.new_this_year,
+    }));
+
   const base = new Map();
-  master.forEach((row) => {
+  masterSeedRows.forEach((row) => {
     const c = code(row);
     if (!c) return;
     const key = keyFor(c, row.residency);
