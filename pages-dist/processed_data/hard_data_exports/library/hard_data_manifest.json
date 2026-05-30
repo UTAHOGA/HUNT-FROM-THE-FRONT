@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-30T03:17:08.330Z",
+  "generated_at": "2026-05-30T09:44:13.276Z",
   "current_source_used": "pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
   "cloudflare_fallback_base": "https://json.uoga.workers.dev",
   "pages_file_limit_mb": 25,
@@ -41,8 +41,8 @@
       "role": "current official/canonical 2026 hunt database",
       "exists": "true",
       "row_count": "not_scanned",
-      "size_bytes": 648836,
-      "size_mb": 0.62,
+      "size_bytes": 616998,
+      "size_mb": 0.59,
       "delivery": "pages-local",
       "href": "./pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
       "local_href": "./pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv",
