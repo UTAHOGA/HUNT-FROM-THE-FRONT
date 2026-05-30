@@ -597,6 +597,11 @@ body {
   cursor: pointer;
 }
 
+.uoga-pdf-flip-toolbar button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
 .uoga-pdf-flip-toolbar {
   display: flex;
   justify-content: center;
@@ -624,6 +629,14 @@ body {
   background:
     radial-gradient(circle at center, rgba(255, 214, 140, 0.10), transparent 45%),
     rgba(7, 3, 1, 0.94);
+}
+
+.uoga-pdf-inline-frame {
+  width: 100%;
+  height: calc(100vh - 220px);
+  border: 0;
+  border-radius: 10px;
+  background: #1b1008;
 }
 
 .uoga-pdf-spread {

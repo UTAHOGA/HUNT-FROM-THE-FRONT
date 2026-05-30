@@ -7779,3 +7779,25 @@ o_table=0).
     - `DATABASE.csv`
     - ladder source
     - predictive source
+
+## Step 6 Public Library Curation Cleanup + Step 7 Library Speed Optimization
+- Timestamp (UTC): 2026-05-30T10:46:00Z
+- Files changed:
+  - `assets/js/hard-copy-public-library.js`
+  - `assets/css/hard-copy-public-library.css`
+  - `hard-copy.html`
+- Step 6 curation cleanup:
+  - Added resilient manifest source fallbacks and support for object-style manifest payloads (`input_file_status` lists).
+  - Added curated fixed public document entries under `public/hard-copy/DISPLAY DATA/*` so the library can render trusted references even when allowlist files are absent.
+  - Added local file availability filtering via `HEAD`/fallback `GET` checks to suppress broken local links before rendering cards.
+  - Kept runtime-denylist protection in place so model/runtime source files are not exposed as library documents.
+- Step 7 speed optimization:
+  - Removed external PDF flipbook runtime dependency path from the library viewer flow.
+  - Replaced PDF render/flip pipeline with native in-browser iframe preview modal.
+  - Disabled obsolete prev/next controls for the lightweight preview mode.
+  - Added lightweight inline-frame styling and disabled-button states in library CSS.
+  - Bumped hard-copy asset cache tokens in `hard-copy.html`.
+- Validation:
+  - `node --check assets/js/hard-copy-public-library.js` passed.
+  - `npm.cmd run build` passed.
+  - Build still reports existing optional-missing runtime artifacts; these are unchanged baseline warnings.

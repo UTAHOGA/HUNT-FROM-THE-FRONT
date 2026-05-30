@@ -2,11 +2,9 @@
   const CURRENT_YEAR = "2026";
   const MANIFEST_URLS = [
     "./processed_data/hard_data_exports/library/public_library_allowlist.json",
+    "./public/hard-copy/data/documents.json",
+    "./public/hard-copy/DISPLAY DATA/data/documents.json",
   ];
-
-  const PDFJS_CDN = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs";
-  const PDFJS_WORKER_CDN = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.worker.min.mjs";
-  const PAGE_FLIP_CDN = "https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js";
 
   const FOLDERS = [
     { id: "rules", title: "UTAH DWR RULES & REGULATIONS", description: "Current-year/current-cycle public rules and regulation PDFs." },
@@ -41,16 +39,18 @@
     "processed_data/library/library_page_hunts.csv",
   ];
 
-  const FIXED_PUBLIC_ITEMS = [];
-
-  let pdfjsLib = null;
-  let pageFlipLoadPromise = null;
-  let pdfLibLoadPromise = null;
-  let pageFlipInstance = null;
-  let activeSpreadMeta = [];
-  let activePdfPageCount = 0;
-  let activePdfSpreads = [];
-  let activeSpreadIndex = 0;
+  const FIXED_PUBLIC_ITEMS = [
+    { folderId: "rules", title: "2026 Big Game Application Guidebook", subtitle: "Current-cycle big game application guidebook.", href: "./public/hard-copy/DISPLAY%20DATA/regulations/2026.biggame.app.pdf", type: "pdf", year: "2026", sortOrder: 10 },
+    { folderId: "rules", title: "2026 Cougar and Bear Regulations", subtitle: "Current-cycle cougar and bear rules.", href: "./public/hard-copy/DISPLAY%20DATA/regulations/2026.regs.cougar.bear.pdf", type: "pdf", year: "2026", sortOrder: 20 },
+    { folderId: "rules", title: "2026 Turkey Regulations", subtitle: "Current-cycle turkey regulations.", href: "./public/hard-copy/DISPLAY%20DATA/regulations/2026.regs.turkey.pdf", type: "pdf", year: "2026", sortOrder: 30 },
+    { folderId: "harvest", title: "2025 Harvest Summary (Public)", subtitle: "Public summary workbook for harvest results.", href: "./public/hard-copy/DISPLAY%20DATA/data/2025_harvest_summary_public.xlsx", type: "xlsx", year: "2025", sortOrder: 10 },
+    { folderId: "draw", title: "2025 Draw Results Summary (Public)", subtitle: "Public summary workbook for draw outcomes.", href: "./public/hard-copy/DISPLAY%20DATA/data/2025_draw_results_summary_public.xlsx", type: "xlsx", year: "2025", sortOrder: 10 },
+    { folderId: "conservation", title: "Unit-Specific Conservation / Expo Bundles", subtitle: "Public workbook with conservation/expo permit bundles by unit.", href: "./public/hard-copy/DISPLAY%20DATA/harvest%20results/unit_specific_conservation_expo_bundles.xlsx", type: "xlsx", year: "2026", sortOrder: 10 },
+    { folderId: "expo", title: "2026 EXPO Draw Results", subtitle: "Formatted Expo draw results (PDF).", href: "./public/hard-copy/DISPLAY%20DATA/expo%20permits/2026%20EXPO%20DRAW%20RESULTS.pdf", type: "pdf", year: "2026", sortOrder: 10 },
+    { folderId: "calendar", title: "2026 Fishing Regulations Calendar Context", subtitle: "Public regulations publication with key timing context.", href: "./public/hard-copy/DISPLAY%20DATA/regulations/2026.regs.fishing.pdf", type: "pdf", year: "2026", sortOrder: 20 },
+    { folderId: "units2026", title: "2026 Hunt Units / Permit Numbers", subtitle: "Current 2026 hunt code, hunt unit, and permit workbook.", href: "./public/hard-copy/DISPLAY%20DATA/data/2026_hunt_units_permit_numbers.xlsx", type: "xlsx", year: "2026", sortOrder: 10 },
+    { folderId: "outfitters", title: "Utah Outfitters by Hunt Code / Hunt Name", subtitle: "Public outfitter workbook tied to hunt code and hunt name.", href: "./public/hard-copy/DISPLAY%20DATA/data/utah_outfitters_by_hunt_code_hunt_name.xlsx", type: "xlsx", year: "2026", sortOrder: 10 },
+  ];
 
   function byId(id) {
     return document.getElementById(id);
@@ -130,7 +130,7 @@
   function toPublicItem(raw) {
     const knownFolderIds = new Set(FOLDERS.map((folder) => folder.id));
     const title = String(raw.title || "").trim();
-    const href = String(raw.href || "").trim();
+    const href = String(raw.href || raw.local_href || "").trim();
     const type = String(raw.type || "").trim().toLowerCase();
     const subtitle = String(raw.subtitle || "").trim();
     const group = String(raw.group || "").trim().toLowerCase();
@@ -177,10 +177,38 @@
       if (!response.ok) return [];
       const text = await response.text();
       const parsed = JSON.parse(String(text || "").replace(/^\uFEFF/, ""));
-      return Array.isArray(parsed) ? parsed : [];
+      if (Array.isArray(parsed)) return parsed;
+      if (parsed && Array.isArray(parsed.input_file_status)) return parsed.input_file_status;
+      return [];
     } catch {
       return [];
     }
+  }
+
+  async function existsByFetch(url) {
+    try {
+      const response = await fetch(url, { method: "HEAD", cache: "no-store" });
+      if (response.ok) return true;
+      if (response.status === 405) {
+        const fallback = await fetch(url, { method: "GET", cache: "no-store" });
+        return fallback.ok;
+      }
+      return false;
+    } catch {
+      return false;
+    }
+  }
+
+  async function filterAvailableItems(items) {
+    const checks = await Promise.all(items.map(async (item) => {
+      const url = safeUrl(item.href);
+      if (url === "#") return null;
+      const parsed = new URL(url);
+      if (parsed.origin !== window.location.origin) return item;
+      const exists = await existsByFetch(url);
+      return exists ? item : null;
+    }));
+    return checks.filter(Boolean);
   }
 
   function dedupe(items) {
@@ -189,24 +217,6 @@
       if (!seen.has(item.id)) seen.set(item.id, item);
     });
     return Array.from(seen.values());
-  }
-
-  function loadScript(src) {
-    return new Promise((resolve, reject) => {
-      const script = document.createElement("script");
-      script.src = src;
-      script.async = true;
-      script.onload = () => resolve();
-      script.onerror = () => reject(new Error(`Failed to load script: ${src}`));
-      document.head.appendChild(script);
-    });
-  }
-
-  async function ensurePageFlipLibrary() {
-    if (!pageFlipLoadPromise) {
-      pageFlipLoadPromise = loadScript(PAGE_FLIP_CDN);
-    }
-    await pageFlipLoadPromise;
   }
 
   function enforceConservationSingleItem(items) {
@@ -227,16 +237,6 @@
 
     const best = [...conservation].sort((a, b) => scoreItem(b) - scoreItem(a))[0];
     return items.filter((item) => item.folderId !== "conservation").concat(best);
-  }
-
-  async function ensurePdfLibrary() {
-    if (!pdfLibLoadPromise) {
-      pdfLibLoadPromise = import(PDFJS_CDN).then((module) => {
-        pdfjsLib = module;
-        pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS_WORKER_CDN;
-      });
-    }
-    await pdfLibLoadPromise;
   }
 
   function closeEmbed() {
@@ -265,123 +265,11 @@
     const book = byId("uogaPdfFlipbook");
     const status = byId("uogaPdfStatus");
     const download = byId("uogaPdfDownload");
-    if (pageFlipInstance) {
-      pageFlipInstance.destroy();
-      pageFlipInstance = null;
-    }
-    activeSpreadMeta = [];
-    activePdfPageCount = 0;
-    activePdfSpreads = [];
-    activeSpreadIndex = 0;
     book.innerHTML = "";
     panel.hidden = true;
     document.body.classList.remove("uoga-modal-open");
     status.textContent = "Loading...";
     download.href = "#";
-  }
-
-  async function renderPdfPages(pdfDoc, targetWidth = 430) {
-    const pageCount = Math.min(pdfDoc.numPages, 60);
-    const pages = [];
-    for (let i = 1; i <= pageCount; i += 1) {
-      const page = await pdfDoc.getPage(i);
-      const initialViewport = page.getViewport({ scale: 1 });
-      const scale = targetWidth / initialViewport.width;
-      const viewport = page.getViewport({ scale });
-      const canvas = document.createElement("canvas");
-      canvas.width = Math.floor(viewport.width);
-      canvas.height = Math.floor(viewport.height);
-      const ctx = canvas.getContext("2d", { alpha: false });
-      await page.render({ canvasContext: ctx, viewport }).promise;
-
-      const pageWrap = document.createElement("div");
-      pageWrap.className = "uoga-pdf-page";
-      pageWrap.dataset.pageNumber = String(i);
-      pageWrap.appendChild(canvas);
-      pages.push(pageWrap);
-    }
-    return { pages, pageCount };
-  }
-
-  function buildSpreads(pages, pageCount, isMobile) {
-    if (isMobile) {
-      const spreads = pages.map((page, index) => {
-        const spread = document.createElement("div");
-        spread.className = "uoga-pdf-spread single";
-        spread.appendChild(page);
-        spread.dataset.spreadIndex = String(index);
-        return spread;
-      });
-      const spreadMeta = pages.map((_, index) => ({ label: `Page ${index + 1} of ${pageCount}` }));
-      return { spreads, spreadMeta };
-    }
-
-    const spreads = [];
-    const spreadMeta = [];
-
-    const coverSpread = document.createElement("div");
-    coverSpread.className = "uoga-pdf-spread cover";
-    coverSpread.dataset.spreadIndex = "0";
-    coverSpread.appendChild(pages[0]);
-    spreads.push(coverSpread);
-    spreadMeta.push({ label: `Cover (Page 1 of ${pageCount})` });
-
-    for (let pageNum = 2; pageNum <= pageCount; pageNum += 2) {
-      const spread = document.createElement("div");
-      const rightPageNum = pageNum + 1;
-      const isSingle = rightPageNum > pageCount;
-      spread.className = `uoga-pdf-spread ${isSingle ? "single" : ""}`.trim();
-      spread.dataset.spreadIndex = String(spreads.length);
-      spread.appendChild(pages[pageNum - 1]);
-      if (!isSingle) spread.appendChild(pages[rightPageNum - 1]);
-      spreads.push(spread);
-      spreadMeta.push({
-        label: isSingle
-          ? `Page ${pageNum} of ${pageCount}`
-          : `Pages ${pageNum}-${rightPageNum} of ${pageCount}`,
-      });
-    }
-
-    return { spreads, spreadMeta };
-  }
-
-  function updateFlipStatus(spreadIndex) {
-    const status = byId("uogaPdfStatus");
-    if (pageFlipInstance) {
-      const index = Math.max(0, Number(spreadIndex) || 0);
-      if (activePdfPageCount <= 0) {
-        status.textContent = "Loading...";
-        return;
-      }
-      if (index === 0) {
-        status.textContent = `Cover (Page 1 of ${activePdfPageCount})`;
-        return;
-      }
-      const leftPage = index + 1;
-      const rightPage = Math.min(leftPage + 1, activePdfPageCount);
-      status.textContent = leftPage === rightPage
-        ? `Page ${leftPage} of ${activePdfPageCount}`
-        : `Pages ${leftPage}-${rightPage} of ${activePdfPageCount}`;
-      return;
-    }
-    const meta = activeSpreadMeta[spreadIndex];
-    if (!meta) {
-      status.textContent = activePdfPageCount ? `Page 1 of ${activePdfPageCount}` : "Loading...";
-      return;
-    }
-    status.textContent = meta.label;
-  }
-
-  function showPdfSpread(index) {
-    const book = byId("uogaPdfFlipbook");
-    if (!activePdfSpreads.length) {
-      book.innerHTML = "";
-      return;
-    }
-    activeSpreadIndex = Math.max(0, Math.min(index, activePdfSpreads.length - 1));
-    book.innerHTML = "";
-    book.appendChild(activePdfSpreads[activeSpreadIndex]);
-    updateFlipStatus(activeSpreadIndex);
   }
 
   async function openPdfFlipbook(item) {
@@ -397,62 +285,29 @@
     document.body.classList.add("uoga-modal-open");
     title.textContent = item.title || "PDF Viewer";
     download.href = safeUrl(viewerHref);
-    status.textContent = "Loading PDF...";
+    status.textContent = "In-browser PDF preview";
+    byId("uogaPdfPrev").disabled = true;
+    byId("uogaPdfNext").disabled = true;
     book.innerHTML = "";
 
     try {
-      await ensurePdfLibrary();
-      await ensurePageFlipLibrary();
-      const pdf = await pdfjsLib.getDocument(safeUrl(viewerHref)).promise;
-      const isMobile = window.innerWidth <= 760;
-      const targetWidth = isMobile ? 320 : 640;
-      const { pages, pageCount } = await renderPdfPages(pdf, targetWidth);
-      if (!pages.length) {
-        status.textContent = "No renderable pages.";
-        return;
-      }
-
-      activePdfPageCount = pageCount;
-
-      try {
-        pageFlipInstance = new window.St.PageFlip(book, {
-          width: 620,
-          height: 800,
-          size: "stretch",
-          minWidth: 360,
-          maxWidth: 700,
-          minHeight: 520,
-          maxHeight: 900,
-          showCover: true,
-          usePortrait: isMobile,
-          drawShadow: true,
-          flippingTime: 700,
-          mobileScrollSupport: false,
-        });
-        pages.forEach((page) => book.appendChild(page));
-        pageFlipInstance.loadFromHTML(book.querySelectorAll(".uoga-pdf-page"));
-        updateFlipStatus(0);
-        pageFlipInstance.on("flip", (event) => {
-          updateFlipStatus(Number(event.data || 0));
-        });
-      } catch (flipError) {
-        if (pageFlipInstance) {
-          pageFlipInstance.destroy();
-          pageFlipInstance = null;
-        }
-        const { spreads, spreadMeta } = buildSpreads(pages, pageCount, isMobile);
-        activeSpreadMeta = spreadMeta;
-        activePdfSpreads = spreads;
-        showPdfSpread(0);
-      }
+      const frame = document.createElement("iframe");
+      frame.className = "uoga-pdf-inline-frame";
+      frame.loading = "lazy";
+      frame.referrerPolicy = "no-referrer-when-downgrade";
+      frame.src = safeUrl(viewerHref);
+      frame.title = item.title || "PDF Preview";
+      book.appendChild(frame);
     } catch (error) {
       document.body.classList.remove("uoga-modal-open");
-      status.textContent = "Could not load flipbook. Use Download PDF.";
-      book.innerHTML = `<div class="public-empty">${esc(error.message || "Flipbook failed to load")}</div>`;
+      status.textContent = "Could not load PDF preview. Use Download Original.";
+      book.innerHTML = `<div class="public-empty">${esc(error.message || "PDF preview failed to load")}</div>`;
     }
   }
 
   function bindStaticControls() {
+    byId("uogaPdfPrev").disabled = true;
+    byId("uogaPdfNext").disabled = true;
     byId("uogaEmbedClose").addEventListener("click", closeEmbed);
     byId("uogaPdfFlipClose").addEventListener("click", closePdfFlipbook);
     byId("uogaPdfFlipPanel").querySelector(".uoga-pdf-flip-backdrop")?.addEventListener("click", closePdfFlipbook);
@@ -460,20 +315,6 @@
       if (event.key === "Escape") {
         closeEmbed();
         closePdfFlipbook();
-      }
-    });
-    byId("uogaPdfPrev").addEventListener("click", () => {
-      if (pageFlipInstance) {
-        pageFlipInstance.flipPrev();
-      } else {
-        showPdfSpread(activeSpreadIndex - 1);
-      }
-    });
-    byId("uogaPdfNext").addEventListener("click", () => {
-      if (pageFlipInstance) {
-        pageFlipInstance.flipNext();
-      } else {
-        showPdfSpread(activeSpreadIndex + 1);
       }
     });
   }
@@ -571,17 +412,12 @@
 
       if (item.type === "pdf") {
         const originalHref = safeUrl(item.href);
-        const viewerHref = item.viewerHref ? safeUrl(item.viewerHref) : "";
-        const viewerDownload = viewerHref
-          ? `<a class="public-file-action" href="${esc(viewerHref)}" target="_blank" rel="noopener noreferrer">Download Viewer PDF</a>`
-          : "";
         return `
           <div class="public-file-card">
             ${base}
             <div class="public-file-actions">
-              <button class="public-file-action" type="button" data-action="flip" data-index="${idx}">View Flipbook</button>
+              <button class="public-file-action" type="button" data-action="flip" data-index="${idx}">View Preview</button>
               <a class="public-file-action" href="${esc(originalHref)}" target="_blank" rel="noopener noreferrer">Download Original</a>
-              ${viewerDownload}
             </div>
           </div>
         `;
@@ -675,6 +511,7 @@
     .then((allSets) => allSets.flat().map(toPublicItem).filter(Boolean))
     .then((items) => dedupe([...items, ...FIXED_PUBLIC_ITEMS]))
     .then((items) => enforceConservationSingleItem(items))
+    .then((items) => filterAvailableItems(items))
     .then(start)
     .catch((error) => {
       const panel = byId("uogaResultsPanel");
