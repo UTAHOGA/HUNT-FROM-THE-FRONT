@@ -544,19 +544,38 @@
       : hasValue(row.management_objective_min)
       ? `${formatValue(row.management_objective_min)}${hasValue(row.management_objective_max) ? ` to ${formatValue(row.management_objective_max)}` : ""} ${formatValue(row.objective_unit, "")}`.trim()
       : "No objective row loaded";
-    const managementDirection = hasValue(row.objective_status)
+    const managementDirection = hasValue(row.management_direction)
+      ? formatValue(row.management_direction)
+      : hasValue(row.objective_status)
       ? formatValue(row.objective_status)
       : "Objective known, observed evidence is limited.";
     return panel("Management Benchmark", `
       <div class="uoga-badge-row">${badge("Management Plan Context")}</div>
       ${listRows([
         metricRow("State objective", `${formatValue(row.management_objective_type, "Objective type pending")} / ${objectiveRange}`),
-        metricRow("Observed evidence", formatValue(row.notes || row.objective_status_rule, "Observed comparison details are limited.")),
+        metricRow("Observed evidence", formatValue(row.management_objective_note || row.notes || row.objective_status_rule, "Observed comparison details are limited.")),
         metricRow("Management direction", managementDirection),
         metricRow("Permit direction watch", formatValue(row.permit_direction_watch, "Use as context only; does not change draw odds.")),
       ])}
       <p class="uoga-outlook-muted">Benchmark only. This is context and does not change modeled draw probability.</p>
     `);
+  }
+
+  function renderPersonaPanel(contract) {
+    const tags = pipeList(contract.persona_tags);
+    const sleeperScore = num(contract.sleeper_score);
+    const sleeperReasons = firstValue(contract, ["sleeper_reasons"]);
+    const tagBadges = tags.length
+      ? tags.slice(0, 8).map((tag) => badge(tag.replace(/_/g, " "), "modeled")).join("")
+      : badge("No persona tags loaded", "limited");
+    return `
+      <div class="uoga-badge-row">${tagBadges}</div>
+      ${listRows([
+        metricRow("Sleeper score", sleeperScore === null ? "Not available" : formatValue(sleeperScore)),
+        metricRow("Sleeper rationale", formatValue(sleeperReasons, "No sleeper rationale loaded.")),
+        metricRow("How to use this", "Use these as comparison hints only; they do not override draw odds."),
+      ])}
+    `;
   }
 
   function getFreshnessLabel(contract, meta, selectedRow) {
@@ -620,6 +639,9 @@
       objective_unit: contract.management_objective_range,
       objective_status: contract.management_objective_status,
       notes: contract.management_objective_note,
+      management_direction: contract.management_direction,
+      permit_direction_watch: contract.permit_direction_watch,
+      management_objective_note: contract.management_objective_note,
     };
     const effectiveManagementRows = hasValue(contract.management_objective_type) || hasValue(contract.management_objective_status)
       ? [managementRow]
@@ -668,6 +690,10 @@
           ]), "is-official")}
           ${renderManagementPanel(effectiveManagementRows)}
         </div>
+        <section class="uoga-outlook-panel is-compact uoga-outlook-wide">
+          <h3>Hunter-Fit Signals</h3>
+          ${renderPersonaPanel(contract)}
+        </section>
         <section class="uoga-outlook-panel is-compact uoga-outlook-wide">
           <h3>Comparable Hunts</h3>
           ${renderComparableCards(comparable)}

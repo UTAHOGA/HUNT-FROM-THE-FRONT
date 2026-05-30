@@ -80,6 +80,7 @@ const outputFiles = {
   newCsv: 'processed_data/research_page/new_hunts_report.csv',
   newJson: 'processed_data/research_page/new_hunts_report.json',
   demographicsJson: 'processed_data/research_page/demographic_hunt_recommendations.json',
+  managementContextJson: 'processed_data/management_context/hunt_management_objective_context.json',
   auditJson: 'processed_data/audits/hunt_classification_layer_audit.json',
 };
 
@@ -416,6 +417,96 @@ function managementStatus(row, mgmt) {
   return { status: 'OBJECTIVE_KNOWN_NO_OBSERVED_DATA', observed: null, reason: 'Objective exists, but comparison rule is not available for this species.' };
 }
 
+function managementDirectionLabel(status) {
+  const s = upper(status);
+  if (s === 'QUALITY_ABOVE_OBJECTIVE') return 'Above Objective';
+  if (s === 'QUALITY_MEETING_OBJECTIVE') return 'Meeting Objective';
+  if (s === 'QUALITY_BELOW_OBJECTIVE') return 'Below Objective';
+  if (s === 'OBJECTIVE_KNOWN_NO_OBSERVED_DATA') return 'Objective Known / Observed Evidence Limited';
+  return 'Objective Context Loaded';
+}
+
+function buildSyntheticManagementRows(databaseRows) {
+  const byCode = new Map();
+  databaseRows.forEach((row) => {
+    const c = upper(row.hunt_code);
+    if (!c || byCode.has(c)) return;
+    const species = lower(row.species);
+    const huntType = lower(row.hunt_type);
+    const huntClass = lower(row.hunt_class);
+    let synthetic = null;
+
+    if (species.includes('elk')) {
+      if (huntType.includes('limited entry') || huntClass.includes('limited entry') || huntClass.includes('premium')) {
+        synthetic = {
+          hunt_code: c,
+          species: row.species,
+          management_objective_type: 'Elk LE Age Objective',
+          management_objective_min: 5.5,
+          management_objective_max: 7.0,
+          objective_unit: 'years avg harvested bull age',
+          objective_status_rule: 'Compare observed average harvested age against statewide LE objective band.',
+          notes: 'Context from statewide elk plan; does not change permits or draw odds.',
+        };
+      }
+    } else if (species.includes('deer')) {
+      if (huntType.includes('premium limited entry') || huntClass.includes('premium')) {
+        synthetic = {
+          hunt_code: c,
+          species: row.species,
+          management_objective_type: 'Mule Deer Premium LE Expectation',
+          management_objective_min: 40,
+          management_objective_max: 45,
+          objective_unit: 'bucks per 100 does objective band',
+          age_structure_threshold_min: 40,
+          objective_status_rule: 'Use verified percent age 5+ as observed evidence when available.',
+          notes: 'Premium LE quality context from statewide mule deer plan; not a direct odds input.',
+        };
+      } else if (huntType.includes('limited entry')) {
+        synthetic = {
+          hunt_code: c,
+          species: row.species,
+          management_objective_type: 'Mule Deer LE Objective',
+          management_objective_min: 25,
+          management_objective_max: 30,
+          objective_unit: 'bucks per 100 does objective band',
+          objective_status_rule: 'Observed buck:doe evidence is external; keep as context-only benchmark.',
+          notes: 'LE management objective context from statewide mule deer plan.',
+        };
+      } else if (huntType.includes('general')) {
+        synthetic = {
+          hunt_code: c,
+          species: row.species,
+          management_objective_type: 'Mule Deer General Objective',
+          management_objective_min: 15,
+          management_objective_max: 20,
+          objective_unit: 'bucks per 100 does objective band',
+          objective_status_rule: 'Use as management context only unless observed buck:doe evidence is loaded.',
+          notes: 'General-season objective context from statewide mule deer plan.',
+        };
+      }
+    }
+
+    if (synthetic) byCode.set(c, synthetic);
+  });
+  return [...byCode.values()];
+}
+
+function permitDirectionWatch(row, yearFlag) {
+  if (yearFlag?.permit_change_pct != null) {
+    const pct = Number(yearFlag.permit_change_pct);
+    if (Math.abs(pct) > 20) {
+      return `Permit-change flag exceeds 20% (${round(pct)}%). Management review context.`;
+    }
+    return `Permit-change signal ${round(pct)}% (within 20% auto-change context).`;
+  }
+  const creep = num(row.point_creep_1yr);
+  if (creep != null && creep >= 1) {
+    return 'Point-creep increase observed; watch permit direction if RAC change exceeds 20%.';
+  }
+  return 'No permit-direction flag loaded from year-change audit.';
+}
+
 function recommendedAction(row) {
   const t = new Set(row.tags);
   if (t.has('DATA_LIMITED_DO_NOT_OVERSELL') || t.has('INSUFFICIENT_DRAW_DATA')) return 'Objective or opportunity data is incomplete. Treat this as a limited-confidence research lead.';
@@ -464,7 +555,9 @@ async function build() {
     readCsv(resolved.database),
   ]);
 
-  const managementByCode = new Map(managementRows.map((row) => [upper(row.hunt_code), row]));
+  const syntheticManagementRows = managementRows.length ? [] : buildSyntheticManagementRows(database);
+  const managementRowsEffective = managementRows.length ? managementRows : syntheticManagementRows;
+  const managementByCode = new Map(managementRowsEffective.map((row) => [upper(row.hunt_code), row]));
   const masterByCode = new Map();
   master.forEach((row) => {
     const c = code(row);
@@ -742,8 +835,10 @@ async function build() {
       const status = managementStatus(row, mgmt);
       row.management_objective_status = status.status;
       row.management_objective_note = status.reason;
+      row.management_direction = managementDirectionLabel(status.status);
       addTag(tagRows, row, status.status, 'QUALITY_OBJECTIVE', status.reason);
     }
+    row.permit_direction_watch = permitDirectionWatch(row, y);
 
     if (success != null && success >= 50) addTag(tagRows, row, 'HIGH_HARVEST_SUCCESS', 'QUALITY_OBJECTIVE', `Harvest success ${round(success)}% is strong.`);
     if (success != null && success > 0 && success < 20) addTag(tagRows, row, 'LOW_HARVEST_SUCCESS', 'QUALITY_OBJECTIVE', `Harvest success ${round(success)}% is low.`);
@@ -840,13 +935,39 @@ async function build() {
     'guaranteed_line_points', 'point_creep_1yr', 'harvest_success_pct',
     'average_days_hunted', 'average_harvest_age', 'current_age_3yr_average', 'percent_5plus',
     'management_objective_type', 'management_objective_range', 'management_objective_status',
-    'management_objective_note', 'permits_2026_res', 'permits_2026_nr', 'permits_2026_total',
+    'management_objective_note', 'management_direction', 'permit_direction_watch',
+    'permits_2026_res', 'permits_2026_nr', 'permits_2026_total',
     'decision_label', 'persona_tags', 'sleeper_score', 'sleeper_reasons',
     'recommended_action', 'data_confidence', 'source_badges', 'model_version', 'rule_version',
     'availability_status', 'harvest_source_file', 'harvest_source_page', 'age_source_file',
     'age_source_page', 'age_source_table_title', 'age_review_status',
   ];
   const cleanRows = rows.map((row) => Object.fromEntries(outlookColumns.map((col) => [col, row[col] ?? ''])));
+  const managementContextRows = [];
+  const managementSeen = new Set();
+  for (const row of rows) {
+    if (!hasValue(row.management_objective_type) && !hasValue(row.management_objective_status)) continue;
+    if (managementSeen.has(row.hunt_code)) continue;
+    managementSeen.add(row.hunt_code);
+    const mg = managementByCode.get(row.hunt_code) || {};
+    managementContextRows.push({
+      hunt_code: row.hunt_code,
+      species: row.species,
+      hunt_name: row.hunt_name,
+      hunt_type: row.hunt_type,
+      hunt_class: row.hunt_class,
+      management_objective_type: row.management_objective_type,
+      management_objective_min: mg.management_objective_min ?? '',
+      management_objective_max: mg.management_objective_max ?? '',
+      objective_unit: mg.objective_unit || row.management_objective_range || '',
+      objective_status: row.management_objective_status,
+      management_direction: row.management_direction || '',
+      notes: row.management_objective_note || mg.notes || '',
+      permit_direction_watch: row.permit_direction_watch || '',
+      source_class: managementRows.length ? 'reviewed_management_context_file' : 'synthetic_plan_context_from_database',
+      context_only: true,
+    });
+  }
 
   const sleeperColumns = ['hunt_code', 'hunt_name', 'species', 'residency', 'hunt_class', 'modeled_draw_probability', 'harvest_success_pct', 'permits_2026_total', 'sleeper_score', 'sleeper_reasons', 'data_limitations'];
   const newColumns = ['hunt_code', 'hunt_name', 'species', 'residency', 'hunt_class', 'permits_2026_total', 'change_flags', 'recommended_review'];
@@ -902,12 +1023,15 @@ async function build() {
     purpose: 'Visitor-friendly hunt classification and persona recommendation layer. Display-only; does not modify draw odds, p_draw, permits, or quotas.',
     persona_groups: demographics,
   });
+  await writeJson(outputFiles.managementContextJson, managementContextRows);
   await writeJson(outputFiles.auditJson, {
     generated_at: new Date().toISOString(),
     inputs: {
       sync_matrix_rows: Array.isArray(syncMatrix) ? syncMatrix.length : 0,
       readiness_engines: readiness.engines ? readiness.engines.length : 0,
       management_context_rows: managementRows.length,
+      management_context_rows_effective: managementRowsEffective.length,
+      management_context_source: managementRows.length ? 'file' : 'synthetic_from_database_and_plan_rules',
       elk_plan_present: hasElkPlan,
       mule_deer_plan_present: hasDeerPlan,
       master_rows: master.length,
@@ -936,6 +1060,7 @@ async function build() {
       sleeper_hunt_rows: sleeperRows.length,
       new_hunt_rows: newRows.length,
       demographic_groups: personaTags.length,
+      management_context_output_rows: managementContextRows.length,
     },
     tag_counts: tagCounts,
     demographic_counts: Object.fromEntries(Object.entries(demographics).map(([tag, group]) => [tag, group.count])),

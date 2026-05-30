@@ -362,9 +362,113 @@
       line-height: 1.6;
     }
 
+    .outfitter-directory-status {
+      margin: 4px 0 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .outfitter-public-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .outfitter-public-card {
+      border: 1px solid var(--line-soft);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.55);
+      padding: 14px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .outfitter-public-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .outfitter-public-head h5 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.1;
+      color: var(--text);
+    }
+
+    .outfitter-public-sub {
+      margin: 4px 0 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .outfitter-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .outfitter-badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(240, 120, 0, 0.34);
+      background: rgba(240, 120, 0, 0.1);
+      color: #5c2f10;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .outfitter-public-meta {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .outfitter-public-meta strong {
+      color: var(--text);
+    }
+
+    .outfitter-public-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .outfitter-public-actions a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      text-decoration: none;
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+      background: var(--panel2);
+    }
+
+    .outfitter-public-actions a:hover {
+      border-color: var(--accent);
+    }
+
     @media (max-width: 980px) {
       .definition-grid { grid-template-columns: 1fr; }
       .span-4, .span-5, .span-6, .span-7, .span-8 { grid-column: span 12; }
+      .outfitter-public-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 760px) {
@@ -579,6 +683,14 @@
           <li>Not a legal determination</li>
         </ul>
       </article>
+
+      <article class="card span-12">
+        <h4>Public Directory</h4>
+        <h3>Verified Outfitter Records</h3>
+        <p>These cards show public-facing service coverage and contact routes for reviewed outfitters.</p>
+        <p id="outfitterDirectoryStatus" class="outfitter-directory-status">Loading verified outfitter records...</p>
+        <div id="verifiedOutfitterGrid" class="outfitter-public-grid"></div>
+      </article>
     </section>
 
     <section class="footer-note">
@@ -642,9 +754,163 @@
       });
     })();
   </script>
+  <script>
+    (function () {
+      const statusEl = document.getElementById('outfitterDirectoryStatus');
+      const gridEl = document.getElementById('verifiedOutfitterGrid');
+      if (!statusEl || !gridEl) return;
+
+      const sources = [
+        './data/outfitters-public.json?v=20260530-verify-directory-1',
+        './data/outfitters.json?v=20260530-verify-directory-1'
+      ];
+
+      function safe(value) {
+        return String(value == null ? '' : value).trim();
+      }
+
+      function escapeHtml(value) {
+        return safe(value)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      }
+
+      function normalizeList(value) {
+        if (Array.isArray(value)) return value.map(safe).filter(Boolean);
+        const v = safe(value);
+        return v ? [v] : [];
+      }
+
+      function firstValue() {
+        for (let i = 0; i < arguments.length; i += 1) {
+          const v = safe(arguments[i]);
+          if (v) return v;
+        }
+        return '';
+      }
+
+      function pickServiceBadges(item) {
+        const explicit = normalizeList(item.serviceTypes || item.service_types);
+        if (explicit.length) return explicit.slice(0, 8);
+        const badges = [];
+        if (item.guidedHunts) badges.push('Fully Guided');
+        if (item.diySupport) badges.push('Semi-Guided');
+        if (item.packTrips) badges.push('Pack-Out / Recovery');
+        if (item.youthHunts) badges.push('Youth Friendly');
+        if (item.trespassAccess) badges.push('Private Land Access');
+        if (item.archery || item.muzzleloader) badges.push('Weapon-Specific Service');
+        return badges.length ? badges : ['Guide Service'];
+      }
+
+      function normalizeOutfitter(raw) {
+        const species = normalizeList(raw.speciesServed || raw.species_served);
+        const units = normalizeList(raw.unitsServed || raw.units_served);
+        const services = pickServiceBadges(raw);
+        const phone = normalizeList(raw.phone);
+        const email = normalizeList(raw.email);
+        const website = firstValue(raw.website, raw.url);
+        const city = firstValue(raw.city, raw.hometown);
+        const state = firstValue(raw.state, raw.region, 'Utah');
+        const reviewed = firstValue(raw.reviewed_at, raw.reviewedAt, raw.lastReviewed, 'Review date pending publication');
+        const verification = firstValue(raw.verificationStatus, raw.certLevel, raw.listingType, 'Verified');
+        const permitContext = firstValue(raw.federal_permit_context, raw.state_permit_context, raw.permit_context, raw.notes);
+        return {
+          name: firstValue(raw.listingName, raw.businessName, raw.name, 'Verified Outfitter'),
+          verification,
+          cityState: city ? `${city}, ${state}` : state,
+          species,
+          units,
+          services,
+          website,
+          phone: phone[0] || '',
+          email: email[0] || '',
+          reviewed,
+          permitContext
+        };
+      }
+
+      function renderCards(items, dataClass) {
+        if (!items.length) {
+          gridEl.innerHTML = '<div class="outfitter-public-card"><p>No reviewed outfitter records are published yet.</p></div>';
+          return;
+        }
+        statusEl.textContent = dataClass === 'public'
+          ? `Showing ${items.length} public outfitter record${items.length === 1 ? '' : 's'}.`
+          : `Showing ${items.length} reviewed records (fallback source).`;
+        gridEl.innerHTML = items.map((item) => {
+          const serviceBadges = item.services.map((tag) => `<span class="outfitter-badge">${escapeHtml(tag)}</span>`).join('');
+          const speciesText = item.species.length ? item.species.slice(0, 4).join(', ') : 'Species not published';
+          const unitsText = item.units.length ? item.units.slice(0, 4).join(', ') : 'Units not published';
+          const actions = [
+            item.website ? `<a href="${escapeHtml(item.website)}" target="_blank" rel="noopener noreferrer">Website</a>` : '',
+            item.phone ? `<a href="tel:${escapeHtml(item.phone.replace(/[^0-9+]/g, ''))}">Call</a>` : '',
+            item.email ? `<a href="mailto:${escapeHtml(item.email)}">Email</a>` : ''
+          ].filter(Boolean).join('');
+          return `
+            <article class="outfitter-public-card">
+              <div class="outfitter-public-head">
+                <div>
+                  <h5>${escapeHtml(item.name)}</h5>
+                  <p class="outfitter-public-sub">${escapeHtml(item.cityState)}</p>
+                </div>
+                <span class="outfitter-badge">${escapeHtml(item.verification)}</span>
+              </div>
+              <div class="outfitter-badge-row">${serviceBadges}</div>
+              <ul class="outfitter-public-meta">
+                <li><strong>Species served:</strong> ${escapeHtml(speciesText)}</li>
+                <li><strong>Units served:</strong> ${escapeHtml(unitsText)}</li>
+                <li><strong>Reviewed:</strong> ${escapeHtml(item.reviewed)}</li>
+                <li><strong>Permit context:</strong> ${escapeHtml(item.permitContext || 'Public permit context not published.')}</li>
+              </ul>
+              <div class="outfitter-public-actions">${actions || '<span class="outfitter-public-sub">Contact route not published</span>'}</div>
+            </article>`;
+        }).join('');
+      }
+
+      async function loadJson(url) {
+        const response = await fetch(url, { cache: 'no-store' });
+        if (!response.ok) throw new Error(`Failed ${url}`);
+        return response.json();
+      }
+
+      (async function initDirectory() {
+        try {
+          let records = [];
+          let mode = 'public';
+          try {
+            const published = await loadJson(sources[0]);
+            if (Array.isArray(published) && published.length) {
+              records = published;
+              mode = 'public';
+            }
+          } catch (error) {
+            console.warn('Public outfitter feed not available:', error);
+          }
+
+          if (!records.length) {
+            const fallback = await loadJson(sources[1]);
+            records = Array.isArray(fallback)
+              ? fallback.filter((row) => {
+                const status = safe(row.verificationStatus).toLowerCase();
+                const cert = safe(row.certLevel).toLowerCase();
+                return status.includes('vetted') || status.includes('verified') || cert.includes('cpo');
+              })
+              : [];
+            mode = 'fallback';
+          }
+
+          const normalized = records.map(normalizeOutfitter).filter((row) => safe(row.name));
+          renderCards(normalized, mode);
+        } catch (error) {
+          console.error(error);
+          statusEl.textContent = 'Could not load outfitter records right now.';
+          gridEl.innerHTML = '<div class="outfitter-public-card"><p>Try refreshing, or check the public data feed files.</p></div>';
+        }
+      })();
+    })();
+  </script>
   <script src="./header-layout.js?v=20260529-mobile-header-1"></script>
 </body>
 </html>
-
-
-

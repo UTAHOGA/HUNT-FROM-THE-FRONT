@@ -7724,3 +7724,58 @@ o_table=0).
   - `node --check assets/js/research-outlook-dashboard.js` passed.
   - `npm.cmd run build` passed.
   - Build produced existing optional-missing notices for runtime artifacts not currently present locally; no protected truth files were modified.
+
+## Research Step 3 Management Benchmark Layer + Step 4 Persona/Sleeper Surface + Step 5 Outfitter Page Public Directory
+- Timestamp (UTC): 2026-05-30T10:13:38Z
+- Assigned sequence continued without pause:
+  - `3) Management objective comparison layer`
+  - `4) Sleeper / demographic hunt tags surface`
+  - `5) Outfitter page rebuild (public records + CTA)`
+- Files changed:
+  - `scripts/build-hunt-research-classification-layer.js`
+  - `assets/js/research-outlook-dashboard.js`
+  - `verify.html`
+- Step 3 implementation:
+  - Added synthetic management-context fallback generation when `processed_data/management_context/hunt_management_objective_context.json` is missing.
+  - Synthetic context is keyed by `hunt_code` from `DATABASE.csv` and uses plan-context objectives only (elk LE age band; mule deer general/LE/premium objective context).
+  - Added management direction labels:
+    - `Above Objective`
+    - `Meeting Objective`
+    - `Below Objective`
+    - `Objective Known / Observed Evidence Limited`
+  - Added permit-direction watch messaging with `>20%` management-review threshold language (context-only).
+  - Wrote management context artifact:
+    - `processed_data/management_context/hunt_management_objective_context.json`
+  - Added audit trace fields:
+    - `management_context_rows_effective`
+    - `management_context_source`
+    - `management_context_output_rows`
+- Step 4 implementation:
+  - Surfaced persona/sleeper signals in the Hunt Research dashboard as visible decision content.
+  - Added `Hunter-Fit Signals` section using:
+    - `persona_tags`
+    - `sleeper_score`
+    - `sleeper_reasons`
+  - Kept explicit language that these signals do not override draw odds.
+- Step 5 implementation:
+  - Rebuilt Verify page with a public outfitter directory card grid.
+  - Added runtime loading flow:
+    - `data/outfitters-public.json` first
+    - fallback to vetted rows from `data/outfitters.json` when public feed is empty
+  - Added per-card display:
+    - verification label
+    - species served
+    - units served
+    - service badges
+    - reviewed date
+    - permit context note
+    - website/call/email action buttons when present
+- Validation:
+  - `node --check scripts/build-hunt-research-classification-layer.js` passed.
+  - `node --check assets/js/research-outlook-dashboard.js` passed.
+  - `node scripts/build-hunt-research-classification-layer.js` passed.
+  - `npm.cmd run build` passed.
+  - Protected-file hash check remained true for:
+    - `DATABASE.csv`
+    - ladder source
+    - predictive source
