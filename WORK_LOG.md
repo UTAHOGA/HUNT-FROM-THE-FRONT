@@ -1,3 +1,25 @@
+## 2026-05-30T07:31:48Z - Drop permits_2026_draw_* Family From DATABASE 2026
+
+- Assigned action:
+  - Delete the 2026 draw-subset permit family:
+    - `permits_2026_draw_res`
+    - `permits_2026_draw_nr`
+    - `permits_2026_draw_total`
+- File modified:
+  - `pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv`
+- Backup created:
+  - `processed_data/backups/DATABASE_before_drop_permits_2026_draw_res_20260530_073056.csv`
+- Validation:
+  - Row count after change: `1449`
+  - Column count after change: `39`
+  - Presence check:
+    - `permits_2026_draw_res`: removed
+    - `permits_2026_draw_nr`: removed
+    - `permits_2026_draw_total`: removed
+    - `permit_allotment_2026_res`: present
+    - `permit_allotment_2026_nr`: present
+    - `permit_allotment_2026_total`: present
+
 ## 2026-05-30T07:25:58Z - DWR Copy/Paste Script Location Note
 
 - Added instruction note file:
