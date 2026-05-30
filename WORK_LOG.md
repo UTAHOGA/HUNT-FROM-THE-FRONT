@@ -1,3 +1,16 @@
+## 2026-05-30T12:05:32Z - Research Dashboard Contract Source Priority Alignment
+
+- Assigned action:
+  - Continue forward and align Hunt Research dashboard runtime reads with the merged public contract layer.
+- File modified:
+  - `assets/js/research-outlook-dashboard.js`
+- Change:
+  - Updated `getOutlookSources()` to prefer `processed_data/public_contracts/hunt_application_outlook.json` (local + Cloudflare paths) before legacy `processed_data/research_page` fallback paths.
+  - This keeps dashboard reads aligned with the contract pipeline while preserving fallback safety.
+- Validation:
+  - `node --check assets/js/research-outlook-dashboard.js` PASS
+  - `npm.cmd run build` PASS
+
 ## 2026-05-30T12:04:38Z - Hunt Research Ladder Polish (Blank Non-Applicable Cells + High-Signal Notes)
 
 - Assigned action:

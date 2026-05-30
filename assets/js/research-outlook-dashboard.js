@@ -266,6 +266,9 @@
     const version = window.UOGA_CONFIG?.HUNT_RESEARCH_DATA_VERSION || "research-outlook-dashboard-2";
     const cloudflare = "https://json.uoga.workers.dev";
     return [
+      `${cloudflare}/processed_data/public_contracts/hunt_application_outlook.json?v=${version}`,
+      `${cloudflare}/public_contracts/hunt_application_outlook.json?v=${version}`,
+      `./processed_data/public_contracts/hunt_application_outlook.json?v=${version}`,
       `${cloudflare}/processed_data/research_page/hunt_application_outlook.json?v=${version}`,
       `${cloudflare}/research_page/hunt_application_outlook.json?v=${version}`,
       `./processed_data/research_page/hunt_application_outlook.json?v=${version}`,
