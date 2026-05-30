@@ -11,7 +11,10 @@ from openpyxl.styles import Alignment, Font
 
 ROOT = Path(__file__).resolve().parents[1]
 DATABASE_PATH = ROOT / "pipeline" / "RAW" / "hunt_unit_database" / "2026" / "csv" / "DATABASE.csv"
-HARVEST_PATH = ROOT / "processed_data" / "harvest_quality_features_all_years_by_hunt_code.csv"
+HARVEST_PATHS = [
+    ROOT / "processed_data" / "harvest_quality_features_all_years_by_hunt_code.csv",
+    ROOT / "pipeline" / "RAW" / "hunt_unit_database" / "2026" / "csv" / "harvest_quality_features_by_hunt_code_2025_for_2026.csv",
+]
 OUTPUT_DIR = ROOT / "processed_data" / "hard_data_exports" / "hunt_tables" / "2026" / "CLEAN_XLXS_STAGED"
 OUTPUT_PATH = OUTPUT_DIR / "MASTER.xlsx"
 AUDIT_DIR = ROOT / "processed_data" / "audits"
@@ -69,6 +72,13 @@ def format_number(value: object) -> str:
 def read_csv_rows(path: Path) -> list[dict[str, str]]:
     with path.open("r", encoding="utf-8-sig", newline="") as handle:
         return list(csv.DictReader(handle))
+
+
+def resolve_harvest_path() -> Path | None:
+    for candidate in HARVEST_PATHS:
+        if candidate.exists():
+            return candidate
+    return None
 
 
 def choose_permit_value(row: dict[str, str], fields: list[str]) -> str:
@@ -218,7 +228,11 @@ def classify_hunt(row: dict[str, str]) -> tuple[str, str]:
 
 def build_harvest_lookup() -> dict[str, dict[str, str]]:
     lookup: dict[str, dict[str, str]] = {}
-    for row in read_csv_rows(HARVEST_PATH):
+    harvest_path = resolve_harvest_path()
+    if not harvest_path:
+        return lookup
+
+    for row in read_csv_rows(harvest_path):
         if clean_text(row.get("model_target_year")) != "2026":
             continue
         hunt_code = clean_code(row.get("hunt_code"))

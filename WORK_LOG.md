@@ -1,3 +1,27 @@
+## 2026-05-30T03:17:26Z - Research Outlook Contract Fallback + Dashboard Contract Validation
+
+- Implemented a fallback seed path in `scripts/build-hunt-research-classification-layer.js` so `hunt_application_outlook` can still be generated when `processed_data/hunt_master_enriched.csv` is unavailable by seeding from `processed_data/point_ladder_view.csv`.
+- Kept prediction math untouched and preserved guardrails that protect `DATABASE.csv`, predictive runtime rows, and ladder source rows from modification.
+- Regenerated research contract outputs:
+  - `processed_data/research_page/hunt_application_outlook.json`
+  - `processed_data/research_page/hunt_application_outlook.csv`
+  - `processed_data/audits/hunt_classification_layer_audit.json`
+- Regeneration result:
+  - outlook rows: `2898`
+  - tag rows: `13446`
+  - sleeper rows: `184`
+  - blocked rows: `0`
+  - protected file hash checks: `database=true`, `predictive=true`, `ladder=true`
+- Validation:
+  - `node --check scripts/build-hunt-research-classification-layer.js` PASS
+  - `node --check hunt-research.js` PASS
+  - `node --check assets/js/research-outlook-dashboard.js` PASS
+  - `node scripts/build-hunt-research-classification-layer.js` PASS
+  - `npm.cmd run build` PASS
+- Mobile QA final pass:
+  - Confirmed mobile breakpoints and overflow protections remain active for Research + dashboard components via CSS contract checks (`@media (max-width: 1220px/768px)`, `overflow-x: auto`, one-column collapse, and min-width safeguards on ladder/dashboard containers).
+  - No mobile-only style regressions were introduced by this change set.
+
 ## 2026-05-29T17:36:34Z - Research Readability And Library Overlay Polish
 
 - Removed the visible Hunt Research runtime source URL paragraph from the dashboard source/freshness details while keeping compact source metadata fields available.
@@ -7422,3 +7446,30 @@ o_table=0).
     - harvest-joined rows `1122`
     - permit total-only rows `235`
     - permit split rows `938`
+
+## Hunt Tables 2026 Regeneration (DATABASE.csv Source, Local Harvest Fallback)
+- Timestamp (local): 2026-05-29T21:20:38-06:00
+- Assigned step:
+  - Regenerate 2026 MASTER hunt table using canonical source:
+    - `pipeline/RAW/hunt_unit_database/2026/csv/DATABASE.csv`
+- Change made:
+  - Updated `scripts/regenerate-hunt-tables-2026-clean-xlsx.py` to resolve harvest input from the first available file in this order:
+    - `processed_data/harvest_quality_features_all_years_by_hunt_code.csv`
+    - `pipeline/RAW/hunt_unit_database/2026/csv/harvest_quality_features_by_hunt_code_2025_for_2026.csv`
+  - Guardrail behavior when harvest files are absent:
+    - script now continues with permit/data rows instead of failing hard.
+- Regenerated outputs:
+  - `processed_data/hard_data_exports/hunt_tables/2026/CLEAN_XLXS_STAGED/MASTER.xlsx`
+  - `processed_data/audits/hunt_tables_2026_master_xlsx_validation.json`
+- Validation:
+  - `python -m py_compile scripts/regenerate-hunt-tables-2026-clean-xlsx.py` passed.
+  - `python scripts/regenerate-hunt-tables-2026-clean-xlsx.py` passed.
+  - Run summary:
+    - rows: `1449`
+    - harvest joins: `1115`
+    - season note fallback rows: `2`
+    - permit total-only rows: `235`
+  - Audit JSON confirms:
+    - `headers_match = true`
+    - `duplicate_hunt_code_count = 0`
+    - `missing_season_count = 0`
