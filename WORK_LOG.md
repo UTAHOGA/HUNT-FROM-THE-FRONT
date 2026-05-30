@@ -4,6 +4,7 @@
   - Continue step sequence with the public data contract layer and complete generation of website-facing contract artifacts.
 - Files modified:
   - `scripts/build-public-data-contracts.js`
+  - `package.json`
 - Files generated:
   - `processed_data/public_contracts/hunt_units.geojson`
   - `processed_data/public_contracts/hunt_odds_history.csv`
@@ -18,6 +19,7 @@
   - Added safe fallback synthesis from `processed_data/research_page/hunt_application_outlook.json` when runtime prediction/odds CSVs are unavailable or too sparse.
   - Added outfitter fallback behavior: if `data/outfitters-public.json` is empty, contract output uses reviewed records from `data/outfitters.json`.
   - Preserved guardrail: contract builder creates website-facing outputs only and does not modify `DATABASE.csv` or draw math.
+  - Added build-chain integration: `npm run build` now executes `build:public-contracts` before `build-pages-dist`.
 - Output summary:
   - `hunt_predictions_rows`: `2898`
   - `hunt_odds_history_rows`: `2898`
