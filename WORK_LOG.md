@@ -1,3 +1,19 @@
+## 2026-05-30T07:25:58Z - DWR Copy/Paste Script Location Note
+
+- Added instruction note file:
+  - `scripts/DWR_COPY_PASTE_WORKFLOW.md`
+- Scope:
+  - documents the generated copy/paste reconciliation scripts and exact run commands
+  - includes workflow order for permit normalization and Expo/Conservation reconciliation
+- Scripts referenced:
+  - `scripts/reconcile-all-species-permits-2026.py`
+  - `scripts/reconcile-expo-conservation-rows.py`
+  - `scripts/reconcile-deer-conservation-rows.py`
+  - `scripts/apply-deer-buck-drawclass-rules.py`
+- Validation:
+  - file exists and is readable
+  - no data/runtime/prediction files changed by this documentation-only note
+
 ## 2026-05-30T07:24:06Z - Drop Duplicate permits_2026 Triplet, Keep permit_allotment_2026 Triplet
 
 - Assigned action:
