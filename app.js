@@ -447,6 +447,33 @@ function saveHuntAndOpenResearch(hunt, residency = 'Resident', points = 12) {
   openHuntResearch(huntCode, record?.residency || residency, record?.selected_points ?? points, record?.draw_pool || inferResearchDrawPool(hunt), record || {});
 }
 
+function openCompareHunts(hunt, residency = 'Resident', points = 12) {
+  const record = saveHuntToBackpack(hunt, residency, points);
+  if (!record) return;
+  const basketPanel = document.getElementById('huntBasket');
+  const compareTarget = basketPanel || document.querySelector('.uoga-backpack-toggle');
+  compareTarget?.scrollIntoView?.({ behavior: 'smooth', block: 'center' });
+  if (basketPanel) {
+    basketPanel.classList.add('jump-flash');
+    window.setTimeout(() => basketPanel.classList.remove('jump-flash'), 900);
+  }
+  updateStatus(`${record.hunt_code} saved. Compare hunts in Hunt Backpack.`);
+}
+
+function openOutfitterMatches(hunt) {
+  if (!hunt) return;
+  const huntKey = getHuntRecordKey(hunt);
+  const selectedKey = selectedHunt ? getHuntRecordKey(selectedHunt) : '';
+  if (!selectedHunt || huntKey !== selectedKey) {
+    updateSelectedHunt(hunt);
+  } else {
+    renderOutfitters();
+  }
+  const outfitterPanel = document.getElementById('outfitterResults')?.closest('.rightbar-section') || document.getElementById('outfitterResults');
+  outfitterPanel?.scrollIntoView?.({ behavior: 'smooth', block: 'start' });
+  updateStatus(`Outfitter matches loaded for ${getHuntCode(hunt) || 'selected hunt'}.`);
+}
+
 // --- DATA NORMALIZATION ---
 function normalizeSpeciesLabel(value) {
   const text = safe(value).trim().toLowerCase();
@@ -2152,11 +2179,17 @@ function buildMatchingHuntCard(h, selectedKey) {
         </div>
       </div>
       <div class="hunt-card-actions">
-        <button type="button" class="secondary hunt-research-ring" data-hunt-select-key="${huntKey}">
-          Select
-        </button>
         <button type="button" class="secondary hunt-research-ring hunt-research-pill" data-hunt-research-key="${huntKey}">
-          Research This Hunt
+          View Research
+        </button>
+        <button type="button" class="secondary hunt-research-ring" data-hunt-compare-key="${huntKey}">
+          Compare Hunts
+        </button>
+        <button type="button" class="secondary hunt-research-ring" data-hunt-save-key="${huntKey}">
+          Save Hunt
+        </button>
+        <button type="button" class="secondary hunt-research-ring" data-hunt-outfitters-key="${huntKey}">
+          Find Outfitters
         </button>
       </div>
     </div>`;
@@ -2330,7 +2363,16 @@ function openSelectedHuntFloat() {
         </div>
         <div class="selected-unit-placard-actions">
           <button type="button" class="secondary hunt-research-ring hunt-research-pill selected-unit-placard-primary-btn" data-inline-hunt-research>
-            Research This Hunt
+            View Research
+          </button>
+          <button type="button" class="secondary hunt-research-ring selected-unit-placard-primary-btn" data-inline-hunt-compare>
+            Compare Hunts
+          </button>
+          <button type="button" class="secondary hunt-research-ring selected-unit-placard-primary-btn" data-inline-hunt-save>
+            Save Hunt
+          </button>
+          <button type="button" class="secondary hunt-research-ring selected-unit-placard-primary-btn" data-inline-hunt-outfitters>
+            Find Outfitters
           </button>
           <button type="button" class="secondary hunt-research-ring selected-unit-placard-map-btn selected-unit-placard-primary-btn" data-inline-view-map>
             View Map
@@ -2347,6 +2389,16 @@ function openSelectedHuntFloat() {
   selectedHuntFloat.querySelector('[data-inline-view-map]')?.addEventListener('click', () => closeSelectedHuntFloat(true));
   selectedHuntFloat.querySelector('[data-inline-hunt-research]')?.addEventListener('click', () => {
     saveHuntAndOpenResearch(selectedHunt, 'Resident', 12);
+  });
+  selectedHuntFloat.querySelector('[data-inline-hunt-compare]')?.addEventListener('click', () => {
+    openCompareHunts(selectedHunt, 'Resident', 12);
+  });
+  selectedHuntFloat.querySelector('[data-inline-hunt-save]')?.addEventListener('click', () => {
+    const record = saveHuntToBackpack(selectedHunt, 'Resident', 12);
+    if (record?.hunt_code) updateStatus(`${record.hunt_code} saved to Hunt Backpack.`);
+  });
+  selectedHuntFloat.querySelector('[data-inline-hunt-outfitters]')?.addEventListener('click', () => {
+    openOutfitterMatches(selectedHunt);
   });
 }
 
@@ -2578,7 +2630,25 @@ function renderSelectedHunt() {
             type="button"
             class="secondary hunt-research-ring hunt-research-pill"
             id="selectedHuntResearchBtn">
-            Research This Hunt
+            View Research
+          </button>
+          <button
+            type="button"
+            class="secondary hunt-research-ring"
+            id="selectedHuntCompareBtn">
+            Compare Hunts
+          </button>
+          <button
+            type="button"
+            class="secondary hunt-research-ring"
+            id="selectedHuntSaveBtn">
+            Save Hunt
+          </button>
+          <button
+            type="button"
+            class="secondary hunt-research-ring"
+            id="selectedHuntOutfittersBtn">
+            Find Outfitters
           </button>
         </div>
       </div>
@@ -2587,6 +2657,16 @@ function renderSelectedHunt() {
 
   document.getElementById('selectedHuntResearchBtn')?.addEventListener('click', () => {
     saveHuntAndOpenResearch(hunt, 'Resident', 12);
+  });
+  document.getElementById('selectedHuntCompareBtn')?.addEventListener('click', () => {
+    openCompareHunts(hunt, 'Resident', 12);
+  });
+  document.getElementById('selectedHuntSaveBtn')?.addEventListener('click', () => {
+    const record = saveHuntToBackpack(hunt, 'Resident', 12);
+    if (record?.hunt_code) updateStatus(`${record.hunt_code} saved to Hunt Backpack.`);
+  });
+  document.getElementById('selectedHuntOutfittersBtn')?.addEventListener('click', () => {
+    openOutfitterMatches(hunt);
   });
 
   if (safe(mapTypeSelect?.value).toLowerCase() === 'dwr') {
@@ -4907,6 +4987,36 @@ function bindControls() {
       if (hunt) saveHuntAndOpenResearch(hunt, 'Resident', 12);
       return;
     }
+    const compareBtn = event.target.closest('[data-hunt-compare-key]');
+    if (compareBtn) {
+      event.stopPropagation();
+      event.preventDefault();
+      const key = compareBtn.getAttribute('data-hunt-compare-key');
+      const hunt = key ? huntData.find(candidate => getHuntRecordKey(candidate) === key) : null;
+      if (hunt) openCompareHunts(hunt, 'Resident', 12);
+      return;
+    }
+    const saveBtn = event.target.closest('[data-hunt-save-key]');
+    if (saveBtn) {
+      event.stopPropagation();
+      event.preventDefault();
+      const key = saveBtn.getAttribute('data-hunt-save-key');
+      const hunt = key ? huntData.find(candidate => getHuntRecordKey(candidate) === key) : null;
+      if (hunt) {
+        const record = saveHuntToBackpack(hunt, 'Resident', 12);
+        if (record?.hunt_code) updateStatus(`${record.hunt_code} saved to Hunt Backpack.`);
+      }
+      return;
+    }
+    const outfitterBtn = event.target.closest('[data-hunt-outfitters-key]');
+    if (outfitterBtn) {
+      event.stopPropagation();
+      event.preventDefault();
+      const key = outfitterBtn.getAttribute('data-hunt-outfitters-key');
+      const hunt = key ? huntData.find(candidate => getHuntRecordKey(candidate) === key) : null;
+      if (hunt) openOutfitterMatches(hunt);
+      return;
+    }
     const selectBtn = event.target.closest('[data-hunt-select-key]');
     if (selectBtn) {
       event.stopPropagation();
@@ -4921,6 +5031,9 @@ function bindControls() {
   });
   document.getElementById('matchingHunts')?.addEventListener('keydown', event => {
     if (event.key !== 'Enter' && event.key !== ' ') return;
+    if (event.target.closest('[data-hunt-research-key], [data-hunt-compare-key], [data-hunt-save-key], [data-hunt-outfitters-key], [data-hunt-select-key]')) {
+      return;
+    }
     const researchBtn = event.target.closest('[data-hunt-research-key]');
     if (researchBtn) {
       event.preventDefault();

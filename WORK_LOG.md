@@ -1,3 +1,26 @@
+## 2026-05-30T13:59:40Z - Hunt Builder Action Unification (View Research / Compare / Save / Find Outfitters)
+
+- Assigned action:
+  - Next step on Builder UX continuity: make hunt cards behave like a single hunt-planning workflow.
+- File modified:
+  - `app.js`
+- Changes:
+  - Matching hunt cards now expose clear action buttons:
+    - `View Research`
+    - `Compare Hunts`
+    - `Save Hunt`
+    - `Find Outfitters`
+  - Selected Hunt Details card now exposes the same four actions.
+  - Selected floating hunt placard now exposes the same four actions (plus existing `View Map`).
+  - Added supporting action handlers:
+    - `openCompareHunts(...)` saves to backpack and jumps to compare surface.
+    - `openOutfitterMatches(...)` selects hunt (if needed), loads outfitter matches, and scrolls to outfitter panel.
+    - Save action confirms via status line.
+  - Updated matching-card click handling for new action buttons.
+- Validation:
+  - `node --check app.js` PASS
+  - `npm.cmd run build` PASS
+
 ## 2026-05-30T12:28:13Z - Hunt Research Input Debounce For Live Typing
 
 - Assigned action:
