@@ -3,6 +3,8 @@
   const MANIFEST_URLS = [
     "./processed_data/hard_data_exports/library/public_library_allowlist.json",
     "./public/hard-copy/data/documents.json",
+    "./hard-copy/data/documents.json",
+    "./hard-copy/documents.json",
     "./public/hard-copy/DISPLAY DATA/data/documents.json",
   ];
 
@@ -185,28 +187,58 @@
     }
   }
 
+  function resolveHrefCandidates(href) {
+    const trimmed = String(href || "").trim();
+    const candidates = new Set([trimmed]);
+    const publicPrefixDot = "./public/hard-copy/";
+    const publicPrefixSlash = "/public/hard-copy/";
+    if (trimmed.startsWith(publicPrefixDot)) {
+      candidates.add(`./hard-copy/${trimmed.slice(publicPrefixDot.length)}`);
+    } else if (trimmed.startsWith(publicPrefixSlash)) {
+      candidates.add(`/hard-copy/${trimmed.slice(publicPrefixSlash.length)}`);
+    } else if (trimmed.startsWith("./hard-copy/")) {
+      candidates.add(`./public/hard-copy/${trimmed.slice("./hard-copy/".length)}`);
+    } else if (trimmed.startsWith("/hard-copy/")) {
+      candidates.add(`/public/hard-copy/${trimmed.slice("/hard-copy/".length)}`);
+    }
+    return Array.from(candidates).filter(Boolean);
+  }
+
   async function existsByFetch(url) {
     try {
       const response = await fetch(url, { method: "HEAD", cache: "no-store" });
       if (response.ok) return true;
       if (response.status === 405) {
         const fallback = await fetch(url, { method: "GET", cache: "no-store" });
-        return fallback.ok;
+        return fallback.ok ? true : false;
       }
       return false;
     } catch {
-      return false;
+      return null;
     }
   }
 
   async function filterAvailableItems(items) {
     const checks = await Promise.all(items.map(async (item) => {
-      const url = safeUrl(item.href);
-      if (url === "#") return null;
-      const parsed = new URL(url);
-      if (parsed.origin !== window.location.origin) return item;
-      const exists = await existsByFetch(url);
-      return exists ? item : null;
+      const hrefCandidates = resolveHrefCandidates(item.href);
+      let hadUnknown = false;
+      for (const candidate of hrefCandidates) {
+        const url = safeUrl(candidate);
+        if (url === "#") continue;
+        const parsed = new URL(url);
+        if (parsed.origin !== window.location.origin) {
+          return { ...item, href: candidate };
+        }
+        const exists = await existsByFetch(url);
+        if (exists === true) {
+          return { ...item, href: candidate };
+        }
+        if (exists === null) {
+          hadUnknown = true;
+        }
+      }
+      if (hadUnknown) return item;
+      return null;
     }));
     return checks.filter(Boolean);
   }
@@ -214,7 +246,8 @@
   function dedupe(items) {
     const seen = new Map();
     items.forEach((item) => {
-      if (!seen.has(item.id)) seen.set(item.id, item);
+      const key = item.id || `${item.folderId || ""}::${String(item.title || "").toLowerCase()}::${String(item.href || "").toLowerCase()}::${String(item.type || "").toLowerCase()}`;
+      if (!seen.has(key)) seen.set(key, item);
     });
     return Array.from(seen.values());
   }
@@ -509,7 +542,10 @@
 
   Promise.all(MANIFEST_URLS.map(fetchManifest))
     .then((allSets) => allSets.flat().map(toPublicItem).filter(Boolean))
-    .then((items) => dedupe([...items, ...FIXED_PUBLIC_ITEMS]))
+    .then((items) => {
+      const fixed = FIXED_PUBLIC_ITEMS.map(toPublicItem).filter(Boolean);
+      return dedupe([...items, ...fixed]);
+    })
     .then((items) => enforceConservationSingleItem(items))
     .then((items) => filterAvailableItems(items))
     .then(start)

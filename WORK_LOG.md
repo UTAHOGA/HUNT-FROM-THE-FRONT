@@ -1,3 +1,20 @@
+## 2026-05-30T15:08:24Z - Hard-Copy Library Render Resilience Fix
+
+- Assigned action:
+  - Repair public Research/Hard-Copy library rendering regression.
+- Files modified:
+  - `assets/js/hard-copy-public-library.js`
+  - `hard-copy.html`
+- Fixes applied:
+  - Added manifest fallbacks for both public and root-served hard-copy document paths.
+  - Added href candidate resolution so links work whether files are served from `/public/hard-copy/*` or `/hard-copy/*`.
+  - Made local availability checks fail-open on network/HEAD uncertainty so optional checks do not blank the library wall/cards.
+  - Normalized fixed fallback entries through `toPublicItem(...)` before dedupe to prevent single-item collapse when manifest files are unavailable.
+  - Bumped hard-copy library script cache token in `hard-copy.html`.
+- Validation:
+  - `node --check assets/js/hard-copy-public-library.js` PASS
+  - `npm.cmd run build` PASS
+
 ## 2026-05-30T14:00:33Z - Compare Hunts Action Opens Backpack Tray
 
 - Assigned action:
