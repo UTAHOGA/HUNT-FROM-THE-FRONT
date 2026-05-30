@@ -220,6 +220,8 @@ window.UOGA_CONFIG = (() => {
     `${CLOUDFLARE_BASE}/draw_reality_engine.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
     `./processed_data/draw_reality_engine_v2.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
     `./processed_data/draw_reality_engine.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
+    `./data_model/runtime_drafts/draw_reality_engine_v2.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
+    `./data_model/harvest_quality/draw_reality_engine_predictive_with_harvest_features.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
   ];
 
   const HUNT_RESEARCH_PREDICTIVE_ENGINE_SOURCES = [
@@ -229,6 +231,8 @@ window.UOGA_CONFIG = (() => {
     `${CLOUDFLARE_BASE}/draw_reality_engine_v2.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
     `./processed_data/draw_reality_engine_predictive_v2.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
     `./processed_data/draw_reality_engine_v2.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
+    `./data_model/harvest_quality/draw_reality_engine_predictive_with_harvest_features.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
+    `./data_model/runtime_drafts/draw_reality_engine_v2.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
   ];
 
   const HUNT_RESEARCH_ENGINE_MODE = USE_PREDICTIVE_DRAW_ENGINE ? 'predictive' : 'observed';
@@ -246,12 +250,15 @@ window.UOGA_CONFIG = (() => {
     `${CLOUDFLARE_BASE}/processed_data/hunt_master_enriched.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
     `${CLOUDFLARE_BASE}/hunt_master_enriched.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
     `./processed_data/hunt_master_enriched.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
+    `./processed_data/point_ladder_view.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
   ];
 
   const HUNT_RESEARCH_REFERENCE_SOURCES = [
     `${CLOUDFLARE_BASE}/processed_data/hunt_unit_reference_linked.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
     `${CLOUDFLARE_BASE}/hunt_unit_reference_linked.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
     `./processed_data/hunt_unit_reference_linked.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
+    `./processed_data/point_ladder_view.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
+    `./data_model/runtime_drafts/draw_reality_engine_v2.csv?v=${HUNT_RESEARCH_DATA_VERSION}`,
   ];
 
   /*

@@ -1,3 +1,19 @@
+## 2026-05-30T12:08:22Z - Research Runtime Source Fallback Expansion In Config
+
+- Assigned action:
+  - Keep moving and improve Hunt Research runtime resilience when primary `processed_data/*` sources are absent.
+- File modified:
+  - `config.js`
+- Change:
+  - Expanded `HUNT_RESEARCH_*_SOURCES` fallback lists to include reviewed local runtime files that exist in this repo snapshot:
+    - `data_model/runtime_drafts/draw_reality_engine_v2.csv`
+    - `data_model/harvest_quality/draw_reality_engine_predictive_with_harvest_features.csv`
+    - `processed_data/point_ladder_view.csv` fallback for master/reference surfaces
+  - No prediction math changes; source-order resilience only.
+- Validation:
+  - `node --check config.js` PASS
+  - `npm.cmd run build` PASS
+
 ## 2026-05-30T12:06:50Z - Verify Page Outfitter Feed Priority Aligned To Public Contracts
 
 - Assigned action:
