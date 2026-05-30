@@ -1,3 +1,25 @@
+## 2026-05-30T16:49:03Z - Cloudflare Pages Dist Deploy Command Hardening
+
+- Assigned action:
+  - Resolve deployment drift where Pages was not publishing from `pages-dist`.
+- Files modified:
+  - `scripts/deploy-pages-dist.js` (new)
+  - `package.json`
+- Changes:
+  - Added deterministic deploy script that:
+    - runs full build (`npm run build`) unless `--skip-build`
+    - verifies `pages-dist/index.html` and `pages-dist/hard-copy.html` exist
+    - deploys with explicit command: `wrangler pages deploy pages-dist --project-name <name>`
+    - supports `--project-name`, `--branch`, `--commit-hash`, and `--dry-run`
+    - supports env fallbacks: `CLOUDFLARE_PAGES_PROJECT`, `CLOUDFLARE_PAGES_BRANCH`, `CLOUDFLARE_PAGES_COMMIT_HASH`
+  - Added npm script:
+    - `deploy:pages-dist`
+- Validation:
+  - `node --check scripts/deploy-pages-dist.js` PASS
+  - `node scripts/deploy-pages-dist.js --project-name uoga-hunt-builder --dry-run --skip-build` PASS
+  - `npm.cmd run deploy:pages-dist -- --project-name uoga-hunt-builder --dry-run` PASS
+  - Local account check: `wrangler whoami` PASS; `wrangler pages project list --json` returned `[]` in current logged-in account.
+
 ## 2026-05-30T16:43:17Z - Hard-Copy Render Hardening + Google Map Auth Fallback
 
 - Assigned action:

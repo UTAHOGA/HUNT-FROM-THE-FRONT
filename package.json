@@ -9,6 +9,7 @@
         "build:viewer-pdfs": "node scripts/build-guidebook-viewer-pdfs.js",
         "build:public-contracts": "node scripts/build-public-data-contracts.js",
         "build:pages": "npm run build:library-page && npm run build:viewer-pdfs && npm run build:public-contracts && node scripts/build-pages-dist.js",
+        "deploy:pages-dist": "node scripts/deploy-pages-dist.js",
         "export:data": "node export-data.js",
         "audit:2026": "node audit-2026-completeness.js",
         "apply:2026:supplements": "node apply-2026-supplements.js",
