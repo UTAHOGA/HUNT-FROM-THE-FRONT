@@ -10,7 +10,7 @@
     2025
   ],
   "command_used": "python -m engine.utah_bonus_predictive.materialize --output-dir processed_data --forecast-year 2026 --history-years 2021,2022,2023,2024,2025",
-  "generated_at": "2026-05-20T23:35:34.880353+00:00",
+  "generated_at": "2026-05-21T00:08:28.418792+00:00",
   "output_files": {
     "ml_draw_predictions_v1.csv": "processed_data\\ml_draw_predictions_v1.csv",
     "ml_draw_predictions_v1_report.json": "processed_data\\ml_draw_predictions_v1_report.json",
@@ -25,12 +25,14 @@
     "phase4_antlerless_validation_inventory.csv": "processed_data\\phase4_antlerless_validation_inventory.csv",
     "phase4_antlerless_validation_inventory.json": "processed_data\\phase4_antlerless_validation_inventory.json",
     "phase6_bonus_special_predictions_v1.csv": "processed_data\\phase6_bonus_special_predictions_v1.csv",
-    "phase6_bonus_special_report.json": "processed_data\\phase6_bonus_special_report.json"
+    "phase6_bonus_special_report.json": "processed_data\\phase6_bonus_special_report.json",
+    "turkey_bonus_predictions_v1.csv": "processed_data\\turkey_bonus_predictions_v1.csv",
+    "turkey_bonus_report.json": "processed_data\\turkey_bonus_report.json"
   },
   "output_row_counts": {
-    "ml_draw_predictions_v1.csv": 28785,
+    "ml_draw_predictions_v1.csv": 28795,
     "backtest_utah_bonus_draw.csv": 10557,
-    "draw_reality_engine_predictive_v2.csv": 28785,
+    "draw_reality_engine_predictive_v2.csv": 28795,
     "draw_reality_engine_v2.csv": 176753
   },
   "duplicate_key_counts": {
@@ -77,26 +79,26 @@
   },
   "coverage_report_summary": {
     "total_historical_backtest_hunt_codes": 1616,
-    "total_forecast_hunt_codes": 948,
+    "total_forecast_hunt_codes": 953,
     "total_active_2026_forecast_eligible_hunt_codes": 592,
     "count_excluded_not_OIL_LE_PLE": 293,
     "count_excluded_not_active_in_2026": 0,
     "count_excluded_missing_forecast_quota": 20,
     "count_excluded_missing_required_metadata": 0,
     "count_excluded_hunt_code_changed_or_not_crosswalked": 222,
-    "count_excluded_other_reason": 133,
-    "count_excluded_missing_model_input_or_not_in_predictive_draft": 133,
+    "count_excluded_other_reason": 128,
+    "count_excluded_missing_model_input_or_not_in_predictive_draft": 128,
     "forecast_codes_match_active_eligible_universe": false,
     "active_eligible_codes_missing_from_forecast": 0,
-    "forecast_codes_outside_active_eligible_universe": 356,
+    "forecast_codes_outside_active_eligible_universe": 361,
     "reason_counts": {
-      "included_forecast": 948,
+      "included_forecast": 953,
       "not_OIL_LE_PLE": 293,
       "not_active_in_2026": 0,
       "missing_forecast_quota": 20,
       "missing_required_metadata": 0,
       "hunt_code_changed_or_not_crosswalked": 222,
-      "other_missing_model_input": 133
+      "other_missing_model_input": 128
     },
     "source_csv": "processed_data\\predictive_coverage_report.csv"
   },
@@ -104,8 +106,8 @@
     "prediction": {
       "p_draw_outside_0_1": 0,
       "p_draw_pct_outside_0_100": 0,
-      "p_draw_pct_null": 3821,
-      "public_permits_gt_0_but_p_draw_null": 3481,
+      "p_draw_pct_null": 3831,
+      "public_permits_gt_0_but_p_draw_null": 3486,
       "status_max_pool_and_p_draw_pct_100": 174,
       "status_max_pool_and_p_draw_pct_lt_100": 0,
       "random_permits_gt_0_and_p_random_pool_0": 2390,

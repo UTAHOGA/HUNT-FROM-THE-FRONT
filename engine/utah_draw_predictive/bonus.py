@@ -59,10 +59,11 @@ STRATEGY_SPECS = [
     ),
     StrategySpec(
         draw_system_type="BONUS_TURKEY",
-        module_name="engine.utah_draw_predictive.bonus",
-        algorithm_status=ALGORITHM_STATUS_IN_SCOPE_MODEL_PENDING,
+        module_name="engine.utah_draw_predictive.turkey",
+        algorithm_status=ALGORITHM_STATUS_MODELED_BONUS,
         target_scope=TARGET_SCOPE_TARGET,
-        reason="Turkey remains target-scope, but a production predictive turkey strategy has not been accepted yet.",
+        reason="Limited-entry turkey uses the Utah bonus model and only promotes rows with proven public-draw source data, valid quota, and modeled bonus probabilities.",
         legacy_logic_present=True,
+        modeled_by_engine=True,
     ),
 ]

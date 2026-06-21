@@ -48,6 +48,8 @@ def test_formal_cli_generates_populated_artifacts(tmp_path: Path) -> None:
     phase4_inventory_json_path = tmp_path / "phase4_antlerless_validation_inventory.json"
     phase6_csv_path = tmp_path / "phase6_bonus_special_predictions_v1.csv"
     phase6_report_path = tmp_path / "phase6_bonus_special_report.json"
+    turkey_csv_path = tmp_path / "turkey_bonus_predictions_v1.csv"
+    turkey_report_path = tmp_path / "turkey_bonus_report.json"
     manifest_path = tmp_path / "utah_bonus_predictive_manifest.json"
 
     assert ml_path.exists()
@@ -63,6 +65,8 @@ def test_formal_cli_generates_populated_artifacts(tmp_path: Path) -> None:
     assert phase4_inventory_json_path.exists()
     assert phase6_csv_path.exists()
     assert phase6_report_path.exists()
+    assert turkey_csv_path.exists()
+    assert turkey_report_path.exists()
     assert manifest_path.exists()
 
     ml_rows = _read_csv(ml_path)
@@ -70,10 +74,12 @@ def test_formal_cli_generates_populated_artifacts(tmp_path: Path) -> None:
     successor_rows = _read_csv(successor_path)
     dedicated_hunter_rows = _read_csv(dedicated_hunter_csv_path)
     phase6_rows = _read_csv(phase6_csv_path)
+    turkey_rows = _read_csv(turkey_csv_path)
     report = json.loads(report_path.read_text(encoding="utf-8"))
     coverage = json.loads(coverage_json_path.read_text(encoding="utf-8"))
     dedicated_hunter_report = json.loads(dedicated_hunter_report_path.read_text(encoding="utf-8"))
     phase6_report = json.loads(phase6_report_path.read_text(encoding="utf-8"))
+    turkey_report = json.loads(turkey_report_path.read_text(encoding="utf-8"))
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
 
     assert ml_rows
@@ -88,6 +94,8 @@ def test_formal_cli_generates_populated_artifacts(tmp_path: Path) -> None:
     assert dedicated_hunter_report["total_rows"] == len(dedicated_hunter_rows)
     assert phase6_report["forecast_year"] == 2026
     assert phase6_report["total_phase6_rows"] == len(phase6_rows)
+    assert turkey_report["forecast_year"] == 2026
+    assert turkey_report["bonus_turkey_row_count"] == len(turkey_rows)
     assert manifest["forecast_year"] == 2026
     assert manifest["calibration_metric_non_null_count"] == len(bt_rows)
 
@@ -104,6 +112,7 @@ def test_formal_cli_generates_populated_artifacts(tmp_path: Path) -> None:
     assert all(str(row.get("p_draw") or "").strip() == "" for row in pending_rows)
     assert all(str(row.get("p_draw_pct") or "").strip() == "" for row in pending_rows)
     assert _nonnull(dedicated_hunter_modeled_rows, "p_preference_draw") == len(dedicated_hunter_modeled_rows)
+    assert _nonnull([row for row in turkey_rows if row.get("algorithm_status") == "MODELED_BONUS"], "p_preference_draw") == 0
     assert all((row.get("p_preference_draw") or "") == (row.get("p_draw") or "") for row in dedicated_hunter_modeled_rows)
     assert _nonnull(dedicated_hunter_rows, "p_bonus_pool") == 0
     assert _nonnull(dedicated_hunter_rows, "p_random_pool") == 0

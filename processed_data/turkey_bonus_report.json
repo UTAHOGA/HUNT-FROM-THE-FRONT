@@ -1,0 +1,29 @@
+{
+  "forecast_year": 2026,
+  "source_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "total_turkey_rows_reviewed": 18,
+  "bonus_turkey_row_count": 14,
+  "bonus_turkey_modeled_row_count": 0,
+  "bonus_turkey_pending_row_count": 14,
+  "excluded_general_season_turkey_row_count": 2,
+  "excluded_remaining_permit_turkey_row_count": 0,
+  "excluded_non_public_turkey_row_count": 7,
+  "excluded_other_non_draw_turkey_row_count": 2,
+  "modeled_turkey_hunt_code_count": 0,
+  "p_bonus_pool_non_null_count": 0,
+  "p_random_pool_non_null_count": 0,
+  "p_draw_non_null_count": 0,
+  "p_draw_pct_non_null_count": 0,
+  "p_preference_draw_non_null_count": 0,
+  "p_draw_outside_0_1_count": 0,
+  "p_draw_pct_outside_0_100_count": 0,
+  "duplicate_key_count": 0,
+  "source_years_used_non_null_count": 14,
+  "data_quality_flags_summary": {}
+}

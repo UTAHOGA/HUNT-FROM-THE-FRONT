@@ -1600,11 +1600,11 @@ RS6727,True,True,True,True,included_forecast,Once-in-a-lifetime,Rocky Mountain B
 TK0001,False,True,True,False,not_OIL_LE_PLE,Statewide,Turkey,Turkey - Statewide Permit,,,
 TK1000,False,True,True,False,not_OIL_LE_PLE,Spring General Season,Turkey,Statewide,,,
 TK1001,False,True,True,False,not_OIL_LE_PLE,Fall Management,Turkey,Northern Region - Private land only,,,2060
-TK1003,False,True,True,True,other_missing_model_input,Limited Entry,Turkey,Central Area,,,600
-TK1004,False,True,True,True,other_missing_model_input,Limited Entry,Turkey,Northeastern Area,,,347
-TK1005,False,True,True,True,other_missing_model_input,Limited Entry,Turkey,Northern Area,,,500
-TK1006,False,True,True,True,other_missing_model_input,Limited Entry,Turkey,Southeastern Area,,,250
-TK1007,False,True,True,True,other_missing_model_input,Limited Entry,Turkey,Southern Area,,,542
+TK1003,True,True,True,True,included_forecast,Limited Entry,Turkey,Central Area,,,600
+TK1004,True,True,True,True,included_forecast,Limited Entry,Turkey,Northeastern Area,,,347
+TK1005,True,True,True,True,included_forecast,Limited Entry,Turkey,Northern Area,,,500
+TK1006,True,True,True,True,included_forecast,Limited Entry,Turkey,Southeastern Area,,,250
+TK1007,True,True,True,True,included_forecast,Limited Entry,Turkey,Southern Area,,,542
 TK1012,False,True,True,False,not_OIL_LE_PLE,Conservation,Turkey,Central Area,,,
 TK1013,False,True,True,False,not_OIL_LE_PLE,Conservation,Turkey,Northeastern Area,,,
 TK1014,False,True,True,False,not_OIL_LE_PLE,Conservation,Turkey,Northern Area,,,
