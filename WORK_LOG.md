@@ -266,3 +266,25 @@
   - Raw file was not moved.
   - `reported_hunt_year` was fixed to 2025 and `model_target_year` to 2026.
   - `source_permits` remains a harvest-report metric and is not used as 2026 allocation quota.
+
+## Step 1C - Promoted Source Manifests Sync
+- Timestamp (UTC): 2026-06-21T00:09:12.634264+00:00
+- Scope:
+  - Re-ran the canonical Step 1C manifest builder against `data_model/quality/raw_pdf_inventory_audit.csv`.
+  - Confirmed no alternate Step 1C pipeline was introduced.
+  - Did not modify website files, `public_client_engine.csv`, or `engine/utah/materialize_engine.py`.
+- Outputs refreshed:
+  - `data_model/quality/promoted_source_summary.json`
+- Outputs verified unchanged and present:
+  - `data_model/quality/promoted_quality_sources.csv`
+  - `data_model/quality/promoted_draw_sources.csv`
+- Validation summary:
+  - Expected promoted quality rows from audit: 253
+  - Actual promoted quality rows: 253
+  - Expected promoted draw rows from audit: 204
+  - Actual promoted draw rows: 204
+  - Duplicate quality source rows: 0
+  - Duplicate draw source rows: 0
+  - Non-promoted quality rows leaked into manifest: 0
+  - Non-promoted draw rows leaked into manifest: 0
+  - Summary `all_checks_passed`: true
